@@ -1,0 +1,145 @@
+%!TEX root = ../Mould_Analytical_Calculation_Note.tex
+
+%%%%% DOCUMENTCLASS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{scrbook}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{preamble_Mould_Analytical_Calculation_Note/package_Mould_Analytical_Calculation_Note}
+\input{preamble_Mould_Analytical_Calculation_Note/definition_Mould_Analytical_Calculation_Note}
+
+%%%%% GEOMETRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{
+  a4paper,  % paper size
+  twoside,
+  text = {6.4in, 9.6in},
+  centering,
+  includehead,  % include the head of the page
+%  headheight = 13.6pt,
+  includefoot,  % include the foot of the page
+}
+%%%%% LINESPREAD %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\linespread{1.15}\selectfont
+%%%%% PARINDENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\parindent{12pt}
+%\def \globalscale {0.83}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% UNIT LENGTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\unitlength}{1pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOOTNOTE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\counterwithout{footnote}{chapter}
+\def\@makefnmark{\hbox{}\hbox{\@textsuperscript{\normalfont\@thefnmark}}\hbox{}}
+\deffootnote[1em]{1em}{1em}{\textsuperscript{\thefootnotemark}}
+\renewcommand\footnoterule{%
+  \kern3\p@
+  \hrule\@width.75\columnwidth
+  \kern2.6\p@
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DISPLAYBREAK %%%%%%%%%%%%%%%%%%%%%%%%%
+\allowdisplaybreaks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% CAPTION WIDTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup{width=.8\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% NAME, AUTOREFNAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand{\partautorefname}{part}  % part --> part
+\renewcommand{\chapterautorefname}{章}  % chapter --> 章
+\renewcommand{\sectionautorefname}{節\!} % section --> 節
+\renewcommand{\subsectionautorefname}{\sectionautorefname} % subsection --> section
+\renewcommand{\subsubsectionautorefname}{節} % subsubsection --> section
+\renewcommand{\appendixname}{補\hskip.5zw 遺} % appendix --> 補 遺
+\renewcommand{\appendixautorefname}{補遺\!} % appendix --> 補遺
+\renewcommand{\figurename}{図}
+\renewcommand{\figureautorefname}{\figurename} % figure --> 図
+\renewcommand{\footnoteautorefname}{脚注}
+\newcommand{\tcb@cnt@hosokuboxautorefname}{補足}
+%\newcommand{\tcb@cnt@Columnautorefname}{Column}
+%\newcommand{\subfigureautorefname}{\figureautorefname} % subfigure --> figure
+%\renewcommand{\tableautorefname}{表}
+%\newcommand{\subtableautorefname}{\tableautorefname}
+\renewcommand\bibname{\hbox to 5zw{参考文献}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% HEADER AND FOOTER %%%%%
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\headrulewidth}{1.5pt}
+%\renewcommand{\footrulewidth}{1pt}
+
+\fancypagestyle{front}{
+  \fancyhead{} % clear all header fields
+  \fancyhead[RO]{\thepage}
+  \chead{\leftmark}
+  \fancyhead[LE]{\thepage}
+  \fancyhead[RE]{}
+  \fancyfoot{}
+}
+\fancypagestyle{main}{
+  \fancyhead{} % clear all header fields
+  \fancyhead[LO]{\nouppercase\rightmark}
+  \fancyhead[RO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
+  \fancyhead[RE]{\thechapter\hskip1zw\nouppercase\leftmark}
+  \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
+  \fancyfoot{} % clear all footer fields
+}
+\fancypagestyle{plainheadfront}{
+  \fancyhead{}
+  \fancyhead[RO]{\thepage}
+  \fancyhead[LE]{\thepage}
+  \fancyfoot{}
+}
+\fancypagestyle{plainhead}{
+  \fancyhead{}
+  \fancyhead[RO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
+  \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
+  \fancyfoot{}
+}
+%%%%% SETLIST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlist[enumerate]{listparindent=\parindent, parsep=\z@, partopsep=\z@, topsep=3pt, itemsep=3pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\setthesection}{\Alph{section}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% EQUATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\@addtoreset{equation}{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% STYLE OF PARAGRAPH %%%%%%%%%%%%%%%%%%%%%
+%for scrbook.cls
+\RedeclareSectionCommand[%
+  style=section,%
+  level=4,%
+  indent=\z@,%
+  beforeskip=3.25ex \@plus1ex \@minus.2ex,%
+  afterskip=0.1ex \@plus.1ex \@minus.1ex,% -1em から変更
+  tocindentfollows=subsubsection,%
+  tocstyle=section,%
+  tocindent=10em,%
+  tocnumwidth=5em,%
+  font=\raggedsection\normalfont\sectfont\gtfamily\nobreak\sball{blue}~
+]{paragraph}
+%for book.cls
+%\renewcommand\paragraph[1]{%
+%  \@startsection{paragraph}{\paragraphnumdepth}{\z@}%
+%  {3.25ex \@plus1ex \@minus.2ex}% \@plus, \@minusは伸び縮みできるスペースの長さ
+%  {0.1ex\@plus.1ex \@minus.1ex}% ここが正だと改行されて、値だけ垂直スペースが入る
+%  {\raggedsection\normalfont\sectfont\gtfamily\nobreak\size@paragraph\sball{blue}~}{#1}\noindent
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RedeclareSectionCommand[%
+  style=section,%
+  level=5,%
+  indent=\z@,% \scr@parindent から変更
+  beforeskip=0.5ex \@plus1ex \@minus .2ex,% 3.25ex \@plus1ex \@minus .2ex から変更
+  afterskip=0.1ex \@plus.1ex \@minus.1ex,% -1em から変更
+  tocstyle=section,%
+  tocindent=12em,%
+  tocnumwidth=6em%
+]{subparagraph}
+%%%%% STYLE OF TABLE OF CONTENTS %%%%%
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\renewcommand\contentsname{目　次}
+
+
+\makeatother

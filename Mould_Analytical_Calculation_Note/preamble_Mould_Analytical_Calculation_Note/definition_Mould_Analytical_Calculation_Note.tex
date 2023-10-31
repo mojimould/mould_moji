@@ -1,0 +1,129 @@
+%!TEX root = ../Mould_Analytical_Calculation_Note.tex
+
+\makeatletter
+
+\input{preamble_Mould_Analytical_Calculation_Note/picture_Mould_Analytical_Calculation_Note}
+
+%%%%%% NEWIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\if@backmatter%\@backmattertrue
+\newif\if@frontmatter%\@frontmattertrue
+\newif\if@appendix%\@appendixfalse
+%%%%%% DEFINECOLOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ai}     {rgb}{0.2039, 0.3765, 0.4314}
+\definecolor{kon}    {rgb}{0.0000, 0.2000, 0.4000}
+\definecolor{konpeki}{rgb}{0.0902, 0.5098, 0.7333}
+\definecolor{moegi}  {rgb}{0.3020, 0.5961, 0.1882}
+\definecolor{sssec}  {rgb}{0.7333, 0.5, 0.7333}
+\definecolor{sora}   {rgb}{0.1451, 0.7216, 0.8039}
+\definecolor{sumire} {rgb}{0.3882, 0.2157, 0.5922}
+\definecolor{wwqqcc}{rgb}{0.4, 0, 0.8}
+\definecolor{qqzzqq}{rgb}{0, 0.6, 0}
+\definecolor{ffwwqq}{rgb}{1, 0.4, 0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% NEWCOLORBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% COLUMN %%%%%
+\newcommand{\Columnname}{Column}
+\newtcolorbox[auto counter, number within=chapter]{Column}[2][]{Columnbox, title={#2}, #1}
+%%%%% HOSOKU BOX %%%%%
+\newcommand{\hosokuname}{補}
+\definecolor{hosoku}{cmyk}{0, 0, 0, .15}
+\newtcolorbox[auto counter, number within=chapter]{hosokubox}[1][]{
+  hosokubox, title={\termblue{\hosokuname~\thetcbcounter}~}, #1
+}
+%%%%% FIG BOX %%%%%
+\newtcolorbox{Figbox}[1][]{Figurebox, #1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TIKZSET %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tikzset{
+  %%%%% SECTIONFORMAT STYLE %%%%%
+  sect/.style={signal, draw, text=white},
+  section/.style={sect, fill=konpeki!100!, signal to=east, inner sep=3pt},
+  subsection/.style={sect, fill=moegi!90!, signal to=nowhere, inner sep=3pt},
+  subsubsection/.style={sect, fill=sssec!100!, signal to=nowhere, inner sep=3pt},
+  %%%%% TERMINAL STYLE %%%%%
+  terminal/.style={rectangle,
+                   minimum size=10pt,
+                   rounded corners=1.5mm,
+                   thin, draw=black!75,
+                   top color=white,
+                   font=\fontfamily{pplx},
+                   inner sep=3pt, inner xsep=3pt,
+                   text height=1ex, text depth=0pt,},
+  %%%%% BMATRIX STYLE %%%%%
+  every left delimiter/.style={xshift=.5em},
+  every right delimiter/.style={xshift=-.5em},
+  bmatrix/.style={matrix of math nodes,
+                  left delimiter=[, right delimiter=],},
+}
+%%%%% TCBSET %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tcbset{
+  %%%%% HIGHLIGHT MATH STYLE %%%%%
+  highlight math style={enhanced, arc=2pt, boxrule=\z@, frame hidden,
+                        fuzzy halo=1pt with blue,
+                        colback=yellow!40!white,
+                        left=\z@, right=\z@, top=.4mm, bottom=.4mm},
+  %%%%% COLUMNBOX STYLE %%%%%
+  Columnbox/.style={enhanced jigsaw, breakable, left=.5ex, right=.5ex,
+                    after title=\hfill\termblue{\Columnname~\thetcbcounter},
+                    fonttitle=\gtfamily\bfseries,
+                    bicolor, colbacklower=black!10!white,},
+  %%%%% HOSOKUBOX STYLE %%%%%
+  hosokubox/.style={breakable, enhanced jigsaw, attach title to upper,
+                    colback=hosoku, colframe=hosoku,
+                    size=fbox, arc=\z@, middle=1mm,
+                    drop lifted shadow={blue!100!white!50!},
+                    skin first is subskin of={enhanced jigsaw}{no shadow},
+                    skin middle is subskin of={enhanced jigsaw}{no shadow},
+                    skin last is subskin of={enhanced jigsaw}%
+                                            {drop lifted shadow={blue!100!white!50!}},
+                    segmentation style={draw=black!50!white},
+                    after=\smallskip\noindent{\color{white}},},
+  %%%%% FIGUREBOX STYLE %%%%%
+  Figurebox/.style={notitle, center upper, center lower, arc=5pt, outer arc=2pt, boxrule=1pt,
+                    colback=green!3!white, colframe=black!25!white,
+                    boxsep=3mm, left=\z@, right=\z@, valign=center,
+                    },
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% OTHER TIKZ DEFINITION %%%%%%%%%%%%%%%%%%
+\tikzfading[name=fade ball, inner color=transparent!60, outer color=transparent!30]
+\def\sball#1{\tikz \shade [ball color=#1, path fading=fade ball] (0,0) circle (.7ex);}
+\def\terminal#1#2{\tikz[baseline=(a.base)] \node (a) [terminal, bottom color=#2] {\small #1};}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% LINK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\nextsectionlink[1]{\addtocounter{section}\@ne
+                               \hyperlink{section.\thechapter.\the\c@section}{#1}%
+                               \addtocounter{section}{-\@ne}}
+\newcommand\previoussectionlink[1]{\addtocounter{section}{-\@ne}
+                                   \hyperlink{section.\thechapter.\the\c@section}{#1}%
+                                   \addtocounter{section}{\@ne}}
+\newcommand\previouschapterlink[1]{\addtocounter{chapter}{-\@ne}
+                                   \hyperlink{chapter.\the\c@chapter}{#1}%
+                                   \addtocounter{chapter}{\@ne}}
+\newcommand{\pageautoref}[1]{%
+  \ifthenelse{\equal{\pageref{#1}}{\thepage}}%
+    {\autoref{#1}}%
+    {\autoref{#1}~[p.\pageref{#1}]}%
+}
+%\def\pageeqref#1{\eqref{#1}~[p.\pageref{#1}]}
+\newcommand{\pageeqref}[1]{%
+  \ifthenelse{\equal{\pageref{#1}}{\thepage}}%
+    {\eqref{#1}}%
+    {\eqref{#1}~[p.\pageref{#1}]}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%
+\def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{\z@}\textbf{#1}}{gray!25}\hskip.75zw}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DECLAREMATHOPERATOR %%%%%%%%%%%%%%%%%%%%
+\DeclareRobustCommand{\bDiv}{\nonscript\mskip-\medmuskip\mkern5mu\mathbin
+  {\operator@font div}\penalty900
+  \mkern5mu\nonscript\mskip-\medmuskip}
+\DeclareRobustCommand{\pod}[1]{\allowbreak
+  \if@display\mkern18mu\else\mkern8mu\fi(#1)}
+\DeclareRobustCommand{\pDiv}[1]{\pod{{\operator@font div}\mkern6mu#1}}
+\DeclareRobustCommand{\Div}[1]{\allowbreak\if@display\mkern18mu
+  \else\mkern12mu\fi{\operator@font div}\,\,#1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+

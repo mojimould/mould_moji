@@ -1,0 +1,2893 @@
+%!TEX encoding = UTF-8 Unicode
+
+\input{preamble_Mould_Analytical_Calculation_Note/style_Mould_Analytical_Calculation_Note}
+
+\usepackage{refcheck}
+
+\begin{document}
+\setlength\baselineskip{18pt}
+\setlength\normalbaselineskip{\baselineskip}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FRONTMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABLE OF CONTENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MAINMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Part I  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{モールドの幾何}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{モールドの振分け}
+%\label{chap:mouldHuriwake}
+モールドの振分けの長さ（振分長）は、トップ側とボトム側では一般に異なる。
+しかし、加工をする際には、ジグの中心に対して両者の長さの差が小さいほうが一般的には好都合である。
+そうした場合の対処法として、ここでは以下のような２つの方法を考える。
+\begin{enumerate}
+\item
+適当な厚さのスペーサをモールドとジグの接点に取り付けることで、双方の振分長を調節する。
+\item
+適当な角度にテーブルを回転することで、双方の振分長を調節する。
+\end{enumerate}
+このとき、モールドがどのように移動するかを考える。
+
+基本的な考え方として、曲率Rの円の中心を原点として$\Omega$だけ回転し、次にモールドとの（スペーサを入れてない側の）接点を中心に$-\theta$だけ回転したと考えることができる。
+なお、ここでは話の簡単化のため、もとの振分けではトップ側よりボトム側の振分け長さのほうが長いものとする。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ジグの接点部が点の場合}
+まずは簡単のため、ジグのモールドとの接点部（\pageautoref{fig:mouldOnComplexPlane1}のU$_\text T$, U$_\text B$の部分）は点であるとして考える。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t]
+\centering
+\begin{Figbox}
+\mouldCoordinate
+\caption[湾曲中心Oを原点とした複素平面上のモールド]
+  {湾曲中心Oを原点とした複素平面上のモールド\newline
+   T$_\text o$, T$_\text i$, B$_\text o$, B$_\text i$, U$_\text T$, U$_\text B$は点、
+   $R_\text c$, $R_\text o$, $R_\text i$, $f_\text T$, $f_\text B$, $l$は長さ、
+   $\alpha_{\text T_\text o}$, $\alpha_{\text T_\text i}$, $\alpha_{\text U_\text B}$は角度を示す。}
+\label{fig:mouldOnComplexPlane1}
+\end{Figbox}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 1.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{スペーサによる再振分け}
+モールドの湾曲における円の中心Oを原点とした複素数平面を考える。
+このとき、\pageautoref{fig:mouldOnComplexPlane1}のように、$R_\text c$, $R_\text i$, $R_\text o$, $f_\text T$, $f_\text B$, $l$, $\alpha_{\text T_\text i}$, $\alpha_{\text T_\text o}$, $\alpha_{\text U_\text B}$をとると、
+\begin{subequations}
+\label{eq:constraintUpoint}
+\begin{gather}
+  \label{eq:constraintUpoint1}
+  R_\text o - R_\text c = R_\text c - R_\text i = \frac{W_x}2~, \qquad
+  \text{Im}\left(R_\text oe^{i\alpha_{\text T_\text o}} - R_\text ie^{i\alpha_{\text T_\text i}}\right) = 0~,\\
+  \label{eq:constraintUpoint2}
+  \sin\alpha_{\text T_\text i} = \frac{f_\text T}{R_\text i}, \qquad
+  \sin\alpha_{\text U_\text B} = \frac l{R_\text i}, \qquad
+  \tan\theta = \frac\delta{2l}~.
+\end{gather}
+\end{subequations}
+ここで$W_x$はモールドの外径、$\delta$はスペーサの厚さである。
+このときモールドを原点Oを中心に$\Omega$だけ回転し、さらに点U$_\text B$($R_\text i$, $-\alpha_{\text U_\text B}$)を中心に$-\theta$だけ回転すると、点T$_\text i$($R_\text i$, $\alpha_{\text T_\text i}$)は、
+\begin{align}
+  \notag
+  & e^{-i\theta}\!\left\{R_\text ie^{i(\alpha_{\text T_\text i} + \Omega)} - R_\text ie^{-i\alpha_{\text U_\text B}}\right\}
+    +R_\text ie^{-i\alpha_{\text U_\text B}}\\
+  &= R_\text i
+     \left\{
+       e^{i(\alpha_{\text T_\text i} + \Omega - \theta)} - e^{-i(\alpha_{\text U_\text B} + \theta)} + e^{-i\alpha_{\text U_\text B}}
+     \right\}
+  \label{eq:afterftUpoint}
+\end{align}
+に移動する。
+また同様に点T$_\text o$($R_\text o$, $\alpha_{\text T_\text o}$)は
+\begin{equation}
+  \notag
+  R_\text oe^{i(\alpha_{\text T_\text o} + \Omega - \theta)} - R_\text i\left\{e^{-i(\alpha_{\text U_\text B} + \theta)} - e^{-i\alpha_{\text U_\text B}}\right\}
+\end{equation}
+に移動する。
+したがって、これらの差
+\begin{equation}
+  \notag
+  e^{i(\Omega - \theta)}\left(R_\text oe^{i\alpha_{\text T_\text o}} - R_\text ie^{i\alpha_{\text T_\text i}}\right)
+\end{equation}
+の虚部が$0$であればよい。
+つまり、\pageeqref{eq:constraintUpoint1}より、$\Omega = \theta$である
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{ここでは$0 \leqq \Omega, \theta < \nicefrac \pi2$としている。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+スペーサを入れた後の（トップ側の）振分長は、\pageeqref{eq:afterftUpoint}の虚部を見ればよい。
+\begin{align*}
+  R_\text i\left\{\sin\alpha_{\text T_\text i} + \sin(\alpha_{\text U_\text B} + \theta) - \sin\alpha_{\text U_\text B}\right\}
+  &= f_\text T - l +R_\text i\left(\sin\alpha_{\text U_\text B}\cos\theta + \cos\alpha_{\text U_\text B}\sin\theta\right)\\
+  &= f_\text T - l +l\cdot\frac{2l}{\sqrt{4l^2+\delta^2}}+\sqrt{R_\text i^2-l^2}\cdot\frac{\delta}{\sqrt{4l^2+\delta^2}}\\
+  &= f_\text T - l +\frac{2l^2+\delta\sqrt{R_\text i^2-l^2}}{\sqrt{4l^2+\delta^2}}~.
+\end{align*}
+まとめると、厚さ$\delta$のスペーサを入れた後のトップ側の振分長$f'_\text T$は、
+\begin{align*}
+  f'_\text T = f_\text T - l +\frac{2l^2+\delta\sqrt{\left(R_\text c-\nicefrac{W_x}2\right)^2-l^2}}{\sqrt{4l^2+\delta^2}}~.
+\end{align*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 1.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{振分長が均等になるスペーサ厚}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+トップ側とボトム側の振分長が同じになるとき、$\delta$は
+\begin{align*}
+  f'_\text T - f_\text T = \frac{f_\text B - f_\text T}2
+\end{align*}
+を満たす。
+これより、
+\begin{align*}
+  \frac{2l^2+\delta\sqrt{R_\text i^2-l^2}}{\sqrt{4l^2+\delta^2}} = l'\qquad
+  \left(l' \equiv l + \frac{f_\text B-f_\text T}2\right)
+\end{align*}
+両辺を2乗すると、
+\begin{gather*}
+  4l^4+\delta^2\left(R_\text i^2-l^2\right)+4l^2\delta\sqrt{R_\text i^2-l^2}
+  = l'^2\left(4l^2+\delta^2\right)\\
+  \longrightarrow\quad
+  \delta^2\left(R_\text i^2-l^2-l'^2\right)+4l^2\delta\sqrt{R_\text i^2-l^2} - 4l^2\left(l'^2 - l^2\right)
+  = 0.
+\end{gather*}
+$\delta > 0$より、
+\begin{align*}
+  \delta
+  &= \frac{\sqrt{4l^4\left(R_\text i^2-l^2\right) +4l^2\left(R_\text i^2-l^2-l'^2\right)\left(l'^2 - l^2\right)}-2l^2\sqrt{R_\text i^2-l^2}}{R_\text i^2-l^2-l'^2}\\
+  &= 2l\cdot\frac{l'\sqrt{R_\text i^2-l'^2}-l\sqrt{R_\text i^2-l^2}}{R_\text i^2-l^2-l'^2}
+\end{align*}
+まとめると、求めるスペーサの厚さ$\delta$は、
+\begin{align*}
+  \delta
+  = 2l\cdot
+    \frac{\left(l+\frac{f_\text B-f_\text T}2\right)\sqrt{\left(R_\text c-\nicefrac{W_x}2\right)^2-\left(l+\frac{f_\text B-f_\text T}2\right)^2}-l\sqrt{\left(R_\text c-\nicefrac{W_x}2\right)^2-l^2}}
+         {\left(R_\text c-\nicefrac{W_x}2\right)^2-l^2-\left(l+\frac{f_\text B-f_\text T}2\right)^2}.
+\end{align*}
+
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{受板がある場合}
+ジグのモールドと接する部品（受板）の大きさを考慮した場合を考える。
+モールドに接する側の面が半径$\rho$の円弧、虚軸方向の厚みが$\sigma$とする。
+また受板の虚軸負方向側の面は、ジグのそれと同じ平面上にあるものとする。
+
+受板の径の中心を改めてU$_\text B$とし、また原点に対する偏角を改めて$-\alpha_{\text U_\text B}$とすると、これはU$_\text B$($R_\text i-\rho$, $-\alpha_{\text U_\text B}$)表すことができる。
+ただし、\pageeqref{eq:constraintUpoint2}は以下のようになる。
+\begin{align*}
+  \sin\alpha_{\text U_\text B} = \frac{\bar l}{R_\text i-\rho}\quad, \quad
+  \tan\psi = \frac\delta{2\bar l} \quad
+  \left(~\bar l \equiv l-\frac\sigma2~\right).
+\end{align*}
+
+これを原点Oを中心に$\Omega$だけ回転し、さらに点U$_\text B$($R_\text i-\rho$, $-\alpha_{\text U_\text B}$)を中心に点T$_\text i$($R_\text i$, $\alpha_{\text T_\text i}$)を$-\theta$だけ回転すると、
+\begin{align}
+  \notag
+  & e^{-i\theta}\!\left\{R_\text ie^{i(\alpha_{\text T_\text i} + \Omega)} - R_\text i'e^{-i\alpha_{\text U_\text B}}\right\}
+    +R_\text i'e^{-i\alpha_{\text U_\text B}}\\
+  & = R_\text ie^{i(\alpha_{\text T_\text i}+\Omega-\theta)}
+      -R_\text i'\left\{e^{-i(\alpha_{\text U_\text B}+\theta)}-e^{-i\alpha_{\text U_\text B}}\right\}\qquad
+    \big(R_\text i' \equiv R_\text i-\rho\big)
+    \label{eq:afterftUfinite}
+\end{align}
+に移動する。
+同様に点T$_\text o$($R_\text o$, $\alpha_{\text T_\text o}$)は
+\begin{align*}
+  R_\text oe^{i(\alpha_{\text T_\text o} + \Omega - \theta)} - R_\text i'\left\{e^{-i(\alpha_{\text U_\text B} + \theta)} - e^{-i\alpha_{\text U_\text B}}\right\}
+\end{align*}
+に移動する。
+したがって、これらの差
+\begin{align*}
+  e^{i(\Omega - \theta)}\left(R_\text oe^{i\alpha_{\text T_\text o}} - R_\text ie^{i\alpha_{\text T_\text i}}\right)
+\end{align*}
+の虚部が$0$であればよい。
+つまり、\pageeqref{eq:constraintUpoint1}より、受板がある場合も$\Omega = \theta$である。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 1.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{受板の接点}
+受板とモールドとの（トップ側の）接点は、$R_\text ie^{i\alpha_{\text U_\text B}}$で与えられる。
+このとき厚さ$\delta$のスペーサを取付けると、U$_\text B$を中心に回転するが、それに伴い受板における接点の位置も変化する。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 1.2.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{回転後のモールドの湾曲中心}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+厚さ$\delta$のスペーサを挟むと、トップ側における受板の円の中心U$_\text B$は実軸方向に$\delta$だけ移動するので、
+\begin{align*}
+  R_\text i'e^{i\alpha_{\text U_\text B}} \quad \longrightarrow \quad \delta+R_\text i'e^{i\alpha_{\text U_\text B}}\ .
+\end{align*}
+よって、それぞれの受板の中心U$_\text B$, U$_\text T$を結んだ線分U$_\text B$U$_\text T$は、U$_\text B$を中心に$-\psi$だけ傾いた線分U$_\text B'$U$_\text T'$にとなる
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{U$_\text B'$U$_\text T'$の長さは$\bar l\sec\psi$であり、U$_\text B$U$_\text T$の長さ$\bar l$より長くなることに注意。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+回転後のモールドの湾曲中心は、この線分の垂直二等分線上にあり、またそれぞれの受板の中心から$R_\text i'$の距離の位置にある。
+つまり、この傾いた線分U$_\text B'$U$_\text T'$の中点から、角度$\pi-\psi$, 大きさ$\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}$の位置に移動する。
+したがって、回転後における湾曲の円の中心O$'$は、
+\begin{align}
+  \notag
+  & \frac\delta2+\sqrt{R_\text i'^2-\bar l^2}+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}e^{i(\pi-\psi)}\\
+  & = \frac\delta2+\sqrt{R_\text i'^2-\bar l^2}-\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi
+      +i\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi\ .
+    \label{eq:afterOrgin}
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 1.2.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{回転後の接点（トップ側）}
+回転後のトップ側における受板の中心U$_\text T'$とモールドの湾曲中心O$'$との差をとると、
+\begin{align*}
+  \frac\delta2+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi
+  +i\left\{\bar l-\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi\right\}
+  = R_\text i'e^{i\alpha'_{\text U_\text T}}\ .
+\end{align*}
+ここで、
+\begin{align*}
+  \tan\alpha'_{\text U_\text T}
+  = \frac{\bar l-\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi}
+         {\frac\delta2+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi}\ .
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+これの大きさは、$\delta\cos\psi-2\bar l\sin\psi = 0$より、
+\begin{align*}
+  \left\{\frac\delta2+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi\right\}^{\!\!2}
+  +\left\{\bar l-\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi\right\}^{\!\!2}
+  = R_\text i'^2\ .
+\end{align*}
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+よって、回転後の接点は以下で与えられる。
+\begin{align*}
+  &  R_\text ie^{i\alpha'_{\text U_\text T}}
+     +\frac\delta2+\sqrt{R_\text i'^2-\bar l^2}-\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi
+     +i\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi\\
+  &= \delta+R_\text i'e^{i\alpha_{\text U_\text B}}+\rho e^{i\alpha'_{\text U_\text T}}\ .
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 1.2.1.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{回転後の接点（ボトム側）}
+回転後のボトム側における受板の中心U$_\text B$とモールドの湾曲中心O$'$との差をとると、
+\begin{align*}
+  -\frac\delta2+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi
+  -i\left\{\bar l+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi\right\}
+  = R_\text i'e^{-i\alpha'_{\text U_\text B}}
+\end{align*}
+ここで、
+\begin{align*}
+  \tan\alpha'_{\text U_\text B}
+  = \frac{\bar l+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi}
+         {-\frac\delta2+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi}
+\end{align*}
+よって、回転後の接点は以下で与えられる。
+\begin{align}
+  \notag
+  &  R_\text ie^{-i\alpha'_{\text U_\text B}}
+     +\frac\delta2+\sqrt{R_\text i'^2-\bar l^2}-\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi
+     +i\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi\\
+  &= R_\text i'e^{-i\alpha_{\text U_\text B}}+\rho e^{-i\alpha'_{\text U_\text B}}
+   \label{eq:afterUBcontact}
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+辺の長さが$R_i'$, $R_i'$, $2\bar l$の二等辺三角形$\triangle$OU$_\text B$U$_\text T$の部分が、回転後には辺の長さ$R_i'$, $R_i'$, $\sqrt{\delta^2+(2\bar l)^2}$の二等辺三角形$\triangle$O$'$U$_\text B'$U$_\text T'$となる。
+実際、$\cos2a = 1-2\sin^2\!a$より、
+\begin{align*}
+  \sin^2\frac{\alpha'_{\text U_\text T}+\alpha'_{\text U_\text B}}2
+  = \frac{\delta^2+(2\bar l)^2}{4R_\text i'^2}\ .
+\end{align*}
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{スペーサによるモールドの回転角}
+厚さ$\delta$のスペーサを挿入すると、モールドの湾曲中心Oは、U$_\text B$を中心に$-\left(\alpha'_{\text U_\text B}\!-\alpha_{\text U_\text B}\right)$だけ回転する。
+実際、
+\begin{align*}
+  -R_\text i'e^{-i\alpha'_{\text U_\text B}}+R_\text i'e^{-i\alpha_{\text U_\text B}}
+  &= R_\text i'(\cos\alpha_{\text U_\text B}-\cos\alpha'_{\text U_\text B})+iR_\text i'(\sin\alpha'_{\text U_\text B}-\sin\alpha_{\text U_\text B})
+\end{align*}
+であり、これは回転後の湾曲中心\pageeqref{eq:afterOrgin}に一致する。
+つまり、$\alpha'_{\text U_\text B}\!-\alpha_{\text U_\text B}$が$\theta$に相当する。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+トップ側の接点U$_\text T'$とボトム側の接点U$_\text B'$の差をとると、
+\begin{align*}
+  R_\text i\!\left(e^{i\alpha_{\text U_\text T}'}-e^{-i\alpha'_{\text U_\text B}}\right)
+  &= \frac{R_\text i'+\rho}{R_\text i'}\left\{\delta+i(2\bar l)\right\}
+   = \frac{R_\text i}{R_\text i'}\sqrt{\delta^2+(2\bar l)^2}e^{i(\nicefrac\pi2-\psi)}\ .
+\end{align*}
+したがって、厚さ$\delta$のスペーサを挿入すると、両接点を通る直線は$-\psi$だけ傾くことがわかる。
+また、その長さは受板中心間U$_\text T'$U$_\text B'$の距離$\sqrt{\delta^2+(2\bar l)^2}$の$\nicefrac{R_i}{R_i'}$倍になっていることも確かめられる。
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 1.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{スペーサによる再振分け}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 1.2.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{振分長}
+スペーサを入れた後の（トップ側の）振分長$f'_\text T$は、\pageeqref{eq:afterftUfinite}の虚部を見ればよい。
+回転角は$-(\alpha'_{\text U_\text B}-\alpha_{\text U_\text B})$なので、
+\begin{align*}
+  f'_\text T
+  = R_\text i\sin\alpha_{\text T_\text i}
+    +R_\text i'\left(\sin\alpha'_{\text U_\text B}-\sin\alpha_{\text U_\text B}\right)
+  &= f_\text T+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi\\
+  &= f_\text T+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac\delta{\sqrt{\delta^2+(2\bar l)^2}}\ .
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 1.2.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{モールドの移動距離}
+\pageeqref{eq:afterftUfinite}の実部は、
+\begin{align*}
+  & R_\text i\cos\alpha_{\text T_\text i}-R_\text i'(\cos\alpha'_{\text U_\text B}-\cos\alpha_{\text U_\text B})\\
+  & = \sqrt{R_\text i^2-f_\text T^2}+\frac\delta2+\sqrt{R_\text i'^2-\bar l^2}
+      -\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi
+\end{align*}
+となる。
+よって、スペーサを挿入することにより、モールドは水平・鉛直方向にそれぞれ、
+\begin{subequations}
+\begin{alignat}{2}
+  \label{eq:spacerMoveHdistance}
+  \text{水平方向：}\quad
+  & \frac\delta2+\sqrt{R_\text i'^2-\bar l^2}-\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}\\
+  \text{鉛直方向：}\quad
+  & \sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac\delta{\sqrt{\delta^2+(2\bar l)^2}}
+\end{alignat}
+\end{subequations}
+だけ移動することがわかる。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 1.2.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{振分けが均等になるスペーサ厚}
+トップ側とボトム側の振分長が同じになるとき、$\delta$は
+\begin{align*}
+  \sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac\delta{\sqrt{\delta^2+(2\bar l)^2}} = f_d \qquad
+  \left(f_d \equiv \frac{f_\text B-f_\text T}2\right)\ .
+\end{align*}
+を満たす。
+両辺を２乗して$-4$倍すると、
+\begin{align*}
+  \delta^2\left\{\delta^2+(2\bar l)^2-4R_\text i'^2\right\}+4f_d^2\left\{\delta^2+(2\bar l)^2\right\}
+  & = \delta^4-2\left\{2R_\text i'^2-2\bar l^2-2f_d^2\right\}\delta^2+4f_d^2(2\bar l)^2\\
+  & = 0\ .
+\end{align*}
+したがって、$f_\text T = f_\text B$ ($f_d = 0$)のとき$\delta = 0$であることを考慮して、
+\begin{align*}
+  \delta^2
+  &= 2\left\{
+       R_\text i'^2-\bar l^2-f_d^2-\sqrt{\left(R_\text i'^2-\bar l^2-f_d^2\right)^2-4f_d^2\bar l^2}\,
+     \right\}\\
+  &= \left(\sqrt{R_\text i'^2-(\bar l-f_d)^2}-\sqrt{R_\text i'^2-(\bar l+f_d)^2}\,\right)^{\!\!2}.
+\end{align*}
+なお、これはモールドが水平・鉛直方向にそれぞれ、
+\begin{align*}
+  \text{水平方向：}~\frac\delta2+\sqrt{R_\text i^2-\bar l^2}-\frac{2\bar l}{\delta}f_d\quad(\delta>0)\ , \qquad
+  \text{鉛直方向：}~\frac{f_\text B-f_\text T}2
+\end{align*}
+だけ移動することを意味する。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+改めてまとめると、厚さ$\delta$のスペーサを（トップ側に）挿入した後のトップ側の振分長$f_\text T'$は、
+\begin{align*}
+  f_\text T' = f_\text T+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac\delta{\sqrt{\delta^2+(2\bar l)^2}}\ .
+\end{align*}
+トップ側とボトム側の振分長が均等になるときのスペーサ厚$\delta'$は、
+\begin{align*}
+  \delta' = \sqrt{R_\text i'^2-(\bar l-f_d)^2}-\sqrt{R_\text i'^2-(\bar l+f_d)^2}\ .
+\end{align*}
+ここで、
+\begin{align*}
+  R_\text i' = R_\text c-\frac{W_x}2-\rho\ ,\quad
+  \bar l = l-\frac\sigma2\ ,\quad
+  f_d = \frac{f_\text B-f_\text T}2\ .
+\end{align*}
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{テーブルの回転による振分けの調節}
+これまでトップ・ボトム振分長の差を小さくするためにスペーサを用いる手法を考えてきた。
+スペーサを取付けることは、本質的にはボトム側の受板の点U$_\text B$を中心に回転しているということである。
+このとき回転の中心はU$_\text B$である必要はなく、他の点でも問題ない。
+したがって、スペーサを用いて回転をしなくても、テーブルそのものを回転するという手法が考えられる。
+これは回転の中心が、受板の点U$_\text B$からテーブル中心Pに変わることに相当する。
+
+受板の円の中心U$_\text B$と、テーブル中心Pとの実軸方向の距離を$\varDelta$とすると、テーブル中心Pの$x$座標$\varDelta'$は次で与えられる。
+\begin{align}
+  \label{eq:tableCenter}
+  \varDelta' = \varDelta+R_\text i'\cos\alpha_{\text U_\text B} = \varDelta+\sqrt{R_\text i'^2-\bar l^2}\ .
+\end{align}
+モールドのトップ側におけるC側端点T$_\text i$($R_\text i$, $\alpha_{\text T_\text i}$)を、原点Oを中心に$\Omega$だけ回転し、さらに点P\,($\varDelta'$, $0$)を中心に$-\theta$だけ回転すると、
+\begin{align}
+  \label{eq:afterfttable}
+  e^{-i\theta}\left\{R_\text i^{i(\alpha_{\text T_\text i}+\Omega)}-\varDelta'\right\}+\varDelta'
+  = R_\text ie^{i(\alpha_{\text T_\text i}+\Omega-\theta)}+\varDelta'\left(1-e^{-i\theta}\right)
+\end{align}
+に移動する。
+同様に、トップ側におけるA側端点T$_\text o$($R_\text o$, $\alpha_{\text T_\text o}$)は、
+\begin{align*}
+  e^{-i\theta}\!\left\{R_\text o^{i(\alpha_{\text T_\text o}+\Omega)}-\varDelta'\right\}+\varDelta'
+  = R_\text ie^{i(\alpha_{\text T_\text o}+\Omega-\theta)}+\varDelta'\!\left(1-e^{-i\theta}\right)
+\end{align*}
+に移動する。
+したがって、これらの差
+\begin{align*}
+  e^{i(\Omega-\theta)}\!\left(R_\text oe^{i\alpha_{\text T_\text o}}-R_\text ie^{i\alpha_{\text T_\text i}}\right)
+\end{align*}
+の虚部が$0$であればよい。
+よって\pageeqref{eq:constraintUpoint1}より、この場合も$\Omega = \theta$となる。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 1.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{回転後のモールドの湾曲中心および受板との接点}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 1.3.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{回転後のモールドの湾曲中心}
+回転後のモールドの湾曲中心O$'$は、点Pを中心に$-\theta$だけ回転するので、
+\begin{align*}
+  \varDelta'\!\left(1-e^{-i\theta}\right) = \varDelta'(1-\cos\theta)+i\varDelta'\sin\theta\ .
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 1.3.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{回転後の接点}
+回転後におけるトップ側の受板との接点は、点Pを中心に$-\theta$だけ回転するので、
+\begin{align*}
+  &  e^{-i\theta}\left(R_\text ie^{i\alpha_{\text U_\text B}}-\varDelta'\right)+\varDelta'\\
+  &= R_\text ie^{i(\alpha_{\text U_\text B}-\theta)}+\varDelta'\!\left(1-e^{-i\theta}\right)\\
+  &= R_\text i\cos(\alpha_{\text U_\text B}-\theta)+\varDelta'(1-\cos\theta)
+     +i\left\{R_\text i\sin(\alpha_{\text U_\text B}-\theta)+i\varDelta'\sin\theta\right\}\ .
+\end{align*}
+同様に、ボトム側の受板との接点は、
+\begin{align*}
+  &  e^{-i\theta}\left(R_\text ie^{-i\alpha_{\text U_\text B}}-\varDelta'\right)+\varDelta'\\
+  &= R_\text ie^{-i(\alpha_{\text U_\text B}+\theta)}+\varDelta'\!\left(1-e^{-i\theta}\right)\\
+  &= R_\text i\cos(\alpha_{\text U_\text B}+\theta)+\varDelta'(1-\cos\theta)
+     -i\left\{R_\text i\sin(\alpha_{\text U_\text B}+\theta)-i\varDelta'\sin\theta\right\}\ .
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+両接点との差をとると、
+\begin{align*}
+  2R_\text i\sin\alpha_{\text U_\text B}\sin\theta+2iR_\text i\sin\alpha_{\text U_\text B}\cos\theta
+  = \frac{R_\text i}{R_\text i'}(2\bar l)e^{i(\pi-\theta)}
+\end{align*}
+となり、受板の両中心間（長さ$2\bar l$）を結んだ線分を$\nicefrac{R_\text i}{R_\text i'}$倍し、虚軸から$-\theta$だけ傾けたものになっていることがわかる。
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 1.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{回転後の振分け}
+回転後のトップ側の振分長$f_\text T'$は、\pageeqref{eq:afterfttable}の虚部を見ればよいので、
+\begin{align*}
+  f_\text T' = f_\text T+\varDelta'\sin\theta = f_\text T+\left(\varDelta+\sqrt{R_\text i'-\bar l^2}\right)\sin\theta\ .
+\end{align*}
+同様に、ボトムの振分長$f_\text B'$は、符号に注意して、
+\begin{align*}
+  f_\text B' = f_\text B-\varDelta'\sin\theta = (f_\text T+f_\text B)-f_\text T'\ .
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+テーブル中心Pによる回転は振分長に影響しない（端面を水平に戻す）ので、湾曲中心Oによる回転だけが影響する。
+よって、振分長は$\varDelta'\sin\theta$だけ変化する。
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+なお、\pageeqref{eq:afterfttable}の実部は、
+\begin{align*}
+  R_\text i\cos\alpha_{\text T_\text i}+\varDelta'(1-\cos\theta)
+  = \sqrt{R_\text i^2-\bar l^2}+\left(\varDelta+\sqrt{R_\text i'-\bar l^2}\right)\!(1-\cos\theta)\ .
+\end{align*}
+となるので、実軸の正方向に動くことがわかる。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 1.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{振分けが均等になるときの回転角}
+トップ側およびボトム側の振分長が同じになるとき、$\theta$は
+\begin{align*}
+  \varDelta'\sin\theta = f_d \qquad \left(f_d = \frac{f_\text B-f_\text T}2\right)
+\end{align*}
+であればいいので、
+\begin{align*}
+  \sin\theta = \frac{f_d}{\varDelta'} = \frac{f_\text B-f_\text T}{2\left(\varDelta+\sqrt{R_\text i'-\bar l^2}\right)}~.
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+改めてまとめると、テーブルを$-\theta$だけ傾けた後のトップ側の振分長$f_\text T'$は、
+\begin{align*}
+  f_\text T' = f_\text T+\left(\varDelta+\sqrt{R_\text i'-\bar l^2}\right)\sin\theta\ .
+\end{align*}
+トップ側とボトム側の振分長が均等になるときの回転角$\theta'$は、
+\begin{align*}
+  \sin\theta' = \frac{f_\text B-f_\text T}{2\left(\varDelta+\sqrt{R_\text i'-\bar l^2}\right)}\ .
+\end{align*}
+ここで、
+\begin{align*}
+  R_\text i' = R_\text c-\frac{W_x}2-\rho\ ,\quad
+  \bar l = l-\frac\sigma2\ ,\quad
+  f_d = \frac{f_\text B-f_\text T}2\ .
+\end{align*}
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{モールドとテーブルとの位置}
+\begin{tcolorbox}[title={2023/07/28時点の三菱マシニングセンタ実測値}, fonttitle=\gtfamily\bfseries]
+\begin{align*}
+  \text{Bot ($B=0$)}
+  \left\{
+  \begin{array}{rl}
+    \text{X :} & 97.790 \sim 99.930\\
+    \text{Y :} & -823.850\\
+    \text{Z :} & -634.620
+  \end{array}
+  \right.\quad
+  \text{Top ($B=180.$)}
+  \left\{
+  \begin{array}{rl}
+    \text{X :} & -97.980 \sim -99.570\\
+    \text{Y :} & -823.780\\
+    \text{Z :} & -634.720
+  \end{array}
+  \right.
+\end{align*}\\
+・Xについては、ジグの当たる点の凸部と端部（Z方向は目分量）\\
+・Yについては、モールドの底が当たる面\\
+・Zについては、X0 Y$-850.$における、ジグとの接点\\
+※これらの値に、センサー先端球の半径を加減する必要がある
+\end{tcolorbox}
+%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}[title={ディンプル用マシニングセンタにおける各々の値（図面上の値）}, fonttitle=\gtfamily\bfseries]
+・ジグ長さ$2l$：660 \quad ・ジグ幅：455\\
+・テーブル中心 と C面側ジグ端 との水平距離：196.5\\
+・受板の円の半径$\rho$：100 \quad ・受板の鉛直方向の幅$\sigma$：40\\
+・テーブル中心 と 受板の円の中心 との水平距離$\varDelta$：201.5\\
+・受板の円の中心 と 受板の水平方向の底 との距離：70\\[12pt]
+2023/09/26時点のディンプル用マシニングセンタにおける各々の実測値\\
+・テーブル回転中心のX座標：$-550.019$ \quad ・テーブル回転中心のZ座標：$-1149.974$
+\end{tcolorbox}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{テーブル中心にあるモールド}
+CADによる描画において、テーブルの回転中心が原点（ワールド原点）に置かれているとする。
+ここでモールドを描画する際、モールドの中心
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{$R_\text c$に相当する点。}\relax
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+をCAD上の原点（ワールド原点）にして描くほうが都合のいいことがある。
+このとき、モールドと受板が接するように移動する必要がある。
+鉛直方向（トップ-ボトム方向）においては$f_d$だけ動かせばよいが、水平方向の移動距離はあまり自明とはいいがたい。
+C側モールド面と受板面との寸法を単純に測ると、（水平方向でなく）最短距離が測定されてしまう。
+工夫により水平方向の距離を出すことも可能ではあるが、ここではその距離を定量的に求めておく。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 2.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{スペーサ取付前}
+（スペーサを取付る前の）モールドの中心がテーブル中心Pに置かれている場合を考える。
+ボトム側の受板に接するモールドの点と、テーブル中心Pとは、実軸方向に
+\begin{align*}
+  R_\text c-R_\text i\cos\alpha_{\text U_\text B}
+\end{align*}
+だけ差がある。
+したがって、モールドの受板と接する点の位置は実軸方向に、
+\begin{align*}
+  \varDelta+\sqrt{R_\text i'^2-\bar l^2}-R_\text c+R_\text i\cos\alpha_{\text U_\text B}\ .
+\end{align*}
+そのため\pageeqref{eq:afterUBcontact} ($\delta = 0$)より、モールドと（ボトム側の）受板は
+\begin{align*}
+  \varDelta+\sqrt{R_\text i'^2-\bar l^2}-R_\text c
+\end{align*}
+だけ実軸方向に離れていることがわかる。
+\pageeqref{eq:tableCenter}より、これはテーブル中心Pとモールドの中心湾曲$R_\text c$との差であることがわかる。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 2.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{スペーサ取付後}
+厚さ$\delta\,(>0)$のスペーサを取付けた場合、モールドの受板と接する点とテーブル中心Pとは、実軸方向に
+\begin{align*}
+  R_\text c-R_\text i\cos\alpha'_{\text U_\text B}
+\end{align*}
+だけ差があるので、その実軸方向の位置は、
+\begin{align*}
+  \varDelta+\sqrt{R_\text i'^2-\bar l^2}-R_\text c+R_\text i\cos\alpha'_{\text U_\text B}\ .
+\end{align*}
+そのため\pageeqref{eq:afterUBcontact}より、モールドと（ボトム側の）受板は
+\begin{align*}
+  &  \varDelta+\sqrt{R_\text i'^2-\bar l^2}-R_\text c+R_\text i\cos\alpha'_{\text U_\text B}
+     -\left(R_\text i'\cos\alpha_{\text U_\text B}+\rho\cos\alpha'_{\text U_\text B}\right)\\
+  &= \varDelta-R_\text c+R_\text i'\cos\alpha'_{\text U_\text B}\\
+  &= \varDelta-R_\text c
+     -\frac\delta2+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}
+\end{align*}
+だけ実軸方向に離れていることがわかる。
+\pageeqref{eq:tableCenter}および\pageeqref{eq:spacerMoveHdistance}より、これはスペーサ取付け後のモールド中心とモールドの中心湾曲$R_\text c$との差であることがわかる。
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{モールド：端面（外径）}
+ここではモールドの端面における各々の位置を考える。
+ただし機内のモールドは、考えている側の端面が工具側に向いているものとする。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{トップ側の端面}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 3.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{トップ端面における湾曲中心の位置}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 3.1.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{スペーサを用いた場合のT$_{R_\text c}'$}
+スペーサを取付けた後のトップ端面における湾曲中心の位置T$_{R_\text c}'$と、テーブル中心PとのX方向の差は、
+\begin{align*}
+  \left(
+    R_\text ce^{i\alpha_\text c}-R_\text i'e^{-i\alpha'_{\text U_\text B}}+R_\text i'e^{-i\alpha_{\text U_\text B}}
+  \right)
+  -\varDelta'
+  = R_\text ce^{i\alpha_\text c}-R_\text i'e^{-i\alpha'_{\text U_\text B}}-\varDelta \qquad
+    \left(\sin\alpha_\text c = \frac{f_\text T}{R_\text c}\right)
+\end{align*}
+の実部を見ればよい。
+したがって
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{この場合、トップ側が工具側に向いている。}、
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{align}
+  \notag
+  &  R_\text c\cos\alpha_\text c-R_\text i'\cos\alpha'_{\text U_\text B}-\varDelta\\
+  &= -\varDelta+\sqrt{R_\text c^2-f_\text T^2}+\frac\delta2
+     -\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+\left(2\bar l\right)^2}}
+     \label{eq:spacerTRc}
+\end{align}
+で与えられる
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{実際の作業では、この点を（端面の湾曲中心T$_{R_\text c}\!$でなく）端面の外側中心T$_\text c$とみなすことが多い。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 3.1.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{テーブルを傾けた場合のT$_{R_\text c}'$}
+テーブルを傾けた後のトップ端面における湾曲中心の位置T$_{R_\text c}'$と、テーブル中心PとのX方向の差は、
+\begin{align*}
+  \left(R_\text ce^{i\alpha_\text c}-\varDelta'e^{-i\theta}+\varDelta'\right)-\varDelta'
+  = R_\text ce^{i\alpha_\text c}-\varDelta'e^{-i\theta}
+\end{align*}
+の実部を見ればよい。
+すなわち、
+\begin{align}
+  \label{eq:tableTRc}
+  R_\text c\cos\alpha_\text c-\varDelta'\cos\theta
+  = \sqrt{R_\text c^2-f_\text T^2}-\left(\varDelta+\sqrt{R_i'^2-\bar l^2}\right)\cos\theta~.
+\end{align}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 3.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{トップ端面における外側中心の位置}
+トップ端における湾曲中心T$_{R_\text c}'$と外径中心T$_\text c'$との差は、以下で与えられる。
+\begin{align}
+  \label{eq:TRc-Tc}
+  \sqrt{R_\text c^2-f_\text T^2}-\frac{\sqrt{R_\text o^2-f_\text T^2}+\sqrt{R_\text i^2-f_\text T^2}}2\ .
+\end{align}
+よって、外径中心T$_\text c'$の位置は、湾曲中心T$_{R_\text c}'$から\pageeqref{eq:TRc-Tc}だけ加味すればよい。
+以下では、外径中心T$_\text c'$の位置を直接計算し、このことが整合していることを確かめる。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 3.1.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{スペーサを用いた場合のT$_\text c'$}
+同様にして、外面A・C側のトップ端点T$_\text o'$, T$_\text i'$の、テーブル中心Pを原点とした場合のX座標はそれぞれ、
+\begin{align*}
+  \text{C面側端点：}&
+  -\varDelta+\sqrt{R_\text i^2-f_\text T^2}
+  +\frac\delta2-\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}\ ,\\
+  \text{A面側端点：}&
+  -\varDelta+\sqrt{R_\text o^2-f_\text T^2}
+  +\frac\delta2-\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}\ .
+\end{align*}
+したがって、トップ端における外径中心T$_\text c'$のX座標は、
+\begin{align}
+  \label{eq:spacerTc}
+  -\varDelta+\frac{\sqrt{R_\text o^2-f_\text T^2}+\sqrt{R_\text i^2-f_\text T^2}}2
+  +\frac\delta2-\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}\ .
+\end{align}
+これより、湾曲中心T$_{R_\text c}'$と外径中心T$_\text c'$との差は\pageeqref{eq:TRc-Tc}となることがわかる。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 3.1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{テーブルを傾けた場合のT$_\text c'$}
+同様にして、外面A・C側のトップ端点T$_\text o'$, T$_\text i'$の、テーブル中心Pを原点とした場合のX座標はそれぞれ、
+\begin{align*}
+  \text{C側端点：}&~
+  \sqrt{R_\text i^2-f_\text T^2}-\varDelta'\cos\theta\ ,\\
+  \text{A側端点：}&~
+  \sqrt{R_\text o^2-f_\text T^2}-\varDelta'\cos\theta\ .
+\end{align*}
+したがって、トップ端における（AC外径の）中点T$_\text c'$のX座標は、
+\begin{align}
+  \label{eq:tableTc}
+  \frac{\sqrt{R_\text o^2-f_\text T^2}+\sqrt{R_\text i^2-f_\text T^2}}2-\varDelta'\cos\theta\ .
+\end{align}
+これより、湾曲中心T$_{R_\text c}'$と外径中心T$_\text c'$との差は\pageeqref{eq:TRc-Tc}となることがわかる。
+
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ボトム側の端面}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 3.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ボトム端面における湾曲中心の位置}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 3.2.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{スペーサを用いた場合のB$_{R_\text c}'$}
+スペーサ取付後のボトム端面における湾曲中心B$_{R_\text c}'$と、テーブル中心PとのX方向の差は、トップ側の場合と同様に考えて
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{この場合は、ボトム側が工具側に向いている。}、
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{align*}
+%  \label{eq:spacerBRc}
+  \varDelta-\sqrt{R_\text c^2-f_\text B^2}-\frac\delta2+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}\ .
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 3.2.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{テーブルを傾けた場合のB$_{R_\text c}'$}
+テーブルを傾けた後のボトム端面における湾曲中心の位置B$_{R_\text c}'$と、テーブル中心PとのX方向の差は、トップ側の場合と同様に考えて
+\begin{align*}
+%  \label{eq:tableBRc}
+  \left(\varDelta+\sqrt{R_i'^2-\bar l^2}\right)\cos\theta-\sqrt{R_\text c^2-f_\text B^2}~.
+\end{align*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 3.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ボトム端面における外側中心の位置}
+ボトム端における湾曲中心B$_{R_\text c}'$と外径中心B$_\text c'$との差は、以下で与えられる。
+\begin{align}
+  \label{eq:BRc-Bc}
+  \sqrt{R_\text c^2-f_\text B^2}-\frac{\sqrt{R_\text o^2-f_\text B^2}+\sqrt{R_\text i^2-f_\text B^2}}2\ .
+\end{align}
+よって、外径中心B$_\text c'$の位置は、湾曲中心B$_{R_\text c}'$から\pageeqref{eq:BRc-Bc}だけ加味すればよい。
+以下では、外径中心B$_\text c'$の位置を直接計算し、このことが整合していることを確かめる。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 3.2.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{スペーサを用いた場合のB$_\text c'$}
+外面A・C面側のボトム端点B$_{R_\text o}'$, B$_{R_\text i}'$の、テーブル中心Pを原点とした場合のX座標はそれぞれ、
+\begin{align*}
+  \text{C面側端点：}&~~
+  \varDelta-\sqrt{R_\text i^2-f_\text B^2}-\frac\delta2+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}\ ,\\
+  \text{A面側端点：}&~~
+  \varDelta-\sqrt{R_\text o^2-f_\text B^2}-\frac\delta2+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l^2}}\ .
+\end{align*}
+したがって、ボトム端における（AC外径の）中点B$_\text c'$のX座標は、
+\begin{align}
+  \label{eq:spacerBc}
+  \varDelta-\frac{\sqrt{R_\text o^2-f_\text B^2}+\sqrt{R_\text i^2-f_\text B^2}}2
+  -\frac\delta2+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}\ .
+\end{align}
+これより、湾曲中心B$_{R_\text c}'$と外径中心B$_\text c'$との差は\pageeqref{eq:BRc-Bc}となることがわかる。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 3.1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{テーブルを傾けた場合のB$_\text c'$}
+外面A・C面側のボトム端点B$_{R_\text o}'$, B$_{R_\text i}'$の、テーブル中心Pを原点とした場合のX座標はそれぞれ、
+\begin{align*}
+  \text{C面側端点：}&~~
+  \varDelta'\cos\theta-\sqrt{R_\text i^2-f_\text B^2}\ ,\\
+  \text{A面側端点：}&~~
+  \varDelta'\cos\theta-\sqrt{R_\text o^2-f_\text B^2}\ .
+\end{align*}
+したがって、ボトム端における（AC外径の）中点B$_\text c'$のX座標は、
+\begin{align}
+  \label{eq:tableBc}
+  \varDelta'\cos\theta-\frac{\sqrt{R_\text o^2-f_\text B^2}+\sqrt{R_\text i^2-f_\text B^2}}2
+\end{align}
+これより、湾曲中心B$_{R_\text c}'$と外径中心B$_\text c'$との差は\pageeqref{eq:BRc-Bc}となることがわかる。
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{モールド：外削}
+モールドに外削があるときは、たいていの場合、A側内面の端面における位置を基準として考えることが多い。
+
+トップ・ボトム端における内径
+をそれぞれ$w_\text T$, $w_\text B$, 外削径をそれぞれ$\mathfrak W_\text T$, $\mathfrak W_\text B$, A側肉厚をそれぞれ$\tau_\text T$, $\tau_\text B$とする。
+また、内面のめっき膜厚を$\mu$とし、通り心（トップ外削中心$\mathfrak T_\text c$とボトム外削中心$\mathfrak B_\text c$の差）のX・Y成分をそれぞれ$T_x$, $T_y$とする。
+ただし、$T_x \geqq 0$として、トップ外削中心$\mathfrak T_\text c$はボトム外削中心$\mathfrak B_\text c$よりA面方向にあるものとする。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+内径$w_\text T$, $w_\text B$は、湾曲の中心O（またはO$'$）に向かった方向にあることに注意。
+内径の中心がそれぞれの端に位置している。
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ボトム側外削径の中心（ボトム基準）}
+肉厚を基準とする場合、ボトム端のA側肉厚を基準にすることが多い。
+このとき、ボトム端における外削径中心B$_\text c'$から、ボトム端内径$w_\text B$の半分を引き、さらにA側肉厚$\tau_\text B$とめっき膜厚$\mu$との差を引いたものが（おおよその）外削A側面の位置$\mathfrak B_\text o'$に相当する
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{ボトム側が工具側にある場合は、A面はXの負方向にあることに注意。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 4.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection[スペーサを用いた場合の$\mathfrak B_\text c'$]
+           {スペーサを用いた場合の$\boldsymbol{\mathfrak B_\text c'}$}
+厚さ$\delta$のスペーサを用いた場合、テーブル中心Pを原点とした
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{マシニングによって機械原点（のX座標）がテーブル中心Pと同じだったり異なったりする場合がある。}\relax
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ボトム側外削径の中心$\mathfrak B_\text c'$の（おおよその）X座標は、\pageeqref{eq:spacerBc}より、
+\begin{align*}
+  \varDelta-\frac{\sqrt{R_\text o^2-f_\text B^2}+\sqrt{R_\text i^2-f_\text B^2}}2-\frac\delta2+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}
+  -\frac{w_\text B}2-\tau_\text B+\frac{\mathfrak W_\text B}2\ .
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+正確には、ボトム端における（内径ではなく）A・C面側の内面中心b$_\text c'$を見る必要がある。
+しかし実際の作業においては、これはタッチセンサーの測定開始点として用いるものであるため、おおよその値（$\pm10$mm以内程度）で十分である。
+そのため、ここでは単純に中心b$_\text c'$の代わりにボトム外削径中心B$_\text c'$とし、またボトム端における内径$w_\text B$を用いている。
+さらにいうと、外削径中心B$_\text c'$はボトム端の湾曲中心B$_{\text R_\text c}'$で代用してもまず問題はない。
+\end{hosokubox}\relax
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+これはタッチセンサー測定の際に基準となる位置であり、主に初物（初めてそのモールドを加工する場合）に対して使用する。
+初物以外での場合は、現物のボトム端に相当する箇所のA面（負方向）側内面b$_\text o'$の位置を直接計測し、その位置を基準として（ワーク座標系の）原点$\mathfrak B_\text c'$を定める。
+計測で定めた原点$\mathfrak B_\text c'$と、ボトム端A側内面b$_\text o'$との差のX座標は、
+\begin{align*}
+  -\left(\frac{\mathfrak W_\text B}2-\tau_\text B+\mu\right).
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 4.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection[テーブルを傾けた場合の$\mathfrak B_\text c'$]
+           {テーブルを傾けた場合の$\boldsymbol{\mathfrak B_\text c'}$}
+テーブルを$-\theta$傾けた場合、テーブル中心Pを原点としたボトム側外削径の中心$\mathfrak B_\text c'$の（おおよその）X座標は、\pageeqref{eq:tableBc}より、
+\begin{align*}
+  \varDelta'\cos\theta-\frac{\sqrt{R_\text o^2-f_\text B^2}+\sqrt{R_\text i^2-f_\text B^2}}2
+  -\frac{w_\text B}2-\tau_\text B+\frac{\mathfrak W_\text B}2\ .
+\end{align*}
+計測して定めた原点$\mathfrak B_\text c'$と、ボトム端A側内面b$_\text o'$との差のX座標は、
+\begin{align*}
+  -\left(\frac{\mathfrak W_\text B}2-\tau_\text B+\mu\right).
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 4.1.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{トップ側外削径中心（ボトム基準）}
+トップ側にも外削がある場合、ボトム側外削から通り芯を指定する形でトップ外削の位置を決めるのが通常である。
+このとき、テーブル中心Pを原点としたトップ側外削径中心$\mathfrak T_\text c'$のX座標は、計測で定めた$\mathfrak B_\text c'$のX座標$\mathcal G_{\text Bx}$の符号を反転し
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{トップ側が工具側にある場合は、A面はXの正方向にある。
+ボトム側と比べてテーブルをB軸（Y軸まわり）に$180^\circ$回転する必要があるため、X座標の符号が反転する形になる。}、
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+通り芯$T_x$の分を加味すればよい。
+したがって、
+\begin{align*}
+  -\mathcal G_{Bx}+T_x
+\end{align*}
+で与えられる
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{Y座標については、B軸の回転に影響しないので、$\mathcal G_{\text By}+T_y$となる。
+なお、実際の作業においては、$T_y = 0$であることが通常である。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ただし実際の作業では、テーブル中心Pの回転中心からのずれも考慮する必要がある
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{回転中心とテーブル中心は通常一致しているものとして考えるが、実際にはわずかにずれている。
+特にX方向のずれは、B軸回転を伴う場合に効いてくる。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{トップ側外削径の中心}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 4.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection[スペーサを用いた場合の$\mathfrak T_\text c'$]
+           {スペーサを用いた場合の$\boldsymbol{\mathfrak T_\text c'}$}
+トップ端外削A側面が基準となる場合も考慮しておく。
+この場合も考えかたはボトム基準のそれと同様である。
+テーブル中心Pを原点とした場合の、トップ側外削径の中心$\mathfrak T_\text c'$のおおよそのX座標は、\pageeqref{eq:spacerTc}より、
+\begin{align*}
+  -\varDelta+\frac{\sqrt{R_\text o^2-f_\text T^2}+\sqrt{R_\text i^2-f_\text T^2}}2+\frac\delta2
+  -\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}
+  +\frac{w_\text T}2+\tau_\text T-\frac{\mathfrak W_\text T}2\ .
+\end{align*}
+初物以外での場合は、計測した原点のX座標（実測値）を$\mathcal G_{tx}$とすると、トップ端におけるA面側内面と$\mathcal G_{tx}$との差のX座標は、
+\begin{align*}
+  \frac{\mathfrak W_\text T}2-\tau_\text T+\mu~.
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 4.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection[テーブルを傾けた場合の$\mathfrak T_\text c'$]
+           {テーブルを傾けた場合の$\boldsymbol{\mathfrak T_\text c'}$}
+テーブルを$-\theta$傾けた場合、テーブル中心Pを原点としたボトム側外削径の中心$\mathfrak T_\text c'$の（おおよその）X座標は、\pageeqref{eq:tableTc}より、
+\begin{align*}
+  \frac{\sqrt{R_\text o^2-f_\text T^2}+\sqrt{R_\text i^2-f_\text T^2}}2-\varDelta'\cos\theta
+  +\frac{w_\text T}2+\tau_\text T-\frac{\mathfrak W_\text T}2\ .
+\end{align*}
+計測して定めた原点$\mathfrak T_\text c'$と、トップ端A側内面t$_\text o'$との差のX座標は、
+\begin{align*}
+  \frac{\mathfrak W_\text T}2-\tau_\text T+\mu~.
+\end{align*}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 4.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ボトム側外削径中心（トップ基準）}
+ボトム側にも外削がある場合、トップ側外削から通り芯を指定する形でボトム外削の位置を決めることが多い。
+このとき、テーブル中心Pを原点としたボトム側外削径中心$\mathfrak B_\text c'$のX座標は、計測で定めた$\mathfrak T_\text c'$のX座標$\mathcal G_{\text Tx}$の符号を反転し、通り芯$T_x$の分を加味すればよい。
+したがって、
+\begin{align*}
+  -\mathcal G_{Tx}+T_x
+\end{align*}
+で与えられる。
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{モールド：溝}
+モールドの溝について考える。
+溝に関しては、その基準が以下のように与えられる場合が考えられる。
+\begin{enumerate}
+\item 溝径の中心Mが、モールドの湾曲中心線上にある場合
+\item 溝径の中心Mが、（トップ側）外削径の中心線上にある場合
+\item A面側の溝深さに指定がある場合
+\end{enumerate}
+なお、溝径を$W_\text M$, 溝位置（端面から溝までの長さ）・溝幅・A側溝深さをそれぞれ$\kappa_p$, $\kappa_w$, $\kappa_d$とする。
+このときいずれの場合も、$y$方向（機内におけるZ方向）
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{計算上の$xy$座標（$x$:実軸, $y$:虚軸）と、機内におけるXZ座標とが混在する形で話を進めているので注意されたし。}\relax
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+の切削範囲は、テーブル中心Pを原点として、
+\begin{align*}
+  \big[f_\text T'-(\kappa_p+\kappa_w)\ ,\ f_\text T'-\kappa_p\big]
+\end{align*}
+であり、また溝中心M$'$の$y$座標はこの切削範囲の中央
+\begin{align*}
+  f_\text T'-\left(\kappa_p+\frac{\kappa_w}2\right)
+\end{align*}
+で与えられる。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 5.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{湾曲中心が基準の場合}
+トップ端における湾曲中心T$_{R_\text c}'$と溝中心M$'$との$x$方向の差は、
+\begin{align*}
+  \sqrt{R_\text c^2-\left(f_\text T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+  -\sqrt{R_\text c^2-f_\text T^2}
+\end{align*}
+で与えられる。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 5.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{スペーサを用いた場合の溝中心（湾曲中心基準）}
+溝中心M$'$がモールドの湾曲中心線上にある場合、テーブル中心Pを原点とした$x$座標は、\pageeqref{eq:spacerTRc}より、
+\begin{align*}
+  -\varDelta+\sqrt{R_\text c^2-\left(f_\text T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}+\frac\delta2
+  -\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+\left(2\bar l\right)^2}}
+\end{align*}
+となる。
+なお実際の作業では、簡単のため、トップ端面の外側中心T$_\text c'$を測定し、それをトップ端面における湾曲中心T$_{R_\text c}'$とみなして溝中心M$'$の位置を計算することが多い。
+実測した外側中心のX・Y座標$G_{\text Tx}$, $G_{\text Ty}$を湾曲中心のそれとみなすと、機内における溝中心M$'$の位置は、テーブル中心Pを原点として、
+\begin{subequations}
+  \label{eq:Mreal}
+\begin{align}
+  \left(
+    G_{\text Tx}
+    +\sqrt{R_\text c^2-\left(f_\text T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}-\sqrt{R_\text c^2-f_\text T^2}\ ,\
+    G_{\text Ty}~,~
+    f_\text T'-\kappa_p-\frac{\kappa_w}2
+  \right).
+\end{align}
+湾曲中心とみなさずに正確に求めるなら、これに\pageeqref{eq:TRc-Tc}を引けばよい。
+その場合のX座標は、
+\begin{align}
+  G_{\text Tx}
+  +\sqrt{R_\text c^2-\left(f_\text T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+  -\frac{\sqrt{R_\text o^2-f_\text T^2}+\sqrt{R_\text i^2-f_\text T^2}}2\ .
+\end{align}
+\end{subequations}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 5.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{テーブルを傾けた場合の溝中心（湾曲中心基準）}
+溝中心M$'$がモールドの湾曲中心線上にある場合、テーブル中心Pを原点とした$x$座標は、\pageeqref{eq:tableTRc}より、
+\begin{align*}
+  \sqrt{R_\text c^2-\left(f_\text T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+  -\varDelta'\cos\theta\ .
+\end{align*}
+実測した外側中心の$X$・$Y$座標$G_{\text Tx}$, $G_{\text Ty}$を湾曲中心のそれとみなした場合とそうでない場合は、\pageeqref{eq:Mreal}で与えられる。
+
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 5.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{外削径の中心が基準の場合}
+溝中心M$'$がトップ外削径の中心線上にある場合、機内におけるその位置座標は、
+\begin{align*}
+  \left(
+    -\mathcal G_{Bx}+T_x\ ,\
+    \mathcal G_{By}\ ,\
+    f_\text T'-\kappa_p-\frac{\kappa_w}2
+  \right) \qquad
+  \text{または}\qquad
+  \left(
+    \mathcal G_{Bx}\ ,\
+    \mathcal G_{By}\ ,\
+    f_\text T'-\kappa_p-\frac{\kappa_w}2
+  \right).
+\end{align*}
+ただし、前者はボトムの外削を基準にした（ボトム基準の通り芯がある）場合であり、後者はトップの外削を基準にした場合である。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 5.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{A面側の溝深さが基準の場合}
+モールドA側面からの溝深さが指定されている場合を考える。
+このとき、溝中心の位置のX座標は、テーブル中心Pを原点として、
+\begin{align*}
+  \sqrt{R_\text o^2-\left(f_\text T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}-\kappa_d-\frac{W_\text M}2
+  -\varDelta'
+\end{align*}
+で与えられる。
+ここで、$W_{mx}$は溝のAC方向の径を表す。
+なお実際の作業では、モールドのA側外面の溝幅中央に相当する箇所を直接計測し、その位置を基準として原点を割り出す。
+その原点のX座標（実測値）を$G_{mx}$とすると、溝幅中央に対するモールドのA側外面と溝中心$G_{mx}$との差は、
+\begin{align*}
+  \frac{W_m}2+\kappa_d
+\end{align*}
+となる。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{モールド：内面溝}
+ここでは主に内面溝に関する計測・加工に必要な、モールドの幾何学的性質を考える。
+
+なお、内面溝の加工は三菱マシニングで行うことはできず、北村マシニング（横型）のみで行う。
+また北村マシニングでは、振分けの調整について基本的にはスペーサを用いた方法は行わず、テーブルの回転を用いた方法のみで行う方針である。
+したがって、スペーサを用いた方法の場合は考慮する必要がない。
+そのため以降では、（内面溝に関する計測・加工については）テーブルを$-\theta$だけ回転した場合についてのみを考えることにする。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 6.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ノーテーション}
+初めに、内面溝に関するノーテーションを簡単にまとめておく。
+なお内面溝は振分けのトップ側にあるため、モールドはトップ側が工具側に向いているものとして話を進める。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% tcolorbox %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}[title={内面溝に関するノーテーション}, fonttitle=\gtfamily\bfseries, breakable, enhanced jigsaw]
+\begin{enumerate}
+\item
+\subparagraph{列の数えかた}
+内面溝は$m$列あるものとし、トップ側から順に１列目, ２列目, …，$m$列目のように数える。
+
+\item
+\subparagraph{列内の個数の数えかた}
+各々の列の内面溝は、AC面側については工具側からみて下から順に、BD面については工具側からみて右から順に１つ目，２つ目，…のように数える。
+
+\item
+\subparagraph{内面溝の寸法}
+トップ端面から１列目までの距離を$q$, 鉛直・水平方向のピッチをそれぞれ$p_z$, $p_x$とし、$m$列目の長さをそれぞれ$d_m$とする。
+
+特に、奇数列目の長さが全て同じ場合はその長さを$d_\text o$, 偶数列目の長さが全て同じ場合はその長さを$d_\text e$とも表記する。
+（\pageautoref{fn:generallyDimpleN}および\pageautoref{hosoku:generallyDimpleN}参照）
+
+\item
+\subparagraph{内径テーパ表の寸法}
+内径テーパ表におけるトップ端からの距離を$\lambda_i$ ($i = 0$, $1$, $2$, $\cdots$), それに対するAC・BD側内径をそれぞれ$w_{\text Ai}$, $w_{\text Bi}$とする。
+（\pageautoref{hosoku:example4taper}参照）
+
+\item
+\subparagraph{内径の（近似）寸法}
+トップ端から$\lambda$の位置のAC内径を$w_{\text A\lambda}$と表す。
+このとき$w_{\text A\lambda}$は、$\lambda_j \leqq \lambda < \lambda_{j+1}$に対する$w_{\text Aj}$, $w_{\text Aj+1}$の加重算術平均（ウェイト算術平均）
+\begin{align*}
+  w_{\text A\lambda}
+   = \frac{(\lambda-\lambda_j)w_{\text Aj+1}+(\lambda_{j+1}-\lambda)w_{\text Aj}}{\lambda_{j+1}-\lambda_j} \qquad
+  \Big(\lambda_j \leqq \lambda < \lambda_{j+1}\Big)
+\end{align*}
+とみなすことにする。（$w_{\text B\lambda}$についても同様）
+
+\item
+\subparagraph{めっき厚を含めた内径の（近似）寸法}
+めっき膜厚$\mu$を考慮したAC・BD内径$w'_{\text A\lambda}$, $w'_{\text B\lambda}$をそれぞれ以下のように表す。
+\begin{align*}
+  w'_{\text A\lambda} \equiv w_{\text A\lambda}+2\mu~, \quad
+  w'_{\text B\lambda} \equiv w_{\text B\lambda}+2\mu~.
+\end{align*}
+\end{enumerate}
+\end{tcolorbox}\noindent
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+このとき$m$列目の内面溝の個数$n_m$は、$n_m = \nicefrac{d_m}{p_x}+1$となる
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{\label{fn:generallyDimpleN}
+たいていの場合、奇数列の個数は全て同じ数$n_\text o$であり、偶数列の個数も全て同じ$n_\text e$である。
+また$|n_\text o-n_\text d| = 1$である。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}[label=hosoku:example4taper]
+たとえば内径テーパ表の値が25mmピッチの場合、$\lambda_0=0$, $\lambda_1=25$, $\lambda_2=50$, $\cdots$とし、それぞれのACおよびBD側内径を$w_{\text A0}$, $w_{\text A1}$, $w_{\text A2}$, $\cdots$および$w_{\text B0}$, $w_{\text B1}$, $w_{\text B2}$, $\cdots$とする、という意味である。
+ここでは離散値である$\lambda_i$を、連続値$\lambda$に（近似的に）置きかえている。
+実際、たとえば$\lambda = \lambda_j$のとき$w_{\text Aj} = w_{\text A\lambda}$となることがわかる。
+\end{hosokubox}\relax
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+内径テーパの$Z$方向のピッチ$\lambda_{i+1}-\lambda_i$は常に一定の場合が多い。
+$\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j \leqq z < \lambda_{j+1}$となる$j$は、
+\begin{align*}
+  j = z \bDiv (\lambda_{i+1}-\lambda_i) = \left\lfloor\frac z{\lambda_{i+1}-\lambda_i}\right\rfloor
+\end{align*}
+のように表すことができる。
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Column}{商$\boldsymbol{\bDiv}$と余り$\boldsymbol{\bmod}$とガウス括弧$\boldsymbol{\lfloor\,\rfloor}$}
+\renewcommand\theequation{c\thechapter.\arabic{equation}}
+\setcounter{equation}{0}
+\paragraph{$\boldsymbol\bDiv$と$\boldsymbol\bmod$}
+割り算の余りを表す記号としては$\bmod$が広く使われる。
+商を表す記号は一般的な数学の教科書等ではあまり用いられないが、プログラミング言語等では$\bDiv$を用いられることがある。
+これに倣って、ここでは商には$\bDiv$, 余りには$\bmod$を用いている。
+
+　一般に、実数$a$, $b$ ($b\neq0$)に対して$a = bq+r$ ($0 \leqq r < |b|$)を満たす整数$q$を商、$r$を余りと呼び、このとき$a \bDiv b = q$および$a \bmod b = r$のように表される。
+なお、ここでは簡単のため、$q \geqq 0$として考えることにする。
+\tcbline*
+\paragraph{ガウス括弧}
+$\lfloor x\rfloor$は、$x \in R$ に対して$x$を超えない最大の整数。
+簡単にいうと、（$x > 0$の場合は）小数点以下を切り捨てた整数部分を表す。
+ガウス記号, 床関数(floor function)などとも呼ばれる。
+\end{Column}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}[title=内面溝加工に関する工具の情報, fonttitle=\gtfamily\bfseries]
+・タッチセンサープローブの半径：5 \quad ・タッチセンサープローブの軸の半径：3.75\\
+・切削用工具径：40 \quad ・切削用工具シャンク径：25
+\end{tcolorbox}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{基本方針}
+内面溝の加工における留意事項の１つに、モールドの内面（特にトップ端）と工具が接触してしまうアンダーカットというものがある。
+特にモールドA面には工具へ向かう方向に湾曲があるため、アンダーカットが生じやすい。
+そこで、アンダーカットを避けつつ加工ができるようにするため、モールドをいくらか（湾曲と反対側に）傾けて加工を行う。
+その傾き角$\phi$ ($0 \leqq \phi < \nicefrac\pi2$)について、ここでは次の２点を基準に考えることにする。
+\begin{tcolorbox}[title=A面の内面溝, fonttitle=\gtfamily\bfseries]
+\begin{enumerate}
+\item[a)]
+A側内面のトップ端点
+\item[b)]
+A側内面の内面溝１列目（トップ端から$q$）の位置
+\end{enumerate}
+\end{tcolorbox}\noindent
+この２点を通る直線と鉛直方向との角度を、傾き角$-\phi$ ($0 < \phi < \nicefrac\pi2$)とする
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{振分長の調整に用いたテーブルの傾き角$\theta$と混同しないように注意。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+なお、トップ端のAC内径は$w_{\text A0}$で代用してもよいものとする。
+
+BおよびD面の内面溝についても（特にA側内面に対して）アンダーカットを避ける必要がある。
+しかし、傾けなくてもアンダーカットが発生せず加工できる場合もある。
+そのためB, D面の内面溝については、A側内面のトップ端のX座標と、それと最も$X$座標が近い内面溝との（$X$方向の）距離を算出する。
+そしてそれを工具径と比べることで、傾けるかどうかを決めることにする。
+また傾ける場合は、上記の角度$\phi$を用いることにする。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+C側の内面溝については、そもそもアンダーカットが生じることがない（湾曲が外側に向いている）ので傾ける必要がない。
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Column}{曲率と傾き}
+内面A側・C側の湾曲をそれぞれ$\mathcal R_\text o$, $\mathcal R_\text i$とすると、曲率はそれぞれ$\mathcal R_\text o^{-1} < R_\text c^{-1} < \mathcal R_\text i^{-1}$である。
+そのため、（トップ側の）A側の$\mathcal R_\text o$を基準にするとより緩やかに、C側の$\mathcal R_\text i$を基準にするとよりきつく傾くことになる。
+また、トップ端から（$Z$方向に）遠い点を基準にするとより緩やかに、近い点を基準にするとよりきつく傾くことになる。
+\end{Column}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+以下ではこの傾き角$\phi$と、回転後の内面溝や内面の位置を定量的に与えることを試みる。
+
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{内面溝の位置と傾き角（傾き前）}
+\pageeqref{eq:tableTRc}より、テーブルを$-\theta$傾けて振分けの調整を行った場合、テーブル中心Oを原点としたモールド中心湾曲線のトップ端における$X$座標は、
+\begin{align*}
+  R_\text c\cos\alpha_\text c-\varDelta'\cos\theta = \sqrt{R_\text c^2-f_\text T^2}-\varDelta'\cos\theta
+\end{align*}
+で与えられる。
+これらはタッチセンサーによる測定の開始点として用いることができる。
+一方で、それ以外の作業では、トップ端における内径の中心座標$g_t$を直接測定するので、それを用いることにする
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{これは中心湾曲線上にない点であるが、公差の範囲内であるものとして、ここではこれで代用する。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+よって、テーブル中心Oを原点とした場合における、内面溝１列目中央の（だいたいの）位置
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{$w_{\text Aq}$, $w_{\text Bq}$はモールド湾曲の中心(0, 0)方向への長さであるため正確ではないことに注意。}\relax
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+は、次で与えられる。
+\begin{align*}
+\begin{array}{rl}
+  \text{A面（$+$X方向）：}
+  & \displaystyle
+    \left(
+      g_{tx}+\mathcal L_0+\frac{w'_{\text Aq}}2~,~
+      g_{ty}~,~
+      f_t'-q
+    \right),\\[12pt]
+  \text{C面（$-$X方向）：}
+  & \displaystyle
+    \left(
+      g_{tx}+\mathcal L_0-\frac{w'_{\text Aq}}2~,~
+      g_{ty}~,~
+      f_t'-q
+    \right),\\[12pt]
+  \text{B面（$+$Y方向）：}
+  & \displaystyle
+    \left(
+      g_{tx}+\mathcal L_0~,~
+      g_{ty}+\frac{w'_{\text Bq}}2~,~
+      f_t'-q
+    \right),\\[12pt]
+  \text{D面（$-$Y方向）：}
+  & \displaystyle
+    \left(
+      g_{tx}+\mathcal L_0~,~
+      g_{ty}-\frac{w'_{\text Bq}}2~,~
+      f_t'-q
+    \right).
+\end{array}
+\end{align*}
+ここで、$i$列目の湾曲中心とトップ端の湾曲中心との$X$座標の差を、
+\begin{align*}
+  \mathcal L_i \equiv \sqrt{R_\text c^2-\left\{f_\text T-q-(i-1)p_z\right\}^2}-\sqrt{R_\text c^2-f_\text T^2}
+\end{align*}
+と表した。
+なお、$i$列目の湾曲中心と$j$列目の湾曲中心との$X$座標の差を
+\begin{align*}
+  \mathcal L_{i,j}
+  \equiv \mathcal L_i-\mathcal L_j
+  = \sqrt{R_\text c^2-\left(f_\text T-q-(i-1)p_z\right)^2}-\sqrt{R_\text c^2-\left\{f_\text T-q-(j-1)p_z\right\}^2}
+\end{align*}
+と表すことにする。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 6.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{内面溝のX座標（傾き前）}
+テーブル中心Oを原点としたとき、傾き前の$i$列目$j$番目の内面溝の$X$座標は、
+\begin{align}
+  \notag
+  \text{A面：}\quad
+  \mathcal D_{xi,\text A}
+  &= g_{tx}+\mathcal L_i+\frac{w'_{\text Aq+(i-1)p_z}}2\\
+  \label{eq:dPosXBefore}
+  \text{C面：}\quad
+  \mathcal D_{xi,\text C}
+  &= g_{tx}+\mathcal L_i-\frac{w'_{\text Aq+(i-1)p_z}}2\\
+  \notag
+  \text{B, D面：}\quad
+  \mathcal D_{xij,\text B}
+  &= g_{tx}+\mathcal L_i+\frac{d_i}2-(j-1)p_x
+\end{align}
+なお、A・C面については$j$に依らないことがわかる。
+そのため、たとえば$\mathcal D_{xij,\text A}$ではなく、$\mathcal D_{xi,\text A}$のように表記している。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 6.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{内面溝のY座標（傾き前）}
+テーブル中心Oを原点としたとき、傾き前の$i$列目$j$番目の内面溝の$Y$座標は、
+\begin{alignat}{3}
+  \notag
+  \text{A, C面：}\quad
+  && \mathcal D_{yij,\text A} &= g_{ty}-\frac{d_i}2+(j-1)p_x\\
+  \label{eq:dPosYBefore}
+  \text{B面：}\quad
+  && \mathcal D_{yi,\text B} &= g_{ty}+\frac{w'_{\text Bq+(i-1)p_z}}2\\
+  \notag
+  \text{D面：}\quad
+  && \mathcal D_{yi,\text D} &= g_{ty}-\frac{w'_{\text Bq+(i-1)p_z}}2
+\end{alignat}
+B・D面については$j$に依らないことがわかる。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 6.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{内面溝のZ座標（傾き前）}
+テーブル中心Oを原点としたとき、傾き前の$i$列目$j$番目の内面溝の$Z$座標は、
+\begin{align}
+  \label{eq:dPosZBefore}
+  \text{A, B, C, D面：}\quad
+  \mathcal D_{zi} = f_t'-q-(i-1)p_z
+\end{align}
+$Z$座標についてはどの面も$j$に依らないことがわかる。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 6.2.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{傾き角}
+A側内面トップ端と、A側内面のトップ端から$q$の位置との$x$方向の差は、
+\begin{align*}
+  \sqrt{\left(R_\text c+\frac{w'_{\text Aq}}2\right)^{\!\!2}-(f_\text T-q)^2}
+  -\sqrt{\left(R_\text c+\frac{w'_{\text A0}}2\right)^{\!\!2}-f_\text T^2}
+\end{align*}
+で与えられる。
+これより、A側内面溝に対する傾き角$\phi_\text A$ ($\phi_\text A \geqq 0$)は、
+\begin{align}
+  \label{eq:dKatamuki}
+  \tan\phi
+  = \frac{\displaystyle
+          \sqrt{\left(R_\text c+\frac{w'_{\text Aq}}2\right)^{\!\!2}-(f_\text T-q)^2}
+          -\sqrt{\left(R_\text c+\frac{w'_{\text A0}}2\right)^{\!\!2}-f_\text T^2}}q
+\end{align}
+で与えられる。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Column}{C側内面溝の傾き角}
+C側内面溝については前述の通り傾ける必要はない。
+しかし、傾けたまま加工をすると形状が歪になってしまうため、内面溝の形状をよりよくするためには傾いていないほうが望ましい。
+そうした事情も考慮する場合は、C面に対しても傾けて加工をする必要が出てくる。
+そのためC側内面溝に対する傾き角$\phi_\text C$についてもここで与えておく。
+なお、$\phi_\text C$は上記の（A面に対する）$\phi$とは異なるものとしている。
+具体的には以下の２点を基準として角度$\phi_\text C$を取ることとする。
+\begin{enumerate}
+\item[a)]
+C側内面の内面溝１列目（トップ端から$q$）の位置
+\item[b)]
+C側内面の内面溝１列目（トップ端から$q+(m-1)p_z$）の位置
+\end{enumerate}
+\tcbline
+C側内面のトップ端から$q$の位置と、C側内面のトップ端から$q+(m-1)p_z$の位置との$x$方向の差は、
+\begin{align*}
+  \sqrt{\bigg(R_\text c-\frac{w'_{\text Aq+(m-1)p_z}}2\bigg)^{\!\!2}-\left\{f_\text T-q-(m-1)p_z\right\}^2}
+  -\sqrt{\left(R_\text c-\frac{w'_{\text Aq}}2\right)^{\!\!2}-(f_\text T-q)^2}
+\end{align*}
+これより、C側内面溝に対する傾き角$\phi_\text C$ ($\phi_\text C > 0$)は、
+\begin{align*}
+  \tan\phi_\text C
+  = \frac{\sqrt{\left(R_\text c-\frac{w'_{\text Aq+(m-1)p_z}}2\right)^{\!2}-\left\{f_\text T-q-(m-1)p_z\right\}^2}
+          -\sqrt{\left(R_\text c-\frac{w'_{\text Aq}}2\right)^{\!2}-(f_\text T-q)^2}}
+         {(m-1)p_z}
+\end{align*}
+で与えられる。
+なお、前述の通り$w_{\text Aq+(m-1)p_z}$は$\lambda_j \leqq q+(m-1)p_z < \lambda_{j+1}$に対する$w_{\text Aj}$, $w_{\text Aj+1}$の加重算術平均
+\begin{align*}
+  w_{\text Aq+(m-1)p_z}
+  = \frac{\{q+(m-1)p_z-\lambda_j\}w_{\text Aj+1}+\{\lambda_{j+1}-q-(m-1)p_z\}w_{\text Aj}}
+         {\lambda_{j+1}-\lambda_j}
+\end{align*}
+であり、内径として代用している。（$w_{\text Bq+(m-1)p_z}$についても同様）
+\end{Column}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 6.2.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{B, D面の内面溝の位置（傾き前）}
+B, D側内面溝において、その$X$座標がA側内面に最も近いものは、$m-1$列目または$m$列目の1番目の内面溝である。
+これらのX座標は\pageeqref{eq:dPosXBefore}よりそれぞれ、
+\begin{align*}
+  m-1\text{列目：}&\quad
+  g_{tx}+\mathcal L_{m-1}+\frac{d_{m-1}}2\\
+  m\text{列目：}&\quad
+  g_{tx}+\mathcal L_m+\frac{d_m}2
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+$d_{m-1} > d_m$のときは$m-1$列目, $d_m > d_{m-1}$のときは$m$列目をみればよい。
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+A側内面のトップ端からの（$X$方向の）距離は、トップ端のAC側内径として$w'_{\text A0}$を代用すると、それぞれ
+\begin{align*}
+  m-1\text{列目：}&\quad
+  \frac{w'_{\text A0}}2-\mathcal L_{m-1}-\frac{d_{m-1}}2\\
+  m\text{列目：}&\quad
+  \frac{w'_{\text A0}}2-\mathcal L_m-\frac{d_m}2
+\end{align*}
+これらのいずれか小さいほうが工具径（半径）よりも小さければ、モールドを傾けて加工をする必要があると判断できる
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{もちろん、いくらか余裕代をとる必要がある。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Column}{B, D側内面溝加工で考慮すべき点}
+\paragraph{工具径とシャンク径}
+アンダーカットが生じるのは主に（A側内面の）トップ端なので、実際には工具径（工具の切削する部分）ではなくシャンク径等（工具のトップ端に相当する箇所）でよい。
+そのため工具径よりシャンク径のほうが小さい場合は、より広い範囲の（B, D面の）内面溝をモールドを傾けずに切削することが可能となる。
+\tcbline*
+\paragraph{端面の削り代}
+内面溝の測定・加工は、モールドの端面を切削する前に行う。
+そのため測定・加工の際は、モールドは端面の削り代の分だけ大きい（長い）ことに注意する必要がある。
+削り代の分だけ湾曲も加味する必要があり、特にA側内面と工具とのアンダーカットに留意しなければならない。
+\tcbline*
+\paragraph{その他のずれ}
+モールドの形状は当然ながら図面のものとは一致はしない。
+特に湾曲や肉厚などの図面とのずれは、アンダーカットに大きく寄与するのでこれも注意する必要がある。
+\end{Column}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 6.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{傾き後の内面溝}
+機内での回転は、テーブル中心Oを原点として行われ、また内面溝の加工はトップ端における内径中心を基準にして切削を行う。
+傾ける前のトップ端内径中心$g_t$の座標は実測により（Oを中心とした$XYZ$直交座標でいうところの）[$g_{tx}$, $g_{ty}$, $f_t'$]で与えられる
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{ここではこれをテーブル中心Oを原点とした座標値として取り扱っている。
+しかし、正確にはこれは機械座標系の値として与えられることに注意。
+（ここでの計測では$XY$成分のみであり、$Z$については計測しないことにも注意。）}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+このときこれの$XZ$成分[$g_{tx}$, $f_t'$]について、$XZ$平面をテーブル中心Oを原点とした複素平面として表すと、
+\begin{align*}
+  \sqrt{g_{tx}^2+f_t'^2}e^{i}
+\end{align*}
+
+
+角度$-\phi$だけ傾けた後のトップ端内面中心の座標$g'_t$は
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{これらをワーク座標原点としてもよいし、ワーク座標原点$g_t$はそのままで各面ごとに傾けてもよい。
+ここでは後者の方法で加工を行うものとする。}、
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    g_{tx}'\\
+    g_{ty}'\\
+    g_{tz}'
+  \end{array}
+  \right]
+  =\left[
+   \begin{array}{c}
+     g_{tx}\cos\phi+f_t'\sin\phi\\
+     g_{ty}\\
+     -g_{tx}\sin\phi+f_t'\cos\phi
+   \end{array}
+   \right].
+\end{align*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 6.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{傾き後の内面溝（A面側）}
+A面側の内面溝については、テーブル中心Oを中心に$-\phi$だけ傾けて加工を行う。
+$\phi$は\pageeqref{eq:dKatamuki}で与えられる。
+このとき、傾けた後の$i$列目$j$番目の内面溝の位置は、\pageeqref{eq:dPosXBefore}, \pageeqref{eq:dPosYBefore}, \pageeqref{eq:dPosZBefore}より、
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    \mathcal D_{xij,\text A}'\\
+    \mathcal D_{yij,\text A}'\\
+    \mathcal D_{zij,\text A}'
+  \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      \mathcal D_{xi,\text A}\cos\phi+\mathcal D_{zi}\sin\phi\\
+      \mathcal D_{yij,\text A}\\
+      -\mathcal D_{xi,\text A}\sin\phi+\mathcal D_{zi}\cos\phi
+    \end{array}
+    \right].
+\end{align*}
+
+
+\paragraph{$j$方向の差分}
+$Y$方向の隣同士の差分、すなわち$i$を固定したときの$j$番目と$j+1$番目の位置の差分は、
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    0\\
+    \mathcal D_{yi(j+1),\text A}-\mathcal D_{yij,\text A}\\
+    0
+  \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      0\\
+      p_x\\
+      0
+    \end{array}
+    \right]\ .
+\end{align*}
+
+
+\paragraph{$i$方向の差分}
+$Z$方向の隣同士の差分、すなわち$j$を固定したときの$i$番目と$i+1$番目の位置の差分については、
+\begin{align*}
+ &\left[
+  \begin{array}{c}
+    (\mathcal D_{x(i+1),\text A}-\mathcal D_{xi,\text A})\cos\phi
+    +(\mathcal D_{z(i+1)}-\mathcal D_{zi})\sin\phi\\
+    (\mathcal D_{y(i+1)j,\text A}-\mathcal D_{yij,\text A})\\
+    (\mathcal D_{xi,\text A}-\mathcal D_{x(i+1),\text A})\sin\phi+(\mathcal D_{z(i+1)}-\mathcal D_{zi})\cos\phi
+  \end{array}
+  \right]\\
+ &= \left[
+    \begin{array}{c}
+      \displaystyle
+      \left(\mathcal L_{i+1, i}+\frac{w'_{\text Aq+ip_z}-w'_{\text Aq+(i-1)p_z}}2\right)\!\cos\phi-p_z\sin\phi\\[6pt]
+      \displaystyle-\frac{d_{i+1}-d_i}2\\[6pt]
+      \displaystyle
+      -\left(\mathcal L_{i+1, i}+\frac{w'_{\text Aq+ip_z}-w'_{\text Aq+(i-1)p_z}}2\right)\!\sin\phi-p_z\cos\phi
+    \end{array}
+    \right]\ .
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}[label=hosoku:generallyDimpleN]
+\pageautoref{fn:generallyDimpleN}でも述べたように、たいていの場合は$|d_{i+1}-d_i|=p_x$であり、また$d_{i+2} = d_i$である。
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 6.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{傾き後の内面溝（C面側）}
+C面側の内面溝については傾けずに行うため、そのままの座標を用いればよい。
+よってC面側に対する$i$列目$j$番目の内面溝の位置は、
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    \mathcal D_{xij,\text C}'\\
+    \mathcal D_{yij,\text C}'\\
+    \mathcal D_{zij,\text C}'
+  \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      \mathcal D_{xi,\text C}\\
+      \mathcal D_{yij,\text A}\\
+      \mathcal D_{zi}
+    \end{array}
+    \right]
+\end{align*}
+
+
+\paragraph{$j$方向の差分}
+$Y$方向の隣同士の差分、すなわち$i$を固定したときの$j$番目と$j+1$番目の位置の差分は、
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    0\\
+    \mathcal D_{yi(j+1),\text A}-\mathcal D_{yij,\text A}\\
+    0
+  \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      0\\
+      p_x\\
+      0
+    \end{array}
+    \right]\ .
+\end{align*}
+
+
+\paragraph{$i$方向の差分}
+$Z$方向の隣同士の差分、すなわち$j$を固定したときの$i$番目と$i+1$番目の位置の差分については、
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    \mathcal D_{x(i+1),\text C}-\mathcal D_{xi,\text C}\\
+    \mathcal D_{y(i+1)j,\text C}-\mathcal D_{yij,\text C}\\
+    \mathcal D_{z(i+1)}-\mathcal D_{zi}
+  \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      \displaystyle
+      \mathcal L_{i+1, i}-\frac{w'_{\text Aq+ip_z}-w'_{\text Aq+(i-1)p_z}}2\\[8pt]
+      \displaystyle-\frac{d_{i+1}-d_i}2\\[5pt]
+      \displaystyle
+      -p_z
+    \end{array}
+    \right]\ .
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+$X$成分の差分の大きさが（$\mathcal L_{i+1, i}$からみて）A面（の$\cos\phi$成分）のそれと同じであることがわかる。
+これは（水平方向の）内径を$w_{\text A\lambda}$等で代用したからであり、実際の長さは異なる（振分中心を除いて対称ではなく、C側のほうが長い）ことに注意。
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 6.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{傾き後の内面溝（B, D面側）}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 6.3.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{傾けない場合}
+B, D面側について、傾けずに加工を行う場合はそのままの座標を用いればよい。
+よってB, D面側に対する$i$列目$j$番目の内面溝の位置は、それぞれ、
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    \mathcal D_{xij,\text B}'\\
+    \mathcal D_{yij,\text B}'\\
+    \mathcal D_{zij,\text B}'
+  \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      \mathcal D_{xij,\text B}\\
+      \mathcal D_{yi,\text B}\\
+      \mathcal D_{zi}
+    \end{array}
+    \right]~, \qquad
+  \left[
+  \begin{array}{c}
+    \mathcal D_{xij,\text D}'\\
+    \mathcal D_{yij,\text D}'\\
+    \mathcal D_{zij,\text D}'
+  \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      \mathcal D_{xij,\text B}\\
+      \mathcal D_{yi,\text D}\\
+      \mathcal D_{zi}
+    \end{array}
+    \right].
+\end{align*}
+
+
+\paragraph{$j$方向の差分}
+$Y$方向の隣同士の差分、すなわち$i$を固定したときの$j$番目と$j+1$番目の位置の差分は、
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    \mathcal D_{xi(j+1),\text B}-\mathcal D_{xij,\text B}\\
+    0\\
+    0
+  \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      -p_x\\
+      0\\
+      0
+    \end{array}
+    \right]\ .
+\end{align*}
+
+
+\paragraph{$i$方向の差分}
+B面に対する$Z$方向の隣同士の差分、すなわち$j$を固定したときの$i$番目と$i+1$番目の位置の差分については、
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    \mathcal D_{x(i+1)j,\text B}-\mathcal D_{xij,\text B}\\
+    \mathcal D_{yi+1,\text B}-\mathcal D_{yi,\text B}\\
+    \mathcal D_{z(i+1)}-\mathcal D_{zi}
+  \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      \displaystyle\mathcal L_{i+1, i}+\frac{d_{i+1}-d_i}2\\[6pt]
+      \displaystyle\frac{w'_{\text Bq+ip_z}-w'_{\text Bq+(i-1)p_z}}2\\[6pt]
+      -p_z
+    \end{array}
+    \right]\ .
+\end{align*}
+D面については、これの$Y$成分の符号を反対にしたものである。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 6.3.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{傾ける場合}
+傾けて加工を行う場合は、$-\phi$だけ傾けて行う。
+したがって傾けた後のB面側に対する$i$列目$j$番目の内面溝の位置は、A面側のときと同様に、
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    \mathcal D_{xij,\text B}'\\
+    \mathcal D_{yij,\text B}'\\
+    \mathcal D_{zij,\text B}'
+  \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      \mathcal D_{xij,\text B}\cos\phi+\mathcal D_{zi}\sin\phi\\
+      \mathcal D_{yi,\text B}\\
+      -\mathcal D_{xij,\text B}\sin\phi+\mathcal D_{zi}\cos\phi
+    \end{array}
+    \right].
+\end{align*}
+D面側の内面溝についても同様に、傾けた後の$i$列目$j$番目の内面溝の位置は、
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    \mathcal D_{xij,\text D}'\\
+    \mathcal D_{yij,\text D}'\\
+    \mathcal D_{zij,\text D}'
+  \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      \mathcal D_{xij,\text B}\cos\phi+\mathcal D_{zi}\sin\phi\\
+      \mathcal D_{yi,\text D}\\
+      -\mathcal D_{xij,\text B}\sin\phi+\mathcal D_{zi}\cos\phi
+    \end{array}
+    \right].
+\end{align*}
+
+
+\paragraph{$j$方向の差分}
+$Y$方向の隣同士の差分、すなわち$i$を固定したときの$j$番目と$j+1$番目の位置の差分は、
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    \left(\mathcal D_{xi(j+1),\text B}-\mathcal D_{xij,\text B}\right)\cos\phi\\
+    0\\
+    -\left(\mathcal D_{xi(j+1),\text B}-\mathcal D_{xij,\text B}\right)\sin\phi
+  \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      -p_x\cos\phi\\[6pt]
+      0\\
+      p_x\sin\phi
+    \end{array}
+    \right]\ .
+\end{align*}
+
+
+\paragraph{$i$方向の差分}
+B面に対する$Z$方向の隣同士の差分、すなわち$j$を固定したときの$i$番目と$i+1$番目の位置の差分については、
+\begin{align*}
+ &\left[
+  \begin{array}{c}
+    \left(\mathcal D_{x(i+1)j,\text B}-\mathcal D_{xij,\text B}\right)\cos\phi
+    +\left(\mathcal D_{z(i+1)}-\mathcal D_{zi}\right)\sin\phi\\
+    \mathcal D_{yi+1,\text B}-\mathcal D_{yi,\text B}\\
+    -\left(\mathcal D_{x(i+1)j,\text B}-\mathcal D_{xij,\text B}\right)\sin\phi
+    +\left(\mathcal D_{z(i+1)}-\mathcal D_{zi}\right)\cos\phi
+  \end{array}
+  \right]\\
+ &= \left[
+    \begin{array}{c}
+      \displaystyle\left(\mathcal L_{i+1, i}+\frac{d_{i+1}-d_i}2\right)\!\cos\phi-p_z\sin\phi\\[10pt]
+      \displaystyle\frac{w'_{\text Bq+ip_z}-w'_{\text Bq+(i-1)p_z}}2\\[8pt]
+      \displaystyle-\left(\mathcal L_{i+1, i}+\frac{d_{i+1}-d_i}2\right)\!\cos\phi-p_z\cos\phi
+    \end{array}
+    \right]\ .
+\end{align*}
+D面に対しては、これの$Y$成分の符号を入れ換えたものとなる。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Column}{傾き後の内面溝（C面側）}
+C面側を傾ける場合、傾けた後の$i$列目$j$番目の内面溝の位置は$\phi_\text C$を用いて以下のように表すことができる。
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    \mathcal D_{xij,\text C}'\\
+    \mathcal D_{yij,\text C}'\\
+    \mathcal D_{zij,\text C}'
+  \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      \mathcal D_{xij,\text C}\cos\phi_\text C+\mathcal D_{zi}\sin\phi_\text C\\
+      \mathcal D_{yij,\text A}\\
+      -\mathcal D_{xij,\text C}\sin\phi_\text C+\mathcal D_{zi}\cos\phi_\text C
+    \end{array}
+    \right].
+\end{align*}
+\end{Column}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter[その他のB回転軸に伴う幾何]
+        {その他のB回転軸に伴う幾何}
+マシニング機内では、XYZ直交座標軸の他に、それぞれの軸としたABC回転軸がある。
+これまでに扱った再振分けのためのテーブル回転や、内面溝のためのテーブル回転は、どちらもB軸の回転（Y軸まわりの回転）である。
+ここではさらに、その他のB回転軸を伴う事象を取り扱うことにする。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 7.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{テーブルがずれている場合の補正}
+ここでは回転の中心は原点にあるものとし、テーブルの中心が原点から($\delta x$, $\delta z$)だけずれているものとする。
+このとき、ある任意の点($x$, $z$)を$\theta$だけ回転すると、
+\begin{align*}
+  \left[
+    \begin{array}{c}
+      x'\\
+      z'
+    \end{array}
+  \right]
+  = \left[
+    \begin{array}{cc}
+      \cos\theta & -\sin\theta\\
+      \sin\theta & \cos\theta
+    \end{array}
+  \right]\!\!
+  \left[
+    \begin{array}{c}
+      x+\delta x\\
+      z+\delta z
+    \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      (x+\delta x)\cos\theta-(z+\delta z)\sin\theta\\
+      (x+\delta x)\sin\theta+(z+\delta z)\cos\theta
+    \end{array}
+  \right].
+\end{align*}
+特に、$\theta = \nicefrac\pi2$の場合は、
+\begin{align*}
+  \left[
+    \begin{array}{c}
+      x'\\
+      z'
+    \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      -z-\delta z\\
+      x+\delta x
+    \end{array}
+  \right].
+\end{align*}
+よって、ずれによる差分は、
+\begin{align*}
+  \left[
+    \begin{array}{c}
+      \delta x\cos\theta-\delta z\sin\theta\\
+      \delta x\sin\theta+\delta z\cos\theta
+    \end{array}
+  \right]
+\end{align*}
+となる。
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 7.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{角度をつけて外削する場合の位置}
+テーブルの中心を原点として考える。
+ボトム端面が工具側に向いているとき、ボトム側端面のZ座標を$z_b$, 端面のA面側・C面側・中心のX座標をそれぞれ$x_A$, $x_C$, $x_m$とする。
+このとき端面のそれぞれの位置は
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{ここではZの正方向を実軸、Xの正方向を虚軸として考えている。}、
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{subequations}
+\begin{align}
+  \text{中点：}&\quad \sqrt{z_b^2+x_m^2}e^{i\theta_m}, \quad \tan\theta_m = \frac{x_m}{z_b}\\
+  \text{C面側端点：}&\quad \sqrt{z_b^2+x_C^2}e^{i\theta_C}, \quad \tan\theta_C = \frac{x_C}{z_b}\\
+  \text{A面側端点：}&\quad \sqrt{z_b^2+x_A^2}e^{i\theta_A}, \quad \tan\theta_A = \frac{x_A}{z_b}.
+\end{align}
+\end{subequations}
+外削部分の高さを$h_b$とすると、外柵部分の傾きはボトム端から距離$\nicefrac{h_b}2$の断面に平行になる形にとるので、必要な回転角$\theta_b$は、
+\begin{equation}
+  \sin\theta_b = \frac{z_b-\nicefrac{h_b}2}{R_\text c}
+\end{equation}
+を満たす。
+回転後のボトム端面の中心の位置は、
+\begin{align}
+  \sqrt{z_b^2+x_m^2}e^{i(\theta_m-\theta_b)}
+\end{align}
+となるので、これの虚部がX座標、実部がZ座標となる
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{ここでは複素数平面を考えているが、通常の直行座標系で単純に回転行列をかけているのと同義である。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation*}
+  \left[
+    \begin{array}{c}
+      x'_m\\
+      z'_b
+    \end{array}
+  \right]
+  = \left[
+    \begin{array}{cc}
+      \cos\theta_b & -\sin\theta_b\\
+      \sin\theta_b & \cos\theta_b
+    \end{array}
+  \right]\!\!
+  \left[
+    \begin{array}{c}
+      x_m\\
+      z_b
+    \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      x_m\cos\theta_b-z_b\sin\theta_b\\
+      x_m\sin\theta_b+z_b\cos\theta_b
+    \end{array}
+  \right].
+\end{equation*}}。
+\begin{align*}
+  \sqrt{z_b^2+x_m^2}\sin(\theta_m-\theta_b)
+  &= \sqrt{z_b^2+x_m^2}(\sin\theta_m\cos\theta_b-\cos\theta_m\sin\theta_b)\\
+  &= x_m\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}-z_b\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c},\\
+  \sqrt{z_b^2+x_m^2}\cos(\theta_m-\theta_b)
+  &= \sqrt{z_b^2+x_m^2}(\cos\theta_m\cos\theta_b+\sin\theta_m\sin\theta_b)\\
+  &= z_b\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}+x_m\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c}.
+\end{align*}
+端面のA面側・C面側の位置についても同様である。
+まとめると、
+\begin{subequations}
+\begin{align}
+  \text{中点：}&\quad
+    \left[
+      \begin{array}{c}
+        x'_m\\
+        z'_b
+      \end{array}
+    \right]
+    = \left[
+      \begin{array}{c}
+        \displaystyle x_m\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}-z_b\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c}\\[15pt]
+        \displaystyle z_b\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}+x_m\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c}
+      \end{array}
+    \right]\\
+  \text{C面側端点：}&\quad
+    \left[
+      \begin{array}{c}
+        x'_C\\
+        z'_b
+      \end{array}
+    \right]
+    = \left[
+      \begin{array}{c}
+        \displaystyle x_C\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}-z_b\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c}\\[15pt]
+        \displaystyle z_b\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}+x_C\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c}
+      \end{array}
+    \right]\\
+  \text{A面側端点：}&\quad
+    \left[
+      \begin{array}{c}
+        x'_A\\
+        z'_b
+      \end{array}
+    \right]
+    = \left[
+      \begin{array}{c}
+        \displaystyle x_A\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}-z_b\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c}\\[15pt]
+        \displaystyle z_b\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}+x_A\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c}
+      \end{array}
+    \right].
+\end{align}
+\end{subequations}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 0.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{通り芯の位置}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 0.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{直接的に測る場合}
+テーブルの中心を原点として考える。
+ボトム端面が工具側に向いているときのボトム端面中心のX, Y, Z座標を$x_b$, $y_b$, $z_b$とし、トップ端面が工具側に向いているときのトップ端面中心のX, Y, Z座標を$x_t$, $y_t$, $z_t$とする。
+このときテーブルを$90^\circ$回転させ、C面が工具側に向いた形にすると
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{ボトム側が工具側にある場合は$-90^\circ$, トップ側が工具側にある場合は$90^\circ$回転した形。}、
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+  \left[
+    \begin{array}{c}
+      x'_b\\
+      z'_b
+    \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      -z_b\\
+        x_b
+    \end{array}
+    \right], \quad
+    \left[
+    \begin{array}{c}
+      x'_t\\
+      z'_t
+    \end{array}
+    \right]
+  = \left[
+    \begin{array}{c}
+      z_t\\
+      -x_t
+    \end{array}
+    \right].
+\end{equation}
+よって、通り心の測定の際は、
+\begin{equation}
+  \label{gaisakuC}
+  \text{ボトム側：}\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle -z_b+\frac{h_b}2\\
+      y_b\\[6pt]
+      \displaystyle x_b+\frac{w_\text B}2
+    \end{array}
+    \right], \quad
+  \text{トップ側：}\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle z_t-\frac{h_t}2\\
+      y_b\\[6pt]
+      \displaystyle -x_t+\frac{w_\text T}2
+    \end{array}
+  \right].
+\end{equation}
+の位置に対して、Z方向における高さ測定を行えばよい。
+ここで、$h_b$, $h_t$はそれぞれボトム・トップ側の外削の高さ、$w_\text B$, $w_\text B$はそれぞれボトム・トップ側の外削部におけるAC間の外径である。
+なお、両測定点のX座標の差$W$は、
+\begin{equation}
+  W = L-\frac{h_b+h_t}2 \qquad \left(L = z_t + z_b\right)
+\end{equation}
+で与えられる。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 0.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{関節的に測る場合}
+2023/07現在、自動ブログラムの都合上、ジグにぶつかってしまい、直接的には（自動で）測れない.
+そこで、関節的に（自動で）計測する方法を考える。
+つまり、ジグのある定点を媒介して測定する
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{ジグの定点として、X方向に移動してもぶつからない点を選ぶ。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+選んだジグの定点の位置座標を($x$, $y$, $z$)とすると、($x$, $y$, $z$)と\pageeqref{gaisakuC}のそれぞれにおける高さ測定をし、その差を見ればよい。
+\begin{tcolorbox}[fonttitle=\gtfamily\bfseries]
+2023/07/26時点、$\text X = -203.880$, $\text Z = -719.560$.\\
+なお、Y座標はモールドのBD外径の中心座標とする。
+\end{tcolorbox}
+
+
+
+
+\appendix
+\makeatletter\@appendixtrue\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Part Appendix %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{補遺}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Appendix A %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{モールドの内径}
+モールドのAC側内面は概ね円弧の形をしているが、テーパが施されており、一般に単純な曲線とはならない。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Appendix B %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{モールド図面関連の決めごと}
+ここではマシニング用プログラムを記述する際やCADで描画をする際に必要となる、図面の数値等の読み取りかたについて触れる。
+
+なお、前提として、特別な指定やその他特記事項がある場合は、それを優先するものとする。
+以下では主に、そうした特別な記述のないいわゆる一般的な場合について記載する。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 0.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{基本事項}
+%% paragraph %%%%%%%%%%%%%%%%%%%%%
+\paragraph{寸法公差の取扱い}　\\
+全体的に、寸法公差がある場合、$+$公差と$-$公差の中央（平均）を見るものとする。
+例えば、$100^{+0.5}_{\phantom -0}$であれば、100.25とみなす
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{内面のテーパ表を見る際はこの限りではないことに注意。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% paragraph %%%%%%%%%%%%%%%%%%%%%
+\paragraph{寸法の優先度}　\\
+公差のある寸法と公差のない寸法（括弧寸法含む）とが共存して記載されている場合、公差のある寸法を優先する。
+例えば、２つの線の寸法がそれぞれ$12^{+0.1}_{\phantom -0}$, $4.05$と記述されていて、かつその和に相当する部分の寸法が16と記述されている場合は、16.10とみなす。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 0.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{振分け}
+振分けの公差については、全長の公差をトップ振分けとボトム振分けとの比率で分配する。
+例えば、全長が$1000^{\phantom +0}_{-1.0}$でトップ振分けが200であれば、全長の公差分$-0.5$を振分けの比$200:800$に分配し、それぞれ$-0.1$, $-0.4$とする。
+つまり、トップ振分けは199.9, ボトム振分けは799.6とみなす。
+
+ただし、簡単のため、単純に2等分してもよいものとする。
+すなわち、上記の例でいうと、トップ振分けを199.75, ボトム振分けを799.75とみなしてもよいものとする
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{もう少し正確には、公差の分配は両者の間に収まっていればよいものとする。
+すなわち、上記の例でいうと、トップ振分けは199.75～199.90に収まっていればよいものとする。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% paragraph %%%%%%%%%%%%%%%%%%%%%
+\paragraph{括弧寸法の場合}　\\
+片方の振分けが括弧寸法の場合は、全長の公差をそのまま括弧寸法に割り当てる。
+例えば、全長が$1000^{\phantom +0}_{-1.0}$でトップ振分けが200, ボトム振分けが(800)であれば、トップ振分けは200, ボトム振分けは799.5とする。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 0.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{外径}
+\label{app:gaikei}
+プログラムを記述する際は、簡単のため、端面部の水平方向の長さは、モールドの外径（中心湾曲と水平な方向）とみなしてもよいものとする。
+
+実際には、中心湾曲を$R$, トップ振分長を$f_\text T$, 外径を$W_x$とすると、トップ端面部の水平方向の長さ$W_\text T$は以下で与えられる。（ボトム端面部も同様）
+\begin{equation}
+  \notag
+  W_\text T = \sqrt{\left(R+\frac{W_x}2\right)^{\!2}-f_\text T^2}-\sqrt{\left(R-\frac{W_x}2\right)^{\!2}-f_\text T^2}\ .
+\end{equation}
+\begin{tcolorbox}
+\begin{equation}
+  \notag
+  (1+x)^\frac12 = 1+\frac x2-\frac{x^2}8+\frac{x^3}{16}-\frac{5x^4}{128}+o\!\left(x^5\right)
+\end{equation}
+なので、
+\begin{align*}
+  & (1+x)^\frac12(1+y)^\frac12-(1-x)^\frac12(1-y)^\frac12\\
+  &= x+y+\frac{(x+y)(x-y)^2}8-\frac{xy(x+y)\big\{5(x-y)^2+7xy\big\}}{128}+\cdots\ .
+\end{align*}
+したがって、
+\begin{equation}
+  \notag
+  x = \frac{\nicefrac{W_x}2+a}R\ ,\quad y = \frac{\nicefrac{W_x}2-a}R\quad
+  \longrightarrow \quad
+  x+y = \frac{W_x}R\ , \quad x-y = \frac{2a}R
+\end{equation}
+であるので、
+\begin{align*}
+  W_\text T
+  = R\left\{(1+x)^\frac12(1+y)^\frac12-(1-x)^\frac12(1-y)^\frac12\right\}
+  = W_x\!\left(1+\frac{a^2}{2R^2}+\cdots\right).
+\end{align*}
+\end{tcolorbox}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 0.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{内径}
+プログラムを記述する際は、簡単のため、端面部の水平方向の長さは、モールドの外径（中心湾曲と水平な方向）とみなしてもよいものとする。
+これは外径\hyperref[app:gaikei]{\ref{app:gaikei}}と同様である。
+
+%% paragraph %%%%%%%%%%%%%%%%%%%%%
+\paragraph{内面テーパおよびテーパ表}　\\
+テーパ表を参照する際は、全長の公差は考慮しないものとする。
+また、トップ端からの距離のピッチも、同様に公差は考慮しないものとする。
+
+例えば、全長が$800^{+0.5}_{\phantom -0}$, トップ振分長が400, ピッチが25である場合を考える。
+このとき、トップ端は振分け中心から400の位置にあり、ピッチは25であるものとし、両端についてはそれを適宜延長して調整する。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Appendix C %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{諸公式}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 0.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{２点間の距離}
+\begin{tcolorbox}
+点($p, $q)と直線$ax+by+c=0$との距離$d$は、以下で与えられる。
+\begin{equation}
+  \notag
+  d = \frac{|ap+bq+c|}{\sqrt{a^2+b^2}}.
+\end{equation}
+\end{tcolorbox}
+\begin{tcolorbox}
+点$\boldsymbol p$を通り方向ベクトルが$\boldsymbol m$の直線L上の点と、点$\boldsymbol q$を通り方向ベクトルが$\boldsymbol m'$の直線$\text L'$上の点は、それぞれパラメータ$t$, $t'$を用いて、
+\begin{equation}
+  \notag
+  \text L: \boldsymbol p+t\boldsymbol m\ , \qquad
+  \text L': \boldsymbol q+t'\boldsymbol m'
+\end{equation}
+で表される。
+このとき、L上の点の中で$\text L'$に最も近づく点の位置$\boldsymbol k$は、以下で与えられる
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{２点間の距離の2乗$|\boldsymbol p-\boldsymbol q+t\boldsymbol m-t'\boldsymbol m'|^2$に対し、それぞれのパラメータ$t$, $t'$に関する微分が0となる。
+それらを連立して解けば$\boldsymbol k$, $\boldsymbol k'$が求まる。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$\text L'$上の点の中でLに最も近づく点の位置$\boldsymbol k'$についても同様である。
+\begin{equation}
+  \notag
+  \boldsymbol k
+  = \boldsymbol p
+    +\frac{(\boldsymbol m-(\boldsymbol m, \boldsymbol m')\boldsymbol m', \boldsymbol p-\boldsymbol q)}
+          {1+(\boldsymbol m, \boldsymbol m')^2}\boldsymbol m
+\end{equation}
+また、これらの差の大きさ$|\boldsymbol k-\boldsymbol k'|$から、２直線間の距離$d$が求まる。
+\end{tcolorbox}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Part Appendix %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{モールド内面溝加工の内製化}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Appendix D %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{現状および業務フロー分析}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section D.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{業務フロー}
+現在、社内のマシニング（以下、三菱マシニング）を用いてモールドの加工を行っている。
+しかし、三菱マシニング（および社内のマシニング）ではモールドの内面溝加工を行うことできる能力を持っていない。
+そのため、内面溝加工に関しては全て外注により行われている。
+具体的なフローは以下のようになっている。
+
+\paragraph{加工の依頼}
+必要な加工内容と数量を社内で決定し、それを外注先に依頼する。
+
+\paragraph{加工}
+指定された内容に基づき、外注先が内面溝の加工を行う。
+
+\paragraph{検品}
+加工された製品が社内に戻った後、内面溝部の品質検査を行う。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{業務フロー}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{要件定義}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{目標}
+新しいマシニングを導入することで、これまで外注していた管状の金属の内部表面の加工を社内で可能にし、生産効率を向上させる。具体的には、1時間あたりの生産量を現状の2倍にし、加工コストを20\%削減する。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{機能}
+\paragraph{特殊な加工を行うためのプログラムを実行する機能}
+この機能により、特殊な加工が自動化されます。具体的には、材料の形状や大きさに応じて最適な加工パラメータが自動的に設定されます。
+
+\paragraph{加工結果をモニターに表示する機能}
+この機能により、ユーザーは加工結果をリアルタイムで確認することができます。具体的には、加工後の材料の形状や大きさ、加工時間、加工精度などが表示されます。
+
+\paragraph{加工パラメータをユーザーが設定できる機能}
+この機能により、ユーザーは加工パラメータを自由に設定することができます。具体的には、切削速度や送り速度、切削深さなどのパラメータを設定できます。
+
+\paragraph{エラーが発生した場合に警告を表示する機能}
+この機能により、ユーザーはシステムの異常をすぐに把握することができます。具体的には、システムが停止した場合や異常な振動が発生した場合などに警告が表示されます。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{性能要件}
+\begin{enumerate}
+\item 加工時間は1ピースあたり30秒以内であること
+\item 故障率は5%以下であること
+\item 連続稼働時間は24時間以上であること
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{制約条件}
+\begin{enumerate}
+\item 開発期間は6ヶ月以内であること
+\item 開発予算は500万円以内であること
+\item 機械のサイズは設置スペース（幅2m×奥行き2m×高さ2m）に収まる範囲であること
+\end{enumerate}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{設計}
+要件定義に基づいてシステムの設計を行います。具体的には以下のような活動が行われます：
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{システム設計}
+システム全体のアーキテクチャを設計します。これには、システムの主要なコンポーネントやそれらがどのように相互作用するか、データがどのように流れるかなどが含まれます。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{詳細設計}
+各コンポーネントの内部構造や動作を詳細に設計します。これには、データ構造、アルゴリズム、インターフェースなどが含まれます。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{実装}
+設計に基づいてプログラムを書きます。この段階では、選択したプログラミング言語を使用してコードを書きます。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{テスト}
+システムが正しく動作することを確認します。具体的には以下のような活動が行われます：
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ユニットテスト}
+個々のコンポーネントが正しく動作するかどうかを確認します。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{統合テスト}
+全体としてシステムが正しく動作するかどうかを確認します。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{保守}
+システムが稼働した後も、新たな要件の追加やバグ修正など、継続的な更新が必要となります。具体的には以下のような活動が行われます
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{修正保守}
+バグ修正や性能改善など、既存の機能に対する修正を行います。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{適応保守}
+環境変化（例えば、OSやハードウェアのアップデート）に対応するための更新を行います。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{機能追加保守}
+新たな機能を追加するための更新を行います。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Appendix D %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{三菱横型マシニング関連メモ}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 0.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{電源}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 0.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{電源OFF}
+・機械が動いていない（自動運転のランプが消えている）ことを確認する。\\
+・非常停止ボタンを押す。\\
+・POWER OFFボタンを押し、電源を切る。\\
+・主電源のスイッチを切る。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 0.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{電源ON}
+・主電源を切ってから10秒以上経っていることを確認する。\\
+・主電源のスイッチを入れる。\\
+・POWER ONボタンを押し、電源を入れる。\\
+・運転準備ボタンを長押しする。（Emergencyが消えるのを確認する）\\
+・全軸原点復帰ボタンを押す。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 0.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cheetsheet}
+\begin{enumerate}
+\item M392, M393 : 扉の開閉
+\item \#145 : センサー測定速度（通常50mm/s)
+\item \#5221, \#5241, \#5261, \#5281, \#5301, \#5321 : G54, G55, G56, G57, G58, G59のX
+\end{enumerate}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BACKMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\backmatter
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LIST OF FIGURES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\listoffigures
+
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%              %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%              %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\end{document}
