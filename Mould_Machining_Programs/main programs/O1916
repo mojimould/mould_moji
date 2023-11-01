@@ -139,7 +139,7 @@ G90 G01 G57 X0 Y0 (G57XY Top Inside Center)
 G43 Z[500.016+100.0] H50 (hosei KouguChou: #50)
 (Z = TopTanmen +100.)
 
-G65 P21002 Z500.016 R8922.7 Q90.0 K20.0
+G65 P21002 Z500.016 R8922.7 Q90.0 K20.0 M6.0 A-2.130
 (BD dimple measurement)
 (Z: top friwake)
 (R: radius of the central curvature)
