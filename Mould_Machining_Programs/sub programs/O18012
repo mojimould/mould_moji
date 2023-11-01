@@ -1,0 +1,133 @@
+%
+O18012 (Y center of inner measurement)
+
+IF[#4012 LT 54]GOTO98
+IF[#4012 GT 59]GOTO98
+IF[#25 LE #0]GOTO98
+IF[#26 LE #0]GOTO98
+IF[#1 LE #0]GOTO98
+IF[#512 LE #0]GOTO98
+IF[[[#25/2]-#512-#1] LE #0]GOTO98
+(if work G# < 54 go to N98)
+(if work G# > 59 go to N98)
+(if Y <= 0 go to N98)
+(if Z <= 0 go to N98)
+(if probe radius D/2 <= 0 go to N98)
+(if A <= 0 go to N98)
+(if Y/2-D/2-A <= 0 go to N98)
+
+IF[#9 EQ #0]GOTO1
+IF[#9 LE 0]GOTO1
+IF[#9 GT 300.0]GOTO1
+(if skip speed F <= 0 or 300.0 < F, go to N1)
+GOTO2
+
+N1
+#9=#514 (skip speed = 50.)
+
+N2
+#101=#4012 (#101= current work coordinate G#)
+#102=#5042 (#102= current work Y)
+
+G65 P19393 (sensor ON, G53)
+IF[#1005EQ1]GOTO96
+(if low battery, go to N96)
+IF[#1004EQ0]GOTO97
+(if current sensor ON, go to N97)
+G#101 (work G#101)
+
+
+G90 G31 Z[#26-#512] F6400
+(Z tanmen: Z - D/2)
+IF[[#5063-#2050]GT[#26-#512]]GOTO10
+(if skip Z - hosei #50 KouguChou > tanmen Z - D/2, to N10)
+
+G91 G31 Y-[[#25/2]-#512-#1] F1800
+(Y-: [BD naikei/2 - D/2 - A])
+IF[[ABS[#102-#5062]]LT[ABS[[#25/2]-#512-#1]]]GOTO11
+(if |startY - skipY| < |BD naikei/2 - D/2 - A|, to N11)
+
+G91 G31 Y-[#1*2] F#9 (Y- skip: 2A)
+
+#103=#5062-#512+#501+#503
+(#103= Y bellow side - D/2 + probe hosei)
+
+G91 Y#1 F2400 (Y+: A)
+IF[[ABS[#103-#501-#503]]GE[ABS[[#25/2]+#1]]]GOTO98
+(if |#103|>=|Y/2+A| go to N98)
+
+G90 Y#102 F3600 (Y to start point)
+
+G91 G31 Y[[#25/2]-#512-#1] F1800
+(Y+: [BD gaikei/2 - D/2 - A])
+IF[[ABS[#102-#5062]]LT[ABS[[#25/2]-#512-#1]]]GOTO11
+(if |startY - skipY| < |BD naikei/2 - D/2 - A|, to N11)
+
+G91 G31 Y[#1*2] F#9 (Y+ skip: 2A)
+
+#104=#5062+#512-#501+#503
+(#104= Y above side + D/2 + probe hosei)
+
+G91 Y-[#1] F2400 (Y-: A)
+IF[[ABS[#104+#501-#503]]GE[ABS[[#25/2]+#1]]]GOTO98
+(if |#104|>=|Y/2+A| go to N98)
+
+#106=[#104+#103]/2 (average: center)
+#105=#104-#103 (difference: width)
+G90 Y#106 F3600 (Y to measured center)
+
+#[5202+[#101-53]*20]=#5022
+(current work origin Y = current machine Y)
+
+G90 Z[#26+100.0] F9600
+GOTO99
+
+
+N96
+#3000=145 (MP10/MP12/MP60-Low battery)
+M00 (ALARM: low battery)
+GOTO99
+
+N97
+#3000=146 (MP10/MP12/MP60-ALARM)
+M00 (ALM: is sensor ok?)
+GOTO99
+
+N11
+G90 G01 Y#102 (Y to start point)
+
+N10
+G91 G28 Z0
+G65 P19392 (sensor OFF)
+
+N98 #3000=121 (are the arguments or the mould OK?)
+M00 (are arguments ok?)
+
+N99
+G65 P19392 (sensor OFF)
+M99
+
+(#25:Y: Y inside width)
+(#26:Z: sokutei point Z)
+(#1 :A: skip kaishi kyori)
+(#9 :F: skip speed)
+
+(#0   : empty)
+(#501 : hosei: touch sensor signal delay)
+(#503 : hosei: probe center Y)
+(#512 : probe radius)
+(#514 : default skip speed)
+(#1004: 0: sensor off, 1: on)
+(#1005: 0: sensor battery ok, 1: low battery)
+(#2050: hosei #50 KouguChou)
+(#3000: alarm)
+(#4012: current work coordinate G#)
+(#5022: current machine coordinate Y)
+(#5042: current work Y)
+(#5062: skip position Y)
+(#5063: skip position Z without KouguChou hosei)
+(#5222: G54 Y)
+(#5242: G55 Y)
+(#5262: G56 Y)
+(#5282: G57 Y)
+%

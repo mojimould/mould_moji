@@ -1,0 +1,80 @@
+%
+O15200
+(Uchigawa 1shuu Corner R, ac HidariMawari)
+
+G90 G00 X0 Y0 (XY c: work genten)
+G91 G00 X#4 (hosei: AC center: +: X+, -: X-)
+
+#27=[#25/2]-#1 (#27= BD naikei/2 - approach R)
+#28=#25-[#18*2] (#28= BD ChokusenBU [BD naikei - Corner R*2])
+#29=#24-[#18*2] (#29= AC ChokusenBU [AC naikei - Corner R*2])
+
+G90 G43 H#11 Z[#26+#6] S#19
+(Hosei KouguChou: #11)
+(Hosei Z: Z+K, Kaitensuu: #19)
+
+M03 (shujiku kaiten on)
+M08 (coolant on)
+
+
+(Kokokara G01)
+
+G91 G01 G41 D#7 X#1 Y#27 F#9
+(Hosei KouguKei, Kougu #7)
+(X+:approach R)
+(Y+:BD naikei/2 - approach R)
+
+G03 X-#1 Y#1 I-#1 J0
+(ac: approach R #1 [-#1, 0] X-Y+)
+
+G01 X-[#29/2] (ac2al: X- AC ChokusenBu/2)
+
+G03 X-#18 Y-#18 I0 J-#18
+(al corner: R #18 [0, #-18] X-Y-)
+
+G01 Y-#28 (l:Y-: BD ChokusenBu)
+
+G03 X#18 Y-#18 I#18 J0
+(bl corner: R #18 [#18, 0] X+Y-)
+
+G01 X#29 (b:X+: AC ChokusenBu)
+
+G03 X#18 Y#18 I0 J#18
+(br corner: R #18 [0, #18] X+Y+)
+
+G01 Y#28 (r:Y+: BD ChokusenBu)
+
+G03 X-#18 Y#18 I-#18 J0
+(ar corner: R #18 [-#18, 0] X-Y+)
+
+G01 X-[#29/2] (ar2ac:X-: AC ChokusenBu/2)
+
+G03 X-#1 Y-#1 I0 J-#1
+(ac: approach R #1 [0, -#1] X-Y-)
+
+M05 (shujiku kaiten off)
+M09 (coolant off)
+
+
+(Kokokara G00)
+
+G90 G00 G40 X0 Y0
+(cancel hosei kougukei)
+(XY: work genten)
+
+G91 G30 Z0 (Z KouguKoukanIchi)
+G30 X0 Y0 (XY KouguKoukanIchi)
+M99
+
+(#24:X:AC Naikei)
+(#25:Y:BD Naikei)
+(#26:Z:KouguSentan Z)
+(#18:R:Corner R)
+(#4 :I:AC center Hosei)
+(#6 :K:Z Hosei)
+(#1 :A:Approach R)
+(#7 :D:KouguKei hosei #)
+(#11:H:KouguChou hosei #)
+(#9 :F:Speed)
+(#19:S:KaitenSuu)
+%

@@ -1,0 +1,380 @@
+% 
+O1916 (main: SMP-1916)
+(parallel angle: -0.642)
+(top furiwake: 500.016)
+(bot furiwake: 499.984)
+
+G91 G28 Z0
+G91 G30 X0 Y0
+G49 G40 G80 G17 (cancel hosei)
+M262 (palette rotate speed 25)
+M71 (palette #1)
+(M60) (palette change)
+
+(Genten Settei G54 G55 G56 G57)
+IF[#1000NE0]GOTO2 (if NOT #1, to N2)
+
+#30=-550.019  (#1 X table center)
+#32=-1149.974 (#1 Z table center)
+#33=0.073     (#1 B table center)
+(palette #1)
+GOTO3 (to N3)
+
+N2
+IF[#1000NE1]GOTO98
+(if the current palette is NOT #2, go to 98)
+
+#30=-550.019  (#2 X table center)
+#32=-1149.974 (#2 Z table center)
+#33=0.073     (#2 B table center)
+(palette #2)
+
+N3
+G90 G10 L2 P1 X-527.732 Y-648.500 Z#32 B#33
+G90 G10 L2 P2 X-526.889 Y-648.500 Z#32 B#33
+G90 G10 L2 P3 X-561.306 Y-648.500 Z#32 B#33
+G90 G10 L2 P4 X-561.923 Y-648.500 Z#32 B#33
+(G54 Bot Gaisaku Center)
+(G55 Bot Inside Center)
+(G56 Top Gaisaku Center)
+(G57 Top Inside Center)
+/M00 (work origins Z & B OK?)
+
+M11 (4jiku unclamp)
+G90 G00 G54 B[180.0 - 0.642]
+(G54 Bottom Gaisaku)
+(B parallel angle 179.358)
+
+M10 (4jiku clamp)
+/M00 (work origins X & Y OK?)
+
+
+(touch sensor measurement)
+
+T50 (touch sensor)
+M06 (tool exchange)
+
+G40 G49 G80 S200 (cancel hosei, low gear)
+M19 (Shujiku orientation)
+
+G90 G01 G54 X0 Y0 F9600
+(G01 G54XY Bot Gaisaku center)
+
+G43 Z[499.984+100.0] H50 (hosei KouguChou #50)
+(Z = BotTanmen +100.)
+
+
+(Bottom sokutei start)
+
+G65 P18101 I-76.725 Z499.984 A10.
+(Bot X Gaisaku center)
+(I: Bot -ACnaikei/2)
+(Z: Bot friwake)
+(A: skip kaishi kyori)
+
+#5261=-[#5221-#30]+#30+11.0
+(Top X Gaisaku center)
+(G56X = -[G54X-tableCenterX] + tableCenterX + tooriShin)
+
+G65 P18002 Y183. Z499.984 A10. F200.
+(Bot Y Gaisaku center)
+(Y: Bot BD gaikei)
+(Z: Bot friwake)
+(A: skip kaishi kyori)
+(F: skip speed)
+
+#5262=#5222 (G56Y = G54Y)
+(Top Y Gaisaku center)
+
+G90 G01 G55 X0 Y0 (G55 XY Bot Inside center)
+
+G65 P18011 X155. Z499.984 A10. F200.
+(Bot X inside center)
+(X: Bot AC naikei)
+(Z: Bot friwake)
+(A: skip kaishi kyori)
+(F: skip speed)
+
+G65 P18012 Y153. Z499.984 A10. F200.
+(Bot Y inside center)
+(Y: Bot BD naikei)
+(Z: Bot friwake)
+(A: skip kaishi kyori)
+(F: skip speed)
+
+(Bottom sokutei end)
+
+
+G91 G28 Z0
+M11 (4jiku unclamp)
+G90 G00 G57 B-0.642 (G57B parallel angle -0.642)
+M10 (4jiku clamp)
+/M00 (work origins X & Y OK?)
+
+G90 G01 G57 X0 Y0 (G57XY Top Inside Center)
+G43 Z[500.016+100.0] H50 (hosei KouguChou: #50)
+(Z = TopTanmen +100.)
+
+
+(Top sokutei start)
+
+G65 P18011 X156.863 Z500.016 A10. F200.
+(Top X inside center)
+(X: AC naikei)
+(Z: top friwake)
+(A: skip kaishi kyori)
+(F: skip speed)
+
+G65 P18012 Y154.839 Z500.016 A10. F200.
+(Top Y inside center)
+(Y: BD naikei)
+(Z: top friwake)
+(A: skip kaishi kyori)
+(F: skip speed)
+
+
+(Dimple measurement start)
+
+G90 G01 G57 X0 Y0 (G57XY Top Inside Center)
+G43 Z[500.016+100.0] H50 (hosei KouguChou: #50)
+(Z = TopTanmen +100.)
+
+G65 P21002 Z500.016 R8922.7 Q90.0 K20.0
+(BD dimple measurement)
+(Z: top friwake)
+(R: radius of the central curvature)
+(Q: )
+
+
+
+
+(Top sokutei end)
+
+
+G49 (Cancel hosei kouguChou)
+G91 G30 X0 Y0 Z0
+/M00 (sokutei owari)
+
+
+(kokokara Top Kakou start)
+
+(dimple)
+
+T02 (tanmen)
+M06 (tool exchange)
+
+
+(Top tanmen start)
+
+#5 = 8.0 (kezuriShiro: all)
+#6 = 4.0 (kezuriShiro: 1 time)
+#7 = FUP[#5 / #6] (kaisuu: #5/#6 kiriage)
+
+WHILE[#7 GE 1]DO1
+#7=#7-1
+G56 G65 P15000 D2. H2. X185. Y183. Z[500.016 + #6*#7] E50. F900. S950.
+END1
+(O15000: tammen kakou)
+(D H: hosei kougu#)
+(X: AC gaikei)
+(Y: BD gaikei)
+(Z: furiwake + 1kezurishiro*kaisuu)
+(E: kougu nigashiryou)
+(F: speed)
+(S: kaitensuu)
+
+(Top tammen end)
+/M00 (tammen ok?)
+
+T16 (gaisaku)
+M06 (tool exchange)
+
+
+(Top gaisaku start)
+
+G56 G65 P15600 Q3. D16. H16. X180.95 Y180.95 Z[500.016 - 32.0] R18. F400. E400. S930. I0.
+G56 G65 P15600 Q1. D16. H16. X180.95 Y180.95 Z[500.016 - 32.0] R18. F400. E400. S930. I0.
+G56 G65 P15600 Q0. D16. H16. X180.95 Y180.95 Z[500.016 - 32.0] R18. F400. E400. S930. I0.
+(O15600: Sotogawa 1shuu Corner R, al HidariMawari)
+(Q: +hosei: AC&BD gaisakuKei)
+(D H: hosei kougu#)
+(X: AC gaisakuKei)
+(Y: BD gaisakuKei)
+(Z: furiwake - gaisakuFukasa)
+(R: corner R)
+(F: speed: chokusen)
+(E: speed: corner R)
+(S: kaitensuu)
+(I: +hosei: AC center)
+
+(Top gaisaku end)
+/M00 (gaisaku ok?)
+
+T06 (mizo)
+M06 (tool exchange)
+
+
+(Mizo start)
+
+#10=-0.1 (+hosei: mizo ichi)
+G56 G65 P15600 D6. H6. X172.90 Y172.90 Z[500.016-12.05-7.0+#10] R18. Q0. I0. F500. E400. S930.
+(mizo ichi)
+(O15600: Sotogawa 1shuu Corner R, al HidariMawari)
+(D H: hosei kougu#)
+(X: AC mizoKei)
+(Y: BD mizoKei)
+(Z: furiwake - mizoIchi + kouguHaba + hosei#10)
+(F: speed: chokusen)
+(E: speed: corner R)
+(S: kaitensuu)
+(Q: +hosei: AC&BD gaisakuKei)
+(I: +hosei: AC center)
+
+#11=0.2 (+hosei: mizo haba)
+G56 G65 P15600 D6. H6. X172.90 Y172.90 Z[500.016-12.05-[8.05/2]+#10+#11] R18. Q0. I0. F500. E400. S930.
+(mizo haba)
+(O15600: Sotogawa 1shuu Corner R, al HidariMawari)
+(D H: hosei kougu#)
+(X: AC mizoKei)
+(Y: BD mizoKei)
+(Z: furiwake - mizoIchi - mizoHaba/2 + hosei#10 + hosei#11)
+(F: speed: chokusen)
+(E: speed: corner R)
+(S: kaitensuu)
+(Q: +hosei: AC&BD gaisakuKei)
+(I: +hosei: AC center)
+
+(Mizo end)
+/M00 (mizo ok?)
+
+T13 (mentori 45)
+M06 (tool exchange)
+
+
+(Top Mentori Soto start)
+
+G56 G65 P15600 D13. H13. X180.95 Y180.95 Z[500.016 - 1.0] R18. Q0. I0. F500. E400. S1800.
+(Top Soto mentori)
+(O15600: Sotogawa 1shuu Corner R, al HidariMawari)
+(I: +hosei: AC center)
+(X: AC gaisakuKei)
+(Y: BD gaisakuKei)
+(Z: furiwake - mentori C)
+(R: corner R)
+(F: speed: chokusen)
+(E: speed: corner R)
+(S: kaitensuu)
+(Q: +hosei: AC&BD gaisakuKei)
+
+(Top Mentori Soto end)
+/M00 (mentori ok?)
+
+M11 (4jiku unclamp)
+G90 G00 G54 B[180.0-0.642] (G54B parallel angle 179.358)
+M10 (4jiku clamp)
+
+
+(kokokara Bottom kakou start)
+
+T02 (tanmen)
+M06 (tool exchange)
+
+
+(Bottom tanmen start)
+
+#8 = 8.0 (kezuriShiro: all)
+#9 = FUP[#8 / #6] (kaisuu: #8/#6 kiriage)
+WHILE[#9 GE 1]DO1
+#9=#9-1
+G54 G65 P15000 D2. H2. X185. Y183. Z[500.016 + #6*#9] E50. F900. S950.
+END1
+(O15000: tammen kakou)
+(D H: hosei kougu#)
+(X: AC gaikei)
+(Y: BD gaikei)
+(Z: furiwake + 1kezurishiro*kaisuu)
+(E: kougu nigashiryou)
+(F: speed)
+(S: kaitensuu)
+
+(Bottom tammen end)
+/M00 (tammen ok?)
+
+T16 (gaisaku)
+M06 (tool exchange)
+
+(Bottom gaisaku start)
+
+G54 G65 P15600 D16. H16. Q3. I0. X180.95 Y180.95 Z[499.984 - 25.0] R18. F400. E400. S930.
+G54 G65 P15600 D16. H16. Q1. I0. X180.95 Y180.95 Z[499.984 - 25.0] R18. F400. E400. S930.
+G54 G65 P15600 D16. H16. Q0. I0. X180.95 Y180.95 Z[499.984 - 25.0] R18. F400. E400. S930.
+(O15600: Sotogawa 1shuu Corner R, al HidariMawari)
+(Q: +hosei: AC&BD gaisakuKei)
+(D H: hosei kougu#)
+(X: AC gaisakuKei)
+(Y: BD gaisakuKei)
+(Z: furiwake - gaisakuFukasa)
+(R: corner R)
+(F: speed: chokusen)
+(E: speed: corner R)
+(S: kaitensuu)
+(I: +hosei: AC center)
+
+(Bottom gaisaku end)
+/M00 (gaisaku ok?)
+
+T11 (mentori 15)
+M06 (tool exchange)
+
+
+(Bottom Mentori Soto start)
+
+G54 G65 P15600 D11. H11. Q0. X180.95 Y180.95 Z[499.984 - 4.0] R18. F500. E400. S1800. I0.
+(Bot Soto Chamfer)
+(O15600: Sotogawa 1shuu Corner R, al HidariMawari)
+(D H: hosei kougu#)
+(Q: +hosei: AC&BD gaisakuKei)
+(X: AC gaisakuKei)
+(Y: BD gaisakuKei)
+(Z: furiwake - mentori C)
+(R: corner R)
+(F: speed: chokusen)
+(E: speed: corner R)
+(S: kaitensuu)
+(I: +hosei: AC center)
+
+(Top Mentori Soto end)
+/M00 (mentori ok?)
+
+(Bottom Mentori Uchi start)
+
+G55 G65 P15200 D11. H11. I-0.668 K4. X155. Y153. Z[499.984 - 10.0] R18. A15. F400. S1800.
+G55 G65 P15200 D11. H11. I-0.668 K2. X155. Y153. Z[499.984 - 10.0] R18. A15. F400. S1800.
+G55 G65 P15200 D11. H11. I-0.668 K0. X155. Y153. Z[499.984 - 10.0] R18. A15. F400. S1800.
+(Bot Uchi Chamfer)
+(O15200: Uchigawa 1shuu Corner R, ac HidariMawari)
+(I: +hosei x center)
+(K: +hosei Z)
+(D H: hosei kougu#)
+(X: AC naikei)
+(Y: BD naikei)
+(Z: furiwake - mentori C)
+(R: corner R)
+(A: approach R)
+(F: speed: chokusen)
+(S: kaitensuu)
+
+(Top Mentori Soto end)
+/M00 (mentori ok?)
+
+T01 (empty)
+M06 (tool exchange)
+GOTO99
+
+N98
+M00 (is the palette #1004 ok?)
+
+N99
+G65 P19392 (sensor OFF)
+M30
+%

@@ -1,0 +1,19 @@
+%
+O19392 (touch sensor OFF)
+
+N1
+M117 (sensor on/off)
+G04X1. (wait 1.0s)
+
+IF[#1004EQ0]GOTO2
+(if current sensor OFF, go to N2)
+
+G04X5. (wait 5.0s)
+#33=#33+1 (the 1st #33=0)
+IF[#33LT4]GOTO1 (if #33 < 4, go to N1)
+
+#3000=146 (MP10/MP12/MP60-ALARM)
+(ALM: is sensor ok?)
+
+N2 M99
+%
