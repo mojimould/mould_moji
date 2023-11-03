@@ -1,4 +1,5 @@
 %!TEX encoding = UTF-8 Unicode
+% arara: uplatex
 
 \input{preamble_Mould_Analytical_Calculation_Note/style_Mould_Analytical_Calculation_Note}
 
@@ -1427,6 +1428,7 @@ $\lfloor x\rfloor$は、$x \in R$ に対して$x$を超えない最大の整数�
 
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1443,22 +1445,22 @@ A側内面のトップ端点
 A側内面の内面溝１列目（トップ端から$q$）の位置
 \end{enumerate}
 \end{tcolorbox}\noindent
-この２点を通る直線と鉛直方向との角度を、傾き角$-\phi$ ($0 < \phi < \nicefrac\pi2$)とする
+この２点を通る直線と鉛直方向との角度を、傾き角$-\phi$とする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{振分長の調整に用いたテーブルの傾き角$\theta$と混同しないように注意。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-なお、トップ端のAC内径は$w_{\text A0}$で代用してもよいものとする。
-
-BおよびD面の内面溝についても（特にA側内面に対して）アンダーカットを避ける必要がある。
-しかし、傾けなくてもアンダーカットが発生せず加工できる場合もある。
-そのためB, D面の内面溝については、A側内面のトップ端のX座標と、それと最も$X$座標が近い内面溝との（$X$方向の）距離を算出する。
-そしてそれを工具径と比べることで、傾けるかどうかを決めることにする。
-また傾ける場合は、上記の角度$\phi$を用いることにする。
+なお、トップ端のAC内径は$w'_{\text A0}$で代用してもよいものとする。
+このとき$\phi > 0$となる場合（C面側に傾く場合）は$\phi$だけ傾けて加工を行う。
+一方、$\phi \leqq 0$となる場合（A面側に傾く場合）は、そもそもアンダーカットが生じないということなので、傾けずにそのまま加工を行うものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosokubox}
-C側の内面溝については、そもそもアンダーカットが生じることがない（湾曲が外側に向いている）ので傾ける必要がない。
+ここでは内面溝の工具として、Tスロットカッターを考えている。
+しかし、当然ながら工具径は有限であるため、いくら適切に傾けたところで限界はある。
+ここではその限界として、A側内面のトップ端の$X$座標と、それと最も$X$座標が近い内面溝との（$X$方向の）距離を算出する。
+そしてそれを工具径と比べることで、どこまでの範囲を加工するかを決定する。
+加工できない部分に内面溝がある場合は、別の工具（アングルヘッド）を使用して加工を行う。
 \end{hosokubox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1569,6 +1571,8 @@ C側の内面溝については、そもそもアンダーカットが生じる�
 なお、A・C面については$j$に依らないことがわかる。
 そのため、たとえば$\mathcal D_{xij,\text A}$ではなく、$\mathcal D_{xi,\text A}$のように表記している。
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 6.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1613,32 +1617,65 @@ A側内面トップ端と、A側内面のトップ端から$q$の位置との$x$
   -\sqrt{\left(R_\text c+\frac{w'_{\text A0}}2\right)^{\!\!2}-f_\text T^2}
 \end{align*}
 で与えられる。
-これより、A側内面溝に対する傾き角$\phi_\text A$ ($\phi_\text A \geqq 0$)は、
-\begin{align}
-  \label{eq:dKatamuki}
+このとき、これが負になる場合は傾ける必要はなく、正となる場合のみ傾ける。
+したがってその傾き角$\phi$は、
+\begin{subequations}
+\label{eq:dKatamuki}
+\begin{alignat}{2}
+  \text{正の場合：}&&\quad
   \tan\phi
-  = \frac{\displaystyle
-          \sqrt{\left(R_\text c+\frac{w'_{\text Aq}}2\right)^{\!\!2}-(f_\text T-q)^2}
-          -\sqrt{\left(R_\text c+\frac{w'_{\text A0}}2\right)^{\!\!2}-f_\text T^2}}q
-\end{align}
+  &= \frac{\displaystyle
+           \sqrt{\left(R_\text c+\frac{w'_{\text Aq}}2\right)^{\!\!2}-(f_\text T-q)^2}
+           -\sqrt{\left(R_\text c+\frac{w'_{\text A0}}2\right)^{\!\!2}-f_\text T^2}}q\\[8pt]
+  \text{負の場合：}&&
+  \phi
+  &= 0
+\end{alignat}
+\end{subequations}
 で与えられる。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+なお、これが負になるのは、
+\begin{align*}
+  & \left(R_\text c+\frac{w'_{\text Aq}}2\right)^{\!\!2}-(f_\text T-q)^2
+    < \left(R_\text c+\frac{w'_{\text A0}}2\right)^{\!\!2}-f_\text T^2\\
+  \longrightarrow~~
+  & \frac{w_{\text A0}-w_{\text Aq}}2
+    \left(2R_\text c+\frac{w_{\text A0}'+w_{\text Aq}'}2\right)
+    > q(2f_\text T-q)
+\end{align*}
+である。
+したがって、以下のような場合に生じる傾向があることがわかる。
+\begin{enumerate}
+\item 曲率が小さい（湾曲$R_\text c$が大きい）
+\item テーパがきつい（$w_{\text A0}-w_{\text Aq}$が大きい）
+\item 内径・めっき膜厚が大きい
+\item トップ端から内面溝１列目までの長さ$q$が小さい
+\end{enumerate}
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Column}{C側内面溝の傾き角}
-C側内面溝については前述の通り傾ける必要はない。
+C側内面溝については傾斜が外側に向いているため、傾けなくともアンダーカットの心配はない。
 しかし、傾けたまま加工をすると形状が歪になってしまうため、内面溝の形状をよりよくするためには傾いていないほうが望ましい。
-そうした事情も考慮する場合は、C面に対しても傾けて加工をする必要が出てくる。
-そのためC側内面溝に対する傾き角$\phi_\text C$についてもここで与えておく。
-なお、$\phi_\text C$は上記の（A面に対する）$\phi$とは異なるものとしている。
-具体的には以下の２点を基準として角度$\phi_\text C$を取ることとする。
+また一方で、面によって傾ける傾けないを分けると、プログラムが複雑になる（条件分岐が増える）要因にもなる。
+そのためここでは、どの面の内面溝に対しても同じ角度$\phi$を用いて加工を行うことにする。
+\tcbline*
+なお、C面に対する内面溝の形状をできるだけよいものにするには、C面のテーパに基づいた角度を用いるほうが望ましい。
+そのため、C側内面溝に対する傾き角$\phi_\text C$についても（１つの例として）与えておく。
+具体的には、以下の２点を基準として角度$\phi_\text C$を取ることとする。
 \begin{enumerate}
 \item[a)]
 C側内面の内面溝１列目（トップ端から$q$）の位置
 \item[b)]
-C側内面の内面溝１列目（トップ端から$q+(m-1)p_z$）の位置
+C側内面の内面溝$m$列目（トップ端から$q+(m-1)p_z$）の位置
 \end{enumerate}
-\tcbline
 C側内面のトップ端から$q$の位置と、C側内面のトップ端から$q+(m-1)p_z$の位置との$x$方向の差は、
 \begin{align*}
   \sqrt{\bigg(R_\text c-\frac{w'_{\text Aq+(m-1)p_z}}2\bigg)^{\!\!2}-\left\{f_\text T-q-(m-1)p_z\right\}^2}
@@ -1836,7 +1873,7 @@ A側内面のトップ端からの（$X$方向の）距離は、トップ端のA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 6.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{傾き後の内面溝（A面側）}
+\subsection{傾き後の内面溝（A, C面側）}
 A面側の内面溝については、テーブル中心Oを中心に$-\phi$だけ傾けて加工を行う。
 $\phi$は\pageeqref{eq:dKatamuki}で与えられる。
 このとき、傾けた後の$i$列目$j$番目の内面溝の位置は、\pageeqref{eq:dPosXBefore}, \eqref{eq:dPosYBefore}, \pageeqref{eq:dPosZBefore}より、
@@ -1853,6 +1890,23 @@ $\phi$は\pageeqref{eq:dKatamuki}で与えられる。
       \mathcal D_{xi,\text A}\cos\phi+\mathcal D_{zi}\sin\phi\\
       \mathcal D_{yij,\text A}\\
       -\mathcal D_{xi,\text A}\sin\phi+\mathcal D_{zi}\cos\phi
+    \end{array}
+    \right].
+\end{align*}
+C面側の内面溝についても同様に、傾けた後の$i$列目$j$番目の内面溝の位置は、
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    \mathcal D_{xij,\text C}'\\
+    \mathcal D_{yij,\text C}'\\
+    \mathcal D_{zij,\text C}'
+  \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      \mathcal D_{xi,\text C}\cos\phi+\mathcal D_{zi}\sin\phi\\
+      \mathcal D_{yij,\text A}\\
+      -\mathcal D_{xi,\text C}\sin\phi+\mathcal D_{zi}\cos\phi
     \end{array}
     \right].
 \end{align*}
@@ -1899,6 +1953,17 @@ $Z$方向の隣同士の差分、すなわち$j$を固定したときの$i$番�
     \end{array}
     \right]\ .
 \end{align*}
+C面に対しては、これの各々の内径$w_\text A'$の符号を入れ換えたものとなる。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosokubox}
+$X$成分の差分の大きさが（$\mathcal L_{i+1, i}$からみて）A面（の$\cos\phi$成分）のそれと同じであることがわかる。
+これは（水平方向の）内径を$w_{\text A\lambda}$等で代用したからであり、実際の長さは異なる（振分中心を除いて対称ではなく、C側のほうが長い）ことに注意。
+\end{hosokubox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1912,177 +1977,11 @@ $Z$方向の隣同士の差分、すなわち$j$を固定したときの$i$番�
 
 
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 6.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{傾き後の内面溝（C面側）}
-C面側の内面溝については傾けずに行うため、そのままの座標を用いればよい。
-よってC面側に対する$i$列目$j$番目の内面溝の位置は、
-\begin{align*}
-  \left[
-  \begin{array}{c}
-    \mathcal D_{xij,\text C}'\\
-    \mathcal D_{yij,\text C}'\\
-    \mathcal D_{zij,\text C}'
-  \end{array}
-  \right]
-  = \left[
-    \begin{array}{c}
-      \mathcal D_{xi,\text C}\\
-      \mathcal D_{yij,\text A}\\
-      \mathcal D_{zi}
-    \end{array}
-    \right]
-\end{align*}
-
-
-\paragraph{$j$方向の差分}
-$Y$方向の隣同士の差分、すなわち$i$を固定したときの$j$番目と$j+1$番目の位置の差分は、
-\begin{align*}
-  \left[
-  \begin{array}{c}
-    0\\
-    \mathcal D_{yi(j+1),\text A}-\mathcal D_{yij,\text A}\\
-    0
-  \end{array}
-  \right]
-  = \left[
-    \begin{array}{c}
-      0\\
-      p_x\\
-      0
-    \end{array}
-    \right]\ .
-\end{align*}
-
-
-\paragraph{$i$方向の差分}
-$Z$方向の隣同士の差分、すなわち$j$を固定したときの$i$番目と$i+1$番目の位置の差分については、
-\begin{align*}
-  \left[
-  \begin{array}{c}
-    \mathcal D_{x(i+1),\text C}-\mathcal D_{xi,\text C}\\
-    \mathcal D_{y(i+1)j,\text C}-\mathcal D_{yij,\text C}\\
-    \mathcal D_{z(i+1)}-\mathcal D_{zi}
-  \end{array}
-  \right]
-  = \left[
-    \begin{array}{c}
-      \displaystyle
-      \mathcal L_{i+1, i}-\frac{w'_{\text Aq+ip_z}-w'_{\text Aq+(i-1)p_z}}2\\[8pt]
-      \displaystyle-\frac{d_{i+1}-d_i}2\\[5pt]
-      \displaystyle
-      -p_z
-    \end{array}
-    \right]\ .
-\end{align*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{hosokubox}
-$X$成分の差分の大きさが（$\mathcal L_{i+1, i}$からみて）A面（の$\cos\phi$成分）のそれと同じであることがわかる。
-これは（水平方向の）内径を$w_{\text A\lambda}$等で代用したからであり、実際の長さは異なる（振分中心を除いて対称ではなく、C側のほうが長い）ことに注意。
-\end{hosokubox}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 6.4.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{傾き後の内面溝（B, D面側）}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 6.4.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{傾けない場合}
-B, D面側について、傾けずに加工を行う場合はそのままの座標を用いればよい。
-よってB, D面側に対する$i$列目$j$番目の内面溝の位置は、それぞれ、
-\begin{align*}
-  \left[
-  \begin{array}{c}
-    \mathcal D_{xij,\text B}'\\
-    \mathcal D_{yij,\text B}'\\
-    \mathcal D_{zij,\text B}'
-  \end{array}
-  \right]
-  = \left[
-    \begin{array}{c}
-      \mathcal D_{xij,\text B}\\
-      \mathcal D_{yi,\text B}\\
-      \mathcal D_{zi}
-    \end{array}
-    \right]~, \qquad
-  \left[
-  \begin{array}{c}
-    \mathcal D_{xij,\text D}'\\
-    \mathcal D_{yij,\text D}'\\
-    \mathcal D_{zij,\text D}'
-  \end{array}
-  \right]
-  = \left[
-    \begin{array}{c}
-      \mathcal D_{xij,\text B}\\
-      \mathcal D_{yi,\text D}\\
-      \mathcal D_{zi}
-    \end{array}
-    \right].
-\end{align*}
-
-
-\paragraph{$j$方向の差分}
-$Y$方向の隣同士の差分、すなわち$i$を固定したときの$j$番目と$j+1$番目の位置の差分は、
-\begin{align*}
-  \left[
-  \begin{array}{c}
-    \mathcal D_{xi(j+1),\text B}-\mathcal D_{xij,\text B}\\
-    0\\
-    0
-  \end{array}
-  \right]
-  = \left[
-    \begin{array}{c}
-      -p_x\\
-      0\\
-      0
-    \end{array}
-    \right]\ .
-\end{align*}
-
-
-\paragraph{$i$方向の差分}
-B面に対する$Z$方向の隣同士の差分、すなわち$j$を固定したときの$i$番目と$i+1$番目の位置の差分については、
-\begin{align*}
-  \left[
-  \begin{array}{c}
-    \mathcal D_{x(i+1)j,\text B}-\mathcal D_{xij,\text B}\\
-    \mathcal D_{yi+1,\text B}-\mathcal D_{yi,\text B}\\
-    \mathcal D_{z(i+1)}-\mathcal D_{zi}
-  \end{array}
-  \right]
-  = \left[
-    \begin{array}{c}
-      \displaystyle\mathcal L_{i+1, i}+\frac{d_{i+1}-d_i}2\\[6pt]
-      \displaystyle\frac{w'_{\text Bq+ip_z}-w'_{\text Bq+(i-1)p_z}}2\\[6pt]
-      -p_z
-    \end{array}
-    \right]\ .
-\end{align*}
-D面については、これの$Y$成分の符号を反対にしたものである。
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 6.4.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{傾ける場合}
-傾けて加工を行う場合は、$-\phi$だけ傾けて行う。
-したがって傾けた後のB面側に対する$i$列目$j$番目の内面溝の位置は、A面側のときと同様に、
+傾けた後のB面側に対する$i$列目$j$番目の内面溝の位置は、A面側のときと同様に、
 \begin{align*}
   \left[
   \begin{array}{c}
@@ -2118,7 +2017,7 @@ D面側の内面溝についても同様に、傾けた後の$i$列目$j$番目�
 \end{align*}
 
 
-\paragraph{$j$方向の差分}
+\paragraph{$j$方向の差分}\noindent
 $Y$方向の隣同士の差分、すなわち$i$を固定したときの$j$番目と$j+1$番目の位置の差分は、
 \begin{align*}
   \left[
@@ -2138,7 +2037,7 @@ $Y$方向の隣同士の差分、すなわち$i$を固定したときの$j$番�
 \end{align*}
 
 
-\paragraph{$i$方向の差分}
+\paragraph{$i$方向の差分}\noindent
 B面に対する$Z$方向の隣同士の差分、すなわち$j$を固定したときの$i$番目と$i+1$番目の位置の差分については、
 \begin{align*}
  &\left[
@@ -2158,35 +2057,7 @@ B面に対する$Z$方向の隣同士の差分、すなわち$j$を固定した�
     \end{array}
     \right]\ .
 \end{align*}
-D面に対しては、これの$Y$成分の符号を入れ換えたものとなる。
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Column}{傾き後の内面溝（C面側）}
-C面側を傾ける場合、傾けた後の$i$列目$j$番目の内面溝の位置は$\phi_\text C$を用いて以下のように表すことができる。
-\begin{align*}
-  \left[
-  \begin{array}{c}
-    \mathcal D_{xij,\text C}'\\
-    \mathcal D_{yij,\text C}'\\
-    \mathcal D_{zij,\text C}'
-  \end{array}
-  \right]
-  = \left[
-    \begin{array}{c}
-      \mathcal D_{xij,\text C}\cos\phi_\text C+\mathcal D_{zi}\sin\phi_\text C\\
-      \mathcal D_{yij,\text A}\\
-      -\mathcal D_{xij,\text C}\sin\phi_\text C+\mathcal D_{zi}\cos\phi_\text C
-    \end{array}
-    \right].
-\end{align*}
-\end{Column}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+D面に対しては、これの各々の内径$w_\text B'$の符号（この場合$Y$成分の符号）を入れ換えたものとなる。
 
 
 

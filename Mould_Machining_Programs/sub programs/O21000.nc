@@ -1,6 +1,6 @@
 %
 O21000 (for dimple measurement)
-(mainly moving along central curvature)
+(level 1: mainly moving along central curvature)
 
 IF[#4012LT54]GOTO98 
 IF[#4012GT59]GOTO98
@@ -18,6 +18,21 @@ IF[#6EQ#0]GOTO98
 IF[#6LT0]GOTO98
 IF[#2EQ#0]GOTO98
 IF[[ABS[#2]]GT20.]GOTO98
+IF[#24EQ#0]GOTO98
+IF[#24LE0]GOTO98
+IF[#25EQ#0]GOTO98
+IF[#25LE0]GOTO98
+IF[#9EQ#0]GOTO98
+IF[#9LE0]GOTO98
+IF[#19EQ#0]GOTO98
+IF[#19LE0]GOTO98
+IF[[#9+#19+ABS[#9-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]GOTO98
+IF[#4EQ#0]GOTO98
+IF[#4LE0]GOTO98
+IF[#4LE0]GOTO98
+IF[#1EQ1]GOTO1
+IF[#1EQ2]GOTO1
+GOTO98
 (if work G# < 54 or G# > 59, go to N98)
 (if Z <= 0 or empty, go to N98)
 (if R <= Z or empty, go to N98)
@@ -26,7 +41,15 @@ IF[[ABS[#2]]GT20.]GOTO98
 (if Q+[M-1]*K >= Z, go to N98)
 (if K < 0 or empty, go to N98)
 (if B is empty or |B| > 20., go to N98)
+(if X <= 0 or empty, go to N98)
+(if Y <= 0 or empty, go to N98)
+(if F <= 0 or empty, go to N98)
+(if S <= 0 or empty, go to N98)
+(if max[F, S] >= min[X, Y], go to N98)
+(if I <= 0 or empty, go to N98)
+(if A is not [1. or 2.], go to N98)
 
+N01
 #401=#4012 (#401= current work coordinate G#)
 #402=#5201+[#401-53]*20 (#402= current work origin X)
 
@@ -58,8 +81,14 @@ G90 G31 Z[#409-#512]
 #410=#5041 (#410= current work X: the center of the 1st row)
 
 WHILE [#13 GT 0] DO1 (1st to last dimple)
+IF[#1=1]GOTO50 (if for AC, go to N50)
 M98 P22002 Y#25 I#4 K#6 B#2
-(moving along row)
+(for BD: moving along row)
+GOTO51
+N50
+M98 P22001 X#24 I#4 K#6 B#2
+(for AC: moving along row)
+N51
 IF[#13GT1]GOTO20 (end of loop)
 #33=SQRT[#18*#18-[#406+[#13-2]*#6]*[#406+[#13-2]*#6]]-SQRT[#18*#18-[#406+[#13-1]*#6]*[#406+[#13-1]*#6]]
 G91 G31 X[#33*COS[#2]-#6*SIN[#2]] Z-[#33*SIN[#2]+#6*COS[#2]] F1800
@@ -104,6 +133,8 @@ N99 M99
 (#25:Y: BD naikei of last row)
 
 (#512: probe radius)
+(#1004: 1: sensor on, 0: off)
+(#1005: 1: sensor low battery, 0: OK)
 (#3000: alarm)
 (#4012: current work coordinate G#)
 (#5041: current work X)
