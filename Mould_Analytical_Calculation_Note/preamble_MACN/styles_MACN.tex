@@ -94,16 +94,29 @@
   \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
   \fancyfoot{}
 }
+\renewcommand*\frontmatter{%
+  \if@twoside\cleardoubleoddpage\else\clearpage\fi
+  \@frontmattertrue\@mainmatterfalse\@backmatterfalse\pagenumbering{roman}\pagestyle{front}%
+}
+\renewcommand*\mainmatter{%
+  \if@twoside\cleardoubleoddpage\else\clearpage\fi
+  \@frontmatterfalse\@mainmattertrue\@backmatterfalse\pagenumbering{arabic}\pagestyle{main}%
+}
+\renewcommand*\backmatter{%
+  \if@openright\cleardoubleoddpage\else\clearpage\fi\@frontmatterfalse\@mainmatterfalse\@backmattertrue\pagestyle{front}
+}
 %%%%% SETLIST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlist[enumerate]{listparindent=\parindent, parsep=\z@, partopsep=\z@, topsep=3pt, itemsep=3pt}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\setthesection}{\Alph{section}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% EQUATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\theequation}{\thesection.\arabic{equation}}
 \@addtoreset{equation}{section}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% STYLE OF PART %%%%%
+\renewcommand\partpagestyle{empty}
+\renewcommand*{\partformat}{\textgt 第\hx\hx\hx \thepart\hx\hx\hx\textgt 部}
+%%%%% STYLE OF CHAPTER %%%%%
+\renewcommand\chapterpagestyle{\if@frontmatter plainheadfront\else plainhead\fi}
 %%%%% STYLE OF PARAGRAPH %%%%%%%%%%%%%%%%%%%%%
 %for scrbook.cls
 \RedeclareSectionCommand[%
@@ -125,7 +138,7 @@
 %  {0.1ex\@plus.1ex \@minus.1ex}% ここが正だと改行されて、値だけ垂直スペースが入る
 %  {\raggedsection\normalfont\sectfont\gtfamily\nobreak\size@paragraph\sball{blue}~}{#1}\noindent
 %}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% STYLE OF SUBPARAGRAPH %%%%%%%%%%%%%%%%%%%%%
 \RedeclareSectionCommand[%
   style=section,%
   level=5,%
