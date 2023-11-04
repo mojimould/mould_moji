@@ -80,19 +80,21 @@ G90 G31 Z[#409-#512]
 (XZ skip: to the center of the 1st row)
 #410=#5041 (#410= current work X: the center of the 1st row)
 
-WHILE [#13 GT 0] DO1 (1st to last dimple)
-IF[#1=1]GOTO50 (if for AC, go to N50)
-M98 P22002 Y#25 I#4 K#6 B#2
-(for BD: moving along row)
+#33=1
+WHILE [#33LE#13] DO1 (if #33 <= #13, do 1)
+IF[#1=2]GOTO50 (if for AC, go to N50)
+M98 P22001 X#24 F#9 S#19 I#4 K#6 B#2 M#33
+(for AC: moving along row)
 GOTO51
 N50
-M98 P22001 X#24 I#4 K#6 B#2
-(for AC: moving along row)
+M98 P22002 Y#25 F#9 S#19 I#4 K#6 B#2 M#33
+(for BD: moving along row)
 N51
-IF[#13GT1]GOTO20 (end of loop)
-#33=SQRT[#18*#18-[#406+[#13-2]*#6]*[#406+[#13-2]*#6]]-SQRT[#18*#18-[#406+[#13-1]*#6]*[#406+[#13-1]*#6]]
-G91 G31 X[#33*COS[#2]-#6*SIN[#2]] Z-[#33*SIN[#2]+#6*COS[#2]] F1800
-#13=#13-1
+IF[#33GE#13]GOTO20 (end of loop)
+#32=#405-[#33-1]*#6 (#32= the #33th row's Z from table center)
+#31=SQRT[#18*#18-[#32+#6]*[#32+#6]]-SQRT[#18*#18-#32*#32]
+G91 G31 X[#31*COS[#2]-#6*SIN[#2]] Z-[#31*SIN[#2]+#6*COS[#2]] F1800
+#33=#33+1
 END1
 
 N20
