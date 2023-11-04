@@ -4,6 +4,10 @@
 
 \input{preamble_Mould_Analytical_Calculation_Note/picture_Mould_Analytical_Calculation_Note}
 
+\newcommand{\customdate}{%
+  \the\year/\two@digits{\the\month}/\two@digits{\the\day}\
+  \currenttime\ (\jadayofweek{\the\year}{\the\month}{\the\day})%
+}
 %%%%%% NEWIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\if@backmatter%\@backmattertrue
 \newif\if@frontmatter%\@frontmattertrue
