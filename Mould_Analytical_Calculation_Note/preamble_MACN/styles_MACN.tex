@@ -22,10 +22,8 @@
 %%%%% PARINDENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength\parindent{12pt}
 %\def \globalscale {0.83}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% UNIT LENGTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\unitlength}{1pt}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOOTNOTE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \counterwithout{footnote}{chapter}
 \def\@makefnmark{\hbox{}\hbox{\@textsuperscript{\normalfont\@thefnmark}}\hbox{}}
@@ -35,13 +33,10 @@
   \hrule\@width.75\columnwidth
   \kern2.6\p@
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% DISPLAYBREAK %%%%%%%%%%%%%%%%%%%%%%%%%
 \allowdisplaybreaks
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% CAPTION WIDTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \captionsetup{width=.8\textwidth}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% NAME, AUTOREFNAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\renewcommand{\partautorefname}{part}  % part --> part
 \renewcommand{\chapterautorefname}{章}  % chapter --> 章
@@ -59,7 +54,6 @@
 %\renewcommand{\tableautorefname}{表}
 %\newcommand{\subtableautorefname}{\tableautorefname}
 \renewcommand\bibname{\hbox to 5zw{参考文献}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% HEADER AND FOOTER %%%%%
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
@@ -114,7 +108,7 @@
 \@addtoreset{equation}{section}
 %%%%% STYLE OF PART %%%%%
 \renewcommand\partpagestyle{empty}
-\renewcommand*{\partformat}{\textgt 第\hx\hx\hx \thepart\hx\hx\hx\textgt 部}
+\renewcommand*{\partformat}{\textgt 第\hx\hx\hx\thepart\hx\hx\hx\textgt 部}
 %%%%% STYLE OF CHAPTER %%%%%
 \renewcommand\chapterpagestyle{\if@frontmatter plainheadfront\else plainhead\fi}
 %%%%% STYLE OF PARAGRAPH %%%%%%%%%%%%%%%%%%%%%

@@ -24,7 +24,6 @@
 \definecolor{wwqqcc}{rgb}{0.4, 0, 0.8}
 \definecolor{qqzzqq}{rgb}{0, 0.6, 0}
 \definecolor{ffwwqq}{rgb}{1, 0.4, 0}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% NEWCOLORBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% COLUMN %%%%%
 \newcommand{\Columnname}{Column}
@@ -37,7 +36,6 @@
 }
 %%%%% FIG BOX %%%%%
 \newtcolorbox{Figbox}[1][]{Figurebox, #1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% TIKZSET %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tikzset{
   %%%%% SECTIONFORMAT STYLE %%%%%
@@ -89,7 +87,6 @@
                     boxsep=3mm, left=\z@, right=\z@, valign=center,
                     },
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% OTHER TIKZ DEFINITION %%%%%%%%%%%%%%%%%%
 \tikzfading[name=fade ball, inner color=transparent!60, outer color=transparent!30]
 \def\sball#1{\tikz \shade [ball color=#1, path fading=fade ball] (0,0) circle (.7ex);}
@@ -115,13 +112,11 @@
     {\eqref{#1}}%
     {\eqref{#1}~[p.\pageref{#1}]}%
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% DIM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\hk}{\hspace{\kanjiskip}}
 \newcommand{\hx}{\hspace{\xkanjiskip}}
 %%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%
 \def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{\z@}\textbf{#1}}{gray!25}\hskip.75zw}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% DECLAREMATHOPERATOR %%%%%%%%%%%%%%%%%%%%
 \DeclareRobustCommand{\bDiv}{\nonscript\mskip-\medmuskip\mkern5mu\mathbin
   {\operator@font div}\penalty900
@@ -131,6 +126,10 @@
 \DeclareRobustCommand{\pDiv}[1]{\pod{{\operator@font div}\mkern6mu#1}}
 \DeclareRobustCommand{\Div}[1]{\allowbreak\if@display\mkern18mu
   \else\mkern12mu\fi{\operator@font div}\,\,#1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Apart}{
+  \addpart*{第\hx\hx\hx\thepart\hx\hx\hx 部の補遺}
+  \addcontentsline{toc}{part}{第\hx\hx\thepart\hx\hx 部の補遺}
+}
 
 
