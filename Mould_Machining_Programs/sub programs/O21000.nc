@@ -30,9 +30,6 @@ IF[[#9+#19+ABS[#9-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]GOTO98
 IF[#4EQ#0]GOTO98
 IF[#4LE0]GOTO98
 IF[#4LE0]GOTO98
-IF[#1EQ1]GOTO1
-IF[#1EQ2]GOTO1
-GOTO98
 (if work G# < 54 or G# > 59, go to N98)
 (if Z <= 0 or empty, go to N98)
 (if R <= Z or empty, go to N98)
@@ -47,7 +44,6 @@ GOTO98
 (if S <= 0 or empty, go to N98)
 (if max[F, S] >= min[X, Y], go to N98)
 (if I <= 0 or empty, go to N98)
-(if A is not [1. or 2.], go to N98)
 
 N01
 #401=#4012 (#401= current work coordinate G#)
@@ -80,9 +76,11 @@ G90 G31 Z[#409-#512]
 (XZ skip: to the center of the 1st row)
 #410=#5041 (#410= current work X: the center of the 1st row)
 
+#30=1 (#30: switch for faces: 1: AC, 2: BD)
+N10
 #33=1
 WHILE [#33LE#13] DO1 (if #33 <= #13, do 1)
-IF[#1=2]GOTO50 (if for AC, go to N50)
+IF[#30=2]GOTO50 (if for AC, go to N50)
 M98 P22001 X#24 F#9 S#19 I#4 K#6 B#2 M#33
 (for AC: moving along row)
 GOTO51
@@ -90,12 +88,16 @@ N50
 M98 P22002 Y#25 F#9 S#19 I#4 K#6 B#2 M#33
 (for BD: moving along row)
 N51
-IF[#33GE#13]GOTO20 (end of loop)
+IF[#33GE#13]GOTO15 (end of loop)
 #32=#405-[#33-1]*#6 (#32= the #33th row's Z from table center)
 #31=SQRT[#18*#18-[#32+#6]*[#32+#6]]-SQRT[#18*#18-#32*#32]
 G91 G31 X[#31*COS[#2]-#6*SIN[#2]] Z-[#31*SIN[#2]+#6*COS[#2]] F1800
 #33=#33+1
 END1
+N15
+IF[#30EQ2]GOTO20
+#30=2
+GOTO10
 
 N20
 G90 G01 X#410 Z[#409-#512] F6400
@@ -131,7 +133,11 @@ N99 M99
 (#18:R: radius of the central curvature)
 (#26:Z: top friwake)
 
+(#1 :A: face, 1: AC, 2: BD)
 (#4 :I: X pitch)
+(#9 :F: length of odd rows)
+(#19:S: length of even rows)
+(#24:X: AC naikei of last row)
 (#25:Y: BD naikei of last row)
 
 (#512: probe radius)
