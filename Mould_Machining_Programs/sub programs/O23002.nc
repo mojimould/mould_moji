@@ -1,6 +1,8 @@
 %
-O23002 (dimple measurement Y: for BD)
+O23002 (for BD dimples measurement)
+(level 3: measurement dimple)
 (J > 0: Y+, J < 0: Y-)
+
 #467=#5041 (#467= current work X: start point X)
 #468=#5042 (#468= current work Y: start point Y)
 IF[#5EQ0]GOTO97 (if J = 0 then to N97)
@@ -14,13 +16,13 @@ IF[#1005EQ0]GOTO1 (if the sensor battery is OK, to N1)
 
 N01
 IF[#5LT0]GOTO2 (if J < 0 then to N2)
-#469=1 GOTO10 (if J > 0, #469=1 and to N10)
-N02 #469=-1 (if J < 0, #469=-1)
+#33=1 GOTO10 (if J > 0, #33=1 and to N10)
+N02 #33=-1 (if J < 0, #33=-1)
 
 N10
-G91 G31 Y[15.0*#469] F#514 (skip Y+ or Y-: 15.0, speed 50)
-#566=#5062+#503+#469*[-#501+#512]
-(#566= current machine Y + hosei probe etc)
+G91 G31 Y[#33*14.0] F#514 (skip Y+ or Y-: 15.0, speed #514)
+#469=#5062+#503+#33*[-#501+#512]
+(#469= current machine Y + hosei probe etc)
 G90 G01 Y#468 F6400 (G90 G01 Y: to start point)
 G90 G01 X#467 (G90 G01 X: to start point)
 GOTO99 (to N99)
@@ -44,4 +46,6 @@ N99 M99
 (#5041: current work X)
 (#5042: current work Y)
 (#5062: skip position Y)
+
+(using #467-#469)
 %

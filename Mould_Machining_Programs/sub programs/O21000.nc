@@ -76,18 +76,17 @@ G90 G31 Z[#409-#512]
 (XZ skip: to the center of the 1st row)
 #410=#5041 (#410= current work X: the center of the 1st row)
 
-#30=4 (#30: faces 1: A, 2: B, 3: C, 4: D)
-IF[#30NE4]GOTO98 (if #30 is not 4, go to N98)
-
+#411=4 (#411: faces 1: A, 2: B, 3: C, 4: D)
+IF[#411NE4]GOTO98 (if #411 is not 4, go to N98)
 N10
 G90 G01 X#410 Y#403 Z[#409-#512] F6400
 (XYZ: to the center of the 1st row)
+
 #33=1 (#33: current row)
 WHILE[#33LE#13]DO1 (if #33 <= #13, do 1)
-IF[#30EQ3]GOTO31 (#30=3, for B)
-IF[#30EQ2]GOTO32 (#30=2, for C)
-IF[#30EQ1]GOTO33 (#30=1, for A)
-N30 (face D)
+IF[#411EQ3]GOTO31 (#411=3, for B)
+IF[#411EQ2]GOTO32 (#411=2, for C)
+IF[#411EQ1]GOTO33 (#411=1, for A)
 M98 P22002 A-1. Y#25 F#9 S#19 I#4 K#6 B#2 M#33
 (for D: moving along row)
 GOTO51
@@ -109,9 +108,10 @@ IF[#33GE#13]GOTO15 (end of loop)
 G91 G31 X[#31*COS[#2]-#6*SIN[#2]] Z-[#31*SIN[#2]+#6*COS[#2]] F1800
 #33=#33+1 (#33 to current row +1)
 END1
+
 N15
-#30=#30-1 (changing face)
-IF[#30LE0]GOTO20 (if #30 <= 0, go to N20 )
+#411=#411-1 (changing face)
+IF[#411LE0]GOTO20 (if #411 <= 0, go to N20 )
 GOTO10
 
 N20
@@ -162,4 +162,6 @@ N99 M99
 (#5041: current work X)
 (#5043: current work Z)
 (#5063: skip position Z without KouguChou hosei)
+
+(using #401-#411)
 %
