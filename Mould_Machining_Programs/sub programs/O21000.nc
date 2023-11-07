@@ -48,6 +48,7 @@ IF[#4LE0]GOTO98
 N01
 #401=#4012 (#401= current work coordinate G#)
 #402=#5201+[#401-53]*20 (#402= current work origin X)
+#403=#5202+[#401-53]*20 (#403= current work origin Y)
 
 M11 (4jiku unclamp)
 G90 G00 G#401 B#2 (current work B: G90 A deg)
@@ -56,14 +57,13 @@ G90 G01 X[#402*COS[#2]-#26*SIN[#2]] F6400
 G90 G01 Z[#402*SIN[#2]+#26*COS[#2]-#512]
 (XZ to tanmen center)
 
-#403=#5041 (#403= current work X: start point X)
-#404=#5043 (#404= current work Z: start point Z)
-#405=#26-#17 (Z: the 1st row before rotation)
-#406=#405-[#13-1]*#6 (Z: the last row before rotation)
-#407=SQRT[#18*#18-#405*#405]-SQRT[#18*#18-#26*#26]
+#404=#5041 (#404= current work X: start point X)
+#405=#5043 (#405= current work Z: start point Z)
+#406=#26-#17 (Z: the 1st row before rotation)
+#407=SQRT[#18*#18-#406*#406]-SQRT[#18*#18-#26*#26]
 (X: the center of the 1st row before rotation)
-#408=[#407*COS[#2]-#405*SIN[#2]]
-#409=[#407*SIN[#2]+#405*COS[#2]]
+#408=[#407*COS[#2]-#406*SIN[#2]]
+#409=[#407*SIN[#2]+#406*COS[#2]]
 (XZ: the center of the 1st row after rotation)
 
 G65 P19393 (sensor ON, G53)
@@ -76,35 +76,50 @@ G90 G31 Z[#409-#512]
 (XZ skip: to the center of the 1st row)
 #410=#5041 (#410= current work X: the center of the 1st row)
 
-#30=1 (#30: switch for faces: 1: AC, 2: BD)
+#30=4 (#30: faces 1: A, 2: B, 3: C, 4: D)
+IF[#30NE4]GOTO98 (if #30 is not 4, go to N98)
+
 N10
-#33=1
-WHILE [#33LE#13] DO1 (if #33 <= #13, do 1)
-IF[#30=2]GOTO50 (if for AC, go to N50)
-M98 P22001 X#24 F#9 S#19 I#4 K#6 B#2 M#33
-(for AC: moving along row)
+G90 G01 X#410 Y#403 Z[#409-#512] F6400
+(XYZ: to the center of the 1st row)
+#33=1 (#33: current row)
+WHILE[#33LE#13]DO1 (if #33 <= #13, do 1)
+IF[#30EQ3]GOTO31 (#30=3, for B)
+IF[#30EQ2]GOTO32 (#30=2, for C)
+IF[#30EQ1]GOTO33 (#30=1, for A)
+N30 (face D)
+M98 P22002 A-1. Y#25 F#9 S#19 I#4 K#6 B#2 M#33
+(for D: moving along row)
 GOTO51
-N50
-M98 P22002 Y#25 F#9 S#19 I#4 K#6 B#2 M#33
-(for BD: moving along row)
+N31 (face B)
+M98 P22002 A1. Y#25 F#9 S#19 I#4 K#6 B#2 M#33
+(for B: moving along row)
+GOTO51
+N32 (face C)
+M98 P22001 A-1. X#24 F#9 S#19 I#4 K#6 B#2 M#33
+(for C: moving along row)
+GOTO51
+N50 (face A)
+M98 P22001 A1. X#24 F#9 S#19 I#4 K#6 B#2 M#33
+(for A: moving along row)
 N51
 IF[#33GE#13]GOTO15 (end of loop)
-#32=#405-[#33-1]*#6 (#32= the #33th row's Z from table center)
+#32=#406-[#33-1]*#6 (#32= the #33th row's Z from table center)
 #31=SQRT[#18*#18-[#32+#6]*[#32+#6]]-SQRT[#18*#18-#32*#32]
 G91 G31 X[#31*COS[#2]-#6*SIN[#2]] Z-[#31*SIN[#2]+#6*COS[#2]] F1800
-#33=#33+1
+#33=#33+1 (#33 to current row +1)
 END1
 N15
-IF[#30EQ2]GOTO20
-#30=2
+#30=#30-1 (changing face)
+IF[#30LE0]GOTO20 (if #30 <= 0, go to N20 )
 GOTO10
 
 N20
 G90 G01 X#410 Z[#409-#512] F6400
 (XZ: to the center of the 1st row)
-G90 G01 X#403 Z#404 F6400 (XZ: to start point)
+G90 G01 X#404 Z#405 F6400 (XZ: to start point)
 G65 P19392 (sensor OFF)
-G90 G01 Z[#404+100.0] F9600
+G90 G01 Z[#405+100.0] F9600
 GOTO99
 
 N96
@@ -133,7 +148,6 @@ N99 M99
 (#18:R: radius of the central curvature)
 (#26:Z: top friwake)
 
-(#1 :A: face, 1: AC, 2: BD)
 (#4 :I: X pitch)
 (#9 :F: length of odd rows)
 (#19:S: length of even rows)

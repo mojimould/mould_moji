@@ -1899,10 +1899,10 @@ A側内面のトップ端からの（$X$方向の）距離は、トップ端のA
 %% subsection 6.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{傾き後の内面溝（A, C面側）}
-A面側の内面溝については、テーブル中心Oを中心に$-\phi$だけ傾けて加工を行う。
-$\phi$は\pageeqref{eq:dKatamuki}で与えられる。
-このとき、傾けた後の$i$列目$j$番目の内面溝の位置は、\pageeqref{eq:dPosXBefore}, \eqref{eq:dPosYBefore}, \pageeqref{eq:dPosZBefore}より、
-\begin{align*}
+傾ける角度$\phi$は\pageeqref{eq:dKatamuki}で与えられる。
+このとき、傾けた後のAおよびC面側に対する$i$列目$j$番目の内面溝の位置は、\pageeqref{eq:dPosXBefore}, \eqref{eq:dPosYBefore}, \pageeqref{eq:dPosZBefore}より、
+\begin{alignat*}{3}
+  \text{A面：}&~~&
   \left[
   \begin{array}{c}
     \mathcal D_{xij,\text A}'\\
@@ -1910,16 +1910,14 @@ $\phi$は\pageeqref{eq:dKatamuki}で与えられる。
     \mathcal D_{zij,\text A}'
   \end{array}
   \right]
-  = \left[
+ &= \left[
     \begin{array}{c}
       \mathcal D_{xi,\text A}\cos\phi+\mathcal D_{zi}\sin\phi\\
       \mathcal D_{yij,\text A}\\
       -\mathcal D_{xi,\text A}\sin\phi+\mathcal D_{zi}\cos\phi
     \end{array}
-    \right].
-\end{align*}
-C面側の内面溝についても同様に、傾けた後の$i$列目$j$番目の内面溝の位置は、
-\begin{align*}
+    \right],\\[2pt]
+  \text{C面：}&~~&
   \left[
   \begin{array}{c}
     \mathcal D_{xij,\text C}'\\
@@ -1927,14 +1925,17 @@ C面側の内面溝についても同様に、傾けた後の$i$列目$j$番目�
     \mathcal D_{zij,\text C}'
   \end{array}
   \right]
-  = \left[
+ &= \left[
     \begin{array}{c}
       \mathcal D_{xi,\text C}\cos\phi+\mathcal D_{zi}\sin\phi\\
       \mathcal D_{yij,\text A}\\
       -\mathcal D_{xi,\text C}\sin\phi+\mathcal D_{zi}\cos\phi
     \end{array}
     \right].
-\end{align*}
+\end{alignat*}
+
+
+
 
 
 \paragraph{$j$方向の差分}\noindent
@@ -2006,40 +2007,60 @@ $X$成分の差分の大きさが（$\mathcal L_{i+1, i}$からみて）A面（�
 %% subsection 6.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{傾き後の内面溝（B, D面側）}
-傾けた後のB面側に対する$i$列目$j$番目の内面溝の位置は、A面側のときと同様に、
-\begin{align*}
+傾けた後のBおよびD面側に対する$i$列目$j$番目の内面溝の位置は、A面側のときと同様に、
+\begin{alignat*}{3}
+  \text{B面：}&~~&
   \left[
-  \begin{array}{c}
-    \mathcal D_{xij,\text B}'\\
-    \mathcal D_{yij,\text B}'\\
-    \mathcal D_{zij,\text B}'
-  \end{array}
+    \begin{array}{c}
+      \mathcal D_{xij,\text B}'\\
+      \mathcal D_{yij,\text B}'\\
+      \mathcal D_{zij,\text B}'
+    \end{array}
   \right]
-  = \left[
+ &= \left[
     \begin{array}{c}
       \mathcal D_{xij,\text B}\cos\phi+\mathcal D_{zi}\sin\phi\\
       \mathcal D_{yi,\text B}\\
       -\mathcal D_{xij,\text B}\sin\phi+\mathcal D_{zi}\cos\phi
     \end{array}
-    \right].
-\end{align*}
-D面側の内面溝についても同様に、傾けた後の$i$列目$j$番目の内面溝の位置は、
-\begin{align*}
+    \right],\\[2pt]
+  \text{D面：}&~~&
   \left[
-  \begin{array}{c}
-    \mathcal D_{xij,\text D}'\\
-    \mathcal D_{yij,\text D}'\\
-    \mathcal D_{zij,\text D}'
-  \end{array}
+    \begin{array}{c}
+      \mathcal D_{xij,\text D}'\\
+      \mathcal D_{yij,\text D}'\\
+      \mathcal D_{zij,\text D}'
+    \end{array}
   \right]
-  = \left[
+ &= \left[
     \begin{array}{c}
       \mathcal D_{xij,\text B}\cos\phi+\mathcal D_{zi}\sin\phi\\
       \mathcal D_{yi,\text D}\\
       -\mathcal D_{xij,\text B}\sin\phi+\mathcal D_{zi}\cos\phi
     \end{array}
     \right].
+\end{alignat*}
+特に、各列の中央（各列の湾曲中心）$[g_{tx}+\mathcal L_i, g_{ty}, f_t'-q-(i-1)p_z]$を原点としてみた場合の位置は、
+\begin{align*}
+  \left[
+  \begin{array}{c}
+    \displaystyle \left\{\frac{d_i}2-(j-1)p_z\right\}\cos\phi\\
+    \displaystyle \pm\frac{w_{Bq+(i-1)p_z}'}2\\
+    \displaystyle -\left\{\frac{d_i}2-(j-1)p_z\right\}\sin\phi
+  \end{array}
+  \right]\qquad
+  %%%%%%%%
+  \left(
+  \text{複号}
+  \left\{
+  \begin{array}{rl}
+    \!+\!\!\!& \text{： B面}\\
+    \!-\!\!\!& \text{： D面}\\
+  \end{array}
+  \right.
+  \right).
 \end{align*}
+
 
 
 \paragraph{$j$方向の差分}\noindent
