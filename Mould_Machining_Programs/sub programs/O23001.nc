@@ -17,7 +17,7 @@ IF[#1005EQ0]GOTO1 (if the sensor battery is OK, to N1)
 N01
 IF[#4LT0]GOTO2 (if I < 0 then to N2)
 #33=1 GOTO10 (if I > 0, #33=1 and to N10)
-N2 #33=-1 (if I < 0, #33=-1)
+N02 #33=-1 (if I < 0, #33=-1)
 
 N10
 G91 G31 X[#33*15.0] F#514 (skip X+ or X-: 15.0, speed #514)
