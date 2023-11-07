@@ -1,5 +1,5 @@
 %
-O21000 (for dimple measurement)
+O21000 (for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 
 IF[#4012LT54]GOTO98 
@@ -48,10 +48,10 @@ IF[#4LE0]GOTO98
 #401=#4012 (#401= current work coordinate G#)
 #402=#5201+[#401-53]*20 (#402= current work origin X)
 #403=#5202+[#401-53]*20 (#403= current work origin Y)
-IF[#4120EQ50]GOTO1 (if T# = 50, go to N01)
-IF[#4120EQ31]GOTO2 (if T# = 31, go to N02)
-IF[#4120EQ32]GOTO3 (if T# = 32, go to N03)
-IF[#4120EQ33]GOTO4 (if T# = 33, go to N04)
+IF[#4111EQ50]GOTO1 (if H# = 50, go to N01)
+IF[#4111EQ31]GOTO2 (if H# = 31, go to N02)
+IF[#4111EQ32]GOTO3 (if H# = 32, go to N03)
+IF[#4111EQ33]GOTO4 (if H# = 33, go to N04)
 GOTO98
 N01 #30=#512 GOTO9 (if sensor, #30=#512)
 N02 #30=#731 GOTO9 (if Tslot 1, #30=#731)
