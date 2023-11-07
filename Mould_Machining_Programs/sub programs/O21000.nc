@@ -45,16 +45,25 @@ IF[#4LE0]GOTO98
 (if max[F, S] >= min[X, Y], go to N98)
 (if I <= 0 or empty, go to N98)
 
-N01
 #401=#4012 (#401= current work coordinate G#)
 #402=#5201+[#401-53]*20 (#402= current work origin X)
 #403=#5202+[#401-53]*20 (#403= current work origin Y)
+IF[#4120EQ50]GOTO1 (if T# = 50, go to N01)
+IF[#4120EQ31]GOTO2 (if T# = 31, go to N02)
+IF[#4120EQ32]GOTO3 (if T# = 32, go to N03)
+IF[#4120EQ33]GOTO4 (if T# = 33, go to N04)
+GOTO98
+N01 #30=#512 GOTO9 (if sensor, #30=#512)
+N02 #30=#731 GOTO9 (if Tslot 1, #30=#731)
+N03 #30=#732 GOTO9 (if Tslot 2, #30=#732)
+N04 #30=#733       (if Tslot 3, #30=#733)
 
+N09
 M11 (4jiku unclamp)
 G90 G00 G#401 B#2 (current work B: G90 A deg)
 M10 (4jiku clamp)
 G90 G01 X[#402*COS[#2]-#26*SIN[#2]] F6400
-G90 G01 Z[#402*SIN[#2]+#26*COS[#2]-#512]
+G90 G01 Z[#402*SIN[#2]+#26*COS[#2]-#30]
 (XZ to tanmen center)
 
 #404=#5041 (#404= current work X: start point X)
@@ -66,20 +75,22 @@ G90 G01 Z[#402*SIN[#2]+#26*COS[#2]-#512]
 #409=[#407*SIN[#2]+#406*COS[#2]]
 (XZ: the center of the 1st row after rotation)
 
+IF[#4120NE50]GOTO05
 G65 P19393 (sensor ON, G53)
 IF[#1005EQ1]GOTO96 (if low battery, go to N96)
 IF[#1004EQ0]GOTO97 (if current sensor OFF, go to N97)
 G#401 (work G#401)
 
+N05
 G91 G31 X#408 F1800
-G90 G31 Z[#409-#512]
+G90 G31 Z[#409-#30]
 (XZ skip: to the center of the 1st row)
 #410=#5041 (#410= current work X: the center of the 1st row)
 
 #411=4 (#411: faces 1: A, 2: B, 3: C, 4: D)
 IF[#411NE4]GOTO98 (if #411 is not 4, go to N98)
 N10
-G90 G01 X#410 Y#403 Z[#409-#512] F6400
+G90 G01 X#410 Y#403 Z[#409-#30] F6400
 (XYZ: to the center of the 1st row)
 
 #33=1 (#33: current row)
@@ -115,10 +126,12 @@ IF[#411LE0]GOTO20 (if #411 <= 0, go to N20 )
 GOTO10
 
 N20
-G90 G01 X#410 Z[#409-#512] F6400
+G90 G01 X#410 Z[#409-#30] F6400
 (XZ: to the center of the 1st row)
 G90 G01 X#404 Z#405 F6400 (XZ: to start point)
+IF[#4120NE50]GOTO21
 G65 P19392 (sensor OFF)
+N21
 G90 G01 Z[#405+100.0] F9600
 GOTO99
 
