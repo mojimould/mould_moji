@@ -37,7 +37,6 @@ G90 G10 L2 P4 X-561.923 Y-648.500 Z#32 B#33
 (G55 Bot Inside Center)
 (G56 Top Gaisaku Center)
 (G57 Top Inside Center)
-/M00 (work origins Z & B OK?)
 
 M11 (4jiku unclamp)
 G90 G00 G54 B[180.0 - 0.642]
@@ -45,7 +44,6 @@ G90 G00 G54 B[180.0 - 0.642]
 (B parallel angle 179.358)
 
 M10 (4jiku clamp)
-/M00 (work origins X & Y OK?)
 
 
 (touch sensor measurement)
@@ -61,6 +59,11 @@ G90 G01 G54 X0 Y0 F9600
 
 G43 Z[499.984+100.0] H50 (hosei KouguChou #50)
 (Z = BotTanmen +100.)
+
+G65 P19393 (sensor ON, G53)
+IF[#1005EQ1]GOTO96 (if low battery, go to N96)
+IF[#1004EQ0]GOTO97 (if current sensor ON, go to N97)
+G#101 (work G#101)
 
 
 (Bottom sokutei start)
@@ -108,11 +111,12 @@ G91 G28 Z0
 M11 (4jiku unclamp)
 G90 G00 G57 B-0.642 (G57B parallel angle -0.642)
 M10 (4jiku clamp)
-/M00 (work origins X & Y OK?)
 
 G90 G01 G57 X0 Y0 (G57XY Top Inside Center)
 G43 Z[500.016+100.0] H50 (hosei KouguChou: #50)
 (Z = TopTanmen +100.)
+
+/M00 (dimple start)
 
 
 (Top sokutei start)
@@ -155,6 +159,7 @@ G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 F102. S85. Q90. I17. K20. M6. U0.3
 
 (Top sokutei end)
 
+G65 P19392 (sensor OFF)
 G49 (Cancel hosei kouguChou)
 G91 G30 X0 Y0 Z0
 /M00 (sokutei owari)
@@ -397,6 +402,16 @@ G55 G65 P15200 D11. H11. I-0.668 K0. X155. Y153. Z[499.984 - 10.0] R18. A15. F40
 
 T01 (empty)
 M06 (tool exchange)
+GOTO99
+
+N96
+#3000=145 (MP10/MP12/MP60-Low battery)
+M00 (ALARM: low battery)
+GOTO99
+
+N97
+#3000=146 (MP10/MP12/MP60-ALARM)
+M00 (ALM: is sensor ok?)
 GOTO99
 
 N98

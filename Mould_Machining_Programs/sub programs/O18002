@@ -20,19 +20,17 @@ IF[#9 GT 300.0]GOTO1
 (if skip speed F <= 0 or 300.0 < F, go to N1)
 GOTO2
 
-N1
-#9=#514 (skip speed = 50.)
+N1 #9=#514 (skip speed = 50.)
 
 N2
 #101=#4012 (#101= current work coordinate G#)
 #102=#5042 (#102= current work Y)
 
-G65 P19393 (sensor ON, G53)
 IF[#1005EQ1]GOTO96 (if low battery, go to N96)
-IF[#1004EQ0]GOTO97 (if current sensor ON, go to N97)
-G#101 (work G#101)
+IF[#1004EQ1]GOTO03 (if current sensor ON, go to N03)
+M117 (sensor on/off)
 
-
+N03
 G01 G91 Y-[[#25/2]+#512+#1] F9600
 (Y-: [BD gaikei/2 + D/2 + A])
 
@@ -83,11 +81,6 @@ GOTO99
 N96
 #3000=145 (MP10/MP12/MP60-Low battery)
 M00 (ALARM: low battery)
-GOTO99
-
-N97
-#3000=146 (MP10/MP12/MP60-ALARM)
-M00 (ALM: is sensor ok?)
 GOTO99
 
 N10

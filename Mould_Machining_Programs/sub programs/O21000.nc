@@ -64,15 +64,15 @@ IF[#4111EQ32]GOTO2 (if H# = 32, go to N02)
 IF[#4111EQ33]GOTO2 (if H# = 33, go to N02)
 GOTO98
 N01 #30=#512
-GOTO3 (if sensor, #30=#512)
-N02 #30=0 (if Tslot 1, #30=0)
+GOTO03 (if sensor, #30=#512)
+N02 #30=0 (if Tslot, #30=0)
 
 N03
-IF[#1000NE0]GOTO4
+IF[#1000NE1]GOTO04
 (if the palette is NOT #1, to N4)
 #29=#401 (p#1 table center X)
 #28=#403 (p#1 table center Z)
-GOTO5
+GOTO05
 N04
 #29=#405 (p#2 table center X)
 #28=#407 (p#2 table center Z)
@@ -95,14 +95,14 @@ G90 G01 Z[[#702-#29]*SIN[#2]+#26*COS[#2]-#30]
 (XZ: the center of the 1st row after rotation)
 
 IF[#4111NE50]GOTO05
-G65 P19393 (sensor ON, G53)
+(if tool is not sensor, go to N05)
 IF[#1005EQ1]GOTO96 (if low battery, go to N96)
-IF[#1004EQ0]GOTO97 (if current sensor OFF, go to N97)
-G#701 (work G#701)
+IF[#1004EQ1]GOTO05 (if current sensor ON, go to N05)
+M117 (sensor on/off)
 
 N05
 G91 G31 X#707 F1800
-G90 G31 Z[#708-#30]
+G90 G31 Z[#708-#30] F600
 (XZ skip: to the center of the 1st row)
 #709=#5041 (#709= current work X: the center of the 1st row)
 
@@ -148,20 +148,12 @@ N20
 G90 G01 X#709 Z[#708-#30] F6400
 (XZ: to the center of the 1st row)
 G90 G01 X#703 Z#703 F6400 (XZ: to start point)
-IF[#4120NE50]GOTO21
-G65 P19392 (sensor OFF)
-N21
 G90 G01 Z[#703+100.0] F9600
 GOTO99
 
 N96
 #3000=145 (MP10/MP12/MP60-Low battery)
 M00 (ALARM: low battery)
-GOTO99
-
-N97
-#3000=146 (MP10/MP12/MP60-ALARM)
-M00 (ALM: is the sensor ok?)
 GOTO99
 
 N10

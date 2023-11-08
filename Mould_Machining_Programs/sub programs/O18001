@@ -26,12 +26,11 @@ N2
 #101=#4012 (#101= current work coordinate G#)
 #102=#5041 (#102= current work X)
 
-G65 P19393 (sensor ON, G53)
 IF[#1005EQ1]GOTO96 (if low battery, go to N96)
-IF[#1004EQ0]GOTO97 (if current sensor ON, go to N97)
-G#101 (work G#101)
+IF[#1004EQ1]GOTO03 (if current sensor ON, go to N03)
+M117 (sensor on/off)
 
-
+N03
 G01 G91 X-[[#24/2]+#512+#1] F9600
 (X-: [AC gaikei/2 + D/2 + A])
 
@@ -84,11 +83,6 @@ N96
 M00 (ALARM: low battery!)
 GOTO99
 
-N97
-#3000=146 (MP10/MP12/MP60-ALARM)
-M00 (ALM: is the sensor ok?)
-GOTO99
-
 N10
 G91 G28 Z0
 G90 G01 X#102 (X to start point)
@@ -98,9 +92,7 @@ G65 P19392 (sensor OFF)
 #3000=121 (are the arguments or the mould OK?)
 M00 (are arguments ok?)
 
-N99
-G65 P19392 (sensor OFF)
-M99
+N99 M99
 
 (#24:X: X outside width)
 (#26:Z: sokutei point Z)

@@ -20,12 +20,11 @@ IF[[#4+[#512*2]+#1] GE #0]GOTO98
 #101=#4012 (#101= current work coordinate G#)
 #102=#5041 (#102= current work X)
 
-G65 P19393 (sensor ON, G53)
 IF[#1005EQ1]GOTO96 (if low battery, go to N96)
-IF[#1004EQ0]GOTO97 (if current sensor ON, go to N97)
-G#101 (work G#101)
+IF[#1004EQ1]GOTO01 (if current sensor ON, go to N01)
+M117 (sensor on/off)
 
-
+N01
 G90 G31 Z[#26-#512] F6400
 (Z skip tanmen: Z - D/2)
 IF[[#5063-#2050]GT[#26-#512]]GOTO10
@@ -58,11 +57,6 @@ N96
 M00 (ALARM: low battery)
 GOTO99
 
-N97
-#3000=146 (MP10/MP12/MP60-ALARM)
-M00 (ALM: is sensor ok?)
-GOTO99
-
 N11
 G90 G01 X#102 (X to start point)
 
@@ -73,9 +67,7 @@ G65 P19392 (sensor OFF)
 N98 #3000=121 (Argument Is Not Assigned)
 M00 (are arguments ok?)
 
-N99
-G65 P19392 (sensor OFF)
-M99
+N99 M99
 
 (#4 :I: -X inside width / 2)
 (#26:Z: sokutei point Z)
