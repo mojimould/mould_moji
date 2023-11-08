@@ -65,15 +65,25 @@ IF[#4111EQ32]GOTO2 (if H# = 32, go to N02)
 IF[#4111EQ33]GOTO2 (if H# = 33, go to N02)
 GOTO98
 N01 #30=#512
-GOTO9 (if sensor, #30=#512)
+GOTO3 (if sensor, #30=#512)
 N02 #30=0 (if Tslot 1, #30=0)
 
-N09
+N03
+IF[#1000NE0]GOTO4
+(if the palette is NOT #1, to N4)
+#29=#401 (p#1 X table center)
+#28=#403 (p#1 X table center)
+GOTO5
+N04
+#29=#405
+#28=#407
+
+N05
 M11 (4jiku unclamp)
 G90 G00 G#701 B#2 (current work B: G90 A deg)
 M10 (4jiku clamp)
-G90 G01 X[#702*COS[#2]-#26*SIN[#2]] F6400
-G90 G01 Z[#702*SIN[#2]+#26*COS[#2]-#30]
+G90 G01 X[[#702-#29]*COS[#2]-#26*SIN[#2]] F6400
+G90 G01 Z[[#702-#29]*SIN[#2]+#26*COS[#2]-#30]
 (XZ to tanmen center)
 
 #704=#5041 (#704= current work X: start point X)
