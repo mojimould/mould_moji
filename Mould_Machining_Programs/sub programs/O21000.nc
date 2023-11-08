@@ -29,7 +29,9 @@ IF[#19LE0]GOTO98
 IF[[#9+#19+ABS[#9-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]GOTO98
 IF[#4EQ#0]GOTO98
 IF[#4LE0]GOTO98
-IF[#4LE0]GOTO98
+IF[#21EQ#0]GOTO98
+IF[#21LE0]GOTO98
+IF[#21GT#4]GOTO98
 (if work G# < 54 or G# > 59, go to N98)
 (if Z <= 0 or empty, go to N98)
 (if R <= Z or empty, go to N98)
@@ -44,6 +46,7 @@ IF[#4LE0]GOTO98
 (if S <= 0 or empty, go to N98)
 (if max[F, S] >= min[X, Y], go to N98)
 (if I <= 0 or empty, go to N98)
+(if U <= 0 or U > I or empty, go to N98)
 
 #401=#4012 (#401= current work coordinate G#)
 #402=#5201+[#401-53]*20 (#402= current work origin X)
@@ -54,9 +57,9 @@ IF[#4111EQ32]GOTO3 (if H# = 32, go to N03)
 IF[#4111EQ33]GOTO4 (if H# = 33, go to N04)
 GOTO98
 N01 #30=#512 GOTO9 (if sensor, #30=#512)
-N02 #30=#731 GOTO9 (if Tslot 1, #30=#731)
-N03 #30=#732 GOTO9 (if Tslot 2, #30=#732)
-N04 #30=#733       (if Tslot 3, #30=#733)
+N02 #30=#781 GOTO9 (if Tslot 1, #30=#781)
+N03 #30=#782 GOTO9 (if Tslot 2, #30=#782)
+N04 #30=#783       (if Tslot 3, #30=#783)
 
 N09
 M11 (4jiku unclamp)
@@ -98,19 +101,19 @@ WHILE[#33LE#13]DO1 (if #33 <= #13, do 1)
 IF[#411EQ3]GOTO31 (#411=3, for B)
 IF[#411EQ2]GOTO32 (#411=2, for C)
 IF[#411EQ1]GOTO33 (#411=1, for A)
-M98 P22002 A-1. Y#25 F#9 S#19 I#4 K#6 B#2 M#33
+M98 P22002 A-1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for D: moving along row)
 GOTO51
 N31 (face B)
-M98 P22002 A1. Y#25 F#9 S#19 I#4 K#6 B#2 M#33
+M98 P22002 A1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for B: moving along row)
 GOTO51
 N32 (face C)
-M98 P22001 A-1. X#24 F#9 S#19 I#4 K#6 B#2 M#33
+M98 P22001 A-1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for C: moving along row)
 GOTO51
 N50 (face A)
-M98 P22001 A1. X#24 F#9 S#19 I#4 K#6 B#2 M#33
+M98 P22001 A1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for A: moving along row)
 N51
 IF[#33GE#13]GOTO15 (end of loop)
@@ -162,6 +165,7 @@ N99 M99
 (#26:Z: top friwake)
 
 (#4 :I: X pitch)
+(#21:U: depth of dimple)
 (#9 :F: length of odd rows)
 (#19:S: length of even rows)
 (#24:X: AC naikei of last row)
