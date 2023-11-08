@@ -4,53 +4,61 @@ O21000 (for dimple measurement & kakou)
 
 IF[#4012LT54]GOTO98 
 IF[#4012GT59]GOTO98
-IF[#26EQ#0]GOTO98
-IF[#26LE0]GOTO98
+(if work G# < 54 or G# > 59, go to N98)
+
 IF[#18EQ#0]GOTO98
-IF[#18LE#26]GOTO98
-IF[#17EQ#0]GOTO98
-IF[#17LE0]GOTO98
-IF[#13EQ#0]GOTO98
-IF[#13LE0]GOTO98
-IF[[#13-FIX[#13]]NE0]GOTO98
-IF[[#17+[#13-1]*#6]GE#26]GOTO98
-IF[#6EQ#0]GOTO98
-IF[#6LT0]GOTO98
-IF[#2EQ#0]GOTO98
-IF[[ABS[#2]]GT20.]GOTO98
 IF[#24EQ#0]GOTO98
 IF[#24LE0]GOTO98
 IF[#25EQ#0]GOTO98
 IF[#25LE0]GOTO98
+IF[#26EQ#0]GOTO98
+IF[#26LE0]GOTO98
 IF[#9EQ#0]GOTO98
 IF[#9LE0]GOTO98
-IF[#19EQ#0]GOTO98
 IF[#19LE0]GOTO98
-IF[[[#9+#19+ABS[#9-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]GOTO98
+IF[#17EQ#0]GOTO98
+IF[#17LE0]GOTO98
 IF[#4EQ#0]GOTO98
 IF[#4LE0]GOTO98
+IF[#6EQ#0]GOTO98
+IF[#6LT0]GOTO98
+IF[#13EQ#0]GOTO98
+IF[#13LE0]GOTO98
 IF[#21EQ#0]GOTO98
 IF[#21LE0]GOTO98
-IF[#21GT#4]GOTO98
-(if work G# < 54 or G# > 59, go to N98)
+(if R is empty, go to N98)
 (if Z <= 0 or empty, go to N98)
-(if R <= Z or empty, go to N98)
 (if Q <= 0 or empty, go to N98)
-(if M <= 0 or empty or not intger, go to N98)
-(if Q+[M-1]*K >= Z, go to N98)
+(if M <= 0 or empty, go to N98)
 (if K < 0 or empty, go to N98)
-(if B is empty or |B| > 20., go to N98)
 (if X <= 0 or empty, go to N98)
 (if Y <= 0 or empty, go to N98)
 (if F <= 0 or empty, go to N98)
-(if S <= 0 or empty, go to N98)
-(if max[F, S] >= min[X, Y], go to N98)
+(if S <= 0, go to N98)
 (if I <= 0 or empty, go to N98)
-(if U <= 0 or U > I or empty, go to N98)
+(if U <= 0 or empty, go to N98)
+
+IF[#18LE#26]GOTO98
+IF[[#13-FIX[#13]]NE0]GOTO98
+IF[[#17+[#13-1]*#6]GE#26]GOTO98
+IF[#2EQ#0]GOTO98
+IF[[[#9+#19+ABS[#9-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]
+IF[[ABS[#2]]GT20.]GOTO98
+IF[#9GE#25]GOTO98
+IF[#19GE#25]GOTO98
+IF[#21GT#4]GOTO98
+(if R <= Z, go to N98)
+(if M is not intger, go to N98)
+(if Q+[M-1]*K >= Z, go to N98)
+(if max[F, S] >= min[X, Y], go to N98)
+(if B is empty or |B| > 20., go to N98)
+(if F >= Y, go to N98)
+(if S >= Y, go to N98)
+(if U > I, go to N98)
 
 #401=#4012 (#401= current work coordinate G#)
-#402=#5201+[#401-53]*20 (#402= current work origin X)
-#403=#5202+[#401-53]*20 (#403= current work origin Y)
+#402=#[5201+[#401-53]*20] (#402= current work origin X)
+#403=#[5202+[#401-53]*20] (#403= current work origin Y)
 IF[#4111EQ50]GOTO1 (if H# = 50, go to N01)
 IF[#4111EQ31]GOTO2 (if H# = 31, go to N02)
 IF[#4111EQ32]GOTO2 (if H# = 32, go to N02)
