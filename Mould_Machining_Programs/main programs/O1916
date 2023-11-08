@@ -12,21 +12,20 @@ M71 (palette #1)
 (M60) (palette change)
 
 (Genten Settei G54 G55 G56 G57)
-IF[#1000NE0]GOTO2 (if NOT #1, to N2)
 
-#30=-550.019  (#1 X table center)
-#32=-1149.974 (#1 Z table center)
-#33=0.073     (#1 B table center)
+IF[#1000NE0]GOTO2 (if NOT #1, to N2)
+#30=#401 (p#1 X table center)
+#32=#403 (p#1 Z table center)
+#33=#404 (p#1 B table center)
 (palette #1)
 GOTO3 (to N3)
 
 N2
 IF[#1000NE1]GOTO98
 (if the current palette is NOT #2, go to 98)
-
-#30=-550.019  (#2 X table center)
-#32=-1149.974 (#2 Z table center)
-#33=0.073     (#2 B table center)
+#30=#405 (p#2 X table center)
+#32=#407 (p#2 Z table center)
+#33=#408 (p#2 B table center)
 (palette #2)
 
 N3
@@ -173,7 +172,7 @@ G90 G01 G57 X0 Y0 (G57XY Top Inside Center)
 G43 Z[500.016+100.0] H31 (hosei KouguChou: #31)
 (Z = TopTanmen +100.)
 
-G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 F102. S85. Q90. I17. K20. M6. B[-2.130-0.642]
+G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 F102. S85. Q90. I17. K20. M6. U0.31 B[-2.130-0.642]
 (dimple kakou)
 (R: radius of the central curvature)
 (X: AC naikei of last row)
@@ -185,6 +184,7 @@ G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 F102. S85. Q90. I17. K20. M6. B[-2
 (I: X pitch)
 (K: Z pitch)
 (M: number of rows)
+(U: depth of dimple)
 (B: angle)
 
 

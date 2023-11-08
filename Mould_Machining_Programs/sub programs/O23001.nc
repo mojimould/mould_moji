@@ -3,8 +3,8 @@ O23001 (for AC dimples measurement)
 (level 3: measurement dimple)
 (I > 0: X+, I < 0: X-)
 
-#467=#5041 (#467= current work X: start point X)
-#468=#5042 (#468= current work Y: start point Y)
+#767=#5041 (#767= current work X: start point X)
+#768=#5042 (#768= current work Y: start point Y)
 IF[#4EQ0]GOTO98 (if I = 0 then to N98)
 IF[#4EQ#0]GOTO98 (if I = #0 then to N98)
 
@@ -21,10 +21,10 @@ N02 #33=-1 (if I < 0, #33=-1)
 
 N05
 G91 G31 X[#33*15.0] F#514 (skip X+ or X-: 15.0, speed #514)
-#469=#5061+#502+#33*[-#501+#512]
-(#469= current machine X + hosei probe etc)
-G90 G01 X#467 F6400 (G90 G01 X: to start point)
-G90 G01 Y#468 (G90 G01 Y: to start point)
+#769=#5061+#502+#33*[-#501+#512]
+(#769= current machine X + hosei probe etc)
+G90 G01 X#767 F6400 (G90 G01 X: to start point)
+G90 G01 Y#768 (G90 G01 Y: to start point)
 GOTO99 (to N99)
 
 N98
@@ -47,5 +47,5 @@ N99 M99
 (#5042: current work Y)
 (#5061: skip position X)
 
-(using #467-#469)
+(using #767-#769)
 %
