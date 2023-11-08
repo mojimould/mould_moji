@@ -26,7 +26,7 @@ IF[#9EQ#0]GOTO98
 IF[#9LE0]GOTO98
 IF[#19EQ#0]GOTO98
 IF[#19LE0]GOTO98
-IF[[#9+#19+ABS[#9-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]GOTO98
+IF[[[#9+#19+ABS[#9-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]GOTO98
 IF[#4EQ#0]GOTO98
 IF[#4LE0]GOTO98
 IF[#21EQ#0]GOTO98
@@ -53,13 +53,11 @@ IF[#21GT#4]GOTO98
 #403=#5202+[#401-53]*20 (#403= current work origin Y)
 IF[#4111EQ50]GOTO1 (if H# = 50, go to N01)
 IF[#4111EQ31]GOTO2 (if H# = 31, go to N02)
-IF[#4111EQ32]GOTO3 (if H# = 32, go to N03)
-IF[#4111EQ33]GOTO4 (if H# = 33, go to N04)
+IF[#4111EQ32]GOTO2 (if H# = 32, go to N02)
+IF[#4111EQ33]GOTO2 (if H# = 33, go to N02)
 GOTO98
 N01 #30=#512 GOTO9 (if sensor, #30=#512)
-N02 #30=#781 GOTO9 (if Tslot 1, #30=#781)
-N03 #30=#782 GOTO9 (if Tslot 2, #30=#782)
-N04 #30=#783       (if Tslot 3, #30=#783)
+N02 #30=0 (if Tslot 1, #30=0)
 
 N09
 M11 (4jiku unclamp)
