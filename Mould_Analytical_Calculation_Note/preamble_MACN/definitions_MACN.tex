@@ -88,7 +88,8 @@
                     },
   %%%%% TWOCTABLE STYLE %%%%%
   twoctable/.style 2 args={
-      tabularx*={\arrayrulewidth0.5mm}{l|>{\centering\arraybackslash}X|X},
+      breakable,
+      tabularx*={\arrayrulewidth0.5mm}{c|>{\arraybackslash}X|X},
       title=#1, enhanced, fonttitle=\bfseries\large, fontupper=\normalsize\sffamily,
       colframe=black!50!black, colbacktitle=blue!10!white,
       coltitle=black,
