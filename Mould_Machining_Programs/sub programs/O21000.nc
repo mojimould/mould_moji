@@ -60,7 +60,6 @@ IF[#21GT#4]GOTO98
 (if U > I, go to N98)
 
 #701=#4012 (#701= current work coordinate G#)
-#702=#[5201+[#701-53]*20] (#702= current work origin X)
 IF[#4111EQ50]GOTO1 (if H# = 50, go to N01)
 IF[#4111EQ31]GOTO2 (if H# = 31, go to N02)
 IF[#4111EQ32]GOTO2 (if H# = 32, go to N02)
@@ -85,19 +84,25 @@ M11 (4jiku unclamp)
 G90 G00 G#701 B[#2+#585]
 (current work B: G90 B+#585 deg)
 M10 (4jiku clamp)
-G90 G01 X[[#702-#29]*COS[ABS[#2]]-#26*SIN[ABS[#2]]] F6400
-G90 G01 Z[[#702-#29]*SIN[ABS[#2]]+#26*COS[ABS[#2]]-#30]
+#702=#[5201+[#701-53]*20]-#29
+(#702= current work origin X from table center)
+#703=#702*COS[ABS[#2]]+#26*SIN[ABS[#2]]
+#704=-#702*SIN[ABS[#2]]+#26*COS[ABS[#2]]
+(#702~-11.095, #703~7.497, #704~500.083)
+G90 G01 X[#703-#702] F6400
+G90 G01 Z[#704-#26-#30]
+(X~18.592, Z~0.067-#30)
 (XZ to tanmen center)
 
-#703=#5041
-#704=#5043
+#705=#5041
+#706=#5043
 (current work XZ: start point XZ)
-#705=#23-#17
+#707=#23-#17
 (Z: the 1st row before rotation)
-#706=SQRT[#18*#18-#705*#705]-SQRT[#18*#18-#23*#23]
+#708=SQRT[#18*#18-#707*#707]-SQRT[#18*#18-#23*#23]
 (the center of the 1st row before rotation)
-#707=#706*COS[ABS[#2]]-#17*SIN[ABS[#2]]
-#708=-#706*SIN[ABS[#2]]-#17*COS[ABS[#2]]
+#709=#708*COS[ABS[#2]]-#17*SIN[ABS[#2]]
+#710=-#708*SIN[ABS[#2]]-#17*COS[ABS[#2]]
 (XZ: the center of the 1st row after rotation)
 
 IF[#4111NE50]GOTO05
@@ -107,23 +112,23 @@ IF[#1004EQ1]GOTO05 (if current sensor ON, go to N05)
 M117 (sensor on/off)
 
 N05
-G91 G31 X#707 Z#708 F600
+G91 G31 X#709 Z#710 F600
 (XZ skip: to the center of the 1st row)
-#709=#5041
-#710=#5043
+#711=#5041
+#712=#5043
 (current work XZ: the center of the 1st row)
 
-#711=4 (#711: faces 1: A, 2: B, 3: C, 4: D)
-IF[#711NE4]GOTO98 (if #711 is not 4, go to N98)
+#713=4 (#713: faces 1: A, 2: B, 3: C, 4: D)
+IF[#713NE4]GOTO98 (if #713 is not 4, go to N98)
 N10
-G90 G01 X#709 Z[#710-#30] F6400
+G90 G01 X#711 Z[#712-#30] F6400
 (XYZ: to the center of the 1st row)
 
 #33=1 (#33: current row)
 WHILE[#33LE#13]DO1 (if #33 <= #13, do 1)
-IF[#711EQ3]GOTO31 (#711=3, for B)
-IF[#711EQ2]GOTO32 (#711=2, for C)
-IF[#711EQ1]GOTO33 (#711=1, for A)
+IF[#713EQ3]GOTO31 (#713=3, for B)
+IF[#713EQ2]GOTO32 (#713=2, for C)
+IF[#713EQ1]GOTO33 (#713=1, for A)
 M98 P22002 A-1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for D: moving along row)
 GOTO51
@@ -140,7 +145,7 @@ M98 P22001 A1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for A: moving along row)
 N51
 IF[#33GE#13]GOTO15 (end of loop)
-#32=#705-[#33-1]*#6
+#32=#707-[#33-1]*#6
 (#32= the #33th row's Z from table center)
 #31=SQRT[#18*#18-[#32+#6]*[#32+#6]]-SQRT[#18*#18-#32*#32]
 G91 G31 X[#31*COS[ABS[#2]]-#6*SIN[ABS[#2]]] Z-[#31*SIN[ABS[#2]]+#6*COS[ABS[#2]]] F1800
@@ -148,15 +153,15 @@ G91 G31 X[#31*COS[ABS[#2]]-#6*SIN[ABS[#2]]] Z-[#31*SIN[ABS[#2]]+#6*COS[ABS[#2]]]
 END1
 
 N15
-#711=#711-1 (changing face)
-IF[#711LE0]GOTO20 (if #711 <= 0, go to N20)
+#713=#713-1 (changing face)
+IF[#713LE0]GOTO20 (if #713 <= 0, go to N20)
 GOTO10
 
 N20
-G90 G01 X#709 Z[#710-#30] F6400
+G90 G01 X#711 Z[#712-#30] F6400
 (XZ: to the center of the 1st row)
-G90 G01 X#703 Z#704 F6400 (XZ: to start point)
-G90 G01 Z[#704+100.0] F9600
+G90 G01 X#705 Z#706 F6400 (XZ: to start point)
+G90 G01 Z[#706+100.0] F9600
 GOTO99
 
 N96
@@ -198,5 +203,5 @@ N99 M99
 (#5044: current work B)
 (#5063: skip position Z without KouguChou hosei)
 
-(using #701-#711)
+(using #701-#713)
 %
