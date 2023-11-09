@@ -92,9 +92,7 @@ G65 P19392 (sensor OFF)
 #3000=121 (are the arguments or the mould OK?)
 M00 (are arguments ok?)
 
-N99
-G65 P19392 (sensor OFF)
-M99
+N99 M99
 
 (#25:Y: Y outside width)
 (#26:Z: sokutei point Z)

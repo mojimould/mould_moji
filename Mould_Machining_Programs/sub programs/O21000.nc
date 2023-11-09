@@ -7,6 +7,8 @@ IF[#4012GT59]GOTO98
 (if work G# < 54 or G# > 59, go to N98)
 
 IF[#18EQ#0]GOTO98
+IF[#23EQ#0]GOTO98
+IF[#23LE0]GOTO98
 IF[#24EQ#0]GOTO98
 IF[#24LE0]GOTO98
 IF[#25EQ#0]GOTO98
@@ -27,6 +29,7 @@ IF[#13LE0]GOTO98
 IF[#21EQ#0]GOTO98
 IF[#21LE0]GOTO98
 (if R is empty, go to N98)
+(if W <= 0 or empty, go to N98)
 (if Z <= 0 or empty, go to N98)
 (if Q <= 0 or empty, go to N98)
 (if M <= 0 or empty, go to N98)
@@ -68,7 +71,7 @@ GOTO03 (if sensor, #30=#512)
 N02 #30=0 (if Tslot, #30=0)
 
 N03
-IF[#1000NE1]GOTO04
+IF[#1000NE0]GOTO04
 (if the palette is NOT #1, to N4)
 #29=#401 (p#1 table center X)
 #28=#403 (p#1 table center Z)
@@ -85,13 +88,15 @@ G90 G01 X[[#702-#29]*COS[#2]-#26*SIN[#2]] F6400
 G90 G01 Z[[#702-#29]*SIN[#2]+#26*COS[#2]-#30]
 (XZ to tanmen center)
 
-#703=#5041 (#703= current work X: start point X)
-#703=#5043 (#703= current work Z: start point Z)
-#705=#26-#17 (Z: the 1st row before rotation)
-#706=SQRT[#18*#18-#705*#705]-SQRT[#18*#18-#26*#26]
-(X: the center of the 1st row before rotation)
-#707=[#706*COS[#2]-#705*SIN[#2]]
-#708=[#706*SIN[#2]+#705*COS[#2]]
+#703=#5041
+#704=#5043
+(current work XZ: start point XZ)
+#705=#23-#17
+(Z: the 1st row before rotation)
+#706=SQRT[#18*#18-#705*#705]-SQRT[#18*#18-#23*#23]
+(the center of the 1st row before rotation)
+#707=#706*COS[#2]-#17*SIN[#2]
+#708=-#706*SIN[#2]-#17*COS[#2]
 (XZ: the center of the 1st row after rotation)
 
 IF[#4111NE50]GOTO05
@@ -101,22 +106,23 @@ IF[#1004EQ1]GOTO05 (if current sensor ON, go to N05)
 M117 (sensor on/off)
 
 N05
-G91 G31 X#707 F1800
-G90 G31 Z[#708-#30] F600
+G91 G31 X#707 Z#708 F600
 (XZ skip: to the center of the 1st row)
-#709=#5041 (#709= current work X: the center of the 1st row)
+#709=#5041
+#710=#5043
+(current work XZ: the center of the 1st row)
 
-#710=4 (#710: faces 1: A, 2: B, 3: C, 4: D)
-IF[#710NE4]GOTO98 (if #710 is not 4, go to N98)
+#711=4 (#711: faces 1: A, 2: B, 3: C, 4: D)
+IF[#711NE4]GOTO98 (if #711 is not 4, go to N98)
 N10
-G90 G01 X#709 Z[#708-#30] F6400
+G90 G01 X#709 Z[#710-#30] F6400
 (XYZ: to the center of the 1st row)
 
 #33=1 (#33: current row)
 WHILE[#33LE#13]DO1 (if #33 <= #13, do 1)
-IF[#710EQ3]GOTO31 (#710=3, for B)
-IF[#710EQ2]GOTO32 (#710=2, for C)
-IF[#710EQ1]GOTO33 (#710=1, for A)
+IF[#711EQ3]GOTO31 (#711=3, for B)
+IF[#711EQ2]GOTO32 (#711=2, for C)
+IF[#711EQ1]GOTO33 (#711=1, for A)
 M98 P22002 A-1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for D: moving along row)
 GOTO51
@@ -133,22 +139,23 @@ M98 P22001 A1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for A: moving along row)
 N51
 IF[#33GE#13]GOTO15 (end of loop)
-#32=#705-[#33-1]*#6 (#32= the #33th row's Z from table center)
+#32=#705-[#33-1]*#6
+(#32= the #33th row's Z from table center)
 #31=SQRT[#18*#18-[#32+#6]*[#32+#6]]-SQRT[#18*#18-#32*#32]
 G91 G31 X[#31*COS[#2]-#6*SIN[#2]] Z-[#31*SIN[#2]+#6*COS[#2]] F1800
 #33=#33+1 (#33 to current row +1)
 END1
 
 N15
-#710=#710-1 (changing face)
-IF[#710LE0]GOTO20 (if #710 <= 0, go to N20 )
+#711=#711-1 (changing face)
+IF[#711LE0]GOTO20 (if #711 <= 0, go to N20)
 GOTO10
 
 N20
-G90 G01 X#709 Z[#708-#30] F6400
+G90 G01 X#709 Z[#710-#30] F6400
 (XZ: to the center of the 1st row)
-G90 G01 X#703 Z#703 F6400 (XZ: to start point)
-G90 G01 Z[#703+100.0] F9600
+G90 G01 X#703 Z#704 F6400 (XZ: to start point)
+G90 G01 Z[#704+100.0] F9600
 GOTO99
 
 N96
@@ -170,7 +177,8 @@ N99 M99
 (#13:M: number of rows)
 (#17:Q: Z length between top and the 1st row)
 (#18:R: radius of the central curvature)
-(#26:Z: top friwake)
+(#23:W: furiwake Top)
+(#26:Z: sai-furiwake Top)
 
 (#4 :I: X pitch)
 (#21:U: depth of dimple)
@@ -188,5 +196,5 @@ N99 M99
 (#5043: current work Z)
 (#5063: skip position Z without KouguChou hosei)
 
-(using #701-#710)
+(using #701-#711)
 %
