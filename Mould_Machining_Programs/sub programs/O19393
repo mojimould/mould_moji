@@ -5,8 +5,10 @@ N1
 M19 (shujiku orientation)
 G53 (kikai zahyoukei)
 
-IF[#1005EQ1]GOTO98 (if low battery, go to 98)
-IF[#1004EQ1]GOTO2 (if current sensor ON, go to N2)
+IF[#1005EQ1]GOTO98
+IF[#1004EQ1]GOTO2
+(if low battery, go to 98)
+(if current sensor ON, go to N2)
 
 M117 (sensor on/off)
 G04X1. (wait 1.0s)
@@ -17,7 +19,8 @@ IF[#1004EQ1]GOTO2
 
 G04X5. (wait 5.0s)
 #33=#33+1 (the 1st #33=0)
-IF[#33LT4]GOTO1 (if #33 < 4, go to N1)
+IF[#33LT4]GOTO1
+(if #33 < 4, go to N1)
 
 #3000=146 (MP10/MP12/MP60-ALARM)
 (ALM: is the sensor ok?)

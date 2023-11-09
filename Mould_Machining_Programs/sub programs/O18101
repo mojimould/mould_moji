@@ -1,24 +1,26 @@
 %
 O18101 (X center: left side measurement)
 
-IF[#4012 LT 54]GOTO98
-IF[#4012 GT 59]GOTO98
-IF[#4 GE #0]GOTO98
-IF[#26 LE #0]GOTO98
-IF[#512 LE #0]GOTO98
-IF[#1 LE #0]GOTO98
-IF[[#4+[#512*2]+#1] GE #0]GOTO98
+IF[#4012LT54]GOTO98
+IF[#4012GT59]GOTO98
 (if work G# < 54 go to N98)
 (if work G# > 59 go to N98)
+
+IF[#4GE0]GOTO98
+IF[#26LE0]GOTO98
+IF[#512LE0]GOTO98
+IF[#1LE0]GOTO98
+IF[[#4+[#512*2]+#1]GE0]GOTO98
 (if I >= 0 go to N98)
 (if Z <= 0 go to N98)
 (if probe radius D/2 <= 0 go to N98)
 (if A <= 0 go to N98)
 (if I+D+A >= 0 go to N98)
 
-
-#101=#4012 (#101= current work coordinate G#)
-#102=#5041 (#102= current work X)
+#101=#4012
+#102=#5041
+(#101= current work coordinate G#)
+(#102= current work X)
 
 IF[#1005EQ1]GOTO96 (if low battery, go to N96)
 IF[#1004EQ1]GOTO01 (if current sensor ON, go to N01)
@@ -35,8 +37,8 @@ G91 G31 X[#4+#512+#1] F1800
 IF[[ABS[#102-#5061]]LT[ABS[#4+#512+#1]]]GOTO11
 (if |startX - skipX| < |AC naikei/2 - D/2 - A| to N11)
 
-G91 G31 X-[#1*2] F#514 (X- skip: 2A)
-
+G91 G31 X-[#1*2] F#514
+(X- skip: 2A)
 #103=#5061-#512+#501+#502
 (#103 = X left side - D/2 + probe hosei)
 

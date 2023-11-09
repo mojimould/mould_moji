@@ -1,30 +1,34 @@
 %
 O18001 (X center of outside measurement)
 
-IF[#4012 LT 54]GOTO98
-IF[#4012 GT 59]GOTO98
-IF[#24 LE #0]GOTO98
-IF[#26 LE #0]GOTO98
-IF[#1 LE #0]GOTO98
-IF[#512 LE #0]GOTO98
+IF[#4012LT54]GOTO98
+IF[#4012GT59]GOTO98
 (if work G# < 54 go to N98)
 (if work G# > 59 go to N98)
+
+IF[#24LE0]GOTO98
+IF[#26LE0]GOTO98
+IF[#1LE0]GOTO98
+IF[#512LE0]GOTO98
 (if X <= 0 go to N98)
 (if Z <= 0 go to N98)
 (if probe radius D/2 <= 0 go to N98)
 (if A <= 0 go to N98)
 
-IF[#9 EQ #0]GOTO1
-IF[#9 LE 0]GOTO1
-IF[#9 GT 300.0]GOTO1
+IF[#9EQ#0]GOTO1
+IF[#9LE0]GOTO1
+IF[#9GT300.0]GOTO1
 (if skip speed F <= 0 or F > 300.0, go to N1)
 GOTO2
 
-N1 #9=#514 (skip speed = 50.)
+N1
+#9=#514 (skip speed = 50.)
 
 N2
-#101=#4012 (#101= current work coordinate G#)
-#102=#5041 (#102= current work X)
+#101=#4012
+#102=#5041
+(#101= current work coordinate G#)
+(#102= current work X)
 
 IF[#1005EQ1]GOTO96 (if low battery, go to N96)
 IF[#1004EQ1]GOTO03 (if current sensor ON, go to N03)
@@ -68,8 +72,10 @@ G91 Z[#512+50.0] F9600 (Z+: D/2+50.)
 IF[[ABS[#104-#501-#502]]LE[ABS[[#24/2]-#1]]]GOTO98
 (if |#104|<=|X/2-A| go to N98)
 
-#106=[#104+#103]/2 (average: center)
-#105=#104-#103 (difference: thickness)
+#106=[#104+#103]/2
+#105=#104-#103
+(average: center)
+(difference: thickness)
 G90 X#106 (X to measured center)
 
 #[5201+[#101-53]*20]=#5021

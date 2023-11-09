@@ -10,7 +10,8 @@ IF[#1004EQ0]GOTO2
 
 G04X5. (wait 5.0s)
 #33=#33+1 (the 1st #33=0)
-IF[#33LT4]GOTO1 (if #33 < 4, go to N1)
+IF[#33LT4]GOTO1
+(if #33 < 4, go to N1)
 
 #3000=146 (MP10/MP12/MP60-ALARM)
 (ALM: is sensor ok?)

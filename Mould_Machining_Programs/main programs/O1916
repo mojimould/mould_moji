@@ -45,10 +45,9 @@ G90 G10 L2 P4 X-561.923 Y-648.500 Z#32 B#33
 (G57 Top Inside Center)
 
 M11 (4jiku unclamp)
-G90 G00 G54 B[180.0 - 0.642]
+G90 G00 G54 B[180.0-0.642]
 (G54 Bottom Gaisaku)
 (B parallel angle 179.358)
-
 M10 (4jiku clamp)
 
 
@@ -63,13 +62,16 @@ M19 (Shujiku orientation)
 G90 G01 G54 X0 Y0 F9600
 (G01 G54XY Bot Gaisaku center)
 
-G43 Z[499.984+100.0] H50 (hosei KouguChou #50)
+G43 Z[499.984+100.0] H50
+(hosei KouguChou #50)
 (Z = BotTanmen +100.)
 
 
 G65 P19393 (sensor ON, G53)
-IF[#1005EQ1]GOTO96 (if low battery, go to N96)
-IF[#1004EQ0]GOTO97 (if current sensor ON, go to N97)
+IF[#1005EQ1]GOTO96
+IF[#1004EQ0]GOTO97
+(if low battery, go to N96)
+(if current sensor ON, go to N97)
 G54
 
 
@@ -78,7 +80,7 @@ G54
 G65 P18101 I-76.725 Z499.984 A10.
 (Bot X Gaisaku center)
 (I: Bot -ACnaikei/2)
-(Z: Bot friwake)
+(Z: sai_furiwake Bot)
 (A: skip kaishi kyori)
 
 #5261=-[#5221-#30]+#30+11.0
@@ -88,7 +90,7 @@ G65 P18101 I-76.725 Z499.984 A10.
 G65 P18002 Y183. Z499.984 A10. F200.
 (Bot Y Gaisaku center)
 (Y: Bot BD gaikei)
-(Z: Bot friwake)
+(Z: sai_furiwake Bot)
 (A: skip kaishi kyori)
 (F: skip speed)
 
@@ -100,14 +102,14 @@ G90 G01 G55 X0 Y0 (G55 XY Bot Inside center)
 G65 P18011 X155. Z499.984 A10. F200.
 (Bot X inside center)
 (X: Bot AC naikei)
-(Z: Bot friwake)
+(Z: sai_furiwake Bot)
 (A: skip kaishi kyori)
 (F: skip speed)
 
 G65 P18012 Y153. Z499.984 A10. F200.
 (Bot Y inside center)
 (Y: Bot BD naikei)
-(Z: Bot friwake)
+(Z: sai_furiwake Bot)
 (A: skip kaishi kyori)
 (F: skip speed)
 
@@ -116,14 +118,15 @@ G65 P18012 Y153. Z499.984 A10. F200.
 
 G91 G28 Z0
 M11 (4jiku unclamp)
-G90 G00 G57 B-0.642 (G57B parallel angle -0.642)
+G90 G00 G57 B-0.642
+(G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
-G90 G01 G57 X0 Y0 (G57XY Top Inside Center)
-G43 Z[500.016+100.0] H50 (hosei KouguChou: #50)
+G90 G01 G57 X0 Y0
+(G57XY Top Inside Center)
+G43 Z[500.016+100.0] H50
+(hosei KouguChou: #50)
 (Z = TopTanmen +100.)
-
-/M00 (dimple start)
 
 
 (Top sokutei start)
@@ -131,23 +134,27 @@ G43 Z[500.016+100.0] H50 (hosei KouguChou: #50)
 G65 P18011 X156.863 Z500.016 A10. F200.
 (Top X inside center)
 (X: AC naikei)
-(Z: top friwake)
+(Z: sai_furiwake Top)
 (A: skip kaishi kyori)
 (F: skip speed)
 
 G65 P18012 Y154.839 Z500.016 A10. F200.
 (Top Y inside center)
 (Y: BD naikei)
-(Z: top friwake)
+(Z: sai_furiwake Top)
 (A: skip kaishi kyori)
 (F: skip speed)
 
 
 (Dimple measurement start)
 
-G90 G01 G57 X0 Y0 (G57XY Top Inside Center)
-G43 Z[500.016+100.0] H50 (hosei KouguChou: #50)
+G90 G01 G57 X0 Y0
+(G57XY Top Inside Center)
+G43 Z[500.016+100.0] H50
+(hosei KouguChou: #50)
 (Z = TopTanmen +100.)
+
+/M00 (dimple start)
 
 G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B[-2.130-0.642]
 (dimple measurement)
@@ -181,9 +188,11 @@ M06 (tool exchange)
 
 (dimple kakou start)
 
-G90 G01 G57 X0 Y0 (G57XY Top Inside Center)
-G43 Z[500.016+100.0] H31 (hosei KouguChou: #31)
-(Z = TopTanmen +100.)
+G90 G01 G57 X0 Y0
+(G57XY Top Inside Center)
+G43 Z[500.016+100.0] H31
+(hosei KouguChou: #31)
+(Z= TopTanmen +100.)
 
 G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 F102. S85. Q90. I17. K20. M6. U0.31 B[-2.130-0.642]
 (dimple kakou)
@@ -209,8 +218,9 @@ M06 (tool exchange)
 
 #5 = 8.0 (kezuriShiro: all)
 #6 = 4.0 (kezuriShiro: 1 time)
-#7 = FUP[#5 / #6] (kaisuu: #5/#6 kiriage)
 
+#7 = FUP[#5 / #6]
+(kaisuu: #5/#6 kiriage)
 WHILE[#7 GE 1]DO1
 #7=#7-1
 G56 G65 P15000 D2. H2. X185. Y183. Z[500.016 + #6*#7] E50. F900. S950.
