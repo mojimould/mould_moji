@@ -7,6 +7,12 @@ O1916 (main: SMP-1916)
 G91 G28 Z0
 G91 G30 X0 Y0
 G49 G40 G80 G17 (cancel hosei)
+IF[#1005EQ1]GOTO96 (if low battery, go to N96)
+IF[#1004EQ0]GOTO01
+(if current sensor off, go to N01)
+M117 (sensor on/off)
+
+N01
 M262 (palette rotate speed 25)
 M71 (palette #1)
 (M60) (palette change)
@@ -60,10 +66,11 @@ G90 G01 G54 X0 Y0 F9600
 G43 Z[499.984+100.0] H50 (hosei KouguChou #50)
 (Z = BotTanmen +100.)
 
+
 G65 P19393 (sensor ON, G53)
 IF[#1005EQ1]GOTO96 (if low battery, go to N96)
 IF[#1004EQ0]GOTO97 (if current sensor ON, go to N97)
-G#101 (work G#101)
+G54
 
 
 (Bottom sokutei start)
