@@ -46,7 +46,7 @@ IF[[#13-FIX[#13]]NE0]GOTO98
 IF[[#17+[#13-1]*#6]GE#26]GOTO98
 IF[#2EQ#0]GOTO98
 IF[[[#9+#19+ABS[#9-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]GOTO98
-IF[[ABS[#2]]GT20.]GOTO98
+IF[[ABS[#2]]GT15.]GOTO98
 IF[#9GE#25]GOTO98
 IF[#19GE#25]GOTO98
 IF[#21GT#4]GOTO98
@@ -82,10 +82,11 @@ N04
 
 N05
 M11 (4jiku unclamp)
-G90 G00 G#701 B#2 (current work B: G90 A deg)
+G90 G00 G#701 B[#2+#585]
+(current work B: G90 B+#585 deg)
 M10 (4jiku clamp)
-G90 G01 X[[#702-#29]*COS[#2]-#26*SIN[#2]] F6400
-G90 G01 Z[[#702-#29]*SIN[#2]+#26*COS[#2]-#30]
+G90 G01 X[[#702-#29]*COS[ABS[#2]]-#26*SIN[ABS[#2]]] F6400
+G90 G01 Z[[#702-#29]*SIN[ABS[#2]]+#26*COS[ABS[#2]]-#30]
 (XZ to tanmen center)
 
 #703=#5041
@@ -95,8 +96,8 @@ G90 G01 Z[[#702-#29]*SIN[#2]+#26*COS[#2]-#30]
 (Z: the 1st row before rotation)
 #706=SQRT[#18*#18-#705*#705]-SQRT[#18*#18-#23*#23]
 (the center of the 1st row before rotation)
-#707=#706*COS[#2]-#17*SIN[#2]
-#708=-#706*SIN[#2]-#17*COS[#2]
+#707=#706*COS[ABS[#2]]-#17*SIN[ABS[#2]]
+#708=-#706*SIN[ABS[#2]]-#17*COS[ABS[#2]]
 (XZ: the center of the 1st row after rotation)
 
 IF[#4111NE50]GOTO05
@@ -142,7 +143,7 @@ IF[#33GE#13]GOTO15 (end of loop)
 #32=#705-[#33-1]*#6
 (#32= the #33th row's Z from table center)
 #31=SQRT[#18*#18-[#32+#6]*[#32+#6]]-SQRT[#18*#18-#32*#32]
-G91 G31 X[#31*COS[#2]-#6*SIN[#2]] Z-[#31*SIN[#2]+#6*COS[#2]] F1800
+G91 G31 X[#31*COS[ABS[#2]]-#6*SIN[ABS[#2]]] Z-[#31*SIN[ABS[#2]]+#6*COS[ABS[#2]]] F1800
 #33=#33+1 (#33 to current row +1)
 END1
 
@@ -194,6 +195,7 @@ N99 M99
 (#4012: current work coordinate G#)
 (#5041: current work X)
 (#5043: current work Z)
+(#5044: current work B)
 (#5063: skip position Z without KouguChou hosei)
 
 (using #701-#711)

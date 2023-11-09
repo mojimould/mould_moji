@@ -3,6 +3,7 @@ O001916 (main: SMP-1916)
 (parallel angle: -0.642)
 (top furiwake: 500.016)
 (bot furiwake: 499.984)
+#585=-0.642
 
 G91 G28 Z0
 G91 G30 X0 Y0
@@ -45,7 +46,7 @@ G90 G10 L2 P4 X-561.923 Y-648.500 Z#32 B#33
 (G57 Top Inside Center)
 
 M11 (4jiku unclamp)
-G90 G00 G54 B[180.0-0.642]
+G90 G00 G54 B[180.0+#585]
 (G54 Bottom Gaisaku)
 (B parallel angle 179.358)
 M10 (4jiku clamp)
@@ -118,8 +119,8 @@ G65 P100012 Y153. Z499.984 A10. F200.
 
 G91 G28 Z0
 M11 (4jiku unclamp)
-G90 G00 G57 B-0.642
-(G57B parallel angle -0.642)
+G90 G00 G57 B#585
+(G57B parallel angle #585)
 M10 (4jiku clamp)
 
 G90 G01 G57 X0 Y0
@@ -156,7 +157,7 @@ G43 Z[500.016+100.0] H50
 
 /M00 (dimple start)
 
-G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B[-2.130-0.642]
+G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B-2.130
 (dimple measurement)
 (R: radius of the central curvature)
 (X: AC naikei of last row)
@@ -170,7 +171,7 @@ G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 W400. F102. S85. Q90. I17. K20. M6
 (K: Z pitch)
 (M: number of rows)
 (U: depth of dimple)
-(B: angle)
+(B: angle for dimple)
 
 (Top sokutei end)
 
@@ -194,7 +195,7 @@ G43 Z[500.016+100.0] H31
 (hosei KouguChou: #31)
 (Z= TopTanmen +100.)
 
-G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B[-2.130-0.642]
+G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B-2.130
 (dimple kakou)
 (R: radius of the central curvature)
 (X: AC naikei of last row)
@@ -208,7 +209,7 @@ G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 W400. F102. S85. Q90. I17. K20. M6
 (K: Z pitch)
 (M: number of rows)
 (U: depth of dimple)
-(B: angle)
+(B: angle for dimple)
 
 
 G90 G30 Z0
@@ -322,7 +323,7 @@ G56 G65 P205600 D13. H13. X180.95 Y180.95 Z[500.016 - 1.0] R18. Q0. I0. F500. E4
 /M00 (mentori ok?)
 
 M11 (4jiku unclamp)
-G90 G00 G54 B[180.0-0.642] (G54B parallel angle 179.358)
+G90 G00 G54 B[180.0+#585] (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
 
