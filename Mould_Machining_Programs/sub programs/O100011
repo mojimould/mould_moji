@@ -1,5 +1,5 @@
 %
-O18011 (X center of inner measurement)
+O100011 (X center of inner measurement)
 
 IF[#4012LT54]GOTO98
 IF[#4012GT59]GOTO98

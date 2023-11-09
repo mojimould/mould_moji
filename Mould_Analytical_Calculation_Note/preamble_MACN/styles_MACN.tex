@@ -40,7 +40,7 @@
 %%%%% NAME, AUTOREFNAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\renewcommand{\partautorefname}{part}  % part --> part
 \renewcommand{\chapterautorefname}{章}  % chapter --> 章
-\renewcommand{\sectionautorefname}{節\!} % section --> 節
+%\renewcommand{\sectionautorefname}{節\!} % section --> 節
 \renewcommand{\subsectionautorefname}{\sectionautorefname} % subsection --> section
 \renewcommand{\subsubsectionautorefname}{節} % subsubsection --> section
 \renewcommand{\appendixname}{補\hskip.5zw 遺} % appendix --> 補 遺
@@ -58,7 +58,7 @@
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\headrulewidth}{1.5pt}
-%\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
 
 \fancypagestyle{front}{
   \fancyhead{} % clear all header fields
@@ -99,6 +99,17 @@
 \renewcommand*\backmatter{%
   \if@openright\cleardoubleoddpage\else\clearpage\fi\@frontmatterfalse\@mainmatterfalse\@backmattertrue\pagestyle{front}
 }
+%%%%% WATERMARK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareNewLayer[
+  background,
+  textarea,
+  contents={%
+    \put(\LenToUnit{.5\paperwidth},\LenToUnit{-.5\paperheight}){%
+      \makebox[0pt][c]{\rotatebox{45}{%
+        \scalebox{10}{\textsf{\textbf{\textcolor{lightgray}{}}}}}}}%
+    }
+]{WatermarkLayer}
+%\AddLayersToPageStyle{@everystyle@}{WatermarkLayer}
 %%%%% SETLIST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlist[enumerate]{listparindent=\parindent, parsep=\z@, partopsep=\z@, topsep=3pt, itemsep=3pt}
 %%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%

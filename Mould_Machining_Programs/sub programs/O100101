@@ -1,5 +1,5 @@
 %
-O18101 (X center: left side measurement)
+O100101 (X center: left side measurement)
 
 IF[#4012LT54]GOTO98
 IF[#4012GT59]GOTO98
