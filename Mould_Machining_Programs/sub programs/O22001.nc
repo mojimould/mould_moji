@@ -52,13 +52,13 @@ N07 #29=#433 GOTO09
 (if Tslot 3, #29=#433 and to N09)
 
 N08 (for sensor)
-G90 G31 X[#734+#33*[#24/2-#512-10]*COS[ABS[#2]]]
+G90 G31 X[#714+#33*[#24/2-#512-10]*COS[ABS[#2]]]
 G91 G31 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#2]]] F1500
 (XYZ skip to the 1st dimple: X: faceA-10 or faceC+10)
 GOTO10
 
 N09 (for kakou)
-G90 G00 X[#734+#33*[#24/2-#29-5]*COS[ABS[#2]]]
+G90 G00 X[#714+#33*[#24/2-#29-5]*COS[ABS[#2]]]
 G91 G00 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#2]]]
 (XYZ to the 1st dimple: X: faceA-5 or faceC+5)
 

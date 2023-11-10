@@ -12,10 +12,8 @@ N01
 
 N02
 #734=#5041
-#735=#5042
 #736=#5043-#[2000+#4111]
 (#734= current work X: start point X)
-(#735= current work Z: start point Y)
 (#736= current work Z: start point Z)
 
 #737=FIX[#13/2]
@@ -52,13 +50,13 @@ N07 #29=#433 GOTO09
 (if Tslot 3, #29=#433 and to N09)
 
 N08 (for sensor)
-G90 G31 Y[#735+#33*[#25/2-#512-10]]
+G90 G31 Y[#715+#33*[#25/2-#512-10]]
 G91 G31 X[#32*COS[ABS[#2]]] Z-[#32*SIN[ABS[#2]]] F1500
 (XYZ skip to the 1st dimple: Y: faceB-10 or faceD+10)
 GOTO10
 
 N09 (for kakou)
-G90 G31 Y[#735+#33*[#25/2-#29-5]]
+G90 G31 Y[#715+#33*[#25/2-#29-5]]
 G91 G00 X[#32*COS[ABS[#2]]] Z-[#32*SIN[ABS[#2]]]
 (XYZ to the 1st dimple: Y: faceB-5 or faceD+5)
 

@@ -149,6 +149,9 @@ IF[#33GE#13]GOTO15 (end of loop)
 (#32= the #33th row's Z from table center)
 #31=SQRT[#18*#18-[#32-#6]*[#32-#6]]-SQRT[#18*#18-#32*#32]
 G91 G31 X[#31*COS[ABS[#2]]-#6*SIN[ABS[#2]]] Z-[#31*SIN[ABS[#2]]+#6*COS[ABS[#2]]] F1500
+#714=#5041
+#715=#5042
+(current work XY: the center of the #33+1th row)
 #33=#33+1 (#33 to current row +1)
 END1
 
@@ -203,5 +206,5 @@ N99 M99
 (#5044: current work B)
 (#5063: skip position Z without KouguChou hosei)
 
-(using #701-#713)
+(using #701-#714)
 %
