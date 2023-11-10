@@ -42,9 +42,15 @@ IF[#4111EQ50]GOTO08
 (if H# is 33, go to N07)
 (if H# is 50, go to N08)
 GOTO98
-N05 #29=#431 GOTO11
-N06 #29=#432 GOTO11
-N07 #29=#433 GOTO11
+N05
+#29=#431
+GOTO11
+N06
+#29=#432
+GOTO11
+N07
+#29=#433
+GOTO11
 (if Tslot 1, #29=#431 and to N09)
 (if Tslot 2, #29=#432 and to N09)
 (if Tslot 3, #29=#433 and to N09)
@@ -69,7 +75,7 @@ IF[#4111NE50]GOTO20
 (for sensor)
 G65P23002 J#33
 (measurement for BD dimples)
-#[#30]=#769
+#[#30]=#768
 GOTO25
 N20 (for kakou)
 G65P33002 J#33 U#21 D#29 W#[#30]

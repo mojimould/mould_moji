@@ -8,8 +8,9 @@ O1916 (main: SMP-1916)
 G91 G28 Z0
 G91 G30 X0 Y0
 G49 G40 G80 G17 (cancel hosei)
-IF[#1005EQ1]GOTO96 (if low battery, go to N96)
+IF[#1005EQ1]GOTO96
 IF[#1004EQ0]GOTO01
+(if low battery, go to N96)
 (if current sensor off, go to N01)
 M117 (sensor on/off)
 

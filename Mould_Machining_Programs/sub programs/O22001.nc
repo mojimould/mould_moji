@@ -42,9 +42,15 @@ IF[#4111EQ50]GOTO08
 (if H# is 33, go to N07)
 (if H# is 50, go to N08)
 GOTO98
-N05 #29=#431 GOTO09
-N06 #29=#432 GOTO09
-N07 #29=#433 GOTO09
+N05
+#29=#431
+GOTO09
+N06
+#29=#432
+GOTO09
+N07
+#29=#433
+GOTO09
 (if Tslot 1, #29=#431 and to N09)
 (if Tslot 2, #29=#432 and to N09)
 (if Tslot 3, #29=#433 and to N09)
@@ -69,7 +75,7 @@ IF[#4111NE50]GOTO15
 (for sensor)
 G65P23001 I#33
 (measurement for AC dimples)
-#[#30]=#769
+#[#30]=#768
 GOTO20
 N15 (for kakou)
 G65P33001 I#33 U#21 D#29 W#[#30]

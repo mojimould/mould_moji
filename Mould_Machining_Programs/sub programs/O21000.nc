@@ -157,7 +157,7 @@ N32 (face C)
 G65P22001 A-1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for C: moving along row)
 GOTO51
-N50 (face A)
+N33 (face A)
 G65P22001 A1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for A: moving along row)
 N51
