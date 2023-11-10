@@ -115,20 +115,37 @@ N05
 G91 G31 X#709 Z#710 F1500
 (XZ skip: to the center of the 1st row)
 #711=#5041
-#712=#5043-#[2000+#4111]
-(current work XZ: the center of the 1st row)
+#712=#5042
+#713=#5043-#[2000+#4111]
+(current work XYZ: the center of the 1st row)
 
-#713=4 (#713: faces 1: A, 2: B, 3: C, 4: D)
-IF[#713NE4]GOTO98 (if #713 is not 4, go to N98)
+#714=4 (#714: faces 1: A, 2: B, 3: C, 4: D)
+IF[#714NE4]GOTO98 (if #714 is not 4, go to N98)
 N10
-G90 G01 X#711 Z#712 F6400
+G90 G01 X#711 Y#712 Z#713 F6400
 (XYZ: to the center of the 1st row)
 
+IF[#714EQ3]GOTO100 (if B, to 101)
+IF[#714EQ2]GOTO101 (if C, to 102)
+IF[#714EQ1]GOTO102 (if A, to 103)
+(for face D)
+G91 G31 Y-[#25/2-#512-10]
+GOTO105
+N100 (for face B)
+G91 G31 Y[#25/2-#512-10]
+GOTO105
+N101 (for face C)
+G91 G31 X-[[#24/2-#512-10]*COS[ABS[#2]]]
+GOTO105
+N102 (for face A)
+G91 G31 X[[#24/2-#512-10]*COS[ABS[#2]]]
+
+N105
 #33=1 (#33: current row)
 WHILE[#33LE#13]DO1 (if #33 <= #13, do 1)
-IF[#713EQ3]GOTO31 (#713=3, for B)
-IF[#713EQ2]GOTO32 (#713=2, for C)
-IF[#713EQ1]GOTO33 (#713=1, for A)
+IF[#714EQ3]GOTO31 (#714=3, for B)
+IF[#714EQ2]GOTO32 (#714=2, for C)
+IF[#714EQ1]GOTO33 (#714=1, for A)
 G65P22002 A-1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for D: moving along row)
 GOTO51
@@ -144,24 +161,23 @@ N50 (face A)
 G65P22001 A1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for A: moving along row)
 N51
-IF[#33GE#13]GOTO15 (end of loop)
+IF[#33GE#13]GOTO15 (end loop for #33)
 #32=#707-[#33-1]*#6
 (#32= the #33th row's Z from table center)
 #31=SQRT[#18*#18-[#32-#6]*[#32-#6]]-SQRT[#18*#18-#32*#32]
 G91 G31 X[#31*COS[ABS[#2]]-#6*SIN[ABS[#2]]] Z-[#31*SIN[ABS[#2]]+#6*COS[ABS[#2]]] F1500
-#714=#5041
-#715=#5042
 (current work XY: the center of the #33+1th row)
 #33=#33+1 (#33 to current row +1)
 END1
 
 N15
-#713=#713-1 (changing face)
-IF[#713LE0]GOTO20 (if #713 <= 0, go to N20)
+#714=#714-1 (changing face)
+IF[#714LE0]GOTO20 (end loop for #714)
 GOTO10
 
+
 N20
-G90 G01 X#711 Z[#712-#30] F6400
+G90 G01 X#711 Z[#713-#30] F6400
 (XZ: to the center of the 1st row)
 G90 G01 X#705 Z#706 F6400 (XZ: to start point)
 G90 G01 Z[#706+100.0] F9600
@@ -202,6 +218,7 @@ N99 M99
 (#3000: alarm)
 (#4012: current work coordinate G#)
 (#5041: current work X)
+(#5042: current work X)
 (#5043: current work Z)
 (#5044: current work B)
 (#5063: skip position Z without KouguChou hosei)

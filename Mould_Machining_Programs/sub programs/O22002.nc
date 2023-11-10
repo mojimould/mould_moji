@@ -42,50 +42,48 @@ IF[#4111EQ50]GOTO08
 (if H# is 33, go to N07)
 (if H# is 50, go to N08)
 GOTO98
-N05 #29=#431 GOTO09
-N06 #29=#432 GOTO09
-N07 #29=#433 GOTO09
+N05 #29=#431 GOTO11
+N06 #29=#432 GOTO11
+N07 #29=#433 GOTO11
 (if Tslot 1, #29=#431 and to N09)
 (if Tslot 2, #29=#432 and to N09)
 (if Tslot 3, #29=#433 and to N09)
 
 N08 (for sensor)
-G90 G31 Y[#715+#33*[#25/2-#512-10]]
 G91 G31 X[#32*COS[ABS[#2]]] Z-[#32*SIN[ABS[#2]]] F1500
 (XYZ skip to the 1st dimple: Y: faceB-10 or faceD+10)
-GOTO10
+GOTO19
 
-N09 (for kakou)
-G90 G31 Y[#715+#33*[#25/2-#29-5]]
+N11 (for kakou)
 G91 G00 X[#32*COS[ABS[#2]]] Z-[#32*SIN[ABS[#2]]]
 (XYZ to the 1st dimple: Y: faceB-5 or faceD+5)
 
-N10
+N19
 #31=1
-#30=900001+#713*100+#737*#739+FIX[[#13-1]/2]*#738
+#30=900001+#714*100+#737*#739+FIX[[#13-1]/2]*#738
 (#30: numbering for dimples)
 (B:#900301-, D:#900401-)
 WHILE[#31LE#740]DO1
-IF[#4111NE50]GOTO15
+IF[#4111NE50]GOTO20
 (if H# is not sensor, go to N15)
 (for sensor)
 G65P23002 J#33
 (measurement for BD dimples)
 #[#30]=#769
-GOTO20
-N15 (for kakou)
+GOTO25
+N20 (for kakou)
 G65P33002 J#33 U#21 D#29 W#[#30]
 (kakou for BD dimples)
-N20
+N25
 #30=#30+1
 IF[#31GE#740]GOTO50 (end loop)
-IF[#4111NE50]GOTO25
+IF[#4111NE50]GOTO30
 (if H# is not sensor, go to N25)
 G91 G31 X[-#4*COS[ABS[#2]]] Z[#4*SIN[ABS[#2]]] F1500
-GOTO30
-N25
-G91 G01 X[-#4*COS[ABS[#2]]] Z[#4*SIN[ABS[#2]]]
+GOTO35
 N30
+G91 G01 X[-#4*COS[ABS[#2]]] Z[#4*SIN[ABS[#2]]]
+N35
 #31=#31+1
 END1
 
