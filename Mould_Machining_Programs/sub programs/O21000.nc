@@ -129,16 +129,16 @@ IF[#714EQ3]GOTO100 (if B, to 101)
 IF[#714EQ2]GOTO101 (if C, to 102)
 IF[#714EQ1]GOTO102 (if A, to 103)
 (for face D)
-G91 G31 Y-[#25/2-#512-10]
+G91 G31 Y-[#25/2-#512-10] F1500
 GOTO105
 N100 (for face B)
-G91 G31 Y[#25/2-#512-10]
+G91 G31 Y[#25/2-#512-10] F1500
 GOTO105
 N101 (for face C)
-G91 G31 X-[[#24/2-#512-10]*COS[ABS[#2]]]
+G91 G31 X-[[#24/2-#512-10]*COS[ABS[#2]]] F1500
 GOTO105
 N102 (for face A)
-G91 G31 X[[#24/2-#512-10]*COS[ABS[#2]]]
+G91 G31 X[[#24/2-#512-10]*COS[ABS[#2]]] F1500
 
 N105
 #33=1 (#33: current row)
@@ -188,11 +188,8 @@ N96
 M00 (ALARM: low battery)
 GOTO99
 
-N10
-G91 G28 Z0
-G65 P19392 (sensor OFF)
-
-N98 #3000=121 (are the arguments or the mould OK?)
+N98
+#3000=121 (are the arguments or the mould OK?)
 M00 (are arguments ok?)
 
 N99 M99

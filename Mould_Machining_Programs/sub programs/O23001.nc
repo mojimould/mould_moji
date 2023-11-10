@@ -19,8 +19,10 @@ G04X1. (wait 1.0s)
 
 N01
 IF[#4LT0]GOTO02 (if I < 0 then to N02)
-#33=1 GOTO05 (if I > 0, #33=1 and to N05)
-N02 #33=-1 (if I < 0, #33=-1)
+#33=1
+GOTO05 (if I > 0, #33=1 and to N05)
+N02
+#33=-1 (if I < 0, #33=-1)
 
 N05
 G91 G31 X[#33*15.0] F#514

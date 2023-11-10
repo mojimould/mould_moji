@@ -9,8 +9,10 @@ IF[#5EQ0]GOTO98 (if J = 0 then to N98)
 IF[#5EQ#0]GOTO98 (if J = #0 then to N98)
 
 IF[#5LT0]GOTO01 (if J < 0 then to N01)
-#33=1 GOTO05 (if J > 0, #33=1 and to N05)
-N01 #33=-1 (if J < 0, #33=-1)
+#33=1
+GOTO05 (if J > 0, #33=1 and to N05)
+N01
+#33=-1 (if J < 0, #33=-1)
 
 N05
 G90 G01 Y[#23-#33*[#7+5.0]] F500
