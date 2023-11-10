@@ -67,12 +67,12 @@ WHILE[#31LE#739]DO1
 IF[#4111NE50]GOTO15
 (if H# is not sensor, go to N15)
 (for sensor)
-M98 P23001 I#33
+G65P23001 I#33
 (measurement for AC dimples)
 #[#30]=#769
 GOTO20
 N15 (for kakou)
-M98 P33001 I#33 U#21 D#29 W#[#30]
+G65P33001 I#33 U#21 D#29 W#[#30]
 (kakou for AC dimples)
 N20
 #30=#30+1

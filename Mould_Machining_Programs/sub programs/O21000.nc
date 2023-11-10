@@ -89,8 +89,8 @@ M10 (4jiku clamp)
 #703=#702*COS[ABS[#2]]+#26*SIN[ABS[#2]]
 #704=-#702*SIN[ABS[#2]]+#26*COS[ABS[#2]]
 (#702~-11.095, #703~7.497, #704~500.083)
-G90 G01 X[#703-#702] F6400
-G90 G01 Z[#704-#26-#30]
+G91 G01 X[#703-#702] F6400
+G91 G01 Z[#704-#26-#30-100]
 (X~18.592, Z~0.067-#30)
 (XZ to tanmen center)
 
@@ -115,13 +115,13 @@ N05
 G91 G31 X#709 Z#710 F600
 (XZ skip: to the center of the 1st row)
 #711=#5041
-#712=#5043
+#712=#5043-#[2000+#4111]
 (current work XZ: the center of the 1st row)
 
 #713=4 (#713: faces 1: A, 2: B, 3: C, 4: D)
 IF[#713NE4]GOTO98 (if #713 is not 4, go to N98)
 N10
-G90 G01 X#711 Z[#712-#30] F6400
+G90 G01 X#711 Z#712 F6400
 (XYZ: to the center of the 1st row)
 
 #33=1 (#33: current row)
@@ -129,19 +129,19 @@ WHILE[#33LE#13]DO1 (if #33 <= #13, do 1)
 IF[#713EQ3]GOTO31 (#713=3, for B)
 IF[#713EQ2]GOTO32 (#713=2, for C)
 IF[#713EQ1]GOTO33 (#713=1, for A)
-M98 P22002 A-1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
+G65P22002 A-1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for D: moving along row)
 GOTO51
 N31 (face B)
-M98 P22002 A1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
+G65P22002 A1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for B: moving along row)
 GOTO51
 N32 (face C)
-M98 P22001 A-1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
+G65P22001 A-1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for C: moving along row)
 GOTO51
 N50 (face A)
-M98 P22001 A1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
+G65P22001 A1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for A: moving along row)
 N51
 IF[#33GE#13]GOTO15 (end of loop)
