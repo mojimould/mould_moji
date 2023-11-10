@@ -12,7 +12,7 @@ N01
 
 N02
 #734=#5042
-#735=#5043
+#735=#5043-#[2000+#4111]
 (#734= current work Y: start point Y)
 (#735= current work Z: start point Z)
 
@@ -50,17 +50,17 @@ N07 #29=#433 GOTO09
 (if Tslot 3, #29=#433 and to N09)
 
 N08 (for sensor)
-G91 G31 X[#33*[#24/2-#512-10]*COS[#2]] Y-#32 Z-[#33*[#24/2]*SIN[#2]] F1800
+G91 G31 X[#33*[#24/2-#512-10]*COS[ABS[#2]]] Y-#32 Z-[#33*[#24/2]*SIN[ABS[#2]]] F1500
 (XYZ skip to the 1st dimple: X: faceA-10 or faceC+10)
 GOTO10
 
 N09 (for kakou)
-G91 G00 X[#33*[#24/2-#29-5]*COS[#2]] Y-#32 Z-[#33*[#24/2]*SIN[#2]]
+G91 G00 X[#33*[#24/2-#29-5]*COS[ABS[#2]]] Y-#32 Z-[#33*[#24/2]*SIN[ABS[#2]]]
 (XYZ to the 1st dimple: X: faceA-5 or faceC+5)
 
 N10
 #31=1
-#30=900001+#711*100+#736*#738+FIX[[#13-1]/2]*#737
+#30=900001+#713*100+#736*#738+FIX[[#13-1]/2]*#737
 (#30: numbering for dimples)
 (A:#900101-, C:#900201-)
 WHILE[#31LE#739]DO1
@@ -79,7 +79,7 @@ N20
 IF[#31GE#739]GOTO50 (end loop)
 IF[#4111NE50]GOTO25
 (if H# is not 50, go to N25)
-G91 G31 Y#6 F1800
+G91 G31 Y#6 F1500
 GOTO30
 N25
 G91 G01 Y#6

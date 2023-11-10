@@ -95,7 +95,7 @@ G91 G01 Z[#704-#26-#30-100]
 (XZ to tanmen center)
 
 #705=#5041
-#706=#5043
+#706=#5043-#[2000+#4111]
 (current work XZ: start point XZ)
 #707=#23-#17
 (Z: the 1st row before rotation)
@@ -112,7 +112,7 @@ IF[#1004EQ1]GOTO05 (if current sensor ON, go to N05)
 M117 (sensor on/off)
 
 N05
-G91 G31 X#709 Z#710 F600
+G91 G31 X#709 Z#710 F1500
 (XZ skip: to the center of the 1st row)
 #711=#5041
 #712=#5043-#[2000+#4111]
@@ -147,7 +147,7 @@ N51
 IF[#33GE#13]GOTO15 (end of loop)
 #32=#707-[#33-1]*#6
 (#32= the #33th row's Z from table center)
-#31=SQRT[#18*#18-[#32+#6]*[#32+#6]]-SQRT[#18*#18-#32*#32]
+#31=SQRT[#18*#18-[#32-#6]*[#32-#6]]-SQRT[#18*#18-#32*#32]
 G91 G31 X[#31*COS[ABS[#2]]-#6*SIN[ABS[#2]]] Z-[#31*SIN[ABS[#2]]+#6*COS[ABS[#2]]] F1800
 #33=#33+1 (#33 to current row +1)
 END1
