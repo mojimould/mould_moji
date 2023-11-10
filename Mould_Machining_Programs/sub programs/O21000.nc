@@ -148,7 +148,7 @@ IF[#33GE#13]GOTO15 (end of loop)
 #32=#707-[#33-1]*#6
 (#32= the #33th row's Z from table center)
 #31=SQRT[#18*#18-[#32-#6]*[#32-#6]]-SQRT[#18*#18-#32*#32]
-G91 G31 X[#31*COS[ABS[#2]]-#6*SIN[ABS[#2]]] Z-[#31*SIN[ABS[#2]]+#6*COS[ABS[#2]]] F1800
+G91 G31 X[#31*COS[ABS[#2]]-#6*SIN[ABS[#2]]] Z-[#31*SIN[ABS[#2]]+#6*COS[ABS[#2]]] F1500
 #33=#33+1 (#33 to current row +1)
 END1
 
