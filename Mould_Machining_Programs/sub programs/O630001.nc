@@ -1,5 +1,5 @@
 %
-O33001 (for AC dimples kakou)
+O630001 (for AC dimples kakou)
 (level 3: kakou dimple)
 (I > 0: Y+, I < 0: Y-)
 

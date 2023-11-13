@@ -78,7 +78,7 @@ G65P230002 J#33
 #[#30]=#768
 GOTO25
 N20 (for kakou)
-G65P33002 J#33 U#21 D#29 W#[#30]
+G65P630002 J#33 U#21 D#29 W#[#30]
 (kakou for BD dimples)
 N25
 #30=#30+1

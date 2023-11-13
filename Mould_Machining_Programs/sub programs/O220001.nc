@@ -78,7 +78,7 @@ G65P230001 I#33
 #[#30]=#768
 GOTO20
 N15 (for kakou)
-G65P33001 I#33 U#21 D#29 W#[#30]
+G65P630001 I#33 U#21 D#29 W#[#30]
 (kakou for AC dimples)
 N20
 #30=#30+1

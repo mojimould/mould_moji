@@ -1,5 +1,5 @@
 %
-O33002 (for BD dimples kakou)
+O630002 (for BD dimples kakou)
 (level 3: kakou dimple)
 (J > 0: Y+, J < 0: Y-)
 
