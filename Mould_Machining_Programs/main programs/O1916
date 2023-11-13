@@ -227,7 +227,7 @@ M06 (tool exchange)
 (kaisuu: #5/#6 kiriage)
 WHILE[#7 GE 1]DO1
 #7=#7-1
-G56 G65 P205000 D2. H2. X185. Y183. Z[500.016 + #6*#7] E50. F900. S950.
+G56 G65 P505000 D2. H2. X185. Y183. Z[500.016 + #6*#7] E50. F900. S950.
 END1
 (O205000: tammen kakou)
 (D H: hosei kougu#)
@@ -247,9 +247,9 @@ M06 (tool exchange)
 
 (Top gaisaku start)
 
-G56 G65 P205600 Q3. D16. H16. X180.95 Y180.95 Z[500.016 - 32.0] R18. F400. E400. S930. I0.
-G56 G65 P205600 Q1. D16. H16. X180.95 Y180.95 Z[500.016 - 32.0] R18. F400. E400. S930. I0.
-G56 G65 P205600 Q0. D16. H16. X180.95 Y180.95 Z[500.016 - 32.0] R18. F400. E400. S930. I0.
+G56 G65 P505600 Q3. D16. H16. X180.95 Y180.95 Z[500.016 - 32.0] R18. F400. E400. S930. I0.
+G56 G65 P505600 Q1. D16. H16. X180.95 Y180.95 Z[500.016 - 32.0] R18. F400. E400. S930. I0.
+G56 G65 P505600 Q0. D16. H16. X180.95 Y180.95 Z[500.016 - 32.0] R18. F400. E400. S930. I0.
 (O205600: Sotogawa 1shuu Corner R, al HidariMawari)
 (Q: +hosei: AC&BD gaisakuKei)
 (D H: hosei kougu#)
@@ -272,7 +272,7 @@ M06 (tool exchange)
 (Mizo start)
 
 #10=-0.1 (+hosei: mizo ichi)
-G56 G65 P205600 D6. H6. X172.90 Y172.90 Z[500.016-12.05-7.0+#10] R18. Q0. I0. F500. E400. S930.
+G56 G65 P505600 D6. H6. X172.90 Y172.90 Z[500.016-12.05-7.0+#10] R18. Q0. I0. F500. E400. S930.
 (mizo ichi)
 (O205600: Sotogawa 1shuu Corner R, al HidariMawari)
 (D H: hosei kougu#)
@@ -286,7 +286,7 @@ G56 G65 P205600 D6. H6. X172.90 Y172.90 Z[500.016-12.05-7.0+#10] R18. Q0. I0. F5
 (I: +hosei: AC center)
 
 #11=0.2 (+hosei: mizo haba)
-G56 G65 P205600 D6. H6. X172.90 Y172.90 Z[500.016-12.05-[8.05/2]+#10+#11] R18. Q0. I0. F500. E400. S930.
+G56 G65 P505600 D6. H6. X172.90 Y172.90 Z[500.016-12.05-[8.05/2]+#10+#11] R18. Q0. I0. F500. E400. S930.
 (mizo haba)
 (O205600: Sotogawa 1shuu Corner R, al HidariMawari)
 (D H: hosei kougu#)
@@ -308,7 +308,7 @@ M06 (tool exchange)
 
 (Top Mentori Soto start)
 
-G56 G65 P205600 D13. H13. X180.95 Y180.95 Z[500.016 - 1.0] R18. Q0. I0. F500. E400. S1800.
+G56 G65 P505600 D13. H13. X180.95 Y180.95 Z[500.016 - 1.0] R18. Q0. I0. F500. E400. S1800.
 (Top Soto mentori)
 (O205600: Sotogawa 1shuu Corner R, al HidariMawari)
 (I: +hosei: AC center)
@@ -342,7 +342,7 @@ M06 (tool exchange)
 #9 = FUP[#8 / #6] (kaisuu: #8/#6 kiriage)
 WHILE[#9 GE 1]DO1
 #9=#9-1
-G54 G65 P205000 D2. H2. X185. Y183. Z[500.016 + #6*#9] E50. F900. S950.
+G54 G65 P505000 D2. H2. X185. Y183. Z[500.016 + #6*#9] E50. F900. S950.
 END1
 (O205000: tammen kakou)
 (D H: hosei kougu#)
@@ -361,9 +361,9 @@ M06 (tool exchange)
 
 (Bottom gaisaku start)
 
-G54 G65 P205600 D16. H16. Q3. I0. X180.95 Y180.95 Z[499.984 - 25.0] R18. F400. E400. S930.
-G54 G65 P205600 D16. H16. Q1. I0. X180.95 Y180.95 Z[499.984 - 25.0] R18. F400. E400. S930.
-G54 G65 P205600 D16. H16. Q0. I0. X180.95 Y180.95 Z[499.984 - 25.0] R18. F400. E400. S930.
+G54 G65 P505600 D16. H16. Q3. I0. X180.95 Y180.95 Z[499.984 - 25.0] R18. F400. E400. S930.
+G54 G65 P505600 D16. H16. Q1. I0. X180.95 Y180.95 Z[499.984 - 25.0] R18. F400. E400. S930.
+G54 G65 P505600 D16. H16. Q0. I0. X180.95 Y180.95 Z[499.984 - 25.0] R18. F400. E400. S930.
 (O205600: Sotogawa 1shuu Corner R, al HidariMawari)
 (Q: +hosei: AC&BD gaisakuKei)
 (D H: hosei kougu#)
@@ -385,7 +385,7 @@ M06 (tool exchange)
 
 (Bottom Mentori Soto start)
 
-G54 G65 P205600 D11. H11. Q0. X180.95 Y180.95 Z[499.984 - 4.0] R18. F500. E400. S1800. I0.
+G54 G65 P505600 D11. H11. Q0. X180.95 Y180.95 Z[499.984 - 4.0] R18. F500. E400. S1800. I0.
 (Bot Soto Chamfer)
 (O205600: Sotogawa 1shuu Corner R, al HidariMawari)
 (D H: hosei kougu#)
@@ -405,9 +405,9 @@ G54 G65 P205600 D11. H11. Q0. X180.95 Y180.95 Z[499.984 - 4.0] R18. F500. E400. 
 
 (Bottom Mentori Uchi start)
 
-G55 G65 P205200 D11. H11. I-0.668 K4. X155. Y153. Z[499.984 - 10.0] R18. A15. F400. S1800.
-G55 G65 P205200 D11. H11. I-0.668 K2. X155. Y153. Z[499.984 - 10.0] R18. A15. F400. S1800.
-G55 G65 P205200 D11. H11. I-0.668 K0. X155. Y153. Z[499.984 - 10.0] R18. A15. F400. S1800.
+G55 G65 P505200 D11. H11. I-0.668 K4. X155. Y153. Z[499.984 - 10.0] R18. A15. F400. S1800.
+G55 G65 P505200 D11. H11. I-0.668 K2. X155. Y153. Z[499.984 - 10.0] R18. A15. F400. S1800.
+G55 G65 P505200 D11. H11. I-0.668 K0. X155. Y153. Z[499.984 - 10.0] R18. A15. F400. S1800.
 (Bot Uchi Chamfer)
 (O205200: Uchigawa 1shuu Corner R, ac HidariMawari)
 (I: +hosei x center)

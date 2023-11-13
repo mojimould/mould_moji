@@ -12,10 +12,13 @@ IF[#5EQ#0]GOTO98
 (if J = #0 then to N98)
 
 IF[#5LT0]GOTO01 (if J < 0 then to N01)
-#33=1
+#33=1 (for B)
+#768=#603
 GOTO05 (if J > 0, #33=1 and to N05)
 N01
-#33=-1 (if J < 0, #33=-1)
+#33=-1 (for D)
+#768=#604
+(if J < 0, #33=-1)
 
 N05
 G90 G01 Y[#23-#33*[#7+5.0]] F500
@@ -39,6 +42,7 @@ N99 M99
 (#23:W: the position of the dimple)
 (#21:U: the depth of dimples)
 
+(#603: )
 (#3000: alarm)
 (#5041: current work X)
 (#5042: current work Y)

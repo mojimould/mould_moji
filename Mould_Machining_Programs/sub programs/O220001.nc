@@ -43,7 +43,7 @@ IF[#4111EQ50]GOTO08
 (if H# is 50, go to N08)
 GOTO98
 N05
-#29=#431
+#29=#431 (kougu Hankei)
 GOTO09
 N06
 #29=#432

@@ -12,12 +12,27 @@ IF[#4EQ#0]GOTO98
 (if I = #0 then to N98)
 
 IF[#4LT0]GOTO01 (if I < 0 then to N01)
-#33=1
-GOTO05 (if I > 0, #33=1 and to N05)
+#33=1 (for A)
+(if I > 0, #33=1)
+IF[#4111EQ31]GOTO02 (if H#= 31, go to N02)
+IF[#4111EQ32]GOTO03 (if H#= 32, go to N02)
+IF[#4111EQ33]GOTO04 (if H#= 33, go to N02)
+GOTO98
+N02 #768=#601 (for T31) GOTO08
+N03 #768=#605 (for T32) GOTO08
+N04 #768=#609 (for T33) GOTO08
 N01
-#33=-1 (if I < 0, #33=-1)
+#33=-1 (for C)
+(if I < 0, #33=-1)
+IF[#4111EQ31]GOTO05 (if H#= 31, go to N02)
+IF[#4111EQ32]GOTO06 (if H#= 32, go to N02)
+IF[#4111EQ33]GOTO07 (if H#= 33, go to N02)
+GOTO98
+N05 #768=#602 (for T31) GOTO08
+N06 #768=#606 (for T32) GOTO08
+N07 #768=#610 (for T33)
 
-N05
+N08
 G90 G01 X[#23-#33*[#7+5.0]] F500
 (X+: #23-#7-5.0 or X-: #23+#7+5.0, speed 500)
 G91 G01 X[#33*5.0] F200
