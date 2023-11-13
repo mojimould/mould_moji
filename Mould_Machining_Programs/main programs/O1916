@@ -6,29 +6,30 @@ O1916 (main: SMP-1916)
 #585=-0.642
 
 G91 G28 Z0
-G91 G30 X0 Y0
-G49 G40 G80 G17 (cancel hosei)
+
 IF[#1005EQ1]GOTO96
 IF[#1004EQ0]GOTO01
 (if low battery, go to N96)
 (if current sensor off, go to N01)
-M117 (sensor on/off)
+M117 (sensor off)
 
 N01
+G91 G30 X0 Y0
+G49 G40 G80 G17 (cancel hosei)
 M262 (palette rotate speed 25)
 M71 (palette #1)
 (M60) (palette change)
 
 (Genten Settei G54 G55 G56 G57)
 
-IF[#1000NE0]GOTO2 (if NOT #1, to N2)
+IF[#1000NE0]GOTO02 (if NOT p#1, to N02)
 #30=#401 (p#1 X table center)
 #32=#403 (p#1 Z table center)
 #33=#404 (p#1 B table center)
 (palette #1)
-GOTO3 (to N3)
+GOTO03 (to N03)
 
-N2
+N02
 IF[#1000NE1]GOTO98
 (if the current palette is NOT #2, go to 98)
 #30=#405 (p#2 X table center)
@@ -36,7 +37,7 @@ IF[#1000NE1]GOTO98
 #33=#408 (p#2 B table center)
 (palette #2)
 
-N3
+N03
 G90 G10 L2 P1 X-527.732 Y-648.500 Z#32 B#33
 G90 G10 L2 P2 X-526.889 Y-648.500 Z#32 B#33
 G90 G10 L2 P3 X-561.306 Y-648.500 Z#32 B#33
@@ -69,17 +70,15 @@ G43 Z[499.984+100.0] H50
 (Z = BotTanmen +100.)
 
 
-G65 P19393 (sensor ON, G53)
-IF[#1005EQ1]GOTO96
-IF[#1004EQ0]GOTO97
-(if low battery, go to N96)
-(if current sensor ON, go to N97)
-G54
-
-
 (Bottom sokutei start)
 
-G65 P100101 I-76.725 Z499.984 A10.
+IF[#1005EQ1]GOTO96
+IF[#1004EQ1]GOTO04
+(if low battery, go to N96)
+M117
+
+N04
+G65 P100101 I-76.725 Z499.984 A10.0
 (Bot X Gaisaku center)
 (I: Bot -ACnaikei/2)
 (Z: sai_furiwake Bot)
@@ -176,10 +175,9 @@ G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 W400. F102. S85. Q90. I17. K20. M6
 
 (Top sokutei end)
 
-G65 P19392 (sensor OFF)
+G65 P900002 (sensor OFF)
 G49 (Cancel hosei kouguChou)
 G91 G30 X0 Y0 Z0
-/M00 (sokutei owari)
 
 
 (kokokara Top Kakou start)
@@ -188,6 +186,8 @@ G91 G30 X0 Y0 Z0
 T31 (dimple)
 M06 (tool exchange)
 
+
+/M00
 (dimple kakou start)
 
 G90 G01 G57 X0 Y0
@@ -216,6 +216,7 @@ G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 W400. F102. S85. Q90. I17. K20. M6
 G90 G30 Z0
 T02 (tanmen)
 M06 (tool exchange)
+
 
 (Top tanmen start)
 
@@ -337,6 +338,7 @@ M06 (tool exchange)
 (Bottom tanmen start)
 
 #8 = 8.0 (kezuriShiro: all)
+
 #9 = FUP[#8 / #6] (kaisuu: #8/#6 kiriage)
 WHILE[#9 GE 1]DO1
 #9=#9-1
@@ -400,6 +402,7 @@ G54 G65 P205600 D11. H11. Q0. X180.95 Y180.95 Z[499.984 - 4.0] R18. F500. E400. 
 (Top Mentori Soto end)
 /M00 (mentori ok?)
 
+
 (Bottom Mentori Uchi start)
 
 G55 G65 P205200 D11. H11. I-0.668 K4. X155. Y153. Z[499.984 - 10.0] R18. A15. F400. S1800.
@@ -424,18 +427,13 @@ G55 G65 P205200 D11. H11. I-0.668 K0. X155. Y153. Z[499.984 - 10.0] R18. A15. F4
 T01 (empty)
 M06 (tool exchange)
 IF[#1004EQ0]GOTO99
-(if current sensor off, go to N01)
+(if current sensor off, go to N99)
 M117 (sensor on/off)
 GOTO99
 
 N96
 #3000=145 (MP10/MP12/MP60-Low battery)
 M00 (ALARM: low battery)
-GOTO99
-
-N97
-#3000=146 (MP10/MP12/MP60-ALARM)
-M00 (ALM: is sensor ok?)
 GOTO99
 
 N98

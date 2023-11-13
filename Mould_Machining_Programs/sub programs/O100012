@@ -97,7 +97,7 @@ G90 G01 Y#102 (Y to start point)
 
 N10
 G91 G28 Z0
-G65 P19392 (sensor OFF)
+G65 P900002 (sensor OFF)
 
 N98 #3000=121 (are the arguments or the mould OK?)
 M00 (are arguments ok?)

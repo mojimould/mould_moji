@@ -86,6 +86,7 @@ G90 X#106 F3600 (X to measured center)
 G90 Z[#26+100.0] F9600
 GOTO99
 
+
 N96
 #3000=145 (MP10/MP12/MP60-Low battery)
 M00 (ALARM: low battery)
@@ -96,7 +97,7 @@ G90 G01 X#102 (X to start point)
 
 N10
 G91 G28 Z0
-G65 P19392 (sensor OFF)
+G65 P900002 (sensor OFF)
 
 N98 #3000=121 (are the arguments or the mould OK?)
 M00 (are arguments ok?)

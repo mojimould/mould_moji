@@ -15,16 +15,16 @@ IF[#1LE0]GOTO98
 (if probe radius D/2 <= 0 go to N98)
 (if A <= 0 go to N98)
 
-IF[#9EQ#0]GOTO1
-IF[#9LE0]GOTO1
-IF[#9GT300.0]GOTO1
-(if skip speed F <= 0 or 300.0 < F, go to N1)
-GOTO2
+IF[#9EQ#0]GOTO01
+IF[#9LE0]GOTO01
+IF[#9GT300.0]GOTO01
+(if skip speed F <= 0 or 300.0 < F, go to N01)
+GOTO02
 
-N1
+N01
 #9=#514 (skip speed = 50.)
 
-N2
+N02
 #101=#4012
 #102=#5042
 (#101= current work coordinate G#)
@@ -97,7 +97,7 @@ G91 G28 Z0
 G90 G01 Y#102 (Y to start point)
 
 N98
-G65 P19392 (sensor OFF)
+G65 P900002 (sensor OFF)
 #3000=121 (are the arguments or the mould OK?)
 M00 (are arguments ok?)
 

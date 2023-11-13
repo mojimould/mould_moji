@@ -32,7 +32,7 @@ G90 G01 Y#767 F6400
 GOTO99 (to N99)
 
 N98
-G65 P19392 (sensor OFF)
+G65 P900002 (sensor OFF)
 #3000=121 (Argument Is Not Assigned)
 M00 (are arguments ok?)
 
