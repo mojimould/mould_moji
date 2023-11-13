@@ -2211,13 +2211,88 @@ D面に対しては、これの各々の内径$w_\text B'$の符号（この場�
 
 
 
+
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 7.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{通り芯}
+トップ・ボトムの両方に外削がある場合を考える。
+通常、それぞれの外削の中心は個別に決められはせず、片方の中心の位置を基準として、もう片方の中心が定められる。
+これらの中心の位置（通り芯）を機内で測定する際は、C面が工具側に向くようにテーブルを$\pm90^\circ$回転（$B$軸回転）し、タッチセンサーを用いてそれぞれの外削部の$Z$座標および$Y$座標を見ることで測定する。
+
+ここでは、この通り芯の測定に必要な位置等について定量的に求める。
+なお、テーブルの中心を原点として考えることにする。
+またモールドのC面が工具側に向くように$B$軸を（G91にて）$\pm90^\circ$回転した状態であるとする
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{G90（絶対座標）の場合、テーブルを傾けて振分長を調整した場合はその回転角$-\theta$を忘れないよう注意。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 7.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ボトムの外削が基準の場合}
+通常、トップの外削中心は、ボトムの外削中心よりA面側（$-Z$側）にある。
+このとき、トップ・ボトム側の外削の高さをそれぞれ$h_\text T$, $h_\text B$ ($h_\text T, h_\text B > 0$)とすると、ボトム側（$-X$側）およびトップ側（$+X$側）の外削C面の中心は、それぞれ
+\begin{align*}
+  \text{ボトム側：}\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle -f_\text B'+\frac{h_\text B}2\\
+      \mathcal G_{\text By}\\[6pt]
+      \displaystyle \mathcal G_{\text Bx}+\frac{\mathfrak W_\text B}2
+    \end{array}
+    \right]~, \qquad
+  \text{トップ側：}\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle f_\text T'-\frac{h_\text T}2\\
+      \mathcal G_{\text By}\\[6pt]
+      \displaystyle -\mathcal G_{\text Bx}+T_x+\frac{\mathfrak W_\text T}2
+    \end{array}
+  \right].
+\end{align*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 7.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{トップの外削が基準の場合}
+通常、ボトムの外削中心は、トップの外削中心よりC面側（$+Z$側）にある。
+このとき、トップ側（$+X$側）およびボトム側（$-X$側）の外削C面の中心は、それぞれ
+\begin{align*}
+  \text{トップ側：}\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle f_\text T'-\frac{h_\text T}2\\
+      \mathcal G_{\text Ty}\\[6pt]
+      \displaystyle \mathcal G_{\text Tx}+\frac{\mathfrak W_\text B}2
+    \end{array}
+    \right]~, \qquad
+  \text{ボトム側：}\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle -f_\text B'+\frac{h_\text B}2\\
+      \mathcal G_{\text Ty}\\[6pt]
+      \displaystyle -\mathcal G_{\text Tx}+T_x+\frac{\mathfrak W_\text B}2
+    \end{array}
+  \right].
+\end{align*}
+
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 7.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{角度をつけて外削する場合の位置}
 テーブルの中心を原点として考える。
-ボトム端面が工具側に向いているとき、ボトム側端面の$Z$座標を$z_b$, 端面のA面側・C面側・中心の$X$座標をそれぞれ$x_A$, $x_C$, $x_m$とする。
+また、ボトム端面側が工具側に向いているとする。
+端面のA面側・C面側・中心の$X$座標をそれぞれ$x_A$, $x_C$, $x_m$とする。
 このとき端面のそれぞれの位置は
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここでは$Z$の正方向を実軸、$X$の正方向を虚軸として考えている。}、
@@ -2229,9 +2304,9 @@ D面に対しては、これの各々の内径$w_\text B'$の符号（この場�
   \text{A面側端点：}&\quad \sqrt{z_b^2+x_A^2}e^{i\theta_A}, \quad \tan\theta_A = \frac{x_A}{z_b}.
 \end{align*}
 \end{subequations}
-外削部分の高さを$h_b$とすると、外柵部分の傾きはボトム端から距離$\nicefrac{h_b}2$の断面に平行になる形にとるので、必要な回転角$\theta_b$は、
+外削部分の高さを$h_\text B$とすると、外柵部分の傾きはボトム端から距離$\nicefrac{h_\text B}2$の断面に平行になる形にとるので、必要な回転角$\theta_b$は、
 \begin{align*}
-  \sin\theta_b = \frac{z_b-\nicefrac{h_b}2}{R_\text c}
+  \sin\theta_b = \frac{z_b-\nicefrac{h_\text B}2}{R_\text c}
 \end{align*}
 を満たす。
 回転後のボトム端面の中心の位置は、
@@ -2271,10 +2346,10 @@ D面に対しては、これの各々の内径$w_\text B'$の符号（この場�
 \begin{align*}
   \sqrt{z_b^2+x_m^2}\sin(\theta_m-\theta_b)
   &= \sqrt{z_b^2+x_m^2}(\sin\theta_m\cos\theta_b-\cos\theta_m\sin\theta_b)\\
-  &= x_m\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}-z_b\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c},\\
+  &= x_m\sqrt{1-\left(\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}\right)^{\!2}}-z_b\cdot\frac{z_b-\nicefrac{h_\text B}2}{R_\text c},\\
   \sqrt{z_b^2+x_m^2}\cos(\theta_m-\theta_b)
   &= \sqrt{z_b^2+x_m^2}(\cos\theta_m\cos\theta_b+\sin\theta_m\sin\theta_b)\\
-  &= z_b\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}+x_m\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c}.
+  &= z_b\sqrt{1-\left(\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}\right)^{\!2}}+x_m\cdot\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}.
 \end{align*}
 端面のA面側・C面側の位置についても同様である。
 まとめると、
@@ -2289,8 +2364,8 @@ D面に対しては、これの各々の内径$w_\text B'$の符号（この場�
     \right]
     = \left[
       \begin{array}{c}
-        \displaystyle x_m\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}-z_b\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c}\\[15pt]
-        \displaystyle z_b\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}+x_m\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c}
+        \displaystyle x_m\sqrt{1-\left(\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}\right)^{\!2}}-z_b\cdot\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}\\[15pt]
+        \displaystyle z_b\sqrt{1-\left(\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}\right)^{\!2}}+x_m\cdot\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}
       \end{array}
     \right]\\
   \text{C面側端点：}&\quad
@@ -2302,8 +2377,8 @@ D面に対しては、これの各々の内径$w_\text B'$の符号（この場�
     \right]
     = \left[
       \begin{array}{c}
-        \displaystyle x_C\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}-z_b\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c}\\[15pt]
-        \displaystyle z_b\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}+x_C\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c}
+        \displaystyle x_C\sqrt{1-\left(\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}\right)^{\!2}}-z_b\cdot\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}\\[15pt]
+        \displaystyle z_b\sqrt{1-\left(\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}\right)^{\!2}}+x_C\cdot\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}
       \end{array}
     \right]\\
   \text{A面側端点：}&\quad
@@ -2315,104 +2390,12 @@ D面に対しては、これの各々の内径$w_\text B'$の符号（この場�
     \right]
     = \left[
       \begin{array}{c}
-        \displaystyle x_A\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}-z_b\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c}\\[15pt]
-        \displaystyle z_b\sqrt{1-\left(\frac{z_b-\nicefrac{h_b}2}{R_\text c}\right)^{\!2}}+x_A\cdot\frac{z_b-\nicefrac{h_b}2}{R_\text c}
+        \displaystyle x_A\sqrt{1-\left(\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}\right)^{\!2}}-z_b\cdot\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}\\[15pt]
+        \displaystyle z_b\sqrt{1-\left(\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}\right)^{\!2}}+x_A\cdot\frac{z_b-\nicefrac{h_\text B}2}{R_\text c}
       \end{array}
     \right].
 \end{align*}
 \end{subequations}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 7.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{通り芯の位置}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 7.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{直接的に測る場合}
-テーブルの中心を原点として考える。
-ボトム端面が工具側に向いているときのボトム端面中心の$X$, $Y$, $Z$座標を$x_b$, $y_b$, $z_b$とし、トップ端面が工具側に向いているときのトップ端面中心の$X$, $Y$, $Z$座標を$x_t$, $y_t$, $z_t$とする。
-このときテーブルを$90^\circ$回転させ、C面が工具側に向いた形にすると
-%% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{ボトム側が工具側にある場合は$-90^\circ$, トップ側が工具側にある場合は$90^\circ$回転した形。}、
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{align*}
-  \left[
-    \begin{array}{c}
-      x'_b\\
-      z'_b
-    \end{array}
-  \right]
-  = \left[
-    \begin{array}{c}
-      -z_b\\
-        x_b
-    \end{array}
-    \right], \quad
-    \left[
-    \begin{array}{c}
-      x'_t\\
-      z'_t
-    \end{array}
-    \right]
-  = \left[
-    \begin{array}{c}
-      z_t\\
-      -x_t
-    \end{array}
-    \right].
-\end{align*}
-よって、通り心の測定の際は、
-\begin{align}
-  \label{eq:gaisakuC}
-  \text{ボトム側：}\quad
-  \left[
-    \begin{array}{c}
-      \displaystyle -z_b+\frac{h_b}2\\
-      y_b\\[6pt]
-      \displaystyle x_b+\frac{w_\text B}2
-    \end{array}
-    \right], \quad
-  \text{トップ側：}\quad
-  \left[
-    \begin{array}{c}
-      \displaystyle z_t-\frac{h_t}2\\
-      y_b\\[6pt]
-      \displaystyle -x_t+\frac{w_\text T}2
-    \end{array}
-  \right].
-\end{align}
-の位置に対して、$Z$方向における高さ測定を行えばよい。
-ここで、$h_b$, $h_t$はそれぞれボトム・トップ側の外削の高さ、$w_\text B$, $w_\text B$はそれぞれボトム・トップ側の外削部におけるAC間の外径である。
-なお、両測定点の$X$座標の差$W$は、
-\begin{align*}
-  W = L-\frac{h_b+h_t}2 \qquad \left(L = z_t + z_b\right)
-\end{align*}
-で与えられる。
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 7.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{関節的に測る場合}
-2023/07現在、自動ブログラムの都合上、ジグにぶつかってしまい、直接的には（自動で）測れない。
-そこで、関節的に（自動で）計測する方法を考える。
-つまり、ジグのある定点を媒介して測定する
-%% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{ジグの定点として、$X$方向に移動してもぶつからない点を選ぶ。}。
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-選んだジグの定点の位置座標を($x$, $y$, $z$)とすると、($x$, $y$, $z$)と\pageeqref{eq:gaisakuC}のそれぞれにおける高さ測定をし、その差を見ればよい。
-\begin{tcolorbox}[fonttitle=\gtfamily\bfseries]
-2023/07/26時点、$X = -203.880$, $Z = -719.560$.\\
-なお、$Y$座標はモールドのBD外径の中心座標とする。
-\end{tcolorbox}
 
 
 
