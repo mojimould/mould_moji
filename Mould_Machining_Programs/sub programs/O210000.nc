@@ -1,5 +1,5 @@
 %
-O21000 (for dimple measurement & kakou)
+O210000 (for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 
 IF[#4012LT54]GOTO98 
@@ -146,19 +146,19 @@ WHILE[#33LE#13]DO1 (if #33 <= #13, do 1)
 IF[#714EQ3]GOTO31 (#714=3, for B)
 IF[#714EQ2]GOTO32 (#714=2, for C)
 IF[#714EQ1]GOTO33 (#714=1, for A)
-G65P22002 A-1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
+G65P220002 A-1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for D: moving along row)
 GOTO51
 N31 (face B)
-G65P22002 A1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
+G65P220002 A1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for B: moving along row)
 GOTO51
 N32 (face C)
-G65P22001 A-1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
+G65P220001 A-1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for C: moving along row)
 GOTO51
 N33 (face A)
-G65P22001 A1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
+G65P220001 A1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for A: moving along row)
 N51
 IF[#33GE#13]GOTO15 (end loop for #33)

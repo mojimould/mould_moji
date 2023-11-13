@@ -1,4 +1,4 @@
-% 
+%
 O1916 (main: SMP-1916)
 (parallel angle: -0.642)
 (top furiwake: 500.016)
@@ -157,7 +157,7 @@ G43 Z[500.016+100.0] H50
 
 /M00 (dimple start)
 
-G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B-2.130
+G65 P210000 R8922.7 X156.161 Y154.148 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B-2.130
 (dimple measurement)
 (R: radius of the central curvature)
 (X: AC naikei of last row)
@@ -196,7 +196,7 @@ G43 Z[500.016+100.0] H31
 (hosei KouguChou: #31)
 (Z= TopTanmen +100.)
 
-G65 P21000 R8922.7 X156.161 Y154.148 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B-2.130
+G65 P210000 R8922.7 X156.161 Y154.148 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B-2.130
 (dimple kakou)
 (R: radius of the central curvature)
 (X: AC naikei of last row)

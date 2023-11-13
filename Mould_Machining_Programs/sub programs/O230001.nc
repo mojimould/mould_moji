@@ -1,5 +1,5 @@
 %
-O23001 (for AC dimples measurement)
+O230001 (for AC dimples measurement)
 (level 3: measurement dimple)
 (I > 0: X+, I < 0: X-)
 

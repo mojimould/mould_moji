@@ -1,5 +1,5 @@
 %
-O23002 (for BD dimples measurement)
+O230002 (for BD dimples measurement)
 (level 3: measurement dimple)
 (J > 0: Y+, J < 0: Y-)
 
