@@ -119,7 +119,7 @@ G91 G31 X#709 Z#710 F1500
 (XZ skip: to the center of the 1st row)
 #711=#5041
 #712=#5042
-#713=#5043-#[2000+#4111]
+#713=#5043-[#[2000+#4111]+#[2200+#4111]]
 (current work XYZ: the center of the 1st row)
 
 IF[#4111EQ50]GOTO007
