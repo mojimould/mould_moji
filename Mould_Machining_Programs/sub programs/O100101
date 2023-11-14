@@ -1,41 +1,43 @@
 %
 O100101 (X center: left side measurement)
 
-IF[#4012LT54]GOTO98
-IF[#4012GT59]GOTO98
-(if work G# < 54 go to N98)
-(if work G# > 59 go to N98)
+IF[#4012LT54]GOTO800
+IF[#4012GT59]GOTO800
+(if work G# < 54 go to N800)
+(if work G# > 59 go to N800)
 
-IF[#4GE0]GOTO98
-IF[#26LE0]GOTO98
-IF[#512LE0]GOTO98
-IF[#1LE0]GOTO98
-IF[[#4+[#512*2]+#1]GE0]GOTO98
-(if I >= 0 go to N98)
-(if Z <= 0 go to N98)
-(if probe radius D/2 <= 0 go to N98)
-(if A <= 0 go to N98)
-(if I+D+A >= 0 go to N98)
+IF[#4GE0]GOTO800
+IF[#26LE0]GOTO800
+IF[#512LE0]GOTO800
+IF[#1LE0]GOTO800
+IF[[#4+[#512*2]+#1]GE0]GOTO800
+(if I >= 0 go to N800)
+(if Z <= 0 go to N800)
+(if probe radius D/2 <= 0 go to N800)
+(if A <= 0 go to N800)
+(if I+D+A >= 0 go to N800)
 
 #101=#4012
 #102=#5041
 (#101= current work coordinate G#)
 (#102= current work X)
 
-IF[#1005EQ1]GOTO96 (if low battery, go to N96)
-IF[#1004EQ1]GOTO01 (if current sensor ON, go to N01)
+IF[#1005EQ1]GOTO801
+IF[#1004EQ1]GOTO001
+(if low battery, go to N801)
+(if current sensor ON, go to N001)
 M117 (sensor on/off)
 
-N01
+N001
 G90 G31 Z[#26-#512] F6400
 (Z skip tanmen: Z - D/2)
-IF[[#5063-#2050]GT[#26-#512]]GOTO10
-(if skip Z - hosei #50 KouguChou > tanmen Z - D/2, to N10)
+IF[[#5063-#2050]GT[#26-#512]]GOTO802
+(if skip Z - hosei #50 KouguChou > tanmen Z - D/2, to N802)
 
 G91 G31 X[#4+#512+#1] F1800
 (X- skip: [AC naikei/2 - D/2 - A])
-IF[[ABS[#102-#5061]]LT[ABS[#4+#512+#1]]]GOTO11
-(if |startX - skipX| < |AC naikei/2 - D/2 - A| to N11)
+IF[[ABS[#102-#5061]]LT[ABS[#4+#512+#1]]]GOTO803
+(if |startX - skipX| < |AC naikei/2 - D/2 - A| to N803)
 
 G91 G31 X-[#1*2] F#514
 (X- skip: 2A)
@@ -45,32 +47,32 @@ G91 G31 X-[#1*2] F#514
 G91 X[-#4-#512+#501+#502] F3000
 (X to measured center)
 
-IF[[ABS[#103-#501-#502]]GE[ABS[#4-#1]]]GOTO98
-(if |#103-#501-#502|>=|I-A| go to N98)
+IF[[ABS[#103-#501-#502]]GE[ABS[#4-#1]]]GOTO800
+(if |#103-#501-#502|>=|I-A| go to N800)
 
 #[5201+[#101-53]*20]=#5021
 (current work origin X = skip sign pos X)
 
 G90 Z[#26+100.0] F9600
-GOTO99
+GOTO999
 
 
-N96
+N801
 #3000=145 (MP10/MP12/MP60-Low battery)
 M00 (ALARM: low battery)
-GOTO99
+GOTO999
 
-N11
+N803
 G90 G01 X#102 (X to start point)
 
-N10
+N802
 G91 G28 Z0
 G65 P900002 (sensor OFF)
 
-N98 #3000=121 (Argument Is Not Assigned)
+N800 #3000=121 (Argument Is Not Assigned)
 M00 (are arguments ok?)
 
-N99 M99
+N999 M99
 
 (#4 :I: -X inside width / 2)
 (#26:Z: sokutei point Z)
