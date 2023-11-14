@@ -7,13 +7,13 @@ O1916 (main: SMP-1916)
 
 G91 G28 Z0
 
-IF[#1005EQ1]GOTO96
-IF[#1004EQ0]GOTO01
-(if low battery, go to N96)
-(if current sensor off, go to N01)
+IF[#1005EQ1]GOTO800
+IF[#1004EQ0]GOTO001
+(if low battery, go to N800)
+(if current sensor off, go to N001)
 M117 (sensor off)
 
-N01
+N001
 G91 G30 X0 Y0
 G49 G40 G80 G17 (cancel hosei)
 M262 (palette rotate speed 25)
@@ -22,22 +22,22 @@ M71 (palette #1)
 
 (Genten Settei G54 G55 G56 G57)
 
-IF[#1000NE0]GOTO02 (if NOT p#1, to N02)
+IF[#1000NE0]GOTO002 (if NOT p#1, to N002)
 #30=#401 (p#1 X table center)
 #32=#403 (p#1 Z table center)
 #33=#404 (p#1 B table center)
 (palette #1)
-GOTO03 (to N03)
+GOTO003 (to N003)
 
-N02
-IF[#1000NE1]GOTO98
-(if the current palette is NOT #2, go to 98)
+N002
+IF[#1000NE1]GOTO801
+(if the current palette is NOT #2, go to N801)
 #30=#405 (p#2 X table center)
 #32=#407 (p#2 Z table center)
 #33=#408 (p#2 B table center)
 (palette #2)
 
-N03
+N003
 G90 G10 L2 P1 X-527.732 Y-648.500 Z#32 B#33
 G90 G10 L2 P2 X-526.889 Y-648.500 Z#32 B#33
 G90 G10 L2 P3 X-561.306 Y-648.500 Z#32 B#33
@@ -72,43 +72,43 @@ G43 Z[499.984+100.0] H50
 
 (Bottom sokutei start)
 
-IF[#1005EQ1]GOTO96
-IF[#1004EQ1]GOTO04
-(if low battery, go to N96)
+IF[#1005EQ1]GOTO800
+IF[#1004EQ1]GOTO004
+(if low battery, go to N800)
 M117
 
-N04
+N004
 G65 P100101 I-76.725 Z499.984 A10.0
-(Bot X Gaisaku center)
+(G54: Bot X Gaisaku center)
 (I: Bot -ACnaikei/2)
 (Z: sai_furiwake Bot)
 (A: skip kaishi kyori)
 
 #5261=-[#5221-#30]+#30+11.0
-(Top X Gaisaku center)
+(G56: Top X Gaisaku center)
 (G56X = -[G54X-tableCenterX] + tableCenterX + tooriShin)
 
 G65 P100002 Y183. Z499.984 A10. F200.
-(Bot Y Gaisaku center)
+(G54: Bot Y Gaisaku center)
 (Y: Bot BD gaikei)
 (Z: sai_furiwake Bot)
 (A: skip kaishi kyori)
 (F: skip speed)
 
 #5262=#5222 (G56Y = G54Y)
-(Top Y Gaisaku center)
+(G56: Top Y Gaisaku center)
 
 G90 G01 G55 X0 Y0 (G55 XY Bot Inside center)
 
 G65 P100011 X155. Z499.984 A10. F200.
-(Bot X inside center)
+(G55: Bot X inside center)
 (X: Bot AC naikei)
 (Z: sai_furiwake Bot)
 (A: skip kaishi kyori)
 (F: skip speed)
 
 G65 P100012 Y153. Z499.984 A10. F200.
-(Bot Y inside center)
+(G55: Bot Y inside center)
 (Y: Bot BD naikei)
 (Z: sai_furiwake Bot)
 (A: skip kaishi kyori)
@@ -133,14 +133,14 @@ G43 Z[500.016+100.0] H50
 (Top sokutei start)
 
 G65 P100011 X156.863 Z500.016 A10. F200.
-(Top X inside center)
+(G57: Top X inside center)
 (X: AC naikei)
 (Z: sai_furiwake Top)
 (A: skip kaishi kyori)
 (F: skip speed)
 
 G65 P100012 Y154.839 Z500.016 A10. F200.
-(Top Y inside center)
+(G57: Top Y inside center)
 (Y: BD naikei)
 (Z: sai_furiwake Top)
 (A: skip kaishi kyori)
@@ -220,16 +220,16 @@ M06 (tool exchange)
 
 (Top tanmen start)
 
-#5 = 8.0 (kezuriShiro: all)
-#6 = 4.0 (kezuriShiro: 1 time)
+#5= 8.0 (kezuriShiro: all)
+#6= 4.0 (kezuriShiro: 1 time)
 
-#7 = FUP[#5 / #6]
+#7= FUP[#5/#6]
 (kaisuu: #5/#6 kiriage)
 WHILE[#7 GE 1]DO1
 #7=#7-1
 G56 G65 P505000 D2. H2. X185. Y183. Z[500.016 + #6*#7] E50. F900. S950.
 END1
-(O205000: tammen kakou)
+(O505000: tammen kakou)
 (D H: hosei kougu#)
 (X: AC gaikei)
 (Y: BD gaikei)
@@ -250,7 +250,7 @@ M06 (tool exchange)
 G56 G65 P505600 Q3. D16. H16. X180.95 Y180.95 Z[500.016 - 32.0] R18. F400. E400. S930. I0.
 G56 G65 P505600 Q1. D16. H16. X180.95 Y180.95 Z[500.016 - 32.0] R18. F400. E400. S930. I0.
 G56 G65 P505600 Q0. D16. H16. X180.95 Y180.95 Z[500.016 - 32.0] R18. F400. E400. S930. I0.
-(O205600: Sotogawa 1shuu Corner R, al HidariMawari)
+(O505600: Sotogawa 1shuu Corner R, al HidariMawari)
 (Q: +hosei: AC&BD gaisakuKei)
 (D H: hosei kougu#)
 (X: AC gaisakuKei)
@@ -274,7 +274,7 @@ M06 (tool exchange)
 #10=-0.1 (+hosei: mizo ichi)
 G56 G65 P505600 D6. H6. X172.90 Y172.90 Z[500.016-12.05-7.0+#10] R18. Q0. I0. F500. E400. S930.
 (mizo ichi)
-(O205600: Sotogawa 1shuu Corner R, al HidariMawari)
+(O505600: Sotogawa 1shuu Corner R, al HidariMawari)
 (D H: hosei kougu#)
 (X: AC mizoKei)
 (Y: BD mizoKei)
@@ -288,7 +288,7 @@ G56 G65 P505600 D6. H6. X172.90 Y172.90 Z[500.016-12.05-7.0+#10] R18. Q0. I0. F5
 #11=0.2 (+hosei: mizo haba)
 G56 G65 P505600 D6. H6. X172.90 Y172.90 Z[500.016-12.05-[8.05/2]+#10+#11] R18. Q0. I0. F500. E400. S930.
 (mizo haba)
-(O205600: Sotogawa 1shuu Corner R, al HidariMawari)
+(O505600: Sotogawa 1shuu Corner R, al HidariMawari)
 (D H: hosei kougu#)
 (X: AC mizoKei)
 (Y: BD mizoKei)
@@ -310,7 +310,7 @@ M06 (tool exchange)
 
 G56 G65 P505600 D13. H13. X180.95 Y180.95 Z[500.016 - 1.0] R18. Q0. I0. F500. E400. S1800.
 (Top Soto mentori)
-(O205600: Sotogawa 1shuu Corner R, al HidariMawari)
+(O505600: Sotogawa 1shuu Corner R, al HidariMawari)
 (I: +hosei: AC center)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
@@ -339,12 +339,12 @@ M06 (tool exchange)
 
 #8 = 8.0 (kezuriShiro: all)
 
-#9 = FUP[#8 / #6] (kaisuu: #8/#6 kiriage)
+#9 = FUP[#8/#6] (kaisuu: #8/#6 kiriage)
 WHILE[#9 GE 1]DO1
 #9=#9-1
 G54 G65 P505000 D2. H2. X185. Y183. Z[500.016 + #6*#9] E50. F900. S950.
 END1
-(O205000: tammen kakou)
+(O505000: tammen kakou)
 (D H: hosei kougu#)
 (X: AC gaikei)
 (Y: BD gaikei)
@@ -364,7 +364,7 @@ M06 (tool exchange)
 G54 G65 P505600 D16. H16. Q3. I0. X180.95 Y180.95 Z[499.984 - 25.0] R18. F400. E400. S930.
 G54 G65 P505600 D16. H16. Q1. I0. X180.95 Y180.95 Z[499.984 - 25.0] R18. F400. E400. S930.
 G54 G65 P505600 D16. H16. Q0. I0. X180.95 Y180.95 Z[499.984 - 25.0] R18. F400. E400. S930.
-(O205600: Sotogawa 1shuu Corner R, al HidariMawari)
+(O505600: Sotogawa 1shuu Corner R, al HidariMawari)
 (Q: +hosei: AC&BD gaisakuKei)
 (D H: hosei kougu#)
 (X: AC gaisakuKei)
@@ -387,7 +387,7 @@ M06 (tool exchange)
 
 G54 G65 P505600 D11. H11. Q0. X180.95 Y180.95 Z[499.984 - 4.0] R18. F500. E400. S1800. I0.
 (Bot Soto Chamfer)
-(O205600: Sotogawa 1shuu Corner R, al HidariMawari)
+(O505600: Sotogawa 1shuu Corner R, al HidariMawari)
 (D H: hosei kougu#)
 (Q: +hosei: AC&BD gaisakuKei)
 (X: AC gaisakuKei)
@@ -409,7 +409,7 @@ G55 G65 P505200 D11. H11. I-0.668 K4. X155. Y153. Z[499.984 - 10.0] R18. A15. F4
 G55 G65 P505200 D11. H11. I-0.668 K2. X155. Y153. Z[499.984 - 10.0] R18. A15. F400. S1800.
 G55 G65 P505200 D11. H11. I-0.668 K0. X155. Y153. Z[499.984 - 10.0] R18. A15. F400. S1800.
 (Bot Uchi Chamfer)
-(O205200: Uchigawa 1shuu Corner R, ac HidariMawari)
+(O505200: Uchigawa 1shuu Corner R, ac HidariMawari)
 (I: +hosei x center)
 (K: +hosei Z)
 (D H: hosei kougu#)
@@ -426,18 +426,18 @@ G55 G65 P505200 D11. H11. I-0.668 K0. X155. Y153. Z[499.984 - 10.0] R18. A15. F4
 
 T01 (empty)
 M06 (tool exchange)
-IF[#1004EQ0]GOTO99
-(if current sensor off, go to N99)
+IF[#1004EQ0]GOTO999
+(if current sensor off, go to N999)
 M117 (sensor on/off)
-GOTO99
+GOTO999
 
-N96
+N800
 #3000=145 (MP10/MP12/MP60-Low battery)
 M00 (ALARM: low battery)
-GOTO99
+GOTO999
 
-N98
+N801
 #3000=121 (is the palette# is ok?)
 
-N99 M30
+N999 M30
 %
