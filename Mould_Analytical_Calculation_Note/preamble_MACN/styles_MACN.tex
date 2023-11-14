@@ -11,11 +11,13 @@
 \geometry{
   a4paper,  % paper size
   twoside,
-  text = {6.4in, 9.6in},
+  text = {6.5in},
   centering,
   includehead,  % include the head of the page
 %  headheight = 13.6pt,
   includefoot,  % include the foot of the page
+  top=15truemm,
+  bottom=0truemm,
 }
 %%%%% LINESPREAD %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \linespread{1.15}\selectfont
@@ -58,7 +60,7 @@
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\headrulewidth}{1.5pt}
-\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\footrulewidth}{0pt}
 
 \fancypagestyle{front}{
   \fancyhead{} % clear all header fields
