@@ -1,49 +1,49 @@
 %
 O100002 (Y center of outer measurement)
 
-IF[#4012LT54]GOTO98
-IF[#4012GT59]GOTO98
-(if work G# < 54 go to N98)
-(if work G# > 59 go to N98)
+IF[#4012LT54]GOTO800
+IF[#4012GT59]GOTO800
+(if work G# < 54 go to N800)
+(if work G# > 59 go to N800)
 
-IF[#25LE0]GOTO98
-IF[#26LE0]GOTO98
-IF[#512LE0]GOTO98
-IF[#1LE0]GOTO98
-(if Y <= 0 go to N98)
-(if Z <= 0 go to N98)
-(if probe radius D/2 <= 0 go to N98)
-(if A <= 0 go to N98)
+IF[#25LE0]GOTO800
+IF[#26LE0]GOTO800
+IF[#512LE0]GOTO800
+IF[#1LE0]GOTO800
+(if Y <= 0 go to N800)
+(if Z <= 0 go to N800)
+(if probe radius D/2 <= 0 go to N800)
+(if A <= 0 go to N800)
 
-IF[#9EQ#0]GOTO01
-IF[#9LE0]GOTO01
-IF[#9GT300.0]GOTO01
-(if skip speed F <= 0 or 300.0 < F, go to N01)
-GOTO02
+IF[#9EQ#0]GOTO001
+IF[#9LE0]GOTO001
+IF[#9GT300.0]GOTO001
+(if skip speed F <= 0 or F > 300.0, go to N001)
+GOTO002
 
-N01
+N001
 #9=#514 (skip speed = 50.)
 
-N02
+N002
 #101=#4012
 #102=#5042
 (#101= current work coordinate G#)
 (#102= current work Y)
 
-IF[#1005EQ1]GOTO96
-IF[#1004EQ1]GOTO03
-(if low battery, go to N96)
-(if current sensor ON, go to N03)
+IF[#1005EQ1]GOTO801
+IF[#1004EQ1]GOTO003
+(if low battery, go to N801)
+(if current sensor ON, go to N003)
 M117 (sensor on/off)
 
-N03
+N003
 G01 G91 Y-[[#25/2]+#512+#1] F9600
 (Y-: [BD gaikei/2 + D/2 + A])
 
 G90 G31 Z[#26-#512] F3600
 (Z skip: tanmen Z - D/2)
-IF[[#5063-#2050]GT[#26-#512]]GOTO10
-(if skip Z - hosei #50 KouguChou > tanmen Z - D/2, to N10)
+IF[[#5063-#2050]GT[#26-#512]]GOTO802
+(if skip Z - hosei #50 KouguChou > tanmen Z - D/2, to N802)
 
 G91 G31 Y[#1*2] F#9
 (Y+ skip: 2A)
@@ -51,10 +51,11 @@ G91 G31 Y[#1*2] F#9
 (#103= Y bellow side + D/2 + probe hosei)
 
 G91 Y-[#1*2] F3600 (Y-: 2A)
-G91 Z[#512+50.0] F9600 (Z+: D/2+50.)
+G91 Z[#512+50.0] F9600
+(Z+: D/2+50.)
 
-IF[[ABS[#103+#501-#503]]LE[ABS[[#25/2]-#1]]]GOTO98
-(if |#103|<=|Y/2-A| go to N98)
+IF[[ABS[#103+#501-#503]]LE[ABS[[#25/2]-#1]]]GOTO800
+(if |#103|<=|Y/2-A|, go to N800)
 
 G90 Y#102 (Y to start point)
 G91 Y[[#25/2]+#512+#1]
@@ -62,8 +63,8 @@ G91 Y[[#25/2]+#512+#1]
 
 G90 G31 Z[#26-#512] F3600
 (Z skip: tanmen Z - D/2)
-IF[[#5063-#2050]GT[#26-#512]]GOTO10
-(if skip Z - hosei #50 KouguChou > tanmen Z - D/2, to N10)
+IF[[#5063-#2050]GT[#26-#512]]GOTO802
+(if skip Z - hosei #50 KouguChou > tanmen Z - D/2, to N802)
 
 G91 G31 Y-[#1*2] F#9
 (Y- skip: 2A)
@@ -71,9 +72,10 @@ G91 G31 Y-[#1*2] F#9
 (#104= Y above side - D/2 + probe hosei)
 
 G91 Y[#1*2] F3600 (Y+: 2A)
-G91 Z[#512+50.0] F9600 (Z+: D/2+50.)
-IF[[ABS[#104-#501-#503]]LE[ABS[[#25/2]-#1]]]GOTO98
-(if |#104|<=|Y/2-A| go to N98)
+G91 Z[#512+50.0] F9600
+(Z+: D/2+50.)
+IF[[ABS[#104-#501-#503]]LE[ABS[[#25/2]-#1]]]GOTO800
+(if |#104|<=|Y/2-A|, go to N800)
 
 #106=[#104+#103]/2
 #105=#104-#103
@@ -85,23 +87,23 @@ G90 Y#106 (Y to measured center)
 (current work origin Y = current machine Y)
 
 G90 Z[#26+100.0]
-GOTO99
+GOTO999
 
-N96
-#3000=145 (MP10/MP12/MP60-Low battery)
+N801
+#3000=145 (Low battery)
 M00 (ALARM: low battery)
-GOTO99
+GOTO999
 
-N10
+N802
 G91 G28 Z0
 G90 G01 Y#102 (Y to start point)
 
-N98
+N800
 G65 P900002 (sensor OFF)
 #3000=121 (are the arguments or the mould OK?)
 M00 (are arguments ok?)
 
-N99 M99
+N999 M99
 
 (#25:Y: Y outside width)
 (#26:Z: sokutei point Z)
