@@ -2,84 +2,84 @@
 O210000 (for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 
-IF[#4012LT54]GOTO098 
-IF[#4012GT59]GOTO098
-(if work G# < 54 or G# > 59, go to N098)
+IF[#4012LT54]GOTO800 
+IF[#4012GT59]GOTO800
+(if work G# < 54 or G# > 59, go to N800)
 
-IF[#18EQ#0]GOTO098
-IF[#23EQ#0]GOTO098
-IF[#23LE0]GOTO098
-IF[#24EQ#0]GOTO098
-IF[#24LE0]GOTO098
-IF[#25EQ#0]GOTO098
-IF[#25LE0]GOTO098
-IF[#26EQ#0]GOTO098
-IF[#26LE0]GOTO098
-IF[#9EQ#0]GOTO098
-IF[#9LE0]GOTO098
-IF[#19LE0]GOTO098
-IF[#17EQ#0]GOTO098
-IF[#17LE0]GOTO098
-IF[#4EQ#0]GOTO098
-IF[#4LE0]GOTO098
-IF[#6EQ#0]GOTO098
-IF[#6LT0]GOTO098
-IF[#13EQ#0]GOTO098
-IF[#13LE0]GOTO098
-IF[#21EQ#0]GOTO098
-IF[#21LE0]GOTO098
-(if R is empty, go to N098)
-(if W <= 0 or empty, go to N098)
-(if Z <= 0 or empty, go to N098)
-(if Q <= 0 or empty, go to N098)
-(if M <= 0 or empty, go to N098)
-(if K < 0 or empty, go to N098)
-(if X <= 0 or empty, go to N098)
-(if Y <= 0 or empty, go to N098)
-(if F <= 0 or empty, go to N098)
-(if S <= 0, go to N098)
-(if I <= 0 or empty, go to N098)
-(if U <= 0 or empty, go to N098)
+IF[#18EQ#0]GOTO800
+IF[#23EQ#0]GOTO800
+IF[#23LE0]GOTO800
+IF[#24EQ#0]GOTO800
+IF[#24LE0]GOTO800
+IF[#25EQ#0]GOTO800
+IF[#25LE0]GOTO800
+IF[#26EQ#0]GOTO800
+IF[#26LE0]GOTO800
+IF[#9EQ#0]GOTO800
+IF[#9LE0]GOTO800
+IF[#19LE0]GOTO800
+IF[#17EQ#0]GOTO800
+IF[#17LE0]GOTO800
+IF[#4EQ#0]GOTO800
+IF[#4LE0]GOTO800
+IF[#6EQ#0]GOTO800
+IF[#6LT0]GOTO800
+IF[#13EQ#0]GOTO800
+IF[#13LE0]GOTO800
+IF[#21EQ#0]GOTO800
+IF[#21LE0]GOTO800
+(if R is empty, go to N800)
+(if W <= 0 or empty, go to N800)
+(if Z <= 0 or empty, go to N800)
+(if Q <= 0 or empty, go to N800)
+(if M <= 0 or empty, go to N800)
+(if K < 0 or empty, go to N800)
+(if X <= 0 or empty, go to N800)
+(if Y <= 0 or empty, go to N800)
+(if F <= 0 or empty, go to N800)
+(if S <= 0, go to N800)
+(if I <= 0 or empty, go to N800)
+(if U <= 0 or empty, go to N800)
 
-IF[#18LE#26]GOTO098
-IF[[#13-FIX[#13]]NE0]GOTO098
-IF[[#17+[#13-1]*#6]GE#26]GOTO098
-IF[#2EQ#0]GOTO098
-IF[[[#9+#19+ABS[#9-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]GOTO098
-IF[[ABS[#2]]GT15.]GOTO098
-IF[#9GE#25]GOTO098
-IF[#19GE#25]GOTO098
-IF[#21GT#4]GOTO098
-(if R <= Z, go to N098)
-(if M is not intger, go to N098)
-(if Q+[M-1]*K >= Z, go to N098)
-(if max[F, S] >= min[X, Y], go to N098)
-(if B is empty or |B| > 20., go to N098)
-(if F >= Y, go to N098)
-(if S >= Y, go to N098)
-(if U > I, go to N098)
+IF[#18LE#26]GOTO800
+IF[[#13-FIX[#13]]NE0]GOTO800
+IF[[#17+[#13-1]*#6]GE#26]GOTO800
+IF[#2EQ#0]GOTO800
+IF[[[#9+#19+ABS[#9-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]GOTO800
+IF[[ABS[#2]]GT15.]GOTO800
+IF[#9GE#25]GOTO800
+IF[#19GE#25]GOTO800
+IF[#21GT#4]GOTO800
+(if R <= Z, go to N800)
+(if M is not intger, go to N800)
+(if Q+[M-1]*K >= Z, go to N800)
+(if max[F, S] >= min[X, Y], go to N800)
+(if B is empty or |B| > 20., go to N800)
+(if F >= Y, go to N800)
+(if S >= Y, go to N800)
+(if U > I, go to N800)
 
 #701=#4012 (#701= current work coordinate G#)
-IF[#4111EQ50]GOTO1 (if H# = 50, go to N01)
-IF[#4111EQ31]GOTO2 (if H# = 31, go to N02)
-IF[#4111EQ32]GOTO2 (if H# = 32, go to N02)
-IF[#4111EQ33]GOTO2 (if H# = 33, go to N02)
-GOTO098
-N01 #30=#512
-GOTO03 (if sensor, #30=#512)
-N02 #30=0 (if Tslot, #30=0)
+IF[#4111EQ50]GOTO001 (if H# = 50, go to N001)
+IF[#4111EQ31]GOTO002 (if H# = 31, go to N002)
+IF[#4111EQ32]GOTO002 (if H# = 32, go to N002)
+IF[#4111EQ33]GOTO002 (if H# = 33, go to N002)
+GOTO800
+N001 #30=#512
+GOTO003 (if sensor, #30=#512)
+N002 #30=0 (if Tslot, #30=0)
 
-N03
-IF[#1000NE0]GOTO04
-(if the palette is NOT #1, to N04)
+N003
+IF[#1000NE0]GOTO004
+(if the palette is NOT #1, to N004)
 #29=#401 (p#1 table center X)
 #28=#403 (p#1 table center Z)
-GOTO05
-N04
+GOTO005
+N004
 #29=#405 (p#2 table center X)
 #28=#407 (p#2 table center Z)
 
-N05
+N005
 M11 (4jiku unclamp)
 G90 G00 G#701 B[#2+#585]
 (current work B: G90 B+#585 deg)
@@ -106,15 +106,15 @@ G91 G01 Z[#704-#26-#30-100]
 #710=-#708*SIN[ABS[#2]]-#17*COS[ABS[#2]]
 (XZ: the center of the 1st row after rotation)
 
-IF[#4111NE50]GOTO06
-(if tool is not sensor, go to N05)
-IF[#1005EQ1]GOTO097
-IF[#1004EQ1]GOTO06
-(if low battery, go to N097)
-(if current sensor ON, go to N05)
+IF[#4111NE50]GOTO006
+(if tool is not sensor, go to N006)
+IF[#1005EQ1]GOTO801
+IF[#1004EQ1]GOTO006
+(if low battery, go to N801)
+(if current sensor ON, go to N006)
 M117 (sensor on/off)
 
-N06
+N006
 G91 G31 X#709 Z#710 F1500
 (XZ skip: to the center of the 1st row)
 #711=#5041
@@ -122,20 +122,23 @@ G91 G31 X#709 Z#710 F1500
 #713=#5043-#[2000+#4111]
 (current work XYZ: the center of the 1st row)
 
-IF[#4111EQ50]GOTO07
+IF[#4111EQ50]GOTO007
 M03 (shujiku kaiten on)
 (M08 coolant on)
 
-N07
-#714=4 (#714: faces 1: A, 2: B, 3: C, 4: D)
+N007
+#714=4 (#714: faces 1: A, 2: C, 3: B, 4: D)
 
 N100 (loop on #714)
 G90 G01 X#711 Y#712 Z#713 F6400
 (XYZ: to the center of the 1st row)
 
-IF[#714EQ3]GOTO101 (if B, to 101)
-IF[#714EQ2]GOTO102 (if C, to 102)
-IF[#714EQ1]GOTO103 (if A, to 103)
+IF[#714EQ3]GOTO101
+IF[#714EQ2]GOTO102
+IF[#714EQ1]GOTO103
+(if B, to N101)
+(if C, to N102)
+(if A, to N103)
 (for face D)
 G91 G31 Y-[#25/2-#512-10] F1500
 GOTO200
@@ -151,9 +154,12 @@ G91 G31 X[[#24/2-#512-10]*COS[ABS[#2]]] F1500
 N200
 #33=1 (#33: current row)
 WHILE[#33LE#13]DO1 (loop on #33)
-IF[#714EQ3]GOTO201 (#714=3, for B)
-IF[#714EQ2]GOTO202 (#714=2, for C)
-IF[#714EQ1]GOTO203 (#714=1, for A)
+IF[#714EQ3]GOTO201
+IF[#714EQ2]GOTO202
+IF[#714EQ1]GOTO203
+(#714=3, for B)
+(#714=2, for C)
+(#714=1, for A)
 G65P220002 A-1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
 (for D: moving along row)
 GOTO204
@@ -187,23 +193,24 @@ GOTO100
 
 
 N104
-IF[#4111EQ50]GOTO08
+IF[#4111EQ50]GOTO008
 M05 (shujiku kaiten off)
 M09 (coolant off)
 
-N08
+N008
 G90 G01 X#711 Z[#713-#30] F6400
 (XZ: to the center of the 1st row)
-G90 G01 X#705 Z#706 F6400 (XZ: to start point)
+G90 G01 X#705 Z#706 F6400
+(XZ: to start point)
 G90 G01 Z[#706+100.0] F9600
 GOTO999
 
-N097
-#3000=145 (MP10/MP12/MP60-Low battery)
+N801
+#3000=145 (Sensor Low battery)
 M00 (ALARM: low battery)
 GOTO999
 
-N098
+N800
 #3000=121 (are the arguments or the mould OK?)
 M00 (are arguments ok?)
 
