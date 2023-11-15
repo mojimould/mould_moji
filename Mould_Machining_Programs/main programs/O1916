@@ -65,10 +65,6 @@ M19 (Shujiku orientation)
 G90 G01 G54 X0 Y0 F9600
 (G01 G54XY Bot Gaisaku center)
 
-G43 Z[499.984+100.0] H50
-(hosei KouguChou #50)
-(Z = BotTanmen +100.)
-
 
 (Bottom sokutei start)
 
@@ -76,6 +72,10 @@ IF[#1005EQ1]GOTO800
 IF[#1004EQ1]GOTO004
 (if low battery, go to N800)
 M117
+
+G43 Z[499.984+100.0] H50
+(hosei KouguChou #50)
+(Z = BotTanmen +100.)
 
 N004
 G65 P100101 I-76.725 Z499.984 A10.0
@@ -175,7 +175,11 @@ G65 P210000 R8922.7 X156.161 Y154.148 Z500.016 W400. F102. S85. Q90. I17. K20. M
 
 (Top sokutei end)
 
+M117 (sensor on/off)
+IF[#1004EQ0]GOTO005
 G65 P900002 (sensor OFF)
+
+N005
 G49 (Cancel hosei kouguChou)
 G91 G30 X0 Y0 Z0
 
@@ -220,10 +224,10 @@ M06 (tool exchange)
 
 (Top tanmen start)
 
-#01= 8.0 (kezuriShiro: all)
-#02= 4.0 (kezuriShiro: 1 time)
+#01=8.0 (kezuriShiro: all)
+#02=4.0 (kezuriShiro: 1 time)
 
-#03= FUP[#01/#02]
+#03=FUP[#01/#02]
 (kaisuu: #01/#02 kiriage)
 WHILE[#03GE1]DO1
 #03=#03-1

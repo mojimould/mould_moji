@@ -11,10 +11,10 @@ N01
 #33=-1
 
 N02
-#734=#5041
-#735=#5043-#[2000+#4111]
-(#734= current work X: start point X)
-(#735= current work Z: start point Z)
+#734=#5001
+#735=#5003
+(#734= current work block end X)
+(#735= current work block end Z)
 
 #736=FIX[#13/2]
 #737=#19/#04+1
@@ -85,10 +85,10 @@ N20
 IF[#31GE#739]GOTO50 (end loop)
 IF[#4111NE50]GOTO25
 (if H# is not sensor, go to N25)
-G91 G31 X[-#04*COS[ABS[#02]]] Z[#02*SIN[ABS[#02]]] F1500
+G91 G31 X[-#04*COS[ABS[#02]]] Z[#04*SIN[ABS[#02]]] F1500
 GOTO30
 N25
-G91 G01 X[-#04*COS[ABS[#02]]] Z[#02*SIN[ABS[#02]]]
+G91 G01 X[-#04*COS[ABS[#02]]] Z[#04*SIN[ABS[#02]]]
 N30
 #31=#31+1
 END1
@@ -134,9 +134,8 @@ N999 M99
 (#3000: alarm)
 (#4012: current work coordinate G#)
 (#4111: current H#)
-(#5041: current work X)
-(#5043: current work Z)
-(#5063: skip position Z without KouguChou hosei)
+(#5001: current work block end point X)
+(#5003: current work block end point  Z)
 
 
 (Subprograms)

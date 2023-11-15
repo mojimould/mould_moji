@@ -92,7 +92,7 @@ M10 (4jiku clamp)
 (#702~-11.095, #703~7.497, #704~500.083)
 G91 G01 X[#703-#702] F6400
 G91 G01 Z[#704-#26-#30-100]
-(X~18.592, Z~0.067-#30)
+(G91: X~18.592, Z~0.067-#30)
 (XZ to tanmen center)
 
 #705=#5041
@@ -123,6 +123,7 @@ G91 G31 X#709 Z#710 F1500
 (current work XYZ: the center of the 1st row)
 
 IF[#4111EQ50]GOTO007
+S2000
 M03 (shujiku kaiten on)
 (M08 coolant on)
 
@@ -260,6 +261,7 @@ N999 M99
 (#5043: current work Z)
 (#5044: current work B)
 (#5063: skip position Z without KouguChou hosei)
+(#5281: G57 X)
 
 
 (Subprograms)
