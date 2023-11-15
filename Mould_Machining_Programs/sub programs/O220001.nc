@@ -2,11 +2,11 @@
 O220001 (for AC dimples measurement & kakou)
 (level 2: mainly moving along row)
 
-IF[#1EQ#0]GOTO98
-IF[#1EQ0]GOTO98
-IF[#1LT0]GOTO01
+IF[#01EQ#0]GOTO98
+IF[#01EQ0]GOTO98
+IF[#01LT0]GOTO01
 #33=1
-GOTO2
+GOTO02
 N01
 #33=-1
 
@@ -17,22 +17,22 @@ N02
 (#735= current work Z: start point Z)
 
 #736=FIX[#13/2]
-#737=#19/#4+1
-#738=#9/#4+1
+#737=#19/#04+1
+#738=#09/#04+1
 (#736= number of even row)
 (#737= number of dimple of even rows)
 (#738= number of dimple of odd rows)
 
 IF[[#13/2]EQ#736]GOTO03
-#32=#9/2
+#32=#09/2
 GOTO04
 N03
 #32=#19/2
-(if #13 is odd, #32=#9/2)
+(if #13 is odd, #32=#09/2)
 (if #13 is even, #32=#19/2)
 
 N04
-#739=[#32*2]/#4+1 (#739= the number of dimple)
+#739=[#32*2]/#04+1 (#739= the number of dimple)
 IF[#4111EQ31]GOTO05
 IF[#4111EQ32]GOTO06
 IF[#4111EQ33]GOTO07
@@ -46,22 +46,22 @@ N05
 #29=#431 (kougu Hankei)
 GOTO09
 N06
-#29=#432
+#29=#432 (kougu Hankei)
 GOTO09
 N07
-#29=#433
+#29=#433 (kougu Hankei)
 GOTO09
 (if Tslot 1, #29=#431 and to N09)
 (if Tslot 2, #29=#432 and to N09)
 (if Tslot 3, #29=#433 and to N09)
 
 N08 (for sensor)
-G91 G31 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#2]]] F1500
+G91 G31 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F1500
 (XYZ skip to the 1st dimple: X: faceA-10 or faceC+10)
 GOTO10
 
 N09 (for kakou)
-G91 G00 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#2]]]
+G91 G00 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]]
 (XYZ to the 1st dimple: X: faceA-5 or faceC+5)
 
 N10
@@ -84,11 +84,11 @@ N20
 #30=#30+1
 IF[#31GE#739]GOTO50 (end loop)
 IF[#4111NE50]GOTO25
-(if H# is not 50, go to N25)
-G91 G31 Y#4 F1500
+(if H# is not sensor, go to N25)
+G91 G31 Y#04 F1500
 GOTO30
 N25
-G91 G01 Y#4
+G91 G01 Y#04
 N30
 #31=#31+1
 END1
@@ -103,24 +103,42 @@ M00 (are arguments ok?)
 
 N99 M99
 
-(#1 :A: face A>0: B, A<0: D)
-(#2 :B: angle)
-(#4 :I: X pitch)
-(#6 :K: Z pitch)
-(#9 :F: length of odd rows)
-(#21:U: depth of dimple)
+(Used Variables and Programs)
+
+(Local variables)
+
+(as received arguments)
+(used only as variables)
+(#01:A: face A>0: A, A<0: C)
+(#02:B: angle)
+(#04:I: X pitch)
+(#09:F: length of odd rows)
 (#13:M: number of rows)
 (#19:S: length of even rows)
 (#25:Y: BD naikei of last row)
+(used only as passed argument)
+(#21:U: depth of dimple)
 
-(#512: probe radius)
+(as LHS)
+(#29, #30, #31, #32, #33)
+
+(Common variables)
+(as RHS)
+(#431, #432, #433, #714)
+(as LHS)
+(#734-#739, #900101-#900200 ,#900201-#900300)
+
+(System variables)
 (#3000: alarm)
 (#4012: current work coordinate G#)
 (#4111: current H#)
-(#5041: current work X)
 (#5042: current work Y)
 (#5043: current work Z)
 (#5063: skip position Z without KouguChou hosei)
 
-(using: #734-#739, #90010x-#90020x)
+(Subprograms)
+(O230001, O630001)
+
+(Passed arguments)
+(#21, #29, #33, #900101-#900200 ,#900201-#900299)
 %
