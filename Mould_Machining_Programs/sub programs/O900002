@@ -17,4 +17,14 @@ IF[#33LT4]GOTO01
 (ALM: is sensor ok?)
 
 N02 M99
+
+(Used Variables and Programs)
+
+(Local variables)
+(#33)
+
+
+(System variables)
+(#1004: 1: sensor on, 0: off)
+(#3000: alarm)
 %

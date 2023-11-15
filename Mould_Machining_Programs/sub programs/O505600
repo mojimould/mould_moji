@@ -3,7 +3,7 @@ O505600
 (Sotogawa 1shuu Corner R, al HidariMawari)
 
 G90 G00 X0 Y0 (XY work genten)
-G91 G00 X#4 (hosei: AC center: +: X+, -: X-)
+G91 G00 X#04 (hosei: AC center: +: X+, -: X-)
 
 #27=#24+#17 (hosei: AC gaikei + Q)
 #28=#25+#17 (hosei: BD gaikei + Q)
@@ -19,8 +19,8 @@ G90 G43 H#11 Z#26 S#19
 (Hosei KouguChou: #11)
 (Z+ tanmen, Kaitensuu #19)
 
-G91 G42 D#7 Y-[#28/2]
-(Hosei Kougukei: #7)
+G91 G42 D#07 Y-[#28/2]
+(Hosei Kougukei: #07)
 (al: Y- BD gaikei/2)
 
 M03 (shujiku kaiten on)
@@ -29,38 +29,22 @@ M08 (coolant on)
 
 (Kokokara G01)
 
-G01 Y-[#29-#18] F#9
+G01 Y-[#29-#18] F#09
 (l:Y-:[1.5*BD gaikei - nigashi])
-(Speed #9)
-
-G03 X#18 Y-#18 I#18 J0 F#8
+G03 X#18 Y-#18 I#18 J0 F#08
 (bl corner: R#18 [#18, 0] X+Y-)
-(Speed #8)
-
-G01 X#30 F#9
+G01 X#30 F#09
 (b: X+ AC chokusenBu)
-(Speed #9)
-
-G03 X#18 Y#18 I0 J#18 F#8
+G03 X#18 Y#18 I0 J#18 F#08
 (br corner: R#18 [0, #18] X+Y+)
-(Speed #8)
-
-G01 Y#31 F#9
+G01 Y#31 F#09
 (r: Y+ BD chokusenBu)
-(Speed #9)
-
-G03 X-#18 Y#18 I-#18 J0 F#8
+G03 X-#18 Y#18 I-#18 J0 F#08
 (ar corner: R#18 [-#18, #0] X-Y+)
-(Speed #8)
-
-G01 X-#30 F#9
+G01 X-#30 F#09
 (a: X- AC chokusenBu)
-(Speed #9)
-
-G03 X-#18 Y-#18 I0 J-#18 F#8
+G03 X-#18 Y-#18 I0 J-#18 F#08
 (al corner: R#18 [0, -#18] X-Y-)
-(Speed #8)
-
 G02 X-60. Y-60. I-60. J0
 (G02 R60 [-60, 0] X-Y-)
 
@@ -78,15 +62,23 @@ G91 G30 Z0 (Z KouguKoukanIchi)
 G91 G30 X0 Y0 (XY KouguKoukanIchi)
 M99
 
+(Used Variables and Programs)
+
+(Local variables)
+
+(as received arguments)
 (#24:X:AC Gaikei)
 (#25:Y:BD Gaikei)
 (#26:Z:Furiwake Nagasa)
 (#18:R:Corner R)
 (#17:Q:Kei Hosei)
-(#4 :I:AC center hosei)
-(#7 :D:KouguKei hosei)
+(#04 :I:AC center hosei)
+(#07 :D:KouguKei hosei)
 (#11:H:KouguChou hosei)
-(#9 :F:Speed Chokusen)
-(#8 :E:Speed Corner R)
+(#09 :F:Speed Chokusen)
+(#08 :E:Speed Corner R)
 (#19:S:KaitenSuu)
+
+(as LHS)
+(#27-#31)
 %

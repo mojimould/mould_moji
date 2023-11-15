@@ -13,24 +13,24 @@ G90 G43 H#11 Z#26
 M03 (shujiku kaiten on)
 M08 (coolant on)
 
-G91 G41 D#7 Y-[#25/2-#8]
-(Hosei KouguKei, Kougu #7)
+G91 G41 D#07 Y-[#25/2-#08]
+(Hosei KouguKei, Kougu #07)
 (ar:Y-:[BD gaikei/2 - nigashi])
 
 
 (Kokokara G01)
 
-G01 Y-[#25+#8] F#9
-(r:Y-:[BD gaikei + nigashi], Speed #9)
+G01 Y-[#25+#08] F#09
+(r:Y-:[BD gaikei + nigashi], Speed #09)
 
 X-#24 (b:X-:AC gaikei)
 Y#25 (l:Y+:BD gaikei)
-X[#24+#8] (a:X+:[AC gaikei + nigashi])
+X[#24+#08] (a:X+:[AC gaikei + nigashi])
 
 
 (Kokokara G00)
 
-G00 G40 X[#25/2] Y#8
+G00 G40 X[#25/2] Y#08
 (Cancel Hosei KouguKei)
 (X+: BD gaikei/2, Y+: nigashi)
 
@@ -41,12 +41,17 @@ G91 G30 Z0 (Z KouguKoukanIchi)
 G30 X0 Y0 (XY KouguKoukanIchi)
 M99
 
+(Used Variables and Programs)
+
+(Local variables)
+
+(as received arguments)
 (#24:X:AC Gaikei)
 (#25:Y:BD Gaikei)
 (#26:Z:Furiwake Nagasa)
-(#7 :D:KouguKei hosei)
+(#07:D:KouguKei hosei)
 (#11:H:KouguChou hosei)
-(#8 :E:Kougu NigashiRyou)
-(#9 :F:Speed)
+(#08:E:Kougu NigashiRyou)
+(#09:F:Speed)
 (#19:S:KaitenSuu)
 %
