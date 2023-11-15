@@ -41,7 +41,7 @@ IF[#5003GT[#26-#512]]GOTO802
 G91 G31 X[#04+#512+#01] F1800
 (X- skip: [AC naikei/2 - D/2 - A])
 IF[[ABS[#5001-#102]]LT[ABS[#04+#512+#01]]]GOTO803
-(if |startX - skipX| < |AC naikei/2 - D/2 - A| to N803)
+(if |skipX - #102| < |AC naikei/2 - D/2 - A| to N803)
 
 G91 G31 X-[#01*2] F#514
 (X- skip: 2A)
@@ -107,9 +107,7 @@ N999 M99
 (#5003: current work block end point Z)
 (#5021: current machine coordinate X)
 (#5221: G54 X)
-(#5241: G55 X)
 (#5261: G56 X)
-(#5281: G57 X)
 
 
 (Subprograms)
