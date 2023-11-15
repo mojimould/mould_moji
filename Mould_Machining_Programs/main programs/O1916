@@ -88,10 +88,11 @@ G65 P100101 I-76.725 Z499.984 A10.0
 (G56: Top X Gaisaku center)
 (G56X = -[G54X-tableCenterX] + tableCenterX + tooriShin)
 
-G65 P100002 Y183. Z499.984 A10. F200.
+G65 P100002 Y183. Z499.984 K0 A10. F200.
 (G54: Bot Y Gaisaku center)
 (Y: Bot BD gaikei)
 (Z: sai_furiwake Bot)
+(K: Z +hosei from tanmen)
 (A: skip kaishi kyori)
 (F: skip speed)
 
