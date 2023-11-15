@@ -6,15 +6,15 @@ IF[#4012GT59]GOTO800
 (if work G# < 54 go to N800)
 (if work G# > 59 go to N800)
 
-IF[#4GE0]GOTO800
+IF[#04GE0]GOTO800
 IF[#26LE0]GOTO800
+IF[#01LE0]GOTO800
 IF[#512LE0]GOTO800
-IF[#1LE0]GOTO800
-IF[[#4+[#512*2]+#1]GE0]GOTO800
+IF[[#04+[#512*2]+#01]GE0]GOTO800
 (if I >= 0 go to N800)
 (if Z <= 0 go to N800)
-(if probe radius D/2 <= 0 go to N800)
 (if A <= 0 go to N800)
+(if probe radius D/2 <= 0 go to N800)
 (if I+D+A >= 0 go to N800)
 
 #101=#4012
@@ -34,20 +34,20 @@ G90 G31 Z[#26-#512] F6400
 IF[[#5063-#2050]GT[#26-#512]]GOTO802
 (if skip Z - hosei #50 KouguChou > tanmen Z - D/2, to N802)
 
-G91 G31 X[#4+#512+#1] F1800
+G91 G31 X[#04+#512+#01] F1800
 (X- skip: [AC naikei/2 - D/2 - A])
-IF[[ABS[#102-#5061]]LT[ABS[#4+#512+#1]]]GOTO803
+IF[[ABS[#102-#5061]]LT[ABS[#04+#512+#01]]]GOTO803
 (if |startX - skipX| < |AC naikei/2 - D/2 - A| to N803)
 
-G91 G31 X-[#1*2] F#514
+G91 G31 X-[#01*2] F#514
 (X- skip: 2A)
 #103=#5061-#512+#501+#502
 (#103 = X left side - D/2 + probe hosei)
 
-G91 X[-#4-#512+#501+#502] F3000
+G91 X[-#04-#512+#501+#502] F3000
 (X to measured center)
 
-IF[[ABS[#103-#501-#502]]GE[ABS[#4-#1]]]GOTO800
+IF[[ABS[#103-#501-#502]]GE[ABS[#04-#01]]]GOTO800
 (if |#103-#501-#502|>=|I-A| go to N800)
 
 #[5201+[#101-53]*20]=#5021
@@ -74,14 +74,22 @@ M00 (are arguments ok?)
 
 N999 M99
 
-(#4 :I: -X inside width / 2)
+(Used Variables and Programs)
+(local variables)
+(#04:I: -X inside width / 2)
 (#26:Z: sokutei point Z)
-(#1 :A: skip kaishi kyori)
+(#01:A: skip kaishi kyori)
 
+(common variables)
+(as destination)
+(#101, #102, #103)
+(as source)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)
 (#514: default skip speed)
+
+(system variables)
 (#1004: 0: sensor off, 1: on)
 (#1005: 0: sensor battery ok, 1: low battery)
 (#2050: hosei #50 KouguChou)
@@ -95,4 +103,7 @@ N999 M99
 (#5241: G55 X)
 (#5261: G56 X)
 (#5281: G57 X)
+
+(subprograms)
+(O900002)
 %
