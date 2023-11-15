@@ -106,22 +106,26 @@ M00 (are arguments ok?)
 N999 M99
 
 (Used Variables and Programs)
-(local variables)
-(#25:Y: Y outside width)
-(#26:Z: sokutei point Z)
+
+(Local variables)
+(as received arguments)
 (#01:A: skip kaishi kyori)
 (#09:F: skip speed)
+(#25:Y: Y outside width)
+(#26:Z: sokutei point Z)
 
-(common variables)
-(as destination)
+
+(Common variables)
+(as LHS)
 (#101, #102, #103, #104, #105, #106)
-(as source)
+(as RHS)
 (#501 : hosei: touch sensor signal delay)
 (#503 : hosei: probe center Y)
 (#512 : probe radius)
 (#514 : default skip speed)
 
-(system variables)
+
+(System variables)
 (#0   : empty)
 (#1004: 0: sensor off, 1: on)
 (#1005: 0: sensor battery ok, 1: low battery)
@@ -137,6 +141,7 @@ N999 M99
 (#5262: G56 Y)
 (#5282: G57 Y)
 
-(subprograms)
+
+(Subprograms)
 (O900002)
 %
