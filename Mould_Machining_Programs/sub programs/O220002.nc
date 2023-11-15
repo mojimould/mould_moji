@@ -96,12 +96,12 @@ END1
 N50
 G90 G01 X#734 Z#735 F6400
 (XZ: to start point)
-GOTO99
+GOTO999
 
 N98 #3000=121 (are the arguments or the mould OK?)
 M00 (are arguments ok?)
 
-N99 M99
+N999 M99
 
 (Used Variables and Programs)
 
@@ -124,7 +124,7 @@ N99 M99
 
 (Common variables)
 (as RHS)
-(#431, #432, #433, #714)
+(#431, #432, #433, #714, #768)
 (as LHS)
 (#734-#739, #900301-#900400 ,#900401-#900500)
 
