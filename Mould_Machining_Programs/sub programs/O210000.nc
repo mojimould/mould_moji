@@ -15,15 +15,15 @@ IF[#25EQ#0]GOTO800
 IF[#25LE0]GOTO800
 IF[#26EQ#0]GOTO800
 IF[#26LE0]GOTO800
-IF[#9EQ#0]GOTO800
-IF[#9LE0]GOTO800
+IF[#09EQ#0]GOTO800
+IF[#09LE0]GOTO800
 IF[#19LE0]GOTO800
 IF[#17EQ#0]GOTO800
 IF[#17LE0]GOTO800
-IF[#4EQ#0]GOTO800
-IF[#4LE0]GOTO800
-IF[#6EQ#0]GOTO800
-IF[#6LT0]GOTO800
+IF[#04EQ#0]GOTO800
+IF[#04LE0]GOTO800
+IF[#06EQ#0]GOTO800
+IF[#06LT0]GOTO800
 IF[#13EQ#0]GOTO800
 IF[#13LE0]GOTO800
 IF[#21EQ#0]GOTO800
@@ -43,13 +43,13 @@ IF[#21LE0]GOTO800
 
 IF[#18LE#26]GOTO800
 IF[[#13-FIX[#13]]NE0]GOTO800
-IF[[#17+[#13-1]*#6]GE#26]GOTO800
-IF[#2EQ#0]GOTO800
-IF[[[#9+#19+ABS[#9-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]GOTO800
-IF[[ABS[#2]]GT15.]GOTO800
-IF[#9GE#25]GOTO800
+IF[[#17+[#13-1]*#06]GE#26]GOTO800
+IF[#02EQ#0]GOTO800
+IF[[[#09+#19+ABS[#09-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]GOTO800
+IF[[ABS[#02]]GT15.]GOTO800
+IF[#09GE#25]GOTO800
 IF[#19GE#25]GOTO800
-IF[#21GT#4]GOTO800
+IF[#21GT#04]GOTO800
 (if R <= Z, go to N800)
 (if M is not intger, go to N800)
 (if Q+[M-1]*K >= Z, go to N800)
@@ -81,13 +81,13 @@ N004
 
 N005
 M11 (4jiku unclamp)
-G90 G00 G#701 B[#2+#585]
+G90 G00 G#701 B[#02+#585]
 (current work B: G90 B+#585 deg)
 M10 (4jiku clamp)
 
 #702=#[5201+[#701-53]*20]-#29
-#703=#702*COS[ABS[#2]]+#26*SIN[ABS[#2]]
-#704=-#702*SIN[ABS[#2]]+#26*COS[ABS[#2]]
+#703=#702*COS[ABS[#02]]+#26*SIN[ABS[#02]]
+#704=-#702*SIN[ABS[#02]]+#26*COS[ABS[#02]]
 (#702= current work origin X from table center)
 (#702~-11.095, #703~7.497, #704~500.083)
 G91 G01 X[#703-#702] F6400
@@ -102,8 +102,8 @@ G91 G01 Z[#704-#26-#30-100]
 (Z: the 1st row before rotation)
 #708=SQRT[#18*#18-#707*#707]-SQRT[#18*#18-#23*#23]
 (the center of the 1st row before rotation)
-#709=#708*COS[ABS[#2]]-#17*SIN[ABS[#2]]
-#710=-#708*SIN[ABS[#2]]-#17*COS[ABS[#2]]
+#709=#708*COS[ABS[#02]]-#17*SIN[ABS[#02]]
+#710=-#708*SIN[ABS[#02]]-#17*COS[ABS[#02]]
 (XZ: the center of the 1st row after rotation)
 
 IF[#4111NE50]GOTO006
@@ -146,10 +146,10 @@ N101 (for face B)
 G91 G31 Y[#25/2-#512-10] F1500
 GOTO200
 N102 (for face C)
-G91 G31 X-[[#24/2-#512-10]*COS[ABS[#2]]] F1500
+G91 G31 X-[[#24/2-#512-10]*COS[ABS[#02]]] F1500
 GOTO200
 N103 (for face A)
-G91 G31 X[[#24/2-#512-10]*COS[ABS[#2]]] F1500
+G91 G31 X[[#24/2-#512-10]*COS[ABS[#02]]] F1500
 
 N200
 #33=1 (#33: current row)
@@ -160,27 +160,27 @@ IF[#714EQ1]GOTO203
 (#714=3, for B)
 (#714=2, for C)
 (#714=1, for A)
-G65P220002 A-1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
+G65P220002 A-1. Y#25 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for D: moving along row)
 GOTO204
 N201 (face B)
-G65P220002 A1. Y#25 F#9 S#19 I#4 K#6 U#21 B#2 M#33
+G65P220002 A1. Y#25 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for B: moving along row)
 GOTO204
 N202 (face C)
-G65P220001 A-1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
+G65P220001 A-1. X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for C: moving along row)
 GOTO204
 N203 (face A)
-G65P220001 A1. X#24 F#9 S#19 I#4 K#6 U#21 B#2 M#33
+G65P220001 A1. X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for A: moving along row)
 N204
 IF[#33GE#13]GOTO205
 (end loop for #33)
-#32=#707-[#33-1]*#6
+#32=#707-[#33-1]*#06
 (#32= the #33th row's Z from table center)
-#31=SQRT[#18*#18-[#32-#6]*[#32-#6]]-SQRT[#18*#18-#32*#32]
-G91 G31 X[#31*COS[ABS[#2]]-#6*SIN[ABS[#2]]] Z-[#31*SIN[ABS[#2]]+#6*COS[ABS[#2]]] F1500
+#31=SQRT[#18*#18-[#32-#06]*[#32-#06]]-SQRT[#18*#18-#32*#32]
+G91 G31 X[#31*COS[ABS[#02]]-#06*SIN[ABS[#02]]] Z-[#31*SIN[ABS[#02]]+#06*COS[ABS[#02]]] F1500
 (current work XY: the center of the #33+1th row)
 #33=#33+1 (#33 to current row +1)
 END1
@@ -216,22 +216,34 @@ M00 (are arguments ok?)
 
 N999 M99
 
-(#2 :B: angle)
-(#6 :K: Z pitch)
+(Used Variables and Programs)
+(local variables)
+(as received argument)
+(#02:B: angle)
+(#06:K: Z pitch)
 (#13:M: number of rows)
 (#17:Q: Z length between top and the 1st row)
 (#18:R: radius of the central curvature)
 (#23:W: furiwake Top)
 (#26:Z: sai-furiwake Top)
-
-(#4 :I: X pitch)
+(as received and passed argument)
+(#04 :I: X pitch)
 (#21:U: depth of dimple)
-(#9 :F: length of odd rows)
+(#09 :F: length of odd rows)
 (#19:S: length of even rows)
 (#24:X: AC naikei of last row)
 (#25:Y: BD naikei of last row)
+(as destination)
+(#28, #29, #30, #31, #32, #33)
 
-(#512: probe radius)
+(common variables)
+(as destination)
+(#401, #403, #405, #407, #512, #585)
+(as source)
+(#701, #702, #703, #704, #705, #707, #708, #709, #710, #711, #712, #713, #714)
+
+(system variables)
+(#0   : empty)
 (#1004: 1: sensor on, 0: off)
 (#1005: 1: sensor low battery, 0: OK)
 (#3000: alarm)
@@ -242,5 +254,6 @@ N999 M99
 (#5044: current work B)
 (#5063: skip position Z without KouguChou hosei)
 
-(using #701-#714)
+(subprograms)
+(O220001, O220002)
 %
