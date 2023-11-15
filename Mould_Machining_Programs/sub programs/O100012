@@ -6,15 +6,19 @@ IF[#4012GT59]GOTO800
 (if work G# < 54 go to N800)
 (if work G# > 59 go to N800)
 
+IF[#25LE#0]GOTO800
 IF[#25LE0]GOTO800
+IF[#26LE#0]GOTO800
 IF[#26LE0]GOTO800
+IF[#01LE#0]GOTO800
 IF[#01LE0]GOTO800
+IF[#512LE#0]GOTO800
 IF[#512LE0]GOTO800
 IF[[[#25/2]-#512-#01]LE0]GOTO800
-(if Y <= 0 go to N800)
-(if Z <= 0 go to N800)
-(if A <= 0 go to N800)
-(if probe radius D/2 <= 0 go to N800)
+(if Y <= 0 or empty, go to N800)
+(if Z <= 0 or empty, go to N800)
+(if A <= 0 or empty, go to N800)
+(if probe radius D/2 <= 0 or empty, go to N800)
 (if Y/2-D/2-A <= 0 go to N800)
 
 IF[#09EQ#0]GOTO001
@@ -28,30 +32,31 @@ N001
 
 N002
 #101=#4012
-#102=#5042
+#102=#5002
 (#101= current work coordinate G#)
-(#102= current work Y)
+(#102= current work block end Y)
 
 IF[#1005EQ1]GOTO801
 IF[#1004EQ1]GOTO003
 (if low battery, go to N801)
 (if current sensor ON, go to N003)
 M117 (sensor on/off)
+G04X1. (wait 1.0s)
 
 N003
 G90 G31 Z[#26-#512] F6400
 (Z tanmen: Z - D/2)
-IF[[#5063-#2050]GT[#26-#512]]GOTO802
-(if skip Z - hosei #50 KouguChou > tanmen Z - D/2, to N802)
+IF[#5003GT[#26-#512]]GOTO802
+(if skip block end Z > tanmen Z - D/2, to N802)
 
 G91 G31 Y-[[#25/2]-#512-#01] F1800
 (Y-: [BD naikei/2 - D/2 - A])
-IF[[ABS[#102-#5062]]LT[ABS[[#25/2]-#512-#01]]]GOTO803
-(if |startY - skipY| < |BD naikei/2 - D/2 - A|, to N803)
+IF[[ABS[#5002-#102]]LT[ABS[[#25/2]-#512-#01]]]GOTO803
+(if |skipY - #102| < |BD naikei/2 - D/2 - A|, to N803)
 
-G91 G31 Y-[#01*2] F#9
+G91 G31 Y-[#01*2] F#09
 (Y- skip: 2A)
-#103=#5062-#512+#501+#503
+#103=#5002-#512+#501+#503
 (#103= Y bellow side - D/2 + probe hosei)
 
 G91 Y#01 F2400 (Y+: A)
@@ -62,16 +67,16 @@ G90 Y#102 F3600 (Y to start point)
 
 G91 G31 Y[[#25/2]-#512-#01] F1800
 (Y+: [BD gaikei/2 - D/2 - A])
-IF[[ABS[#102-#5062]]LT[ABS[[#25/2]-#512-#01]]]GOTO803
-(if |startY - skipY| < |BD naikei/2 - D/2 - A|, to N803)
+IF[[ABS[#5002-#102]]LT[ABS[[#25/2]-#512-#01]]]GOTO803
+(if |skipY - #102| < |BD naikei/2 - D/2 - A|, to N803)
 
 G91 G31 Y[#01*2] F#09
 (Y+ skip: 2A)
-#104=#5062+#512-#501+#503
+#104=#5002+#512-#501+#503
 (#104= Y above side + D/2 + probe hosei)
 
 G91 Y-#01 F2400 (Y-: A)
-IF[[ABS[#104+#501-#503]]GE[ABS[[#25/2]+#1]]]GOTO800
+IF[[ABS[#104+#501-#503]]GE[ABS[[#25/2]+#01]]]GOTO800
 (if |#104| >= |Y/2+A| go to N800)
 
 #106=[#104+#103]/2
@@ -131,13 +136,10 @@ N999 M99
 (#2050: hosei #50 KouguChou)
 (#3000: alarm)
 (#4012: current work coordinate G#)
+(#5002: current work block end point Y)
+(#5003: current work block end point Z)
 (#5022: current machine coordinate Y)
-(#5042: current work Y)
-(#5062: skip position Y)
-(#5063: skip position Z without KouguChou hosei)
-(#5222: G54 Y)
 (#5242: G55 Y)
-(#5262: G56 Y)
 (#5282: G57 Y)
 
 
