@@ -14,11 +14,13 @@ IF[#01LE#0]GOTO800
 IF[#01LE0]GOTO800
 IF[#512LE#0]GOTO800
 IF[#512LE0]GOTO800
+IF[[#ABS[#6]]GT#26/2]GOTO800
 IF[[[#25/2]-#512-#01]LE0]GOTO800
 (if Y <= 0 or empty, go to N800)
 (if Z <= 0 or empty, go to N800)
 (if A <= 0 or empty, go to N800)
 (if probe radius D/2 <= 0 or empty, go to N800)
+(if |K| > Z/2, go to N800)
 (if Y/2-D/2-A <= 0 go to N800)
 
 IF[#09EQ#0]GOTO001
@@ -44,10 +46,10 @@ M117 (sensor on/off)
 G04X1. (wait 1.0s)
 
 N003
-G90 G31 Z[#26-#512] F6400
-(Z tanmen: Z - D/2)
-IF[#5003GT[#26-#512]]GOTO802
-(if skip block end Z > tanmen Z - D/2, to N802)
+G90 G31 Z[#26-#512+#06] F6400
+(Z tanmen: Z-D/2+K)
+IF[#5003GT[#26-#512+#06]]GOTO802
+(if skip block end Z > tanmen Z-D/2+K, to N802)
 
 G91 G31 Y-[[#25/2]-#512-#01] F1800
 (Y-: [BD naikei/2 - D/2 - A])
@@ -114,6 +116,7 @@ N999 M99
 (Local variables)
 (as received arguments)
 (#01:A: skip kaishi kyori)
+(#06:K: Z +hosei from tanmen)
 (#09:F: skip speed)
 (#25:Y: Y inside width)
 (#26:Z: sokutei point Z)
