@@ -43,11 +43,11 @@ N999 M99
 (Local variables)
 
 (as received arguments)
-(used only as variables)
 (#04:I: +:X+direction, -:X-direction)
 
 (as LHS)
 (#33)
+
 
 (Common variables)
 (as RHS)
@@ -58,14 +58,17 @@ N999 M99
 (as LHS)
 (#767, #768)
 
+
 (System variables)
 (#1004: 1: sensor on, 0: off)
 (#3000: alarm)
 (#5041: current work X)
 (#5061: skip position X)
 
+
 (Subprograms)
 (O90002)
+
 
 (Used in other programs)
 (#768)

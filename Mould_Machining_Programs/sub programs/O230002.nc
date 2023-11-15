@@ -49,6 +49,7 @@ N999 M99
 (as LHS)
 (#33)
 
+
 (Common variables)
 (as RHS)
 (#501: hosei: touch sensor signal delay)
@@ -58,14 +59,17 @@ N999 M99
 (as LHS)
 (#767, #768)
 
+
 (System variables)
 (#1004: 1: sensor on, 0: off)
 (#3000: alarm)
 (#5042: current work Y)
 (#5062: skip position Y)
 
+
 (Subprograms)
 (O90002)
+
 
 (Used in other programs)
 (#768)

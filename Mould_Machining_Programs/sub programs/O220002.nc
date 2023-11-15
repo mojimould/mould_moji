@@ -122,11 +122,13 @@ N999 M99
 (as LHS)
 (#29, #30, #31, #32, #33)
 
+
 (Common variables)
 (as RHS)
 (#431, #432, #433, #714, #768)
 (as LHS)
 (#734-#739, #900301-#900400 ,#900401-#900500)
+
 
 (System variables)
 (#3000: alarm)
@@ -136,8 +138,10 @@ N999 M99
 (#5043: current work Z)
 (#5063: skip position Z without KouguChou hosei)
 
+
 (Subprograms)
 (O230001, O630001)
+
 
 (Passed arguments)
 (#21, #29, #33, #900301-#900400 ,#900401-#900500)

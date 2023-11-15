@@ -241,11 +241,13 @@ N999 M99
 (as LHS)
 (#28, #29, #30, #31, #32, #33)
 
+
 (Common variables)
 (as RHS)
 (#401, #403, #405, #407, #512, #585)
 (as LHS)
 (#701-#714)
+
 
 (System variables)
 (#0   : empty)
@@ -259,11 +261,14 @@ N999 M99
 (#5044: current work B)
 (#5063: skip position Z without KouguChou hosei)
 
+
 (Subprograms)
 (O220001, O220002)
 
+
 (Passed argument)
 (#02, #04, #09, #13, #19, #21, #24, #25)
+
 
 (Used in other programs)
 (#714)

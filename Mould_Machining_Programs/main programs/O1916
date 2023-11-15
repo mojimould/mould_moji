@@ -447,23 +447,28 @@ N999 M30
 (Local variables)
 (#01, #02, #03, #04, #05, #06, #07, #30, #32, #33)
 
+
 (Common variables)
 (as LHS)
 (#585)
 (as RHS)
 (#401, #403, #404, #405, #407, #408)
 
+
 (System variables)
 (#1000, #1004, #1005, #3000)
 (#5221, #5222, #5261, #5262)
 
-(subprograms)
+
+(Subprograms)
 (O100002, O100011, O100012, O100101, O210000)
 (O505000, O505200, O505600)
 (O900002)
 
+
 (Used as part of passed arguments)
 (#02, #03, #05, #06, #07)
+
 
 (Used in other programs)
 (#585)
