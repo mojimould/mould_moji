@@ -33,27 +33,11 @@ N03
 
 N04
 #739=[#32*2]/#04+1 (#739= the number of dimple)
-IF[#4111EQ31]GOTO05
-IF[#4111EQ32]GOTO06
-IF[#4111EQ33]GOTO07
 IF[#4111EQ50]GOTO08
-(if H# is 31, go to N05)
-(if H# is 32, go to N06)
-(if H# is 33, go to N07)
 (if H# is 50, go to N08)
-GOTO98
-N05
-#29=#431 (kougu Hankei)
+#29=#[2400+#4111]
+(#29= hosei KouguKei #4111)
 GOTO09
-N06
-#29=#432 (kougu Hankei)
-GOTO09
-N07
-#29=#433 (kougu Hankei)
-GOTO09
-(if Tslot 1, #29=#431 and to N09)
-(if Tslot 2, #29=#432 and to N09)
-(if Tslot 3, #29=#433 and to N09)
 
 N08 (for sensor)
 G91 G31 X[#32*COS[ABS[#02]]] Z-[#32*SIN[ABS[#02]]] F1500
@@ -135,7 +119,7 @@ N999 M99
 (#4012: current work coordinate G#)
 (#4111: current H#)
 (#5001: current work block end point X)
-(#5003: current work block end point  Z)
+(#5003: current work block end point Z)
 
 
 (Subprograms)
@@ -144,4 +128,8 @@ N999 M99
 
 (Passed arguments)
 (#21, #29, #33, #900301-#900400 ,#900401-#900500)
+
+
+(Using variables in other programs)
+(#714, #768)
 %

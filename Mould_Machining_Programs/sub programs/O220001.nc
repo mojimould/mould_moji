@@ -11,10 +11,10 @@ N01
 #33=-1
 
 N02
-#734=#5042
-#735=#5043-#[2000+#4111]
-(#734= current work Y: start point Y)
-(#735= current work Z: start point Z)
+#734=#5002
+#735=#5003
+(#734= current work block end Y)
+(#735= current work block end Z)
 
 #736=FIX[#13/2]
 #737=#19/#04+1
@@ -33,27 +33,11 @@ N03
 
 N04
 #739=[#32*2]/#04+1 (#739= the number of dimple)
-IF[#4111EQ31]GOTO05
-IF[#4111EQ32]GOTO06
-IF[#4111EQ33]GOTO07
 IF[#4111EQ50]GOTO08
-(if H# is 31, go to N05)
-(if H# is 32, go to N06)
-(if H# is 33, go to N07)
 (if H# is 50, go to N08)
-GOTO98
-N05
-#29=#431 (kougu Hankei)
+#29=#[2400+#4111]
+(#29= hosei KouguKei #4111)
 GOTO09
-N06
-#29=#432 (kougu Hankei)
-GOTO09
-N07
-#29=#433 (kougu Hankei)
-GOTO09
-(if Tslot 1, #29=#431 and to N09)
-(if Tslot 2, #29=#432 and to N09)
-(if Tslot 3, #29=#433 and to N09)
 
 N08 (for sensor)
 G91 G31 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F1500
@@ -96,12 +80,12 @@ END1
 N50
 G90 G01 Y#734 Z#735 F6400
 (YZ: to start point)
-GOTO99
+GOTO999
 
 N98 #3000=121 (are the arguments or the mould OK?)
 M00 (are arguments ok?)
 
-N99 M99
+N999 M99
 
 (Used Variables and Programs)
 
@@ -134,9 +118,8 @@ N99 M99
 (#3000: alarm)
 (#4012: current work coordinate G#)
 (#4111: current H#)
-(#5042: current work Y)
-(#5043: current work Z)
-(#5063: skip position Z without KouguChou hosei)
+(#5002: current work block end point Y)
+(#5003: current work block end point Z)
 
 
 (Subprograms)
@@ -145,4 +128,8 @@ N99 M99
 
 (Passed arguments)
 (#21, #29, #33, #900101-#900200 ,#900201-#900299)
+
+
+(Using variables in other programs)
+(#714, #768)
 %
