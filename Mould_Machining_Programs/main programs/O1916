@@ -107,9 +107,6 @@ G65 P100011 X155.14 Z[499.984-10.0] A10. F200.
 (G55: Bot X inside center)
 (X: Bot AC naikei)
 (Z: sai_furiwake Bot)
-(K: Z +hosei from tanmen)
-(R: radius of the central curvature)
-(C: hosei direction +: +X, -: -X)
 (A: skip kaishi kyori)
 (F: skip speed)
 

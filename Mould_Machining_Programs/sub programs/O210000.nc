@@ -268,7 +268,7 @@ N999 M99
 (O220001, O220002)
 
 
-(Passed argument)
+(Passed arguments)
 (#02, #04, #09, #13, #19, #21, #24, #25)
 
 
