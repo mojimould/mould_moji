@@ -1,20 +1,51 @@
 %
 O505000
-(Tanmen kakou, ar MigiMawari)
+(O505500: rectangle 1shuu, ar MigiMawari)
 
-G90 G00 X0 Y0 (XY current work genten)
+IF[#24EQ#0]GOTO800
+IF[#24LE0]GOTO800
+IF[#25EQ#0]GOTO800
+IF[#25LE0]GOTO800
+IF[#26EQ#0]GOTO800
+IF[#26LE0]GOTO800
+IF[#07EQ#0]GOTO800
+IF[#07LE0]GOTO800
+IF[#09EQ#0]GOTO800
+IF[#09LE0]GOTO800
+IF[#19EQ#0]GOTO800
+IF[#19LE0]GOTO800
+(if X <= 0 or empty, go to N800)
+(if Y <= 0 or empty, go to N800)
+(if Z <= 0 or empty, go to N800)
+(if D <= 0 or empty, go to N800)
+(if F <= 0 or empty, go to N800)
+(if S <= 0 or empty, go to N800)
+
+IF[#11EQ#0]GOTO001
+(if H is empty, go to N001)
+IF[#11LE0]GOTO800
+(if H <=0, go to N800)
+#33=#11
+N002
+
+N001
+#33=#07
+
+N002
+G90 G00 X0 Y0
+(XY current work genten)
 
 G91 X[#24/2] Y#25 S#19
 (X+:AC gaikei/2, Y+:BD gaikei, Kaitensuu #19)
 
-G90 G43 H#11 Z#26
-(Hosei KouguChou #11, Z: tanmen)
+G90 G43 H#33 Z#26
+(hosei kouguChou #33, Z: tanmen)
 
 M03 (shujiku kaiten on)
 M08 (coolant on)
 
 G91 G41 D#07 Y-[#25/2-#08]
-(Hosei KouguKei, Kougu #07)
+(hosei KouguKei, Kougu #07)
 (ar:Y-:[BD gaikei/2 - nigashi])
 
 
@@ -23,35 +54,46 @@ G91 G41 D#07 Y-[#25/2-#08]
 G01 Y-[#25+#08] F#09
 (r:Y-:[BD gaikei + nigashi], Speed #09)
 
-X-#24 (b:X-:AC gaikei)
-Y#25 (l:Y+:BD gaikei)
+X-#24 (b:X-: AC gaikei)
+Y#25 (l:Y+: BD gaikei)
 X[#24+#08] (a:X+:[AC gaikei + nigashi])
 
 
 (Kokokara G00)
 
 G00 G40 X[#25/2] Y#08
-(Cancel Hosei KouguKei)
+(cancel hosei kouguKei)
 (X+: BD gaikei/2, Y+: nigashi)
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
 
-G91 G30 Z0 (Z KouguKoukanIchi)
-G30 X0 Y0 (XY KouguKoukanIchi)
-M99
+G91 G30 Z0
+GOTO999
+
+N800
+#3000=121 (are the arguments OK?)
+
+N999 M99
 
 (Used Variables and Programs)
 
 (Local variables)
 
 (as received arguments)
-(#24:X:AC Gaikei)
-(#25:Y:BD Gaikei)
-(#26:Z:Furiwake Nagasa)
-(#07:D:KouguKei hosei)
-(#11:H:KouguChou hosei)
-(#08:E:Kougu NigashiRyou)
-(#09:F:Speed)
-(#19:S:KaitenSuu)
+(#24:X: AC gaikei)
+(#25:Y: BD gaikei)
+(#26:Z: tanmen Z)
+(#07:D: kouguKei hosei)
+(#08:E: kougu nigashiRyou)
+(#09:F: speed)
+(#19:S: kaitenSuu)
+(as received hidden arguments)
+(#11:H: kouguChou hosei)
+
+(as LHS)
+(#33)
+
+(System variables)
+(#3000: alarm)
 %

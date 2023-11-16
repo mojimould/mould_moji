@@ -234,10 +234,10 @@ M06 (tool exchange)
 (kaisuu: #01/#02 kiriage)
 WHILE[#03GE1]DO1
 #03=#03-1
-G56 G65 P505000 D2. H2. X185. Y183. Z[500.016+#02*#03] E50. F900. S950.
+G56 G65 P505000 D2. X185. Y183. Z[500.016+#02*#03] E50. F900. S950.
 END1
-(O505000: tammen kakou)
-(D H: hosei kougu#)
+(O505000: rectangle 1shuu, ar MigiMawari)
+(D: hosei Kei&Chou kougu#)
 (X: AC gaikei)
 (Y: BD gaikei)
 (Z: furiwake + 1kezurishiro*kaisuu)
@@ -349,10 +349,10 @@ M06 (tool exchange)
 #05=FUP[#04/#02] (kaisuu: #04/#02 kiriage)
 WHILE[#05GE1]DO1
 #05=#05-1
-G54 G65 P505000 D2. H2. X185. Y183. Z[500.016+#02*#05] E50. F900. S950.
+G54 G65 P505000 D2. X185. Y183. Z[500.016+#02*#05] E50. F900. S950.
 END1
-(O505000: tammen kakou)
-(D H: hosei kougu#)
+(O505000: rectangle 1shuu, ar MigiMawari)
+(D: hosei Kei&Chou kougu#)
 (X: AC gaikei)
 (Y: BD gaikei)
 (Z: furiwake + 1kezurishiro*kaisuu)
