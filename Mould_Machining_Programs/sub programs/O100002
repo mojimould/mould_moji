@@ -137,7 +137,6 @@ N999 M99
 (#0   : empty)
 (#1004: 0: sensor off, 1: on)
 (#1005: 0: sensor battery ok, 1: low battery)
-(#2050: hosei #50 KouguChou)
 (#3000: alarm)
 (#4012: current work coordinate G#)
 (#5002: current work block end Y)
