@@ -1,12 +1,22 @@
 %
 O101003 (X center of outside measurement)
 
-IF[#23LE#0]GOTO800
-IF[#26LE#0]GOTO800
+IF[#23EQ#0]GOTO800
+IF[#23LE0]GOTO800
+IF[#26EQ#0]GOTO800
+IF[#26LE0]GOTO800
+IF[#20LE#0]GOTO800
+IF[#20LE0]GOTO800
+IF[#02LE#0]GOTO800
+IF[#02LE0]GOTO800
+IF[#13LE#0]GOTO800
+IF[#13LE0]GOTO800
+IF[#06LE#0]GOTO800
+IF[#06LE0]GOTO800
 IF[#01LE#0]GOTO800
 IF[#01LE0]GOTO800
-IF[#03LE#0]GOTO800
-IF[#03GE0]GOTO800
+IF[#21LE#0]GOTO800
+IF[#24LE#0]GOTO800
 IF[#512LE#0]GOTO800
 IF[#512LE0]GOTO800
 IF[#514LE#0]GOTO800
@@ -14,8 +24,13 @@ IF[#514LE0]GOTO800
 IF[#4112NE50]GOTO800
 (if W <= 0 or empty, go to N800)
 (if Z <= 0 or empty, go to N800)
+(if T <= 0 or empty, go to N800)
+(if B <= 0 or empty, go to N800)
+(if M <= 0 or empty, go to N800)
+(if K <= 0 or empty, go to N800)
+(if U is empty, go to N800)
+(if X is empty, go to N800)
 (if A <= 0 or empty, go to N800)
-(if C >= 0 or empty, go to N800)
 (if #512 <= 0 or empty, go to N800)
 (if #514 <= 0 or empty, go to N800)
 (if H# is not 50, go to N800)
@@ -39,8 +54,10 @@ M117 (sensor on/off)
 G04X1. (wait 1.0s)
 
 N003
-G53 G01 G90 X[#23-[#13/2]+#33] F9600
+G53 G31 G90 X[#23-[#13/2]+#33] F1800
 (G90 X: W-M/2+#33)
+IF[#5003GT[#23-[#13/2]+#33]]GOTO802
+(if skip block end X > W-M/2+#33, to N802)
 
 G53 G90 G31 Z[#21-#33+[#20/2]+#01+#32] F3600
 (G53 Z skip: topGaisakuCmen Z+A)
@@ -53,11 +70,11 @@ G91 G31 Z[-#01*2] F#514
 (#101= Z top side + probe hosei)
 
 G91 G28 Z0
-G53 G01 G90 X[-#26+[#11/2]+#33] F9600
+G53 G01 G90 X[-#26+[#06/2]+#33] F9600
 (G90 X: -Z+H/2+#33)
 
 G53 G90 G31 Z[#24-#33+[#02/2]+#01+#32] F3600
-(G53 Z skip: botGaisakuCmen Z+A)
+(G53 Z skip: bot gaisakuCmen Z+A)
 IF[#5003GT[#24-#33+[#02/2]+#01+#32]]GOTO802
 (if skip block end Z > Cmen Z+A, to N802)
 
@@ -96,17 +113,17 @@ N999 M99
 (Local variables)
 (as received arguments)
 (#01:A: skip kaishi kyori)
-(#23:W: sai-furiwake Top)
-(#26:Z: sai-furiwake Bot)
-(#20:T: Top gaisakuKei)
 (#02:B: Bot gaisakuKei)
+(#06:K: Bot gaisaku height)
 (#13:M: mizoIchi)
-(#11:H: Bot gaisaku height)
+(#20:T: Top gaisakuKei)
 (#21:U: Top gaisaku center X)
+(#23:W: sai-furiwake Top)
 (#24:X: Bot gaisaku center X)
+(#26:Z: sai-furiwake Bot)
 
 (as LHS)
-(#33, #32)
+(#32, #33)
 
 
 (Common variables)

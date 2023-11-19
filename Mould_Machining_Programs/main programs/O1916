@@ -1,11 +1,12 @@
 %
 O1916 (main: SMP-1916)
+
 #29=1
 (center line measurement: 0:off, 1:on)
+#600=-0.642
 (parallel angle: -0.642)
 (top furiwake: 500.016)
 (bot furiwake: 499.984)
-#600=-0.642
 
 G91 G28 Z0
 
@@ -462,7 +463,17 @@ G54 G43 Z[#5261-#30+[180.95/2]+100.0] H50
 (hosei kouguChou: #50)
 (Z= gaisakuCmen+100.)
 
-G65 P101003 W500.016 Z499.084 T180.95 B180.95 M12.05 H25. U#5261 X#5221 A10.
+G65 P101003 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U#5261 X#5221 A10.
+(O101003: toorishin X)
+(W: sai-furiwake Top)
+(Z: sai-furiwake Bot)
+(T: Top AC gaisakuKei)
+(B: Bot AC gaisakuKei)
+(M: mizoIchi)
+(K: Bot gaisaku height)
+(U: Top gaisaku center X)
+(X: Bot gaisaku center X)
+(A: skip kaishi kyori)
 M06
 
 N800
@@ -493,7 +504,7 @@ N999 M30
 
 
 (Subprograms)
-(O100002, O100011, O100012, O100101, O210000)
+(O100002, O100011, O100012, O100101, O101003, O210000)
 (O505000, O505200, O505600)
 (O900002)
 
