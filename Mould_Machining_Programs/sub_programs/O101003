@@ -18,8 +18,6 @@ IF[#01LE0]GOTO800
 IF[#21LE#0]GOTO800
 IF[#21EQ0]GOTO800
 IF[#04LE#0]GOTO800
-IF[#512LE#0]GOTO800
-IF[#512LE0]GOTO800
 IF[#514LE#0]GOTO800
 IF[#514LE0]GOTO800
 IF[#4112NE50]GOTO800
@@ -32,7 +30,6 @@ IF[#4112NE50]GOTO800
 (if U <= 0 or empty, go to N800)
 (if I is empty, go to N800)
 (if A <= 0 or empty, go to N800)
-(if #512 <= 0 or empty, go to N800)
 (if #514 <= 0 or empty, go to N800)
 (if H# is not 50, go to N800)
 
@@ -117,11 +114,11 @@ N999 M99
 (Local variables)
 (as received arguments)
 (#01:A: skip kaishi kyori)
-(#02:B: Bot gaisakuKei)
+(#02:B: AC Bot gaisakuKei)
 (#06:K: Bot gaisaku height)
 (#13:M: mizoIchi)
-(#20:T: Top gaisakuKei)
-(#31:U: toorishin X)
+(#20:T: AC Top gaisakuKei)
+(#21:U: tooriShin X)
 (#23:W: sai-furiwake Top)
 (#04:I: Bot gaisaku center X)
 (#26:Z: sai-furiwake Bot)
