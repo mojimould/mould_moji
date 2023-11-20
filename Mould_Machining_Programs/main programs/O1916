@@ -336,7 +336,8 @@ G56 G65 P505600 D13. H13. X180.95 Y180.95 Z[500.016-1.0] R18. Q0. I0. F500. E400
 /M00 (mentori ok?)
 
 M11 (4jiku unclamp)
-G90 G00 G54 B[180.0+#600] (G54B parallel angle 179.358)
+G90 G00 G54 B[180.0+#600]
+(G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
 
@@ -353,7 +354,7 @@ M06 (tool exchange)
 #05=FUP[#04/#02] (kaisuu: #04/#02 kiriage)
 WHILE[#05GE1]DO1
 #05=#05-1
-G54 G65 P505000 D2. X185. Y183. Z[500.016+#02*#05] E50. F900. S950.
+G54 G65 P505000 D2. X185. Y183. Z[499.84+#02*#05] E50. F900. S950.
 END1
 (O505000: rectangle 1shuu, ar MigiMawari)
 (D: hosei Kei&Chou kougu#)
@@ -435,6 +436,10 @@ G55 G65 P505200 D11. H11. I0 K0. X155.14 Y153.14 Z[499.984-10.0] R18. A15. F400.
 (Top Mentori Soto end)
 /M00 (mentori ok?)
 
+
+(Kakou Owari)
+
+
 T01 (empty)
 M06 (tool exchange)
 IF[#1004EQ0]GOTO006
@@ -451,7 +456,7 @@ M00 (is tooriShin ready?)
 
 M11 (4jiku unclamp)
 G90 G00 G54 B[-90+#600]
-(G54 Bottom Gaisaku)
+(G54 Top:+X, Bot:-X)
 (B parallel angle -90.642)
 M10 (4jiku clamp)
 
@@ -463,18 +468,75 @@ G54 G43 Z[#5261-#30+[180.95/2]+100.0] H50
 (hosei kouguChou: #50)
 (Z= gaisakuCmen+100.)
 
-G65 P101003 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U#5261 X#5221 A10.
-(O101003: toorishin X)
+(tooriShin X start)
+
+IF[#1005EQ1]GOTO800
+IF[#1004EQ1]GOTO007
+(if low battery, go to N800)
+(if current sensor on, go to N007)
+M117
+
+N007
+G65 P101003 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11. I#5221 A10.
+(O101003: tooriShin X)
 (W: sai-furiwake Top)
 (Z: sai-furiwake Bot)
-(T: Top AC gaisakuKei)
-(B: Bot AC gaisakuKei)
+(T: AC Top gaisakuKei)
+(B: AC Bot gaisakuKei)
 (M: mizoIchi)
 (K: Bot gaisaku height)
-(U: Top gaisaku center X)
-(X: Bot gaisaku center X)
+(U: tooriShin X)
+(I: Bot gaisaku center X)
 (A: skip kaishi kyori)
-M06
+
+IF[#1005EQ1]GOTO800
+IF[#1004EQ0]GOTO008
+(if low battery, go to N800)
+(if current sensor off, go to N008)
+M117 (sensor off)
+
+N008 (tooriShin Z end)
+M00 (is the toorishin X OK?)
+
+
+G91 G28 Z0
+M11 (4jiku unclamp)
+G90 G00 G54 B[180+#600]
+(G54 Bot:+Z, Top:-Z)
+(B parallel angle 179.358)
+M10 (4jiku clamp)
+
+G90 G01 G54 X0 Y0
+
+
+(tooriShin Y start)
+
+IF[#1005EQ1]GOTO800
+IF[#1004EQ1]GOTO009
+(if low battery, go to N800)
+(if current sensor on, go to N009)
+M117
+
+N009
+G54 G43 Z[499.84+100.0] H50
+G65 P101002 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11. I#5221 A10.
+(O101002: toorishin Y)
+(W: sai-furiwake Top)
+(Z: sai-furiwake Bot)
+(T: BD Top gaisakuKei)
+(B: BD Bot gaisakuKei)
+(M: mizoIchi)
+(K: Bot gaisaku height)
+(U: tooriShin X)
+(I: Bot gaisaku center X)
+(A: skip kaishi kyori)
+
+(tooriShin Y end)
+M06 (is the toorishin Y OK?)
+
+G91 G28 Z0
+G91 G30 X0 Y0
+GOTO999
 
 N800
 #3000=145 (MP10/MP12/MP60-Low battery)

@@ -1,0 +1,163 @@
+%
+O101002 (Y center of outside measurement)
+
+IF[#23EQ#0]GOTO800
+IF[#23LE0]GOTO800
+IF[#26EQ#0]GOTO800
+IF[#26LE0]GOTO800
+IF[#20LE#0]GOTO800
+IF[#20LE0]GOTO800
+IF[#02LE#0]GOTO800
+IF[#02LE0]GOTO800
+IF[#13LE#0]GOTO800
+IF[#13LE0]GOTO800
+IF[#06LE#0]GOTO800
+IF[#06LE0]GOTO800
+IF[#01LE#0]GOTO800
+IF[#01LE0]GOTO800
+IF[#21LE#0]GOTO800
+IF[#21EQ0]GOTO800
+IF[#04LE#0]GOTO800
+IF[#512LE#0]GOTO800
+IF[#512LE0]GOTO800
+IF[#514LE#0]GOTO800
+IF[#514LE0]GOTO800
+IF[#4112NE50]GOTO800
+(if W <= 0 or empty, go to N800)
+(if Z <= 0 or empty, go to N800)
+(if T <= 0 or empty, go to N800)
+(if B <= 0 or empty, go to N800)
+(if M <= 0 or empty, go to N800)
+(if K <= 0 or empty, go to N800)
+(if U <= 0 or empty, go to N800)
+(if I is empty, go to N800)
+(if A <= 0 or empty, go to N800)
+(if #512 <= 0 or empty, go to N800)
+(if #514 <= 0 or empty, go to N800)
+(if H# is not 50, go to N800)
+
+IF[#1000NE0]GOTO001
+(if NOT p#1, to N001)
+#33=#401 (p#1 X table center)
+#32=#403 (p#1 Z table center)
+GOTO002
+
+N001
+#33=#405 (p#2 X table center)
+#32=#407 (p#2 Z table center)
+
+N002
+G53 G01 X#04
+
+IF[#1005EQ1]GOTO801
+IF[#1004EQ1]GOTO003
+(if low battery, go to N801)
+(if current sensor ON, go to N003)
+M117 (sensor on/off)
+G04X1. (wait 1.0s)
+
+N003
+G54 G91 G01 Y[[#02/2]+#512+#01] F6400
+(G91 Y: B/2+#512+A)
+
+G90 G31 Z[#26-#512-[#06/2]] F3600
+(G53 Z skip: BotTanmen Z-#512-K/2)
+IF[#5003GT[#26-#512-[#06/2]]]GOTO802
+(if skip block end Z > BotTanmen Z-#512-K/2, to N802)
+
+G91 G31 Y-[#01*2] F#514
+(Y- skip: 2A)
+G91 G01 Y[#01*2] F3600
+(Y+: 2A)
+#101=#5002-#512+#501+#503
+(#101= Bot Y above side - #512 + probe hosei)
+
+G91 G28 Z0
+IF[[ABS[#101-#501-#503]]LE[ABS[[#02/2]-#01]]]GOTO800
+(if |#101|<=|B/2-A|, go to N800)
+
+M11 (4jiku unclamp)
+G91 G00 G54 B180
+(G54 rotate 180 deg)
+(parallel angle -0.642)
+M10 (4jiku clamp)
+
+G90 G53 G01 X[-[#04-#33]+#33+#21]
+G91 G01 Y[[#20/2+#512+#01]]
+
+G90 G53 G31 Z[#23-#512-[#13/2]+#32] F3600
+(G53 Z skip: W-#512-M/2)
+IF[#5003GT[#23-#512-[#13/2]+#32]]GOTO802
+(if skip block end Z > W-#512-M/2+#32, to N802)
+
+G91 G31 Y-[#01*2] F#514
+(Y- skip: 2A)
+G91 G01 Y[#01*2] F3600
+(Y+: 2A)
+#102=#5002-#512+#501+#503
+(#102= Top Y above side - #512 + probe hosei)
+
+G91 G28 Z0
+IF[[ABS[#102-#501-#503]]LE[ABS[[#20/2]-#01]]]GOTO800
+(if |#102|<=|T/2-A|, go to N800)
+
+#103=#101-#102
+(difference)
+
+G54 G90 G01 Y#103
+(Y to table center)
+GOTO999
+
+
+N801
+#3000=145 (Low battery)
+M00 (ALARM: low battery)
+GOTO999
+
+N802
+G91 G28 Z0
+G53 G90 G01 X#33
+(X to table point)
+
+N800
+G65 P900002 (sensor OFF)
+#3000=121 (are the arguments OK?)
+M00 (are the arguments ok?)
+
+N999 M99
+
+(Used Variables and Programs)
+
+(Local variables)
+(as received arguments)
+(#01:A: skip kaishi kyori)
+(#02:B: Bot gaisakuKei)
+(#06:K: Bot gaisaku height)
+(#13:M: mizoIchi)
+(#20:T: Top gaisakuKei)
+(#21:U: Top gaisaku center X)
+(#23:W: sai-furiwake Top)
+(#24:X: Bot gaisaku center X)
+(#26:Z: sai-furiwake Bot)
+
+(as LHS)
+(#32, #33)
+
+
+(Common variables)
+(as LHS)
+(#101, #102, #103)
+(as RHS)
+(#401, #403, #405, #407)
+(#501 : hosei: touch sensor signal delay)
+(#514 : default skip speed)
+
+
+(System variables)
+(#0   : empty)
+(#1004: 0: sensor off, 1: on)
+(#1005: 0: sensor battery ok, 1: low battery)
+(#3000: alarm)
+(#4012: current work coordinate G#)
+(#5003: current work block end Z)
+%
