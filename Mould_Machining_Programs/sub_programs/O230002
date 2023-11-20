@@ -6,23 +6,23 @@ O230002 (for BD dimples measurement)
 #767=#5042
 (#767= current work Y: start point Y)
 
-IF[#05EQ0]GOTO98
-IF[#05EQ#0]GOTO98
-(if J = 0 then to N98)
-(if J = #0 then to N98)
+IF[#05EQ0]GOTO800
+IF[#05EQ#0]GOTO800
+(if J = 0 or empty, to N800)
 
-IF[#1004EQ1]GOTO01
+IF[#1004EQ1]GOTO001
 M117 (if the sensor is off, turn on)
 G04X1. (wait 1.0s)
 
-N01
-IF[#05LT0]GOTO02 (if J < 0 then to N02)
-#33=1
-GOTO05 (if J > 0, #33=1 and to N05)
-N02
+N001
+IF[#05LT0]GOTO002
+(if J < 0 to N002)
+#33=1 (if J > 0, #33=1)
+GOTO003
+N002
 #33=-1 (if J < 0, #33=-1)
 
-N05
+N003
 G91 G31 Y[#33*15.0] F#514
 (skip Y+ or Y-: 15.0, speed #514)
 #768=#5062+#503+#33*[-#501+#512]
@@ -43,7 +43,6 @@ N999 M99
 (Local variables)
 
 (as received arguments)
-(used only as variables)
 (#05:J: +:Y+direction, -:Y-direction)
 
 (as LHS)
