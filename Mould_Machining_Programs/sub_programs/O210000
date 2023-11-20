@@ -161,11 +161,11 @@ IF[#714EQ1]GOTO203
 (#714=3, for B)
 (#714=2, for C)
 (#714=1, for A)
-G65P220002 A-1. Y#25 F#09 S#19 I#04 K#06 U#21 B#02 M#33
+G65P220002 A-1. F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for D: moving along row)
 GOTO204
 N201 (face B)
-G65P220002 A1. Y#25 F#09 S#19 I#04 K#06 U#21 B#02 M#33
+G65P220002 A1. F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for B: moving along row)
 GOTO204
 N202 (face C)
@@ -269,7 +269,7 @@ N999 M99
 
 
 (Passed arguments)
-(#02, #04, #09, #13, #19, #21, #24, #25)
+(#02, #04, #09, #13, #19, #21, #24)
 
 
 (Used in other programs)
