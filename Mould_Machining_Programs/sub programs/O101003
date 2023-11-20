@@ -16,7 +16,8 @@ IF[#06LE0]GOTO800
 IF[#01LE#0]GOTO800
 IF[#01LE0]GOTO800
 IF[#21LE#0]GOTO800
-IF[#24LE#0]GOTO800
+IF[#21EQ0]GOTO800
+IF[#04LE#0]GOTO800
 IF[#512LE#0]GOTO800
 IF[#512LE0]GOTO800
 IF[#514LE#0]GOTO800
@@ -28,15 +29,15 @@ IF[#4112NE50]GOTO800
 (if B <= 0 or empty, go to N800)
 (if M <= 0 or empty, go to N800)
 (if K <= 0 or empty, go to N800)
-(if U is empty, go to N800)
-(if X is empty, go to N800)
+(if U <= 0 or empty, go to N800)
+(if I is empty, go to N800)
 (if A <= 0 or empty, go to N800)
 (if #512 <= 0 or empty, go to N800)
 (if #514 <= 0 or empty, go to N800)
 (if H# is not 50, go to N800)
 
 IF[#1000NE0]GOTO001
-(if NOT p#1, to N002)
+(if NOT p#1, to N001)
 #33=#401 (p#1 X table center)
 #32=#403 (p#1 Z table center)
 GOTO002
@@ -53,15 +54,18 @@ IF[#1004EQ1]GOTO003
 M117 (sensor on/off)
 G04X1. (wait 1.0s)
 
-N003
-G53 G31 G90 X[#23-[#13/2]+#33] F1800
-(G90 X: W-M/2+#33)
-IF[#5003GT[#23-[#13/2]+#33]]GOTO802
-(if skip block end X > W-M/2+#33, to N802)
+#31=-[#04-#33]+#33+#21
+(#31= Top gaisaku center X)
 
-G53 G90 G31 Z[#21-#33+[#20/2]+#01+#32] F3600
+N003
+G53 G31 G90 X[#23-[#13/2]+#33] F1500
+(G90 X skip: W-M/2+#33)
+IF[#5003NE[#23-[#13/2]+#33]]GOTO802
+(if skip block end X is not W-M/2+#33, to N802)
+
+G53 G90 G31 Z[#31-#33+[#20/2]+#01+#32] F3600
 (G53 Z skip: topGaisakuCmen Z+A)
-IF[#5003GT[#21-#33+[#20/2]+#01+#32]]GOTO802
+IF[#5003GT[#31-#33+[#20/2]+#01+#32]]GOTO802
 (if skip block end Z > Cmen Z+A, to N802)
 
 G91 G31 Z[-#01*2] F#514
@@ -73,9 +77,9 @@ G91 G28 Z0
 G53 G01 G90 X[-#26+[#06/2]+#33] F9600
 (G90 X: -Z+H/2+#33)
 
-G53 G90 G31 Z[#24-#33+[#02/2]+#01+#32] F3600
+G53 G90 G31 Z[#04-#33+[#02/2]+#01+#32] F3600
 (G53 Z skip: bot gaisakuCmen Z+A)
-IF[#5003GT[#24-#33+[#02/2]+#01+#32]]GOTO802
+IF[#5003GT[#04-#33+[#02/2]+#01+#32]]GOTO802
 (if skip block end Z > Cmen Z+A, to N802)
 
 G91 G31 Z[-#01*2] F#514
@@ -87,9 +91,10 @@ G91 G28 Z0
 #103=#102-#101
 (difference)
 
-G53 G90 G01 X#33
+G54 G90 G01 X#103
 (X to table center)
 GOTO999
+
 
 N801
 #3000=145 (Low battery)
@@ -98,8 +103,7 @@ GOTO999
 
 N802
 G91 G28 Z0
-G53 G90 G01 X#33
-(X to table point)
+G54 G90 G01 #33
 
 N800
 G65 P900002 (sensor OFF)
@@ -117,9 +121,9 @@ N999 M99
 (#06:K: Bot gaisaku height)
 (#13:M: mizoIchi)
 (#20:T: Top gaisakuKei)
-(#21:U: Top gaisaku center X)
+(#31:U: toorishin X)
 (#23:W: sai-furiwake Top)
-(#24:X: Bot gaisaku center X)
+(#04:I: Bot gaisaku center X)
 (#26:Z: sai-furiwake Bot)
 
 (as LHS)
