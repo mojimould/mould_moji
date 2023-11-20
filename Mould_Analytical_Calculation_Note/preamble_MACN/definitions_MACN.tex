@@ -138,11 +138,6 @@
     {\eqref{#1}}%
     {\eqref{#1}~[p.\pageref{#1}]}%
 }
-%%%%% DIM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\hk}{\hspace{\kanjiskip}}
-\newcommand{\hx}{\hspace{\xkanjiskip}}
-%%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%
-\def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{\z@}\textbf{#1}}{gray!25}\hskip.75zw}
 %%%%% DECLAREMATHOPERATOR %%%%%%%%%%%%%%%%%%%%
 \DeclareRobustCommand{\bDiv}{\nonscript\mskip-\medmuskip\mkern5mu\mathbin
   {\operator@font div}\penalty900
@@ -157,5 +152,29 @@
   \addpart*{第\hx\hx\hx\thepart\hx\hx\hx 部の補遺}
   \addcontentsline{toc}{part}{第\hx\hx\thepart\hx\hx 部の補遺}
 }
+%%%%% DIM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\hk}{\hspace{\kanjiskip}}
+\newcommand{\hx}{\hspace{\xkanjiskip}}
+%%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%
+\def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{\z@}\textbf{#1}}{gray!25}\hskip.75zw}
+\newcommand\MXOThickness{O100001} % X外側中心計測
+\newcommand\MYOThickness{O100002} % Y外側中心計測
+\newcommand\MXIWidth{O100011} % X内側中心計測
+\newcommand\MYIWidth{O100011} % Y内側中心計測
+\newcommand\MXface{O100101} % X基準面計測
+\newcommand\MXcenterline{O101002} % 通り芯X
+\newcommand\MYcenterline{O101003} % 通り芯Y
+\newcommand\DLone{O210000} % 内面溝用 レベル1
+\newcommand\DLtwoAC{O220001} % 内面溝用 レベル2 AC
+\newcommand\DLtwoBD{O220002} % 内面溝用 レベル2 BD
+\newcommand\DMLthreeAC{O230001} % 内面溝 測定用 レベル3 AC
+\newcommand\DMLthreeBD{O230002} % 内面溝 測定用 レベル3 BD
+\newcommand\KRecRight{O505000} % 端面用 rectangle  左回り
+\newcommand\KICRLeft{O505200} % 内面取用 コーナーR 左回り
+\newcommand\KOCRLeft{O505600} % 内面取用 コーナーR 左回り
+\newcommand\DKLthreeAC{O630001} % 内面溝 加工用 レベル3 AC
+\newcommand\DKLthreeBD{O630002} % 内面溝 加工用 レベル3 BD
+\newcommand\OsensorOn{O900001} % タッチセンサーON
+\newcommand\OsensorOff{O900002} % タッチセンサーOFF
 
 
