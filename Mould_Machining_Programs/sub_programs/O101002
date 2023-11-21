@@ -69,12 +69,12 @@ G91 G31 Y-[#01*2] F#514
 (Y- skip: 2A)
 G91 G01 Y[#01*2] F3600
 (Y+: 2A)
-#101=#5002-#512+#501+#503
-(#101= Bot Y above side - #512 + probe hosei)
+#900019=#5002-#512+#501+#503
+(#900019= Bot Y above side - #512 + probe hosei)
 
 G91 G28 Z0
-IF[[ABS[#101-#501-#503]]LE[ABS[[#02/2]-#01]]]GOTO800
-(if |#101|<=|B/2-A|, go to N800)
+IF[[ABS[#900019-#501-#503]]LE[ABS[[#02/2]-#01]]]GOTO800
+(if |#900019|<=|B/2-A|, go to N800)
 
 M11 (4jiku unclamp)
 G91 G00 G54 B180
@@ -94,17 +94,17 @@ G91 G31 Y-[#01*2] F#514
 (Y- skip: 2A)
 G91 G01 Y[#01*2] F3600
 (Y+: 2A)
-#102=#5002-#512+#501+#503
-(#102= Top Y above side - #512 + probe hosei)
+#900020=#5002-#512+#501+#503
+(#900020= Top Y above side - #512 + probe hosei)
 
 G91 G28 Z0
-IF[[ABS[#102-#501-#503]]LE[ABS[[#20/2]-#01]]]GOTO800
-(if |#102|<=|T/2-A|, go to N800)
+IF[[ABS[#900020-#501-#503]]LE[ABS[[#20/2]-#01]]]GOTO800
+(if |#900020|<=|T/2-A|, go to N800)
 
-#103=#101-#102-[#02-#20]/2
+#900021=#900019-#900020-[#02-#20]/2
 (difference)
 
-G54 G90 G01 Y#103
+G54 G90 G01 Y#900021
 (Y to table center)
 GOTO999
 
@@ -146,7 +146,7 @@ N999 M99
 
 (Common variables)
 (as LHS)
-(#101, #102, #103)
+(#900019, #900020, #900021)
 (as RHS)
 (#401, #403, #405, #407)
 (#501 : hosei: touch sensor signal delay)

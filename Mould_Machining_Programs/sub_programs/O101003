@@ -67,8 +67,8 @@ IF[#5003GT[#31-#33+[#20/2]+#01+#32]]GOTO802
 
 G91 G31 Z[-#01*2] F#514
 (Z- skip: 2A)
-#101=#5003+#501
-(#101= Z top side + probe hosei)
+#900022=#5003+#501
+(#900022= Z top side + probe hosei)
 
 G91 G28 Z0
 G53 G01 G90 X[-#26+[#06/2]+#33] F9600
@@ -81,14 +81,14 @@ IF[#5003GT[#04-#33+[#02/2]+#01+#32]]GOTO802
 
 G91 G31 Z[-#01*2] F#514
 (Z- skip: 2A)
-#102=#5003+#501
-(#102= Z bot side + probe hosei)
+#900023=#5003+#501
+(#900023= Z bot side + probe hosei)
 
 G91 G28 Z0
-#103=#102-#101
+#900024=#900023-#900022
 (difference)
 
-G54 G90 G01 X#103
+G54 G90 G01 X#900024
 (X to table center)
 GOTO999
 
@@ -129,7 +129,7 @@ N999 M99
 
 (Common variables)
 (as LHS)
-(#101, #102, #103)
+(#900022, #900023, #900024)
 (as RHS)
 (#401, #403, #405, #407)
 (#501 : hosei: touch sensor signal delay)
