@@ -67,19 +67,26 @@ IF[#4111EQ31]GOTO002 (if H#=31, go to N002)
 IF[#4111EQ32]GOTO002 (if H#=32, go to N002)
 IF[#4111EQ33]GOTO002 (if H#=33, go to N002)
 GOTO800
-N001 #30=#512
-GOTO003 (if sensor, #30=#512)
-N002 #30=0 (if Tslot, #30=0)
+N001 (if sensor)
+#702=#512 (Z hosei)
+#703=#512 (XY hosei)
+#704=31 (G#)
+GOTO003
+N002 (if Tslot)
+#702=0 (Z hosei)
+#703=#[2400+#4111]+#[2600+#4111]
+(XY hosei: the KouguHankei)
+#704=1 (G#)
 
 N003
 IF[#1000NE0]GOTO004
 (if the palette is NOT #1, to N004)
-#29=#401 (p#1 table center X)
-#28=#403 (p#1 table center Z)
+#30=#401 (p#1 table center X)
+#29=#403 (p#1 table center Z)
 GOTO005
 N004
-#29=#405 (p#2 table center X)
-#28=#407 (p#2 table center Z)
+#30=#405 (p#2 table center X)
+#29=#407 (p#2 table center Z)
 
 N005
 M11 (4jiku unclamp)
@@ -87,91 +94,95 @@ G90 G00 G#701 B[#02+#600]
 (current work B: G90 B+#600 deg)
 M10 (4jiku clamp)
 
-#702=#[5201+[#701-53]*20]-#29
-#703=#702*COS[ABS[#02]]+#26*SIN[ABS[#02]]
-#704=-#702*SIN[ABS[#02]]+#26*COS[ABS[#02]]
-(#702= current work origin X from table center)
-(#702~-11.095, #703~7.497, #704~500.083)
-G91 G01 X[#703-#702] F6400
-G91 G01 Z[#704-#26-#30-100]
-(G91: X~18.592, Z~0.067-#30)
+#705=#[5201+[#701-53]*20]-#30
+#706=#705*COS[ABS[#02]]+#26*SIN[ABS[#02]]
+#707=-#705*SIN[ABS[#02]]+#26*COS[ABS[#02]]
+(#705= current work origin X from table center)
+(#705~-11.095, #706~7.497, #707~500.083)
+G91 G01 X[#706-#705] F6400
+G91 G01 Z[#707-#26-#702-100]
+(G91: X~18.592, Z~0.067-#702)
 (XZ to tanmen center)
 
-#705=#5001
-#706=#5003
+#708=#5001
+#709=#5003
 (XZ block end: start point XZ)
-#707=#23-#17
+#710=#23-#17
 (Z: the 1st row before rotation)
-#708=SQRT[#18*#18-#707*#707]-SQRT[#18*#18-#23*#23]
+#711=SQRT[#18*#18-#710*#710]-SQRT[#18*#18-#23*#23]
 (the center of the 1st row before rotation)
-#709=#708*COS[ABS[#02]]-#17*SIN[ABS[#02]]
-#710=-#708*SIN[ABS[#02]]-#17*COS[ABS[#02]]
+#712=#711*COS[ABS[#02]]-#17*SIN[ABS[#02]]
+#713=-#711*SIN[ABS[#02]]-#17*COS[ABS[#02]]
 (XZ: the center of the 1st row after rotation)
 
 IF[#4111NE50]GOTO006
-(if tool is not sensor, go to N006)
+(if tool is not sensor, go to N007)
 IF[#1005EQ1]GOTO801
 IF[#1004EQ1]GOTO006
 (if low battery, go to N801)
 (if current sensor ON, go to N006)
 M117 (sensor on/off)
+G04X1.
 
 N006
-G91 G31 X#709 Z#710 F1500
-(XZ skip: to the center of the 1st row)
-#711=#5001
-#712=#5002
-#713=#5003
-(XYZ block end: the center of the 1st row)
-IF[#711NE[#705+#709]]GOTO800
-IF[#712NE[#706+#710]]GOTO800
+G91 G#704 X#712 Z#713 F1500
+(XZ to the center of the 1st row)
+(if sensor G31, else G01)
 
-IF[#4111EQ50]GOTO007
+#714=#5001
+#715=#5002
+#716=#5003
+(XYZ block end: the center of the 1st row)
+IF[#714NE[#708+#712]]GOTO800
+IF[#715NE[#709+#713]]GOTO800
+
+IF[#4111EQ50]GOTO009
 S2000
 M03 (shujiku kaiten on)
 (M08 coolant on)
 
-N007
-#714=4 (#714: faces 1: A, 2: C, 3: B, 4: D)
-#715=#25/2-#512-10
-#716=[#24/2-#512-10]*COS[ABS[#02]]
-(#715, #716: face from -10)
+N009
+#717=4
+(#717: faces 1: A, 2: C, 3: B, 4: D)
+#718=#25/2-#703-10
+#719=[#24/2-#703-10]*COS[ABS[#02]]
+(#718, #719: face from -10)
 
-N100 (loop on #714)
-G90 G01 X#711 Y#712 Z#713 F6400
+N100 (loop on #717)
+G90 G01 X#714 Y#715 Z#716 F6400
 (XYZ: to the center of the 1st row)
 
-IF[#714EQ3]GOTO101
-IF[#714EQ2]GOTO102
-IF[#714EQ1]GOTO103
+IF[#717EQ3]GOTO101
+IF[#717EQ2]GOTO102
+IF[#717EQ1]GOTO103
 (if B, to N101)
 (if C, to N102)
 (if A, to N103)
 (for face D)
-G91 G31 Y-#715 F1500
-IF[#5002GT[-#715]]GOTO802
+G91 G#704 Y-#718 F1500
+IF[#5002GT[-#718]]GOTO802
 GOTO200
 N101 (for face B)
-G91 G31 Y#715 F1500
-IF[#5002LT#715]GOTO802
+G91 G#704 Y#718 F1500
+IF[#5002LT#718]GOTO802
 GOTO200
 N102 (for face C)
-G91 G31 X-#716 F1500
-IF[#5001GT[-#716]]GOTO802
+G91 G#704 X-#719 F1500
+IF[#5001GT[#714-#719]]GOTO802
 GOTO200
 N103 (for face A)
-G91 G31 X#716 F1500
-IF[#5001LT#716]GOTO802
+G91 G#704 X#719 F1500
+IF[#5001LT[#714+#719]]GOTO802
 
 N200
 #33=1 (#33: current row)
 WHILE[#33LE#13]DO1 (loop on #33)
-IF[#714EQ3]GOTO201
-IF[#714EQ2]GOTO202
-IF[#714EQ1]GOTO203
-(#714=3, for B)
-(#714=2, for C)
-(#714=1, for A)
+IF[#717EQ3]GOTO201
+IF[#717EQ2]GOTO202
+IF[#717EQ1]GOTO203
+(#717=3, for B)
+(#717=2, for C)
+(#717=1, for A)
 G65P220002 A-1. F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for D: moving along row)
 GOTO204
@@ -189,32 +200,32 @@ G65P220001 A1. X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 N204
 IF[#33GE#13]GOTO205
 (end loop for #33)
-#32=#707-[#33-1]*#06
+#32=#710-[#33-1]*#06
 (#32= the #33th row's Z from table center)
 #31=SQRT[#18*#18-[#32-#06]*[#32-#06]]-SQRT[#18*#18-#32*#32]
-G91 G31 X[#31*COS[ABS[#02]]-#06*SIN[ABS[#02]]] Z-[#31*SIN[ABS[#02]]+#06*COS[ABS[#02]]] F1500
+G91 G#704 X[#31*COS[ABS[#02]]-#06*SIN[ABS[#02]]] Z-[#31*SIN[ABS[#02]]+#06*COS[ABS[#02]]] F1500
 (current work XY: the center of the #33+1th row)
 #33=#33+1 (#33 to current row +1)
 END1
 
 N205
-#714=#714-1 (changing face)
-IF[#714LE0]GOTO104
-(end loop for #714)
+#717=#717-1 (changing face)
+IF[#717LE0]GOTO104
+(end loop for #717)
 GOTO100
 
 
 N104
-IF[#4111EQ50]GOTO008
+IF[#4111EQ50]GOTO010
 M05 (shujiku kaiten off)
 M09 (coolant off)
 
-N008
-G90 G01 X#711 Z[#713-#30] F6400
+N010
+G90 G01 X#714 Z[#716-#702] F6400
 (XZ: to the center of the 1st row)
-G90 G01 X#705 Z#706 F6400
+G90 G01 X#708 Z#709 F6400
 (XZ: to start point)
-G90 G01 Z[#706+100.0] F9600
+G90 G01 Z[#709+100.0] F9600
 GOTO999
 
 
@@ -224,15 +235,15 @@ M00 (ALARM: low battery)
 GOTO999
 
 N802
-G90 G01 X#711 Y#712 F1800
+G90 G01 X#714 Y#715 F1800
 IF[#1004EQ0]GOTO803
 (if current sensor OFF, go to N803)
 M117 (sensor on/off)
 
 N803
-G90 G01 Z#713 F1800
+G90 G01 Z#716 F1800
 (XYZ: to the center of the 1st row)
-G90 G01 X#705 Z#706 F1800
+G90 G01 X#708 Z#709 F1800
 (XZ: to start point)
 
 N800
@@ -264,14 +275,14 @@ N999 M99
 (#25:Y: BD naikei of last row)
 
 (as LHS)
-(#28, #29, #30, #31, #32, #33)
+(#29, #30, #31, #32, #33)
 
 
 (Common variables)
 (as RHS)
 (#401, #403, #405, #407, #512, #600)
 (as LHS)
-(#701-#716)
+(#701-#719)
 
 
 (System variables)
@@ -295,5 +306,5 @@ N999 M99
 
 
 (Used in other programs)
-(#714)
+(#717)
 %
