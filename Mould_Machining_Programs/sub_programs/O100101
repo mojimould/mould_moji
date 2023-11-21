@@ -12,6 +12,7 @@ IF[#26LE#0]GOTO800
 IF[#26LE0]GOTO800
 IF[#20LE#0]GOTO800
 IF[#20LE0]GOTO800
+IF[ABS[#04]GE20]GOTO800
 IF[#13LE#0]GOTO800
 IF[#13LE0]GOTO800
 IF[#01LE#0]GOTO800
@@ -22,13 +23,14 @@ IF[#514NE50]GOTO800
 (if X <= 0 or empty go to N800)
 (if Z <= 0 or empty go to N800)
 (if T <= 0 or empty go to N800)
+(if |I| >= 20, go to N800)
 (if M <= 0 or empty go to N800)
 (if A <= 0 or empty go to N800)
 (if #512 D/2 <= 0 or empty go to N800)
 (if #514 is not 50.0 go to N800)
 (if I+D+A >= 0 go to N800)
 
-#101=-[#24/2]+#20-#13
+#101=-[#24/2]+#20+#04-#13
 IF[#101GT0]GOTO800
 (if #101 > 0, go to 800)
 
@@ -60,7 +62,7 @@ G91 G31 X-[#01*2] F#514
 #900017=#5001-#512+#501+#502
 (#900017 = X left side - D/2 + probe hosei)
 
-G91 X[-#101-#512+#501+#502] F3000
+G91 G01 X[-#101-#512+#501+#502] F3600
 (X to measured center)
 
 IF[[ABS[#900017-#501-#502]]GE[ABS[#101-#01]]]GOTO800
