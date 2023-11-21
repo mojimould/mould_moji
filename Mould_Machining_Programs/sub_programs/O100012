@@ -1,8 +1,11 @@
 %
 O100012 (Y center of inner measurement)
 
-IF[#4012LT54]GOTO800
-IF[#4012GT59]GOTO800
+#33=#4012
+(#33= current work coordinate G#)
+
+IF[#33LT54]GOTO800
+IF[#33GT59]GOTO800
 (if work G# < 54 go to N800)
 (if work G# > 59 go to N800)
 
@@ -10,21 +13,23 @@ IF[#25LE#0]GOTO800
 IF[#25LE0]GOTO800
 IF[#26LE#0]GOTO800
 IF[#26LE0]GOTO800
+IF[#13LT0]GOTO800
 IF[#01LE#0]GOTO800
 IF[#01LE0]GOTO800
 IF[#512LE#0]GOTO800
 IF[#512LE0]GOTO800
 IF[#514NE50]GOTO800
-IF[[#ABS[#6]]GT#26/2]GOTO800
+IF[[#ABS[#06]]GT#26/2]GOTO800
 (if Y <= 0 or empty, go to N800)
 (if Z <= 0 or empty, go to N800)
+(if M < 0, go to N800)
 (if A <= 0 or empty, go to N800)
 (if probe radius D/2 <= 0 or empty, go to N800)
 (if #514 is not 50.0, go to N800)
 (if |K| > Z/2, go to N800)
 
-#33=#25+#13*2
-IF[[[#33/2]-#512-#01]LE0]GOTO800
+#32=#25/2+#13
+IF[[#32-#512-#01]LE0]GOTO800
 (if Y/2+M-D/2-A <= 0 go to N800)
 
 IF[#09EQ#0]GOTO001
@@ -37,10 +42,8 @@ N001
 #09=#514 (skip speed = 50.)
 
 N002
-#101=#4012
-#102=#5002
-(#101= current work coordinate G#)
-(#102= current work block end Y)
+#31=#5002
+(#31= current work block end Y)
 
 IF[#1005EQ1]GOTO801
 IF[#1004EQ1]GOTO003
@@ -55,10 +58,10 @@ G90 G31 Z[#26-#512+#06] F6400
 IF[#5003GT[#26-#512+#06]]GOTO802
 (if skip block end Z > tanmen Z-D/2+K, to N802)
 
-G91 G31 Y-[[#33/2]-#512-#01] F1800
+G91 G31 Y-[#32-#512-#01] F1800
 (Y-: [BD naikei/2 - D/2 - A])
-IF[[ABS[#5002-#102]]LT[ABS[[#33/2]-#512-#01]]]GOTO803
-(if |skipY - #102| < |BD naikei/2 - D/2 - A|, to N803)
+IF[[ABS[#5002-#31]]LT[ABS[#32-#512-#01]]]GOTO803
+(if |skipY-#31| < |BD naikei/2 - D/2 - A|, to N803)
 
 G91 G31 Y-[#01*2] F#09
 (Y- skip: 2A)
@@ -66,15 +69,15 @@ G91 G31 Y-[#01*2] F#09
 (#900013= Y bellow side - D/2 + probe hosei)
 
 G91 Y#01 F2400 (Y+: A)
-IF[[ABS[#900013-#501-#503]]GE[ABS[[#33/2]+#01]]]GOTO800
+IF[[ABS[#900013-#501-#503]]GE[ABS[#32+#01]]]GOTO800
 (if |#900013|>=|Y/2+A| go to N800)
 
-G90 Y#102 F3600 (Y to start point)
+G90 Y#31 F3600 (Y to start point)
 
-G91 G31 Y[[#33/2]-#512-#01] F1800
+G91 G31 Y[#32-#512-#01] F1800
 (Y+: [BD gaikei/2 - D/2 - A])
-IF[[ABS[#5002-#102]]LT[ABS[[#33/2]-#512-#01]]]GOTO803
-(if |skipY - #102| < |BD naikei/2 - D/2 - A|, to N803)
+IF[[ABS[#5002-#31]]LT[ABS[#32-#512-#01]]]GOTO803
+(if |skipY - #31| < |BD naikei/2 - D/2 - A|, to N803)
 
 G91 G31 Y[#01*2] F#09
 (Y+ skip: 2A)
@@ -82,7 +85,7 @@ G91 G31 Y[#01*2] F#09
 (#900014= Y above side + D/2 + probe hosei)
 
 G91 Y-#01 F2400 (Y-: A)
-IF[[ABS[#900014+#501-#503]]GE[ABS[[#33/2]+#01]]]GOTO800
+IF[[ABS[#900014+#501-#503]]GE[ABS[#32+#01]]]GOTO800
 (if |#900014| >= |Y/2+A| go to N800)
 
 #900015=[#900014+#900013]/2
@@ -91,7 +94,7 @@ IF[[ABS[#900014+#501-#503]]GE[ABS[[#33/2]+#01]]]GOTO800
 (difference: width)
 G90 Y#900015 F3600 (Y to measured center)
 
-#[5202+[#101-53]*20]=#5022
+#[5202+[#33-53]*20]=#5022
 (current work origin Y = current machine Y)
 
 G90 Z[#26+100.0] F9600
@@ -104,7 +107,7 @@ M00 (ALARM: low battery)
 GOTO999
 
 N803
-G90 G01 Y#102 (Y to start point)
+G90 G01 Y#31 (Y to start point)
 
 N802
 G91 G28 Z0
@@ -127,12 +130,12 @@ N999 M99
 (#26:Z: sai-furiwake)
 
 (as LHS)
-(#33)
+(#31, #32, #33)
 
 
 (Common variables)
 (as LHS)
-(#101, #102, #900013, #900014, #900015, #900016)
+(#900013, #900014, #900015, #900016)
 (as RHS)
 (#501 : hosei: touch sensor signal delay)
 (#503 : hosei: probe center Y)
