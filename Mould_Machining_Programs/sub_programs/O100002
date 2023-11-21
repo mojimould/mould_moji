@@ -1,8 +1,13 @@
 %
 O100002 (Y center of outer measurement)
 
-IF[#4012LT54]GOTO800
-IF[#4012GT59]GOTO800
+#33=#4012
+#32=#5002
+(#33= current work coordinate G#)
+(#32= current work block end Y)
+
+IF[#33LT54]GOTO800
+IF[#33GT59]GOTO800
 (if work G# < 54 go to N800)
 (if work G# > 59 go to N800)
 
@@ -14,13 +19,11 @@ IF[#01LE#0]GOTO800
 IF[#01LE0]GOTO800
 IF[#512LE#0]GOTO800
 IF[#512LE0]GOTO800
-IF[#514NE50]GOTO800
 IF[[ABS[#06]]GT[#26/2]]GOTO800
 (if Y <= 0 or empty, go to N800)
 (if Z <= 0 or empty, go to N800)
 (if A <= 0 or empty, go to N800)
 (if probe radius D/2 <= 0 or empty, go to N800)
-(if #514 is not 50.0, go to N800)
 (if |K| > Z/2, go to N800)
 
 IF[#09EQ#0]GOTO001
@@ -30,14 +33,11 @@ IF[#09GT300.0]GOTO001
 GOTO002
 
 N001
+IF[#514NE50]GOTO800
+(if #514 is not 50.0, go to N800)
 #09=#514 (skip speed = 50.)
 
 N002
-#101=#4012
-#102=#5002
-(#101= current work coordinate G#)
-(#102= current work block end Y)
-
 IF[#1005EQ1]GOTO801
 IF[#1004EQ1]GOTO003
 (if low battery, go to N801)
@@ -66,7 +66,7 @@ G91 Z[#512-#06+60.0] F9600
 IF[[ABS[#900005+#501-#503]]LE[ABS[[#25/2]-#01]]]GOTO800
 (if |#900005|<=|Y/2-A|, go to N800)
 
-G90 Y#102 (Y to start point)
+G90 Y#32 (Y to start point)
 G91 Y[[#25/2]+#512+#01]
 (Y+: [BD gaikei/2 + D/2 + 1])
 
@@ -92,7 +92,7 @@ IF[[ABS[#900006-#501-#503]]LE[ABS[[#25/2]-#01]]]GOTO800
 (difference: thickness)
 G90 Y#900007 (Y to measured center)
 
-#[5202+[#101-53]*20]=#5022
+#[5202+[#33-53]*20]=#5022
 (current work origin Y = current machine Y)
 
 G90 Z[#26+100.0]
@@ -105,7 +105,7 @@ GOTO999
 
 N802
 G91 G28 Z0
-G90 G01 Y#102 (Y to start point)
+G90 G01 Y#32 (Y to start point)
 
 N800
 G65 P900002 (sensor OFF)
@@ -124,10 +124,13 @@ N999 M99
 (#25:Y: Y outside width)
 (#26:Z: sokutei point Z)
 
+(as LHS)
+(#32, #33)
+
 
 (Common variables)
 (as LHS)
-(#101, #102, #900005, #900006, #900007, #900008)
+(#900005, #900006, #900007, #900008)
 (as RHS)
 (#501 : hosei: touch sensor signal delay)
 (#503 : hosei: probe center Y)
