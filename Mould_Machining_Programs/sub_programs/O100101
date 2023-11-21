@@ -1,13 +1,13 @@
 %
 O100101 (X center: left side measurement)
 
-#101=#4012
-#102=#5001
-(#101= current work coordinate G#)
-(#102= current work block end X)
+#33=#4012
+#32=#5001
+(#33= current work coordinate G#)
+(#32= current work block end X)
 
-IF[#101LT54]GOTO800
-IF[#101GT59]GOTO800
+IF[#33LT54]GOTO800
+IF[#33GT59]GOTO800
 (if work G# < 54 go to N800)
 (if work G# > 59 go to N800)
 
@@ -40,16 +40,16 @@ IF[#514NE50]GOTO800
 
 IF[#03GT0]GOTO001
 (if C > 0, go to N001)
-#33=-1 (for Bot)
+#31=-1 (for Bot)
 GOTO002
 N001
-#33=1 (for Top)
+#31=1 (for Top)
 
 N002
-#103=[[#24/2]-[#20+#04]+#13]
-IF[#103LT0]GOTO800
-(#103=[X/2-[T+I]+M])
-(if #103 < 0, go to 800)
+#30=[[#24/2]-[#20+#04]+#13]
+IF[#30LT0]GOTO800
+(#30=[X/2-[T+I]+M])
+(if #30 < 0, go to 800)
 
 IF[#1005EQ1]GOTO801
 IF[#1004EQ1]GOTO003
@@ -64,23 +64,23 @@ G90 G31 Z[#26-#512] F6400
 IF[#5003GT[#26-#512]]GOTO802
 (if skip block end Z > tanmen Z - D/2, to N802)
 
-G91 G31 X[#33*[#103-#512-#01]] F1800
-(X skip: #33*[#103-D/2-A])
-IF[[ABS[#5001-#102]]LT[ABS[#103-#512-#01]]]GOTO803
-(if |skipX-#102| < |#103-D/2-A| to N803)
+G91 G31 X[#31*[#30-#512-#01]] F1800
+(X skip: #31*[#30-D/2-A])
+IF[[ABS[#5001-#32]]LT[ABS[#30-#512-#01]]]GOTO803
+(if |skipX-#32| < |#30-D/2-A| to N803)
 
-G91 G31 X[#33*#01*2] F#514
-(X skip: #33*2A)
-#900017=#5001+#502+#33*[#512-#501]
-(#900017= block end X +#502+#33*[D/2-#501])
+G91 G31 X[#31*#01*2] F#514
+(X skip: #31*2A)
+#900017=#5001+#502+#31*[#512-#501]
+(#900017= block end X +#502+#31*[D/2-#501])
 
-G91 G01 X[#33*[-#103+#512-#501]+#502] F3600
+G91 G01 X[#31*[-#30+#512-#501]+#502] F3600
 (X to measured center)
 
-IF[[ABS[#900017-#502]]GE[ABS[#103+#01-#501]]]GOTO800
-(if |#900017-#502|>=|#103-A-#501|, go to N800)
+IF[[ABS[#900017-#502]]GE[ABS[#30+#01-#501]]]GOTO800
+(if |#900017-#502|>=|#30-A-#501|, go to N800)
 
-#[5201+[#101-53]*20]=#5021
+#[5201+[#33-53]*20]=#5021
 (current work origin X = current machine coordinate X)
 
 G90 Z[#26+100.0] F9600
@@ -93,7 +93,7 @@ M00 (ALARM: low battery)
 GOTO999
 
 N803
-G90 G01 X#102 (X to start point)
+G90 G01 X#32 (X to start point)
 
 N802
 G91 G28 Z0
@@ -116,10 +116,13 @@ N999 M99
 (#24:X: AC gaisakuKei)
 (#26:Z: sokutei point Z)
 
+(as LHS)
+(#30, #31, #32, #33)
+
 
 (Common variables)
 (as LHS)
-(#101, #102, #103, #900017)
+(#900017)
 (as RHS)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
