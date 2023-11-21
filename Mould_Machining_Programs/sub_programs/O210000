@@ -123,6 +123,8 @@ G91 G31 X#709 Z#710 F1500
 #712=#5002
 #713=#5003
 (XYZ block end: the center of the 1st row)
+IF[#711NE[#705+#709]]GOTO800
+IF[#712NE[#706+#710]]GOTO800
 
 IF[#4111EQ50]GOTO007
 S2000
@@ -131,6 +133,9 @@ M03 (shujiku kaiten on)
 
 N007
 #714=4 (#714: faces 1: A, 2: C, 3: B, 4: D)
+#715=#25/2-#512-10
+#716=[#24/2-#512-10]*COS[ABS[#02]]
+(#715, #716: face from -10)
 
 N100 (loop on #714)
 G90 G01 X#711 Y#712 Z#713 F6400
@@ -143,16 +148,20 @@ IF[#714EQ1]GOTO103
 (if C, to N102)
 (if A, to N103)
 (for face D)
-G91 G31 Y-[#25/2-#512-10] F1500
+G91 G31 Y-#715 F1500
+IF[#5002GT[-#715]]GOTO802
 GOTO200
 N101 (for face B)
-G91 G31 Y[#25/2-#512-10] F1500
+G91 G31 Y#715 F1500
+IF[#5002LT#715]GOTO802
 GOTO200
 N102 (for face C)
-G91 G31 X-[[#24/2-#512-10]*COS[ABS[#02]]] F1500
+G91 G31 X-#716 F1500
+IF[#5001GT[-#716]]GOTO802
 GOTO200
 N103 (for face A)
-G91 G31 X[[#24/2-#512-10]*COS[ABS[#02]]] F1500
+G91 G31 X#716 F1500
+IF[#5001LT#716]GOTO802
 
 N200
 #33=1 (#33: current row)
@@ -208,10 +217,23 @@ G90 G01 X#705 Z#706 F6400
 G90 G01 Z[#706+100.0] F9600
 GOTO999
 
+
 N801
 #3000=145 (Sensor Low battery)
 M00 (ALARM: low battery)
 GOTO999
+
+N802
+G90 G01 X#711 Y#712 F1800
+IF[#1004EQ0]GOTO803
+(if current sensor OFF, go to N803)
+M117 (sensor on/off)
+
+N803
+G90 G01 Z#713 F1800
+(XYZ: to the center of the 1st row)
+G90 G01 X#705 Z#706 F1800
+(XZ: to start point)
 
 N800
 #3000=121 (are the arguments or the mould OK?)
@@ -249,7 +271,7 @@ N999 M99
 (as RHS)
 (#401, #403, #405, #407, #512, #600)
 (as LHS)
-(#701-#714)
+(#701-#716)
 
 
 (System variables)
