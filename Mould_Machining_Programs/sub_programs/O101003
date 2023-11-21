@@ -1,5 +1,5 @@
 %
-O101003 (X center of outside measurement)
+O101003 (X centerline measurement)
 
 IF[#23EQ#0]GOTO800
 IF[#23LE0]GOTO800
