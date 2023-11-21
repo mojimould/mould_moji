@@ -9,14 +9,14 @@ IF[#33GT59]GOTO800
 (if work G# < 54 go to N800)
 (if work G# > 59 go to N800)
 
-IF[#24LE#0]GOTO800
+IF[#24EQ#0]GOTO800
 IF[#24LE0]GOTO800
-IF[#26LE#0]GOTO800
+IF[#26EQ#0]GOTO800
 IF[#26LE0]GOTO800
 IF[#13LT0]GOTO800
-IF[#01LE#0]GOTO800
+IF[#01EQ#0]GOTO800
 IF[#01LE0]GOTO800
-IF[#512LE#0]GOTO800
+IF[#512EQ#0]GOTO800
 IF[#512LE0]GOTO800
 IF[#514NE50]GOTO800
 (if X <= 0 or empty, go to N800)
@@ -44,17 +44,17 @@ IF[#06EQ#0]GOTO002
 
 IF[#23LT0]GOTO800
 IF[#18LT0]GOTO800
-IF[[#ABS[#06]]GE[#23/2]]GOTO800
+IF[[ABS[#06]]GE[#23/2]]GOTO800
 IF[#18LT#23]GOTO800
 (if W,R < 0, go to N800)
 (if |K| >= W/2, go to N800)
 (if R < W, go to N800)
 #31=SQRT[#18*#18-[#23+#06]*[#23+#06]]-SQRT[#18*#18-#23*#23]
-(for bottom: if K>0, #31>0)
-(for Top: if K>0, #31<0)
+(for bottom: if K>0, #31<0)
+(for Top: if K>0, #31>0)
 IF[[ABS[#31]]GE#32]GOTO800
 (if |#31| >= X/2, go to N800)
-G91 G01 X#31
+G91 G01 X-#31
 (if K>0, Top X-, Bot X+)
 
 N002
