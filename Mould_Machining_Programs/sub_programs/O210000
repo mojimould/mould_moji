@@ -2,8 +2,11 @@
 O210000 (for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 
-IF[#4012LT54]GOTO800 
-IF[#4012GT59]GOTO800
+#701=#4012
+(#701= current work coordinate G#)
+
+IF[#701LT54]GOTO800 
+IF[#701GT59]GOTO800
 (if work G# < 54 or G# > 59, go to N800)
 
 IF[#18EQ#0]GOTO800
@@ -59,11 +62,10 @@ IF[#21GT#04]GOTO800
 (if S >= Y, go to N800)
 (if U > I, go to N800)
 
-#701=#4012 (#701= current work coordinate G#)
-IF[#4111EQ50]GOTO001 (if H# = 50, go to N001)
-IF[#4111EQ31]GOTO002 (if H# = 31, go to N002)
-IF[#4111EQ32]GOTO002 (if H# = 32, go to N002)
-IF[#4111EQ33]GOTO002 (if H# = 33, go to N002)
+IF[#4111EQ50]GOTO001 (if H#=50, go to N001)
+IF[#4111EQ31]GOTO002 (if H#=31, go to N002)
+IF[#4111EQ32]GOTO002 (if H#=32, go to N002)
+IF[#4111EQ33]GOTO002 (if H#=33, go to N002)
 GOTO800
 N001 #30=#512
 GOTO003 (if sensor, #30=#512)
@@ -256,11 +258,9 @@ N999 M99
 (#1005: 1: sensor low battery, 0: OK)
 (#3000: alarm)
 (#4012: current work coordinate G#)
-(#5041: current work X)
-(#5042: current work X)
-(#5043: current work Z)
-(#5044: current work B)
-(#5063: skip position Z without KouguChou hosei)
+(#5001: block end X)
+(#5002: block end X)
+(#5003: block end Z)
 (#5281: G57 X)
 
 
