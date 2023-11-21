@@ -28,14 +28,14 @@ IF[#514NE50]GOTO800
 (if #514 is not 50.0 go to N800)
 (if I+D+A >= 0 go to N800)
 
-#900017=-[#24/2]+#20-#13
-IF[#900017GT0]GOTO800
-(if #900017 > 0, go to 800)
+#101=-[#24/2]+#20-#13
+IF[#101GT0]GOTO800
+(if #101 > 0, go to 800)
 
-#101=#4012
-#102=#5001
-(#101= current work coordinate G#)
-(#102= current work block end X)
+#102=#4012
+#103=#5001
+(#102= current work coordinate G#)
+(#103= current work block end X)
 
 IF[#1005EQ1]GOTO801
 IF[#1004EQ1]GOTO001
@@ -50,23 +50,23 @@ G90 G31 Z[#26-#512] F6400
 IF[#5003GT[#26-#512]]GOTO802
 (if skip block end Z > tanmen Z - D/2, to N802)
 
-G91 G31 X[#900017+#512+#01] F1800
+G91 G31 X[#101+#512+#01] F1800
 (X- skip: [AC naikei/2 - D/2 - A])
-IF[[ABS[#5001-#102]]LT[ABS[#900017+#512+#01]]]GOTO803
-(if |skipX - #102| < |AC naikei/2 - D/2 - A| to N803)
+IF[[ABS[#5001-#103]]LT[ABS[#101+#512+#01]]]GOTO803
+(if |skipX - #103| < |AC naikei/2 - D/2 - A| to N803)
 
 G91 G31 X-[#01*2] F#514
 (X- skip: 2A)
-#900018=#5001-#512+#501+#502
-(#900018 = X left side - D/2 + probe hosei)
+#900017=#5001-#512+#501+#502
+(#900017 = X left side - D/2 + probe hosei)
 
-G91 X[-#900017-#512+#501+#502] F3000
+G91 X[-#101-#512+#501+#502] F3000
 (X to measured center)
 
-IF[[ABS[#900018-#501-#502]]GE[ABS[#900017-#01]]]GOTO800
-(if |#900018-#501-#502|>=|I-A| go to N800)
+IF[[ABS[#900017-#501-#502]]GE[ABS[#101-#01]]]GOTO800
+(if |#900017-#501-#502|>=|I-A| go to N800)
 
-#[5201+[#101-53]*20]=#5021
+#[5201+[#102-53]*20]=#5021
 (current work origin X = current machine coordinate X)
 
 G90 Z[#26+100.0] F9600
@@ -79,7 +79,7 @@ M00 (ALARM: low battery)
 GOTO999
 
 N803
-G90 G01 X#102 (X to start point)
+G90 G01 X#103 (X to start point)
 
 N802
 G91 G28 Z0
@@ -103,7 +103,7 @@ N999 M99
 
 (Common variables)
 (as LHS)
-(#101, #102, #900017, #900018)
+(#101, #102, #103, #900017)
 (as RHS)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
