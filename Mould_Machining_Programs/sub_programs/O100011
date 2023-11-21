@@ -26,13 +26,12 @@ IF[[[#24/2]-#512-#01]LE0]GOTO800
 (if #514 is not 50.0, go to N800)
 (if X/2-D/2-A <= 0 go to N800)
 
-IF[[#06*#18*#23*#03]NE0]GOTO001
+IF[[#06*#18*#23]NE0]GOTO001
 (if K*R*W*C is not 0, go to N001)
 IF[#06NE#0]GOTON800
 IF[#18NE#0]GOTON800
 IF[#23NE#0]GOTON800
-IF[#03NE#0]GOTON800
-(if either K, R, W, C is 0, go to N800)
+(if either K, R, W is 0, go to N800)
 
 N001
 #103=0 (#103: x +hosei)
@@ -153,7 +152,6 @@ N999 M99
 (#24:X: X inside width)
 (#26:Z: sai-furiwake)
 (as received hidden arguments)
-(#03:C: x hosei: +: for Bot, -: for Top)
 (#06:K: Z +hosei from tanmen)
 (#18:R: radius of the central curvature)
 (#23:W: furiwake)

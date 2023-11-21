@@ -107,14 +107,13 @@ G54 G65 P100002 Y183. Z499.984 K0 A10. F200.
 
 G90 G01 G55 X0 Y0 (G55 XY Bot Inside center)
 
-G55 G65 P100011 X155.14 Z499.84 W600. K-10. R8922.7 C1. F200. A10.
+G55 G65 P100011 X155.14 Z499.84 W600. K-10. R8922.7 F200. A10.
 (G55: Bot X inside center)
 (X: Bot AC naikei)
 (Z: Bot sai_furiwake)
 (W: Bot furiwake)
 (K: Z +hosei from tanmen)
 (R: radius of the central curvature)
-(C: +: for Bot, -: for Top)
 (F: skip speed)
 (A: skip kaishi kyori)
 
