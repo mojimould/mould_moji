@@ -107,21 +107,23 @@ G54 G65 P100002 Y183. Z499.984 K0 A10. F200.
 
 G90 G01 G55 X0 Y0 (G55 XY Bot Inside center)
 
-G55 G65 P100011 X155.14 Z499.84 W600. K-10. R8922.7 F200. A10.
+G55 G65 P100011 X155. Z499.84 W600. K-10. R8922.7 M0.07 F200. A10.
 (G55: Bot X inside center)
 (X: Bot AC naikei)
 (Z: Bot sai_furiwake)
 (W: Bot furiwake)
 (K: Z +hosei from tanmen)
 (R: radius of the central curvature)
+(M: mekki mm)
 (F: skip speed)
 (A: skip kaishi kyori)
 
-G55 G65 P100012 Y153.14 Z499.984 K0. F200. A10.
+G55 G65 P100012 Y153 Z499.984 K0. M0.07 F200. A10.
 (G55: Bot Y inside center)
 (Y: Bot BD naikei)
 (Z: sai_furiwake Bot)
 (K: Z +hosei from tanmen)
+(M: mekki mm)
 (F: skip speed)
 (A: skip kaishi kyori)
 
@@ -143,19 +145,21 @@ G43 Z[500.016+100.0] H50
 
 (Top sokutei start)
 
-G57 G65 P100011 X157.003 Z500.016 A10. F200.
+G57 G65 P100011 X156.863 Z500.016 M0.07 F200. A10.
 (G57: Top X inside center)
 (X: AC naikei)
-(Z: sai_furiwake Top)
-(A: skip kaishi kyori)
+(Z: Top sai_furiwake)
+(M: mekki mm)
 (F: skip speed)
+(A: skip kaishi kyori)
 
-G57 G65 P100012 Y154.979 Z500.016 A10. F200.
+G57 G65 P100012 Y154.839 Z500.016 M0.07 F200. A10.
 (G57: Top Y inside center)
 (Y: BD naikei)
-(Z: sai_furiwake Top)
-(A: skip kaishi kyori)
+(Z: Top sai_furiwake)
+(M: mekki mm)
 (F: skip speed)
+(A: skip kaishi kyori)
 
 
 (Dimple measurement start)
@@ -164,7 +168,7 @@ G90 G01 G57 X0 Y0
 (G57XY Top Inside Center)
 G43 Z[500.016+100.0] H50
 (hosei KouguChou: #50)
-(Z= TopTanmen +100.)
+(Z= topTanmen+100.)
 
 /M00 (dimple start)
 

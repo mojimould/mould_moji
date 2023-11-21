@@ -16,14 +16,16 @@ IF[#512LE#0]GOTO800
 IF[#512LE0]GOTO800
 IF[#514NE50]GOTO800
 IF[[#ABS[#6]]GT#26/2]GOTO800
-IF[[[#25/2]-#512-#01]LE0]GOTO800
 (if Y <= 0 or empty, go to N800)
 (if Z <= 0 or empty, go to N800)
 (if A <= 0 or empty, go to N800)
 (if probe radius D/2 <= 0 or empty, go to N800)
 (if #514 is not 50.0, go to N800)
 (if |K| > Z/2, go to N800)
-(if Y/2-D/2-A <= 0 go to N800)
+
+#33=#25+#13*2
+IF[[[#33/2]-#512-#01]LE0]GOTO800
+(if Y/2+M-D/2-A <= 0 go to N800)
 
 IF[#09EQ#0]GOTO001
 IF[#09LE0]GOTO001
@@ -53,9 +55,9 @@ G90 G31 Z[#26-#512+#06] F6400
 IF[#5003GT[#26-#512+#06]]GOTO802
 (if skip block end Z > tanmen Z-D/2+K, to N802)
 
-G91 G31 Y-[[#25/2]-#512-#01] F1800
+G91 G31 Y-[[#33/2]-#512-#01] F1800
 (Y-: [BD naikei/2 - D/2 - A])
-IF[[ABS[#5002-#102]]LT[ABS[[#25/2]-#512-#01]]]GOTO803
+IF[[ABS[#5002-#102]]LT[ABS[[#33/2]-#512-#01]]]GOTO803
 (if |skipY - #102| < |BD naikei/2 - D/2 - A|, to N803)
 
 G91 G31 Y-[#01*2] F#09
@@ -64,14 +66,14 @@ G91 G31 Y-[#01*2] F#09
 (#900013= Y bellow side - D/2 + probe hosei)
 
 G91 Y#01 F2400 (Y+: A)
-IF[[ABS[#900013-#501-#503]]GE[ABS[[#25/2]+#01]]]GOTO800
+IF[[ABS[#900013-#501-#503]]GE[ABS[[#33/2]+#01]]]GOTO800
 (if |#900013|>=|Y/2+A| go to N800)
 
 G90 Y#102 F3600 (Y to start point)
 
-G91 G31 Y[[#25/2]-#512-#01] F1800
+G91 G31 Y[[#33/2]-#512-#01] F1800
 (Y+: [BD gaikei/2 - D/2 - A])
-IF[[ABS[#5002-#102]]LT[ABS[[#25/2]-#512-#01]]]GOTO803
+IF[[ABS[#5002-#102]]LT[ABS[[#33/2]-#512-#01]]]GOTO803
 (if |skipY - #102| < |BD naikei/2 - D/2 - A|, to N803)
 
 G91 G31 Y[#01*2] F#09
@@ -80,7 +82,7 @@ G91 G31 Y[#01*2] F#09
 (#900014= Y above side + D/2 + probe hosei)
 
 G91 Y-#01 F2400 (Y-: A)
-IF[[ABS[#900014+#501-#503]]GE[ABS[[#25/2]+#01]]]GOTO800
+IF[[ABS[#900014+#501-#503]]GE[ABS[[#33/2]+#01]]]GOTO800
 (if |#900014| >= |Y/2+A| go to N800)
 
 #900015=[#900014+#900013]/2
@@ -120,8 +122,12 @@ N999 M99
 (#01:A: skip kaishi kyori)
 (#06:K: Z +hosei from tanmen)
 (#09:F: skip speed)
+(#13:M: mekki mm)
 (#25:Y: Y inside width)
-(#26:Z: sokutei point Z)
+(#26:Z: sai-furiwake)
+
+(as LHS)
+(#33)
 
 
 (Common variables)
