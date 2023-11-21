@@ -1,8 +1,13 @@
 %
 O100101 (X center: left side measurement)
 
-IF[#4012LT54]GOTO800
-IF[#4012GT59]GOTO800
+#101=#4012
+#102=#5001
+(#101= current work coordinate G#)
+(#102= current work block end X)
+
+IF[#101LT54]GOTO800
+IF[#101GT59]GOTO800
 (if work G# < 54 go to N800)
 (if work G# > 59 go to N800)
 
@@ -15,6 +20,8 @@ IF[#20LE0]GOTO800
 IF[ABS[#04]GE20]GOTO800
 IF[#13LE#0]GOTO800
 IF[#13LE0]GOTO800
+IF[#03LE#0]GOTO800
+IF[#03EQ0]GOTO800
 IF[#01LE#0]GOTO800
 IF[#01LE0]GOTO800
 IF[#512LE#0]GOTO800
@@ -25,50 +32,55 @@ IF[#514NE50]GOTO800
 (if T <= 0 or empty go to N800)
 (if |I| >= 20, go to N800)
 (if M <= 0 or empty go to N800)
+(if C = 0 or empty go to N800)
 (if A <= 0 or empty go to N800)
 (if #512 D/2 <= 0 or empty go to N800)
 (if #514 is not 50.0 go to N800)
 (if I+D+A >= 0 go to N800)
 
-#101=-[#24/2]+#20+#04-#13
-IF[#101GT0]GOTO800
-(if #101 > 0, go to 800)
+IF[#03GT0]GOTO001
+(if C > 0, go to N001)
+#33=-1 (for Bot)
+GOTO002
+N001
+#33=1 (for Top)
 
-#102=#4012
-#103=#5001
-(#102= current work coordinate G#)
-(#103= current work block end X)
+N002
+#103=[[#24/2]-[#20+#04]+#13]
+IF[#103LT0]GOTO800
+(#103=[X/2-[T+I]+M])
+(if #103 < 0, go to 800)
 
 IF[#1005EQ1]GOTO801
-IF[#1004EQ1]GOTO001
+IF[#1004EQ1]GOTO003
 (if low battery, go to N801)
-(if current sensor ON, go to N001)
+(if current sensor ON, go to N003)
 M117 (sensor on/off)
 G04X1. (wait 1.0s)
 
-N001
+N003
 G90 G31 Z[#26-#512] F6400
 (Z skip tanmen: Z - D/2)
 IF[#5003GT[#26-#512]]GOTO802
 (if skip block end Z > tanmen Z - D/2, to N802)
 
-G91 G31 X[#101+#512+#01] F1800
-(X- skip: [AC naikei/2 - D/2 - A])
-IF[[ABS[#5001-#103]]LT[ABS[#101+#512+#01]]]GOTO803
-(if |skipX - #103| < |AC naikei/2 - D/2 - A| to N803)
+G91 G31 X[#33*[#103-#512-#01]] F1800
+(X skip: #33*[#103-D/2-A])
+IF[[ABS[#5001-#102]]LT[ABS[#103-#512-#01]]]GOTO803
+(if |skipX-#102| < |#103-D/2-A| to N803)
 
-G91 G31 X-[#01*2] F#514
-(X- skip: 2A)
-#900017=#5001-#512+#501+#502
-(#900017 = X left side - D/2 + probe hosei)
+G91 G31 X[#33*#01*2] F#514
+(X skip: #33*2A)
+#900017=#5001+#502+#33*[#512-#501]
+(#900017= block end X +#502+#33*[D/2-#501])
 
-G91 G01 X[-#101-#512+#501+#502] F3600
+G91 G01 X[#33*[-#103+#512-#501]+#502] F3600
 (X to measured center)
 
-IF[[ABS[#900017-#501-#502]]GE[ABS[#101-#01]]]GOTO800
-(if |#900017-#501-#502|>=|I-A| go to N800)
+IF[[ABS[#900017-#502]]GE[ABS[#103+#01-#501]]]GOTO800
+(if |#900017-#502|>=|#103-A-#501|, go to N800)
 
-#[5201+[#102-53]*20]=#5021
+#[5201+[#101-53]*20]=#5021
 (current work origin X = current machine coordinate X)
 
 G90 Z[#26+100.0] F9600
@@ -81,7 +93,7 @@ M00 (ALARM: low battery)
 GOTO999
 
 N803
-G90 G01 X#103 (X to start point)
+G90 G01 X#102 (X to start point)
 
 N802
 G91 G28 Z0
@@ -97,6 +109,8 @@ N999 M99
 (Local variables)
 (as received arguments)
 (#01:A: skip kaishi kyori)
+(#03:C: +: for Top, -: for Bot)
+(#04:I: T +hosei)
 (#13:M: mekki mm)
 (#20:T: A nikuatsu)
 (#24:X: AC gaisakuKei)
@@ -126,6 +140,6 @@ N999 M99
 (#5261: G56 X)
 
 
-(Subprograms)
+(Subprogram)
 (O900002)
 %

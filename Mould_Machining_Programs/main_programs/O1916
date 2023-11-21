@@ -82,13 +82,14 @@ G43 Z[499.984+100.0] H50
 (Z= BotTanmen +100.)
 
 N004
-G54 G65 P100101 I0. X180.95 Z499.984 T13.82 M0.07 A10.0
+G54 G65 P100101 I0. X180.95 Z499.984 T13.82 M0.07 C-1. A10.0
 (G54: Bot X Gaisaku center)
 (I: T +hosei)
 (X: Bot AC gaisakuKei)
 (Z: Bot sai_furiwake)
 (T: Bot A nikuatsu)
 (M: mekki mm)
+(C: +: for Top, -: for Bot)
 (A: skip kaishi kyori)
 
 #5261=-[#5221-#30]+#30+11.0
