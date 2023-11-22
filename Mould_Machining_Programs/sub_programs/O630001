@@ -3,16 +3,18 @@ O630001 (for AC dimples kakou)
 (level 3: kakou dimple)
 (I > 0: Y+, I < 0: Y-)
 
-#33=#5041
-(#33= current work X: start point X)
-
 IF[#04EQ#0]GOTO800
 IF[#04EQ0]GOTO800
 (if I = 0 or empty, to N800)
 
+#33=#5041
+(#33= current work X: start point X)
+#32=#[2400+#4111]+#[2600+#4111]
+(#32= hosei KouguKei + Mamou)
+
 IF[#04LT0]GOTO001 (if I < 0 then to N001)
-#32=1 (for A)
-(if I > 0, #32=1)
+#31=1 (for A)
+(if I > 0, #31=1)
 IF[#4111EQ31]GOTO002
 IF[#4111EQ32]GOTO003
 IF[#4111EQ33]GOTO004
@@ -21,18 +23,18 @@ IF[#4111EQ33]GOTO004
 (if H#=33, go to N004)
 GOTO800
 N002 (for T31)
-#31=#601
+#30=#601
 GOTO008
 N003 (for T32)
-#31=#605
+#30=#605
 GOTO008
 N004 (for T33)
-#31=#609
+#30=#609
 GOTO008
 
 N001
-#32=-1 (for C)
-(if I < 0, #32=-1)
+#31=-1 (for C)
+(if I < 0, #31=-1)
 IF[#4111EQ31]GOTO005
 IF[#4111EQ32]GOTO006
 IF[#4111EQ33]GOTO007
@@ -41,19 +43,19 @@ IF[#4111EQ33]GOTO007
 (if H#=33, go to N007)
 GOTO800
 N005 (for T31)
-#31=#602
+#30=#602
 GOTO008
 N006 (for T32)
-#31=#606
+#30=#606
 GOTO008
 N007 (for T33)
-#31=#610
+#30=#610
 
 N008
-G90 G01 X[#23-#32*[#07+5.0]] F500
-(X+: #23-#07-5.0 or X-: #23+#07+5.0, speed 500)
-G91 G01 X[#32*5.0] F200
-G91 G01 X[#32*#21] F100
+G90 G01 X[#23-#31*[#32+5.0]] F500
+(X+: #23-#32-5.0 or X-: #23+#32+5.0, speed 500)
+G91 G01 X[#31*5.0] F200
+G91 G01 X[#31*#21] F100
 (Y+ or Y-: 5.0, speed 200)
 (Y+ or Y-: #21, speed 100)
 G90 G01 X#33 F6400
@@ -72,12 +74,11 @@ N999 M99
 
 (as received arguments)
 (#04:I: +:X+direction, -:X-direction)
-(#07:D: the radius of the current tool)
 (#21:U: the depth of dimples)
 (#23:W: the position of the dimple)
 
 (as LHS)
-(#31, #32, #33)
+(#30, #31, #32, #33)
 
 
 (Common variables)
