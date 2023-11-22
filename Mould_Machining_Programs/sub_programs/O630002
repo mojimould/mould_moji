@@ -3,54 +3,60 @@ O630002 (for BD dimples kakou)
 (level 3: kakou dimple)
 (J > 0: Y+, J < 0: Y-)
 
-#767=#5042
-(#767= current work X: start point Y)
+#33=#5042
+(#33= current work X: start point Y)
 
 IF[#05EQ0]GOTO800
 IF[#05EQ#0]GOTO800
-(if J = 0 then to N800)
-(if J = #0 then to N800)
+(if J = 0 or empty, to N800)
 
 IF[#05LT0]GOTO001 (if J < 0 then to N001)
-#33=1 (for B)
-(if J > 0, #33=1)
-IF[#4111EQ31]GOTO002 (if H#= 31, go to N002)
-IF[#4111EQ32]GOTO003 (if H#= 32, go to N003)
-IF[#4111EQ33]GOTO004 (if H#= 33, go to N004)
+#32=1 (for B)
+(if J > 0, #32=1)
+IF[#4111EQ31]GOTO002
+IF[#4111EQ32]GOTO003
+IF[#4111EQ33]GOTO004
+(if H#=31, go to N002)
+(if H#=32, go to N003)
+(if H#=33, go to N004)
 GOTO800
 N002 (for T31)
-#768=#603
+#31=#603
 GOTO008
 N003 (for T32)
-#768=#607
+#31=#607
 GOTO008
 N004 (for T33)
-#768=#611
+#31=#611
 GOTO008
+
 N001
-#33=-1 (for D)
-(if J < 0, #33=-1)
-IF[#4111EQ31]GOTO005 (if H#= 31, go to N005)
-IF[#4111EQ32]GOTO006 (if H#= 32, go to N006)
-IF[#4111EQ33]GOTO007 (if H#= 33, go to N007)
+#32=-1 (for D)
+(if J < 0, #32=-1)
+IF[#4111EQ31]GOTO005
+IF[#4111EQ32]GOTO006
+IF[#4111EQ33]GOTO007
+(if H#=31, go to N005)
+(if H#=32, go to N006)
+(if H#=33, go to N007)
 GOTO800
 N005 (for T31)
-#768=#604
+#31=#604
 GOTO008
 N006 (for T32)
-#768=#608
+#31=#608
 GOTO008
 N007 (for T33)
-#768=#612
+#31=#612
 
 N008
-G90 G01 Y[#23-#33*[#07+5.0]] F500
+G90 G01 Y[#23-#32*[#07+5.0]] F500
 (Y+: #23-#07-5.0 or Y-: #23+#07+5.0, speed 500)
-G91 G01 Y[#33*5.0] F200
-G91 G01 Y[#33*#21] F100
+G91 G01 Y[#32*5.0] F200
+G91 G01 Y[#32*#21] F100
 (Y+ or Y-: 5.0, speed 200)
 (Y+ or Y-: #21, speed 100)
-G90 G01 Y#767 F6400
+G90 G01 Y#33 F6400
 (G90 G01 Y: to start point)
 GOTO999 (to N999)
 
@@ -71,14 +77,12 @@ N999 M99
 (#23:W: the position of the dimple)
 
 (as LHS)
-(#33)
+(#31, #32, #33)
 
 
 (Common variables)
 (as RHS)
 (#603, #604, #607, #608, #611, #612)
-(as LHS)
-(#767, #768)
 
 
 (System variables)
