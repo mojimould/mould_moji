@@ -3,30 +3,30 @@ O900001 (touch sensor ON)
 
 #33=0
 
-N01 (loop)
+N001 (loop)
 M19 (shujiku orientation)
 G53 (kikai zahyoukei)
-IF[#1005EQ1]GOTO98
-IF[#1004EQ1]GOTO02
-(if low battery, go to 98)
-(if current sensor ON, go to N02)
+IF[#1005EQ1]GOTO800
+IF[#1004EQ1]GOTO999
+(if low battery, go to N800)
+(if current sensor ON, go to N999)
 M117 (sensor on/off)
 G04X1. (wait 1.0s)
 G53 (kikai zahyoukei)
-IF[#1004EQ1]GOTO02
+IF[#1004EQ1]GOTO999
 (if current sensor ON, go to N2)
 G04X4. (wait 4.0s)
 #33=#33+1
-IF[#33LT4]GOTO01
-(if #33 < 4, go to N01)
+IF[#33LT4]GOTO001
+(if #33 < 4, go to N001)
 
-#3000=146 (MP10/MP12/MP60-ALARM)
+#3000=146 (sensor-ALARM)
 (ALM: is the sensor ok?)
-GOTO02 (go to N02)
+GOTO999 (go to N999)
 
-N98 #3000=145 (MP10/MP12/MP60-Low battery)
+N800 #3000=145 (sensor-Low battery)
 
-N02 M99
+N999 M99
 
 (Used Variables and Programs)
 
