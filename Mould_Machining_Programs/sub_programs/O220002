@@ -4,11 +4,13 @@ O220002 (for BD dimples measurement & kakou)
 
 IF[#01EQ#0]GOTO800
 IF[#01EQ0]GOTO800
+(if A = 0 or empty, to N800)
+
 IF[#01LT0]GOTO001
-#33=1
+#33=1 (for B)
 GOTO002
 N001
-#33=-1
+#33=-1 (for D)
 
 N002
 #734=#5001
@@ -19,9 +21,9 @@ N002
 #736=FIX[#13/2]
 #737=#19/#04+1
 #738=#09/#04+1
-(#736= number of even row)
-(#737= number of dimple of even rows)
-(#738= number of dimple of odd rows)
+(#736= # of even row)
+(#737= # of dimple of even rows)
+(#738= # of dimple of odd rows)
 
 IF[[#13/2]EQ#736]GOTO003
 #32=#09/2
@@ -32,10 +34,11 @@ N003
 (if #13 is even, #32=#19/2)
 
 N004
-#739=[#32*2]/#04+1 (#739= the number of dimple)
+#739=[#32*2]/#04+1
+(#739= the number of dimple)
 IF[#4111EQ50]GOTO005
-(if H# is 50, go to N005)
-#29=#[2400+#4111]
+(if H#=50, go to N005)
+#29=#[2400+#4111]+#[2600+#4111]
 (#29= hosei KouguKei #4111)
 GOTO006
 
@@ -130,5 +133,6 @@ N999 M99
 
 
 (Using variables in other programs)
-(#717, #768)
+(#717: O210000)
+(#768: O230002)
 %
