@@ -5,22 +5,21 @@ IF[#23EQ#0]GOTO800
 IF[#23LE0]GOTO800
 IF[#26EQ#0]GOTO800
 IF[#26LE0]GOTO800
-IF[#20LE#0]GOTO800
+IF[#20EQ#0]GOTO800
 IF[#20LE0]GOTO800
-IF[#02LE#0]GOTO800
+IF[#02EQ#0]GOTO800
 IF[#02LE0]GOTO800
-IF[#13LE#0]GOTO800
+IF[#13EQ#0]GOTO800
 IF[#13LE0]GOTO800
-IF[#06LE#0]GOTO800
+IF[#06EQ#0]GOTO800
 IF[#06LE0]GOTO800
-IF[#01LE#0]GOTO800
+IF[#01EQ#0]GOTO800
 IF[#01LE0]GOTO800
-IF[#21LE#0]GOTO800
+IF[#21EQ#0]GOTO800
 IF[#21EQ0]GOTO800
-IF[#04LE#0]GOTO800
-IF[#512LE#0]GOTO800
+IF[#512EQ#0]GOTO800
 IF[#512LE0]GOTO800
-IF[#514LE#0]GOTO800
+IF[#514EQ#0]GOTO800
 IF[#514LE0]GOTO800
 IF[#4112NE50]GOTO800
 (if W <= 0 or empty, go to N800)
@@ -47,7 +46,10 @@ N001
 #32=#407 (p#2 Z table center)
 
 N002
-G53 G01 X#04
+G91 G28 Z0
+G54 G90 G01 X0 Y0
+G54 G43 Z[#26+100.0] H50
+(G43 Z: tanmen + 100.)
 
 IF[#1005EQ1]GOTO801
 IF[#1004EQ1]GOTO003
@@ -57,45 +59,47 @@ M117 (sensor on/off)
 G04X1. (wait 1.0s)
 
 N003
-G54 G91 G01 Y[[#02/2]+#512+#01] F6400
-(G91 Y: B/2+#512+A)
+G54 G90 G01 Y[[#02/2]+#512+#01] F5400
+(G90 Y: B/2+#512+A)
 
-G90 G31 Z[#26-#512-[#06/2]] F3600
-(G53 Z skip: BotTanmen Z-#512-K/2)
-IF[#5003GT[#26-#512-[#06/2]]]GOTO802
-(if skip block end Z > BotTanmen Z-#512-K/2, to N802)
+G54 G90 G31 Z[#26-[#06/2]-#512] F3600
+(G53 Z skip: BotTanmen Z-K/2-#512)
+IF[#5003GT[#26-[#06/2]-#512]]GOTO802
+(if skip block end Z > BotTanmen Z-K/2-#512, to N802)
 
 G91 G31 Y-[#01*2] F#514
 (Y- skip: 2A)
+#900019=#5002-#512+#501+#503
+(#900019= Y bot above side - #512 + probe hosei)
+
 G91 G01 Y[#01*2] F3600
 (Y+: 2A)
-#900019=#5002-#512+#501+#503
-(#900019= Bot Y above side - #512 + probe hosei)
 
 G91 G28 Z0
 IF[[ABS[#900019-#501-#503]]LE[ABS[[#02/2]-#01]]]GOTO800
 (if |#900019|<=|B/2-A|, go to N800)
 
 M11 (4jiku unclamp)
-G91 G00 G54 B180
-(G54 rotate 180 deg)
-(parallel angle -0.642)
+G91 G00 B180.
+(rotate 180 deg)
 M10 (4jiku clamp)
 
-G90 G53 G01 X[-[#04-#33]+#33+#21]
-G91 G01 Y[[#20/2+#512+#01]]
+G91 G01 X[-2*[#5221-#33]+#21] Y[[#20/2]+#512+#01] F5400
+(X: top gaisaku center)
+(Y: top gaisaku Bmen + A)
 
-G90 G53 G31 Z[#23-#512-[#13/2]+#32] F3600
-(G53 Z skip: W-#512-M/2)
-IF[#5003GT[#23-#512-[#13/2]+#32]]GOTO802
+G54 G90 G31 Z[#23-[#13/2]-#512] F3600
+(G54 Z skip: W-M/2-#512)
+IF[#5003GT[#23-[#13/2]-#512]]GOTO802
 (if skip block end Z > W-#512-M/2+#32, to N802)
 
 G91 G31 Y-[#01*2] F#514
-(Y- skip: 2A)
+(Y-: 2A)
+#900020=#5002-#512+#501+#503
+(#900020= Y top above side - #512 + probe hosei)
+
 G91 G01 Y[#01*2] F3600
 (Y+: 2A)
-#900020=#5002-#512+#501+#503
-(#900020= Top Y above side - #512 + probe hosei)
 
 G91 G28 Z0
 IF[[ABS[#900020-#501-#503]]LE[ABS[[#20/2]-#01]]]GOTO800
@@ -116,8 +120,7 @@ GOTO999
 
 N802
 G91 G28 Z0
-G53 G90 G01 X#33
-(X to table point)
+G54 G90 G01 X0
 
 N800
 G65 P900002 (sensor OFF)
@@ -131,13 +134,13 @@ N999 M99
 (Local variables)
 (as received arguments)
 (#01:A: skip kaishi kyori)
-(#02:B: BD Bot gaisakuKei)
+(#02:B: BD bot gaisakuKei)
 (#06:K: Bot gaisaku height)
 (#13:M: mizoIchi)
-(#20:T: BD Top gaisakuKei)
+(#20:T: BD top gaisakuKei)
 (#21:U: tooriShin X)
 (#23:W: sai-furiwake Top)
-(#24:X: Bot gaisaku center X)
+(#24:X: bot gaisaku center X)
 (#26:Z: sai-furiwake Bot)
 
 (as LHS)
@@ -160,6 +163,6 @@ N999 M99
 (#1004: 0: sensor off, 1: on)
 (#1005: 0: sensor battery ok, 1: low battery)
 (#3000: alarm)
-(#4012: current work coordinate G#)
 (#5003: current work block end Z)
+(#5221: G54 origin X)
 %

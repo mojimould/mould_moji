@@ -5,22 +5,20 @@ IF[#23EQ#0]GOTO800
 IF[#23LE0]GOTO800
 IF[#26EQ#0]GOTO800
 IF[#26LE0]GOTO800
-IF[#20LE#0]GOTO800
+IF[#20EQ#0]GOTO800
 IF[#20LE0]GOTO800
-IF[#02LE#0]GOTO800
+IF[#02EQ#0]GOTO800
 IF[#02LE0]GOTO800
-IF[#13LE#0]GOTO800
+IF[#13EQ#0]GOTO800
 IF[#13LE0]GOTO800
-IF[#06LE#0]GOTO800
+IF[#06EQ#0]GOTO800
 IF[#06LE0]GOTO800
-IF[#01LE#0]GOTO800
+IF[#01EQ#0]GOTO800
 IF[#01LE0]GOTO800
-IF[#21LE#0]GOTO800
+IF[#21EQ#0]GOTO800
 IF[#21EQ0]GOTO800
-IF[#04LE#0]GOTO800
-IF[#514LE#0]GOTO800
+IF[#514EQ#0]GOTO800
 IF[#514LE0]GOTO800
-IF[#4112NE50]GOTO800
 (if W <= 0 or empty, go to N800)
 (if Z <= 0 or empty, go to N800)
 (if T <= 0 or empty, go to N800)
@@ -28,10 +26,8 @@ IF[#4112NE50]GOTO800
 (if M <= 0 or empty, go to N800)
 (if K <= 0 or empty, go to N800)
 (if U <= 0 or empty, go to N800)
-(if I is empty, go to N800)
 (if A <= 0 or empty, go to N800)
 (if #514 <= 0 or empty, go to N800)
-(if H# is not 50, go to N800)
 
 IF[#1000NE0]GOTO001
 (if NOT p#1, to N001)
@@ -44,6 +40,12 @@ N001
 #32=#407 (p#2 Z table center)
 
 N002
+G91 G30 X0Y0Z0
+G54 G01 G90 G43 Z[-[#5221-#33]-#21+[#20/2]+#01] H50
+(Z: topGaisakuCmen + A)
+G53 G01 G90 X[#23-[#13/2]+#33] F5400
+(X: W-M/2 from table center)
+
 IF[#1005EQ1]GOTO801
 IF[#1004EQ1]GOTO003
 (if low battery, go to N801)
@@ -51,18 +53,13 @@ IF[#1004EQ1]GOTO003
 M117 (sensor on/off)
 G04X1. (wait 1.0s)
 
-#31=-[#04-#33]+#33+#21
-(#31= Top gaisaku center X)
-
 N003
-G53 G31 G90 X[#23-[#13/2]+#33] F1500
-(G90 X skip: W-M/2+#33)
-IF[#5003NE[#23-[#13/2]+#33]]GOTO802
-(if skip block end X is not W-M/2+#33, to N802)
+G54 G90 G31 Y0 F1500
+(G90 Y skip: G54 origin Y)
+IF[#5002GT0]GOTO802
+(if skip block end Y > 0, to N802)
 
-G53 G90 G31 Z[#31-#33+[#20/2]+#01+#32] F3600
-(G53 Z skip: topGaisakuCmen Z+A)
-IF[#5003GT[#31-#33+[#20/2]+#01+#32]]GOTO802
+IF[#5003GT[-[#5221-#33]-#21+[#20/2]+#01]]GOTO802
 (if skip block end Z > Cmen Z+A, to N802)
 
 G91 G31 Z[-#01*2] F#514
@@ -72,11 +69,11 @@ G91 G31 Z[-#01*2] F#514
 
 G91 G28 Z0
 G53 G01 G90 X[-#26+[#06/2]+#33] F9600
-(G90 X: -Z+H/2+#33)
+(X: -Z+K/2 from table center)
 
-G53 G90 G31 Z[#04-#33+[#02/2]+#01+#32] F3600
-(G53 Z skip: bot gaisakuCmen Z+A)
-IF[#5003GT[#04-#33+[#02/2]+#01+#32]]GOTO802
+G54 G90 G31 Z[#5221-#33+[#02/2]+#01] F1800
+(G54 Z skip: bot gaisakuCmen Z+A)
+IF[#5003GT[#5221-#33+[#02/2]+#01]]GOTO802
 (if skip block end Z > Cmen Z+A, to N802)
 
 G91 G31 Z[-#01*2] F#514
@@ -100,7 +97,7 @@ GOTO999
 
 N802
 G91 G28 Z0
-G54 G90 G01 #33
+G54 G91 G01 X0
 
 N800
 G65 P900002 (sensor OFF)
@@ -120,7 +117,6 @@ N999 M99
 (#20:T: AC Top gaisakuKei)
 (#21:U: tooriShin X)
 (#23:W: sai-furiwake Top)
-(#04:I: Bot gaisaku center X)
 (#26:Z: sai-furiwake Bot)
 
 (as LHS)
@@ -141,6 +137,6 @@ N999 M99
 (#1004: 0: sensor off, 1: on)
 (#1005: 0: sensor battery ok, 1: low battery)
 (#3000: alarm)
-(#4012: current work coordinate G#)
 (#5003: current work block end Z)
+(#5221: G54 origin X)
 %
