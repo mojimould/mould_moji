@@ -14,29 +14,35 @@ IF[#33GT59]GOTO800
 IF[#24EQ#0]GOTO800
 IF[#24LE0]GOTO800
 IF[#26EQ#0]GOTO800
-IF[#26LE0]GOTO800
 IF[#20EQ#0]GOTO800
 IF[#20LE0]GOTO800
-IF[[ABS[#04]]GE20]GOTO800
-IF[#13EQ#0]GOTO800
-IF[#13LE0]GOTO800
+IF[#13LT0]GOTO800
 IF[#03EQ#0]GOTO800
 IF[#03EQ0]GOTO800
 IF[#01EQ#0]GOTO800
 IF[#01LE0]GOTO800
+(if X <= 0 or #0, go to N800)
+(if Z = #0 go to, N800)
+(if T <= 0 or #0, go to N800)
+(if M < 0, go to N800)
+(if C = 0 or #0, go to N800)
+(if A <= 0 or #0, go to N800)
+
+IF[#20LE#13]GOTO800
+IF[#26LE[#411/2]]GOTO800
+IF[[ABS[#04]]GE#20]GOTO800
+(if T <= M or #0, go to N800)
+(if Z <= #411/2, go to N800)
+(if |I| >= T, go to N800)
+
+IF[#411EQ#0]GOTO800
+IF[#411LE0]GOTO800
 IF[#512EQ#0]GOTO800
 IF[#512LE0]GOTO800
-IF[#514NE50]GOTO800
-(if X <= 0 or empty go to N800)
-(if Z <= 0 or empty go to N800)
-(if T <= 0 or empty go to N800)
-(if |I| >= 20, go to N800)
-(if M <= 0 or empty go to N800)
-(if C = 0 or empty go to N800)
-(if A <= 0 or empty go to N800)
-(if #512 D/2 <= 0 or empty go to N800)
-(if #514 is not 50.0 go to N800)
-(if I+D+A >= 0 go to N800)
+IF[#514GT50]GOTO800
+(if #411 <= 0 or #0 go to N800)
+(if #512 <= 0 or #0 go to N800)
+(if #514 > 50.0 go to N800)
 
 IF[#03GT0]GOTO001
 (if C > 0, go to N001)
@@ -46,10 +52,10 @@ N001
 #31=1 (for Top)
 
 N002
-#30=[[#24/2]-[#20+#04]+#13]
-IF[#30LT0]GOTO800
-(#30=[X/2-[T+I]+M])
-(if #30 < 0, go to 800)
+#30=[#24/2]-[#20+#04]+#13
+IF[#30LE0]GOTO800
+(#30=X/2-[T+I]+M)
+(if #30 <= 0, go to 800)
 
 IF[#1005EQ1]GOTO801
 IF[#1004EQ1]GOTO003
@@ -124,6 +130,7 @@ N999 M99
 (as LHS)
 (#900017)
 (as RHS)
+(#411)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)
@@ -131,6 +138,7 @@ N999 M99
 
 
 (System variables)
+(#0   : empty)
 (#1004: 0: sensor off, 1: on)
 (#1005: 0: sensor battery ok, 1: low battery)
 (#2050: hosei #50 KouguChou)
