@@ -4,8 +4,8 @@ O1916 (main: SMP-1916)
 #33=1
 (center line measurement: 0:off, 1:on)
 #600=-0.642 (parallel angle)
-(top furiwake: 500.016)
-(bot furiwake: 499.984)
+(top sai-furiwake: 500.016)
+(bot sai-furiwake: 499.984)
 
 G91 G28 Z0
 
@@ -133,13 +133,13 @@ G55 G65 P100012 Y153 Z499.984 K0. M0.07 F200. A10.
 
 G91 G28 Z0
 M11 (4jiku unclamp)
-G90 G00 G57 B#600
+G57 G90 G00 B#600
 (G57B parallel angle #600)
 M10 (4jiku clamp)
 
-G90 G01 G57 X0 Y0
+G57 G90 G01 X0 Y0
 (G57XY Top Inside Center)
-G43 Z[500.016+100.0] H50
+G57 G90 G43 Z[500.016+100.0] H50
 (hosei KouguChou: #50)
 (Z= TopTanmen +100.)
 
@@ -165,9 +165,9 @@ G57 G65 P100012 Y154.839 Z500.016 M0.07 F200. A10.
 
 (Dimple measurement start)
 
-G90 G01 G57 X0 Y0
+G57 G90 G01 X0 Y0
 (G57XY Top Inside Center)
-G43 Z[500.016+100.0] H50
+G57 G90 G43 Z[500.016+100.0] H50
 (hosei KouguChou: #50)
 (Z= topTanmen+100.)
 
@@ -211,9 +211,9 @@ M06 (tool exchange)
 /M00
 (dimple kakou start)
 
-G90 G01 G57 X0 Y0
+G57 G90 G01 X0 Y0
 (G57XY Top Inside Center)
-G43 Z[500.016+100.0] H31
+G57 G90 G43 Z[500.016+100.0] H31
 (hosei KouguChou: #31)
 (Z= TopTanmen +100.)
 
