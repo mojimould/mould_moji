@@ -248,13 +248,14 @@ M06 (tool exchange)
 (kaisuu: #01/#02 kiriage)
 WHILE[#03GE1]DO1
 #03=#03-1
-G56 G65 P505000 D2. X185. Y183. Z[500.016+#02*#03] E50. F900. S950.
+G56 G65 P505000 D2. X185. Y183. Z500.016 K[#02*#03] E50. F900. S950.
 END1
 (O505000: rectangle 1shuu, ar MigiMawari)
 (D: hosei Kei&Chou kougu#)
 (X: AC gaikei)
 (Y: BD gaikei)
-(Z: furiwake + 1kezurishiro*kaisuu)
+(Z: sai-furiwake)
+(K: 1kezuriShiro*kaisuu)
 (E: kougu nigashiryou)
 (F: speed)
 (S: kaitensuu)
@@ -262,6 +263,7 @@ END1
 (Top tammen end)
 /M00 (tammen ok?)
 
+G91 G28 Z0
 T16 (gaisaku)
 M06 (tool exchange)
 
@@ -286,6 +288,7 @@ G56 G65 P505600 Q0. D16. H16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S
 (Top gaisaku end)
 /M00 (gaisaku ok?)
 
+G91 G28 Z0
 T06 (mizo)
 M06 (tool exchange)
 
@@ -323,6 +326,7 @@ G56 G65 P505600 D6. H6. X172.90 Y172.90 Z[500.016-[12.05+#06]-[8.05+#07]] R18. Q
 (Mizo end)
 /M00 (mizo ok?)
 
+G91 G28 Z0
 T13 (mentori 45)
 M06 (tool exchange)
 
@@ -345,6 +349,7 @@ G56 G65 P505600 D13. H13. X180.95 Y180.95 Z[500.016-1.0] R18. Q0. I0. F500. E400
 (Top Mentori Soto end)
 /M00 (mentori ok?)
 
+G91 G28 Z0
 M11 (4jiku unclamp)
 G90 G00 G54 B[180.0+#600]
 (G54B parallel angle 179.358)
@@ -364,13 +369,14 @@ M06 (tool exchange)
 #05=FUP[#04/#02] (kaisuu: #04/#02 kiriage)
 WHILE[#05GE1]DO1
 #05=#05-1
-G54 G65 P505000 D2. X185. Y183. Z[499.84+#02*#05] E50. F900. S950.
+G54 G65 P505000 D2. X185. Y183. Z499.84 K[#02*#05] E50. F900. S950.
 END1
 (O505000: rectangle 1shuu, ar MigiMawari)
 (D: hosei Kei&Chou kougu#)
 (X: AC gaikei)
 (Y: BD gaikei)
-(Z: furiwake + 1kezurishiro*kaisuu)
+(Z: sai-furiwake)
+(K: 1kezuriShiro*kaisuu)
 (E: kougu nigashiryou)
 (F: speed)
 (S: kaitensuu)
@@ -378,6 +384,7 @@ END1
 (Bottom tammen end)
 /M00 (tammen ok?)
 
+G91 G28 Z0
 T16 (gaisaku)
 M06 (tool exchange)
 
@@ -401,6 +408,7 @@ G54 G65 P505600 D16. H16. Q0. I0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E40
 (Bottom gaisaku end)
 /M00 (gaisaku ok?)
 
+G91 G28 Z0
 T11 (mentori 15)
 M06 (tool exchange)
 
@@ -424,7 +432,7 @@ G54 G65 P505600 D11. H11. Q0. X180.95 Y180.95 Z[499.984-4.0] R18. F500. E400. S1
 (Top Mentori Soto end)
 /M00 (mentori ok?)
 
-
+G91 G28 Z0
 (Bottom Mentori Uchi start)
 
 G55 G65 P505200 D11. H11. I0 K4. X155.14 Y153.14 Z[499.984-10.0] R18. A15. F400. S1800.
@@ -446,7 +454,7 @@ G55 G65 P505200 D11. H11. I0 K0. X155.14 Y153.14 Z[499.984-10.0] R18. A15. F400.
 (Top Mentori Soto end)
 /M00 (mentori ok?)
 
-
+G91 G28 Z0
 (Kakou Owari)
 
 

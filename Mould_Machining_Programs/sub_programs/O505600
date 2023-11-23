@@ -1,6 +1,35 @@
 %
 O505600
-(Sotogawa 1shuu Corner R, al HidariMawari)
+(sotogawa 1shuu Corner R, al HidariMawari)
+
+IF[#24EQ#0]GOTO800
+IF[#24LE0]GOTO800
+IF[#25EQ#0]GOTO800
+IF[#25LE0]GOTO800
+IF[#26EQ#0]GOTO800
+IF[#07EQ#0]GOTO800
+IF[#07LT1]GOTO800
+IF[#18EQ#0]GOTO800
+IF[#18LE0]GOTO800
+IF[#08EQ#0]GOTO800
+IF[#08LE0]GOTO800
+IF[#09EQ#0]GOTO800
+IF[#09LE0]GOTO800
+IF[#19EQ#0]GOTO800
+IF[#19LE0]GOTO800
+(if X <= 0 or #0, go to N800)
+(if Y <= 0 or #0, go to N800)
+(if Z = #0, go to N800)
+(if D < 1 or #0, go to N800)
+(if R <= 0 or #0, go to N800)
+(if E <= 0 or #0, go to N800)
+(if F <= 0 or #0, go to N800)
+(if S <= 0 or #0, go to N800)
+
+IF[#26LE[#411/2]]GOTO800
+IF[[ABS[#17]]GE[#25/2]]GOTO800
+(if |Q| >= Y/2, go to N800)
+(if Z <= #411/2, go to N800)
 
 G90 G00 X0 Y0 (XY work genten)
 G91 G00 X#04 (hosei: AC center: +: X+, -: X-)
@@ -58,9 +87,14 @@ G90 G00 G40 Y[#28/2]
 (Hosei Cancel Kougukei)
 (Y+ BD gaikei/2)
 
-G91 G30 Z0 (Z KouguKoukanIchi)
-G91 G30 X0 Y0 (XY KouguKoukanIchi)
-M99
+G90 G00 Z[#26+100]
+(Z: tanmen+100.)
+GOTO999
+
+N800
+#3000=121 (are the arguments OK?)
+
+N999 M99
 
 (Used Variables and Programs)
 
@@ -81,4 +115,12 @@ M99
 
 (as LHS)
 (#27-#31)
+
+
+(Common variable)
+(#411)
+
+
+(System variables)
+(#3000: alarm)
 %

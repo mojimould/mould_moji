@@ -57,9 +57,14 @@ G90 G00 G40 X0 Y0
 (cancel hosei kougukei)
 (XY: work genten)
 
-G91 G30 Z0 (Z KouguKoukanIchi)
-G30 X0 Y0 (XY KouguKoukanIchi)
-M99
+G90 G00 Z[#26+100]
+(Z: tanmen+100)
+GOTO999
+
+N800
+#3000=121 (are the arguments OK?)
+
+N999 M99
 
 (Used Variables and Programs)
 
@@ -80,4 +85,8 @@ M99
 
 (as LHS)
 (#27, #28, #29)
+
+
+(System variables)
+(#3000: alarm)
 %
