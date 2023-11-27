@@ -5,14 +5,12 @@ O900001 (touch sensor ON)
 
 N001 (loop)
 M19 (shujiku orientation)
-G53 (kikai zahyoukei)
 IF[#1005EQ1]GOTO800
 IF[#1004EQ1]GOTO999
 (if low battery, go to N800)
 (if current sensor ON, go to N999)
 M117 (sensor on/off)
 G04X1. (wait 1.0s)
-G53 (kikai zahyoukei)
 IF[#1004EQ1]GOTO999
 (if current sensor ON, go to N2)
 G04X4. (wait 4.0s)
