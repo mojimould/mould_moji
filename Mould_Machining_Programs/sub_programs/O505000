@@ -27,7 +27,9 @@ IF[#19LE0]GOTO800
 (if S <= 0 or #0, go to N800)
 
 IF[#26LE[#411/2]]GOTO800
+IF[[FIX[#11]]NE#11]GOTO800
 (if Z <= #411/2, go to N800)
+(if FIX[H] is not H, go to N800)
 
 G90 G00 X0 Y0
 (XY current work genten)
@@ -49,7 +51,7 @@ M08 (coolant on)
 
 G91 Y-[[#25+#17]/2-#08]
 (G91 G41 D#07 Y-[[#25+#17]/2-#08])
-(hosei kouguKei, Kougu #07)
+(hosei kouguKei, kougu #07)
 (ar:Y-:[BD gaikei/2 - nigashi])
 
 
