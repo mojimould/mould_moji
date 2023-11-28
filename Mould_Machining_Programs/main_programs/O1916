@@ -71,16 +71,18 @@ G90 G01 G54 X0 Y0 F9600
 
 (Bottom sokutei start)
 
+
+G65 P900001 (sensor ON)
 IF[#1005EQ1]GOTO800
 IF[#1004EQ1]GOTO004
 (if low battery, go to N800)
 M117
 
+N004
 G54 G43 Z[499.984+100.0] H50
 (hosei kouguChou #50)
 (Z= BotTanmen +100.)
 
-N004
 G54 G65 P100101 I0. X180.95 Z499.984 T13.82 M0.07 C-1. A10.0
 (G54: Bot X Gaisaku center)
 (I: T +hosei)
@@ -242,16 +244,16 @@ M06 (tool exchange)
 (Top tanmen start)
 
 #01=8.0 (kezuriShiro: all)
-#02=4.0 (kezuriShiro: 1 time)
 
-#03=FUP[#01/#02]
-(kaisuu: #01/#02 kiriage)
-WHILE[#03GE1]DO1
-#03=#03-1
-G56 G65 P505000 D2. X185. Y183. Z500.016 K[#02*#03] E50. F900. S950.
+#104=4.0 (kezuriShiro: 1 time)
+#02=FUP[#01/#104]
+(kaisuu: #01/#104 kiriage)
+WHILE[#02GE1]DO1
+#02=#02-1
+G56 G65 P505000 H2. X185. Y183. Z500.016 K[#104*#02] E50. F900. S950.
 END1
 (O505000: rectangle 1shuu, ar MigiMawari)
-(D: hosei Kei&Chou kougu#)
+(H: hosei kouguChou #)
 (X: AC gaikei)
 (Y: BD gaikei)
 (Z: sai-furiwake)
@@ -295,31 +297,34 @@ M06 (tool exchange)
 
 (Mizo start)
 
-#06=0.1 (+hosei: mizo ichi)
-G56 G65 P505600 D6. H6. X172.90 Y172.90 Z[500.016-[12.05+#06]-7.0] R18. Q0. I0. F500. E400. S930.
-(mizo ichi: Z=480.966-#06)
+#105=0.1 (+hosei: mizo ichi)
+#106=-0.2 (+hosei: mizo haba)
+
+G56 G65 P505600 D6. H6. X172.90 Y172.90 Z[500.016-#613] M[12.05+#105] R18. Q0. I0. F500. E400. S930.
+(mizo ichi: Z=480.966-#105)
 (O505600: Sotogawa 1shuu Corner R, al HidariMawari)
 (D H: hosei kougu#)
 (X: AC mizoKei)
 (Y: BD mizoKei)
-(Z: furiwake-[mizoIchi+#06]-kouguHaba)
+(Z: furiwake-kouguHaba)
+(M: mizoIchi + #105)
 (F: speed: chokusen)
 (E: speed: corner R)
 (S: kaitensuu)
 (Q: +hosei: AC&BD gaisakuKei)
 (I: +hosei: AC center)
 
-#07=-0.2 (+hosei: mizo haba)
-G56 G65 P505600 D6. H6. X172.90 Y172.90 Z[500.016-[12.05+#06]-[8.05+#07]] R18. Q0. I0. F500. E400. S930.
-(mizo haba: Z=479.916-[#06+#07])
+G56 G65 P505600 D6. H6. X172.90 Y172.90 Z[500.016-[8.05+#106]] M[12.05+#105] R18. Q0. I0. F500. E400. S930.
+(mizo haba: Z=479.916-[#105+#106])
 (O505600: Sotogawa 1shuu Corner R, al HidariMawari)
 (D H: hosei kougu#)
 (X: AC mizoKei)
 (Y: BD mizoKei)
-(Z: furiwake-[mizoIchi+#06]-[mizoHaba+#07])
+(Z: furiwake-[mizoHaba+#106])
+(M: mizoIchi + #105)
 (F: speed: chokusen)
 (E: speed: corner R)
-(S: kaitensuu)
+(S: kaitenSuu)
 (Q: +hosei: AC&BD gaisakuKei)
 (I: +hosei: AC center)
 
@@ -364,15 +369,15 @@ M06 (tool exchange)
 
 (Bottom tanmen start)
 
-#04= 8.0 (kezuriShiro: all)
+#03= 8.0 (kezuriShiro: all)
 
-#05=FUP[#04/#02] (kaisuu: #04/#02 kiriage)
-WHILE[#05GE1]DO1
-#05=#05-1
-G54 G65 P505000 D2. X185. Y183. Z499.84 K[#02*#05] E50. F900. S950.
+#04=FUP[#03/#104] (kaisuu: #03/#104 kiriage)
+WHILE[#04GE1]DO1
+#04=#04-1
+G54 G65 P505000 H2. X185. Y183. Z499.84 K[#104*#04] E50. F900. S950.
 END1
 (O505000: rectangle 1shuu, ar MigiMawari)
-(D: hosei Kei&Chou kougu#)
+(H: hosei kouguChou #)
 (X: AC gaikei)
 (Y: BD gaikei)
 (Z: sai-furiwake)
@@ -550,12 +555,12 @@ N999 M30
 (Used Variables and Programs)
 
 (Local variables)
-(#01-#07, #33)
+(#01-#04, #33)
 
 
 (Common variables)
 (as LHS)
-(#101, #102, #103, #600)
+(#101, #102, #103, #104, #105, #106, #600)
 (as RHS)
 (#401, #403, #404, #405, #407, #408, #900021, #900024)
 
@@ -568,11 +573,11 @@ N999 M30
 (Subprograms)
 (O100002, O100011, O100012, O100101, O101003, O210000)
 (O505000, O505200, O505600)
-(O900002)
+(O900001, O900002)
 
 
 (Used as part of passed arguments)
-(#02, #03, #05, #06, #07)
+(#02, #03, #04)
 
 
 (Used in other programs)
