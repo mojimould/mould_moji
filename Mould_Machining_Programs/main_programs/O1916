@@ -440,21 +440,22 @@ G54 G65 P505600 D11. H11. Q0. X180.95 Y180.95 Z[499.984-4.0] R18. F500. E400. S1
 G91 G28 Z0
 (Bottom Mentori Uchi start)
 
-G55 G65 P505200 D11. H11. I0 K4. X155.14 Y153.14 Z[499.984-10.0] R18. A15. F400. S1800.
-G55 G65 P505200 D11. H11. I0 K2. X155.14 Y153.14 Z[499.984-10.0] R18. A15. F400. S1800.
-G55 G65 P505200 D11. H11. I0 K0. X155.14 Y153.14 Z[499.984-10.0] R18. A15. F400. S1800.
+G55 G65 P505200 D11. I0 K4. X155.14 Y153.14 Z499.984 W10. R18. A15. F400. S1800.
+G55 G65 P505200 D11. I0 K2. X155.14 Y153.14 Z499.984 W10. R18. A15. F400. S1800.
+G55 G65 P505200 D11. I0 K0. X155.14 Y153.14 Z499.984 W10. R18. A15. F400. S1800.
 (Bot Uchi Chamfer)
 (O505200: Uchigawa 1shuu Corner R, ac HidariMawari)
-(I: +hosei x center)
+(I: +hosei X center)
 (K: +hosei Z)
-(D H: hosei kougu#)
+(D: hosei kougu #)
 (X: AC naikei)
 (Y: BD naikei)
-(Z: sai-furiwake - mentori C)
+(Z: sai-furiwake)
+(W: mentori fukasa C)
 (R: corner R)
 (A: approach R)
 (F: speed: chokusen)
-(S: kaitensuu)
+(S: kaitenSuu)
 
 (Top Mentori Soto end)
 /M00 (mentori ok?)

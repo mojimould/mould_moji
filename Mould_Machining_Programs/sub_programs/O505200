@@ -2,16 +2,55 @@
 O505200
 (Uchigawa 1shuu Corner R, ac HidariMawari)
 
+IF[#24EQ#0]GOTO800
+IF[#24LE0]GOTO800
+IF[#25EQ#0]GOTO800
+IF[#25LE0]GOTO800
+IF[#26EQ#0]GOTO800
+IF[#23EQ#0]GOTO800
+IF[#23LT0]GOTO800
+IF[#18EQ#0]GOTO800
+IF[#18LT0]GOTO800
+IF[#07EQ#0]GOTO800
+IF[#07LT2]GOTO800
+IF[#09EQ#0]GOTO800
+IF[#09LE0]GOTO800
+IF[#01EQ#0]GOTO800
+IF[#01LE0]GOTO800
+IF[#19EQ#0]GOTO800
+IF[#19LE0]GOTO800
+(if X <= 0 or #0, go to N800)
+(if Y <= 0 or #0, go to N800)
+(if Z = #0, go to N800)
+(if W <= 0 or #0, go to N800)
+(if R <= 0 or #0, go to N800)
+(if D < 2 or #0, go to N800)
+(if A <= 0 or #0, go to N800)
+(if F <= 0 or #0, go to N800)
+(if S <= 0 or #0, go to N800)
+
+IF[[#26-#23]LE[#411/2]]GOTO800
+IF[#18GE[[#24+#25-ABS[#24-#25]]/4]]GOTO800
+IF[[ABS[#01]]GE[[#24+#25-ABS[#24-#25]]/4]]GOTO800
+IF[[FIX[#07]]NE#07]GOTO800
+(if Z-W <= #411/2, go to N800)
+(if R >= min[X/2, Y/2], go to N800)
+(if |I| >= min[X/2, Y/2], go to N800)
+(if FIX[D] is not D, go to N800)
+
 G90 G00 X0 Y0 (XY c: work genten)
 G91 G00 X#04 (hosei: AC center: +: X+, -: X-)
 
-#27=[#25/2]-#01 (#27= BD naikei/2 - approach R)
-#28=#25-[#18*2] (#28= BD ChokusenBU [BD naikei - Corner R*2])
-#29=#24-[#18*2] (#29= AC ChokusenBU [AC naikei - Corner R*2])
+#33=[#25/2]-#01
+#32=#25-[#18*2]
+#31=#24-[#18*2]
+(#33= BD naikei/2 - approach R)
+(#32= BD chokusenBu [BD naikei - Corner R*2])
+(#31= AC chokusenBu [AC naikei - Corner R*2])
 
-G90 G43 H#11 Z[#26+#06] S#19
-(Hosei KouguChou: #11)
-(Hosei Z: Z+K, Kaitensuu: #19)
+G90 G43 H#07 Z[#26-#23+#06] S#19
+(hosei kouguChou: #07)
+(hosei Z: Z-W+K, kaitenSuu: #19)
 
 M03 (shujiku kaiten on)
 M08 (coolant on)
@@ -19,31 +58,31 @@ M08 (coolant on)
 
 (Kokokara G01)
 
-G91 G01 G41 D#07 X#01 Y#27 F#09
-(Hosei KouguKei, Kougu #07)
-(X+:approach R)
-(Y+:BD naikei/2 - approach R)
+G91 G01 G41 D#07 X#01 Y#33 F#09
+(hosei kouguKei, kougu #07)
+(X+: approach R)
+(Y+: BD naikei/2 - approach R)
 
 G03 X-#01 Y#01 I-#01 J0
 (ac: approach R #01 [-#01, 0] X-Y+)
-G01 X-[#29/2]
-(ac2al: X- AC ChokusenBu/2)
+G01 X-[#31/2]
+(ac2al: X- AC chokusenBu/2)
 G03 X-#18 Y-#18 I0 J-#18
 (al corner: R #18 [0, #-18] X-Y-)
-G01 Y-#28
-(l:Y-: BD ChokusenBu)
+G01 Y-#32
+(l:Y-: BD chokusenBu)
 G03 X#18 Y-#18 I#18 J0
 (bl corner: R #18 [#18, 0] X+Y-)
-G01 X#29
-(b:X+: AC ChokusenBu)
+G01 X#31
+(b:X+: AC chokusenBu)
 G03 X#18 Y#18 I0 J#18
 (br corner: R #18 [0, #18] X+Y+)
-G01 Y#28
-(r:Y+: BD ChokusenBu)
+G01 Y#32
+(r:Y+: BD chokusenBu)
 G03 X-#18 Y#18 I-#18 J0
 (ar corner: R #18 [-#18, 0] X-Y+)
-G01 X-[#29/2]
-(ar2ac:X-: AC ChokusenBu/2)
+G01 X-[#31/2]
+(ar2ac:X-: AC chokusenBu/2)
 G03 X-#01 Y-#01 I0 J-#01
 (ac: approach R #01 [0, -#01] X-Y-)
 
@@ -54,7 +93,7 @@ M09 (coolant off)
 (Kokokara G00)
 
 G90 G00 G40 X0 Y0
-(cancel hosei kougukei)
+(cancel hosei kouguKei)
 (XY: work genten)
 
 G90 G00 Z[#26+100]
@@ -71,20 +110,24 @@ N999 M99
 (Local variables)
 
 (as received arguments)
-(#24:X:AC Naikei)
-(#25:Y:BD Naikei)
-(#26:Z:KouguSentan Z)
-(#18:R:Corner R)
-(#04:I:AC center Hosei)
-(#06:K:Z Hosei)
-(#01:A:Approach R)
-(#07:D:KouguKei hosei #)
-(#11:H:KouguChou hosei #)
-(#09:F:Speed)
-(#19:S:KaitenSuu)
+(#01:A: approach R)
+(#04:I: +hosei X center)
+(#06:K: +hosei Z)
+(#07:D: hosei kouguKei)
+(#09:F: speed)
+(#18:R: corner R)
+(#19:S: kaitenSuu)
+(#23:W: mentori fukasa C)
+(#24:X: AC naikei)
+(#25:Y: BD naikei)
+(#26:Z: sai-furiwake)
 
 (as LHS)
-(#27, #28, #29)
+(#31, #32, #33)
+
+
+(Common variable)
+(#411)
 
 
 (System variables)
