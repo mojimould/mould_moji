@@ -407,7 +407,7 @@ G54 G65 P505600 D16. H16. Q0. I0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E40
 (R: corner R)
 (F: speed: chokusen)
 (E: speed: corner R)
-(S: kaitensuu)
+(S: kaitenSuu)
 (I: +hosei: AC center)
 
 (Bottom gaisaku end)
@@ -431,7 +431,7 @@ G54 G65 P505600 D11. H11. Q0. X180.95 Y180.95 Z[499.984-4.0] R18. F500. E400. S1
 (R: corner R)
 (F: speed: chokusen)
 (E: speed: corner R)
-(S: kaitensuu)
+(S: kaitenSuu)
 (I: +hosei: AC center)
 
 (Top Mentori Soto end)
