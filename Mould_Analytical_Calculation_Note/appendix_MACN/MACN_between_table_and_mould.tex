@@ -1,0 +1,102 @@
+%!TEX root = ../Mould_Analytical_Calculation_Note.tex
+
+\begin{tcolorbox}[title={2023/07/28時点の三菱マシニングセンタ実測値}, fonttitle=\gtfamily\bfseries]
+\begin{align*}
+  \text{Bot ($B=0$)}
+  \left\{
+  \begin{array}{rl}
+    \text{X :} & 97.790 \sim 99.930\\
+    \text{Y :} & -823.850\\
+    \text{Z :} & -634.620
+  \end{array}
+  \right.\quad
+  \text{Top ($B=180.$)}
+  \left\{
+  \begin{array}{rl}
+    \text{X :} & -97.980 \sim -99.570\\
+    \text{Y :} & -823.780\\
+    \text{Z :} & -634.720
+  \end{array}
+  \right.
+\end{align*}\\
+・Xについては、ジグの当たる点の凸部と端部（$Z$方向は目分量）\\
+・Yについては、モールドの底が当たる面\\
+・Zについては、X0 Y$-850.$における、ジグとの接点\\
+※これらの値に、センサー先端球の半径を加減する必要がある
+\end{tcolorbox}
+%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}[title={ディンプル用マシニングセンタにおける各々の値（図面上の値）}, fonttitle=\gtfamily\bfseries]
+・ジグ長さ$2l$：660 \quad ・ジグ幅：455\\
+・テーブル中心 と C面側ジグ端 との水平距離：196.5\\
+・受板の円の半径$\rho$：100 \quad ・受板の鉛直方向の幅$\sigma$：40\\
+・テーブル中心 と 受板の円の中心 との水平距離$\varDelta$：201.5\\
+・受板の円の中心 と 受板の水平方向の底 との距離：70\\[12pt]
+2023/09/26時点のディンプル用マシニングセンタにおける各々の実測値\\
+・テーブル回転中心の$X$座標：$-550.019$ \quad ・テーブル回転中心の$Z$座標：$-1149.974$
+\end{tcolorbox}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{テーブル中心にあるモールド}
+CADによる描画において、テーブルの回転中心が原点（ワールド原点）に置かれているとする。
+ここでモールドを描画する際、モールドの中心
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{$R_\text c$に相当する点。}\relax
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+をCAD上の原点（ワールド原点）にして描くほうが都合のいいことがある。
+このとき、モールドと受板が接するように移動する必要がある。
+鉛直方向（トップ-ボトム方向）においては$f_d$だけ動かせばよいが、水平方向の移動距離はあまり自明とはいいがたい。
+C側モールド面と受板面との寸法を単純に測ると、（水平方向でなく）最短距離が測定されてしまう。
+工夫により水平方向の距離を出すことも可能ではあるが、ここではその距離を定量的に求めておく。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 2.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{スペーサ取付前}
+（スペーサを取付る前の）モールドの中心がテーブル中心Pに置かれている場合を考える。
+ボトム側の受板に接するモールドの点と、テーブル中心Pとは、実軸方向に
+\begin{align*}
+  R_\text c-R_\text i\cos\alpha_{\text U_\text B}
+\end{align*}
+だけ差がある。
+したがって、モールドの受板と接する点の位置は実軸方向に、
+\begin{align*}
+  \varDelta+\sqrt{R_\text i'^2-\bar l^2}-R_\text c+R_\text i\cos\alpha_{\text U_\text B}\ .
+\end{align*}
+そのため\pageeqref{eq:afterUBcontact} ($\delta = 0$)より、モールドと（ボトム側の）受板は
+\begin{align*}
+  \varDelta+\sqrt{R_\text i'^2-\bar l^2}-R_\text c
+\end{align*}
+だけ実軸方向に離れていることがわかる。
+\pageeqref{eq:tableCenter}より、これはテーブル中心Pとモールドの中心湾曲$R_\text c$との差であることがわかる。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 2.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{スペーサ取付後}
+厚さ$\delta\,(>0)$のスペーサを取付けた場合、モールドの受板と接する点とテーブル中心Pとは、実軸方向に
+\begin{align*}
+  R_\text c-R_\text i\cos\alpha'_{\text U_\text B}
+\end{align*}
+だけ差があるので、その実軸方向の位置は、
+\begin{align*}
+  \varDelta+\sqrt{R_\text i'^2-\bar l^2}-R_\text c+R_\text i\cos\alpha'_{\text U_\text B}\ .
+\end{align*}
+そのため\pageeqref{eq:afterUBcontact}より、モールドと（ボトム側の）受板は
+\begin{align*}
+  &  \varDelta+\sqrt{R_\text i'^2-\bar l^2}-R_\text c+R_\text i\cos\alpha'_{\text U_\text B}
+     -\left(R_\text i'\cos\alpha_{\text U_\text B}+\rho\cos\alpha'_{\text U_\text B}\right)\\
+  &= \varDelta-R_\text c+R_\text i'\cos\alpha'_{\text U_\text B}\\
+  &= \varDelta-R_\text c
+     -\frac\delta2+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}
+\end{align*}
+だけ実軸方向に離れていることがわかる。
+\pageeqref{eq:tableCenter}および\pageeqref{eq:spacerMoveHdistance}より、これはスペーサ取付け後のモールド中心とモールドの中心湾曲$R_\text c$との差であることがわかる。
