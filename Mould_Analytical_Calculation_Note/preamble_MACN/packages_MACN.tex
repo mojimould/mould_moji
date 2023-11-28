@@ -1,8 +1,7 @@
 %!TEX root = ../Mould_Analytical_Calculation_Note.tex
 
 \usepackage{graphicx}
-%\usepackage{fancyhdr}  % HEADER AND FOOTER
-\usepackage{scrlayer-fancyhdr}
+\usepackage{scrlayer-fancyhdr} % HEADER AND FOOTER with scrbook.cls
 \usepackage[dvipsnames]{xcolor}
 \usepackage{eulervm} % lmodern newtxmath newpxmath eulervm
 \usepackage{amsmath, amssymb} % 数式環境の使用
@@ -29,8 +28,7 @@
 \usepackage{array, tabularx}
 \usepackage{longtable}
 \usepackage{colortbl}
-\usepackage{framed}
-\usepackage{float}
+%\usepackage{framed}
 \usepackage[hang, small, bf]{caption}  % caption
 \usepackage{subcaption}
 %\usepackage{cite}  % citation numbering [1,2,3] --> [1-3]
@@ -38,13 +36,14 @@
 \usepackage{lastpage} % get the last page
 \usepackage{units}
 \usepackage{titletoc}
-\usepackage{scrextend}
+%\usepackage{scrextend}
 \usepackage{ifthen}
 \usepackage{datetime}
 \usepackage{bxjaholiday} % japan holiday (for weekday)
 \usepackage{cleveref}
 \usepackage{babel}
-\usepackage{listings} % input source code file
+\usepackage{jvlisting} % input source code file
+\usepackage{scrhack}
 \usepackage{pgffor} % foreach
 \usepackage{footnote} % out of environment
 
@@ -52,6 +51,7 @@
 \def\pgfsysdriver{pgfsys-dvipdfmx.def}
 \usepackage[most]{tcolorbox}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % if you want to use latest version, compat=newest
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% TIKZ LIBRARY etc %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usetikzlibrary{arrows}
