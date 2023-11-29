@@ -13,6 +13,7 @@ IF[#18EQ#0]GOTO800
 IF[#18LT0]GOTO800
 IF[#07EQ#0]GOTO800
 IF[#07LT2]GOTO800
+IF[#07GT200]GOTO800
 IF[#09EQ#0]GOTO800
 IF[#09LE0]GOTO800
 IF[#01EQ#0]GOTO800
@@ -24,7 +25,7 @@ IF[#19LE0]GOTO800
 (if Z = #0, go to N800)
 (if W <= 0 or #0, go to N800)
 (if R <= 0 or #0, go to N800)
-(if D < 2 or #0, go to N800)
+(if D < 2 or D > 200 or #0, go to N800)
 (if A <= 0 or #0, go to N800)
 (if F <= 0 or #0, go to N800)
 (if S <= 0 or #0, go to N800)
