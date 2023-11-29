@@ -8,16 +8,21 @@
 \usepackage{enumitem}
 
 \usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper} % 目次 (PDF bookmark) 文字化けの解消
 \hypersetup{
+  pdftitle={モールド関連 -主に幾何学的性質-}
+  pdfauthor = {Kurahashi Nobuaki},  % text for PDF Author field
   citecolor = sora,      % color of citation links
   colorlinks = true,     % color links
   linkcolor = blue,      % color of links
   linktocpage = false,   % (if it is true) make page number, not text, be link on TOC, LOF and LOT
-  pdfauthor = {Kurahashi Nobuaki},  % text for PDF Author field
   pdfcenterwindow = false, % position the document window center of the screen
   pdfencoding = unicode,   % PDFDocEncoding or Unicode
+  bookmarksnumbered=true,
+  bookmarksopen=true, %bookmarks open
+  pdfstartview={Fit}, % Fit, FitV, FitH, FitB
   pdffitwindow = true,     % resize document window to fit document size
-  pdfkeywords = {mould},
+  pdfkeywords = {mould, mold},
   pdfpagemode = UseThumbs, % set default mode of PDF display
   unicode = true,
   urlcolor= ai,
