@@ -9,9 +9,9 @@ O1916 (main: SMP-1916)
 
 G91 G28 Z0
 
-IF[#1005EQ1]GOTO800
+IF[#1005EQ1]GOTO802
 IF[#1004EQ0]GOTO001
-(if low battery, go to N800)
+(if low battery, go to N802)
 (if current sensor off, go to N001)
 M117 (sensor off)
 
@@ -73,9 +73,9 @@ G90 G01 G54 X0 Y0 F9600
 
 
 G65 P900001 (sensor ON)
-IF[#1005EQ1]GOTO800
+IF[#1005EQ1]GOTO802
 IF[#1004EQ1]GOTO004
-(if low battery, go to N800)
+(if low battery, go to N802)
 M117
 
 N004
@@ -240,14 +240,13 @@ G91 G28 Z0
 T02 (tanmen)
 M06 (tool exchange)
 
-G56 G90 G00 X0 Y0
-
 
 (Top tanmen start)
 
 #01=8.0 (kezuriShiro: all)
 
 #104=4.0 (kezuriShiro: 1 time)
+IF[#104LE0]GOTO800
 #02=FUP[#01/#104]
 (kaisuu: #01/#104 kiriage)
 WHILE[#02GE1]DO1
@@ -255,6 +254,7 @@ WHILE[#02GE1]DO1
 G56 G65 P505000 D2. X156.863 Y154.839 Z500.016 K[#104*#02]
 END1
 (O505000: rectangle 1shuu, ar MigiMawari)
+(default: E=[hosei D# kouguKei], F=900, S=950)
 (D: hosei kouguKei&Chou #)
 (X: Top AC naikei)
 (Y: Top BD naikei)
@@ -368,7 +368,7 @@ M06 (tool exchange)
 
 (Bottom tanmen start)
 
-#03= 8.0 (kezuriShiro: all)
+#03=8.0 (kezuriShiro: all)
 
 #04=FUP[#03/#104] (kaisuu: #03/#104 kiriage)
 WHILE[#04GE1]DO1
@@ -376,6 +376,7 @@ WHILE[#04GE1]DO1
 G54 G65 P505000 D2. X155. Y153. Z499.84 K[#104*#04]
 END1
 (O505000: rectangle 1shuu, ar MigiMawari)
+(default: E=[hosei D# kouguKei], F=900, S=950)
 (D: hosei kouguChou #)
 (X: Bot AC naikei)
 (Y: Bot BD naikei)
@@ -436,22 +437,21 @@ G54 G65 P505600 D11. H11. Q0. X180.95 Y180.95 Z[499.984-4.0] R18. F500. E400. S1
 G91 G28 Z0
 (Bottom Mentori Uchi start)
 
-G55 G65 P505200 D11. I0 K4. X155.14 Y153.14 Z499.984 W10. R18. A15. F400. S1800.
-G55 G65 P505200 D11. I0 K2. X155.14 Y153.14 Z499.984 W10. R18. A15. F400. S1800.
-G55 G65 P505200 D11. I0 K0. X155.14 Y153.14 Z499.984 W10. R18. A15. F400. S1800.
+G55 G65 P505200 D11. I0 K4. X155. Y153. Z499.984 W10. R18. M0.07
+G55 G65 P505200 D11. I0 K2. X155. Y153. Z499.984 W10. R18. M0.07
+G55 G65 P505200 D11. I0 K0. X155. Y153. Z499.984 W10. R18. M0.07
 (Bot Uchi Chamfer)
 (O505200: Uchigawa 1shuu Corner R, ac HidariMawari)
-(I: +hosei X center)
-(K: +hosei Z)
+(default: A=15, F=400, S=1800)
 (D: hosei kougu #)
+(I*: +hosei X center)
+(K*: +hosei Z)
 (X: AC naikei)
 (Y: BD naikei)
 (Z: Bot sai_furiwake)
 (W: mentori fukasa C)
 (R: corner R)
-(A: approach R)
-(F: speed: chokusen)
-(S: kaitenSuu)
+(M*: mekki)
 
 (Top Mentori Soto end)
 /M00 (mentori ok?)
@@ -490,9 +490,9 @@ G54 G65 P101003 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11. A10.
 (I: Bot gaisaku center X)
 (A: skip kaishi kyori)
 
-IF[#1005EQ1]GOTO800
+IF[#1005EQ1]GOTO802
 IF[#1004EQ0]GOTO008
-(if low battery, go to N800)
+(if low battery, go to N802)
 (if current sensor off, go to N008)
 M117 (sensor off)
 
@@ -530,12 +530,17 @@ G91 G28 Z0
 GOTO006
 
 
-N800
+N802
 #3000=145 (MP10/MP12/MP60-Low battery)
 GOTO999
 
 N801
 #3000=121 (is the palette# is ok?)
+GOTO006
+
+N800
+#3000=121 (are the arguments OK?)
+GOTO006
 
 
 N006
