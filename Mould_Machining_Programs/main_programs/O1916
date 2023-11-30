@@ -240,6 +240,8 @@ G91 G28 Z0
 T02 (tanmen)
 M06 (tool exchange)
 
+G56 G90 G00 X0 Y0
+
 
 (Top tanmen start)
 
@@ -250,17 +252,14 @@ M06 (tool exchange)
 (kaisuu: #01/#104 kiriage)
 WHILE[#02GE1]DO1
 #02=#02-1
-G56 G65 P505000 H2. X185. Y183. Z500.016 K[#104*#02] E50. F900. S950.
+G56 G65 P505000 D2. X156.863 Y154.839 Z500.016 K[#104*#02]
 END1
 (O505000: rectangle 1shuu, ar MigiMawari)
-(H: hosei kouguChou #)
-(X: AC gaikei)
-(Y: BD gaikei)
+(D: hosei kouguKei&Chou #)
+(X: Top AC naikei)
+(Y: Top BD naikei)
 (Z: Top sai_furiwake)
 (K: 1kezuriShiro*kaisuu)
-(E: kougu nigashiryou)
-(F: speed)
-(S: kaitensuu)
 
 (Top tammen end)
 /M00 (tammen ok?)
@@ -374,17 +373,14 @@ M06 (tool exchange)
 #04=FUP[#03/#104] (kaisuu: #03/#104 kiriage)
 WHILE[#04GE1]DO1
 #04=#04-1
-G54 G65 P505000 H2. X185. Y183. Z499.84 K[#104*#04] E50. F900. S950.
+G54 G65 P505000 D2. X155. Y153. Z499.84 K[#104*#04]
 END1
 (O505000: rectangle 1shuu, ar MigiMawari)
-(H: hosei kouguChou #)
-(X: AC gaikei)
-(Y: BD gaikei)
+(D: hosei kouguChou #)
+(X: Bot AC naikei)
+(Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
 (K: 1kezuriShiro*kaisuu)
-(E: kougu nigashiryou)
-(F: speed)
-(S: kaitensuu)
 
 (Bottom tammen end)
 /M00 (tammen ok?)
