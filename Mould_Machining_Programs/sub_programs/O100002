@@ -62,15 +62,15 @@ IF[#5003GT[#26-#512+#06]]GOTO802
 
 G91 G31 Y[#01*2] F#09
 (Y+ skip: 2A)
-#900005=#5002+#512-#501+#503
-(#900005= Y bellow side + D/2 + probe hosei)
+#900006=#5002+#512-#501+#503
+(#900006= Y bellow side + D/2 + probe hosei)
 
 G91 Y-[#01*2] F3600 (Y-: 2A)
 G91 Z[#512-#06+60.0] F9600
 (Z+: D/2-K+60.)
 
-IF[[ABS[#900005+#501-#503]]LE[ABS[[#25/2]-#01]]]GOTO800
-(if |#900005|<=|Y/2-A|, go to N800)
+IF[[ABS[#900006+#501-#503]]LE[ABS[[#25/2]-#01]]]GOTO800
+(if |#900006|<=|Y/2-A|, go to N800)
 
 G90 Y#32 (Y to start point)
 G91 Y[[#25/2]+#512+#01]
@@ -83,20 +83,20 @@ IF[#5003GT[#26-#512+#06]]GOTO802
 
 G91 G31 Y-[#01*2] F#09
 (Y- skip: 2A)
-#900006=#5002-#512+#501+#503
-(#900006= Y above side - D/2 + probe hosei)
+#900007=#5002-#512+#501+#503
+(#900007= Y above side - D/2 + probe hosei)
 
 G91 Y[#01*2] F3600 (Y+: 2A)
 G91 Z[#512-#06+60.0] F9600
 (Z+: D/2-K+60.)
-IF[[ABS[#900006-#501-#503]]LE[ABS[[#25/2]-#01]]]GOTO800
-(if |#900006|<=|Y/2-A|, go to N800)
+IF[[ABS[#900007-#501-#503]]LE[ABS[[#25/2]-#01]]]GOTO800
+(if |#900007|<=|Y/2-A|, go to N800)
 
-#900007=[#900006+#900005]/2
-#900008=#900006-#900005
+#900008=[#900007+#900006]/2
+#900009=#900007-#900006
 (average: center)
 (difference: thickness)
-G90 Y#900007 (Y to measured center)
+G90 Y#900008 (Y to measured center)
 
 #[5202+[#33-53]*20]=#5022
 (current work origin Y = current machine Y)
@@ -136,7 +136,7 @@ N999 M99
 
 (Common variables)
 (as LHS)
-(#900005, #900006, #900007, #900008)
+(#900006, #900007, #900008, #900009)
 (as RHS)
 (#411)
 (#501 : hosei: touch sensor signal delay)
