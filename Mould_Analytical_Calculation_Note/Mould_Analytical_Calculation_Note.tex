@@ -930,49 +930,31 @@ $\delta > 0$より、
 
 \paragraph{加工の開始可能範囲}\noindent
 初めの位置は$X+$, $Y+$方向の角の上方に工具があるものとする。
-工具の刃径（半径）を$\phi_\text D$, 最大刃径（半径）$\phi'_\text D$とすると
+工具の刃径（直径）を$\phi_\text D$, 最大刃径（直径）$\phi'_\text D$とすると
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{通常、刃径はDC、最大刃径はDCXと表記され、それぞれ直径として与えられることが多い。}、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 $X$位置については、工具の中心が
 \begin{align*}
-  \frac{w_x}2-\delta_w+\phi_\text D
+  \frac{w_x}2-\delta_w+\frac{\phi_\text D}2
 \end{align*}
 にあればよい。
-よって、工具径補正値として$\phi_\text D$に（G41で）設定すると、$X$座標を$\nicefrac w2-\delta_w$として下方向（$Y-$方向）に移動すればよい。
-しかし工具径補正を行って移動する際は、通常の$XY$方向の移動に加えて$X$方向の補正分も考慮する必要がある。
-$X$, $Y$方向には同じ速さで動くものとし、また$X$方向の移動がなくなるまで工具はモールドに触れないものとすると、加工（移動）の開始位置は
+そのためここでは、まず$X$方向に絶対座標(G90)
 \begin{align*}
-  \left(\frac{w_x}2-\delta_w~,~\frac{W_y}2+\phi'_\text D\right)
-  = \left(\frac{w_x}2-\delta_w~,~\frac{w_y}2+\tau_y+\phi'_\text D\right)
+  \frac{w_x}2-\delta_w
 \end{align*}
-の点から$\pm45^\circ$上方に延ばした2線の間になければならない。
+まで移動して、その後に工具径補正値として$\nicefrac{\phi_\text D}2$に（G41で）設定して下方向（$Y-$方向）に移動する場合を考える。
+このとき、動き始めは$X$方向の補正分も加えて斜めに移動することになる。
+$X$, $Y$方向には同じ速さで動くものとし、また$X$方向の移動がなくなるまで工具はモールドに触れないものとすると、加工（移動）の開始位置の$Y$座標は、
+\begin{align*}
+  \frac{W_y}2+\frac{\phi'_\text D+\phi_\text D}2
+  = \frac{w_y}2+\tau_y+\frac{\phi'_\text D+\phi_\text D}2
+\end{align*}
+より上方向（$Y+$方向）であればよい。
 ここで、$W_y$, $\tau_y$はBD方向の外径およびBD方向の肉厚である
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここでは話を単純化し、めっき膜厚や偏肉は無視している。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-つまり、
-\begin{align*}
-  Y &> \left|X-\frac{w_x}2+\delta_w\right|+\frac{W_y}2+\phi'_\text D
-\end{align*}
-または
-\begin{align*}
-  Y &> \left|X-\frac{w_x}2+\delta_w\right|+\frac{w_y}2+\tau_y+\phi'_\text D
-\end{align*}
-の範囲から加工（移動）を始める必要がある。
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{hosokubox}
-$w_x = w_y$の場合、$X > \nicefrac{w_x}2-\delta_w$のとき、
-\begin{align*}
-  Y > X+\delta_w+\tau_y+\phi'_\text D
-\end{align*}
-となるので、$X+$方向から始める場合は、$Y$は$X$より概ね$\delta_w+\tau_y+\phi'_\text D$より大きくあればいい。
-\end{hosokubox}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -985,8 +967,7 @@ $w_x = w_y$の場合、$X > \nicefrac{w_x}2-\delta_w$のとき、
 \chapter{外削}
 モールドに外削があるときは、たいていの場合、A側内面の端面における位置を基準として考えることが多い。
 
-トップ・ボトム端における内径
-をそれぞれ$w_\text T$, $w_\text B$, 外削径をそれぞれ$\mathfrak W_\text T$, $\mathfrak W_\text B$, A側肉厚をそれぞれ$\tau_\text T$, $\tau_\text B$とする。
+トップ・ボトム端における内径をそれぞれ$w_\text T$, $w_\text B$, 外削径をそれぞれ$\mathfrak W_\text T$, $\mathfrak W_\text B$, A側肉厚をそれぞれ$\tau_\text T$, $\tau_\text B$とする。
 また、内面のめっき膜厚を$\mu$とし、通り心（トップ外削中心$\mathfrak T_\text c$とボトム外削中心$\mathfrak B_\text c$の差）の$X$・$Y$成分をそれぞれ$T_x$, $T_y$とする。
 ただし、$T_x \geqq 0$として、トップ外削中心$\mathfrak T_\text c$はボトム外削中心$\mathfrak B_\text c$よりA面方向にあるものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
