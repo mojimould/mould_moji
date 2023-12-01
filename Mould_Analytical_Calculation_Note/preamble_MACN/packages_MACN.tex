@@ -10,24 +10,26 @@
 \usepackage[dvipdfmx]{hyperref}
 \usepackage{pxjahyper} % 目次 (PDF bookmark) 文字化けの解消
 \hypersetup{
-  pdfcreator={upLaTeX with hyperref}, % creator for PDF subjct field
+%  pdfcreationdate=date,
+%  pdfcreator={upLaTeX with hyperref}, % creator for PDF subjct field
   pdftitle={モールド関連 -主に幾何学的性質-}, % title for PDF subjct field
-  pdfsubject=mould, % text for PDF subjct field
+  pdfsubject={Mould-Related - Mainly Geometric Properties}, % text for PDF subjct field
   pdfauthor={Kurahashi Nobuaki},  % text for PDF Author field
-  citecolor=sora,      % color of citation links
-  colorlinks=true,     % color links
-  linkcolor=blue,      % color of links
+  pdfkeywords={mould, mold}, % keywords
+%  pdfproducer=producer, % dvipdfmx
   linktocpage=false,   % (if it is true) make page number, not text, be link on TOC, LOF and LOT
   pdfcenterwindow=false, % position the document window center of the screen
-  pdfencoding=unicode,   % PDFDocEncoding or Unicode
+  pdffitwindow=true,     % resize document window to fit document size
   bookmarksnumbered=true,
   bookmarksopen=true, %bookmarks open
   pdfstartview={Fit}, % Fit, FitV, FitH, FitB
-  pdffitwindow=true,     % resize document window to fit document size
-  pdfkeywords={mould, mold},
   pdfpagemode=UseThumbs, % set default mode of PDF display
   unicode=true,
-  urlcolor=ai,
+  pdfencoding=unicode,   % PDFDocEncoding or Unicode
+  colorlinks=true,     % color links
+  linkcolor=blue,      % color of links
+  urlcolor=ai,         % color of urls
+  citecolor=sora,      % color of citation links
 }
 
 \usepackage{appendix}  % appendices
@@ -47,12 +49,12 @@
 \usepackage{ifthen}
 \usepackage{datetime}
 \usepackage{bxjaholiday} % japan holiday (for weekday)
-\usepackage{cleveref}
 \usepackage{babel}
 \usepackage{jvlisting} % input source code file
 \usepackage{scrhack}
 \usepackage{pgffor} % foreach
 \usepackage{footnote} % out of environment
+\usepackage{cleveref}
 
 %%%%% tikz %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\pgfsysdriver{pgfsys-dvipdfmx.def}
