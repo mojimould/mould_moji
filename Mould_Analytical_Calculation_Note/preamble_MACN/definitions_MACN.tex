@@ -58,7 +58,8 @@
       \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% define \footnote to \footnote using counter GlobalFootnote
       \renewcommand\thempfootnote{\arabic{mpfootnote}}% arabic footnote
       \renewcommand{\arraystretch}{1.2}% 行の高さを調整
-      \setlength{\LTpre}{0pt}%
+      \setlength{\LTpre}{-3pt}%
+      \setlength{\LTpost}{0pt}%
       \setlength{\LTleft}{0pt}%
       \setlength{\LTright}{0pt}%
       \begin{longtable}{@{}c|l@{\extracolsep{\fill}}c}%
