@@ -271,12 +271,12 @@ M06 (tool exchange)
 
 (Top gaisaku start)
 
-G56 G65 P505600 Q3. D16. H16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930. I0.
-G56 G65 P505600 Q1. D16. H16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930. I0.
-G56 G65 P505600 Q0. D16. H16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930. I0.
+G56 G65 P505600 Q3. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930. I0.
+G56 G65 P505600 Q1. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930. I0.
+G56 G65 P505600 Q0. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930. I0.
 (O505600: Sotogawa 1shuu Corner R, al HidariMawari)
 (Q: +hosei: AC&BD gaisakuKei)
-(D H: hosei kougu#)
+(D: hosei kougu#)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
 (Z: Top sai_furiwake - gaisakuFukasa)
@@ -299,10 +299,10 @@ M06 (tool exchange)
 #901005=0.1 (+hosei: mizo ichi)
 #901006=-0.2 (+hosei: mizo haba)
 
-G56 G65 P505600 D6. H6. X172.90 Y172.90 Z[500.016-#613] M[12.05+#901005] R18. Q0. I0. F500. E400. S930.
+G56 G65 P505600 D6. X172.90 Y172.90 Z[500.016-#613] M[12.05+#901005] R18. Q0. I0. F500. E400. S930.
 (mizo ichi: Z=500.016-#901005)
 (O505600: Sotogawa 1shuu Corner R, al HidariMawari)
-(D H: hosei kougu#)
+(D: hosei kouguKei&Chou #)
 (X: AC mizoKei)
 (Y: BD mizoKei)
 (Z: Top sai_furiwake - kouguAtsusa)
@@ -310,13 +310,13 @@ G56 G65 P505600 D6. H6. X172.90 Y172.90 Z[500.016-#613] M[12.05+#901005] R18. Q0
 (F: speed: chokusen)
 (E: speed: corner R)
 (S: kaitensuu)
-(Q: +hosei: AC&BD gaisakuKei)
+(Q: +hosei: AC&BD mizoKei)
 (I: +hosei: AC center)
 
-G56 G65 P505600 D6. H6. X172.90 Y172.90 Z[500.016-[8.05+#901006]] M[12.05+#901005] R18. Q0. I0. F500. E400. S930.
+G56 G65 P505600 D6. X172.90 Y172.90 Z[500.016-[8.05+#901006]] M[12.05+#901005] R18. Q0. I0. F500. E400. S930.
 (mizo haba: Z=479.916-[#901005+#901006])
 (O505600: Sotogawa 1shuu Corner R, al HidariMawari)
-(D H: hosei kougu#)
+(D: hosei kouguKei&Chou #)
 (X: AC mizoKei)
 (Y: BD mizoKei)
 (Z: Top sai_furiwake - [mizoHaba+#901006])
@@ -324,7 +324,7 @@ G56 G65 P505600 D6. H6. X172.90 Y172.90 Z[500.016-[8.05+#901006]] M[12.05+#90100
 (F: speed: chokusen)
 (E: speed: corner R)
 (S: kaitenSuu)
-(Q: +hosei: AC&BD gaisakuKei)
+(Q: +hosei: AC&BD mizoKei)
 (I: +hosei: AC center)
 
 (Mizo end)
@@ -337,18 +337,19 @@ M06 (tool exchange)
 
 (Top Mentori Soto start)
 
-G56 G65 P505600 D13. H13. X180.95 Y180.95 Z[500.016-1.0] R18. Q0. I0. F500. E400. S1800.
+G56 G65 P505600 D13. X180.95 Y180.95 Z[500.016-1.0] R18. I0. Q0. F500. E400. S1800.
 (Top Soto mentori)
 (O505600: Sotogawa 1shuu Corner R, al HidariMawari)
-(I: +hosei: AC center)
+(D: hosei kouguKei&Chou #)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
 (Z: Top sai_furiwake - mentori C)
 (R: corner R)
+(I: +hosei: AC center)
+(Q: +hosei: AC&BD gaisakuKei)
 (F: speed: chokusen)
 (E: speed: corner R)
 (S: kaitensuu)
-(Q: +hosei: AC&BD gaisakuKei)
 
 (Top Mentori Soto end)
 /M00 (mentori ok?)
@@ -393,12 +394,12 @@ M06 (tool exchange)
 
 (Bottom gaisaku start)
 
-G54 G65 P505600 D16. H16. Q3. I0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
-G54 G65 P505600 D16. H16. Q1. I0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
-G54 G65 P505600 D16. H16. Q0. I0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
+G54 G65 P505600 D16. Q3. I0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
+G54 G65 P505600 D16. Q1. I0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
+G54 G65 P505600 D16. Q0. I0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
 (O505600: Sotogawa 1shuu Corner R, al HidariMawari)
 (Q: +hosei: AC&BD gaisakuKei)
-(D H: hosei kougu#)
+(D: hosei kouguKei&Chou #)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
 (Z: Bot sai_furiwake - gaisakuFukasa)
@@ -418,10 +419,10 @@ M06 (tool exchange)
 
 (Bottom Mentori Soto start)
 
-G54 G65 P505600 D11. H11. Q0. X180.95 Y180.95 Z[499.984-4.0] R18. F500. E400. S1800. I0.
+G54 G65 P505600 D11. Q0. X180.95 Y180.95 Z[499.984-4.0] R18. F500. E400. S1800. I0.
 (Bot Soto Chamfer)
 (O505600: Sotogawa 1shuu Corner R, al HidariMawari)
-(D H: hosei kougu#)
+(D: hosei kouguKei&Chou #)
 (Q: +hosei: AC&BD gaisakuKei)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
