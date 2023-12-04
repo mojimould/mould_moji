@@ -300,7 +300,7 @@ M06 (tool exchange)
 #901006=-0.2 (+hosei: mizoHaba)
 
 G56 G65 P505600 D6. X172.90 Y172.90 Z[500.016-#605] M12.05 R18. Q0. I0. F500. E400. S930.
-(mizo ichi: 487.966)
+(mizoIchi: 487.966)
 (O505600: Sotogawa 1shuu Corner R, al HidariMawari)
 (D: hosei kouguKei&Chou #)
 (X: AC mizoKei)
@@ -314,7 +314,7 @@ G56 G65 P505600 D6. X172.90 Y172.90 Z[500.016-#605] M12.05 R18. Q0. I0. F500. E4
 (I: +hosei: AC center)
 
 G56 G65 P505600 D6. X172.90 Y172.90 Z[500.016-[8.05+#901006]] M12.05 R18. Q0. I0. F500. E400. S930.
-(mizo haba: 479.916)
+(mizoHaba: 479.916)
 (O505600: Sotogawa 1shuu Corner R, al HidariMawari)
 (D: hosei kouguKei&Chou #)
 (X: AC mizoKei)

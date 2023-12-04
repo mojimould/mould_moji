@@ -40,21 +40,28 @@ IF[[FIX[#07]]NE#07]GOTO800
 G90 G00 X0 Y0 (XY work genten)
 G91 G00 X#04 (hosei: AC center: +: X+, -: X-)
 
-#33=#24+#17 (#33= hosei: AC gaikei +Q)
-#32=#25+#17 (#32= hosei: BD gaikei +Q)
-#31=#32+#32/2 (#31= BD gaikei*1.5)
-#30=#33-#18*2 (#30= AC chokusenBu [AC gaikei - 2*corner R])
-#29=#32-#18*2 (#29= BD chokusenBu [BD gaikei - 2*corner R])
+#33=#25+#17 (#33= hosei: BD gaikei +Q)
+#32=#33+#33/2 (#32= BD gaikei*1.5)
+#31=#24+#17-#18*2 (#31= AC chokusenBu [X+Q-2R])
 
-G91 G00 X-[#33/2] Y#31
-(al: X- AC gaikei/2)
+G91 G00 X-[[#24+#17]/2] Y#32
+(al: X-: AC gaikei/2)
 (Y+: 1.5*BD gaikei)
 
-G90 G43 H#07 Z[#26-#13-#901005] S#19
+IF[#4111GE6]GOTO001
+IF[#4111LE10]GOTO001
+(if 6 <= H# <=10, go to N001)
+#30=0
+GOTO002
+N001
+#30=#901005
+
+N002
+G90 G43 H#07 Z[#26-#13-#30] S#19
 (hosei kouguChou: #07)
 (Z+ tanmen, kaitenSuu #19)
 
-G91 G42 D#07 Y-[#32/2]
+G91 G42 D#07 Y-[#33/2]
 (hosei kouguKei: #07)
 (al: Y- BD gaikei/2)
 
@@ -64,19 +71,19 @@ M08 (coolant on)
 
 (Kokokara G01)
 
-G01 Y-[#31-#18] F#09
+G01 Y-[#32-#18] F#09
 (l:Y-:[1.5*BD gaikei - nigashi])
 G03 X#18 Y-#18 I#18 J0 F#08
 (bl corner: R#18 [#18, 0] X+Y-)
-G01 X#30 F#09
+G01 X#31 F#09
 (b: X+ AC chokusenBu)
 G03 X#18 Y#18 I0 J#18 F#08
 (br corner: R#18 [0, #18] X+Y+)
-G01 Y#29 F#09
+G01 Y[#33-#18*2] F#09
 (r: Y+ BD chokusenBu)
 G03 X-#18 Y#18 I-#18 J0 F#08
 (ar corner: R#18 [-#18, #0] X-Y+)
-G01 X-#30 F#09
+G01 X-#31 F#09
 (a: X- AC chokusenBu)
 G03 X-#18 Y-#18 I0 J-#18 F#08
 (al corner: R#18 [0, -#18] X-Y-)
@@ -89,7 +96,7 @@ M09 (coolant off)
 
 (Kokokara G00)
 
-G90 G00 G40 Y[#32/2]
+G90 G00 G40 Y[#33/2]
 (hosei cancel kouguKei)
 (Y+ BD gaikei/2)
 
@@ -107,20 +114,20 @@ N999 M99
 (Local variables)
 
 (as received arguments)
-(#24:X: AC Gaikei)
-(#25:Y: BD Gaikei)
-(#26:Z: furiwake Nagasa)
+(#24:X: AC gaikei)
+(#25:Y: BD gaikei)
+(#26:Z: sai-furiwake)
 (#13:M: mizoIchi)
 (#18:R: corner R)
 (#17:Q: +hosei X&Y)
 (#04:I: +hosei AC center)
 (#07:D: kouguKei&Chou hosei)
-(#09:F: speed chokusen)
+(#09:F: speed chokusenBu)
 (#08:E: speed corner R)
 (#19:S: kaitenSuu)
 
 (as LHS)
-(#29, #30, #31, #32, #33)
+(#30, #31, #32, #33)
 
 
 (Common variable)
@@ -129,4 +136,5 @@ N999 M99
 
 (System variables)
 (#3000: alarm)
+(#4111: current H#)
 %
