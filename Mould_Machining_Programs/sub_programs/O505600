@@ -28,11 +28,11 @@ IF[#19LE0]GOTO800
 (if F <= 0 or #0, go to N800)
 (if S <= 0 or #0, go to N800)
 
-IF[[#26-#13]LE[#411/2]]GOTO800
+IF[[#26-#13-#901005]LE[#411/2]]GOTO800
 IF[[ABS[#17]]GE[#25/2]]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/4]]GOTO800
 IF[[FIX[#07]]NE#07]GOTO800
-(if Z-M <= #411/2, go to N800)
+(if Z-M-#901005 <= #411/2, go to N800)
 (if |Q| >= Y/2, go to N800)
 (if R >= min[X/2, Y/2], go to N800)
 (if D is not integer, go to N800)
@@ -50,7 +50,7 @@ G91 G00 X-[#33/2] Y#31
 (al: X- AC gaikei/2)
 (Y+: 1.5*BD gaikei)
 
-G90 G43 H#07 Z[#26-#13] S#19
+G90 G43 H#07 Z[#26-#13-#901005] S#19
 (hosei kouguChou: #07)
 (Z+ tanmen, kaitenSuu #19)
 
@@ -124,7 +124,7 @@ N999 M99
 
 
 (Common variable)
-(#411)
+(#411, #901005)
 
 
 (System variables)
