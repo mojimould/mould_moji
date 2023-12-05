@@ -10,32 +10,32 @@ IF[#25LE0]GOTO800
 IF[#26EQ#0]GOTO800
 IF[#06EQ#0]GOTO800
 IF[#06LT0]GOTO800
-IF[#07EQ#0]GOTO800
-IF[#07LT2]GOTO800
-IF[#07GT200]GOTO800
+IF[#11EQ#0]GOTO800
+IF[#11LT2]GOTO800
+IF[#11GT200]GOTO800
 (if X <= 0 or #0, go to N800)
 (if Y <= 0 or #0, go to N800)
 (if Z = #0, go to N800)
 (if K < 0 or #0, go to N800)
-(if D < 2 or D > 200 or #0, go to N800)
+(if H < 2 or H > 200 or #0, go to N800)
 
 IF[#26LE[#411/2]]GOTO800
-IF[[FIX[#07]]NE#07]GOTO800
+IF[[FIX[#11]]NE#11]GOTO800
 IF[#601EQ#0]GOTO800
 IF[#601LE1]GOTO800
 (if Z <= #411/2, go to N800)
-(if D is not integer, go to N800)
+(if H is not integer, go to N800)
 (if #601 <=1 or empty, go to N800)
 
-(for Q)
-IF[#17EQ#0]GOTO001
-(if Q = #0, go to N001)
-IF[#17LE0]GOTO800
-IF[#17GE[#601/2]]GOTO800
-(if Q <= 0 or Q >= #601/2, go to N800)
+(for V)
+IF[#22EQ#0]GOTO001
+(if V = #0, go to N001)
+IF[#22LT1]GOTO800
+IF[#22GE[#601/2]]GOTO800
+(if V < 1 or Q >= #601/2, go to N800)
 GOTO002
 N001
-#17=5 (default: Q=5)
+#22=5 (default: Q=5)
 
 N002 (for F)
 IF[#09EQ#0]GOTO003
@@ -58,37 +58,33 @@ N005
 #19=950 (default: S=950)
 
 N004
-#33=[#24/2]-#17
-#32=[#25/2]-#17
-(XY: naikei/2 -Q)
+#33=[#24/2]-#22+#601/2
+#32=[#25/2]-#22+#601/2
+(XY: naikei/2 -Q +DCX/2)
 
 
 (Kokokara G00)
 
-G90 G00 X#33 Y[#25/2+#601*1.5]
-(G90 X: naikeiAC/2 -Q)
-(G90 Y: naikeiBD/2 +DCX*1.5)
+G90 G00 X#33 Y[#25/2+#601]
+(G90 X: naikeiAC/2 -Q +DCX/2)
+(G90 Y: naikeiBD/2 +DCX)
 
-G90 G00 G43 H#07 Z[#26+#06] S#19
-(hosei kouguChou H#, Z: tanmen)
+G90 G00 G43 H#11 Z[#26+#06] S#19
+(hosei kouguChou H#, Z: tanmen+K)
 M03 (shujiku kaiten on)
 M08 (coolant on)
-
-G90 G00 G41 D#07 Y[#25/2+#601]
-(hosei kouguKei #07: X+)
-(ar:Y-:#601/2)
 
 
 (Kokokara G01)
 
 G90 G01 Y-[#32] F#09
-(r:Y:-[naikeiBD/2 -Q], speed #09)
+(r:Y:-[naikeiBD/2 -Q +DCX/2], speed #09)
 G90 G01 X-[#33]
-(b:X:-[naikeiAC/2 -Q])
+(b:X:-[naikeiAC/2 -Q +DCX/2])
 G90 G01 Y#32
-(l:Y:[naikeiBD/2 -Q])
+(l:Y:[naikeiBD/2 -Q +DCX/2])
 G90 G01 X#33
-(a:X:[naikeiAC/2 -Q])
+(a:X:[naikeiAC/2 -Q +DCX/2])
 
 
 (Kokokara G00)
@@ -113,14 +109,14 @@ N999 M99
 (Local variables)
 
 (as received arguments)
-(#07:D: hosei kouguKei&Chou #)
+(#11:D: hosei kouguKei&Chou #)
 (#24:X: AC naikei)
 (#25:Y: BD naikei)
-(#26:Z: sai-furiwake Z)
+(#26:Z: sai-furiwake)
 (as received hidden arguments)
 (#09:F: speed)
-(#17:Q: -hosei: nakei/2)
 (#19:S: kaitenSuu)
+(#22:V: -hosei: naikei/2)
 
 (as LHS)
 (#32, #33)

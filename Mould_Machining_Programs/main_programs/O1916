@@ -251,11 +251,11 @@ IF[#101LE0]GOTO800
 (kaisuu: #01/#101 kiriage)
 WHILE[#02GE1]DO1
 #02=#02-1
-G56 G65 P505000 D2. X156.863 Y154.839 Z500.016 K[#101*#02]
+G56 G65 P505000 H2. X156.863 Y154.839 Z500.016 K[#101*#02]
 END1
 (O505000: rectangle 1shuu, ar MigiMawari)
-(default: E=[hosei D# kouguKei], F=900, S=950)
-(D: hosei kouguKei&Chou #)
+(default: V=5, F=900, S=950)
+(H: hosei kouguChou #)
 (X: Top AC naikei)
 (Y: Top BD naikei)
 (Z: Top sai_furiwake)
@@ -309,7 +309,7 @@ G56 G65 P505600 D6. X172.90 Y172.90 Z[500.016-#605] M12.05 R18. Q0. I0. F500. E4
 (M: mizoIchi)
 (F: speed: chokusen)
 (E: speed: corner R)
-(S: kaitensuu)
+(S: kaitenSuu)
 (Q: +hosei: AC&BD mizoKei)
 (I: +hosei: AC center)
 
@@ -349,7 +349,7 @@ G56 G65 P505600 D13. X180.95 Y180.95 Z[500.016-1.0] R18. I0. Q0. F500. E400. S18
 (Q: +hosei: AC&BD gaisakuKei)
 (F: speed: chokusen)
 (E: speed: corner R)
-(S: kaitensuu)
+(S: kaitenSuu)
 
 (Top Mentori Soto end)
 /M00 (mentori ok?)
@@ -372,14 +372,15 @@ M06 (tool exchange)
 #03=8.0 (kezuriShiro: all)
 
 IF[#101LE0]GOTO800
-#04=FUP[#03/#101] (kaisuu: #03/#101 kiriage)
+#04=FUP[#03/#101]
+(kaisuu: #03/#101 kiriage)
 WHILE[#04GE1]DO1
 #04=#04-1
-G54 G65 P505000 D2. X155. Y153. Z499.84 K[#101*#04]
+G54 G65 P505000 H2. X155. Y153. Z499.84 K[#101*#04]
 END1
 (O505000: rectangle 1shuu, ar MigiMawari)
-(default: E=[hosei D# kouguKei], F=900, S=950)
-(D: hosei kouguChou #)
+(default: V=5, F=900, S=950)
+(H: hosei kouguChou #)
 (X: Bot AC naikei)
 (Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
