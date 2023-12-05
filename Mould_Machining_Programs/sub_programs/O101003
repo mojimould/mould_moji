@@ -34,11 +34,9 @@ IF[#411LE0]GOTO800
 IF[#514EQ#0]GOTO800
 IF[#514LE0]GOTO800
 IF[#514GT50]GOTO800
-IF[#4111NE50]GOTO800
 (if #411 <= 0 or #0, go to N800)
 (if #514 <= 0 or #0, go to N800)
 (if #514 > 50. or #0, go to N800)
-(if H# is not 50, go to N800)
 
 IF[#1000NE0]GOTO001
 (if NOT p#1, to N001)
@@ -52,7 +50,7 @@ N001
 
 N002
 G91 G30 X0Y0Z0
-G54 G01 G90 G43 Z[-[#5221-#33]-#21+[#20/2]+#01] H50
+G54 G01 G90 G43 Z[-[#5221-#33]-#21+[#20/2]+#01] H50 F5400
 (Z: topGaisakuCmen + A)
 G53 G01 G90 X[#23-[#13/2]+#33] F5400
 (X: W-M/2 from table center)

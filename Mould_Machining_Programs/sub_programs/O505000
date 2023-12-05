@@ -1,7 +1,7 @@
 %
 O505000
 (rectangle 1shuu, ar MigiMawari)
-(default: Q=5, F=900, S=950)
+(default: V=5, F=900, S=950)
 
 IF[#24EQ#0]GOTO800
 IF[#24LE0]GOTO800
@@ -32,10 +32,10 @@ IF[#22EQ#0]GOTO001
 (if V = #0, go to N001)
 IF[#22LT1]GOTO800
 IF[#22GE[#601/2]]GOTO800
-(if V < 1 or Q >= #601/2, go to N800)
+(if V < 1 or V >= #601/2, go to N800)
 GOTO002
 N001
-#22=5 (default: Q=5)
+#22=5 (default: V=5)
 
 N002 (for F)
 IF[#09EQ#0]GOTO003
@@ -58,15 +58,15 @@ N005
 #19=950 (default: S=950)
 
 N004
-#33=[#24/2]-#22+#601/2
-#32=[#25/2]-#22+#601/2
-(XY: naikei/2 -Q +DCX/2)
+#33=[#24/2]-#22+#[2400+#11]
+#32=[#25/2]-#22+#[2400+#11]
+(XY: naikei/2 -V +DC/2)
 
 
 (Kokokara G00)
 
 G90 G00 X#33 Y[#25/2+#601]
-(G90 X: naikeiAC/2 -Q +DCX/2)
+(G90 X: naikeiAC/2 -V +DCX/2)
 (G90 Y: naikeiBD/2 +DCX)
 
 G90 G00 G43 H#11 Z[#26+#06] S#19
@@ -78,18 +78,18 @@ M08 (coolant on)
 (Kokokara G01)
 
 G90 G01 Y-[#32] F#09
-(r:Y:-[naikeiBD/2 -Q +DCX/2], speed #09)
+(r:Y:-[naikeiBD/2 -V +DC/2], speed #09)
 G90 G01 X-[#33]
-(b:X:-[naikeiAC/2 -Q +DCX/2])
+(b:X:-[naikeiAC/2 -V +DC/2])
 G90 G01 Y#32
-(l:Y:[naikeiBD/2 -Q +DCX/2])
+(l:Y:[naikeiBD/2 -V +DC/2])
 G90 G01 X#33
-(a:X:[naikeiAC/2 -Q +DCX/2])
+(a:X:[naikeiAC/2 -V +DC/2])
 
 
 (Kokokara G00)
 
-G91 G00 G40 X[#24/2] Y[25/2]
+G91 G00 G40 X[#24/2] Y[#25/2]
 (cancel hosei kouguKei)
 (X+: naikeiAC/2, Y+: neikeiBD/2)
 
@@ -128,4 +128,5 @@ N999 M99
 
 (System variables)
 (#3000: alarm)
+(#24xx: hosei kouguKei)
 %
