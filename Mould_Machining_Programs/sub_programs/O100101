@@ -65,7 +65,7 @@ M117 (sensor on/off)
 G04X1. (wait 1.0s)
 
 N003
-G90 G31 Z[#26-#512] F6400
+G90 G31 Z[#26-#512] F1800
 (Z skip tanmen: Z - D/2)
 IF[#5003GT[#26-#512]]GOTO802
 (if skip block end Z > tanmen Z - D/2, to N802)
