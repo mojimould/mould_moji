@@ -55,9 +55,9 @@ N008
 G90 G01 Y[#23-#31*[#32+5.0]] F500
 (Y+: #23-#32-5.0 or Y-: #23+#32+5.0, speed 500)
 G91 G01 Y[#31*5.0] F200
-G91 G01 Y[#31*#21] F100
+G91 G01 Y[#31*[#21+#30]] F100
 (Y+ or Y-: 5.0, speed 200)
-(Y+ or Y-: #21, speed 100)
+(Y+ or Y-: U+hosei, speed 100)
 G90 G01 Y#33 F6400
 (G90 G01 Y: to start point)
 GOTO999 (to N999)

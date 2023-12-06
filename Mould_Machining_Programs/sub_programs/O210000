@@ -106,10 +106,8 @@ G90 G01 Z[#26+100] F6400
 #706=#705*COS[ABS[#02]]+#26*SIN[ABS[#02]]
 #707=-#705*SIN[ABS[#02]]+#26*COS[ABS[#02]]
 (#705= current work origin X from table center)
-(#705~-11.095, #706~7.497, #707~500.083 in O1916)
 G91 G01 X[#706-#705] F6400
-G91 G01 Z[#707-#26-#702-100]
-(G91: X~18.592, Z~0.067-#702 in O1916)
+G91 G01 Z[#707-#26-#702-100] F6400
 (XZ to tanmen center)
 
 #708=#5001
@@ -133,7 +131,7 @@ M117 (sensor on/off)
 G04X1.
 
 N006
-G91 G#704 X#712 Z#713 F1500
+G91 G#704 X#712 Z#713 F1800
 (XZ to the center of the 1st row)
 (if sensor G31, else G01)
 
