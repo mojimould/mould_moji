@@ -35,7 +35,7 @@ N003
 
 N004
 #739=[#32*2]/#04+1
-(#739= the number of dimple)
+(#739= the # of dimple for current row)
 IF[#4111EQ50]GOTO005
 (if H#=50, go to N005)
 GOTO006

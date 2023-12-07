@@ -138,6 +138,8 @@ $R_\text c \to \infty$ ($\nicefrac1{R_\text c} \to 0$)の場合、すなわち�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 このとき、\pageautoref{fig:mouldOnComplexPlane1}のように、$R_\text c$, $R_\text i$, $R_\text o$, $f_\text T$, $f_\text B$, $l$, $\alpha_{\text T_\text i}$, $\alpha_{\text T_\text o}$, $\alpha_{\text U_\text B}$をとると、
 \begin{subequations}
+%% label{eq:constraintUpoint1}
+%% label{eq:constraintUpoint2}
 \begin{gather}
   \label{eq:constraintUpoint1}
   R_\text o - R_\text c = R_\text c - R_\text i = \frac{W_x}2~, \qquad
@@ -150,6 +152,7 @@ $R_\text c \to \infty$ ($\nicefrac1{R_\text c} \to 0$)の場合、すなわち�
 \end{subequations}
 ここで$W_x$はモールドの(AC)外径、$\delta$はスペーサの厚さである。
 このときモールドを原点Oを中心に$\Omega$だけ回転し、さらに点U$_\text B$($R_\text i$, $-\alpha_{\text U_\text B}$)を中心に$-\theta$だけ回転すると、点T$_\text i$($R_\text i$, $\alpha_{\text T_\text i}$)は、
+%% label{eq:afterftUpoint}
 \begin{align}
   \notag
   & e^{-i\theta}\!\left\{R_\text ie^{i(\alpha_{\text T_\text i} + \Omega)} - R_\text ie^{-i\alpha_{\text U_\text B}}\right\}
@@ -253,6 +256,7 @@ $\delta > 0$より、
 \end{align*}
 
 これを原点Oを中心に$\Omega$だけ回転し、さらに点U$_\text B$($R_\text i-\rho$, $-\alpha_{\text U_\text B}$)を中心に点T$_\text i$($R_\text i$, $\alpha_{\text T_\text i}$)を$-\theta$だけ回転すると、
+%% label{eq:afterftUfinite}
 \begin{align}
   \notag
   & e^{-i\theta}\!\left\{R_\text ie^{i(\alpha_{\text T_\text i} + \Omega)} - R_\text i'e^{-i\alpha_{\text U_\text B}}\right\}
@@ -301,6 +305,7 @@ $\delta > 0$より、
 回転後のモールドの湾曲中心は、この線分の垂直二等分線上にあり、またそれぞれの受板の中心から$R_\text i'$の距離の位置にある。
 つまり、この傾いた線分U$_\text B'$U$_\text T'$の中点から、角度$\pi-\psi$, 大きさ$\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}$の位置に移動する。
 したがって、回転後における湾曲の円の中心O$'$は、
+%% label{eq:afterOrgin}
 \begin{align}
   \notag
   & \frac\delta2+\sqrt{R_\text i'^2-\bar l^2}+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}e^{i(\pi-\psi)}\\
@@ -366,6 +371,7 @@ $\delta > 0$より、
          {\displaystyle-\frac\delta2+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi}
 \end{align*}
 よって、回転後の接点は以下で与えられる。
+%% label{eq:afterUBcontact}
 \begin{align}
   \notag
   &  R_\text ie^{-i\alpha'_{\text U_\text B}}
@@ -455,6 +461,7 @@ $\delta > 0$より、
 となる。
 よって、スペーサを挿入することにより、モールドは水平・鉛直方向にそれぞれ、
 \begin{subequations}
+%% label{eq:spacerMoveHdistance}
 \begin{alignat}{2}
   \label{eq:spacerMoveHdistance}
   \text{水平方向：}\quad
@@ -537,6 +544,7 @@ $\delta > 0$より、
 これは回転の中心が、受板の点U$_\text B$からテーブル中心Pに変わることに相当する。
 
 受板の円の中心U$_\text B$と、テーブル中心Pとの実軸方向の距離を$\varDelta$とすると、テーブル中心Pの$x$座標$\varDelta'$は次で与えられる。
+%% label{eq:tableCenter}
 \begin{align}
   \label{eq:tableCenter}
   \varDelta' = \varDelta+R_\text i'\cos\alpha_{\text U_\text B} = \varDelta+\sqrt{R_\text i'^2-\bar l^2}\ .
@@ -727,6 +735,7 @@ $\delta > 0$より、
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{この場合、トップ側が工具側に向いている。}、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% label{eq:spacerTRc}
 \begin{align}
   \notag
   &  R_\text c\cos\alpha_\text c-R_\text i'\cos\alpha'_{\text U_\text B}-\varDelta\\
@@ -751,6 +760,7 @@ $\delta > 0$より、
 \end{align*}
 の実部を見ればよい。
 すなわち、
+%% label{eq:tableTRc}
 \begin{align}
   \label{eq:tableTRc}
   R_\text c\cos\alpha_\text c-\varDelta'\cos\theta
@@ -764,6 +774,7 @@ $\delta > 0$より、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{トップ端面における外側中心の位置}
 トップ端における湾曲中心T$_{R_\text c}'$と外径中心T$_\text c'$との差は、以下で与えられる。
+%% label{eq:TRc-Tc}
 \begin{align}
   \label{eq:TRc-Tc}
   \sqrt{R_\text c^2-f_\text T^2}-\frac{\sqrt{R_\text o^2-f_\text T^2}+\sqrt{R_\text i^2-f_\text T^2}}2\ .
@@ -787,6 +798,7 @@ $\delta > 0$より、
   +\frac\delta2-\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}\ .
 \end{align*}
 したがって、トップ端における外径中心T$_\text c'$の$X$座標は、
+%% label{eq:spacerTc}
 \begin{align}
   \label{eq:spacerTc}
   -\varDelta+\frac{\sqrt{R_\text o^2-f_\text T^2}+\sqrt{R_\text i^2-f_\text T^2}}2
@@ -807,6 +819,7 @@ $\delta > 0$より、
   \sqrt{R_\text o^2-f_\text T^2}-\varDelta'\cos\theta\ .
 \end{align*}
 したがって、トップ端における（AC外径の）中点T$_\text c'$の$X$座標は、
+%% label{eq:tableTc}
 \begin{align}
   \label{eq:tableTc}
   \frac{\sqrt{R_\text o^2-f_\text T^2}+\sqrt{R_\text i^2-f_\text T^2}}2-\varDelta'\cos\theta\ .
@@ -861,6 +874,7 @@ $\delta > 0$より、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ボトム端面における外側中心の位置}
 ボトム端における湾曲中心B$_{R_\text c}'$と外径中心B$_\text c'$との差は、以下で与えられる。
+%% label{eq:BRc-Bc}
 \begin{align}
   \label{eq:BRc-Bc}
   \sqrt{R_\text c^2-f_\text B^2}-\frac{\sqrt{R_\text o^2-f_\text B^2}+\sqrt{R_\text i^2-f_\text B^2}}2\ .
@@ -881,6 +895,7 @@ $\delta > 0$より、
   \varDelta-\sqrt{R_\text o^2-f_\text B^2}-\frac\delta2+\sqrt{R_\text i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l^2}}\ .
 \end{align*}
 したがって、ボトム端における（AC外径の）中点B$_\text c'$の$X$座標は、
+%% label{eq:spacerBc}
 \begin{align}
   \label{eq:spacerBc}
   \varDelta-\frac{\sqrt{R_\text o^2-f_\text B^2}+\sqrt{R_\text i^2-f_\text B^2}}2
@@ -901,6 +916,7 @@ $\delta > 0$より、
   \varDelta'\cos\theta-\sqrt{R_\text o^2-f_\text B^2}\ .
 \end{align*}
 したがって、ボトム端における（AC外径の）中点B$_\text c'$の$X$座標は、
+%% label{eq:tableBc}
 \begin{align}
   \label{eq:tableBc}
   \varDelta'\cos\theta-\frac{\sqrt{R_\text o^2-f_\text B^2}+\sqrt{R_\text i^2-f_\text B^2}}2
@@ -1186,6 +1202,7 @@ $X$, $Y$方向には同じ速さで動くものとし、また$X$方向の移動
 となる。
 なお実際の作業では、簡単のため、トップ端面の外側中心T$_\text c'$を測定し、それをトップ端面における湾曲中心T$_{R_\text c}'$とみなして溝中心M$'$の位置を計算することが多い。
 実測した外側中心の$X$・$Y$座標$G_{\text Tx}$, $G_{\text Ty}$を湾曲中心のそれとみなすと、機内における溝中心M$'$の位置は、テーブル中心Pを原点として、
+%% label{eq:Mreal}
 \begin{subequations}
   \label{eq:Mreal}
 \begin{align}
@@ -1504,9 +1521,11 @@ A側内面の内面溝１列目（トップ端から$q$）の位置
 \end{array}
 \end{align*}
 ここで、$i$列目の湾曲中心とトップ端の湾曲中心との$X$座標の差を、
-\begin{align*}
+%% label{eq:}
+\begin{align}
+  \label{eq:dimpleCenterDistance}
   \mathcal L_i \equiv \sqrt{R_\text c^2-\left\{f_\text T-q-(i-1)p_z\right\}^2}-\sqrt{R_\text c^2-f_\text T^2}
-\end{align*}
+\end{align}
 と表した。
 なお、$i$列目の湾曲中心と$j$列目の湾曲中心との$X$座標の差を
 \begin{align*}
@@ -1523,6 +1542,7 @@ A側内面の内面溝１列目（トップ端から$q$）の位置
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{内面溝の\texorpdfstring{$X$}{X}座標（傾き前）}
 テーブル中心Oを原点としたとき、傾き前の$i$列目$j$番目の内面溝の$X$座標は、
+%% label{eq:dPosXBefore}
 \begin{align}
   \notag
   \text{A面：}\quad
@@ -1547,6 +1567,7 @@ A側内面の内面溝１列目（トップ端から$q$）の位置
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{内面溝の\texorpdfstring{$Y$}{Y}座標（傾き前）}
 テーブル中心Oを原点としたとき、傾き前の$i$列目$j$番目の内面溝の$Y$座標は、
+%% label{eq:dPosYBefore}
 \begin{alignat}{3}
   \notag
   \text{A, C面：}\quad
@@ -1567,6 +1588,7 @@ B・D面については$j$に依らないことがわかる。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{内面溝の\texorpdfstring{$Z$}{Z}座標（傾き前）}
 テーブル中心Oを原点としたとき、傾き前の$i$列目$j$番目の内面溝の$Z$座標は、
+%% label{eq:dPosZBefore}
 \begin{align}
   \label{eq:dPosZBefore}
   \text{A, B, C, D面：}\quad
@@ -1588,6 +1610,7 @@ A側内面トップ端と、A側内面のトップ端から$q$の位置との$x$
 で与えられる。
 このとき、これが負になる場合は傾ける必要はなく、正となる場合のみ傾ける。
 したがってその傾き角$\phi$は、
+%% label{eq:dKatamuki}
 \begin{subequations}
 \label{eq:dKatamuki}
 \begin{alignat}{2}
@@ -1749,7 +1772,9 @@ A側内面のトップ端からの（$X$方向の）距離は、トップ端のA
 \footnote{これらをワーク座標原点としてもよいし、ワーク座標原点$g_t$はそのままで各面ごとに傾けてもよい。
 ここでは後者の方法で加工を行うものとする。}、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{align*}
+%% label{eq:afterPhiTCenterFromO}
+\begin{align}
+  \label{eq:afterPhiTCenterFromO}
   \left[
   \begin{array}{c}
     g_{tx}'\\
@@ -1764,7 +1789,7 @@ A側内面のトップ端からの（$X$方向の）距離は、トップ端のA
      -g_{tx}\sin\phi+f_t'\cos\phi
    \end{array}
    \right].
-\end{align*}
+   \end{align}
 同様に、$i$列目における（傾ける前の）湾曲中心の位置は、[$g_{tx}+\mathcal L_i$, $g_{ty}$, $f_t'-q-(i-1)p_z$]で与えられる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここではトップ端における湾曲中心を、トップ端における内面中心と同一視している。}
@@ -1780,7 +1805,9 @@ A側内面のトップ端からの（$X$方向の）距離は、トップ端のA
   \right].
 \end{align*}
 したがって、傾けた後のトップ端の湾曲中心と$i$列目に対する湾曲中心との差分は、
-\begin{align*}
+%% label{eq:afterPhidimpleCenterDistance}
+\begin{align}
+  \label{eq:afterPhidimpleCenterDistance}
   \left[
   \begin{array}{c}
     \mathcal L_i\cos\phi-\{q+(i-1)p_z\}\sin\phi\\
@@ -1788,7 +1815,7 @@ A側内面のトップ端からの（$X$方向の）距離は、トップ端のA
     -\mathcal L_i\sin\phi-\{q+(i-1)p_z\}\cos\phi
   \end{array}
   \right].
-\end{align*}
+\end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
