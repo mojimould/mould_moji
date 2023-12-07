@@ -1,5 +1,5 @@
 %
-O101002 (Y centerline measurement)
+O111002 (Y centerline measurement)
 
 IF[#23EQ#0]GOTO800
 IF[#26EQ#0]GOTO800
@@ -131,7 +131,7 @@ G91 G28 Z0
 G54 G90 G01 X0
 
 N800
-G65 P900002 (sensor OFF)
+G65 P910002 (sensor OFF)
 #3000=121 (are the arguments OK?)
 M00 (are the arguments ok?)
 
@@ -173,4 +173,8 @@ N999 M99
 (#3000: alarm)
 (#5003: current work block end Z)
 (#5221: G54 origin X)
+
+
+(Subprograms)
+(O910002)
 %

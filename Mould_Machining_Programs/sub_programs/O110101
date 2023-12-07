@@ -1,5 +1,5 @@
 %
-O100101 (X center: left side measurement)
+O110101 (X center: left side measurement)
 
 #33=#4012
 #32=#5001
@@ -103,7 +103,7 @@ G90 G01 X#32 (X to start point)
 
 N802
 G91 G28 Z0
-G65 P900002 (sensor OFF)
+G65 P910002 (sensor OFF)
 
 N800 #3000=121 (Argument Is Not Assigned)
 M00 (are arguments ok?)
@@ -152,5 +152,5 @@ N999 M99
 
 
 (Subprogram)
-(O900002)
+(O910002)
 %

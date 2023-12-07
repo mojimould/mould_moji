@@ -32,7 +32,7 @@ G90 G01 Y#767 F5600
 GOTO999 (to N999)
 
 N800
-G65 P900002 (sensor OFF)
+G65 P910002 (sensor OFF)
 #3000=121 (Argument Is Not Assigned)
 M00 (are arguments ok?)
 
@@ -66,7 +66,7 @@ N999 M99
 
 
 (Subprograms)
-(O90002)
+(O91002)
 
 
 (Used in other programs)

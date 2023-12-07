@@ -1,5 +1,5 @@
 %
-O100011 (X center of inner measurement)
+O110011 (X center of inner measurement)
 
 #33=#4012
 (#33= current work coordinate G#)
@@ -140,7 +140,7 @@ G90 G01 X#30 (X to start point)
 
 N802
 G91 G28 Z0
-G65 P900002 (sensor OFF)
+G65 P910002 (sensor OFF)
 
 N800 #3000=121 (are the arguments or the mould OK?)
 M00 (are arguments ok?)
@@ -191,5 +191,5 @@ N999 M99
 
 
 (Subprograms)
-(O900002)
+(O910002)
 %

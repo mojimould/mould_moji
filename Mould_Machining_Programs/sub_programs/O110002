@@ -1,5 +1,5 @@
 %
-O100002 (Y center of outer measurement)
+O110002 (Y center of outer measurement)
 
 #33=#4012
 #32=#5002
@@ -114,7 +114,7 @@ G91 G28 Z0
 G90 G01 Y#32 (Y to start point)
 
 N800
-G65 P900002 (sensor OFF)
+G65 P910002 (sensor OFF)
 #3000=121 (are the arguments or the mould OK?)
 M00 (are arguments ok?)
 
@@ -159,5 +159,5 @@ N999 M99
 
 
 (Subprograms)
-(O900002)
+(O910002)
 %
