@@ -52,10 +52,10 @@ M117 (sensor on/off)
 G04X1. (wait 1.0s)
 
 N003
-G01 G91 Y-[[#25/2]+#512+#01] F9600
+G01 G91 Y-[[#25/2]+#512+#01] F6400
 (Y-: [BD gaikei/2 + D/2 + A])
 
-G90 G31 Z[#26-#512+#06] F1800
+G90 G31 Z[#26-#512+#06] F1500
 (Z skip: tanmen Z-D/2+K)
 IF[#5003GT[#26-#512+#06]]GOTO802
 (if skip block end Z > tanmen Z-D/2+K, to N802)
@@ -66,7 +66,7 @@ G91 G31 Y[#01*2] F#09
 (#900006= Y bellow side + D/2 + probe hosei)
 
 G91 Y-[#01*2] F3600 (Y-: 2A)
-G91 Z[#512-#06+60.0] F9600
+G91 Z[#512-#06+60.0] F6400
 (Z+: D/2-K+60.)
 
 IF[[ABS[#900006+#501-#503]]LE[ABS[[#25/2]-#01]]]GOTO800
@@ -76,7 +76,7 @@ G90 Y#32 (Y to start point)
 G91 Y[[#25/2]+#512+#01]
 (Y+: [BD gaikei/2 + D/2 + 1])
 
-G90 G31 Z[#26-#512+#06] F1800
+G90 G31 Z[#26-#512+#06] F1500
 (Z skip: tanmen Z-D/2+K)
 IF[#5003GT[#26-#512+#06]]GOTO802
 (if skip block end Z > tanmen Z-D/2+K, to N802)
@@ -87,7 +87,7 @@ G91 G31 Y-[#01*2] F#09
 (#900007= Y above side - D/2 + probe hosei)
 
 G91 Y[#01*2] F3600 (Y+: 2A)
-G91 Z[#512-#06+60.0] F9600
+G91 Z[#512-#06+60.0] F6400
 (Z+: D/2-K+60.)
 IF[[ABS[#900007-#501-#503]]LE[ABS[[#25/2]-#01]]]GOTO800
 (if |#900007|<=|Y/2-A|, go to N800)

@@ -82,12 +82,12 @@ M117 (sensor on/off)
 G04X1. (wait 1.0s)
 
 N005
-G90 G31 Z[#26-#512+#06] F1800
+G90 G31 Z[#26-#512+#06] F1500
 (Z tanmen: Z-D/2+K)
 IF[#5003GT[#26-#512+#06]]GOTO802
 (if skip block end Z > tanmen Z-D/2+K, to N802)
 
-G91 G31 X-[#32-#512-#01] F1800
+G91 G31 X-[#32-#512-#01] F1500
 (X-: [AC naikei/2 - D/2 - A])
 IF[[ABS[#5001-#30]]LT[ABS[#32-#512-#01]]]GOTO803
 (if |skipX-#30| < |AC naikei/2 - D/2 - A|, to N803)
@@ -103,7 +103,7 @@ IF[[ABS[#900011-#501-#502]]GE[ABS[#32+#01]]]GOTO800
 
 G90 X#30 F3600 (X to start point)
 
-G91 G31 X[#32-#512-#01] F1800
+G91 G31 X[#32-#512-#01] F1500
 (X+: [AC gaikei/2 - D/2 - A])
 IF[[ABS[#5001-#30]]LT[ABS[#32-#512-#01]]]GOTO803
 (if |skipX - #30| < |AC naikei/2 - D/2 - A|, to N803)
@@ -126,7 +126,7 @@ G90 X#900013 F3600 (X to measured center)
 #[5201+[#33-53]*20]=#5021
 (current work origin X = current machine X)
 
-G90 Z[#26+100.0] F9600
+G90 Z[#26+100.0] F6400
 GOTO999
 
 

@@ -131,7 +131,7 @@ M117 (sensor on/off)
 G04X1.
 
 N006
-G91 G#704 X#712 Z#713 F1800
+G91 G#704 X#712 Z#713 F1500
 (XZ to the center of the 1st row after rotation)
 (if sensor G31, else G01)
 
@@ -230,7 +230,7 @@ G90 G01 X#714 Z[#716-#702] F6400
 (XZ: to the center of the 1st row)
 G90 G01 X#708 Z#709 F6400
 (XZ: to start point)
-G90 G01 Z[#709+100.0] F9600
+G90 G01 Z[#709+100.0] F6400
 GOTO999
 
 
@@ -240,15 +240,15 @@ M00 (ALARM: low battery)
 GOTO999
 
 N802
-G90 G01 X#714 Y#715 F1800
+G90 G01 X#714 Y#715 F1500
 IF[#1004EQ0]GOTO803
 (if current sensor OFF, go to N803)
 M117 (sensor on/off)
 
 N803
-G90 G01 Z#716 F1800
+G90 G01 Z#716 F1500
 (XYZ: to the center of the 1st row)
-G90 G01 X#708 Z#709 F1800
+G90 G01 X#708 Z#709 F1500
 (XZ: to start point)
 
 N800
