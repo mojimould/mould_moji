@@ -73,12 +73,13 @@
   \fancyfoot{}
 }
 \fancypagestyle{main}{
-  \fancyhead{} % clear all header fields
-  \fancyhead[LO]{\nouppercase\rightmark}
-  \fancyhead[RO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
-  \fancyhead[RE]{\thechapter\hskip1zw\nouppercase\leftmark}
-  \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
-  \fancyfoot{} % clear all footer fields
+  \fancyhead[C]{} % header center fields for all main pages
+  \fancyhead[LO]{\nouppercase\rightmark} % header left fields for all main odd pages
+  \fancyhead[RO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
+  \fancyhead[RE]{\thechapter\hskip1zw\nouppercase\leftmark} % header right fields for all main even pages
+  \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header left fields for all main even pages
+  \fancyfoot[LO]{\tiny\customdate} % footer left fields for main odd pages
+  \fancyfoot[RE]{\tiny\customdate} % footer right fields for main even pages
 }
 \fancypagestyle{plainheadfront}{
   \fancyhead{}
