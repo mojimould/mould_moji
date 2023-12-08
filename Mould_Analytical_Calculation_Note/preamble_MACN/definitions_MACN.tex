@@ -25,33 +25,100 @@
 \definecolor{qqzzqq}{rgb}{0, 0.6, 0}
 \definecolor{ffwwqq}{rgb}{1, 0.4, 0}
 %%%%% NEWCOLORBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{GlobalFootnote}% difine a counter Global Footnote
 %%%%% COLUMN %%%%%
 \newcommand{\Columnname}{Column}
 \newtcolorbox[auto counter, number within=chapter]{Column}[2][]{Columnbox, title={#2}, #1}
-%%%%% HOSOKU BOX %%%%%
+%%%%% FIGBOX %%%%%
+\newtcolorbox{Figbox}[1][]{Figurebox, #1}
+%%%%% HOSOKU %%%%%
 \newcommand{\hosokuname}{補}
 \definecolor{hosoku}{cmyk}{0, 0, 0, .15}
-\newtcolorbox[auto counter, number within=chapter]{hosokubox}[1][]{
-  hosokubox, title={\termblue{\hosokuname~\thetcbcounter}~}, #1
-}
-%%%%% FIG BOX %%%%%
-\newtcolorbox{Figbox}[1][]{Figurebox, #1}
+\newtcolorbox[auto counter, number within=chapter]{hosoku}[1][]{hosokubox, #1}
 %%%%% TWOCTABLE %%%%%
-\newcounter{GlobalFootnote}% difine a counter Global Footnote
-\newtcolorbox[auto counter, number within=chapter]{twoCtable}[2][]{
-    breakable,
-    enhanced,
-    fonttitle=\bfseries\large,
-    fontupper=\normalsize\sffamily,
-    colframe=black!50!black,
-    colbacktitle=blue!10!white,
-    coltitle=black,
-    title=#2,
-    #1,
-    top=0pt,
-    bottom=0pt,
-    left=0pt,
-    right=0pt,
+\newtcolorbox[auto counter, number within=chapter]{twoCtable}[2][]{twoCtablebox, title={#2}, #1}
+%%%%% TCBSET %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tcbset{%
+  %%%%% COLUMNBOX STYLE %%%%%
+  Columnbox/.style={%
+    after title=\hfill\termblue{\Columnname~\thetcbcounter},%
+    fonttitle=\gtfamily\bfseries,%
+    breakable,%
+    enhanced jigsaw,%
+    left=.5ex,%
+    right=.5ex,%
+    bicolor,%
+    colbacklower=black!10!white,%
+    before upper={%
+      \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
+      \let\oldfootnote=\footnote% \oldfootnote=\footnote
+      \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% define \footnote to \footnote using counter GlobalFootnote
+      \renewcommand\thempfootnote{\arabic{mpfootnote}}% arabic footnote
+    },
+    after upper={%
+      \setcounter{footnote}{\value{GlobalFootnote}}% footnoteValue=GlobalFootnoteValue
+      \let\footnote=\oldfootnote% \footnote=\oldfootnote
+    },
+  },%
+  %%%%% FIGUREBOX STYLE %%%%%
+  Figurebox/.style={%
+    notitle,%
+    center upper,%
+    center lower,%
+    arc=5pt,%
+    outer arc=2pt,%
+    boxrule=1pt,%
+    boxsep=3mm,%
+    valign=center,%
+    left=\z@,%
+    right=\z@,%
+    colback=green!3!white,%
+    colframe=black!25!white,%
+  },
+  %%%%% HIGHLIGHT MATH STYLE %%%%%
+%  highlight math/.style={%
+%    enhanced,%
+%    arc=2pt,%
+%    boxrule=\z@,%
+%    frame hidden,%
+%    fuzzy halo=1pt with blue,%
+%    left=\z@,%
+%    right=\z@,%
+%    top=.4mm,%
+%    bottom=.4mm,%
+%    colback=yellow!40!white,%
+%  },%
+  %%%%% HOSOKUBOX STYLE %%%%%
+  hosokubox/.style={%
+    title={\termblue{\hosokuname~\thetcbcounter}~},%
+    attach title to upper,%
+    breakable,%
+    enhanced jigsaw,%
+    size=fbox,%
+    arc=\z@,%
+    middle=1mm,%
+    colback=hosoku,%
+    colframe=hosoku,%
+    drop lifted shadow={blue!100!white!50!},%
+    skin first is subskin of={enhanced jigsaw}{no shadow},%
+    skin middle is subskin of={enhanced jigsaw}{no shadow},%
+    skin last is subskin of={enhanced jigsaw}{drop lifted shadow={blue!100!white!50!}},%
+    segmentation style={draw=black!50!white},%
+    after=\smallskip\noindent{\color{white}},%
+  },
+  %%%%% TWOCTABLEBOX STYLE %%%%%
+  twoCtablebox/.style={%
+    breakable,%
+    enhanced,%
+    fonttitle=\bfseries,%
+    fontupper=\small\sffamily,%
+    colframe=black!50!black,%
+    colbacktitle=blue!10!white,%
+    coltitle=black,%
+    top=0pt,%
+    bottom=0pt,%
+    left=0pt,%
+    right=0pt,%
     before upper={%
       \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
       \let\oldfootnote=\footnote% \oldfootnote=\footnote
@@ -69,57 +136,33 @@
       \setcounter{footnote}{\value{GlobalFootnote}}% footnoteValue=GlobalFootnoteValue
       \let\footnote=\oldfootnote% \footnote=\oldfootnote
     },
+  },
 }
 %%%%% TIKZSET %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tikzset{
   %%%%% SECTIONFORMAT STYLE %%%%%
-  sect/.style={signal, draw, text=white},
-  section/.style={sect, fill=konpeki!100!, signal to=east, inner sep=3pt},
-  subsection/.style={sect, fill=moegi!90!, signal to=nowhere, inner sep=3pt},
-  subsubsection/.style={sect, fill=sssec!100!, signal to=nowhere, inner sep=3pt},
+%  sect/.style={signal, draw, text=white},
+%  section/.style={sect, fill=konpeki!100!, signal to=east, inner sep=3pt},
+%  subsection/.style={sect, fill=moegi!90!, signal to=nowhere, inner sep=3pt},
+%  subsubsection/.style={sect, fill=sssec!100!, signal to=nowhere, inner sep=3pt},
   %%%%% TERMINAL STYLE %%%%%
-  terminal/.style={rectangle,
-                   minimum size=10pt,
-                   rounded corners=1.5mm,
-                   thin, draw=black!75,
-                   top color=white,
-                   font=\fontfamily{pplx},
-                   inner sep=3pt, inner xsep=3pt,
-                   text height=1ex, text depth=0pt,},
+  terminal/.style={%
+    rectangle,%
+    minimum size=10pt,%
+    rounded corners=1.5mm,%
+    thin,%
+    draw=black!75,%
+    top color=white,%
+    font=\fontfamily{pplx},%
+    inner sep=3pt,%
+    inner xsep=3pt,%
+    text height=1ex,%
+    text depth=0pt,%
+  },
   %%%%% BMATRIX STYLE %%%%%
-  every left delimiter/.style={xshift=.5em},
-  every right delimiter/.style={xshift=-.5em},
-  bmatrix/.style={matrix of math nodes,
-                  left delimiter=[, right delimiter=],},
-}
-%%%%% TCBSET %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tcbset{%
-  %%%%% HIGHLIGHT MATH STYLE %%%%%
-  highlight math style={enhanced, arc=2pt, boxrule=\z@, frame hidden,
-                        fuzzy halo=1pt with blue,
-                        colback=yellow!40!white,
-                        left=\z@, right=\z@, top=.4mm, bottom=.4mm},
-  %%%%% COLUMNBOX STYLE %%%%%
-  Columnbox/.style={enhanced jigsaw, breakable, left=.5ex, right=.5ex,
-                    after title=\hfill\termblue{\Columnname~\thetcbcounter},
-                    fonttitle=\gtfamily\bfseries,
-                    bicolor, colbacklower=black!10!white,},
-  %%%%% HOSOKUBOX STYLE %%%%%
-  hosokubox/.style={breakable, enhanced jigsaw, attach title to upper,
-                    colback=hosoku, colframe=hosoku,
-                    size=fbox, arc=\z@, middle=1mm,
-                    drop lifted shadow={blue!100!white!50!},
-                    skin first is subskin of={enhanced jigsaw}{no shadow},
-                    skin middle is subskin of={enhanced jigsaw}{no shadow},
-                    skin last is subskin of={enhanced jigsaw}%
-                                            {drop lifted shadow={blue!100!white!50!}},
-                    segmentation style={draw=black!50!white},
-                    after=\smallskip\noindent{\color{white}},},
-  %%%%% FIGUREBOX STYLE %%%%%
-  Figurebox/.style={notitle, center upper, center lower, arc=5pt, outer arc=2pt, boxrule=1pt,
-                    colback=green!3!white, colframe=black!25!white,
-                    boxsep=3mm, left=\z@, right=\z@, valign=center,
-                    },
+%  every left delimiter/.style={xshift=.5em},
+%  every right delimiter/.style={xshift=-.5em},
+%  bmatrix/.style={matrix of math nodes, left delimiter=[, right delimiter=],},
 }
 %%%%% OTHER TIKZ DEFINITION %%%%%%%%%%%%%%%%%%
 \tikzfading[name=fade ball, inner color=transparent!60, outer color=transparent!30]
@@ -148,6 +191,9 @@
     {\eqref{#1}~[p.\pageref{#1}]}%
 }
 %%%%% DECLAREMATHOPERATOR %%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\IP}{Im}
+\DeclareMathOperator{\RP}{Re}
+%%%%% DECLAREROBUSTCOMMAND %%%%%%%%%%%%%%%%%%%%
 \DeclareRobustCommand{\bDiv}{\nonscript\mskip-\medmuskip\mkern5mu\mathbin
   {\operator@font div}\penalty900
   \mkern5mu\nonscript\mskip-\medmuskip}
@@ -164,8 +210,7 @@
 %%%%% DIM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\hk}{\hspace{\kanjiskip}}
 \newcommand{\hx}{\hspace{\xkanjiskip}}
-%%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%
-\def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{\z@}\textbf{#1}}{gray!25}\hskip.75zw}
+%%%%% PRG # %%%%%%%%%%%%%%%%%%
 \newcommand\MXOThickness{O110001} % X外側中心計測
 \newcommand\MYOThickness{O110002} % Y外側中心計測
 \newcommand\MXIWidth{O110011} % X内側中心計測
@@ -185,5 +230,7 @@
 \newcommand\DKLthreeBD{O630002} % 内面溝 加工用 レベル3 BD
 \newcommand\OsensorOn{O910001} % タッチセンサーON
 \newcommand\OsensorOff{O910002} % タッチセンサーOFF
-
-
+%%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%
+\newcommand{\dimpleMname}{ディンプルマシニング}
+\newcommand{\mitsubishiMname}{三菱マシニング}
+\def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{\z@}\textbf{#1}}{gray!25}\hskip.75zw}

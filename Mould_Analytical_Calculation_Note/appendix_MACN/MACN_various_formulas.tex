@@ -7,34 +7,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section C.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{２点間の距離}
-\begin{tcolorbox}
-点($p, $q)と直線$ax+by+c=0$との距離$d$は、以下で与えられる。
-\begin{equation}
-  \notag
+\section{2点間の距離}
+\begin{Column}{}
+点($p$, $q$)と直線$ax+by+c=0$との距離$d$は、以下で与えられる。
+\begin{align*}
   d = \frac{|ap+bq+c|}{\sqrt{a^2+b^2}}.
-\end{equation}
-\end{tcolorbox}
-\begin{tcolorbox}
-点$\boldsymbol p$を通り方向ベクトルが$\boldsymbol m$の直線L上の点と、点$\boldsymbol q$を通り方向ベクトルが$\boldsymbol m'$の直線$\text L'$上の点は、それぞれパラメータ$t$, $t'$を用いて、
-\begin{equation}
-  \notag
-  \text L: \boldsymbol p+t\boldsymbol m\ , \qquad
-  \text L': \boldsymbol q+t'\boldsymbol m'
-\end{equation}
+\end{align*}
+\end{Column}
+\begin{Column}{}
+点$\boldsymbol p$を通り方向ベクトルが$\boldsymbol m$の直線L上の点と、点$\boldsymbol q$を通り方向ベクトルが$\boldsymbol m'$の直線$\mathrm L'$上の点は、それぞれパラメータ$t$, $t'$を用いて、
+\begin{align*}
+  \mathrm L: \boldsymbol p+t\boldsymbol m\ , \qquad
+  \mathrm L': \boldsymbol q+t'\boldsymbol m'
+\end{align*}
 で表される。
-このとき、L上の点の中で$\text L'$に最も近づく点の位置$\boldsymbol k$は、以下で与えられる
+このとき、L上の点の中で$\mathrm L'$に最も近づく点の位置$\boldsymbol k$は、以下で与えられる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{２点間の距離の2乗$|\boldsymbol p-\boldsymbol q+t\boldsymbol m-t'\boldsymbol m'|^2$に対し、それぞれのパラメータ$t$, $t'$に関する微分が0となる。
 それらを連立して解けば$\boldsymbol k$, $\boldsymbol k'$が求まる。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-$\text L'$上の点の中でLに最も近づく点の位置$\boldsymbol k'$についても同様である。
-\begin{equation}
-  \notag
+$\mathrm L'$上の点の中でLに最も近づく点の位置$\boldsymbol k'$についても同様である。
+\begin{align*}
   \boldsymbol k
   = \boldsymbol p
     +\frac{(\boldsymbol m-(\boldsymbol m, \boldsymbol m')\boldsymbol m', \boldsymbol p-\boldsymbol q)}
           {1+(\boldsymbol m, \boldsymbol m')^2}\boldsymbol m
-\end{equation}
-また、これらの差の大きさ$|\boldsymbol k-\boldsymbol k'|$から、２直線間の距離$d$が求まる。
-\end{tcolorbox}
+\end{align*}
+また、これらの差の大きさ$|\boldsymbol k-\boldsymbol k'|$から、2直線間の距離$d$が求まる。
+\end{Column}
