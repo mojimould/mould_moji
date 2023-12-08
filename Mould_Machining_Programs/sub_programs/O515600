@@ -30,15 +30,22 @@ IF[#19LE0]GOTO800
 
 IF[[#26-#13-#901005]LE[#411/2]]GOTO800
 IF[[ABS[#17]]GE[#25/2]]GOTO800
-IF[#18GE[[#24+#25-ABS[#24-#25]]/4]]GOTO800
+IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 IF[[FIX[#07]]NE#07]GOTO800
+IF[#04LE#18]GOTO800
 (if Z-M-#901005 <= #411/2, go to N800)
 (if |Q| >= Y/2, go to N800)
-(if R >= min[X/2, Y/2], go to N800)
+(if R >= min[X/4, Y/4], go to N800)
 (if D is not integer, go to N800)
+(if I <= R, go to N800)
 
-G90 G00 X0 Y0 (XY work genten)
-G91 G00 X#04 (hosei: AC center: +: X+, -: X-)
+IF[#04NE#0]GOTO001
+#04=0
+
+N001
+G90 G00 X#04 Y0 F9600
+(X: work genten +I)
+(Y: work genten)
 
 #33=#25+#17 (#33= hosei: BD gaikei +Q)
 #32=#33+#33/2 (#32= BD gaikei*1.5)
@@ -48,15 +55,15 @@ G91 G00 X-[[#24+#17]/2] Y#32
 (al: X-: AC gaikei/2)
 (Y+: 1.5*BD gaikei)
 
-IF[#4111GE6]GOTO001
-IF[#4111LE10]GOTO001
-(if 6 <= H# <=10, go to N001)
+IF[#4111GE6]GOTO002
+IF[#4111LE10]GOTO002
+(if 6 <= H# <=10, go to N002)
 #30=0
-GOTO002
-N001
+GOTO003
+N002
 #30=#901005
 
-N002
+N003
 G90 G43 H#07 Z[#26-#13-#30] S#19
 (hosei kouguChou: #07)
 (Z+ tanmen, kaitenSuu #19)
@@ -74,21 +81,21 @@ M08 (coolant on)
 G01 Y-[#32-#18] F#09
 (l:Y-:[1.5*BD gaikei - nigashi])
 G03 X#18 Y-#18 I#18 J0 F#08
-(bl corner: R#18 [#18, 0] X+Y-)
+(bl corner: R#18 [R, 0] X+Y-)
 G01 X#31 F#09
 (b: X+ AC chokusenBu)
 G03 X#18 Y#18 I0 J#18 F#08
-(br corner: R#18 [0, #18] X+Y+)
+(br corner: R#18 [0, R] X+Y+)
 G01 Y[#33-#18*2] F#09
 (r: Y+ BD chokusenBu)
 G03 X-#18 Y#18 I-#18 J0 F#08
-(ar corner: R#18 [-#18, #0] X-Y+)
+(ar corner: R#18 [-R, #0] X-Y+)
 G01 X-#31 F#09
 (a: X- AC chokusenBu)
 G03 X-#18 Y-#18 I0 J-#18 F#08
-(al corner: R#18 [0, -#18] X-Y-)
+(al corner: R#18 [0, -R] X-Y-)
 G02 X-60. Y-60. I-60. J0
-(G02 R60 [-60, 0] X-Y-)
+(G02 R60 [-60., 0] X-Y-)
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
@@ -120,11 +127,12 @@ N999 M99
 (#13:M: mizoIchi)
 (#18:R: corner R)
 (#17:Q: +hosei X&Y)
-(#04:I: +hosei AC center)
 (#07:D: kouguKei&Chou hosei)
 (#09:F: speed chokusenBu)
 (#08:E: speed corner R)
 (#19:S: kaitenSuu)
+(as received hidden arguments)
+(#04:I: +hosei AC center)
 
 (as LHS)
 (#30, #31, #32, #33)

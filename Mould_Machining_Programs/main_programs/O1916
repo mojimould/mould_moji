@@ -173,7 +173,7 @@ G57 G90 G00 B#600
 (G57B parallel angle #600)
 M10 (4jiku clamp)
 
-G57 G90 G01 X0 Y0
+G57 G90 G01 X0 Y0 F3600
 (G57XY Top Inside Center)
 G57 G90 G43 Z[500.016+100.0] H50
 (hosei KouguChou: #50)
@@ -206,7 +206,7 @@ G65 P910002 (sensor OFF)
 
 N005
 G49 (Cancel hosei kouguChou)
-G91 G30 X0 Y0 Z0
+G91 G28 Z0
 
 
 (kokokara Top Kakou start)
@@ -225,7 +225,7 @@ G57 G90 G00 B#600
 (G57B parallel angle #600)
 M10 (4jiku clamp)
 
-G57 G90 G01 X0 Y0
+G57 G90 G00 X0 Y0 F9600
 (G57XY Top Inside Center)
 G57 G90 G43 Z[500.016+100.0] H31
 (hosei KouguChou: #31)
@@ -263,13 +263,14 @@ IF[#101LE0]GOTO800
 (kaisuu: #01/#101 kiriage)
 WHILE[#02GE1]DO1
 #02=#02-1
-G56 G65 P515000 H2. X156.863 Y154.839 Z500.016 K[#101*#02]
+G56 G65 P515000 H2. X156.863 Y154.839 R19. Z500.016 K[#101*#02]
 END1
-(O505000: rectangle 1shuu, ar MigiMawari)
+(O515000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
 (default: V=5, F=900, S=950)
 (H: hosei kouguChou #)
 (X: Top AC naikei)
 (Y: Top BD naikei)
+(R: sotogawa corner R or C)
 (Z: Top sai_furiwake)
 (K: 1kezuriShiro*kaisuu)
 
@@ -283,20 +284,20 @@ M06 (tool exchange)
 
 (Top gaisaku start)
 
-G56 G65 P515600 Q3. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930. I0.
-G56 G65 P515600 Q1. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930. I0.
-G56 G65 P515600 Q0. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930. I0.
-(O505600: Sotogawa 1shuu Corner R, al HidariMawari)
+G56 G65 P515600 Q3. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930.
+G56 G65 P515600 Q1. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930.
+G56 G65 P515600 Q0. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930.
+(O515600: Sotogawa 1shuu Corner R, al HidariMawari)
+(default: I=0)
 (Q: +hosei: AC&BD gaisakuKei)
 (D: hosei kougu#)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
-(Z: Top sai_furiwake - gaisakuFukasa)
+(Z: Top sai_furiwake - gaisakuLength)
 (R: corner R)
 (F: speed: chokusen)
 (E: speed: corner R)
 (S: kaitensuu)
-(I: +hosei: AC center)
 
 (Top gaisaku end)
 /M00 (gaisaku ok?)
@@ -313,21 +314,21 @@ M06 (tool exchange)
 
 G56 G65 P515600 D6. X172.90 Y172.90 Z[500.016-#605] M12.05 R18. Q0. I0. F500. E400. S930.
 (mizoIchi: 487.966)
-(O505600: Sotogawa 1shuu Corner R, al HidariMawari)
+(O515600: Sotogawa 1shuu Corner R, al HidariMawari)
 (D: hosei kouguKei&Chou #)
 (X: AC mizoKei)
 (Y: BD mizoKei)
-(Z: Top sai_furiwake - kouguAtsusa)
+(Z: Top sai_furiwake - kouguThickness)
 (M: mizoIchi)
 (F: speed: chokusen)
 (E: speed: corner R)
 (S: kaitenSuu)
 (Q: +hosei: AC&BD mizoKei)
-(I: +hosei: AC center)
+(I*: +hosei: AC center)
 
 G56 G65 P515600 D6. X172.90 Y172.90 Z[500.016-[8.05+#901006]] M12.05 R18. Q0. I0. F500. E400. S930.
 (mizoHaba: 479.916)
-(O505600: Sotogawa 1shuu Corner R, al HidariMawari)
+(O515600: Sotogawa 1shuu Corner R, al HidariMawari)
 (D: hosei kouguKei&Chou #)
 (X: AC mizoKei)
 (Y: BD mizoKei)
@@ -337,7 +338,7 @@ G56 G65 P515600 D6. X172.90 Y172.90 Z[500.016-[8.05+#901006]] M12.05 R18. Q0. I0
 (E: speed: corner R)
 (S: kaitenSuu)
 (Q: +hosei: AC&BD mizoKei)
-(I: +hosei: AC center)
+(I*: +hosei: AC center)
 
 (Mizo end)
 /M00 (mizo ok?)
@@ -351,13 +352,13 @@ M06 (tool exchange)
 
 G56 G65 P515600 D13. X180.95 Y180.95 Z[500.016-1.0] R18. I0. Q0. F500. E400. S1800.
 (Top Soto mentori)
-(O505600: Sotogawa 1shuu Corner R, al HidariMawari)
+(O515600: Sotogawa 1shuu Corner R, al HidariMawari)
 (D: hosei kouguKei&Chou #)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
 (Z: Top sai_furiwake - mentori C)
 (R: corner R)
-(I: +hosei: AC center)
+(I*: +hosei: AC center)
 (Q: +hosei: AC&BD gaisakuKei)
 (F: speed: chokusen)
 (E: speed: corner R)
@@ -388,13 +389,14 @@ IF[#101LE0]GOTO800
 (kaisuu: #03/#101 kiriage)
 WHILE[#04GE1]DO1
 #04=#04-1
-G54 G65 P515000 H2. X155. Y153. Z499.84 K[#101*#04]
+G54 G65 P515000 H2. X155. Y153. R19. Z499.84 K[#101*#04]
 END1
-(O505000: rectangle 1shuu, ar MigiMawari)
+(O515000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
 (default: V=5, F=900, S=950)
 (H: hosei kouguChou #)
 (X: Bot AC naikei)
 (Y: Bot BD naikei)
+(R: sotogawa corner R)
 (Z: Bot sai_furiwake)
 (K: 1kezuriShiro*kaisuu)
 
@@ -407,10 +409,11 @@ M06 (tool exchange)
 
 (Bottom gaisaku start)
 
-G54 G65 P515600 D16. Q3. I0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
-G54 G65 P515600 D16. Q1. I0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
-G54 G65 P515600 D16. Q0. I0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
-(O505600: Sotogawa 1shuu Corner R, al HidariMawari)
+G54 G65 P515600 D16. Q3. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
+G54 G65 P515600 D16. Q1. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
+G54 G65 P515600 D16. Q0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
+(O515600: Sotogawa 1shuu Corner R, al HidariMawari)
+(default: I=0)
 (Q: +hosei: AC&BD gaisakuKei)
 (D: hosei kouguKei&Chou #)
 (X: AC gaisakuKei)
@@ -420,7 +423,6 @@ G54 G65 P515600 D16. Q0. I0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S9
 (F: speed: chokusen)
 (E: speed: corner R)
 (S: kaitenSuu)
-(I: +hosei: AC center)
 
 (Bottom gaisaku end)
 /M00 (gaisaku ok?)
@@ -432,9 +434,10 @@ M06 (tool exchange)
 
 (Bottom Mentori Soto start)
 
-G54 G65 P515600 D11. Q0. X180.95 Y180.95 Z[499.984-4.0] R18. F500. E400. S1800. I0.
+G54 G65 P515600 D11. Q0. X180.95 Y180.95 Z[499.984-4.0] R18. F500. E400. S1800.
 (Bot Soto Chamfer)
-(O505600: Sotogawa 1shuu Corner R, al HidariMawari)
+(O515600: Sotogawa 1shuu Corner R, al HidariMawari)
+(default: I=0)
 (D: hosei kouguKei&Chou #)
 (Q: +hosei: AC&BD gaisakuKei)
 (X: AC gaisakuKei)
@@ -444,7 +447,6 @@ G54 G65 P515600 D11. Q0. X180.95 Y180.95 Z[499.984-4.0] R18. F500. E400. S1800. 
 (F: speed: chokusen)
 (E: speed: corner R)
 (S: kaitenSuu)
-(I: +hosei: AC center)
 
 (Top Mentori Soto end)
 /M00 (mentori ok?)
@@ -456,7 +458,7 @@ G55 G65 P515200 D11. I0 K4. X155. Y153. Z499.984 W10. R18. M0.07
 G55 G65 P515200 D11. I0 K2. X155. Y153. Z499.984 W10. R18. M0.07
 G55 G65 P515200 D11. I0 K0. X155. Y153. Z499.984 W10. R18. M0.07
 (Bot Uchi Chamfer)
-(O505200: Uchigawa 1shuu Corner R, ac HidariMawari)
+(O515200: Uchigawa 1shuu Corner R, ac HidariMawari)
 (default: A=15, F=400, S=1800)
 (D: hosei kougu #)
 (I*: +hosei X center)
