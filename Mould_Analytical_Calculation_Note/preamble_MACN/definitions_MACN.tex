@@ -63,6 +63,8 @@
   %%%%% FIGUREBOX STYLE %%%%%
   Figurebox/.style={%
     notitle,%
+    height=\textwidth,
+%    width=\textwidth,
     center upper,%
     center lower,%
     arc=5pt,%
@@ -70,10 +72,12 @@
     boxrule=1pt,%
     boxsep=3mm,%
     valign=center,%
+    halign=center,%
     left=\z@,%
     right=\z@,%
     colback=green!3!white,%
     colframe=black!25!white,%
+    before={\centering},
   },
   %%%%% HIGHLIGHT MATH STYLE %%%%%
 %  highlight math/.style={%
@@ -168,7 +172,6 @@
 \tikzfading[name=fade ball, inner color=transparent!60, outer color=transparent!30]
 \def\sball#1{\tikz \shade [ball color=#1, path fading=fade ball] (0,0) circle (.7ex);}
 \def\terminal#1#2{\tikz[baseline=(a.base)] \node (a) [terminal, bottom color=#2] {\small #1};}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% LINK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand\nextsectionlink[1]{\addtocounter{section}\@ne
                                \hyperlink{section.\thechapter.\the\c@section}{#1}%
@@ -230,7 +233,8 @@
 \newcommand\DKLthreeBD{O630002} % 内面溝 加工用 レベル3 BD
 \newcommand\OsensorOn{O910001} % タッチセンサーON
 \newcommand\OsensorOff{O910002} % タッチセンサーOFF
+%%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
+\newcommand{\DMname}{ディンプルマシニング}
+\newcommand{\MMname}{三菱マシニング}
 %%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%
-\newcommand{\dimpleMname}{ディンプルマシニング}
-\newcommand{\mitsubishiMname}{三菱マシニング}
 \def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{\z@}\textbf{#1}}{gray!25}\hskip.75zw}

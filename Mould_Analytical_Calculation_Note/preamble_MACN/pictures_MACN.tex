@@ -2,7 +2,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\mouldCoordinate{%
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=1, every node/.style={scale=0.75}]
 % 値の計算
 \pgfmathsetmacro{\Ax}{9.6} %A:T_iのx座標
 \pgfmathsetmacro{\Ay}{3.5} %A:T_iのy座標
@@ -21,8 +21,8 @@
 \pgfmathsetmacro{\Hx}{1+(\Ri)} %H:テーブルの中心
 \pgfmathsetmacro{\Ix}{1.90} %I:テーブルx方向の長さの半分
 % 座標系を描画
-\draw[-latex, dotted] (-0.4, 0) -- (14.5, 0) node[below] {\textbf{Re}};
-\draw[-latex, dotted] (0, -4) -- (0, 4) node[below right] {\textbf{Im}};
+\draw[-latex, line width=0.5pt] (-0.4, 0) -- (14.5, 0) node[below] {\textbf{Re}};
+\draw[-latex, line width=0.5pt] (0, -4) -- (0, 4) node[below right] {\textbf{Im}};
 % 座標を定義
 \coordinate (O) at (  0, 0); % 原点
 \coordinate (A) at (\Ax, \Ay); %
@@ -45,9 +45,9 @@
 \coordinate (Lt) at (\Hx+\Ix+0.4, \Ub);
 \coordinate (Lb) at (\Hx+\Ix+0.4, -\Ub);
 \coordinate (Lc) at (\Hx+\Ix+0.4, 0);
-\coordinate (Fc) at (\Hx+\Ix+0.9, 0);
-\coordinate (Ft) at (\Hx+\Ix+0.9, \Ay);
-\coordinate (Fb) at (\Hx+\Ix+0.9, \Cy);
+\coordinate (Fc) at (\Hx+\Ix+1.0, 0);
+\coordinate (Ft) at (\Hx+\Ix+1.0, \Ay);
+\coordinate (Fb) at (\Hx+\Ix+1.0, \Cy);
 % 点を描画
 \fill (O) circle (2pt);
 \fill (A) circle (2pt);
@@ -72,11 +72,11 @@
 \node at (Ut) [right] {U$_\mathrm T$};
 \node at (Ub) [right] {U$_\mathrm B$};
 % モールド外形
-\draw[line width=1pt, fill=ffwwqq, fill opacity=0.1]
+\draw[line width=0.75pt, fill=ffwwqq, fill opacity=0.1]
   let \p1=(A), \p2=(C), \p3=(B), \p4=(D), \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)}, \n3={atan2(\y3,\x3)}, \n4={atan2(\y4,\x4)}
     in (A) -- (B) -- (\n3:\Ro) arc (\n3:\n4:\Ro) -- (C) -- (\n2:\Ri) arc (\n2:\n1:\Ri) -- cycle;
 % モールド中心線
-\draw[dotted, line width=1pt] let \p1=(E), \p2=(F), \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)}
+\draw[dotted, line width=0.5pt] let \p1=(E), \p2=(F), \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)}
   in (\n1:\Rc) arc (\n1:\n2:\Rc);
 % テーブル
 \draw (Ut) -- (Tal) -- (Tbl) -- (Ub);
@@ -84,25 +84,25 @@
 \draw[dotted] (Tar) -- (Lt);
 \draw[dotted] (Tbr) -- (Lb);
 \draw[dotted] (Tar) -- (Lt);
-\draw[latex-latex, line width=1pt] (Lc) -- (Lt) node[midway, right] {$l$};
-\draw[latex-latex, line width=1pt] (Lc) -- (Lb) node[midway, right] {$l$};
+\draw[latex-latex, line width=0.5pt] (Lc) -- (Lt) node[midway, right] {$l$};
+\draw[latex-latex, line width=0.5pt] (Lc) -- (Lb) node[midway, right] {$l$};
 % 振分け
 \draw[dotted] (B) -- (Ft);
 \draw[dotted] (D) -- (Fb);
-\draw[latex-latex, line width=1pt] (Fc) -- (Ft) node[midway, right] {$f_\mathrm T$};
-\draw[latex-latex, line width=1pt] (Fc) -- (Fb) node[midway, right] {$f_\mathrm B$};
+\draw[latex-latex, line width=0.5pt] (Fc) -- (Ft) node[midway, right] {$f_\mathrm T$};
+\draw[latex-latex, line width=0.5pt] (Fc) -- (Fb) node[midway, right] {$f_\mathrm B$};
 % 半径
-\draw[dotted, line width=1pt] (O) -- (A) node[midway, above left] {$R_\mathrm i$} ;
-\draw[dotted, line width=1pt] (O) -- (B) node[midway, below right] {$R_\mathrm o$} ;
-\draw[dotted, line width=1pt] (O) -- (Ub) node[midway, above right] {$R_\mathrm i$} ;
+\draw[dotted, line width=0.5pt] (O) -- (A) node[midway, above left] {$R_\mathrm i$} ;
+\draw[dotted, line width=0.5pt] (O) -- (B) node[midway, below right] {$R_\mathrm o$} ;
+\draw[dotted, line width=0.5pt] (O) -- (Ub) node[midway, above right] {$R_\mathrm i$} ;
 % 角度
-\draw[line width=1pt, fill=ffwwqq, fill opacity=0.1]
+\draw[line width=0.5pt, fill=ffwwqq, fill opacity=0.1]
   let \p1=(Ri), \p2=(A), \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)}
    in (\n1:2) arc (\n1:\n2:2) node[midway, right, opacity=1] {$\alpha_{\mathrm T_\mathrm i}$} -- (O);
-\draw[line width=1pt, fill=qqzzqq, fill opacity=0.1]
+\draw[line width=0.5pt, fill=qqzzqq, fill opacity=0.1]
   let \p1=(Ro), \p2=(B), \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)}
   in (\n1:3.2) arc (\n1:\n2:3.2) node[midway, right, opacity=1] {$\alpha_{\mathrm T_\mathrm o}$} -- (O) -- cycle ;
-\draw[line width=1pt, fill=wwqqcc, fill opacity=0.1]
+\draw[line width=0.5pt, fill=wwqqcc, fill opacity=0.1]
   let \p1=(Ri), \p2=(Ub), \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)}
   in (\n1:2.7) arc (\n1:\n2:2.7) node[midway, right, opacity=1] {$\alpha_{\mathrm U_\mathrm B}$} -- (O);
 \end{tikzpicture}%
