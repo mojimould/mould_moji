@@ -257,13 +257,13 @@ M06 (tool exchange)
 
 #01=8.0 (kezuriShiro: all)
 
-#101=4.0 (kezuriShiro: 1 time)
-IF[#101LE0]GOTO800
-#02=FUP[#01/#101]
-(kaisuu: #01/#101 kiriage)
+#401=4.0 (kezuriShiro: 1 time)
+IF[#401LE0]GOTO800
+#02=FUP[#01/#401]
+(kaisuu: #01/#401 kiriage)
 WHILE[#02GE1]DO1
 #02=#02-1
-G56 G65 P515000 H2. X156.863 Y154.839 R19. Z500.016 K[#101*#02]
+G56 G65 P515000 H2. X156.863 Y154.839 R19. Z500.016 K[#401*#02]
 END1
 (O515000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
 (default: V=5, F=900, S=950)
@@ -384,12 +384,12 @@ M06 (tool exchange)
 
 #03=8.0 (kezuriShiro: all)
 
-IF[#101LE0]GOTO800
-#04=FUP[#03/#101]
-(kaisuu: #03/#101 kiriage)
+IF[#401LE0]GOTO800
+#04=FUP[#03/#401]
+(kaisuu: #03/#401 kiriage)
 WHILE[#04GE1]DO1
 #04=#04-1
-G54 G65 P515000 H2. X155. Y153. R19. Z499.984 K[#101*#04]
+G54 G65 P515000 H2. X155. Y153. R19. Z499.984 K[#401*#04]
 END1
 (O515000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
 (default: V=5, F=900, S=950)
@@ -579,7 +579,7 @@ N999 M30
 
 (Common variables)
 (as LHS)
-(#101, #600, #901001, #901002, #901003, #901005, #901006)
+(#401, #600, #901001, #901002, #901003, #901005, #901006)
 (as RHS)
 (#451, #453, #454, #455, #457, #458, #900021, #900024)
 
