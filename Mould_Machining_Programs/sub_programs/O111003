@@ -49,10 +49,10 @@ N001
 #32=#457 (p#2 Z table center)
 
 N002
-G91 G30 X0Y0Z0
-G54 G01 G90 G43 Z[-[#5221-#33]-#21+[#20/2]+#01] H50 F5400
-(Z: topGaisakuCmen + A)
-G53 G01 G90 X[#23-[#13/2]+#33] F5400
+G91 G30 X0 Y0 Z0
+G90 G54 G01 Y0 F5400
+(G90 Y: G54 origin Y)
+G90 G53 G01 X[#23-[#13/2]+#33] F5400
 (X: W-M/2 from table center)
 
 IF[#1005EQ1]GOTO801
@@ -60,35 +60,38 @@ IF[#1004EQ1]GOTO003
 (if low battery, go to N801)
 (if current sensor ON, go to N003)
 M117 (sensor on/off)
-G04X1. (wait 1.0s)
+G04 X1. (wait 1.0s)
 
 N003
-G54 G90 G31 Y0 F1500
-(G90 Y skip: G54 origin Y)
-IF[#5002GT0]GOTO803
-(if skip block end Y > 0, to N802)
-
-IF[#5003GT[-[#5221-#33]-#21+[#20/2]+#01]]GOTO802
+G90 G54 G43 G31 Z[#5221-#33-#21+[#20/2]+100] H50 F3600
+(Z skip: topGaisakuCmen +100.)
+G90 G31 Z[#5221-#33-#21+[#20/2]+#01] F1500
+(Z skip: topGaisakuCmen +A)
+IF[#5003GT[#5221-#33-#21+[#20/2]+#01]]GOTO802
 (if skip block end Z > Cmen Z+A, to N802)
 
 G91 G31 Z[-#01*2] F#514
 (Z- skip: 2A)
-IF[#5003LE[-[#5221-#33]-#21+[#20/2]-#01]]GOTO802
+IF[#5003LE[#5221-#33-#21+[#20/2]-#01]]GOTO802
 (if skip block end Z <= Cmen Z-A, to N802)
 #900028=#5003+#501
 (#900028= Z top side + probe hosei)
 
 G91 G28 Z0
-G53 G01 G90 X[-#26+[#06/2]+#33] F6400
+G90 G53 G01 X[-#26+[#06/2]+#33] F5400
 (X: -Z+K/2 from table center)
 
-G54 G90 G31 Z[#5221-#33+[#02/2]+#01] F1500
-(G54 Z skip: bot gaisakuCmen Z+A)
+G90 G54 G31 Z[#5221-#33+[#20/2]+100] F3600
+(Z skip: botGaisakuCmen +100.)
+G90 G31 Z[#5221-#33+[#02/2]+#01] F1500
+(G54 Z skip: botGaisakuCmen Z+A)
 IF[#5003GT[#5221-#33+[#02/2]+#01]]GOTO802
 (if skip block end Z > Cmen Z+A, to N802)
 
 G91 G31 Z[-#01*2] F#514
 (Z- skip: 2A)
+IF[#5003LE[#5221-#33+[#20/2]-#01]]GOTO802
+(if skip block end Z <= Cmen Z-A, to N802)
 #900029=#5003+#501
 (#900029= Z bot side + probe hosei)
 
@@ -96,7 +99,7 @@ G91 G28 Z0
 #900030=#900029-#900028
 (difference)
 
-G54 G90 G01 X#900030
+G90 G54 G01 X#900030 F5400
 (X to table center)
 GOTO999
 
@@ -105,9 +108,6 @@ N801
 #3000=145 (Low battery)
 M00 (ALARM: low battery)
 GOTO999
-
-N803
-G91 G28 Y0
 
 N802
 G91 G28 Z0

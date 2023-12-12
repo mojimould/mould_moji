@@ -55,8 +55,8 @@ N001
 
 N002
 G91 G28 Z0
-G54 G90 G01 X0 Y0
-G54 G43 Z[#26+100.0] H50
+G90 G54 G01 X0 Y[[#02/2]+#512+#01] F5400
+G90 G54 G43 G01 Z[#26+100.0] H50 F3600
 (G43 Z: tanmen + 100.)
 
 IF[#1005EQ1]GOTO801
@@ -64,14 +64,11 @@ IF[#1004EQ1]GOTO003
 (if low battery, go to N801)
 (if current sensor ON, go to N003)
 M117 (sensor on/off)
-G04X1. (wait 1.0s)
+G04 X1. (wait 1.0s)
 
 N003
-G54 G90 G01 Y[[#02/2]+#512+#01] F5400
-(G90 Y: B/2+#512+A)
-
-G54 G90 G31 Z[#26-[#06/2]-#512] F1500
-(G53 Z skip: BotTanmen Z-K/2-#512)
+G90 G54 G31 Z[#26-[#06/2]-#512] F1500
+(G54 Z skip: BotTanmen Z-K/2-#512)
 IF[#5003GT[#26-[#06/2]-#512]]GOTO802
 (if skip block end Z > BotTanmen Z-K/2-#512, to N802)
 
@@ -96,7 +93,8 @@ G91 G01 X[-2*[#5221-#33]+#21] Y[[#20/2]+#512+#01] F5400
 (X: top gaisaku center)
 (Y: top gaisaku Bmen + A)
 
-G54 G90 G31 Z[#23-[#13/2]-#512] F3600
+G90 G54 G01 Z[#23+100.0] F3600
+G90 G54 G31 Z[#23-[#13/2]-#512] F1500
 (G54 Z skip: W-M/2-#512)
 IF[#5003GT[#23-[#13/2]-#512]]GOTO802
 (if skip block end Z > W-#512-M/2+#32, to N802)
@@ -116,7 +114,7 @@ IF[[ABS[#900025-#501-#503]]LE[ABS[[#20/2]-#01]]]GOTO800
 #900026=#900024-#900025-[#02-#20]/2
 (difference)
 
-G54 G90 G01 Y#900026
+G90 G54 G01 Y#900026 F5400
 (Y to table center)
 GOTO999
 
@@ -128,7 +126,7 @@ GOTO999
 
 N802
 G91 G28 Z0
-G54 G90 G01 X0
+G90 G54 G01 X0 F5400
 
 N800
 G65 P910002 (sensor OFF)
