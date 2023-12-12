@@ -12,7 +12,7 @@ IF[#05EQ0]GOTO800
 
 IF[#1004EQ1]GOTO001
 M117 (if the sensor is off, turn on)
-G04X1. (wait 1.0s)
+G04 X1. (wait 1.0s)
 
 N001
 IF[#05LT0]GOTO002
@@ -27,7 +27,7 @@ G91 G31 Y[#33*15.0] F#514
 (skip Y+ or Y-: 15.0, speed #514)
 #768=#5002+#503+#33*[-#501+#512]
 (#768= block end Y + hosei probe etc)
-G90 G01 Y#767 F5600
+G90 G01 Y#767 F3600
 (G90 G01 Y: to start point)
 GOTO999 (to N999)
 

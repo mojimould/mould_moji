@@ -12,7 +12,7 @@ IF[#04EQ0]GOTO800
 
 IF[#1004EQ1]GOTO001
 M117 (if the sensor is off, turn on)
-G04X1. (wait 1.0s)
+G04 X1. (wait 1.0s)
 
 N001
 IF[#04LT0]GOTO002
@@ -27,7 +27,7 @@ G91 G31 X[#33*15.0] F#514
 (skip X+ or X-: 15.0, speed #514)
 #768=#5001+#502+#33*[-#501+#512]
 (#768= block end X + hosei probe etc)
-G90 G01 X#767 F5600
+G90 G01 X#767 F3600
 (G90 G01 X: to start point)
 GOTO999 (to N999)
 
@@ -36,7 +36,7 @@ G65 P910002 (sensor OFF)
 #3000=121 (Argument Is Not Assigned)
 M00 (are arguments ok?)
 
-N999 M99
+N999 M99 
 
 (Used Variables and Programs)
 

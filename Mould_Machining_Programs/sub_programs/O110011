@@ -25,9 +25,9 @@ IF[#26LE[#461/2]]GOTO800
 
 IF[#512EQ#0]GOTO800
 IF[#512LE0]GOTO800
-IF[#514GT50]GOTO800
+IF[#514NE50]GOTO800
 (if #512 <= 0 or #0, go to N800)
-(if #514 > 50.0, go to N800)
+(if #514 is not 50.0, go to N800)
 
 #32=#24/2+#13
 IF[[#32-#512-#01]LE0]GOTO800
@@ -57,7 +57,7 @@ IF[#18LT#23]GOTO800
 (for Top: if K>0, #31>0)
 IF[[ABS[#31]]GE#32]GOTO800
 (if |#31| >= X/2, go to N800)
-G91 G01 X-#31
+G91 G01 X-#31 F5400
 (if K>0, Top X-, Bot X+)
 
 N002
@@ -79,7 +79,7 @@ IF[#1004EQ1]GOTO005
 (if low battery, go to N801)
 (if current sensor ON, go to N005)
 M117 (sensor on/off)
-G04X1. (wait 1.0s)
+G04 X1. (wait 1.0s)
 
 N005
 G90 G31 Z[#26-#512+#06] F1500
@@ -97,11 +97,11 @@ G91 G31 X-[#01*2] F#09
 #900011=#5001-#512+#501+#502
 (#900011= X left side - D/2 + probe hosei)
 
-G91 X#01 F2400 (X+: A)
+G91 G01 X#01 F3600 (X+: A)
 IF[[ABS[#900011-#501-#502]]GE[ABS[#32+#01]]]GOTO800
 (if |#900011|>=|X/2+A| go to N800)
 
-G90 X#30 F3600 (X to start point)
+G90 G01 X#30 F5400 (X to start point)
 
 G91 G31 X[#32-#512-#01] F1500
 (X+: [AC gaikei/2 - D/2 - A])
@@ -113,7 +113,7 @@ G91 G31 X[#01*2] F#09
 #900012=#5001+#512-#501+#502
 (#900012= X right side + D/2 + probe hosei)
 
-G91 X-#01 F2400 (X-: A)
+G91 G01 X-#01 F3600 (X-: A)
 IF[[ABS[#900012+#501-#502]]GE[ABS[#32+#01]]]GOTO800
 (if |#900012| >= |X/2+A| go to N800)
 
@@ -121,12 +121,12 @@ IF[[ABS[#900012+#501-#502]]GE[ABS[#32+#01]]]GOTO800
 #900014=#900012-#900011
 (average: center)
 (difference: width)
-G90 X#900013 F3600 (X to measured center)
+G90 G01 X#900013 F5400 (X to measured center)
 
 #[5201+[#33-53]*20]=#5021
 (current work origin X = current machine X)
 
-G90 Z[#26+100.0] F6400
+G90 G01 Z[#26+100.0] F5400
 GOTO999
 
 
@@ -136,7 +136,7 @@ M00 (ALARM: low battery)
 GOTO999
 
 N803
-G90 G01 X#30 (X to start point)
+G90 G01 X#30 F5400 (X to start point)
 
 N802
 G91 G28 Z0

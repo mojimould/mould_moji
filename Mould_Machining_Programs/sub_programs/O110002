@@ -49,10 +49,10 @@ IF[#1004EQ1]GOTO003
 (if low battery, go to N801)
 (if current sensor ON, go to N003)
 M117 (sensor on/off)
-G04X1. (wait 1.0s)
+G04 X1. (wait 1.0s)
 
 N003
-G01 G91 Y-[[#25/2]+#512+#01] F6400
+G91 G01 Y-[[#25/2]+#512+#01] F5400
 (Y-: [BD gaikei/2 + D/2 + A])
 
 G90 G31 Z[#26-#512+#06] F1500
@@ -65,15 +65,15 @@ G91 G31 Y[#01*2] F#09
 #900006=#5002+#512-#501+#503
 (#900006= Y bellow side + D/2 + probe hosei)
 
-G91 Y-[#01*2] F3600 (Y-: 2A)
-G91 Z[#512-#06+60.0] F6400
+G91 G01 Y-[#01*2] F3600 (Y-: 2A)
+G91 G01 Z[#512-#06+60.0] F5400
 (Z+: D/2-K+60.)
 
 IF[[ABS[#900006+#501-#503]]LE[ABS[[#25/2]-#01]]]GOTO800
 (if |#900006|<=|Y/2-A|, go to N800)
 
-G90 Y#32 (Y to start point)
-G91 Y[[#25/2]+#512+#01]
+G90 G01 Y#32 F5400 (Y to start point)
+G91 G01 Y[[#25/2]+#512+#01] F5400
 (Y+: [BD gaikei/2 + D/2 + 1])
 
 G90 G31 Z[#26-#512+#06] F1500
@@ -86,8 +86,8 @@ G91 G31 Y-[#01*2] F#09
 #900007=#5002-#512+#501+#503
 (#900007= Y above side - D/2 + probe hosei)
 
-G91 Y[#01*2] F3600 (Y+: 2A)
-G91 Z[#512-#06+60.0] F6400
+G91 G01 Y[#01*2] F3600 (Y+: 2A)
+G91 G01 Z[#512-#06+60.0] F5400
 (Z+: D/2-K+60.)
 IF[[ABS[#900007-#501-#503]]LE[ABS[[#25/2]-#01]]]GOTO800
 (if |#900007|<=|Y/2-A|, go to N800)
@@ -96,12 +96,13 @@ IF[[ABS[#900007-#501-#503]]LE[ABS[[#25/2]-#01]]]GOTO800
 #900009=#900007-#900006
 (average: center)
 (difference: thickness)
-G90 Y#900008 (Y to measured center)
+G90 G01 Y#900008 F5400
+(Y to measured center)
 
 #[5202+[#33-53]*20]=#5022
 (current work origin Y = current machine Y)
 
-G90 Z[#26+100.0]
+G90 G01 Z[#26+100.0] F5400
 GOTO999
 
 N801
@@ -111,7 +112,7 @@ GOTO999
 
 N802
 G91 G28 Z0
-G90 G01 Y#32 (Y to start point)
+G90 G01 Y#32 F5400 (Y to start point)
 
 N800
 G65 P910002 (sensor OFF)

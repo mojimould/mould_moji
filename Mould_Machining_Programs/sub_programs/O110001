@@ -1,5 +1,5 @@
 %
-O110001 (X center of outside measurement)
+O110001 (X center of outer measurement)
 
 #33=#4012
 #32=#5001
@@ -29,10 +29,10 @@ IF[#461EQ#0]GOTO800
 IF[#461LE0]GOTO800
 IF[#512EQ#0]GOTO800
 IF[#512LE0]GOTO800
-IF[#514GT50]GOTO800
+IF[#514NE50]GOTO800
 (if #461 <= 0 or #0, go to N800)
 (if #512 <= 0 or #0, go to N800)
-(if #514 > 50.0, go to N800)
+(if #514 is not 50.0, go to N800)
 
 IF[#09EQ#0]GOTO001
 IF[#09LE0]GOTO001
@@ -49,10 +49,10 @@ IF[#1004EQ1]GOTO003
 (if low battery, go to N801)
 (if current sensor ON, go to N003)
 M117 (sensor on/off)
-G04X1. (wait 1.0s)
+G04 X1. (wait 1.0s)
 
 N003
-G01 G91 X-[[#24/2]+#512+#01] F6400
+G91 G01 X-[[#24/2]+#512+#01] F5400
 (X-: [AC gaikei/2 + D/2 + A])
 
 G90 G31 Z[#26-#512+#06] F1500
@@ -65,15 +65,15 @@ G91 G31 X[#01*2] F#09
 #900001=#5001+#512-#501+#502
 (#900001= X left side + D/2 + probe hosei)
 
-G91 X-[#01*2] F3600 (X-: 2A)
-G91 Z[#512-#06+60.0] F6400
+G91 G01 X-[#01*2] F3600 (X-: 2A)
+G91 G01 Z[#512-#06+60.0] F5400
 (Z+: D/2-K+60.)
 
 IF[[ABS[#900001+#501-#502]]LE[ABS[[#24/2]-#01]]]GOTO800
 (if |#900001|<=|X/2-A|, go to N800)
 
-G90 X#32 (X to start point)
-G91 X[[#24/2]+#512+#01]
+G90 G01 X#32 F5400 (X to start point)
+G91 G01 X[[#24/2]+#512+#01] F5400
 (X+: [AC gaikei/2 + D/2 + 1])
 
 G90 G31 Z[#26-#512+#06] F1500
@@ -86,8 +86,8 @@ G91 G31 X-[#01*2] F#09
 #900002=#5001-#512+#501+#502
 (#900002= X right side - D/2 + probe hosei)
 
-G91 X[#01*2] F3600 (X+: 2A)
-G91 Z[#512-#06+60.0] F6400
+G91 G01 X[#01*2] F3600 (X+: 2A)
+G91 G01 Z[#512-#06+60.0] F5400
 (Z+: D/2-K+60.)
 IF[[ABS[#900002-#501-#502]]LE[ABS[[#24/2]-#01]]]GOTO800
 (if |#900002|<=|X/2-A|, go to N800)
@@ -96,12 +96,13 @@ IF[[ABS[#900002-#501-#502]]LE[ABS[[#24/2]-#01]]]GOTO800
 #900004=#900002-#900001
 (average: center)
 (difference: thickness)
-G90 X#900003 (X to measured center)
+G90 G01 X#900003 F5400
+(X to measured center)
 
 #[5201+[#33-53]*20]=#5021
 (current work origin X = current machine X)
 
-G90 Z[#26+100.0]
+G90 G01 Z[#26+100.0] F5400
 GOTO999
 
 N801
@@ -111,7 +112,7 @@ GOTO999
 
 N802
 G91 G28 Z0
-G90 G01 X#32 (X to start point)
+G90 G01 X#32 F5400 (X to start point)
 
 N800
 G65 P910002 (sensor OFF)

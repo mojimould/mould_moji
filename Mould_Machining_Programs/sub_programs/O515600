@@ -43,7 +43,7 @@ IF[#04NE#0]GOTO001
 #04=0
 
 N001
-G90 G00 X#04 Y0 F9600
+G90 G00 X#04 Y0 F10800
 (X: work genten +I)
 (Y: work genten)
 
@@ -51,7 +51,7 @@ G90 G00 X#04 Y0 F9600
 #32=#33+#33/2 (#32= BD gaikei*1.5)
 #31=#24+#17-#18*2 (#31= AC chokusenBu [X+Q-2R])
 
-G91 G00 X-[[#24+#17]/2] Y#32
+G91 G00 X-[[#24+#17]/2] Y#32 F10800
 (al: X-: AC gaikei/2)
 (Y+: 1.5*BD gaikei)
 
@@ -64,11 +64,11 @@ N002
 #30=#901005
 
 N003
-G90 G43 H#07 Z[#26-#13-#30] S#19
+G90 G43 G01 H#07 Z[#26-#13-#30] S#19 F5400
 (hosei kouguChou: #07)
 (Z+ tanmen, kaitenSuu #19)
 
-G91 G42 D#07 Y-[#33/2]
+G91 G42 G01 D#07 Y-[#33/2] F5400
 (hosei kouguKei: #07)
 (al: Y- BD gaikei/2)
 
@@ -78,23 +78,23 @@ M08 (coolant on)
 
 (Kokokara G01)
 
-G01 Y-[#32-#18] F#09
+G91 G01 Y-[#32-#18] F#09
 (l:Y-:[1.5*BD gaikei - nigashi])
-G03 X#18 Y-#18 I#18 J0 F#08
+G91 G03 X#18 Y-#18 I#18 J0 F#08
 (bl corner: R#18 [R, 0] X+Y-)
-G01 X#31 F#09
+G91 G01 X#31 F#09
 (b: X+ AC chokusenBu)
-G03 X#18 Y#18 I0 J#18 F#08
+G91 G03 X#18 Y#18 I0 J#18 F#08
 (br corner: R#18 [0, R] X+Y+)
-G01 Y[#33-#18*2] F#09
+G91 G01 Y[#33-#18*2] F#09
 (r: Y+ BD chokusenBu)
-G03 X-#18 Y#18 I-#18 J0 F#08
+G91 G03 X-#18 Y#18 I-#18 J0 F#08
 (ar corner: R#18 [-R, #0] X-Y+)
-G01 X-#31 F#09
+G91 G01 X-#31 F#09
 (a: X- AC chokusenBu)
-G03 X-#18 Y-#18 I0 J-#18 F#08
+G91 G03 X-#18 Y-#18 I0 J-#18 F#08
 (al corner: R#18 [0, -R] X-Y-)
-G02 X-60. Y-60. I-60. J0
+G91 G02 X-60. Y-60. I-60. J0 F#09
 (G02 R60 [-60., 0] X-Y-)
 
 M05 (shujiku kaiten off)
@@ -103,11 +103,11 @@ M09 (coolant off)
 
 (Kokokara G00)
 
-G90 G00 G40 Y[#33/2]
+G90 G40 G00 Y[#33/2] F5400
 (hosei cancel kouguKei)
 (Y+ BD gaikei/2)
 
-G90 G00 Z[#26+100]
+G90 G00 Z[#26+100] F10800
 (Z: tanmen+100.)
 GOTO999
 
