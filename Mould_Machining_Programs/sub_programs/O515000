@@ -22,12 +22,12 @@ IF[#11GT200]GOTO800
 (if K < 0 or #0, go to N800)
 (if H < 2 or H > 200 or #0, go to N800)
 
-IF[#26LE[#411/2]]GOTO800
+IF[#26LE[#461/2]]GOTO800
 IF[[FIX[#11]]NE#11]GOTO800
 IF[#601EQ#0]GOTO800
 IF[#601LE1]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
-(if Z <= #411/2, go to N800)
+(if Z <= #461/2, go to N800)
 (if H is not integer, go to N800)
 (if #601 <=1 or empty, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
@@ -136,7 +136,7 @@ N999 M99
 
 
 (Common variable)
-(#411, #601)
+(#461, #601)
 
 
 (System variables)

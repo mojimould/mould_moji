@@ -28,12 +28,12 @@ IF[#19LE0]GOTO800
 (if F <= 0 or #0, go to N800)
 (if S <= 0 or #0, go to N800)
 
-IF[[#26-#13-#901005]LE[#411/2]]GOTO800
+IF[[#26-#13-#901005]LE[#461/2]]GOTO800
 IF[[ABS[#17]]GE[#25/2]]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 IF[[FIX[#07]]NE#07]GOTO800
 IF[#04GE#18]GOTO800
-(if Z-M-#901005 <= #411/2, go to N800)
+(if Z-M-#901005 <= #461/2, go to N800)
 (if |Q| >= Y/2, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
 (if D is not integer, go to N800)
@@ -139,7 +139,7 @@ N999 M99
 
 
 (Common variable)
-(#411, #901005)
+(#461, #901005)
 
 
 (System variables)

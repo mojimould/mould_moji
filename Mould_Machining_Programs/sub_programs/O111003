@@ -24,29 +24,29 @@ IF[#21LT0]GOTO800
 (if U < 0 or #0, go to N800)
 (if A <= 0 or #0, go to N800)
 
-IF[#23LE[#411/2]]GOTO800
-IF[#26LE[#411/2]]GOTO800
-(if W <= #411/2, go to N800)
-(if Z <= #411/2, go to N800)
+IF[#23LE[#461/2]]GOTO800
+IF[#26LE[#461/2]]GOTO800
+(if W <= #461/2, go to N800)
+(if Z <= #461/2, go to N800)
 
-IF[#411EQ#0]GOTO800
-IF[#411LE0]GOTO800
+IF[#461EQ#0]GOTO800
+IF[#461LE0]GOTO800
 IF[#514EQ#0]GOTO800
 IF[#514LE0]GOTO800
 IF[#514GT50]GOTO800
-(if #411 <= 0 or #0, go to N800)
+(if #461 <= 0 or #0, go to N800)
 (if #514 <= 0 or #0, go to N800)
 (if #514 > 50. or #0, go to N800)
 
 IF[#1000NE0]GOTO001
 (if NOT p#1, to N001)
-#33=#401 (p#1 X table center)
-#32=#403 (p#1 Z table center)
+#33=#451 (p#1 X table center)
+#32=#453 (p#1 Z table center)
 GOTO002
 
 N001
-#33=#405 (p#2 X table center)
-#32=#407 (p#2 Z table center)
+#33=#455 (p#2 X table center)
+#32=#457 (p#2 Z table center)
 
 N002
 G91 G30 X0Y0Z0
@@ -140,7 +140,7 @@ N999 M99
 (as LHS)
 (#900028, #900029, #900030)
 (as RHS)
-(#401, #403, #405, #407, #411)
+(#451, #453, #455, #457, #461)
 (#501 : hosei: touch sensor signal delay)
 (#514 : default skip speed)
 
