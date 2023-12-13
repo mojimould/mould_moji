@@ -1,5 +1,7 @@
 %!TEX root = ../Mould_Analytical_Calculation_Note.tex
 
+\usepackage{geometry}  % PAPER SIZE
+\usepackage{array}
 \usepackage{graphicx}
 \usepackage{scrlayer-fancyhdr} % HEADER AND FOOTER with scrbook.cls
 \usepackage[dvipsnames]{xcolor}
@@ -31,38 +33,37 @@
   urlcolor=ai,         % color of urls
   citecolor=sora,      % color of citation links
 }
+\usepackage[backend=biber, style=numeric-comp]{biblatex} % references
+\addbibresource{MACN_reference.bib}
 
-\usepackage{appendix}  % appendices
-\usepackage{geometry}  % PAPER SIZE
-\usepackage{array, tabularx}
-\usepackage{longtable}
-\usepackage{colortbl}
-%\usepackage{framed}
-\usepackage[hang, small, bf]{caption}  % caption
-\usepackage{subcaption}
-%\usepackage{cite}  % citation numbering [1,2,3] --> [1-3]
-\usepackage{extarrows}
-\usepackage{lastpage} % get the last page
-\usepackage{units}
-\usepackage{titletoc}
-%\usepackage{scrextend}
-\usepackage{ifthen}
+\usepackage{babel} % language support
+\usepackage{csquotes} % using with babel
 \usepackage{datetime}
 \usepackage{bxjaholiday} % japan holiday (for weekday)
-\usepackage{babel}
+\usepackage{lastpage} % get the last page
+\usepackage{footnote} % out of environment
+\usepackage{titletoc}
+\usepackage{appendix}  % appendices
+\usepackage[hang, small, bf]{caption}  % caption
+\usepackage{subcaption} % subcaption
+\usepackage{longtable} % longtable
+\usepackage{colortbl}
+\usepackage{pdflscape} % landscape
+\usepackage{afterpage} % afterpage
+\usepackage{setspace} % setstretch
+%\usepackage{cite}  % citation numbering [1,2,3] --> [1-3]
+%\usepackage{cleveref}
+\usepackage{ifthen}
+\usepackage{pgffor} % foreach
+
+\usepackage{extarrows}
+\usepackage{units}
+%\usepackage{scrextend}
 \usepackage{adjustbox} %
 \usepackage{jvlisting} % input source code file
 \usepackage{listings}
 %\usepackage{moreverb}
 \usepackage{scrhack}
-\usepackage{pgffor} % foreach
-\usepackage{footnote} % out of environment
-%\usepackage{cleveref}
-\usepackage{pdflscape} % landscape
-\usepackage{afterpage} % afterpage
-\usepackage[backend=biber, style=numeric-comp]{biblatex} % references
-\addbibresource{MACN_reference.bib}
-\usepackage{setspace} % setstretch
 
 
 %%%%% tikz %%%%%%%%%%%%%%%%%%%%%%%%%%%%
