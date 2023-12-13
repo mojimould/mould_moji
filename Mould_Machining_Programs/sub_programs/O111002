@@ -36,12 +36,10 @@ IF[#512LE0]GOTO800
 IF[#514EQ#0]GOTO800
 IF[#514LE0]GOTO800
 IF[#514GT50]GOTO800
-IF[#4611NE50]GOTO800
 (if #461 <= 0 or #0, go to N800)
 (if #512 <= 0 or #0, go to N800)
 (if #514 <= 0 or #0, go to N800)
 (if #514 > 50. or #0, go to N800)
-(if H# is not 50, go to N800)
 
 IF[#1000NE0]GOTO001
 (if NOT p#1, to N001)
@@ -89,11 +87,12 @@ G91 G00 B180.
 (rotate 180 deg)
 M10 (4jiku clamp)
 
-G91 G01 X[-2*[#5221-#33]+#21] Y[[#20/2]+#512+#01] F5400
+G91 G01 X[-2*[#5221-#33]+#21] F5400
+G90 G01 Y[[#20/2]+#512+#01] F5400
 (X: top gaisaku center)
 (Y: top gaisaku Bmen + A)
 
-G90 G54 G01 Z[#23+100.0] F3600
+G90 G54 G43 G01 Z[#23+100.0] H50 F3600
 G90 G54 G31 Z[#23-[#13/2]-#512] F1500
 (G54 Z skip: W-M/2-#512)
 IF[#5003GT[#23-[#13/2]-#512]]GOTO802

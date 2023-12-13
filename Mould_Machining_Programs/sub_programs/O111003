@@ -81,7 +81,7 @@ G91 G28 Z0
 G90 G53 G01 X[-#26+[#06/2]+#33] F5400
 (X: -Z+K/2 from table center)
 
-G90 G54 G31 Z[#5221-#33+[#20/2]+100] F3600
+G90 G54 G43 G31 Z[#5221-#33+[#20/2]+100] H50 F3600
 (Z skip: botGaisakuCmen +100.)
 G90 G31 Z[#5221-#33+[#02/2]+#01] F1500
 (G54 Z skip: botGaisakuCmen Z+A)

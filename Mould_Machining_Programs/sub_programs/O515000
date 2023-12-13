@@ -71,8 +71,8 @@ N004
 (Kokokara G00)
 
 G90 G00 G40 X#33 Y[#25/2+#601] F10800
-(G40: non-keiHosei)
-(G90 X: naikeiAC/2 -V +DCX/2)
+(G40: cancel keiHosei)
+(G90 X: naikeiAC/2 -V +DC/2)
 (G90 Y: naikeiBD/2 +DCX)
 
 G90 G01 G43 H#11 Z[#26+#06] S#19 F5400
@@ -104,7 +104,6 @@ G91 G03 X[#[2400+#11]] Y-[#[2400+#11]] I[#[2400+#11]] J0
 
 (Kokokara G00)
 
-G40 (cancel hosei kouguKei)
 M05 (shujiku kaiten off)
 M09 (coolant off)
 
