@@ -73,8 +73,8 @@
     boxsep=3mm,%
     valign=center,%
     halign=center,%
-    left=\z@,%
-    right=\z@,%
+    left=0pt,%
+    right=0pt,%
     colback=green!3!white,%
     colframe=black!25!white,%
     before={\centering},
@@ -83,11 +83,11 @@
 %  highlight math/.style={%
 %    enhanced,%
 %    arc=2pt,%
-%    boxrule=\z@,%
+%    boxrule=0pt,%
 %    frame hidden,%
 %    fuzzy halo=1pt with blue,%
-%    left=\z@,%
-%    right=\z@,%
+%    left=0pt,%
+%    right=0pt,%
 %    top=.4mm,%
 %    bottom=.4mm,%
 %    colback=yellow!40!white,%
@@ -99,7 +99,7 @@
     breakable,%
     enhanced jigsaw,%
     size=fbox,%
-    arc=\z@,%
+    arc=0pt,%
     middle=1mm,%
     colback=hosoku,%
     colframe=hosoku,%
@@ -237,4 +237,4 @@
 \newcommand{\DMname}{ディンプルマシニング}
 \newcommand{\MMname}{三菱マシニング}
 %%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%
-\def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{\z@}\textbf{#1}}{gray!25}\hskip.75zw}
+\def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{0pt}\textbf{#1}}{gray!25}\hskip6pt}
