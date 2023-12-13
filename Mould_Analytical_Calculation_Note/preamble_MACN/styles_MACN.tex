@@ -64,6 +64,11 @@
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\headrulewidth}{1.5pt}
 \renewcommand{\footrulewidth}{0pt}
+\newcommand{\commonfoot}{
+  \fancyfoot{}
+  \fancyfoot[LO]{\tiny\customdate} % footer left fields for main odd pages
+  \fancyfoot[RE]{\tiny\customdate} % footer right fields for main even pages
+}
 
 \fancypagestyle{front}{
   \fancyhead{} % clear all header fields
@@ -71,7 +76,7 @@
   \chead{\leftmark}
   \fancyhead[LE]{\thepage}
   \fancyhead[RE]{}
-  \fancyfoot{}
+  \commonfoot
 }
 \fancypagestyle{main}{
   \fancyhead[C]{} % header center fields for all main pages
@@ -79,20 +84,19 @@
   \fancyhead[RO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
   \fancyhead[RE]{\thechapter\hskip1zw\nouppercase\leftmark} % header right fields for all main even pages
   \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header left fields for all main even pages
-  \fancyfoot[LO]{\tiny\customdate} % footer left fields for main odd pages
-  \fancyfoot[RE]{\tiny\customdate} % footer right fields for main even pages
+  \commonfoot
 }
 \fancypagestyle{plainheadfront}{
   \fancyhead{}
   \fancyhead[RO]{\thepage}
   \fancyhead[LE]{\thepage}
-  \fancyfoot{}
+  \commonfoot
 }
 \fancypagestyle{plainhead}{
   \fancyhead{}
   \fancyhead[RO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
   \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
-  \fancyfoot{}
+  \commonfoot
 }
 \renewcommand*\frontmatter{%
   \if@twoside\cleardoubleoddpage\else\clearpage\fi
@@ -128,6 +132,8 @@
 \renewcommand*{\partformat}{\begin{gtfamily}第\hx\hx\hx\thepart\hx\hx\hx 部\end{gtfamily}}
 %%%%% STYLE OF CHAPTER %%%%%
 \renewcommand\chapterpagestyle{\if@frontmatter plainheadfront\else plainhead\fi}
+%%%%% STYLE OF SECTION %%%%%
+\setcounter{secnumdepth}{3}
 %%%%% STYLE OF PARAGRAPH %%%%%%%%%%%%%%%%%%%%%
 %for scrbook.cls
 \RedeclareSectionCommand[%
@@ -161,9 +167,14 @@
   tocnumwidth=6em%
 ]{subparagraph}
 %%%%% STYLE OF TABLE OF CONTENTS %%%%%
-\setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 \renewcommand\contentsname{目　次}
+%%%%% STYLE OF LIST OF FIGURES %%%%%
+\renewcommand\listfigurename{\hbox to 4zw{図目次}}
+%\setcounter{lofdepth}{2}
+\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3.2em}}
+%\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% STYLE OF LISTINGS %%%%%
 \lstset{%
 %  language=,
@@ -184,5 +195,14 @@
   comment=[l]{(},
   alsoletter={},
 }
+%%%%% STYLE OF BIBLATEX %%%%%
+\ExecuteBibliographyOptions{
+ sorting=nyt,
+ hyperref=true,
+ block=nbpar,
+ subentry=true,
+ citecounter=true,
+}
+\appto\bibfont{\footnotesize\setstretch{1.1}}
 
 \makeatother
