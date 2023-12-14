@@ -21,9 +21,9 @@
 \definecolor{sssec}  {rgb}{0.7333, 0.5, 0.7333}
 \definecolor{sora}   {rgb}{0.1451, 0.7216, 0.8039}
 \definecolor{sumire} {rgb}{0.3882, 0.2157, 0.5922}
-\definecolor{wwqqcc}{rgb}{0.4, 0, 0.8}
-\definecolor{qqzzqq}{rgb}{0, 0.6, 0}
-\definecolor{ffwwqq}{rgb}{1, 0.4, 0}
+\definecolor{wwqqcc} {rgb}{0.4, 0, 0.8}
+\definecolor{qqzzqq} {rgb}{0, 0.6, 0}
+\definecolor{ffwwqq} {rgb}{1, 0.4, 0}
 %%%%% NEWCOLORBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcounter{GlobalFootnote}% difine a counter Global Footnote
 %%%%% COLUMN %%%%%
@@ -37,137 +37,6 @@
 \newtcolorbox[auto counter, number within=chapter]{hosoku}[1][]{hosokubox, #1}
 %%%%% TWOCTABLE %%%%%
 \newtcolorbox[auto counter, number within=chapter]{twoCtable}[2][]{twoCtablebox, title={#2}, #1}
-%%%%% TCBSET %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tcbset{%
-  %%%%% COLUMNBOX STYLE %%%%%
-  Columnbox/.style={%
-    after title=\hfill\termblue{\Columnname~\thetcbcounter},%
-    fonttitle=\gtfamily\bfseries,%
-    breakable,%
-    enhanced jigsaw,%
-    left=.5ex,%
-    right=.5ex,%
-    bicolor,%
-    colbacklower=black!10!white,%
-    before upper={%
-      \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
-      \let\oldfootnote=\footnote% \oldfootnote=\footnote
-      \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% define \footnote to \footnote using counter GlobalFootnote
-      \renewcommand\thempfootnote{\arabic{mpfootnote}}% arabic footnote
-    },
-    after upper={%
-      \setcounter{footnote}{\value{GlobalFootnote}}% footnoteValue=GlobalFootnoteValue
-      \let\footnote=\oldfootnote% \footnote=\oldfootnote
-    },
-  },%
-  %%%%% FIGUREBOX STYLE %%%%%
-  Figurebox/.style={%
-    notitle,%
-    height=\textwidth,
-%    width=\textwidth,
-    center upper,%
-    center lower,%
-    arc=5pt,%
-    outer arc=2pt,%
-    boxrule=1pt,%
-    boxsep=3mm,%
-    valign=center,%
-    halign=center,%
-    left=0pt,%
-    right=0pt,%
-    colback=green!3!white,%
-    colframe=black!25!white,%
-    before={\centering},
-  },
-  %%%%% HIGHLIGHT MATH STYLE %%%%%
-%  highlight math/.style={%
-%    enhanced,%
-%    arc=2pt,%
-%    boxrule=0pt,%
-%    frame hidden,%
-%    fuzzy halo=1pt with blue,%
-%    left=0pt,%
-%    right=0pt,%
-%    top=.4mm,%
-%    bottom=.4mm,%
-%    colback=yellow!40!white,%
-%  },%
-  %%%%% HOSOKUBOX STYLE %%%%%
-  hosokubox/.style={%
-    title={\termblue{\hosokuname~\thetcbcounter}~},%
-    attach title to upper,%
-    breakable,%
-    enhanced jigsaw,%
-    size=fbox,%
-    arc=0pt,%
-    middle=1mm,%
-    colback=hosoku,%
-    colframe=hosoku,%
-    drop lifted shadow={blue!100!white!50!},%
-    skin first is subskin of={enhanced jigsaw}{no shadow},%
-    skin middle is subskin of={enhanced jigsaw}{no shadow},%
-    skin last is subskin of={enhanced jigsaw}{drop lifted shadow={blue!100!white!50!}},%
-    segmentation style={draw=black!50!white},%
-    after=\smallskip\noindent{\color{white}},%
-  },
-  %%%%% TWOCTABLEBOX STYLE %%%%%
-  twoCtablebox/.style={%
-    breakable,%
-    enhanced,%
-    fonttitle=\bfseries,%
-    fontupper=\small\sffamily,%
-    colframe=black!50!black,%
-    colbacktitle=blue!10!white,%
-    coltitle=black,%
-    top=0pt,%
-    bottom=0pt,%
-    left=0pt,%
-    right=0pt,%
-    before upper={%
-      \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
-      \let\oldfootnote=\footnote% \oldfootnote=\footnote
-      \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% define \footnote to \footnote using counter GlobalFootnote
-      \renewcommand\thempfootnote{\arabic{mpfootnote}}% arabic footnote
-      \renewcommand{\arraystretch}{1.2}% 行の高さを調整
-      \setlength{\LTpre}{-3pt}%
-      \setlength{\LTpost}{0pt}%
-      \setlength{\LTleft}{0pt}%
-      \setlength{\LTright}{0pt}%
-      \begin{longtable}{@{}c|l@{\extracolsep{\fill}}c}%
-    },%
-    after upper={%
-      \end{longtable}%
-      \setcounter{footnote}{\value{GlobalFootnote}}% footnoteValue=GlobalFootnoteValue
-      \let\footnote=\oldfootnote% \footnote=\oldfootnote
-    },
-  },
-}
-%%%%% TIKZSET %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tikzset{
-  %%%%% SECTIONFORMAT STYLE %%%%%
-%  sect/.style={signal, draw, text=white},
-%  section/.style={sect, fill=konpeki!100!, signal to=east, inner sep=3pt},
-%  subsection/.style={sect, fill=moegi!90!, signal to=nowhere, inner sep=3pt},
-%  subsubsection/.style={sect, fill=sssec!100!, signal to=nowhere, inner sep=3pt},
-  %%%%% TERMINAL STYLE %%%%%
-  terminal/.style={%
-    rectangle,%
-    minimum size=10pt,%
-    rounded corners=1.5mm,%
-    thin,%
-    draw=black!75,%
-    top color=white,%
-    font=\fontfamily{pplx},%
-    inner sep=3pt,%
-    inner xsep=3pt,%
-    text height=1ex,%
-    text depth=0pt,%
-  },
-  %%%%% BMATRIX STYLE %%%%%
-%  every left delimiter/.style={xshift=.5em},
-%  every right delimiter/.style={xshift=-.5em},
-%  bmatrix/.style={matrix of math nodes, left delimiter=[, right delimiter=],},
-}
 %%%%% OTHER TIKZ DEFINITION %%%%%%%%%%%%%%%%%%
 \tikzfading[name=fade ball, inner color=transparent!60, outer color=transparent!30]
 \def\sball#1{\tikz \shade [ball color=#1, path fading=fade ball] (0,0) circle (.7ex);}
@@ -205,8 +74,19 @@
 \DeclareRobustCommand{\pDiv}[1]{\pod{{\operator@font div}\mkern6mu#1}}
 \DeclareRobustCommand{\Div}[1]{\allowbreak\if@display\mkern18mu
   \else\mkern12mu\fi{\operator@font div}\,\,#1}
+%%%%% DECLARENEWLAYER %%%%%%%%%%%%%%%%%%%%
+\DeclareNewLayer[
+  foreground,
+  page,
+  contents={%
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[rotate=atan(297/210), scale=29, anchor=center, opacity=0.1, text=lightgray] at (current page.center)
+          {\sffamily\bfseries\scshape copy};%
+    \end{tikzpicture}%
+  }%
+]{WatermarkLayer}
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\Apart}{
+\newcommand{\Appendixpart}{
   \addpart*{第\hx\hx\hx\thepart\hx\hx\hx 部の補遺}
   \addcontentsline{toc}{part}{第\hx\hx\thepart\hx\hx 部の補遺}
 }

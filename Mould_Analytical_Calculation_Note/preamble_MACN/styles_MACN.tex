@@ -19,6 +19,29 @@
   top=15truemm,
   bottom=0truemm,
 }
+%%%%% HEYPERSETUP %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+%  pdfcreationdate=date,
+%  pdfcreator={upLaTeX with hyperref}, % creator for PDF subjct field
+  pdftitle={モールド関連 -主に幾何学的性質-}, % title for PDF subjct field
+  pdfsubject={Mould-Related - Mainly Geometric Properties}, % text for PDF subjct field
+  pdfauthor={Kurahashi Nobuaki},  % text for PDF Author field
+  pdfkeywords={mould, mold}, % keywords
+%  pdfproducer=producer, % dvipdfmx
+  linktocpage=false,   % (if it is true) make page number, not text, be link on TOC, LOF and LOT
+  pdfcenterwindow=false, % position the document window center of the screen
+  pdffitwindow=true,     % resize document window to fit document size
+  bookmarksnumbered=true,
+  bookmarksopen=true, %bookmarks open
+  pdfstartview={FitH}, % Fit, FitV, FitH, FitB
+  pdfpagemode=UseThumbs, % set default mode of PDF display
+  unicode=true,
+  pdfencoding=unicode,   % PDFDocEncoding or Unicode
+  colorlinks=true,     % color links
+  linkcolor=ai,      % color of links
+  urlcolor=ai,         % color of urls
+  citecolor=sora,      % color of citation links
+}
 %%%%% LINESPREAD %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \linespread{1.15}\selectfont
 %%%%% PARINDENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -48,7 +71,7 @@
 %\renewcommand{\sectionautorefname}{節\!} % section --> 節
 \renewcommand{\subsectionautorefname}{\sectionautorefname} % subsection --> section
 \renewcommand{\subsubsectionautorefname}{節} % subsubsection --> section
-\renewcommand{\appendixname}{補\hskip.5zw 遺} % appendix --> 補 遺
+%\renewcommand{\appendixname}{補\hskip0.5em 遺} % appendix --> 補 遺
 \renewcommand{\appendixautorefname}{補遺\!} % appendix --> 補遺
 \renewcommand{\figurename}{図}
 \renewcommand{\figureautorefname}{\figurename} % figure --> 図
@@ -58,7 +81,6 @@
 %\newcommand{\subfigureautorefname}{\figureautorefname} % subfigure --> figure
 %\renewcommand{\tableautorefname}{表}
 %\newcommand{\subtableautorefname}{\tableautorefname}
-\renewcommand\bibname{\hbox to 4.4zw{参考文献}}
 %%%%% HEADER AND FOOTER %%%%%
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
@@ -82,7 +104,7 @@
   \fancyhead[C]{} % header center fields for all main pages
   \fancyhead[LO]{\nouppercase\rightmark} % header left fields for all main odd pages
   \fancyhead[RO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
-  \fancyhead[RE]{\thechapter\hskip1zw\nouppercase\leftmark} % header right fields for all main even pages
+  \fancyhead[RE]{\thechapter.\hskip0.75em\nouppercase\leftmark} % header right fields for all main even pages
   \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header left fields for all main even pages
   \commonfoot
 }
@@ -110,18 +132,9 @@
   \if@openright\cleardoubleoddpage\else\clearpage\fi\@frontmatterfalse\@mainmatterfalse\@backmattertrue\pagestyle{front}
 }
 %%%%% WATERMARK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\DeclareNewLayer[
-  background,
-  textarea,
-  contents={%
-    \put(\LenToUnit{.5\paperwidth},\LenToUnit{-.5\paperheight}){%
-      \makebox[0pt][c]{\rotatebox{45}{%
-        \scalebox{10}{\textsf{\textbf{\textcolor{lightgray}{}}}}}}}%
-    }
-]{WatermarkLayer}
-%\AddLayersToPageStyle{@everystyle@}{WatermarkLayer}
+\AddLayersToPageStyle{@everystyle@}{WatermarkLayer}
 %%%%% SETLIST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlist[enumerate]{listparindent=\parindent, parsep=\z@, partopsep=\z@, topsep=3pt, itemsep=3pt}
+\setlist[enumerate]{listparindent=\parindent, parsep=0pt, partopsep=0pt, topsep=3pt, itemsep=3pt}
 %%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\setthesection}{\Alph{section}}
 %%%%% EQUATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -139,7 +152,7 @@
 \RedeclareSectionCommand[%
   style=section,%
   level=4,%
-  indent=\z@,%
+  indent=0pt,%
   beforeskip=3.25ex \@plus1ex \@minus.2ex,%
   afterskip=0.1ex \@plus.1ex \@minus.1ex,% -1em から変更
   tocindentfollows=subsubsection,%
@@ -150,7 +163,7 @@
 ]{paragraph}
 %for book.cls
 %\renewcommand\paragraph[1]{%
-%  \@startsection{paragraph}{\paragraphnumdepth}{\z@}%
+%  \@startsection{paragraph}{\paragraphnumdepth}{0pt}%
 %  {3.25ex \@plus1ex \@minus.2ex}% \@plus, \@minusは伸び縮みできるスペースの長さ
 %  {0.1ex\@plus.1ex \@minus.1ex}% ここが正だと改行されて、値だけ垂直スペースが入る
 %  {\raggedsection\normalfont\sectfont\gtfamily\nobreak\size@paragraph\sball{blue}~}{#1}\noindent
@@ -159,7 +172,7 @@
 \RedeclareSectionCommand[%
   style=section,%
   level=5,%
-  indent=\z@,% \scr@parindent から変更
+  indent=0pt,% \scr@parindent から変更
   beforeskip=0.5ex \@plus1ex \@minus .2ex,% 3.25ex \@plus1ex \@minus .2ex から変更
   afterskip=0.1ex \@plus.1ex \@minus.1ex,% -1em から変更
   tocstyle=section,%
@@ -170,7 +183,7 @@
 \setcounter{tocdepth}{3}
 \renewcommand\contentsname{目　次}
 %%%%% STYLE OF LIST OF FIGURES %%%%%
-\renewcommand\listfigurename{\hbox to 4zw{図目次}}
+\renewcommand\listfigurename{\texorpdfstring{\hbox to 3em{図目次}}{図目次}}
 %\setcounter{lofdepth}{2}
 \renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3.2em}}
 %\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
@@ -179,7 +192,8 @@
 \lstset{%
 %  language=,
   numbers=left,%
-  numbersep=8pt,%
+  numbersep=7pt,%
+  numberstyle=\ttfamily\footnotesize,%
   breaklines=true,%
   frame=single,%
   columns=fixed,%
@@ -190,12 +204,12 @@
   otherkeywords={GOTO, EQ, NE, LT, LE, GT, GE, DO, WHI, END},
   basicstyle=\ttfamily,%
   keywordstyle=\fontfamily{pcr}\selectfont\bfseries,%
-  commentstyle=\color{black!60!green!100}\slshape,
-  numberstyle=\ttfamily,%
+  commentstyle=\small\color{black!60!green!100}\slshape,
   comment=[l]{(},
   alsoletter={},
 }
 %%%%% STYLE OF BIBLATEX %%%%%
+\renewcommand{\bibname}{\texorpdfstring{\hbox to 4.1em{参考文献}}{参考文献}}
 \ExecuteBibliographyOptions{
  sorting=nyt,
  hyperref=true,
@@ -204,5 +218,136 @@
  citecounter=true,
 }
 \appto\bibfont{\footnotesize\setstretch{1.1}}
+%%%%% TCBSET %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tcbset{%
+  %%%%% COLUMNBOX STYLE %%%%%
+  Columnbox/.style={%
+    after title=\hfill\termblue{\Columnname~\thetcbcounter},%
+    fonttitle=\gtfamily\bfseries,%
+    breakable,%
+    enhanced jigsaw,%
+    left=.5ex,%
+    right=.5ex,%
+    bicolor,%
+    colbacklower=black!10!white,%
+    before upper={%
+      \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
+      \let\oldfootnote=\footnote% \oldfootnote=\footnote
+      \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% define \footnote to \footnote using counter GlobalFootnote
+      \renewcommand\thempfootnote{\arabic{mpfootnote}}% arabic footnote
+    },
+    after upper={%
+      \setcounter{footnote}{\value{GlobalFootnote}}% footnoteValue=GlobalFootnoteValue
+      \let\footnote=\oldfootnote% \footnote=\oldfootnote
+    },
+  },%
+  %%%%% FIGUREBOX STYLE %%%%%
+  Figurebox/.style={%
+    notitle,%
+    height=\textwidth,
+%    width=\textwidth,
+    center upper,%
+    center lower,%
+    arc=5pt,%
+    outer arc=2pt,%
+    boxrule=1pt,%
+    boxsep=3mm,%
+    valign=center,%
+    halign=center,%
+    left=0pt,%
+    right=0pt,%
+    colback=green!3!white,%
+    colframe=black!25!white,%
+    before={\centering},
+  },
+  %%%%% HIGHLIGHT MATH STYLE %%%%%
+%  highlight math/.style={%
+%    enhanced,%
+%    arc=2pt,%
+%    boxrule=0pt,%
+%    frame hidden,%
+%    fuzzy halo=1pt with blue,%
+%    left=0pt,%
+%    right=0pt,%
+%    top=.4mm,%
+%    bottom=.4mm,%
+%    colback=yellow!40!white,%
+%  },%
+  %%%%% HOSOKUBOX STYLE %%%%%
+  hosokubox/.style={%
+    title={\termblue{\hosokuname~\thetcbcounter}~},%
+    attach title to upper,%
+    breakable,%
+    enhanced jigsaw,%
+    size=fbox,%
+    arc=0pt,%
+    middle=1mm,%
+    colback=hosoku,%
+    colframe=hosoku,%
+    drop lifted shadow={blue!100!white!50!},%
+    skin first is subskin of={enhanced jigsaw}{no shadow},%
+    skin middle is subskin of={enhanced jigsaw}{no shadow},%
+    skin last is subskin of={enhanced jigsaw}{drop lifted shadow={blue!100!white!50!}},%
+    segmentation style={draw=black!50!white},%
+    after=\smallskip\noindent{\color{white}},%
+  },
+  %%%%% TWOCTABLEBOX STYLE %%%%%
+  twoCtablebox/.style={%
+    breakable,%
+    enhanced,%
+    fonttitle=\bfseries,%
+    fontupper=\small\sffamily,%
+    colframe=black!50!black,%
+    colbacktitle=blue!10!white,%
+    coltitle=black,%
+    top=0pt,%
+    bottom=0pt,%
+    left=0pt,%
+    right=0pt,%
+    before upper={%
+      \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
+      \let\oldfootnote=\footnote% \oldfootnote=\footnote
+      \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% define \footnote to \footnote using counter GlobalFootnote
+      \renewcommand\thempfootnote{\arabic{mpfootnote}}% arabic footnote
+      \renewcommand{\arraystretch}{1.2}% 行の高さを調整
+      \setlength{\LTpre}{-3pt}%
+      \setlength{\LTpost}{0pt}%
+      \setlength{\LTleft}{0pt}%
+      \setlength{\LTright}{0pt}%
+      \begin{longtable}{@{}c|l@{\extracolsep{\fill}}c}%
+    },%
+    after upper={%
+      \end{longtable}%
+      \setcounter{footnote}{\value{GlobalFootnote}}% footnoteValue=GlobalFootnoteValue
+      \let\footnote=\oldfootnote% \footnote=\oldfootnote
+    },
+  },
+}
+%%%%% TIKZSET %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tikzset{
+  %%%%% SECTIONFORMAT STYLE %%%%%
+%  sect/.style={signal, draw, text=white},
+%  section/.style={sect, fill=konpeki!100!, signal to=east, inner sep=3pt},
+%  subsection/.style={sect, fill=moegi!90!, signal to=nowhere, inner sep=3pt},
+%  subsubsection/.style={sect, fill=sssec!100!, signal to=nowhere, inner sep=3pt},
+  %%%%% TERMINAL STYLE %%%%%
+  terminal/.style={%
+    rectangle,%
+    minimum size=10pt,%
+    rounded corners=1.5mm,%
+    thin,%
+    draw=black!75,%
+    top color=white,%
+    font=\fontfamily{pplx},%
+    inner sep=3pt,%
+    inner xsep=3pt,%
+    text height=1ex,%
+    text depth=0pt,%
+  },
+  %%%%% BMATRIX STYLE %%%%%
+%  every left delimiter/.style={xshift=.5em},
+%  every right delimiter/.style={xshift=-.5em},
+%  bmatrix/.style={matrix of math nodes, left delimiter=[, right delimiter=],},
+}
 
 \makeatother
