@@ -104,7 +104,7 @@
   \fancyhead[C]{} % header center fields for all main pages
   \fancyhead[LO]{\nouppercase\rightmark} % header left fields for all main odd pages
   \fancyhead[RO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
-  \fancyhead[RE]{\thechapter.\hskip0.75em\nouppercase\leftmark} % header right fields for all main even pages
+  \fancyhead[RE]{{\sffamily\bfseries\thechapter.\hskip0.75em\nouppercase\leftmark}} % header right fields for all main even pages
   \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header left fields for all main even pages
   \commonfoot
 }
@@ -201,10 +201,10 @@
   breakindent=3pt,%
   postbreak=\mbox{\textcolor{blue}{$\hookrightarrow$}\,},%
   keywords={IF, SIN, COS, SQRT, FIX, FUP, ABS},
-  otherkeywords={GOTO, EQ, NE, LT, LE, GT, GE, DO, WHI, END},
+  otherkeywords={GOTO, EQ, GE, WHILE},
   basicstyle=\ttfamily,%
   keywordstyle=\fontfamily{pcr}\selectfont\bfseries,%
-  commentstyle=\small\color{black!60!green!100}\slshape,
+  commentstyle=\footnotesize\color{black!60!green!100}\slshape,
   comment=[l]{(},
   alsoletter={},
 }
@@ -219,7 +219,11 @@
 }
 \appto\bibfont{\footnotesize\setstretch{1.1}}
 %%%%% TCBSET %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{myheadercolor}{rgb}{0.68, 0.85, 0.90}
 \tcbset{%
+  %%%%% COLUMNBOX STYLE %%%%%
+  Tabularbox/.style={%
+  },%
   %%%%% COLUMNBOX STYLE %%%%%
   Columnbox/.style={%
     after title=\hfill\termblue{\Columnname~\thetcbcounter},%
