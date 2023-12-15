@@ -63,8 +63,24 @@
 \makesavenoteenv{longtable}
 %%%%% DISPLAYBREAK %%%%%%%%%%%%%%%%%%%%%%%%%
 \allowdisplaybreaks
-%%%%% CAPTION WIDTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionsetup{width=.8\textwidth}
+%%%%% CAPTION STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup[figure]{%
+  width=.8\textwidth,
+  labelfont={bf, sf},
+  font={small},
+}
+\captionsetup[lstlisting]{
+  labelfont={bf, sf},
+  font={bf, Large, sf},
+  justification=raggedright,
+  singlelinecheck=false,
+  aboveskip=0pt,
+  belowskip=0pt,
+}
+\AtBeginDocument{
+  \counterwithout{lstlisting}{chapter}
+  \renewcommand{\thelstlisting}{\thechapter.\ifnum\value{lstlisting}<10 0\fi\arabic{lstlisting}.}
+}
 %%%%% NAME, AUTOREFNAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\renewcommand{\partautorefname}{part}  % part --> part
 \renewcommand{\chapterautorefname}{章}  % chapter --> 章
@@ -75,6 +91,7 @@
 \renewcommand{\appendixautorefname}{補遺\!} % appendix --> 補遺
 \renewcommand{\figurename}{図}
 \renewcommand{\figureautorefname}{\figurename} % figure --> 図
+\renewcommand{\lstlistingname}{Prg.}
 \renewcommand{\footnoteautorefname}{脚注}
 \newcommand{\tcb@cnt@hosokuboxautorefname}{補足}
 %\newcommand{\tcb@cnt@Columnautorefname}{Column}
@@ -185,28 +202,58 @@
 %%%%% STYLE OF LIST OF FIGURES %%%%%
 \renewcommand\listfigurename{\texorpdfstring{\hbox to 3em{図目次}}{図目次}}
 %\setcounter{lofdepth}{2}
-\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3.2em}}
+%\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3.2em}}
 %\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% STYLE OF LISTINGS %%%%%
-\lstset{%
-%  language=,
+\renewcommand*\l@lstlisting{\@dottedtocline{1}{1.5em}{3.2em}}
+\renewcommand{\lstlistlistingname}{Programs}
+\lstdefinelanguage{GcodeBasic}{
+  sensitive=true,%
+  basicstyle=\small\ttfamily\linespread{1}\selectfont,%
   numbers=left,%
-  numbersep=7pt,%
+  numbersep=6pt,%
   numberstyle=\ttfamily\footnotesize,%
   breaklines=true,%
-  frame=single,%
-  columns=fixed,%
-  basewidth=0.54em,%
   breakindent=3pt,%
   postbreak=\mbox{\textcolor{blue}{$\hookrightarrow$}\,},%
-  keywords={IF, SIN, COS, SQRT, FIX, FUP, ABS},
-  otherkeywords={GOTO, EQ, GE, WHILE},
-  basicstyle=\ttfamily,%
-  keywordstyle=\fontfamily{pcr}\selectfont\bfseries,%
-  commentstyle=\footnotesize\color{black!60!green!100}\slshape,
-  comment=[l]{(},
-  alsoletter={},
+  frame=single,%
+  columns=fixed,%
+  basewidth=0.53em,%
+  lineskip=-1pt,
+  comment=[l]{(},%
+  commentstyle=\footnotesize\color{black!60!green!100}\slshape,%
+  stringstyle={},%
+  alsoletter={},%
+  keywords={},%
+  keywordstyle=\bfseries,%
+}
+\lstdefinestyle{Gcode}{%
+  language=GcodeBasic,
+  emph={G90, G91},
+  emphstyle={\bfseries\color{red}},
+  emph={[2]G53, G54, G55, G56, G57},
+  emphstyle={[2]\bfseries\color{blue}},
+  emph={[3]G40, G41, G42, G43, G44},
+  emphstyle={[3]\bfseries\color{orange}},
+  emph={[4]G00, G01, G02, G03, G31},
+  emphstyle={[4]\bfseries\color{magenta}},
+  emph={[5]G28, G30},
+  emphstyle={[5]\bfseries\color{violet}},
+  emph={[6]G04, G65},
+  emphstyle={[6]\bfseries\color{cyan}},
+  emph={[11]M00, M10, M11, M99, M117},
+  emphstyle={[11]\fontfamily{pcr}\bfseries\color{yellow!100!green!80!black!100!}},
+  nolol,
+}
+\lstdefinestyle{Gcode-more}{
+  style=Gcode,
+  morekeywords={[20]IF, GOTO, WHILE},%
+  keywordstyle={[20]\fontfamily{pcr}\selectfont\bfseries},%
+  emph={[22]SIN, COS, SQRT, FIX, FUP, ABS},%
+  emphstyle={[22]\fontfamily{pcr}\selectfont\bfseries},%
+  emph={[31]P910001, P910002},%
+  emphstyle={[31]\bfseries\color{cyan}},%
 }
 %%%%% STYLE OF BIBLATEX %%%%%
 \renewcommand{\bibname}{\texorpdfstring{\hbox to 4.1em{参考文献}}{参考文献}}
