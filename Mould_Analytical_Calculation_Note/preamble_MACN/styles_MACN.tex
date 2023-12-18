@@ -28,7 +28,8 @@
   pdfauthor={Kurahashi Nobuaki},  % text for PDF Author field
   pdfkeywords={mould, mold}, % keywords
 %  pdfproducer=producer, % dvipdfmx
-  linktocpage=false,   % (if it is true) make page number, not text, be link on TOC, LOF and LOT
+  linktoc=all,
+%  linktocpage=false,   % (if it is true) make page number, not text, be link on TOC, LOF and LOT
   pdfcenterwindow=false, % position the document window center of the screen
   pdffitwindow=true,     % resize document window to fit document size
   bookmarksnumbered=true,
@@ -63,35 +64,7 @@
 \makesavenoteenv{longtable}
 %%%%% DISPLAYBREAK %%%%%%%%%%%%%%%%%%%%%%%%%
 \allowdisplaybreaks
-%%%%% CAPTION STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionsetup[figure]{%
-  width=.8\textwidth,
-  labelfont={bf, sf},
-  font={small},
-}
-\captionsetup[lstlisting]{
-  labelfont={bf, sf},
-  font={bf, Large, sf},
-  justification=raggedright,
-  singlelinecheck=false,
-  aboveskip=0pt,
-  belowskip=0pt,
-}
-\AtBeginDocument{
-  \counterwithout{lstlisting}{chapter}
-  \renewcommand{\thelstlisting}{\thechapter.\ifnum\value{lstlisting}<10 0\fi\arabic{lstlisting}.}
-}
 %%%%% NAME, AUTOREFNAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\renewcommand{\partautorefname}{part}  % part --> part
-\renewcommand{\chapterautorefname}{章}  % chapter --> 章
-%\renewcommand{\sectionautorefname}{節\!} % section --> 節
-\renewcommand{\subsectionautorefname}{\sectionautorefname} % subsection --> section
-\renewcommand{\subsubsectionautorefname}{節} % subsubsection --> section
-%\renewcommand{\appendixname}{補\hskip0.5em 遺} % appendix --> 補 遺
-\renewcommand{\appendixautorefname}{補遺\!} % appendix --> 補遺
-\renewcommand{\figurename}{図}
-\renewcommand{\figureautorefname}{\figurename} % figure --> 図
-\renewcommand{\lstlistingname}{Prg.}
 \renewcommand{\footnoteautorefname}{脚注}
 \newcommand{\tcb@cnt@hosokuboxautorefname}{補足}
 %\newcommand{\tcb@cnt@Columnautorefname}{Column}
@@ -112,7 +85,7 @@
 \fancypagestyle{front}{
   \fancyhead{} % clear all header fields
   \fancyhead[RO]{\thepage}
-  \chead{\leftmark}
+  \chead{\small\leftmark}
   \fancyhead[LE]{\thepage}
   \fancyhead[RE]{}
   \commonfoot
@@ -121,8 +94,8 @@
   \fancyhead[C]{} % header center fields for all main pages
   \fancyhead[LO]{\nouppercase\rightmark} % header left fields for all main odd pages
   \fancyhead[RO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
-  \fancyhead[RE]{{\sffamily\bfseries\thechapter.\hskip0.75em\nouppercase\leftmark}} % header right fields for all main even pages
-  \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header left fields for all main even pages
+  \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
+  \fancyhead[RE]{\hyperref[\ifx\@chapapp\appendixname app:\else chap:\fi\thechapter]{{\sffamily\bfseries\thechapter.\hskip0.75em\nouppercase\leftmark}}} % header right fields for all main even pages
   \commonfoot
 }
 \fancypagestyle{plainheadfront}{
@@ -152,18 +125,152 @@
 \AddLayersToPageStyle{@everystyle@}{WatermarkLayer}
 %%%%% SETLIST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlist[enumerate]{listparindent=\parindent, parsep=0pt, partopsep=0pt, topsep=3pt, itemsep=3pt}
-%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\setthesection}{\Alph{section}}
 %%%%% EQUATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\theequation}{\thesection.\arabic{equation}}
 \@addtoreset{equation}{section}
+%%%%% CAPTION STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup[figure]{%
+  width=.8\textwidth,
+  format=hang,
+  labelfont={bf, sf},
+  labelsep={colon},
+  font={small},
+}
+\captionsetup[lstlisting]{
+  justification=raggedright,
+  singlelinecheck=false,
+  aboveskip=0pt,
+  belowskip=0pt,
+  labelformat={empty},
+  labelfont={bf, sf},
+  labelsep={space},
+  font={bf, large, sf},
+  hypcap=false,
+}
+%%%%% STYLE OF TABLE OF CONTENTS %%%%%
+\setcounter{tocdepth}{3}
+\renewcommand\contentsname{\texorpdfstring{\hbox to 2em{目次}}{目次}}
+%%%%% STYLE OF LIST OF FIGURES %%%%%
+\renewcommand{\figurename}{図}
+\renewcommand{\figureautorefname}{\figurename} % figure --> 図
+\renewcommand\listfigurename{\texorpdfstring{\hbox to 3em{図目次}}{図目次}}
+%\setcounter{lofdepth}{2}
+%\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3.2em}}
+%\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% STYLE OF LISTINGS %%%%%
+\renewcommand{\lstlistlistingname}{プログラム 目次}
+\renewcommand{\lstlistingname}{{\scshape Prg: }}
+\AtBeginDocument{
+%  \counterwithout{lstlisting}{chapter}
+  \renewcommand{\thelstlisting}{}
+}
+\renewcommand*\l@lstlisting{\@dottedtocline{1}{0.6em}{3.2em}}
+\lstdefinelanguage{GcodeBasic}{
+  sensitive=true,%
+  basicstyle=\small\ttfamily\linespread{1}\selectfont,%
+  numbers=left,%
+  numbersep=6pt,%
+  numberstyle=\ttfamily\scriptsize\color{black!75!},%
+  breaklines=true,%
+  breakindent=3pt,%
+  postbreak=\mbox{\textcolor{blue}{$\hookrightarrow$}\,},%
+  frame=single,%
+  columns=fixed,%
+  basewidth=0.53em,%
+  lineskip=-1.2pt,
+  comment=[l]{(},%
+  commentstyle=\footnotesize\color{black!60!green!100}\slshape,%
+  stringstyle={},%
+  alsoletter={},%
+  keywords={},%
+  keywordstyle=\bfseries,%
+}
+%\lstdefinestyle{Gcode}{%
+%  language=GcodeBasic,
+%  nolol,
+%}
+\lstdefinestyle{Gcode-more}{
+  language=GcodeBasic,
+  nolol,
+  morekeywords={[20]IF, GOTO, THEN, WHILE, DO1, DO2, END1, END2},%
+  keywordstyle={[20]\fontfamily{pcr}\selectfont\bfseries},%
+  emph={G90, G91},
+  emphstyle={\bfseries\color{red}},
+  emph={[2]G53, G54, G55, G56, G57},
+  emphstyle={[2]\bfseries\color{blue}},
+  emph={[3]G40, G41, G42, G43, G44},
+  emphstyle={[3]\bfseries\color{orange}},
+  emph={[4]G00, G01, G02, G03, G31},
+  emphstyle={[4]\bfseries\color{magenta}},
+  emph={[5]G28, G30},
+  emphstyle={[5]\bfseries\color{violet}},
+  emph={[6]G04, G13, G49, G58, G65, G80},
+  emphstyle={[6]\bfseries\color{cyan}},
+  emph={[11]M00, M01, M04, M05, M06, M08, M09,
+        M10, M11, M19,
+        M30, M32, M33,
+        M48, M49,
+        M60, M61, M62, M63,
+        M71, M72, M73, M74, M78, M79,
+        M98, M99,
+        M117, M214, M262},
+  emphstyle={[11]\fontfamily{pcr}\bfseries\color{yellow!100!green!80!black!100!}},
+  emph={[22]SIN, COS, SQRT, FIX, FUP, ROUND, ABS},%
+  emphstyle={[22]\fontfamily{pcr}\selectfont\bfseries},%
+  emph={[31]P910001, P910002, P220001, P220002, P230001, P230002, P630001, P630002},%
+  emphstyle={[31]\bfseries\color{cyan}},%
+}
+\lstdefinestyle{Gcode-bundle}{
+  language=GcodeBasic,
+  nolol,
+  morekeywords={[120]WHILE, THEN, DO1, DO2, END1, END2},%
+  keywordstyle={[120]\fontfamily{pcr}\selectfont\bfseries},%
+  emph={[102]},
+  emphstyle={[102]\bfseries\color{blue}},
+  emph={[111]M10, M11, M19, M30, M32, M33, M48, M49,  M61, M62, M74, M78, M262},
+  emphstyle={[111]\fontfamily{pcr}\bfseries\color{yellow!100!green!80!black!100!}},
+  emph={[122]SIN, COS, SQRT, FIX, FUP, ABS},%
+  emphstyle={[122]\fontfamily{pcr}\selectfont\bfseries},%
+}
+\lstdefinestyle{Gcode-ren}{
+  language=GcodeBasic,
+  nolol,
+  morekeywords={[220]IF, WHILE, THEN, DO1, DO2, END1, END2},%
+  keywordstyle={[220]\fontfamily{pcr}\selectfont\bfseries},%
+  emph={[202]},
+  emphstyle={[202]\bfseries\color{blue}},
+  emph={[211]M0, M5, M19, M32, M33, M99, M214},
+  emphstyle={[211]\fontfamily{pcr}\bfseries\color{yellow!100!green!80!black!100!}},
+  emph={[222]SIN, COS, TAN, ATAN, SQRT, FIX, FUP, ROUND, DPRNT},%
+  emphstyle={[222]\fontfamily{pcr}\selectfont\bfseries},%
+}
+%%%%% STYLE OF BIBLATEX %%%%%
+\renewcommand{\bibname}{\texorpdfstring{\hbox to 4.1em{参考文献}}{参考文献}}
+\ExecuteBibliographyOptions{
+ sorting=nyt,
+ hyperref=true,
+ block=nbpar,
+ subentry=true,
+ citecounter=true,
+}
+\appto\bibfont{\footnotesize\setstretch{1.1}}
 %%%%% STYLE OF PART %%%%%
+%\renewcommand{\partautorefname}{part}  % part --> part
 \renewcommand\partpagestyle{empty}
 \renewcommand*{\partformat}{\begin{gtfamily}第\hx\hx\hx\thepart\hx\hx\hx 部\end{gtfamily}}
 %%%%% STYLE OF CHAPTER %%%%%
+\renewcommand{\chapterautorefname}{章}  % chapter --> 章
 \renewcommand\chapterpagestyle{\if@frontmatter plainheadfront\else plainhead\fi}
+%%%%% STYLE OF APPENDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\setthesection}{\Alph{section}}
+%\renewcommand{\appendixname}{補\hskip0.5em 遺} % appendix --> 補 遺
+\renewcommand{\appendixautorefname}{補遺\!} % appendix --> 補遺
 %%%%% STYLE OF SECTION %%%%%
+%\renewcommand{\sectionautorefname}{節\!} % section --> 節
 \setcounter{secnumdepth}{3}
+\renewcommand{\subsectionautorefname}{\sectionautorefname} % subsection --> section
+\renewcommand{\subsubsectionautorefname}{\sectionautorefname} % subsubsection --> section
 %%%%% STYLE OF PARAGRAPH %%%%%%%%%%%%%%%%%%%%%
 %for scrbook.cls
 \RedeclareSectionCommand[%
@@ -196,75 +303,6 @@
   tocindent=12em,%
   tocnumwidth=6em%
 ]{subparagraph}
-%%%%% STYLE OF TABLE OF CONTENTS %%%%%
-\setcounter{tocdepth}{3}
-\renewcommand\contentsname{目　次}
-%%%%% STYLE OF LIST OF FIGURES %%%%%
-\renewcommand\listfigurename{\texorpdfstring{\hbox to 3em{図目次}}{図目次}}
-%\setcounter{lofdepth}{2}
-%\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3.2em}}
-%\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% STYLE OF LISTINGS %%%%%
-\renewcommand*\l@lstlisting{\@dottedtocline{1}{1.5em}{3.2em}}
-\renewcommand{\lstlistlistingname}{Programs}
-\lstdefinelanguage{GcodeBasic}{
-  sensitive=true,%
-  basicstyle=\small\ttfamily\linespread{1}\selectfont,%
-  numbers=left,%
-  numbersep=6pt,%
-  numberstyle=\ttfamily\footnotesize,%
-  breaklines=true,%
-  breakindent=3pt,%
-  postbreak=\mbox{\textcolor{blue}{$\hookrightarrow$}\,},%
-  frame=single,%
-  columns=fixed,%
-  basewidth=0.53em,%
-  lineskip=-1pt,
-  comment=[l]{(},%
-  commentstyle=\footnotesize\color{black!60!green!100}\slshape,%
-  stringstyle={},%
-  alsoletter={},%
-  keywords={},%
-  keywordstyle=\bfseries,%
-}
-\lstdefinestyle{Gcode}{%
-  language=GcodeBasic,
-  emph={G90, G91},
-  emphstyle={\bfseries\color{red}},
-  emph={[2]G53, G54, G55, G56, G57},
-  emphstyle={[2]\bfseries\color{blue}},
-  emph={[3]G40, G41, G42, G43, G44},
-  emphstyle={[3]\bfseries\color{orange}},
-  emph={[4]G00, G01, G02, G03, G31},
-  emphstyle={[4]\bfseries\color{magenta}},
-  emph={[5]G28, G30},
-  emphstyle={[5]\bfseries\color{violet}},
-  emph={[6]G04, G65},
-  emphstyle={[6]\bfseries\color{cyan}},
-  emph={[11]M00, M10, M11, M99, M117},
-  emphstyle={[11]\fontfamily{pcr}\bfseries\color{yellow!100!green!80!black!100!}},
-  nolol,
-}
-\lstdefinestyle{Gcode-more}{
-  style=Gcode,
-  morekeywords={[20]IF, GOTO, WHILE},%
-  keywordstyle={[20]\fontfamily{pcr}\selectfont\bfseries},%
-  emph={[22]SIN, COS, SQRT, FIX, FUP, ABS},%
-  emphstyle={[22]\fontfamily{pcr}\selectfont\bfseries},%
-  emph={[31]P910001, P910002},%
-  emphstyle={[31]\bfseries\color{cyan}},%
-}
-%%%%% STYLE OF BIBLATEX %%%%%
-\renewcommand{\bibname}{\texorpdfstring{\hbox to 4.1em{参考文献}}{参考文献}}
-\ExecuteBibliographyOptions{
- sorting=nyt,
- hyperref=true,
- block=nbpar,
- subentry=true,
- citecounter=true,
-}
-\appto\bibfont{\footnotesize\setstretch{1.1}}
 %%%%% TCBSET %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{myheadercolor}{rgb}{0.68, 0.85, 0.90}
 \tcbset{%
