@@ -56,7 +56,8 @@
   \part*{第\hx\hx\thepart\hx\hx 部の補遺}
   \addcontentsline{toc}{part}{第\hx\thepart\hx 部の補遺}
 }
-%%%%% LABEL FOR CHAPTER OR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% AUTO LABELING %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR CHAPTER OR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\modHeadchapter}[2][]{%
   \ifx\relax#1\relax
     \chapter{#2}%
@@ -68,6 +69,15 @@
   \else
     \label{chap:\thechapter}%
   \fi
+}
+%%%%% FOR SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\modHeadsection}[2][]{%
+  \ifx\relax#1\relax
+    \section{#2}%
+  \else%
+    \section[#1]{#2}%
+  \fi
+  \label{sec:\thesection}%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% DECLARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -174,3 +184,4 @@
 \newcommand{\linkSQLiteConsortium}{\href{https://www.sqlite.org/consortium.html}{SQLite Consortium}}
 %%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%
 \def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{0pt}\textbf{#1}}{gray!25}\hskip6pt}
+\def\pcrNum{{\fontfamily{pcr}\selectfont\#}}
