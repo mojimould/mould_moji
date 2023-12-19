@@ -813,7 +813,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \begin{align}
   \label{eq:tableTRc}
   R_\mathrm c\cos\alpha_\mathrm c-\varDelta'\cos\theta
-  = \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\left(\varDelta+\sqrt{R_i'^2-\bar l^2}\right)\cos\theta~.
+  = \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\left(\varDelta+\sqrt{R_i'^2-\bar l^2}\right)\!\cos\theta~.
 \end{align}
 
 
@@ -840,10 +840,10 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \subsubsection{スペーサを用いた場合のT\texorpdfstring{$_\mathrm c'$}{c'}}
 同様にして、外面A・C側のトップ端点T$_\mathrm o'$, T$_\mathrm i'$の、テーブル中心Pを原点とした場合の$X$座標はそれぞれ、
 \begin{align*}
-  \text{C面側端点：}&
+  \text{C側端点：}&
   -\varDelta+\sqrt{R_\mathrm i^2-f_\mathrm T^2}+\frac\delta2
   -\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}\ ,\\
-  \text{A面側端点：}&
+  \text{A側端点：}&
   -\varDelta+\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\frac\delta2
   -\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}\ .
 \end{align*}
@@ -915,7 +915,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 テーブルを傾けた後のボトム端面における湾曲中心の位置B$_{R_\mathrm c}'$と、テーブル中心Pとの$X$方向の差は、トップ側の場合と同様に考えて
 \begin{align*}
 %  \label{eq:tableBRc}
-  \left(\varDelta+\sqrt{R_i'^2-\bar l^2}\right)\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}~.
+  \left(\varDelta+\sqrt{R_i'^2-\bar l^2}\right)\!\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}~.
 \end{align*}
 
 
@@ -941,9 +941,9 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \subsubsection{スペーサを用いた場合のB\texorpdfstring{$_\mathrm c'$}{c'}}
 外面A・C面側のボトム端点B$_{R_\mathrm o}'$, B$_{R_\mathrm i}'$の、テーブル中心Pを原点とした場合の$X$座標はそれぞれ、
 \begin{align*}
-  \text{C面側端点：}&~~
+  \text{C側端点：}&~~
   \varDelta-\sqrt{R_\mathrm i^2-f_\mathrm B^2}-\frac\delta2+\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}\ ,\\
-  \text{A面側端点：}&~~
+  \text{A側端点：}&~~
   \varDelta-\sqrt{R_\mathrm o^2-f_\mathrm B^2}-\frac\delta2+\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l^2}}\ .
 \end{align*}
 したがって、ボトム端における（AC外径の）中点B$_\mathrm c'$の$X$座標は、
@@ -962,9 +962,9 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \subsubsection{テーブルを傾けた場合のB\texorpdfstring{$_\mathrm c'$}{c'}}
 外面A・C面側のボトム端点B$_{R_\mathrm o}'$, B$_{R_\mathrm i}'$の、テーブル中心Pを原点とした場合の$X$座標はそれぞれ、
 \begin{align*}
-  \text{C面側端点：}&~~
+  \text{C側端点：}&~~
   \varDelta'\cos\theta-\sqrt{R_\mathrm i^2-f_\mathrm B^2}\ ,\\
-  \text{A面側端点：}&~~
+  \text{A側端点：}&~~
   \varDelta'\cos\theta-\sqrt{R_\mathrm o^2-f_\mathrm B^2}\ .
 \end{align*}
 したがって、ボトム端における（AC外径の）中点B$_\mathrm c'$の$X$座標は、
@@ -2367,35 +2367,42 @@ $T_x$, $T_y$ ($T_x \geqq 0$)を機内で測定する際は、C面が工具側に
 \subsection{外削前に測定をする場合}
 外削をせずに通り芯($X$)の測定を行うことはない。
 ただ、プログラムの試運転などで動きをみるといった可能性はありうるので、外削を行っていない状態で測定する場合についても述べておく。
-なお、ここではボトムの外削が基準の場合を考える。
-このとき、測定するC側外面の位置は、
+なお、ここでは振分けの調整にスペーサ用いた場合、かつボトムの外削が基準の場合を考える。
+このとき、測定するC側外面の位置は、\pageeqref{eq:tableBc}, \pageeqref{eq:tableTc}より、
 \begin{align*}
-  \text{ボトム側：}&\quad
+  \text{ボトム側：}&~~
   \left[
     \begin{array}{c}
       \displaystyle -f_\mathrm B'+\frac{h_\mathrm B}2\\[5pt]
       \mathcal G_{\mathrm By}\\[3pt]
       \displaystyle
-      G_{\mathrm Bx}
-      +\sqrt{R_\mathrm c^2-f_\mathrm B'^2}
-      -\sqrt{R_\mathrm c^2-\left(f_\mathrm B'-\frac{h_\mathrm B}2\right)^2}
-      +\frac{W_\mathrm B}2
+      \varDelta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
+      +\sqrt{R_\mathrm c^2-f_\mathrm B^2}
+      -\sqrt{R_\mathrm c^2-\left(f_\mathrm B-\frac{h_\mathrm B}2\right)^2}
+      +\frac{W_x}2
     \end{array}
     \right]~,\\
-  \text{トップ側：}&\quad
+  \text{トップ側：}&~~
   \left[
     \begin{array}{c}
       \displaystyle f_\mathrm T'-\frac{\kappa_p}2\\[5pt]
       \mathcal G_{\mathrm By}-T_y\\[3pt]
       \displaystyle
-      G_{\mathrm Tx}
-      +\sqrt{R_\mathrm c^2-f_\mathrm T'^2}
-      -\sqrt{R_\mathrm c^2-\left(f_\mathrm T'-\frac{\kappa_p}2\right)^2}
-      +\frac{W_\mathrm T}2
+      \varDelta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2
+      +\sqrt{R_\mathrm c^2-f_\mathrm T^2}
+      -\sqrt{R_\mathrm c^2-\left(f_\mathrm T-\frac{\kappa_p}2\right)^2}
+      +\frac{W_x}2
     \end{array}
   \right].
 \end{align*}
-
+よって、これらの$Z$座標の差は、
+\begin{align*}
+ &\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}-\sqrt{R_\mathrm i^2-f_\mathrm T^2}
+         -\sqrt{R_\mathrm o^2-f_\mathrm B^2}-\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
+  +\sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}\\
+ &+\sqrt{R_\mathrm c^2-\left(f_\mathrm T-\frac{\kappa_p}2\right)^2}
+  -\sqrt{R_\mathrm c^2-\left(f_\mathrm B-\frac{h_\mathrm B}2\right)^2}
+\end{align*}
 
 
 
