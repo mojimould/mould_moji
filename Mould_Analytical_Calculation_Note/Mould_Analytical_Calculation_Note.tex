@@ -2,7 +2,7 @@
 
 \input{preamble_MACN/styles_MACN}
 
-\usepackage{refcheck}
+%\usepackage{refcheck}
 \newcommand{\WMsentence}{Draft}
 
 \begin{document}
@@ -2366,7 +2366,37 @@ $T_x$, $T_y$ ($T_x \geqq 0$)を機内で測定する際は、C面が工具側に
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{外削前に測定をする場合}
 外削をせずに通り芯($X$)の測定を行うことはない。
-ただ、プログラムの試運転などで動きをみるといった可能性はありうるので、
+ただ、プログラムの試運転などで動きをみるといった可能性はありうるので、外削を行っていない状態で測定する場合についても述べておく。
+なお、ここではボトムの外削が基準の場合を考える。
+このとき、測定するC側外面の位置は、
+\begin{align*}
+  \text{ボトム側：}&\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle -f_\mathrm B'+\frac{h_\mathrm B}2\\[5pt]
+      \mathcal G_{\mathrm By}\\[3pt]
+      \displaystyle
+      G_{\mathrm Bx}
+      +\sqrt{R_\mathrm c^2-f_\mathrm B'^2}
+      -\sqrt{R_\mathrm c^2-\left(f_\mathrm B'-\frac{h_\mathrm B}2\right)^2}
+      +\frac{W_\mathrm B}2
+    \end{array}
+    \right]~,\\
+  \text{トップ側：}&\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle f_\mathrm T'-\frac{\kappa_p}2\\[5pt]
+      \mathcal G_{\mathrm By}-T_y\\[3pt]
+      \displaystyle
+      G_{\mathrm Tx}
+      +\sqrt{R_\mathrm c^2-f_\mathrm T'^2}
+      -\sqrt{R_\mathrm c^2-\left(f_\mathrm T'-\frac{\kappa_p}2\right)^2}
+      +\frac{W_\mathrm T}2
+    \end{array}
+  \right].
+\end{align*}
+
+
 
 
 
