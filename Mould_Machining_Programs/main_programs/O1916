@@ -3,6 +3,7 @@ O1916 (main: SMP-1916)
 
 #33=1
 (center line measurement: 0:off, 1:on)
+
 #600=-0.642 (parallel angle)
 (Top sai_furiwake: 500.016)
 (Bot sai_furiwake: 499.984)
@@ -66,6 +67,7 @@ M06 (tool exchange)
 
 G40 G49 G80 S200 (cancel hosei, low gear)
 M19 (Shujiku orientation)
+G43 H50 (hosei kouguChou #50)
 
 G90 G54 G01 X0 Y0 F5400
 (G01 G54XY Bot Gaisaku center)
@@ -214,25 +216,17 @@ IF[#1004EQ0]GOTO005
 G65 P910002 (sensor OFF)
 
 N005
-G49 (Cancel hosei kouguChou)
 G91 G28 Z0
 
 
 (kokokara Top Kakou start)
 
+
 /M00
 (dimple kakou start)
 
-
 T31 (Tslot R20)
 M06 (tool exchange)
-
-
-G91 G28 Z0
-M11 (4jiku unclamp)
-G90 G57 G00 B#600
-(G57B parallel angle #600)
-M10 (4jiku clamp)
 
 G90 G57 G00 X0 Y0 F10800
 (G57XY Top Inside Center)
