@@ -13,6 +13,9 @@
 \newif\if@backmatter%\@backmattertrue
 \newif\if@frontmatter%\@frontmattertrue
 \newif\if@appendix%\@appendixfalse
+%%%%%% TOC LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tocPartSeparateline{\addtocontents{toc}{\protect\par\protect\hrulefill\protect\par\protect\vspace*{-10pt}}}%
+\def\tocAPartSeparateline{\addtocontents{toc}{\protect\par\protect\vspace*{15pt}\protect\hrule width 0.5\linewidth\protect\par\protect\vspace*{-10pt}}}%
 %%%%%% DEFINECOLOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{ai}     {rgb}{0.2039, 0.3765, 0.4314}
 \definecolor{kon}    {rgb}{0.0000, 0.2000, 0.4000}
@@ -50,8 +53,8 @@
            {\captionof{#1}{\lstlistingname\thechapter.\ifnum\value{lstlisting}<10 0\fi\arabic{lstlisting}. #2}}
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Appendixpart}{
-  \addpart*{第\hx\hx\hx\thepart\hx\hx\hx 部の補遺}
-  \addcontentsline{toc}{part}{第\hx\hx\thepart\hx\hx 部の補遺}
+  \part*{第\hx\hx\thepart\hx\hx 部の補遺}
+  \addcontentsline{toc}{part}{第\hx\thepart\hx 部の補遺}
 }
 %%%%% LABEL FOR CHAPTER OR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\modHeadchapter}[2][]{%
@@ -116,8 +119,10 @@
 \def\sball#1{\tikz \shade [ball color=#1, path fading=fade ball] (0,0) circle (.7ex);}
 \def\terminal#1#2{\tikz[baseline=(a.base)] \node (a) [terminal, bottom color=#2] {\small #1};}
 %%%%% DIM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\hk}{\hspace{\kanjiskip}}
-\newcommand{\hx}{\hspace{\xkanjiskip}}
+\setlength{\kanjiskip}{0.0pt plus 0.4pt minus 0.5pt}
+\setlength{\xkanjiskip}{2.40555pt plus 1.0pt minus 1.0pt}
+\newcommand{\hk}{\hspace{\kanjiskip}} % \kanjiskip at 12pt scrbook.cls
+\newcommand{\hx}{\hspace{\xkanjiskip}} % \xkanjiskip at 12pt scrbook.cls
 %%%%% PRG # %%%%%%%%%%%%%%%%%%
 \newcommand\MXOThickness{O110001} % X外側中心計測
 \newcommand\MYOThickness{O110002} % Y外側中心計測

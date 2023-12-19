@@ -134,6 +134,7 @@
   format=hang,
   labelfont={bf, sf},
   labelsep={colon},
+  labelformat=simple,
   font={small},
 }
 \captionsetup[lstlisting]{
@@ -148,6 +149,21 @@
   hypcap=false,
 }
 %%%%% STYLE OF TABLE OF CONTENTS %%%%%
+\renewcommand{\thechapter}{\ifnum\value{chapter}<10 0\fi\arabic{chapter}} % add 0 for chapter num
+\setlength{\cftchapnumwidth}{1.7em} % tocloft
+\renewcommand{\cftchapaftersnum}{.} % tocloft
+\renewcommand{\cftsecaftersnum}{.} % tocloft
+\renewcommand{\cftsubsecaftersnum}{.} % tocloft
+\renewcommand{\cftsubsubsecaftersnum}{.} % tocloft
+\AtBeginEnvironment{appendices}{%
+  \patchcmd{\part}{\newpage}{\relax}{}{}%
+  \pretocmd{\part}{\tocAPartSeparateline}{}{}{}% add page break before parts, except part 1
+}
+\AfterEndEnvironment{appendices}{%
+  \patchcmd{\part}{\tocAPartSeparateline}{\relax}{}{}%
+  \pretocmd{\part}{\addtocontents{toc}{\protect\newpage}}{}{}{}% add page break before parts, except the first one
+}
+
 \setcounter{tocdepth}{3}
 \renewcommand\contentsname{\texorpdfstring{\hbox to 2em{目次}}{目次}}
 %%%%% STYLE OF LIST OF FIGURES %%%%%
@@ -157,7 +173,9 @@
 %\setcounter{lofdepth}{2}
 %\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3.2em}}
 %\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\cftfigpresnum}{図\,}
+\renewcommand{\cftfigaftersnum}{.} % tocloft
+\setlength{\cftfignumwidth}{3.5em}
 %%%%% STYLE OF LISTINGS %%%%%
 \renewcommand{\lstlistlistingname}{プログラム 目次}
 \renewcommand{\lstlistingname}{{\scshape Prg: }}
@@ -255,6 +273,7 @@
  citecounter=true,
 }
 \appto\bibfont{\footnotesize\setstretch{1.1}}
+\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}\hspace{-6pt}}
 %%%%% STYLE OF PART %%%%%
 %\renewcommand{\partautorefname}{part}  % part --> part
 \renewcommand\partpagestyle{empty}
