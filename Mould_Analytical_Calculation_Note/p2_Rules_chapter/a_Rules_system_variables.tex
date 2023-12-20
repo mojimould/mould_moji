@@ -6,34 +6,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\DMname のシステム変数}
 \begin{twoCtable}{}
-\#1000 & パレット\#~~0:\#1, 1:\#2\\\hline
-\#1004 & タッチセンサー電源~~0: off, 1: on\\\hline
-\#1005 & タッチセンサー電池残量~~0: ok, 1: low\\\hline
-\#2000+xxx & 工具長補正 \#xxx補正量（摩耗0とした値, xxx=1-200）\\\hline
-\#2200+xxx & 工具長補正 \#xxx摩耗 (xxx=1-200)\\\hline
-\#2400+xxx & 工具径補正 \#xxx補正量（摩耗0とした値, xxx=1-200）\\\hline
-\#2600+xxx & 工具径補正 \#xxx摩耗 (xxx=1-200)\\\hline
-\#3000 & アラーム\\\hline
-\#3011 & 現在の年月日(yyyymmdd)\\\hline
-\#4012 & 現在のワーク座標系\# (G\#)\\\hline
-\#4107 & 直前の工具径補正コード\# (D\#)\\\hline
-\#4111 & 直前の工具長補正コード\# (H\#)\\\hline
-\#4113 & 直前のブロック指令 Mコード\# (M\#)\\\hline
-\#4114 & 直前のブロック指令 シーケンス\# (N\#)\\\hline
-\#4115 & 直前のブロック指令 プログラム\# (O\#)\\\hline
-\#4120 & 直前のブロック指令 工具コード\# (T\#)\\\hline
-\#500x\footnote{\#500x:工具補正値が加味された値（ワーク座標系に表示される数値）。途中でスキップがオンになったときはそのときの値。}
+\pcrNum1000 & パレット\pcrNum~~0:\pcrNum1, 1:\pcrNum2\\\hline
+\pcrNum1004 & タッチセンサー電源~~0: off, 1: on\\\hline
+\pcrNum1005 & タッチセンサー電池残量~~0: OK, 1: low\\\hline
+\pcrNum2000+xxx & 工具長補正 \pcrNum xxx補正量（摩耗0とした値, xxx=1-200）\\\hline
+\pcrNum2200+xxx & 工具長補正 \pcrNum xxx摩耗 (xxx=1-200)\\\hline
+\pcrNum2400+xxx & 工具径補正 \pcrNum xxx補正量（摩耗0とした値, xxx=1-200）\\\hline
+\pcrNum2600+xxx & 工具径補正 \pcrNum xxx摩耗 (xxx=1-200)\\\hline
+\pcrNum3000 & アラーム\\\hline
+\pcrNum3011 & 現在の年月日(yyyymmdd)\\\hline
+\pcrNum4012 & 現在のワーク座標系\pcrNum (G\pcrNum)\\\hline
+\pcrNum4107 & 直前の工具径補正コード\pcrNum (D\pcrNum)\\\hline
+\pcrNum4111 & 直前の工具長補正コード\pcrNum (H\pcrNum)\\\hline
+\pcrNum4113 & 直前のブロック指令 Mコード\pcrNum (M\pcrNum)\\\hline
+\pcrNum4114 & 直前のブロック指令 シーケンス\pcrNum (N\pcrNum)\\\hline
+\pcrNum4115 & 直前のブロック指令 プログラム\pcrNum (O\pcrNum)\\\hline
+\pcrNum4120 & 直前のブロック指令 工具コード\pcrNum (T\pcrNum)\\\hline
+\pcrNum500x\footnote{\pcrNum500x:工具補正値が加味された値（ワーク座標系に表示される数値）。途中でスキップがオンになったときはそのときの値。}
        & ブロック終点位置（現在のワーク座標系）1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
-\#502x & 現在の機械座標系の座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
-\#504x & 現在のワーク座標系の座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
-\#506x & スキップ座標 1:X, 2:Y, 3:Z, 4:B, 5:C（工具補正0とした値）\\\hline
-\#522x & ワーク座標系G54原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
-\#524x & ワーク座標系G55原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
-\#526x & ワーク座標系G56原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
-\#528x & ワーク座標系G57原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
-\#530x & ワーク座標系G58原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
-\#532x & ワーク座標系G59原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
-\#10000+xxx & 工具長補正 \#xxx補正量（摩耗0とした値, xxx=1-200）
+\pcrNum502x & 現在の機械座標系の座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
+\pcrNum504x & 現在のワーク座標系の座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
+\pcrNum506x & スキップ座標 1:X, 2:Y, 3:Z, 4:B, 5:C（工具補正0とした値）\\\hline
+\pcrNum522x & ワーク座標系G54原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
+\pcrNum524x & ワーク座標系G55原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
+\pcrNum526x & ワーク座標系G56原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
+\pcrNum528x & ワーク座標系G57原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
+\pcrNum530x & ワーク座標系G58原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
+\pcrNum532x & ワーク座標系G59原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
+\pcrNum10000+xxx & 工具長補正 \pcrNum xxx補正量（摩耗0とした値, xxx=1-200）
 \end{twoCtable}
 
 
@@ -44,17 +44,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\MMname のシステム変数}
 \begin{twoCtable}{}
-\#4111 & 直前の工具長補正 Hコード\#\\\hline
-\#4120 & 直前の工具 Tコード\#\\\hline
-\#502x & 現在の機械座標系の座標 1:X, 2:Y, 3:Z, 4:B\\\hline
-\#504x & 現在のワーク座標系の座標 1:X, 2:Y, 3:Z, 4:B\\\hline
-\#506x & スキップ座標 1:X, 2:Y, 3:Z, 4:B（工具補正0とした値）\\\hline
-\#522x & ワーク座標系G54原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
-\#524x & ワーク座標系G55原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
-\#526x & ワーク座標系G56原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
-\#528x & ワーク座標系G57原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
-\#530x & ワーク座標系G58原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
-\#532x & ワーク座標系G59原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\
+\pcrNum4111 & 直前の工具長補正 Hコード\pcrNum\\\hline
+\pcrNum4120 & 直前の工具 Tコード\pcrNum\\\hline
+\pcrNum502x & 現在の機械座標系の座標 1:X, 2:Y, 3:Z, 4:B\\\hline
+\pcrNum504x & 現在のワーク座標系の座標 1:X, 2:Y, 3:Z, 4:B\\\hline
+\pcrNum506x & スキップ座標 1:X, 2:Y, 3:Z, 4:B（工具補正0とした値）\\\hline
+\pcrNum522x & ワーク座標系G54原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
+\pcrNum524x & ワーク座標系G55原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
+\pcrNum526x & ワーク座標系G56原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
+\pcrNum528x & ワーク座標系G57原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
+\pcrNum530x & ワーク座標系G58原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
+\pcrNum532x & ワーク座標系G59原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\
 \end{twoCtable}
 
 

@@ -154,8 +154,8 @@
 \newcommand\OsensorOn{O910001} % タッチセンサーON
 \newcommand\OsensorOff{O910002} % タッチセンサーOFF
 %%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
-\newcommand{\DMname}{ディンプルマシニング}
-\newcommand{\MMname}{三菱マシニング}
+\newcommand{\DMname}{Dマシニング}
+\newcommand{\MMname}{Mマシニング}
 %%%%% LINK NAME %%%%%%%%%%%%%%%%%%
 \newcommand{\linkLaTeX}{\href{https://www.latex-project.org/}{\LaTeX}}
 \newcommand{\linkLaTeXProject}{\href{https://www.latex-project.org/}{\LaTeX\ Project}}
@@ -184,4 +184,5 @@
 \newcommand{\linkSQLiteConsortium}{\href{https://www.sqlite.org/consortium.html}{SQLite Consortium}}
 %%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%
 \def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{0pt}\textbf{#1}}{gray!25}\hskip6pt}
-\def\pcrNum{{\fontfamily{pcr}\selectfont\#}}
+\def\pcrNum{\ifmmode{{\fontfamily{pcr}\selectfont{\text\#}}}\else{{\fontfamily{pcr}\selectfont\#}}\fi}
+\newcommand\cf{{\itshape cf.\,}}
