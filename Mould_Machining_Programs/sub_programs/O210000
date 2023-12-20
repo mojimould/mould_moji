@@ -9,7 +9,6 @@ IF[#701LT54]GOTO800
 IF[#701GT59]GOTO800
 (if work G# < 54 or G# > 59, go to N800)
 
-IF[#18EQ#0]GOTO800
 IF[#23EQ#0]GOTO800
 IF[#23LE0]GOTO800
 IF[#24EQ#0]GOTO800
@@ -31,7 +30,6 @@ IF[#13LE0]GOTO800
 IF[#21EQ#0]GOTO800
 IF[#21LE0]GOTO800
 IF[#02EQ#0]GOTO800
-(if R is #0, go to N800)
 (if W <= 0 or #0, go to N800)
 (if X <= 0 or #0, go to N800)
 (if Y <= 0 or #0, go to N800)
@@ -46,7 +44,7 @@ IF[#02EQ#0]GOTO800
 (if B = #0, go to N800)
 
 IF[#26LE[#461/2]]GOTO800
-IF[#18LE#26]GOTO800
+IF[#482LE#26]GOTO800
 IF[[#13-FIX[#13]]NE0]GOTO800
 IF[[#17+[#13-1]*#06]GE#26]GOTO800
 IF[[[#09+#19+ABS[#09-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]GOTO800
@@ -97,16 +95,16 @@ N004
 
 N005
 M11 (4jiku unclamp)
-G90 G#701 G00 B[#02+#600]
-(current work B: G90 B+#600 deg)
+G90 G#701 G00 B[#02+#481]
+(current work B: G90 B+#481 deg)
 M10 (4jiku clamp)
 
-G90 G01 Z[#26+100] F5400
+G90 G01 Z[#26+#491] F5400
 #705=#[5201+[#701-53]*20]-#30
 #706=#705*COS[ABS[#02]]+#26*SIN[ABS[#02]]
 #707=-#705*SIN[ABS[#02]]+#26*COS[ABS[#02]]
 (#705= current work origin X from table center)
-G91 G01 X[#706-#705] Z[#707-#26-#702-100] F5400
+G91 G01 X[#706-#705] Z[#707-#26-#702-#491] F5400
 (XZ to tanmen center)
 
 #708=#5001
@@ -114,7 +112,7 @@ G91 G01 X[#706-#705] Z[#707-#26-#702-100] F5400
 (XZ block end: start point XZ)
 #710=#23-#17
 (Z: the 1st row before rotation)
-#711=SQRT[#18*#18-#710*#710]-SQRT[#18*#18-#23*#23]
+#711=SQRT[#482*#482-#710*#710]-SQRT[#482*#482-#23*#23]
 (the center of the 1st row before rotation)
 #712=#711*COS[ABS[#02]]-#17*SIN[ABS[#02]]
 #713=-#711*SIN[ABS[#02]]-#17*COS[ABS[#02]]
@@ -207,7 +205,7 @@ IF[#33GE#13]GOTO205
 (end loop for #33)
 #32=#710-[#33-1]*#06
 (#32= the #33th row's Z from table center)
-#31=SQRT[#18*#18-[#32-#06]*[#32-#06]]-SQRT[#18*#18-#32*#32]
+#31=SQRT[#482*#482-[#32-#06]*[#32-#06]]-SQRT[#482*#482-#32*#32]
 G91 G#704 X[#31*COS[ABS[#02]]-#06*SIN[ABS[#02]]] Z-[#31*SIN[ABS[#02]]+#06*COS[ABS[#02]]] F1500
 (current work XY: the center of the #33+1th row)
 #33=#33+1 (#33 to current row +1)
@@ -230,14 +228,14 @@ G90 G01 X#714 Z[#716-#702] F5400
 (XZ: to the center of the 1st row)
 G90 G01 X#708 Z#709 F5400
 (XZ: to start point)
-G90 G01 Z[#709+100.0] F5400
+G90 G01 Z[#709+#491] F5400
 GOTO999
 
 
 N801
+M05 (shujiku kaiten off)
+M09 (coolant off)
 #3000=145 (Sensor Low battery)
-M00 (ALARM: low battery)
-GOTO999
 
 N802
 G90 G01 X#714 Y#715 F1500
@@ -252,8 +250,9 @@ G90 G01 X#708 Z#709 F1500
 (XZ: to start point)
 
 N800
+M05 (shujiku kaiten off)
+M09 (coolant off)
 #3000=121 (are the arguments or the mould OK?)
-M00 (are arguments ok?)
 
 N999 M99
 
@@ -265,7 +264,6 @@ N999 M99
 (used only as variables)
 (#06:K: Z pitch)
 (#17:Q: Z length between top and the 1st row)
-(#18:R: radius of the central curvature)
 (#23:W: furiwake Top)
 (#26:Z: sai-furiwake Top)
 (used as variables and passed arguments)
@@ -285,7 +283,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#451, #453, #455, #457, #512, #600)
+(#451, #453, #455, #457, #512, #481, #482, #491)
 (as LHS)
 (#701-#719)
 
@@ -307,7 +305,7 @@ N999 M99
 
 
 (Passed arguments)
-(#02, #04, #09, #13, #19, #21, #24 , #33)
+(#02, #04, #09, #13, #19, #21, #24, #33)
 
 
 (Used variable in other programs)

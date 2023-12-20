@@ -10,8 +10,6 @@ IF[#25LE0]GOTO800
 IF[#18EQ#0]GOTO800
 IF[#18LE0]GOTO800
 IF[#26EQ#0]GOTO800
-IF[#06EQ#0]GOTO800
-IF[#06LT0]GOTO800
 IF[#11EQ#0]GOTO800
 IF[#11LT2]GOTO800
 IF[#11GT200]GOTO800
@@ -19,7 +17,6 @@ IF[#11GT200]GOTO800
 (if Y <= 0 or #0, go to N800)
 (if R <= 0 or #0, go to N800)
 (if Z = #0, go to N800)
-(if K < 0 or #0, go to N800)
 (if H < 2 or H > 200 or #0, go to N800)
 
 IF[#26LE[#461/2]]GOTO800
@@ -27,10 +24,14 @@ IF[[FIX[#11]]NE#11]GOTO800
 IF[#601EQ#0]GOTO800
 IF[#601LE1]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
+IF[[#401*#901007]LT0]GOTO800
+IF[#401GT5]GOTO800
 (if Z <= #461/2, go to N800)
 (if H is not integer, go to N800)
-(if #601 <=1 or empty, go to N800)
+(if #601 <= 1 or empty, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
+(if #401*#901007 < 0, go to N800)
+(if #401 > 5, go to N800)
 
 (for V)
 IF[#22EQ#0]GOTO001
@@ -75,7 +76,7 @@ G90 G00 G40 X#33 Y[#25/2+#601] F10800
 (G90 X: naikeiAC/2 -V +DC/2)
 (G90 Y: naikeiBD/2 +DCX)
 
-G90 G01 G43 H#11 Z[#26+#06] S#19 F5400
+G90 G01 G43 H#11 Z[#26+#401*#901007] S#19 F5400
 (hosei kouguChou H#, Z: tanmen+K)
 M03 (shujiku kaiten on)
 M08 (coolant on)
@@ -104,13 +105,13 @@ G91 G03 X[#[2400+#11]] Y-[#[2400+#11]] I[#[2400+#11]] J0
 
 (Kokokara G00)
 
-M05 (shujiku kaiten off)
-M09 (coolant off)
-
-G90 G00 Z[#26+#06+100] F10800
+G90 G00 Z[#26+#401*#901007+#491] F10800
+(Z: tanmen+#491)
 GOTO999
 
 N800
+M05 (shujiku kaiten off)
+M09 (coolant off)
 #3000=121 (are the arguments OK?)
 
 N999 M99
@@ -135,7 +136,8 @@ N999 M99
 
 
 (Common variable)
-(#461, #601)
+(as RHS)
+(#401, #461, #491, #601, #901007)
 
 
 (System variables)

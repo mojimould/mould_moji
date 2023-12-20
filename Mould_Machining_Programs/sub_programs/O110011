@@ -33,10 +33,10 @@ IF[#514NE50]GOTO800
 IF[[#32-#512-#01]LE0]GOTO800
 (if X/2+M-D/2-A <= 0 go to N800)
 
-IF[[#06*#18*#23]NE0]GOTO001
+IF[[#06*#482*#23]NE0]GOTO001
 (if K*R*W is not 0, go to N001)
 IF[#06NE#0]GOTO800
-IF[#18NE#0]GOTO800
+IF[#482NE#0]GOTO800
 IF[#23NE#0]GOTO800
 (if either K, R, W is 0, go to N800)
 
@@ -46,13 +46,11 @@ IF[#06EQ#0]GOTO002
 (if K is #0, go to N002)
 
 IF[#23LT0]GOTO800
-IF[#18LT0]GOTO800
+IF[#482LT0]GOTO800
 IF[[ABS[#06]]GE[#23/2]]GOTO800
-IF[#18LT#23]GOTO800
 (if W,R < 0, go to N800)
 (if |K| >= W/2, go to N800)
-(if R < W, go to N800)
-#31=SQRT[#18*#18-[#23+#06]*[#23+#06]]-SQRT[#18*#18-#23*#23]
+#31=SQRT[#482*#482-[#23+#06]*[#23+#06]]-SQRT[#482*#482-#23*#23]
 (for bottom: if K>0, #31<0)
 (for Top: if K>0, #31>0)
 IF[[ABS[#31]]GE#32]GOTO800
@@ -126,7 +124,7 @@ G90 G01 X#900013 F5400 (X to measured center)
 #[5201+[#33-53]*20]=#5021
 (current work origin X = current machine X)
 
-G90 G01 Z[#26+100.0] F5400
+G90 G01 Z[#26+#491] F5400
 GOTO999
 
 
@@ -159,7 +157,6 @@ N999 M99
 (#26:Z: sai-furiwake)
 (as received hidden arguments)
 (#06:K: Z +hosei from tanmen)
-(#18:R: radius of the central curvature)
 (#23:W: furiwake)
 
 (as LHS)
@@ -169,11 +166,11 @@ N999 M99
 (as LHS)
 (#900011, #900012, #900013, #900014)
 (as RHS)
-(#461)
-(#501 : hosei: touch sensor signal delay)
-(#502 : hosei: probe center X)
-(#512 : probe radius)
-(#514 : default skip speed)
+(#461, #482, #491)
+(#501: hosei: touch sensor signal delay)
+(#502: hosei: probe center X)
+(#512: probe radius)
+(#514: default skip speed)
 
 
 (System variables)

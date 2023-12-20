@@ -14,17 +14,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection D.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{コモン変数 (\pcrNum100 - \pcrNum199)}
-\pcrNum100 - \pcrNum199については、（機械設置時の）バンドルのプログラムで既に使用されているものが多いため、基本的には使用しないものとする。
-使用する場合は、一時的なものとして扱うものとする。
+\subsection{コモン変数 (\pcrNum100\,-\pcrNum199)}
+\pcrNum100\,-\pcrNum199については、（機械設置時の）バンドルのプログラムで既に使用されているものが多いため、基本的には使用しないものとする。
+使用する場合は、一時的なもの(LHS)として扱うものとする。
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection D.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{コモン変数 (\pcrNum400 - \pcrNum449)}
-\pcrNum400 - \pcrNum449については、主に作業者が入力・変更することが想定されるものとする。
+\subsection{コモン変数 (\pcrNum400\,-\pcrNum449)}
+\pcrNum400\,-\pcrNum449については、主に作業者が入力・変更することが想定されるものとする。
 \begin{twoCtable}{}
 \pcrNum400 & （予備）\\\hline
 \hline
@@ -47,7 +47,7 @@
 \pcrNum414 & 工具T33（Tスロット）C側内面溝 深さ補正値（深さに$+$補正）\\\hline
 \pcrNum415 & 工具T33（Tスロット）B側内面溝 深さ補正値（深さに$+$補正）\\\hline
 \pcrNum416 & 工具T33（Tスロット）D側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\pcrNum417 & （予備）\\
+& （以下予備）
 \end{twoCtable}
 
 
@@ -56,8 +56,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection D.1.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{コモン変数 (\pcrNum450 - \pcrNum499)}
-\pcrNum450 - \pcrNum499については、主に管理者が入力・変更することが想定されるものとする。
+\subsection{コモン変数 (\pcrNum450\,-\pcrNum479)}
+\pcrNum450\,-\pcrNum479については、主にパレットやジグに関するものとする。
 \begin{twoCtable}{}
 \pcrNum450 & （予備）\\\hline
 \pcrNum451 & パレット\pcrNum1 ジグ中心機械座標$X$\\\hline
@@ -78,17 +78,49 @@
 \pcrNum465 & パレット\pcrNum2ジグ外側幅（機械座標系$B$0における$Z$方向）\\\hline
 \pcrNum466 & パレット\pcrNum2ジグ内側幅（機械座標系$B$0における$Z$方向）\\\hline
 \pcrNum467 & パレット\pcrNum2ジグ幅（機械座標系$B$0における$X$方向）\\\hline
-\pcrNum468 & （予備）\\
+& （以下予備）
+\end{twoCtable}
+
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{コモン変数 (\pcrNum480\,-\pcrNum489)}
+\pcrNum480\,-\pcrNum489については、主に各々の製品明細に依存するものとする。
+\begin{twoCtable}{}
+\pcrNum480 & （予備）\\\hline
+\pcrNum481 & 振分調整用角度$-\theta[\deg]$\\\hline
+\pcrNum482 & 中心湾曲$R_\mathrm c$ ($\nicefrac1{R_\mathrm c} = 0$の場合は\pcrNum0)\\\hline
+\pcrNum483 & （予備）\\\hline
+& （以下予備）
 \end{twoCtable}
 
 
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{コモン変数 (\pcrNum500-\pcrNum599)}
-\pcrNum500 - \pcrNum599については、主にO910xおよびO93xxで使用されるものとする。
+\subsection{コモン変数 (\pcrNum490\,-\pcrNum499)}
+\pcrNum490\,-\pcrNum499については、その他の調整に用いるものとする。
+\begin{twoCtable}{}
+\pcrNum490 & （予備）\\\hline
+\pcrNum491 & アプローチ 端面・工具間 距離\\\hline
+\pcrNum492 & （予備）\\\hline
+\pcrNum493 & （予備）\\\hline
+& （以下予備）
+\end{twoCtable}
+
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{コモン変数 (\pcrNum500\,-\pcrNum599)}
+\pcrNum500\,-\pcrNum599については、主にO910xおよびO93xxで使用されるものとする。
 \begin{twoCtable}{}
 \pcrNum500 & 芯ずれ許容差 (O93xx)\\\hline
 \pcrNum501 & タッチセンサー信号遅れ補正 (O93xx)\\\hline
@@ -108,19 +140,19 @@
 \pcrNum518 & センサーの位置$Z$座標 (O910x)\\\hline
 \pcrNum520 & 拡張ワーク座標系 (O910x)\\\hline
 \pcrNum523 & アプローチ時用の送り速さ値 (O910x)\\\hline
-\pcrNum524 & 測定時用の送り速さ値 (O910x)\\
+\pcrNum524 & 測定時用の送り速さ値 (O910x)
 \end{twoCtable}
 
 
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{コモン変数 (\pcrNum600-\pcrNum699)}
-\pcrNum600 - \pcrNum699については、主に管理者が入力・変更することが想定されるものとする。
+\subsection{コモン変数 (\pcrNum600\,-\pcrNum699)}
+\pcrNum600\,-\pcrNum699については、主に工具に関するものとする。
 \begin{twoCtable}{}
-\pcrNum600 & 振分調整用角度$-\theta[\deg]$\\\hline
+\pcrNum600 & （予備）\\\hline
 \hline
 \pcrNum601 & 工具T02（フェイスミル）最大刃径（直径）DCX公称値$\phi'_\mathrm D$\\\hline
 \pcrNum602 & （工具T02用予備）\\\hline
@@ -159,44 +191,46 @@
 \pcrNum631 & （工具T33 Tスロットカッター用予備）\\\hline
 \pcrNum632 & （工具T33 Tスロットカッター用予備）\\\hline
 \pcrNum633 & （工具T34 Tスロットカッター用予備）\\\hline
-\pcrNum634 & （工具T34 Tスロットカッター用予備）\\
+\pcrNum634 & （工具T34 Tスロットカッター用予備）\\\hline
+& （以下予備）
 \end{twoCtable}
 
 
 
 %\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{コモン変数 (\pcrNum701-\pcrNum799)}
-\pcrNum700 - \pcrNum799については、主に内面溝用サブプログラム(O2x000x, O6x000x)で使用されるものとする
+\subsection{コモン変数 (\pcrNum700\,-\pcrNum799)}
+\pcrNum700\,-\pcrNum799については、主に内面溝用サブプログラム(O2x000x, O6x000x)で使用されるものとする
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.6.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.7.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\pcrNum701-\pcrNum733}
-\pcrNum700 - \pcrNum733については、主に\DLone で使用されるものとする。
+\subsubsection{\pcrNum700\,-\pcrNum733}
+\pcrNum700\,-\pcrNum733については、主に\DLone で使用されるものとする。
 \begin{twoCtable}{}
+\pcrNum700 & （予備）\\\hline
 \pcrNum701 & プログラム読込み時の座標系(\pcrNum4012)\\\hline
 \pcrNum702 & 工具別$Z$補正(T50:\pcrNum512, T3x:0)\\\hline
 \pcrNum703 & 工具別$XY$補正(T50:\pcrNum512, T3x:\pcrNum[2400+\pcrNum4111]+\pcrNum[2600+\pcrNum4111])\\\hline
 \pcrNum704 & 工具別移動G\pcrNum (T50:31, T3x:1)\\\hline
 \pcrNum705 & テーブル中心からワーク座標(\pcrNum701)原点までの$X$距離\\\hline
-\pcrNum706 & 傾き後のトップ端面中心（機械座標）$X$ (cf. \pageeqref{eq:afterPhiTCenterFromO})\\\hline
-\pcrNum707 & テーブル中心から傾き後のトップ端面中心までの$Z$距離 (cf. \pageeqref{eq:afterPhiTCenterFromO})\\\hline
+\pcrNum706 & 傾き後のトップ端面中心（機械座標）$X$ (\cf\pageeqref{eq:afterPhiTCenterFromO})\\\hline
+\pcrNum707 & テーブル中心から傾き後のトップ端面中心までの$Z$距離 (\cf\pageeqref{eq:afterPhiTCenterFromO})\\\hline
 \pcrNum708 & 傾き後トップ端中心（ブロックエンド）$X$座標(\pcrNum5001)\\\hline
 \pcrNum709 & 傾き後トップ端中心（ブロックエンド）$Z$座標(\pcrNum5003)\\\hline
-\pcrNum710 & テーブル中心から内面溝１列目までの$Z$距離$Z-q$\\\hline
-\pcrNum711 & トップ端中心から内面溝１列目中心までの$X$距離(cf. \pageeqref{eq:dimpleCenterDistance})\\\hline
-\pcrNum712 & 傾き後内面溝１列目中心$X$移動距離(cf. \pageeqref{eq:afterPhidimpleCenterDistance})\\\hline
-\pcrNum713 & 傾き後内面溝１列目中心$Z$移動距離(cf. \pageeqref{eq:afterPhidimpleCenterDistance})\\\hline
-\pcrNum714 & 傾き後内面溝１列目中心（ブロックエンド）$X$座標 (\pcrNum5001)\\\hline
-\pcrNum715 & 傾き後内面溝１列目中心（ブロックエンド）$Y$座標 (\pcrNum5002)\\\hline
-\pcrNum716 & 傾き後内面溝１列目中心（ブロックエンド）$Z$座標 (\pcrNum5003)\\\hline
+\pcrNum710 & テーブル中心から内面溝1列目までの$Z$距離$Z-q$\\\hline
+\pcrNum711 & トップ端中心から内面溝1列目中心までの$X$距離(\cf\pageeqref{eq:dimpleCenterDistance})\\\hline
+\pcrNum712 & 傾き後内面溝1列目中心$X$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\\hline
+\pcrNum713 & 傾き後内面溝1列目中心$Z$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\\hline
+\pcrNum714 & 傾き後内面溝1列目中心（ブロックエンド）$X$座標 (\pcrNum5001)\\\hline
+\pcrNum715 & 傾き後内面溝1列目中心（ブロックエンド）$Y$座標 (\pcrNum5002)\\\hline
+\pcrNum716 & 傾き後内面溝1列目中心（ブロックエンド）$Z$座標 (\pcrNum5003)\\\hline
 \pcrNum717 & 各面用ループ番号(1:A, 2:C, 3:B, 4:D)\\\hline
-\pcrNum718 & BD内半径$-\pcrNum703-10$\\\hline
-\pcrNum719 & (AC内半径$-\pcrNum703-10)\cos\phi$\\\hline
+\pcrNum718 & BD内半径$-\text{\pcrNum703}-10$\\\hline
+\pcrNum719 & (AC内半径$-\text{\pcrNum703}-10)\cos\phi$\\\hline
 & （以下予備）
 \end{twoCtable}
 
@@ -204,10 +238,10 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.7.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\pcrNum734-\pcrNum766}
-\pcrNum734 - \pcrNum766については、主に\DLtwoAC, \DLtwoBD で使用されるものとする。
+\subsubsection{\pcrNum734\,-\pcrNum766}
+\pcrNum734\,-\pcrNum766については、主に\DLtwoAC, \DLtwoBD で使用されるものとする。
 \begin{twoCtable}{}
 \pcrNum734 & プログラム読込時ブロックエンド$Y$ or $X$ (\pcrNum5002, \pcrNum5001)\\\hline
 \pcrNum735 & プログラム読込時ブロックエンド$Z$ (\pcrNum5003)\\\hline
@@ -221,10 +255,10 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.6.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.7.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\pcrNum767-\pcrNum799}
-\pcrNum767 - \pcrNum799については、主に\DMLthreeAC, \DMLthreeBD, \DKLthreeAC, \DKLthreeBD で使用されるものとする。
+\subsubsection{\pcrNum767\,-\pcrNum799}
+\pcrNum767\,-\pcrNum799については、主に\DMLthreeAC, \DMLthreeBD, \DKLthreeAC, \DKLthreeBD で使用されるものとする。
 \begin{twoCtable}{}
 \pcrNum767 & プログラム読込時ブロックエンド$X$ or $Y$ (\pcrNum5001, \pcrNum5002)\\\hline
 \pcrNum768 & 内面溝 表面位置$X$ or $Y$測定値\\\hline
@@ -235,18 +269,18 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{コモン変数 (\pcrNum900001-\pcrNum900031, \pcrNum900101-\pcrNum900500)}
-\pcrNum900000 - \pcrNum900999については、主に実測値を格納する。
+\subsection{コモン変数 (\pcrNum900001\,-\pcrNum900031, \pcrNum900101\,-\pcrNum900500)}
+\pcrNum900000\,-\pcrNum900999については、主に実測値を格納する。
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.7.1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.8.1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\pcrNum900001-\pcrNum900005}
-\pcrNum900001 - \pcrNum900005については、主に\MXOThickness で使用されるものとする。
+\subsubsection{\pcrNum900001\,-\pcrNum900005}
+\pcrNum900001\,-\pcrNum900005については、主に\MXOThickness で使用されるものとする。
 \begin{twoCtable}{}
 \pcrNum900001 & $X$外中心測定 $-X$側測定値\\\hline
 \pcrNum900002 & $X$外中心測定 $+X$側測定値\\\hline
@@ -258,10 +292,10 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.7.2  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.8.2  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\pcrNum900006-\pcrNum900010}
-\pcrNum900006 - \pcrNum900010については、主に\MYOThickness で使用されるものとする。
+\subsubsection{\pcrNum900006\,-\pcrNum900010}
+\pcrNum900006\,-\pcrNum900010については、主に\MYOThickness で使用されるものとする。
 \begin{twoCtable}{}
 \pcrNum900006 & $Y$外中心測定 $-Y$側測定値\\\hline
 \pcrNum900007 & $Y$外中心測定 $+Y$側測定値\\\hline
@@ -273,10 +307,10 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.7.3  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.8.3  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\pcrNum900011-\pcrNum900015}
-\pcrNum900011 - \pcrNum900015については、主に\MXIWidth で使用されるものとする。
+\subsubsection{\pcrNum900011\,-\pcrNum900015}
+\pcrNum900011\,-\pcrNum900015については、主に\MXIWidth で使用されるものとする。
 \begin{twoCtable}{}
 \pcrNum900011 & $X$内中心測定 $-X$側測定値\\\hline
 \pcrNum900012 & $X$内中心測定 $+X$側測定値\\\hline
@@ -287,11 +321,12 @@
 
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.7.4  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.8.4  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\pcrNum900016-\pcrNum900020}
-\pcrNum900016 - \pcrNum900020については、主に\MYIWidth で使用されるものとする。
+\subsubsection{\pcrNum900016\,-\pcrNum900020}
+\pcrNum900016\,-\pcrNum900020については、主に\MYIWidth で使用されるものとする。
 \begin{twoCtable}{}
 \pcrNum900016 & $Y$内中心測定 $-Y$側測定値\\\hline
 \pcrNum900017 & $Y$内中心測定 $+Y$側測定値\\\hline
@@ -303,10 +338,10 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.7.5  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.8.5  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\pcrNum900021-\pcrNum900023}
-\pcrNum900021 - \pcrNum900023については、主に\MXface で使用されるものとする。
+\subsubsection{\pcrNum900021\,-\pcrNum900023}
+\pcrNum900021\,-\pcrNum900023については、主に\MXface で使用されるものとする。
 \begin{twoCtable}{}
 \pcrNum900021 & $X$外削中心測定 内面測定値\\\hline
 \pcrNum900022 & （予備）\\\hline
@@ -316,10 +351,10 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.7.6  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.8.6  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\pcrNum900024-\pcrNum900027}
-\pcrNum900024 - \pcrNum900027については、主に\MYcenterline で使用されるものとする。
+\subsubsection{\pcrNum900024\,-\pcrNum900027}
+\pcrNum900024\,-\pcrNum900027については、主に\MYcenterline で使用されるものとする。
 \begin{twoCtable}{}
 \pcrNum900024 & $Y$通り芯 ボトム側測定値\\\hline
 \pcrNum900025 & $Y$通り芯 トップ側測定値\\\hline
@@ -330,10 +365,10 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.7.7  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.8.7  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\pcrNum900028-\pcrNum900031}
-\pcrNum900028 - \pcrNum900031については、主に\MXcenterline で使用されるものとする。
+\subsubsection{\pcrNum900028\,-\pcrNum900031}
+\pcrNum900028\,-\pcrNum900031については、主に\MXcenterline で使用されるものとする。
 \begin{twoCtable}{}
 \pcrNum900028 & $X$通り芯 トップ側測定値\\\hline
 \pcrNum900029 & $X$通り芯 ボトム側測定値\\\hline
@@ -343,16 +378,40 @@
 
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection D.1.7.8  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.8.8  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\pcrNum900101-\pcrNum900500}
-\pcrNum900101 - \pcrNum900500については、主に\DMLthreeAC, \DMLthreeBD で使用されるものとする。
+\subsubsection{\pcrNum900101\,-\pcrNum900500}
+\pcrNum900101\,-\pcrNum900500については、主に\DMLthreeAC, \DMLthreeBD で使用されるものとする。
 \begin{twoCtable}{}
-\pcrNum900101-\pcrNum900200 & A側内面溝 深さ測定値（Tスロット）\\\hline
-\pcrNum900201-\pcrNum900300 & C側内面溝 深さ測定値（Tスロット）\\\hline
-\pcrNum900301-\pcrNum900400 & B側内面溝 深さ測定値（Tスロット）\\\hline
-\pcrNum900401-\pcrNum900500 & D側内面溝 深さ測定値（Tスロット）
+\pcrNum900101\,-\pcrNum900200 & A側内面溝 深さ測定値（Tスロット）\\\hline
+\pcrNum900201\,-\pcrNum900300 & C側内面溝 深さ測定値（Tスロット）\\\hline
+\pcrNum900301\,-\pcrNum900400 & B側内面溝 深さ測定値（Tスロット）\\\hline
+\pcrNum900401\,-\pcrNum900500 & D側内面溝 深さ測定値（Tスロット）
+\end{twoCtable}
+
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection D.1.8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{コモン変数 (\pcrNum901000\,-\pcrNum901099)}
+\pcrNum901000\,-\pcrNum901099については、主にメインプログラムで一時的に使用するもの(LHS)とする。
+\begin{twoCtable}{}
+\pcrNum901000 & （予備）\\\hline
+\pcrNum901001 & ジグ中心機械座標$X$ (\pcrNum451 or \pcrNum455)\\\hline
+\pcrNum901002 & ジグ中心機械座標$Y$ (\pcrNum452 or \pcrNum456)\\\hline
+\pcrNum901003 & ジグ中心機械座標$Z$ (\pcrNum453 or \pcrNum457)\\\hline
+\pcrNum901004 & ジグ中心機械座標$B$ (\pcrNum454 or \pcrNum458)\\\hline
+\pcrNum901005 & （予備）\\\hline
+\pcrNum901006 & 端面 全切削代\\\hline
+\pcrNum901007 & 端面 切削回数（FUP[\pcrNum901006\,/\pcrNum401]）\\\hline
+\pcrNum901008 & （予備）\\\hline
+\pcrNum901009 & 溝位置 $+$補正量\\\hline
+\pcrNum901010 & 溝幅 $+$補正量\\\hline
+& （以下予備）
 \end{twoCtable}
 
 
