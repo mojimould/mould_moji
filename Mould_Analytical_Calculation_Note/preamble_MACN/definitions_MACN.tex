@@ -138,6 +138,7 @@
 \tikzfading[name=fade ball, inner color=transparent!60, outer color=transparent!30]
 \def\sball#1{\tikz \shade [ball color=#1, path fading=fade ball] (0,0) circle (.7ex);}
 \def\terminal#1#2{\tikz[baseline=(a.base)] \node (a) [terminal, bottom color=#2] {\small #1};}
+\def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{0pt}\textbf{#1}}{gray!25}\hskip6pt}
 %%%%% DIM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\kanjiskip}{0.0pt plus 0.4pt minus 0.5pt}
 \setlength{\xkanjiskip}{2.40555pt plus 1.0pt minus 1.0pt}
@@ -193,6 +194,5 @@
 \newcommand{\linkSQLite}{\href{https://www.sqlite.org/}{SQLite}}
 \newcommand{\linkSQLiteConsortium}{\href{https://www.sqlite.org/consortium.html}{SQLite Consortium}}
 %%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%
-\def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{0pt}\textbf{#1}}{gray!25}\hskip6pt}
 \def\pcrNum{\ifmmode{{\fontfamily{pcr}\selectfont{\text\#}}}\else{{\fontfamily{pcr}\selectfont\#}}\fi}
 \newcommand\cf{{\itshape cf.\,}}

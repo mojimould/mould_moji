@@ -1,7 +1,7 @@
 %!TEX root = ../Mould_Analytical_Calculation_Note.tex
 
 %%%%% DOCUMENTCLASS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[12pt]{scrbook}
+\documentclass[11pt]{scrbook}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{preamble_MACN/packages_MACN}
@@ -46,11 +46,12 @@
 %%%%% LINESPREAD %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \linespread{1.15}\selectfont
 %%%%% PARINDENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength\parindent{12pt}
+\setlength\parindent{11pt}
 %\def \globalscale {0.83}
 %%%%% UNIT LENGTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\unitlength}{1pt}
 %%%%% FOOTNOTE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand*{\footnoteautorefname}{脚注}
 \interfootnotelinepenalty=10000
 \counterwithout{footnote}{chapter}
 \def\@makefnmark{\hbox{}\hbox{\@textsuperscript{\normalfont\@thefnmark}}\hbox{}}
@@ -65,7 +66,6 @@
 %%%%% DISPLAYBREAK %%%%%%%%%%%%%%%%%%%%%%%%%
 \allowdisplaybreaks
 %%%%% NAME, AUTOREFNAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\footnoteautorefname}{脚注}
 \newcommand{\tcb@cnt@hosokuboxautorefname}{補足}
 %\newcommand{\tcb@cnt@Columnautorefname}{Column}
 %\newcommand{\subfigureautorefname}{\figureautorefname} % subfigure --> figure
@@ -75,7 +75,6 @@
 \pagestyle{fancy}
 %\@frontmatterfalse\@backmattertrue\tocloftpagestyle{plainhead}
 %\@frontmattertrue\@backmatterfalse\tocloftpagestyle{plainheadfront}
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\headrulewidth}{1.5pt}
 \renewcommand{\footrulewidth}{0pt}
 \newcommand{\commonheadfoot}{
@@ -150,8 +149,8 @@
 }
 %%%%% STYLE OF TABLE OF CONTENTS %%%%%
 %\renewcommand{\thechapter}{\ifnum\value{chapter}<10 0\fi\arabic{chapter}} % add 0 for chapter num
-\setlength{\cftpartnumwidth}{5em} % tocloft
-\setlength{\cftchapnumwidth}{1.7em} % tocloft
+\setlength{\cftpartnumwidth}{4.25em} % tocloft
+\setlength{\cftchapnumwidth}{1.5em} % tocloft
 \renewcommand{\cftchapaftersnum}{.} % tocloft
 \renewcommand{\cftsecaftersnum}{.} % tocloft
 \renewcommand{\cftsubsecaftersnum}{.} % tocloft
@@ -174,7 +173,7 @@
 %\setcounter{lofdepth}{2}
 %\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3.2em}}
 %\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
-\renewcommand{\cftfigpresnum}{図\,}
+\renewcommand{\cftfigpresnum}{\figurename\,}
 \renewcommand{\cftfigaftersnum}{.} % tocloft
 \setlength{\cftfignumwidth}{3.5em}
 %%%%% STYLE OF LISTINGS %%%%%
@@ -283,7 +282,7 @@
 %\renewcommand{\partautorefname}{part}  % part --> part
 \renewcommand\partpagestyle{emptydate}
 \renewcommand*{\partformat}{\begin{gtfamily}\thepart\end{gtfamily}}
-\renewcommand{\thepart}{第\hx\hx\Roman{part}\hx\hx 部}
+\renewcommand{\thepart}{第\hx\Roman{part}\hx 部}
 %\renewcommand*{\addparttocentry}[2]{\addtocentrydefault{part}{#1}{第#2部}}
 %%%%% STYLE OF CHAPTER %%%%%
 \renewcommand{\chapterautorefname}{章}  % chapter --> 章
@@ -308,7 +307,7 @@
   tocindentfollows=subsubsection,%
   tocstyle=section,%
   tocindent=10em,%
-  tocnumwidth=5em,%
+  tocnumwidth=5em,% def: 5em
   font=\raggedsection\normalfont\sectfont\gtfamily\nobreak\sball{blue}~
 ]{paragraph}
 %for book.cls
