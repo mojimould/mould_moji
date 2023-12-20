@@ -16,8 +16,8 @@
   includehead,  % include the head of the page
 %  headheight = 13.6pt,
   includefoot,  % include the foot of the page
-  top=15truemm,
-  bottom=0truemm,
+  top=15.0truemm,
+  bottom=-0.5truemm,
 }
 %%%%% HEYPERSETUP %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hypersetup{
@@ -97,7 +97,7 @@
   \fancyhead[LO]{\hyperref[sec:\thesection]{{\small\nouppercase\rightmark}}}
   \fancyhead[RO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
   \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
-  \fancyhead[RE]{\hyperref[\ifx\@chapapp\appendixname app:\else chap:\fi\thechapter]{{\sffamily\bfseries\thechapter.\hskip0.75em\nouppercase\leftmark}}} % header right fields for all main even pages
+  \fancyhead[RE]{\hyperref[\ifx\@chapapp\appendixname app:\else chap:\fi\thechapter]{{\sffamily\bfseries\thechapter.\hskip0.75em\nouppercase\Chaptername}}} % header right fields for all main even pages
 }
 \fancypagestyle{plainheadfront}{
   \commonheadfoot
@@ -139,7 +139,8 @@
 \captionsetup[lstlisting]{
   justification=raggedright,
   singlelinecheck=false,
-  aboveskip=0pt,
+  position=above,
+  aboveskip=1.1pt,
   belowskip=0pt,
   labelformat={empty},
   labelfont={bf, sf},
@@ -149,6 +150,7 @@
 }
 %%%%% STYLE OF TABLE OF CONTENTS %%%%%
 %\renewcommand{\thechapter}{\ifnum\value{chapter}<10 0\fi\arabic{chapter}} % add 0 for chapter num
+\setlength{\cftpartnumwidth}{5em} % tocloft
 \setlength{\cftchapnumwidth}{1.7em} % tocloft
 \renewcommand{\cftchapaftersnum}{.} % tocloft
 \renewcommand{\cftsecaftersnum}{.} % tocloft
@@ -186,6 +188,10 @@
 \lstdefinelanguage{GcodeBasic}{
   sensitive=true,%
   basicstyle=\small\ttfamily\linespread{1}\selectfont,%
+  abovecaptionskip=0pt,
+  belowcaptionskip=0pt,
+%  aboveskip=0\baselineskip,
+%  belowskip=0\baselineskip,
   numbers=left,%
   numbersep=6pt,%
   numberstyle=\ttfamily\scriptsize\color{black!75!},%
@@ -276,7 +282,9 @@
 %%%%% STYLE OF PART %%%%%
 %\renewcommand{\partautorefname}{part}  % part --> part
 \renewcommand\partpagestyle{emptydate}
-\renewcommand*{\partformat}{\begin{gtfamily}第\hx\hx\hx\thepart\hx\hx\hx 部\end{gtfamily}}
+\renewcommand*{\partformat}{\begin{gtfamily}\thepart\end{gtfamily}}
+\renewcommand{\thepart}{第\hx\hx\Roman{part}\hx\hx 部}
+%\renewcommand*{\addparttocentry}[2]{\addtocentrydefault{part}{#1}{第#2部}}
 %%%%% STYLE OF CHAPTER %%%%%
 \renewcommand{\chapterautorefname}{章}  % chapter --> 章
 \renewcommand\chapterpagestyle{\if@frontmatter plainheadfront\else plainhead\fi}

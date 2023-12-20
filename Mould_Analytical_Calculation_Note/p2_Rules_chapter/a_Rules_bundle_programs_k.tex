@@ -3,12 +3,11 @@
 
 ここでは機械設置時付属のNCプログラムを記載する。
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section G.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{O7000-O7313}
-\addcontentsline{lol}{section}{\numberline{\thesection}O7000-O7313}
+\addcontentsline{lol}{section}{\numberline{\thesection.}\Sectionname}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -53,7 +52,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{O7300\,:}
+\modcaptionof{lstlisting}{O7300\,: \pcrNum502, \pcrNum503の測定}
 \lstinputlisting[style=Gcode-bundle]{../Mould_Machining_Programs/bundle_programs_k/O7300.nc}
 
 
@@ -69,7 +68,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{O7302\,: \#502, \#503の測定}
+\modcaptionof{lstlisting}{O7302\,:}
 \lstinputlisting[style=Gcode-bundle]{../Mould_Machining_Programs/bundle_programs_k/O7302.nc}
 
 
@@ -120,7 +119,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{O8123}
 \addtocontents{lol}{\protect\addvspace{10pt}}{}{}
-\addcontentsline{lol}{section}{\numberline{\thesection}O8123}
+\addcontentsline{lol}{section}{\numberline{\thesection.}\Sectionname}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -134,9 +133,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section E.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{O9001-O9921}
+\modHeadsection{O9001-O9022}
 \addtocontents{lol}{\protect\addvspace{10pt}}{}{}
-\addcontentsline{lol}{section}{\numberline{\thesection}O9001-O9921}
+\addcontentsline{lol}{section}{\numberline{\thesection.}\Sectionname}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -196,9 +195,17 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{O9100-O9103: 自動工具長測定・工具破損検出}
+\addtocontents{lol}{\protect\addvspace{10pt}}{}{}
+\addcontentsline{lol}{section}{\numberline{\thesection.}\Sectionname}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{O9100\,: 工具長測定}
+\modcaptionof{lstlisting}{O9100\,: 自動工具長測定}
 \lstinputlisting[style=Gcode-bundle]{../Mould_Machining_Programs/bundle_programs_k/O9100.nc}
 
 
@@ -206,7 +213,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{O9101\,: 工具長測定}
+\modcaptionof{lstlisting}{O9101\,: 工具長オフセット量の修正}
 \lstinputlisting[style=Gcode-bundle]{../Mould_Machining_Programs/bundle_programs_k/O9101.nc}
 
 
@@ -214,7 +221,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{O9102\,: tool break check}
+\modcaptionof{lstlisting}{O9102\,: 工具破損検出}
 \lstinputlisting[style=Gcode-bundle]{../Mould_Machining_Programs/bundle_programs_k/O9102.nc}
 
 
@@ -222,11 +229,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{O9103\,: 手動測定}
+\modcaptionof{lstlisting}{O9103\,: 自動工具径測定}
 \lstinputlisting[style=Gcode-bundle]{../Mould_Machining_Programs/bundle_programs_k/O9103.nc}
 
 
 \clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{O9200: パラメタ確認}
+\addtocontents{lol}{\protect\addvspace{10pt}}{}{}
+\addcontentsline{lol}{section}{\numberline{\thesection.}\Sectionname}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -236,9 +251,17 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{O9300-O9313: タッチセンサー自動芯出し}
+\addtocontents{lol}{\protect\addvspace{10pt}}{}{}
+\addcontentsline{lol}{section}{\numberline{\thesection.}\Sectionname}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{O9300\,: \#502, \#503}
+\modcaptionof{lstlisting}{O9300\,: プローブの倒れの補正量の測定}
 \lstinputlisting[style=Gcode-bundle]{../Mould_Machining_Programs/bundle_programs_k/O9300.nc}
 
 
@@ -246,7 +269,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{O9301\,: \texorpdfstring{$XYZ$}{XYZ}}
+\modcaptionof{lstlisting}{O9301\,: 自動\texorpdfstring{$XYZ$}{XYZ}端面芯出し}
 \lstinputlisting[style=Gcode-bundle]{../Mould_Machining_Programs/bundle_programs_k/O9301.nc}
 
 
@@ -254,7 +277,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{O9302\,: 内円 自動}
+\modcaptionof{lstlisting}{O9302\,: 自動内円芯出し}
 \lstinputlisting[style=Gcode-bundle]{../Mould_Machining_Programs/bundle_programs_k/O9302.nc}
 
 
@@ -262,7 +285,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{O9303\,: 外円 自動}
+\modcaptionof{lstlisting}{O9303\,: 自動外円芯出し}
 \lstinputlisting[style=Gcode-bundle]{../Mould_Machining_Programs/bundle_programs_k/O9303.nc}
 
 
@@ -270,7 +293,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{O9310\,: \texorpdfstring{$XY$}{XY} 手動}
+\modcaptionof{lstlisting}{O9310\,: 手動\texorpdfstring{$XY$}{XY}端面芯出し}
 \lstinputlisting[style=Gcode-bundle]{../Mould_Machining_Programs/bundle_programs_k/O9310.nc}
 
 
@@ -278,7 +301,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{O9311\,: 内円 手動}
+\modcaptionof{lstlisting}{O9311\,: 手動内円芯出し}
 \lstinputlisting[style=Gcode-bundle]{../Mould_Machining_Programs/bundle_programs_k/O9311.nc}
 
 
@@ -286,19 +309,30 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{O9312\,: 外円 手動}
+\modcaptionof{lstlisting}{O9312\,: 手動外円芯出し}
 \lstinputlisting[style=Gcode-bundle]{../Mould_Machining_Programs/bundle_programs_k/O9312.nc}
 
 
-%\clearpage
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{O9313\,: \texorpdfstring{$Z$}{Z}測定}
+\modcaptionof{lstlisting}{O9313\,: \texorpdfstring{$Z$}{Z}座標系設定}
 \lstinputlisting[style=Gcode-bundle]{../Mould_Machining_Programs/bundle_programs_k/O9313.nc}
 
 
+
+
+
 \clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{O9390-O9393}
+\addtocontents{lol}{\protect\addvspace{10pt}}{}{}
+\addcontentsline{lol}{section}{\numberline{\thesection.}\Sectionname}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection G.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

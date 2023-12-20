@@ -49,14 +49,19 @@
     {\eqref{#1}~[p.\pageref{#1}]}%
 }
 %%%%% LISTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\abovecaptionskip}{0pt}
 \newcommand{\modcaptionof}[2]
            {\captionof{#1}{\lstlistingname\thechapter.\ifnum\value{lstlisting}<10 0\fi\arabic{lstlisting}. #2}}
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Appendixpart}{
-  \part*{第\hx\hx\thepart\hx\hx 部の補遺}
-  \addcontentsline{toc}{part}{第\hx\thepart\hx 部の補遺}
+  \part*{\thepart の補遺}
+  \addcontentsline{toc}{part}{\thepart の補遺}
 }
 %%%%% AUTO LABELING %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TO GET CHAPTER TITLE %%%%%%
+\newcommand\Chaptername{} % initialize \Chaptername
+\let\old@chapter\@chapter
+\def\@chapter[#1]#2{\gdef\Chaptername{#2}\old@chapter[#1]{#2}}
 %%%%% FOR CHAPTER OR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\modHeadchapter}[2][]{%
   \ifx\relax#1\relax
@@ -71,6 +76,11 @@
   \fi
 }
 %%%%% FOR SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TO GET SECTION TITLE %%%%%%
+\newcommand\Sectionname{} % initialize \Sectionname
+\let\Sectionmark\sectionmark
+\def\sectionmark#1{\def\Sectionname{#1}\Sectionmark{#1}}
+%%%%% TO LABEL SECTION  %%%%%%
 \newcommand{\modHeadsection}[2][]{%
   \ifx\relax#1\relax
     \section{#2}%
