@@ -346,9 +346,10 @@ G90 G56 G00 B#481
 (G57B parallel angle #481)
 M10 (4jiku clamp)
 
-G56 G65 P515600 D6. X172.90 Y172.90 Z[500.016-#605] M12.05 R18. Q0. I0. F500. E400. S930.
+G56 G65 P515610 D6. X172.90 Y172.90 Z[500.016-#605] R14. M12.05 W8.05
 (mizoIchi: 487.966)
-(O515600: Sotogawa 1shuu Corner R, al HidariMawari)
+(O515610: Mizo Corner R or C, al HidariMawari)
+(default: F=500., E=400, S=930., Q=0, I=0)
 (D: hosei kouguKei&Chou #)
 (X: AC mizoKei)
 (Y: BD mizoKei)
@@ -360,9 +361,9 @@ G56 G65 P515600 D6. X172.90 Y172.90 Z[500.016-#605] M12.05 R18. Q0. I0. F500. E4
 (Q: +hosei: AC&BD mizoKei)
 (I*: +hosei: AC center)
 
-G56 G65 P515600 D6. X172.90 Y172.90 Z[500.016-[8.05+#901010]] M12.05 R18. Q0. I0. F500. E400. S930.
+G56 G65 P515610 D6. X172.90 Y172.90 Z[500.016-[8.05+#901010]] M12.05 R14. Q0. I0. F500. E400. S930.
 (mizoHaba: 479.916)
-(O515600: Sotogawa 1shuu Corner R, al HidariMawari)
+(O515610: Mizo Corner R, al HidariMawari)
 (D: hosei kouguKei&Chou #)
 (X: AC mizoKei)
 (Y: BD mizoKei)
