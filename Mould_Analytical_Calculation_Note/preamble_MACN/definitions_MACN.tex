@@ -4,19 +4,28 @@
 
 \input{preamble_MACN/pictures_MACN}
 
-%%%%%% DATE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\customdate}{%
-  \the\year/\two@digits{\the\month}/\two@digits{\the\day}\
-  \currenttime\ (\jadayofweek{\the\year}{\the\month}{\the\day})%
-}
-%%%%%% NEWIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DATE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\customtoday}{\the\year/\two@digits{\the\month}/\two@digits{\the\day}}
+\newcommand{\customdate}{\customtoday\ \currenttime\ (\jadayofweek{\the\year}{\the\month}{\the\day})}
+\newcommand{\customtodayap}{\ifnum\currenthour<12 \customtoday\,a.m.\else\customtoday\,p.m.\fi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% NEWIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\if@backmatter%\@backmattertrue
 \newif\if@frontmatter%\@frontmattertrue
 \newif\if@appendix%\@appendixfalse
-%%%%%% TOC LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\tocPartSeparateline{\addtocontents{toc}{\protect\par\protect\hrulefill\protect\par\protect\vspace*{-10pt}}}%
-\def\tocAPartSeparateline{\addtocontents{toc}{\protect\par\protect\vspace*{15pt}\protect\hrule width 0.5\linewidth\protect\par\protect\vspace*{-10pt}}}%
-%%%%%% DEFINECOLOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DIMENSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\kanjiskip}{0.0pt plus 0.4pt minus 0.5pt}
+\setlength{\xkanjiskip}{2.40555pt plus 1.0pt minus 1.0pt}
+\newcommand{\hk}{\hspace{\kanjiskip}} % \kanjiskip at 12pt scrbook.cls
+\newcommand{\hx}{\hspace{\xkanjiskip}} % \xkanjiskip at 12pt scrbook.cls
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% COLOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{ai}     {rgb}{0.2039, 0.3765, 0.4314}
 \definecolor{kon}    {rgb}{0.0000, 0.2000, 0.4000}
 \definecolor{konpeki}{rgb}{0.0902, 0.5098, 0.7333}
@@ -27,17 +36,13 @@
 \definecolor{wwqqcc} {rgb}{0.4, 0, 0.8}
 \definecolor{qqzzqq} {rgb}{0, 0.6, 0}
 \definecolor{ffwwqq} {rgb}{1, 0.4, 0}
-%%%%% LINK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\newcommand\nextsectionlink[1]{\addtocounter{section}\@ne
-%                               \hyperlink{section.\thechapter.\the\c@section}{#1}%
-%                               \addtocounter{section}{-\@ne}}
-%\newcommand\previoussectionlink[1]{\addtocounter{section}{-\@ne}
-%                                   \hyperlink{section.\thechapter.\the\c@section}{#1}%
-%                                   \addtocounter{section}{\@ne}}
-%\newcommand\previouschapterlink[1]{\addtocounter{chapter}{-\@ne}
-%                                   \hyperlink{chapter.\the\c@chapter}{#1}%
-%                                   \addtocounter{chapter}{\@ne}}
-%%%%% REF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% REF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% AUTOREFNAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand{\subfigureautorefname}{\figureautorefname} % subfigure --> figure
+%\newcommand{\subtableautorefname}{\tableautorefname}
+%%%%% PAGEREF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\pageautoref}[1]{%
   \ifthenelse{\equal{\pageref{#1}}{\thepage}}%
     {\autoref{#1}}%
@@ -48,20 +53,31 @@
     {\eqref{#1}}%
     {\eqref{#1}~[p.\pageref{#1}]}%
 }
-%%%%% LISTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR LISTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% CAPTOINOF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\abovecaptionskip}{0pt}
 \newcommand{\modcaptionof}[2]
            {\captionof{#1}{\lstlistingname\thechapter.\ifnum\value{lstlisting}<10 0\fi\arabic{lstlisting}. #2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TOC LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tocPartSeparateline{\addtocontents{toc}{\protect\par\protect\hrulefill\protect\par\protect\vspace*{-10pt}}}%
+\def\tocAPartSeparateline{\addtocontents{toc}{\protect\par\protect\vspace*{15pt}\protect\hrule width 0.5\linewidth\protect\par\protect\vspace*{-10pt}}}%
+%%%%% TO NO PAGE BREAK IN TOC %%%
+\pretocmd{\section}{\ifnum\value{section}=0\addtocontents{toc}{\protect\nopagebreak}\fi}{}{}
+\pretocmd{\subsection}{\ifnum\value{subsection}=0\addtocontents{toc}{\protect\nopagebreak}\fi}{}{}
+\pretocmd{\subsubsection}{\ifnum\value{subsubsection}=0\addtocontents{toc}{\protect\nopagebreak}\fi}{}{}
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Appendixpart}{
   \part*{\thepart の補遺}
   \addcontentsline{toc}{part}{\thepart の補遺}
 }
-%%%%% AUTO LABELING %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% TO GET CHAPTER TITLE %%%%%%
-\newcommand\Chaptername{} % initialize \Chaptername
-\let\old@chapter\@chapter
-\def\@chapter[#1]#2{\gdef\Chaptername{#2}\old@chapter[#1]{#2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% AUTO LABELING %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR CHAPTER OR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\modHeadchapter}[2][]{%
   \ifx\relax#1\relax
@@ -76,10 +92,6 @@
   \fi
 }
 %%%%% FOR SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% TO GET SECTION TITLE %%%%%%
-\newcommand\Sectionname{} % initialize \Sectionname
-\let\Sectionmark\sectionmark
-\def\sectionmark#1{\def\Sectionname{#1}\Sectionmark{#1}}
 %%%%% TO LABEL SECTION  %%%%%%
 \newcommand{\modHeadsection}[2][]{%
   \ifx\relax#1\relax
@@ -89,6 +101,33 @@
   \fi
   \label{sec:\thesection}%
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% NEWCOLORBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{GlobalFootnote}% difine a counter Global Footnote
+%%%%% COLUMN %%%%%
+\newcommand{\Columnname}{Column}
+\newtcolorbox[auto counter, number within=chapter]{Column}[2][]{Columnbox, title={#2}, #1}
+%\newcommand{\tcb@cnt@Columnautorefname}{Column}
+%%%%% FIGBOX %%%%%
+\newtcolorbox{Figbox}[1][]{Figurebox, #1}
+%%%%% TABBOX %%%%%
+\newtcolorbox{Tabbox}[1][]{Tabularbox, #1}
+%\renewcommand{\tableautorefname}{表}
+%%%%% HOSOKU %%%%%
+\newcommand{\hosokuname}{補}
+\definecolor{hosoku}{cmyk}{0, 0, 0, .15}
+\newtcolorbox[auto counter, number within=chapter]{hosoku}[1][]{hosokubox, #1}
+\newcommand{\tcb@cnt@hosokuautorefname}{補足}
+%%%%% TWOCTABLE %%%%%
+\newtcolorbox[auto counter, number within=chapter]{twoCtable}[2][]{twoCtablebox, title={#2}, #1}
+%%%%% OTHER TIKZ DEFINITION %%%%%%%%%%%%%%%%%%
+\def\pgfname{\textsc{pgf}}
+\def\tikzname{Ti\textit{k}Z}
+\tikzfading[name=fade ball, inner color=transparent!60, outer color=transparent!30]
+\def\sball#1{\tikz \shade [ball color=#1, path fading=fade ball] (0,0) circle (.7ex);}
+\def\terminal#1#2{\tikz[baseline=(a.base)] \node (a) [terminal, bottom color=#2] {\small #1};}
+\def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{0pt}\textbf{#1}}{gray!25}\hskip6pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% DECLARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -116,57 +155,8 @@
   }%
 ]{WatermarkLayer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% NEWCOLORBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% LINK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcounter{GlobalFootnote}% difine a counter Global Footnote
-%%%%% COLUMN %%%%%
-\newcommand{\Columnname}{Column}
-\newtcolorbox[auto counter, number within=chapter]{Column}[2][]{Columnbox, title={#2}, #1}
-%%%%% FIGBOX %%%%%
-\newtcolorbox{Figbox}[1][]{Figurebox, #1}
-%%%%% TABBOX %%%%%
-\newtcolorbox{Tabbox}[1][]{Tabularbox, #1}
-%%%%% HOSOKU %%%%%
-\newcommand{\hosokuname}{補}
-\definecolor{hosoku}{cmyk}{0, 0, 0, .15}
-\newtcolorbox[auto counter, number within=chapter]{hosoku}[1][]{hosokubox, #1}
-%%%%% TWOCTABLE %%%%%
-\newtcolorbox[auto counter, number within=chapter]{twoCtable}[2][]{twoCtablebox, title={#2}, #1}
-%%%%% OTHER TIKZ DEFINITION %%%%%%%%%%%%%%%%%%
-\def\pgfname{\textsc{pgf}}
-\def\tikzname{Ti\textit{k}Z}
-\tikzfading[name=fade ball, inner color=transparent!60, outer color=transparent!30]
-\def\sball#1{\tikz \shade [ball color=#1, path fading=fade ball] (0,0) circle (.7ex);}
-\def\terminal#1#2{\tikz[baseline=(a.base)] \node (a) [terminal, bottom color=#2] {\small #1};}
-\def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{0pt}\textbf{#1}}{gray!25}\hskip6pt}
-%%%%% DIM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\kanjiskip}{0.0pt plus 0.4pt minus 0.5pt}
-\setlength{\xkanjiskip}{2.40555pt plus 1.0pt minus 1.0pt}
-\newcommand{\hk}{\hspace{\kanjiskip}} % \kanjiskip at 12pt scrbook.cls
-\newcommand{\hx}{\hspace{\xkanjiskip}} % \xkanjiskip at 12pt scrbook.cls
-%%%%% PRG # %%%%%%%%%%%%%%%%%%
-\newcommand\MXOThickness{O110001} % X外側中心計測
-\newcommand\MYOThickness{O110002} % Y外側中心計測
-\newcommand\MXIWidth{O110011} % X内側中心計測
-\newcommand\MYIWidth{O110012} % Y内側中心計測
-\newcommand\MXface{O110101} % X基準面計測
-\newcommand\MYcenterline{O111002} % 通り芯Y
-\newcommand\MXcenterline{O111003} % 通り芯X（Z測定）
-\newcommand\DLone{O210000} % 内面溝用 レベル1
-\newcommand\DLtwoAC{O220001} % 内面溝用 レベル2 AC
-\newcommand\DLtwoBD{O220002} % 内面溝用 レベル2 BD
-\newcommand\DMLthreeAC{O230001} % 内面溝 測定用 レベル3 AC
-\newcommand\DMLthreeBD{O230002} % 内面溝 測定用 レベル3 BD
-\newcommand\KRecRight{O515000} % 端面用 rectangle  左回り
-\newcommand\KICRLeft{O515200} % 内面取用 コーナーR 左回り
-\newcommand\KOCRLeft{O515600} % 内面取用 コーナーR 左回り
-\newcommand\DKLthreeAC{O630001} % 内面溝 加工用 レベル3 AC
-\newcommand\DKLthreeBD{O630002} % 内面溝 加工用 レベル3 BD
-\newcommand\OsensorOn{O910001} % タッチセンサーON
-\newcommand\OsensorOff{O910002} % タッチセンサーOFF
-%%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
-\newcommand{\DMname}{Dマシニング}
-\newcommand{\MMname}{Mマシニング}
 %%%%% LINK NAME %%%%%%%%%%%%%%%%%%
 \newcommand{\linkLaTeX}{\href{https://www.latex-project.org/}{\LaTeX}}
 \newcommand{\linkLaTeXProject}{\href{https://www.latex-project.org/}{\LaTeX\ Project}}
@@ -193,6 +183,50 @@
 \newcommand{\linkCanonicalLtd}{\href{https://canonical.com/}{Canonical Ltd}}
 \newcommand{\linkSQLite}{\href{https://www.sqlite.org/}{SQLite}}
 \newcommand{\linkSQLiteConsortium}{\href{https://www.sqlite.org/consortium.html}{SQLite Consortium}}
+%\newcommand\nextsectionlink[1]{\addtocounter{section}\@ne
+%                               \hyperlink{section.\thechapter.\the\c@section}{#1}%
+%                               \addtocounter{section}{-\@ne}}
+%\newcommand\previoussectionlink[1]{\addtocounter{section}{-\@ne}
+%                                   \hyperlink{section.\thechapter.\the\c@section}{#1}%
+%                                   \addtocounter{section}{\@ne}}
+%\newcommand\previouschapterlink[1]{\addtocounter{chapter}{-\@ne}
+%                                   \hyperlink{chapter.\the\c@chapter}{#1}%
+%                                   \addtocounter{chapter}{\@ne}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TO GET CHAPTER TITLE %%%%%%
+\newcommand\Chaptername{} % initialize \Chaptername
+\let\old@chapter\@chapter
+\def\@chapter[#1]#2{\gdef\Chaptername{#2}\old@chapter[#1]{#2}}
+%%%%% TO GET SECTION TITLE %%%%%%
+\newcommand\Sectionname{} % initialize \Sectionname
+\let\Sectionmark\sectionmark
+\def\sectionmark#1{\def\Sectionname{#1}\Sectionmark{#1}}
+%%%%% TO PRG NAME %%%%%%
+\newcommand\MXOThickness{O110001} % X外側中心計測
+\newcommand\MYOThickness{O110002} % Y外側中心計測
+\newcommand\MXIWidth{O110011} % X内側中心計測
+\newcommand\MYIWidth{O110012} % Y内側中心計測
+\newcommand\MXface{O110101} % 外削X基準面計測
+\newcommand\MYcenterline{O111002} % 通り芯Y
+\newcommand\MXcenterline{O111003} % 通り芯X（Z測定）
+\newcommand\DLone{O210000} % 内面溝用 レベル1
+\newcommand\DLtwoAC{O220001} % 内面溝用 レベル2 AC
+\newcommand\DLtwoBD{O220002} % 内面溝用 レベル2 BD
+\newcommand\DMLthreeAC{O230001} % 内面溝 測定用 レベル3 AC
+\newcommand\DMLthreeBD{O230002} % 内面溝 測定用 レベル3 BD
+\newcommand\KRecRight{O515000} % 端面用 コーナーR 右回り
+\newcommand\KICRLeft{O515200} % 内側 コーナーR 左回り
+\newcommand\KOCRLeft{O515600} % 外側 コーナーR 左回り
+\newcommand\KOKRCLeft{O515610} % 溝 コーナーR or C 左回り
+\newcommand\DKLthreeAC{O630001} % 内面溝 加工用 レベル3 AC
+\newcommand\DKLthreeBD{O630002} % 内面溝 加工用 レベル3 BD
+\newcommand\OsensorOn{O910001} % タッチセンサーON
+\newcommand\OsensorOff{O910002} % タッチセンサーOFF
 %%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%
-\def\pcrNum{\ifmmode{{\fontfamily{pcr}\selectfont{\text\#}}}\else{{\fontfamily{pcr}\selectfont\#}}\fi}
+\newcommand\pcrNum{\ifmmode{{\fontfamily{pcr}\selectfont{\text\#}}}\else{{\fontfamily{pcr}\selectfont\#}}\fi}
 \newcommand\cf{{\itshape cf.\,}}
+%%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
+\newcommand{\DMname}{Dマシニング}
+\newcommand{\MMname}{Mマシニング}

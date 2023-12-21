@@ -1,13 +1,16 @@
 %!TEX root = ../Mould_Analytical_Calculation_Note.tex
 
-%%%%% DOCUMENTCLASS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[11pt]{scrbook}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DOCUMENTCLASS %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{scrbook}
 
 \input{preamble_MACN/packages_MACN}
 \input{preamble_MACN/definitions_MACN}
 
-%%%%% GEOMETRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% GEOMETRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \geometry{
   a4paper, % paper size
   twoside,
@@ -19,7 +22,9 @@
   top=15.0truemm,
   bottom=-0.5truemm,
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% HEYPERSETUP %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hypersetup{
 %  pdfcreationdate=date,
 %  pdfcreator={upLaTeX with hyperref}, % creator for PDF subjct field
@@ -43,14 +48,26 @@
   urlcolor=ai,         % color of urls
   citecolor=sora,      % color of citation links
 }
-%%%%% LINESPREAD %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DISPLAYBREAK %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\allowdisplaybreaks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% UNIT LENGTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\unitlength}{1pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% LINESPREAD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \linespread{1.15}\selectfont
-%%%%% PARINDENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PARINDENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength\parindent{11pt}
 %\def \globalscale {0.83}
-%%%%% UNIT LENGTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\unitlength}{1pt}
-%%%%% FOOTNOTE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOOTNOTE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand*{\footnoteautorefname}{脚注}
 \interfootnotelinepenalty=10000
 \counterwithout{footnote}{chapter}
@@ -63,15 +80,9 @@
 }
 \makesavenoteenv{twoCtable}
 \makesavenoteenv{longtable}
-%%%%% DISPLAYBREAK %%%%%%%%%%%%%%%%%%%%%%%%%
-\allowdisplaybreaks
-%%%%% NAME, AUTOREFNAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\tcb@cnt@hosokuboxautorefname}{補足}
-%\newcommand{\tcb@cnt@Columnautorefname}{Column}
-%\newcommand{\subfigureautorefname}{\figureautorefname} % subfigure --> figure
-%\renewcommand{\tableautorefname}{表}
-%\newcommand{\subtableautorefname}{\tableautorefname}
-%%%%% HEADER AND FOOTER %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% HEADER AND FOOTER %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
 %\@frontmatterfalse\@backmattertrue\tocloftpagestyle{plainhead}
 %\@frontmattertrue\@backmatterfalse\tocloftpagestyle{plainheadfront}
@@ -122,7 +133,8 @@
 %%%%% WATERMARK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AddLayersToPageStyle{@everystyle@}{WatermarkLayer}
 %%%%% SETLIST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlist[enumerate]{listparindent=\parindent, parsep=0pt, partopsep=0pt, topsep=3pt, itemsep=3pt}
+\setlist[enumerate]{listparindent=\parindent, parsep=0pt, partopsep=0pt, topsep=3pt, itemsep=3pt, leftmargin=*}
+\setlist[enumerate, 1]{leftmargin=\leftmargini}
 %%%%% EQUATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\theequation}{\thesection.\arabic{equation}}
 \@addtoreset{equation}{section}
@@ -177,7 +189,7 @@
 \renewcommand{\cftfigaftersnum}{.} % tocloft
 \setlength{\cftfignumwidth}{3.5em}
 %%%%% STYLE OF LISTINGS %%%%%
-\renewcommand{\lstlistlistingname}{プログラム 目次}
+\renewcommand{\lstlistlistingname}{プログラム 一覧}
 \renewcommand{\lstlistingname}{{\scshape Prg: }}
 \AtBeginDocument{
 %  \counterwithout{lstlisting}{chapter}
@@ -268,7 +280,7 @@
   emphstyle={[222]\fontfamily{pcr}\selectfont\bfseries},%
 }
 %%%%% STYLE OF BIBLATEX %%%%%
-\renewcommand{\bibname}{\texorpdfstring{\hbox to 4.1em{参考文献}}{参考文献}}
+\renewcommand{\bibname}{\texorpdfstring{\hbox to 4em{参考文献}}{参考文献}}
 \ExecuteBibliographyOptions{
  sorting=nyt,
  hyperref=true,
@@ -293,7 +305,7 @@
 \renewcommand{\appendixautorefname}{補遺\!} % appendix --> 補遺
 %%%%% STYLE OF SECTION %%%%%
 %\renewcommand{\sectionautorefname}{節\!} % section --> 節
-\setcounter{secnumdepth}{3}
+\setcounter{secnumdepth}{4}
 \renewcommand{\subsectionautorefname}{\sectionautorefname} % subsection --> section
 \renewcommand{\subsubsectionautorefname}{\sectionautorefname} % subsubsection --> section
 %%%%% STYLE OF PARAGRAPH %%%%%%%%%%%%%%%%%%%%%
