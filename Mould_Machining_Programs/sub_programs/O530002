@@ -1,20 +1,20 @@
 %
-O630001 (for AC dimples kakou)
+O530002 (for BD dimples kakou)
 (level 3: kakou dimple)
-(I > 0: Y+, I < 0: Y-)
+(J > 0: Y+, J < 0: Y-)
 
-IF[#04EQ#0]GOTO800
-IF[#04EQ0]GOTO800
-(if I = 0 or empty, to N800)
+IF[#05EQ0]GOTO800
+IF[#05EQ#0]GOTO800
+(if J = 0 or empty, to N800)
 
-#33=#5041
-(#33= current work X: start point X)
+#33=#5042
+(#33= current work X: start point Y)
 #32=#[2400+#4111]+#[2600+#4111]
 (#32= hosei KouguKei + Mamou)
 
-IF[#04LT0]GOTO001 (if I < 0 then to N001)
-#31=1 (for A)
-(if I > 0, #31=1)
+IF[#05LT0]GOTO001 (if J < 0 then to N001)
+#31=1 (for B)
+(if J > 0, #31=1)
 IF[#4111EQ31]GOTO002
 IF[#4111EQ32]GOTO003
 IF[#4111EQ33]GOTO004
@@ -23,18 +23,18 @@ IF[#4111EQ33]GOTO004
 (if H#=33, go to N004)
 GOTO800
 N002 (for T31)
-#30=#403
+#30=#405
 GOTO008
 N003 (for T32)
-#30=#408
+#30=#410
 GOTO008
 N004 (for T33)
-#30=#413
+#30=#415
 GOTO008
 
 N001
-#31=-1 (for C)
-(if I < 0, #31=-1)
+#31=-1 (for D)
+(if J < 0, #31=-1)
 IF[#4111EQ31]GOTO005
 IF[#4111EQ32]GOTO006
 IF[#4111EQ33]GOTO007
@@ -43,22 +43,22 @@ IF[#4111EQ33]GOTO007
 (if H#=33, go to N007)
 GOTO800
 N005 (for T31)
-#30=#404
+#30=#406
 GOTO008
 N006 (for T32)
-#30=#409
+#30=#411
 GOTO008
 N007 (for T33)
-#30=#414
+#30=#416
 
 N008
-G90 G01 X[#23-#31*[#32+1.0]] F5400
-(X+: #23-#32-5.0 or X-: #23+#32+5.0)
-G91 G01 X[#31*[1.0+#30]] F540
-G91 G01 X[#31*#21] F100
+G90 G01 Y[#23-#31*[#32+1.0]] F5400
+(Y+: #23-#32-5.0 or Y-: #23+#32+5.0)
+G91 G01 Y[#31*[1.0+#30]] F540
+G91 G01 Y[#31*#21] F100
 (Y+ or Y-: 5.0+hosei, speed 300)
 (Y+ or Y-: U, speed 100)
-G90 G01 X#33 F5400
+G90 G01 Y#33 F5400
 (G90 G01 Y: to start point)
 GOTO999 (to N999)
 
@@ -73,7 +73,7 @@ N999 M99
 (Local variables)
 
 (as received arguments)
-(#04:I: +:X+direction, -:X-direction)
+(#05:J: +:Y+direction, -:Y-direction)
 (#21:U: the depth of dimples)
 (#23:W: the position of the dimple)
 
@@ -83,10 +83,10 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#403, #404, #408, #409, #413, #414)
+(#405, #406, #410, #411, #415, #416)
 
 
 (System variables)
 (#3000: alarm)
-(#5041: current work X)
+(#5042: current work Y)
 %

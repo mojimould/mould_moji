@@ -24,8 +24,8 @@
 %% subsection 9.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{番号付け：8, 7桁目}
-現時点（\customtodayap）では7, 8桁目は使用していないため、両者とも0とする。
-これをふまえて、以下では0埋めを省略して、プログラム番号を6桁の数字 (\verb|\d{6}|)で表す。
+現時点（\customtodayap）では、7桁目および8桁目は使用していないため、両者とも0とする。
+これに伴い、以下では0埋めを省略して、プログラム番号を6桁の数字 (\verb|\d{6}|)で表す。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -42,8 +42,8 @@
 \item\label{item:6KD} 加工（内面溝）を行うプログラム
 \item\label{item:6KN} 加工（逃し溝）を行うプログラム
 \setcounter{enumi}{7}
-\item\label{item:6oM} その他、製品の計測・加工に直接関係しない、タッチセンサーを用いるプログラム
 \item\label{item:6o} その他、製品の計測・加工に直接関係しない、タッチセンサーを用いないプログラム
+\item\label{item:6oM} その他、製品の計測・加工に直接関係しない、タッチセンサーを用いるプログラム
 \end{enumerate}
 したがって、任意のプログラムは\verb|[0-689]\d{5}|で表される。
 なお、複数の用途での使用が想定されるものに対しては、番号の若いほうに合わせる。
@@ -60,7 +60,7 @@
 \footnote{稀に、図面番号にアルファベットが含まれるものが存在する。
 その場合は、その都度に別途対応する。}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item 6桁目が\ref{item:6Mmain}（内面溝・逃し溝以外の測定）の場合、以下にように分類する
+\item 6桁目が\ref{item:6Mmain}（内面溝・逃し溝以外の測定）の場合、5桁目を以下にように分類する
   \begin{enumerate}[label=\arabic*., ref=\arabic*]
   \item\label{item:5MCOB} 芯出し（通り芯除く）において、($XY$)外側の両面を測定するプログラム(\verb|11\d{4}|)
   \item\label{item:5MCOO} 芯出し（通り芯除く）において、($XY$)外側の片面を測定するプログラム(\verb|12\d{4}|)
@@ -68,7 +68,7 @@
   \item\label{item:5MCIO} 芯出し（通り芯除く）において、($XY$)内側の片面を測定するプログラム(\verb|14\d{4}|)
   \item\label{item:5MCL} 通り芯を測定するプログラム(\verb|5\d{5}|)
   \end{enumerate}
-\item 6桁目が\ref{item:6MD}, \ref{item:6MN}, \ref{item:6KD}, \ref{item:6KN}（内面溝・逃し溝の測定, 加工）の場合、以下にように分類する
+\item 6桁目が\ref{item:6MD}, \ref{item:6MN}, \ref{item:6KD}, \ref{item:6KN}（内面溝・逃し溝の測定, 加工）の場合、5桁目を以下にように分類する
   \begin{enumerate}[label=\arabic*., ref=\arabic*]
   \item 主にレベル1の階層で用いるプログラム(\verb|[2356]1\d{4}|)
   \item 主にレベル2の階層で用いるプログラム(\verb|[2356]2\d{4}|)
@@ -76,7 +76,7 @@
   \item 主にレベル4の階層で用いるプログラム(\verb|[2356]4\d{4}|)
   \end{enumerate}
   なお、複数の用途での使用が想定されるものについては、番号の若いほうに合わせる
-\item 6桁目が\ref{item:6Kmain}（内面溝・逃し溝以外の加工）の場合、以下にように分類する
+\item 6桁目が\ref{item:6Kmain}（内面溝・逃し溝以外の加工）の場合、5桁目を以下にように分類する
   \begin{enumerate}[label=\arabic*., ref=\arabic*]
   \item\label{item:5KF} 端面の加工のプログラム(\verb|41\d{4}|)
   \item\label{item:5KO} 外削の加工のプログラム(\verb|42\d{4}|)
@@ -96,14 +96,19 @@
 4桁目の数字は、以下のように分類する。
 なお、以下では6桁目が\ref{item:6Mmain} $\sim$ \ref{item:6KN} (\verb|[1-6]{2}\d{4}|)の場合のみについて記述する。
 \begin{enumerate}[label=\alph*), ref=\alph*)]
-\item 6桁目が\ref{item:6Kmain}（内面溝・逃し溝以外の加工）以外の場合、5桁目の数字に問わず、$2\sim4$桁目は0とする(\verb|[1-356][1-5]0{3}\d|)
+\item 6桁目が\ref{item:6Kmain}\hx 以外（内面溝・逃し溝の加工）の場合、5桁目の依らず、$2\sim4$桁目は0とする(\verb|[1-356][1-5]0{3}\d|)
 \item 6桁目が\ref{item:6Kmain}（内面溝・逃し溝以外の加工）の場合、5桁目の数字に応じて以下にように分類する
   \begin{enumerate}[label=\alph{enumi}\,-\arabic*), leftmargin=\leftmargini]
-  \item 5桁目が\ref{item:5KK}（溝加工）以外の場合、$1\sim4$桁目は0とする(\verb|4[124-6]0{4}|)
+  \item 5桁目が\ref{item:5KO}, \ref{item:5KK}（外削, 溝加工）以外の場合、$1\sim4$桁目は0とする(\verb|4[14-6]0{4}|)
+  \item 5桁目が\ref{item:5KO}（外削加工）の場合、4桁目を以下のように分類し、$1\sim3$桁目は0とする
+    \begin{enumerate}[label=\arabic*., ref=\arabic*, start=0, leftmargin=*]
+    \item 端面に垂直方向な外削の加工のプログラム(\verb|420{4}|)
+    \item 湾曲に沿った方向な外削の加工のプログラム(\verb|4210{3}|)
+    \end{enumerate}
   \item 5桁目が\ref{item:5KK}（溝加工）の場合、4桁目を以下のように分類し、$1\sim3$桁目は0とする
     \begin{enumerate}[label=\arabic*., ref=\arabic*, leftmargin=*]
-    \item 径にコーナーがない（長方形の）溝の加工のプログラム(\verb|4310{3}|)
-    \item 径のコーナーがRあるいはCの溝の加工のプログラム(\verb|4320{3}|)
+    \item 径にコーナーのない（長方形の）溝の加工のプログラム(\verb|4310{3}|)
+    \item 径にコーナーのある溝の加工のプログラム(\verb|4320{3}|)
     \end{enumerate}
   \end{enumerate}
 \end{enumerate}

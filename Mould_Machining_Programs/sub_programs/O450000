@@ -1,6 +1,6 @@
 %
-O515200
-(Uchigawa 1shuu Corner R, ac HidariMawari)
+O450000
+(Uchigawa Mentori Corner R, ac HidariMawari 1shuu)
 (default: A=15, F=400, S=1800)
 
 IF[#24EQ#0]GOTO800

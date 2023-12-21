@@ -1,6 +1,6 @@
 %
-O515000
-(XY sotogawa-V 1shuu Coner R, ar MigiMawari)
+O410000
+(Tanmen naikei-V Coner R, ar MigiMawari 1shuu)
 (default: V=5, F=900, S=950)
 
 IF[#24EQ#0]GOTO800

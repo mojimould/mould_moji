@@ -1,5 +1,5 @@
 %
-O111002 (Y centerline measurement)
+O150002 (Y centerline measurement)
 
 IF[#23EQ#0]GOTO800
 IF[#26EQ#0]GOTO800

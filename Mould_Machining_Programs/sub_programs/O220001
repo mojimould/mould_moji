@@ -63,7 +63,7 @@ G65 P230001 I#33
 #[#30]=#768
 GOTO101
 N100 (for kakou)
-G65 P630001 I#33 U#21 W#[#30]
+G65 P530001 I#33 U#21 W#[#30]
 (kakou for AC dimples)
 N101
 #30=#30+1
@@ -123,7 +123,7 @@ N999 M99
 
 
 (Subprograms)
-(O230001, O630001)
+(O230001, O530001)
 
 
 (Passed arguments)
@@ -131,6 +131,6 @@ N999 M99
 
 
 (Used variables in other programs)
-(#717: O210000)
+(#717: O210003)
 (#768: O230001)
 %

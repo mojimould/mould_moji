@@ -59,7 +59,7 @@ G90 G54 G00 B[180.0+#481]
 M10 (4jiku clamp)
 
 
-(touch sensor measurement)
+(*** touch sensor measurement ***)
 
 (Bottom sokutei start)
 
@@ -84,7 +84,7 @@ G90 G54 G43 G01 Z[499.984+#491] H50 F3600
 (hosei kouguChou #50)
 (Z= BotTanmen +#491)
 
-G54 G65 P110101 I0. X180.95 Z499.984 T13.82 M0.07 C-1. A10.0
+G54 G65 P140001 I0. X180.95 Z499.984 T13.82 M0.07 C-1. A10.0
 (G54: Bot X Gaisaku center)
 (I: T +hosei)
 (X: Bot AC gaisakuKei)
@@ -117,7 +117,7 @@ G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-G55 G65 P110011 X155. Z499.84 W600. K-10. M0.07 F200. A10.
+G55 G65 P130001 X155. Z499.84 W600. K-10. M0.07 F200. A10.
 (G55: Bot X inside center)
 (X: Bot AC naikei)
 (Z: Bot sai_furiwake)
@@ -132,7 +132,7 @@ G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-G55 G65 P110012 Y153 Z499.984 K0. M0.07 F200. A10.
+G55 G65 P130002 Y153 Z499.984 K0. M0.07 F200. A10.
 (G55: Bot Y inside center)
 (Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
@@ -157,7 +157,7 @@ G90 G57 G43 Z[500.016+#491] H50 F3600
 (hosei KouguChou: #50)
 (Z= TopTanmen +#491)
 
-G57 G65 P110011 X156.863 Z500.016 M0.07 F200. A10.
+G57 G65 P130001 X156.863 Z500.016 M0.07 F200. A10.
 (G57: Top X inside center)
 (X: AC naikei)
 (Z: Top sai_furiwake)
@@ -169,7 +169,7 @@ G90 G57 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-G57 G65 P110012 Y154.839 Z500.016 M0.07 F200. A10.
+G57 G65 P130002 Y154.839 Z500.016 M0.07 F200. A10.
 (G57: Top Y inside center)
 (Y: BD naikei)
 (Z: Top sai_furiwake)
@@ -195,7 +195,7 @@ G90 G57 G43 Z[500.016+#491] H50 F3600
 (hosei KouguChou: #50)
 (Z= topTanmen+#491)
 
-G57 G65 P210000 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B-2.130
+G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B-2.130
 (dimple measurement)
 (X: AC naikei of last row)
 (Y: BD naikei of last row)
@@ -240,7 +240,7 @@ G90 G57 G43 Z[500.016+#491] H31 F5400
 (hosei KouguChou: #31)
 (Z= TopTanmen +#491)
 
-G57 G65 P210000 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B-2.130
+G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B-2.130
 (dimple kakou)
 (X: AC naikei of last row)
 (Y: BD naikei of last row)
@@ -280,9 +280,9 @@ IF[#401GT5]GOTO800
 (kaisuu: #901006/#401 kiriage)
 WHILE[#901007GE1]DO1
 #901007=#901007-1
-G57 G65 P515000 H2. X156.863 Y154.839 Z500.016 R19.
+G57 G65 P410000 H2. X156.863 Y154.839 Z500.016 R19.
 END1
-(O515000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
+(O410000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
 (default: V=5, F=900, S=950)
 (H: hosei kouguChou #)
 (X: Top AC naikei)
@@ -309,10 +309,10 @@ G90 G56 G00 B#481
 (G57B parallel angle #481)
 M10 (4jiku clamp)
 
-G56 G65 P515600 Q3. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930.
-G56 G65 P515600 Q1. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930.
-G56 G65 P515600 Q0. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930.
-(O515600: Sotogawa 1shuu Corner R, al HidariMawari)
+G56 G65 P420000 Q3. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930.
+G56 G65 P420000 Q1. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930.
+G56 G65 P420000 Q0. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930.
+(O420000: Sotogawa 1shuu Corner R, al HidariMawari)
 (default: I=0)
 (Q: +hosei: AC&BD gaisakuKei)
 (D: hosei kougu#)
@@ -346,11 +346,12 @@ G90 G56 G00 B#481
 (G57B parallel angle #481)
 M10 (4jiku clamp)
 
-G56 G65 P515610 D6. X172.90 Y172.90 Z[500.016-#605] R14. M12.05 W8.05
+G56 G65 P432000 D6. R14. X172.90 Y172.90 Z[500.016-#605] M12.05 W8.05
 (mizoIchi: 487.966)
-(O515610: Mizo Corner R or C, al HidariMawari)
+(O432000: Mizo Corner R or C, al HidariMawari)
 (default: F=500., E=400, S=930., Q=0, I=0)
 (D: hosei kouguKei&Chou #)
+(R: coner R)
 (X: AC mizoKei)
 (Y: BD mizoKei)
 (Z: Top sai_furiwake - kouguThickness)
@@ -361,9 +362,9 @@ G56 G65 P515610 D6. X172.90 Y172.90 Z[500.016-#605] R14. M12.05 W8.05
 (Q: +hosei: AC&BD mizoKei)
 (I*: +hosei: AC center)
 
-G56 G65 P515610 D6. X172.90 Y172.90 Z[500.016-[8.05+#901010]] M12.05 R14. Q0. I0. F500. E400. S930.
+G56 G65 P432000 D6. X172.90 Y172.90 Z[500.016-[8.05+#901010]] M12.05 R14. Q0. I0. F500. E400. S930.
 (mizoHaba: 479.916)
-(O515610: Mizo Corner R, al HidariMawari)
+(O432000: Mizo Corner R, al HidariMawari)
 (D: hosei kouguKei&Chou #)
 (X: AC mizoKei)
 (Y: BD mizoKei)
@@ -394,9 +395,9 @@ G90 G56 G00 B#481
 (G57B parallel angle #481)
 M10 (4jiku clamp)
 
-G56 G65 P515600 D13. X180.95 Y180.95 Z[500.016-1.0] R18. I0. Q0. F500. E400. S1800.
+G56 G65 P440000 D13. X180.95 Y180.95 Z[500.016-1.0] R18. I0. Q0. F500. E400. S1800.
 (Top Soto mentori)
-(O515600: Sotogawa 1shuu Corner R, al HidariMawari)
+(O440000: Sotogawa 1shuu Corner R, al HidariMawari)
 (D: hosei kouguKei&Chou #)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
@@ -437,9 +438,9 @@ IF[#401LE0]GOTO800
 (kaisuu: #901006/#401 kiriage)
 WHILE[#901007GE1]DO1
 #901007=#901007-1
-G55 G65 P515000 H2. X155. Y153. R19. Z499.984
+G55 G65 P410000 H2. X155. Y153. R19. Z499.984
 END1
-(O515000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
+(O410000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
 (default: V=5, F=900, S=950)
 (H: hosei kouguChou #)
 (X: Bot AC naikei)
@@ -466,10 +467,10 @@ G90 G00 G54 B[180.0+#481]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G54 G65 P515600 D16. Q3. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
-G54 G65 P515600 D16. Q1. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
-G54 G65 P515600 D16. Q0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
-(O515600: Sotogawa 1shuu Corner R, al HidariMawari)
+G54 G65 P420000 D16. Q3. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
+G54 G65 P420000 D16. Q1. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
+G54 G65 P420000 D16. Q0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
+(O420000: Sotogawa 1shuu Corner R, al HidariMawari)
 (default: I=0)
 (Q: +hosei: AC&BD gaisakuKei)
 (D: hosei kouguKei&Chou #)
@@ -500,9 +501,9 @@ G90 G00 G54 B[180.0+#481]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G54 G65 P515600 D11. Q0. X180.95 Y180.95 Z[499.984-4.0] R18. F500. E400. S1800.
+G54 G65 P440000 D11. Q0. X180.95 Y180.95 Z[499.984-4.0] R18. F500. E400. S1800.
 (Bot Soto Chamfer)
-(O515600: Sotogawa 1shuu Corner R, al HidariMawari)
+(O440000: Sotogawa 1shuu Corner R, al HidariMawari)
 (default: I=0)
 (D: hosei kouguKei&Chou #)
 (Q: +hosei: AC&BD gaisakuKei)
@@ -533,11 +534,11 @@ G90 G00 G55 B[180.0+#481]
 (G55B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G55 G65 P515200 D11. I0 K4. X155. Y153. Z499.984 W10. R3.5 M0.07
-G55 G65 P515200 D11. I0 K2. X155. Y153. Z499.984 W10. R3.5 M0.07
-G55 G65 P515200 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5 M0.07
+G55 G65 P450000 D11. I0 K4. X155. Y153. Z499.984 W10. R3.5 M0.07
+G55 G65 P450000 D11. I0 K2. X155. Y153. Z499.984 W10. R3.5 M0.07
+G55 G65 P450000 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5 M0.07
 (Bot Uchi Chamfer)
-(O515200: Uchigawa 1shuu Corner R, ac HidariMawari)
+(O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
 (default: A=15, F=400, S=1800)
 (D: hosei kougu #)
 (I*: +hosei X center)
@@ -576,8 +577,8 @@ M10 (4jiku clamp)
 T50 (touch sensor)
 M06
 
-G54 G65 P111003 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11. A10.
-(O111003: tooriShin X)
+G54 G65 P150003 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11. A10.
+(O150003: tooriShin X)
 (W: Top sai_furiwake)
 (Z: Top sai_furiwake)
 (T: Top AC gaisakuKei)
@@ -608,8 +609,8 @@ G90 G54 G00 B[180+#481]
 (B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G54 G65 P111002 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11. A10.
-(O111002: toorishin Y)
+G54 G65 P150002 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11. A10.
+(O150002: toorishin Y)
 (W: Top sai_furiwake)
 (Z: Bot sai_furiwake)
 (T: Top BD gaisakuKei)
@@ -679,8 +680,8 @@ N999 M30
 
 
 (Subprograms)
-(O110002, O110011, O110012, O110101, O111003, O210000)
-(O515000, O515200, O515600)
+(O110002, O130001, O130002, O140001, O150003, O210003)
+(O410000, O420000, O432000, O450000, O440000)
 (O910001, O910002)
 
 
@@ -688,10 +689,10 @@ N999 M30
 
 
 (Used in other programs)
-(#481: O210000)
-(#482: O110011, O210000)
-(#900030: O111002)
-(#900026: O111003)
-(#901006, #901007: O515000)
-(#901009: O515600)
+(#481: O210003)
+(#482: O130001, O210003)
+(#900026: O150003)
+(#900030: O150002)
+(#901006, #901007: O410000)
+(#901009: O432000)
 %
