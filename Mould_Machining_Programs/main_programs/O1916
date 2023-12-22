@@ -191,7 +191,7 @@ M10 (4jiku clamp)
 
 G90 G57 G01 X0 Y0 F5400
 (G57XY Top Inside Center)
-G90 G57 G43 Z[500.016+#491] H50 F3600
+G90 G57 G43 G01 Z[500.016+#491] H50 F3600
 (hosei KouguChou: #50)
 (Z= topTanmen+#491)
 
@@ -260,7 +260,7 @@ G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U
 /M00
 
 
-(*** Top tanmen start ***)
+(*** Top Tanmen start ***)
 
 
 #901006=8.0 (kezuriShiro)
@@ -297,7 +297,7 @@ M09 (coolant off)
 /M00
 
 
-(*** Top gaisaku start ***)
+(*** Top Gaisaku start ***)
 
 
 G91 G28 Z0
@@ -331,7 +331,7 @@ M09 (coolant off)
 /M00
 
 
-(*** mizo kakou start ***)
+(*** Mizo start ***)
 
 
 #901009=0.1 (+hosei: mizoIchi)
@@ -346,44 +346,28 @@ G90 G56 G00 B#481
 (G57B parallel angle #481)
 M10 (4jiku clamp)
 
-G56 G65 P432000 D6. R14. X172.90 Y172.90 Z[500.016-#605] M12.05 W8.05
-(mizoIchi: 487.966)
+G56 G65 P432000 D6. R14. X172.90 Y172.90 Z500.016 M12.05 W8.05
+(mizo: 487.966, mizoHaba: 479.916)
 (O432000: Mizo Corner R or C, al HidariMawari)
-(default: F=500., E=400, S=930., Q=0, I=0)
+(default: F=500., E=400., S=930., Q=0, I=0)
 (D: hosei kouguKei&Chou #)
 (R: coner R)
 (X: AC mizoKei)
 (Y: BD mizoKei)
 (Z: Top sai_furiwake - kouguThickness)
 (M: mizoIchi)
-(F: speed: chokusen)
-(E: speed: corner R)
-(S: kaitenSuu)
-(Q: +hosei: AC&BD mizoKei)
+(W: mizoHaba)
+(F*: speed: chokusen)
+(E*: speed: corner R)
+(S*: kaitenSuu)
+(Q*: +hosei: AC&BD mizoKei)
 (I*: +hosei: AC center)
-
-G56 G65 P432000 D6. X172.90 Y172.90 Z[500.016-[8.05+#901010]] M12.05 R14. Q0. I0. F500. E400. S930.
-(mizoHaba: 479.916)
-(O432000: Mizo Corner R, al HidariMawari)
-(D: hosei kouguKei&Chou #)
-(X: AC mizoKei)
-(Y: BD mizoKei)
-(Z: Top sai_furiwake - [mizoHaba+#901010])
-(M: mizoIchi)
-(F: speed: chokusen)
-(E: speed: corner R)
-(S: kaitenSuu)
-(Q: +hosei: AC&BD mizoKei)
-(I*: +hosei: AC center)
-
-M05 (shujiku kaiten off)
-M09 (coolant off)
 
 (mizo kakou end)
 /M00
 
 
-(*** Top mentori soto start ***)
+(*** Top SotoMentori start ***)
 
 
 G91 G28 Z0
@@ -681,7 +665,7 @@ N999 M30
 
 (Subprograms)
 (O110002, O130001, O130002, O140001, O150003, O210003)
-(O410000, O420000, O432000, O450000, O440000)
+(O410000, O420000, O432000, O440000, O450000)
 (O910001, O910002)
 
 
