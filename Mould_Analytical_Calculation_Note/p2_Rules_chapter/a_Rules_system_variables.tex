@@ -5,23 +5,94 @@
 %% section E.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\DMname のシステム変数}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection E.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\pcrNum1000-\pcrNum1000: パレット}
 \begin{twoCtable}{}
-\pcrNum1000 & パレット\pcrNum~~0:\pcrNum1, 1:\pcrNum2\\\hline
+\pcrNum1000 & パレット\pcrNum~~0:\pcrNum1, 1:\pcrNum2
+\end{twoCtable}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection E.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\pcrNum1004-\pcrNum1005: タッチセンサー電源}
+\begin{twoCtable}{}
 \pcrNum1004 & タッチセンサー電源~~0: off, 1: on\\\hline
-\pcrNum1005 & タッチセンサー電池残量~~0: OK, 1: low\\\hline
+\pcrNum1005 & タッチセンサー電池残量~~0: OK, 1: low
+\end{twoCtable}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection E.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\pcrNum2001-\pcrNum2800: 工具補正}
+\begin{twoCtable}{}
 \pcrNum2000+xxx & 工具長補正 \pcrNum xxx補正量（摩耗0とした値, xxx=1-200）\\\hline
 \pcrNum2200+xxx & 工具長補正 \pcrNum xxx摩耗 (xxx=1-200)\\\hline
 \pcrNum2400+xxx & 工具径補正 \pcrNum xxx補正量（摩耗0とした値, xxx=1-200）\\\hline
-\pcrNum2600+xxx & 工具径補正 \pcrNum xxx摩耗 (xxx=1-200)\\\hline
-\pcrNum3000 & アラーム\\\hline
-\pcrNum3011 & 現在の年月日(yyyymmdd)\\\hline
-\pcrNum4012 & 現在のワーク座標系\pcrNum (G\pcrNum)\\\hline
-\pcrNum4107 & 直前の工具径補正コード\pcrNum (D\pcrNum)\\\hline
-\pcrNum4111 & 直前の工具長補正コード\pcrNum (H\pcrNum)\\\hline
-\pcrNum4113 & 直前のブロック指令 Mコード\pcrNum (M\pcrNum)\\\hline
-\pcrNum4114 & 直前のブロック指令 シーケンス\pcrNum (N\pcrNum)\\\hline
-\pcrNum4115 & 直前のブロック指令 プログラム\pcrNum (O\pcrNum)\\\hline
-\pcrNum4120 & 直前のブロック指令 工具コード\pcrNum (T\pcrNum)\\\hline
+\pcrNum2600+xxx & 工具径補正 \pcrNum xxx摩耗 (xxx=1-200)
+\end{twoCtable}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection E.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\pcrNum3000: アラーム}
+\begin{twoCtable}{}
+\pcrNum3000 & アラーム
+\end{twoCtable}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection E.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\pcrNum3011-\pcrNum3011: 時計・時刻}
+\begin{twoCtable}{}
+\pcrNum3011 & 現在の年月日(yyyymmdd)
+\end{twoCtable}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection E.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\pcrNum4001-\pcrNum4021: 直前までのブロックで指令されたG指令モーダル情報}
+\begin{twoCtable}{}
+\pcrNum4012 & ワーク座標系\pcrNum{} (\verb|G#|)
+\end{twoCtable}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection E.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\pcrNum4101-\pcrNum4120: 直前までのブロックで指令されたモーダル情報}
+\begin{twoCtable}{}
+\pcrNum4107 & \verb|D#| 工具径補正コード\pcrNum\\\hline
+\pcrNum4109 & \verb|F#| Fコード\pcrNum\\\hline
+\pcrNum4111 & \verb|H#| 工具長補正コード\pcrNum\\\hline
+\pcrNum4113 & \verb|M#| Mコード\pcrNum\\\hline
+\pcrNum4114 & \verb|N#| シーケンス\pcrNum\\\hline
+\pcrNum4115 & \verb|O#| プログラム\pcrNum\\\hline
+\pcrNum4119 & \verb|S#| Sコード\pcrNum\\\hline
+\pcrNum4120 & \verb|T#| 工具コード\pcrNum
+\end{twoCtable}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection E.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\pcrNum5001-\pcrNum10200: 位置情報}
+\begin{twoCtable}{}
 \pcrNum500x\footnote{\pcrNum500x:工具補正値が加味された値（ワーク座標系に表示される数値）。途中でスキップがオンになったときはそのときの値。}
        & ブロック終点位置（現在のワーク座標系）1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
 \pcrNum502x & 現在の機械座標系の座標 1:X, 2:Y, 3:Z, 4:B, 5:C\\\hline
