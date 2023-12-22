@@ -1,133 +1,72 @@
 %
-O432000
-(Mizo Corner R or C, ar HidariMawari 1shuu)
+O402200
+(Corner R or C, ar HidariMawari 1shuu)
 
 N001
-IF[#07EQ#0]GOTO800
 IF[#24EQ#0]GOTO800
 IF[#24LT10]GOTO800
 IF[#25EQ#0]GOTO800
 IF[#25LT10]GOTO800
-IF[#26EQ#0]GOTO800
-IF[#13LT#0]GOTO800
-IF[#13LE1]GOTO800
-IF[#23LT#0]GOTO800
-IF[#23LE1]GOTO800
-(if D = #0, go to N800)
 (if X < 10 or #0, go to N800)
 (if Y < 10 or #0, go to N800)
-(if Z = #0, go to N800)
-(if M < 1, or #0, go to N800)
-(if W < 1, or #0, go to N800)
 
-N002
-IF[#18EQ#0]GOTO003
+N002 (for F)
+IF[#09NE#0]GOTO003
+#09=500.0
+N003 (for E)
+IF[#08NE#0]GOTO004
+#08=400.0
+N004 (for S)
+IF[#19NE#0]GOTO005
+#19=930.0
+(default: F=500.)
+(default: E=400.)
+(default: S=930.)
+
+N005
+IF[#09LT10]GOTO800
+IF[#08LT10]GOTO800
+IF[#19LE200]GOTO800
+(if F < 10, go to N800)
+(if E < 10, go to N800)
+(if S <= 200, go to N800)
+
+N006
+IF[#01EQ1]GOTO007
+IF[#01EQ2]GOTO007
+IF[#01EQ3]GOTO010
+IF[#01EQ4]GOTO010
+GOTO800
+
+N007
+IF[#18EQ#0]GOTO008
 IF[#03NE#0]GOTO800
 (if either R and C are not #0, go to N800)
 #33=#18
-GOTO004
+GOTO009
 (if R is not #0 and C=#0, go to N004)
-N003
+N008
 IF[#03EQ#0]GOTO800
 (if both R and C are #0, go to N800)
 #33=#03
 (if C is not #0 and R=#0, go to N004)
 
-N004 (for F)
-IF[#09NE#0]GOTO005
-#09=500.0
-N005 (for E)
-IF[#08NE#0]GOTO006
-#08=400.0
-N006 (for S)
-IF[#19NE#0]GOTO007
-#19=930.0
-N007 (for Q)
-IF[#17NE#0]GOTO008
-#17=0
-N008 (for I)
-IF[#04NE#0]GOTO009
-#04=0
-(default: F=500.)
-(default: E=400.)
-(default: S=930.)
-(default: Q=0)
-(default: I=0)
-
 N009
 IF[#33LT1]GOTO800
-IF[#09LT10]GOTO800
-IF[#08LT10]GOTO800
-IF[#19LE200]GOTO800
-(if #33 < 1, go to N800)
-(if F < 10, go to N800)
-(if E < 10, go to N800)
-(if S <= 200, go to N800)
-
-N010
 IF[#33GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
-IF[[#26-#13-#23-#901009-#901010]LE[#461/2]]GOTO800
-IF[[ABS[#17]]GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
-IF[[FIX[#07]]NE#07]GOTO800
-IF[#07LT6]GOTO800
-IF[#07GT10]GOTO800
-IF[#04GE#33]GOTO800
+(if #33 < 1, go to N800)
 (if #33 < 1 or #33 >= min[X/4, Y/4], go to N800)
-(if Z-M-W-#901009-#901010 <= #461/2, go to N800)
-(if |Q| >= min[X/4, Y/4], go to N800)
-(if D < 6 or D > 10 or D is not integer, go to N800)
-(if I >= #33, go to N800)
 
-N011
-#32=#[#2200+#07]+#[#2400+#07]
-IF[#32LE1]GOTO800
-(#32: kouguKei)
-(if #32 <= 1, go to N800)
 
-N012
-IF[#07EQ6]GOTO013
-IF[#07EQ7]GOTO014
-IF[#07EQ8]GOTO015
-IF[#07EQ9]GOTO016
-N013 (for T06)
-#31=#605
-GOTO017
-N014 (for T07)
-#31=#607
-GOTO017
-N015 (for T08)
-#31=#609
-GOTO017
-N016 (for T09)
-#31=#611
-(#31: kougu Thickness)
-#30=#24+#17
-#29=#25+#17
 
 
 (kokokara G00)
 
+N010
+IF[#01NE1]GOTO021
 
-N017
-G91 G28 Z0
-G90 G00 X[[#30/2]+#32*3+#04] Y[[#29/2]+#32] F10800
-G90 G43 G00 H#07 Z[#26+#491] F10800
-G90 G01 Z[#26-#13-#901009-#31] S#19 F5400
-
-N018
-M03 (shujiku kaiten on)
-M08 (coolant on)
-
-N019
-G90 G42 G01 D#07 X[[#30/2]+#32*2+#04] Y[#29/2] F5400
-
-IF[#03NE#0]GOTO021
-(if C, go to N021)
 
 N020 (for R)
-G65 P400015 A#01 R#33 X#30 Y#29 F#09 E#08 S#19
-
-
 G91 G01 X-[#30+#32*2-#33] F#09
 (a: X-)
 G91 G03 X-#33 Y-#33 I0 J-#33 F#08
