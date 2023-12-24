@@ -3,7 +3,8 @@
 \input{preamble_MACN/styles_MACN}
 
 \usepackage{refcheck}
-\newcommand{\WMsentence}{Copy}
+\setallpageWatermark{Copy}{atan(297/210)+5.1}{32.1}
+%\setallpageWatermark{Draft}{atan(297/210)+5.1}{25.3}
 
 \begin{document}
 \setlength\baselineskip{16pt}
@@ -477,7 +478,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 1.2.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{振分長}
+\subsubsection{再振分長}
 スペーサを入れた後の（トップ側の）振分長$f'_\mathrm T$は、\pageeqref{eq:afterftUfinite}の虚部を見ればよい。
 回転角は$-(\alpha'_{\mathrm U_\mathrm B}-\alpha_{\mathrm U_\mathrm B})$なので、
 \begin{align*}
@@ -519,7 +520,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 1.2.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{振分長が均等になるスペーサ厚}
+\subsection{再振分長が均等になるスペーサ厚}
 トップ側とボトム側の振分長が同じになるとき、$\delta$は
 \begin{align*}
   \sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac\delta{\sqrt{\delta^2+(2\bar l)^2}} = f_d \qquad

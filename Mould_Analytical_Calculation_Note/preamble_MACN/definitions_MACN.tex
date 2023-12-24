@@ -144,16 +144,17 @@
 \DeclareRobustCommand{\Div}[1]{\allowbreak\if@display\mkern18mu
   \else\mkern12mu\fi{\operator@font div}\,\,#1}
 %%%%% DECLARENEWLAYER %%%%%%%%%%%%%%%%%%%%
-\DeclareNewLayer[
-  foreground,
-  page,
-  contents={%
-    \begin{tikzpicture}[remember picture, overlay]
-      \node[rotate=atan(297/210), scale=29.5, anchor=center, opacity=0.1, text=lightgray] at (current page.center)
-        {\scshape\WMsentence};%
-    \end{tikzpicture}%
-  }%
-]{WatermarkLayer}
+\newcommand{\setallpageWatermark}[3]{%
+  \DeclareNewLayer[
+    foreground,
+    page,
+    contents={%
+      \begin{tikzpicture}[remember picture, overlay]
+        \node[rotate=#2, scale=#3, anchor=center, opacity=0.1, text=lightgray] at (current page.center){\scshape#1};%
+      \end{tikzpicture}%
+    }%
+  ]{WatermarkLayer}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% LINK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
