@@ -19,4 +19,4 @@
     - These documents are used for numerical position calculations and for spacer calculations.
 
 <sub>Copyright © 2023.</sub>
-<sub>This work (except for bundled programs) is owned by the individual creator, not any corporation. All rights reserved.</sub>
+<sub>This document (except for bundled programs) is owned by the individual writer, not any corporation. All rights reserved. However, unless the use is substantially similar to the original work, you are free to use it without permission. (I would appreciate it if you could contact me when using it.)</sub>
