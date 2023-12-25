@@ -58,8 +58,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% CAPTOINOF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\abovecaptionskip}{0pt}
-\newcommand{\modcaptionof}[2]
-           {\captionof{#1}{\lstlistingname\thechapter.\ifnum\value{lstlisting}<10 0\fi\arabic{lstlisting}. #2}}
+\newcommand{\modcaptionof}[2]{%
+  \captionof{#1}{%
+    \csname #1name\endcsname\thechapter.%
+    \ifnum\value{#1}<10 0\fi
+      \arabic{#1}. #2}}
+\newcommand{\modTcaptionof}[3]{%
+  \begin{caption}{\csname #1name\endcsname\thechapter.\ifnum\value{#1}<10 0\fi\arabic{#1}. #2}
+  #3
+  \end{caption}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -123,7 +130,7 @@
 \newtcolorbox[auto counter, number within=chapter]{hosoku}[1][]{hosokubox, #1}
 \newcommand{\tcb@cnt@hosokuautorefname}{補足}
 %%%%% TWOCTABLE %%%%%
-\newtcolorbox[auto counter, number within=chapter]{twoCtable}[2][]{twoCtablebox, title={#2}, #1}
+\newtcolorbox[number within=chapter]{twoCtable}[2][]{twoCtablebox, title={#2}, #1}
 %%%%% OTHER TIKZ DEFINITION %%%%%%%%%%%%%%%%%%
 \def\pgfname{\textsc{pgf}}
 \def\tikzname{Ti\textit{k}Z}

@@ -84,8 +84,6 @@
 %%%%% HEADER AND FOOTER %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
-%\@frontmatterfalse\@backmattertrue\tocloftpagestyle{plainhead}
-%\@frontmattertrue\@backmatterfalse\tocloftpagestyle{plainheadfront}
 \renewcommand{\headrulewidth}{1.5pt}
 \renewcommand{\footrulewidth}{0pt}
 \newcommand{\commonheadfoot}{
@@ -94,9 +92,7 @@
   \fancyfoot[LO]{\tiny\customdate} % footer left fields for main odd pages
   \fancyfoot[RE]{\tiny\customdate} % footer right fields for main even pages
 }
-
 \fancypagestyle{emptydate}{\renewcommand{\headrulewidth}{0pt}\commonheadfoot}
-
 \fancypagestyle{front}{
   \commonheadfoot
   \fancyhead[RO]{\thepage}
@@ -121,14 +117,14 @@
 }
 \renewcommand*\frontmatter{%
   \if@twoside\cleardoubleoddpage\else\clearpage\fi
-  \@frontmattertrue\@mainmatterfalse\@backmatterfalse\pagenumbering{roman}\tocloftpagestyle{plainheadfront}\pagestyle{front}%
+  \@frontmattertrue\@mainmatterfalse\@backmatterfalse\pagenumbering{roman}\pagestyle{plainheadfront}%
 }
 \renewcommand*\mainmatter{%
   \if@twoside\cleardoubleoddpage\else\clearpage\fi
   \@frontmatterfalse\@mainmattertrue\@backmatterfalse\pagenumbering{arabic}\pagestyle{main}%
 }
 \renewcommand*\backmatter{%
-  \if@openright\cleardoubleoddpage\else\clearpage\fi\@frontmatterfalse\@mainmatterfalse\@backmattertrue\tocloftpagestyle{plainhead}\pagestyle{front}
+  \if@openright\cleardoubleoddpage\else\clearpage\fi\@frontmatterfalse\@mainmatterfalse\@backmattertrue\pagestyle{plainhead}
 }
 %%%%% WATERMARK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AddLayersToPageStyle{@everystyle@}{WatermarkLayer}
@@ -159,14 +155,38 @@
   font={bf, large, sf},
   hypcap=false,
 }
+\captionsetup[table]{
+  justification=raggedright,
+  singlelinecheck=false,
+  position=above,
+  aboveskip=3pt,
+  belowskip=1pt,
+  labelformat={empty},
+  labelfont={bf, sf},
+  labelsep={space},
+  font={bf, large, sf},
+  hypcap=false,
+}
 %%%%% STYLE OF TABLE OF CONTENTS %%%%%
-%\renewcommand{\thechapter}{\ifnum\value{chapter}<10 0\fi\arabic{chapter}} % add 0 for chapter num
-\setlength{\cftpartnumwidth}{4.25em} % tocloft
-\setlength{\cftchapnumwidth}{1.5em} % tocloft
-\renewcommand{\cftchapaftersnum}{.} % tocloft
-\renewcommand{\cftsecaftersnum}{.} % tocloft
-\renewcommand{\cftsubsecaftersnum}{.} % tocloft
-\renewcommand{\cftsubsubsecaftersnum}{.} % tocloft
+\RedeclareSectionCommand[
+  tocindent=0em,
+  tocnumwidth=4.25em
+]{part}
+\addtokomafont{partentry}{\def\autodot{}}
+%\RedeclareSectionCommand[
+%  tocindent=1.5em,
+%  tocnumwidth=1.5em
+%]{chapter}
+%\RedeclareSectionCommand[
+%  tocindent=3em,
+%  tocnumwidth=2.5em,
+%  tocentrynumberformat=\entrynumberwithdot
+%]{section}
+%\RedeclareSectionCommand[
+%  tocindent=4.5em,
+%  tocnumwidth=2.5em,
+%  tocentrynumberformat=\entrynumberwithdot
+%]{subsection}
 \AtBeginEnvironment{appendices}{%
   \patchcmd{\part}{\newpage}{\relax}{}{}%
   \pretocmd{\part}{\tocAPartSeparateline}{}{}{}% add page break before parts, except part 1
@@ -184,9 +204,7 @@
 %\setcounter{lofdepth}{2}
 %\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3.2em}}
 %\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
-\renewcommand{\cftfigpresnum}{\figurename\,}
-\renewcommand{\cftfigaftersnum}{.} % tocloft
-\setlength{\cftfignumwidth}{3.5em}
+\renewcommand{\tablename}{表}
 %%%%% STYLE OF LISTINGS %%%%%
 \renewcommand{\lstlistlistingname}{プログラム 一覧}
 \renewcommand{\lstlistingname}{{\scshape Prg: }}
@@ -292,7 +310,7 @@
 %%%%% STYLE OF PART %%%%%
 %\renewcommand{\partautorefname}{part}  % part --> part
 \renewcommand\partpagestyle{emptydate}
-\renewcommand*{\partformat}{\begin{gtfamily}\thepart\end{gtfamily}}
+%\renewcommand*{\partformat}{\begin{gtfamily}\thepart\end{gtfamily}}
 \renewcommand{\thepart}{第\hx\Roman{part}\hx 部}
 %\renewcommand*{\addparttocentry}[2]{\addtocentrydefault{part}{#1}{第#2部}}
 %%%%% STYLE OF CHAPTER %%%%%

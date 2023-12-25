@@ -41,6 +41,7 @@
 %%                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \addcontentsline{toc}{chapter}{\contentsname}
+\pagestyle{front}%
 \tableofcontents
 
 
@@ -56,6 +57,19 @@
 \let\cleardoublepage\relax  % \cleardoublepageを一時的に無効にする
 \pagestyle{front}%
 \lstlistoflistings  % insert lol
+\endgroup
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LIST OF TABLES   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begingroup
+\let\cleardoublepage\clearpage  % \cleardoublepageを一時的に無効にする
+\pagestyle{front}%
+\listoftables  % insert lot
+\addchaptertocentry{}{\listtablename}
 \endgroup
 
 
