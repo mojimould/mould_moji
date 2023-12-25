@@ -292,6 +292,7 @@ END1
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
+G91 G28 Z0
 
 (Top tammen end)
 /M00
@@ -309,23 +310,28 @@ G90 G56 G00 B#481
 (G57B parallel angle #481)
 M10 (4jiku clamp)
 
-G56 G65 P420000 Q3. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930.
-G56 G65 P420000 Q1. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930.
-G56 G65 P420000 Q0. D16. X180.95 Y180.95 Z[500.016-32.0] R18. F400. E400. S930.
+G56 G65 P420000 D16. Q3. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
+G56 G65 P420000 D16. Q1. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
+G56 G65 P420000 D16. Q0. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
 (O420000: Sotogawa 1shuu Corner R, al HidariMawari)
-(default: I=0)
-(Q: +hosei: AC&BD gaisakuKei)
-(D: hosei kougu#)
+(default: Q=0, F=400, E=400, S=930, I=0, M=0, W=0)
+(D: hosei kouguKei&Chou #)
+(Q*: +hosei: AC&BD gaisakuKei)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
-(Z: Top sai_furiwake - gaisakuLength)
+(Z: Top sai_furiwake)
 (R: corner R)
-(F: speed: chokusen)
-(E: speed: corner R)
-(S: kaitensuu)
+(K: gaisaku Length)
+(M*: mizoIchi)
+(W*: mizoHaba)
+(F*: speed: chokusen)
+(E*: speed: corner R)
+(S*: kaitensuu)
+(I*: +hosei: AC center)
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
+G91 G28 Z0
 
 (Top gaisaku end)
 /M00
@@ -363,7 +369,7 @@ G56 G65 P430000 D6. A1. R14. X172.90 Y172.90 Z500.016 M12.05 W8.05
 (S*: kaitenSuu)
 (Q*: +hosei: AC&BD mizoKei)
 (I*: +hosei: AC center)
-(B*: 2 or 3 times)
+(B*: 3: 3 times)
 
 (mizo kakou end)
 /M00
@@ -436,6 +442,7 @@ END1
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
+G91 G28 Z0
 
 (Bottom tammen end)
 /M00
@@ -453,23 +460,28 @@ G90 G00 G54 B[180.0+#481]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G54 G65 P420000 D16. Q3. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
-G54 G65 P420000 D16. Q1. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
-G54 G65 P420000 D16. Q0. X180.95 Y180.95 Z[499.984-25.0] R18. F400. E400. S930.
+G54 G65 P420000 D16. Q3. X180.95 Y180.95 Z499.984 R18. K25.0
+G54 G65 P420000 D16. Q1. X180.95 Y180.95 Z499.984 R18. K25.0
+G54 G65 P420000 D16. Q0. X180.95 Y180.95 Z499.984 R18. K25.0
 (O420000: Sotogawa 1shuu Corner R, al HidariMawari)
-(default: I=0)
-(Q: +hosei: AC&BD gaisakuKei)
+(default: Q=0, F=400, E=400, S=930, I=0, M=0, W=0)
 (D: hosei kouguKei&Chou #)
+(Q*: +hosei: AC&BD gaisakuKei)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
-(Z: Bot sai_furiwake - gaisakuLength)
+(Z: Top sai_furiwake)
 (R: corner R)
-(F: speed: chokusen)
-(E: speed: corner R)
-(S: kaitenSuu)
+(K: gaisaku Length)
+(M*: mizoIchi)
+(W*: mizoHaba)
+(F*: speed: chokusen)
+(E*: speed: corner R)
+(S*: kaitensuu)
+(I*: +hosei: AC center)
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
+G91 G28 Z0
 
 (Bottom gaisaku end)
 /M00
