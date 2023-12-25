@@ -1,0 +1,260 @@
+%
+O430000
+(Mizo Corner R or C, ar HidariMawari 1shuu)
+
+N001
+IF[#07EQ#0]GOTO800
+IF[#24EQ#0]GOTO800
+IF[#24LT10]GOTO800
+IF[#25EQ#0]GOTO800
+IF[#25LT10]GOTO800
+IF[#26EQ#0]GOTO800
+IF[#13LT#0]GOTO800
+IF[#13LE1]GOTO800
+IF[#23LT#0]GOTO800
+IF[#23LE1]GOTO800
+(if D = #0, go to N800)
+(if X < 10 or #0, go to N800)
+(if Y < 10 or #0, go to N800)
+(if Z = #0, go to N800)
+(if M < 1, or #0, go to N800)
+(if W < 1, or #0, go to N800)
+
+N002
+IF[#01EQ1]GOTO003
+IF[#01EQ2]GOTO004
+IF[#01EQ3]GOTO005
+IF[#01EQ4]GOTO005
+GOTO800
+(if A is not 1, 2, 3, 4, go to N800)
+
+N003 (for R)
+IF[#18EQ#0]GOTO800
+IF[#03NE#0]GOTO800
+IF[#18LT0.1]GOTO800
+IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
+(if R < 0.1 or R >= min[X/4, Y/4], go to N800)
+GOTO006
+
+N004 (for C)
+IF[#03EQ#0]GOTO800
+IF[#18NE#0]GOTO800
+IF[#03LT0.1]GOTO800
+IF[#03GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
+(if C < 0.1 or C >= min[X/4, Y/4], go to N800)
+GOTO006
+
+N005 (for rec or BD only)
+IF[#03NE#0]GOTO800
+IF[#18NE#0]GOTO800
+
+N006 (for F)
+IF[#09NE#0]GOTO007
+#09=500.0
+N007 (for E)
+IF[#08NE#0]GOTO008
+#08=400.0
+N008 (for S)
+IF[#19NE#0]GOTO009
+#19=930.0
+N009 (for Q)
+IF[#17NE#0]GOTO010
+#17=0
+N010 (for I)
+IF[#04NE#0]GOTO011
+#04=0
+(default: F=500.)
+(default: E=400.)
+(default: S=930.)
+(default: Q=0)
+(default: I=0)
+
+N011
+IF[#09LT10]GOTO800
+IF[#08LT10]GOTO800
+IF[#19LE200]GOTO800
+(if F < 10, go to N800)
+(if E < 10, go to N800)
+(if S <= 200, go to N800)
+
+N012
+IF[[#26-#13-#23-#901009-#901010]LE[#461/2]]GOTO800
+IF[[ABS[#17]]GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
+IF[#07LT6]GOTO800
+IF[#07GT10]GOTO800
+IF[[FIX[#07]]NE#07]GOTO800
+IF[[ABS[#04]]GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
+(if Z-M-W-#901009-#901010 <= #461/2, go to N800)
+(if |Q| >= min[X/4, Y/4], go to N800)
+(if D < 6 or D > 10 or D is not integer, go to N800)
+(if |I| >= min[X/4, Y/4], go to N800)
+
+N013
+#32=[50+#[#2200+#07]+#[#2400+#07]+ABS[50-#[#2200+#07]+#[#2400+#07]]]/2
+(#32: max[50, kouguKei])
+
+N014
+IF[#07EQ6]GOTO015
+IF[#07EQ7]GOTO016
+IF[#07EQ8]GOTO017
+IF[#07EQ9]GOTO018
+N015 (for T06)
+#31=#605
+GOTO019
+N016 (for T07)
+#31=#607
+GOTO019
+N017 (for T08)
+#31=#609
+GOTO019
+N018 (for T09)
+#31=#611
+(#31: kougu Thickness)
+#30=#24+#17
+#29=#25+#17
+
+
+(kokokara G00)
+
+
+N019
+G91 G28 Z0
+G90 G00 X[[#30/2]+#32*3+#04] Y[[#29/2]+#32] F10800
+G90 G43 G00 H#07 Z[#26+#491] F10800
+G90 G01 Z[#26-#13-#901009-#31] S#19 F5400
+
+N020
+M03 (shujiku kaiten on)
+M08 (coolant on)
+
+N021
+G90 G42 G01 D#07 X[[#30/2]+#32*2+#04] Y[#29/2] F5400
+
+N022
+IF[#01EQ1]GOTO023
+IF[#01EQ2]GOTO024
+IF[#01EQ3]GOTO025
+IF[#01EQ4]GOTO026
+GOTO800
+
+N023 (for R)
+G65 P490005 A#01 R#33 X#30 Y#29 D#32 F#09 E#08 S#19
+GOTO027
+N024 (for C)
+G65 P490005 A#01 C#03 X#30 Y#29 D#32 F#09 E#08 S#19
+GOTO027
+N025 (for rec)
+G65 P490005 A#01 X#30 Y#29 D#32 F#09 S#19
+GOTO027
+N026 (for BD only)
+G65 P490005 A#01 X[#30+#32] Y#29 D#32 F#09 S#19
+
+N027
+IF[#02NE3]GOTO034
+G90 G40 G00 X[[#30/2]+#32*3+#04] F10800
+G90 G00 Y[[#29/2]+#32] F10800
+G90 G01 Z[#26-[#13+#901009+[#23+#901010+#31]/2]] S#19 F5400
+
+N028
+G90 G42 G01 D#07 X[[#30/2]+#32*2+#04] Y[#29/2] F5400
+
+N029
+IF[#01EQ1]GOTO030
+IF[#01EQ2]GOTO031
+IF[#01EQ3]GOTO032
+IF[#01EQ4]GOTO033
+GOTO800
+
+N030 (for R)
+G65 P490005 A#01 R#33 X#30 Y#29 D#32 F#09 E#08 S#19
+GOTO034
+N031 (for C)
+G65 P490005 A#01 C#03 X#30 Y#29 D#32 F#09 E#08 S#19
+GOTO034
+N032 (for rec)
+G65 P490005 A#01 X#30 Y#29 D#32 F#09 S#19
+GOTO034
+N033 (for BD only)
+G65 P490005 A#01 X[#30+#32] Y#29 D#32 F#09 S#19
+
+N034
+G90 G40 G00 X[[#30/2]+#32*3+#04] F10800
+G90 G00 Y[[#29/2]+#32] F10800
+G90 G01 Z[#26-#13-#23-#901009-#901010] S#19 F5400
+
+N035
+G90 G42 G01 D#07 X[[#30/2]+#32*2+#04] Y[#29/2] F5400
+
+N036
+IF[#01EQ1]GOTO037
+IF[#01EQ2]GOTO038
+IF[#01EQ3]GOTO039
+IF[#01EQ4]GOTO040
+GOTO800
+
+N037 (for R)
+G65 P490005 A#01 R#33 X#30 Y#29 D#32 F#09 E#08 S#19
+GOTO041
+N038 (for C)
+G65 P490005 A#01 C#03 X#30 Y#29 D#32 F#09 E#08 S#19
+GOTO041
+N039 (for rec)
+G65 P490005 A#01 X#30 Y#29 D#32 F#09 S#19
+GOTO041
+N040 (for BD only)
+G65 P490005 A#01 X[#30+#32] Y#29 D#32 F#09 S#19
+
+N041
+M05 (shujiku kaiten off)
+M09 (coolant off)
+
+N042
+G90 G40 G00 X[#30+#32*3] F10800
+S200
+G91 G28 Z0
+GOTO999
+
+N800
+M05 (shujiku kaiten off)
+M09 (coolant off)
+#3000=121 (are the arguments OK?)
+
+N999 M99
+
+(Used Variables and Programs)
+
+(Local variables)
+
+(as received arguments)
+(#07:D: kouguKei&Chou hosei)
+(#13:M: mizoIchi)
+(#18:R: corner R)
+(#23:W: mizoHaba)
+(#24:X: AC gaikei)
+(#25:Y: BD gaikei)
+(#26:Z: sai-furiwake)
+(as received hidden arguments)
+(#04:I: +hosei AC center)
+(#08:E: speed corner R)
+(#09:F: speed chokusenBu)
+(#17:Q: +hosei X&Y)
+(#19:S: kaitenSuu)
+
+(as LHS)
+(#29, #30, #31, #32, #33)
+
+
+(Common variable)
+(as RHS)
+(#461, #491, #901009, #901010)
+
+
+(System variables)
+(#22xx: #xx kouguChou)
+(#24xx: #xx kouguChouMamou)
+(#3000: alarm)
+
+
+(Subprograms)
+(O490005)
+%

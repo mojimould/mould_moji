@@ -346,12 +346,12 @@ G90 G56 G00 B#481
 (G57B parallel angle #481)
 M10 (4jiku clamp)
 
-G56 G65 P432000 D6. A1. R14. X172.90 Y172.90 Z500.016 M12.05 W8.05
+G56 G65 P430000 D6. A1. R14. X172.90 Y172.90 Z500.016 M12.05 W8.05
 (mizo: 487.966, mizoHaba: 479.916)
-(O432000: Mizo Corner R or C, al HidariMawari)
-(default: F=500., E=400., S=930., Q=0, I=0)
+(O430000: Mizo Corner R or C, al HidariMawari)
+(default: F=500., E=400., S=930., Q=0, I=0, B=#0)
 (D: hosei kouguKei&Chou #)
-(A: type)
+(A: key type)
 (R: coner R)
 (X: AC mizoKei)
 (Y: BD mizoKei)
@@ -363,6 +363,7 @@ G56 G65 P432000 D6. A1. R14. X172.90 Y172.90 Z500.016 M12.05 W8.05
 (S*: kaitenSuu)
 (Q*: +hosei: AC&BD mizoKei)
 (I*: +hosei: AC center)
+(B*: 2 or 3 times)
 
 (mizo kakou end)
 /M00
@@ -404,7 +405,7 @@ M09 (coolant off)
 (kokokara Bottom kakou start)
 
 
-(*** Bottom tanmen start ***)
+(*** Bottom Tanmen start ***)
 
 
 G91 G28 Z0
@@ -440,7 +441,7 @@ M09 (coolant off)
 /M00
 
 
-(*** Bottom gaisaku start ***)
+(*** Bottom Gaisaku start ***)
 
 
 G91 G28 Z0
@@ -474,7 +475,7 @@ M09 (coolant off)
 /M00
 
 
-(*** Bottom mentori soto start ***)
+(*** Bottom Mentori Soto start ***)
 
 
 G91 G28 Z0
@@ -507,7 +508,7 @@ M09 (coolant off)
 /M00
 
 
-(*** Bottom mentori uchi start ***)
+(*** Bottom Mentori Uchi start ***)
 
 
 G91 G28 Z0
@@ -550,7 +551,7 @@ IF[#33EQ0]GOTO006
 M00
 
 
-(*** tooriShin X start ***)
+(*** TooriShin X start ***)
 
 G91 G30 X0 Y0
 M11 (4jiku unclamp)
@@ -584,7 +585,7 @@ N008 (tooriShin X end)
 M00
 
 
-(*** tooriShin Y start ***)
+(*** TooriShin Y start ***)
 
 
 G91 G28 Z0
@@ -666,7 +667,7 @@ N999 M30
 
 (Subprograms)
 (O110002, O130001, O130002, O140001, O150003, O210003)
-(O410000, O420000, O432000, O440000, O450000)
+(O410000, O420000, O430000, O440000, O450000)
 (O910001, O910002)
 
 
@@ -679,5 +680,5 @@ N999 M30
 (#900026: O150003)
 (#900030: O150002)
 (#901006, #901007: O410000)
-(#901009: O432000)
+(#901009: O430000)
 %

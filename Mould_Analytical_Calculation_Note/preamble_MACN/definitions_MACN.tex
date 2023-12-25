@@ -105,6 +105,9 @@
 %%%%% NEWCOLORBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcounter{GlobalFootnote}% difine a counter Global Footnote
+%%%%% PART %%%%%
+\newcommand{\tablePartnname}{\thepart}
+\newtcolorbox[auto counter, number within=part]{tablePart}[2][]{Columnbox, title={\termblue{\tablePartnname：#2}}, #1, after title={}}
 %%%%% COLUMN %%%%%
 \newcommand{\Columnname}{Column}
 \newtcolorbox[auto counter, number within=chapter]{Column}[2][]{Columnbox, title={#2}, #1}
@@ -221,7 +224,7 @@
 \newcommand\DMLthreeBD{O230002} % 内面溝 測定用 レベル3 BD
 \newcommand\KTanmenRight{O410000} % 端面用 コーナーR 右回り
 \newcommand\KGaisakuRLeft{O420000} % 外側 コーナーR 左回り
-\newcommand\KMizoConerLeft{O432000} % 溝用 コーナーRC 左回り
+\newcommand\KMizoConerLeft{O430000} % 溝用 コーナーRC 左回り
 \newcommand\KUchiMentoriRLeft{O450000} % 内側面取用 コーナーR 左回り
 \newcommand\KSotoMentoriRLeft{O440000} % 外側面取用 コーナーR 左回り
 \newcommand\DKLthreeAC{O530001} % 内面溝 加工用 レベル3 AC
@@ -234,3 +237,16 @@
 %%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
 \newcommand{\DMname}{Dマシニング}
 \newcommand{\MMname}{Mマシニング}
+%%%%% FOR PART WITH TABLE %%%%%%%%%%%%%%%%%%
+\newcommand{\tPart}[3]{
+  \begingroup
+  \@openrightfalse
+  \part{#1}
+  \thispagestyle{empty}
+  \vspace*{0.1\textheight}%
+  \begin{tablePart}{#2}
+  #3
+  \end{tablePart}%
+  \@openrighttrue
+  \endgroup
+}
