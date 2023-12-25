@@ -87,7 +87,7 @@ IF[#5003GT[#26-#512+#06]]GOTO802
 
 G91 G31 X-[#32-#512-#01] F1500
 (X-: [AC naikei/2 - D/2 - A])
-IF[[ABS[#5001-#30]]LT[ABS[#32-#512-#01]]]GOTO803
+IF[[ABS[#5001-#30]+0.001]LT[ABS[#32-#512-#01]]]GOTO803
 (if |skipX-#30| < |AC naikei/2 - D/2 - A|, to N803)
 
 G91 G31 X-[#01*2] F#09
@@ -103,7 +103,7 @@ G90 G01 X#30 F5400 (X to start point)
 
 G91 G31 X[#32-#512-#01] F1500
 (X+: [AC gaikei/2 - D/2 - A])
-IF[[ABS[#5001-#30]]LT[ABS[#32-#512-#01]]]GOTO803
+IF[[ABS[#5001-#30]+0.001]LT[ABS[#32-#512-#01]]]GOTO803
 (if |skipX - #30| < |AC naikei/2 - D/2 - A|, to N803)
 
 G91 G31 X[#01*2] F#09

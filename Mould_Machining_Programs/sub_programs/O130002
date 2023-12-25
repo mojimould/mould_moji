@@ -63,7 +63,7 @@ IF[#5003GT[#26-#512+#06]]GOTO802
 
 G91 G31 Y-[#32-#512-#01] F1500
 (Y-: [BD naikei/2 - D/2 - A])
-IF[[ABS[#5002-#31]]LT[ABS[#32-#512-#01]]]GOTO803
+IF[[ABS[#5002-#31]+0.001]LT[ABS[#32-#512-#01]]]GOTO803
 (if |skipY-#31| < |BD naikei/2 - D/2 - A|, to N803)
 
 G91 G31 Y-[#01*2] F#09
@@ -79,7 +79,7 @@ G90 G01 Y#31 F5400 (Y to start point)
 
 G91 G31 Y[#32-#512-#01] F1500
 (Y+: [BD gaikei/2 - D/2 - A])
-IF[[ABS[#5002-#31]]LT[ABS[#32-#512-#01]]]GOTO803
+IF[[ABS[#5002-#31]+0.001]LT[ABS[#32-#512-#01]]]GOTO803
 (if |skipY - #31| < |BD naikei/2 - D/2 - A|, to N803)
 
 G91 G31 Y[#01*2] F#09

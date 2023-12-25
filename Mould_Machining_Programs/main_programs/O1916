@@ -1,7 +1,7 @@
 %
 O1916 (main: SMP-1916)
 
-#33=1
+#33=0
 (center line measurement: 0:off, 1:on)
 
 #481=-0.642 (parallel angle)
@@ -132,7 +132,7 @@ G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-G55 G65 P130002 Y153 Z499.984 K0. M0.07 F200. A10.
+G55 G65 P130002 Y153 Z499.984 K-10. M0.07 F200. A10.
 (G55: Bot Y inside center)
 (Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
@@ -411,9 +411,6 @@ G91 G28 Z0
 /M00
 
 
-(kokokara Bottom kakou start)
-
-
 (*** Bottom Tanmen start ***)
 
 
@@ -542,7 +539,7 @@ G55 G65 P450000 D11. I0 K2. X155. Y153. Z499.984 W10. R3.5 M0.07
 G55 G65 P450000 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5 M0.07
 (Bot Uchi Chamfer)
 (O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
-(default: A=15., F=400., S=1800., M=0)
+(default: F=400., S=1800., I=0, K=0, A=15.)
 (D: hosei kougu #)
 (I*: +hosei X center)
 (K*: +hosei Z)
@@ -551,7 +548,10 @@ G55 G65 P450000 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5 M0.07
 (Z: Bot sai_furiwake)
 (W: mentori fukasa C)
 (R: corner R)
-(M*: mekki)
+(M: mekki)
+(F*: speed: chokusen)
+(S*: kaitenSuu)
+(A*: approach radius)
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
@@ -569,6 +569,7 @@ M00
 
 
 (*** TooriShin X start ***)
+
 
 G91 G30 X0 Y0
 M11 (4jiku unclamp)

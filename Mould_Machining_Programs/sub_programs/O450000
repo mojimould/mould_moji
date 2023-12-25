@@ -1,7 +1,6 @@
 %
 O450000
 (Uchigawa Mentori Corner R, ac HidariMawari 1shuu)
-(default: A=15, F=400, S=1800)
 
 N001
 IF[#07EQ#0]GOTO800
@@ -14,6 +13,7 @@ IF[#23EQ#0]GOTO800
 IF[#23LT0.1]GOTO800
 IF[#18EQ#0]GOTO800
 IF[#18LT0.1]GOTO800
+IF[#13EQ#0]GOTO800
 IF[#13LT0]GOTO800
 IF[#07LT2]GOTO800
 IF[#07GT200]GOTO800
@@ -22,6 +22,7 @@ IF[#07GT200]GOTO800
 (if Y < 10 or #0, go to N800)
 (if Z = #0, go to N800)
 (if W < 0.1 or #0, go to N800)
+(if M < 0 or #0, go to N800)
 (if R <= 0.1 or #0, go to N800)
 
 N002 (for F)
@@ -39,11 +40,17 @@ IF[#06NE#0]GOTO006
 N006 (for A)
 IF[#01NE#0]GOTO007
 #01=15.
-(default: F=500.)
+(default: F=400.)
 (default: S=1800.)
-(default: Q=0)
 (default: I=0)
+(default: K=0)
 (default: A=15.)
+
+N007
+IF[#09LT10]GOTO800
+IF[#19LT200]GOTO800
+(if F < 10, go to N800)
+(if S < 200, go to N800)
 
 N008
 IF[#01LT1]GOTO800
@@ -62,6 +69,7 @@ IF[#13GE#18]GOTO800
 (if D < 11 or D > 15 or D is not integer, go to N800)
 (if M >= R, go to N800)
 
+N009
 #33=#25-[#18*2]
 #32=#24-[#18*2]
 #31=#18+#13
@@ -73,31 +81,26 @@ IF[#13GE#18]GOTO800
 (kokokara G00)
 
 
-N009
-G90 G00 X0 Y0 (XY c: work genten)
-G91 G00 X#04
+N010
+G90 G43 G00 H#07 Z[#26+#491] F10800
+G90 G00 X#04 Y0 F10800
+G90 G01 Z[#26-#23+#06] F5400 S#19
 (hosei: AC center: +: X+, -: X-)
-
-
-
-
-
-
-G90 G43 H#07 Z[#26-#23+#06] S#19
 (hosei kouguChou: #07)
-(hosei Z: Z-W+K, S=#19)
+(hosei Z: Z-W+K)
 
+N011
 M03 (shujiku kaiten on)
 M08 (coolant on)
 
-G91 G41 G01 D#07 X#01 Y[[#25/2]+#13-#01] F#09
+N012
+G91 G41 G01 D#07 X#01 Y[[#25/2]+#13-#01] F5400
 (hosei kouguKei, kougu #07)
 (X+: A)
 (Y+: Y/2+M-A)
-
-G91 G03 X-#01 Y#01 I-#01 J0
+G91 G03 X-#01 Y#01 I-#01 J0 F#09
 (ac: approach R #01 [-#01, 0] X-Y+)
-G91 G01 X-[#32/2]
+G91 G01 X-[#32/2] F#09
 (ac2al: X- AC chokusenBu/2)
 G91 G03 X-#31 Y-#31 I0 J-#31
 (al corner: R #31 [0, -#31] X-Y-)
@@ -118,11 +121,10 @@ G91 G01 X-[#32/2]
 G91 G03 X-#01 Y-#01 I0 J-#01
 (ac: approach R #01 [0, -#01] X-Y-)
 
+N013
 G90 G00 G40 X0 Y0 F5400
-(cancel hosei kouguKei)
-(XY: work genten)
-
 G90 G00 Z[#26+#491] F10800
+(XY: work genten)
 (Z: tanmen+#491)
 GOTO999
 
@@ -138,17 +140,17 @@ N999 M99
 (Local variables)
 
 (as received arguments)
-(#04:I: +hosei X center)
-(#06:K: +hosei Z)
 (#07:D: hosei kouguKei)
 (#13:M: mekki)
 (#18:R: corner R)
-(#23:W: mentori fukasa C)
+(#23:W: mentori length C)
 (#24:X: AC naikei)
 (#25:Y: BD naikei)
 (#26:Z: sai-furiwake)
 (as received hidden arguments)
 (#01:A: approach R)
+(#04:I: +hosei X center)
+(#06:K: +hosei Z)
 (#09:F: speed)
 (#19:S: kaitenSuu)
 
