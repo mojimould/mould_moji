@@ -11,18 +11,18 @@ IF[#25LT10]GOTO800
 IF[#26EQ#0]GOTO800
 IF[#06EQ#0]GOTO800
 IF[#06LT1]GOTO800
-IF[#13LT1]GOTO800
-IF[#23LT1]GOTO800
+IF[#13LT0]GOTO800
+IF[#23LT0]GOTO800
 IF[#18EQ#0]GOTO800
-IF[#18LE1]GOTO800
+IF[#18LT0.1]GOTO800
 (if D = #0, go to N800)
 (if X < 10 or #0, go to N800)
 (if Y < 10 or #0, go to N800)
 (if Z = #0, go to N800)
 (if K < 1 or #0, go to N800)
-(if M < 1, go to N800)
-(if W < 1, go to N800)
-(if R <= 1 or #0, go to N800)
+(if M < 0, go to N800)
+(if W < 0, go to N800)
+(if R < 1 or #0, go to N800)
 
 N002 (for F)
 IF[#09NE#0]GOTO003
@@ -61,7 +61,7 @@ IF[#07LT16]GOTO800
 IF[#07GT20]GOTO800
 IF[[FIX[#07]]NE#07]GOTO800
 IF[ABS[#04]GE#18]GOTO800
-(if Z-M <= #461/2, go to N800)
+(if Z-K <= #461/2, go to N800)
 (if |Q| > R, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
 (if D < 16 or D > 20 or D is not integer, go to N800)
@@ -106,8 +106,8 @@ N015
 G65 P490005 A1. R#18 X#31 Y#30 D#32 F#09 E#08 S#19
 
 N016
-G90 G40 G00 X[[#30/2]+#32*3+#04] F10800
-G90 G00 Y[[#29/2]+#32] F10800
+G90 G40 G00 X[[#31/2]+#32*3+#04] F10800
+G90 G00 Y[[#30/2]+#32] F10800
 G90 G43 G00 H#07 Z[#26+#491] F10800
 GOTO999
 
