@@ -1,11 +1,26 @@
 %!TEX root = ../Mould_Analytical_Calculation_Note.tex
 \setcounter{lstlisting}{0}
 
-ここでは具体的に作成した（サブ）プログラムを記載しておく。
+ここでは具体的に作成したプログラムを記載する。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section E.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{メインプログラムの例}
+\addtocontents{lol}{\protect\addvspace{3pt}}{}{}
+\addcontentsline{lol}{section}{\numberline{\thesection}\Sectionname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MXOThickness %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MainEx}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/main_programs/\MainEx}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{測定用（内面溝除く）プログラム}
 \addtocontents{lol}{\protect\addvspace{3pt}}{}{}
@@ -68,7 +83,7 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section E.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{加工用（内面溝除く）サブプログラム}
 \addtocontents{lol}{\protect\addvspace{10pt}}{}{}
@@ -113,11 +128,18 @@
 \modcaptionof{lstlisting}{\KUchiMentoriRLeft\,:加工 内面取用 コーナーR 左回り1周}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\KUchiMentoriRLeft}
 
-\texttt{}
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section E.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KOLeft\,:外側 左回り1周}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\KOLeft}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{内面溝用 移動・測定・加工用プログラム}
 \addtocontents{lol}{\protect\addvspace{10pt}}{}{}
@@ -182,7 +204,7 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section E.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{その他のサブプログラム}
 \addtocontents{lol}{\protect\addvspace{10pt}}{}{}
@@ -190,7 +212,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \OsensorOn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \OsensorOn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modcaptionof{lstlisting}{\OsensorOn\,:タッチセンサー電源ON}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\OsensorOn}
@@ -198,7 +220,7 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \OsensorOff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \OsensorOff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modcaptionof{lstlisting}{\OsensorOff\,:タッチセンサー電源OFF}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\OsensorOff}
