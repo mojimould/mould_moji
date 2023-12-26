@@ -5,21 +5,20 @@ N001
 #33=0
 (center line measurement: 0:off, 1:on)
 
-N002
 #481=-0.642 (parallel angle)
 #482=8922.7 (center curvature R)
 (Top sai_furiwake: 500.016)
 (Bot sai_furiwake: 499.984)
 
-N003
+N002
 G91 G28 Z0
 IF[#1005EQ1]GOTO802
-IF[#1004EQ0]GOTO001
+IF[#1004EQ0]GOTO003
 (if low battery, go to N802)
-(if current sensor off, go to N001)
+(if current sensor off, go to N003)
 M117 (sensor off)
 
-N004
+N003
 G90 G53 G00 X-5.501 Y-258.624 F9600
 G49 G40 G80 G17 (cancel hosei)
 M262 (palette rotate speed 25)
@@ -28,16 +27,16 @@ M71 (palette #1)
 
 (Genten Settei G54 G55 G56 G57)
 
-N005
-IF[#1000NE0]GOTO006
-(if NOT p#1, to N006)
+N004
+IF[#1000NE0]GOTO005
+(if NOT p#1, to N005)
 #901001=#451 (p#1 X jig center)
 #901003=#453 (p#1 Z jig center)
 #901004=#454 (p#1 B jig center)
 (palette #1)
-GOTO007
+GOTO006
 
-N006
+N005
 IF[#1000NE1]GOTO801
 (if the current palette is NOT #2, go to N801)
 #901001=#455 (p#2 X jig center)
@@ -45,7 +44,7 @@ IF[#1000NE1]GOTO801
 #901004=#458 (p#2 B jig center)
 (palette #2)
 
-N007
+N006
 G90 G10 L2 P1 X-527.732 Y-648.500 Z#901003 B#901004
 G90 G10 L2 P2 X-526.889 Y-648.500 Z#901003 B#901004
 G90 G10 L2 P3 X-561.306 Y-648.500 Z#901003 B#901004
@@ -55,7 +54,7 @@ G90 G10 L2 P4 X-561.923 Y-648.500 Z#901003 B#901004
 (G56 Top Gaisaku Center)
 (G57 Top Inside Center)
 
-N008
+N007
 M11 (4jiku unclamp)
 G90 G54 G00 B[180.0+#481]
 (G54 Bottom Gaisaku)
@@ -65,35 +64,32 @@ M10 (4jiku clamp)
 
 (*** touch sensor measurement ***)
 
+
 (Bottom sokutei start)
 
 N009
 T50 (touch sensor)
 M06 (tool exchange)
 
-N010
 G40 G49 G80 S200 (cancel hosei, low gear)
 M19 (Shujiku orientation)
 G43 H50 (hosei kouguChou #50)
 
-N011
 G90 G54 G01 X0 Y0 F5400
 (G01 G54XY Bot Gaisaku center)
 
-N012
+N010
 G65 P910001 (sensor ON)
 IF[#1005EQ1]GOTO802
-IF[#1004EQ1]GOTO013
+IF[#1004EQ1]GOTO011
 (if low battery, go to N802)
 M117
 
-
-N013
+N011
 G90 G54 G43 G01 Z[499.984+#491] H50 F3600
 (hosei kouguChou #50)
 (Z= BotTanmen +#491)
 
-N014
 G54 G65 P140001 I0. X180.95 Z499.984 T13.82 M0.07 C-1. A10.0
 (G54: Bot X Gaisaku center)
 (I: T +hosei)
@@ -104,17 +100,15 @@ G54 G65 P140001 I0. X180.95 Z499.984 T13.82 M0.07 C-1. A10.0
 (C: +: for Top, -: for Bot)
 (A: skip kaishi kyori)
 
-N015
 #5261=-[#5221-#901001]+#901001+11.0
 (G56: Top Gaisaku center X)
 (G56X= -[G54X-tableCenterX]+tableCenterX+tooriShin)
 
-N016
+N012
 G90 G54 G01 X0 Y0 F5400
 (G55 XY Bot outside center)
 G43 H50 (hosei kouguChou #50)
 
-N017
 G54 G65 P110002 Y183. Z499.984 K0 A10. F200.
 (G54: Bot Y Gaisaku center)
 (Y: Bot BD gaikei)
@@ -123,16 +117,14 @@ G54 G65 P110002 Y183. Z499.984 K0 A10. F200.
 (A: skip kaishi kyori)
 (F: skip speed)
 
-N018
 #5262=#5222 (G56Y=G54Y)
 (G56: Top Gaisaku center Y)
 
-N019
+N013
 G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-N020
 G55 G65 P130001 X155. Z499.84 W600. K-10. M0.07 F200. A10.
 (G55: Bot X inside center)
 (X: Bot AC naikei)
@@ -144,12 +136,11 @@ G55 G65 P130001 X155. Z499.84 W600. K-10. M0.07 F200. A10.
 (F: skip speed)
 (A: skip kaishi kyori)
 
-N021
+N014
 G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-N022
 G55 G65 P130002 Y153 Z499.984 K-10. M0.07 F200. A10.
 (G55: Bot Y inside center)
 (Y: Bot BD naikei)
@@ -162,21 +153,20 @@ G55 G65 P130002 Y153 Z499.984 K-10. M0.07 F200. A10.
 (Bottom sokutei end)
 (Top sokutei start)
 
-N023
+N015
 G91 G28 Z0
 M11 (4jiku unclamp)
 G90 G57 G00 B#481
 (G57B parallel angle #481)
 M10 (4jiku clamp)
 
-N024
+N016
 G90 G57 G01 X0 Y0 F5400
 (G57XY Top Inside Center)
 G90 G57 G43 Z[500.016+#491] H50 F3600
 (hosei KouguChou: #50)
 (Z= TopTanmen +#491)
 
-N025
 G57 G65 P130001 X156.863 Z500.016 M0.07 F200. A10.
 (G57: Top X inside center)
 (X: AC naikei)
@@ -185,12 +175,11 @@ G57 G65 P130001 X156.863 Z500.016 M0.07 F200. A10.
 (F: skip speed)
 (A: skip kaishi kyori)
 
-N026
+N017
 G90 G57 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-N027
 G57 G65 P130002 Y154.839 Z500.016 M0.07 F200. A10.
 (G57: Top Y inside center)
 (Y: BD naikei)
@@ -205,21 +194,20 @@ G57 G65 P130002 Y154.839 Z500.016 M0.07 F200. A10.
 (*** Dimple measurement start ***)
 
 
-N028
+N018
 G91 G28 Z0
 M11 (4jiku unclamp)
 G90 G57 G00 B#481
 (G57B parallel angle #481)
 M10 (4jiku clamp)
 
-N029
+N019
 G90 G57 G01 X0 Y0 F5400
 (G57XY Top Inside Center)
 G90 G57 G43 G01 Z[500.016+#491] H50 F3600
 (hosei KouguChou: #50)
 (Z= topTanmen+#491)
 
-N030
 G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B-2.130
 (dimple measurement)
 (X: AC naikei of last row)
@@ -237,12 +225,12 @@ G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U
 
 (Top sokutei end)
 
-N031
+N020
 M117 (sensor on/off)
 G04 X1.
-IF[#1004EQ0]GOTO032
+IF[#1004EQ0]GOTO021
 G65 P910002 (sensor OFF)
-N032
+N021
 G91 G28 Z0
 
 
@@ -255,19 +243,17 @@ G91 G28 Z0
 (*** dimple kakou start ***)
 
 
-N033
+N022
 G91 G28 Z0
 T31 (Tslot R20)
 M06 (tool exchange)
 
-N034
 G90 G57 G00 X0 Y0 F10800
 (G57XY Top Inside Center)
 G90 G57 G43 Z[500.016+#491] H31 F5400
 (hosei KouguChou: #31)
 (Z= TopTanmen +#491)
 
-N035
 G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B-2.130
 (dimple kakou)
 (X: AC naikei of last row)
@@ -291,22 +277,20 @@ G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U
 (*** Top Tanmen start ***)
 
 
-N036
+N023
 #901006=8.0 (kezuriShiro)
 
 
-N037
 G91 G28 Z0
 T02 (tanmen)
 M06 (tool exchange)
 
-N038
 M11 (4jiku unclamp)
 G90 G57 G00 B#481
 (G57B parallel angle #481)
 M10 (4jiku clamp)
 
-N039
+N24
 IF[#401LE0]GOTO800
 IF[#401GT5]GOTO800
 #901007=FUP[#901006/#401]
@@ -324,7 +308,6 @@ END1
 (Z: Top sai_furiwake)
 (R: sotogawa corner R or C)
 
-N040
 M05 (shujiku kaiten off)
 M09 (coolant off)
 G91 G28 Z0
@@ -336,18 +319,17 @@ G91 G28 Z0
 (*** Top Gaisaku start ***)
 
 
-N041
+N025
 G91 G28 Z0
 T16 (gaisaku)
 M06 (tool exchange)
 
-N042
 M11 (4jiku unclamp)
 G90 G56 G00 B#481
 (G57B parallel angle #481)
 M10 (4jiku clamp)
 
-N043
+N026
 G56 G65 P420000 D16. Q3. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
 G56 G65 P420000 D16. Q1. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
 G56 G65 P420000 D16. Q0. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
@@ -367,7 +349,7 @@ G56 G65 P420000 D16. Q0. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
 (S*: kaitensuu)
 (I*: +hosei: AC center)
 
-N044
+N027
 M05 (shujiku kaiten off)
 M09 (coolant off)
 G91 G28 Z0
@@ -379,23 +361,21 @@ G91 G28 Z0
 (*** Mizo start ***)
 
 
-N045
+N028
 #901009=0.1 (+hosei: mizoIchi)
 #901010=-0.2 (+hosei: mizoHaba)
 
 
-N046
 G91 G28 Z0
 T06 (mizo)
 M06 (tool exchange)
 
-N047
 M11 (4jiku unclamp)
 G90 G56 G00 B#481
 (G57B parallel angle #481)
 M10 (4jiku clamp)
 
-N048
+N029
 G56 G65 P430000 D6. A1. R14. X172.90 Y172.90 Z500.016 M12.05 W8.05
 (mizo: 487.966, mizoHaba: 479.916)
 (O430000: Mizo Corner R or C, ar HidariMawari)
@@ -422,18 +402,17 @@ G56 G65 P430000 D6. A1. R14. X172.90 Y172.90 Z500.016 M12.05 W8.05
 (*** Top SotoMentori start ***)
 
 
-N049
+N030
 G91 G28 Z0
 T13 (mentori 45)
 M06 (tool exchange)
 
-N050
 M11 (4jiku unclamp)
 G90 G56 G00 B#481
 (G57B parallel angle #481)
 M10 (4jiku clamp)
 
-N051
+N031
 G56 G65 P440000 D13. X180.95 Y180.95 Z500.016 K1. R18.
 (Top Soto mentori)
 (O440000: Sotogawa 1shuu Corner R, ar HidariMawari)
@@ -450,7 +429,6 @@ G56 G65 P440000 D13. X180.95 Y180.95 Z500.016 K1. R18.
 (Q*: +hosei: AC&BD mizoKei)
 (I*: +hosei: AC center)
 
-N052
 M05 (shujiku kaiten off)
 M09 (coolant off)
 G91 G28 Z0
@@ -462,23 +440,21 @@ G91 G28 Z0
 (*** Bottom Tanmen start ***)
 
 
-N053
+N032
 G91 G28 Z0
 T02 (tanmen)
 M06 (tool exchange)
 
-N054
 M11 (4jiku unclamp)
 G90 G00 G54 B[180.0+#481]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
 
-N055
+N033
 #901006=8.0 (kezuriShiro: all)
 
 
-N056
 IF[#401LE0]GOTO800
 #901007=FUP[#901006/#401]
 (kaisuu: #901006/#401 kiriage)
@@ -494,7 +470,6 @@ END1
 (R: sotogawa corner R)
 (Z: Bot sai_furiwake)
 
-N057
 M05 (shujiku kaiten off)
 M09 (coolant off)
 G91 G28 Z0
@@ -506,18 +481,17 @@ G91 G28 Z0
 (*** Bottom Gaisaku start ***)
 
 
-N058
+N034
 G91 G28 Z0
 T16 (gaisaku)
 M06 (tool exchange)
 
-N059
 M11 (4jiku unclamp)
 G90 G00 G54 B[180.0+#481]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
-N060
+N035
 G54 G65 P420000 D16. Q3. X180.95 Y180.95 Z499.984 R18. K25.0
 G54 G65 P420000 D16. Q1. X180.95 Y180.95 Z499.984 R18. K25.0
 G54 G65 P420000 D16. Q0. X180.95 Y180.95 Z499.984 R18. K25.0
@@ -537,7 +511,6 @@ G54 G65 P420000 D16. Q0. X180.95 Y180.95 Z499.984 R18. K25.0
 (S*: kaitensuu)
 (I*: +hosei: AC center)
 
-N061
 M05 (shujiku kaiten off)
 M09 (coolant off)
 G91 G28 Z0
@@ -549,18 +522,17 @@ G91 G28 Z0
 (*** Bottom SotoMentori start ***)
 
 
-N062
+N036
 G91 G28 Z0
 T11 (mentori 15)
 M06 (tool exchange)
 
-N063
 M11 (4jiku unclamp)
 G90 G00 G54 B[180.0+#481]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
-N064
+N037
 G54 G65 P440000 D11. Q0. X180.95 Y180.95 Z499.984 K4.0 R18.
 (Bot Soto Chamfer)
 (O440000: Sotogawa 1shuu Corner R, ar HidariMawari)
@@ -577,7 +549,6 @@ G54 G65 P440000 D11. Q0. X180.95 Y180.95 Z499.984 K4.0 R18.
 (Q*: +hosei: AC&BD mizoKei)
 (I*: +hosei: AC center)
 
-N065
 M05 (shujiku kaiten off)
 M09 (coolant off)
 
@@ -588,18 +559,17 @@ M09 (coolant off)
 (*** Bottom UchiMentori start ***)
 
 
-N066
+N038
 G91 G28 Z0
 T11 (mentori 15)
 M06 (tool exchange)
 
-N067
 M11 (4jiku unclamp)
 G90 G00 G55 B[180.0+#481]
 (G55B parallel angle 179.358)
 M10 (4jiku clamp)
 
-N068
+N039
 G55 G65 P450000 D11. I0 K4. X155. Y153. Z499.984 W10. R3.5 M0.07
 G55 G65 P450000 D11. I0 K2. X155. Y153. Z499.984 W10. R3.5 M0.07
 G55 G65 P450000 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5 M0.07
@@ -619,27 +589,26 @@ G55 G65 P450000 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5 M0.07
 (S*: kaitenSuu)
 (A*: approach radius)
 
-N069
 M05 (shujiku kaiten off)
 M09 (coolant off)
+G91 G28 Z0
 
 (Bottom mentori soto end)
+
+(Kakou Owari)
 /M00
 
-N070
-G91 G28 Z0
-(Kakou Owari)
 
-N071
-IF[#33EQ0]GOTO081
-(if #33=0, go to N081)
+N040
+IF[#33EQ0]GOTO048
+(if #33=0, go to N048)
 M00
 
 
 (*** TooriShin X start ***)
 
 
-N072
+N041
 G91 G30 X0 Y0
 M11 (4jiku unclamp)
 G90 G00 G54 B[-90+#481]
@@ -647,11 +616,10 @@ G90 G00 G54 B[-90+#481]
 (B parallel angle -90.642)
 M10 (4jiku clamp)
 
-N073
 T50 (touch sensor)
 M06
 
-N074
+N042
 G54 G65 P150003 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11. A10.
 (O150003: tooriShin X)
 (W: Top sai_furiwake)
@@ -664,21 +632,21 @@ G54 G65 P150003 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11. A10.
 (I: Bot gaisaku center X)
 (A: skip kaishi kyori)
 
-N075
+N043
 IF[#1005EQ1]GOTO802
-IF[#1004EQ0]GOTO076
+IF[#1004EQ0]GOTO044
 (if low battery, go to N802)
-(if current sensor off, go to N076)
+(if current sensor off, go to N044)
 M117 (sensor off)
 
-N076 (tooriShin X end)
+N044 (tooriShin X end)
 M00
 
 
 (*** TooriShin Y start ***)
 
 
-N077
+N045
 G91 G28 Z0
 M11 (4jiku unclamp)
 G90 G54 G00 B[180+#481]
@@ -686,7 +654,7 @@ G90 G54 G00 B[180+#481]
 (B parallel angle 179.358)
 M10 (4jiku clamp)
 
-N078
+N046
 G54 G65 P150002 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11. A10.
 (O150002: toorishin Y)
 (W: Top sai_furiwake)
@@ -701,13 +669,12 @@ G54 G65 P150002 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11. A10.
 
 (tooriShin Y end)
 
-N079
+N047
 G90 G54 G01 X#900030 Y#900026 F5400
 M00 (is the toorishin Y OK?)
 
-N080
 G91 G28 Z0
-GOTO081
+GOTO048
 
 
 N802
@@ -720,23 +687,22 @@ N801
 M05 (shujiku kaiten off)
 M09 (coolant off)
 #3000=121 (is the palette# is ok?)
-GOTO006
+GOTO999
 
 N800
 M05 (shujiku kaiten off)
 M09 (coolant off)
 #3000=121 (are the arguments OK?)
-GOTO006
 
 
-N081
+N048
 T01 (empty)
 M06 (tool exchange)
-IF[#1004EQ0]GOTO082
-(if current sensor off, go to N082)
+IF[#1004EQ0]GOTO049
+(if current sensor off, go to N049)
 M117 (sensor on/off)
 
-N082
+N049
 M60 (palette change)
 
 N999 M30
