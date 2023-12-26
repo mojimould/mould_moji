@@ -1,7 +1,6 @@
 %
 O410000
 (Tanmen naikei-V Coner R, ar MigiMawari 1shuu)
-(default: V=5, F=900, S=950)
 
 N001
 IF[#24EQ#0]GOTO800
@@ -18,14 +17,17 @@ IF[#11EQ#0]GOTO800
 (if Z = #0, go to N800)
 
 N002 (for F)
-IF[#09EQ#0]GOTO003
+IF[#09NE#0]GOTO003
 #09=900.
 N003 (for S)
-IF[#19EQ#0]GOTO004
+IF[#19NE#0]GOTO004
 #19=950.
 N004 (for V)
-IF[#22EQ#0]GOTO005
+IF[#22NE#0]GOTO005
 #22=5.
+(default: F=900.)
+(default: S=950.)
+(default: V=5.)
 
 N005
 IF[#09LT10]GOTO800
@@ -64,8 +66,9 @@ N007
 
 
 N008
+G90 G00 G43 H#11 Z[#26+#491] F10800
 G90 G00 G40 X#33 Y[#25/2+#601] F10800
-G90 G01 G43 H#11 Z[#26+#401*#901007] S#19 F5400
+G90 G01 Z[#26+#401*#901007] S#19 F5400
 (G40: cancel keiHosei)
 (G90 X: naikeiAC/2 -V +DC/2, Y: naikeiBD/2 +DCX)
 (hosei kouguChou H#, Z: tanmen+K)
@@ -93,12 +96,8 @@ G91 G02 X#18 Y-#18 I0 J-#18
 (G02 R#18 [0, -R] X+Y-)
 G91 G03 X[#[2400+#11]] Y-[#[2400+#11]] I[#[2400+#11]] J0
 
-
-(Kokokara G00)
-
-
 N011
-G90 G00 Z[#26+#401*#901007+#491] F10800
+G90 G00 Z[#26+#491] F10800
 (Z: tanmen+#491)
 GOTO999
 

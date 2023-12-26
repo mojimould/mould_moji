@@ -36,9 +36,9 @@ IF[[#32-#512-#01]LE0]GOTO800
 IF[[#06*#482*#23]NE0]GOTO001
 (if K*R*W is not 0, go to N001)
 IF[#06NE#0]GOTO800
-IF[#482NE#0]GOTO800
 IF[#23NE#0]GOTO800
-(if either K, R, W is 0, go to N800)
+IF[#482LT100]GOTO800
+(if either K, W is 0, go to N800)
 
 N001
 #31=0 (#31: X +hosei)
