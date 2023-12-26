@@ -45,6 +45,19 @@
 \tableofcontents
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LIST OF TABLES   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begingroup
+\let\cleardoublepage\clearpage  % \cleardoublepageを一時的に無効にする
+\pagestyle{front}%
+\listoftables  % insert lot
+\addchaptertocentry{}{\listtablename}
+\endgroup
+
+
 \clearpage
 \phantomsection
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,19 +70,6 @@
 \let\cleardoublepage\relax  % \cleardoublepageを一時的に無効にする
 \pagestyle{front}%
 \lstlistoflistings  % insert lol
-\endgroup
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% LIST OF TABLES   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begingroup
-\let\cleardoublepage\clearpage  % \cleardoublepageを一時的に無効にする
-\pagestyle{front}%
-\listoftables  % insert lot
-\addchaptertocentry{}{\listtablename}
 \endgroup
 
 
@@ -129,6 +129,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{lof}{chapter}{\thechapter. \Chaptername}
 \newlength{\oldtextwidth}
 \setlength{\oldtextwidth}{\textwidth}
 \newlength{\oldtextheight}
@@ -2636,8 +2637,8 @@ $T_x$, $T_y$ ($T_x \geqq 0$)を機内で測定する際は、C面が工具側に
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\part{モールドのRDBの設計}
-\input{./MACN_part_RDB}
+%\part{モールドのRDBの設計}
+%\input{./MACN_part_RDB}
 
 
 
@@ -2693,8 +2694,8 @@ $T_x$, $T_y$ ($T_x \geqq 0$)を機内で測定する際は、C面が工具側に
 \printbibliography}
 \addchaptertocentry{}{\bibname}
 \endgroup
-
-
+\clearpage
+\thispagestyle{empty}\ \vfill\hfill{\tiny Printed in Japan}
 
 
 \end{document}

@@ -159,7 +159,7 @@
   justification=raggedright,
   singlelinecheck=false,
   position=above,
-  aboveskip=3pt,
+  aboveskip=4pt,
   belowskip=1pt,
   labelformat={empty},
   labelfont={bf, sf},
@@ -168,11 +168,11 @@
   hypcap=false,
 }
 %%%%% STYLE OF TABLE OF CONTENTS %%%%%
-\RedeclareSectionCommand[
-  tocindent=0em,
-  tocnumwidth=4.25em
-]{part}
-\addtokomafont{partentry}{\def\autodot{}}
+%\RedeclareSectionCommand[
+%  tocindent=0em,
+%  tocnumwidth=4.25em
+%]{part}
+%\addtokomafont{partentry}{\def\autodot{}}
 %\RedeclareSectionCommand[
 %  tocindent=1.5em,
 %  tocnumwidth=1.5em
@@ -189,28 +189,33 @@
 %]{subsection}
 \AtBeginEnvironment{appendices}{%
   \patchcmd{\part}{\newpage}{\relax}{}{}%
-  \pretocmd{\part}{\tocAPartSeparateline}{}{}{}% add page break before parts, except part 1
+  \pretocmd{\part}{\tocAPartSeparateline{toc}{15pt}{-10pt}}{}{}{}% add page break before parts, except part 1
 }
 \AfterEndEnvironment{appendices}{%
   \patchcmd{\part}{\tocAPartSeparateline}{\relax}{}{}%
   \pretocmd{\part}{\addtocontents{toc}{\protect\newpage}}{}{}{}% add page break before parts, except the first one
 }
 \setcounter{tocdepth}{3}
-\renewcommand\contentsname{\texorpdfstring{\hbox to 2em{目次}}{目次}}
+\renewcommand\contentsname{\texorpdfstring{\hbox to 1.9em{目次}}{目次}}
 %%%%% STYLE OF LIST OF FIGURES %%%%%
+\renewcommand\listfigurename{\texorpdfstring{\hbox to 2.75em{図目次}}{図目次}}
 \renewcommand{\figurename}{図}
 \renewcommand{\figureautorefname}{\figurename} % figure --> 図
-\renewcommand\listfigurename{\texorpdfstring{\hbox to 3em{図目次}}{図目次}}
 %\setcounter{lofdepth}{2}
 %\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3.2em}}
 %\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
+%%%%% STYLE OF LIST OF TABLES %%%%%
+\renewcommand\listtablename{\texorpdfstring{\hbox to 2.75em{表目次}}{表目次}}
 \renewcommand{\tablename}{表}
+\AtBeginDocument{%
+  \renewcommand{\thetable}{}%
+}
 %%%%% STYLE OF LISTINGS %%%%%
-\renewcommand{\lstlistlistingname}{プログラム 一覧}
+\renewcommand{\lstlistlistingname}{プログラム 目次}
 \renewcommand{\lstlistingname}{{\scshape Prg: }}
-\AtBeginDocument{
+\AtBeginDocument{%
 %  \counterwithout{lstlisting}{chapter}
-  \renewcommand{\thelstlisting}{}
+  \renewcommand{\thelstlisting}{}%
 }
 \renewcommand*\l@lstlisting{\@dottedtocline{1}{0.6em}{3.2em}}
 \lstdefinelanguage{GcodeBasic}{
@@ -256,20 +261,26 @@
   emphstyle={[4]\bfseries\color{magenta}},
   emph={[5]G28, G30},
   emphstyle={[5]\bfseries\color{violet}},
-  emph={[6]G04, G13, G49, G58, G65, G80},
+  emph={[6]G04, G10, G13, G17, G49, G58, G65, G80},
   emphstyle={[6]\bfseries\color{cyan}},
-  emph={[11]M00, M01, M04, M05, M06, M08, M09,
-        M10, M11, M19,
-        M30, M32, M33,
-        M48, M49,
-        M60, M61, M62, M63,
-        M71, M72, M73, M74, M78, M79,
-        M98, M99,
-        M117, M214, M262},
+  emph={[11]
+    T01, T02, T06, T11, T13, T16, T31, T50,
+    M00, M01, M03, M04, M05, M06, M08, M09,
+    M10, M11, M19,
+    M30, M32, M33,
+    M48, M49,
+    M60, M61, M62, M63,
+    M71, M72, M73, M74, M78, M79,
+    M98, M99,
+    M117, M214, M262},
   emphstyle={[11]\fontfamily{pcr}\bfseries\color{yellow!100!green!80!black!100!}},
   emph={[22]SIN, COS, SQRT, FIX, FUP, ROUND, ABS},%
   emphstyle={[22]\fontfamily{pcr}\selectfont\bfseries},%
-  emph={[31]P910001, P910002, P220001, P220002, P230001, P230002, P630001, P630002},%
+  emph={[31]
+    P140001, P110002, P130001, P130002, P150002, P150003,
+    P210003, P220001, P220002, P230001, P230002, P530001, P530002,
+    P410000, P420000, P430000, P440000, P450000, P490005,
+    P910001, P910002},%
   emphstyle={[31]\bfseries\color{cyan}},%
 }
 \lstdefinestyle{Gcode-bundle}{
@@ -284,18 +295,18 @@
   emph={[122]SIN, COS, SQRT, FIX, FUP, ABS},%
   emphstyle={[122]\fontfamily{pcr}\selectfont\bfseries},%
 }
-\lstdefinestyle{Gcode-ren}{
-  language=GcodeBasic,
-  nolol,
-  morekeywords={[220]IF, WHILE, THEN, DO1, DO2, END1, END2},%
-  keywordstyle={[220]\fontfamily{pcr}\selectfont\bfseries},%
-  emph={[202]},
-  emphstyle={[202]\bfseries\color{blue}},
-  emph={[211]M0, M5, M19, M32, M33, M99, M214},
-  emphstyle={[211]\fontfamily{pcr}\bfseries\color{yellow!100!green!80!black!100!}},
-  emph={[222]SIN, COS, TAN, ATAN, SQRT, FIX, FUP, ROUND, DPRNT},%
-  emphstyle={[222]\fontfamily{pcr}\selectfont\bfseries},%
-}
+%\lstdefinestyle{Gcode-ren}{
+%  language=GcodeBasic,
+%  nolol,
+%  morekeywords={[220]IF, WHILE, THEN, DO1, DO2, END1, END2},%
+%  keywordstyle={[220]\fontfamily{pcr}\selectfont\bfseries},%
+%  emph={[202]},
+%  emphstyle={[202]\bfseries\color{blue}},
+%  emph={[211]M0, M5, M19, M32, M33, M99, M214},
+%  emphstyle={[211]\fontfamily{pcr}\bfseries\color{yellow!100!green!80!black!100!}},
+%  emph={[222]SIN, COS, TAN, ATAN, SQRT, FIX, FUP, ROUND, DPRNT},%
+%  emphstyle={[222]\fontfamily{pcr}\selectfont\bfseries},%
+%}
 %%%%% STYLE OF BIBLATEX %%%%%
 \renewcommand{\bibname}{\texorpdfstring{\hbox to 4em{参考文献}}{参考文献}}
 \ExecuteBibliographyOptions{
@@ -311,7 +322,8 @@
 %\renewcommand{\partautorefname}{part}  % part --> part
 \renewcommand\partpagestyle{emptydate}
 %\renewcommand*{\partformat}{\begin{gtfamily}\thepart\end{gtfamily}}
-\renewcommand{\thepart}{第\hx\Roman{part}\hx 部}
+%\renewcommand{\partname}{}
+%\renewcommand{\thepart}{第\hspace{2truemm}\Roman{part}\hspace{2truemm}部} %
 %\renewcommand*{\addparttocentry}[2]{\addtocentrydefault{part}{#1}{第#2部}}
 %%%%% STYLE OF CHAPTER %%%%%
 \renewcommand{\chapterautorefname}{章}  % chapter --> 章
@@ -447,6 +459,8 @@
     bottom=0pt,%
     left=0pt,%
     right=0pt,%
+    enlarge top by=-5pt,
+    enlarge bottom by=5pt,
     before upper={%
       \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
       \let\oldfootnote=\footnote% \oldfootnote=\footnote
@@ -458,6 +472,7 @@
       \setlength{\LTleft}{0pt}%
       \setlength{\LTright}{0pt}%
       \begin{longtable}{@{}c|l@{\extracolsep{\fill}}c}%
+      \addtocounter{table}{-1}%
     },%
     after upper={%
       \end{longtable}%

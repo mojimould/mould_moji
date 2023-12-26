@@ -56,25 +56,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR LISTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% CAPTOINOF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% CAPTOINOF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\abovecaptionskip}{0pt}
 \newcommand{\modcaptionof}[2]{%
   \captionof{#1}{%
     \csname #1name\endcsname\thechapter.%
     \ifnum\value{#1}<10 0\fi
       \arabic{#1}. #2}}
-\newcommand{\modTcaptionof}[3]{%
-  \begin{caption}{\csname #1name\endcsname\thechapter.\ifnum\value{#1}<10 0\fi\arabic{#1}. #2}
-  #3
-  \end{caption}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% TOC LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\tocPartSeparateline{\addtocontents{toc}{\protect\par\protect\hrulefill\protect\par\protect\vspace*{-10pt}}}%
-\def\tocAPartSeparateline{\addtocontents{toc}{\protect\par\protect\vspace*{15pt}\protect\hrule width 0.5\linewidth\protect\par\protect\vspace*{-10pt}}}%
+\newcommand\tocAPartSeparateline[3]{\addtocontents{#1}{\protect\par\protect\vspace*{#2}\protect\hrule width 0.5\linewidth\protect\par\protect\vspace*{#3}}}%
+\newcommand\listAPartSeparateline{\tocAPartSeparateline{lol}{2pt}{2pt}}
 %%%%% TO NO PAGE BREAK IN TOC %%%
-\pretocmd{\section}{\ifnum\value{section}=0\addtocontents{toc}{\protect\nopagebreak}\fi}{}{}
+\pretocmd{\section}{\ifnum\value{section}=0\addtocontents{toc}{\protect\nopagebreak[4]}\fi}{}{}
 \pretocmd{\subsection}{\ifnum\value{subsection}=0\addtocontents{toc}{\protect\nopagebreak}\fi}{}{}
 \pretocmd{\subsubsection}{\ifnum\value{subsubsection}=0\addtocontents{toc}{\protect\nopagebreak}\fi}{}{}
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -217,6 +214,7 @@
 \let\Sectionmark\sectionmark
 \def\sectionmark#1{\def\Sectionname{#1}\Sectionmark{#1}}
 %%%%% TO PRG NAME %%%%%%
+\newcommand\MainEx{O1916} % an example for main program
 \newcommand\MXOThickness{O110001} % X外側中心計測
 \newcommand\MYOThickness{O110002} % Y外側中心計測
 \newcommand\MXIWidth{O130001} % X内側中心計測
@@ -229,11 +227,12 @@
 \newcommand\DLtwoBD{O220002} % 内面溝用 レベル2 BD
 \newcommand\DMLthreeAC{O230001} % 内面溝 測定用 レベル3 AC
 \newcommand\DMLthreeBD{O230002} % 内面溝 測定用 レベル3 BD
-\newcommand\KTanmenRight{O410000} % 端面用 コーナーR 右回り
-\newcommand\KGaisakuRLeft{O420000} % 外側 コーナーR 左回り
-\newcommand\KMizoConerLeft{O430000} % 溝用 コーナーRC 左回り
-\newcommand\KUchiMentoriRLeft{O450000} % 内側面取用 コーナーR 左回り
-\newcommand\KSotoMentoriRLeft{O440000} % 外側面取用 コーナーR 左回り
+\newcommand\KTanmenRight{O410000} % 端面用 右回り
+\newcommand\KGaisakuRLeft{O420000} % 外側 左回り
+\newcommand\KMizoConerLeft{O430000} % 溝用 左回り
+\newcommand\KSotoMentoriRLeft{O440000} % 外側面取用 左回り
+\newcommand\KUchiMentoriRLeft{O450000} % 内側面取用 左回り
+\newcommand\KOLeft{O490005} % 外 左回り
 \newcommand\DKLthreeAC{O530001} % 内面溝 加工用 レベル3 AC
 \newcommand\DKLthreeBD{O530002} % 内面溝 加工用 レベル3 BD
 \newcommand\OsensorOn{O910001} % タッチセンサーON
