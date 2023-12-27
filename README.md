@@ -1,6 +1,6 @@
 # The documents about mould
 - **Mould Analytical Calculation Note**
-    - This document primarily discusses the analytical position calculations of the mould and the conventions used when creating programs.
+    - This document primarily discusses the analytical calculations of the mould and the conventions used when creating programs.
 
 - **Mould hyper-CAD_template**
     - These are template files for drawing mould in hyper-CAD.
@@ -11,7 +11,7 @@
 - **Mould Machining Programs**
     - These are the NC programs used for actual machining.
         - **Bundled Programs**
-          - These are pre-installed programs that originally installed on the machine and others added when setup.
+          - These are pre-installed programs added when setup.
         - **Created Programs (main and sub)**
           - These are created programs as needed.
 
