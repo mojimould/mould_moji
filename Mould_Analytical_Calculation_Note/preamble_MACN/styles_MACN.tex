@@ -242,10 +242,6 @@
   keywords={},%
   keywordstyle=\bfseries,%
 }
-%\lstdefinestyle{Gcode}{%
-%  language=GcodeBasic,
-%  nolol,
-%}
 \lstdefinestyle{Gcode-more}{
   language=GcodeBasic,
   nolol,
@@ -310,11 +306,11 @@
 %%%%% STYLE OF BIBLATEX %%%%%
 \renewcommand{\bibname}{\texorpdfstring{\hbox to 4em{参考文献}}{参考文献}}
 \ExecuteBibliographyOptions{
- sorting=nyt,
- hyperref=true,
- block=nbpar,
- subentry=true,
- citecounter=true,
+  sorting=nyt,
+  hyperref=true,
+  block=nbpar,
+  subentry=true,
+  citecounter=true,
 }
 \appto\bibfont{\footnotesize\setstretch{1.1}}
 \DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}\hspace{-6pt}}
