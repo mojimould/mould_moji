@@ -74,12 +74,13 @@
 \def\@makefnmark{\hbox{}\hbox{\@textsuperscript{\normalfont\@thefnmark}}\hbox{}}
 \deffootnote[1em]{1em}{1em}{\textsuperscript{\thefootnotemark}}
 \renewcommand\footnoterule{%
-  \kern3\p@
+  \kern3pt
   \hrule\@width.75\columnwidth
-  \kern2.6\p@
+  \kern2.6pt
 }
 \makesavenoteenv{twoCtable}
 \makesavenoteenv{longtable}
+\makesavenoteenv{tablePart}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% HEADER AND FOOTER %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -207,9 +208,7 @@
 %%%%% STYLE OF LIST OF TABLES %%%%%
 \renewcommand\listtablename{\texorpdfstring{\hbox to 2.75em{表目次}}{表目次}}
 \renewcommand{\tablename}{表}
-\AtBeginDocument{%
-  \renewcommand{\thetable}{}%
-}
+\AtBeginDocument{\renewcommand{\thetable}{}}
 %%%%% STYLE OF LISTINGS %%%%%
 \renewcommand{\lstlistlistingname}{プログラム 目次}
 \renewcommand{\lstlistingname}{{\scshape Prg: }}

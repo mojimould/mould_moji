@@ -9,7 +9,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\customtoday}{\the\year/\two@digits{\the\month}/\two@digits{\the\day}}
 \newcommand{\customdate}{\customtoday\ \currenttime\ (\jadayofweek{\the\year}{\the\month}{\the\day})}
-\newcommand{\customtodayap}{\ifnum\currenthour<12 \customtoday\,a.m.\else\customtoday\,p.m.\fi}
+%\newcommand{\customtodayap}{\ifnum\currenthour<12 \customtoday\,a.m.\else\customtoday\,p.m.\fi}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% NEWIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -72,12 +72,12 @@
 \newcommand\listAPartSeparateline{\tocAPartSeparateline{lol}{2pt}{2pt}}
 %%%%% TO NO PAGE BREAK IN TOC %%%
 \pretocmd{\section}{\ifnum\value{section}=0\addtocontents{toc}{\protect\nopagebreak[4]}\fi}{}{}
-\pretocmd{\subsection}{\ifnum\value{subsection}=0\addtocontents{toc}{\protect\nopagebreak}\fi}{}{}
+\pretocmd{\subsection}{\ifnum\value{subsection}=0\addtocontents{toc}{\protect\nopagebreak[4]}\fi}{}{}
 \pretocmd{\subsubsection}{\ifnum\value{subsubsection}=0\addtocontents{toc}{\protect\nopagebreak}\fi}{}{}
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Appendixpart}{
-  \part*{\thepart の補遺}
-  \addcontentsline{toc}{part}{\thepart の補遺}
+  \part*{\partname\ \thepart\hx の補遺}
+  \addcontentsline{toc}{part}{\partname\ \thepart\hx の補遺}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% AUTO LABELING %%%%%%%%%%%%%%%%%%%%%%%%%%
