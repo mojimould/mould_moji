@@ -38,6 +38,9 @@ IF[#22LT1]GOTO800
 (if S <= 200, go to N800)
 (if V < 1, go to N800)
 
+#901007=FUP[#901006/#401]
+(#901007: kakou kaisuu)
+
 N006
 IF[#07LT2]GOTO800
 IF[#07GT5]GOTO800
@@ -46,14 +49,18 @@ IF[#26LE[#461/2]]GOTO800
 IF[#601EQ#0]GOTO800
 IF[#601LE1]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
-IF[[#401*#901007]LT0]GOTO800
+IF[#401EQ#0]GOTO800
+IF[#401LE0]GOTO800
 IF[#401GT5]GOTO800
+IF[#901007LE0]GOTO800
+IF[[#401*#901007]LT0]GOTO800
 (if D < 2 or D > 5 or #0 or D is not integer, go to N800)
 (if Z <= #461/2, go to N800)
-(if BCX <= 1 or empty, go to N800)
+(if BCX <= 1 or BCX = #0, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
+(if #401 <= 0 or #401 > 5 or #401 = #0, go to N800)
+(if #901007 <= 0, go to N800)
 (if #401*#901007 < 0, go to N800)
-(if #401 > 5, go to N800)
 
 N007
 #33=#[2400+#07]+#[2600+#07]
@@ -67,13 +74,6 @@ N007
 N008
 IF[#22GE#33]GOTO800
 (if V >= kouguKei, go to N800)
-
-N009
-IF[#401LE0]GOTO800
-IF[#401GT5]GOTO800
-#901007=FUP[#901006/#401]
-(#901007: kakou kaisuu)
-IF[#901007LE0]GOTO800
 
 
 (Kokokara G00)

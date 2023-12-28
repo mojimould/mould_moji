@@ -442,10 +442,10 @@ G90 G00 G54 B[180.0+#481]
 M10 (4jiku clamp)
 
 N033
-G55 G65 P410000 H2. X155. Y153. R19. Z499.984
+G55 G65 P410000 D2. X155. Y153. R19. Z499.984
 (O410000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
 (default: V=5, F=900, S=950)
-(H: hosei kouguChou #)
+(D: hosei kouguKei&Chou #)
 (X: Bot AC naikei)
 (Y: Bot BD naikei)
 (R: sotogawa corner R)
