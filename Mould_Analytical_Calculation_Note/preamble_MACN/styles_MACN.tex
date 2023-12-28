@@ -101,10 +101,9 @@
 }
 \fancypagestyle{main}{
   \commonheadfoot
-  \fancyhead[C]{\partname.\thepart}
   \fancyhead[LO]{\hyperref[sec:\thesection]{{\small\nouppercase\rightmark}}}
-  \fancyhead[RO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
-  \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
+  \fancyhead[RO]{{\small\partname.\,\thepart}~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
+  \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$~~{\small\partname.\,\thepart}} % header right fields for all main odd pages
   \fancyhead[RE]{\hyperref[\ifx\@chapapp\appendixname app:\else chap:\fi\thechapter]{{\sffamily\bfseries\thechapter.\hskip0.75em\nouppercase\Chaptername}}} % header right fields for all main even pages
 }
 \fancypagestyle{plainheadfront}{
@@ -113,6 +112,11 @@
   \fancyhead[LE]{\thepage}
 }
 \fancypagestyle{plainhead}{
+  \commonheadfoot
+  \fancyhead[RO]{{\small\partname.\,\thepart}~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
+  \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
+}
+\fancypagestyle{plainheadback}{
   \commonheadfoot
   \fancyhead[RO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
   \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
@@ -126,7 +130,8 @@
   \@frontmatterfalse\@mainmattertrue\@backmatterfalse\pagenumbering{arabic}\pagestyle{main}%
 }
 \renewcommand*\backmatter{%
-  \if@openright\cleardoubleoddpage\else\clearpage\fi\@frontmatterfalse\@mainmatterfalse\@backmattertrue\pagestyle{plainhead}
+  \if@openright\cleardoubleoddpage\else\clearpage\fi
+  \@frontmatterfalse\@mainmatterfalse\@backmattertrue\pagestyle{plainheadback}
 }
 %%%%% WATERMARK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AddLayersToPageStyle{@everystyle@}{WatermarkLayer}
@@ -288,6 +293,8 @@
   emphstyle={[102]\bfseries\color{blue}},
   emph={[111]M10, M11, M19, M30, M32, M33, M48, M49,  M61, M62, M74, M78, M262},
   emphstyle={[111]\fontfamily{pcr}\bfseries\color{yellow!100!green!80!black!100!}},
+  emph={[112]M98P9001},
+  emphstyle={[112]\bfseries\color{cyan}},
   emph={[122]SIN, COS, SQRT, FIX, FUP, ABS},%
   emphstyle={[122]\fontfamily{pcr}\selectfont\bfseries},%
 }
@@ -303,8 +310,10 @@
 %  emph={[222]SIN, COS, TAN, ATAN, SQRT, FIX, FUP, ROUND, DPRNT},%
 %  emphstyle={[222]\fontfamily{pcr}\selectfont\bfseries},%
 %}
+%%%%% STYLE OF INDEX %%%%%
+\renewcommand{\indexname}{\texorpdfstring{\hbox to 1.9em{索引}}{索引}}
 %%%%% STYLE OF BIBLATEX %%%%%
-\renewcommand{\bibname}{\texorpdfstring{\hbox to 4em{参考文献}}{参考文献}}
+\renewcommand{\bibname}{\texorpdfstring{\hbox to 3.75em{参考文献}}{参考文献}}
 \ExecuteBibliographyOptions{
   sorting=nyt,
   hyperref=true,
