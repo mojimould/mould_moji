@@ -54,17 +54,17 @@ IF[#19LT200]GOTO800
 (if S < 200, go to N800)
 
 N008
-IF[[#26-#06]LE[#461/2]]GOTO800
-IF[[ABS[#17]]GT#18]GOTO800
-IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 IF[#07LT16]GOTO800
 IF[#07GT20]GOTO800
 IF[[FIX[#07]]NE#07]GOTO800
+IF[[#26-#06]LE[#461/2]]GOTO800
+IF[[ABS[#17]]GT#18]GOTO800
+IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 IF[ABS[#04]GE#18]GOTO800
+(if D < 16 or D > 20 or D is not integer, go to N800)
 (if Z-K <= #461/2, go to N800)
 (if |Q| > R, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
-(if D < 16 or D > 20 or D is not integer, go to N800)
 (if |I| >= R, go to N800)
 
 N009
@@ -77,8 +77,8 @@ N010
 (if K > M+W, #33=K)
 
 N011
-#32=#[2200+#07]+#[2400+#07]
-#31=[30+#32+ABS[30-#32]]/2
+#32=#[2400+#07]+#[2600+#07]
+#31=[#492+#32+ABS[#492-#32]]/2
 #30=#24+#17
 #29=#25+#17
 (#31: max[30, hosei kouguKei])
@@ -144,10 +144,12 @@ N999 M99
 
 (Common variable)
 (as RHS)
-(#461, #491)
+(#461, #491, #492)
 
 
 (System variables)
+(#24xx: #xx kouguKei)
+(#26xx: #xx kouguKeiMamou)
 (#3000: alarm)
 
 

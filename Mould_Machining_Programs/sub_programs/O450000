@@ -39,12 +39,12 @@ IF[#06NE#0]GOTO006
 #06=0
 N006 (for A)
 IF[#01NE#0]GOTO007
-#01=15.
+#01=#493
 (default: F=400.)
 (default: S=1800.)
 (default: I=0)
 (default: K=0)
-(default: A=15.)
+(default: A=#493)
 
 N007
 IF[#09LT10]GOTO800
@@ -160,7 +160,7 @@ N999 M99
 
 (Common variable)
 (as RHS)
-(#461, #491)
+(#461, #491, #493)
 
 
 (System variables)

@@ -90,8 +90,8 @@ IF[[ABS[#04]]GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 (if |I| >= min[X/4, Y/4], go to N800)
 
 N013
-#33=#[2200+#07]+#[2400+#07]
-#32=[30+#33+ABS[30-#33]]/2
+#33=#[2400+#07]+#[2600+#07]
+#32=[#492+#33+ABS[#492-#33]]/2
 (#32: max[30, hosei kouguKei])
 
 N014
@@ -221,6 +221,7 @@ M09 (coolant off)
 N043
 G90 G40 G00 X[#29+#32*3] F10800
 S200
+G90 G43 G00 H#07 Z[#26+#491] F7200
 G91 G28 Z0
 GOTO999
 
@@ -256,12 +257,12 @@ N999 M99
 
 (Common variable)
 (as RHS)
-(#461, #491, #901009, #901010)
+(#461, #491, #492, #901009, #901010)
 
 
 (System variables)
-(#22xx: #xx kouguChou)
-(#24xx: #xx kouguChouMamou)
+(#24xx: #xx kouguKei)
+(#26xx: #xx kouguKeiMamou)
 (#3000: alarm)
 
 
