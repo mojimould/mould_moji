@@ -2,7 +2,7 @@
 O1916 (main: SMP-1916)
 
 N001
-#33=0
+#100=0
 (center line measurement: 0:off, 1:on)
 
 #481=-0.642 (parallel angle)
@@ -291,26 +291,14 @@ G90 G57 G00 B#481
 M10 (4jiku clamp)
 
 N24
-IF[#401LE0]GOTO800
-IF[#401GT5]GOTO800
-#901007=FUP[#901006/#401]
-IF[#901007LE0]GOTO800
-(kaisuu: #901006/#401 kiriage)
-WHILE[#901007GE1]DO1
-#901007=#901007-1
-G57 G65 P410000 H2. X156.863 Y154.839 Z500.016 R19.
-END1
+G57 G65 P410000 D2. X156.863 Y154.839 Z500.016 R19.
 (O410000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
 (default: V=5, F=900, S=950)
-(H: hosei kouguChou #)
+(D: hosei kouguKei&Chou #)
 (X: Top AC naikei)
 (Y: Top BD naikei)
 (Z: Top sai_furiwake)
 (R: sotogawa corner R or C)
-
-M05 (shujiku kaiten off)
-M09 (coolant off)
-G91 G28 Z0
 
 (Top tammen end)
 /M00
@@ -441,6 +429,9 @@ G91 G28 Z0
 
 
 N032
+#901006=8.0 (kezuriShiro: all)
+
+
 G91 G28 Z0
 T02 (tanmen)
 M06 (tool exchange)
@@ -450,18 +441,8 @@ G90 G00 G54 B[180.0+#481]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
-
 N033
-#901006=8.0 (kezuriShiro: all)
-
-
-IF[#401LE0]GOTO800
-#901007=FUP[#901006/#401]
-(kaisuu: #901006/#401 kiriage)
-WHILE[#901007GE1]DO1
-#901007=#901007-1
 G55 G65 P410000 H2. X155. Y153. R19. Z499.984
-END1
 (O410000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
 (default: V=5, F=900, S=950)
 (H: hosei kouguChou #)
@@ -600,8 +581,8 @@ G91 G28 Z0
 
 
 N040
-IF[#33EQ0]GOTO048
-(if #33=0, go to N048)
+IF[#100EQ0]GOTO048
+(if #100=0, go to N048)
 M00
 
 
@@ -710,12 +691,11 @@ N999 M30
 (Used Variables and Programs)
 
 (Local variables)
-(#33)
 
 
 (Common variables)
 (as LHS)
-(#401, #481, #482, #901001, #901003, #901004, #901006, #901007, #901009, #901010)
+(#100, #401, #481, #482, #901001, #901003, #901004, #901006, #901009, #901010)
 (as RHS)
 (#451, #453, #454, #455, #457, #458, #491, #900021, #900024)
 
@@ -739,6 +719,6 @@ N999 M30
 (#482: O130001, O210003)
 (#900026: O150003)
 (#900030: O150002)
-(#901006, #901007: O410000)
+(#901006: O410000)
 (#901009: O430000)
 %
