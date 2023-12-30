@@ -24,6 +24,12 @@
 \newcommand{\hk}{\hspace{\kanjiskip}} % \kanjiskip at 12pt scrbook.cls
 \newcommand{\hx}{\hspace{\xkanjiskip}} % \xkanjiskip at 12pt scrbook.cls
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% CDOTFILL LIKE TOC %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\cdotfill{%
+  \leaders\hbox{$\m@th\mkern\@dotsep mu\hbox{$\cdot$}\mkern \@dotsep mu$}\hfill\kern\z@
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% COLOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{ai}     {rgb}{0.2039, 0.3765, 0.4314}
@@ -70,10 +76,6 @@
 \def\tocPartSeparateline{\addtocontents{toc}{\protect\par\protect\hrulefill\protect\par\protect\vspace*{-10pt}}}%
 \newcommand\tocAPartSeparateline[3]{\addtocontents{#1}{\protect\par\protect\vspace*{#2}\protect\hrule width 0.5\linewidth\protect\par\protect\vspace*{#3}}}%
 \newcommand\listAPartSeparateline{\tocAPartSeparateline{lol}{2pt}{2pt}}
-%%%%% TO NO PAGE BREAK IN TOC %%%
-\pretocmd{\section}{\ifnum\value{section}=0\addtocontents{toc}{\protect\nopagebreak[4]}\fi}{}{}
-\pretocmd{\subsection}{\ifnum\value{subsection}=0\addtocontents{toc}{\protect\nopagebreak[4]}\fi}{}{}
-\pretocmd{\subsubsection}{\ifnum\value{subsubsection}=0\addtocontents{toc}{\protect\nopagebreak}\fi}{}{}
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Appendixpart}{
   \part*{\partname\ \thepart\hx の補遺}
@@ -150,6 +152,8 @@
 \DeclareRobustCommand{\pDiv}[1]{\pod{{\operator@font div}\mkern6mu#1}}
 \DeclareRobustCommand{\Div}[1]{\allowbreak\if@display\mkern18mu
   \else\mkern12mu\fi{\operator@font div}\,\,#1}
+%%%%% DECLARENEWTOC %%%%%%%%%%%%%%%%%%%%
+\DeclareNewTOC[owner=\jobname, name=Part]{lop}
 %%%%% DECLARENEWLAYER %%%%%%%%%%%%%%%%%%%%
 \newcommand{\setallpageWatermark}[3]{%
   \DeclareNewLayer[
@@ -249,6 +253,7 @@
   \begingroup
   \@openrightfalse
   \part{#1}
+  \addxcontentsline{lop}{part}{\protect\numberline{\thepart}#1}%
   \thispagestyle{empty}
   \vspace*{0.1\textheight}%
   \begin{tablePart}{#2}
