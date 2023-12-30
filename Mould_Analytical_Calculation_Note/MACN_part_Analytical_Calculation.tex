@@ -48,7 +48,7 @@
 \begin{Figbox}
 \resizebox{\linewidth}{!}{\adjustbox{max height=\textheight}{\mouldCoordinate}}%
 \captionsetup{width=.75\textwidth}
-\caption[湾曲中心Oを原点とした複素平面上のモールド]
+\captionof{figure}[湾曲中心Oを原点とした複素平面上のモールド]
   {湾曲中心Oを原点とした複素平面上のモールド\newline
    T$_\mathrm o$, T$_\mathrm i$, B$_\mathrm o$, B$_\mathrm i$, U$_\mathrm T$, U$_\mathrm B$は点、%
    $R_\mathrm c$, $R_\mathrm o$, $R_\mathrm i$, $f_\mathrm T$, $f_\mathrm B$, $l$は長さ、%
@@ -194,18 +194,17 @@ $\delta > 0$より、
 %% section 1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{受板がある場合}
-ジグのモールドと接する部品（受板）の大きさを考慮した場合を考える。
+ジグのモールドと接する部品（\index{うけいた@受板}受板）の大きさを考慮した場合を考える。
 モールドに接する側の面が半径$\rho$の円弧、虚軸方向の厚みが$\sigma$とする。
 また受板の虚軸負方向側の面は、ジグのそれと同じ平面上にあるものとする。
 
-受板の径の中心を改めてU$_\mathrm B$とし、また原点に対する偏角を改めて$-\alpha_{\mathrm U_\mathrm B}$とすると、これはU$_\mathrm B$($R_\mathrm i-\rho$, $-\alpha_{\mathrm U_\mathrm B}$)表すことができる。
+\index{うけいた@受板!のけい@の径}受板の径の中心を改めてU$_\mathrm B$とし、また原点に対する偏角を改めて$-\alpha_{\mathrm U_\mathrm B}$とすると、これはU$_\mathrm B$($R_\mathrm i-\rho$, $-\alpha_{\mathrm U_\mathrm B}$)表すことができる。
 ただし、\pageeqref{eq:constraintUpoint2}は以下のようになる。
 \begin{align*}
   \sin\alpha_{\mathrm U_\mathrm B} = \frac{\bar l}{R_\mathrm i-\rho}\quad, \quad
   \tan\psi = \frac\delta{2\bar l} \quad
   \left(~\bar l \equiv l-\frac\sigma2~\right).
 \end{align*}
-
 これを原点Oを中心に$\Omega$だけ回転し、さらに点U$_\mathrm B$($R_\mathrm i-\rho$, $-\alpha_{\mathrm U_\mathrm B}$)を中心に点T$_\mathrm i$($R_\mathrm i$, $\alpha_{\mathrm T_\mathrm i}$)を$-\theta$だけ回転すると、
 %% label{eq:afterftUfinite}
 \begin{align}
@@ -2513,7 +2512,7 @@ $T_x$, $T_y$ ($T_x \geqq 0$)を機内で測定する際は、C面が工具側に
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadchapter{内径}
 \addcontentsline{lot}{chapter}{\thechapter. \Chaptername}
-\input{p1_MACN_chapter/c_MACN_inner_diameter}
+\input{pAC_chapter/c_MACN_inner_diameter}
 
 
 
@@ -2536,7 +2535,7 @@ $T_x$, $T_y$ ($T_x \geqq 0$)を機内で測定する際は、C面が工具側に
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadchapter{モールドとテーブルとの位置}
-\input{./p1_MACN_chapter/a_MACN_between_table_and_mould}
+\input{./pAC_chapter/a_MACN_between_table_and_mould}
 
 
 
@@ -2547,7 +2546,7 @@ $T_x$, $T_y$ ($T_x \geqq 0$)を機内で測定する際は、C面が工具側に
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\modHeadchapter{諸公式}
-%\input{./p1_MACN_chapter/a_MACN_various_formulas}
+%\input{./pAC_chapter/a_MACN_various_formulas}
 
 
 \end{appendices}

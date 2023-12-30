@@ -7,9 +7,14 @@
 \usepackage[style=english]{csquotes} % Context sensitive quotation facilities.
 
 % Font and Math Settings
+%\usepackage[T1]{fontenc} % for _ in \jobname
 \usepackage{amsmath, amssymb} % Enhanced math support in LaTeX.
 \usepackage{eulervm} % Euler virtual math fonts.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DOTFILL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\patchcmd{\@dottedtocline}{\hbox{.}}{\hbox{$\cdot$}}{}{}
 % Layout and Table Settings
 \usepackage{geometry} % Provides an easy and flexible user interface to customize page layout.
 \usepackage{array} % Extends array and tabular environments.
@@ -36,6 +41,9 @@
 
 % Footnote
 \usepackage{footnotehyper} % Improve on LaTeX's footnote handling.
+
+% Make index
+\usepackage{makeidx} % expand makeidx
 
 % Hyperlink Settings
 \usepackage[dvipdfmx]{hyperref} % Adds support for hyperlinks.
@@ -85,9 +93,6 @@
 
 % List Display
 \usepackage{jvlisting} % For including code listings with Japanese comments.
-
-% Make index
-\usepackage{makeidx}
 
 % Other
 \usepackage{scrhack} % Fix koma-script interaction with other packages.

@@ -52,6 +52,11 @@
 %%%%% DISPLAYBREAK %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \allowdisplaybreaks
+%%%%% TO NO PAGE BREAK IN TOC %%%
+%\apptocmd{\modHeadchapter}{\addtocontents{lot}{\protect\nopagebreak}}{}{}
+%\pretocmd{\modHeadsection}{\ifnum\value{section}=0\addtocontents{lot}{\protect\nopagebreak}\fi}{}{}
+%\pretocmd{\subsection}{\ifnum\value{subsection}=0\addtocontents{toc}{\protect\nopagebreak[4]}\fi}{}{}
+%\pretocmd{\subsubsection}{\ifnum\value{subsubsection}=0\addtocontents{toc}{\protect\nopagebreak}\fi}{}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% UNIT LENGTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -84,7 +89,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% HEADER AND FOOTER %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagestyle{fancy}
+%\pagestyle{fancy}
 \renewcommand{\headrulewidth}{1.5pt}
 \renewcommand{\footrulewidth}{0pt}
 \newcommand{\commonheadfoot}{
@@ -102,8 +107,8 @@
 \fancypagestyle{main}{
   \commonheadfoot
   \fancyhead[LO]{\hyperref[sec:\thesection]{{\small\nouppercase\rightmark}}}
-  \fancyhead[RO]{{\small\partname.\,\thepart}~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
-  \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$~~{\small\partname.\,\thepart}} % header right fields for all main odd pages
+  \fancyhead[RO]{{\small\partname.\,\thepart}~~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
+  \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$~~~{\small\partname.\,\thepart}} % header right fields for all main odd pages
   \fancyhead[RE]{\hyperref[\ifx\@chapapp\appendixname app:\else chap:\fi\thechapter]{{\sffamily\bfseries\thechapter.\hskip0.75em\nouppercase\Chaptername}}} % header right fields for all main even pages
 }
 \fancypagestyle{plainheadfront}{
@@ -113,7 +118,7 @@
 }
 \fancypagestyle{plainhead}{
   \commonheadfoot
-  \fancyhead[RO]{{\small\partname.\,\thepart}~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
+  \fancyhead[RO]{{\small\partname.\,\thepart}~~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
   \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
 }
 \fancypagestyle{plainheadback}{
@@ -132,6 +137,14 @@
 \renewcommand*\backmatter{%
   \if@openright\cleardoubleoddpage\else\clearpage\fi
   \@frontmatterfalse\@mainmatterfalse\@backmattertrue\pagestyle{plainheadback}
+}
+%\AtBeginEnvironment{theindex}{%
+%  \let\oldhyperpage\hyperpage
+%  \renewcommand{\hyperpage}[1]{\cdotfill~\oldhyperpage{#1}~}
+%}
+\AtEndEnvironment{theindex}{%
+  \thispagestyle{plainheadback}
+  \pagestyle{plainheadback}
 }
 %%%%% WATERMARK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AddLayersToPageStyle{@everystyle@}{WatermarkLayer}
@@ -194,6 +207,7 @@
 %  tocnumwidth=2.5em,
 %  tocentrynumberformat=\entrynumberwithdot
 %]{subsection}
+%%%%% STYLE OF LIST OF TABLES %%%%%
 \AtBeginEnvironment{appendices}{%
   \patchcmd{\part}{\newpage}{\relax}{}{}%
   \pretocmd{\part}{\tocAPartSeparateline{toc}{15pt}{-10pt}}{}{}{}% add page break before parts, except part 1
@@ -204,6 +218,8 @@
 }
 \setcounter{tocdepth}{3}
 \renewcommand\contentsname{\texorpdfstring{\hbox to 1.9em{目次}}{目次}}
+%%%%% STYLE OF LIST OF PARTTABLES %%%%%
+\renewcommand\listoflopname{\texorpdfstring{\hbox to 2.75em{大項目}}{大項目}}
 %%%%% STYLE OF LIST OF FIGURES %%%%%
 \renewcommand\listfigurename{\texorpdfstring{\hbox to 2.75em{図目次}}{図目次}}
 \renewcommand{\figurename}{図}
