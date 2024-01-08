@@ -53,7 +53,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \allowdisplaybreaks
 %%%%% TO NO PAGE BREAK IN TOC %%%
-%\apptocmd{\modHeadchapter}{\addtocontents{lot}{\protect\nopagebreak}}{}{}
+%\pretocmd{\modHeadchapter}{\addtocontents{lot}{\protect\nopagebreak}}{}{}
 %\pretocmd{\modHeadsection}{\ifnum\value{section}=0\addtocontents{lot}{\protect\nopagebreak}\fi}{}{}
 %\pretocmd{\subsection}{\ifnum\value{subsection}=0\addtocontents{toc}{\protect\nopagebreak[4]}\fi}{}{}
 %\pretocmd{\subsubsection}{\ifnum\value{subsubsection}=0\addtocontents{toc}{\protect\nopagebreak}\fi}{}{}
