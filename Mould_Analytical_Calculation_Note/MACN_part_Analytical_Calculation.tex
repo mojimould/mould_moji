@@ -198,7 +198,7 @@ $\delta > 0$より、
 モールドに接する側の面が半径$\rho$の円弧、虚軸方向の厚みが$\sigma$とする。
 また受板の虚軸負方向側の面は、ジグのそれと同じ平面上にあるものとする。
 
-\index{うけいたの径@受板の径}受板の径の中心を改めてU$_\mathrm B$とし、また原点に対する偏角を改めて$-\alpha_{\mathrm U_\mathrm B}$とすると、これはU$_\mathrm B$($R_\mathrm i-\rho$, $-\alpha_{\mathrm U_\mathrm B}$)表すことができる。
+\index{うけいたの径@受板の径}受板の径の中心を改めてU$_\mathrm B$とし、また原点に対する偏角を改めて$-\alpha_{\mathrm U_\mathrm B}$とすると、これはU$_\mathrm B$($R_\mathrm i-\rho$, $-\alpha_{\mathrm U_\mathrm B}$)と表すことができる。
 ただし、\pageeqref{eq:constraintUpoint2}は以下のようになる。
 \begin{align*}
   \sin\alpha_{\mathrm U_\mathrm B} = \frac{\bar l}{R_\mathrm i-\rho}\quad, \quad
@@ -593,13 +593,18 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{回転後の振分長}
 回転後のトップ側の振分長$f_\mathrm T'$は、\pageeqref{eq:afterfttable}の虚部を見ればよいので、
-\begin{align*}
-  f_\mathrm T' = f_\mathrm T+\varDelta'\sin\theta = f_\mathrm T+\left(\varDelta+\sqrt{R_\mathrm i'-\bar l^2}\right)\sin\theta\ .
-\end{align*}
+\begin{subequations}
+\label{eq:saifuriwake}
+\begin{align}
+  f_\mathrm T'
+  = f_\mathrm T+\varDelta'\sin\theta
+  = f_\mathrm T+\left(\varDelta+\sqrt{R_\mathrm i'-\bar l^2}\right)\sin\theta\ .
+\end{align}
 同様に、ボトムの振分長$f_\mathrm B'$は、符号に注意して、
-\begin{align*}
+\begin{align}
   f_\mathrm B' = f_\mathrm B-\varDelta'\sin\theta = (f_\mathrm T+f_\mathrm B)-f_\mathrm T'\ .
-\end{align*}
+\end{align}
+\end{subequations}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -628,10 +633,11 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
   \varDelta'\sin\theta = f_d \qquad \left(f_d = \frac{f_\mathrm B-f_\mathrm T}2\right)
 \end{align*}
 であればいいので、
-\begin{align*}
+\begin{align}
+  \label{eq:saifuriwakeangle}
   \sin\theta = \frac{f_d}{\varDelta'}
   = \frac{f_\mathrm B-f_\mathrm T}{2\left(\varDelta+\sqrt{R_\mathrm i'-\bar l^2}\right)}~.
-\end{align*}
+\end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -837,10 +843,10 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{テーブルを傾けた場合のB\texorpdfstring{$_{R_\mathrm c}'$}{Rc'}}
 テーブルを傾けた後のボトム端面における湾曲中心の位置B$_{R_\mathrm c}'$と、テーブル中心Pとの$X$方向の差は、トップ側の場合と同様に考えて
-\begin{align*}
-%  \label{eq:tableBRc}
+\begin{align}
+  \label{eq:tableBRc}
   \left(\varDelta+\sqrt{R_i'^2-\bar l^2}\right)\!\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}~.
-\end{align*}
+\end{align}
 
 
 
@@ -936,7 +942,7 @@ $X$位置については、工具の中心が
   \frac{w_x}2-\delta_w+\frac{\phi_\mathrm D}2
 \end{align}
 にあればよい。
-そのためここでは、まず$X$方向に絶対座標(G90)
+そのためここでは、まず$X$方向に絶対座標(\verb|G90|)
 \begin{align*}
   \frac{w_x}2-\delta_w
 \end{align*}
@@ -1019,7 +1025,7 @@ $X$位置については、工具の中心が
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{ボトム側外削径の中心（ボトム基準）}
 \index{にくあつ@肉厚}肉厚を基準とする場合、ボトム端の\index{Aがわにくあつ@A側肉厚}A側肉厚を基準にすることが多い。
-このとき、ボトム端における\index{がいさくちゅうしん@外削中心}外削径中心B$_\mathrm c'$から、\index{ぼとむたんないけい@ボトム端内径}ボトム端内径$w_\mathrm B$の半分を引き、さらにA側肉厚$\tau_\mathrm B$とめっき膜厚$\mu$との差を引いたものが（おおよその）外削A側面の位置$\mathfrak B_\mathrm o'$に相当する
+このとき、ボトム端における\index{がいけいちゅうしん@外径中心}外径中心B$_\mathrm c'$から、\index{ぼとむたんないけい@ボトム端内径}ボトム端内径$w_\mathrm B$の半分を引き、さらにA側肉厚$\tau_\mathrm B$とめっき膜厚$\mu$との差を引いたものが（おおよその）外削A側面の位置$\mathfrak B_\mathrm o'$に相当する
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ボトム側が工具側にある場合は、A面は$X$の負方向にあることに注意。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1046,15 +1052,15 @@ $X$位置については、工具の中心が
 \begin{hosoku}
 正確には、ボトム端における（内径ではなく）A・C面側の内面中心b$_\mathrm c'$を見る必要がある。
 しかし実際の作業においては、これはタッチセンサーの測定開始点として用いるものであるため、おおよその値（$\pm10$mm以内程度）で十分である。
-そのため、ここでは単純に中心b$_\mathrm c'$の代わりにボトム外削径中心B$_\mathrm c'$とし、またボトム端における内径$w_\mathrm B$を用いている。
-さらにいうと、外削径中心B$_\mathrm c'$はボトム端の湾曲中心B$_{\mathrm R_\mathrm c}'$で代用してもまず問題はない。
+そのため、ここでは単純に中心b$_\mathrm c'$の代わりにボトム外径中心B$_\mathrm c'$とし、またボトム端における内径$w_\mathrm B$を用いている。
+さらにいうと、外径中心B$_\mathrm c'$はボトム端の湾曲中心B$_{\mathrm R_\mathrm c}'$で代用してもまず問題はない。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 これは飽くまで（図面の数字をもとにした）計算値であり、タッチセンサーでの測定開始点として用いる。
 そして、現物のボトム端に相当する箇所のA面（負方向）側内面b$_\mathrm o'$の位置を直接計測し、その位置を基準として（ワーク座標系の）原点$\mathfrak B_\mathrm c'$を定める。
-計測で定めた原点$\mathfrak B_\mathrm c'$と、ボトム端A側内面b$_\mathrm o'$との差の$X$座標は、
+このとき、A側内面b$_\mathrm o'$の$X$座標が以下になるように、原点$\mathfrak B_\mathrm c'$を定める。
 \begin{align*}
   -\left(\frac{\mathfrak W_\mathrm B}2-\tau_\mathrm B+\mu\right).
 \end{align*}
@@ -1066,14 +1072,16 @@ $X$位置については、工具の中心が
 \subsection[テーブルを傾けた場合の\texorpdfstring{$\mathfrak B_\mathrm c'$}{Bc'}]
            {テーブルを傾けた場合の$\boldsymbol{\mathfrak B_\mathrm c'}$}
 テーブルを$-\theta$傾けた場合、テーブル中心Pを原点としたボトム側外削径の中心$\mathfrak B_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:tableBc}より、
-\begin{align*}
+\begin{align}
+  \label{eq:gaisakucenterBt}
   \varDelta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
   -\frac{w_\mathrm B}2-\tau_\mathrm B+\frac{\mathfrak W_\mathrm B}2\ .
-\end{align*}
-計測して定めた原点$\mathfrak B_\mathrm c'$と、ボトム端A側内面b$_\mathrm o'$との差の$X$座標は、
-\begin{align*}
+\end{align}
+このとき、計測したA側内面b$_\mathrm o'$の$X$座標が以下になるように、原点$\mathfrak B_\mathrm c'$を定める。
+\begin{align}
+  \label{eq:gaisakucenterBr}
   -\left(\frac{\mathfrak W_\mathrm B}2-\tau_\mathrm B+\mu\right).
-\end{align*}
+\end{align}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1088,9 +1096,10 @@ $X$位置については、工具の中心が
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 通り芯$T_x$の分を加味すればよい。
 したがって、
-\begin{align*}
+\begin{align}
+  \label{eq:BbasedTx}
   -\mathcal G_{Bx}+T_x
-\end{align*}
+\end{align}
 で与えられる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{$Y$座標については、$B$軸の回転に影響しないので、$\mathcal G_{\mathrm By}+T_y$となる。
@@ -1124,7 +1133,7 @@ $X$位置については、工具の中心が
   -\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}
   +\frac{w_\mathrm T}2+\tau_\mathrm T-\frac{\mathfrak W_\mathrm T}2\ .
 \end{align*}
-これを\index{タッチセンサー}タッチセンサーでの\index{そくていかいしてん@測定開始点}測定開始点とし、計測した原点の$X$座標（実測値）を$\mathcal G_{tx}$とすると、トップ端における\index{Aがわないめん@A側内面}A面側内面と$\mathcal G_{tx}$との差の$X$座標は、
+これを\index{タッチセンサー}タッチセンサーでの\index{そくていかいしてん@測定開始点}測定開始点とし、計測した原点の$X$座標（実測値）を$\mathcal G_{Tx}$とすると、トップ端における\index{Aがわないめん@A側内面}A面側内面と$\mathcal G_{Tx}$との差の$X$座標は、
 \begin{align*}
   \frac{\mathfrak W_\mathrm T}2-\tau_\mathrm T+\mu~.
 \end{align*}
@@ -1135,15 +1144,17 @@ $X$位置については、工具の中心が
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection[テーブルを傾けた場合の\texorpdfstring{$\mathfrak T_\mathrm c'$}{Tc'}]
            {テーブルを傾けた場合の$\boldsymbol{\mathfrak T_\mathrm c'}$}
-テーブルを$-\theta$傾けた場合、\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（てーぶるちゅうしん)@P（テーブル中心）}Pを原点としたボトム側外削径の中心$\mathfrak T_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:tableTc}より、
-\begin{align*}
+テーブルを$-\theta$傾けた場合、\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（てーぶるちゅうしん)@P（テーブル中心）}Pを原点としたトップ側外削径の中心$\mathfrak T_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:tableTc}より、
+\begin{align}
+  \label{eq:gaisakucenterTt}
   \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta'\cos\theta
   +\frac{w_\mathrm T}2+\tau_\mathrm T-\frac{\mathfrak W_\mathrm T}2\ .
-\end{align*}
+\end{align}
 計測して定めた原点$\mathfrak T_\mathrm c'$と、トップ端A側内面t$_\mathrm o'$との差の$X$座標は、
-\begin{align*}
+\begin{align}
+  \label{eq:gaisakucenterTr}
   \frac{\mathfrak W_\mathrm T}2-\tau_\mathrm T+\mu~.
-\end{align*}
+\end{align}
 
 
 
@@ -1153,11 +1164,12 @@ $X$位置については、工具の中心が
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ボトム側外削径中心（トップ基準）}
 ボトム側にも外削がある場合、トップ側外削から通り芯を指定する形でボトム外削の位置を決めることが多い。
-このとき、テーブル中心Pを原点としたボトム側外削径中心$\mathfrak B_\mathrm c'$の$X$座標は、計測で定めた$\mathfrak T_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Tx}$の符号を反転し、通り芯$T_x$の分を加味すればよい。
+このとき、テーブル中心Pを原点とした\index{ボトムがわがいさくちゅうしん@ボトム側外削中心}ボトム側外削径中心$\mathfrak B_\mathrm c'$の$X$座標は、計測で定めた$\mathfrak T_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Tx}$の符号を反転し、\index{とおりしん@通り芯}通り芯$T_x$の分を加味すればよい。
 したがって、
-\begin{align*}
+\begin{align}
+  \label{eq:TbasedTx}
   -\mathcal G_{Tx}+T_x
-\end{align*}
+\end{align}
 で与えられる。
 
 
@@ -1284,7 +1296,7 @@ $X$位置については、工具の中心が
 モールド\index{Aがわみぞふかさ@A側溝深さ}A側面からの溝深さが指定されている場合を考える。
 このとき、溝中心の位置の$X$座標は、テーブル中心Pを原点として、
 \begin{align*}
-  \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}-\kappa_d-\frac{W_\mathrm M}2
+  \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}-\kappa_d-\frac{W_{mx}}2
   -\varDelta'
 \end{align*}
 で与えられる。
@@ -1292,7 +1304,7 @@ $X$位置については、工具の中心が
 なお実際の作業では、モールドの\index{Aがわがいめん@A側外面}A側外面の溝幅中央に相当する箇所を直接計測し、その位置を基準として原点を割り出す。
 その原点の$X$座標（実測値）を$G_{mx}$とすると、溝幅中央に対するモールドのA側外面と溝中心$G_{mx}$との差は、
 \begin{align*}
-  \frac{W_m}2+\kappa_d
+  \frac{W_{mx}}2+\kappa_d
 \end{align*}
 となる。
 
@@ -1308,7 +1320,7 @@ $X$位置については、工具の中心が
 \modHeadchapter{面取}
 ここでは主に、\index{テーパーエンドミル}テーパーエンドミルを用いた\index{Cめんとり@C面取}C面取について考える。
 テーパーエンドミルは、その名の通りテーパーの付いた工具であり、先端が平坦になっているものも多い。
-しかし、先端部分を\index{こうぐちょう@工具長}工具長として設定すると、その部分が段差となりテーパー加工が適切に行うことができない。
+しかし、先端部分を\index{こうぐちょう@工具長}工具長として設定すると、その部分が段差となり\index{テーパーかこう@テーパー加工}テーパー加工を適切に行うことができない。
 そのため、先端部分から一定の距離$d_\mathrm e$だけずらした箇所を工具長として設定し、またその箇所の直径（\index{さんしょうちょっけい@参照直径}参照直径）$D_\mathrm r$を工具直径として補正を行うことが推奨される。
 
 ここで、先端径（直径）
@@ -1317,9 +1329,7 @@ $X$位置については、工具の中心が
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 およびテーパーの角度（片角）を$D_\mathrm e$, $\xi_\mathrm e$とすると、参照直径$D_\mathrm r$は
 \begin{align*}
-  D_\mathrm r
-  = (D_\mathrm e\cot\xi_\mathrm e+2d_\mathrm e)\tan\xi_\mathrm e
-  = D_\mathrm e+2d_\mathrm e\tan\xi_\mathrm e
+  D_\mathrm r = D_\mathrm e+2d_\mathrm e\tan\xi_\mathrm e
 \end{align*}
 で与えられる。
 通常、\index{こうぐけいほせい@工具径補正}工具径補正は工具の半径を用いて行うので、工具径を
@@ -2509,6 +2519,7 @@ $T_x$, $T_y$ ($T_x \geqq 0$)を機内で測定する際は、C面が工具側に
 
 
 
+\setlength{\parindent}{11pt}
 \begin{appendices}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

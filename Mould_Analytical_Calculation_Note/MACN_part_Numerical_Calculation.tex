@@ -10,14 +10,124 @@
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadchapter{数値解析}
-基本的に、数値解析については数値計算用の言語を用いて行うため、その詳細は別ドキュメントに譲る。
+基本的に、\index{すうちかいせき@数値解析}数値解析については数値計算用の言語を用いて行うため、その詳細は別ドキュメントに譲る。
 ここでは数値解析に必要な部分をピックアップしておく。
+なお、ここでは主に\DMname について述べるため、スペーサに関するものは省略する。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section D.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{振分け}
+テーブルを$-\theta$だけ回転させたときのトップ・ボトム側の\index{ふりわけちょう@振分長}振分長$f'_\mathrm T$, $f'_\mathrm B$は、\eqref{eq:saifuriwake}より、
+\begin{align*}
+  f_\mathrm T' = f_\mathrm T+\varDelta'\!\sin\theta~~, \quad
+  f_\mathrm B' = (f_\mathrm T+f_\mathrm B)-f_\mathrm T'
+\end{align*}
+トップ側とボトム側の振分長が均等になるときの回転角$\theta'$は、\pageeqref{eq:saifuriwakeangle}より、
+\begin{align*}
+  \sin\theta' = \frac{f_d}{\varDelta'}\ .
+\end{align*}
+ここで、
+\begin{align*}
+  \varDelta' = \varDelta+\sqrt{R_\mathrm i'-\bar l^2}\ , \quad
+  R_\mathrm i' = R_\mathrm c-\frac{W_x}2-\rho\ ,\quad
+  \bar l = l-\frac\sigma2\ ,\quad
+  f_d = \frac{f_\mathrm B-f_\mathrm T}2\ .
+\end{align*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{湾曲中心}
+トップ端およびボトム端における（$-\theta$回転後の）\index{わんきょくちゅうしん@湾曲中心}湾曲中心の$X$値は、\pageeqref{eq:tableTRc}, \pageeqref{eq:tableBRc}よりそれぞれ、
+\begin{align*}
+  \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\varDelta'\!\cos\theta~, \quad
+  \varDelta'\!\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}~.
+\end{align*}
+また、（計算上の）\index{うちがわちゅうしん@内側中心}内側中心はこの湾曲中心を持って代用してもよいものとする。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{外側中心}
+トップ端およびボトム端における\index{そとがわちゅうしん@外側中心}外側中心の$X$位置は、\pageeqref{eq:tableTc}, \pageeqref{eq:tableBc}よりそれぞれ、
+\begin{align*}
+  \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta'\cos\theta~, \quad
+  \varDelta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2\ .
+\end{align*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{外削}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 9.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{外削中心：ボトムA面肉厚基準の場合}
+\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（てーぶるちゅうしん)@P（テーブル中心）}Pを原点としたボトム側外削径の中心$\mathfrak B_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterBt}より、
+\begin{align*}
+  \varDelta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
+  -\frac{w_\mathrm B}2-\tau_\mathrm B+\frac{\mathfrak W_\mathrm B}2\ .
+\end{align*}
+このとき、計測したA側内面b$_\mathrm o'$の$X$座標が\pageeqref{eq:gaisakucenterBr}となるように、原点$\mathfrak B_\mathrm c'$を定める。
+\begin{align*}
+  -\left(\frac{\mathfrak W_\mathrm B}2-\tau_\mathrm B+\mu\right).
+\end{align*}
+トップ側にも外削がある場合、計測で定めた$\mathfrak B_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Bx}$および\index{とおりしん@通り芯}通り芯$T_x$を用いて\pageeqref{eq:BbasedTx}で与えられる。
+\begin{align*}
+  -\mathcal G_{Bx}+T_x\ .
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 9.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{外削中心：トップA面肉厚基準の場合}
+\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（てーぶるちゅうしん)@P（テーブル中心）}Pを原点としたトップ側外削径の中心$\mathfrak T_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterTt}より、
+\begin{align*}
+  \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta'\cos\theta
+  +\frac{w_\mathrm T}2+\tau_\mathrm T-\frac{\mathfrak W_\mathrm T}2\ .
+\end{align*}
+このとき、計測したA側内面t$_\mathrm o'$の$X$座標が\pageeqref{eq:gaisakucenterTr}となるように、原点$\mathfrak T_\mathrm c'$を定める。
+\begin{align*}
+  \frac{\mathfrak W_\mathrm T}2-\tau_\mathrm T+\mu~.
+\end{align*}
+ボトム側にも外削がある場合、計測で定めた$\mathfrak T_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Tx}$および\index{とおりしん@通り芯}通り芯$T_x$を用いて\pageeqref{eq:TbasedTx}で与えられる。
+\begin{align*}
+  -\mathcal G_{Tx}+T_x
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 9.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{外削長}
+\index{がいさくちょう@外削長}外削長に関しては、基本的には\index{ふりわけちょう@振分長}振分長から外削長を引いた位置に$Z$座標を合わせればよい。
+ただし、
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{溝中心}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{面取中心}
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
