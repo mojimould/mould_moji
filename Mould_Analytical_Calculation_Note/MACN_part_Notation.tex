@@ -1,178 +1,188 @@
 %!TEX root = Mould_Analytical_Calculation_Note.tex
 
 
-\rowcolors{3}{gray!10}{white}
-\setlength\cellspacetoplimit{4pt}
-\setlength\cellspacebottomlimit{4pt}
-\begin{longtable}{|c|Sl|}
-\hline
-\rowcolor{orange!20} % ヘッダ行の背景色を白に設定
-\textbf{記号} & \textbf{内容}\\
-\hline
-\endfirsthead
+ここでは\pageautoref{part:ACN}で記述した変数等の表記を一覧にして示しておく。
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Notation}{長さ・角度}{図面}
+$R_\mathrm c$ & 中心湾曲半径 & ○\\\hline
+$R_\mathrm i$ & 内側（C面側）湾曲半径 & \\\hline
+$R_\mathrm o$ & 外側（A面側）湾曲半径 & \\\hline
+$f_\mathrm T$ & トップ振分長（調整前） & ○\\\hline
+$f_\mathrm B$ & ボトム振分長（調整前） &○\\\hline
+$f_\mathrm T'$ & トップ振分長（調整後） &\\\hline
+$f_\mathrm B'$ & ボトム振分長（調整後） &\\\hline
+$f_\mathrm d$ & $\displaystyle \frac{f_\mathrm B-f_\mathrm T}2$ &\\\hline
+$\theta$ & 振分長調整用角度 &\\\hline
+$\psi$ & スペーサによる$\mathrm U_\mathrm B$を中心とした傾き角 &\\\hline
+$W_x$ & AC外径 & ○\\\hline
+$W_y$ & BD外径 & ○\\\hline
+$w_\mathrm T$ & トップ端内径（略称） & ○\\\hline
+$w_\mathrm B$ & ボトム端内径（略称） & ○\\\hline
+$w_x$ & 端面AC内径（略称） & ○\\\hline
+$w_y$ & 端面BD内径（略称） & ○\\\hline
+$\mathfrak W_\mathrm T$ & トップ側AC外削径 & ○\\\hline
+$\mathfrak W_\mathrm B$ & トップ側BD外削径 & ○\\\hline
+$h_\mathrm T$ & トップ側外削長 & ○\\\hline
+$h_\mathrm B$ & ボトム側外削長 & ○\\\hline
+$\tau_y$ & BD方向肉厚（略称） &\\\hline
+$\tau_\mathrm T$ & トップ端A側肉厚（指定時） & ○\\\hline
+$\tau_\mathrm B$ & ボトム端A側肉厚（指定時） & ○\\\hline
+$\mu$ & めっき膜厚 & ○\\\hline
+$T_x$ & $X$方向通り芯 & ○\\\hline
+$T_y$ & $Y$方向通り芯 &\\\hline
+$\delta x$ & 回転中心とジグ中心とのずれ$X$ &\\\hline
+$\delta z$ & 回転中心とジグ中心とのずれ$Z$ &\\\hline
 \hline
-\rowcolor{orange!20} % ヘッダ行の背景色を白に設定
-\textbf{記号} & \textbf{内容}\\
-\hline
-\endhead
+$\alpha_{\mathrm c}$ & 湾曲中心$O$と$\mathrm T_\mathrm c$の角度（鋭角） &\\\hline
+$\alpha_{\mathrm T_\mathrm i}$ & 湾曲中心$O$と$\mathrm T_\mathrm i$の角度（鋭角） &\\\hline
+$\alpha_{\mathrm T_\mathrm o}$ & 湾曲中心$O$と$\mathrm T_\mathrm o$の角度（鋭角） &\\\hline
+$\alpha_{\mathrm U_\mathrm B}$ & 湾曲中心$O$と$\mathrm U_\mathrm B$の角度（鋭角） &\\\hline
+$\alpha_{\mathrm U_\mathrm T}'$ & 湾曲中心$O'$と$\mathrm U_\mathrm T'$の角度（鋭角） &\\\hline
+$\alpha_{\mathrm U_\mathrm B}'$ & 湾曲中心$O'$と$\mathrm U_\mathrm B'$の角度（鋭角） &\\\hline
+\end{Notation}
 
-\hline
-\multicolumn{2}{|r|}{\scriptsize 次ページへ続く} \\
-\hline
-\endfoot
 
-\hline
-\endlastfoot
+\begin{Notation}{溝}{図面}
+$W_\mathrm M$ & 溝径（略称） & ○\\\hline
+$W_{mx}$ & 溝AC径 & ○\\\hline
+$\kappa_p$ & 溝位置 & ○\\\hline
+$\kappa_w$ & 溝幅 & ○\\\hline
+$\kappa_d$ & A側溝深さ（指定時） & ○\\\hline
+\end{Notation}
 
-$R_\mathrm c$ & 中心湾曲半径\\\hline
-$R_\mathrm i$ & 内側（C面側）湾曲半径\\\hline
-$R_\mathrm o$ & 外側（A面側）湾曲半径\\\hline
-$f_\mathrm T$ & トップ振分長（調整前）\\\hline
-$f_\mathrm B$ & ボトム振分長（調整前）\\\hline
-$f_\mathrm T'$ & トップ振分長（調整後）\\\hline
-$f_\mathrm B'$ & ボトム振分長（調整後）\\\hline
-$\theta$ & 振分長調整用角度\\\hline
-$l$ & ジグ長さの半分\\\hline
-$\rho$ & 受板の半径\\\hline
-$\sigma$ & 受板の幅\\\hline
-$R_\mathrm i'$ & $R_i-\rho$\\\hline
-$\bar l$ & $\displaystyle l-\frac\sigma2$\\\hline
-$f_\mathrm d$ & $\displaystyle \frac{f_\mathrm B-f_\mathrm T}2$\\\hline
-$l'$ & $l+f_\mathrm d$\\\hline
-$\delta$ & スペーサの厚さ\\\hline
-$\psi$ & スペーサによる$\mathrm U_\mathrm B$を中心とした傾き\\\hline
-$\varDelta$ & $\mathrm U_\mathrm B$とテーブル中心$P$との水平距離\\\hline
-$\varDelta'$ & Oを原点としたテーブル中心$P$の水平距離\\\hline
-$W_x$ & AC外径\\\hline
-$W_y$ & BD外径\\\hline
-$w_\mathrm T$ & トップ端内径（略称）\\\hline
-$w_\mathrm B$ & ボトム端内径（略称）\\\hline
-$w_x$ & 端面AC内径（略称）\\\hline
-$w_y$ & 端面BD内径（略称）\\\hline
-$\mathfrak W_\mathrm T$ & トップ側AC外削径\\\hline
-$\mathfrak W_\mathrm B$ & トップ側BD外削径\\\hline
-$h_\mathrm B$ & ボトム側外削長\\\hline
-$\tau_y$ & BD方向肉厚（略称）\\\hline
-$\tau_\mathrm T$ & トップ端A側肉厚\\\hline
-$\tau_\mathrm B$ & ボトム端A側肉厚\\\hline
-$\mu$ & めっき膜厚\\\hline
-$T_x$ & $X$方向通り芯\\\hline
-$T_y$ & $Y$方向通り芯\\\hline
-$W_\mathrm M$ & 溝径（略称）\\\hline
-$W_{mx}$ & 溝AC径\\\hline
-$\kappa_p$ & 溝位置\\\hline
-$\kappa_w$ & 溝幅\\\hline
-$\kappa_d$ & A側溝深さ\\\hline
-$m$ & 内面溝列数\\\hline
-$q$ & トップ端から内面溝1列目までの距離\\\hline
-$p_x$ & 内面溝水平方向ピッチ\\\hline
-$p_z$ & 内面溝鉛直方向ピッチ\\\hline
-$d_i$ & 内面溝$i$列目の長さ\\\hline
-$d_\mathrm o$ & 内面溝奇数列目の長さ（全て同じ場合）\\\hline
-$d_\mathrm e$ & 内面溝偶数列目の長さ（全て同じ場合）\\\hline
-$n_m$ & $m$列目の内面溝の個数\\\hline
-$n_\mathrm o$ & 奇数列目の内面溝の個数（全て同じ場合）\\\hline
-$n_\mathrm e$ & 偶数列目の内面溝の個数（全て同じ場合）\\\hline
-$\lambda_i$ & 内面テーパ表におけるトップ端からの$i$番目の距離\\\hline
-$w_{\mathrm Ai}$ & $\lambda_i$に対するAC内径\\\hline
-$w_{\mathrm Bi}$ & $\lambda_i$に対するBD内径\\\hline
-$w_{\mathrm A\lambda}$ & トップ端からの距離$\lambda$に対する近似AC内径\\\hline
-$w_{\mathrm B\lambda}$ & トップ端からの距離$\lambda$に対する近似BD内径\\\hline
-$w_{\mathrm A\lambda}'$ & $w_{\mathrm A\lambda}+2\mu$\\\hline
-$w_{\mathrm B\lambda}'$ & $w_{\mathrm B\lambda}+2\mu$\\\hline
-$w_{\mathrm A}'$ & $w_{\mathrm A\lambda}'$の略記\\\hline
-$w_{\mathrm B}'$ & $w_{\mathrm B\lambda}'$の略記\\\hline
-$\phi$ & 内面溝用傾け角（鋭角）\\\hline
-$\phi_\mathrm C$ & C面用内面溝用傾け角（鋭角）\\\hline
-$\mathcal R_\mathrm o$ & A側内面湾曲\\\hline
-$\mathcal R_\mathrm i$ & C側内面湾曲\\\hline
-$\mathcal L_i$ & $i$列目の湾曲中心とトップ端の湾曲中心との差$X$\\\hline
-$\mathcal L_{i,j}$ & $i$列目の湾曲中心と$j$列目の湾曲中心との差$X$\\\hline
-$\mathcal D_{xi,\mathrm A}$ & A面$i$列目$j$番目の内面溝$X$（P原点・傾き前）\\\hline
-$\mathcal D_{xi,\mathrm C}$ & C面$i$列目$j$番目の内面溝$X$（P原点・傾き前）\\\hline
-$\mathcal D_{xij,\mathrm B}$ & B, D面$i$列目$j$番目の内面溝$X$（P原点・傾き前）\\\hline
-$\mathcal D_{yij,\mathrm A}$ & A, C面$i$列目$j$番目の内面溝$Y$（P原点・傾き前）\\\hline
-$\mathcal D_{yi,\mathrm B}$ & B面$i$列目$j$番目の内面溝$Y$（P原点・傾き前）\\\hline
-$\mathcal D_{yi,\mathrm D}$ & D面$i$列目$j$番目の内面溝$Y$（P原点・傾き前）\\\hline
-$\mathcal D_{zi,\mathrm D}$ & $i$列目$j$番目の内面溝$Z$（P原点・傾き前）\\\hline
-$\mathcal D_{xij,\mathrm A}'$ & A面$i$列目$j$番目の内面溝$X$（P原点・傾け後）\\\hline
-$\mathcal D_{yij,\mathrm A}'$ & A面$i$列目$j$番目の内面溝$Y$（P原点・傾け後）\\\hline
-$\mathcal D_{zij,\mathrm A}'$ & A面$i$列目$j$番目の内面溝$Z$（P原点・傾け後）\\\hline
-$\mathcal D_{xij,\mathrm C}'$ & C面$i$列目$j$番目の内面溝$X$（P原点・傾け後）\\\hline
-$\mathcal D_{yij,\mathrm C}'$ & C面$i$列目$j$番目の内面溝$Y$（P原点・傾け後）\\\hline
-$\mathcal D_{zij,\mathrm C}'$ & C面$i$列目$j$番目の内面溝$Z$（P原点・傾け後）\\\hline
-$\mathcal D_{xij,\mathrm B}'$ & B面$i$列目$j$番目の内面溝$X$（P原点・傾け後）\\\hline
-$\mathcal D_{yij,\mathrm B}'$ & B面$i$列目$j$番目の内面溝$Y$（P原点・傾け後）\\\hline
-$\mathcal D_{zij,\mathrm B}'$ & B面$i$列目$j$番目の内面溝$Z$（P原点・傾け後）\\\hline
-$\mathcal D_{xij,\mathrm D}'$ & D面$i$列目$j$番目の内面溝$X$（P原点・傾け後）\\\hline
-$\mathcal D_{yij,\mathrm D}'$ & D面$i$列目$j$番目の内面溝$Y$（P原点・傾け後）\\\hline
-$\mathcal D_{zij,\mathrm D}'$ & D面$i$列目$j$番目の内面溝$Z$（P原点・傾け後）\\\hline
-$\delta x$ & 回転中心とジグ中心とのずれ$X$\\\hline
-$\delta z$ & 回転中心とジグ中心とのずれ$Z$\\\hline
-$T_\mathrm l$ & 液相線温度\\\hline
-$T_\mathrm s$ & 固相線温度\\\hline
-$T_0$ & 基準温度\\\hline
-$X_\mathrm i$ & 化学組成の含有量\\\hline
-$k_\mathrm i$ & 化学組成における影響係数\\\hline
-\hline
-$G_{Tx}$ & 計測した外側中心$X$\\\hline
-$G_{Ty}$ & 計測した外側中心$Y$\\\hline
-$\mathcal G_{Bx}$ & 計測した$\mathfrak B_\mathrm c'$の$X$座標\\\hline
-$\mathcal G_{By}$ & 計測した$\mathfrak B_\mathrm c'$の$Y$座標\\\hline
-$\mathcal G_{Tx}$ & 計測した$\mathfrak T_\mathrm c'$の$X$座標\\\hline
-$\mathcal G_{mx}$ & 計測した（A側溝深さ基準）溝中心\\\hline
-$g_t$ & 計測したトップ端における内径中心\\\hline
-$g_{tx}$ & 計測したトップ端における内径中心$X$\\\hline
-$g_{ty}$ & 計測したトップ端における内径中心$Y$\\\hline
-$g_t'$ & 傾け後のトップ端内面中心\\\hline
-$g_{tx}'$ & 傾け後のトップ端内面中心$X$\\\hline
-$g_{ty}'$ & 傾け後のトップ端内面中心$Y$\\\hline
-$g_{tZ}'$ & 傾け後のトップ端内面中心$Z$\\\hline
-\hline
-$\delta_w$ & 端面加工 輪郭調整用パラメータ\\\hline
-$\phi_\mathrm D$ & 端面加工用フェイスミル刃径（直径）\\\hline
-$\phi_\mathrm D'$ & 端面加工用フェイスミル最大刃径（直径）\\\hline
-$d_\mathrm e$ & テーパーエンドミル先端からの距離（参照直径用）\\\hline
-$D_\mathrm r$ & テーパーエンドミル参照直径\\\hline
-$D_\mathrm e$ & テーパーエンドミル先端径（直径）\\\hline
-$\xi_\mathrm e$ & テーパーエンドミル テーパー角度（片角）\\\hline
-\hline
-$\alpha_{\mathrm c}$ & 湾曲中心$O$と$\mathrm T_\mathrm c$の角度（鋭角）\\\hline
-$\alpha_{\mathrm T_\mathrm i}$ & 湾曲中心$O$と$\mathrm T_\mathrm i$の角度（鋭角）\\\hline
-$\alpha_{\mathrm T_\mathrm o}$ & 湾曲中心$O$と$\mathrm T_\mathrm o$の角度（鋭角）\\\hline
-$\alpha_{\mathrm U_\mathrm B}$ & 湾曲中心$O$と$\mathrm U_\mathrm B$の角度（鋭角）\\\hline
-$\alpha_{\mathrm U_\mathrm T}'$ & 湾曲中心$O'$と$\mathrm U_\mathrm T'$の角度（鋭角）\\\hline
-$\alpha_{\mathrm U_\mathrm B}'$ & 湾曲中心$O'$と$\mathrm U_\mathrm B'$の角度（鋭角）\\\hline
-\hline
-O & 湾曲中心点\\\hline
-P & テーブル中心点\\\hline
-T$_{R_\mathrm c}$ & トップ端における湾曲中心\\\hline
-$\mathrm T_\mathrm i$ & トップ内側（C側）端点\\\hline
-$\mathrm T_\mathrm o$ & トップ外側（A側）端点\\\hline
-$\mathrm B_\mathrm i$ & ボトム内側（C側）端点\\\hline
-$\mathrm B_\mathrm o$ & ボトム外側（A側）端点\\\hline
-$\mathrm U_\mathrm T$ & トップ側受板中心\\\hline
-$\mathrm U_\mathrm B$ & ボトム側受板中心\\\hline
-$O'$ & $-\psi$傾き後の湾曲中心点\\\hline
-$\mathrm U_\mathrm T'$ & $-\psi$傾き後のトップ側受板中心\\\hline
-$\mathrm U_\mathrm B'$ & $-\psi$傾き後のボトム側受板中心\\\hline
-T$_{R_\mathrm c}'$ & 傾き後のトップ端における湾曲中心\\\hline
-T$_\mathrm c'$ & 傾き後のトップ端における外径中心\\\hline
-$\mathrm T_\mathrm i'$ & 傾き後のトップ内側（C側）端点\\\hline
-$\mathrm T_\mathrm o'$ & 傾き後のトップ外側（A側）端点\\\hline
-B$_{R_\mathrm c}'$ & 傾き後のボトム端における湾曲中心\\\hline
-B$_\mathrm c'$ & 傾き後のボトム端における外径中心\\\hline
-B$_{R_\mathrm i}'$ & 傾き後のボトム内側（C側）端点\\\hline
-B$_{R_\mathrm o}'$ & 傾き後のボトム外側（A側）端点\\\hline
-$\mathfrak T_\mathrm c$ & トップ外削中心\\\hline
-$\mathfrak B_\mathrm c$ & ボトム外削中心\\\hline
-$\mathfrak T_\mathrm c'$ & トップ外削中心（P原点）\\\hline
-$\mathfrak B_\mathrm c'$ & ボトム外削中心（P原点）\\\hline
-$\mathfrak B_\mathrm o'$ & ボトム外削A面\\\hline
-b$_\mathrm c'$ & ボトム端内面中心\\\hline
-b$_\mathrm o'$ & ボトム端A側内面\\\hline
-t$_\mathrm o'$ & トップ端A側内面\\\hline
-M & 溝中心\\\hline
-M$'$ & 傾き後の溝中心\\\hline
-\end{longtable}
+
+\begin{Notation}{内面溝}{図面}
+$m$ & 内面溝列数 & ○\\\hline
+$q$ & トップ端から内面溝1列目までの距離 & ○\\\hline
+$p_x$ & 内面溝水平方向ピッチ & ○\\\hline
+$p_z$ & 内面溝鉛直方向ピッチ & ○\\\hline
+$d_i$ & 内面溝$i$列目の長さ & ○\\\hline
+$d_\mathrm o$ & 内面溝奇数列目の長さ（全て同じ場合） & ○\\\hline
+$d_\mathrm e$ & 内面溝偶数列目の長さ（全て同じ場合） & ○\\\hline
+$n_m$ & $m$列目の内面溝の個数 & ○\\\hline
+$n_\mathrm o$ & 奇数列目の内面溝の個数（全て同じ場合） & ○\\\hline
+$n_\mathrm e$ & 偶数列目の内面溝の個数（全て同じ場合） & ○\\\hline
+$\lambda_i$ & 内面テーパ表におけるトップ端からの$i$番目の距離 & ○\\\hline
+$w_{\mathrm Ai}$ & $\lambda_i$に対するAC内径 & ○\\\hline
+$w_{\mathrm Bi}$ & $\lambda_i$に対するBD内径 & ○\\\hline
+$w_{\mathrm A\lambda}$ & トップ端からの距離$\lambda$に対する近似AC内径 &\\\hline
+$w_{\mathrm B\lambda}$ & トップ端からの距離$\lambda$に対する近似BD内径 &\\\hline
+$w_{\mathrm A\lambda}'$ & $w_{\mathrm A\lambda}+2\mu$ &\\\hline
+$w_{\mathrm B\lambda}'$ & $w_{\mathrm B\lambda}+2\mu$ &\\\hline
+$w_{\mathrm A}'$ & $w_{\mathrm A\lambda}'$の略記 &\\\hline
+$w_{\mathrm B}'$ & $w_{\mathrm B\lambda}'$の略記 &\\\hline
+$\phi$ & 内面溝用傾け角（鋭角） &\\\hline
+$\phi_\mathrm C$ & C面用内面溝用傾け角（鋭角） &\\\hline
+$g_t'$ & 傾け後のトップ端内面中心 &\\\hline
+$g_{tx}'$ & 傾け後のトップ端内面中心$X$ &\\\hline
+$g_{ty}'$ & 傾け後のトップ端内面中心$Y$ &\\\hline
+$g_{tZ}'$ & 傾け後のトップ端内面中心$Z$ &\\\hline
+$\mathcal R_\mathrm o$ & A側内面湾曲 &\\\hline
+$\mathcal R_\mathrm i$ & C側内面湾曲 &\\\hline
+$\mathcal L_i$ & $i$列目の湾曲中心とトップ端の湾曲中心との差$X$ &\\\hline
+$\mathcal L_{i,j}$ & $i$列目の湾曲中心と$j$列目の湾曲中心との差$X$ &\\\hline
+$\mathcal D_{xi,\mathrm A}$ & A面$i$列目$j$番目の内面溝$X$（P原点・傾け前） &\\\hline
+$\mathcal D_{xi,\mathrm C}$ & C面$i$列目$j$番目の内面溝$X$（P原点・傾け前） &\\\hline
+$\mathcal D_{xij,\mathrm B}$ & B, D面$i$列目$j$番目の内面溝$X$（P原点・傾け前） &\\\hline
+$\mathcal D_{yij,\mathrm A}$ & A, C面$i$列目$j$番目の内面溝$Y$（P原点・傾け前） &\\\hline
+$\mathcal D_{yi,\mathrm B}$ & B面$i$列目$j$番目の内面溝$Y$（P原点・傾け前） &\\\hline
+$\mathcal D_{yi,\mathrm D}$ & D面$i$列目$j$番目の内面溝$Y$（P原点・傾け前） &\\\hline
+$\mathcal D_{zi,\mathrm D}$ & $i$列目$j$番目の内面溝$Z$（P原点・傾け前） &\\\hline
+$\mathcal D_{xij,\mathrm A}'$ & A面$i$列目$j$番目の内面溝$X$（P原点・傾け後） &\\\hline
+$\mathcal D_{yij,\mathrm A}'$ & A面$i$列目$j$番目の内面溝$Y$（P原点・傾け後） &\\\hline
+$\mathcal D_{zij,\mathrm A}'$ & A面$i$列目$j$番目の内面溝$Z$（P原点・傾け後） &\\\hline
+$\mathcal D_{xij,\mathrm C}'$ & C面$i$列目$j$番目の内面溝$X$（P原点・傾け後） &\\\hline
+$\mathcal D_{yij,\mathrm C}'$ & C面$i$列目$j$番目の内面溝$Y$（P原点・傾け後） &\\\hline
+$\mathcal D_{zij,\mathrm C}'$ & C面$i$列目$j$番目の内面溝$Z$（P原点・傾け後） &\\\hline
+$\mathcal D_{xij,\mathrm B}'$ & B面$i$列目$j$番目の内面溝$X$（P原点・傾け後） &\\\hline
+$\mathcal D_{yij,\mathrm B}'$ & B面$i$列目$j$番目の内面溝$Y$（P原点・傾け後） &\\\hline
+$\mathcal D_{zij,\mathrm B}'$ & B面$i$列目$j$番目の内面溝$Z$（P原点・傾け後） &\\\hline
+$\mathcal D_{xij,\mathrm D}'$ & D面$i$列目$j$番目の内面溝$X$（P原点・傾け後） &\\\hline
+$\mathcal D_{yij,\mathrm D}'$ & D面$i$列目$j$番目の内面溝$Y$（P原点・傾け後） &\\\hline
+$\mathcal D_{zij,\mathrm D}'$ & D面$i$列目$j$番目の内面溝$Z$（P原点・傾け後） &\\\hline
+\end{Notation}
+
+
+\clearpage
+\begin{Notation}{計測値}{参照}
+$G_{Tx}$ & 計測した外側中心$X$ &\\\hline
+$G_{Ty}$ & 計測した外側中心$Y$ &\\\hline
+$\mathcal G_{Bx}$ & 計測した$\mathfrak B_\mathrm c'$の$X$座標 &\\\hline
+$\mathcal G_{By}$ & 計測した$\mathfrak B_\mathrm c'$の$Y$座標 &\\\hline
+$\mathcal G_{Tx}$ & 計測した$\mathfrak T_\mathrm c'$の$X$座標 &\\\hline
+$\mathcal G_{mx}$ & 計測した（A側溝深さ基準）溝中心 &\\\hline
+$g_t$ & 計測したトップ端における内径中心 &\\\hline
+$g_{tx}$ & 計測したトップ端における内径中心$X$ &\\\hline
+$g_{ty}$ & 計測したトップ端における内径中心$Y$ &\\\hline
+\end{Notation}
+
+
+\begin{Notation}{ジグ}{図面}
+$l$ & ジグ長さの半分 & ○\\\hline
+$\rho$ & 受板の半径 & ○\\\hline
+$\sigma$ & 受板の幅 & ○\\\hline
+$R_\mathrm i'$ & $R_i-\rho$ &\\\hline
+$\bar l$ & $\displaystyle l-\frac\sigma2$ &\\\hline
+$l'$ & $l+f_\mathrm d$ &\\\hline
+$\delta$ & スペーサの厚さ &\\\hline
+$\varDelta$ & $\mathrm U_\mathrm B$とテーブル中心$P$との水平距離 &\\\hline
+$\varDelta'$ & Oを原点としたテーブル中心$P$の水平距離 &\\\hline
+\end{Notation}
+
+
+\begin{Notation}{工具}{図面}
+$\delta_w$ & 端面加工 輪郭調整用パラメータ &\\\hline
+$\phi_\mathrm D$ & 端面加工用フェイスミル刃径（直径） & ○\\\hline
+$\phi_\mathrm D'$ & 端面加工用フェイスミル最大刃径（直径） & ○\\\hline
+$d_\mathrm e$ & テーパーエンドミル先端からの距離（参照直径用） &\\\hline
+$D_\mathrm r$ & テーパーエンドミル参照直径 &\\\hline
+$D_\mathrm e$ & テーパーエンドミル先端径（直径） & ○\\\hline
+$\xi_\mathrm e$ & テーパーエンドミル テーパー角度（片角） & ○\\\hline
+\end{Notation}
+
+
+\begin{Notation}{eテーパ}{参照}
+$T_\mathrm l$ & 液相線温度 &\\\hline
+$T_\mathrm s$ & 固相線温度 &\\\hline
+$T_0$ & 基準温度 &\\\hline
+$X_\mathrm i$ & 化学組成の含有量 &\\\hline
+$k_\mathrm i$ & 化学組成における影響係数 &\\\hline
+\end{Notation}
+
+
+\clearpage
+\begin{Notation}{位置}{参照}
+O & 湾曲中心点 &\\\hline
+P & テーブル中心点 &\\\hline
+T$_{R_\mathrm c}$ & トップ端における湾曲中心 &\\\hline
+$\mathrm T_\mathrm i$ & トップ内側（C側）端点 &\\\hline
+$\mathrm T_\mathrm o$ & トップ外側（A側）端点 &\\\hline
+$\mathrm B_\mathrm i$ & ボトム内側（C側）端点 &\\\hline
+$\mathrm B_\mathrm o$ & ボトム外側（A側）端点 &\\\hline
+$\mathrm U_\mathrm T$ & トップ側受板中心 &\\\hline
+$\mathrm U_\mathrm B$ & ボトム側受板中心 &\\\hline
+$O'$ & $-\psi$傾き後の湾曲中心点 &\\\hline
+$\mathrm U_\mathrm T'$ & $-\psi$傾き後のトップ側受板中心 &\\\hline
+$\mathrm U_\mathrm B'$ & $-\psi$傾き後のボトム側受板中心 &\\\hline
+T$_{R_\mathrm c}'$ & 傾き後のトップ端における湾曲中心 &\\\hline
+T$_\mathrm c'$ & 傾き後のトップ端における外径中心 &\\\hline
+$\mathrm T_\mathrm i'$ & 傾き後のトップ内側（C側）端点 &\\\hline
+$\mathrm T_\mathrm o'$ & 傾き後のトップ外側（A側）端点 &\\\hline
+B$_{R_\mathrm c}'$ & 傾き後のボトム端における湾曲中心 &\\\hline
+B$_\mathrm c'$ & 傾き後のボトム端における外径中心 &\\\hline
+B$_{R_\mathrm i}'$ & 傾き後のボトム内側（C側）端点 &\\\hline
+B$_{R_\mathrm o}'$ & 傾き後のボトム外側（A側）端点 &\\\hline
+$\mathfrak T_\mathrm c$ & トップ外削中心 &\\\hline
+$\mathfrak B_\mathrm c$ & ボトム外削中心 &\\\hline
+$\mathfrak T_\mathrm c'$ & トップ外削中心（P原点） &\\\hline
+$\mathfrak B_\mathrm c'$ & ボトム外削中心（P原点） &\\\hline
+$\mathfrak B_\mathrm o'$ & ボトム外削A面 &\\\hline
+b$_\mathrm c'$ & ボトム端内面中心 &\\\hline
+b$_\mathrm o'$ & ボトム端A側内面 &\\\hline
+t$_\mathrm o'$ & トップ端A側内面 &\\\hline
+M & 溝中心 &\\\hline
+M$'$ & 傾き後の溝中心 &\\\hline
+\end{Notation}

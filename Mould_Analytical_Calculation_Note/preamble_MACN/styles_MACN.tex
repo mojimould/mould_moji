@@ -212,6 +212,7 @@
 \AtBeginEnvironment{appendices}{%
   \patchcmd{\part}{\newpage}{\relax}{}{}%
   \pretocmd{\part}{\tocAPartSeparateline{toc}{15pt}{-10pt}}{}{}{}% add page break before parts, except part 1
+ % \patchcmd{\part}{\tableAPartSeparateline}{\relax}{}{}%
 }
 \AfterEndEnvironment{appendices}{%
   \patchcmd{\part}{\tocAPartSeparateline}{\relax}{}{}%
@@ -341,7 +342,7 @@
 \appto\bibfont{\footnotesize\setstretch{1.1}}
 \DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}\hspace{-6pt}}
 %%%%% STYLE OF PART %%%%%
-%\renewcommand{\partautorefname}{part}  % part --> part
+\renewcommand{\partautorefname}{part}  % part --> part
 \renewcommand\partpagestyle{emptydate}
 %\renewcommand*{\partformat}{\begin{gtfamily}\thepart\end{gtfamily}}
 %\renewcommand{\partname}{}
@@ -493,7 +494,7 @@
       \setlength{\LTpost}{0pt}%
       \setlength{\LTleft}{0pt}%
       \setlength{\LTright}{0pt}%
-      \begin{longtable}{@{}c|l@{\extracolsep{\fill}}c}%
+      \begin{longtable}{@{}c|Sl@{\extracolsep{\fill}}c}%
       \addtocounter{table}{-1}%
     },%
     after upper={%

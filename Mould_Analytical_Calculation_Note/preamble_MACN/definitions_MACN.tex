@@ -73,9 +73,9 @@
 %%%%% FOR TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% TOC LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\tocPartSeparateline{\addtocontents{toc}{\protect\par\protect\hrulefill\protect\par\protect\vspace*{-10pt}}}%
+\newcommand\PartSeparateline[1]{\addtocontents{#1}{\protect\par\protect\hrulefill\protect\par\protect\vspace*{-10pt}}}%
 \newcommand\tocAPartSeparateline[3]{\addtocontents{#1}{\protect\par\protect\vspace*{#2}\protect\hrule width 0.5\linewidth\protect\par\protect\vspace*{#3}}}%
-\newcommand\listAPartSeparateline{\tocAPartSeparateline{lol}{2pt}{2pt}}
+%\newcommand\tableAPartSeparateline{\tocAPartSeparateline{lot}{2pt}{2pt}}
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Appendixpart}{
   \part*{\partname\ \thepart\hx の補遺}
@@ -250,16 +250,51 @@
 \newcommand{\DMname}{Dマシニング}
 \newcommand{\MMname}{Mマシニング}
 %%%%% FOR PART WITH TABLE %%%%%%%%%%%%%%%%%%
-\newcommand{\tPart}[3]{
+\newcommand{\tPart}[4][]{
   \begingroup
   \@openrightfalse
-  \part{#1}
-  \addxcontentsline{lop}{part}{\protect\numberline{\thepart}#1}%
+  \part{#2}
+  \addxcontentsline{lop}{part}{\protect\numberline{\thepart}#2}%
+  \ifx#1\relax\else\addxcontentsline{#1}{part}{\protect\numberline{\thepart}#2}\fi
   \thispagestyle{empty}
   \vspace*{0.1\textheight}%
-  \begin{tablePart}{#2}
-  #3
+  \begin{tablePart}{#3}
+  #4
   \end{tablePart}%
   \@openrighttrue
   \endgroup
+}
+%%%%% NOTATION TABLE %%%%%%%%%%%%%%%%%%
+\newenvironment{Notation}[2]
+{%
+  \rowcolors{3}{gray!10}{white}
+  \setlength\cellspacetoplimit{4pt}
+  \setlength\cellspacebottomlimit{4pt}
+  \if\relax\detokenize{#1}\relax
+  \else
+    \captionsetup{justification=centering}
+    \setlength{\abovecaptionskip}{-7pt}
+    \modcaptionof{table}{#1} % 追加したキャプション
+    \addtocounter{table}{-1}
+  \fi
+  \begin{longtable}{|c|Sl|c|}
+  \hline
+  \rowcolor{orange!20}
+  \textbf{記号} & \textbf{内容} & \textbf{#2}\\
+  \hline
+  \endfirsthead
+  \hline
+  \rowcolor{orange!20}
+  \textbf{記号} & \textbf{内容} & \textbf{#2}\\
+  \hline
+  \endhead
+  \hline
+  \multicolumn{3}{|r|}{\scriptsize 次ページへ続く} \\
+  \hline
+  \endfoot
+  \hline
+  \endlastfoot
+}
+{%
+  \end{longtable}
 }
