@@ -489,11 +489,13 @@
       \let\oldfootnote=\footnote% \oldfootnote=\footnote
       \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% define \footnote to \footnote using counter GlobalFootnote
       \renewcommand\thempfootnote{\arabic{mpfootnote}}% arabic footnote
-      \renewcommand{\arraystretch}{1.2}% 行の高さを調整
-      \setlength{\LTpre}{-3pt}%
+%      \renewcommand{\arraystretch}{1.2}% 行の高さを調整
+      \setlength{\LTpre}{0pt}%
       \setlength{\LTpost}{0pt}%
       \setlength{\LTleft}{0pt}%
       \setlength{\LTright}{0pt}%
+      \setlength\cellspacetoplimit{3.5pt}
+      \setlength\cellspacebottomlimit{3.5pt}
       \begin{longtable}{@{}c|Sl@{\extracolsep{\fill}}c}%
       \addtocounter{table}{-1}%
     },%
