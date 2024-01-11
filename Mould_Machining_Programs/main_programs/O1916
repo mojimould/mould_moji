@@ -2,11 +2,10 @@
 O1916 (main: SMP-1916)
 
 N001
-#100=0
-(center line measurement: 0:off, 1:on)
-
-#481=-0.642 (parallel angle)
-#482=8922.7 (center curvature R)
+#675=8922.7 (center curvature R)
+#676=-0.642 (furiwake angle)
+#677=-2.130 (dimple angle)
+#678=0.07 (Mekki)
 (Top sai_furiwake: 500.016)
 (Bot sai_furiwake: 499.984)
 
@@ -55,7 +54,7 @@ G90 G10 L2 P4 X-561.923 Y-648.500 Z#901007 B#901008
 
 N102
 M11 (4jiku unclamp)
-G90 G54 G00 B[180.0+#481]
+G90 G54 G00 B[180.0+#676]
 (G54 Bottom Gaisaku)
 (B parallel angle 179.358)
 M10 (4jiku clamp)
@@ -83,7 +82,7 @@ G90 G54 G43 G01 Z[499.984+#491] H50 F3600
 (hosei kouguChou #50)
 (Z= BotTanmen +#491)
 
-G54 G65 P140001 I0. X180.95 Z499.984 T13.82 M0.07 C-1. A10.0
+G54 G65 P140001 I0. X180.95 Z499.984 T13.82 M#678 C-1. A10.0
 (G54: Bot X Gaisaku center)
 (I: T +hosei)
 (X: Bot AC gaisakuKei)
@@ -117,7 +116,7 @@ G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-G55 G65 P130001 X155. Z499.84 W600. K-10. M0.07 F200. A10.
+G55 G65 P130001 X155. Z499.84 W600. K-10. M#678 F200. A10.
 (G55: Bot X inside center)
 (X: Bot AC naikei)
 (Z: Bot sai_furiwake)
@@ -132,7 +131,7 @@ G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-G55 G65 P130002 Y153 Z499.984 K-10. M0.07 F200. A10.
+G55 G65 P130002 Y153 Z499.984 K-10. M#678 F200. A10.
 (G55: Bot Y inside center)
 (Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
@@ -146,8 +145,8 @@ G55 G65 P130002 Y153 Z499.984 K-10. M0.07 F200. A10.
 
 G91 G28 Z0
 M11 (4jiku unclamp)
-G90 G57 G00 B#481
-(G57B parallel angle #481)
+G90 G57 G00 B#676
+(G57B parallel angle #676)
 M10 (4jiku clamp)
 
 G90 G57 G01 X0 Y0 F5400
@@ -156,7 +155,7 @@ G90 G57 G43 Z[500.016+#491] H50 F3600
 (hosei KouguChou: #50)
 (Z= TopTanmen +#491)
 
-G57 G65 P130001 X156.863 Z500.016 M0.07 F200. A10.
+G57 G65 P130001 X156.863 Z500.016 M#678 F200. A10.
 (G57: Top X inside center)
 (X: AC naikei)
 (Z: Top sai_furiwake)
@@ -168,7 +167,7 @@ G90 G57 G01 X0 Y0 F5400
 (G57XY Top inside center)
 G43 H50 (hosei kouguChou #50)
 
-G57 G65 P130002 Y154.839 Z500.016 M0.07 F200. A10.
+G57 G65 P130002 Y154.839 Z500.016 M#678 F200. A10.
 (G57: Top Y inside center)
 (Y: BD naikei)
 (Z: Top sai_furiwake)
@@ -176,17 +175,16 @@ G57 G65 P130002 Y154.839 Z500.016 M0.07 F200. A10.
 (F: skip speed)
 (A: skip kaishi kyori)
 
+
+N200
+(*** Dimple Measurement Start ***)
 /M00
 
 
-(*** Dimple measurement start ***)
-
-
-N200
 G91 G28 Z0
 M11 (4jiku unclamp)
-G90 G57 G00 B#481
-(G57B parallel angle #481)
+G90 G57 G00 B#676
+(G57B parallel angle #676)
 M10 (4jiku clamp)
 
 G90 G57 G01 X0 Y0 F5400
@@ -195,7 +193,7 @@ G90 G57 G43 G01 Z[500.016+#491] H50 F3600
 (hosei KouguChou: #50)
 (Z= topTanmen+#491)
 
-G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B-2.130
+G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31
 (dimple measurement)
 (X: AC naikei of last row)
 (Y: BD naikei of last row)
@@ -208,9 +206,8 @@ G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U
 (K: Z pitch)
 (M: number of rows)
 (U: depth of dimple)
-(B: angle for dimple)
 
-(Top sokutei end)
+(dimple mesurement end)
 
 M117 (sensor on/off)
 G04 X1.
@@ -220,16 +217,11 @@ N201
 G91 G28 Z0
 
 
-(kokokara Top Kakou start)
-
-
+N300
+(*** Dimple Kakou Start ***)
 /M00
 
 
-(*** dimple kakou start ***)
-
-
-N300
 G91 G28 Z0
 T31 (Tslot R20)
 M06 (tool exchange)
@@ -240,7 +232,7 @@ G90 G57 G43 Z[500.016+#491] H31 F5400
 (hosei KouguChou: #31)
 (Z= TopTanmen +#491)
 
-G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 B-2.130
+G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31
 (dimple kakou)
 (X: AC naikei of last row)
 (Y: BD naikei of last row)
@@ -253,15 +245,13 @@ G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U
 (K: Z pitch)
 (M: number of rows)
 (U: depth of dimple)
-(B: angle for dimple)
-
 
 (dimple kakou end)
-/M00
 
 
 N400
 (*** Top Tanmen start ***)
+/M00
 
 
 G91 G28 Z0
@@ -269,8 +259,8 @@ T02 (tanmen)
 M06 (tool exchange)
 
 M11 (4jiku unclamp)
-G90 G57 G00 B#481
-(G57B parallel angle #481)
+G90 G57 G00 B#676
+(G57B parallel angle #676)
 M10 (4jiku clamp)
 
 N24
@@ -285,11 +275,11 @@ G57 G65 P410000 D2. X156.863 Y154.839 Z500.016 R19. K#402
 (K: kezuriShiro)
 
 (Top tammen end)
-/M00
 
 
 N410
 (*** Top Gaisaku start ***)
+/M00
 
 
 G91 G28 Z0
@@ -297,8 +287,8 @@ T16 (gaisaku)
 M06 (tool exchange)
 
 M11 (4jiku unclamp)
-G90 G56 G00 B#481
-(G57B parallel angle #481)
+G90 G56 G00 B#676
+(G57B parallel angle #676)
 M10 (4jiku clamp)
 
 G56 G65 P420000 D16. Q3. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
@@ -325,11 +315,11 @@ M09 (coolant off)
 G91 G28 Z0
 
 (Top gaisaku end)
-/M00
 
 
 N420
 (*** Mizo start ***)
+/M00
 
 
 G91 G28 Z0
@@ -337,8 +327,8 @@ T06 (mizo)
 M06 (tool exchange)
 
 M11 (4jiku unclamp)
-G90 G56 G00 B#481
-(G57B parallel angle #481)
+G90 G56 G00 B#676
+(G57B parallel angle #676)
 M10 (4jiku clamp)
 
 G56 G65 P430000 D6. A1. R14. X172.90 Y172.90 Z500.016 M12.05 W8.05
@@ -361,11 +351,11 @@ G56 G65 P430000 D6. A1. R14. X172.90 Y172.90 Z500.016 M12.05 W8.05
 (B*: 3: 3 times)
 
 (mizo kakou end)
-/M00
 
 
 N430
 (*** Top SotoMentori start ***)
+/M00
 
 
 G91 G28 Z0
@@ -373,8 +363,8 @@ T13 (mentori 45)
 M06 (tool exchange)
 
 M11 (4jiku unclamp)
-G90 G56 G00 B#481
-(G57B parallel angle #481)
+G90 G56 G00 B#676
+(G57B parallel angle #676)
 M10 (4jiku clamp)
 
 G56 G65 P440000 D13. X180.95 Y180.95 Z500.016 K1. R18.
@@ -398,11 +388,11 @@ M09 (coolant off)
 G91 G28 Z0
 
 (Top SotoMentori end)
-/M00
 
 
 N500
 (*** Bottom Tanmen start ***)
+/M00
 
 
 #901006=8.0 (kezuriShiro: all)
@@ -413,7 +403,7 @@ T02 (tanmen)
 M06 (tool exchange)
 
 M11 (4jiku unclamp)
-G90 G00 G54 B[180.0+#481]
+G90 G00 G54 B[180.0+#676]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
@@ -432,11 +422,11 @@ M09 (coolant off)
 G91 G28 Z0
 
 (Bottom tammen end)
-/M00
 
 
 N510
 (*** Bottom Gaisaku start ***)
+/M00
 
 
 G91 G28 Z0
@@ -444,7 +434,7 @@ T16 (gaisaku)
 M06 (tool exchange)
 
 M11 (4jiku unclamp)
-G90 G00 G54 B[180.0+#481]
+G90 G00 G54 B[180.0+#676]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
@@ -472,11 +462,11 @@ M09 (coolant off)
 G91 G28 Z0
 
 (Bottom gaisaku end)
-/M00
 
 
 N520
 (*** Bottom SotoMentori start ***)
+/M00
 
 
 G91 G28 Z0
@@ -484,7 +474,7 @@ T11 (mentori 15)
 M06 (tool exchange)
 
 M11 (4jiku unclamp)
-G90 G00 G54 B[180.0+#481]
+G90 G00 G54 B[180.0+#676]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
@@ -508,11 +498,11 @@ M05 (shujiku kaiten off)
 M09 (coolant off)
 
 (Bottom SotoMentori end)
-/M00
 
 
 N530
 (*** Bottom UchiMentori start ***)
+/M00
 
 
 G91 G28 Z0
@@ -520,13 +510,13 @@ T11 (mentori 15)
 M06 (tool exchange)
 
 M11 (4jiku unclamp)
-G90 G00 G55 B[180.0+#481]
+G90 G00 G55 B[180.0+#676]
 (G55B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G55 G65 P450000 D11. I0 K4. X155. Y153. Z499.984 W10. R3.5 M0.07
-G55 G65 P450000 D11. I0 K2. X155. Y153. Z499.984 W10. R3.5 M0.07
-G55 G65 P450000 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5 M0.07
+G55 G65 P450000 D11. I0 K4. X155. Y153. Z499.984 W10. R3.5 M#678
+G55 G65 P450000 D11. I0 K2. X155. Y153. Z499.984 W10. R3.5 M#678
+G55 G65 P450000 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5 M#678
 (Bot Uchi Chamfer)
 (O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
 (default: F=400., S=1800., I=0, K=0, A=15.)
@@ -550,21 +540,20 @@ G91 G28 Z0
 (Bottom Uchimentori end)
 
 (Kakou Owari)
-/M00
 
 
-IF[#100EQ0]GOTO990
-(if #100=0, go to N990)
-M00
+IF[#405EQ0]GOTO990
+(if #405=0, go to N990)
 
 
 N150
 (*** TooriShin X start ***)
+M00
 
 
 G91 G30 X0 Y0
 M11 (4jiku unclamp)
-G90 G00 G54 B[-90+#481]
+G90 G00 G54 B[-90+#676]
 (G54 Top:+X, Bot:-X)
 (B parallel angle -90.642)
 M10 (4jiku clamp)
@@ -584,16 +573,17 @@ G54 G65 P150003 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11. A10.
 (I: Bot gaisaku center X)
 (A: skip kaishi kyori)
 
-M00 (tooriShin X end)
+(tooriShin X end)
 
 
 N160
 (*** TooriShin Y start ***)
+M00 
 
 
 G91 G28 Z0
 M11 (4jiku unclamp)
-G90 G54 G00 B[180+#481]
+G90 G54 G00 B[180+#676]
 (G54 Bot:+Z, Top:-Z)
 (B parallel angle 179.358)
 M10 (4jiku clamp)
@@ -653,9 +643,9 @@ N999 M30
 
 (Common variables)
 (as LHS)
-(#100, #481, #482, #901001, #901003, #901004, #901006)
+(#675, #676, #677, #678, #901001, #901003, #901004, #901006)
 (as RHS)
-(#491, #900021, #900024)
+(#402, #403, #405, #491, #900021, #900024)
 
 
 (System variables)
@@ -673,8 +663,9 @@ N999 M30
 
 
 (Used in other programs)
-(#481: O210003)
-(#482: O130001, O210003)
+(#675: O130001, O210003)
+(#676, #677: O210003)
+(#678: O130001, O130002, O140001, O450000)
 (#900026: O150003)
 (#900030: O150002)
 %

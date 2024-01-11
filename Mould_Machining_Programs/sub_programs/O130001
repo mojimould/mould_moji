@@ -33,11 +33,11 @@ IF[#514NE50]GOTO800
 IF[[#32-#512-#01]LE0]GOTO800
 (if X/2+M-D/2-A <= 0 go to N800)
 
-IF[[#06*#482*#23]NE0]GOTO001
+IF[[#06*#675*#23]NE0]GOTO001
 (if K*R*W is not 0, go to N001)
 IF[#06NE#0]GOTO800
 IF[#23NE#0]GOTO800
-IF[#482LT100]GOTO800
+IF[#675LT100]GOTO800
 (if either K, W is 0, go to N800)
 
 N001
@@ -46,11 +46,11 @@ IF[#06EQ#0]GOTO002
 (if K is #0, go to N002)
 
 IF[#23LT0]GOTO800
-IF[#482LT0]GOTO800
+IF[#675LT0]GOTO800
 IF[[ABS[#06]]GE[#23/2]]GOTO800
 (if W,R < 0, go to N800)
 (if |K| >= W/2, go to N800)
-#31=SQRT[#482*#482-[#23+#06]*[#23+#06]]-SQRT[#482*#482-#23*#23]
+#31=SQRT[#675*#675-[#23+#06]*[#23+#06]]-SQRT[#675*#675-#23*#23]
 (for bottom: if K>0, #31<0)
 (for Top: if K>0, #31>0)
 IF[[ABS[#31]]GE#32]GOTO800
@@ -167,7 +167,7 @@ N999 M99
 (as LHS)
 (#900011, #900012, #900013, #900014)
 (as RHS)
-(#482, #491, #901011)
+(#491, #675, #901011)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)
