@@ -19,102 +19,98 @@
 
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 15.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{コモン変数 (\pcrNum400\,-\pcrNum499)}
+\modHeadsection{コモン変数 (\pcrNum400\,-\pcrNum474)}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pcrNum400\,-\pcrNum474については、主に作業者が入力・変更することが想定されるものとする。\\
+
 \modcaptionof{table}{コモン変数 (\pcrNum400\,-\pcrNum449)}
-\pcrNum400\,-\pcrNum449については、主に作業者が入力・変更することが想定されるものとする。
 \begin{twoCtable}{}
-\pcrNum400 & （予備）\\\hline
+\pcrNum400 & 計測・加工 開始N番号\\\hline
 \hline
-\pcrNum401 & 端面加工 1回あたりの$Z$方向削り代\\\hline
-\pcrNum402 & （予備）\\\hline
+\pcrNum401 & （予備）\\\hline
 \hline
-\pcrNum403 & 工具\verb|T31|（Tスロット）A側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\pcrNum404 & 工具\verb|T31|（Tスロット）C側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\pcrNum405 & 工具\verb|T31|（Tスロット）B側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\pcrNum406 & 工具\verb|T31|（Tスロット）D側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\pcrNum407 & （予備）\\\hline
-\hline
-\pcrNum408 & 工具\verb|T32|（Tスロット）A側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\pcrNum409 & 工具\verb|T32|（Tスロット）C側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\pcrNum410 & 工具\verb|T32|（Tスロット）B側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\pcrNum411 & 工具\verb|T32|（Tスロット）D側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\pcrNum412 & （予備）\\\hline
-\hline
-\pcrNum413 & 工具\verb|T33|（Tスロット）A側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\pcrNum414 & 工具\verb|T33|（Tスロット）C側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\pcrNum415 & 工具\verb|T33|（Tスロット）B側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\pcrNum416 & 工具\verb|T33|（Tスロット）D側内面溝 深さ補正値（深さに$+$補正）\\\hline
-& （以下予備）
+\pcrNum402 & トップ端面 全削り代\\\hline
+\pcrNum403 & ボトム端面 全削り代\\\hline
+\pcrNum404 & （予備）\\\hline
+\pcrNum405 & ボトム外削 A面肉厚$+$補正（\verb|G54|ワーク座標系補正）\\\hline
+\pcrNum406 & ボトム外削 仕上げ前stop (0:non-stop, 1:外削径1mm残し\verb|M00|)\\\hline
+\pcrNum407 & ボトム外削 仕上げ加工回数 (上限5)\\\hline
+\pcrNum408 & トップ外削 A面肉厚$+$補正（\verb|G56|ワーク座標系補正）\\\hline
+\pcrNum409 & トップ外削 仕上げ前stop (0:non-stop, 1:外削径1mm残し\verb|M00|)\\\hline
+\pcrNum410 & トップ外削 仕上げ加工回数 (上限5)\\\hline
+\pcrNum411 & （予備）\\\hline
+\pcrNum412 & 溝位置$+$補正\\\hline
+\pcrNum413 & 溝幅$+$補正\\\hline
+\pcrNum414 & 溝A面深さ$+$補正（\verb|G56|ワーク座標系補正）\\\hline
+\pcrNum415 & 溝 仕上げ前stop (0:non-stop, 1:溝径1mm残し\verb|M00|)\\\hline
+\pcrNum416 & 溝 仕上げ加工回数 (上限5)\\\hline
+\pcrNum417 & （予備）\\\hline
+\pcrNum418 & トップ外面取$X+$補正（\verb|G56|ワーク座標系補正）\\\hline
+\pcrNum419 & トップ外面取 仕上げ前stop (0:non-stop, 1:$Z+1$mm手前\verb|M00|)\\\hline
+\pcrNum420 & トップ外面取 仕上げ加工回数 (上限5)\\\hline
+\pcrNum421 & （予備）\\\hline
+\pcrNum422 & トップ内面取$X+$補正（\verb|G57|ワーク座標系補正）\\\hline
+\pcrNum423 & トップ内面取 仕上げ前stop (0:non-stop, 1:$Z+1$mm手前\verb|M00|)\\\hline
+\pcrNum424 & トップ内面取 仕上げ加工回数 (上限5)\\\hline
+\pcrNum425 & （予備）\\\hline
+\pcrNum426 & ボトム外面取$X+$補正（\verb|G54|ワーク座標系補正）\\\hline
+\pcrNum427 & ボトム外面取 仕上げ前stop (0:non-stop, 1:$Z+1$mm手前\verb|M00|)\\\hline
+\pcrNum428 & ボトム外面取 仕上げ加工回数 (上限5)\\\hline
+\pcrNum429 & （予備）\\\hline
+\pcrNum430 & ボトム内面取$X+$補正（\verb|G55|ワーク座標系補正）\\\hline
+\pcrNum431 & ボトム内面取 仕上げ前stop (0:non-stop, 1:$Z+1$mm手前\verb|M00|)\\\hline
+\pcrNum432 & ボトム内面取 仕上げ加工回数 (上限5)\\\hline
+\pcrNum433 & （以下予備）
 \end{twoCtable}
+
 
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{コモン変数 (\pcrNum450\,-\pcrNum479)}
-\pcrNum450\,-\pcrNum479については、主に\index{パレット}パレットや\index{ジグ}ジグに関するものとする。
+\modcaptionof{table}{コモン変数 (\pcrNum450\,-\pcrNum474)}
 \begin{twoCtable}{}
 \pcrNum450 & （予備）\\\hline
-\pcrNum451 & パレット\pcrNum1 ジグ中心機械座標$X$\\\hline
-\pcrNum452 & パレット\pcrNum1 ジグ中心機械座標$Y$\\\hline
-\pcrNum453 & パレット\pcrNum1 ジグ中心機械座標$Z$\\\hline
-\pcrNum454 & パレット\pcrNum1 ジグ中心機械座標$B$\\\hline
-\pcrNum455 & パレット\pcrNum2 ジグ中心機械座標$X$\\\hline
-\pcrNum456 & パレット\pcrNum2 ジグ中心機械座標$Y$\\\hline
-\pcrNum457 & パレット\pcrNum2 ジグ中心機械座標$Z$\\\hline
-\pcrNum458 & パレット\pcrNum2 ジグ中心機械座標$B$\\\hline
-\pcrNum459 & 工具中心機械座標$C$\\\hline
+\pcrNum451 & 工具\verb|T31|（Tスロット）A側内面溝 深さ補正値（深さに$+$補正）\\\hline
+\pcrNum452 & 工具\verb|T31|（Tスロット）C側内面溝 深さ補正値（深さに$+$補正）\\\hline
+\pcrNum453 & 工具\verb|T31|（Tスロット）B側内面溝 深さ補正値（深さに$+$補正）\\\hline
+\pcrNum454 & 工具\verb|T31|（Tスロット）D側内面溝 深さ補正値（深さに$+$補正）\\\hline
+\pcrNum455 & （予備）\\\hline
+\hline
+\pcrNum456 & 工具\verb|T32|（Tスロット）A側内面溝 深さ補正値（深さに$+$補正）\\\hline
+\pcrNum457 & 工具\verb|T32|（Tスロット）C側内面溝 深さ補正値（深さに$+$補正）\\\hline
+\pcrNum458 & 工具\verb|T32|（Tスロット）B側内面溝 深さ補正値（深さに$+$補正）\\\hline
+\pcrNum459 & 工具\verb|T32|（Tスロット）D側内面溝 深さ補正値（深さに$+$補正）\\\hline
 \pcrNum460 & （予備）\\\hline
 \hline
-\pcrNum461 & パレット\pcrNum1ジグ外側幅$2l$（機械座標系$B$0における$Z$方向）\\\hline
-\pcrNum462 & パレット\pcrNum1ジグ内側幅（機械座標系$B$0における$Z$方向）\\\hline
-\pcrNum463 & パレット\pcrNum1ジグ幅（機械座標系$B$0における$X$方向）\\\hline
-\pcrNum464 & （予備）\\\hline
-\pcrNum465 & パレット\pcrNum2ジグ外側幅（機械座標系$B$0における$Z$方向）\\\hline
-\pcrNum466 & パレット\pcrNum2ジグ内側幅（機械座標系$B$0における$Z$方向）\\\hline
-\pcrNum467 & パレット\pcrNum2ジグ幅（機械座標系$B$0における$X$方向）\\\hline
+\pcrNum461 & 工具\verb|T33|（Tスロット）A側内面溝 深さ補正値（深さに$+$補正）\\\hline
+\pcrNum462 & 工具\verb|T33|（Tスロット）C側内面溝 深さ補正値（深さに$+$補正）\\\hline
+\pcrNum463 & 工具\verb|T33|（Tスロット）B側内面溝 深さ補正値（深さに$+$補正）\\\hline
+\pcrNum464 & 工具\verb|T33|（Tスロット）D側内面溝 深さ補正値（深さに$+$補正）\\\hline
 & （以下予備）
 \end{twoCtable}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{hosoku}
-図面上の数値は、
-\begin{align*}
-  \pcrNum461 = 660~, \quad \pcrNum463 = 455
-\end{align*}\noindent
-その他、
-\begin{enumerate}
-\item テーブル中心 と C面側ジグ端 との水平距離：196.5
-\item 受板の円の半径$\rho$：100
-\item 受板の鉛直方向の幅$\sigma$：40
-\item テーブル中心 と 受板の円の中心 との水平距離$\varDelta$：201.5
-\item 受板の円の中心 と 受板の水平方向の底 との距離：70
-\end{enumerate}
-また、2023/09/26時点において、
-\begin{align*}
-  \pcrNum451 = -550.019~, \quad \pcrNum453 = -1149.974
-\end{align*}
-\end{hosoku}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 15.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{コモン変数 (\pcrNum475\,-\pcrNum499)}
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{コモン変数 (\pcrNum480\,-\pcrNum489)}
+\modcaptionof{table}{コモン変数 (\pcrNum475\,-\pcrNum489)}
 \pcrNum480\,-\pcrNum489については、主に各々の製品明細に依存するものとする。
 \begin{twoCtable}{}
 \pcrNum480 & （予備）\\\hline
@@ -137,11 +133,11 @@
 \pcrNum492 & 外側加工面 法線方向クリアランス平面間距離 最小値\\\hline
 \pcrNum493 & 内側加工面 法線方向クリアランス平面間距離 最小値\\\hline
 \pcrNum494 & （予備）\\\hline
-\pcrNum495 & （予備）\\\hline
-\pcrNum496 & （予備）\\\hline
+\pcrNum495 & 端面加工 1回あたりの$Z$方向削り代\\\hline
+\pcrNum496 & 端面 切削回数 (FUP[\pcrNum402\,/\pcrNum495] or FUP[\pcrNum403\,/\pcrNum495])\\\hline
 \pcrNum497 & （予備）\\\hline
 \pcrNum498 & （予備）\\\hline
-\pcrNum498 & （予備）
+\pcrNum499 & （予備）
 \end{twoCtable}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -478,22 +474,54 @@
 \modHeadsection{コモン変数 (\pcrNum901000\,-\pcrNum901099)}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\pcrNum901000\,-\pcrNum901099については、主にメインプログラムで一時的に使用するもの(LHS)とする。\\
+\pcrNum901000\,-\pcrNum901099については、主にパレットやジグに関するものとする。\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modcaptionof{table}{コモン変数 (\pcrNum901000\,-\pcrNum901099)}
 \begin{twoCtable}{}
 \pcrNum901000 & （予備）\\\hline
-\pcrNum901001 & ジグ中心機械座標$X$ (\pcrNum451 or \pcrNum455)\\\hline
-\pcrNum901002 & ジグ中心機械座標$Y$ (\pcrNum452 or \pcrNum456)\\\hline
-\pcrNum901003 & ジグ中心機械座標$Z$ (\pcrNum453 or \pcrNum457)\\\hline
-\pcrNum901004 & ジグ中心機械座標$B$ (\pcrNum454 or \pcrNum458)\\\hline
-\pcrNum901005 & （予備）\\\hline
-\pcrNum901006 & 端面 全切削代\\\hline
-\pcrNum901007 & 端面 切削回数（FUP[\pcrNum901006\,/\pcrNum401]）\\\hline
-\pcrNum901008 & （予備）\\\hline
-\pcrNum901009 & 溝位置 $+$補正量\\\hline
-\pcrNum901010 & 溝幅 $+$補正量\\\hline
+\pcrNum901001 & パレット\pcrNum1 ジグ中心機械座標$X$\\\hline
+\pcrNum901002 & パレット\pcrNum1 ジグ中心機械座標$Y$\\\hline
+\pcrNum901003 & パレット\pcrNum1 ジグ中心機械座標$Z$\\\hline
+\pcrNum901004 & パレット\pcrNum1 ジグ中心機械座標$B$\\\hline
+\pcrNum901005 & パレット\pcrNum2 ジグ中心機械座標$X$\\\hline
+\pcrNum901006 & パレット\pcrNum2 ジグ中心機械座標$Y$\\\hline
+\pcrNum901007 & パレット\pcrNum2 ジグ中心機械座標$Z$\\\hline
+\pcrNum901008 & パレット\pcrNum2 ジグ中心機械座標$B$\\\hline
+\pcrNum901009 & 工具中心機械座標$C$\\\hline
+\pcrNum901010 & （予備）\\\hline
+\hline
+\pcrNum901011 & パレット\pcrNum1 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向）\\\hline
+\pcrNum901012 & パレット\pcrNum1 ジグ内側幅（機械座標系$B$0における$Z$方向）\\\hline
+\pcrNum901013 & パレット\pcrNum1 ジグ幅（機械座標系$B$0における$X$方向）\\\hline
+\pcrNum901014 & （予備）\\\hline
+\pcrNum901015 & パレット\pcrNum2 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向）\\\hline
+\pcrNum901016 & パレット\pcrNum2 ジグ内側幅（機械座標系$B$0における$Z$方向）\\\hline
+\pcrNum901017 & パレット\pcrNum2 ジグ幅（機械座標系$B$0における$X$方向）\\\hline
 & （以下予備）
 \end{twoCtable}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosoku}
+図面上の数値は、
+\begin{align*}
+  \pcrNum901011 = 660~, \quad \pcrNum901013 = 455
+\end{align*}\noindent
+その他、
+\begin{enumerate}
+\item テーブル中心 と C面側ジグ端 との水平距離：196.5
+\item 受板の円の半径$\rho$：100
+\item 受板の鉛直方向の幅$\sigma$：40
+\item テーブル中心 と 受板の円の中心 との水平距離$\varDelta$：201.5
+\item 受板の円の中心 と 受板の水平方向の底 との距離：70
+\end{enumerate}
+また、2023/09/26時点において、
+\begin{align*}
+  \pcrNum901001 = -550.019~, \quad \pcrNum901003 = -1149.974
+\end{align*}
+\end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

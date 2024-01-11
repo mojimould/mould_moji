@@ -24,32 +24,32 @@ IF[#21LT0]GOTO800
 (if U < 0 or #0, go to N800)
 (if A <= 0 or #0, go to N800)
 
-IF[#23LE[#461/2]]GOTO800
-IF[#26LE[#461/2]]GOTO800
-(if W <= #461/2, go to N800)
-(if Z <= #461/2, go to N800)
+IF[#23LE[#901011/2]]GOTO800
+IF[#26LE[#901011/2]]GOTO800
+(if W <= #901011/2, go to N800)
+(if Z <= #901011/2, go to N800)
 
-IF[#461EQ#0]GOTO800
-IF[#461LE0]GOTO800
+IF[#901011EQ#0]GOTO800
+IF[#901011LE0]GOTO800
 IF[#512EQ#0]GOTO800
 IF[#512LE0]GOTO800
 IF[#514EQ#0]GOTO800
 IF[#514LE0]GOTO800
 IF[#514GT50]GOTO800
-(if #461 <= 0 or #0, go to N800)
+(if #901011 <= 0 or #0, go to N800)
 (if #512 <= 0 or #0, go to N800)
 (if #514 <= 0 or #0, go to N800)
 (if #514 > 50. or #0, go to N800)
 
 IF[#1000NE0]GOTO001
 (if NOT p#1, to N001)
-#33=#451 (p#1 X table center)
-#32=#453 (p#1 Z table center)
+#33=#901001 (p#1 X table center)
+#32=#901003 (p#1 Z table center)
 GOTO002
 
 N001
-#33=#455 (p#2 X table center)
-#32=#457 (p#2 Z table center)
+#33=#901005 (p#2 X table center)
+#32=#901007 (p#2 Z table center)
 
 N002
 G91 G28 Z0
@@ -88,7 +88,7 @@ G91 G00 B180.
 M10 (4jiku clamp)
 
 G91 G01 X[-2*[#5221-#33]+#21] F5400
-G90 G01 Y[[#20/2]+#512+#01] F5400
+G90 G54 G01 Y[[#20/2]+#512+#01] F5400
 (X: top gaisaku center)
 (Y: top gaisaku Bmen + A)
 
@@ -106,13 +106,20 @@ G91 G31 Y-[#01*2] F#514
 G91 G01 Y[#01*2] F3600
 (Y+: 2A)
 
-G91 G28 Z0
+G90 G53 G01 Z0 F5400
 IF[[ABS[#900025-#501-#503]]LE[ABS[[#20/2]-#01]]]GOTO800
 (if |#900025|<=|T/2-A|, go to N800)
 
 #900026=#900024-#900025-[#02-#20]/2
 (difference)
 
+IF[#1005EQ1]GOTO801
+IF[#1004EQ0]GOTO004
+(if low battery, go to N801)
+(if current sensor off, go to N004)
+M117 (sensor off)
+
+N004
 G90 G54 G01 Y#900026 F5400
 (Y to table center)
 GOTO999
@@ -120,11 +127,9 @@ GOTO999
 
 N801
 #3000=145 (Low battery)
-M00 (ALARM: low battery)
-GOTO999
 
 N802
-G91 G28 Z0
+G90 G53 G01 Z0 F5400
 G90 G54 G01 X0 F5400
 
 N800
@@ -156,7 +161,7 @@ N999 M99
 (as LHS)
 (#900024, #900025, #900026)
 (as RHS)
-(#451, #453, #455, #457, #461, #491)
+(#491, #901001, #901003, #901005, #901007, #901011)
 (#501: hosei: touch sensor signal delay)
 (#503: hosei: probe center Y)
 (#512: probe radius)

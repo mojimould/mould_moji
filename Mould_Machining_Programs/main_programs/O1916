@@ -1,4 +1,4 @@
-%
+%#451
 O1916 (main: SMP-1916)
 
 N001
@@ -10,42 +10,28 @@ N001
 (Top sai_furiwake: 500.016)
 (Bot sai_furiwake: 499.984)
 
-G91 G28 Z0
-IF[#1005EQ1]GOTO802
-IF[#1004EQ0]GOTO003
-(if low battery, go to N802)
-(if current sensor off, go to N003)
+G90 G53 G01 Z0 F5400
+IF[#1005EQ1]GOTO820
+IF[#1004EQ0]GOTO002
+(if low battery, go to N820)
+(if current sensor off, go to N002)
 M117 (sensor off)
 
-G90 G53 G00 X-5.501 Y-258.624 F7200
+N002
+G90 G53 G00 X-5.501 Y-258.624 F5400
 G49 G40 G80 G17 (cancel hosei)
 M262 (palette rotate speed 25)
 M71 (palette #1)
 (M60) (palette change)
 
-(Genten Settei G54 G55 G56 G57)
-
-IF[#1000NE0]GOTO002
-(if NOT p#1, to N002)
-#901001=#451 (p#1 X jig center)
-#901003=#453 (p#1 Z jig center)
-#901004=#454 (p#1 B jig center)
-(palette #1)
-GOTO010
-
-N002
-IF[#1000NE1]GOTO801
-(if the current palette is NOT #2, go to N801)
-#901001=#455 (p#2 X jig center)
-#901003=#457 (p#2 Z jig center)
-#901004=#458 (p#2 B jig center)
-(palette #2)
-
 
 (*** touch sensor measurement ***)
 
 
-N100
+(Genten Settei G54 G55 G56 G57)
+N100 (for palette #1)
+IF[#1000NE0]GOTO101
+(if NOT p#1, to N101)
 G90 G10 L2 P1 X-527.732 Y-648.500 Z#901003 B#901004
 G90 G10 L2 P2 X-526.889 Y-648.500 Z#901003 B#901004
 G90 G10 L2 P3 X-561.306 Y-648.500 Z#901003 B#901004
@@ -54,7 +40,20 @@ G90 G10 L2 P4 X-561.923 Y-648.500 Z#901003 B#901004
 (G55 Bot Inside Center)
 (G56 Top Gaisaku Center)
 (G57 Top Inside Center)
+GOTO102
+N101 (for palette #2)
+IF[#1000NE1]GOTO821
+(if the current palette is NOT #2, go to N821)
+G90 G10 L2 P1 X-527.732 Y-648.500 Z#901007 B#901008
+G90 G10 L2 P2 X-526.889 Y-648.500 Z#901007 B#901008
+G90 G10 L2 P3 X-561.306 Y-648.500 Z#901007 B#901008
+G90 G10 L2 P4 X-561.923 Y-648.500 Z#901007 B#901008
+(G54 Bot Gaisaku Center)
+(G55 Bot Inside Center)
+(G56 Top Gaisaku Center)
+(G57 Top Inside Center)
 
+N102
 M11 (4jiku unclamp)
 G90 G54 G00 B[180.0+#481]
 (G54 Bottom Gaisaku)
@@ -74,12 +73,12 @@ G90 G54 G01 X0 Y0 F5400
 (G01 G54XY Bot Gaisaku center)
 
 G65 P910001 (sensor ON)
-IF[#1005EQ1]GOTO802
-(if low battery, go to N802)
-IF[#1004EQ1]GOTO101
+IF[#1005EQ1]GOTO820
+(if low battery, go to N820)
+IF[#1004EQ1]GOTO103
 M117
 
-N101
+N103
 G90 G54 G43 G01 Z[499.984+#491] H50 F3600
 (hosei kouguChou #50)
 (Z= BotTanmen +#491)
@@ -94,7 +93,8 @@ G54 G65 P140001 I0. X180.95 Z499.984 T13.82 M0.07 C-1. A10.0
 (C: +: for Top, -: for Bot)
 (A: skip kaishi kyori)
 
-#5261=-[#5221-#901001]+#901001+11.0
+IF[#1000EQ0]THEN #5261=-[#5221-#901001]+#901001+11.0
+IF[#1000EQ1]THEN #5261=-[#5221-#901005]+#901005+11.0
 (G56: Top Gaisaku center X)
 (G56X= -[G54X-tableCenterX]+tableCenterX+tooriShin)
 
@@ -260,11 +260,8 @@ G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U
 /M00
 
 
-(*** Top Tanmen start ***)
-
-
 N400
-#901006=8.0 (kezuriShiro)
+(*** Top Tanmen start ***)
 
 
 G91 G28 Z0
@@ -277,7 +274,7 @@ G90 G57 G00 B#481
 M10 (4jiku clamp)
 
 N24
-G57 G65 P410000 D2. X156.863 Y154.839 Z500.016 R19.
+G57 G65 P410000 D2. X156.863 Y154.839 Z500.016 R19. K#402
 (O410000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
 (default: V=5, F=900, S=950)
 (D: hosei kouguKei&Chou #)
@@ -285,15 +282,16 @@ G57 G65 P410000 D2. X156.863 Y154.839 Z500.016 R19.
 (Y: Top BD naikei)
 (Z: Top sai_furiwake)
 (R: sotogawa corner R or C)
+(K: kezuriShiro)
 
 (Top tammen end)
 /M00
 
 
+N410
 (*** Top Gaisaku start ***)
 
 
-N410
 G91 G28 Z0
 T16 (gaisaku)
 M06 (tool exchange)
@@ -330,12 +328,8 @@ G91 G28 Z0
 /M00
 
 
-(*** Mizo start ***)
-
-
 N420
-#901009=0.1 (+hosei: mizoIchi)
-#901010=-0.2 (+hosei: mizoHaba)
+(*** Mizo start ***)
 
 
 G91 G28 Z0
@@ -370,10 +364,10 @@ G56 G65 P430000 D6. A1. R14. X172.90 Y172.90 Z500.016 M12.05 W8.05
 /M00
 
 
+N430
 (*** Top SotoMentori start ***)
 
 
-N430
 G91 G28 Z0
 T13 (mentori 45)
 M06 (tool exchange)
@@ -403,14 +397,14 @@ M05 (shujiku kaiten off)
 M09 (coolant off)
 G91 G28 Z0
 
-(Top mentori soto end)
+(Top SotoMentori end)
 /M00
 
 
+N500
 (*** Bottom Tanmen start ***)
 
 
-N500
 #901006=8.0 (kezuriShiro: all)
 
 
@@ -423,14 +417,15 @@ G90 G00 G54 B[180.0+#481]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G55 G65 P410000 D2. X155. Y153. R19. Z499.984
+G55 G65 P410000 D2. X155. Y153. Z499.984 R19. K#403
 (O410000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
 (default: V=5, F=900, S=950)
 (D: hosei kouguKei&Chou #)
 (X: Bot AC naikei)
 (Y: Bot BD naikei)
-(R: sotogawa corner R)
 (Z: Bot sai_furiwake)
+(R: sotogawa corner R)
+(K: kezuriShiro)
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
@@ -440,10 +435,10 @@ G91 G28 Z0
 /M00
 
 
+N510
 (*** Bottom Gaisaku start ***)
 
 
-N510
 G91 G28 Z0
 T16 (gaisaku)
 M06 (tool exchange)
@@ -480,10 +475,10 @@ G91 G28 Z0
 /M00
 
 
+N520
 (*** Bottom SotoMentori start ***)
 
 
-N520
 G91 G28 Z0
 T11 (mentori 15)
 M06 (tool exchange)
@@ -512,14 +507,14 @@ G54 G65 P440000 D11. Q0. X180.95 Y180.95 Z499.984 K4.0 R18.
 M05 (shujiku kaiten off)
 M09 (coolant off)
 
-(Bottom mentori soto end)
+(Bottom SotoMentori end)
 /M00
 
 
+N530
 (*** Bottom UchiMentori start ***)
 
 
-N530
 G91 G28 Z0
 T11 (mentori 15)
 M06 (tool exchange)
@@ -552,22 +547,21 @@ M05 (shujiku kaiten off)
 M09 (coolant off)
 G91 G28 Z0
 
-(Bottom mentori soto end)
+(Bottom Uchimentori end)
 
 (Kakou Owari)
 /M00
 
 
-N150
 IF[#100EQ0]GOTO990
 (if #100=0, go to N990)
 M00
 
 
+N150
 (*** TooriShin X start ***)
 
 
-N151
 G91 G30 X0 Y0
 M11 (4jiku unclamp)
 G90 G00 G54 B[-90+#481]
@@ -590,20 +584,13 @@ G54 G65 P150003 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11. A10.
 (I: Bot gaisaku center X)
 (A: skip kaishi kyori)
 
-IF[#1005EQ1]GOTO802
-IF[#1004EQ0]GOTO152
-(if low battery, go to N802)
-(if current sensor off, go to N152)
-M117 (sensor off)
-
-N152 (tooriShin X end)
-M00
-
-
-(*** TooriShin Y start ***)
+M00 (tooriShin X end)
 
 
 N160
+(*** TooriShin Y start ***)
+
+
 G91 G28 Z0
 M11 (4jiku unclamp)
 G90 G54 G00 B[180+#481]
@@ -623,26 +610,22 @@ G54 G65 P150002 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11. A10.
 (I: Bot gaisaku center X)
 (A: skip kaishi kyori)
 
-(tooriShin Y end)
-
 G90 G54 G01 X#900030 Y#900026 F5400
-M00 (is the toorishin Y OK?)
+M00 (tooriShin Y end)
 
-G91 G28 Z0
+G90 G53 G01 Z0 F5400
 GOTO990
 
-
-N802
+(error)
+N820
 M05 (shujiku kaiten off)
 M09 (coolant off)
 #3000=145 (MP60-Low battery)
-GOTO999
 
-N801
+N821
 M05 (shujiku kaiten off)
 M09 (coolant off)
-#3000=121 (is the palette# is ok?)
-GOTO999
+#3000=146 (is the palette# is ok?)
 
 N800
 M05 (shujiku kaiten off)
@@ -651,13 +634,14 @@ M09 (coolant off)
 
 
 N990
-T01 (empty)
-M06 (tool exchange)
 IF[#1004EQ0]GOTO991
 (if current sensor off, go to N991)
 M117 (sensor on/off)
 
 N991
+G90 G53 G01 X-5.501 Y-258.624 F5400
+T01 (empty)
+M06 (tool exchange)
 M60 (palette change)
 
 N999 M30
@@ -669,9 +653,9 @@ N999 M30
 
 (Common variables)
 (as LHS)
-(#100, #401, #481, #482, #901001, #901003, #901004, #901006, #901009, #901010)
+(#100, #481, #482, #901001, #901003, #901004, #901006)
 (as RHS)
-(#451, #453, #454, #455, #457, #458, #491, #900021, #900024)
+(#491, #900021, #900024)
 
 
 (System variables)
@@ -693,6 +677,4 @@ N999 M30
 (#482: O130001, O210003)
 (#900026: O150003)
 (#900030: O150002)
-(#901006: O410000)
-(#901009: O430000)
 %

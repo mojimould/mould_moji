@@ -24,32 +24,32 @@ IF[#21LT0]GOTO800
 (if U < 0 or #0, go to N800)
 (if A <= 0 or #0, go to N800)
 
-IF[#23LE[#461/2]]GOTO800
-IF[#26LE[#461/2]]GOTO800
-(if W <= #461/2, go to N800)
-(if Z <= #461/2, go to N800)
+IF[#23LE[#901011/2]]GOTO800
+IF[#26LE[#901011/2]]GOTO800
+(if W <= #901011/2, go to N800)
+(if Z <= #901011/2, go to N800)
 
-IF[#461EQ#0]GOTO800
-IF[#461LE0]GOTO800
+IF[#901011EQ#0]GOTO800
+IF[#901011LE0]GOTO800
 IF[#514EQ#0]GOTO800
 IF[#514LE0]GOTO800
 IF[#514GT50]GOTO800
-(if #461 <= 0 or #0, go to N800)
+(if #901011 <= 0 or #0, go to N800)
 (if #514 <= 0 or #0, go to N800)
 (if #514 > 50. or #0, go to N800)
 
 IF[#1000NE0]GOTO001
 (if NOT p#1, to N001)
-#33=#451 (p#1 X table center)
-#32=#453 (p#1 Z table center)
+#33=#901001 (p#1 X table center)
+#32=#901003 (p#1 Z table center)
 GOTO002
 
 N001
-#33=#455 (p#2 X table center)
-#32=#457 (p#2 Z table center)
+#33=#901005 (p#2 X table center)
+#32=#901007 (p#2 Z table center)
 
 N002
-G91 G30 X0 Y0 Z0
+G90 G53 G01 X-5.501 Y-258.624 Z0 F5400
 G90 G54 G01 Y0 F5400
 (G90 Y: G54 origin Y)
 G90 G53 G01 X[#23-[#13/2]+#33] F5400
@@ -65,7 +65,7 @@ G04 X1. (wait 1.0s)
 N003
 G90 G54 G43 G31 Z[#5221-#33-#21+[#20/2]+#491] H50 F3600
 (Z skip: topGaisakuCmen +#491)
-G90 G31 Z[#5221-#33-#21+[#20/2]+#01] F1500
+G90 G54 G31 Z[#5221-#33-#21+[#20/2]+#01] F1500
 (Z skip: topGaisakuCmen +A)
 IF[#5003GT[#5221-#33-#21+[#20/2]+#01]]GOTO802
 (if skip block end Z > Cmen Z+A, to N802)
@@ -77,13 +77,13 @@ IF[#5003LE[#5221-#33-#21+[#20/2]-#01]]GOTO802
 #900028=#5003+#501
 (#900028= Z top side + probe hosei)
 
-G91 G28 Z0
+G90 G53 G01 Z0 F5400
 G90 G53 G01 X[-#26+[#06/2]+#33] F5400
 (X: -Z+K/2 from table center)
 
 G90 G54 G43 G31 Z[#5221-#33+[#20/2]+#491] H50 F3600
 (Z skip: botGaisakuCmen +#491)
-G90 G31 Z[#5221-#33+[#02/2]+#01] F1500
+G90 G54 G31 Z[#5221-#33+[#02/2]+#01] F1500
 (G54 Z skip: botGaisakuCmen Z+A)
 IF[#5003GT[#5221-#33+[#02/2]+#01]]GOTO802
 (if skip block end Z > Cmen Z+A, to N802)
@@ -95,10 +95,17 @@ IF[#5003LE[#5221-#33+[#20/2]-#01]]GOTO802
 #900029=#5003+#501
 (#900029= Z bot side + probe hosei)
 
-G91 G28 Z0
+G90 G53 G01 Z0 F5400
 #900030=#900029-#900028
 (difference)
 
+IF[#1005EQ1]GOTO801
+IF[#1004EQ0]GOTO004
+(if low battery, go to N801)
+(if current sensor off, go to N004)
+M117 (sensor off)
+
+N004
 G90 G54 G01 X#900030 F5400
 (X to table center)
 GOTO999
@@ -106,8 +113,6 @@ GOTO999
 
 N801
 #3000=145 (Low battery)
-M00 (ALARM: low battery)
-GOTO999
 
 N802
 G91 G28 Z0
@@ -140,7 +145,7 @@ N999 M99
 (as LHS)
 (#900028, #900029, #900030)
 (as RHS)
-(#451, #453, #455, #457, #461, #491)
+(#491, #901001, #901003, #901005, #901007, #901011)
 (#501: hosei: touch sensor signal delay)
 (#514: default skip speed)
 
