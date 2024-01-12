@@ -508,7 +508,7 @@ G55 G65 P450000 D11. I0 K2. X155. Y153. Z499.984 W10. R3.5
 G55 G65 P450000 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5
 (Bot Uchi Chamfer)
 (O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
-(default: F=400., S=1800., I=0, K=0, A=#493)
+(default: F=400., S=1800., I=0, K=0)
 (D: hosei kougu #)
 (I*: +hosei X center)
 (K*: +hosei Z)
@@ -520,7 +520,6 @@ G55 G65 P450000 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5
 (M: mekki)
 (F*: speed: chokusen)
 (S*: kaitenSuu)
-(A*: approach radius)
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
@@ -630,7 +629,7 @@ N999 M30
 (as LHS)
 (#675, #676, #677, #678, #901001, #901003, #901004, #901006)
 (as RHS)
-(#402, #403, #405, #601, #493, #900021, #900024)
+(#402, #403, #405, #601, #900021, #900024)
 
 
 (System variables)

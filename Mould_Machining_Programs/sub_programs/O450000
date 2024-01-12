@@ -34,41 +34,38 @@ IF[#04NE#0]GOTO005
 N005 (for K)
 IF[#06NE#0]GOTO006
 #06=0
-N006 (for A)
-IF[#01NE#0]GOTO007
-#01=#493
 (default: F=400.)
 (default: S=1800.)
 (default: I=0)
 (default: K=0)
-(default: A=#493)
 
-N007
+N006
 IF[#09LT10]GOTO800
 IF[#19LT200]GOTO800
 (if F < 10, go to N800)
 (if S < 200, go to N800)
 
-N008
-IF[#01LT1]GOTO800
-IF[#01GE[#25/2]]GOTO800
+N007
 IF[[#26-#23]LE[#901011/2]]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 IF[[ABS[#04]]GE#18]GOTO800
 IF[#07LT11]GOTO800
 IF[#07GT15]GOTO800
 IF[[FIX[#07]]NE#07]GOTO800
+IF[#608EQ#0]GOTO800
+IF[#608LT1]GOTO800
+IF[#608GE[#25/2]]GOTO800
 IF[#678EQ#0]GOTO800
 IF[#678LT0]GOTO800
 IF[#678GE#18]GOTO800
-(if A < 1 or A >= Y/2, go to N800)
 (if Z-W <= #901011/2, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
 (if |I| >= R, go to N800)
 (if D < 11 or D > 15 or D is not integer, go to N800)
+(if #678 < 1 or #678 >= Y/2 or #0, go to N800)
 (if mekki < 0 or #0 or mekki >= R, go to N800)
 
-N009
+N008
 #33=#25-[#18*2]
 #32=#24-[#18*2]
 #31=#18+#678
@@ -80,7 +77,7 @@ N009
 (kokokara G00)
 
 
-N010
+N009
 G90 G43 G00 H#07 Z[#26+#601] F7200
 G90 G00 X#04 Y0 F10800
 G90 G01 Z[#26-#23+#06] F5400 S#19
@@ -88,17 +85,17 @@ G90 G01 Z[#26-#23+#06] F5400 S#19
 (hosei kouguChou: #07)
 (hosei Z: Z-W+K)
 
-N011
+N010
 M03 (shujiku kaiten on)
 M08 (coolant on)
 
-N012
-G91 G41 G01 D#07 X#01 Y[[#25/2]+#678-#01] F5400
+N011
+G91 G41 G01 D#07 X#608 Y[[#25/2]+#678-#608] F5400
 (hosei kouguKei, kougu #07)
 (X+: A)
 (Y+: Y/2+mekki-A)
-G91 G03 X-#01 Y#01 I-#01 J0 F#09
-(ac: approach R #01 [-#01, 0] X-Y+)
+G91 G03 X-#608 Y#608 I-#608 J0 F#09
+(ac: approach R #608 [-#608, 0] X-Y+)
 G91 G01 X-[#32/2] F#09
 (ac2al: X- AC chokusenBu/2)
 G91 G03 X-#31 Y-#31 I0 J-#31
@@ -117,10 +114,10 @@ G91 G03 X-#31 Y#31 I-#31 J0
 (ar corner: R #31 [-#31, 0] X-Y+)
 G91 G01 X-[#32/2]
 (ar2ac:X-: AC chokusenBu/2)
-G91 G03 X-#01 Y-#01 I0 J-#01
-(ac: approach R #01 [0, -#01] X-Y-)
+G91 G03 X-#608 Y-#608 I0 J-#608
+(ac: approach R #608 [0, -#608] X-Y-)
 
-N013
+N012
 G90 G00 G40 X0 Y0 F5400
 G90 G00 Z[#26+#601] F7200
 (XY: work genten)
@@ -146,7 +143,6 @@ N999 M99
 (#25:Y: BD naikei)
 (#26:Z: sai-furiwake)
 (as received hidden arguments)
-(#01:A: approach R)
 (#04:I: +hosei X center)
 (#06:K: +hosei Z)
 (#09:F: speed)
@@ -158,7 +154,7 @@ N999 M99
 
 (Common variable)
 (as RHS)
-(#601, #493, #901011)
+(#601, #608, #901011)
 (#678: mekki)
 
 
