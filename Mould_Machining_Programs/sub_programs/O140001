@@ -18,13 +18,10 @@ IF[#20EQ#0]GOTO800
 IF[#20LE0]GOTO800
 IF[#03EQ#0]GOTO800
 IF[#03EQ0]GOTO800
-IF[#01EQ#0]GOTO800
-IF[#01LE0]GOTO800
 (if X <= 0 or #0, go to N800)
 (if Z = #0 go to, N800)
 (if T <= 0 or #0, go to N800)
 (if C = 0 or #0, go to N800)
-(if A <= 0 or #0, go to N800)
 
 IF[#20LE#678]GOTO800
 IF[#26LE[#901011/2]]GOTO800
@@ -38,10 +35,17 @@ IF[#901011LE0]GOTO800
 IF[#512EQ#0]GOTO800
 IF[#512LE0]GOTO800
 IF[#514NE50]GOTO800
+IF[#603EQ#0]GOTO800
+IF[#603LE0]GOTO800
+IF[#604EQ#0]GOTO800
+IF[#604LT0]GOTO800
+IF[#604GT20]GOTO800
 IF[#678LT0]GOTO800
 (if #901011 <= 0 or #0 go to N800)
 (if #512 <= 0 or #0 go to N800)
 (if #514 is not 50.0 go to N800)
+(if #603 <= 0 or #0, go to N800)
+(if #604 < 0 or #604 > 20.0 or #0, go to N800)
 (if mekki < 0, go to N800)
 
 IF[#03GT0]GOTO001
@@ -66,25 +70,25 @@ G04 X1. (wait 1.0s)
 
 N003
 G90 G31 Z[#26-#512] F1500
-(Z skip tanmen: Z - D/2)
+(Z skip tanmen: Z -D/2)
 IF[#5003GT[#26-#512]]GOTO802
-(if skip block end Z > tanmen Z - D/2, to N802)
+(if skip block end Z > tanmen Z -D/2, to N802)
 
-G91 G31 X[#31*[#30-#512-#01]] F1500
-(X skip: #31*[#30-D/2-A])
-IF[[ABS[#5001-#32]+0.001]LT[ABS[#30-#512-#01]]]GOTO803
-(if |skipX-#32| < |#30-D/2-A| to N803)
+G91 G31 X[#31*[#30-#512-#603]] F1500
+(X skip: #31*[#30-D/2-#603])
+IF[[ABS[#5001-#32]+0.001]LT[ABS[#30-#512-#603]]]GOTO803
+(if |skipX-#32| < |#30-D/2-#603| to N803)
 
-G91 G31 X[#31*#01*2] F#514
-(X skip: #31*2A)
+G91 G31 X[#31*[#603+#604]] F#514
+(X skip: #31*[#603+#604])
 #900021=#5001+#502+#31*[#512-#501]
 (#900021= block end X +#502+#31*[D/2-#501])
 
 G91 G01 X[#31*[-#30+#512-#501]+#502] F3600
 (X to measured center)
 
-IF[[ABS[#900021-#502]]GE[ABS[#30+#01-#501]]]GOTO800
-(if |#900021-#502|>=|#30-A-#501|, go to N800)
+IF[[ABS[#900021-#502]]GE[ABS[#30+#603-#501]]]GOTO800
+(if |#900021-#502|>=|#30-#603-#501|, go to N800)
 
 #[5201+[#33-53]*20]=#5021
 (current work origin X = current machine coordinate X)
@@ -114,7 +118,6 @@ N999 M99
 
 (Local variables)
 (as received arguments)
-(#01:A: skip kaishi kyori)
 (#03:C: +: for Top, -: for Bot)
 (#04:I: T +hosei)
 (#20:T: A nikuatsu)
@@ -129,7 +132,7 @@ N999 M99
 (as LHS)
 (#900021)
 (as RHS)
-(#601, #901011)
+(#601, #603, #604, #901011)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)

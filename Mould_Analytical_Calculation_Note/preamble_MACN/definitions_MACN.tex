@@ -78,7 +78,7 @@
 %\newcommand\tableAPartSeparateline{\tocAPartSeparateline{lot}{2pt}{2pt}}
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Appendixpart}{
-  \part*{\partname\ \thepart\hx の補遺}
+  \part*{\partname\ \thepart\hx の補遺\label{Apart:\thepart}}
   \addcontentsline{toc}{part}{\partname\ \thepart\hx の補遺}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -87,14 +87,17 @@
 %%%%% FOR CHAPTER OR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\modHeadchapter}[2][]{%
   \ifx\relax#1\relax
-    \chapter{#2}%
+    \ifx\@chapapp\appendixname
+      \chapter{#2\label{app:\thechapter}}%
+    \else
+      \chapter{#2\label{chap:\thechapter}}%
+    \fi
   \else%
-    \chapter[#1]{#2}%
-  \fi
-  \ifx\@chapapp\appendixname
-    \label{app:\thechapter}%
-  \else
-    \label{chap:\thechapter}%
+    \ifx\@chapapp\appendixname
+      \chapter[#1]{#2\label{app:\thechapter}}%
+    \else
+      \chapter[#1]{#2\label{chap:\thechapter}}%
+    \fi
   \fi
   \indentspace%
 }
@@ -102,11 +105,10 @@
 %%%%% TO LABEL SECTION  %%%%%%
 \newcommand{\modHeadsection}[2][]{%
   \ifx\relax#1\relax
-    \section{#2}%
+    \section{#2\label{sec:\thesection}}%
   \else%
-    \section[#1]{#2}%
+    \section[#1]{#2\label{sec:\thesection}}%
   \fi
-  \label{sec:\thesection}%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% NEWCOLORBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -252,16 +254,21 @@
 %%%%% FOR PART WITH TABLE %%%%%%%%%%%%%%%%%%
 \newcommand{\tPart}[4][]{
   \begingroup
+  \cleardoublepage
   \@openrightfalse
-  \part{#2}
-  \addxcontentsline{lop}{part}{\protect\numberline{\thepart}#2}%
-  \ifx#1\relax\else\addxcontentsline{#1}{part}{\protect\numberline{\thepart}#2}\fi
-  \thispagestyle{empty}
+  \let\oldnewpage\newpage
+  \let\newpage\relax
+  \part{#2\label{part:\thepart}}
+  \addcontentsline{lop}{part}{\protect\numberline{\thepart}#2}%
+  \ifx#1\relax\else\addcontentsline{#1}{part}{\protect\numberline{\thepart}#2}\fi
+  \let\newpage\oldnewpage
+  \clearpage
+  \@openrighttrue
+  \thispagestyle{emptydate}
   \vspace*{0.1\textheight}%
   \begin{tablePart}{#3}
   #4
   \end{tablePart}%
-  \@openrighttrue
   \endgroup
 }
 %%%%% NOTATION TABLE %%%%%%%%%%%%%%%%%%

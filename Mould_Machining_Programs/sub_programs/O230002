@@ -23,8 +23,8 @@ N002
 #33=-1 (if J < 0, #33=-1)
 
 N003
-G91 G31 Y[#33*15.0] F#514
-(skip Y+ or Y-: 15.0, speed #514)
+G91 G31 Y[#33*[#603+#604]] F#514
+(skip Y+ or Y-: #603+#604, speed #514)
 #768=#5002+#503+#33*[-#501+#512]
 (#768= block end Y + hosei probe etc)
 G90 G01 Y#767 F3600
@@ -55,6 +55,7 @@ N999 M99
 (#503: hosei: probe center Y)
 (#512: probe radius)
 (#514: default skip speed)
+(#603, #604)
 (as LHS)
 (#767, #768)
 

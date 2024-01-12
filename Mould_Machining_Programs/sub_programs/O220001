@@ -42,7 +42,7 @@ GOTO006
 
 N005 (for sensor)
 G91 G31 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F1500
-(YZ skip to the 1st dimple: X: faceA-10 or faceC+10)
+(YZ skip to the 1st dimple: X: faceA-#603 or faceC+#603)
 GOTO007
 
 N006 (for kakou)
@@ -110,7 +110,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#717, #768)
+(#603, #717, #768)
 (as LHS)
 (#734-#739, #900101-#900200 ,#900201-#900300)
 

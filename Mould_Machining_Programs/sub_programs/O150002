@@ -11,8 +11,6 @@ IF[#13EQ#0]GOTO800
 IF[#13LE0]GOTO800
 IF[#06EQ#0]GOTO800
 IF[#06LE0]GOTO800
-IF[#01EQ#0]GOTO800
-IF[#01LE0]GOTO800
 IF[#21EQ#0]GOTO800
 IF[#21LT0]GOTO800
 (if W = #0, go to N800)
@@ -22,7 +20,6 @@ IF[#21LT0]GOTO800
 (if M <= 0 or #0, go to N800)
 (if K <= 0 or #0, go to N800)
 (if U < 0 or #0, go to N800)
-(if A <= 0 or #0, go to N800)
 
 IF[#23LE[#901011/2]]GOTO800
 IF[#26LE[#901011/2]]GOTO800
@@ -36,10 +33,20 @@ IF[#512LE0]GOTO800
 IF[#514EQ#0]GOTO800
 IF[#514LE0]GOTO800
 IF[#514GT50]GOTO800
+IF[#601EQ#0]GOTO800
+IF[#601LT50]GOTO800
+IF[#603EQ#0]GOTO800
+IF[#603LE0]GOTO800
+IF[#604EQ#0]GOTO800
+IF[#604LT0]GOTO800
+IF[#604GT20]GOTO800
 (if #901011 <= 0 or #0, go to N800)
 (if #512 <= 0 or #0, go to N800)
 (if #514 <= 0 or #0, go to N800)
 (if #514 > 50. or #0, go to N800)
+(if #601 < 50 or #0, go to N800)
+(if #603 <= 0 or #0, go to N800)
+(if #604 < 0 or #604 > 20.0 or #0, go to N800)
 
 IF[#1000NE0]GOTO001
 (if NOT p#1, to N001)
@@ -53,7 +60,7 @@ N001
 
 N002
 G91 G28 Z0
-G90 G54 G01 X0 Y[[#02/2]+#512+#01] F5400
+G90 G54 G01 X0 Y[[#02/2]+#512+#603] F5400
 G90 G54 G43 G01 Z[#26+#601] H50 F3600
 (G43 Z: tanmen + #601)
 
@@ -70,17 +77,17 @@ G90 G54 G31 Z[#26-[#06/2]-#512] F1500
 IF[#5003GT[#26-[#06/2]-#512]]GOTO802
 (if skip block end Z > BotTanmen Z-K/2-#512, to N802)
 
-G91 G31 Y-[#01*2] F#514
-(Y- skip: 2A)
+G91 G31 Y-[#603+#604] F#514
+(Y- skip: #603+#604)
 #900024=#5002-#512+#501+#503
-(#900024= Y bot above side - #512 + probe hosei)
+(#900024= Y bot above side -#512 +probe hosei)
 
-G91 G01 Y[#01*2] F3600
-(Y+: 2A)
+G91 G01 Y[#603*2] F3600
+(Y+: #603*2)
 
 G91 G28 Z0
-IF[[ABS[#900024-#501-#503]]LE[ABS[[#02/2]-#01]]]GOTO800
-(if |#900024|<=|B/2-A|, go to N800)
+IF[[ABS[#900024-#501-#503]]LE[ABS[[#02/2]-#603]]]GOTO800
+(if |#900024|<=|B/2-#603|, go to N800)
 
 M11 (4jiku unclamp)
 G91 G00 B180.
@@ -88,9 +95,9 @@ G91 G00 B180.
 M10 (4jiku clamp)
 
 G91 G01 X[-2*[#5221-#33]+#21] F5400
-G90 G54 G01 Y[[#20/2]+#512+#01] F5400
+G90 G54 G01 Y[[#20/2]+#512+#603] F5400
 (X: top gaisaku center)
-(Y: top gaisaku Bmen + A)
+(Y: top gaisaku Bmen +#603)
 
 G90 G54 G43 G01 Z[#23+#601] H50 F3600
 G90 G54 G31 Z[#23-[#13/2]-#512] F1500
@@ -98,17 +105,17 @@ G90 G54 G31 Z[#23-[#13/2]-#512] F1500
 IF[#5003GT[#23-[#13/2]-#512]]GOTO802
 (if skip block end Z > W-#512-M/2+#32, to N802)
 
-G91 G31 Y-[#01*2] F#514
-(Y-: 2A)
+G91 G31 Y-[#603+#604] F#514
+(Y-: #603+#604)
 #900025=#5002-#512+#501+#503
-(#900025= Y top above side - #512 + probe hosei)
+(#900025= Y top above side -#512 +probe hosei)
 
-G91 G01 Y[#01*2] F3600
-(Y+: 2A)
+G91 G01 Y[#603*2] F3600
+(Y+: #603*2)
 
 G90 G53 G01 Z0 F5400
-IF[[ABS[#900025-#501-#503]]LE[ABS[[#20/2]-#01]]]GOTO800
-(if |#900025|<=|T/2-A|, go to N800)
+IF[[ABS[#900025-#501-#503]]LE[ABS[[#20/2]-#603]]]GOTO800
+(if |#900025|<=|T/2-#603|, go to N800)
 
 #900026=#900024-#900025-[#02-#20]/2
 (difference)
@@ -143,7 +150,6 @@ N999 M99
 
 (Local variables)
 (as received arguments)
-(#01:A: skip kaishi kyori)
 (#02:B: BD bot gaisakuKei)
 (#06:K: Bot gaisaku height)
 (#13:M: mizoIchi)
@@ -161,7 +167,7 @@ N999 M99
 (as LHS)
 (#900024, #900025, #900026)
 (as RHS)
-(#601, #901001, #901003, #901005, #901007, #901011)
+(#601, #603, #604, #901001, #901003, #901005, #901007, #901011)
 (#501: hosei: touch sensor signal delay)
 (#503: hosei: probe center Y)
 (#512: probe radius)

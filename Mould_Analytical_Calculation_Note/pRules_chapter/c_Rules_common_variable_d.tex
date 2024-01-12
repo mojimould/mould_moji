@@ -102,29 +102,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modcaptionof{table}{コモン変数 (\ttNum475\,-\ttNum499)}
 \begin{twoCtable}{}
-\ttNum475 & （予備）\\\hline
-\ttNum491 & 端面$Z$方向クリアランス平面間距離\\\hline
-\ttNum492 & 外側加工面 法線方向クリアランス平面間距離 最小値\\\hline
-\ttNum493 & 内側加工面 法線方向クリアランス平面間距離 最小値\\\hline
+\ttNum492* & 外側加工面 法線方向クリアランス平面間距離 最小値 & 30.0\\\hline
+\ttNum493* & 内側加工面 法線方向クリアランス平面間距離 最小値 & 15.0\\\hline
 \ttNum494 & （予備）\\\hline
-\ttNum495 & 端面加工 1回あたりの$Z$方向削り代\\\hline
+\ttNum495 & 端面加工 1回あたりの$Z$方向削り代 & 4.0\\\hline
 \ttNum496 & 端面 切削回数 (FUP[\ttNum402\,/\ttNum495] or FUP[\ttNum403\,/\ttNum495])\\\hline
-\ttNum497 & （予備）\\\hline
-\ttNum498 & （予備）\\\hline
-\ttNum499 & （予備）
 \end{twoCtable}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{hosoku}
-2023/12/28時点における設定値は、
-\begin{align*}
-  \ttNum491 = 100.0~, \quad \ttNum492 = 30.0~, \quad \ttNum493 = 15.0
-\end{align*}
-\end{hosoku}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -151,28 +134,16 @@
 \ttNum507 & 工具破損検出の許容差 (O910x)\\\hline
 \ttNum509 & Z座標系設定 (O93xx）\\\hline
 \ttNum511 & インチ／ミリ切替 (O910x)\\\hline
-\ttNum512 & タッチセンサープローブ半径$\mathrm{mm}$値 (O93xx)\\\hline
+\ttNum512 & タッチセンサープローブ半径$\mathrm{mm}$値 (O93xx) & 5.0\\\hline
 \ttNum513 & 移動時用の送り速さ値 (O910x)\\\hline
-\ttNum514 & スキップ(\verb|G31|)測定時用 送り速さ値 (O910x, O93xx)\\\hline
+\ttNum514 & スキップ(\verb|G31|)測定時用 送り速さ値 (O910x, O93xx) & 50.0\\\hline
 \ttNum516 & センサーの位置$X$座標 (O910x)\\\hline
 \ttNum517 & センサーの位置$Y$座標 (O910x)\\\hline
 \ttNum518 & センサーの位置$Z$座標 (O910x)\\\hline
 \ttNum520 & 拡張ワーク座標系 (O910x)\\\hline
 \ttNum523 & アプローチ時用の送り速さ値 (O910x)\\\hline
-\ttNum524 & 測定時用の送り速さ値 (O910x)
+\ttNum524 & 測定時用の送り速さ値 (O910x) & 50.0
 \end{twoCtable}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{hosoku}
-2023/12/28時点における設定値は、
-\begin{align*}
-  \ttNum512 = 10.0~, \quad \ttNum514 = 50.0
-\end{align*}
-\end{hosoku}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -183,66 +154,26 @@
 \modHeadsection{コモン変数 (\ttNum600\,-\ttNum699)}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\ttNum600\,-\ttNum674については、主に\index{こうぐ@工具}工具に関するものとする。\\
+\ttNum600\,-\ttNum674については、主に製品と工具間の距離に関するものとする。\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modcaptionof{table}{コモン変数 (\ttNum600\,-\ttNum674)}
 \begin{twoCtable}{}
 \ttNum600 & （予備）\\\hline
-\hline
-\ttNum601 & 工具\verb|T02|（フェイスミル）最大刃径（直径）DCX公称値$\phi'_\mathrm D$\\\hline
-\ttNum602 & （工具\verb|T02|用予備）\\\hline
-\ttNum603 & （工具\verb|T03|フェイスミル用予備）\\\hline
-\ttNum604 & （工具\verb|T03|フェイスミル用予備）\\\hline
-\hline
-\ttNum605 & 工具\verb|T06|（サイドカッター）厚さ$t$\\\hline
-\ttNum606 & （工具\verb|T06|用予備）\\\hline
-\ttNum607 & （工具\verb|T07|サイドカッター用予備）\\\hline
-\ttNum608 & （工具\verb|T07|サイドカッター用予備）\\\hline
-\ttNum609 & 工具\verb|T08|（サイドカッター）厚さ$t$\\\hline
-\ttNum610 & （工具\verb|T08|用予備）\\\hline
-\ttNum611 & （工具\verb|T09|サイドカッター用予備）\\\hline
-\ttNum612 & （工具\verb|T09|サイドカッター用予備）\\\hline
-\hline
-\ttNum613 & （工具\verb|T11|テーパエンドミル用予備）\\\hline
-\ttNum614 & （工具\verb|T11|テーパエンドミル用予備）\\\hline
-\ttNum615 & （工具\verb|T12|テーパエンドミル用予備）\\\hline
-\ttNum616 & （工具\verb|T12|テーパエンドミル用予備）\\\hline
-\ttNum617 & （工具\verb|T13|テーパエンドミル用予備）\\\hline
-\ttNum618 & （工具\verb|T13|テーパエンドミル用予備）\\\hline
-\ttNum619 & （工具\verb|T14|テーパエンドミル用予備）\\\hline
-\ttNum620 & （工具\verb|T14|テーパエンドミル用予備）\\\hline
-\hline
-\ttNum621 & （工具\verb|T16|スクエアエンドミル用予備）\\\hline
-\ttNum622 & （工具\verb|T16|スクエアエンドミル用予備）\\\hline
-\ttNum623 & （工具\verb|T17|スクエアエンドミル用予備）\\\hline
-\ttNum624 & （工具\verb|T17|スクエアエンドミル用予備）\\\hline
-\ttNum625 & （工具\verb|T18|スクエアエンドミル用予備）\\\hline
-\ttNum626 & （工具\verb|T18|スクエアエンドミル用予備）\\\hline
-\hline
-\ttNum627 & （工具\verb|T31| Tスロットカッター用予備）\\\hline
-\ttNum628 & （工具\verb|T31| Tスロットカッター用予備）\\\hline
-\ttNum629 & （工具\verb|T32| Tスロットカッター用予備）\\\hline
-\ttNum630 & （工具\verb|T32| Tスロットカッター用予備）\\\hline
-\ttNum631 & （工具\verb|T33| Tスロットカッター用予備）\\\hline
-\ttNum632 & （工具\verb|T33| Tスロットカッター用予備）\\\hline
-\ttNum633 & （工具\verb|T34| Tスロットカッター用予備）\\\hline
-\ttNum634 & （工具\verb|T34| Tスロットカッター用予備）\\\hline
+\ttNum601 & 工具 - 端面間 $Z$方向クリアランス平面間距離 & 100.0\\\hline
+\ttNum602 & （予備）\\\hline
+\ttNum603 & タッチセンサー計測時の近付き量 & 10.0\\\hline
+\ttNum604 & タッチセンサー計測時の行過ぎ量 & 5.0\\\hline
+\ttNum605 & （予備）\\\hline
+\ttNum606 & （予備）\\\hline
+\ttNum607 & 外側加工面 法線方向クリアランス平面間距離 最小値 & 30.0\\\hline
+\ttNum608 & 内側加工面 法線方向クリアランス平面間距離 最小値 & 15.0\\\hline
+\ttNum609 & （予備）\\\hline
+\ttNum610 & 端面加工 1回あたりの$Z$方向削り代 & 4.0\\\hline
+\ttNum611 & 端面 切削回数 (FUP[\ttNum402\,/\ttNum495] or FUP[\ttNum403\,/\ttNum495])\\\hline
 & （以下予備）
 \end{twoCtable}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{hosoku}
-2023/12/28時点における設定値は、
-\begin{align*}
-  \ttNum601 = 113.5~, \quad \ttNum605 = 7.0~, \quad \ttNum609 = 5.0
-\end{align*}
-\end{hosoku}\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %\clearpage
@@ -469,9 +400,9 @@
 \modcaptionof{table}{コモン変数 (\ttNum901000\,-\ttNum901099)}
 \begin{twoCtable}{}
 \ttNum901000 & （予備）\\\hline
-\ttNum901001 & パレット\ttNum1 ジグ中心機械座標$X$\\\hline
+\ttNum901001 & パレット\ttNum1 ジグ中心機械座標$X$ & -550.019\\\hline
 \ttNum901002 & パレット\ttNum1 ジグ中心機械座標$Y$\\\hline
-\ttNum901003 & パレット\ttNum1 ジグ中心機械座標$Z$\\\hline
+\ttNum901003 & パレット\ttNum1 ジグ中心機械座標$Z$ & -1149.974\\\hline
 \ttNum901004 & パレット\ttNum1 ジグ中心機械座標$B$\\\hline
 \ttNum901005 & パレット\ttNum2 ジグ中心機械座標$X$\\\hline
 \ttNum901006 & パレット\ttNum2 ジグ中心機械座標$Y$\\\hline
@@ -480,9 +411,9 @@
 \ttNum901009 & 工具中心機械座標$C$\\\hline
 \ttNum901010 & （予備）\\\hline
 \hline
-\ttNum901011 & パレット\ttNum1 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向）\\\hline
+\ttNum901011 & パレット\ttNum1 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向） & 660.0\\\hline
 \ttNum901012 & パレット\ttNum1 ジグ内側幅（機械座標系$B$0における$Z$方向）\\\hline
-\ttNum901013 & パレット\ttNum1 ジグ幅（機械座標系$B$0における$X$方向）\\\hline
+\ttNum901013 & パレット\ttNum1 ジグ幅（機械座標系$B$0における$X$方向） & 455.0\\\hline
 \ttNum901014 & （予備）\\\hline
 \ttNum901015 & パレット\ttNum2 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向）\\\hline
 \ttNum901016 & パレット\ttNum2 ジグ内側幅（機械座標系$B$0における$Z$方向）\\\hline
@@ -493,10 +424,6 @@
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-図面上の数値は、
-\begin{align*}
-  \ttNum901011 = 660~, \quad \ttNum901013 = 455
-\end{align*}\noindent
 その他、
 \begin{enumerate}
 \item テーブル中心 と C面側ジグ端 との水平距離：196.5
@@ -505,11 +432,66 @@
 \item テーブル中心 と 受板の円の中心 との水平距離$\varDelta$：201.5
 \item 受板の円の中心 と 受板の水平方向の底 との距離：70
 \end{enumerate}
-また、2023/09/26時点において、
-\begin{align*}
-  \ttNum901001 = -550.019~, \quad \ttNum901003 = -1149.974
-\end{align*}
+また、\ttNum901001, \ttNum901003の値は2023/09/26時点のものである。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 15.8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{コモン変数 (\ttNum901100\,-\ttNum901199)}
+\addtocontents{lot}{\protect\addvspace{3pt}}{}{}
+\addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
+\ttNum901100\,-\ttNum901199については、主に工具に関するものとする。\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{table}{コモン変数 (\ttNum901100\,-\ttNum901199)}
+\begin{twoCtable}{}
+\ttNum901100 & （予備）\\\hline
+\hline
+\ttNum901101 & 工具\verb|T02|（フェイスミル）最大刃径（直径）DCX公称値$\phi'_\mathrm D$ & 113.5\\\hline
+\ttNum901102 & （工具\verb|T02|用予備）\\\hline
+\ttNum901103 & （工具\verb|T03|フェイスミル用予備）\\\hline
+\ttNum901104 & （工具\verb|T03|フェイスミル用予備）\\\hline
+\hline
+\ttNum901105 & 工具\verb|T06|（サイドカッター）厚さ$t$ & 7.0\\\hline
+\ttNum901106 & （工具\verb|T06|用予備）\\\hline
+\ttNum901107 & （工具\verb|T07|サイドカッター用予備）\\\hline
+\ttNum901108 & （工具\verb|T07|サイドカッター用予備）\\\hline
+\ttNum901109 & 工具\verb|T08|（サイドカッター）厚さ$t$ & 5.0\\\hline
+\ttNum901110 & （工具\verb|T08|用予備）\\\hline
+\ttNum901111 & （工具\verb|T09|サイドカッター用予備）\\\hline
+\ttNum901112 & （工具\verb|T09|サイドカッター用予備）\\\hline
+\hline
+\ttNum901113 & （工具\verb|T11|テーパエンドミル用予備）\\\hline
+\ttNum901114 & （工具\verb|T11|テーパエンドミル用予備）\\\hline
+\ttNum901115 & （工具\verb|T12|テーパエンドミル用予備）\\\hline
+\ttNum901116 & （工具\verb|T12|テーパエンドミル用予備）\\\hline
+\ttNum901117 & （工具\verb|T13|テーパエンドミル用予備）\\\hline
+\ttNum901118 & （工具\verb|T13|テーパエンドミル用予備）\\\hline
+\ttNum901119 & （工具\verb|T14|テーパエンドミル用予備）\\\hline
+\ttNum901120 & （工具\verb|T14|テーパエンドミル用予備）\\\hline
+\hline
+\ttNum901121 & （工具\verb|T16|スクエアエンドミル用予備）\\\hline
+\ttNum901122 & （工具\verb|T16|スクエアエンドミル用予備）\\\hline
+\ttNum901123 & （工具\verb|T17|スクエアエンドミル用予備）\\\hline
+\ttNum901124 & （工具\verb|T17|スクエアエンドミル用予備）\\\hline
+\ttNum901125 & （工具\verb|T18|スクエアエンドミル用予備）\\\hline
+\ttNum901126 & （工具\verb|T18|スクエアエンドミル用予備）\\\hline
+\hline
+\ttNum901127 & （工具\verb|T31| Tスロットカッター用予備）\\\hline
+\ttNum901128 & （工具\verb|T31| Tスロットカッター用予備）\\\hline
+\ttNum901129 & （工具\verb|T32| Tスロットカッター用予備）\\\hline
+\ttNum901130 & （工具\verb|T32| Tスロットカッター用予備）\\\hline
+\ttNum901131 & （工具\verb|T33| Tスロットカッター用予備）\\\hline
+\ttNum901132 & （工具\verb|T33| Tスロットカッター用予備）\\\hline
+\ttNum901133 & （工具\verb|T34| Tスロットカッター用予備）\\\hline
+\ttNum901134 & （工具\verb|T34| Tスロットカッター用予備）\\\hline
+& （以下予備）
+\end{twoCtable}
