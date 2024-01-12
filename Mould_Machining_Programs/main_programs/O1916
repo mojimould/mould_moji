@@ -1,4 +1,4 @@
-%#451
+%
 O1916 (main: SMP-1916)
 
 N001
@@ -82,13 +82,12 @@ G90 G54 G43 G01 Z[499.984+#491] H50 F3600
 (hosei kouguChou #50)
 (Z= BotTanmen +#491)
 
-G54 G65 P140001 I0. X180.95 Z499.984 T13.82 M#678 C-1. A10.0
+G54 G65 P140001 I0. X180.95 Z499.984 T13.82 C-1. A10.0
 (G54: Bot X Gaisaku center)
 (I: T +hosei)
 (X: Bot AC gaisakuKei)
 (Z: Bot sai_furiwake)
 (T: Bot A nikuatsu)
-(M: mekki mm)
 (C: +: for Top, -: for Bot)
 (A: skip kaishi kyori)
 
@@ -116,14 +115,13 @@ G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-G55 G65 P130001 X155. Z499.84 W600. K-10. M#678 F200. A10.
+G55 G65 P130001 X155. Z499.84 W600. K-10. F200. A10.
 (G55: Bot X inside center)
 (X: Bot AC naikei)
 (Z: Bot sai_furiwake)
 (W: Bot ori_furiwake)
 (K: Z +hosei from tanmen)
 (R: radius of the central curvature)
-(M: mekki mm)
 (F: skip speed)
 (A: skip kaishi kyori)
 
@@ -131,12 +129,11 @@ G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-G55 G65 P130002 Y153 Z499.984 K-10. M#678 F200. A10.
+G55 G65 P130002 Y153 Z499.984 K-10. F200. A10.
 (G55: Bot Y inside center)
 (Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
 (K: Z +hosei from tanmen)
-(M: mekki mm)
 (F: skip speed)
 (A: skip kaishi kyori)
 
@@ -155,11 +152,10 @@ G90 G57 G43 Z[500.016+#491] H50 F3600
 (hosei KouguChou: #50)
 (Z= TopTanmen +#491)
 
-G57 G65 P130001 X156.863 Z500.016 M#678 F200. A10.
+G57 G65 P130001 X156.863 Z500.016 F200. A10.
 (G57: Top X inside center)
 (X: AC naikei)
 (Z: Top sai_furiwake)
-(M: mekki mm)
 (F: skip speed)
 (A: skip kaishi kyori)
 
@@ -167,11 +163,10 @@ G90 G57 G01 X0 Y0 F5400
 (G57XY Top inside center)
 G43 H50 (hosei kouguChou #50)
 
-G57 G65 P130002 Y154.839 Z500.016 M#678 F200. A10.
+G57 G65 P130002 Y154.839 Z500.016 F200. A10.
 (G57: Top Y inside center)
 (Y: BD naikei)
 (Z: Top sai_furiwake)
-(M: mekki mm)
 (F: skip speed)
 (A: skip kaishi kyori)
 
@@ -193,7 +188,7 @@ G90 G57 G43 G01 Z[500.016+#491] H50 F3600
 (hosei KouguChou: #50)
 (Z= topTanmen+#491)
 
-G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31
+G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31
 (dimple measurement)
 (X: AC naikei of last row)
 (Y: BD naikei of last row)
@@ -232,7 +227,7 @@ G90 G57 G43 Z[500.016+#491] H31 F5400
 (hosei KouguChou: #31)
 (Z= TopTanmen +#491)
 
-G57 G65 P210003 X156.593 Y154.574 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31
+G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31
 (dimple kakou)
 (X: AC naikei of last row)
 (Y: BD naikei of last row)
@@ -514,12 +509,12 @@ G90 G00 G55 B[180.0+#676]
 (G55B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G55 G65 P450000 D11. I0 K4. X155. Y153. Z499.984 W10. R3.5 M#678
-G55 G65 P450000 D11. I0 K2. X155. Y153. Z499.984 W10. R3.5 M#678
-G55 G65 P450000 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5 M#678
+G55 G65 P450000 D11. I0 K4. X155. Y153. Z499.984 W10. R3.5
+G55 G65 P450000 D11. I0 K2. X155. Y153. Z499.984 W10. R3.5
+G55 G65 P450000 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5
 (Bot Uchi Chamfer)
 (O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
-(default: F=400., S=1800., I=0, K=0, A=15.)
+(default: F=400., S=1800., I=0, K=0, A=#493)
 (D: hosei kougu #)
 (I*: +hosei X center)
 (K*: +hosei Z)
@@ -645,7 +640,7 @@ N999 M30
 (as LHS)
 (#675, #676, #677, #678, #901001, #901003, #901004, #901006)
 (as RHS)
-(#402, #403, #405, #491, #900021, #900024)
+(#402, #403, #405, #491, #493, #900021, #900024)
 
 
 (System variables)

@@ -12,12 +12,10 @@ IF[#33GT59]GOTO800
 IF[#25EQ#0]GOTO800
 IF[#25LE0]GOTO800
 IF[#26EQ#0]GOTO800
-IF[#13LT0]GOTO800
 IF[#01EQ#0]GOTO800
 IF[#01LE0]GOTO800
 (if Y <= 0 or #0, go to N800)
 (if Z = #0, go to N800)
-(if M < 0, go to N800)
 (if A <= 0 or #0, go to N800)
 
 IF[#26LE[#901011/2]]GOTO800
@@ -28,12 +26,14 @@ IF[[ABS[#06]]GT#26/2]GOTO800
 IF[#512EQ#0]GOTO800
 IF[#512LE0]GOTO800
 IF[#514NE50]GOTO800
+IF[#678LT0]GOTO800
 (if #512 <= 0 or #0, go to N800)
 (if #514 is not 50.0, go to N800)
+(if mekki < 0, go to N800)
 
-#32=#25/2+#13
+#32=#25/2+#678
 IF[[#32-#512-#01]LE0]GOTO800
-(if Y/2+M-D/2-A <= 0 go to N800)
+(if Y/2+mekki-D/2-A <= 0 go to N800)
 
 IF[#09EQ#0]GOTO001
 IF[#09LE0]GOTO001
@@ -129,7 +129,6 @@ N999 M99
 (#01:A: skip kaishi kyori)
 (#06:K: Z +hosei from tanmen)
 (#09:F: skip speed)
-(#13:M: mekki mm)
 (#25:Y: Y inside width)
 (#26:Z: sai-furiwake)
 
@@ -146,6 +145,7 @@ N999 M99
 (#503: hosei: probe center Y)
 (#512: probe radius)
 (#514: default skip speed)
+(#678: mekki mm)
 
 
 (System variables)

@@ -13,8 +13,6 @@ IF[#23EQ#0]GOTO800
 IF[#23LT0.1]GOTO800
 IF[#18EQ#0]GOTO800
 IF[#18LT0.1]GOTO800
-IF[#13EQ#0]GOTO800
-IF[#13LT0]GOTO800
 IF[#07LT2]GOTO800
 IF[#07GT200]GOTO800
 (if D = #0, go to N800)
@@ -22,7 +20,6 @@ IF[#07GT200]GOTO800
 (if Y < 10 or #0, go to N800)
 (if Z = #0, go to N800)
 (if W < 0.1 or #0, go to N800)
-(if M < 0 or #0, go to N800)
 (if R <= 0.1 or #0, go to N800)
 
 N002 (for F)
@@ -61,21 +58,23 @@ IF[[ABS[#04]]GE#18]GOTO800
 IF[#07LT11]GOTO800
 IF[#07GT15]GOTO800
 IF[[FIX[#07]]NE#07]GOTO800
-IF[#13GE#18]GOTO800
+IF[#678EQ#0]GOTO800
+IF[#678LT0]GOTO800
+IF[#678GE#18]GOTO800
 (if A < 1 or A >= Y/2, go to N800)
 (if Z-W <= #901011/2, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
 (if |I| >= R, go to N800)
 (if D < 11 or D > 15 or D is not integer, go to N800)
-(if M >= R, go to N800)
+(if mekki < 0 or #0 or mekki >= R, go to N800)
 
 N009
 #33=#25-[#18*2]
 #32=#24-[#18*2]
-#31=#18+#13
+#31=#18+#678
 (#33= BD chokusenBu [X - R*2])
 (#32= AC chokusenBu [Y - R*2])
-(#31= R+M)
+(#31= R+mekki)
 
 
 (kokokara G00)
@@ -94,10 +93,10 @@ M03 (shujiku kaiten on)
 M08 (coolant on)
 
 N012
-G91 G41 G01 D#07 X#01 Y[[#25/2]+#13-#01] F5400
+G91 G41 G01 D#07 X#01 Y[[#25/2]+#678-#01] F5400
 (hosei kouguKei, kougu #07)
 (X+: A)
-(Y+: Y/2+M-A)
+(Y+: Y/2+mekki-A)
 G91 G03 X-#01 Y#01 I-#01 J0 F#09
 (ac: approach R #01 [-#01, 0] X-Y+)
 G91 G01 X-[#32/2] F#09
@@ -141,7 +140,6 @@ N999 M99
 
 (as received arguments)
 (#07:D: hosei kouguKei)
-(#13:M: mekki)
 (#18:R: corner R)
 (#23:W: mentori length C)
 (#24:X: AC naikei)
@@ -161,6 +159,7 @@ N999 M99
 (Common variable)
 (as RHS)
 (#491, #493, #901011)
+(#678: mekki)
 
 
 (System variables)
