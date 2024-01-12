@@ -78,9 +78,9 @@ IF[#1004EQ1]GOTO103
 M117
 
 N103
-G90 G54 G43 G01 Z[499.984+#491] H50 F3600
+G90 G54 G43 G01 Z[499.984+#601] H50 F3600
 (hosei kouguChou #50)
-(Z= BotTanmen +#491)
+(Z= BotTanmen +#601)
 
 G54 G65 P140001 I0. X180.95 Z499.984 T13.82 C-1. A10.0
 (G54: Bot X Gaisaku center)
@@ -148,9 +148,9 @@ M10 (4jiku clamp)
 
 G90 G57 G01 X0 Y0 F5400
 (G57XY Top Inside Center)
-G90 G57 G43 Z[500.016+#491] H50 F3600
+G90 G57 G43 Z[500.016+#601] H50 F3600
 (hosei KouguChou: #50)
-(Z= TopTanmen +#491)
+(Z= TopTanmen +#601)
 
 G57 G65 P130001 X156.863 Z500.016 F200. A10.
 (G57: Top X inside center)
@@ -184,9 +184,9 @@ M10 (4jiku clamp)
 
 G90 G57 G01 X0 Y0 F5400
 (G57XY Top Inside Center)
-G90 G57 G43 G01 Z[500.016+#491] H50 F3600
+G90 G57 G43 G01 Z[500.016+#601] H50 F3600
 (hosei KouguChou: #50)
-(Z= topTanmen+#491)
+(Z= topTanmen+#601)
 
 G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31
 (dimple measurement)
@@ -223,9 +223,9 @@ M06 (tool exchange)
 
 G90 G57 G00 X0 Y0 F10800
 (G57XY Top Inside Center)
-G90 G57 G43 Z[500.016+#491] H31 F5400
+G90 G57 G43 Z[500.016+#601] H31 F5400
 (hosei KouguChou: #31)
-(Z= TopTanmen +#491)
+(Z= TopTanmen +#601)
 
 G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31
 (dimple kakou)
@@ -640,7 +640,7 @@ N999 M30
 (as LHS)
 (#675, #676, #677, #678, #901001, #901003, #901004, #901006)
 (as RHS)
-(#402, #403, #405, #491, #493, #900021, #900024)
+(#402, #403, #405, #601, #493, #900021, #900024)
 
 
 (System variables)

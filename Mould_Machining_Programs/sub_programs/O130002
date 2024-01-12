@@ -101,7 +101,7 @@ G90 G01 Y#900018 F5400
 #[5202+[#33-53]*20]=#5022
 (current work origin Y = current machine Y)
 
-G90 G01 Z[#26+#491] F5400
+G90 G01 Z[#26+#601] F5400
 GOTO999
 
 
@@ -140,7 +140,7 @@ N999 M99
 (as LHS)
 (#900016, #900017, #900018, #900019)
 (as RHS)
-(#491, #901011)
+(#601, #901011)
 (#501: hosei: touch sensor signal delay)
 (#503: hosei: probe center Y)
 (#512: probe radius)

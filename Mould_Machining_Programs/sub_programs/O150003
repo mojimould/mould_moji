@@ -63,8 +63,8 @@ M117 (sensor on/off)
 G04 X1. (wait 1.0s)
 
 N003
-G90 G54 G43 G31 Z[#5221-#33-#21+[#20/2]+#491] H50 F3600
-(Z skip: topGaisakuCmen +#491)
+G90 G54 G43 G31 Z[#5221-#33-#21+[#20/2]+#601] H50 F3600
+(Z skip: topGaisakuCmen +#601)
 G90 G54 G31 Z[#5221-#33-#21+[#20/2]+#01] F1500
 (Z skip: topGaisakuCmen +A)
 IF[#5003GT[#5221-#33-#21+[#20/2]+#01]]GOTO802
@@ -81,8 +81,8 @@ G90 G53 G01 Z0 F5400
 G90 G53 G01 X[-#26+[#06/2]+#33] F5400
 (X: -Z+K/2 from table center)
 
-G90 G54 G43 G31 Z[#5221-#33+[#20/2]+#491] H50 F3600
-(Z skip: botGaisakuCmen +#491)
+G90 G54 G43 G31 Z[#5221-#33+[#20/2]+#601] H50 F3600
+(Z skip: botGaisakuCmen +#601)
 G90 G54 G31 Z[#5221-#33+[#02/2]+#01] F1500
 (G54 Z skip: botGaisakuCmen Z+A)
 IF[#5003GT[#5221-#33+[#02/2]+#01]]GOTO802
@@ -145,7 +145,7 @@ N999 M99
 (as LHS)
 (#900028, #900029, #900030)
 (as RHS)
-(#491, #901001, #901003, #901005, #901007, #901011)
+(#601, #901001, #901003, #901005, #901007, #901011)
 (#501: hosei: touch sensor signal delay)
 (#514: default skip speed)
 
