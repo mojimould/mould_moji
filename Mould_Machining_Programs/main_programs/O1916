@@ -253,7 +253,7 @@ G90 G57 G00 B#676
 M10 (4jiku clamp)
 
 N24
-G57 G65 P410000 D2. X156.863 Y154.839 Z500.016 R19. K#402
+G57 G65 P410000 D2. X156.863 Y154.839 Z500.016 R19. K#412
 (O410000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
 (default: F=900, S=950)
 (D: hosei kouguKei&Chou #)
@@ -396,7 +396,7 @@ G90 G00 G54 B[180.0+#676]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G55 G65 P410000 D2. X155. Y153. Z499.984 R19. K#403
+G55 G65 P410000 D2. X155. Y153. Z499.984 R19. K#413
 (O410000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
 (default: F=900, S=950)
 (D: hosei kouguKei&Chou #)
@@ -530,8 +530,8 @@ G91 G28 Z0
 (Kakou Owari)
 
 
-IF[#405EQ0]GOTO990
-(if #405=0, go to N990)
+IF[#401EQ0]GOTO990
+(if #401=0, go to N990)
 
 
 N150
@@ -629,7 +629,7 @@ N999 M30
 (as LHS)
 (#675, #676, #677, #678, #901001, #901003, #901004, #901006)
 (as RHS)
-(#402, #403, #405, #601, #900021, #900024)
+(#401, #412, #413, #601, #900021, #900024)
 
 
 (System variables)
