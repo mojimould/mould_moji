@@ -26,19 +26,25 @@ IF[#09NE#0]GOTO003
 N003 (for S)
 IF[#19NE#0]GOTO004
 #19=950.
+N004 (for V)
+IF[#22NE#0]GOTO005
+#22=5.
 (default: F=900.)
 (default: S=950.)
-
-N004
-IF[#09LT10]GOTO800
-IF[#19LE200]GOTO800
-(if F < 10, go to N800)
-(if S <= 200, go to N800)
-
-#33=FUP[#06/#611]
-(#33: kakou kaisuu)
+(default: V=5.)
 
 N005
+IF[#09LT10]GOTO800
+IF[#19LE200]GOTO800
+IF[#22LT1]GOTO800
+(if F < 10, go to N800)
+(if S <= 200, go to N800)
+(if V < 1, go to N800)
+
+#496=FUP[#06/#495]
+(#496: kakou kaisuu)
+
+N006
 IF[#07LT2]GOTO800
 IF[#07GT5]GOTO800
 IF[[FIX[#07]]NE#07]GOTO800
@@ -46,63 +52,60 @@ IF[#26LE[#901011/2]]GOTO800
 IF[#901101EQ#0]GOTO800
 IF[#901101LE1]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
-IF[#610EQ#0]GOTO800
-IF[#610LT1]GOTO800
-IF[#611EQ#0]GOTO800
-IF[#611LE0]GOTO800
-IF[#611GT5]GOTO800
-IF[#33LE0]GOTO800
-IF[[#611*#33]LT0]GOTO800
+IF[#495EQ#0]GOTO800
+IF[#495LE0]GOTO800
+IF[#495GT5]GOTO800
+IF[#496LE0]GOTO800
+IF[[#495*#496]LT0]GOTO800
 (if D < 2 or D > 5 or #0 or D is not integer, go to N800)
 (if Z <= #901011/2, go to N800)
 (if BCX <= 1 or BCX = #0, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
-(if #610 < 1 or #0, go to N800)
-(if #611 <= 0 or #611 > 5 or #0, go to N800)
-(if #33 <= 0, go to N800)
-(if #611*#33 < 0, go to N800)
-
-N006
-#32=#[2400+#07]+#[2600+#07]
-#31=[#607+#32+ABS[#607-#32]]/2
-#30=#24-[#610*2]
-#29=#25-[#610*2]
-IF[#31LE0]GOTO800
-(#31: max[#607, hosei kouguKei])
-(#30: X-#610*2)
-(#29: Y-#610*2)
+(if #495 <= 0 or #495 > 5 or #495 = #0, go to N800)
+(if #496 <= 0, go to N800)
+(if #495*#496 < 0, go to N800)
 
 N007
-IF[#610GE#32]GOTO800
-(if #610 >= kouguKei, go to N800)
+#33=#[2400+#07]+#[2600+#07]
+#32=[#607+#33+ABS[#607-#33]]/2
+#31=#24-[#22*2]
+#30=#25-[#22*2]
+IF[#32LE0]GOTO800
+(#32: max[#607, hosei kouguKei])
+(#31: X-2V)
+(#30: Y-2V)
+
+N008
+IF[#22GE#33]GOTO800
+(if V >= kouguKei, go to N800)
 
 
 (Kokokara G00)
 
 
 N100 (loop)
-WHILE[#33GE1]DO1
-#33=#33-1
+WHILE[#496GE1]DO1
+#496=#496-1
 
 N101
-G90 G43 G00 H#07 Z[#26+#611*#33+#601] F7200
-G90 G00 X[[#30/2]+#31*3] Y[#29/2] F10800
+G90 G43 G00 H#07 Z[#26+#495*#496+#601] F7200
+G90 G00 X[[#31/2]+#32*3] Y[#30/2] F10800
 G42 D#07
-G91 G00 X-[#31/2] F10800
-G90 G01 Z[#26+#611*#33] S#19 F5400
+G91 G00 X-[#32/2] F10800
+G90 G01 Z[#26+#495*#496] S#19 F5400
 
 N102
 M03 (shujiku kaiten on)
 M08 (coolant on)
 
 N103
-G90 G01 X[[#30/2]+#31*2] Y[#29/2] F5400
+G90 G01 X[[#31/2]+#32*2] Y[#30/2] F5400
 
 N104
-G65 P490005 A1. R#18 X#30 Y#29 D#31 F#09 E#09 S#19
+G65 P490005 A1. R#18 X#31 Y#30 D#32 F#09 E#09 S#19
 
 N105
-G90 G40 G00 X[[#30/2]+#31*3] F10800
+G90 G40 G00 X[[#31/2]+#32*3] F10800
 END1
 
 N106
@@ -136,17 +139,17 @@ N999 M99
 (as received hidden arguments)
 (#09:F: speed)
 (#19:S: kaitenSuu)
+(#22:V: -hosei: naikei/2)
 
 (as LHS)
-(#29, #30, #31, #32, #33)
-
-(as RHS)
-(#33)
+(#30, #31, #32, #33)
 
 
 (Common variable)
+(as LHS)
+(#496)
 (as RHS)
-(#601, #607, #610, #611, #901011, #901101)
+(#601, #607, #495, #496, #901011, #901101)
 
 
 (System variables)

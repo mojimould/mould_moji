@@ -96,6 +96,17 @@
 \end{twoCtable}
 
 
+\ttNum475\,-\ttNum499については、その他の調整に用いるものとする。\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{table}{コモン変数 (\ttNum475\,-\ttNum499)}
+\begin{twoCtable}{}
+\ttNum495 & 端面加工 1回あたりの$Z$方向削り代 & 4.0\\\hline
+\ttNum496 & 端面 切削回数 (FUP[\ttNum402\,/\ttNum495] or FUP[\ttNum403\,/\ttNum495])
+\end{twoCtable}
+
+
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -128,7 +139,7 @@
 \ttNum518 & センサーの位置$Z$座標 (O910x)\\\hline
 \ttNum520 & 拡張ワーク座標系 (O910x)\\\hline
 \ttNum523 & アプローチ時用の送り速さ値 (O910x)\\\hline
-\ttNum524 & 測定時用の送り速さ値 (O910x)
+\ttNum524 & 測定時用の送り速さ値 (O910x) & 50.0
 \end{twoCtable}
 
 
@@ -156,8 +167,8 @@
 \ttNum607 & 外側加工面 法線方向クリアランス平面間距離 最小値 & 30.0\\\hline
 \ttNum608 & 内側加工面 法線方向クリアランス平面間距離 最小値 & 15.0\\\hline
 \ttNum609 & （予備）\\\hline
-\ttNum610 & 端面加工 加工輪郭$-$補正値 & 5.0\\\hline
-\ttNum611 & 端面加工 1回あたりの$Z$方向削り代 & 4.0\\\hline
+\ttNum610 & 端面加工 1回あたりの$Z$方向削り代 & 4.0\\\hline
+\ttNum611 & 端面 切削回数 (FUP[\ttNum402\,/\ttNum495] or FUP[\ttNum403\,/\ttNum495])\\\hline
 & （以下予備）
 \end{twoCtable}
 
@@ -197,14 +208,14 @@
 \ttNum703 & 工具別$XY$補正(\verb|T50|:\ttNum512, \verb|T3|x:\ttNum[2400+\ttNum4111]+\ttNum[2600+\ttNum4111])\\\hline
 \ttNum704 & 工具別移動\verb|G#| (\verb|T50|:31, \verb|T3|x:1)\\\hline
 \ttNum705 & テーブル中心からワーク座標(\ttNum701)原点までの$X$距離\\\hline
-\ttNum706 & 傾き後のトップ端面中心（機械座標）$X$ & \pageeqref{eq:afterPhiTCenterFromO}\\\hline
-\ttNum707 & テーブル中心から傾き後のトップ端面中心までの$Z$距離 & \pageeqref{eq:afterPhiTCenterFromO}\\\hline
+\ttNum706 & 傾き後のトップ端面中心（機械座標）$X$ (\cf\pageeqref{eq:afterPhiTCenterFromO})\\\hline
+\ttNum707 & テーブル中心から傾き後のトップ端面中心までの$Z$距離 (\cf\pageeqref{eq:afterPhiTCenterFromO})\\\hline
 \ttNum708 & 傾き後トップ端中心（ブロックエンド）$X$座標(\ttNum5001)\\\hline
 \ttNum709 & 傾き後トップ端中心（ブロックエンド）$Z$座標(\ttNum5003)\\\hline
 \ttNum710 & テーブル中心から内面溝1列目までの$Z$距離$Z-q$\\\hline
-\ttNum711 & トップ端中心から内面溝1列目中心までの$X$距離 & \pageeqref{eq:dimpleCenterDistance}\\\hline
-\ttNum712 & 傾き後内面溝1列目中心$X$移動距離 & \pageeqref{eq:afterPhidimpleCenterDistance}\\\hline
-\ttNum713 & 傾き後内面溝1列目中心$Z$移動距離 & \pageeqref{eq:afterPhidimpleCenterDistance}\\\hline
+\ttNum711 & トップ端中心から内面溝1列目中心までの$X$距離(\cf\pageeqref{eq:dimpleCenterDistance})\\\hline
+\ttNum712 & 傾き後内面溝1列目中心$X$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\\hline
+\ttNum713 & 傾き後内面溝1列目中心$Z$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\\hline
 \ttNum714 & 傾き後内面溝1列目中心（ブロックエンド）$X$座標 (\ttNum5001)\\\hline
 \ttNum715 & 傾き後内面溝1列目中心（ブロックエンド）$Y$座標 (\ttNum5002)\\\hline
 \ttNum716 & 傾き後内面溝1列目中心（ブロックエンド）$Z$座標 (\ttNum5003)\\\hline
