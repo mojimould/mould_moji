@@ -11,7 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadchapter{数値解析}
 基本的に、\index{すうちかいせき@数値解析}数値解析については数値計算用の言語を用いて行うため、その詳細は別ドキュメントに譲る。
-ここでは数値解析に必要な部分をピックアップしておく。
+ここではその数値解析に必要な部分をピックアップしておく。
 なお、ここでは主に\DMname について述べるため、スペーサに関するものは省略する。
 
 
@@ -135,15 +135,15 @@
 %% subsection 9.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{湾曲中心が基準の場合}
-\index{みぞいち@溝位置}溝位置$\kappa_p$および\index{みぞはば@溝幅}溝幅$\kappa_w$に対し、テーブル\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（てーぶるちゅうしん)@P（テーブル中心）}Pを原点とした\index{みぞちゅうしん@溝中心}溝の中心の$Z$座標は、\pageeqref{eq:mizocenterZ}より
+\index{みぞいち@溝位置}溝位置$\kappa_p$および\index{みぞはば@溝幅}溝幅$\kappa_w$に対し、\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（てーぶるちゅうしん)@P（テーブル中心）}Pを原点とした\index{みぞちゅうしん@溝中心}溝の中心の$Z$座標は、\pageeqref{eq:mizocenterZ}より
 \begin{align*}
   f_\mathrm T'-\kappa_p-\frac{\kappa_w}2
 \end{align*}
 で与えられ、このときトップ端における湾曲中心T$_{R_\mathrm c}'$と溝中心M$'$との$X$方向の差は、\pageeqref{eq:difTopMizoCenter}より、
-\begin{align}
+\begin{align*}
   \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
   -\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ .
-\end{align}
+\end{align*}
 
 
 
