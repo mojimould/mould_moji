@@ -297,16 +297,14 @@ G90 G56 G00 B#101
 (G57B parallel angle #101)
 M10 (4jiku clamp)
 
-G56 G65 P420000 D16. Q3. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
-G56 G65 P420000 D16. Q1. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
-G56 G65 P420000 D16. Q0. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
-G56 G65 P420000 D16. X180.95 Y180.95 U185. V183. Z500.016 R18. K32.0 M12.05 W8.05 C1.
+G56 G65 P420000 D16. X180.95 Y180.95 U185. V183. Z500.016 R18. K32.0 M12.05 W8.05 C1. A#417
 (O420000: Sotogawa 1shuu Corner R, ar HidariMawari)
-(default: Q=0, F=400, E=400, S=930, I=0, M=0, W=0)
+(default: F=400, E=400, S=930, M=0, W=0)
 (D: hosei kouguKei&Chou #)
-(Q*: +hosei: AC&BD gaisakuKei)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
+(U: AC gaiKei)
+(V: BD gaiKei)
 (Z: Top sai_furiwake)
 (R: corner R)
 (K: gaisaku Length)
@@ -315,7 +313,8 @@ G56 G65 P420000 D16. X180.95 Y180.95 U185. V183. Z500.016 R18. K32.0 M12.05 W8.0
 (F*: speed: chokusen)
 (E*: speed: corner R)
 (S*: kaitensuu)
-(I*: +hosei: AC center)
+(C: +: for Top, -: for Bot)
+(A: shiage kaisuu)
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
@@ -449,15 +448,14 @@ G90 G00 G54 B[180.0+#101]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G54 G65 P420000 D16. Q3. X180.95 Y180.95 Z499.984 R18. K25.0
-G54 G65 P420000 D16. Q1. X180.95 Y180.95 Z499.984 R18. K25.0
-G54 G65 P420000 D16. Q0. X180.95 Y180.95 Z499.984 R18. K25.0
+G54 G65 P420000 D16. X180.95 Y180.95 Z499.984 R18. K25.0 C1. A#417
 (O420000: Sotogawa 1shuu Corner R, al HidariMawari)
-(default: Q=0, F=400, E=400, S=930, I=0, M=0, W=0)
+(default: F=400, E=400, S=930, M=0, W=0)
 (D: hosei kouguKei&Chou #)
-(Q*: +hosei: AC&BD gaisakuKei)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
+(U: AC gaiKei)
+(V: BD gaiKei)
 (Z: Top sai_furiwake)
 (R: corner R)
 (K: gaisaku Length)
@@ -466,7 +464,8 @@ G54 G65 P420000 D16. Q0. X180.95 Y180.95 Z499.984 R18. K25.0
 (F*: speed: chokusen)
 (E*: speed: corner R)
 (S*: kaitensuu)
-(I*: +hosei: AC center)
+(C: +: for Top, -: for Bot)
+(A: shiage kaisuu)
 
 M05 (shujiku kaiten off)
 M09 (coolant off)

@@ -1,6 +1,6 @@
 %
 O410000
-(Tanmen naikei-V Coner R, ar MigiMawari 1shuu)
+(Tanmen naikei-#610 Coner R, ar MigiMawari 1shuu)
 
 N001
 IF[#07EQ#0]GOTO800
@@ -35,8 +35,8 @@ IF[#19LE200]GOTO800
 (if F < 10, go to N800)
 (if S <= 200, go to N800)
 
-#104=FUP[#06/#650]
-(#104: kakou kaisuu)
+#105=FUP[#06/#650]
+(#105: kakou kaisuu)
 
 N005
 IF[#07LT2]GOTO800
@@ -46,20 +46,20 @@ IF[#26LE[#901011/2]]GOTO800
 IF[#901101EQ#0]GOTO800
 IF[#901101LE1]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
-IF[#104LE0]GOTO800
+IF[#105LE0]GOTO800
 IF[#610LT1]GOTO800
 IF[#650EQ#0]GOTO800
 IF[#650LE0]GOTO800
 IF[#650GT5]GOTO800
-IF[[#650*#104]LT0]GOTO800
+IF[[#650*#105]LT0]GOTO800
 (if D < 2 or D > 5 or #0 or D is not integer, go to N800)
 (if Z <= #901011/2, go to N800)
 (if BCX <= 1 or BCX = #0, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
-(if #104 <= 0, go to N800)
+(if #105 <= 0, go to N800)
 (if #610 < 1, go to N800)
 (if #650 <= 0 or #650 > 5 or #650 = #0, go to N800)
-(if #650*#104 < 0, go to N800)
+(if #650*#105 < 0, go to N800)
 
 N006
 #33=#[2400+#07]+#[2600+#07]
@@ -68,27 +68,27 @@ N006
 #30=#25-[#610*2]
 IF[#32LE0]GOTO800
 (#32: max[#607, hosei kouguKei])
-(#31: X-2V)
-(#30: Y-2V)
+(#31: X-#610*2)
+(#30: Y-#610*2)
 
 N007
 IF[#610GE#33]GOTO800
-(if V >= kouguKei, go to N800)
+(if #610 >= kouguKei, go to N800)
 
 
-(Kokokara G00)
+(kokokara G00)
 
 
 N100 (loop)
-WHILE[#104GE1]DO1
-#104=#104-1
+WHILE[#105GE1]DO1
+#105=#105-1
 
 N101
-G90 G43 G00 H#07 Z[#26+#650*#104+#601] F7200
+G90 G43 G00 H#07 Z[#26+#650*#105+#601] F7200
 G90 G00 X[[#31/2]+#32*3] Y[#30/2] F10800
 G42 D#07
 G91 G00 X-[#32/2] F10800
-G90 G01 Z[#26+#650*#104] S#19 F5400
+G90 G01 Z[#26+#650*#105] S#19 F5400
 
 N102
 M03 (shujiku kaiten on)
@@ -110,7 +110,7 @@ M09 (coolant off)
 
 N107
 G90 G43 G00 H#07 Z[#26+#601] F7200
-G91 G28 Z0
+G90 G53 G00 Z0 F7200
 GOTO999
 
 
@@ -142,9 +142,9 @@ N999 M99
 
 (Common variable)
 (as LHS)
-(#104)
+(#105)
 (as RHS)
-(#601, #607, #610, #650, #104, #901011, #901101)
+(#601, #607, #610, #650, #105, #901011, #901101)
 
 
 (System variables)

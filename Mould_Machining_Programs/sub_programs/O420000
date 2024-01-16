@@ -8,6 +8,8 @@ IF[#24EQ#0]GOTO800
 IF[#24LT10]GOTO800
 IF[#25EQ#0]GOTO800
 IF[#25LT10]GOTO800
+IF[#21EQ#0]GOTO800
+IF[#22EQ#0]GOTO800
 IF[#26EQ#0]GOTO800
 IF[#06EQ#0]GOTO800
 IF[#06LT1]GOTO800
@@ -15,35 +17,33 @@ IF[#13LT0]GOTO800
 IF[#23LT0]GOTO800
 IF[#18EQ#0]GOTO800
 IF[#18LT0.1]GOTO800
+IF[#03EQ#0]GOTO800
 (if D = #0, go to N800)
 (if X < 10 or #0, go to N800)
 (if Y < 10 or #0, go to N800)
+(if U = #0, go to N800)
+(if V = #0, go to N800)
 (if Z = #0, go to N800)
 (if K < 1 or #0, go to N800)
 (if M < 0, go to N800)
 (if W < 0, go to N800)
-(if R < 1 or #0, go to N800)
+(if R < 0.1 or #0, go to N800)
+(if C = #0, go to N800)
 
-N002 (for F)
-IF[#09NE#0]GOTO003
-#09=400.0
-N003 (for E)
-IF[#08NE#0]GOTO004
-#08=400.0
-N004 (for S)
-IF[#19NE#0]GOTO005
-#19=930.0
-N005 (for Q)
-IF[#17NE#0]GOTO006
-#17=0
-N006 (for I)
-IF[#04NE#0]GOTO007
-#04=0
+IF[#03GT0]GOTO002
+(if C > 0, go to N001)
+#33=#415 (for Bot)
+GOTO003
+N002
+#33=-#418 (for Top)
+
+N003
+IF[#09NE#0]THEN #09=400
+IF[#08NE#0]THEN #08=400
+IF[#19NE#0]THEN #19=930
 (default: F=400.)
 (default: E=400.)
 (default: S=930.)
-(default: Q=0)
-(default: I=0)
 
 N007
 IF[#09LT10]GOTO800
@@ -58,58 +58,110 @@ IF[#07LT16]GOTO800
 IF[#07GT20]GOTO800
 IF[[FIX[#07]]NE#07]GOTO800
 IF[[#26-#06]LE[#901011/2]]GOTO800
-IF[[ABS[#17]]GT#18]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
-IF[ABS[#04]GE#18]GOTO800
+IF[ABS[#33]GE#18]GOTO800
 (if D < 16 or D > 20 or D is not integer, go to N800)
 (if Z-K <= #901011/2, go to N800)
 (if |Q| > R, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
-(if |I| >= R, go to N800)
+(if |#33| >= R, go to N800)
 
 N009
 IF[#06GT[#13+#23]]GOTO010
-#33=#13+1
-(if K <= M+W, #33=M+1)
+#32=#13+1
+(if K <= M+W, #32=M+1)
 GOTO011
 N010
-#33=#06
-(if K > M+W, #33=K)
+#32=#06
+(if K > M+W, #32=K)
 
 N011
-#32=#[2400+#07]+#[2600+#07]
-#31=[#607+#32+ABS[#607-#32]]/2
-#30=#24+#17
-#29=#25+#17
-IF[#31LE0]GOTO800
-(#31: max[#607, hosei kouguKei])
-(#30: X+Q)
-(#29: Y+Q)
+#31=#[2400+#07]+#[2600+#07]
+#30=[#607+#31+ABS[#607-#31]]/2
+IF[#30LE0]GOTO800
+(#30: max[#607, hosei kouguKei])
+
+#105=FUP[[#21-#24-#653]/#652]
+#106=FUP[[#22-#25-#653]/#652]
+#107=[#105+#106+ABS[#105-106]]/2
+IF[#107LT0]GOTO800
 
 
 (kokokara G00)
 
 
-N012
-G90 G43 G00 H#07 Z[#26+#601] F7200
-G90 G00 X[[#30/2]+#31*3+#04] Y[#29/2] F10800
-G42 D#07
-G91 G00 X-[#31/2] F10800
-G90 G01 Z[#26-#33] S#19 F5400
+N100
+WHILE[#107GE1]DO1
+#107=#107-1
+#108=#24+#653+#652*#107
+#109=#25+#653+#652*#107
 
-N013
+N101
+G90 G43 G00 H#07 Z[#26+#601] F7200
+G90 G00 X[[#108/2]+#30*3+#33] Y[#109/2] F10800
+G42 D#07
+G91 G00 X-[#30/2] F10800
+G90 G01 Z[#26-#32] S#19 F5400
+
+N102
 M03 (shujiku kaiten on)
 M08 (coolant on)
 
-N014
-G90 G01 X[[#30/2]+#31*2+#04] Y[#29/2] F5400
+N103
+G90 G01 X[[#108/2]+#30*2+#33] Y[#109/2] F5400
 
-N015
-G65 P490005 A1. R#18 X#30 Y#29 D#31 F#09 E#08 S#19
+N104
+G65 P490005 A1. R#18 X#108 Y#109 D#30 F#09 E#08 S#19
 
-N016
-G90 G40 G00 X[[#30/2]+#31*3+#04] F10800
+N105
+G90 G40 G00 X[[#108/2]+#30*3+#33] F10800
+END1
+
+
+IF[#416NE0]GOTO012
+M05 (shujiku kaiten off)
+M09 (coolant off)
+M00
+
+
+N012
+#29=FUP[#417]
+IF[#29EQ#0]THEN #29=0
+IF[#29LT0]THEN #29=0
+IF[#29GT3]THEN #29=3
+
+N200 (Shiage)
+WHILE[#29GE0]DO2
+#29=#29-1
+
+N201
 G90 G43 G00 H#07 Z[#26+#601] F7200
+G90 G00 X[[#24/2]+#30*3+#33] Y[#25/2] F10800
+G42 D#07
+G91 G00 X-[#30/2] F10800
+G90 G01 Z[#26-#32] S#19 F5400
+
+N202
+M03 (shujiku kaiten on)
+M08 (coolant on)
+
+N203
+G90 G01 X[[#24/2]+#30*2+#33] Y[#25/2] F5400
+
+N204
+G65 P490005 A1. R#18 X#24 Y#25 D#30 F#09 E#08 S#19
+
+N205
+G90 G40 G00 X[[#24/2]+#30*3+#33] F10800
+END2
+
+N013
+M05 (shujiku kaiten off)
+M09 (coolant off)
+
+N014
+G90 G43 G00 H#07 Z[#26+#601] F7200
+G90 G53 G00 Z0 F7200
 GOTO999
 
 N800
@@ -124,23 +176,25 @@ N999 M99
 (Local variables)
 
 (as received arguments)
+(#01:A: shiage kaisuu)
+(#03:C: +: for Top, -: for Bot)
 (#06:K: gaisaku Length)
 (#07:D: kouguKei&Chou hosei)
-(#13:M: mizoIchi)
 (#18:R: corner R)
-(#23:W: mizoHaba)
+(#21:U: AC gaiKei)
+(#22:V: BD gaiKei)
 (#24:X: AC gaikei)
 (#25:Y: BD gaikei)
 (#26:Z: sai-furiwake)
 (as received hidden arguments)
-(#04:I: +hosei AC center)
+(#13:M: mizoIchi)
+(#23:W: mizoHaba)
 (#08:E: speed corner R)
 (#09:F: speed chokusenBu)
-(#17:Q: +hosei X&Y)
 (#19:S: kaitenSuu)
 
 (as LHS)
-(#29, #30, #31, #32, #33)
+(#30, #31, #32, #33, #105, #106, #107, #108, #109)
 
 
 (Common variable)
@@ -159,5 +213,5 @@ N999 M99
 
 
 (Passed arguments)
-(#08, #09, #18, #19, #29, #30, #32)
+(#08, #09, #18, #19, #30, #108, #109)
 %
