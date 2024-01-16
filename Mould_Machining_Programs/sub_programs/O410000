@@ -41,8 +41,8 @@ IF[#22LT1]GOTO800
 (if S <= 200, go to N800)
 (if V < 1, go to N800)
 
-#496=FUP[#06/#495]
-(#496: kakou kaisuu)
+#104=FUP[#06/#610]
+(#104: kakou kaisuu)
 
 N006
 IF[#07LT2]GOTO800
@@ -52,18 +52,18 @@ IF[#26LE[#901011/2]]GOTO800
 IF[#901101EQ#0]GOTO800
 IF[#901101LE1]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
-IF[#495EQ#0]GOTO800
-IF[#495LE0]GOTO800
-IF[#495GT5]GOTO800
-IF[#496LE0]GOTO800
-IF[[#495*#496]LT0]GOTO800
+IF[#610EQ#0]GOTO800
+IF[#610LE0]GOTO800
+IF[#610GT5]GOTO800
+IF[#104LE0]GOTO800
+IF[[#610*#104]LT0]GOTO800
 (if D < 2 or D > 5 or #0 or D is not integer, go to N800)
 (if Z <= #901011/2, go to N800)
 (if BCX <= 1 or BCX = #0, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
-(if #495 <= 0 or #495 > 5 or #495 = #0, go to N800)
-(if #496 <= 0, go to N800)
-(if #495*#496 < 0, go to N800)
+(if #610 <= 0 or #610 > 5 or #610 = #0, go to N800)
+(if #104 <= 0, go to N800)
+(if #610*#104 < 0, go to N800)
 
 N007
 #33=#[2400+#07]+#[2600+#07]
@@ -84,15 +84,15 @@ IF[#22GE#33]GOTO800
 
 
 N100 (loop)
-WHILE[#496GE1]DO1
-#496=#496-1
+WHILE[#104GE1]DO1
+#104=#104-1
 
 N101
-G90 G43 G00 H#07 Z[#26+#495*#496+#601] F7200
+G90 G43 G00 H#07 Z[#26+#610*#104+#601] F7200
 G90 G00 X[[#31/2]+#32*3] Y[#30/2] F10800
 G42 D#07
 G91 G00 X-[#32/2] F10800
-G90 G01 Z[#26+#495*#496] S#19 F5400
+G90 G01 Z[#26+#610*#104] S#19 F5400
 
 N102
 M03 (shujiku kaiten on)
@@ -147,9 +147,9 @@ N999 M99
 
 (Common variable)
 (as LHS)
-(#496)
+(#104)
 (as RHS)
-(#601, #607, #495, #496, #901011, #901101)
+(#601, #607, #610, #104, #901011, #901101)
 
 
 (System variables)

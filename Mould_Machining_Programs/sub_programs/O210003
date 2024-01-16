@@ -29,7 +29,7 @@ IF[#13EQ#0]GOTO800
 IF[#13LE0]GOTO800
 IF[#21EQ#0]GOTO800
 IF[#21LE0]GOTO800
-IF[#677EQ#0]GOTO800
+IF[#102EQ#0]GOTO800
 (if W <= 0 or #0, go to N800)
 (if X <= 0 or #0, go to N800)
 (if Y <= 0 or #0, go to N800)
@@ -44,11 +44,11 @@ IF[#677EQ#0]GOTO800
 (if B = #0, go to N800)
 
 IF[#26LE[#901011/2]]GOTO800
-IF[#675LE#26]GOTO800
+IF[#100LE#26]GOTO800
 IF[[#13-FIX[#13]]NE0]GOTO800
 IF[[#17+[#13-1]*#06]GE#26]GOTO800
 IF[[[#09+#19+ABS[#09-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]GOTO800
-IF[[ABS[#677]]GT15.]GOTO800
+IF[[ABS[#102]]GT15.]GOTO800
 IF[#09GE#25]GOTO800
 IF[#19GE#25]GOTO800
 IF[#21GT#04]GOTO800
@@ -90,14 +90,14 @@ IF[#1000EQ1]THEN #30=#901005
 
 N004
 M11 (4jiku unclamp)
-G90 G#701 G00 B[#676+#677]
-(current work B: G90 #676+#677 deg)
+G90 G#701 G00 B[#101+#102]
+(current work B: G90 #101+#102 deg)
 M10 (4jiku clamp)
 
 G90 G01 Z[#26+#601] F5400
 #705=#[5201+[#701-53]*20]-#30
-#706=#705*COS[ABS[#677]]+#26*SIN[ABS[#677]]
-#707=-#705*SIN[ABS[#677]]+#26*COS[ABS[#677]]
+#706=#705*COS[ABS[#102]]+#26*SIN[ABS[#102]]
+#707=-#705*SIN[ABS[#102]]+#26*COS[ABS[#102]]
 (#705= current work origin X from table center)
 G91 G01 X[#706-#705] Z[#707-#26-#702-#601] F5400
 (XZ to tanmen center)
@@ -107,10 +107,10 @@ G91 G01 X[#706-#705] Z[#707-#26-#702-#601] F5400
 (XZ block end: start point XZ)
 #710=#23-#17
 (Z: the 1st row before rotation)
-#711=SQRT[#675*#675-#710*#710]-SQRT[#675*#675-#23*#23]
+#711=SQRT[#100*#100-#710*#710]-SQRT[#100*#100-#23*#23]
 (the center of the 1st row before rotation)
-#712=#711*COS[ABS[#677]]-#17*SIN[ABS[#677]]
-#713=-#711*SIN[ABS[#677]]-#17*COS[ABS[#677]]
+#712=#711*COS[ABS[#102]]-#17*SIN[ABS[#102]]
+#713=-#711*SIN[ABS[#102]]-#17*COS[ABS[#102]]
 (XZ: the center of the 1st row after rotation)
 
 IF[#4111NE50]GOTO005
@@ -142,7 +142,7 @@ N009
 #717=4
 (#717: faces 1: A, 2: C, 3: B, 4: D)
 #718=#25/2-#703-#603
-#719=[#24/2-#703-#603]*COS[ABS[#677]]
+#719=[#24/2-#703-#603]*COS[ABS[#102]]
 (#718, #719: face from -#603)
 
 N100 (loop on #717)
@@ -181,27 +181,27 @@ IF[#717EQ1]GOTO203
 (#717=2, for C)
 (#717=1, for A)
 (face D)
-G65 P220002 A-1. F#09 S#19 I#04 K#06 U#21 B#677 M#33
+G65 P220002 A-1. F#09 S#19 I#04 K#06 U#21 B#102 M#33
 (for D: moving along row)
 GOTO204
 N201 (face B)
-G65 P220002 A1. F#09 S#19 I#04 K#06 U#21 B#677 M#33
+G65 P220002 A1. F#09 S#19 I#04 K#06 U#21 B#102 M#33
 (for B: moving along row)
 GOTO204
 N202 (face C)
-G65 P220001 A-1. X#24 F#09 S#19 I#04 K#06 U#21 B#677 M#33
+G65 P220001 A-1. X#24 F#09 S#19 I#04 K#06 U#21 B#102 M#33
 (for C: moving along row)
 GOTO204
 N203 (face A)
-G65 P220001 A1. X#24 F#09 S#19 I#04 K#06 U#21 B#677 M#33
+G65 P220001 A1. X#24 F#09 S#19 I#04 K#06 U#21 B#102 M#33
 (for A: moving along row)
 N204
 IF[#33GE#13]GOTO205
 (end loop for #33)
 #32=#710-[#33-1]*#06
 (#32= the #33th row's Z from table center)
-#31=SQRT[#675*#675-[#32-#06]*[#32-#06]]-SQRT[#675*#675-#32*#32]
-G91 G#704 X[#31*COS[ABS[#677]]-#06*SIN[ABS[#677]]] Z-[#31*SIN[ABS[#677]]+#06*COS[ABS[#677]]] F1500
+#31=SQRT[#100*#100-[#32-#06]*[#32-#06]]-SQRT[#100*#100-#32*#32]
+G91 G#704 X[#31*COS[ABS[#102]]-#06*SIN[ABS[#102]]] Z-[#31*SIN[ABS[#102]]+#06*COS[ABS[#102]]] F1500
 (current work XY: the center of the #33+1th row)
 #33=#33+1 (#33 to current row +1)
 END1
@@ -277,7 +277,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#601, #603, #512, #675, #676, #901001, #901005, #901011)
+(#100, #101, #512, #601, #603, #901001, #901005, #901011)
 (as LHS)
 (#701-#719)
 

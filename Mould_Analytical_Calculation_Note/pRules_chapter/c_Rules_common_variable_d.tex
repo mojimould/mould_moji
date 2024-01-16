@@ -10,8 +10,23 @@
 \modHeadsection{コモン変数 (\ttNum100\,-\ttNum199)}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\ttNum100\,-\ttNum199については、（機械設置時の）\index{バンドルのプログラム}バンドルのプログラムで既に使用されているものが多いため、基本的には（\index{RHS}RHSとしては）使用しないものとする。
-使用する場合は、一時的なもの(\index{LHS}LHS)として扱うものとする。
+\ttNum100\,-\ttNum199については、（機械設置時の）\index{バンドルのプログラム}バンドルのプログラムで既に使用されているものが多いため、基本的には（\index{RHS}RHSとしては）使用しないものとし、一時的なもの(\index{LHS}LHS)として扱うものとする。
+\newline
+
+
+%\clearpage
+\noindent\ttNum100\,-\ttNum105については、主に各々の製品明細または個々の製品に固有のものとする。\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{table}{コモン変数 (\ttNum675\,-\ttNum699)}
+\begin{twoCtable}{}
+\ttNum100 & 中心湾曲$R_\mathrm c$ ($\nicefrac1{R_\mathrm c} = 0$の場合は\ttNum0)\\\hline
+\ttNum101 & 振分長調整用 傾け角度$-\theta[\deg]$\\\hline
+\ttNum102 & 内面溝用 傾け角度$-\phi[\deg]$\\\hline
+\ttNum103 & 内面めっき膜厚$\mu$\\\hline
+\ttNum104 & 端面 切削回数 (FUP[\ttNum412\,/\ttNum610] or FUP[\ttNum413\,/\ttNum610])
+\end{twoCtable}
 
 
 
@@ -125,17 +140,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\ttNum475\,-\ttNum499については、その他の調整に用いるものとする。\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{コモン変数 (\ttNum475\,-\ttNum499)}
-\begin{twoCtable}{}
-\ttNum495 & 端面加工 1回あたりの$Z$方向削り代 & 4.0\\\hline
-\ttNum496 & 端面 切削回数 (FUP[\ttNum402\,/\ttNum495] or FUP[\ttNum403\,/\ttNum495])
-\end{twoCtable}
-
-
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -197,24 +201,9 @@
 \ttNum608 & 内側加工面 法線方向クリアランス平面間距離 最小値 & 15.0\\\hline
 \ttNum609 & （予備）\\\hline
 \ttNum610 & 端面加工 1回あたりの$Z$方向削り代 & 4.0\\\hline
-\ttNum611 & 端面 切削回数 (FUP[\ttNum402\,/\ttNum495] or FUP[\ttNum403\,/\ttNum495])\\\hline
 & （以下予備）
 \end{twoCtable}
 
-
-%\clearpage
-\ttNum675\,-\ttNum699については、主に各々の製品明細に固有のものとする。\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{コモン変数 (\ttNum675\,-\ttNum699)}
-\begin{twoCtable}{}
-\ttNum675 & 中心湾曲$R_\mathrm c$ ($\nicefrac1{R_\mathrm c} = 0$の場合は\ttNum0)\\\hline
-\ttNum676 & 振分長調整用 傾け角度$-\theta[\deg]$\\\hline
-\ttNum677 & 内面溝用 傾け角度$-\phi[\deg]$\\\hline
-\ttNum678 & 内面めっき膜厚$\mu$\\\hline
-& （以下予備）
-\end{twoCtable}
 
 
 \clearpage

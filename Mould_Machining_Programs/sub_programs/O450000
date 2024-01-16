@@ -55,20 +55,20 @@ IF[[FIX[#07]]NE#07]GOTO800
 IF[#608EQ#0]GOTO800
 IF[#608LT1]GOTO800
 IF[#608GE[#25/2]]GOTO800
-IF[#678EQ#0]GOTO800
-IF[#678LT0]GOTO800
-IF[#678GE#18]GOTO800
+IF[#103EQ#0]GOTO800
+IF[#103LT0]GOTO800
+IF[#103GE#18]GOTO800
 (if Z-W <= #901011/2, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
 (if |I| >= R, go to N800)
 (if D < 11 or D > 15 or D is not integer, go to N800)
-(if #678 < 1 or #678 >= Y/2 or #0, go to N800)
+(if #608 < 1 or #608 >= Y/2 or #0, go to N800)
 (if mekki < 0 or #0 or mekki >= R, go to N800)
 
 N008
 #33=#25-[#18*2]
 #32=#24-[#18*2]
-#31=#18+#678
+#31=#18+#103
 (#33= BD chokusenBu [X - R*2])
 (#32= AC chokusenBu [Y - R*2])
 (#31= R+mekki)
@@ -90,7 +90,7 @@ M03 (shujiku kaiten on)
 M08 (coolant on)
 
 N011
-G91 G41 G01 D#07 X#608 Y[[#25/2]+#678-#608] F5400
+G91 G41 G01 D#07 X#608 Y[[#25/2]+#103-#608] F5400
 (hosei kouguKei, kougu #07)
 (X+: A)
 (Y+: Y/2+mekki-A)
@@ -154,8 +154,8 @@ N999 M99
 
 (Common variable)
 (as RHS)
+(#103: mekki)
 (#601, #608, #901011)
-(#678: mekki)
 
 
 (System variables)

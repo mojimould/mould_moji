@@ -29,7 +29,7 @@ IF[#603LE0]GOTO800
 IF[#604EQ#0]GOTO800
 IF[#604LT0]GOTO800
 IF[#604GT20]GOTO800
-IF[#678LT0]GOTO800
+IF[#103LT0]GOTO800
 (if #512 <= 0 or #0, go to N800)
 (if #514 is not 50.0, go to N800)
 (if #603 <= 0 or #0, go to N800)
@@ -46,7 +46,7 @@ N001
 #31=#410
 
 N002
-#30=#25/2+#678
+#30=#25/2+#103
 IF[[#30-#512-#603]LE0]GOTO800
 (if Y/2+mekki-D/2-#603 <= 0 go to N800)
 IF[[ABS[#31]]GT#26/2]GOTO800
@@ -161,7 +161,7 @@ N999 M99
 (#503: hosei: probe center Y)
 (#512: probe radius)
 (#514: default skip speed)
-(#678: mekki mm)
+(#103: mekki mm)
 
 
 (System variables)

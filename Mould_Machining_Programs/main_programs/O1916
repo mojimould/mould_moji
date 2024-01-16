@@ -2,14 +2,9 @@
 O1916 (main: SMP-1916)
 
 N001
-#675=8922.7 (center curvature R)
-#676=-0.642 (furiwake angle)
-#677=-2.130 (dimple angle)
-#678=0.07 (Mekki)
+G90 G53 G01 Z0 F5400
 (Top sai_furiwake: 500.016)
 (Bot sai_furiwake: 499.984)
-
-G90 G53 G01 Z0 F5400
 IF[#1005EQ1]GOTO820
 IF[#1004EQ0]GOTO002
 (if low battery, go to N820)
@@ -53,13 +48,15 @@ G90 G10 L2 P4 X-561.923 Y-648.500 Z#901007 B#901008
 (G57 Top Inside Center)
 
 N102
+#101=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G54 G00 B[180.0+#676]
+G90 G54 G00 B[180.0+#101]
 (G54 Bottom Gaisaku)
 (B parallel angle 179.358)
 M10 (4jiku clamp)
 
 (Bottom sokutei start)
+
 
 T50 (touch sensor)
 M06 (tool exchange)
@@ -82,6 +79,8 @@ G90 G54 G43 G01 Z[499.984+#601] H50 F3600
 (hosei kouguChou #50)
 (Z= BotTanmen +#601)
 
+#100=8922.7 (center curvature R)
+#103=0.07 (Mekki)
 G54 G65 P140001 X180.95 Z499.984 W600.0 T13.82 C-1.
 (G54: Bot X Gaisaku center)
 (X: Bot AC gaisakuKei)
@@ -113,6 +112,8 @@ G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
+#100=8922.7 (center curvature R)
+#103=0.07 (Mekki)
 G55 G65 P130001 X155. Z499.84 W600. F200. C-1.
 (G55: Bot X inside center)
 (X: Bot AC naikei)
@@ -126,6 +127,7 @@ G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
+#103=0.07 (Mekki)
 G55 G65 P130002 Y153 Z499.984 F200. C-1.
 (G55: Bot Y inside center)
 (Y: Bot BD naikei)
@@ -136,10 +138,11 @@ G55 G65 P130002 Y153 Z499.984 F200. C-1.
 (Bottom sokutei end)
 (Top sokutei start)
 
-G91 G28 Z0
+G90 G53 G01 Z0 F7200
+#101=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G57 G00 B#676
-(G57B parallel angle #676)
+G90 G57 G00 B#101
+(G57B parallel angle #101)
 M10 (4jiku clamp)
 
 G90 G57 G01 X0 Y0 F5400
@@ -148,6 +151,8 @@ G90 G57 G43 Z[500.016+#601] H50 F3600
 (hosei KouguChou: #50)
 (Z= TopTanmen +#601)
 
+#100=8922.7 (center curvature R)
+#103=0.07 (Mekki)
 G57 G65 P130001 X156.863 Z500.016 F200. C1.
 (G57: Top X inside center)
 (X: AC naikei)
@@ -159,6 +164,7 @@ G90 G57 G01 X0 Y0 F5400
 (G57XY Top inside center)
 G43 H50 (hosei kouguChou #50)
 
+#103=0.07 (Mekki)
 G57 G65 P130002 Y154.839 Z500.016 F200. C1.
 (G57: Top Y inside center)
 (Y: BD naikei)
@@ -172,10 +178,11 @@ N200
 /M00
 
 
-G91 G28 Z0
+G90 G53 G01 Z0 F7200
+#101=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G57 G00 B#676
-(G57B parallel angle #676)
+G90 G57 G00 B#101
+(G57B parallel angle #101)
 M10 (4jiku clamp)
 
 G90 G57 G01 X0 Y0 F5400
@@ -184,6 +191,8 @@ G90 G57 G43 G01 Z[500.016+#601] H50 F3600
 (hosei KouguChou: #50)
 (Z= topTanmen+#601)
 
+#100=8922.7 (center curvature R)
+#102=-2.130 (dimple angle)
 G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31
 (dimple measurement)
 (X: AC naikei of last row)
@@ -205,7 +214,7 @@ G04 X1.
 IF[#1004EQ0]GOTO201
 G65 P910002 (sensor OFF)
 N201
-G91 G28 Z0
+G90 G53 G01 Z0 F7200
 
 
 N300
@@ -223,6 +232,8 @@ G90 G57 G43 Z[500.016+#601] H31 F5400
 (hosei KouguChou: #31)
 (Z= TopTanmen +#601)
 
+#100=8922.7 (center curvature R)
+#102=-2.130 (dimple angle)
 G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31
 (dimple kakou)
 (X: AC naikei of last row)
@@ -249,9 +260,10 @@ G91 G28 Z0
 T02 (tanmen)
 M06 (tool exchange)
 
+#101=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G57 G00 B#676
-(G57B parallel angle #676)
+G90 G57 G00 B#101
+(G57B parallel angle #101)
 M10 (4jiku clamp)
 
 N24
@@ -277,9 +289,10 @@ G91 G28 Z0
 T16 (gaisaku)
 M06 (tool exchange)
 
+#101=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G56 G00 B#676
-(G57B parallel angle #676)
+G90 G56 G00 B#101
+(G57B parallel angle #101)
 M10 (4jiku clamp)
 
 G56 G65 P420000 D16. Q3. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
@@ -317,9 +330,10 @@ G91 G28 Z0
 T06 (mizo)
 M06 (tool exchange)
 
+#101=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G56 G00 B#676
-(G57B parallel angle #676)
+G90 G56 G00 B#101
+(G57B parallel angle #101)
 M10 (4jiku clamp)
 
 G56 G65 P430000 D6. A1. R14. X172.90 Y172.90 Z500.016 M12.05 W8.05
@@ -353,9 +367,10 @@ G91 G28 Z0
 T13 (mentori 45)
 M06 (tool exchange)
 
+#101=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G56 G00 B#676
-(G57B parallel angle #676)
+G90 G56 G00 B#101
+(G57B parallel angle #101)
 M10 (4jiku clamp)
 
 G56 G65 P440000 D13. X180.95 Y180.95 Z500.016 K1. R18.
@@ -393,8 +408,9 @@ G91 G28 Z0
 T02 (tanmen)
 M06 (tool exchange)
 
+#101=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G00 G54 B[180.0+#676]
+G90 G00 G54 B[180.0+#101]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
@@ -424,8 +440,9 @@ G91 G28 Z0
 T16 (gaisaku)
 M06 (tool exchange)
 
+#101=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G00 G54 B[180.0+#676]
+G90 G00 G54 B[180.0+#101]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
@@ -464,8 +481,9 @@ G91 G28 Z0
 T11 (mentori 15)
 M06 (tool exchange)
 
+#101=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G00 G54 B[180.0+#676]
+G90 G00 G54 B[180.0+#101]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
@@ -500,11 +518,13 @@ G91 G28 Z0
 T11 (mentori 15)
 M06 (tool exchange)
 
+#101=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G00 G55 B[180.0+#676]
+G90 G00 G55 B[180.0+#101]
 (G55B parallel angle 179.358)
 M10 (4jiku clamp)
 
+#103=0.07 (Mekki)
 G55 G65 P450000 D11. I0 K4. X155. Y153. Z499.984 W10. R3.5
 G55 G65 P450000 D11. I0 K2. X155. Y153. Z499.984 W10. R3.5
 G55 G65 P450000 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5
@@ -542,8 +562,9 @@ M00
 
 
 G91 G30 X0 Y0
+#101=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G00 G54 B[-90+#676]
+G90 G00 G54 B[-90+#101]
 (G54 Top:+X, Bot:-X)
 (B parallel angle -90.642)
 M10 (4jiku clamp)
@@ -570,8 +591,9 @@ M00
 
 
 G91 G28 Z0
+#101=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G54 G00 B[180+#676]
+G90 G54 G00 B[180+#101]
 (G54 Bot:+Z, Top:-Z)
 (B parallel angle 179.358)
 M10 (4jiku clamp)
@@ -629,7 +651,7 @@ N999 M30
 
 (Common variables)
 (as LHS)
-(#675, #676, #677, #678, #901001, #901003, #901004, #901006)
+(#100, #101, #102, #103, #901001, #901003, #901004, #901006)
 (as RHS)
 (#401, #412, #413, #601, #900021, #900024)
 
@@ -649,9 +671,9 @@ N999 M30
 
 
 (Used in other programs)
-(#675: O130001, O210003)
-(#676, #677: O210003)
-(#678: O130001, O130002, O140001, O450000)
+(#100: O130001, O140001, O210003)
+(#101, #102: O210003)
+(#103: O130001, O130002, O140001, O450000)
 (#900026: O150003)
 (#900030: O150002)
 %

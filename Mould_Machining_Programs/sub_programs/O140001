@@ -23,10 +23,10 @@ IF[#03EQ0]GOTO800
 (if T <= 0 or #0, go to N800)
 (if C = 0 or #0, go to N800)
 
-IF[#20LE#678]GOTO800
+IF[#20LE#103]GOTO800
 IF[#26LE[#901011/2]]GOTO800
 IF[[ABS[#04]]GE#20]GOTO800
-(if T <= M or #0, go to N800)
+(if T <= mekki or #0, go to N800)
 (if Z <= #901011/2, go to N800)
 (if |I| >= T, go to N800)
 
@@ -40,7 +40,7 @@ IF[#603LE0]GOTO800
 IF[#604EQ#0]GOTO800
 IF[#604LT0]GOTO800
 IF[#604GT20]GOTO800
-IF[#678LT0]GOTO800
+IF[#103LT0]GOTO800
 (if #901011 <= 0 or #0 go to N800)
 (if #512 <= 0 or #0 go to N800)
 (if #514 is not 50.0 go to N800)
@@ -58,7 +58,7 @@ N001
 #30=#407
 
 N002
-#29=[#24/2]-[#20+#04]+#678
+#29=[#24/2]-[#20+#04]+#103
 IF[#29LE0]GOTO800
 (#29=X/2-[T+I]+mekki)
 (if #29 <= 0, go to 800)
@@ -69,11 +69,11 @@ IF[#30EQ#0]GOTO005
 (if #30 is #0, go to N005)
 
 IF[#23LT10]GOTO800
-IF[#675LT10]GOTO800
+IF[#100LT10]GOTO800
 IF[[ABS[#30]]GE[#23/2]]GOTO800
 (if W,R < 10, go to N800)
 (if |#30| >= W/2, go to N800)
-#28=SQRT[#675*#675-[#23+#30]*[#23+#30]]-SQRT[#675*#675-#23*#23]
+#28=SQRT[#100*#100-[#23+#30]*[#23+#30]]-SQRT[#100*#100-#23*#23]
 IF[[ABS[#28]]GE#32]GOTO800
 (if |#28| >= X/2, go to N800)
 IF[#31EQ1]GOTO004
@@ -154,12 +154,12 @@ N999 M99
 (as LHS)
 (#900021)
 (as RHS)
-(#601, #603, #604, #901011)
+(#100, #403, #407, #601, #603, #604, #901011)
+(#103: mekki mm)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)
 (#514: default skip speed)
-(#678: mekki mm)
 
 
 (System variables)
