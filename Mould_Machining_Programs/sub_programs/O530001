@@ -5,7 +5,9 @@ O530001 (for AC dimples kakou)
 
 IF[#04EQ#0]GOTO800
 IF[#04EQ0]GOTO800
-(if I = 0 or empty, to N800)
+IF[#620LT0]GOTO800
+(if I = 0 or empty, go to N800)
+(if #620 < 0, go to N800)
 
 #33=#5041
 (#33= current work X: start point X)
@@ -52,11 +54,11 @@ N007 (for T33)
 #30=#462
 
 N008
-G90 G01 X[#23-#31*[#32+1.0]] F5400
-(X+: #23-#32-1.0 or X-: #23+#32+1.0)
-G91 G01 X[#31*[1.0+#30]] F540
+G90 G01 X[#23-#31*[#32+#620]] F5400
+(X+: #23-#32-#620 or X-: #23+#32+#620)
+G91 G01 X[#31*[#620+#30]] F540
 G91 G01 X[#31*#21] F100
-(Y+ or Y-: 1.0+hosei, speed 540)
+(Y+ or Y-: #620+hosei, speed 540)
 (Y+ or Y-: U, speed 100)
 G90 G01 X#33 F5400
 (G90 G01 Y: to start point)
