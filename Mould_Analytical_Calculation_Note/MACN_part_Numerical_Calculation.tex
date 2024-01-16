@@ -22,9 +22,14 @@
 テーブルを$-\theta$だけ回転させたときのトップ・ボトム側の\index{ふりわけちょう@振分長}振分長$f'_\mathrm T$, $f'_\mathrm B$は、\eqref{eq:saifuriwake}より、
 \begin{align*}
   f_\mathrm T' = f_\mathrm T+\varDelta'\!\sin\theta~~, \quad
-  f_\mathrm B' = (f_\mathrm T+f_\mathrm B)-f_\mathrm T'
+  f_\mathrm B' = (f_\mathrm T+f_\mathrm B)-f_\mathrm T'\ .
 \end{align*}
-トップ側とボトム側の振分長が均等になるときの回転角$\theta'$は、\pageeqref{eq:saifuriwakeangle}より、
+ジグ（長さ$2l$）からの張出長に換算するならば、それぞれ
+\begin{align*}
+  f_\mathrm T+\varDelta'\!\sin\theta-l~~, \quad
+  (f_\mathrm T+f_\mathrm B)-f_\mathrm T'-l\ .
+\end{align*}
+トップ側とボトム側の振分長が均等かつ平行になるときの回転角$\theta'$は、\pageeqref{eq:saifuriwakeangle}より、
 \begin{align*}
   \sin\theta' = \frac{f_d}{\varDelta'}\ .
 \end{align*}
@@ -38,10 +43,20 @@
 
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{湾曲中心}
+\modHeadsection{外径・湾曲中心}
+\index{ジグ}ジグの底の$Y$座標を$\varDelta_y$とすると、外中心$Y$座標は、
+\begin{align*}
+  \varDelta_y+\frac{W_y}2\ .
+\end{align*}
+トップ端およびボトム端における（$-\theta$回転後の）\index{そとがわちゅうしん@外側中心}外側中心の$X$位置は、\pageeqref{eq:tableTc}, \pageeqref{eq:tableBc}よりそれぞれ、
+\begin{align*}
+  \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta'\cos\theta~, \quad
+  \varDelta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2\ .
+\end{align*}
 トップ端およびボトム端における（$-\theta$回転後の）\index{わんきょくちゅうしん@湾曲中心}湾曲中心の$X$値は、\pageeqref{eq:tableTRc}, \pageeqref{eq:tableBRc}よりそれぞれ、
 \begin{align*}
   \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\varDelta'\!\cos\theta~, \quad
@@ -50,18 +65,8 @@
 また、（計算上の）\index{うちがわちゅうしん@内側中心}内側中心はこの湾曲中心を持って代用してもよいものとする。
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{外側中心}
-トップ端およびボトム端における\index{そとがわちゅうしん@外側中心}外側中心の$X$位置は、\pageeqref{eq:tableTc}, \pageeqref{eq:tableBc}よりそれぞれ、
-\begin{align*}
-  \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta'\cos\theta~, \quad
-  \varDelta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2\ .
-\end{align*}
 
-
-
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 9.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -69,7 +74,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 9.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 9.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{外削中心：ボトムA面肉厚基準の場合}
 \index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（てーぶるちゅうしん)@P（テーブル中心）}Pを原点としたボトム側外削径の中心$\mathfrak B_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterBt}より、
@@ -88,7 +93,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 9.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 9.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{外削中心：トップA面肉厚基準の場合}
 \index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（てーぶるちゅうしん)@P（テーブル中心）}Pを原点としたトップ側外削径の中心$\mathfrak T_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterTt}より、
@@ -107,7 +112,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 9.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 9.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{外削長}
 \index{がいさくちょう@外削長}外削長に関しては、基本的には\index{ふりわけちょう@振分長}振分長から外削長を引いた位置に$Z$座標を合わせればよい。
@@ -119,17 +124,33 @@
 
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{溝中心}
+\modHeadsection{溝}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 9.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{湾曲中心が基準の場合}
+\index{みぞいち@溝位置}溝位置$\kappa_p$および\index{みぞはば@溝幅}溝幅$\kappa_w$に対し、テーブル\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（てーぶるちゅうしん)@P（テーブル中心）}Pを原点とした\index{みぞちゅうしん@溝中心}溝の中心の$Z$座標は、\pageeqref{eq:mizocenterZ}より
+\begin{align*}
+  f_\mathrm T'-\kappa_p-\frac{\kappa_w}2
+\end{align*}
+で与えられ、このときトップ端における湾曲中心T$_{R_\mathrm c}'$と溝中心M$'$との$X$方向の差は、\pageeqref{eq:difTopMizoCenter}より、
+\begin{align}
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+  -\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ .
+\end{align}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{面取中心}
+\modHeadsection{C面取}
 
 
 
