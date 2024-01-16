@@ -5,13 +5,15 @@ N001
 G90 G53 G01 Z0 F5400
 (Top sai_furiwake: 500.016)
 (Bot sai_furiwake: 499.984)
+
+N002
 IF[#1005EQ1]GOTO820
 IF[#1004EQ0]GOTO002
 (if low battery, go to N820)
 (if current sensor off, go to N002)
 M117 (sensor off)
 
-N002
+N003
 G90 G53 G00 X-5.501 Y-258.624 F5400
 G49 G40 G80 G17 (cancel hosei)
 M262 (palette rotate speed 25)
@@ -269,7 +271,7 @@ M10 (4jiku clamp)
 N24
 G57 G65 P410000 D2. X156.863 Y154.839 Z500.016 R19. K#412
 (O410000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
-(default: V=5, F=900, S=950)
+(default: F=900, S=950)
 (D: hosei kouguKei&Chou #)
 (X: Top AC naikei)
 (Y: Top BD naikei)
@@ -298,6 +300,7 @@ M10 (4jiku clamp)
 G56 G65 P420000 D16. Q3. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
 G56 G65 P420000 D16. Q1. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
 G56 G65 P420000 D16. Q0. X180.95 Y180.95 Z500.016 R18. K32.0 M12.05 W8.05
+G56 G65 P420000 D16. X180.95 Y180.95 U185. V183. Z500.016 R18. K32.0 M12.05 W8.05 C1.
 (O420000: Sotogawa 1shuu Corner R, ar HidariMawari)
 (default: Q=0, F=400, E=400, S=930, I=0, M=0, W=0)
 (D: hosei kouguKei&Chou #)
@@ -416,7 +419,7 @@ M10 (4jiku clamp)
 
 G55 G65 P410000 D2. X155. Y153. Z499.984 R19. K#413
 (O410000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
-(default: V=5, F=900, S=950)
+(default: F=900, S=950)
 (D: hosei kouguKei&Chou #)
 (X: Bot AC naikei)
 (Y: Bot BD naikei)

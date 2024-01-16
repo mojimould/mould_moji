@@ -15,17 +15,17 @@
 
 
 %\clearpage
-\noindent\ttNum100\,-\ttNum105については、主に各々の製品明細または個々の製品に固有のものとする。\\
+\noindent\ttNum100\,-\ttNum104については、主に各々の製品明細または個々の製品に固有のものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{コモン変数 (\ttNum675\,-\ttNum699)}
+\modcaptionof{table}{\ttNum100\,-\ttNum104：主に製品固有値}
 \begin{twoCtable}{}
 \ttNum100 & 中心湾曲$R_\mathrm c$ ($\nicefrac1{R_\mathrm c} = 0$の場合は\ttNum0)\\\hline
 \ttNum101 & 振分長調整用 傾け角度$-\theta[\deg]$\\\hline
 \ttNum102 & 内面溝用 傾け角度$-\phi[\deg]$\\\hline
 \ttNum103 & 内面めっき膜厚$\mu$\\\hline
-\ttNum104 & 端面 切削回数 (FUP[\ttNum412\,/\ttNum610] or FUP[\ttNum413\,/\ttNum610])
+\ttNum104 & 端面 切削回数 (FUP[\ttNum412\,/\ttNum650] or FUP[\ttNum413\,/\ttNum650])
 \end{twoCtable}
 
 
@@ -40,7 +40,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ttNum400\,-\ttNum474については、主に作業者が入力・変更することが想定されるものとする。\\
+\ttNum400\,-\ttNum474については、主に作業者が入力・変更することが想定されるものとする。
 
 \modcaptionof{table}{\ttNum400\,-\ttNum411：主に計測用（内面溝除く）}
 \begin{twoCtable}{}
@@ -67,18 +67,18 @@
 \ttNum412 & トップ端面 全削り代\\\hline
 \ttNum413 & ボトム端面 全削り代\\\hline
 \ttNum414 & （予備）\\\hline
-\ttNum415 & ボトム外削 A面肉厚$+$補正（\verb|G54|ワーク座標系補正）\\\hline
-\ttNum416 & ボトム外削 仕上げ前stop (0:non-stop, 1:外削径1mm残し\verb|M00|)\\\hline
-\ttNum417 & ボトム外削 仕上げ加工回数 (上限5)\\\hline
-\ttNum418 & トップ外削 A面肉厚$+$補正（\verb|G56|ワーク座標系補正）\\\hline
-\ttNum419 & トップ外削 仕上げ前stop (0:non-stop, 1:外削径1mm残し\verb|M00|)\\\hline
-\ttNum420 & トップ外削 仕上げ加工回数 (上限5)\\\hline
+\ttNum415 & ボトム外削 A面肉厚$+$補正（\verb|G54|ワーク座標系補正） & 0\\\hline
+\ttNum416 & ボトム外削 仕上げ前stop (0:non-stop, 1:外削径1mm残し\verb|M00|) & 0\\\hline
+\ttNum417 & ボトム外削 仕上げ加工回数 (上限5) & 1\\\hline
+\ttNum418 & トップ外削 A面肉厚$+$補正（\verb|G56|ワーク座標系補正） & 0\\\hline
+\ttNum419 & トップ外削 仕上げ前stop (0:non-stop, 1:外削径1mm残し\verb|M00|) & 0\\\hline
+\ttNum420 & トップ外削 仕上げ加工回数 (上限5) & 1\\\hline
 \ttNum421 & （予備）\\\hline
-\ttNum422 & 溝位置$+$補正\\\hline
-\ttNum423 & 溝幅$+$補正\\\hline
-\ttNum424 & 溝A面深さ$+$補正（\verb|G56|ワーク座標系補正）\\\hline
-\ttNum425 & 溝 仕上げ前stop (0:non-stop, 1:溝径1mm残し\verb|M00|)\\\hline
-\ttNum426 & 溝 仕上げ加工回数 (上限5)\\\hline
+\ttNum422 & 溝位置$+$補正 & 0\\\hline
+\ttNum423 & 溝幅$+$補正 & 0\\\hline
+\ttNum424 & 溝A面深さ$+$補正（\verb|G56|ワーク座標系補正） & 0\\\hline
+\ttNum425 & 溝 仕上げ前stop (0:non-stop, 1:溝径1mm残し\verb|M00|) & 0\\\hline
+\ttNum426 & 溝 仕上げ加工回数 (上限5) & 1\\\hline
 \ttNum425 & （予備）
 \end{twoCtable}
 
@@ -148,11 +148,11 @@
 \modHeadsection{コモン変数 (\ttNum500\,-\ttNum599)}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\ttNum500\,-\ttNum599については、主にO910xおよびO93xxで使用されるものとする。\\
+\ttNum500\,-\ttNum599については、主にO910xおよびO93xxで使用されるものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{コモン変数 (\ttNum500\,-\ttNum524)}
+\modcaptionof{table}{\ttNum500\,-\ttNum524：O910x, O93xx用}
 \begin{twoCtable}{}
 \ttNum500 & 芯ずれ許容差 (O93xx)\\\hline
 \ttNum501 & タッチセンサー信号遅れ補正 (O93xx)\\\hline
@@ -172,7 +172,7 @@
 \ttNum518 & センサーの位置$Z$座標 (O910x)\\\hline
 \ttNum520 & 拡張ワーク座標系 (O910x)\\\hline
 \ttNum523 & アプローチ時用の送り速さ値 (O910x)\\\hline
-\ttNum524 & 測定時用の送り速さ値 (O910x) & 50.0
+\ttNum524 & 測定時用の送り速さ値 (O910x)
 \end{twoCtable}
 
 
@@ -184,11 +184,11 @@
 \modHeadsection{コモン変数 (\ttNum600\,-\ttNum699)}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\ttNum600\,-\ttNum674については、主に製品と工具間の距離に関するものとする。\\
+\ttNum600\,-\ttNum649については、主に製品と工具間の距離に関するものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{コモン変数 (\ttNum600\,-\ttNum674)}
+\modcaptionof{table}{\ttNum600\,-\ttNum649：ワークと工具間の距離}
 \begin{twoCtable}{}
 \ttNum600 & （予備）\\\hline
 \ttNum601 & 工具 - 端面間 $Z$方向クリアランス平面間距離 & 100.0\\\hline
@@ -200,7 +200,51 @@
 \ttNum607 & 外側加工面 法線方向クリアランス平面間距離 最小値 & 30.0\\\hline
 \ttNum608 & 内側加工面 法線方向クリアランス平面間距離 最小値 & 15.0\\\hline
 \ttNum609 & （予備）\\\hline
-\ttNum610 & 端面加工 1回あたりの$Z$方向削り代 & 4.0\\\hline
+\ttNum610 & 端面加工用 内径輪郭径$-$補正量 & 5.0\\\hline
+\ttNum611 & （予備）\\\hline
+\ttNum612 & 外削加工用 \\\hline
+\ttNum613 & （予備）\\\hline
+\ttNum614 & 溝加工用 BD溝加工のみ時 AC方向クリアランス平面間距離 & \ttNum607*1.5\\\hline
+\ttNum615 & （予備）\\\hline
+\ttNum616 & 外面取加工用 \\\hline
+\ttNum617 & （予備）\\\hline
+\ttNum618 & 内面取加工用 \\\hline
+\ttNum617 & （予備）\\\hline
+\ttNum618 & 座ぐり加工用 \\\hline
+& （以下予備）
+\end{twoCtable}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosoku}
+\ttNum614について、正確には$\max[\ttNum607, \text{{\small（溝工具半径）}}]\times1.5$である。
+\end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{table}{\ttNum650\,-\ttNum674：1回あたりの削り代}
+\begin{twoCtable}{}
+\ttNum650 & 端面加工1回あたりの$Z$方向削り代 & 4.0\\\hline
+\ttNum651 & （予備） & \\\hline
+\ttNum652 & 外削加工1回あたりの径方向削り代（直径） & 2.0\\\hline
+\ttNum653 & 外削加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
+\ttNum654 & 溝加工1回あたりの径方向削り代（片面深さ） & 5.0\\\hline
+\ttNum655 & 溝加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
+\ttNum656 & 外面取加工1回あたりの径方向削り代（直径） & \\\hline
+\ttNum657 & 外面取加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
+\ttNum658 & 内面取加工1回あたりの径方向削り代（直径） & \\\hline
+\ttNum659 & 内面取加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
+\ttNum660 & （座ぐり加工用予備） & \\\hline
+\ttNum661 & （座ぐり加工用予備） & \\\hline
+\ttNum662 & （内面溝加工用予備） & \\\hline
+\ttNum663 & （内面溝加工用予備） & \\\hline
 & （以下予備）
 \end{twoCtable}
 
@@ -213,12 +257,11 @@
 \modHeadsection{コモン変数 (\ttNum700\,-\ttNum799)}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\ttNum700\,-\ttNum799については、主に内面溝用サブプログラム(O2x000x, O5x000x)で使用されるものとする\\
+\ttNum700\,-\ttNum799については、主に内面溝用サブプログラム(O2x000x, O5x000x)で使用されるものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum700\,-\ttNum733}
-\ttNum700\,-\ttNum733については、主に\DLone で使用されるものとする。
+\modcaptionof{table}{\ttNum700\,-\ttNum733：内面溝レベル1サブプログラム用 (\DLone)}
 \begin{twoCtable}{}
 \ttNum700 & （予備）\\\hline
 \ttNum701 & プログラム読込み時の座標系(\ttNum4012)\\\hline
@@ -249,8 +292,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum734\,-\ttNum766}
-\ttNum734\,-\ttNum766については、主に\DLtwoAC, \DLtwoBD で使用されるものとする。
+\modcaptionof{table}{\ttNum734\,-\ttNum766：内面溝レベル2サブプログラム用 (\DLtwoAC, \DLtwoBD)}
 \begin{twoCtable}{}
 \ttNum734 & プログラム読込時ブロックエンド$Y$ or $X$ (\ttNum5002, \ttNum5001)\\\hline
 \ttNum735 & プログラム読込時ブロックエンド$Z$ (\ttNum5003)\\\hline
@@ -267,8 +309,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum767\,-\ttNum799}
-\ttNum767\,-\ttNum799については、主に\DMLthreeAC, \DMLthreeBD, \DKLthreeAC, \DKLthreeBD で使用されるものとする。
+\modcaptionof{table}{\ttNum767\,-\ttNum799：内面溝 測定・加工用 (\DMLthreeAC, \DMLthreeBD, \DKLthreeAC, \DKLthreeBD)}
 \begin{twoCtable}{}
 \ttNum767 & プログラム読込時ブロックエンド$X$ or $Y$ (\ttNum5001, \ttNum5002)\\\hline
 \ttNum768 & 内面溝 表面位置$X$ or $Y$測定値\\\hline
@@ -284,12 +325,11 @@
 \modHeadsection{コモン変数 (\ttNum900001\,-\ttNum900031, \ttNum900101\,-\ttNum900500)}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\ttNum900001\,-\ttNum900031, \ttNum900101\,-\ttNum900500については、主に実測値を格納する。\\
+\ttNum900001\,-\ttNum900031, \ttNum900101\,-\ttNum900500については、主に実測値を格納する。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum900001\,-\ttNum900005}
-\ttNum900001\,-\ttNum900005については、主に\MXOThickness で使用されるものとする。
+\modcaptionof{table}{\ttNum900001\,-\ttNum900005：外中心$X$測定用 (\MXOThickness)}
 \begin{twoCtable}{}
 \ttNum900001 & $X$外中心測定 $-X$側測定値\\\hline
 \ttNum900002 & $X$外中心測定 $+X$側測定値\\\hline
@@ -303,8 +343,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum900006\,-\ttNum900010}
-\ttNum900006\,-\ttNum900010については、主に\MYOThickness で使用されるものとする。
+\modcaptionof{table}{\ttNum900006\,-\ttNum900010：外中心$Y$測定用 (\MYOThickness)}
 \begin{twoCtable}{}
 \ttNum900006 & $Y$外中心測定 $-Y$側測定値\\\hline
 \ttNum900007 & $Y$外中心測定 $+Y$側測定値\\\hline
@@ -318,8 +357,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum900011\,-\ttNum900015}
-\ttNum900011\,-\ttNum900015については、主に\MXIWidth で使用されるものとする。
+\modcaptionof{table}{\ttNum900011\,-\ttNum900015：内中心$X$測定用 (\MXIWidth)}
 \begin{twoCtable}{}
 \ttNum900011 & $X$内中心測定 $-X$側測定値\\\hline
 \ttNum900012 & $X$内中心測定 $+X$側測定値\\\hline
@@ -333,8 +371,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum900016\,-\ttNum900020}
-\ttNum900016\,-\ttNum900020については、主に\MYIWidth で使用されるものとする。
+\modcaptionof{table}{\ttNum900016\,-\ttNum900020：内中心$Y$測定用 (\MYIWidth)}
 \begin{twoCtable}{}
 \ttNum900016 & $Y$内中心測定 $-Y$側測定値\\\hline
 \ttNum900017 & $Y$内中心測定 $+Y$側測定値\\\hline
@@ -344,12 +381,11 @@
 \end{twoCtable}
 
 
-\clearpage
+%\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum900021\,-\ttNum900023}
-\ttNum900021\,-\ttNum900023については、主に\MXface で使用されるものとする。
+\modcaptionof{table}{\ttNum900021\,-\ttNum900023：外削中心$X$測定用 (\MXface)}
 \begin{twoCtable}{}
 \ttNum900021 & $X$外削中心測定 内面測定値\\\hline
 \ttNum900022 & （予備）\\\hline
@@ -357,12 +393,11 @@
 \end{twoCtable}
 
 
-%\clearpage
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum900024\,-\ttNum900027}
-\ttNum900024\,-\ttNum900027については、主に\MYcenterline で使用されるものとする。
+\modcaptionof{table}{\ttNum900024\,-\ttNum900027：通り芯$X$測定用 (\MYcenterline)}
 \begin{twoCtable}{}
 \ttNum900024 & $Y$通り芯 ボトム側測定値\\\hline
 \ttNum900025 & $Y$通り芯 トップ側測定値\\\hline
@@ -375,8 +410,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum900028\,-\ttNum900031}
-\ttNum900028\,-\ttNum900031については、主に\MXcenterline で使用されるものとする。
+\modcaptionof{table}{\ttNum900028\,-\ttNum900031：通り芯$X$測定用 (\MXcenterline)}
 \begin{twoCtable}{}
 \ttNum900028 & $X$通り芯 トップ側測定値\\\hline
 \ttNum900029 & $X$通り芯 ボトム側測定値\\\hline
@@ -390,8 +424,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum900101\,-\ttNum900500}
-\ttNum900101\,-\ttNum900500については、主に\DMLthreeAC, \DMLthreeBD で使用されるものとする。
+\modcaptionof{table}{\ttNum900101\,-\ttNum900500：内面溝用 表面位置測定値 (\DMLthreeAC, \DMLthreeBD)}
 \begin{twoCtable}{}
 \ttNum900101\,-\ttNum900200 & A側内面溝 深さ測定値（Tスロット）\\\hline
 \ttNum900201\,-\ttNum900300 & C側内面溝 深さ測定値（Tスロット）\\\hline
@@ -408,11 +441,11 @@
 \modHeadsection{コモン変数 (\ttNum901000\,-\ttNum901099)}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\ttNum901000\,-\ttNum901099については、主にパレットやジグに関するものとする。\\
+\ttNum901000\,-\ttNum901099については、主にパレットやジグに関するものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{コモン変数 (\ttNum901000\,-\ttNum901099)}
+\modcaptionof{table}{\ttNum901000\,-\ttNum901099：主にパレット・ジグ}
 \begin{twoCtable}{}
 \ttNum901000 & （予備）\\\hline
 \ttNum901001 & パレット\ttNum1 ジグ中心機械座標$X$ & -550.019\\\hline
@@ -462,11 +495,11 @@
 \modHeadsection{コモン変数 (\ttNum901100\,-\ttNum901199)}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\ttNum901100\,-\ttNum901199については、主に工具に関するものとする。\\
+\ttNum901100\,-\ttNum901199については、主に工具に関するものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{コモン変数 (\ttNum901100\,-\ttNum901199)}
+\modcaptionof{table}{\ttNum901100\,-\ttNum901199：工具}
 \begin{twoCtable}{}
 \ttNum901100 & （予備）\\\hline
 \hline

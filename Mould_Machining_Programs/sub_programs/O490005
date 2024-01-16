@@ -19,44 +19,19 @@ IF[#19LE200]GOTO800
 (if E < 10 or #0, go to N800)
 (if S <= 200 or #0, go to N800)
 
-N002
-IF[#01EQ1]GOTO003
-IF[#01EQ2]GOTO003
-IF[#01EQ3]GOTO006
-IF[#01EQ4]GOTO006
-GOTO800
-
-N003
-IF[#18EQ#0]GOTO004
-IF[#03NE#0]GOTO800
-(if either R and C are not #0, go to N800)
-#33=#18
-GOTO005
-(if R is not #0 and C=#0, go to N004)
-N004
-IF[#03EQ#0]GOTO800
-(if both R and C are #0, go to N800)
-#33=#03
-(if C is not #0 and R=#0, go to N004)
-
-N005
-IF[#33LT1]GOTO800
-IF[#33GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
-(if #33 < 1, go to N800)
-(if #33 < 1 or #33 >= min[X/4, Y/4], go to N800)
-
 
 (kokokara G00)
 
 
-N006
+N002
 S#19
-IF[#01EQ1]GOTO007
-IF[#01EQ1]GOTO008
-IF[#01EQ1]GOTO009
-IF[#01EQ1]GOTO010
+IF[#01EQ1]GOTO003
+IF[#01EQ2]GOTO004
+IF[#01EQ3]GOTO005
+IF[#01EQ4]GOTO006
+GOTO800
 
-N007 (for R)
+N003 (for R)
 G91 G01 X-[#24+#07*2-#18] F#09
 (a: X-)
 G91 G03 X-#18 Y-#18 I0 J-#18 F#08
@@ -77,7 +52,7 @@ G91 G02 X-[#07*2] Y[#07*2] I0. J[#07*2] F#09
 (G02 R[#07*2] [0, #07*2] X-Y+)
 GOTO999
 
-N008 (for C)
+N004 (for C)
 G91 G01 X-[#24+#07*2-#03] F#09
 (a: X-)
 G91 G01 X-#03 Y-#03 F#08
@@ -98,7 +73,7 @@ G91 G01 X-[#07*2] Y[#07*2] F#09
 (X-Y+)
 GOTO999
 
-N009 (for rec)
+N005 (for rec)
 G91 G01 X-[#24+#07*2] F#09
 (a:X-)
 G91 G01 Y-#25 F#09
@@ -109,12 +84,12 @@ G91 G01 Y[#25+#07*2] F#09
 (Y+)
 GOTO999
 
-N010 (for BD only)
-G91 G01 X-[#24+#07*2+#07] F#09
+N006 (for BD only)
+G91 G01 X-[#24+#07*2+[#07*1.5]] F#09
 (a:X-)
 G91 G00 Y-#25 F10800
 (l:Y-)
-G91 G01 X[#24+#07*2] F#09
+G91 G01 X[#24+#07*3] F#09
 (b: X+)
 G91 G00 Y[#25+#07*2] F10800
 (r: Y+)
