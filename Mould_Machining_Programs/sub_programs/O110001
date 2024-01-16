@@ -18,9 +18,7 @@ IF[#26EQ#0]GOTO800
 (if Z = #0, go to N800)
 
 IF[#26LE[#901011/2]]GOTO800
-IF[[ABS[#06]]GT[#26/2]]GOTO800
 (if Z <= #901011/2, go to N800)
-(if |K| > Z/2, go to N800)
 
 IF[#901011EQ#0]GOTO800
 IF[#901011LE10]GOTO800
@@ -41,31 +39,44 @@ IF[#604GT20]GOTO800
 (if #603 <= 0 or #0, go to N800)
 (if #604 < 0 or #604 > 20.0 or #0, go to N800)
 
-IF[#09EQ#0]GOTO001
-IF[#09LE0]GOTO001
-IF[#09GT300.0]GOTO001
-(if skip speed F <= 0 or F > 300.0, go to N001)
+IF[#03GT0]GOTO001
+(if C > 0, go to N001)
+#31=-1 (for Bot)
+#30=#403
 GOTO002
-
 N001
-#09=#514 (skip speed = 50.)
+#31=1 (for Top)
+#30=#407
 
 N002
+IF[[ABS[#30]]GT[#26/2]]GOTO800
+(if |#30| > Z/2, go to N800)
+
+IF[#09EQ#0]GOTO003
+IF[#09LE0]GOTO003
+IF[#09GT300.0]GOTO003
+(if skip speed F <= 0 or F > 300.0, go to N003)
+GOTO004
+
+N003
+#09=#514 (skip speed = 50.)
+
+N004
 IF[#1005EQ1]GOTO801
-IF[#1004EQ1]GOTO003
+IF[#1004EQ1]GOTO005
 (if low battery, go to N801)
-(if current sensor ON, go to N003)
+(if current sensor ON, go to N005)
 M117 (sensor on/off)
 G04 X1. (wait 1.0s)
 
-N003
+N005
 G91 G01 X-[[#24/2]+#512+#603] F5400
 (X-: [AC gaikei/2 + D/2 + #603])
 
-G90 G31 Z[#26-#512+#06] F1500
-(Z skip: tanmen Z-D/2+K)
-IF[#5003GT[#26-#512+#06]]GOTO802
-(if skip block end Z > tanmen Z-D/2+K, to N802)
+G90 G31 Z[#26-#512+#30] F1500
+(Z skip: tanmen Z-D/2+#30)
+IF[#5003GT[#26-#512+#30]]GOTO802
+(if skip block end Z > tanmen Z-D/2+#30, to N802)
 
 G91 G31 X[#603+#604] F#09
 (X+ skip: #603+#604)
@@ -73,8 +84,8 @@ G91 G31 X[#603+#604] F#09
 (#900001= X left side + D/2 + probe hosei)
 
 G91 G01 X-[#603*2] F3600 (X-: #603*2)
-G91 G01 Z[#512-#06+#601*0.6] F5400
-(Z+: D/2-K+#601*0.6)
+G91 G01 Z[#512-#30+#601] F5400
+(Z+: D/2-#30+#601)
 
 IF[[ABS[#900001+#501-#502]]LE[ABS[[#24/2]-#603]]]GOTO800
 (if |#900001|<=|X/2-#603|, go to N800)
@@ -83,10 +94,10 @@ G90 G01 X#32 F5400 (X to start point)
 G91 G01 X[[#24/2]+#512+#603] F5400
 (X+: [AC gaikei/2 + D/2 + #603])
 
-G90 G31 Z[#26-#512+#06] F1500
-(Z skip: tanmen Z-D/2+K)
-IF[#5003GT[#26-#512+#06]]GOTO802
-(if skip block end Z > tanmen Z-D/2+K, to N802)
+G90 G31 Z[#26-#512+#30] F1500
+(Z skip: tanmen Z-D/2+#30)
+IF[#5003GT[#26-#512+#30]]GOTO802
+(if skip block end Z > tanmen Z-D/2+#30, to N802)
 
 G91 G31 X-[#603+#604] F#09
 (X- skip: #603+#604)
@@ -94,8 +105,8 @@ G91 G31 X-[#603+#604] F#09
 (#900002= X right side - D/2 + probe hosei)
 
 G91 G01 X[#603*2] F3600 (X+: #603*2)
-G91 G01 Z[#512-#06+#601*0.6] F5400
-(Z+: D/2-K+#601*0.6)
+G91 G01 Z[#512-#30+#601] F5400
+(Z+: D/2-#30+#601)
 IF[[ABS[#900002-#501-#502]]LE[ABS[[#24/2]-#603]]]GOTO800
 (if |#900002|<=|X/2-#603|, go to N800)
 
@@ -132,20 +143,19 @@ N999 M99
 
 (Local variables)
 (as received arguments)
-(#06:K: Z +hosei from tanmen)
 (#09:F: skip speed)
 (#24:X: X outside width)
 (#26:Z: sokutei point Z)
 
 (as LHS)
-(#32, #33)
+(#30, #31, #32, #33)
 
 
 (Common variables)
 (as LHS)
 (#900001, #900002, #900003, #900004)
 (as RHS)
-(#601, #603, #604, #901011)
+(#403, #407, #601, #603, #604, #901011)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)

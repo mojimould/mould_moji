@@ -82,11 +82,11 @@ G90 G54 G43 G01 Z[499.984+#601] H50 F3600
 (hosei kouguChou #50)
 (Z= BotTanmen +#601)
 
-G54 G65 P140001 I0. X180.95 Z499.984 T13.82 C-1.
+G54 G65 P140001 X180.95 Z499.984 W600.0 T13.82 C-1.
 (G54: Bot X Gaisaku center)
-(I: T +hosei)
 (X: Bot AC gaisakuKei)
 (Z: Bot sai_furiwake)
+(W: Bot ori_furiwake)
 (T: Bot A nikuatsu)
 (C: +: for Top, -: for Bot)
 
@@ -99,12 +99,12 @@ G90 G54 G01 X0 Y0 F5400
 (G55 XY Bot outside center)
 G43 H50 (hosei kouguChou #50)
 
-G54 G65 P110002 Y183. Z499.984 K0 F200.
+G54 G65 P110002 Y183. Z499.984 F200. C-1.
 (G54: Bot Y Gaisaku center)
 (Y: Bot BD gaikei)
 (Z: Bot sai_furiwake)
-(K: Z +hosei from tanmen)
 (F: skip speed)
+(C: +: for Top, -: for Bot)
 
 #5262=#5222 (G56Y=G54Y)
 (G56: Top Gaisaku center Y)
@@ -113,25 +113,25 @@ G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-G55 G65 P130001 X155. Z499.84 W600. K-10. F200.
+G55 G65 P130001 X155. Z499.84 W600. F200. C-1.
 (G55: Bot X inside center)
 (X: Bot AC naikei)
 (Z: Bot sai_furiwake)
 (W: Bot ori_furiwake)
-(K: Z +hosei from tanmen)
 (R: radius of the central curvature)
 (F: skip speed)
+(C: +: for Top, -: for Bot)
 
 G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-G55 G65 P130002 Y153 Z499.984 K-10. F200.
+G55 G65 P130002 Y153 Z499.984 F200. C-1.
 (G55: Bot Y inside center)
 (Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
-(K: Z +hosei from tanmen)
 (F: skip speed)
+(C: +: for Top, -: for Bot)
 
 (Bottom sokutei end)
 (Top sokutei start)
@@ -148,21 +148,23 @@ G90 G57 G43 Z[500.016+#601] H50 F3600
 (hosei KouguChou: #50)
 (Z= TopTanmen +#601)
 
-G57 G65 P130001 X156.863 Z500.016 F200.
+G57 G65 P130001 X156.863 Z500.016 F200. C1.
 (G57: Top X inside center)
 (X: AC naikei)
 (Z: Top sai_furiwake)
 (F: skip speed)
+(C: +: for Top, -: for Bot)
 
 G90 G57 G01 X0 Y0 F5400
 (G57XY Top inside center)
 G43 H50 (hosei kouguChou #50)
 
-G57 G65 P130002 Y154.839 Z500.016 F200.
+G57 G65 P130002 Y154.839 Z500.016 F200. C1.
 (G57: Top Y inside center)
 (Y: BD naikei)
 (Z: Top sai_furiwake)
 (F: skip speed)
+(C: +: for Top, -: for Bot)
 
 
 N200
