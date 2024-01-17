@@ -8,9 +8,9 @@ G90 G53 G01 Z0 F5400
 
 N002
 IF[#1005EQ1]GOTO820
-IF[#1004EQ0]GOTO002
+IF[#1004EQ0]GOTO003
 (if low battery, go to N820)
-(if current sensor off, go to N002)
+(if current sensor off, go to N003)
 M117 (sensor off)
 
 N003
@@ -121,7 +121,6 @@ G55 G65 P130001 X155. Z499.84 W600. F200. C-1.
 (X: Bot AC naikei)
 (Z: Bot sai_furiwake)
 (W: Bot ori_furiwake)
-(R: radius of the central curvature)
 (F: skip speed)
 (C: +: for Top, -: for Bot)
 
@@ -155,10 +154,11 @@ G90 G57 G43 Z[500.016+#601] H50 F3600
 
 #100=8922.7 (center curvature R)
 #103=0.07 (Mekki)
-G57 G65 P130001 X156.863 Z500.016 F200. C1.
+G57 G65 P130001 X156.863 Z500.016 W400. F200. C1.
 (G57: Top X inside center)
 (X: AC naikei)
 (Z: Top sai_furiwake)
+(W: Top ori_furiwake)
 (F: skip speed)
 (C: +: for Top, -: for Bot)
 

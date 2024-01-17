@@ -66,7 +66,7 @@ N003
 
 N004
 IF[#1005EQ1]GOTO801
-IF[#1004EQ1]GOTO003
+IF[#1004EQ1]GOTO005
 (if low battery, go to N801)
 (if current sensor ON, go to N005)
 M117 (sensor on/off)

@@ -789,8 +789,6 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \subsubsection{テーブルを傾けた場合のT\texorpdfstring{$_\mathrm c'$}{c'}}
 同様にして、外面A・C側のトップ端点T$_\mathrm o'$, T$_\mathrm i'$の、テーブル中心Pを原点とした場合の$X$座標はそれぞれ、
 \begin{subequations}
-%% label{eq:tableTio}
-  \label{eq:tableTio}
 \begin{align}
 %% label{eq:tableTi}
   \label{eq:tableTi}
@@ -894,8 +892,6 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \subsubsection{テーブルを傾けた場合のB\texorpdfstring{$_\mathrm c'$}{c'}}
 外面A・C面側のボトム端点B$_{R_\mathrm o}'$, B$_{R_\mathrm i}'$の、テーブル中心Pを原点とした場合の$X$座標はそれぞれ、
 \begin{subequations}
-%% label{eq:tableBRio}
-  \label{eq:tableBRio}
 \begin{align}
 %% label{eq:tableBRi}
   \label{eq:tableBRi}
@@ -1525,7 +1521,6 @@ $X$位置については、工具の中心が
 \end{align*}
 端面のA面側・C面側の位置についても同様である。
 まとめると、
-\begin{subequations}
 \begin{align*}
   \text{中点：}&\quad
     \left[
@@ -1578,88 +1573,6 @@ $X$位置については、工具の中心が
         +x_A\cdot\frac{z_b-\nicefrac{h_\mathrm B}2}{R_\mathrm c}
       \end{array}
     \right].
-\end{align*}
-\end{subequations}
-
-
-
-
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 8.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{ワークの開閉口への移動}
-\index{しあげかこう@仕上げ加工}仕上げ加工の前に端面付近の様子を見たり測定器で測定したりしたい場合がある。
-しかしその場合、機内に入って測定等を行うのは危険を伴う。
-一方で、その都度パレットを回転して測定等を行うのも非効率である。
-そこで、モールドの端面部を扉付近に移動させることを考える。
-基本的には$45^\circ$前後回転させて近づければよいが、壁面との接触を考慮しなければならない。
-
-テーブル中心$P$から壁面までの$X$および$Z$方向の（移動可能な）距離をそれぞれ$H_x$, $H_z$とする。
-トップ側が工具側にある場合に\index{テーブル}テーブルを$-\xi_H$だけ回転すると、\pageeqref{eq:tableTio}よりトップ$A$側端点の$XZ$位置は
-\begin{align*}
-  \left[
-  \begin{array}{c}
-    \sqrt{R_\mathrm o^2-f_\mathrm T^2}-\varDelta'\cos\theta\\[3pt]
-    f_\mathrm T'
-  \end{array}
-  \right]\!\!\!
-  \left[
-  \begin{array}{cc}
-    \cos\xi_H & -\sin\xi_H\\[3pt]
-    \sin\xi_H & \cos\xi_H
-  \end{array}
-  \right]
-  = \left[
-    \begin{array}{c}
-      f_\mathrm T'\sin\xi_H+\left(\sqrt{R_\mathrm o^2-f_\mathrm T^2}-\varDelta'\cos\theta\right)\!\cos\xi_H\\[5pt]
-      f_\mathrm T'\cos\xi_H-\left(\sqrt{R_\mathrm o^2-f_\mathrm T^2}-\varDelta'\cos\theta\right)\!\sin\xi_H
-    \end{array}
-    \right]
-\end{align*}
-トップ$C$側端点の$XZ$位置は
-\begin{align*}
-  \left[
-  \begin{array}{c}
-    \sqrt{R_\mathrm i^2-f_\mathrm T^2}-\varDelta'\cos\theta\\[3pt]
-    f_\mathrm T'
-  \end{array}
-  \right]\!\!\!
-  \left[
-  \begin{array}{cc}
-    \cos\xi_H & -\sin\xi_H\\[3pt]
-    \sin\xi_H & \cos\xi_H
-  \end{array}
-  \right]
-  = \left[
-    \begin{array}{c}
-      f_\mathrm T'\sin\xi_H+\left(\sqrt{R_\mathrm i^2-f_\mathrm T^2}-\varDelta'\cos\theta\right)\!\cos\xi_H\\[5pt]
-      f_\mathrm T'\cos\xi_H-\left(\sqrt{R_\mathrm i^2-f_\mathrm T^2}-\varDelta'\cos\theta\right)\!\sin\xi_H
-    \end{array}
-    \right]
-\end{align*}
-となるので、移動できる範囲は
-\begin{align*}
-  H_x &> f_\mathrm T'\sin\xi_H+\left(\sqrt{R_\mathrm i^2-f_\mathrm T^2}-\varDelta'\cos\theta\right)\!\cos\xi_H\ ,\\
-  H_z &> f_\mathrm T'\cos\xi_H-\left(\sqrt{R_\mathrm o^2-f_\mathrm T^2}-\varDelta'\cos\theta\right)\!\sin\xi_H
-\end{align*}
-となる。
-単純に（\verb|G91|で）$\xi_H = \nicefrac\pi4$とすると、
-\begin{align*}
-  H_x-\frac{f_\mathrm T'+\left(\sqrt{R_\mathrm i^2-f_\mathrm T^2}-\varDelta'\cos\theta\right)}{\sqrt2}~~,\qquad
-  H_z-\frac{f_\mathrm T'-\left(\sqrt{R_\mathrm o^2-f_\mathrm T^2}-\varDelta'\cos\theta\right)}{\sqrt2}
-\end{align*}
-だけ移動できる。
-ボトム側が工具側にある場合も\pageeqref{eq:tableBRio}より同様にして、
-\begin{align*}
-  H_x &> f_\mathrm B'\sin\xi_H+\left(\varDelta'\cos\theta-\sqrt{R_\mathrm o^2-f_\mathrm B^2}\right)\!\cos\xi_H\ ,\\
-  H_z &> f_\mathrm B'\cos\xi_H-\left(\varDelta'\cos\theta-\sqrt{R_\mathrm i^2-f_\mathrm B^2}\right)\!\sin\xi_H
-\end{align*}
-となる。
-単純に（\verb|G91|で）$\xi_H = \nicefrac\pi4$とすると、
-\begin{align*}
-  H_x-\frac{f_\mathrm B'+\left(\varDelta'\cos\theta-\sqrt{R_\mathrm o^2-f_\mathrm B^2}\right)}{\sqrt2}~~,\qquad
-  H_z-\frac{f_\mathrm B'-\left(\varDelta'\cos\theta-\sqrt{R_\mathrm i^2-f_\mathrm B^2}\right)}{\sqrt2}\ .
 \end{align*}
 
 

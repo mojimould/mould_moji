@@ -25,10 +25,8 @@ IF[#03EQ0]GOTO800
 
 IF[#20LE#103]GOTO800
 IF[#26LE[#901011/2]]GOTO800
-IF[[ABS[#04]]GE#20]GOTO800
 (if T <= mekki or #0, go to N800)
 (if Z <= #901011/2, go to N800)
-(if |I| >= T, go to N800)
 
 IF[#901011EQ#0]GOTO800
 IF[#901011LE0]GOTO800
@@ -58,9 +56,9 @@ N001
 #30=#407
 
 N002
-#29=[#24/2]-[#20+#04]+#103
+#29=[#24/2]-#20+#103
 IF[#29LE0]GOTO800
-(#29=X/2-[T+I]+mekki)
+(#29=X/2-T+mekki)
 (if #29 <= 0, go to 800)
 
 N003
@@ -74,7 +72,7 @@ IF[[ABS[#30]]GE[#23/2]]GOTO800
 (if W,R < 10, go to N800)
 (if |#30| >= W/2, go to N800)
 #28=SQRT[#100*#100-[#23+#30]*[#23+#30]]-SQRT[#100*#100-#23*#23]
-IF[[ABS[#28]]GE#32]GOTO800
+IF[[ABS[#28]]GE[#24/2]]GOTO800
 (if |#28| >= X/2, go to N800)
 IF[#31EQ1]GOTO004
 G91 G01 X-#28 F5400
@@ -109,6 +107,15 @@ G91 G31 X[#31*[#603+#604]] F#514
 G91 G01 X[#31*[-#29+#512-#501]+#502] F3600
 (X to measured center)
 
+IF[#31EQ1]GOTO007
+G91 G01 X#28 F5400
+(X to center for Bot)
+GOTO008
+N007
+G91 G01 X-#28 F5400
+(X to center for Top)
+
+N008
 IF[[ABS[#900021-#502]]GE[ABS[#29+#603-#501]]]GOTO800
 (if |#900021-#502|>=|#29-#603-#501|, go to N800)
 
@@ -141,10 +148,10 @@ N999 M99
 (Local variables)
 (as received arguments)
 (#03:C: +: for Top, -: for Bot)
-(#04:I: T +hosei)
-(#20:T: A nikuatsu)
+(#20:T: A-nikuatsu)
+(#23:W: ori_furiwake)
 (#24:X: AC gaisakuKei)
-(#26:Z: sokutei point Z)
+(#26:Z: sai_furiwake)
 
 (as LHS)
 (#28, #29, #30, #31, #32, #33)
