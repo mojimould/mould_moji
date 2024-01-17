@@ -109,20 +109,6 @@
   \fi
   \indentspace%
 }
-\renewcommand*{\chapterformat}{%
-  \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
-                      baseline=-8.5pt]
-    \node[fill=\if@appendix white\else Maroon!65\fi,
-          text=\if@appendix Maroon!65\else white\fi,
-          signal from=east,
-          inner sep=5pt,
-          text height=1.5ex,
-          text depth=2pt]
-      at (0, 0) {\LARGE{\fontfamily{pplx}\bfseries\,C.~\thechapter~~\relax}};
-  \end{tikzpicture}~~%
-%  \par\nobreak
-%  \vskip 20pt
-}
 %%%%% FOR SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% TO LABEL SECTION  %%%%%%
 \newcommand{\modHeadsection}[2][]{%
@@ -309,7 +295,7 @@
   \begin{longtable}{|c|Sl|c|}
   \hline
   \rowcolor{orange!20}
-  \textbf{記号} & \textbf{内容} & \textbf{#2}\\
+  \textbf{記号} & \textbf{内容}\hspace*{0.75\textwidth} & \textbf{#2}\\
   \hline
   \endfirsthead
   \hline

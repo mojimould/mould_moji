@@ -114,12 +114,13 @@
 }
 \fancypagestyle{plainheadfront}{
   \commonheadfoot
+  %\fancyhead[C]{}
   \fancyhead[RO]{\thepage}
   \fancyhead[LE]{\thepage}
 }
 \fancypagestyle{plainhead}{
   \commonheadfoot
-  \fancyhead[RO]{{\small\partname.\,\thepart}~~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
+  \fancyhead[RO]{\hyperref[part:\thepart]{\small\partname.\,\thepart}~~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
   \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
 }
 \fancypagestyle{plainheadback}{
@@ -350,9 +351,23 @@
 %\renewcommand{\partname}{}
 %\renewcommand{\thepart}{第\hspace{2truemm}\Roman{part}\hspace{2truemm}部} %
 %\renewcommand*{\addparttocentry}[2]{\addtocentrydefault{part}{#1}{第#2部}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% STYLE OF CHAPTER %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\chapterautorefname}{章}  % chapter --> 章
 \renewcommand\chapterpagestyle{\if@frontmatter plainheadfront\else plainhead\fi}
+\renewcommand*{\chapterformat}{%
+  \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
+                      baseline=-8.5pt]
+    \node[fill=\if@appendix white\else Maroon!65\fi,
+          text=\if@appendix Maroon!65\else white\fi,
+          signal from=east,
+          inner sep=5pt,
+          text height=1.5ex,
+          text depth=2pt]
+      at (0, 0) {\LARGE{\fontfamily{pplx}\bfseries\,\thepart.~\thechapter~~\relax}};
+  \end{tikzpicture}~~%
+}
 %%%%% STYLE OF APPENDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\setthesection}{\Alph{section}}
 %\renewcommand{\appendixname}{補\hskip0.5em 遺} % appendix --> 補 遺
@@ -360,8 +375,33 @@
 %%%%% STYLE OF SECTION %%%%%
 %\renewcommand{\sectionautorefname}{節\!} % section --> 節
 \setcounter{secnumdepth}{4}
-\renewcommand{\subsectionautorefname}{\sectionautorefname} % subsection --> section
 \renewcommand{\subsubsectionautorefname}{\sectionautorefname} % subsubsection --> section
+\renewcommand*{\sectionformat}{%
+  \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
+                      baseline=-5.25pt]
+    \node[fill=Green!65,
+          text=white,
+          signal from=east,
+          inner sep=5pt,
+          text height=1.3ex,
+          text depth=0pt]
+      at (0, 0) {\Large{\fontfamily{pplx}\bfseries\,\thesection~\relax}};
+  \end{tikzpicture}~~%
+}
+%%%%% STYLE OF SUBSECTION %%%%%
+\renewcommand{\subsectionautorefname}{\sectionautorefname} % subsection --> section
+\renewcommand*{\subsectionformat}{%
+  \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
+                      baseline=-4pt]
+    \node[fill=Blue!50,
+          text=white,
+          signal from=east,
+          inner sep=5pt,
+          text height=1.25ex,
+          text depth=0pt]
+      at (0, 0) {\large{\fontfamily{pplx}\bfseries\,\thesubsection~\relax}};
+  \end{tikzpicture}~~%
+}
 %%%%% STYLE OF PARAGRAPH %%%%%%%%%%%%%%%%%%%%%
 %for scrbook.cls
 \RedeclareSectionCommand[%
