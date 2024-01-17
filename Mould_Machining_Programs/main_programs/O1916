@@ -57,6 +57,7 @@ G90 G54 G00 B[180.0+#101]
 (B parallel angle 179.358)
 M10 (4jiku clamp)
 
+
 (Bottom sokutei start)
 
 
@@ -174,10 +175,11 @@ G57 G65 P130002 Y154.839 Z500.016 F200. C1.
 (F: skip speed)
 (C: +: for Top, -: for Bot)
 
+IF[#187EQ1]THEN M00
+
 
 N200
 (*** Dimple Measurement Start ***)
-/M00
 
 
 G90 G53 G01 Z0 F7200
@@ -218,10 +220,11 @@ G65 P910002 (sensor OFF)
 N201
 G90 G53 G01 Z0 F7200
 
+IF[#188EQ1]THEN M00
+
 
 N300
 (*** Dimple Kakou Start ***)
-/M00
 
 
 G91 G28 Z0
@@ -251,11 +254,11 @@ G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U
 (U: depth of dimple)
 
 (dimple kakou end)
+IF[#189EQ1]THEN M00
 
 
 N400
 (*** Top Tanmen start ***)
-/M00
 
 
 G91 G28 Z0
