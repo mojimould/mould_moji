@@ -272,15 +272,17 @@ G90 G57 G00 B#101
 M10 (4jiku clamp)
 
 N24
-G57 G65 P410000 D2. X156.863 Y154.839 Z500.016 R19. K#412
-(O410000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
+G57 G65 P410000 C1. D2. X156.863 Y154.839 Z500.016 R19.
+(O410000: XY naikei sotogawa-#610 1shuu Coner R, ar MigiMawari)
 (default: F=900, S=950)
+(C: +: Top, -: Bot)
 (D: hosei kouguKei&Chou #)
 (X: Top AC naikei)
 (Y: Top BD naikei)
 (Z: Top sai_furiwake)
 (R: sotogawa corner R or C)
-(K: kezuriShiro)
+(F*: speed: chokusen)
+(S*: kaitensuu)
 
 (Top tammen end)
 IF[#190EQ1]THEN M00
@@ -418,15 +420,17 @@ G90 G00 G54 B[180.0+#101]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G55 G65 P410000 D2. X155. Y153. Z499.984 R19. K#413
-(O410000: XY sotogawa-V 1shuu Coner R, ar MigiMawari)
+G55 G65 P410000 C-1. D2. X155. Y153. Z499.984 R19.
+(O410000: XY naikei sotogawa-#610 1shuu Coner R, ar MigiMawari)
 (default: F=900, S=950)
+(C: +: Top, -: Bot)
 (D: hosei kouguKei&Chou #)
 (X: Bot AC naikei)
 (Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
 (R: sotogawa corner R)
-(K: kezuriShiro)
+(F*: speed: chokusen)
+(S*: kaitensuu)
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
@@ -654,9 +658,11 @@ N999 M30
 
 (Common variables)
 (as LHS)
-(#100, #101, #102, #103, #901001, #901003, #901004, #901006)
+(#100, #101, #102, #103)
+(#901001, #901003, #901004, #901006)
 (as RHS)
-(#401, #412, #413, #601, #900021, #900024)
+(#401, #601)
+(#900021, #900024)
 
 
 (System variables)

@@ -30,12 +30,10 @@ IF[#03EQ#0]GOTO800
 (if R < 0.1 or #0, go to N800)
 (if C = #0, go to N800)
 
-IF[#03GT0]GOTO002
-(if C > 0, go to N001)
-#33=#415 (for Bot)
-GOTO003
 N002
-#33=-#418 (for Top)
+IF[#03GT0]THEN #33=-#418
+IF[#03LT0]THEN #33=#415
+(#33: +hosei: A-men nikuatsu)
 
 N003
 IF[#09NE#0]THEN #09=400
@@ -45,7 +43,7 @@ IF[#19NE#0]THEN #19=930
 (default: E=400.)
 (default: S=930.)
 
-N007
+N004
 IF[#09LT10]GOTO800
 IF[#08LT10]GOTO800
 IF[#19LT200]GOTO800
@@ -53,7 +51,7 @@ IF[#19LT200]GOTO800
 (if E < 10, go to N800)
 (if S < 200, go to N800)
 
-N008
+N005
 IF[#07LT16]GOTO800
 IF[#07GT20]GOTO800
 IF[[FIX[#07]]NE#07]GOTO800
@@ -66,16 +64,13 @@ IF[ABS[#33]GE#18]GOTO800
 (if R >= min[X/4, Y/4], go to N800)
 (if |#33| >= R, go to N800)
 
-N009
-IF[#06GT[#13+#23]]GOTO010
-#32=#13+1
-(if K <= M+W, #32=M+1)
-GOTO011
-N010
-#32=#06
+N006
+IF[#06GT[#13+#23]]THEN #32=#06
+IF[#06LE[#13+#23]]THEN #32=#13+1
 (if K > M+W, #32=K)
+(if K <= M+W, #32=M+1)
 
-N011
+N007
 #31=#[2400+#07]+#[2600+#07]
 #30=[#607+#31+ABS[#607-#31]]/2
 IF[#30LE0]GOTO800
@@ -85,6 +80,7 @@ IF[#30LE0]GOTO800
 #106=FUP[[#22-#25-#653]/#652]
 #107=[#105+#106+ABS[#105-106]]/2
 IF[#107LT0]GOTO800
+(#107: kakou kaisuu)
 
 
 (kokokara G00)
@@ -114,23 +110,23 @@ G90 G40 G00 X[[#108/2]+#30*3+#33] F10800
 END1
 
 
-IF[#03GT0]GOTO012
-IF[#416EQ0]GOTO013
+IF[#03GT0]GOTO008
+IF[#416EQ0]GOTO009
 M05 (shujiku kaiten off)
 M09 (coolant off)
 M00 (for Bot, #416=1)
-GOTO013
-N012
-IF[#419EQ0]GOTO013
+GOTO009
+N008
+IF[#419EQ0]GOTO009
 M05 (shujiku kaiten off)
 M09 (coolant off)
 M00 (for Top, #419=1)
 
-N013
+N009
 IF[#03GT0]THEN #29=FUP[#420]
 IF[#03LT0]THEN #29=FUP[#417]
 
-N014
+N010
 IF[#29EQ#0]THEN #29=0
 IF[#29LT0]THEN #29=0
 IF[#29GT3]THEN #29=3
@@ -156,11 +152,11 @@ G65 P490005 A1. R#18 X#24 Y#25 D#30 F#09 E#08 S#19
 G90 G40 G00 X[[#24/2]+#30*3+#33] F10800
 END2
 
-N015
+N011
 M05 (shujiku kaiten off)
 M09 (coolant off)
 
-N016
+N012
 S200
 G90 G43 G00 H#07 Z[#26+#601] F7200
 G90 G53 G00 Z0 F7200
