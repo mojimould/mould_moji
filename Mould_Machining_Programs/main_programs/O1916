@@ -283,11 +283,11 @@ G57 G65 P410000 D2. X156.863 Y154.839 Z500.016 R19. K#412
 (K: kezuriShiro)
 
 (Top tammen end)
+IF[#190EQ1]THEN M00
 
 
 N410
 (*** Top Gaisaku start ***)
-/M00
 
 
 G91 G28 Z0
@@ -300,7 +300,7 @@ G90 G56 G00 B#101
 (G57B parallel angle #101)
 M10 (4jiku clamp)
 
-G56 G65 P420000 D16. X180.95 Y180.95 U185. V183. Z500.016 R18. K32.0 M12.05 W8.05 C1. A#417
+G56 G65 P420000 D16. X180.95 Y180.95 U185. V183. Z500.016 R18. K32.0 M12.05 W8.05 C1.
 (O420000: Sotogawa 1shuu Corner R, ar HidariMawari)
 (default: F=400, E=400, S=930, M=0, W=0)
 (D: hosei kouguKei&Chou #)
@@ -317,18 +317,17 @@ G56 G65 P420000 D16. X180.95 Y180.95 U185. V183. Z500.016 R18. K32.0 M12.05 W8.0
 (E*: speed: corner R)
 (S*: kaitensuu)
 (C: +: for Top, -: for Bot)
-(A: shiage kaisuu)
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
 G91 G28 Z0
 
 (Top gaisaku end)
+IF[#191EQ1]THEN M00
 
 
 N420
 (*** Mizo start ***)
-/M00
 
 
 G91 G28 Z0
@@ -341,7 +340,7 @@ G90 G56 G00 B#101
 (G57B parallel angle #101)
 M10 (4jiku clamp)
 
-G56 G65 P430000 D6. A1. R14. X172.90 Y172.90 Z500.016 M12.05 W8.05
+G56 G65 P430000 D6. A1. R14. X172.90 Y172.90 U180.95 V180.95 Z500.016 M12.05 W8.05
 (mizo: 487.966, mizoHaba: 479.916)
 (O430000: Mizo Corner R or C, ar HidariMawari)
 (default: F=500., E=400., S=930., Q=0, I=0, B=#0)
@@ -350,6 +349,8 @@ G56 G65 P430000 D6. A1. R14. X172.90 Y172.90 Z500.016 M12.05 W8.05
 (R: coner R)
 (X: AC mizoKei)
 (Y: BD mizoKei)
+(U: AC gaisakuKei)
+(V: BD gaisakuKei)
 (Z: Top sai_furiwake - kouguThickness)
 (M: mizoIchi)
 (W: mizoHaba)
@@ -451,7 +452,7 @@ G90 G00 G54 B[180.0+#101]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G54 G65 P420000 D16. X180.95 Y180.95 Z499.984 R18. K25.0 C-1. A#417
+G54 G65 P420000 D16. X180.95 Y180.95 Z499.984 R18. K25.0 C-1.
 (O420000: Sotogawa 1shuu Corner R, al HidariMawari)
 (default: F=400, E=400, S=930, M=0, W=0)
 (D: hosei kouguKei&Chou #)
@@ -468,7 +469,6 @@ G54 G65 P420000 D16. X180.95 Y180.95 Z499.984 R18. K25.0 C-1. A#417
 (E*: speed: corner R)
 (S*: kaitensuu)
 (C: +: for Top, -: for Bot)
-(A: shiage kaisuu)
 
 M05 (shujiku kaiten off)
 M09 (coolant off)

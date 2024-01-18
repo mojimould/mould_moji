@@ -110,7 +110,7 @@ M08 (coolant on)
 N103
 G90 G01 X[[#108/2]+#30*2+#33] Y[#109/2] F5400
 
-N104
+N104 (for R)
 G65 P490005 A1. R#18 X#108 Y#109 D#30 F#09 E#08 S#19
 
 N105
@@ -118,14 +118,23 @@ G90 G40 G00 X[[#108/2]+#30*3+#33] F10800
 END1
 
 
-IF[#416NE0]GOTO012
+IF[#03GT0]GOTO012
+IF[#416EQ0]GOTO013
 M05 (shujiku kaiten off)
 M09 (coolant off)
-M00
-
-
+M00 (for Bot, #416=1)
+GOTO013
 N012
-#29=FUP[#417]
+IF[#419EQ0]GOTO013
+M05 (shujiku kaiten off)
+M09 (coolant off)
+M00 (for Top, #419=1)
+
+N013
+IF[#03GT0]THEN #29=FUP[#420]
+IF[#03LT0]THEN #29=FUP[#417]
+
+N014
 IF[#29EQ#0]THEN #29=0
 IF[#29LT0]THEN #29=0
 IF[#29GT3]THEN #29=3
@@ -148,18 +157,19 @@ M08 (coolant on)
 N203
 G90 G01 X[[#24/2]+#30*2+#33] Y[#25/2] F5400
 
-N204
+N204 (for R)
 G65 P490005 A1. R#18 X#24 Y#25 D#30 F#09 E#08 S#19
 
 N205
 G90 G40 G00 X[[#24/2]+#30*3+#33] F10800
 END2
 
-N013
+N015
 M05 (shujiku kaiten off)
 M09 (coolant off)
 
-N014
+N016
+S200
 G90 G43 G00 H#07 Z[#26+#601] F7200
 G90 G53 G00 Z0 F7200
 GOTO999
@@ -176,7 +186,6 @@ N999 M99
 (Local variables)
 
 (as received arguments)
-(#01:A: shiage kaisuu)
 (#03:C: +: for Top, -: for Bot)
 (#06:K: gaisaku Length)
 (#07:D: kouguKei&Chou hosei)
