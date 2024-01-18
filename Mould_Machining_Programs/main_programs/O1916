@@ -340,12 +340,13 @@ G90 G56 G00 B#101
 (G57B parallel angle #101)
 M10 (4jiku clamp)
 
-G56 G65 P430000 D6. A1. R14. X172.90 Y172.90 U180.95 V180.95 Z500.016 M12.05 W8.05
-(mizo: 487.966, mizoHaba: 479.916)
-(O430000: Mizo Corner R or C, ar HidariMawari)
-(default: F=500., E=400., S=930., I=0, B=#0)
+G56 G65 P430000 D6. A1. C#0 R14. X172.90 Y172.90 U180.95 V180.95 Z500.016 M12.05 W8.05
+(mizoIchi: 487.966, mizoHaba: 479.916)
+(O430000: Mizo, ar HidariMawari)
+(default: F=500., E=400., S=930.)
 (D: hosei kouguKei&Chou #)
 (A: key type)
+(C: coner C)
 (R: coner R)
 (X: AC mizoKei)
 (Y: BD mizoKei)
@@ -357,8 +358,6 @@ G56 G65 P430000 D6. A1. R14. X172.90 Y172.90 U180.95 V180.95 Z500.016 M12.05 W8.
 (F*: speed: chokusen)
 (E*: speed: corner R)
 (S*: kaitenSuu)
-(I*: +hosei: AC center)
-(B*: 3: 3 times)
 
 (mizo kakou end)
 

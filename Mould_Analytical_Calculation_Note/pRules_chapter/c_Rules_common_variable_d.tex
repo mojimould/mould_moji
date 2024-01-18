@@ -40,7 +40,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum100\,-\ttNum174：主に各工程後一時停止}
+\modcaptionof{table}{\ttNum175\,-\ttNum199：主に各工程後一時停止{\color{red}\footnotesize（*未実装）}}
 \begin{twoCtable}{}
 \ttNum187 & 測定（通り芯・内面溝除く）後 一時停止 (0:non-stop, 1: \verb|M00|) & 0\\\hline
 \ttNum188 & 内面溝測定後 一時停止 (0:non-stop, 1: \verb|M00|) & 0\\\hline
@@ -91,7 +91,7 @@
 
 
 %\clearpage
-\modcaptionof{table}{\ttNum412\,-\ttNum425：主に加工用（内面溝除く）}
+\modcaptionof{table}{\ttNum412\,-\ttNum425：主に加工用（内面溝除く）{\color{red}\footnotesize（*未実装）}}
 \begin{twoCtable}{}
 \ttNum412 & トップ端面 全削り代\\\hline
 \ttNum413 & ボトム端面 全削り代\\\hline
@@ -105,30 +105,31 @@
 \ttNum421 & （予備）\\\hline
 \ttNum422 & 溝位置$+$補正 & 0\\\hline
 \ttNum423 & 溝幅$+$補正 & 0\\\hline
-\ttNum424* & 溝A面深さ$+$補正（\verb|G56|ワーク座標系補正） & 0\\\hline
-\ttNum425* & 溝 仕上げ前 一時停止 (0:non-stop, 1:溝径\ttNum655残し\verb|M00|) & 0\\\hline
-\ttNum426* & 溝 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum427 & （予備）
+\ttNum424 & 溝A面深さ$+$補正（\verb|G56|ワーク座標系$-$補正） & 0\\\hline
+\ttNum425 & 溝幅$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\\hline
+\ttNum426* & 溝 仕上げ前 一時停止 (0:non-stop, 1:溝径\ttNum655残し\verb|M00|) & 0\\\hline
+\ttNum427* & 溝 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum428 & （予備）
 \end{twoCtable}
 
 \clearpage
-\modcaptionof{table}{\ttNum425\,-\ttNum449：主に加工用（続き）}
+\modcaptionof{table}{\ttNum425\,-\ttNum449：主に加工用（続き）{\color{red}\footnotesize（*未実装）}}
 \begin{twoCtable}{}
-\ttNum426* & トップ外面取$X+$補正（\verb|G56|ワーク座標系補正） & 0\\\hline
-\ttNum427* & トップ外面取 仕上げ前 一時停止 (0:non-stop, 1:外径\ttNum657残し\verb|M00|) & 0\\\hline
-\ttNum428* & トップ外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum429 & （予備）\\\hline
-\ttNum430* & トップ内面取$X+$補正（\verb|G57|ワーク座標系補正） & 0\\\hline
-\ttNum431* & トップ内面取 仕上げ前 一時停止 (0:non-stop, 1:内径\ttNum659残し\verb|M00|) & 0\\\hline
-\ttNum432* & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum433 & （予備）\\\hline
-\ttNum434* & ボトム外面取$X+$補正（\verb|G54|ワーク座標系補正） & 0\\\hline
-\ttNum435* & ボトム外面取 仕上げ前 一時停止 (0:non-stop, 1:外径\ttNum657残し\verb|M00|) & 0\\\hline
-\ttNum436* & ボトム外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum437 & （予備）\\\hline
-\ttNum438* & ボトム内面取$X+$補正（\verb|G55|ワーク座標系補正） & 0\\\hline
-\ttNum439* & ボトム内面取 仕上げ前 一時停止 (0:non-stop, 1:内径\ttNum659残し\verb|M00|) & 0\\\hline
-\ttNum440* & ボトム内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum429* & トップ外面取$X+$補正（\verb|G56|ワーク座標系補正） & 0\\\hline
+\ttNum430* & トップ外面取 仕上げ前 一時停止 (0:non-stop, 1:外径\ttNum657残し\verb|M00|) & 0\\\hline
+\ttNum431* & トップ外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum432 & （予備）\\\hline
+\ttNum433* & トップ内面取$X+$補正（\verb|G57|ワーク座標系補正） & 0\\\hline
+\ttNum434* & トップ内面取 仕上げ前 一時停止 (0:non-stop, 1:内径\ttNum659残し\verb|M00|) & 0\\\hline
+\ttNum435* & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum436 & （予備）\\\hline
+\ttNum437* & ボトム外面取$X+$補正（\verb|G54|ワーク座標系補正） & 0\\\hline
+\ttNum438* & ボトム外面取 仕上げ前 一時停止 (0:non-stop, 1:外径\ttNum657残し\verb|M00|) & 0\\\hline
+\ttNum439* & ボトム外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum440 & （予備）\\\hline
+\ttNum441* & ボトム内面取$X+$補正（\verb|G55|ワーク座標系補正） & 0\\\hline
+\ttNum442* & ボトム内面取 仕上げ前 一時停止 (0:non-stop, 1:内径\ttNum659残し\verb|M00|) & 0\\\hline
+\ttNum443* & ボトム内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
 & （以下予備）
 \end{twoCtable}
 
@@ -177,7 +178,7 @@
 \modHeadsection{コモン変数 (\ttNum500\,-\ttNum599)}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\ttNum500\,-\ttNum599については、主にO910xおよびO93xxで使用されるものとする。
+\ttNum500\,-\ttNum599については、主に\index{バンドルのプログラム}バンドルのプログラム(\index{O910x}O910xおよび\index{O93xx}O93xx)で使用されるものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -236,7 +237,7 @@ $\vdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum600\,-\ttNum649：ワークと工具間の距離}
+\modcaptionof{table}{\ttNum600\,-\ttNum649：ワークと工具間の距離{\color{red}\footnotesize（*未実装）}}
 \begin{twoCtable}{}
 \ttNum600 & （予備）\\\hline
 \ttNum601 & 工具 - 端面間 $Z$方向クリアランス平面間距離 & 100.0\\\hline
@@ -250,19 +251,19 @@ $\vdots$ & （以下不明） & \ttNum0
 \ttNum609 & （予備）\\\hline
 \ttNum610 & 端面加工用 内径輪郭径$-$補正量 & 5.0\\\hline
 \ttNum611 & （予備）\\\hline
-\ttNum612 & 外削加工用 \\\hline
+\ttNum612* & 外削加工用 \\\hline
 \ttNum613 & （予備）\\\hline
 \ttNum614 & 溝加工用 BD溝加工のみ時 AC方向クリアランス平面間距離 & \ttNum607*1.5\\\hline
 \ttNum615 & （予備）\\\hline
-\ttNum616 & 外面取加工用 \\\hline
+\ttNum616* & 外面取加工用 \\\hline
 \ttNum617 & （予備）\\\hline
-\ttNum618 & 内面取加工用 \\\hline
+\ttNum618* & 内面取加工用 \\\hline
 \ttNum617 & （予備）\\\hline
-\ttNum618 & 座ぐり加工用 \\\hline
+\ttNum618* & 座ぐり加工用 \\\hline
 \ttNum619 & （予備）\\\hline
 \ttNum620 & 内面溝加工用 加工近付き量 & 1 \\\hline
 \ttNum621 & （予備）\\\hline
-\ttNum622 & （逃し溝加工用） \\\hline
+\ttNum622 & （逃し溝加工用予備） \\\hline
 & （以下予備）
 \end{twoCtable}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -281,18 +282,18 @@ $\vdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum650\,-\ttNum674：1回あたりの削り代}
+\modcaptionof{table}{\ttNum650\,-\ttNum674：1回あたりの削り代{\color{red}\footnotesize（*未実装）}}
 \begin{twoCtable}{}
 \ttNum650 & 端面加工1回あたりの$Z$方向削り代 & 4.0\\\hline
 \ttNum651 & （予備） & \\\hline
 \ttNum652 & 外削加工1回あたりの径方向削り代（直径） & 2.0\\\hline
 \ttNum653 & 外削加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
-\ttNum654 & 溝加工1回あたりの径方向削り代（片面深さ） & 6.0\\\hline
-\ttNum655 & 溝加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
-\ttNum656 & 外面取加工1回あたりの径方向削り代（直径） & \\\hline
-\ttNum657 & 外面取加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
-\ttNum658 & 内面取加工1回あたりの径方向削り代（直径） & \\\hline
-\ttNum659 & 内面取加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
+\ttNum654* & 溝加工1回あたりの径方向削り代（片面深さ） & 6.0\\\hline
+\ttNum655* & 溝加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
+\ttNum656* & 外面取加工1回あたりの径方向削り代（直径） & \\\hline
+\ttNum657* & 外面取加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
+\ttNum658* & 内面取加工1回あたりの径方向削り代（直径） & \\\hline
+\ttNum659* & 内面取加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
 \ttNum660 & （座ぐり加工用予備） & \\\hline
 \ttNum661 & （座ぐり加工用予備） & \\\hline
 \ttNum662 & （内面溝加工用予備） & \\\hline
@@ -512,20 +513,20 @@ $\vdots$ & （以下不明） & \ttNum0
 \ttNum901010 & （予備）\\\hline
 \hline
 \ttNum901011 & パレット\ttNum1 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向） & 660\\\hline
-\ttNum901012 & パレット\ttNum1 ジグ内側幅（機械座標系$B$0における$Z$方向）& 410\\\hline
+\ttNum901012 & パレット\ttNum1 ジグ内側幅（機械座標系$B$0における$Z$方向） & 410\\\hline
 \ttNum901013 & パレット\ttNum1 ジグ幅（機械座標系$B$0における$X$方向） & 455\\\hline
 \ttNum901014 & （予備）\\\hline
-\ttNum901015 & パレット\ttNum2 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向）\\\hline
-\ttNum901016 & パレット\ttNum2 ジグ内側幅（機械座標系$B$0における$Z$方向）\\\hline
-\ttNum901017 & パレット\ttNum2 ジグ幅（機械座標系$B$0における$X$方向）\\\hline
+\ttNum901015 & パレット\ttNum2 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向） & 660\\\hline
+\ttNum901016 & パレット\ttNum2 ジグ内側幅（機械座標系$B$0における$Z$方向） & 410\\\hline
+\ttNum901017 & パレット\ttNum2 ジグ幅（機械座標系$B$0における$X$方向） & 455\\\hline
 & （以下予備）
 \end{twoCtable}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-ジグ中心\index{きかいざひょう@機械座標}機械座標については2023/09/26時点のものである。
-その他、
+\index{ジグのちゅうしん@ジグの中心}ジグ中心\index{きかいざひょう@機械座標}機械座標については2023/09/26時点のものである。
+その他の（\index{ずめん@図面}図面上の）\index{すんぽう@寸法}寸法として、
 \begin{enumerate}
 \item テーブル中心 と C面側ジグ端 との水平距離：196.5
 \item 受板の円の半径$\rho$：100

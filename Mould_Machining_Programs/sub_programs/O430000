@@ -52,11 +52,9 @@ N006
 IF[#09NE#0]THEN #09=500.0
 IF[#08NE#0]THEN #08=400.0
 IF[#19NE#0]THEN #19=930.0
-IF[#04NE#0]THEN #04=0
 (default: F=500.)
 (default: E=400.)
 (default: S=930.)
-(default: I=0)
 
 N007
 IF[#09LT10]GOTO800
@@ -71,7 +69,7 @@ IF[#07LT6]GOTO800
 IF[#07GT10]GOTO800
 IF[[#26-#13-#23-#422-#423]LE[#901011/2]]GOTO800
 IF[[FIX[#07]]NE#07]GOTO800
-IF[[ABS[#04]]GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
+IF[[ABS[#424]]GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 (if D < 6 or D > 10 or D is not integer, go to N800)
 (if Z-M-W-#422-#423 <= #901011/2, go to N800)
 (if |Q| >= min[X/4, Y/4], go to N800)
@@ -97,7 +95,7 @@ IF[#31LE1]GOTO800
 
 N011
 G90 G43 G00 H#07 Z[#26+#601] F7200
-G90 G00 X[[#24/2]+#32*3+#04] Y[#25/2] F10800
+G90 G00 X[[#24/2]+#32*3-#424] Y[#25/2] F10800
 G42 D#07
 G91 G00 X-[#32/2] F10800
 G90 G01 Z[#26-#13-#422-#31] S#19 F5400
@@ -107,76 +105,37 @@ M03 (shujiku kaiten on)
 M08 (coolant on)
 
 N013
-G90 G01 X[[#24/2]+#32*2+#04] Y[#25/2] F5400
+G90 G01 X[[#24/2]+#32*2-#424] Y[#25/2] F5400
+G65 P490005 A#01 C#03 R#18 X#24 Y#25 D#32 F#09 E#08 S#19
 
 N014
-IF[#01EQ1]GOTO015
-IF[#01EQ2]GOTO016
-GOTO017
-
-N015 (for R)
-G65 P490005 A#01 R#18 X#24 Y#25 D#32 F#09 E#08 S#19
-GOTO018
-N016 (for C)
-G65 P490005 A#01 C#03 X#24 Y#25 D#32 F#09 E#08 S#19
-GOTO018
-N017 (for rec or BD only)
-G65 P490005 A#01 X#24 Y#25 D#32 F#09 S#19
-
-N018
-IF[#02NE3]GOTO024
-G90 G40 G00 X[[#24/2]+#32*3+#04] F10800
+IF[#425NE3]GOTO016
+G90 G40 G00 X[[#24/2]+#32*3-#424] F10800
 G90 G00 Y[#25/2] F10800
 G42 D#07
 G91 G00 X-[#32/2] F10800
 G90 G01 Z[#26-[#13+#422+[#23+#423+#31]/2]] S#19 F5400
 
-N019
-G90 G01 X[[#24/2]+#32*2+#04] Y[#25/2] F5400
+N015
+G90 G01 X[[#24/2]+#32*2-#424] Y[#25/2] F5400
+G65 P490005 A#01 C#03 R#18 X#24 Y#25 D#32 F#09 E#08 S#19
 
-N020
-IF[#01EQ1]GOTO021
-IF[#01EQ2]GOTO022
-GOTO023
-
-N021 (for R)
-G65 P490005 A#01 R#18 X#24 Y#25 D#32 F#09 E#08 S#19
-GOTO024
-N022 (for C)
-G65 P490005 A#01 C#03 X#24 Y#25 D#32 F#09 E#08 S#19
-GOTO024
-N023 (for rec or BD only)
-G65 P490005 A#01 X#24 Y#25 D#32 F#09 S#19
-
-N024
-G90 G40 G00 X[[#24/2]+#32*3+#04] F10800
+N016
+G90 G40 G00 X[[#24/2]+#32*3-#424] F10800
 G90 G00 Y[#25/2] F10800
 G42 D#07
 G91 G00 X-[#32/2] F10800
 G90 G01 Z[#26-#13-#23-#422-#423] S#19 F5400
 
-N025
-G90 G01 X[[#24/2]+#32*2+#04] Y[#25/2] F5400
+N017
+G90 G01 X[[#24/2]+#32*2-#424] Y[#25/2] F5400
+G65 P490005 A#01 C#03 R#18 X#24 Y#25 D#32 F#09 E#08 S#19
 
-N026
-IF[#01EQ1]GOTO027
-IF[#01EQ2]GOTO028
-GOTO029
-
-N027 (for R)
-G65 P490005 A#01 R#18 X#24 Y#25 D#32 F#09 E#08 S#19
-GOTO030
-N028 (for C)
-G65 P490005 A#01 C#03 X#24 Y#25 D#32 F#09 E#08 S#19
-GOTO030
-N029 (for rec or BD only)
-G65 P490005 A#01 X#24 Y#25 D#32 F#09 S#19
-
-N030
+N018
 M05 (shujiku kaiten off)
 M09 (coolant off)
 
-N031
+N019
 G90 G40 G00 X[#24+#32*3] F10800
 S200
 G90 G43 G00 H#07 Z[#26+#601] F7200
@@ -195,15 +154,18 @@ N999 M99
 (Local variables)
 
 (as received arguments)
+(#01:A: key type)
+(#03:C: corner C)
 (#07:D: kouguKei&Chou hosei)
 (#13:M: mizoIchi)
 (#18:R: corner R)
+(#21:U: AC gaisakuKei)
+(#22:V: BD gaisakuKei)
 (#23:W: mizoHaba)
-(#24:X: AC gaikei)
-(#25:Y: BD gaikei)
+(#24:X: AC mizoKei)
+(#25:Y: BD mizoKei)
 (#26:Z: sai-furiwake)
 (as received hidden arguments)
-(#04:I: +hosei AC center)
 (#08:E: speed corner R)
 (#09:F: speed chokusenBu)
 (#19:S: kaitenSuu)
@@ -214,7 +176,7 @@ N999 M99
 
 (Common variable)
 (as RHS)
-(#422, #423, #601, #607, #901011, #901105, #901107, #901109, #901111)
+(#422, #423, #424, #425, #601, #607, #901011, #901105, #901107, #901109, #901111)
 
 
 (System variables)
