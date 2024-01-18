@@ -48,21 +48,12 @@ N005 (for rec or BD only)
 IF[#03NE#0]GOTO800
 IF[#18NE#0]GOTO800
 
-N006 (for F)
-IF[#09NE#0]GOTO007
-#09=500.0
-N007 (for E)
-IF[#08NE#0]GOTO008
-#08=400.0
-N008 (for S)
-IF[#19NE#0]GOTO009
-#19=930.0
-N009 (for Q)
-IF[#17NE#0]GOTO010
-#17=0
-N010 (for I)
-IF[#04NE#0]GOTO011
-#04=0
+N006
+IF[#09NE#0]THEN #09=500.0
+IF[#08NE#0]THEN #08=400.0
+IF[#19NE#0]THEN #19=930.0
+IF[#17NE#0]THEN #17=0
+IF[#04NE#0]THEN #04=0
 (default: F=500.)
 (default: E=400.)
 (default: S=930.)
@@ -78,15 +69,15 @@ IF[#19LT200]GOTO800
 (if S < 200, go to N800)
 
 N012
-IF[[#26-#13-#23-#422-#423]LE[#901011/2]]GOTO800
-IF[[ABS[#17]]GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 IF[#07LT6]GOTO800
 IF[#07GT10]GOTO800
+IF[[#26-#13-#23-#422-#423]LE[#901011/2]]GOTO800
+IF[[ABS[#17]]GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 IF[[FIX[#07]]NE#07]GOTO800
 IF[[ABS[#04]]GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
+(if D < 6 or D > 10 or D is not integer, go to N800)
 (if Z-M-W-#422-#423 <= #901011/2, go to N800)
 (if |Q| >= min[X/4, Y/4], go to N800)
-(if D < 6 or D > 10 or D is not integer, go to N800)
 (if |I| >= min[X/4, Y/4], go to N800)
 
 N013
