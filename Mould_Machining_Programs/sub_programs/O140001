@@ -1,6 +1,7 @@
 %
 O140001 (X center: left side measurement)
 
+N001
 #33=#4012
 #32=#5001
 (#33= current work coordinate G#)
@@ -46,14 +47,12 @@ IF[#103LT0]GOTO800
 (if #604 < 0 or #604 > 20.0 or #0, go to N800)
 (if mekki < 0, go to N800)
 
-IF[#03GT0]GOTO001
-(if C > 0, go to N001)
-#31=-1 (for Bot)
-#30=#403
-GOTO002
-N001
-#31=1 (for Top)
-#30=#407
+IF[#03GT0]THEN #31=1
+IF[#03LT0]THEN #31=-1
+(Top: #31=1, Bot: #31=-1)
+IF[#03GT0]THEN #30=#407
+IF[#03LT0]THEN #30=#403
+(Top: #30=#407, Bot: #30=#403)
 
 N002
 #29=[#24/2]-#20+#103
@@ -94,6 +93,7 @@ G90 G31 Z[#26-#512+#30] F1500
 IF[#5003GT[#26-#512+#30]]GOTO802
 (if skip block end Z > tanmen Z -D/2+#30, to N802)
 
+N007
 G91 G31 X[#31*[#29-#512-#603]] F1500
 (X skip: #31*[#29-D/2-#603])
 IF[[ABS[#5001-#32]+0.001]LT[ABS[#29-#512-#603]]]GOTO803
@@ -104,18 +104,11 @@ G91 G31 X[#31*[#603+#604]] F#514
 #900021=#5001+#502+#31*[#512-#501]
 (#900021= block end X +#502+#31*[D/2-#501])
 
-G91 G01 X[#31*[-#29+#512-#501]+#502] F3600
-(X to measured center)
-
-IF[#31EQ1]GOTO007
-G91 G01 X#28 F5400
-(X to center for Bot)
-GOTO008
-N007
-G91 G01 X-#28 F5400
-(X to center for Top)
-
 N008
+G91 G01 X[#31*[-#29+#512-#501]+#502] F5400
+(X to measured center)
+G91 G01 X-[#31*#28] F5400
+(X to measured tanmen center)
 IF[[ABS[#900021-#502]]GE[ABS[#29+#603-#501]]]GOTO800
 (if |#900021-#502|>=|#29-#603-#501|, go to N800)
 

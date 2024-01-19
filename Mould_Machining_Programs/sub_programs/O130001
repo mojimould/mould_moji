@@ -1,6 +1,7 @@
 %
 O130001 (X center of inner measurement)
 
+N001
 #33=#4012
 (#33= current work coordinate G#)
 
@@ -17,9 +18,6 @@ IF[#03EQ0]GOTO800
 (if X <= 0 or #0, go to N800)
 (if Z = #0, go to N800)
 (if C = 0 or #0, go to N800)
-
-IF[#26LE[#901011/2]]GOTO800
-(if Z <= #901011/2, go to N800)
 
 IF[#901011EQ#0]GOTO800
 IF[#901011LE0]GOTO800
@@ -39,14 +37,15 @@ IF[#103LT0]GOTO800
 (if #604 < 0 or #604 > 20.0 or #0, go to N800)
 (if mekki < 0, go to N800)
 
-IF[#03GT0]GOTO001
-(if C > 0, go to N001)
-#32=-1 (for Bot)
-#31=#405
-GOTO002
-N001
-#32=1 (for Top)
-#31=#409
+IF[#26LE[#901011/2]]GOTO800
+(if Z <= #901011/2, go to N800)
+
+IF[#03GT0]THEN #32=1
+IF[#03LT0]THEN #32=-1
+(Top: #32=1, Bot: #32=-1)
+IF[#03GT0]THEN #31=#409
+IF[#03LT0]THEN #31=#405
+(Top: #31=#409, Bot: #31=#405)
 
 N002
 #30=#24/2+#103
@@ -72,16 +71,11 @@ N004
 G91 G01 X#29 F5400
 
 N005
-IF[#09EQ#0]GOTO006
-IF[#09LE0]GOTO006
-IF[#09GT300.0]GOTO006
-(if skip speed F <= 0 or F > 300.0, go to N006)
-GOTO007
+IF[#09EQ#0]THEN #09=#514
+IF[#09LE0]THEN #09=#514
+IF[#09GT300.0]THEN #09=#514
+(if F <= 0 or F > 300.0 or #0, F=#514)
 
-N006
-#09=#514 (skip speed = 50.)
-
-N007
 #28=#5001 (#28= block end X)
 
 IF[#1005EQ1]GOTO801
@@ -97,6 +91,7 @@ G90 G31 Z[#26-#512+#31] F1500
 IF[#5003GT[#26-#512+#31]]GOTO802
 (if skip block end Z > tanmen Z-D/2+#31, to N802)
 
+
 G91 G31 X-[#30-#512-#603] F1500
 (X-: [AC naikei/2 -D/2 -#603])
 IF[[ABS[#5001-#28]+0.001]LT[ABS[#30-#512-#603]]]GOTO803
@@ -107,11 +102,12 @@ G91 G31 X-[#603+#604] F#09
 #900011=#5001-#512+#501+#502
 (#900011= X left side -D/2 +probe hosei)
 
+
 G91 G01 X#603 F3600 (X+: #603)
 IF[[ABS[#900011-#501-#502]]GE[ABS[#30+#603]]]GOTO800
 (if |#900011|>=|X/2+#603|, go to N800)
-
 G90 G01 X#28 F5400 (X to start point)
+
 
 G91 G31 X[#30-#512-#603] F1500
 (X+: [AC gaikei/2 -D/2 -#603])
@@ -123,6 +119,7 @@ G91 G31 X[#603+#604] F#09
 #900012=#5001+#512-#501+#502
 (#900012= X right side +D/2 +probe hosei)
 
+
 G91 G01 X-#603 F3600 (X-: #603)
 IF[[ABS[#900012+#501-#502]]GE[ABS[#30+#603]]]GOTO800
 (if |#900012| >= |X/2+#603| go to N800)
@@ -132,15 +129,12 @@ IF[[ABS[#900012+#501-#502]]GE[ABS[#30+#603]]]GOTO800
 (average: center)
 (difference: width)
 
-IF[#32EQ1]GOTO009
-G90 G01 X[#900013+#29] F5400
-(X to center for Bot)
-GOTO010
-N009
-G90 G01 X[#900013-#29] F5400
-(X to center for Top)
+G90 G01 X#900013 F5400
+(X to measured center)
+G90 G01 X-[#32*#29] F5400
+(X to measured tanmen center)
 
-N010
+
 #[5201+[#33-53]*20]=#5021
 (current work origin X = current machine X)
 
@@ -150,8 +144,6 @@ GOTO999
 
 N801
 #3000=145 (Low battery)
-M00 (ALARM: low battery)
-GOTO999
 
 N803
 G90 G01 X#28 F5400 (X to start point)
