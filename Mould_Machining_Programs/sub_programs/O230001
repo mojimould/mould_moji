@@ -3,8 +3,8 @@ O230001 (for AC dimples measurement)
 (level 3: measurement dimple)
 (I > 0: X+, I < 0: X-)
 
-#767=#5001
-(#767= current work block end X)
+#750=#5001
+(#750= current work block end X)
 
 IF[#04EQ#0]GOTO800
 IF[#04EQ0]GOTO800
@@ -25,18 +25,17 @@ N002
 N003
 G91 G31 X[#33*[#603+#604]] F#514
 (skip X+ or X-: #603+#604, speed #514)
-#768=#5001+#502+#33*[-#501+#512]
-(#768= block end X + hosei probe etc)
-G90 G01 X#767 F3600
+#751=#5001+#502+#33*[-#501+#512]
+(#751= block end X + hosei probe etc)
+G90 G01 X#750 F3600
 (G90 G01 X: to start point)
 GOTO999 (to N999)
 
 N800
 G65 P910002 (sensor OFF)
 #3000=121 (Argument Is Not Assigned)
-M00 (are arguments ok?)
 
-N999 M99 
+N999 M99
 
 (Used Variables and Programs)
 
@@ -57,7 +56,7 @@ N999 M99
 (#514: default skip speed)
 (#603, #604)
 (as LHS)
-(#767, #768)
+(#750, #751)
 
 
 (System variables)
@@ -71,5 +70,5 @@ N999 M99
 
 
 (Used in other programs)
-(#768)
+(#751: O220001)
 %
