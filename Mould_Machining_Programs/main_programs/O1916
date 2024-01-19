@@ -117,7 +117,7 @@ G43 H50 (hosei kouguChou #50)
 
 #100=8922.7 (center curvature R)
 #103=0.07 (Mekki)
-G55 G65 P130001 C-1. X155. Z499.84 W600. F200.
+G55 G65 P130001 C-1. X155. Z499.984 W600. F200.
 (G55: Bot X inside center)
 (C: +: Top, -: Bot)
 (X: Bot AC naikei)
@@ -175,7 +175,8 @@ G57 G65 P130002 C1. Y154.839 Z500.016 F200.
 (Z: Top sai_furiwake)
 (F: skip speed)
 
-IF[#187EQ1]THEN M00
+IF[#187EQ0]GOTO200
+M00
 
 
 N200
@@ -220,13 +221,15 @@ G65 P910002 (sensor OFF)
 N201
 G90 G53 G01 Z0 F7200
 
-IF[#188EQ1]THEN M00
+IF[#188EQ0]GOTO300
+M00
 
 
 N300
 (*** Dimple Kakou Start ***)
 
 
+G49
 G91 G28 Z0
 T31 (Tslot R20)
 M06 (tool exchange)
@@ -254,13 +257,15 @@ G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U
 (U: depth of dimple)
 
 (dimple kakou end)
-IF[#189EQ1]THEN M00
+IF[#189EQ0]GOTO400
+M00
 
 
 N400
 (*** Top Tanmen start ***)
 
 
+G49
 G91 G28 Z0
 T02 (tanmen)
 M06 (tool exchange)
@@ -285,13 +290,15 @@ G57 G65 P410000 C1. D2. X156.863 Y154.839 Z500.016 R19.
 (S*: kaitensuu)
 
 (Top tammen end)
-IF[#190EQ1]THEN M00
+IF[#190EQ0]GOTO410
+M00
 
 
 N410
 (*** Top Gaisaku start ***)
 
 
+G49
 G91 G28 Z0
 T16 (gaisaku)
 M06 (tool exchange)
@@ -325,13 +332,15 @@ M09 (coolant off)
 G91 G28 Z0
 
 (Top gaisaku end)
-IF[#191EQ1]THEN M00
+IF[#191EQ0]GOTO420
+M00
 
 
 N420
 (*** Mizo start ***)
 
 
+G49
 G91 G28 Z0
 T06 (mizo)
 M06 (tool exchange)

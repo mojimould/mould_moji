@@ -36,9 +36,9 @@ IF[#03LT0]THEN #33=#415
 (#33: +hosei: A-men nikuatsu)
 
 N003
-IF[#09NE#0]THEN #09=400
-IF[#08NE#0]THEN #08=400
-IF[#19NE#0]THEN #19=930
+IF[#09EQ#0]THEN #09=400
+IF[#08EQ#0]THEN #08=400
+IF[#19EQ#0]THEN #19=930
 (default: F=400.)
 (default: E=400.)
 (default: S=930.)
@@ -78,7 +78,7 @@ IF[#30LE0]GOTO800
 
 #105=FUP[[#21-#24-#653]/#652]
 #106=FUP[[#22-#25-#653]/#652]
-#107=[#105+#106+ABS[#105-106]]/2
+#107=[#105+#106+ABS[#105-#106]]/2
 IF[#107LT0]GOTO800
 (#107: kakou kaisuu)
 
