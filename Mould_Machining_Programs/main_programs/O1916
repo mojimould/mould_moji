@@ -630,7 +630,7 @@ M00 (tooriShin Y end)
 G90 G53 G01 Z0 F5400
 GOTO990
 
-(error)
+(Alerm)
 N820
 M05 (shujiku kaiten off)
 M09 (coolant off)
