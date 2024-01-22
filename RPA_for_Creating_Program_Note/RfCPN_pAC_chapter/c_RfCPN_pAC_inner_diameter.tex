@@ -1,0 +1,43 @@
+%!TEX root = ../RPA_for_Creating_Program_Note.tex
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 7.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{eテーパの算定\TBW}
+使用する鋼材の種類として、\index{C@C（炭素）}C, \index{Si@Si（ケイ素）}Si, \index{Mn@Mn（マンガン）}Mn, \index{P@P（リン）}P, \index{S@S（硫黄）}Sが含まれている場合を考える。
+\index{JISきかく@JIS規格}JIS規格に基づいた鋼種を用いるものとすれば、その規格によってそれぞれの化学組成の含有量も決定される。
+それぞれの化学組成の含有量($\mathrm{wt}\%$)を$X_\mathrm C$, $X_\mathrm{Si}$, $X_\mathrm{Mn}$, $X_\mathrm P$, $X_\mathrm S$とし、またその影響係数を$k_\mathrm C$, $k_\mathrm{Si}$, $k_\mathrm{Mn}$, $k_\mathrm P$, $k_\mathrm S$とする。
+また、その鋼材の\index{えきそうせんおんど@液相線温度}液相線温度を$T_\mathrm l$[$^\circ\mathrm C$], \index{こそうせんおんど@固相線温度}固相線温度を$T_\mathrm s$[$^\circ\mathrm C$]とする。
+一般にこれらの温度は、ある基準となる温度$T_0$に対して、
+\begin{align*}
+  T = T_0-\sum_i k_iX_i
+\end{align*}
+として与えられる。
+今の場合だと、
+\begin{align*}
+  T_l
+  &= 1536-78X_\mathrm C-7.6X_\mathrm{Si}-4.9X_\mathrm{Mn}-34.4X_\mathrm P-38X_\mathrm S~,\\
+  T_s
+  &= 1536-415.5X_\mathrm C-12.3X_\mathrm{Si}-6.8X_\mathrm{Mn}-124.5X_\mathrm P-183.9X_\mathrm S
+\end{align*}
+となることが知られている\cite{1986KO}。\\
+\addtocontents{lot}{\protect\addvspace{3pt}}{}{}
+\addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
+\modcaptionof{table}{化学組成の含有量}
+\begin{tabular}[t]{|c|c|c|c|c|c|c|}
+  \hline
+  鋼材(wt\%) & C & Si & Mn & P & S
+  \\\hline
+  \index{JISコード}JISコード & 0.1 & 0.5 & 0.6 & 0.7 & 0.8
+  \\\hline
+\end{tabular}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{内側湾曲の近似曲線\TBW}
+(to be written...)

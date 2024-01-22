@@ -1,0 +1,270 @@
+%!TEX root = ./RPA_for_Creating_Program_Note.tex
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadchapter{数値計算}
+基本的に、\index{すうちじょうほう@数値情報}数値情報については数値計算用の言語を用いて行うため、その詳細は別ドキュメントに譲る。
+ここではその\index{すうちけいさん@数値計算}数値計算に必要な部分をピックアップする。
+なお、ここでは主に\DMname について述べるため、スペーサに関するものは省略する。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{振分け}
+テーブルを$-\theta$だけ回転させたときのトップ・ボトム側の\index{ふりわけちょう@振分長}振分長$f'_\mathrm T$, $f'_\mathrm B$は、\eqref{eq:saifuriwake}より、
+\begin{align*}
+  f_\mathrm T' = f_\mathrm T+\varDelta'\!\sin\theta~~, \quad
+  f_\mathrm B' = (f_\mathrm T+f_\mathrm B)-f_\mathrm T'\ .
+\end{align*}
+ジグ（長さ$2l$）からの張出長に換算するならば、それぞれ
+\begin{align*}
+  f_\mathrm T+\varDelta'\!\sin\theta-l~~, \quad
+  (f_\mathrm T+f_\mathrm B)-f_\mathrm T'-l\ .
+\end{align*}
+トップ側とボトム側の振分長が均等かつ平行になるときの\index{かたむきかく（ふりわけよう）@傾き角（振分け用）}回転角$\theta'$は、\pageeqref{eq:saifuriwakeangle}より、
+\begin{align*}
+  \sin\theta' = \frac{f_d}{\varDelta'}\ .
+\end{align*}
+ここで、
+\begin{align*}
+  \varDelta' = \varDelta+\sqrt{R_\mathrm i'-\bar l^2}\ , \quad
+  R_\mathrm i' = R_\mathrm c-\frac{W_x}2-\rho\ ,\quad
+  \bar l = l-\frac\sigma2\ ,\quad
+  f_d = \frac{f_\mathrm B-f_\mathrm T}2\ .
+\end{align*}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{外径・湾曲中心}
+\index{ジグ}ジグの底の$Y$座標を$\varDelta_y$とすると、外中心$Y$座標は、
+\begin{align*}
+  \varDelta_y+\frac{W_y}2\ .
+\end{align*}
+トップ端およびボトム端における（$-\theta$回転後の）\index{そとがわちゅうしん@外側中心}外側中心の$X$位置は、\pageeqref{eq:tableTc}, \pageeqref{eq:tableBc}よりそれぞれ、
+\begin{align*}
+  \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta'\cos\theta~, \quad
+  \varDelta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2\ .
+\end{align*}
+トップ端およびボトム端における（$-\theta$回転後の）\index{わんきょくちゅうしん@湾曲中心}湾曲中心の$X$値は、\pageeqref{eq:tableTRc}, \pageeqref{eq:tableBRc}よりそれぞれ、
+\begin{align*}
+  \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\varDelta'\!\cos\theta~, \quad
+  \varDelta'\!\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}~.
+\end{align*}
+また、（計算上の）\index{うちがわちゅうしん@内側中心}内側中心はこの湾曲中心を持って代用してもよいものとする。
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{外削}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 9.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{外削中心：ボトムA面肉厚基準の場合}
+\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（てーぶるちゅうしん)@P（テーブル中心）}Pを原点としたボトム側外削径の中心$\mathfrak B_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterBt}より、
+\begin{align*}
+  \varDelta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
+  -\frac{w_\mathrm B}2-\tau_\mathrm B+\frac{\mathfrak W_\mathrm B}2\ .
+\end{align*}
+このとき、計測したA側内面b$_\mathrm o'$の$X$座標が\pageeqref{eq:gaisakucenterBr}となるように、原点$\mathfrak B_\mathrm c'$を定める。
+\begin{align*}
+  -\left(\frac{\mathfrak W_\mathrm B}2-\tau_\mathrm B+\mu\right).
+\end{align*}
+トップ側にも外削がある場合、計測で定めた$\mathfrak B_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Bx}$および\index{とおりしん@通り芯}通り芯$T_x$を用いて\pageeqref{eq:BbasedTx}で与えられる。
+\begin{align*}
+  -\mathcal G_{Bx}+T_x\ .
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 9.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{外削中心：トップA面肉厚基準の場合}
+\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（てーぶるちゅうしん)@P（テーブル中心）}Pを原点としたトップ側外削径の中心$\mathfrak T_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterTt}より、
+\begin{align*}
+  \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta'\cos\theta
+  +\frac{w_\mathrm T}2+\tau_\mathrm T-\frac{\mathfrak W_\mathrm T}2\ .
+\end{align*}
+このとき、計測したA側内面t$_\mathrm o'$の$X$座標が\pageeqref{eq:gaisakucenterTr}となるように、原点$\mathfrak T_\mathrm c'$を定める。
+\begin{align*}
+  \frac{\mathfrak W_\mathrm T}2-\tau_\mathrm T+\mu~.
+\end{align*}
+ボトム側にも外削がある場合、計測で定めた$\mathfrak T_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Tx}$および\index{とおりしん@通り芯}通り芯$T_x$を用いて\pageeqref{eq:TbasedTx}で与えられる。
+\begin{align*}
+  -\mathcal G_{Tx}+T_x
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 9.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{外削長}
+\index{がいさくちょう@外削長}外削長に関しては、基本的には\index{ふりわけちょう@振分長}振分長から外削長を引いた位置に$Z$座標を合わせればよい。
+ただし、トップ側において、外削長$h_\mathrm T$が\index{みぞいち@溝位置}溝位置$\kappa_p$と\index{みぞはば@溝幅}溝幅$\kappa_w$の和に一致する場合は、外削長を$\kappa_p+1$mmとして切削する。
+つまり、
+\begin{align*}
+  h_\mathrm T = \kappa_p+\kappa_w \quad \longrightarrow \quad h_\mathrm T+1[\mathrm{mm}]
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 9.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{湾曲に沿った外削\TBW}
+(to be written...)
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{溝}
+\index{みぞいち@溝位置}溝位置$\kappa_p$および\index{みぞはば@溝幅}溝幅$\kappa_w$に対し、\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（てーぶるちゅうしん)@P（テーブル中心）}Pを原点とした\index{みぞちゅうしん@溝中心}溝の中心の$Z$座標は、\pageeqref{eq:mizocenterZ}より
+\begin{align*}
+  f_\mathrm T'-\kappa_p-\frac{\kappa_w}2\ .
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 9.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{湾曲中心が基準の場合}
+トップ端における湾曲中心T$_{R_\mathrm c}'$と溝中心M$'$との$X$方向の差は、\pageeqref{eq:difTopMizoCenter}より、
+\begin{align*}
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+  -\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ .
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 10.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{外削中心が基準の場合}
+\index{みぞちゅうしん@溝中心}溝の中心は\index{トップがわのがいさくちゅうしん@トップ側の外削中心}トップ側の外削中心とする。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 10.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{A側溝深さ指定の場合}
+\paragraph*{外削のない場合}\noindent
+\index{Aがわみぞふかさ@A側溝深さ}A側溝深さ$\kappa_d$に対し、\index{みぞちゅうしん@溝中心}溝中心の位置の$X$座標は\pageeqref{eq:mizocenterA}より、
+\begin{align*}
+  \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}-\kappa_d-\frac{W_{mx}}2
+  -\varDelta\ .
+\end{align*}
+また\index{Aがわがいめん@A側外面}A側外面の\index{じっそくち@実測値}実測値を$G_{mx}$とすると、\pageeqref{eq:mizocenterAd}より、
+\begin{align*}
+  G_{mx}-\frac{W_{mx}}2-\kappa_d\ .
+\end{align*}
+
+
+\paragraph*{外削のある場合}\noindent
+\index{Aがわみぞふかさ@A側溝深さ}A側溝深さ$\kappa_d$に対し、トップ外削$X$中心を$\mathcal G_{\mathrm Tx}$とすると、\index{みぞちゅうしん@溝中心}溝中心の位置の$X$座標は\pageeqref{eq:mizocenterAG}より、
+\begin{align*}
+  \mathcal G_{\mathrm Tx}+\frac{\mathfrak W_x}2-\kappa_d-\frac{W_{mx}}2\ .
+\end{align*}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{外側C面取\TBW}
+(to be written...)
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{内側C面取\TBW}
+(to be written...)
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{座ぐり\TBW}
+(to be written...)
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadchapter{代入する数値\TBW}
+(to be written...)
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}[title={内面溝加工に関する工具(T31, T50)の情報}, fonttitle=\gtfamily\bfseries]
+・タッチセンサープローブの半径：5 \quad ・タッチセンサープローブの軸の半径：3.75\\
+・切削用工具径：40 \quad ・切削用工具シャンク径：25
+\end{tcolorbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}[title={2023/07/28時点の\MMname 実測値}, fonttitle=\gtfamily\bfseries]
+\begin{align*}
+  \text{Bot ($B=0$)}
+  \left\{
+  \begin{array}{rl}
+    X: & 97.790 \sim 99.930\\
+    Y: & -823.850\\
+    Z: & -634.620
+  \end{array}
+  \right.\quad
+  \text{Top ($B=180.$)}
+  \left\{
+  \begin{array}{rl}
+    X: & -97.980 \sim -99.570\\
+    Y: & -823.780\\
+    Z: & -634.720
+  \end{array}
+  \right.
+\end{align*}\\
+・$X$については、ジグの当たる点の凸部と端部（$Z$方向は目分量）\\
+・$Y$については、モールドの底が当たる面\\
+・$Z$については、$X0$ $Y-850.$における、ジグとの接点\\
+※これらの値に、\index{タッチセンサーせんたん@タッチセンサー先端}タッチセンサー先端球の半径を加減する必要がある
+\end{tcolorbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\modHeadsection{}
+%(to be written...)
+
+
+

@@ -1,0 +1,115 @@
+%!TEX root = ../RPA_for_Creating_Program_Note.tex
+
+
+
+トップ・ボトムの両方に外削がある場合を考える。
+通常、それぞれの外削の中心は個別に決められはせず、片方の中心の位置を基準として、もう片方の中心が定められる。
+これらの中心の位置の差（通り芯
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{通常、通り芯(centerline)というのはその名の通り中心線を表すことが多い。
+しかし、ここではトップ側外削中心とボトム側外削中心との位置の差を表す用語として「通り芯」と呼んでいる。}）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$T_x$, $T_y$ ($T_x \geqq 0$)を機内で測定する際は、C面が工具側に向くようにテーブルを$\pm90^\circ$回転（$B$軸回転）し、タッチセンサーを用いてそれぞれの外削部の$Z$座標および$Y$座標を見ることで測定する。
+
+ここでは、この通り芯の測定に必要な位置等について定量的に求める。
+なお、テーブルの中心Pを原点として考えることにする。
+またモールドのC面が工具側に向くように$B$軸を（\verb|G91|にて）$\pm90^\circ$回転した状態であるとする
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{G90（絶対座標）の場合、テーブルを傾けて振分長を調整した場合はその回転角$-\theta$を忘れないよう注意。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 7.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{ボトムの外削が基準の場合}
+通常、トップの外削中心は、ボトムの外削中心よりA面側（$-Z$側）にある。
+このとき、溝位置$\kappa_p$およびボトム側の外削の長さ$h_\mathrm B$ ($h_\mathrm B > 0$)を用いると、ボトム側（$-X$側）およびトップ側（$+X$側）の外削C面の中心
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{トップ側には溝があるので、トップ側の外削の長さは溝位置$\kappa_p$とみなしている。}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+は、それぞれ
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{通常、$Y$方向の通り芯は$T_y=0$である。}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{align*}
+  \text{ボトム側：}\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle -f_\mathrm B'+\frac{h_\mathrm B}2\\[5pt]
+      \mathcal G_{\mathrm By}\\[3pt]
+      \displaystyle \mathcal G_{\mathrm Bx}+\frac{\mathfrak W_\mathrm B}2
+    \end{array}
+    \right]~, \qquad
+  \text{トップ側：}\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle f_\mathrm T'-\frac{\kappa_p}2\\[5pt]
+      \mathcal G_{\mathrm By}-T_y\\[3pt]
+      \displaystyle \mathcal G_{\mathrm Bx}-T_x+\frac{\mathfrak W_\mathrm T}2
+    \end{array}
+  \right].
+\end{align*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 7.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{トップの外削が基準の場合}
+通常、ボトムの外削中心は、トップの外削中心よりC面側（$+Z$側）にある。
+このとき、トップ側（$+X$側）およびボトム側（$-X$側）の外削C面の中心は、それぞれ
+\begin{align*}
+  \text{トップ側：}\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle f_\mathrm T'-\frac{\kappa_p}2\\[5pt]
+      \mathcal G_{\mathrm Ty}\\[3pt]
+      \displaystyle \mathcal G_{\mathrm Tx}+\frac{\mathfrak W_\mathrm B}2
+    \end{array}
+    \right]~, \qquad
+  \text{ボトム側：}\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle -f_\mathrm B'+\frac{h_\mathrm B}2\\[5pt]
+      \mathcal G_{\mathrm Ty}+T_y\\[3pt]
+      \displaystyle \mathcal G_{\mathrm Tx}+T_x+\frac{\mathfrak W_\mathrm B}2
+    \end{array}
+  \right].
+\end{align*}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 7.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{外削前に測定をする場合}
+外削をせずに通り芯($X$)の測定を行うことはない。
+ただ、プログラムの試運転などで動きをみるといった可能性はありうるので、外削を行っていない状態で測定する場合についても述べておく。
+なお、ここでは振分けの調整にスペーサ用いた場合、かつボトムの外削が基準の場合を考える。
+このとき、測定するC側外面の位置は、\pageeqref{eq:tableTi}, \pageeqref{eq:tableBRi}より、
+\begin{align*}
+  \text{トップ側：}
+  \left[
+    \begin{array}{c}
+      \displaystyle f_\mathrm T'-\frac{\kappa_p}2\\[5pt]
+      \mathcal G_{\mathrm By}-T_y\\[3pt]
+      \displaystyle \varDelta'\!\cos\theta-\sqrt{R_\mathrm i^2-\left(f_\mathrm T-\frac{\kappa_p}2\right)^{\!\!2}}
+    \end{array}
+  \right]~, \quad
+  \text{ボトム側：}
+  \left[
+    \begin{array}{c}
+      \displaystyle -f_\mathrm B'+\frac{h_\mathrm B}2\\[5pt]
+      \mathcal G_{\mathrm By}\\[3pt]
+      \displaystyle \varDelta'\!\cos\theta-\sqrt{R_\mathrm i^2-\left(f_\mathrm B-\frac{h_\mathrm B}2\right)^{\!\!2}}
+    \end{array}
+    \right].
+\end{align*}
+なお、これらの$Z$座標の差は以下で与えられる。
+\begin{align*}
+  \sqrt{R_\mathrm i^2-\left(f_\mathrm T-\frac{\kappa_p}2\right)^{\!\!2}}
+  -\sqrt{R_\mathrm i^2-\left(f_\mathrm B-\frac{h_\mathrm B}2\right)^{\!\!2}}~.
+\end{align*}

@@ -1,0 +1,226 @@
+%!TEX root = ../RPA_for_Creating_Program_Note.tex
+\setcounter{lstlisting}{0}
+
+ここでは具体的に作成したプログラムを記載する。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{メインプログラムの例}
+\addtocontents{lol}{\protect\addvspace{3pt}}{}{}
+\addcontentsline{lol}{section}{\numberline{\thesection}\Sectionname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MXOThickness %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MainEx}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/main_programs/\MainEx}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{測定用（内面溝除く）プログラム}
+\addtocontents{lol}{\protect\addvspace{3pt}}{}{}
+\addcontentsline{lol}{section}{\numberline{\thesection}\Sectionname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MXOThickness %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MXOThickness\,:測定 外側中心\texorpdfstring{$X$}{X}}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\MXOThickness}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MYOThickness %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MYOThickness\,:測定 外側中心\texorpdfstring{$Y$}{Y}}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\MYOThickness}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MXIWidth %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MXIWidth\,:測定 内側中心\texorpdfstring{$X$}{X}}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\MXIWidth}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MYIWidth %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MYIWidth\,:測定 内側中心\texorpdfstring{$Y$}{Y}}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\MYIWidth}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MXface %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MXface\,:測定 \texorpdfstring{$-X$}{-X}方向基準面}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\MXface}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MYcenterline %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MYcenterline\,:測定 通り芯\texorpdfstring{$Y$}{Y}}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\MYcenterline}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MXcenterline  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MXcenterline\,:測定 通り芯\texorpdfstring{$X$}{X}}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\MXcenterline}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{加工用（内面溝除く）サブプログラム}
+\addtocontents{lol}{\protect\addvspace{10pt}}{}{}
+\addcontentsline{lol}{section}{\numberline{\thesection}\Sectionname}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KTanmenRight %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KTanmenRight\,:加工 端面用 コーナーR 右回り1周}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\KTanmenRight}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KGaisakuRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KGaisakuRLeft\,:加工 外削用 コーナーR 左回り1周}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\KGaisakuRLeft}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KMizoConerLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KMizoConerLeft\,:加工 溝用 左回り1周}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\KMizoConerLeft}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KSotoMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KSotoMentoriRLeft\,:加工 外面取用 コーナーR 左回り1周}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\KSotoMentoriRLeft}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KUchiMentoriRLeft\,:加工 内面取用 コーナーR 左回り1周}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\KUchiMentoriRLeft}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KOLeft\,:外側 左回り1周}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\KOLeft}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{内面溝用 移動・測定・加工用プログラム}
+\addtocontents{lol}{\protect\addvspace{10pt}}{}{}
+\addcontentsline{lol}{section}{\numberline{\thesection}\Sectionname}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \DLone %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\DLone\,:内面溝 移動 各列の中心上}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\DLone}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \DLtwoAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\DLtwoAC\,:内面溝 移動 AC面 列内の各内面溝上}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\DLtwoAC}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \DLtwoBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\DLtwoBD\,:内面溝 移動 BC面 列内の各内面溝上}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\DLtwoBD}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \DMLthreeAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\DMLthreeAC\,:内面溝 測定 AC内表面\texorpdfstring{$X$}{X}}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\DMLthreeAC}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \DMLthreeBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\DMLthreeBD\,:内面溝 測定 BD内表面\texorpdfstring{$Y$}{Y}}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\DMLthreeBD}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \DKLthreeAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\DKLthreeAC\,:内面溝 加工 AC内表面\texorpdfstring{$X$}{X}}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\DKLthreeAC}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \DKLthreeBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\DKLthreeBD\,:内面溝 加工 BD内表面\texorpdfstring{$Y$}{Y}}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\DKLthreeBD}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{その他のサブプログラム}
+\addtocontents{lol}{\protect\addvspace{10pt}}{}{}
+\addcontentsline{lol}{section}{\numberline{\thesection}\Sectionname}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \OsensorOn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\OsensorOn\,:タッチセンサー電源ON}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\OsensorOn}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \OsensorOff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\OsensorOff\,:タッチセンサー電源OFF}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\OsensorOff}

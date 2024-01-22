@@ -1,0 +1,319 @@
+%!TEX root = ../RPA_for_Creating_Program_Note.tex
+
+\makeatletter
+
+\input{RfCPN_preamble/RfCPN_pictures}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DATE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\customtoday}{\the\year/\two@digits{\the\month}/\two@digits{\the\day}}
+\newcommand{\customdate}{\customtoday\ \currenttime\ (\jadayofweek{\the\year}{\the\month}{\the\day})}
+\newcommand{\customtodayap}{\ifnum\currenthour<12 \customtoday\,a.m.\else\customtoday\,p.m.\fi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% NEWIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\if@backmatter%\@backmattertrue
+\newif\if@frontmatter%\@frontmattertrue
+\newif\if@appendix%\@appendixfalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DIMENSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifluatex
+  \usepackage{luatexja}
+  \ltjsetparameter{kanjiskip=0.0pt plus 0.4pt minus 0.5pt}
+  \ltjsetparameter{xkanjiskip=2.40555pt plus 1.0pt minus 1.0pt}
+  \newcommand{\hk}{\hspace{\ltjgetparameter{kanjiskip}}}
+  \newcommand{\hx}{\hspace{\ltjgetparameter{xkanjiskip}}}
+\else
+  \setlength{\kanjiskip}{0.0pt plus 0.4pt minus 0.5pt}
+  \setlength{\xkanjiskip}{2.40555pt plus 1.0pt minus 1.0pt}
+  \newcommand{\hk}{\hspace{\kanjiskip}}
+  \newcommand{\hx}{\hspace{\xkanjiskip}}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% CDOTFILL LIKE TOC %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand\cdotfill{%
+%  \leaders\hbox{$\m@th\mkern\@dotsep mu\hbox{$\cdot$}\mkern \@dotsep mu$}\hfill\kern\z@
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% COLOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ai}     {rgb}{0.2039, 0.3765, 0.4314}
+\definecolor{kon}    {rgb}{0.0000, 0.2000, 0.4000}
+\definecolor{konpeki}{rgb}{0.0902, 0.5098, 0.7333}
+\definecolor{moegi}  {rgb}{0.3020, 0.5961, 0.1882}
+\definecolor{sssec}  {rgb}{0.7333, 0.5, 0.7333}
+\definecolor{sora}   {rgb}{0.1451, 0.7216, 0.8039}
+\definecolor{sumire} {rgb}{0.3882, 0.2157, 0.5922}
+\definecolor{wwqqcc} {rgb}{0.4, 0, 0.8}
+\definecolor{qqzzqq} {rgb}{0, 0.6, 0}
+\definecolor{ffwwqq} {rgb}{1, 0.4, 0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% REF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% AUTOREFNAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand{\subfigureautorefname}{\figureautorefname} % subfigure --> figure
+%\newcommand{\subtableautorefname}{\tableautorefname}
+%%%%% PAGEREF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\pageautoref}[1]{%
+  \ifthenelse{\equal{\pageref{#1}}{\thepage}}%
+    {\autoref{#1}}%
+    {\autoref{#1}~[p.\pageref{#1}]}%
+}
+\newcommand{\pageeqref}[1]{%
+  \ifthenelse{\equal{\pageref{#1}}{\thepage}}%
+    {\eqref{#1}}%
+    {\eqref{#1}~[p.\pageref{#1}]}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR LISTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% CAPTOINOF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\abovecaptionskip}{0pt}
+\newcommand{\modcaptionof}[2]{%
+  \captionof{#1}{%
+    \csname #1name\endcsname\thechapter.%
+    \ifnum\value{#1}<10 0\fi
+      \arabic{#1}. #2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TOC LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\PartSeparateline[1]{\addtocontents{#1}{\protect\par\protect\hrulefill\protect\par\protect\vspace*{-10pt}}}%
+\newcommand\tocAPartSeparateline[3]{\addtocontents{#1}{\protect\par\protect\vspace*{#2}\protect\hrule width 0.5\linewidth\protect\par\protect\vspace*{#3}}}%
+%\newcommand\tableAPartSeparateline{\tocAPartSeparateline{lot}{2pt}{2pt}}
+%%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Appendixpart}{
+  \part*{\partname\ \thepart\hx の補遺\label{Apart:\thepart}}
+  \addcontentsline{toc}{part}{\partname\ \thepart\hx の補遺}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% AUTO LABELING %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR CHAPTER OR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\modHeadchapter}[2][]{%
+  \ifx\relax#1\relax
+    \ifx\@chapapp\appendixname
+      \chapter{#2\label{app:\thechapter}}%
+    \else
+      \chapter{#2\label{chap:\thechapter}}%
+    \fi
+  \else%
+    \ifx\@chapapp\appendixname
+      \chapter[#1]{#2\label{app:\thechapter}}%
+    \else
+      \chapter[#1]{#2\label{chap:\thechapter}}%
+    \fi
+  \fi
+  \thispagestyle{main}%
+  \indentspace%
+}
+%%%%% FOR SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TO LABEL SECTION  %%%%%%
+\newcommand{\modHeadsection}[2][]{%
+  \ifx\relax#1\relax
+    \section{#2\label{sec:\thesection}}%
+  \else%
+    \section[#1]{#2\label{sec:\thesection}}%
+  \fi
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% NEWCOLORBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{GlobalFootnote}% difine a counter Global Footnote
+%%%%% PART %%%%%
+\newcommand{\tablePartnname}{\thepart}
+\newtcolorbox[auto counter, number within=part]{tablePart}[2][]{Columnbox, title={\termblue{\tablePartnname：#2}}, #1, after title={}}
+%%%%% COLUMN %%%%%
+\newcommand{\Columnname}{Column}
+\newtcolorbox[auto counter, number within=chapter, list inside=loC]{Column}[2][]{%
+  Columnbox, title={#2}, #1, list entry={\numberline{\Columnname~\thetcbcounter}{\protect\hspace*{41pt}#2}}}
+%\newcommand{\tcb@cnt@Columnautorefname}{Column}
+%%%%% FIGBOX %%%%%
+\newtcolorbox{Figbox}[1][]{Figurebox, #1}
+%%%%% TABBOX %%%%%
+\newtcolorbox{Tabbox}[1][]{Tabularbox, #1}
+%\renewcommand{\tableautorefname}{表}
+%%%%% HOSOKU %%%%%
+\newcommand{\hosokuname}{補}
+\definecolor{hosoku}{cmyk}{0, 0, 0, .15}
+\newtcolorbox[auto counter, number within=chapter]{hosoku}[1][]{hosokubox, #1}
+\newcommand{\tcb@cnt@hosokuautorefname}{補足}
+%%%%% TWOCTABLE %%%%%
+\newtcolorbox[number within=chapter]{twoCtable}[2][]{twoCtablebox, title={#2}, #1}
+%%%%% OTHER TIKZ DEFINITION %%%%%%%%%%%%%%%%%%
+\def\pgfname{\textsc{pgf}}
+\def\tikzname{Ti\textit{k}Z}
+\tikzfading[name=fade ball, inner color=transparent!60, outer color=transparent!30]
+\def\sball#1{\tikz \shade [ball color=#1, path fading=fade ball] (0,0) circle (.7ex);}
+\def\terminal#1#2{\tikz[baseline=(a.base)] \node (a) [terminal, bottom color=#2] {\small #1};}
+\def\termblue#1{\terminal{\color{blue}\fontsize{8pt}{0pt}\textbf{#1}}{gray!25}\hskip6pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DECLARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DECLAREMATHOPERATOR %%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\IP}{Im}
+\DeclareMathOperator{\RP}{Re}
+%%%%% DECLAREROBUSTCOMMAND %%%%%%%%%%%%%%%%%%%%
+\DeclareRobustCommand{\bDiv}{\nonscript\mskip-\medmuskip\mkern5mu\mathbin
+  {\operator@font div}\penalty900
+  \mkern5mu\nonscript\mskip-\medmuskip}
+\DeclareRobustCommand{\pod}[1]{\allowbreak
+  \if@display\mkern18mu\else\mkern8mu\fi(#1)}
+\DeclareRobustCommand{\pDiv}[1]{\pod{{\operator@font div}\mkern6mu#1}}
+\DeclareRobustCommand{\Div}[1]{\allowbreak\if@display\mkern18mu
+  \else\mkern12mu\fi{\operator@font div}\,\,#1}
+%%%%% DECLARENEWTOC %%%%%%%%%%%%%%%%%%%%
+\DeclareNewTOC[owner=\jobname, name=Part]{lop}
+\DeclareNewTOC[owner=\jobname, name=Column]{loC}
+%%%%% DECLARENEWLAYER %%%%%%%%%%%%%%%%%%%%
+\newcommand{\setallpageWatermark}[4]{%
+  \DeclareNewLayer[
+    foreground,
+    page,
+    contents={%
+      \begin{tikzpicture}[remember picture, overlay]
+        \node[rotate=#2, scale=#3, anchor=center, opacity=#4, text=lightgray] at (current page.center){\scshape#1};%
+      \end{tikzpicture}%
+    }%
+  ]{WatermarkLayer}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% LINK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% LINK NAME %%%%%%%%%%%%%%%%%%
+\newcommand{\linkLaTeX}{\href{https://www.latex-project.org/}{\LaTeX}}
+\newcommand{\linkLaTeXProject}{\href{https://www.latex-project.org/}{\LaTeX\ Project}}
+\newcommand{\linkAMS}{\href{https://www.latex-project.org/}{American Mathematical Society}}
+\newcommand{\linkTeXLive}{\href{https://tug.org/texlive/}{\TeX\ Live}}
+\newcommand{\linkTeXUsersGroup}{\href{http://www.tug.org/}{\TeX\ Users Group}}
+\newcommand{\linkBibLaTeX}{\href{https://ctan.org/pkg/biblatex}{Bib\LaTeX}}
+\newcommand{\linkBiber}{\href{https://ctan.org/pkg/biber}{Biber}}
+\newcommand{\linkupmendex}{\href{https://ctan.org/pkg/upmendex}{upmendex}}
+\newcommand{\linkPGFTikZ}{\href{https://github.com/pgf-tikz/pgf}{\pgfname/\tikzname}}
+\newcommand{\linkTeXStudio}{\href{https://texstudio.org/}{\TeX\ Studio}}
+\newcommand{\linkSumatraPDF}{\href{https://www.sumatrapdfreader.org/}{Sumatra PDF}}
+\newcommand{\linkVSCode}{\href{https://code.visualstudio.com/}{VS Code}}
+\newcommand{\linkExcel}{\href{https://www.microsoft.com/ja-jp/microsoft-365/excel}{Excel}}
+\newcommand{\linkMicrosoftCopilot}{\href{https://www.bing.com/}{Microsoft Copilot}}
+\newcommand{\linkMicrosoftCorp}{\href{https://www.microsoft.com/}{Microsoft Corporation}}
+\newcommand{\linkPython}{\href{https://www.python.org/}{Python}}
+\newcommand{\linkPythonSF}{\href{https://www.python.org/psf-landing/}{Python Software Foundation}}
+\newcommand{\linkGitHub}{\href{https://github.com/}{GitHub}}
+\newcommand{\linkGitHubInc}{\href{https://github.com/}{GitHub, Inc}}
+\newcommand{\linkDocker}{\href{https://www.docker.com/}{Docker}}
+\newcommand{\linkDockerInc}{\href{https://www.docker.com/}{Docker, Inc}}
+\newcommand{\linkUbuntu}{\href{https://ubuntu.com/}{Ubuntu}}
+\newcommand{\linkCanonicalLtd}{\href{https://canonical.com/}{Canonical Ltd}}
+\newcommand{\linkSQLite}{\href{https://www.sqlite.org/}{SQLite}}
+\newcommand{\linkSQLiteConsortium}{\href{https://www.sqlite.org/consortium.html}{SQLite Consortium}}
+\newcommand{\linkChatGPT}{\href{https://openai.com/chatgpt}{ChatGPT}}
+\newcommand{\linkOpenAI}{\href{https://www.openai.com/}{OpenAI}}
+%\newcommand\nextsectionlink[1]{\addtocounter{section}\@ne
+%                               \hyperlink{section.\thechapter.\the\c@section}{#1}%
+%                               \addtocounter{section}{-\@ne}}
+%\newcommand\previoussectionlink[1]{\addtocounter{section}{-\@ne}
+%                                   \hyperlink{section.\thechapter.\the\c@section}{#1}%
+%                                   \addtocounter{section}{\@ne}}
+%\newcommand\previouschapterlink[1]{\addtocounter{chapter}{-\@ne}
+%                                   \hyperlink{chapter.\the\c@chapter}{#1}%
+%                                   \addtocounter{chapter}{\@ne}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TO GET CHAPTER TITLE %%%%%%
+\newcommand\Chaptername{} % initialize \Chaptername
+\let\old@chapter\@chapter
+\def\@chapter[#1]#2{\gdef\Chaptername{#2}\old@chapter[#1]{#2}}
+%%%%% TO GET SECTION TITLE %%%%%%
+\newcommand\Sectionname{} % initialize \Sectionname
+\let\Sectionmark\sectionmark
+\def\sectionmark#1{\def\Sectionname{#1}\Sectionmark{#1}}
+%%%%% TO PRG NAME %%%%%%
+\newcommand\MainEx{O1916} % an example for main program
+\newcommand\MXOThickness{O110001} % X外側中心計測
+\newcommand\MYOThickness{O110002} % Y外側中心計測
+\newcommand\MXIWidth{O130001} % X内側中心計測
+\newcommand\MYIWidth{O130002} % Y内側中心計測
+\newcommand\MXface{O140001} % 外削X基準面計測
+\newcommand\MYcenterline{O150002} % 通り芯Y
+\newcommand\MXcenterline{O150003} % 通り芯X（Z測定）
+\newcommand\DLone{O210003} % 内面溝用 レベル1
+\newcommand\DLtwoAC{O220001} % 内面溝用 レベル2 AC
+\newcommand\DLtwoBD{O220002} % 内面溝用 レベル2 BD
+\newcommand\DMLthreeAC{O230001} % 内面溝 測定用 レベル3 AC
+\newcommand\DMLthreeBD{O230002} % 内面溝 測定用 レベル3 BD
+\newcommand\KTanmenRight{O410000} % 端面用 右回り
+\newcommand\KGaisakuRLeft{O420000} % 外側 左回り
+\newcommand\KMizoConerLeft{O430000} % 溝用 左回り
+\newcommand\KSotoMentoriRLeft{O440000} % 外側面取用 左回り
+\newcommand\KUchiMentoriRLeft{O450000} % 内側面取用 左回り
+\newcommand\KOLeft{O490005} % 外 左回り
+\newcommand\DKLthreeAC{O530001} % 内面溝 加工用 レベル3 AC
+\newcommand\DKLthreeBD{O530002} % 内面溝 加工用 レベル3 BD
+\newcommand\OsensorOn{O910001} % タッチセンサーON
+\newcommand\OsensorOff{O910002} % タッチセンサーOFF
+%%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
+\newcommand{\DMname}{Dマシニング}
+\newcommand{\MMname}{Mマシニング}
+%%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%
+\newcommand\ttNum{\ifmmode{\text{\texttt\#}}\else\texttt\#\fi}
+\newcommand\cf{{\itshape cf.\,}}
+\newcommand{\TBW}{\texorpdfstring{\small{\color{red}\,*}}{}}
+%%%%% FOR PART WITH TABLE %%%%%%%%%%%%%%%%%%
+\newcommand{\tPart}[4][]{
+%  \begingroup
+  \@openrightfalse
+  \let\oldnewpage\newpage
+  \let\newpage\relax
+  \part{#2\label{part:\thepart}}
+  \addcontentsline{lop}{part}{\protect\numberline{\thepart}#2}%
+  \ifx#1\relax\else\addcontentsline{#1}{part}{\protect\numberline{\thepart}#2}\fi
+  \let\newpage\oldnewpage
+  \clearpage
+  \@openrightfalse
+  \thispagestyle{emptydate}
+  \vspace*{0.1\textheight}%
+  \begin{tablePart}{#3}
+  #4
+  \end{tablePart}%
+  \@openrightfalse
+  \@mainmattertrue\pagestyle{main}
+%  \endgroup
+}
+%%%%% NOTATION TABLE %%%%%%%%%%%%%%%%%%
+\newenvironment{Notation}[2]
+{%
+  \rowcolors{3}{gray!10}{white}
+  \setlength\cellspacetoplimit{4pt}
+  \setlength\cellspacebottomlimit{4pt}
+  \if\relax\detokenize{#1}\relax
+  \else
+    \captionsetup{justification=centering}
+    \setlength{\abovecaptionskip}{-7pt}
+    \modcaptionof{table}{#1} % 追加したキャプション
+    \addtocounter{table}{-1}
+  \fi
+  \begin{longtable}{|c|Sl|c|}
+  \hline
+  \rowcolor{orange!20}
+  \textbf{記号} & \textbf{内容}\hspace*{0.75\textwidth} & \textbf{#2}\\
+  \hline
+  \endfirsthead
+  \hline
+  \rowcolor{orange!20}
+  \textbf{記号} & \textbf{内容} & \textbf{#2}\\
+  \hline
+  \endhead
+  \hline
+  \multicolumn{3}{|r|}{\scriptsize 次ページへ続く} \\
+  \hline
+  \endfoot
+  \hline
+  \endlastfoot
+}
+{%
+  \end{longtable}
+}
