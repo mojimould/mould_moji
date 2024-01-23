@@ -1,6 +1,7 @@
 %
 O130002 (Y center of inner measurement)
 
+N001
 #33=#4012
 (#33= current work coordinate G#)
 
@@ -36,14 +37,12 @@ IF[#103LT0]GOTO800
 (if #604 < 0 or #604 > 20.0 or #0, go to N800)
 (if mekki < 0, go to N800)
 
-IF[#03GT0]GOTO001
-(if C > 0, go to N001)
-#32=-1 (for Bot)
-#31=#406
-GOTO002
-N001
-#32=1 (for Top)
-#31=#410
+IF[#03GT0]THEN #32=1
+IF[#03LT0]THEN #32=-1
+(Top: #32=1, Bot: #32=-1)
+IF[#03GT0]THEN #31=#411
+IF[#03LT0]THEN #31=#406
+(Top: #31=#411, Bot: #31=#406)
 
 N002
 #30=#25/2+#103
@@ -52,14 +51,11 @@ IF[[#30-#512-#603]LE0]GOTO800
 IF[[ABS[#31]]GT#26/2]GOTO800
 (if |#31| > Z/2, go to N800)
 
-IF[#09EQ#0]GOTO003
-IF[#09LE0]GOTO003
-IF[#09GT300.0]GOTO003
-(if skip speed F <= 0 or F > 300.0, go to N003)
-GOTO004
-
 N003
-#09=#514 (skip speed = 50.)
+IF[#09EQ#0]THEN #09=#514
+IF[#09LE0]THEN #09=#514
+IF[#09GT300.0]THEN #09=#514
+(if F <= 0 or F > 300.0 or #0, F=#514)
 
 N004
 #29=#5002
@@ -156,7 +152,7 @@ N999 M99
 (as LHS)
 (#900016, #900017, #900018, #900019)
 (as RHS)
-(#406, #410, #601, #603, #604, #901011)
+(#406, #411, #601, #603, #604, #901011)
 (#501: hosei: touch sensor signal delay)
 (#503: hosei: probe center Y)
 (#512: probe radius)

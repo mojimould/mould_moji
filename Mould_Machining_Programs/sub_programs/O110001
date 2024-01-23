@@ -1,6 +1,7 @@
 %
 O110001 (X center of outer measurement)
 
+N001
 #33=#4012
 #32=#5001
 (#33= current work coordinate G#)
@@ -14,8 +15,11 @@ IF[#33GT59]GOTO800
 IF[#24EQ#0]GOTO800
 IF[#24LE0]GOTO800
 IF[#26EQ#0]GOTO800
+IF[#03EQ#0]GOTO800
+IF[#03EQ0]GOTO800
 (if X <= 0 or #0, go to N800)
 (if Z = #0, go to N800)
+(if C = 0 or #0, go to N800)
 
 IF[#26LE[#901011/2]]GOTO800
 (if Z <= #901011/2, go to N800)
@@ -39,16 +43,13 @@ IF[#604GT20]GOTO800
 (if #603 <= 0 or #0, go to N800)
 (if #604 < 0 or #604 > 20.0 or #0, go to N800)
 
-IF[#03GT0]GOTO001
-(if C > 0, go to N001)
-#31=-1 (for Bot)
-#30=#403
-GOTO002
-N001
-#31=1 (for Top)
-#30=#407
-
 N002
+IF[#03GT0]THEN #31=1
+IF[#03LT0]THEN #31=-1
+(Top: #31=1, Bot: #31=-1)
+IF[#03GT0]THEN #30=#408
+IF[#03LT0]THEN #30=#403
+(Top: #30=#408, Bot: #30=#403)
 IF[[ABS[#30]]GT[#26/2]]GOTO800
 (if |#30| > Z/2, go to N800)
 
@@ -69,24 +70,20 @@ N004
 G91 G01 X#29 F5400
 
 N005
-IF[#09EQ#0]GOTO006
-IF[#09LE0]GOTO006
-IF[#09GT300.0]GOTO006
-(if skip speed F <= 0 or F > 300.0, go to N006)
-GOTO007
+IF[#09EQ#0]THEN #09=#514
+IF[#09LE0]THEN #09=#514
+IF[#09GT300.0]THEN #09=#514
+(if F <= 0 or F > 300.0 or #0, F=#514)
 
 N006
-#09=#514 (skip speed = 50.)
-
-N007
 IF[#1005EQ1]GOTO801
-IF[#1004EQ1]GOTO008
+IF[#1004EQ1]GOTO007
 (if low battery, go to N801)
-(if current sensor ON, go to N008)
+(if current sensor ON, go to N007)
 M117 (sensor on/off)
 G04 X1. (wait 1.0s)
 
-N008
+N007
 G91 G01 X-[[#24/2]+#512+#603] F5400
 (X-: [AC gaikei/2 + D/2 + #603])
 
@@ -132,15 +129,15 @@ IF[[ABS[#900002-#501-#502]]LE[ABS[[#24/2]-#603]]]GOTO800
 (average: center)
 (difference: thickness)
 
-IF[#31EQ1]GOTO009
+IF[#31EQ1]GOTO008
 G90 G01 X[#900003+#29] F5400
 (X to center for Bot)
-GOTO010
-N009
+GOTO009
+N008
 G90 G01 X[#900003-#29] F5400
 (X to center for Top)
 
-N010
+N009
 #[5201+[#33-53]*20]=#5021
 (current work origin X = current machine X)
 
@@ -181,7 +178,7 @@ N999 M99
 (as LHS)
 (#900001, #900002, #900003, #900004)
 (as RHS)
-(#403, #407, #601, #603, #604, #901011)
+(#403, #408, #601, #603, #604, #901011)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)
