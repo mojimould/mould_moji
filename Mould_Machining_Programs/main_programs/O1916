@@ -212,8 +212,6 @@ G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U
 (M: number of rows)
 (U: depth of dimple)
 
-(dimple mesurement end)
-
 M117 (sensor on/off)
 G04 X1.
 IF[#1004EQ0]GOTO201
@@ -221,6 +219,7 @@ G65 P910002 (sensor OFF)
 N201
 G90 G53 G01 Z0 F7200
 
+(dimple mesurement end)
 IF[#188EQ0]GOTO300
 M00
 
@@ -371,11 +370,12 @@ G56 G65 P430000 D6. A1. C#0 R14. X172.90 Y172.90 U180.95 V180.95 Z500.016 M12.05
 (S*: kaitenSuu)
 
 (mizo kakou end)
+IF[#192EQ0]GOTO430
+M00
 
 
 N430
 (*** Top SotoMentori start ***)
-/M00
 
 
 G91 G28 Z0
@@ -409,6 +409,8 @@ M09 (coolant off)
 G91 G28 Z0
 
 (Top SotoMentori end)
+IF[#193EQ0]GOTO500
+M00
 
 
 N500
@@ -446,6 +448,8 @@ M09 (coolant off)
 G91 G28 Z0
 
 (Bottom tammen end)
+IF[#196EQ0]GOTO510
+M00
 
 
 N510
@@ -486,6 +490,8 @@ M09 (coolant off)
 G91 G28 Z0
 
 (Bottom gaisaku end)
+IF[#197EQ0]GOTO520
+M00
 
 
 N520
@@ -523,6 +529,8 @@ M05 (shujiku kaiten off)
 M09 (coolant off)
 
 (Bottom SotoMentori end)
+IF[#198EQ0]GOTO530
+M00
 
 
 N530
@@ -564,15 +572,19 @@ M09 (coolant off)
 G91 G28 Z0
 
 (Bottom Uchimentori end)
+IF[#199EQ0]GOTO150
+M00
+
 
 (Kakou Owari)
 
 
+N150
 IF[#401EQ0]GOTO990
 (if #401=0, go to N990)
 
 
-N150
+N151
 (*** TooriShin X start ***)
 M00
 
