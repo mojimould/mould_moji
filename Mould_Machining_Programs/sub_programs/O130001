@@ -11,31 +11,36 @@ IF[#33GT59]GOTO800
 (if work G# > 59 go to N800)
 
 IF[#24EQ#0]GOTO800
-IF[#24LE0]GOTO800
+IF[#24LT10]GOTO800
 IF[#26EQ#0]GOTO800
+IF[#18EQ#0]GOTO800
+IF[#13EQ#0]GOTO800
+IF[#13LT0]GOTO800
+IF[#13GT10]GOTO800
 IF[#03EQ#0]GOTO800
 IF[#03EQ0]GOTO800
-(if X <= 0 or #0, go to N800)
+(if X < 10 or #0, go to N800)
 (if Z = #0, go to N800)
+(if R = #0, go to N800)
+(if M < 0 or M > 10 or #0, go to N800)
 (if C = 0 or #0, go to N800)
 
 IF[#901011EQ#0]GOTO801
 IF[#901011LE0]GOTO801
 IF[#512EQ#0]GOTO801
 IF[#512LE0]GOTO801
+IF[#514EQ#0]GOTO801
 IF[#514NE50]GOTO801
 IF[#603EQ#0]GOTO801
 IF[#603LE0]GOTO801
 IF[#604EQ#0]GOTO801
 IF[#604LT0]GOTO801
 IF[#604GT20]GOTO801
-IF[#103LT0]GOTO801
 (if #901011 <= 0 or #0 go to N801)
 (if #512 <= 0 or #0, go to N801)
-(if #514 is not 50.0, go to N801)
+(if #514 is not 50.0 or #0, go to N801)
 (if #603 <= 0 or #0, go to N801)
 (if #604 < 0 or #604 > 20.0 or #0, go to N801)
-(if mekki < 0, go to N801)
 
 IF[#26LE[#901011/2]]GOTO810
 (if Z <= #901011/2, go to N810)
@@ -48,20 +53,20 @@ IF[#03LT0]THEN #31=#405
 (Top: #31=#410, Bot: #31=#405)
 
 N002
-#30=#24/2+#103
+#30=#24/2+#13
 IF[[#30-#512-#603]LE0]GOTO811
-(if X/2+mekki-D/2-#603 <= 0 go to N811)
+(if X/2+M-D/2-#603 <= 0 go to N811)
 IF[#31EQ#0]GOTO005
 (if #31 is #0, go to N005)
 
 N003
 #29=0 (#29: X +hosei)
 IF[#23LT10]GOTO802
-IF[#100LT10]GOTO802
+IF[#18LT10]GOTO802
 IF[[ABS[#31]]GE[#23/2]]GOTO812
 (if W,R < 10, go to N802)
 (if |#31| >= W/2, go to N812)
-#29=SQRT[#100*#100-[#23+#31]*[#23+#31]]-SQRT[#100*#100-#23*#23]
+#29=SQRT[#18*#18-[#23+#31]*[#23+#31]]-SQRT[#18*#18-#23*#23]
 IF[[ABS[#29]]GE[#24/2]]GOTO812
 (if |#29| >= X/2, go to N812)
 IF[#32EQ1]GOTO004
@@ -163,6 +168,8 @@ N999 M99
 (as received arguments)
 (#03:C: +: for Top, -: for Bot)
 (#09:F: skip speed)
+(#13:M: mekki mm)
+(#18:R: central curvature)
 (#23:W: ori_furiwake)
 (#24:X: X inside width)
 (#26:Z: sai-furiwake)
@@ -175,12 +182,11 @@ N999 M99
 (as LHS)
 (#900011, #900012, #900013, #900014)
 (as RHS)
-(#100, #405, #410, #601, #603, #604, #901011)
+(#405, #410, #601, #603, #604, #901011)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)
 (#514: default skip speed)
-(#103: mekki mm)
 
 
 (System variables)
