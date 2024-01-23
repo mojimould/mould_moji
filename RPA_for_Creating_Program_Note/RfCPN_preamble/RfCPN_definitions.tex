@@ -17,6 +17,32 @@
 \newif\if@frontmatter%\@frontmattertrue
 \newif\if@appendix%\@appendixfalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% CLEARLEFTPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\thispageNum}{\the\value{page}}
+\newcommand{\clearleftpage}{%
+  \if@twoside%
+    \ifodd\thispageNum%
+      \clearpage%
+    \else
+      \cleardoublepage%
+    \fi
+  \else%
+    \clearpage%
+  \fi
+}
+\newcommand{\clearrightpage}{%
+  \if@twoside%
+    \ifodd\thispageNum%
+      \cleardoublepage%
+    \else%
+      \clearpage%
+    \fi
+  \else%
+    \clearpage%
+  \fi
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% DIMENSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifluatex
@@ -86,6 +112,7 @@
 %\newcommand\tableAPartSeparateline{\tocAPartSeparateline{lot}{2pt}{2pt}}
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Appendixpart}{
+  \clearrightpage
   \part*{\partname\ \thepart\hx の補遺\label{Apart:\thepart}}
   \addcontentsline{toc}{part}{\partname\ \thepart\hx の補遺}
 }
@@ -94,6 +121,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR CHAPTER OR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\modHeadchapter}[2][]{%
+  \clearrightpage\clearleftpage
+  \let\newpage\relax
   \ifx\relax#1\relax
     \ifx\@chapapp\appendixname
       \chapter{#2\label{app:\thechapter}}%
@@ -109,6 +138,7 @@
   \fi
   \thispagestyle{main}%
   \indentspace%
+  \let\newpage\tmpnewpage
 }
 %%%%% FOR SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% TO LABEL SECTION  %%%%%%
@@ -264,8 +294,9 @@
 \newcommand{\TBW}{\texorpdfstring{\small{\color{red}\,*}}{}}
 %%%%% FOR PART WITH TABLE %%%%%%%%%%%%%%%%%%
 \newcommand{\tPart}[4][]{
-%  \begingroup
-  \@openrightfalse
+  \begingroup
+  \clearrightpage
+%  \@openrightfalse
   \let\oldnewpage\newpage
   \let\newpage\relax
   \part{#2\label{part:\thepart}}
@@ -273,15 +304,15 @@
   \ifx#1\relax\else\addcontentsline{#1}{part}{\protect\numberline{\thepart}#2}\fi
   \let\newpage\oldnewpage
   \clearpage
-  \@openrightfalse
+%  \@openrightfalse
   \thispagestyle{emptydate}
   \vspace*{0.1\textheight}%
   \begin{tablePart}{#3}
   #4
   \end{tablePart}%
-  \@openrightfalse
+%  \@openrightfalse
   \@mainmattertrue\pagestyle{main}
-%  \endgroup
+  \endgroup
 }
 %%%%% NOTATION TABLE %%%%%%%%%%%%%%%%%%
 \newenvironment{Notation}[2]

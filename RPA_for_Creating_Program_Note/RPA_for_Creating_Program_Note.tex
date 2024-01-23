@@ -6,13 +6,13 @@
 \setallpageWatermark{Copy}{atan(297/210)+5.1}{32.1}{0.075}
 %\setallpageWatermark{Draft}{atan(297/210)+5.1}{25.3}
 %\RequirePackage{plautopatch}
-%%%%% STYLE OF INDEX %%%%%
 
-\begin{document}
 \setlength\baselineskip{16pt}
 \setlength\normalbaselineskip{\baselineskip}
-\let\tmpcleardoublepage\cleardoublepage
-\let\tmpclearpage\clearpage
+\let\cleardoublepage\tmpcleardoublepage
+\let\clearpage\tmpclearpage
+\input{./RfCPN_preamble/RfCPN_title}
+\begin{document}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -20,11 +20,9 @@
 %% TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{./RfCPN_preamble/RfCPN_title}
-\cleardoublepage
+\let\cleardoublepage\relax
 \maketitle
-
-
+\let\cleardoublepage\tmpcleardoublepage
 
 
 
@@ -44,6 +42,7 @@
 %% LIST OF PARTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocounter{page}{1}
 \addchaptertocentry{}{\listoflopname}
 \begingroup
 \let\cleardoublepage\relax
@@ -59,6 +58,7 @@
 %% TABLE OF CONTENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearrightpage
 \addchaptertocentry{}{\contentsname}
 \tableofcontents % insert toc
 
@@ -68,6 +68,7 @@
 %% LIST OF TABLES   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearrightpage
 \addchaptertocentry{}{\listtablename}
 \listoftables  % insert lot
 
@@ -78,6 +79,7 @@
 %% LIST OF LISTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearrightpage
 \addchaptertocentry{}{\lstlistlistingname}
 \lstlistoflistings % insert lol
 
@@ -92,10 +94,10 @@
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeatletter
-\renewcommand*\mainmatter{%
-  \if@twoside\clearpage\else\cleardoubleoddpage\fi
-  \@mainmattertrue\pagenumbering{arabic}%
-}
+%\renewcommand*\mainmatter{%
+%  \if@twoside\clearpage\else\cleardoubleoddpage\fi
+%  \@mainmattertrue\pagenumbering{arabic}%
+%}
 \mainmatter
 \makeatother
 
@@ -199,10 +201,10 @@
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tPart{RDBの設計}{概要}{%
-\paragraph*{背景}
+\paragraph*{目的}
 (to be written...)
 \tcbline*
-\paragraph*{目的}
+\paragraph*{背景}
 (to be written...)
 }
 %\input{./RfCPN_part_RDB}

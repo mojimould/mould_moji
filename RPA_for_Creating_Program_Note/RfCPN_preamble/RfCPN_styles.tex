@@ -3,8 +3,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% DOCUMENTCLASS %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[11pt, twoside, open=left, headings=openleft]{scrbook}
+\documentclass[11pt, twoside, open=any]{scrbook}
 
+\let\tmpcleardoublepage\cleardoublepage
+\let\tmpclearpage\clearpage
+\let\tmpnewpage\newpage
 \input{RfCPN_preamble/RfCPN_packages}
 \input{RfCPN_preamble/RfCPN_definitions}
 
@@ -13,7 +16,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \geometry{
   a4paper, % paper size
-  twoside,
   centering,
   textwidth={6.5in},
   includehead,  % include the head of the page
@@ -115,8 +117,8 @@
 \fancypagestyle{plainheadfront}{
   \commonheadfoot
   %\fancyhead[C]{}
-  \fancyhead[RO]{\thepage}
-  \fancyhead[LE]{\thepage}
+  \fancyhead[LO]{\thepage}
+  \fancyhead[RE]{\thepage}
 }
 \fancypagestyle{plainhead}{
   \commonheadfoot
