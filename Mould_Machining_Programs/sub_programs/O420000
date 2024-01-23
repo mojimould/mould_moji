@@ -31,8 +31,8 @@ IF[#03EQ#0]GOTO800
 (if C = #0, go to N800)
 
 N002
-IF[#03GT0]THEN #33=-#418
-IF[#03LT0]THEN #33=#415
+IF[#03GT0]THEN #33=-#416
+IF[#03LT0]THEN #33=#420
 (#33: +hosei: A-men nikuatsu)
 
 N003
@@ -111,20 +111,20 @@ END1
 
 
 IF[#03GT0]GOTO008
-IF[#416EQ0]GOTO009
+IF[#421EQ0]GOTO009
 M05 (shujiku kaiten off)
 M09 (coolant off)
-M00 (for Bot, #416=1)
+M00 (for Bot, #421=1)
 GOTO009
 N008
-IF[#419EQ0]GOTO009
+IF[#417EQ0]GOTO009
 M05 (shujiku kaiten off)
 M09 (coolant off)
-M00 (for Top, #419=1)
+M00 (for Top, #417=1)
 
 N009
-IF[#03GT0]THEN #29=FUP[#420]
-IF[#03LT0]THEN #29=FUP[#417]
+IF[#03GT0]THEN #29=FUP[#418]
+IF[#03LT0]THEN #29=FUP[#422]
 
 N010
 IF[#29EQ#0]THEN #29=0
@@ -198,7 +198,7 @@ N999 M99
 (as LHS)
 (#105, #106, #107, #108, #109)
 (as RHS)
-(#415, #416, #417, #418, #419, #420, #601, #607, #652, #653)
+(#416, #417, #418, #420, #421, #422, #601, #607, #652, #653)
 (#901011)
 
 

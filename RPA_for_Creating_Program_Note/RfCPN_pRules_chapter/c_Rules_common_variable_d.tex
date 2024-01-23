@@ -63,7 +63,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 15.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{コモン変数 (\ttNum400\,-\ttNum499)}
+\modHeadsection{コモン変数 (\ttNum400\,-\ttNum499)\TBW}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,7 +71,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ttNum400\,-\ttNum474については、主に\index{さぎょうしゃ@作業者}作業者が入力・変更することが想定されるものとする。
 
-\modcaptionof{table}{\ttNum400\,-\ttNum412：主に計測用（内面溝除く）}
+\modcaptionof{table}{\ttNum400\,-\ttNum412：主に計測用（内面溝除く）\TBW}
 \begin{twoCtable}{}
 \ttNum400\TBW & 計測・加工 開始N番号 & 0\\\hline
 \ttNum401 & 通り芯測定(0:off, 1:on) & 0\\\hline
@@ -92,45 +92,47 @@
 
 
 %\clearpage
-\modcaptionof{table}{\ttNum412\,-\ttNum425：主に加工用（内面溝除く）\TBW}
+\modcaptionof{table}{\ttNum413\,-\ttNum430：主に加工用（内面溝除く）\TBW}
 \begin{twoCtable}{}
-\ttNum412 & トップ端面 全削り代\\\hline
-\ttNum413 & ボトム端面 全削り代\\\hline
-\ttNum414 & （予備）\\\hline
-\ttNum415 & ボトム外削 A面肉厚$+$補正（\verb|G54|ワーク座標系補正） & 0\\\hline
-\ttNum416 & ボトム外削 仕上げ前 一時停止 (0:non-stop, 1:外削径\ttNum653残し\verb|M00|) & 0\\\hline
-\ttNum417 & ボトム外削 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum418 & トップ外削 A面肉厚$+$補正（\verb|G56|ワーク座標系補正） & 0\\\hline
-\ttNum419 & トップ外削 仕上げ前 一時停止 (0:non-stop, 1:外削径\ttNum653残し\verb|M00|) & 0\\\hline
-\ttNum420 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum421 & （予備）\\\hline
-\ttNum422 & 溝位置$+$補正 & 0\\\hline
-\ttNum423 & 溝幅$+$補正 & 0\\\hline
-\ttNum424 & 溝A面深さ$+$補正（\verb|G56|ワーク座標系$-$補正） & 0\\\hline
-\ttNum425 & 溝幅$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\\hline
-\ttNum426\TBW & 溝 仕上げ前 一時停止 (0:non-stop, 1:溝径\ttNum655残し\verb|M00|) & 0\\\hline
-\ttNum427\TBW & 溝 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum428 & （予備）
+\ttNum413 & トップ端面 全削り代\\\hline
+\ttNum414 & ボトム端面 全削り代\\\hline
+\ttNum415 & （予備）\\\hline
+\ttNum416 & トップ外削 A面肉厚$+$補正（\verb|G56|ワーク座標系補正） & 0\\\hline
+\ttNum417 & トップ外削 仕上げ前 一時停止 (0:non-stop, 1:外削径\ttNum653残し\verb|M00|) & 0\\\hline
+\ttNum418 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum419 & （予備）\\\hline
+\ttNum420 & ボトム外削 A面肉厚$+$補正（\verb|G54|ワーク座標系補正） & 0\\\hline
+\ttNum421 & ボトム外削 仕上げ前 一時停止 (0:non-stop, 1:外削径\ttNum653残し\verb|M00|) & 0\\\hline
+\ttNum422 & ボトム外削 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum423 & （予備）\\\hline
+\ttNum424 & 溝位置$+$補正 & 0\\\hline
+\ttNum425 & 溝幅$+$補正 & 0\\\hline
+\ttNum426 & 溝A面深さ$+$補正（AC溝径中心$-$補正） & 0\\\hline
+\ttNum427 & 溝幅$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\\hline
+\ttNum428\TBW & 溝 仕上げ前 一時停止 (0:non-stop, 1:溝径\ttNum655残し\verb|M00|) & 0\\\hline
+\ttNum439\TBW & 溝 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum430 & （予備）
 \end{twoCtable}
+
 
 \clearpage
 \modcaptionof{table}{\ttNum425\,-\ttNum449：主に加工用（続き）\TBW}
 \begin{twoCtable}{}
-\ttNum429\TBW & トップ外面取$X+$補正（\verb|G56|ワーク座標系補正） & 0\\\hline
-\ttNum430\TBW & トップ外面取 仕上げ前 一時停止 (0:non-stop, 1:外径\ttNum657残し\verb|M00|) & 0\\\hline
-\ttNum431\TBW & トップ外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum432 & （予備）\\\hline
-\ttNum433\TBW & トップ内面取$X+$補正（\verb|G57|ワーク座標系補正） & 0\\\hline
-\ttNum434\TBW & トップ内面取 仕上げ前 一時停止 (0:non-stop, 1:内径\ttNum659残し\verb|M00|) & 0\\\hline
-\ttNum435\TBW & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum436 & （予備）\\\hline
-\ttNum437\TBW & ボトム外面取$X+$補正（\verb|G54|ワーク座標系補正） & 0\\\hline
-\ttNum438\TBW & ボトム外面取 仕上げ前 一時停止 (0:non-stop, 1:外径\ttNum657残し\verb|M00|) & 0\\\hline
-\ttNum439\TBW & ボトム外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum440 & （予備）\\\hline
-\ttNum441\TBW & ボトム内面取$X+$補正（\verb|G55|ワーク座標系補正） & 0\\\hline
-\ttNum442\TBW & ボトム内面取 仕上げ前 一時停止 (0:non-stop, 1:内径\ttNum659残し\verb|M00|) & 0\\\hline
-\ttNum443\TBW & ボトム内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum431\TBW & トップ外面取$X+$補正（\verb|G56|ワーク座標系補正） & 0\\\hline
+\ttNum432\TBW & トップ外面取 仕上げ前 一時停止 (0:non-stop, 1:外径\ttNum657残し\verb|M00|) & 0\\\hline
+\ttNum433\TBW & トップ外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum434 & （予備）\\\hline
+\ttNum435\TBW & トップ内面取$X+$補正（\verb|G57|ワーク座標系補正） & 0\\\hline
+\ttNum436\TBW & トップ内面取 仕上げ前 一時停止 (0:non-stop, 1:内径\ttNum659残し\verb|M00|) & 0\\\hline
+\ttNum437\TBW & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum438 & （予備）\\\hline
+\ttNum439\TBW & ボトム外面取$X+$補正（\verb|G54|ワーク座標系補正） & 0\\\hline
+\ttNum440\TBW & ボトム外面取 仕上げ前 一時停止 (0:non-stop, 1:外径\ttNum657残し\verb|M00|) & 0\\\hline
+\ttNum441\TBW & ボトム外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum442 & （予備）\\\hline
+\ttNum443\TBW & ボトム内面取$X+$補正（\verb|G55|ワーク座標系補正） & 0\\\hline
+\ttNum444\TBW & ボトム内面取 仕上げ前 一時停止 (0:non-stop, 1:内径\ttNum659残し\verb|M00|) & 0\\\hline
+\ttNum445\TBW & ボトム内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
 & （以下予備）
 \end{twoCtable}
 
