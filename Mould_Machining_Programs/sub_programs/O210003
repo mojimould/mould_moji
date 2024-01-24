@@ -89,8 +89,8 @@ IF[#1000EQ1]THEN #30=#901005
 
 N004
 M11 (4jiku unclamp)
-G90 G#701 G00 B[#100+#02]
-(current work B: G90 #100+#02 deg)
+G90 G#701 G00 B[#01+#02]
+(current work B: G90 #01+#02 deg)
 M10 (4jiku clamp)
 
 G90 G01 Z[#26+#601] F5400
@@ -256,6 +256,7 @@ N999 M99
 
 (as received arguments)
 (used only as variables)
+(#01:A: angle for furiwake)
 (#02:B: angle for dimple)
 (#06:K: Z pitch)
 (#17:Q: Z length between top and the 1st row)
@@ -278,7 +279,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#100, #512, #601, #603, #901001, #901005, #901011)
+(#512, #601, #603, #901001, #901005, #901011)
 (as LHS)
 (#701-#719)
 

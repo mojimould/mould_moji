@@ -50,9 +50,8 @@ G90 G10 L2 P4 X-561.923 Y-648.500 Z#901007 B#901008
 (G57 Top Inside Center)
 
 N102
-#100=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G54 G00 B[180.0+#100]
+G90 G54 G00 B[180.0-0.642]
 (G54 Bottom Gaisaku)
 (B parallel angle 179.358)
 M10 (4jiku clamp)
@@ -141,10 +140,9 @@ G55 G65 P130002 C-1. Y153 Z499.984 F200. M0.07
 (Top sokutei start)
 
 G90 G53 G01 Z0 F7200
-#100=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G57 G00 B#100
-(G57B parallel angle #100)
+G90 G57 G00 B-0.642
+(G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
 G90 G57 G01 X0 Y0 F5400
@@ -184,10 +182,9 @@ N200
 
 
 G90 G53 G01 Z0 F7200
-#100=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G57 G00 B#100
-(G57B parallel angle #100)
+G90 G57 G00 B-0.642
+(G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
 G90 G57 G01 X0 Y0 F5400
@@ -196,7 +193,7 @@ G90 G57 G43 G01 Z[500.016+#601] H50 F3600
 (hosei KouguChou: #50)
 (Z= topTanmen+#601)
 
-G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 R8922.7 B-2.130
+G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 R8922.7 A-0.642 B-2.130
 (dimple measurement)
 (X: AC naikei: Top-tanmen)
 (Y: BD naikei: Top-tanmen)
@@ -210,6 +207,7 @@ G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U
 (M: number of rows)
 (U: depth of dimple)
 (R: central curvature)
+(A: angle for furiwake)
 (B: angle for dimple)
 
 M117 (sensor on/off)
@@ -239,7 +237,7 @@ G90 G57 G43 Z[500.016+#601] H31 F5400
 (hosei KouguChou: #31)
 (Z= TopTanmen +#601)
 
-G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 R8922.7 B-2.130
+G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 R8922.7 A-0.642 B-2.130
 (dimple kakou)
 (X: AC naikei of last row)
 (Y: BD naikei of last row)
@@ -253,6 +251,7 @@ G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U
 (M: number of rows)
 (U: depth of dimple)
 (R: central curvature)
+(A: angle for furiwake)
 (B: angle for dimple)
 
 (dimple kakou end)
@@ -269,10 +268,9 @@ G91 G28 Z0
 T02 (tanmen)
 M06 (tool exchange)
 
-#100=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G57 G00 B#100
-(G57B parallel angle #100)
+G90 G57 G00 B-0.642
+(G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
 N24
@@ -302,10 +300,9 @@ G91 G28 Z0
 T16 (gaisaku)
 M06 (tool exchange)
 
-#100=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G56 G00 B#100
-(G57B parallel angle #100)
+G90 G56 G00 B-0.642
+(G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
 G56 G65 P420000 C1. D16. X180.95 Y180.95 U185. V183. Z500.016 R18. K32.0 M12.05 W8.05
@@ -344,10 +341,9 @@ G91 G28 Z0
 T06 (mizo)
 M06 (tool exchange)
 
-#100=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G56 G00 B#100
-(G57B parallel angle #100)
+G90 G56 G00 B-0.642
+(G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
 G56 G65 P430000 D6. A1. C#0 R14. X172.90 Y172.90 U180.95 V180.95 Z500.016 M12.05 W8.05
@@ -382,10 +378,9 @@ G91 G28 Z0
 T13 (mentori 45)
 M06 (tool exchange)
 
-#100=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G56 G00 B#100
-(G57B parallel angle #100)
+G90 G56 G00 B-0.642
+(G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
 G56 G65 P440000 D13. X180.95 Y180.95 Z500.016 K1. R18.
@@ -425,9 +420,8 @@ G91 G28 Z0
 T02 (tanmen)
 M06 (tool exchange)
 
-#100=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G00 G54 B[180.0+#100]
+G90 G00 G54 B[180.0-0.642]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
@@ -461,9 +455,8 @@ G91 G28 Z0
 T16 (gaisaku)
 M06 (tool exchange)
 
-#100=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G00 G54 B[180.0+#100]
+G90 G00 G54 B[180.0-0.642]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
@@ -503,9 +496,8 @@ G91 G28 Z0
 T11 (mentori 15)
 M06 (tool exchange)
 
-#100=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G00 G54 B[180.0+#100]
+G90 G00 G54 B[180.0-0.642]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
@@ -542,9 +534,8 @@ G91 G28 Z0
 T11 (mentori 15)
 M06 (tool exchange)
 
-#100=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G00 G55 B[180.0+#100]
+G90 G00 G55 B[180.0-0.642]
 (G55B parallel angle 179.358)
 M10 (4jiku clamp)
 
@@ -589,9 +580,8 @@ M00
 
 
 G91 G30 X0 Y0
-#100=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G00 G54 B[-90+#100]
+G90 G00 G54 B[-90-0.642]
 (G54 Top:+X, Bot:-X)
 (B parallel angle -90.642)
 M10 (4jiku clamp)
@@ -618,9 +608,8 @@ M00
 
 
 G91 G28 Z0
-#100=-0.642 (furiwake angle)
 M11 (4jiku unclamp)
-G90 G54 G00 B[180+#100]
+G90 G54 G00 B[180-0.642]
 (G54 Bot:+Z, Top:-Z)
 (B parallel angle 179.358)
 M10 (4jiku clamp)
@@ -678,7 +667,6 @@ N999 M30
 
 (Common variables)
 (as LHS)
-(#100)
 (#901001, #901003, #901004, #901006)
 (as RHS)
 (#401, #601)
@@ -700,7 +688,6 @@ N999 M30
 
 
 (Used in other programs)
-(#100: O210003)
 (#900026: O150003)
 (#900030: O150002)
 %
