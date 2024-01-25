@@ -1,0 +1,231 @@
+%!TEX root = ../RPA_for_Creating_Program_Note.tex
+
+
+
+\index{みぞ@溝}溝に関しては、その基準が以下のように与えられる場合が考えられる。
+\begin{enumerate}
+\item \index{みぞけい@溝径}溝径の中心Mが、モールドの\index{わんきょくちゅうしんせん@湾曲中心線}湾曲中心線上にある場合
+\item \index{みぞちゅうしん@溝中心}溝径の中心Mが、（トップ側）\index{がいさくちゅうしん@外削中心}外削径の中心線上にある場合
+\item \index{Aがわみぞふかさ@A側溝深さ}A面側の\index{みぞふかさ@溝深さ}溝深さに指定がある場合
+\end{enumerate}
+なお、溝径を$W_\mathrm M$, \index{みぞいち@溝位置}溝位置（端面から溝までの長さ）・\index{みぞはば@溝幅}溝幅・A側溝深さをそれぞれ$\kappa_p$, $\kappa_w$, $\kappa_d$とする。
+このときいずれの場合も、$y$方向（機内における$Z$方向
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{計算上の$xy$座標（$x$:実軸, $y$:虚軸）と、機内における$XZ$座標とが混在する形で話を進めているので注意されたし。}）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+の\index{せっさくはんい@切削範囲}切削範囲は、テーブル中心Pを\index{げんてん@原点}原点として、
+\begin{align*}
+  \big[f_\mathrm T'-(\kappa_p+\kappa_w)\ ,\ f_\mathrm T'-\kappa_p\big]
+\end{align*}
+であり、また溝中心M$'$の$y$座標（$Z$座標）はこの切削範囲の中央
+%% label{eq:mizocenterZ}
+\begin{align}
+  \label{eq:mizocenterZ}
+  f_\mathrm T'-\left(\kappa_p+\frac{\kappa_w}2\right)
+\end{align}
+で与えられる。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{湾曲中心が基準の場合}
+トップ端における湾曲中心T$_{R_\mathrm c}'$と溝中心M$'$との$x$方向の差は、
+%% label{eq:difTopMizoCenter}
+\begin{align}
+  \label{eq:difTopMizoCenter}
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+  -\sqrt{R_\mathrm c^2-f_\mathrm T^2}
+\end{align}
+で与えられる。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 4.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{スペーサを用いた場合の溝中心（湾曲中心基準）}
+溝中心M$'$がモールドの湾曲中心線上にある場合、テーブル中心Pを原点とした$x$座標は、\pageeqref{eq:spacerTRc}より、
+\begin{align*}
+  -\varDelta+\sqrt{R_\mathrm c^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}+\frac\delta2
+  -\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+\left(2\bar l\right)^2}}
+\end{align*}
+となる。
+なお実際の作業では、簡単のため、トップ端面の外側中心T$_\mathrm c'$を測定し、それをトップ端面における湾曲中心T$_{R_\mathrm c}'$とみなして溝中心M$'$の位置を計算することが多い。
+実測した外側中心の$X$・$Y$座標$G_{\mathrm Tx}$, $G_{\mathrm Ty}$を湾曲中心のそれとみなすと、機内における溝中心M$'$の位置は、テーブル中心Pを原点として、
+%% label{eq:Mreal}
+\begin{subequations}
+  \label{eq:Mreal}
+\begin{align}
+  \left(
+    G_{\mathrm Tx}
+    +\sqrt{R_\mathrm c^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+    -\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\
+    G_{\mathrm Ty}~,~
+    f_\mathrm T'-\kappa_p-\frac{\kappa_w}2
+  \right).
+\end{align}
+湾曲中心とみなさずに正確に求めるなら、これに\pageeqref{eq:TRc-Tc}を引けばよい。
+その場合の$X$座標は、
+\begin{align}
+  G_{\mathrm Tx}
+  +\sqrt{R_\mathrm c^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+  -\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2\ .
+\end{align}
+\end{subequations}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 4.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{テーブルを傾けた場合の溝中心（湾曲中心基準）}
+\index{みぞちゅうしん@溝中心}溝中心M$'$がモールドの湾曲中心線上にある場合、テーブル中心Pを原点とした$x$座標は、\pageeqref{eq:tableTRc}より、
+\begin{align*}
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+  -\varDelta'\cos\theta\ .
+\end{align*}
+実測した\index{そとがわちゅうしん@外側中心}外側中心の$X$・$Y$座標$G_{\mathrm Tx}$, $G_{\mathrm Ty}$を\index{わんきょくちゅうしん@湾曲中心}湾曲中心のそれとみなした場合とそうでない場合は、\pageeqref{eq:Mreal}で与えられる。
+
+
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{外削径の中心が基準の場合}
+\index{みぞちゅうしん@溝中心}溝中心M$'$がトップ外削径の中心線上にある場合、機内におけるその位置座標は、
+\begin{align*}
+  \left(
+    -\mathcal G_{Bx}+T_x\ ,\
+    \mathcal G_{By}\ ,\
+    f_\mathrm T'-\kappa_p-\frac{\kappa_w}2
+  \right) \qquad
+  \text{または}\qquad
+  \left(
+    \mathcal G_{Bx}\ ,\
+    \mathcal G_{By}\ ,\
+    f_\mathrm T'-\kappa_p-\frac{\kappa_w}2
+  \right).
+\end{align*}
+ただし、前者はボトムの外削を基準にした（ボトム基準の\index{とおりしん@通り芯}通り芯がある）場合であり、後者はトップの外削を基準にした場合である。
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 4.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{A面側の溝深さが基準の場合}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 4.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{外削のない場合}
+トップ側に外削がなく、\index{Aがわみぞふかさ@A側溝深さ}A側面からの溝深さが指定されている場合を考える。
+\index{みぞちゅうしん@溝中心}溝中心の位置の$X$座標は、テーブル中心Pを\index{げんてん@原点}原点として、
+%% label{eq:mizocenterA}
+\begin{align}
+  \label{eq:mizocenterA}
+  \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}-\kappa_d-\frac{W_{mx}}2
+  -\varDelta'
+\end{align}
+で与えられる。
+ここで、$W_{mx}$は溝のAC方向の径を表す。
+なお実際の作業では、モールドの\index{Aがわがいめん@A側外面}A側外面の\index{みぞはばちゅうおう@溝幅中央}溝幅中央に相当する箇所を直接計測し、その位置を基準として原点を割り出す。
+トップ端面における中心の$X$座標（\index{じっそくち@実測値}実測値）$G_{\mathrm Tx}$がわかっている場合、\index{みぞちゅうしん@溝中心}溝の中心の$X$座標$G_{mx}$は\pageeqref{eq:Mreal}で与えられ、また\index{みぞはばちゅうおう@溝幅中央}溝幅中央に対する\index{Aがわがいめん@A側外面}A側外面と$G_{\mathrm Tx}$との差（の絶対値）は、
+%% label{eq:mizocenterA}
+\begin{align}
+  \label{eq:mizocenterAd}
+  \frac{W_{mx}}2+\kappa_d
+  +\sqrt{R_\mathrm c^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+  -\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2\ .
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 4.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{外削のある場合}
+トップ側に外削があり、かつ\index{Aがわみぞふかさ@A側溝深さ}A側溝深さが指定されている場合を考える。
+トップ側の外削中心の実測値を$\mathcal G_{\mathrm Tx}$とすると、\index{みぞちゅうしん@溝中心}溝中心$G_{mx}$との差($G_{mx}-\mathcal G_{\mathrm Tx}$)は
+%% label{eq:mizocenterAG}
+\begin{align}
+  \label{eq:mizocenterAG}
+  \frac{\mathfrak W_x}2-\kappa_d-\frac{W_{mx}}2\ .
+\end{align}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 4.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{測定上の溝深さ}
+ここでは特に\index{Aがわみぞふかさ@A側溝深さ}A面側溝深さ$\kappa_d$に限って話を進める。
+トップ側に外削がある場合、$\kappa_d$は\index{Aがわがいさくめん@A側外削面}A側外削面と溝のA側面との差で与えられる。
+しかし外削がない場合、つまり\index{Aがわがいめん@A側外面}A側外面に湾曲がある場合は、$\kappa_d$の値は自明ではない。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 4.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{図面上の溝深さ}
+図面上においてA側の溝深さが$\kappa_d$のとき、これは溝幅の中央の位置におけるA側外面から端面と水平な方向に$\kappa_d$という意味で与えられる。
+すなわち、溝のA面側の水平方向の位置は、\pageeqref{eq:mizocenterA}より、
+\begin{align*}
+  \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}-\kappa_d-\varDelta'\ .
+\end{align*}
+溝中心の$X$座標$G_{mx}$が与えられている場合は、
+\begin{align*}
+  G_{mx}+\frac{W_{mx}}2
+\end{align*}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 4.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{測定上の溝深さ\TBW}
+通常、実測には\index{マイクロメータ}マイクロメータ（\index{デプスゲージ}デプスゲージ）が用いられる。
+このとき、計測は計測器を湾曲に沿った形にして行われる。
+したがって、その計測値は\index{みぞはば@溝幅}溝幅の両端に対する外面の傾斜だけ傾いた形で与えられる。
+溝幅の両端に対する外面の$XZ$位置は、溝中心の$X$座標を$G_{mx}$として、
+\begin{align*}
+  \text{トップ側：}&~
+  \left(
+  G_{mx}+\frac{W_x}2
+  -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+  +\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}~,~~
+  f_\mathrm T-\kappa_p
+  \right)\\
+  \text{ボトム側：}&~
+  \left(
+  G_{mx}+\frac{W_x}2
+  +\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\kappa_w\right)^2}
+  -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}~,~~
+  f_\mathrm T-\kappa_p-\kappa_w
+  \right)
+\end{align*}
+またその差は、
+\begin{align*}
+  \left(
+  \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}
+  -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\kappa_w\right)^2}~,~~
+  \kappa_w
+  \right)
+\end{align*}
+したがって、計測の際の傾斜の角度$\zeta$ ($> 0$)は
+\begin{align*}
+  \tan\zeta
+  = \frac{\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\kappa_w\right)^2}
+          -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}}
+         {\kappa_w}\ .
+\end{align*}
+
+
+
+
+
