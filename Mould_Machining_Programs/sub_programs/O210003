@@ -3,7 +3,7 @@ O210003 (for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 
 #701=#4012
-(#701= current work coordinate G#)
+(#701: current work coordinate G#)
 
 IF[#701LT54]GOTO800 
 IF[#701GT59]GOTO800
