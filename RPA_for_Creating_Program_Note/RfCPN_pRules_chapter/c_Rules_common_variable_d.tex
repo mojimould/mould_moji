@@ -21,7 +21,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modcaptionof{table}{\ttNum100\,-\ttNum110：主に一時保存値}
 \begin{twoCtable}{}
-\ttNum100 & 各工程 切削回数用 一時保存値（全削り代$X$）\\\hline
+\ttNum100 & 各工程 切削回数用 一時保存値（全削り代$X$ or $Z$）\\\hline
 \ttNum101 & 各工程 切削回数用 一時保存値（全削り代$Y$）\\\hline
 \ttNum102 & 各工程 切削回数用 一時保存値 (max[\ttNum100, \ttNum101])\\\hline
 \ttNum103 & 各工程 切削回数用 一時保存値（切削回数）\\\hline
@@ -67,7 +67,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 15.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{コモン変数 (\ttNum400\,-\ttNum499)\TBW}
+\modHeadsection{コモン変数 (\ttNum400\,-\ttNum474)\TBW}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -96,7 +96,7 @@
 
 
 %\clearpage
-\modcaptionof{table}{\ttNum413\,-\ttNum430：主に加工用（内面溝除く）\TBW}
+\modcaptionof{table}{\ttNum413\,-\ttNum430：主に加工用（内面溝除く）}
 \begin{twoCtable}{}
 \ttNum413 & トップ端面 全削り代\\\hline
 \ttNum414 & ボトム端面 全削り代\\\hline
@@ -113,8 +113,8 @@
 \ttNum425 & 溝幅$+$補正 & 0\\\hline
 \ttNum426 & 溝A面深さ$+$補正（AC溝径中心$-$補正） & 0\\\hline
 \ttNum427 & 溝幅$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\\hline
-\ttNum428\TBW & 溝 仕上げ前 一時停止 (0:non-stop, 1:溝径\ttNum655残し\verb|M00|) & 0\\\hline
-\ttNum429\TBW & 溝 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum428 & 溝 仕上げ前 一時停止 (0:non-stop, 1:溝径\ttNum655残し\verb|M00|) & 0\\\hline
+\ttNum429 & 溝 仕上げ加工 追加回数 (上限3) & 0\\\hline
 \ttNum430 & （不使用）
 \end{twoCtable}
 
@@ -279,7 +279,7 @@ $\vdots$ & （以下不明） & \ttNum0
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-\ttNum614について、正確には$\max[\ttNum607, \text{{\small（溝工具半径）}}]\times1.5$である。
+\ttNum614について、正確には$\max[\ttNum607, \text{{\small（溝工具半径）}}]\times1.5$.
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -297,7 +297,7 @@ $\vdots$ & （以下不明） & \ttNum0
 \ttNum651 & （予備） & \\\hline
 \ttNum652 & 外削加工1回あたりの径方向削り代（直径） & 2.0\\\hline
 \ttNum653 & 外削加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
-\ttNum654\TBW & 溝加工1回あたりの径方向削り代（片面深さ） & 6.0\\\hline
+\ttNum654\TBW & 溝加工1回あたりの径方向削り代（片面深さ） & 5.0\\\hline
 \ttNum655\TBW & 溝加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
 \ttNum656\TBW & 外面取加工1回あたりの径方向削り代（直径） & \\\hline
 \ttNum657\TBW & 外面取加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
