@@ -32,8 +32,8 @@ IF[#19LE200]GOTO800
 N004
 IF[#03GT0]THEN #100=#413
 IF[#03LT0]THEN #100=#414
-#101=FUP[#100/#650]
-(#101: kakou kaisuu)
+#103=FUP[#100/#650]
+(#103: kakou kaisuu)
 
 N005
 IF[#07LT2]GOTO800
@@ -45,21 +45,21 @@ IF[#901101LE1]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 IF[#100EQ#0]GOTO800
 IF[#100LT1]GOTO800
-IF[#101LE0]GOTO800
+IF[#103LE0]GOTO800
 IF[#610LT1]GOTO800
 IF[#650EQ#0]GOTO800
 IF[#650LE0]GOTO800
 IF[#650GT5]GOTO800
-IF[[#650*#101]LT0]GOTO800
+IF[[#650*#103]LT0]GOTO800
 (if D < 2 or D > 5 or #0 or D is not integer, go to N800)
 (if Z <= #901011/2, go to N800)
 (if BCX <= 1 or BCX = #0, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
 (if #100 < 1 or #0, go to N800)
-(if #101 <= 0, go to N800)
+(if #103 <= 0, go to N800)
 (if #610 < 1, go to N800)
 (if #650 <= 0 or #650 > 5 or #650 = #0, go to N800)
-(if #650*#101 < 0, go to N800)
+(if #650*#103 < 0, go to N800)
 
 N006
 #33=#[2400+#07]+#[2600+#07]
@@ -79,16 +79,18 @@ IF[#610GE#33]GOTO800
 (kokokara G00)
 
 
+N008
+G90 G43 G00 H#07 Z[#26+#650*#103+#601] F7200
+
 N100 (loop)
-WHILE[#101GE1]DO1
-#101=#101-1
+WHILE[#103GE1]DO1
+#103=#103-1
 
 N101
-G90 G43 G00 H#07 Z[#26+#650*#101+#601] F7200
 G90 G00 X[[#31/2]+#32*3] Y[#30/2] F10800
 G42 D#07
 G91 G00 X-[#32/2] F10800
-G90 G01 Z[#26+#650*#101] S#19 F5400
+G90 G01 Z[#26+#650*#103] S#19 F5400
 
 N102
 M03 (shujiku kaiten on)
@@ -104,11 +106,11 @@ N105
 G90 G40 G00 X[[#31/2]+#32*3] F10800
 END1
 
-N106
+N009
 M05 (shujiku kaiten off)
 M09 (coolant off)
 
-N107
+N010
 G90 G43 G00 H#07 Z[#26+#601] F7200
 G90 G53 G00 Z0 F7200
 GOTO999
@@ -141,7 +143,7 @@ N999 M99
 
 (Common variable)
 (as LHS)
-(#100, #101)
+(#100, #103)
 (as RHS)
 (#413, #414, #601, #607, #610, #650)
 (#901011, #901101)
