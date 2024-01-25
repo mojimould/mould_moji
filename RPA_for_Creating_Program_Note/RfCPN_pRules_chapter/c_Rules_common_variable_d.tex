@@ -7,26 +7,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 15.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{コモン変数 (\ttNum100\,-\ttNum199)}
+\modHeadsection{コモン変数 (\ttNum100\,-\ttNum174)}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\ttNum100\,-\ttNum199については、（機械設置時の）\index{バンドルのプログラム}バンドルのプログラムで既に使用されているものが多いため、基本的には（\index{RHS}RHSとしては）使用しないものとし、一時的なもの(\index{LHS}LHS)として扱うものとする。
+\ttNum100\,-\ttNum174については、（機械設置時の）\index{バンドルのプログラム}バンドルのプログラムで既に使用されているものが多いため、基本的には（\index{RHS}RHSとしては）使用しないものとし、一時的なもの(\index{LHS}LHS)として扱うものとする。
 \newline
 
 
 %\clearpage
-\noindent\ttNum100\,-\ttNum110については、主に各々の製品明細または個々の製品に固有のものとする。
+\noindent\ttNum100\,-\ttNum110については、主に一時的な保存に用いるものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum100\,-\ttNum110：主に製品固有値}
+\modcaptionof{table}{\ttNum100\,-\ttNum110：主に一時保存値}
 \begin{twoCtable}{}
-\ttNum100 & 各工程 切削回数用 一時保存値\\\hline
-\ttNum101 & 各工程 切削回数用 一時保存値\\\hline
-\ttNum102 & 各工程 切削回数用 一時保存値\\\hline
-\ttNum103 & 各工程 切削回数用 一時保存値\\\hline
-\ttNum104 & 各工程 切削回数用 一時保存値\\\hline
-\ttNum105 & （予備）\\\hline
+\ttNum100 & 各工程 切削回数用 一時保存値（全削り代$X$）\\\hline
+\ttNum101 & 各工程 切削回数用 一時保存値（全削り代$Y$）\\\hline
+\ttNum102 & 各工程 切削回数用 一時保存値 (max[\ttNum100, \ttNum101])\\\hline
+\ttNum103 & 各工程 切削回数用 一時保存値（切削回数）\\\hline
+\ttNum104 & 各工程 切削回数用 一時保存値（加工時 径$X$）\\\hline
+\ttNum105 & 各工程 切削回数用 一時保存値（加工時 径$Y$）\\\hline
 \ttNum106 & （予備）\\\hline
 \ttNum107 & （予備）\\\hline
 \ttNum108 & （予備）\\\hline
@@ -36,6 +36,10 @@
 
 
 \clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 15.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{コモン変数 (\ttNum175\,-\ttNum199)}
 \noindent\ttNum175\,-\ttNum199については、主に各工程後の確認のためのものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -76,18 +80,18 @@
 \ttNum400\TBW & 計測・加工 開始N番号 & 0\\\hline
 \ttNum401 & 通り芯測定(0:off, 1:on) & 0\\\hline
 \hline
-\ttNum402 & （予備）\\\hline
+\ttNum402 & （不使用）\\\hline
 \hline
 \ttNum403 & ボトム外$X$芯出し or ボトム外削$X$芯出し 測定位置$Z+$補正（$X$自動補正） & 0\\\hline
 \ttNum404 & ボトム外$Y$芯出し 測定位置$Z+$補正 & 0\\\hline
 \ttNum405 & ボトム内$X$芯出し 測定位置$Z+$補正（$X$自動補正） & 0\\\hline
 \ttNum406 & ボトム内$Y$芯出し 測定位置$Z+$補正 & 0\\\hline
-\ttNum407 & （予備）\\\hline
+\ttNum407 & （不使用）\\\hline
 \ttNum408 & トップ外$X$芯出し or トップ外削$X$芯出し 測定位置$Z+$補正（$X$自動補正） & 0\\\hline
 \ttNum409 & トップ外$Y$芯出し 測定位置$Z+$補正 & 0\\\hline
 \ttNum410 & トップ内$X$芯出し 測定位置$Z+$補正（$X$自動補正） & 0\\\hline
 \ttNum411 & トップ内$Y$芯出し 測定位置$Z+$補正 & 0\\\hline
-\ttNum412 & （予備）
+\ttNum412 & （不使用）
 \end{twoCtable}
 
 
@@ -96,22 +100,22 @@
 \begin{twoCtable}{}
 \ttNum413 & トップ端面 全削り代\\\hline
 \ttNum414 & ボトム端面 全削り代\\\hline
-\ttNum415 & （予備）\\\hline
-\ttNum416\TBW & トップ外削 A面肉厚$+$補正（\verb|G56|ワーク座標系補正） & 0\\\hline
+\ttNum415 & （不使用）\\\hline
+\ttNum416 & トップ外削 A面肉厚$+$補正 & 0\\\hline
 \ttNum417 & トップ外削 仕上げ前 一時停止 (0:non-stop, 1:外削径\ttNum653残し\verb|M00|) & 0\\\hline
 \ttNum418 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum419 & （予備）\\\hline
-\ttNum420\TBW & ボトム外削 A面肉厚$+$補正（\verb|G54|ワーク座標系補正） & 0\\\hline
+\ttNum419 & （不使用）\\\hline
+\ttNum420 & ボトム外削 A面肉厚$+$補正 & 0\\\hline
 \ttNum421 & ボトム外削 仕上げ前 一時停止 (0:non-stop, 1:外削径\ttNum653残し\verb|M00|) & 0\\\hline
 \ttNum422 & ボトム外削 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum423 & （予備）\\\hline
+\ttNum423 & （不使用）\\\hline
 \ttNum424 & 溝位置$+$補正 & 0\\\hline
 \ttNum425 & 溝幅$+$補正 & 0\\\hline
 \ttNum426 & 溝A面深さ$+$補正（AC溝径中心$-$補正） & 0\\\hline
 \ttNum427 & 溝幅$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\\hline
 \ttNum428\TBW & 溝 仕上げ前 一時停止 (0:non-stop, 1:溝径\ttNum655残し\verb|M00|) & 0\\\hline
-\ttNum439\TBW & 溝 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum430 & （予備）
+\ttNum429\TBW & 溝 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum430 & （不使用）
 \end{twoCtable}
 
 
@@ -121,18 +125,19 @@
 \ttNum431\TBW & トップ外面取$X+$補正（\verb|G56|ワーク座標系補正） & 0\\\hline
 \ttNum432\TBW & トップ外面取 仕上げ前 一時停止 (0:non-stop, 1:外径\ttNum657残し\verb|M00|) & 0\\\hline
 \ttNum433\TBW & トップ外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum434 & （予備）\\\hline
+\ttNum434 & （不使用）\\\hline
 \ttNum435\TBW & トップ内面取$X+$補正（\verb|G57|ワーク座標系補正） & 0\\\hline
 \ttNum436\TBW & トップ内面取 仕上げ前 一時停止 (0:non-stop, 1:内径\ttNum659残し\verb|M00|) & 0\\\hline
 \ttNum437\TBW & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum438 & （予備）\\\hline
+\ttNum438 & （不使用）\\\hline
 \ttNum439\TBW & ボトム外面取$X+$補正（\verb|G54|ワーク座標系補正） & 0\\\hline
 \ttNum440\TBW & ボトム外面取 仕上げ前 一時停止 (0:non-stop, 1:外径\ttNum657残し\verb|M00|) & 0\\\hline
 \ttNum441\TBW & ボトム外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum442 & （予備）\\\hline
+\ttNum442 & （不使用）\\\hline
 \ttNum443\TBW & ボトム内面取$X+$補正（\verb|G55|ワーク座標系補正） & 0\\\hline
 \ttNum444\TBW & ボトム内面取 仕上げ前 一時停止 (0:non-stop, 1:内径\ttNum659残し\verb|M00|) & 0\\\hline
 \ttNum445\TBW & ボトム内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum446 & （不使用）\\\hline
 & （以下予備）
 \end{twoCtable}
 
@@ -143,23 +148,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modcaptionof{table}{\ttNum450\,-\ttNum474：主に内面溝 加工用}
 \begin{twoCtable}{}
-\ttNum450 & （予備）\\\hline
+\ttNum450 & （不使用）\\\hline
 \ttNum451 & 工具\verb|T31|（Tスロット）A側内面溝 深さ補正値（深さに$+$補正） & 0.06\\\hline
 \ttNum452 & 工具\verb|T31|（Tスロット）C側内面溝 深さ補正値（深さに$+$補正） & 0.03\\\hline
 \ttNum453 & 工具\verb|T31|（Tスロット）B側内面溝 深さ補正値（深さに$+$補正） & 0.06\\\hline
 \ttNum454 & 工具\verb|T31|（Tスロット）D側内面溝 深さ補正値（深さに$+$補正） & 0.03\\\hline
-\ttNum455 & （予備）\\\hline
+\ttNum455 & （不使用）\\\hline
 \hline
 \ttNum456 & 工具\verb|T32|（Tスロット）A側内面溝 深さ補正値（深さに$+$補正）\\\hline
 \ttNum457 & 工具\verb|T32|（Tスロット）C側内面溝 深さ補正値（深さに$+$補正）\\\hline
 \ttNum458 & 工具\verb|T32|（Tスロット）B側内面溝 深さ補正値（深さに$+$補正）\\\hline
 \ttNum459 & 工具\verb|T32|（Tスロット）D側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\ttNum460 & （予備）\\\hline
+\ttNum460 & （不使用）\\\hline
 \hline
 \ttNum461 & 工具\verb|T33|（Tスロット）A側内面溝 深さ補正値（深さに$+$補正）\\\hline
 \ttNum462 & 工具\verb|T33|（Tスロット）C側内面溝 深さ補正値（深さに$+$補正）\\\hline
 \ttNum463 & 工具\verb|T33|（Tスロット）B側内面溝 深さ補正値（深さに$+$補正）\\\hline
 \ttNum464 & 工具\verb|T33|（Tスロット）D側内面溝 深さ補正値（深さに$+$補正）\\\hline
+\ttNum465 & （不使用）\\\hline
 & （以下予備）
 \end{twoCtable}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -305,17 +305,17 @@ G90 G56 G00 B-0.642
 (G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
-G56 G65 P420000 C1. D16. X180.95 Y180.95 U185. V183. Z500.016 R18. K32.0 M12.05 W8.05
+G56 G65 P420000 C1. D16. R18. X180.95 Y180.95 U185. V183. Z500.016 K32.0 M12.05 W8.05
 (O420000: Sotogawa 1shuu Corner R, ar HidariMawari)
 (default: F=400, E=400, S=930, M=0, W=0)
 (C: +: Top, -: Bot)
 (D: hosei kouguKei&Chou #)
+(R: corner R)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
 (U: AC gaiKei)
 (V: BD gaiKei)
 (Z: Top sai_furiwake)
-(R: corner R)
 (K: gaisaku Length)
 (M*: mizoIchi)
 (W*: mizoHaba)
