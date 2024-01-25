@@ -273,7 +273,6 @@ G90 G57 G00 B-0.642
 (G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
-N24
 G57 G65 P410000 C1. D2. X156.863 Y154.839 Z500.016 R19.
 (O410000: XY naikei sotogawa-#610 1shuu Coner R, ar MigiMawari)
 (default: F=900, S=950)
@@ -287,8 +286,14 @@ G57 G65 P410000 C1. D2. X156.863 Y154.839 Z500.016 R19.
 (S*: kaitensuu)
 
 (Top tammen end)
-IF[#190EQ0]GOTO410
-M98 P90003
+IF[#190EQ1]GOTO401
+IF[#190EQ2]GOTO402
+GOTO410
+N401
+M00 (if #190=1)
+GOTO410
+N402
+M98 P90003 (if #190=2)
 
 
 N410
@@ -569,12 +574,12 @@ M00
 (Kakou Owari)
 
 
-N150
+N650
 IF[#401EQ0]GOTO990
 (if #401=0, go to N990)
 
 
-N151
+N651
 (*** TooriShin X start ***)
 M00
 
@@ -602,7 +607,7 @@ G54 G65 P150003 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11.
 (tooriShin X end)
 
 
-N160
+N660
 (*** TooriShin Y start ***)
 M00 
 
@@ -681,7 +686,7 @@ N999 M30
 (Subprograms)
 (O110002, O130001, O130002, O140001, O150003, O210003)
 (O410000, O420000, O430000, O440000, O450000)
-(O910001, O910002)
+(O900003, O910001, O910002)
 
 
 (Used as part of passed arguments)
