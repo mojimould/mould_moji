@@ -161,6 +161,11 @@
 \newtcolorbox[auto counter, number within=chapter, list inside=loC]{Column}[2][]{%
   Columnbox, title={#2}, #1, list entry={\numberline{\Columnname~\thetcbcounter}{\protect\hspace*{41pt}#2}}}
 %\newcommand{\tcb@cnt@Columnautorefname}{Column}
+%%%%% Formula %%%%%
+\newcommand{\Formulaname}{Eq.}
+\newtcolorbox[auto counter, number within=chapter]{Formula}[2][]{%
+  Formulabox, title={#2}, #1}
+\newcommand{\tcb@cnt@Formulaautorefname}{Eq.\!}
 %%%%% FIGBOX %%%%%
 \newtcolorbox{Figbox}[1][]{Figurebox, #1}
 %%%%% TABBOX %%%%%

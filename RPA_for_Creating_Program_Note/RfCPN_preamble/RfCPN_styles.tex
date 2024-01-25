@@ -89,6 +89,7 @@
 \makesavenoteenv{twoCtable}
 \makesavenoteenv{longtable}
 \makesavenoteenv{tablePart}
+\makesavenoteenv{Column}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% HEADER AND FOOTER %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -377,7 +378,7 @@
 %\renewcommand{\appendixname}{補\hskip0.5em 遺} % appendix --> 補 遺
 \renewcommand{\appendixautorefname}{補遺\!} % appendix --> 補遺
 %%%%% STYLE OF SECTION %%%%%
-%\renewcommand{\sectionautorefname}{節\!} % section --> 節
+\renewcommand{\sectionautorefname}{節\!} % section --> 節
 \setcounter{secnumdepth}{4}
 \renewcommand{\subsubsectionautorefname}{\sectionautorefname} % subsubsection --> section
 \renewcommand*{\sectionformat}{%
@@ -443,10 +444,6 @@
 \tcbset{%
   %%%%% COLUMNBOX STYLE %%%%%
   Tabularbox/.style={%
-  },%
-  %%%%% COLUMNBOX STYLE %%%%%
-  Columnbox/.style={%
-    after title=\hfill\termblue{\Columnname~\thetcbcounter},%
     fonttitle=\gtfamily\bfseries,%
     breakable,%
     enhanced jigsaw,%
@@ -464,6 +461,16 @@
       \setcounter{footnote}{\value{GlobalFootnote}}% footnoteValue=GlobalFootnoteValue
       \let\footnote=\oldfootnote% \footnote=\oldfootnote
     },
+  },%
+  %%%%% COLUMNBOX STYLE %%%%%
+  Columnbox/.style={%
+    Tabularbox,
+    after title=\hfill\termblue{\Columnname~\thetcbcounter},%
+  },%
+  %%%%% FORMULA STYLE %%%%%
+  Formulabox/.style={%
+    Tabularbox,
+    after title=\hfill\termblue{\Formulaname~\thetcbcounter},%
   },%
   %%%%% FIGUREBOX STYLE %%%%%
   Figurebox/.style={%
