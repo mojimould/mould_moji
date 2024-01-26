@@ -217,19 +217,21 @@
   \right)
 \end{align*}
 したがって、計測の際の傾斜の角度$\zeta$ ($> 0$)は
-\begin{align*}
+%% label{eq:angleZeta}
+\begin{align}
+  \label{eq:angleZeta}
   \tan\zeta
   = \frac{\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\kappa_w\right)^2}
           -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}}
          {\kappa_w}\ .
-\end{align*}
+\end{align}
 
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 4.4.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{測定における溝深さの補正}
+\subsection{測定における溝深さの補正\label{subsec:keywayDepthDif}}
 測定の際は、計測器を溝のトップ側およびボトム側に寄せる形で測定し、その平均値を測定値としている。
 つまり、トップ側に寄っているときは計測器の針の付け根が溝位置にあるところ、ボトム側に寄っているときは針の先端が溝幅ボトム側にあるところで測定を行っている。
 この平均値を$\kappa_d'$とする。

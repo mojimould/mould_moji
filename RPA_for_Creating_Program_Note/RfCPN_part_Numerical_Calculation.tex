@@ -163,8 +163,22 @@
 %% subsection 10.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{A側溝深さ指定の場合}
-\paragraph*{外削のない場合}\noindent
-\index{Aがわみぞふかさ@A側溝深さ}A側溝深さ$\kappa_d$に対し、\index{みぞちゅうしん@溝中心}溝中心の位置の$X$座標は\pageeqref{eq:mizocenterA}より、
+\paragraph*{外削のない場合}
+\index{Aがわみぞふかさ@A側溝深さ}A側溝深さ$\kappa_d$は、その測定値$\kappa_d'$が図面上の値となるように与えられるものとする。このとき\pageeqref{eq:keydepthDif1}より、
+\begin{align*}
+  \kappa_d
+  &= \frac{2\kappa_d'-\kappa_w\sin\zeta}{1+\cos^2\zeta}\cos\zeta
+     +\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+     -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}\ .
+\end{align*}
+ここで$\zeta$は\pageeqref{eq:angleZeta}より、
+\begin{align*}
+  \tan\zeta
+  = \frac{\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\kappa_w\right)^2}
+          -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}}
+         {\kappa_w}\ .
+\end{align*}
+A側溝深さ$\kappa_d$に対し、\index{みぞちゅうしん@溝中心}溝中心の位置の$X$座標は\pageeqref{eq:mizocenterA}より、
 \begin{align*}
   \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}-\kappa_d-\frac{W_{mx}}2
   -\varDelta\ .
@@ -175,7 +189,7 @@
 \end{align*}
 
 
-\paragraph*{外削のある場合}\noindent
+\paragraph*{外削のある場合}
 \index{Aがわみぞふかさ@A側溝深さ}A側溝深さ$\kappa_d$に対し、トップ外削$X$中心を$\mathcal G_{\mathrm Tx}$とすると、\index{みぞちゅうしん@溝中心}溝中心の位置の$X$座標は\pageeqref{eq:mizocenterAG}より、
 \begin{align*}
   \mathcal G_{\mathrm Tx}+\frac{\mathfrak W_x}2-\kappa_d-\frac{W_{mx}}2\ .
