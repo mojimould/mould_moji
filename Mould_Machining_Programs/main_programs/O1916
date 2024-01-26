@@ -452,6 +452,7 @@ N500
 #901006=8.0 (kezuriShiro: all)
 
 
+G49
 G91 G28 Z0
 T02 (tanmen)
 M06 (tool exchange)
@@ -487,6 +488,7 @@ N510
 /M00
 
 
+G49
 G91 G28 Z0
 T16 (gaisaku)
 M06 (tool exchange)
@@ -528,6 +530,7 @@ N530
 /M00
 
 
+G49
 G91 G28 Z0
 T11 (mentori 15)
 M06 (tool exchange)
@@ -566,6 +569,7 @@ N540
 /M00
 
 
+G49
 G91 G28 Z0
 T11 (mentori 15)
 M06 (tool exchange)
@@ -595,6 +599,7 @@ G55 G65 P450000 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5 M0.07
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
+G49
 G91 G28 Z0
 
 (Bottom Uchimentori end)

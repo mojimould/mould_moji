@@ -55,4 +55,8 @@ N999 M99
 
 (System variables)
 (#3000: alarm)
+(#4012: current work coordinate G#)
+(#5001: block end X)
+(#5002: block end X)
+(#5003: block end Z)
 %
