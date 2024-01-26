@@ -172,8 +172,8 @@
 %% subsection 4.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{図面上の溝深さ}
-図面上においてA側の溝深さが$\kappa_d$のとき、これは溝幅の中央の位置におけるA側外面から端面と水平な方向に$\kappa_d$という意味で与えられる。
-すなわち、溝のA面側の水平方向の位置は、\pageeqref{eq:mizocenterA}より、
+単純に考えると、図面上においてA側の溝深さが$\kappa_d$のとき、これは溝幅の中央の位置におけるA側外面から端面と水平な方向に$\kappa_d$という意味で与えられる。
+このとき、溝のA面側の水平方向の位置は、\pageeqref{eq:mizocenterA}より、
 \begin{align*}
   \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}-\kappa_d-\varDelta'\ .
 \end{align*}
@@ -184,11 +184,10 @@
 
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 4.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{測定上の溝深さ\TBW}
+\subsection{測定上の傾き}
 通常、実測には\index{マイクロメータ}マイクロメータ（\index{デプスゲージ}デプスゲージ）が用いられる。
 このとき、計測は計測器を湾曲に沿った形にして行われる。
 したがって、その計測値は\index{みぞはば@溝幅}溝幅の両端に対する外面の傾斜だけ傾いた形で与えられる。
@@ -224,6 +223,85 @@
           -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}}
          {\kappa_w}\ .
 \end{align*}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 4.4.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{測定における溝深さの補正}
+測定の際は、計測器を溝のトップ側およびボトム側に寄せる形で測定し、その平均値を測定値としている。
+つまり、トップ側に寄っているときは計測器の針の付け根が溝位置にあるところ、ボトム側に寄っているときは針の先端が溝幅ボトム側にあるところで測定を行っている。
+この平均値を$\kappa_d'$とする。
+
+トップ側およびボトム側の（A側）溝深さをそれぞれ$\kappa_s$, $\kappa_l$とすると、
+\begin{align*}
+  \kappa_l-\kappa_s = \kappa_w\tan\zeta \quad,\qquad
+  \kappa_d' = \frac{\kappa_l\cos\zeta+\kappa_s\sec\zeta}2
+\end{align*}
+であり、
+\begin{align*}
+  \kappa_l = \frac{2\kappa_d'\cos\zeta+\kappa_w\tan\zeta}{1+\cos^2\zeta}~~, \quad
+  \kappa_s = \frac{2\kappa_d'-\kappa_w\sin\zeta}{1+\cos^2\zeta}\cos\zeta\ .
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosoku}
+$\kappa_l = a+b$, $\kappa_s = a-b$とすると、
+\begin{align*}
+  a = \frac{\kappa_l+\kappa_s}2~~, \quad
+  b = \frac{\kappa_l-\kappa_s}2\,\left(= \frac12\kappa_w\tan\zeta\right)
+\end{align*}
+であり、
+\begin{align*}
+  2\kappa_d' = a(\cos\zeta+\sec\zeta)+b(\cos\zeta-\sec\zeta)
+  \quad\longrightarrow\quad
+  a = \frac{2\kappa_d'\cos\zeta+b\sin^2\zeta}{1+\cos^2\zeta}\ .
+\end{align*}
+また、$\kappa_l$, $\kappa_s$はその平均値$a$からその差の半分$b$の和あるいは差として得られる。
+\begin{align*}
+  \kappa_l
+  &= \frac{2\kappa_d'\cos\zeta+\frac{\kappa_w\tan\zeta}2\sin^2\zeta}{1+\cos^2\zeta}+\frac12\kappa_w\tan\zeta\ ,\\
+  \kappa_s
+  &= \frac{2\kappa_d'\cos\zeta+\frac{\kappa_w\tan\zeta}2\sin^2\zeta}{1+\cos^2\zeta}-\frac12\kappa_w\tan\zeta\ .
+\end{align*}
+\end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$\kappa_d$および$\kappa_s$の差は
+\begin{align*}
+  \kappa_d-\kappa_s
+  &= \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+     -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}
+\end{align*}
+なので、
+\begin{subequations}
+%% label{eq:keydepthDif1}
+\begin{align}
+  \label{eq:keydepthDif1}
+  \kappa_d
+  &= \frac{2\kappa_d'-\kappa_w\sin\zeta}{1+\cos^2\zeta}\cos\zeta
+     +\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+     -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}
+\end{align}
+あるいは、
+%% label{eq:keydepthDif2}
+\begin{align}
+  \label{eq:keydepthDif2}
+  \kappa_d'
+  &= \frac{1+\cos^2\zeta}{2\cos\zeta}
+     \left\{
+     \kappa_d
+     -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+     +\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}
+     \right\}
+     +\frac12\kappa_w\sin\zeta\ .
+\end{align}
+\end{subequations}
+したがって、$\kappa_d$を図面上の数値とする場合は\pageeqref{eq:keydepthDif2}を、$\kappa_d'$を図面上の数値とする場合は、\pageeqref{eq:keydepthDif1}を用いて補正すればよい。
+
 
 
 
