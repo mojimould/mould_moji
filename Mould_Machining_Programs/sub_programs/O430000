@@ -97,8 +97,8 @@ N011
 #101=#22-#25
 #102=[#100+#101+ABS[#100-#101]]/2
 (#102=max[#100, #101])
-IF[#102LE#655]GOTO013
-(if #102 <= #655, go to N013)
+IF[#102LE#655]GOTO015
+(if #102 <= #655, go to N015)
 #103=FUP[[#102-#655]/[#654*2]]
 IF[#103LT0]GOTO800
 (#103: kakou kaisuu)
@@ -155,24 +155,39 @@ END1
 
 
 N012
+IF[#421EQ1]GOTO013
+IF[#421EQ2]GOTO014
+GOTO016
+N013 (if #421=1)
+M05 (shujiku kaiten off)
+M09 (coolant off)
+M00 (for Bot)
+N014 (if #421=2)
+M05 (shujiku kaiten off)
+M09 (coolant off)
+M98 P90003 (for Bot)
+
+
 IF[#428EQ0]GOTO011
 M05 (shujiku kaiten off)
 M09 (coolant off)
 M00 (if #428=1)
 
-N013
-#30=FUP[#429]
+N015
+#106=FUP[#429]
 
-IF[#30EQ#0]THEN #30=0
-IF[#30LT0]THEN #30=0
-IF[#30GT3]THEN #30=3
+IF[#106EQ#0]THEN #106=0
+IF[#106LT0]THEN #106=0
+IF[#106GT3]THEN #106=3
+IF[#655LE0]THEN #106=#106-1
+(#106: Siage +kaisuu)
 
-N014
+N016
 G90 G43 G00 H#07 Z[#26+#601] F7200
 
 N200 (Shiage)
-WHILE[#30GE0]DO2
-#30=#30-1
+WHILE[#106GE0]DO2
+#106=#106-1
 
 N201
 G90 G00 X[[#24/2]+#32*3-#426] Y[#25/2] F10800
@@ -214,11 +229,11 @@ G90 G40 G00 X[[#24/2]+#32*3-#426] F10800
 END2
 
 
-N015
+N017
 M05 (shujiku kaiten off)
 M09 (coolant off)
 
-N016
+N018
 S200
 G90 G43 G00 H#07 Z[#26+#601] F7200
 G90 G53 G00 Z0 F7200
@@ -257,6 +272,8 @@ N999 M99
 
 
 (Common variable)
+(as LHS)
+(#102, #103, #104, #105, #106)
 (as RHS)
 (#424, #425, #426, #427, #428, #429, #601, #607)
 (#901011, #901105, #901107, #901109, #901111)
@@ -269,7 +286,7 @@ N999 M99
 
 
 (Subprograms)
-(O490005)
+(O490005, O900003)
 
 
 (Passed arguments)
