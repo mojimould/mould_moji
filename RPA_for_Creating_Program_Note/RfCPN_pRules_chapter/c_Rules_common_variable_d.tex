@@ -126,19 +126,19 @@
 \modcaptionof{table}{\ttNum425\,-\ttNum449：主に加工用（続き）\TBW}
 \begin{twoCtable}{}
 \ttNum431\TBW & トップ外面取$X+$補正 & 0\\\hline
-\ttNum432\TBW & トップ外面取 仕上げ前 一時停止 (0:non-stop, 1:外径\ttNum657残し\verb|M00|) & 0\\\hline
+\ttNum432\TBW & トップ外面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
 \ttNum433\TBW & トップ外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
 \ttNum434 & （不使用）\\\hline
 \ttNum435\TBW & トップ内面取$X+$補正 & 0\\\hline
-\ttNum436\TBW & トップ内面取 仕上げ前 一時停止 (0:non-stop, 1:内径\ttNum659残し\verb|M00|) & 0\\\hline
+\ttNum436\TBW & トップ内面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
 \ttNum437\TBW & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
 \ttNum438 & （不使用）\\\hline
 \ttNum439\TBW & ボトム外面取$X+$補正 & 0\\\hline
-\ttNum440\TBW & ボトム外面取 仕上げ前 一時停止 (0:non-stop, 1:外径\ttNum657残し\verb|M00|) & 0\\\hline
+\ttNum440\TBW & ボトム外面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
 \ttNum441\TBW & ボトム外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
 \ttNum442 & （不使用）\\\hline
 \ttNum443\TBW & ボトム内面取$X+$補正 & 0\\\hline
-\ttNum444\TBW & ボトム内面取 仕上げ前 一時停止 (0:non-stop, 1:内径\ttNum659残し\verb|M00|) & 0\\\hline
+\ttNum444\TBW & ボトム内面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
 \ttNum445\TBW & ボトム内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
 \ttNum446 & （不使用）\\\hline
 & （以下予備）
@@ -422,13 +422,11 @@ $\vdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum900011\,-\ttNum900015：内中心$X$測定用 (\MXIWidth)}
+\modcaptionof{table}{\ttNum900011\,-\ttNum900013：溝中心$X$測定用 (\MXOface)}
 \begin{twoCtable}{}
-\ttNum900011 & $X$内中心測定 $-X$側測定値\\\hline
-\ttNum900012 & $X$内中心測定 $+X$側測定値\\\hline
-\ttNum900013 & $X$内中心測定値\\\hline
-\ttNum900014 & $X$内中心測定 厚さ測定値\\\hline
-\ttNum900015 & （予備）\\
+\ttNum900011 & $X$溝中心測定 A側外面測定値\\\hline
+\ttNum900012 & （予備）\\\hline
+\ttNum900013 & （予備）\\
 \end{twoCtable}
 
 
@@ -436,13 +434,13 @@ $\vdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum900016\,-\ttNum900020：内中心$Y$測定用 (\MYIWidth)}
+\modcaptionof{table}{\ttNum900014\,-\ttNum900018：内中心$X$測定用 (\MXIWidth)}
 \begin{twoCtable}{}
-\ttNum900016 & $Y$内中心測定 $-Y$側測定値\\\hline
-\ttNum900017 & $Y$内中心測定 $+Y$側測定値\\\hline
-\ttNum900018 & $Y$内中心測定値\\\hline
-\ttNum900019 & $Y$内中心測定 厚さ測定値\\\hline
-\ttNum900020 & （予備）\\
+\ttNum900014 & $X$内中心測定 $-X$側測定値\\\hline
+\ttNum900015 & $X$内中心測定 $+X$側測定値\\\hline
+\ttNum900016 & $X$内中心測定値\\\hline
+\ttNum900017 & $X$内中心測定 厚さ測定値\\\hline
+\ttNum900018 & （予備）\\
 \end{twoCtable}
 
 
@@ -450,10 +448,12 @@ $\vdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum900021\,-\ttNum900023：外削中心$X$測定用 (\MXface)}
+\modcaptionof{table}{\ttNum900019\,-\ttNum900023：内中心$Y$測定用 (\MYIWidth)}
 \begin{twoCtable}{}
-\ttNum900021 & $X$外削中心測定 内面測定値\\\hline
-\ttNum900022 & （予備）\\\hline
+\ttNum900019 & $Y$内中心測定 $-Y$側測定値\\\hline
+\ttNum900020 & $Y$内中心測定 $+Y$側測定値\\\hline
+\ttNum900021 & $Y$内中心測定値\\\hline
+\ttNum900022 & $Y$内中心測定 厚さ測定値\\\hline
 \ttNum900023 & （予備）\\
 \end{twoCtable}
 
@@ -462,12 +462,24 @@ $\vdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum900024\,-\ttNum900027：通り芯$X$測定用 (\MYcenterline)}
+\modcaptionof{table}{\ttNum900024\,-\ttNum900026：外削中心$X$測定用 (\MXIface)}
 \begin{twoCtable}{}
-\ttNum900024 & $Y$通り芯 ボトム側測定値\\\hline
-\ttNum900025 & $Y$通り芯 トップ側測定値\\\hline
-\ttNum900026 & $Y$通り芯 測定値\\\hline
-\ttNum900027 & （予備）\\
+\ttNum900024 & $X$外削中心測定 内面測定値\\\hline
+\ttNum900025 & （予備）\\\hline
+\ttNum900026 & （予備）\\
+\end{twoCtable}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{table}{\ttNum900027\,-\ttNum900030：通り芯$X$測定用 (\MYcenterline)}
+\begin{twoCtable}{}
+\ttNum900027 & $Y$通り芯 ボトム側測定値\\\hline
+\ttNum900028 & $Y$通り芯 トップ側測定値\\\hline
+\ttNum900029 & $Y$通り芯 測定値\\\hline
+\ttNum900030 & （予備）\\
 \end{twoCtable}
 
 
@@ -475,12 +487,12 @@ $\vdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum900028\,-\ttNum900031：通り芯$X$測定用 (\MXcenterline)}
+\modcaptionof{table}{\ttNum900031\,-\ttNum900034：通り芯$X$測定用 (\MXcenterline)}
 \begin{twoCtable}{}
-\ttNum900028 & $X$通り芯 トップ側測定値\\\hline
-\ttNum900029 & $X$通り芯 ボトム側測定値\\\hline
-\ttNum900030 & $X$通り芯 測定値\\\hline
-\ttNum900031 & （予備）\\
+\ttNum900031 & $X$通り芯 トップ側測定値\\\hline
+\ttNum900032 & $X$通り芯 ボトム側測定値\\\hline
+\ttNum900033 & $X$通り芯 測定値\\\hline
+\ttNum900034 & （予備）\\
 \end{twoCtable}
 
 
