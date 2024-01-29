@@ -104,6 +104,18 @@
     \ifnum\value{#1}<10 0\fi
       \arabic{#1}. #2}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Articlename}{論文}
+\newcommand{\Bookname}{書籍}
+\newcommand{\OnlineSourcename}{ウェブサイト}
+\defbibheading{articles}[\Articlename]{\section*{#1}}
+\defbibheading{online}[\OnlineSourcename]{\section*{#1}}
+%%%%% DECLAREFIELDFORMAT %%%%%%%%%%%%%%%%%%%%
+\DeclareFieldFormat{urldate}{%
+  (\textbf{urlseen~}\thefield{urlyear}/\ifnum\thefield{urlmonth}<10 0\fi\thefield{urlmonth})%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% TOC LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

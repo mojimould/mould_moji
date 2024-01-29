@@ -212,7 +212,14 @@
 %  tocnumwidth=2.5em,
 %  tocentrynumberformat=\entrynumberwithdot
 %]{subsection}
-%%%%% STYLE OF LIST OF TABLES %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF TOC %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{tocdepth}{3}
+\renewcommand\contentsname{\texorpdfstring{\hbox to 1.9em{目次}}{目次}}
+\patchcmd{\l@part}{\begingroup}{\begingroup\begingroup\tikzset{every node/.style={rectangle,fill=blue!20,rounded corners}}}{}{}
+\patchcmd{\l@part}{\endgroup}{\endgroup\endgroup}{}{}
+%%%%% STYLE OF LIST FOR APPENDIX %%%%%
 \AtBeginEnvironment{appendices}{%
   \@appendixtrue%
   \patchcmd{\part}{\newpage}{\relax}{}{}%
@@ -224,24 +231,42 @@
   \pretocmd{\part}{\addtocontents{toc}{\protect\newpage}}{}{}{}% add page break before parts, except the first one
   \@appendixfalse%
 }
-\setcounter{tocdepth}{3}
-\renewcommand\contentsname{\texorpdfstring{\hbox to 1.9em{目次}}{目次}}
-%%%%% STYLE OF LIST OF PARTTABLES %%%%%
+%%%%% STYLE OF PART FOR LIST %%%%%
+%\newcommand{\tocpartnumdeco}[1]{%
+%  \begin{tikzpicture}[baseline]
+%    \node[draw, rounded corners, fill=blue!20, text=black, minimum width=1.5em, align=center, yshift=4.5pt] (partnumber) {#1};
+%  \end{tikzpicture}
+%}
+%\renewcommand*{\addparttocentry}[2]{%
+%  \addtocentrydefault{part}{\tocpartnumdeco{#1}}{#2}%
+%}
+%\renewcommand*{\partformat}{\thepart\autodot\enskip}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF LOP %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listoflopname{\texorpdfstring{\hbox to 2.75em{大項目}}{大項目}}
-%%%%% STYLE OF LIST OF FIGURES %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF LOF %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listfigurename{\texorpdfstring{\hbox to 2.75em{図目次}}{図目次}}
 \renewcommand{\figurename}{図}
 \renewcommand{\figureautorefname}{\figurename} % figure --> 図
 %\setcounter{lofdepth}{2}
 %\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3.2em}}
 %\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
-%%%%% STYLE OF LIST OF Columns %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF LOC %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listofloCname{Column一覧}
-%%%%% STYLE OF LIST OF TABLES %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF LOT %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listtablename{\texorpdfstring{\hbox to 2.75em{表目次}}{表目次}}
 \renewcommand{\tablename}{表}
 \AtBeginDocument{\renewcommand{\thetable}{}}
-%%%%% STYLE OF LISTINGS %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF LISTLINGS %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\lstlistlistingname}{プログラム 目次}
 \renewcommand{\lstlistingname}{{\scshape Prg: }}
 \AtBeginDocument{%
@@ -336,12 +361,17 @@
 %  emph={[222]SIN, COS, TAN, ATAN, SQRT, FIX, FUP, ROUND, DPRNT},%
 %  emphstyle={[222]\fontfamily{pcr}\selectfont\bfseries},%
 %}
-%%%%% STYLE OF INDEX %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF INDEX %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\indexname}{\texorpdfstring{\hbox to 1.9em{索引}}{索引}}
-%%%%% STYLE OF BIBLATEX %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF BIBLATEX %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\bibname}{\texorpdfstring{\hbox to 3.75em{参考文献}}{参考文献}}
 \ExecuteBibliographyOptions{
-  sorting=nyt,
+  sorting=none,
+  refsegment=chapter,
   hyperref=true,
   block=nbpar,
   subentry=true,
@@ -349,16 +379,18 @@
 }
 \appto\bibfont{\footnotesize\setstretch{1.1}}
 \DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}\hspace{-6pt}}
-%%%%% STYLE OF PART %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF PART %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\partautorefname}{part}  % part --> part
 \renewcommand\partpagestyle{emptydate}
 %\renewcommand*{\partformat}{\begin{gtfamily}\thepart\end{gtfamily}}
 %\renewcommand{\partname}{}
 %\renewcommand{\thepart}{第\hspace{2truemm}\Roman{part}\hspace{2truemm}部} %
 %\renewcommand*{\addparttocentry}[2]{\addtocentrydefault{part}{#1}{第#2部}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% STYLE OF CHAPTER %%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF CHAPTER %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\chapterautorefname}{章}  % chapter --> 章
 \renewcommand\chapterpagestyle{\if@frontmatter plainheadfront\else plainhead\fi}
 \renewcommand*{\chapterformat}{%
@@ -377,7 +409,9 @@
 \renewcommand{\setthesection}{\Alph{section}}
 %\renewcommand{\appendixname}{補\hskip0.5em 遺} % appendix --> 補 遺
 \renewcommand{\appendixautorefname}{補遺\!} % appendix --> 補遺
-%%%%% STYLE OF SECTION %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF SECTION %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\sectionautorefname}{節\!} % section --> 節
 \setcounter{secnumdepth}{4}
 \renewcommand*{\sectionformat}{%
@@ -392,7 +426,9 @@
       at (0, 0) {\Large{\fontfamily{pplx}\bfseries\,\thesection~\relax}};
   \end{tikzpicture}~~%
 }
-%%%%% STYLE OF SUBSECTION %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF SUBSECTION %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\subsectionautorefname}{\sectionautorefname} % subsection --> section
 \renewcommand*{\subsectionformat}{%
   \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
@@ -406,7 +442,9 @@
       at (0, 0) {\large{\fontfamily{pplx}\bfseries\,\thesubsection~\relax}};
   \end{tikzpicture}~~%
 }
-%%%%% STYLE OF SUBSECTION %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF SUBSUBSECTION %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\subsubsectionautorefname}{\sectionautorefname} % subsubsection --> section
 \renewcommand*{\subsubsectionformat}{%
   \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
@@ -420,7 +458,9 @@
       at (0, 0) {\small{\fontfamily{pplx}\bfseries\,\thesubsubsection~\relax}};
   \end{tikzpicture}~~%
 }
-%%%%% STYLE OF PARAGRAPH %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF PARAGRAPH %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %for scrbook.cls
 \RedeclareSectionCommand[%
   style=section,%
@@ -442,7 +482,9 @@
 %  {0.1ex\@plus.1ex \@minus.1ex}% ここが正だと改行されて、値だけ垂直スペースが入る
 %  {\raggedsection\normalfont\sectfont\gtfamily\nobreak\size@paragraph\sball{blue}~}{#1}\noindent
 %}
-%%%%% STYLE OF SUBPARAGRAPH %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF SUBPARAGRAPH %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RedeclareSectionCommand[%
   style=section,%
   level=5,%
@@ -454,7 +496,9 @@
   tocindent=12em,%
   tocnumwidth=6em%
 ]{subparagraph}
-%%%%% TCBSET %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF TCBSET %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{myheadercolor}{rgb}{0.68, 0.85, 0.90}
 \tcbset{%
   %%%%% COLUMNBOX STYLE %%%%%
@@ -574,7 +618,9 @@
     },
   },
 }
-%%%%% TIKZSET %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF TIKZSET %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tikzset{
   %%%%% SECTIONFORMAT STYLE %%%%%
 %  sect/.style={signal, draw, text=white},
