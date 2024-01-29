@@ -2,6 +2,7 @@
 
 \input{RfCPN_preamble/RfCPN_styles}
 
+\newcommand{\thisdocumentversion}{version 0.1.0}
 \usepackage{refcheck}
 \setallpageWatermark{Copy}{atan(297/210)+5.1}{32.1}{0.075}
 %\setallpageWatermark{Draft}{atan(297/210)+5.1}{25.3}
@@ -43,10 +44,11 @@
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \addtocounter{page}{1}
-\addchaptertocentry{}{\listoflopname}
 \begingroup
 \let\cleardoublepage\relax
 \renewcommand{\contentsname}{\partcontentsname}
+\phantomsection
+\addchaptertocentry{}{\listoflopname}
 \listoftoc{lop} % insert lop
 \let\cleardoublepage\tmpcleardoublepage
 \endgroup
@@ -58,9 +60,11 @@
 %% TABLE OF CONTENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\clearrightpage
+\clearrightpage\clearpage
+\phantomsection
 \addchaptertocentry{}{\contentsname}
 \tableofcontents % insert toc
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -69,6 +73,7 @@
 %%                  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearrightpage
+\phantomsection
 \addchaptertocentry{}{\listtablename}
 \listoftables  % insert lot
 
@@ -80,6 +85,7 @@
 %%                  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearrightpage
+\phantomsection
 \addchaptertocentry{}{\lstlistlistingname}
 \lstlistoflistings % insert lol
 
@@ -170,7 +176,39 @@
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tPart[lot]{諸規程・諸標準の策定：コーディング}{概要}{%
+\tPart[lot]{諸規程の策定}{概要}{%
+\paragraph*{目的}
+\DMname についての（特にソフトウェアの観点による）\textbf{規程および標準の策定・制定}を試みる。
+\tcbline*
+\paragraph*{背景}
+あらゆる業務・作業において、何の基準・標準もなく\textbf{管理状態}におくことは不可能である。
+
+　しかし現時点（\DMname 設置時点）において、「\textbf{ソフトウェアエンジニアリング}に関する管理・業務を行う部門」は存在しておらず、専任の担当者さえ存在しない。
+そのため、ソフトウェアエンジニアリング視点による\textbf{規程・標準}等も存在しない
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{「ソフトウェア」を「ハードウェア」に置き換えてみると、これがどれほどの異常事態であるかがわかる。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+　したがって、（\DMname 関連に限らず）こうした視点による規程・標準を設けることが焦眉の課題である。
+これにより、すべての業務におけるソフトウェア関連作業の管理や、ソフトウェア開発（外注含む）に関する手続き等にかかる（時間的・金額的）コストの増加を大きく抑えられることが期待される。
+\tcbline*
+\paragraph*{結論}
+\DMname 関連のソフトウェア開発における、（ソフトウェアの観点による）寸法・コードの記述法・工具・保守等の規程を策定した。
+}
+\input{./RfCPN_part_Rules}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Part Rules    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tPart[lot]{諸標準の策定：G-codeの記述}{概要}{%
 \paragraph*{目的}
 \DMname についての（特にソフトウェアの観点による）\textbf{規程および標準の策定・制定}を試みる。
 \tcbline*
@@ -189,7 +227,7 @@
 \paragraph*{結論}
 \DMname 関連のソフトウェア開発における、（ソフトウェアの観点による）寸法・コードの記述法・工具・保守等の規程・標準を策定した。
 }
-\input{./RfCPN_part_Rules}
+\input{./RfCPN_part_Standards_Coding}
 
 
 
@@ -245,18 +283,22 @@
 %% LIST OF FIGURES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\afterpage{\addchaptertocentry{}{\listfigurename}\listoffigures\thispagestyle{plainheadback}\clearpage}
+\phantomsection
+\addchaptertocentry{}{\listfigurename}{}%
+\listoffigures\thispagestyle{plainheadback}
 
 
-%\clearpage
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% LIST OF ColumnS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begingroup
-\afterpage{\let\cleardoublepage\relax\addchaptertocentry{}{\listofloCname}
-\listoftoc{loC}\thispagestyle{plainheadback}\clearpage}
+\let\cleardoublepage\relax
+\phantomsection
+\addchaptertocentry{}{\listofloCname}
+\listoftoc{loC}\thispagestyle{plainheadback}
 \let\cleardoublepage\tmpcleardoublepage
 \endgroup
 
@@ -268,10 +310,14 @@
 %% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%              %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\printbibheading
 \begingroup
 \let\cleardoublepage\relax  % \cleardoublepageを無効にする
 \addchaptertocentry{}{\bibname}
-{\footnotesize\printbibliography\thispagestyle{plainheadback}}
+{\footnotesize%
+\printbibliography[type=article, heading=articles]%
+\printbibliography[type=online, heading=online]%
+\thispagestyle{plainheadback}}
 \let\cleardoublepage\tmpcleardoublepage
 \endgroup
 

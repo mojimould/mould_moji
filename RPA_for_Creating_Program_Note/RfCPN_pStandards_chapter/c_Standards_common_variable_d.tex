@@ -28,10 +28,7 @@
 \ttNum104 & 各工程 切削回数用 一時保存値（加工時 径$X$）\\\hline
 \ttNum105 & 各工程 切削回数用 一時保存値（加工時 径$Y$）\\\hline
 \ttNum106 & 各工程 切削回数用 一時保存値（仕上げ 切削回数）\\\hline
-\ttNum107 & （予備）\\\hline
-\ttNum108 & （予備）\\\hline
-\ttNum109 & （予備）\\\hline
-\ttNum110 & （予備）
+\ttNum107 & （以下 予備）\\
 \end{twoCtable}
 
 
@@ -39,14 +36,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 15.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{コモン変数 (\ttNum175\,-\ttNum199)}
+\modHeadsection{コモン変数 (\ttNum175\,-\ttNum199)\TBW}
 \noindent\ttNum175\,-\ttNum199については、主に各工程後の確認のためのものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum175\,-\ttNum199：主に各工程後一時停止}
+\modcaptionof{table}{\ttNum175\,-\ttNum199：主に各工程後一時停止\TBW}
 \begin{twoCtable}{}
-\ttNum184 & 測定（通り芯・内面溝除く）後 一時停止 (0:non-stop, 1: \verb|M00|) & 0\\\hline
+\ttNum183 & （不使用）\\\hline
+\ttNum184\TBW & 測定（通り芯・内面溝除く）後 一時停止 (0:non-stop, 1: \verb|M00|) & 0\\\hline
 \ttNum185 & （不使用）\\\hline
 \ttNum186 & 内面溝測定後 一時停止 (0:non-stop, 1: \verb|M00|) & 0\\\hline
 \ttNum187 & 内面溝加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|P90003|) & 0\\\hline
