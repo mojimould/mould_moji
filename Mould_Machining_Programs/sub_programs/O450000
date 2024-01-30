@@ -79,9 +79,9 @@ N008
 
 
 N009
-G90 G43 G00 H#07 Z[#26+#601] F7200
-G90 G00 X#04 Y0 F10800
-G90 G01 Z[#26-#23+#06] F5400 S#19
+G90 G43 G01 H#07 Z[#26+#601] F10800
+G90 G00 X#04 Y0
+G90 G01 Z[#26-#23+#06] S#19 F10800
 (hosei: AC center: +: X+, -: X-)
 (hosei kouguChou: #07)
 (hosei Z: Z-W+K)
@@ -115,12 +115,12 @@ G91 G03 X-#31 Y#31 I-#31 J0
 (ar corner: R #31 [-#31, 0] X-Y+)
 G91 G01 X-[#32/2]
 (ar2ac:X-: AC chokusenBu/2)
-G91 G03 X-#608 Y-#608 I0 J-#608
+G91 G03 X-#608 Y-#608 I0 J-#608 F7200
 (ac: approach R #608 [0, -#608] X-Y-)
 
 N012
-G90 G00 G40 X0 Y0 F5400
-G90 G00 Z[#26+#601] F7200
+G90 G00 G40 X0 Y0
+G90 G01 Z[#26+#601] F10800
 (XY: work genten)
 (Z: tanmen+#601)
 GOTO999

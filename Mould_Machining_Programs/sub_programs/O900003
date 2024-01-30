@@ -2,14 +2,14 @@
 O900003 (pause and check)
 
 N001
+G90 G53 G01 Z0 F10800
+
 #33=#4012
 #32=#5001
 #31=#5002
-#30=#5003
 (#33: current work coordinate G#)
 (#32: X block end: start point X)
 (#31: Y block end: start point Y)
-(#30: Z block end: start point Z)
 
 N002
 IF[#33LT54]GOTO800 
@@ -17,7 +17,7 @@ IF[#33GT59]GOTO800
 (if work G# < 54 or G# > 59, go to N800)
 
 N003
-G91 G30 G00 X0 Y0 F10800
+G91 G28 G00 X0 Y0
 
 N004
 M11 (4jiku unclamp)
@@ -25,21 +25,19 @@ G91 G00 B90.0
 M10 (4jiku clamp)
 
 N005
-G90 G#33 G00 Z1050.0 F7200
+G90 G53 G01 Z-1000.0 F10800
 
 N006
 M00 (OK?)
 
 N007
-G90 G#33 G00 Z#30 F7200
+G90 G53 G01 Z0 F10800
 
 N008
 M11 (4jiku unclamp)
 G91 G00 B-90.0
 M10 (4jiku clamp)
 
-N009
-G91 G#33 G00 X#32 Y#31 F10800
 GOTO999
 
 
@@ -51,7 +49,7 @@ N999 M99
 (Used Variables)
 
 (Local variables)
-(#30, #31, #32, #33)
+(#31, #32, #33)
 
 (System variables)
 (#3000: alarm)
