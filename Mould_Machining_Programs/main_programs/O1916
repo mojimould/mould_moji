@@ -189,6 +189,7 @@ G57 G65 P130002 C1. Y154.839 Z500.016 F200. M0.07
 (F*: skip speed)
 (M: mekki mm)
 
+(mesurement end)
 IF[#184EQ0]GOTO200
 M00
 
