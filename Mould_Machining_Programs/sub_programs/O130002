@@ -122,18 +122,17 @@ GOTO999
 
 N801
 #3000=145 (Low battery)
-M00 (ALARM: low battery)
 GOTO999
 
 N803
 G90 G01 Y#29 F5400 (Y to start point)
 
 N802
-G91 G28 Z0
+G90 G53 G01 Z0 F7200
 G65 P910002 (sensor OFF)
 
-N800 #3000=121 (are the arguments or the mould OK?)
-M00 (are arguments ok?)
+N800
+#3000=121 (are the arguments or the mould OK?)
 
 N999 M99
 

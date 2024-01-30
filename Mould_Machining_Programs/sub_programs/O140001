@@ -70,7 +70,8 @@ IF[#29LE0]GOTO800
 N003
 #28=0 (#28: X +hosei)
 IF[#30EQ#0]GOTO005
-(if #30 is #0, go to N005)
+IF[#30EQ0]GOTO005
+(if #30 = 0 or #0, go to N005)
 
 IF[#23LT10]GOTO800
 IF[#18LT10]GOTO800
@@ -128,18 +129,16 @@ GOTO999
 
 N801
 #3000=145 (sensor low battery)
-M00 (ALARM: low battery)
 GOTO999
 
 N803
 G90 G01 X#32 F5400 (X to start point)
 
 N802
-G91 G28 Z0
+G90 G53 G01 Z0 F7200
 G65 P910002 (sensor OFF)
 
 N800 #3000=121 (Argument Is Not Assigned)
-M00 (are arguments ok?)
 
 N999 M99
 

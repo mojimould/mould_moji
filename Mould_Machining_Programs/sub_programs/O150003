@@ -122,12 +122,11 @@ N801
 #3000=145 (Low battery)
 
 N802
-G91 G28 Z0
+G90 G53 G01 Z0 F7200
 
 N800
 G65 P910002 (sensor OFF)
 #3000=121 (are the arguments OK?)
-M00 (are the arguments ok?)
 
 N999 M99
 
