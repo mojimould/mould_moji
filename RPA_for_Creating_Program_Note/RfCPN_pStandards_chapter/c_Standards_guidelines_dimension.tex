@@ -59,31 +59,6 @@
   = \sqrt{\left(R+\frac{W_x}2\right)^{\!2}-f_\mathrm T^2}
     -\sqrt{\left(R-\frac{W_x}2\right)^{\!2}-f_\mathrm T^2}\ .
 \end{align*}
-\begin{Column}{近似計算}
-\index{テイラーてんかい@テイラー展開}テイラー展開（\index{マクローリンてんかい@マクローリン展開}マクローリン展開）\pageautoref{formula:taylorexpansion}より、
-\begin{align*}
-  (1+x)^\frac12 = 1+\frac x2-\frac{x^2}8+\frac{x^3}{16}-\frac{5x^4}{128}+o\!\left(x^5\right)
-\end{align*}
-なので、
-\begin{align*}
-  & (1+x)^\frac12(1+y)^\frac12-(1-x)^\frac12(1-y)^\frac12\\
-  &= x+y+\frac{(x+y)(x-y)^2}8-\frac{xy(x+y)\big\{5(x-y)^2+7xy\big\}}{128}+\cdots\ .
-\end{align*}
-したがって、
-\begin{align*}
-  x = \frac{\nicefrac{W_x}2+f_\mathrm T}R\ ,\quad y = \frac{\nicefrac{W_x}2-f_\mathrm T}R\quad
-  \longrightarrow \quad
-  x+y = \frac{W_x}R\ , \quad x-y = \frac{2f_\mathrm T}R
-\end{align*}
-とすると、
-\begin{align*}
-  W_\mathrm T
-  = R\left\{(1+x)^\frac12(1+y)^\frac12-(1-x)^\frac12(1-y)^\frac12\right\}
-  = W_x\!\left(1+\frac{f_\mathrm T^2}{2R^2}+\cdots\right)
-\end{align*}
-と近似できる。
-また、$R\to\infty$ ($R^{-1}\to0$)に対して$W_\mathrm T = W_x$であることもわかる。
-\end{Column}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
