@@ -5,6 +5,70 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section C.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{近似計算}
+\begin{Formula}[label=formula:taylorexpansion]{テイラー展開（マクローリン展開）}
+$f(x)$に対する\index{テイラーてんかい@テイラー展開}テイラー展開（\index{マクローリンてんかい@マクローリン展開}マクローリン展開）は、以下で与えられる。
+\begin{align*}
+  \sum_{n=1}^{\infty}\frac{f^{(n)}(0)}{n!}x^n\ .
+\end{align*}
+\tcbline*
+特に、$f(x) = \sqrt{1+x}$の場合、
+\begin{align*}
+  (1+x)^\frac12 = 1+\frac x2-\frac{x^2}8+\frac{x^3}{16}-\frac{5x^4}{128}+o\!\left(x^5\right)
+\end{align*}
+\end{Formula}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section C.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{回転}
+\begin{Formula}{回転によるずれ}
+回転中心が原点から($\delta x$, $\delta z$)だけずれているとき、ある任意の点($x$, $z$)を$\theta$だけ回転すると、
+\begin{align*}
+  \left[
+    \begin{array}{c}
+      x'\\
+      z'
+    \end{array}
+  \right]
+  = \left[
+    \begin{array}{cc}
+      \cos\theta & -\sin\theta\\
+      \sin\theta & \cos\theta
+    \end{array}
+  \right]\!\!
+  \left[
+    \begin{array}{c}
+      x+\delta x\\
+      z+\delta z
+    \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      (x+\delta x)\cos\theta-(z+\delta z)\sin\theta\\
+      (x+\delta x)\sin\theta+(z+\delta z)\cos\theta
+    \end{array}
+  \right].
+\end{align*}
+また、ずれによる差分は、
+\begin{align*}
+  \left[
+    \begin{array}{c}
+      \delta x\cos\theta-\delta z\sin\theta\\
+      \delta x\sin\theta+\delta z\cos\theta
+    \end{array}
+  \right].
+\end{align*}
+\end{Formula}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section C.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{2点間の距離}
 \begin{Formula}{点と直線間の距離}
 点($p$, $q$)と直線$ax+by+c=0$との距離$d$は、以下で与えられる。
@@ -32,16 +96,4 @@ $\mathrm L'$上の点の中でLに最も近づく点の位置$\boldsymbol k'$に
           {1+(\boldsymbol m, \boldsymbol m')^2}\boldsymbol m
 \end{align*}
 また、これらの差の大きさ$\left|\boldsymbol k-\boldsymbol k'\right|$から、2直線間の距離$d$が求まる。
-\end{Formula}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section C.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{近似計算}
-\begin{Formula}[label=formula:taylorexpansion]{テイラー展開（マクローリン展開）}
-$f(x)$に対する\index{テイラーてんかい@テイラー展開}テイラー展開（\index{マクローリンてんかい@マクローリン展開}マクローリン展開）は、以下で与えられる。
-\begin{align*}
-  \sum_{n=1}^{\infty}\frac{f^{(n)}(0)}{n!}x^n\ .
-\end{align*}
 \end{Formula}
