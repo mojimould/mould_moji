@@ -17,13 +17,15 @@ IF[#18EQ#0]GOTO800
 IF[#13EQ#0]GOTO800
 IF[#13LT0]GOTO800
 IF[#13GT10]GOTO800
-IF[#03EQ#0]GOTO800
-IF[#03EQ0]GOTO800
 (if X < 10 or #0, go to N800)
 (if Z = #0, go to N800)
 (if R = #0, go to N800)
 (if M < 0 or M > 10 or #0, go to N800)
-(if C = 0 or #0, go to N800)
+
+IF[#18LE#26]GOTO800
+IF[#26LE[#901011/2]]GOTO810
+(if R <= Z, go to N800)
+(if Z <= #901011/2, go to N810)
 
 IF[#901011EQ#0]GOTO801
 IF[#901011LE0]GOTO801
@@ -42,14 +44,15 @@ IF[#604GT20]GOTO801
 (if #603 <= 0 or #0, go to N801)
 (if #604 < 0 or #604 > 20.0 or #0, go to N801)
 
-IF[#26LE[#901011/2]]GOTO810
-(if Z <= #901011/2, go to N810)
-
-IF[#03GT0]THEN #32=1
-IF[#03LT0]THEN #32=-1
+IF[#33GT56]THEN #32=1
+IF[#33GT57]THEN #32=1
+IF[#33LT54]THEN #32=-1
+IF[#33LT55]THEN #32=-1
 (Top: #32=1, Bot: #32=-1)
-IF[#03GT0]THEN #31=#410
-IF[#03LT0]THEN #31=#405
+IF[#33GT56]THEN #31=#410
+IF[#33GT57]THEN #31=#410
+IF[#33LT54]THEN #31=#405
+IF[#33LT55]THEN #31=#405
 (Top: #31=#410, Bot: #31=#405)
 
 N002
@@ -166,7 +169,6 @@ N999 M99
 
 (Local variables)
 (as received arguments)
-(#03:C: +: for Top, -: for Bot)
 (#09:F: skip speed)
 (#13:M: mekki mm)
 (#18:R: central curvature)

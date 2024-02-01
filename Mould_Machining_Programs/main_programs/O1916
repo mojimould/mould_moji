@@ -97,9 +97,8 @@ G90 G54 G43 G01 Z[499.984+#601] H50 F5400
 (hosei kouguChou #50)
 (Z= BotTanmen +#601)
 
-G54 G65 P140001 C-1. X180.95 Z499.984 W600.0 T13.82 R8922.7 M0.07
+G54 G65 P140001 X180.95 Z499.984 W600.0 T13.82 R8922.7 M0.07
 (G54: Bot X Gaisaku center)
-(C: +: Top, -: Bot)
 (X: Bot AC gaisakuKei)
 (Z: Bot sai_furiwake)
 (W: Bot ori_furiwake)
@@ -116,9 +115,8 @@ G90 G54 G01 X0 Y0 F5400
 (G55 XY Bot outside center)
 G43 H50 (hosei kouguChou #50)
 
-G54 G65 P110002 C-1. Y183. Z499.984 F200.
+G54 G65 P110002 Y183. Z499.984 F200.
 (G54: Bot Y Gaisaku center)
-(C: +: Top, -: Bot)
 (Y: Bot BD gaikei)
 (Z: Bot sai_furiwake)
 (F: skip speed)
@@ -130,9 +128,8 @@ G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-G55 G65 P130001 C-1. X155. Z499.984 W600. F200. R8922.7 M0.07
+G55 G65 P130001 X155. Z499.984 W600. F200. R8922.7 M0.07
 (G55: Bot X inside center)
-(C: +: Top, -: Bot)
 (X: Bot AC naikei)
 (Z: Bot sai_furiwake)
 (W: Bot ori_furiwake)
@@ -144,9 +141,8 @@ G90 G55 G01 X0 Y0 F5400
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-G55 G65 P130002 C-1. Y153 Z499.984 F200. M0.07
+G55 G65 P130002 Y153 Z499.984 F200. M0.07
 (G55: Bot Y inside center)
-(C: +: Top, -: Bot)
 (Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
 (F*: skip speed)
@@ -167,9 +163,8 @@ G90 G57 G43 Z[500.016+#601] H50 F5400
 (hosei KouguChou: #50)
 (Z= TopTanmen +#601)
 
-G57 G65 P130001 C1. X156.863 Z500.016 W400. F200. R8922.7 M0.07
+G57 G65 P130001 X156.863 Z500.016 W400. F200. R8922.7 M0.07
 (G57: Top X inside center)
-(C: +: Top, -: Bot)
 (X: AC naikei)
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)
@@ -181,9 +176,8 @@ G90 G57 G01 X0 Y0 F5400
 (G57XY Top inside center)
 G43 H50 (hosei kouguChou #50)
 
-G57 G65 P130002 C1. Y154.839 Z500.016 F200. M0.07
+G57 G65 P130002 Y154.839 Z500.016 F200. M0.07
 (G57: Top Y inside center)
-(C: +: Top, -: Bot)
 (Y: BD naikei)
 (Z: Top sai_furiwake)
 (F*: skip speed)
