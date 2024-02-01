@@ -37,9 +37,11 @@ IF[#23EQ#0]THEN #23=0
 IF[#09EQ#0]THEN #09=400
 IF[#08EQ#0]THEN #08=400
 IF[#19EQ#0]THEN #19=930
-(default: F=400.)
-(default: E=400.)
-(default: S=930.)
+(default: M=0)
+(default: W=0)
+(default: F=400)
+(default: E=400)
+(default: S=930)
 
 N004
 IF[#13LT0]GOTO800
@@ -62,7 +64,6 @@ IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 IF[ABS[#33]GE#18]GOTO800
 (if D < 16 or D > 20 or D is not integer, go to N800)
 (if Z-K <= #901011/2, go to N800)
-(if |Q| > R, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
 (if |#33| >= R, go to N800)
 
@@ -114,7 +115,7 @@ M08 (coolant on)
 
 N103
 G90 G01 X[[#104/2]+#30*2+#33] Y[#105/2] F7200
-G65 P490005 A1. R#18 X#104 Y#105 D#30 F#09 E#08 S#19
+G65 P490005 K1. R#18 X#104 Y#105 D#30 F#09 E#08 S#19
 G90 G40 G00 X[[#104/2]+#30*3+#33]
 END1
 
@@ -180,7 +181,7 @@ M08 (coolant on)
 
 N203
 G90 G01 X[[#24/2]+#30*2+#33] Y[#25/2] F5400
-G65 P490005 A1. R#18 X#24 Y#25 D#30 F#09 E#08 S#19
+G65 P490005 K1. R#18 X#24 Y#25 D#30 F#09 E#08 S#19
 G90 G40 G00 X[[#24/2]+#30*3+#33]
 END2
 

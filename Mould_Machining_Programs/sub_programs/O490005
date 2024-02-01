@@ -25,12 +25,12 @@ IF[#19LE200]GOTO800
 
 N002
 S#19
-IF[#01EQ1]GOTO003
-IF[#01EQ2]GOTO004
-IF[#01EQ3]GOTO005
-IF[#01EQ4]GOTO006
+IF[#06EQ1]GOTO003
+IF[#06EQ2]GOTO004
+IF[#06EQ3]GOTO005
+IF[#06EQ4]GOTO006
 GOTO800
-(if A is not 1, 2, 3, 4, go to N800)
+(if K is not 1, 2, 3, 4, go to N800)
 
 N003 (for R)
 G91 G01 X-[#24+#07*2-#18] F#09
@@ -109,8 +109,8 @@ N999 M99
 (Local variables)
 
 (as received arguments)
-(#01:A: type)
 (#03:C: corner C)
+(#06:K: type)
 (#07:D: kouguNigashiRyou)
 (#08:E: speed at corner)
 (#09:F: speed at chokusenBu)
