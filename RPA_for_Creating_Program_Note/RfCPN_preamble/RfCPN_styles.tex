@@ -228,7 +228,7 @@
 }
 \AfterEndEnvironment{appendices}{%
   \patchcmd{\part}{\tocAPartSeparateline}{\relax}{}{}%
-  \pretocmd{\part}{\addtocontents{toc}{\protect\newpage}}{}{}{}% add page break before parts, except the first one
+  \addtocontents{toc}{\protect\newpage}% add page break before parts, except the first one
   \@appendixfalse%
 }
 %%%%% STYLE OF PART FOR LIST %%%%%

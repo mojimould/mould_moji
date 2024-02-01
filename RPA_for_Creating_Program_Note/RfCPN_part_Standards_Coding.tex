@@ -31,7 +31,7 @@
 %% chapter 10 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadchapter{工具番号}
+\modHeadchapter{工具番号および登録工具}
 \addcontentsline{lot}{chapter}{\thechapter. \Chaptername}
 \input{./RfCPN_pStandards_chapter/c_Standards_tool_number}
 
@@ -42,9 +42,20 @@
 %% chapter 13 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadchapter{工具の速さ（Fコード値）\TBW}
+\modHeadchapter{工具の速さ値（Fコード値）}
 \addcontentsline{lot}{chapter}{\thechapter. \Chaptername}
 \input{./RfCPN_pStandards_chapter/c_Standards_guidelines_Fvalue}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter 13 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadchapter{工具の回転数（Sコード値）}
+\addcontentsline{lot}{chapter}{\thechapter. \Chaptername}
+\input{./RfCPN_pStandards_chapter/c_Standards_guidelines_Svalue}
 
 
 
@@ -53,7 +64,7 @@
 %% chapter 12 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadchapter{シーケンス番号（Nコード値）\TBW}
+\modHeadchapter{シーケンス番号（Nコード値）}
 \addcontentsline{lot}{chapter}{\thechapter. \Chaptername}
 \input{./RfCPN_pStandards_chapter/c_Standards_sequence_number}
 
@@ -153,7 +164,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Column}{コード記述 注意点・ミスの例\TBW}
+\begin{Column}{コード記述 注意点・ミスの例}
 \begin{enumerate}
 \item \verb|#|の付け忘れ
 \item \verb|[ ]|の数の不整合
@@ -164,8 +175,12 @@
 \end{enumerate}
 \tcbline*
 \begin{enumerate}
-\item \verb|G00|では\verb|F|値の記述はできるが指定されない
-\item \verb|M98|でプログラムを呼出すとレベル1の階層になる
+\item
+\verb|G31|はすべての工具に適用できる。\\
+ただし、\index{スキップ}スキップ機能が有するのは\index{タッチセンサープローブ}タッチセンサープローブのみ。\\
+また、センサーの電源が入っていない状態で用いると工具は移動せず、移動開始点がそのまま\index{ブロックエンド}ブロックエンドとなり、プログラムは進行する。
+\item \verb|G00|では\verb|F|値の記述はできるが適用されない
+\item \verb|M98|で呼び出したプログラムは、レベル1の階層（\index{メインプログラム}メインプログラム）として実行される。
 \end{enumerate}
 \end{Column}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
