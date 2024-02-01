@@ -147,8 +147,11 @@ M09 (coolant off)
 G90 G01 Z[#26+#601] F7200
 G65 P900003 (for Top)
 
-
 N016
+IF[#03GT0]THEN #33=-#416
+IF[#03LT0]THEN #33=#420
+(#33: +hosei: A-men nikuatsu)
+
 IF[#03GT0]THEN #106=FUP[#418]
 IF[#03LT0]THEN #106=FUP[#422]
 
