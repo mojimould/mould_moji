@@ -265,9 +265,11 @@ $\kappa_l = a+b$, $\kappa_s = a-b$とすると、
 また、$\kappa_l$, $\kappa_s$はその平均値$a$からその差の半分$b$の和あるいは差として得られる。
 \begin{align*}
   \kappa_l
-  &= \frac{2\kappa_d'\cos\zeta+\frac{\kappa_w\tan\zeta}2\sin^2\zeta}{1+\cos^2\zeta}+\frac12\kappa_w\tan\zeta\ ,\\
+  &= \frac{2\kappa_d'\cos\zeta+\frac{\kappa_w\tan\zeta}2\sin^2\zeta}{1+\cos^2\zeta}+\frac12\kappa_w\tan\zeta
+   = \frac{2\kappa_d'\cos\zeta+\kappa_w\tan\zeta}{1+\cos^2\zeta}\ ,\\
   \kappa_s
-  &= \frac{2\kappa_d'\cos\zeta+\frac{\kappa_w\tan\zeta}2\sin^2\zeta}{1+\cos^2\zeta}-\frac12\kappa_w\tan\zeta\ .
+  &= \frac{2\kappa_d'\cos\zeta+\frac{\kappa_w\tan\zeta}2\sin^2\zeta}{1+\cos^2\zeta}-\frac12\kappa_w\tan\zeta
+   = \frac{2\kappa_d'-\kappa_w\sin\zeta}{1+\cos^2\zeta}\cos\zeta\ .
 \end{align*}
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -342,7 +344,7 @@ $R\to\infty$ ($R^{-1}\to0$)に対して、
       \sqrt{1-\left(\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}\right)^{\!\!2}}
       -\sqrt{1-\left(\frac{f_\mathrm T-\kappa_p}{R_\mathrm o}\right)^{\!\!2}}
       \right\}\\
-  &= \kappa_d'+\frac{\kappa_w}2\frac{f_\mathrm T-\kappa_p}{R_\mathrm o}
+  &= \kappa_d'+\frac{\kappa_w^2}{8R_\mathrm o}
      +o\!\left(R_\mathrm o^{-3}\right)\ .
 \end{align*}
 これから、$\kappa_d > \kappa_d'$であることがわかる。

@@ -1,11 +1,25 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
-\DMname で取り決めている\index{コモンへんすう@コモン変数}コモン変数について、以下に挙げる。
+
+
+ここでは\DMname で使用する\index{コモンへんすう@コモン変数}コモン変数について述べる。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 11.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{コモン変数の範囲}
+\DMname で使用可能なコモン変数は以下のとおりである。
+\begin{enumerate}
+\item \ttNum100\,-\ttNum199
+\item \ttNum400\,-\ttNum999
+\item \ttNum900000\,-\ttNum907399
+\end{enumerate}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 15.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 11.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{コモン変数 (\ttNum100\,-\ttNum174)}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
@@ -44,10 +58,10 @@
 \modcaptionof{table}{\ttNum175\,-\ttNum199：主に各工程後一時停止}
 \begin{twoCtable}{}
 \ttNum183 & （不使用）\\\hline
-\ttNum184 & 測定（通り芯・内面溝除く）後 一時停止 (0:non-stop, 1: \verb|M00|) & 0\\\hline
+\ttNum184 & 測定（通り芯・\dimple 除く）後 一時停止 (0:non-stop, 1: \verb|M00|) & 0\\\hline
 \ttNum185 & （不使用）\\\hline
-\ttNum186 & 内面溝測定後 一時停止 (0:non-stop, 1: \verb|M00|) & 0\\\hline
-\ttNum187 & 内面溝加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|P90003|) & 0\\\hline
+\ttNum186 & \dimple 測定後 一時停止 (0:non-stop, 1: \verb|M00|) & 0\\\hline
+\ttNum187 & \dimple 加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|P90003|) & 0\\\hline
 \ttNum188 & （不使用）\\\hline
 \ttNum189 & トップ端面加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|P90003|) & 0\\\hline
 \ttNum190 & トップ外削加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|P90003|) & 0\\\hline
@@ -76,7 +90,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ttNum400\,-\ttNum474については、主に\index{さぎょうしゃ@作業者}作業者が入力・変更することが想定されるものとする。
 
-\modcaptionof{table}{\ttNum400\,-\ttNum412：主に計測用（内面溝除く）}
+\modcaptionof{table}{\ttNum400\,-\ttNum412：主に計測用（\dimple 除く）}
 \begin{twoCtable}{}
 \ttNum400 & 計測・加工 開始N番号 & 0\\\hline
 \ttNum401 & 通り芯測定(0:off, 1:on) & 0\\\hline
@@ -97,7 +111,7 @@
 
 
 %\clearpage
-\modcaptionof{table}{\ttNum413\,-\ttNum430：主に加工用（内面溝除く）}
+\modcaptionof{table}{\ttNum413\,-\ttNum430：主に加工用（\dimple 除く）}
 \begin{twoCtable}{}
 \ttNum413 & トップ端面 全削り代\\\hline
 \ttNum414 & ボトム端面 全削り代\\\hline
@@ -147,25 +161,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum450\,-\ttNum474：主に内面溝 加工用}
+\modcaptionof{table}{\ttNum450\,-\ttNum474：主に\dimple~加工用}
 \begin{twoCtable}{}
 \ttNum450 & （不使用）\\\hline
-\ttNum451 & 工具\verb|T31|（Tスロット）A側内面溝 深さ補正値（深さに$+$補正） & 0.06\\\hline
-\ttNum452 & 工具\verb|T31|（Tスロット）C側内面溝 深さ補正値（深さに$+$補正） & 0.03\\\hline
-\ttNum453 & 工具\verb|T31|（Tスロット）B側内面溝 深さ補正値（深さに$+$補正） & 0.06\\\hline
-\ttNum454 & 工具\verb|T31|（Tスロット）D側内面溝 深さ補正値（深さに$+$補正） & 0.03\\\hline
+\ttNum451 & 工具\verb|T31|（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） & 0.06\\\hline
+\ttNum452 & 工具\verb|T31|（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） & 0.03\\\hline
+\ttNum453 & 工具\verb|T31|（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） & 0.06\\\hline
+\ttNum454 & 工具\verb|T31|（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） & 0.03\\\hline
 \ttNum455 & （不使用）\\\hline
 \hline
-\ttNum456 & 工具\verb|T32|（Tスロット）A側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\ttNum457 & 工具\verb|T32|（Tスロット）C側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\ttNum458 & 工具\verb|T32|（Tスロット）B側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\ttNum459 & 工具\verb|T32|（Tスロット）D側内面溝 深さ補正値（深さに$+$補正）\\\hline
+\ttNum456 & 工具\verb|T32|（Tスロット）A側\dimple~深さ補正値（深さに$+$補正）\\\hline
+\ttNum457 & 工具\verb|T32|（Tスロット）C側\dimple~深さ補正値（深さに$+$補正）\\\hline
+\ttNum458 & 工具\verb|T32|（Tスロット）B側\dimple~深さ補正値（深さに$+$補正）\\\hline
+\ttNum459 & 工具\verb|T32|（Tスロット）D側\dimple~深さ補正値（深さに$+$補正）\\\hline
 \ttNum460 & （不使用）\\\hline
 \hline
-\ttNum461 & 工具\verb|T33|（Tスロット）A側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\ttNum462 & 工具\verb|T33|（Tスロット）C側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\ttNum463 & 工具\verb|T33|（Tスロット）B側内面溝 深さ補正値（深さに$+$補正）\\\hline
-\ttNum464 & 工具\verb|T33|（Tスロット）D側内面溝 深さ補正値（深さに$+$補正）\\\hline
+\ttNum461 & 工具\verb|T33|（Tスロット）A側\dimple~深さ補正値（深さに$+$補正）\\\hline
+\ttNum462 & 工具\verb|T33|（Tスロット）C側\dimple~深さ補正値（深さに$+$補正）\\\hline
+\ttNum463 & 工具\verb|T33|（Tスロット）B側\dimple~深さ補正値（深さに$+$補正）\\\hline
+\ttNum464 & 工具\verb|T33|（Tスロット）D側\dimple~深さ補正値（深さに$+$補正）\\\hline
 \ttNum465 & （不使用）\\\hline
 & （以下予備）
 \end{twoCtable}
@@ -271,7 +285,7 @@ $\vdots$ & （以下不明） & \ttNum0
 \ttNum617 & （予備）\\\hline
 \ttNum618 & （座ぐり加工用予備） \\\hline
 \ttNum619 & （予備）\\\hline
-\ttNum620 & 内面溝加工用 加工近付き量 & 1 \\\hline
+\ttNum620 & \dimple 加工用 加工近付き量 & 1 \\\hline
 \ttNum621 & （予備）\\\hline
 \ttNum622 & （逃し溝加工用予備） \\\hline
 & （以下予備）
@@ -306,8 +320,8 @@ $\vdots$ & （以下不明） & \ttNum0
 \ttNum659\TBW & 内面取加工 仕上げ加工前 残り削り代（直径） & 1.0\\\hline
 \ttNum660 & （座ぐり加工用予備） & \\\hline
 \ttNum661 & （座ぐり加工用予備） & \\\hline
-\ttNum662 & （内面溝加工用予備） & \\\hline
-\ttNum663 & （内面溝加工用予備） & \\\hline
+\ttNum662 & （\dimple 加工用予備） & \\\hline
+\ttNum663 & （\dimple 加工用予備） & \\\hline
 & （以下予備）
 \end{twoCtable}
 
@@ -320,11 +334,11 @@ $\vdots$ & （以下不明） & \ttNum0
 \modHeadsection{コモン変数 (\ttNum700\,-\ttNum774)}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\ttNum700\,-\ttNum774については、主に\index{ないめんみぞそくていようサブプログラム@内面溝測定用サブプログラム}内面溝用サブプログラム(O2x000x)で使用されるものとする。
+\ttNum700\,-\ttNum774については、主に\expandafterindex{\dimplekana そくていようサブプログラム@\dimple 測定用サブプログラム}\dimple 用サブプログラム(O2x000x)で使用されるものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum700\,-\ttNum725：内面溝レベル1サブプログラム用 (\DLone)}
+\modcaptionof{table}{\ttNum700\,-\ttNum725：\dimple レベル1サブプログラム用 (\DLone)}
 \begin{twoCtable}{}
 \ttNum700 & （予備）\\\hline
 \ttNum701 & プログラム読込み時の座標系(\ttNum4012)\\\hline
@@ -336,13 +350,13 @@ $\vdots$ & （以下不明） & \ttNum0
 \ttNum707 & テーブル中心から傾き後のトップ端面中心までの$Z$距離 (\cf\pageeqref{eq:afterPhiTCenterFromO})\\\hline
 \ttNum708 & 傾き後トップ端中心（ブロックエンド）$X$座標(\ttNum5001)\\\hline
 \ttNum709 & 傾き後トップ端中心（ブロックエンド）$Z$座標(\ttNum5003)\\\hline
-\ttNum710 & テーブル中心から内面溝1列目までの$Z$距離$Z-q$\\\hline
-\ttNum711 & トップ端中心から内面溝1列目中心までの$X$距離(\cf\pageeqref{eq:dimpleCenterDistance})\\\hline
-\ttNum712 & 傾き後内面溝1列目中心$X$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\\hline
-\ttNum713 & 傾き後内面溝1列目中心$Z$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\\hline
-\ttNum714 & 傾き後内面溝1列目中心（ブロックエンド）$X$座標 (\ttNum5001)\\\hline
-\ttNum715 & 傾き後内面溝1列目中心（ブロックエンド）$Y$座標 (\ttNum5002)\\\hline
-\ttNum716 & 傾き後内面溝1列目中心（ブロックエンド）$Z$座標 (\ttNum5003)\\\hline
+\ttNum710 & テーブル中心から\dimple1列目までの$Z$距離$Z-q$\\\hline
+\ttNum711 & トップ端中心から\dimple1列目中心までの$X$距離(\cf\pageeqref{eq:dimpleCenterDistance})\\\hline
+\ttNum712 & 傾き後\dimple1列目中心$X$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\\hline
+\ttNum713 & 傾き後\dimple1列目中心$Z$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\\hline
+\ttNum714 & 傾き後\dimple1列目中心（ブロックエンド）$X$座標 (\ttNum5001)\\\hline
+\ttNum715 & 傾き後\dimple1列目中心（ブロックエンド）$Y$座標 (\ttNum5002)\\\hline
+\ttNum716 & 傾き後\dimple1列目中心（ブロックエンド）$Z$座標 (\ttNum5003)\\\hline
 \ttNum717 & 各面用ループ番号(1:A, 2:C, 3:B, 4:D)\\\hline
 \ttNum718 & BD内半径$-\text{\ttNum703}-10$\\\hline
 \ttNum719 & (AC内半径$-\text{\ttNum703}-10)\cos\phi$\\\hline
@@ -355,14 +369,14 @@ $\vdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum725\,-\ttNum749：内面溝レベル2サブプログラム用 (\DLtwoAC, \DLtwoBD)}
+\modcaptionof{table}{\ttNum725\,-\ttNum749：\dimple~レベル2サブプログラム用 (\DLtwoAC, \DLtwoBD)}
 \begin{twoCtable}{}
 \ttNum725 & プログラム読込時ブロックエンド$Y$ or $X$ (\ttNum5002, \ttNum5001)\\\hline
 \ttNum726 & プログラム読込時ブロックエンド$Z$ (\ttNum5003)\\\hline
-\ttNum727 & 内面溝 偶数列の列数\\\hline
-\ttNum728 & 内面溝 偶数列（一列）の内面溝数\\\hline
-\ttNum729 & 内面溝 奇数列（一列）の内面溝数\\\hline
-\ttNum730 & 内面溝 現在の列の内面溝数\\\hline
+\ttNum727 & \dimple~偶数列の列数\\\hline
+\ttNum728 & \dimple~偶数列（一列）の\dimple~数\\\hline
+\ttNum729 & \dimple~奇数列（一列）の\dimple~数\\\hline
+\ttNum730 & \dimple~現在の列の\dimple~数\\\hline
 & （以下予備）
 \end{twoCtable}
 
@@ -372,10 +386,10 @@ $\vdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum750\,-\ttNum774：内面溝 測定用 (\DMLthreeAC, \DMLthreeBD)}
+\modcaptionof{table}{\ttNum750\,-\ttNum774：\dimple~測定用 (\DMLthreeAC, \DMLthreeBD)}
 \begin{twoCtable}{}
 \ttNum750 & プログラム読込時ブロックエンド$X$ or $Y$ (\ttNum5001, \ttNum5002)\\\hline
-\ttNum751 & 内面溝 表面位置$X$ or $Y$測定値\\\hline
+\ttNum751 & \dimple~表面位置$X$ or $Y$測定値\\\hline
 & （以下予備）
 \end{twoCtable}
 
@@ -499,12 +513,12 @@ $\vdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{table}{\ttNum900101\,-\ttNum900500：内面溝用 表面位置測定値 (\DMLthreeAC, \DMLthreeBD)}
+\modcaptionof{table}{\ttNum900101\,-\ttNum900500：\dimple 用 表面位置測定値 (\DMLthreeAC, \DMLthreeBD)}
 \begin{twoCtable}{}
-\ttNum900101\,-\ttNum900200 & A側内面溝 深さ測定値（Tスロット）\\\hline
-\ttNum900201\,-\ttNum900300 & C側内面溝 深さ測定値（Tスロット）\\\hline
-\ttNum900301\,-\ttNum900400 & B側内面溝 深さ測定値（Tスロット）\\\hline
-\ttNum900401\,-\ttNum900500 & D側内面溝 深さ測定値（Tスロット）
+\ttNum900101\,-\ttNum900200 & A側\dimple~深さ測定値（Tスロット）\\\hline
+\ttNum900201\,-\ttNum900300 & C側\dimple~深さ測定値（Tスロット）\\\hline
+\ttNum900301\,-\ttNum900400 & B側\dimple~深さ測定値（Tスロット）\\\hline
+\ttNum900401\,-\ttNum900500 & D側\dimple~深さ測定値（Tスロット）
 \end{twoCtable}
 
 
@@ -599,7 +613,7 @@ $\vdots$ & \qquad$\vdots$\\\hline
 $\vdots$ & \qquad$\vdots$\\\hline
 \hline
 \ttNum901127 & \verb|T31| Tスロットカッターシャンク直径（公称値） & 25\\\hline
-\ttNum901128 & （以下 内面溝加工工具用予備）\\\hline
+\ttNum901128 & （以下 \dimple 加工工具用予備）\\\hline
 $\vdots$ & \qquad$\vdots$
 \end{twoCtable}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -608,6 +622,39 @@ $\vdots$ & \qquad$\vdots$
 \begin{hosoku}
 \index{タッチセンサープローブのじく@タッチセンサープローブの軸}タッチセンサープローブの軸の半径：3.75
 \end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+~\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcolorbox}[title={2023/07/28時点の\MMname 実測値}, fonttitle=\gtfamily\bfseries]
+\begin{align*}
+  \text{Bot ($B=0$)}
+  \left\{
+  \begin{array}{rl}
+    X: & 97.790 \sim 99.930\\
+    Y: & -823.850\\
+    Z: & -634.620
+  \end{array}
+  \right.\quad
+  \text{Top ($B=180.$)}
+  \left\{
+  \begin{array}{rl}
+    X: & -97.980 \sim -99.570\\
+    Y: & -823.780\\
+    Z: & -634.720
+  \end{array}
+  \right.
+\end{align*}\\
+・$X$については、ジグの当たる点の凸部と端部（$Z$方向は目分量）\\
+・$Y$については、モールドの底が当たる面\\
+・$Z$については、$X0$ $Y-850.$における、ジグとの接点\\
+※これらの値に、\index{タッチセンサーせんたん@タッチセンサー先端}タッチセンサー先端球の半径を加減する必要がある
+\end{tcolorbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
