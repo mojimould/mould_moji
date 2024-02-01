@@ -7,7 +7,7 @@ N001
 G49 G40 G80 G17 (cancel hosei)
 M05 (shujiku kaiten off)
 M09 (coolant off)
-G90 G53 G01 Z0 F5400
+G90 G53 G01 Z0 F10800
 
 N002
 IF[#1005EQ1]GOTO820
@@ -93,7 +93,7 @@ IF[#1004EQ1]GOTO103
 M117
 
 N103
-G90 G54 G43 G01 Z[499.984+#601] H50 F3600
+G90 G54 G43 G01 Z[499.984+#601] H50 F5400
 (hosei kouguChou #50)
 (Z= BotTanmen +#601)
 
@@ -155,7 +155,7 @@ G55 G65 P130002 C-1. Y153 Z499.984 F200. M0.07
 (Bottom sokutei end)
 (Top sokutei start)
 
-G90 G53 G01 Z0 F7200
+G90 G53 G01 Z0 F10800
 M11 (4jiku unclamp)
 G90 G57 G00 B-0.642
 (G57B parallel angle -0.642)
@@ -163,7 +163,7 @@ M10 (4jiku clamp)
 
 G90 G57 G01 X0 Y0 F5400
 (G57XY Top Inside Center)
-G90 G57 G43 Z[500.016+#601] H50 F3600
+G90 G57 G43 Z[500.016+#601] H50 F5400
 (hosei KouguChou: #50)
 (Z= TopTanmen +#601)
 
@@ -198,7 +198,7 @@ N200
 (*** Dimple Measurement Start ***)
 
 
-G90 G53 G01 Z0 F7200
+G90 G53 G01 Z0 F10800
 M11 (4jiku unclamp)
 G90 G57 G00 B-0.642
 (G57B parallel angle -0.642)
@@ -206,7 +206,7 @@ M10 (4jiku clamp)
 
 G90 G57 G01 X0 Y0 F5400
 (G57XY Top Inside Center)
-G90 G57 G43 G01 Z[500.016+#601] H50 F3600
+G90 G57 G43 G01 Z[500.016+#601] H50 F5400
 (hosei KouguChou: #50)
 (Z= topTanmen+#601)
 
@@ -232,7 +232,7 @@ G04 X1.
 IF[#1004EQ0]GOTO201
 G65 P910002 (sensor OFF)
 N201
-G90 G53 G01 Z0 F7200
+G90 G53 G01 Z0 F10800
 
 (dimple mesurement end)
 IF[#186EQ0]GOTO300
@@ -244,7 +244,7 @@ N300
 
 
 G49
-G91 G28 Z0
+G90 G53 G01 Z0 F10800
 T31 (Tslot R20)
 M06 (tool exchange)
 
@@ -287,7 +287,7 @@ N400
 
 
 G49
-G91 G28 Z0
+G90 G53 G01 Z0 F10800
 T02 (tanmen)
 M06 (tool exchange)
 
@@ -324,7 +324,7 @@ N410
 
 
 G49
-G91 G28 Z0
+G90 G53 G01 Z0 F10800
 T16 (gaisaku)
 M06 (tool exchange)
 
@@ -367,7 +367,7 @@ N420
 
 
 G49
-G91 G28 Z0
+G90 G53 G01 Z0 F10800
 T06 (mizo)
 M06 (tool exchange)
 
@@ -411,7 +411,7 @@ N430
 
 
 G49
-G91 G28 Z0
+G90 G53 G01 Z0 F10800
 T13 (mentori 45)
 M06 (tool exchange)
 
@@ -438,23 +438,25 @@ G56 G65 P440000 D13. X180.95 Y180.95 Z500.016 K1. R18.
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
-G91 G28 Z0
+G90 G53 G01 Z0 F10800
 
 (Top SotoMentori end)
-IF[#192EQ0]GOTO500
-M00
+IF[#192EQ1]GOTO431
+IF[#192EQ2]GOTO432
+GOTO500
+N431
+M00 (if #192=1)
+GOTO500
+N432
+G65 P900003 (if #192=2)
 
 
 N500
 (*** Bottom Tanmen start ***)
-/M00
-
-
-#901006=8.0 (kezuriShiro: all)
 
 
 G49
-G91 G28 Z0
+G90 G53 G01 Z0 F10800
 T02 (tanmen)
 M06 (tool exchange)
 
@@ -477,20 +479,25 @@ G55 G65 P410000 C-1. D2. X155. Y153. Z499.984 R19.
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
-G91 G28 Z0
+G90 G53 G01 Z0 F10800
 
 (Bottom tammen end)
-IF[#196EQ0]GOTO510
-M00
+IF[#196EQ1]GOTO501
+IF[#196EQ2]GOTO502
+GOTO510
+N501
+M00 (if #196=1)
+GOTO510
+N502
+G65 P900003 (if #196=2)
 
 
 N510
 (*** Bottom Gaisaku start ***)
-/M00
 
 
 G49
-G91 G28 Z0
+G90 G53 G01 Z0 F10800
 T16 (gaisaku)
 M06 (tool exchange)
 
@@ -517,22 +524,23 @@ G54 G65 P420000 C-1. D16. X180.95 Y180.95 U185. V185. Z499.984 R18. K25.0
 (E*: speed: corner R)
 (S*: kaitensuu)
 
-M05 (shujiku kaiten off)
-M09 (coolant off)
-G91 G28 Z0
-
 (Bottom gaisaku end)
-IF[#197EQ0]GOTO530
-M00
+IF[#197EQ1]GOTO511
+IF[#197EQ2]GOTO512
+GOTO530
+N511
+M00 (if #197=1)
+GOTO530
+N512
+G65 P900003 (if #197=2)
 
 
 N530
 (*** Bottom SotoMentori start ***)
-/M00
 
 
 G49
-G91 G28 Z0
+G90 G53 G01 Z0 F10800
 T11 (mentori 15)
 M06 (tool exchange)
 
@@ -561,13 +569,18 @@ M05 (shujiku kaiten off)
 M09 (coolant off)
 
 (Bottom SotoMentori end)
-IF[#198EQ0]GOTO540
-M00
+IF[#198EQ1]GOTO531
+IF[#198EQ2]GOTO532
+GOTO540
+N531
+M00 (if #198=1)
+GOTO540
+N532
+G65 P900003 (if #198=2)
 
 
 N540
 (*** Bottom UchiMentori start ***)
-/M00
 
 
 G49
@@ -604,8 +617,14 @@ G49
 G91 G28 Z0
 
 (Bottom Uchimentori end)
-IF[#199EQ0]GOTO005
-M00
+IF[#199EQ1]GOTO541
+IF[#199EQ2]GOTO542
+GOTO005
+N541
+M00 (if #199=1)
+GOTO005
+N542
+G65 P900003 (if #199=2)
 
 
 (Kakou Owari)
