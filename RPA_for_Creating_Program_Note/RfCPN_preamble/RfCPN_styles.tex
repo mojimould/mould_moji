@@ -251,8 +251,9 @@
 \renewcommand\listfigurename{\texorpdfstring{\hbox to 2.75em{図目次}}{図目次}}
 \renewcommand{\figurename}{図}
 \renewcommand{\figureautorefname}{\figurename} % figure --> 図
+%\AtBeginDocument{\renewcommand{\thefigure}{図}}
 %\setcounter{lofdepth}{2}
-%\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3.2em}}
+\renewcommand*\l@figure{\@dottedtocline{1}{1.8em}{3.2em}}
 %\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF LOC %%%%%%%%%%%%%%%%%%%%%%%
@@ -263,6 +264,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listtablename{\texorpdfstring{\hbox to 2.75em{表目次}}{表目次}}
 \renewcommand{\tablename}{表}
+%\renewcommand*\l@table{\@dottedtocline{1}{1.6em}{3.5em}}
 \AtBeginDocument{\renewcommand{\thetable}{}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF LISTLINGS %%%%%%%%%%%%%%%%%
@@ -371,7 +373,8 @@
 \renewcommand{\bibname}{\texorpdfstring{\hbox to 3.75em{参考文献}}{参考文献}}
 \ExecuteBibliographyOptions{
   sorting=none,
-  refsegment=chapter,
+  defernumbers=false,
+%  refsegment=chapter,
   hyperref=true,
   block=nbpar,
   subentry=true,
