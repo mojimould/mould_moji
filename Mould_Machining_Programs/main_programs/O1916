@@ -570,22 +570,19 @@ G90 G00 G55 B[180.0-0.642]
 (G55B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G55 G65 P450000 D11. I0 K4. X155. Y153. Z499.984 W10. R3.5 M0.07
-G55 G65 P450000 D11. I0 K2. X155. Y153. Z499.984 W10. R3.5 M0.07
-G55 G65 P450000 D11. I0 K0. X155. Y153. Z499.984 W10. R3.5 M0.07
+G55 G65 P450000 D11. X155. Y153. Z499.984 C10. R3.5 M0.07
 (Bot Uchi Chamfer)
 (O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
-(default: F=400., S=1800., I=0, K=0)
+(default: F=400., E=400., S=1800.)
 (D: hosei kougu #)
-(I*: +hosei X center)
-(K*: +hosei Z)
 (X: AC naikei)
 (Y: BD naikei)
 (Z: Bot sai_furiwake)
-(W: mentori fukasa C)
+(C: mentori length C)
 (R: corner R)
 (M: mekki mm)
 (F*: speed: chokusen)
+(E*: speed: corner)
 (S*: kaitenSuu)
 
 M05 (shujiku kaiten off)
@@ -682,7 +679,7 @@ M09 (coolant off)
 N800
 M05 (shujiku kaiten off)
 M09 (coolant off)
-#3000=121 (are the arguments OK?)
+#3000=100 (are the arguments OK?)
 
 
 N990
