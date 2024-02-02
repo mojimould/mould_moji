@@ -23,8 +23,8 @@ IF[#13LT0]GOTO800
 (if R <= 0.1 or #0, go to N800)
 (if M < 0 or #0, go to N800)
 
-IF[#4012GT57]THEN #33=#435
-IF[#4012LT55]THEN #33=#443
+IF[#4012EQ57]THEN #33=#435
+IF[#4012EQ55]THEN #33=#443
 (Top: #33=#435. Bot: #33=#443)
 (#33: X +hosei)
 
@@ -50,18 +50,29 @@ IF[#07GT15]GOTO800
 IF[[FIX[#07]]NE#07]GOTO800
 IF[[#26-#03]LE[#901011/2]]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
+IF[#13GE#18]GOTO800
 IF[[ABS[#33]]GE#18]GOTO800
 IF[#608EQ#0]GOTO800
 IF[#608LT1]GOTO800
 IF[#608GE[#25/2]]GOTO800
-IF[#13GE#18]GOTO800
+IF[#659GT#658]GOTO800
 (if D < 11 or D > 15 or D is not integer, go to N800)
 (if Z-C <= #901011/2, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
+(if M >= R, go to N800)
 (if |#33| >= R, go to N800)
 (if #608 < 1 or #608 >= Y/2 or #0, go to N800)
-(if M >= R, go to N800)
+(if #659 > #658, go to N800)
 
+IF[#07EQ11]THEN #32=#03*TAN[15]
+IF[#07EQ12]THEN #32=#03*TAN[30]
+IF[#07EQ13]THEN #32=#03
+
+IF[#32LE#659]GOTO017
+(if #32 <= #659, go to Shiage)
+#103=FUP[[[#32*2]-#659]/#658]
+IF[#103LT0]GOTO800
+(#103: kakou kaisuu)
 
 
 (kokokara G00)
@@ -71,7 +82,6 @@ N009
 G90 G00 X#33 Y0
 G90 G43 G01 H#07 Z[#26+#601] F10800
 G90 G01 Z[#26-#03] S#19 F10800
-(hosei: AC center: +: X+, -: X-)
 (hosei kouguChou: #07)
 (hosei Z: Z-C)
 
@@ -79,8 +89,79 @@ N010
 M03 (shujiku kaiten on)
 M08 (coolant on)
 
-N011
+N100 (ShiageMae loop)
+WHILE[#103GE1]DO1
+#103=#103-1
+#104=#24-#659-#658*#103
+#105=#25-#659-#658*#103
+
+G65 P490007 D#07 X#104 Y#105 R#18 M#13 A#608 F#09 E#08 S#19
+END1
+
+N011 (pause)
+IF[#4012EQ56]GOTO012
+IF[#444EQ1]GOTO013
+IF[#444EQ2]GOTO014
+GOTO017
+N013 (if #444=1)
+M05 (shujiku kaiten off)
+M09 (coolant off)
+G90 G01 Z[#26+#601] F10800
+M00 (for Bot)
+N014 (if #444=2)
+M05 (shujiku kaiten off)
+M09 (coolant off)
+G65 P900003 (for Bot)
+G90 G01 Z[#26+#601] F5400
+GOTO017
+N012 (for Top)
+IF[#436EQ1]GOTO015
+IF[#436EQ2]GOTO016
+GOTO017
+N015 (if #436=1)
+M05 (shujiku kaiten off)
+M09 (coolant off)
+G90 G01 Z[#26+#601] F10800
+M00 (for Top)
+N016 (if #436=2)
+M05 (shujiku kaiten off)
+M09 (coolant off)
+G65 P900003 (for Top)
+G90 G01 Z[#26+#601] F5400
+
+
+N017 (Shiage)
+IF[#4012EQ57]THEN #33=#435
+IF[#4012EQ55]THEN #33=#443
+(Top: #33=#435. Bot: #33=#443)
+(#33: X +hosei)
+
+IF[#4012EQ56]THEN #106=FUP[#437]
+IF[#4012EQ54]THEN #106=FUP[#445]
+(Top: #106=FUP[#437]. Bot: #106=FUP[#445])
+
+IF[#106EQ#0]THEN #106=0
+IF[#106LT0]THEN #106=0
+IF[#106GT3]THEN #106=3
+IF[#659LE0]THEN #106=#106-1
+(#106: Shiage kakou kaisuu)
+
+G90 G01 X#33 Y0 F5400
+G90 G43 G01 Z[#26-#03] S#19 F10800
+(hosei kouguChou: #07)
+(hosei Z: Z-C)
+
+M03 (shujiku kaiten on)
+M08 (coolant on)
+
+
+N200 (Shiage loop)
+WHILE[#106GE0]DO2
+#106=#106-1
+
 G65 P490007 D#07 X#24 Y#25 R#18 M#13 A#608 F#09 E#08 S#19
+END2
+
 G90 G01 X#33 Y0 F5400
 
 N990
@@ -117,15 +198,18 @@ N999 M99
 (#19:S: kaitenSuu)
 
 (as LHS)
-(#33)
+(#32, #33)
 
 
 (Common variable)
+(as LHS)
+(#103, #104, #105, #106)
 (as RHS)
-(#435, #443, #601, #608)
+(#435, #436, #437, #443, #444, #445, #601, #608, #658, #659)
 (#901011)
 
 
 (System variables)
 (#3000: alarm)
+(#4012)
 %

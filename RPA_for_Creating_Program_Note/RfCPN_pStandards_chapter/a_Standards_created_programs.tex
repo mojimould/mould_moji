@@ -24,7 +24,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section E.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{測定用（内面溝除く）サブプログラム}
+\modHeadsection{測定用（\dimple 除く）サブプログラム}
 \addtocontents{lol}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lol}{section}{\numberline{\thesection}\Sectionname}
 
@@ -87,7 +87,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section E.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{加工用（内面溝除く）サブプログラム}
+\modHeadsection{加工用（\dimple 除く）サブプログラム}
 \addtocontents{lol}{\protect\addvspace{10pt}}{}{}
 \addcontentsline{lol}{section}{\numberline{\thesection}\Sectionname}
 
@@ -135,15 +135,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KOLeft\,:外側 左回り1周}
-\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\KOLeft}
+\modcaptionof{lstlisting}{\KOLeftAR\,:外側 左回り1周 右上始まり}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\KOLeftAR}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KILeftAC\,:外側 左回り1周 中央上始まり}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\KILeftAC}
 
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section E.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{内面溝用 移動・測定・加工用サブプログラム}
+\modHeadsection{\dimple 用 移動・測定・加工用サブプログラム}
 \addtocontents{lol}{\protect\addvspace{10pt}}{}{}
 \addcontentsline{lol}{section}{\numberline{\thesection}\Sectionname}
 
@@ -151,7 +159,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DLone %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DLone\,:内面溝 移動 各列の中心上}
+\modcaptionof{lstlisting}{\DLone\,:\dimple レベル1：移動 各列の中心上}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\DLone}
 
 
@@ -159,7 +167,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DLtwoAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DLtwoAC\,:内面溝 移動 AC面 列内の各内面溝上}
+\modcaptionof{lstlisting}{\DLtwoAC\,:\dimple レベル2：移動 AC面 列内の各\dimple 上}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\DLtwoAC}
 
 
@@ -167,7 +175,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DLtwoBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DLtwoBD\,:内面溝 移動 BC面 列内の各内面溝上}
+\modcaptionof{lstlisting}{\DLtwoBD\,:\dimple レベル2：移動 BC面 列内の各\dimple 上}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\DLtwoBD}
 
 
@@ -175,7 +183,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DMLthreeAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DMLthreeAC\,:内面溝 測定 AC内表面\texorpdfstring{$X$}{X}}
+\modcaptionof{lstlisting}{\DMLthreeAC\,:\dimple レベル3：測定 AC内表面\texorpdfstring{$X$}{X}}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\DMLthreeAC}
 
 
@@ -183,7 +191,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DMLthreeBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DMLthreeBD\,:内面溝 測定 BD内表面\texorpdfstring{$Y$}{Y}}
+\modcaptionof{lstlisting}{\DMLthreeBD\,:\dimple レベル3：測定 BD内表面\texorpdfstring{$Y$}{Y}}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\DMLthreeBD}
 
 
@@ -191,7 +199,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DKLthreeAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DKLthreeAC\,:内面溝 加工 AC内表面\texorpdfstring{$X$}{X}}
+\modcaptionof{lstlisting}{\DKLthreeAC\,:\dimple レベル3：加工 AC内表面\texorpdfstring{$X$}{X}}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\DKLthreeAC}
 
 
@@ -199,7 +207,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DKLthreeBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DKLthreeBD\,:内面溝 加工 BD内表面\texorpdfstring{$Y$}{Y}}
+\modcaptionof{lstlisting}{\DKLthreeBD\,:\dimple レベル3：加工 BD内表面\texorpdfstring{$Y$}{Y}}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\DKLthreeBD}
 
 
@@ -216,7 +224,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \OpauseCheck %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\OpauseCheck\,: \texorpdfstring{$\boldsymbol{90^\circ}$}{90°}回転 扉前一時停止}
+\modcaptionof{lstlisting}{\OpauseCheck\,:加工後 確認用：\texorpdfstring{$\boldsymbol{90^\circ}$}{90°}回転 扉前一時停止}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\OpauseCheck}
 
 
