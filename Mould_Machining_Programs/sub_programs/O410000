@@ -30,8 +30,9 @@ IF[#19LE200]GOTO800
 (if S <= 200, go to N800)
 
 N004
-IF[#03GT0]THEN #100=#413
-IF[#03LT0]THEN #100=#414
+IF[#4012GT57]THEN #100=#413
+IF[#4012GT55]THEN #100=#414
+(Top: #100=#413, Bot: #100=#414)
 #106=FUP[#100/#650]
 (#106: kakou kaisuu)
 
@@ -97,12 +98,8 @@ M03 (shujiku kaiten on)
 M08 (coolant on)
 
 N103
-G90 G01 X[[#31/2]+#32*2] Y[#30/2] F7200
-
-N104
+G90 G01 X[[#31/2]+#32*2] Y[#30/2] F5400
 G65 P490005 K1. R#18 X#31 Y#30 D#32 F#09 E#09 S#19
-
-N105
 G90 G40 G00 X[[#31/2]+#32*3]
 END1
 
@@ -119,7 +116,7 @@ GOTO999
 N800
 M05 (shujiku kaiten off)
 M09 (coolant off)
-#3000=121 (are the arguments OK?)
+#3000=100 (are the arguments OK?)
 
 N999 M99
 
@@ -153,6 +150,7 @@ N999 M99
 (#24xx: #xx kouguKei)
 (#26xx: #xx kouguKeiMamou)
 (#3000: alarm)
+(#4012: current work coordinate G#)
 
 
 (Subprograms)

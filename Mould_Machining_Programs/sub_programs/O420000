@@ -15,7 +15,6 @@ IF[#06EQ#0]GOTO800
 IF[#06LT1]GOTO800
 IF[#18EQ#0]GOTO800
 IF[#18LT0.1]GOTO800
-IF[#03EQ#0]GOTO800
 (if D = #0, go to N800)
 (if X < 10 or #0, go to N800)
 (if Y < 10 or #0, go to N800)
@@ -24,12 +23,12 @@ IF[#03EQ#0]GOTO800
 (if Z = #0, go to N800)
 (if K < 1 or #0, go to N800)
 (if R < 0.1 or #0, go to N800)
-(if C = #0, go to N800)
 
 N002
-IF[#03GT0]THEN #33=-#416
-IF[#03LT0]THEN #33=#420
-(#33: +hosei: A-men nikuatsu)
+IF[#4012GT56]THEN #33=-#416
+IF[#4012LT54]THEN #33=#420
+(Top: #33=-#416. Bot: #33=#420)
+(#33: hosei: A-men nikuatsu)
 
 N003
 IF[#13EQ#0]THEN #13=0
@@ -114,14 +113,14 @@ M03 (shujiku kaiten on)
 M08 (coolant on)
 
 N103
-G90 G01 X[[#104/2]+#30*2+#33] Y[#105/2] F7200
+G90 G01 X[[#104/2]+#30*2+#33] Y[#105/2] F5400
 G65 P490005 K1. R#18 X#104 Y#105 D#30 F#09 E#08 S#19
 G90 G40 G00 X[[#104/2]+#30*3+#33]
 END1
 
 
 N010
-IF[#03GT0]GOTO011
+IF[#4012GT56]GOTO011
 IF[#421EQ1]GOTO012
 IF[#421EQ2]GOTO013
 GOTO016
@@ -145,22 +144,24 @@ M00 (for Top)
 N015 (if 417=1)
 M05 (shujiku kaiten off)
 M09 (coolant off)
-G90 G01 Z[#26+#601] F7200
+G90 G01 Z[#26+#601] F10800
 G65 P900003 (for Top)
 
 N016
-IF[#03GT0]THEN #33=-#416
-IF[#03LT0]THEN #33=#420
-(#33: +hosei: A-men nikuatsu)
+IF[#4012GT56]THEN #33=-#416
+IF[#4012LT54]THEN #33=#420
+(Top: #33=-#416. Bot: #33=#420)
+(#33: hosei: A-men nikuatsu)
 
-IF[#03GT0]THEN #106=FUP[#418]
-IF[#03LT0]THEN #106=FUP[#422]
+IF[#4012GT56]THEN #106=FUP[#418]
+IF[#4012LT54]THEN #106=FUP[#422]
+(Top: #106=FUP[#418]. Bot: #106=FUP[#422])
 
 IF[#106EQ#0]THEN #106=0
 IF[#106LT0]THEN #106=0
 IF[#106GT3]THEN #106=3
 IF[#653LE0]THEN #106=#106-1
-(#106: kakou kaisuu)
+(#106: Shiage kakou kaisuu)
 
 
 G90 G43 G01 H#07 Z[#26+#601] F10800
@@ -196,6 +197,7 @@ G90 G43 G01 H#07 Z[#26+#601] F10800
 G90 G53 G01 Z0 F10800
 GOTO999
 
+
 N800
 M05 (shujiku kaiten off)
 M09 (coolant off)
@@ -208,7 +210,6 @@ N999 M99
 (Local variables)
 
 (as received arguments)
-(#03:C: +: for Top, -: for Bot)
 (#06:K: gaisaku Length)
 (#07:D: kouguKei&Chou hosei)
 (#18:R: corner R)
@@ -240,6 +241,7 @@ N999 M99
 (#24xx: #xx kouguKei)
 (#26xx: #xx kouguKeiMamou)
 (#3000: alarm)
+(#4012: current work coordinate G#)
 
 
 (Subprograms)

@@ -290,10 +290,9 @@ G90 G57 G00 B-0.642
 (G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
-G57 G65 P410000 C1. D2. X156.863 Y154.839 Z500.016 R19.
+G57 G65 P410000 D2. X156.863 Y154.839 Z500.016 R19.
 (O410000: XY naikei sotogawa-#610 1shuu Coner R, ar MigiMawari)
 (default: F=900, S=950)
-(C: +: Top, -: Bot)
 (D: hosei kouguKei&Chou #)
 (X: Top AC naikei)
 (Y: Top BD naikei)
@@ -327,10 +326,9 @@ G90 G56 G00 B-0.642
 (G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
-G56 G65 P420000 C1. D16. R18. X180.95 Y180.95 U185. V183. Z500.016 K32.0 M12.05 W8.05
+G56 G65 P420000 D16. R18. X180.95 Y180.95 U185. V183. Z500.016 K32.0 M12.05 W8.05
 (O420000: Sotogawa 1shuu Corner R, ar HidariMawari)
 (default: F=400, E=400, S=930, M=0, W=0)
-(C: +: Top, -: Bot)
 (D: hosei kouguKei&Chou #)
 (R: corner R)
 (X: AC gaisakuKei)
@@ -382,7 +380,7 @@ G56 G65 P430000 D6. K1. C#0 R14. X172.90 Y172.90 U180.95 V180.95 Z500.016 M12.05
 (Y: BD mizoKei)
 (U: AC gaisakuKei)
 (V: BD gaisakuKei)
-(Z: Top sai_furiwake - kouguThickness)
+(Z: Top sai_furiwake)
 (M: mizoIchi)
 (W: mizoHaba)
 (F*: speed: chokusen)
@@ -414,24 +412,18 @@ G90 G56 G00 B-0.642
 (G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
-G56 G65 P440000 C1. D13. X180.95 Y180.95 Z500.016 K1. R18.
-(Top Soto mentori)
+G56 G65 P440000 D13. X180.95 Y180.95 Z500.016 C1. R18.
 (O440000: Sotogawa 1shuu Corner R, ar HidariMawari)
 (default: F=500., E=400., S=1800.)
-(C: +: Top, -: Bot)
 (D: hosei kouguKei&Chou #)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
 (Z: Top sai_furiwake)
-(K: mentori C)
+(C: mentori C)
 (R: corner R)
 (F*: speed: chokusen)
 (E*: speed: corner R)
 (S*: kaitenSuu)
-
-M05 (shujiku kaiten off)
-M09 (coolant off)
-G90 G53 G01 Z0 F10800
 
 (Top SotoMentori end)
 IF[#192EQ1]GOTO431
@@ -458,10 +450,9 @@ G90 G00 G54 B[180.0-0.642]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G55 G65 P410000 C-1. D2. X155. Y153. Z499.984 R19.
+G55 G65 P410000 D2. X155. Y153. Z499.984 R19.
 (O410000: XY naikei sotogawa-#610 1shuu Coner R, ar MigiMawari)
 (default: F=900, S=950)
-(C: +: Top, -: Bot)
 (D: hosei kouguKei&Chou #)
 (X: Bot AC naikei)
 (Y: Bot BD naikei)
@@ -499,10 +490,9 @@ G90 G00 G54 B[180.0-0.642]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G54 G65 P420000 C-1. D16. X180.95 Y180.95 U185. V185. Z499.984 R18. K25.0
+G54 G65 P420000 D16. X180.95 Y180.95 U185. V185. Z499.984 R18. K25.0
 (O420000: Sotogawa 1shuu Corner R, al HidariMawari)
 (default: F=400, E=400, S=930, M=0, W=0)
-(C: +: Top, -: Bot)
 (D: hosei kouguKei&Chou #)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
@@ -542,23 +532,18 @@ G90 G00 G54 B[180.0-0.642]
 (G54B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G54 G65 P440000 C-1. D11. Q0. X180.95 Y180.95 Z499.984 K4.0 R18.
-(Bot Soto Chamfer)
+G54 G65 P440000 D11. X180.95 Y180.95 Z499.984 C4.0 R18.
 (O440000: Sotogawa 1shuu Corner R, ar HidariMawari)
 (default: F=500., E=400., S=1800.)
-(C: +: Top, -: Bot)
 (D: hosei kouguKei&Chou #)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
 (Z: Top sai_furiwake)
-(K: mentori C)
+(C: mentori C)
 (R: corner R)
 (F*: speed: chokusen)
 (E*: speed: corner R)
 (S*: kaitenSuu)
-
-M05 (shujiku kaiten off)
-M09 (coolant off)
 
 (Bottom SotoMentori end)
 IF[#198EQ1]GOTO531
@@ -576,7 +561,7 @@ N540
 
 
 G49
-G91 G28 Z0
+G90 G53 G01 Z0 F10800
 T11 (mentori 15)
 M06 (tool exchange)
 
