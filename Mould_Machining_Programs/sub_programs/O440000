@@ -178,7 +178,7 @@ GOTO999
 N800
 M05 (shujiku kaiten off)
 M09 (coolant off)
-#3000=121 (are the arguments OK?)
+#3000=100 (are the arguments OK?)
 
 N999 M99
 
