@@ -22,8 +22,8 @@ IF[#18LT0.1]GOTO800
 (if R < 0.1 or #0, go to N800)
 
 N002
-IF[#4012GT56]THEN #33=#431
-IF[#4012LT54]THEN #33=#439
+IF[#4012EQ56]THEN #33=#431
+IF[#4012EQ54]THEN #33=#439
 (Top: #33=#431. Bot: #33=#439)
 (#33: X +hosei)
 
@@ -50,10 +50,12 @@ IF[[FIX[#07]]NE#07]GOTO800
 IF[[#26-#03]LE[#901011/2]]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 IF[ABS[#33]GE#18]GOTO800
+IF[#657GT#656]GOTO800
 (if D < 11 or D > 15 or D is not integer, go to N800)
 (if Z-C <= #901011/2, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
 (if |#33| >= R, go to N800)
+(if #657 > #656, go to N800)
 
 N006
 #32=#[#2400+#07]+#[#2600+#07]
@@ -61,10 +63,14 @@ N006
 IF[#31LE0]GOTO800
 (#31: max[#607, hosei kouguKei])
 
+IF[#07EQ11]THEN #30=#03*TAN[15]
+IF[#07EQ12]THEN #30=#03*TAN[30]
+IF[#07EQ13]THEN #30=#03
+
 N007
-IF[#03LE#657]GOTO016
-(if #03 <= #657, go to N016)
-#103=FUP[[[#03*2]-#657]/#656]
+IF[#30LE#657]GOTO016
+(if #30 <= #657, go to N016)
+#103=FUP[[[#30*2]-#657]/#656]
 IF[#103LT0]GOTO800
 (#103: kakou kaisuu)
 
@@ -75,7 +81,7 @@ IF[#103LT0]GOTO800
 N008
 G90 G43 G01 H#07 Z[#26+#601] F10800
 
-N100
+N100 (ShiageMae loop)
 WHILE[#103GE1]DO1
 #103=#103-1
 #104=#24+#657+#656*#103
@@ -97,14 +103,16 @@ G65 P490005 K1. R#18 X#104 Y#105 D#31 F#09 E#08 S#19
 G90 G40 G00 X[[#104/2]+#31*3+#33]
 END1
 
+
 N010 (pause)
-IF[#4012GT56]GOTO011
+IF[#4012EQ56]GOTO011
 IF[#440EQ1]GOTO012
 IF[#440EQ2]GOTO013
 GOTO016
 N012 (if #440=1)
 M05 (shujiku kaiten off)
 M09 (coolant off)
+G90 G01 Z[#26+#601] F10800
 M00 (for Bot)
 N013 (if #440=2)
 M05 (shujiku kaiten off)
@@ -115,24 +123,25 @@ N011 (for Top)
 IF[#432EQ1]GOTO014
 IF[#432EQ2]GOTO015
 GOTO016
-N014 (if 440=1)
+N014 (if #432=1)
 M05 (shujiku kaiten off)
 M09 (coolant off)
+G90 G01 Z[#26+#601] F10800
 M00 (for Top)
-N015 (if 440=1)
+N015 (if #432=2)
 M05 (shujiku kaiten off)
 M09 (coolant off)
-G90 G01 Z[#26+#601] F7200
 G65 P900003 (for Top)
 
-N016
-IF[#4012GT56]THEN #33=#431
-IF[#4012LT54]THEN #33=#439
+
+N016 (Shiage)
+IF[#4012EQ56]THEN #33=#431
+IF[#4012EQ54]THEN #33=#439
 (Top: #33=#431. Bot: #33=#439)
 (#33: X +hosei)
 
-IF[#4012GT56]THEN #106=FUP[#433]
-IF[#4012LT54]THEN #106=FUP[#441]
+IF[#4012EQ56]THEN #106=FUP[#433]
+IF[#4012EQ54]THEN #106=FUP[#441]
 (Top: #106=FUP[#433]. Bot: #106=FUP[#441])
 
 IF[#106EQ#0]THEN #106=0
@@ -144,7 +153,7 @@ IF[#657LE0]THEN #106=#106-1
 N017
 G90 G43 G01 H#07 Z[#26+#601] F10800
 
-N200 (Shiage)
+N200 (Shiage loop)
 WHILE[#106GE0]DO2
 #106=#106-1
 
@@ -199,7 +208,7 @@ N999 M99
 (#19:S: kaitenSuu)
 
 (as LHS)
-(#31, #32, #33)
+(#30, #31, #32, #33)
 
 
 (Common variable)

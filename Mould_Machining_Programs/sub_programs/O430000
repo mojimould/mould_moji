@@ -109,7 +109,7 @@ IF[#103LT0]GOTO800
 
 G90 G43 G01 H#07 Z[#26+#601] F10800
 
-N100
+N100 (ShiageMae loop)
 WHILE[#103GE1]DO1
 #103=#103-1
 #104=#24+#655+[#654*2]*#103
@@ -155,27 +155,22 @@ G90 G40 G00 X[[#104/2]+#32*3-#426]
 END1
 
 
-N012
-IF[#421EQ1]GOTO013
-IF[#421EQ2]GOTO014
+N012 (pause)
+IF[#428EQ1]GOTO013
+IF[#428EQ2]GOTO014
 GOTO016
-N013 (if #421=1)
+N013 (if #428=1)
 M05 (shujiku kaiten off)
 M09 (coolant off)
 M00
-N014 (if #421=2)
+N014 (if #428=2)
 M05 (shujiku kaiten off)
 M09 (coolant off)
 G90 G01 Z[#26+#601] F10800
 G65 P900003
 
 
-IF[#428EQ0]GOTO011
-M05 (shujiku kaiten off)
-M09 (coolant off)
-M00 (if #428=1)
-
-N015
+N015 (Shiage)
 #106=FUP[#429]
 
 IF[#106EQ#0]THEN #106=0
@@ -187,7 +182,7 @@ IF[#655LE0]THEN #106=#106-1
 N016
 G90 G43 G01 H#07 Z[#26+#601] F10800
 
-N200 (Shiage)
+N200 (Shiage loop)
 WHILE[#106GE0]DO2
 #106=#106-1
 
