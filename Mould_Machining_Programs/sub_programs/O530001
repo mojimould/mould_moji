@@ -3,6 +3,7 @@ O530001 (for AC dimples kakou)
 (level 3: kakou dimple)
 (I > 0: Y+, I < 0: Y-)
 
+N001
 IF[#04EQ#0]GOTO800
 IF[#04EQ0]GOTO800
 IF[#620LT0]GOTO800
@@ -14,44 +15,26 @@ IF[#620LT0]GOTO800
 #32=#[2400+#4111]+#[2600+#4111]
 (#32= hosei KouguKei + Mamou)
 
-IF[#04LT0]GOTO001 (if I < 0, go to N001)
+IF[#04LT0]GOTO002 (if I < 0, go to N002)
 #31=1 (for A)
 (if I > 0, #31=1)
-IF[#4111EQ31]GOTO002
-IF[#4111EQ32]GOTO003
-IF[#4111EQ33]GOTO004
-(if H#=31, go to N002)
-(if H#=32, go to N003)
-(if H#=33, go to N004)
-GOTO800
-N002 (for T31)
-#30=#451
-GOTO008
-N003 (for T32)
-#30=#456
-GOTO008
-N004 (for T33)
-#30=#461
+IF[#4111EQ31]THEN #30=#450
+IF[#4111EQ32]THEN #30=#455
+IF[#4111EQ33]THEN #30=#460
+(if H#=31, #30=#450)
+(if H#=32, #30=#455)
+(if H#=33, #30=#460)
 GOTO008
 
-N001
+N002
 #31=-1 (for C)
 (if I < 0, #31=-1)
-IF[#4111EQ31]GOTO005
-IF[#4111EQ32]GOTO006
-IF[#4111EQ33]GOTO007
-(if H#=31, go to N005)
-(if H#=32, go to N006)
-(if H#=33, go to N007)
-GOTO800
-N005 (for T31)
-#30=#452
-GOTO008
-N006 (for T32)
-#30=#457
-GOTO008
-N007 (for T33)
-#30=#462
+IF[#4111EQ31]THEN #30=#451
+IF[#4111EQ32]THEN #30=#456
+IF[#4111EQ33]THEN #30=#461
+(if H#=31, #30=#451)
+(if H#=32, #30=#456)
+(if H#=33, #30=#461)
 
 N008
 G90 G01 X[#23-#31*[#32+#620]] F5400
@@ -85,7 +68,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#451, #452, #456, #457, #461, #462, #620)
+(#450, #451, #455, #456, #460, #461, #620)
 
 
 (System variables)
