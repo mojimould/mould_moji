@@ -42,29 +42,42 @@
   \tan\frac\pi6 = \frac1{\sqrt3}\ , \quad
   \tan\frac\pi4 = 1\ .
 \end{align*}
-\end{hosoku}\relax
+\end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%\clearpage
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 5.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 24.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection[中心座標\texorpdfstring{$X$}{X}の移動]{中心座標$X$の移動}
-\index{がいさく@外削}外削があり、かつ外側の\index{Cめんとり@C面取}C面取の場合であれば、Cの大きさに依らずその中心座標($XY$)は変わらない。
-しかしそれ以外の場合は、特に$X$座標については、Cの大きさに応じて湾曲中心線に沿って移動する。
-C面取の大きさを$m_\mathrm C$とすると、\index{たんめん@端面}端面と面取先端部との中心座標($X$)の差
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 24.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\index{がいさく@外削}外削があり、かつ外側の\index{Cめんとり@C面取}C面取の場合であれば、Cの大きさに依らず加工径の中心座標($XY$)は変わらない。
+一方、外削のない場合は、中心の$X$座標はCの大きさに応じて湾曲中心線に沿って移動する。
+外側C面取の大きさを$c_\mathrm o$とすると、\index{たんめん@端面}端面と面取先端部との中心座標($X$)の差
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{どちらの場合も端面が工具側にある場合を考えている。}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 は、
 \begin{align*}
   \text{トップ側：}&~~
-  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-m_\mathrm C\right)^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\\
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-c_\mathrm o\right)^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\\
   \text{ボトム側：}&~~
-  \sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-\left(f_\mathrm B-m_\mathrm C\right)^2}\ .
+  \sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-\left(f_\mathrm B-c_\mathrm o\right)^2}\ .
 \end{align*}
+これは内側C面取でも同様であり、内側C面取の大きさを$c_\mathrm I$とすると、
+\begin{align*}
+  \text{トップ側：}&~~
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-c_\mathrm I\right)^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\\
+  \text{ボトム側：}&~~
+  \sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-\left(f_\mathrm B-c_\mathrm I\right)^2}\ .
+\end{align*}
+
 
 
