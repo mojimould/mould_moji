@@ -2,15 +2,15 @@
 O220001 (for AC dimples measurement & kakou)
 (level 2: mainly moving along row)
 
+N001
 IF[#01EQ#0]GOTO800
 IF[#01EQ0]GOTO800
 (if A = 0 or empty, to N800)
 
-IF[#01LT0]GOTO001
-#33=1 (for A)
-GOTO002
-N001
-#33=-1 (for C)
+IF[#01GT0]THEN #33=1
+IF[#01LT0]THEN #33=-1
+(for A, #33=1)
+(for C, #33=-1)
 
 N002
 #725=#5002
@@ -25,11 +25,8 @@ N002
 (#728= # of dimple of even rows)
 (#729= # of dimple of odd rows)
 
-IF[[#13/2]EQ#727]GOTO003
-#32=#09/2
-GOTO004
-N003
-#32=#19/2
+IF[[#13/2]NE#727]THEN #32=#09/2
+IF[[#13/2]EQ#727]THEN #32=#19/2
 (if #13 is odd, #32=#09/2)
 (if #13 is even, #32=#19/2)
 
@@ -39,12 +36,10 @@ N004
 IF[#4111EQ50]GOTO005
 (if H#=50, go to N005)
 GOTO006
-
 N005 (for sensor)
 G91 G31 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F1500
 (YZ skip to the 1st dimple: X: faceA-#603 or faceC+#603)
 GOTO007
-
 N006 (for kakou)
 G91 G01 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F5400
 (YZ to the 1st dimple: X: faceA-5 or faceC+5)
@@ -60,7 +55,7 @@ IF[#4111NE50]GOTO100
 (for sensor)
 G65 P230001 I#33
 (measurement for AC dimples)
-#[#30]=#751
+#[#30]=#749
 GOTO101
 N100 (for kakou)
 G65 P530001 I#33 U#21 W#[#30]
@@ -111,7 +106,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#603, #717, #751)
+(#603, #717, #749)
 (as LHS)
 (#725-#730)
 (#900101-#900200 ,#900201-#900300)
@@ -134,5 +129,5 @@ N999 M99
 
 (Used variables in other programs)
 (#717: O210003)
-(#751: O230001)
+(#749: O230001)
 %
