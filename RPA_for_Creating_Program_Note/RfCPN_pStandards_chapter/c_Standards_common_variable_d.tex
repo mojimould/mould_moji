@@ -8,7 +8,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 11.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{コモン変数の範囲}
+\modHeadsection{コモン変数の範囲\TBW}
 \DMname で使用可能なコモン変数は以下のとおりである。
 \begin{enumerate}
 \item \ttNum100\,-\ttNum199
@@ -19,7 +19,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 11.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 18.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum100\,-\ttNum199}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
@@ -27,7 +27,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 11.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 18.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum100\,-\ttNum174：一時保存値}
 \ttNum100\,-\ttNum174については、（機械設置時の）\index{バンドルのプログラム}バンドルのプログラムで既に使用されているものが多いため、基本的には（\index{RHS}RHSとしては）使用しないものとし、一時的なもの(\index{LHS}LHS)として扱うものとする。
@@ -37,9 +37,6 @@
 %\clearpage
 \noindent\ttNum100\,-\ttNum110については、主に一時的な保存に用いるものとする。\\
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modcaptionof{table}{\ttNum100\,-\ttNum110：一時保存値}
 \begin{twoCtable}{}
 \ttNum100 & 各工程 切削回数用 一時保存値（仕上げ前 全削り代$X$ or $Z$）\\\hline
@@ -55,14 +52,11 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 11.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 18.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum175\,-\ttNum199：各工程後一時停止}
 \noindent\ttNum175\,-\ttNum199については、主に各工程後の確認のためのものとする。\\
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% common variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modcaptionof{table}{\ttNum175\,-\ttNum199：各工程後一時停止}
 \begin{twoCtable}{}
 \ttNum175 & （以下 予備）\\\hline
@@ -90,91 +84,97 @@ $\vdots$ & \qquad$\vdots$\\\hline
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 11.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 18.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum400\,-\ttNum474：加工時の調整\TBW}
+\modHeadsection{\ttNum400\,-\ttNum474：加工時の調整}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
 \ttNum400\,-\ttNum474については、\index{さぎょうしゃ@作業者}作業者が入力・変更することが想定されるものとする。
 
+
+%\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 11.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 18.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum400\,-\ttNum412：主に測定時の調整\TBW}
-\modcaptionof{table}{\ttNum400\,-\ttNum412：主に測定時の調整（\dimple 除く）\TBW}
+\subsection{\ttNum400\,-\ttNum424}
+\modcaptionof{table}{\ttNum400\,-\ttNum404：初期設定}
 \begin{twoCtable}{}
-\ttNum400 & 計測・加工 開始N番号 & 0\\\hline
-\ttNum401 & 通り芯測定(0:off, 1:on) & 0\\\hline
-\hline
-\ttNum402 & （不使用）\\\hline
-\hline
-\ttNum403 & ボトム外$X$芯出し（両側・片側測定）測定位置$Z+$補正（$X$自動補正） & 0\\\hline
-\ttNum404 & ボトム外$Y$芯出し（両側測定）測定位置$Z+$補正 & 0\\\hline
-\ttNum405 & ボトム内$X$芯出し（両側測定）測定位置$Z+$補正（$X$自動補正） & 0\\\hline
-\ttNum406 & ボトム内$Y$芯出し（両側測定）測定位置$Z+$補正 & 0\\\hline
-\ttNum407 & （不使用）\\\hline
-\ttNum408 & トップ外$X$芯出し（両側・片側測定）測定位置$Z+$補正（$X$自動補正） & 0\\\hline
-\ttNum409 & トップ外$Y$芯出し（両側測定）測定位置$Z+$補正 & 0\\\hline
-\ttNum410 & トップ内$X$芯出し（両側測定）測定位置$Z+$補正（$X$自動補正） & 0\\\hline
-\ttNum411 & トップ内$Y$芯出し（両側測定）測定位置$Z+$補正 & 0\\\hline
-\ttNum412 & （不使用）
+\ttNum400 & トップ端面 全削り代\\\hline
+\ttNum401 & ボトム端面 全削り代\\\hline
+\ttNum402 & 計測・加工 開始N番号 & 0\\\hline
+\ttNum403 & 通り芯測定(0:off, 1:on) & 0\\\hline
+\ttNum404 & （不使用）
+\end{twoCtable}
+
+\modcaptionof{table}{\ttNum405\,-\ttNum414：測定時の調整（\dimple 除く）}
+\begin{twoCtable}{}
+\ttNum405 & ボトム外$X$芯出し（両側・片側測定）測定位置$Z+$補正（$X$自動補正） & 0\\\hline
+\ttNum406 & ボトム外$Y$芯出し（両側測定）測定位置$Z+$補正 & 0\\\hline
+\ttNum407 & ボトム内$X$芯出し（両側測定）測定位置$Z+$補正（$X$自動補正） & 0\\\hline
+\ttNum408 & ボトム内$Y$芯出し（両側測定）測定位置$Z+$補正 & 0\\\hline
+\ttNum409 & （不使用）\\\hline
+\ttNum410 & トップ外$X$芯出し（両側・片側測定）測定位置$Z+$補正（$X$自動補正） & 0\\\hline
+\ttNum411 & トップ外$Y$芯出し（両側測定）測定位置$Z+$補正 & 0\\\hline
+\ttNum412 & トップ内$X$芯出し（両側測定）測定位置$Z+$補正（$X$自動補正） & 0\\\hline
+\ttNum413 & トップ内$Y$芯出し（両側測定）測定位置$Z+$補正 & 0\\\hline
+\ttNum414 & （不使用）
 \end{twoCtable}
 
 
 %\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 11.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum413\,-\ttNum449：加工時の調整（\dimple 除く）\TBW}
-\modcaptionof{table}{\ttNum413\,-\ttNum415：端面加工の全削り代}
+\modcaptionof{table}{\ttNum415\,-\ttNum424：加工時の調整（端面・\dimple 除く）}
 \begin{twoCtable}{}
-\ttNum413 & トップ端面 全削り代\\\hline
-\ttNum414 & ボトム端面 全削り代\\\hline
-\ttNum415 & （不使用）
+\ttNum415 & トップ外削 A面肉厚$+$補正（外削中心$X-$補正） & 0\\\hline
+\ttNum416 & トップ外削 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
+\ttNum417 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum418 & （不使用）\\\hline
+\ttNum419 & 溝位置$+$補正 & 0\\\hline
+\ttNum420 & 溝幅$+$補正 & 0\\\hline
+\ttNum421 & 溝A面深さ$+$補正（溝径中心$X-$補正） & 0\\\hline
+\ttNum422 & 溝幅$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\\hline
+\ttNum423 & 溝 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
+\ttNum424 & 溝 仕上げ加工 追加回数 (上限3) & 0
+\end{twoCtable}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 18.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\ttNum425\,-\ttNum449\TBW}
+
+\modcaptionof{table}{\ttNum425\,-\ttNum449：加工時の調整（続き）\TBW}
+\begin{twoCtable}{}
+\ttNum425 & トップ外面取$X+$補正 & 0\\\hline
+\ttNum426 & トップ外面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
+\ttNum427 & トップ外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum428 & （不使用）\\\hline
+\ttNum429 & トップ内面取$X+$補正 & 0\\\hline
+\ttNum430 & トップ内面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
+\ttNum431 & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum432 & （不使用）\\\hline
+\ttNum433\TBW & （座ぐり$X+$補正） &\\\hline
+\ttNum434\TBW & （座ぐり 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|)） &\\\hline
+\ttNum435\TBW & （座ぐり 仕上げ加工 追加回数 (上限3)） &\\\hline
+\ttNum436 & （不使用）\\\hline
+\ttNum437 & ボトム外削 A面肉厚$+$補正（外削中心$X+$補正） & 0\\\hline
+\ttNum438 & ボトム外削 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
+\ttNum439 & ボトム外削 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum440 & （不使用）\\\hline
+\ttNum441 & ボトム外面取$X+$補正 & 0\\\hline
+\ttNum442 & ボトム外面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
+\ttNum443 & ボトム外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum444 & （不使用）\\\hline
+\ttNum445 & ボトム内面取$X+$補正 & 0\\\hline
+\ttNum446 & ボトム内面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
+\ttNum447 & ボトム内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
+\ttNum448 & （不使用）\\\hline
+\ttNum449 & （予備）
 \end{twoCtable}
 
 
 \clearpage
-\modcaptionof{table}{\ttNum416\,-\ttNum449：加工時の調整（端面・\dimple 除く）\TBW}
-\begin{twoCtable}{}
-\ttNum416 & トップ外削 A面肉厚$+$補正（外削中心$X-$補正） & 0\\\hline
-\ttNum417 & トップ外削 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
-\ttNum418 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum419 & （不使用）\\\hline
-\ttNum420 & ボトム外削 A面肉厚$+$補正（外削中心$X+$補正） & 0\\\hline
-\ttNum421 & ボトム外削 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
-\ttNum422 & ボトム外削 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum423 & （不使用）\\\hline
-\ttNum424 & 溝位置$+$補正 & 0\\\hline
-\ttNum425 & 溝幅$+$補正 & 0\\\hline
-\ttNum426 & 溝A面深さ$+$補正（溝径中心$X-$補正） & 0\\\hline
-\ttNum427 & 溝幅$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\\hline
-\ttNum428 & 溝 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
-\ttNum429 & 溝 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum430 & （不使用）\\\hline
-\ttNum431 & トップ外面取$X+$補正 & 0\\\hline
-\ttNum432 & トップ外面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
-\ttNum433 & トップ外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum434 & （不使用）\\\hline
-\ttNum435 & トップ内面取$X+$補正 & 0\\\hline
-\ttNum436 & トップ内面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
-\ttNum437 & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum438 & （不使用）\\\hline
-\ttNum439 & ボトム外面取$X+$補正 & 0\\\hline
-\ttNum440 & ボトム外面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
-\ttNum441 & ボトム外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum442 & （不使用）\\\hline
-\ttNum443 & ボトム内面取$X+$補正 & 0\\\hline
-\ttNum444 & ボトム内面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
-\ttNum445 & ボトム内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum446 & （不使用）\\\hline
-& （以下予備）
-\end{twoCtable}
-
-
-\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 11.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 18.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum450\,-\ttNum474：\dimple 深さの調整\TBW}
 \modcaptionof{table}{\ttNum450\,-\ttNum474：\dimple 深さの調整\TBW}
@@ -222,7 +222,7 @@ $\vdots$ & \qquad$\vdots$\\\hline
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 13.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 18.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum500\,-\ttNum599：バンドルプログラムの使用コモン変数}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}

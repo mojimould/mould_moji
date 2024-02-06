@@ -46,11 +46,11 @@ IF[#33GT57]THEN #31=1
 IF[#33LT54]THEN #31=-1
 IF[#33LT55]THEN #31=-1
 (Top: #31=1, Bot: #31=-1)
-IF[#33GT56]THEN #30=#408
-IF[#33GT57]THEN #30=#408
-IF[#33LT54]THEN #30=#403
-IF[#33LT55]THEN #30=#403
-(Top: #30=#408, Bot: #30=#403)
+IF[#33GT56]THEN #30=#410
+IF[#33GT57]THEN #30=#410
+IF[#33LT54]THEN #30=#405
+IF[#33LT55]THEN #30=#405
+(Top: #30=#410, Bot: #30=#405)
 IF[[ABS[#30]]GT[#26/2]]GOTO800
 (if |#30| > Z/2, go to N800)
 
@@ -176,7 +176,7 @@ N999 M99
 (as LHS)
 (#900001, #900002, #900003, #900004)
 (as RHS)
-(#403, #408, #601, #603, #604, #901011)
+(#405, #410, #601, #603, #604, #901011)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)
