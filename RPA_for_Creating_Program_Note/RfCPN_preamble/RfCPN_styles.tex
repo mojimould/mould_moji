@@ -30,10 +30,16 @@
 \hypersetup{
 %  pdfcreationdate=date,
 %  pdfcreator={upLaTeX with hyperref}, % creator for PDF subjct field
-  pdftitle={モールド関連 -主に幾何学的性質-}, % title for PDF subjct field
-  pdfsubject={Mould-Related - Mainly Geometric Properties}, % text for PDF subjct field
+  pdftitle={RPA実現に向けたRDBSの設計と構築}, % title for PDF subjct field
+  pdfsubject={プログラム作成業務の自動化}, % text for PDF subjct field
   pdfauthor={Kurahashi Nobuaki},  % text for PDF Author field
-  pdfkeywords={mould, mold}, % keywords
+  pdfkeywords={
+    mold,
+    mould,
+    RDB,
+    RDBS,
+    RPA,
+  }, % keywords
 %  pdfproducer=producer, % dvipdfmx
   linktoc=all,
 %  linktocpage=false,   % (if it is true) make page number, not text, be link on TOC, LOF and LOT
@@ -219,6 +225,40 @@
 \renewcommand\contentsname{\texorpdfstring{\hbox to 1.9em{目次}}{目次}}
 \patchcmd{\l@part}{\begingroup}{\begingroup\begingroup\tikzset{every node/.style={rectangle,fill=blue!20,rounded corners}}}{}{}
 \patchcmd{\l@part}{\endgroup}{\endgroup\endgroup}{}{}
+%\RedeclareSectionCommand[
+%  tocnumwidth=2.4em % section # の幅を調整
+%]{part}
+%\RedeclareSectionCommand[
+%  tocnumwidth=2.71em % section # の幅を調整
+%]{section}
+%\RedeclareSectionCommand[
+%  tocindent=4.21em, % subsection のインデントを調整
+%  tocnumwidth=3.25em % subsection # の幅を調整
+%]{subsection}
+%\RedeclareSectionCommand[
+%  tocindent=7.46em, % subsubsection のインデントを調整
+%  tocnumwidth=3.75em % subsubsection # の幅を調整
+%]{subsubsection}
+\DeclareTOCStyleEntry[
+%  indent=1.5em, % エントリのインデントを調整
+  numwidth=2.35em % エントリ番号の幅を調整
+]{tocline}{part}
+\DeclareTOCStyleEntry[
+  indent=2.35em, % エントリのインデントを調整
+%  numwidth=2.4em % エントリ番号の幅を調整
+]{tocline}{chapter}
+\DeclareTOCStyleEntry[
+  indent=4.21em, % エントリのインデントを調整
+  numwidth=2.71em % エントリ番号の幅を調整
+]{tocline}{section}
+\DeclareTOCStyleEntry[
+  indent=6.92em, % エントリのインデントを調整
+  numwidth=3.25em % エントリ番号の幅を調整
+]{tocline}{subsection}
+\DeclareTOCStyleEntry[
+  indent=10.17em, % エントリのインデントを調整
+  numwidth=3.79em % エントリ番号の幅を調整
+]{tocline}{subsubsection}
 %%%%% STYLE OF LIST FOR APPENDIX %%%%%
 \AtBeginEnvironment{appendices}{%
   \@appendixtrue%
@@ -264,7 +304,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listtablename{\texorpdfstring{\hbox to 2.75em{表目次}}{表目次}}
 \renewcommand{\tablename}{表}
-%\renewcommand*\l@table{\@dottedtocline{1}{1.6em}{3.5em}}
+\renewcommand*\l@table{\@dottedtocline{1}{1.0em}{3.2em}}
 \AtBeginDocument{\renewcommand{\thetable}{}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF LISTLINGS %%%%%%%%%%%%%%%%%
@@ -275,7 +315,7 @@
 %  \counterwithout{lstlisting}{chapter}
   \renewcommand{\thelstlisting}{}%
 }
-\renewcommand*\l@lstlisting{\@dottedtocline{1}{0.6em}{3.2em}}
+\renewcommand*\l@lstlisting{\@dottedtocline{1}{1.0em}{3.2em}}
 \lstdefinelanguage{GcodeBasic}{
   sensitive=true,%
   basicstyle=\small\ttfamily\linespread{1}\selectfont,%
