@@ -6,8 +6,15 @@ O530001 (for AC dimples kakou)
 N001
 IF[#04EQ#0]GOTO800
 IF[#04EQ0]GOTO800
-IF[#620LT0]GOTO800
 (if I = 0 or empty, go to N800)
+
+IF[#620LT0]GOTO800
+IF[#693EQ#0]GOTO800
+IF[#693LE10]GOTO800
+IF[#694EQ#0]GOTO800
+IF[#694LE10]GOTO800
+(if #693 <= 10 or #0, go to N800)
+(if #694 <= 10 or #0, go to N800)
 (if #620 < 0, go to N800)
 
 #33=#5041

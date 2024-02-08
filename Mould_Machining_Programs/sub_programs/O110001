@@ -22,10 +22,9 @@ IF[#26LE[#901011/2]]GOTO800
 (if Z <= #901011/2, go to N800)
 
 IF[#901011EQ#0]GOTO800
-IF[#901011LE10]GOTO800
+IF[#901011LE100]GOTO800
 IF[#512EQ#0]GOTO800
 IF[#512LE1]GOTO800
-IF[#514NE50]GOTO800
 IF[#601EQ#0]GOTO800
 IF[#601LT50]GOTO800
 IF[#603EQ#0]GOTO800
@@ -33,12 +32,14 @@ IF[#603LE0]GOTO800
 IF[#604EQ#0]GOTO800
 IF[#604LT0]GOTO800
 IF[#604GT20]GOTO800
-(if #901011 <= 10 or #0, go to N800)
+IF[#680EQ#0]GOTO800
+IF[#680LE10]GOTO800
+(if #901011 <= 100 or #0, go to N800)
 (if #512 <= 1 or #0, go to N800)
-(if #514 is not 50.0, go to N800)
 (if #601 < 50 or #0, go to N800)
 (if #603 <= 0 or #0, go to N800)
 (if #604 < 0 or #604 > 20.0 or #0, go to N800)
+(if #680 <= 10 or #0, go to N800)
 
 N002
 IF[#33GT56]THEN #31=1
@@ -71,12 +72,6 @@ N004
 G91 G01 X#29 F#676
 
 N005
-IF[#09EQ#0]THEN #09=#514
-IF[#09LE0]THEN #09=#514
-IF[#09GT300.0]THEN #09=#514
-(if F <= 0 or F > 300.0 or #0, F=#514)
-
-N006
 IF[#1005EQ1]GOTO801
 IF[#1004EQ1]GOTO007
 (if low battery, go to N801)
@@ -93,7 +88,7 @@ G90 G31 Z[#26-#512+#30] F#678
 IF[#5003GT[#26-#512+#30]]GOTO802
 (if skip block end Z > tanmen Z-D/2+#30, to N802)
 
-G91 G31 X[#603+#604] F#09
+G91 G31 X[#603+#604] F#680
 (X+ skip: #603+#604)
 #900001=#5001+#512-#501+#502
 (#900001= X left side + D/2 + probe hosei)
@@ -114,7 +109,7 @@ G90 G31 Z[#26-#512+#30] F#678
 IF[#5003GT[#26-#512+#30]]GOTO802
 (if skip block end Z > tanmen Z-D/2+#30, to N802)
 
-G91 G31 X-[#603+#604] F#09
+G91 G31 X-[#603+#604] F#680
 (X- skip: #603+#604)
 #900002=#5001-#512+#501+#502
 (#900002= X right side - D/2 + probe hosei)
@@ -163,7 +158,6 @@ N999 M99
 
 (Local variables)
 (as received arguments)
-(#09:F: skip speed)
 (#23:W: ori_furiwake)
 (#24:X: X outside width)
 (#26:Z: sai_furiwake)
@@ -176,11 +170,10 @@ N999 M99
 (as LHS)
 (#900001, #900002, #900003, #900004)
 (as RHS)
-(#405, #410, #601, #603, #604, #676, #678)
+(#405, #410, #601, #603, #604, #676, #678, #680)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)
-(#514: default skip speed)
 (#901011)
 
 

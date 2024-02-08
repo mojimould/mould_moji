@@ -97,12 +97,12 @@ G90 G#701 G01 B[#01+#02]
 (current work B: G90 #01+#02 deg)
 M10 (4jiku clamp)
 
-G90 G01 Z[#26+#601] F5400
+G90 G01 Z[#26+#601] F#676
 #705=#[5201+[#701-53]*20]-#30
 #706=#705*COS[ABS[#02]]+#26*SIN[ABS[#02]]
 #707=-#705*SIN[ABS[#02]]+#26*COS[ABS[#02]]
 (#705= current work origin X from table center)
-G91 G01 X[#706-#705] Z[#707-#26-#702-#601] F5400
+G91 G01 X[#706-#705] Z[#707-#26-#702-#601] F#676
 (XZ to tanmen center)
 
 #708=#5001
@@ -126,7 +126,7 @@ M117 (sensor on/off)
 G04 X1.
 
 N005
-G91 G#704 X#712 Z#713 F1500
+G91 G#704 X#712 Z#713 F#678
 (XZ to the center of the 1st row after rotation)
 (if sensor G31, else G01)
 
@@ -149,7 +149,7 @@ N009
 (#718, #719: face from -#603)
 
 N100 (loop on #717)
-G90 G01 X#714 Y#715 Z#716 F5400
+G90 G01 X#714 Y#715 Z#716 F#676
 (XYZ: to the center of the 1st row)
 
 IF[#717EQ3]GOTO101
@@ -159,19 +159,19 @@ IF[#717EQ1]GOTO103
 (if C, to N102)
 (if A, to N103)
 (for face D)
-G91 G#704 Y-#718 F1500
+G91 G#704 Y-#718 F#678
 IF[#5002GT[-#718]]GOTO802
 GOTO200
 N101 (for face B)
-G91 G#704 Y#718 F1500
+G91 G#704 Y#718 F#678
 IF[#5002LT#718]GOTO802
 GOTO200
 N102 (for face C)
-G91 G#704 X-#719 F1500
+G91 G#704 X-#719 F#678
 IF[#5001GT[#714-#719+0.001]]GOTO802
 GOTO200
 N103 (for face A)
-G91 G#704 X#719 F1500
+G91 G#704 X#719 F#678
 IF[#5001LT[#714+#719-0.001]]GOTO802
 
 N200
@@ -204,7 +204,7 @@ IF[#33GE#13]GOTO205
 #32=#710-[#33-1]*#06
 (#32= the #33th row's Z from table center)
 #31=SQRT[#18*#18-[#32-#06]*[#32-#06]]-SQRT[#18*#18-#32*#32]
-G91 G#704 X[#31*COS[ABS[#02]]-#06*SIN[ABS[#02]]] Z-[#31*SIN[ABS[#02]]+#06*COS[ABS[#02]]] F1500
+G91 G#704 X[#31*COS[ABS[#02]]-#06*SIN[ABS[#02]]] Z-[#31*SIN[ABS[#02]]+#06*COS[ABS[#02]]] F#678
 (current work XY: the center of the #33+1th row)
 #33=#33+1 (#33 to current row +1)
 END1
@@ -222,11 +222,11 @@ M05 (shujiku kaiten off)
 M09 (coolant off)
 
 N010
-G90 G01 X#714 Z[#716-#702] F5400
+G90 G01 X#714 Z[#716-#702] F#676
 (XZ: to the center of the 1st row)
-G90 G01 X#708 Z#709 F5400
+G90 G01 X#708 Z#709 F#676
 (XZ: to start point)
-G90 G01 Z[#709+#601] F5400
+G90 G01 Z[#709+#601] F#676
 GOTO999
 
 
@@ -236,15 +236,15 @@ M09 (coolant off)
 #3000=145 (Sensor Low battery)
 
 N802
-G90 G01 X#714 Y#715 F1500
+G90 G01 X#714 Y#715 F#678
 IF[#1004EQ0]GOTO803
 (if current sensor OFF, go to N803)
 M117 (sensor on/off)
 
 N803
-G90 G01 Z#716 F1500
+G90 G01 Z#716 F#678
 (XYZ: to the center of the 1st row)
-G90 G01 X#708 Z#709 F1500
+G90 G01 X#708 Z#709 F#678
 (XZ: to start point)
 
 N800
@@ -284,7 +284,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#512, #601, #603, #901001, #901005, #901011)
+(#512, #601, #603, #676, #901001, #901005, #901011)
 (as LHS)
 (#701-#719)
 

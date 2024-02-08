@@ -115,11 +115,10 @@ G90 G54 G01 X0 Y0 #676
 (G55 XY Bot outside center)
 G43 H50 (hosei kouguChou #50)
 
-G54 G65 P110002 Y183. Z499.984 F200.
+G54 G65 P110002 Y183. Z499.984
 (G54: Bot Y Gaisaku center)
 (Y: Bot BD gaikei)
 (Z: Bot sai_furiwake)
-(F: skip speed)
 
 #5262=#5222 (G56Y=G54Y)
 (G56: Top Gaisaku center Y)
@@ -128,12 +127,11 @@ G90 G55 G01 X0 Y0 #676
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-G55 G65 P130001 X155. Z499.984 W600. F200. R8922.7 M0.07
+G55 G65 P130001 X155. Z499.984 W600. R8922.7 M0.07
 (G55: Bot X inside center)
 (X: Bot AC naikei)
 (Z: Bot sai_furiwake)
 (W: Bot ori_furiwake)
-(F*: skip speed)
 (R: central curvature)
 (M: mekki mm)
 
@@ -141,11 +139,10 @@ G90 G55 G01 X0 Y0 #676
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
-G55 G65 P130002 Y153 Z499.984 F200. M0.07
+G55 G65 P130002 Y153 Z499.984 M0.07
 (G55: Bot Y inside center)
 (Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
-(F*: skip speed)
 (M: mekki mm)
 
 (Bottom sokutei end)
@@ -163,12 +160,11 @@ G90 G57 G43 Z[500.016+#601] H50 #676
 (hosei KouguChou: #50)
 (Z= TopTanmen +#601)
 
-G57 G65 P130001 X156.863 Z500.016 W400. F200. R8922.7 M0.07
+G57 G65 P130001 X156.863 Z500.016 W400. R8922.7 M0.07
 (G57: Top X inside center)
 (X: AC naikei)
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)
-(F*: skip speed)
 (R: central curvature)
 (M: mekki mm)
 
@@ -176,11 +172,10 @@ G90 G57 G01 X0 Y0 #676
 (G57XY Top inside center)
 G43 H50 (hosei kouguChou #50)
 
-G57 G65 P130002 Y154.839 Z500.016 F200. M0.07
+G57 G65 P130002 Y154.839 Z500.016 M0.07
 (G57: Top Y inside center)
 (Y: BD naikei)
 (Z: Top sai_furiwake)
-(F*: skip speed)
 (M: mekki mm)
 
 (mesurement end)

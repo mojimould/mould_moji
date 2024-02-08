@@ -34,22 +34,22 @@ IF[#26LE[#901011/2]]GOTO800
 (if T <= M, go to N800)
 (if Z <= #901011/2, go to N800)
 
-IF[#901011EQ#0]GOTO800
-IF[#901011LE0]GOTO800
 IF[#512EQ#0]GOTO800
 IF[#512LE0]GOTO800
-IF[#514EQ#0]GOTO800
-IF[#514NE50]GOTO800
 IF[#603EQ#0]GOTO800
 IF[#603LE0]GOTO800
 IF[#604EQ#0]GOTO800
 IF[#604LT0]GOTO800
 IF[#604GT20]GOTO800
-(if #901011 <= 0 or #0 go to N800)
+IF[#679EQ#0]GOTO800
+IF[#679NE50]GOTO800
+IF[#901011EQ#0]GOTO800
+IF[#901011LE100]GOTO800
 (if #512 <= 0 or #0 go to N800)
-(if #514 is not 50.0 or #0, go to N800)
 (if #603 <= 0 or #0, go to N800)
 (if #604 < 0 or #604 > 20.0 or #0, go to N800)
+(if #679 is not 50.0 or #0, go to N800)
+(if #901011 <= 100 or #0 go to N800)
 
 IF[#33GT56]THEN #31=1
 IF[#33GT57]THEN #31=1
@@ -108,7 +108,7 @@ G91 G31 X[#31*[#29-#512-#603]] F#678
 IF[[ABS[#5001-#32]+0.001]LT[ABS[#29-#512-#603]]]GOTO803
 (if |skipX-#32| < |#29-D/2-#603| to N803)
 
-G91 G31 X[#31*[#603+#604]] F#514
+G91 G31 X[#31*[#603+#604]] F#679
 (X skip: #31*[#603+#604])
 #900024=#5001+#502+#31*[#512-#501]
 (#900024= block end X +#502+#31*[D/2-#501])
@@ -162,11 +162,10 @@ N999 M99
 (as LHS)
 (#900024)
 (as RHS)
-(#403, #408, #601, #603, #604, #676, #678)
+(#403, #408, #601, #603, #604, #676, #678, #679)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)
-(#514: default skip speed)
 (#901011)
 
 
