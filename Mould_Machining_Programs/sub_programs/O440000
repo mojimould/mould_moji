@@ -28,19 +28,17 @@ IF[#4012EQ54]THEN #33=#441
 (#33: X +hosei)
 
 N003
-IF[#09EQ#0]THEN #09=500
-IF[#08EQ#0]THEN #08=400
 IF[#19EQ#0]THEN #19=1800
-(default: F=500)
-(default: E=400)
 (default: S=1800)
 
 N004
-IF[#09LT10]GOTO800
-IF[#08LT10]GOTO800
+IF[#688EQ#0]GOTO800
+IF[#688LE10]GOTO800
+IF[#689EQ#0]GOTO800
+IF[#689LE10]GOTO800
 IF[#19LT200]GOTO800
-(if F < 10, go to N800)
-(if E < 10, go to N800)
+(if #688 <= 10 or #0, go to N800)
+(if #689 <= 10 or #0, go to N800)
 (if S < 200, go to N800)
 
 N005
@@ -99,7 +97,7 @@ M08 (coolant on)
 
 N103
 G90 G01 X[[#104/2]+#31*2+#33] Y[#105/2] F#677
-G65 P490005 K1. R#18 X#104 Y#105 D#31 F#09 E#08 S#19
+G65 P490005 K1. R#18 X#104 Y#105 D#31 F#688 E#689 S#19
 G90 G40 G00 X[[#104/2]+#31*3+#33]
 END1
 
@@ -169,7 +167,7 @@ M08 (coolant on)
 
 N203
 G90 G01 X[[#24/2]+#31*2+#33] Y[#25/2] F#677
-G65 P490005 K1. R#18 X#24 Y#25 D#31 F#09 E#08 S#19
+G65 P490005 K1. R#18 X#24 Y#25 D#31 F#688 E#689 S#19
 G90 G40 G00 X[[#24/2]+#31*3+#33]
 END2
 
@@ -203,8 +201,6 @@ N999 M99
 (#25:Y: BD gaikei)
 (#26:Z: sai-furiwake)
 (as received hidden arguments)
-(#08:E: speed corner R)
-(#09:F: speed chokusenBu)
 (#19:S: kaitenSuu)
 
 (as LHS)
@@ -231,5 +227,5 @@ N999 M99
 
 
 (Passed arguments)
-(#08, #09, #18, #19, #24, #25, #31, #104, #105)
+(#18, #19, #24, #25, #31, #104, #105, #688, #689)
 %

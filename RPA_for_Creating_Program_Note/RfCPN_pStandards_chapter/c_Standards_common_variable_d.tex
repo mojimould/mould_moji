@@ -140,9 +140,9 @@ $\vdots$ & \qquad$\vdots$\\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 18.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum425\,-\ttNum449\TBW}
+\subsection{\ttNum425\,-\ttNum449}
 
-\modcaptionof{table}{\ttNum425\,-\ttNum449：加工時の調整（続き）\TBW}
+\modcaptionof{table}{\ttNum425\,-\ttNum449：加工時の調整（続き）}
 \begin{twoCtable}{}
 \ttNum425 & トップ外面取$X+$補正 & 0\\\hline
 \ttNum426 & トップ外面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
@@ -152,9 +152,9 @@ $\vdots$ & \qquad$\vdots$\\\hline
 \ttNum430 & トップ内面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
 \ttNum431 & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
 \ttNum432 & （不使用）\\\hline
-\ttNum433\TBW & （座ぐり$X+$補正） &\\\hline
-\ttNum434\TBW & （座ぐり 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|)） &\\\hline
-\ttNum435\TBW & （座ぐり 仕上げ加工 追加回数 (上限3)） &\\\hline
+\ttNum433 & （座ぐり$X+$補正用 予備） &\\\hline
+\ttNum434 & （座ぐり 仕上げ前 一時停止用 予備） &\\\hline
+\ttNum435 & （座ぐり 仕上げ加工 追加回数用 予備） &\\\hline
 \ttNum436 & （不使用）\\\hline
 \ttNum437 & ボトム外削 A面肉厚$+$補正（外削中心$X+$補正） & 0\\\hline
 \ttNum438 & ボトム外削 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
@@ -361,31 +361,32 @@ $\vdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 11.5.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum675\,-\ttNum699：工具の送り速さ\TBW}
+\subsection{\ttNum675\,-\ttNum699：工具の送り速さ}
 \ttNum675\,-\ttNum699については、工具の送り速さに関するものとする。\\
 
-\modcaptionof{table}{\ttNum675\,-\ttNum699：工具の送り速さ\TBW}
+\modcaptionof{table}{\ttNum675\,-\ttNum699：工具の送り速さ}
 \begin{twoCtable}{}
-\ttNum675 & $Z$最大送り速さ値（タッチセンサープローブ除く） & 10800\\\hline
+\ttNum675 & $Z$最大送り速さ値（タッチセンサープローブ除く） & 12000\\\hline
 \ttNum676 & 最大送り速さ値（タッチセンサープローブ） & 5400\\\hline
-\ttNum677 & アプローチ・リトラクト送り速さ値（タッチセンサープローブ除く） & 5400\\\hline
+\ttNum677 & アプローチ・リトラクト送り速さ値（タッチセンサープローブ除く） & 6000\\\hline
 \ttNum678 & アプローチ・リトラクト送り速さ値（タッチセンサープローブ） & 1500\\\hline
 \ttNum679 & アプローチ送り速さ値（片側測定時） & 50\\\hline
 \ttNum680 & アプローチ送り速さ値（両側測定時） & 200\\\hline
-\ttNum681 & 端面加工 直線 & 900\\\hline
-\ttNum682 & 端面加工 コーナー & 900\\\hline
-\ttNum683 & 外削加工 直線 & 400\\\hline
-\ttNum684 & 外削加工 コーナー & 400\\\hline
-\ttNum685 & 溝加工 直線 & 500\\\hline
-\ttNum686 & 溝加工 コーナー & 400\\\hline
-\ttNum687 & 外面取加工 直線 & 500\\\hline
-\ttNum688 & 外面取加工 コーナー & 400\\\hline
-\ttNum689 & 内面取加工 直線 & 400\\\hline
-\ttNum690 & 内面取加工 コーナー & 400\\\hline
-\ttNum691\TBW & 座ぐり加工 直線 & \\\hline
-\ttNum692\TBW & 座ぐり加工 コーナー & \\\hline
-\ttNum693 & \dimple 表面アプローチ & 540\\\hline
-\ttNum694 & \dimple 加工  & 100\\\hline
+\ttNum681 & （予備）\\\hline
+\ttNum682 & 端面加工 直線 & 900\\\hline
+\ttNum683 & 端面加工 コーナー & 900\\\hline
+\ttNum684 & 外削加工 直線 & 400\\\hline
+\ttNum685 & 外削加工 コーナー & 400\\\hline
+\ttNum686 & 溝加工 直線 & 500\\\hline
+\ttNum687 & 溝加工 コーナー & 400\\\hline
+\ttNum688 & 外面取加工 直線 & 500\\\hline
+\ttNum689 & 外面取加工 コーナー & 400\\\hline
+\ttNum690 & 内面取加工 直線 & 400\\\hline
+\ttNum691 & 内面取加工 コーナー & 400\\\hline
+\ttNum692 & （座ぐり加工 直線用 予備） & \\\hline
+\ttNum693 & （座ぐり加工 コーナー用 予備） & \\\hline
+\ttNum694 & \dimple 表面アプローチ & 540\\\hline
+\ttNum695 & \dimple 加工  & 100\\\hline
 & （以下予備）
 \end{twoCtable}
 
