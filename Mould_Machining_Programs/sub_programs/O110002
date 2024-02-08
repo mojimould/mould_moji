@@ -69,10 +69,10 @@ M117 (sensor on/off)
 G04 X1. (wait 1.0s)
 
 N005
-G91 G01 Y-[[#25/2]+#512+#603] F5400
+G91 G01 Y-[[#25/2]+#512+#603] F#676
 (Y-: [BD gaikei/2 + D/2 + #603])
 
-G90 G31 Z[#26-#512+#30] F1500
+G90 G31 Z[#26-#512+#30] F#678
 (Z skip: tanmen Z-D/2+#30)
 IF[#5003GT[#26-#512+#30]]GOTO802
 (if skip block end Z > tanmen Z-D/2+#30, to N802)
@@ -82,18 +82,18 @@ G91 G31 Y[#603+#604] F#09
 #900006=#5002+#512-#501+#503
 (#900006= Y bellow side + D/2 + probe hosei)
 
-G91 G01 Y-[#603*2] F3600 (Y-: #603*2)
-G91 G01 Z[#512-#30+#601] F5400
+G91 G01 Y-[#603*2] F#676 (Y-: #603*2)
+G91 G01 Z[#512-#30+#601] F#676
 (Z+: D/2-#30+#601)
 
 IF[[ABS[#900006+#501-#503]]LE[ABS[[#25/2]-#603]]]GOTO800
 (if |#900006|<=|Y/2-#603|, go to N800)
 
-G90 G01 Y#32 F5400 (Y to start point)
-G91 G01 Y[[#25/2]+#512+#603] F5400
+G90 G01 Y#32 F#676 (Y to start point)
+G91 G01 Y[[#25/2]+#512+#603] F#676
 (Y+: [BD gaikei/2 + D/2 + #603])
 
-G90 G31 Z[#26-#512+#30] F1500
+G90 G31 Z[#26-#512+#30] F#678
 (Z skip: tanmen Z-D/2+#30)
 IF[#5003GT[#26-#512+#30]]GOTO802
 (if skip block end Z > tanmen Z-D/2+#30, to N802)
@@ -103,8 +103,8 @@ G91 G31 Y-[#603+#604] F#09
 #900007=#5002-#512+#501+#503
 (#900007= Y above side - D/2 + probe hosei)
 
-G91 G01 Y[#603*2] F3600 (Y+: #603*2)
-G91 G01 Z[#512-#30+#601] F5400
+G91 G01 Y[#603*2] F#676 (Y+: #603*2)
+G91 G01 Z[#512-#30+#601] F#676
 (Z+: D/2-#30+#601)
 IF[[ABS[#900007-#501-#503]]LE[ABS[[#25/2]-#603]]]GOTO800
 (if |#900007|<=|Y/2-#603|, go to N800)
@@ -113,13 +113,13 @@ IF[[ABS[#900007-#501-#503]]LE[ABS[[#25/2]-#603]]]GOTO800
 #900009=#900007-#900006
 (average: center)
 (difference: thickness)
-G90 G01 Y#900008 F5400
+G90 G01 Y#900008 F#676
 (Y to measured center)
 
 #[5202+[#33-53]*20]=#5022
 (current work origin Y = current machine Y)
 
-G90 G01 Z[#26+#601] F5400
+G90 G01 Z[#26+#601] F#676
 GOTO999
 
 N801
@@ -127,8 +127,8 @@ N801
 GOTO999
 
 N802
-G90 G53 G01 Z0 F7200
-G90 G01 Y#32 F5400 (Y to start point)
+G90 G53 G01 Z0 F#676
+G90 G01 Y#32 F#676 (Y to start point)
 
 N800
 G65 P910002 (sensor OFF)
@@ -152,11 +152,12 @@ N999 M99
 (as LHS)
 (#900006, #900007, #900008, #900009)
 (as RHS)
-(#406, #411, #601, #603, #604, #901011)
+(#406, #411, #601, #603, #604, #676, #678)
 (#501: hosei: touch sensor signal delay)
 (#503: hosei: probe center Y)
 (#512: probe radius)
 (#514: default skip speed)
+(#901011)
 
 
 (System variables)

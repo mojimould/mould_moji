@@ -72,12 +72,12 @@ M117 (sensor on/off)
 G04 X1. (wait 1.0s)
 
 N005
-G90 G31 Z[#26-#512+#31] F1500
+G90 G31 Z[#26-#512+#31] F#678
 (Z tanmen: Z-D/2+#31)
 IF[#5003GT[#26-#512+#31]]GOTO802
 (if skip block end Z > tanmen Z-D/2+#31, to N802)
 
-G91 G31 Y-[#30-#512-#603] F1500
+G91 G31 Y-[#30-#512-#603] F#678
 (Y-: [BD naikei/2 -D/2 -#603])
 IF[[ABS[#5002-#29]+0.001]LT[ABS[#30-#512-#603]]]GOTO803
 (if |skipY-#29| < |BD naikei/2 -D/2 -#603|, to N803)
@@ -87,13 +87,13 @@ G91 G31 Y-[#603+#604] F#09
 #900019=#5002-#512+#501+#503
 (#900019= Y bellow side -D/2 +probe hosei)
 
-G91 G01 Y#603 F3600 (Y+: #603)
+G91 G01 Y#603 F#676 (Y+: #603)
 IF[[ABS[#900019-#501-#503]]GE[ABS[#30+#603]]]GOTO800
 (if |#900019|>=|Y/2+#603| go to N800)
 
-G90 G01 Y#29 F5400 (Y to start point)
+G90 G01 Y#29 F#676 (Y to start point)
 
-G91 G31 Y[#30-#512-#603] F1500
+G91 G31 Y[#30-#512-#603] F#678
 (Y+: [BD gaikei/2 -D/2 -#603])
 IF[[ABS[#5002-#29]+0.001]LT[ABS[#30-#512-#603]]]GOTO803
 (if |skipY - #29| < |BD naikei/2 -D/2 -#603|, to N803)
@@ -103,7 +103,7 @@ G91 G31 Y[#603+#604] F#09
 #900020=#5002+#512-#501+#503
 (#900020= Y above side +D/2 +probe hosei)
 
-G91 G01 Y-#603 F3600 (Y-: #603)
+G91 G01 Y-#603 F#676 (Y-: #603)
 IF[[ABS[#900020+#501-#503]]GE[ABS[#30+#603]]]GOTO800
 (if |#900020| >= |Y/2+#603| go to N800)
 
@@ -111,13 +111,13 @@ IF[[ABS[#900020+#501-#503]]GE[ABS[#30+#603]]]GOTO800
 #900022=#900020-#900019
 (average: center)
 (difference: width)
-G90 G01 Y#900021 F5400
+G90 G01 Y#900021 F#676
 (Y to measured center)
 
 #[5202+[#33-53]*20]=#5022
 (current work origin Y = current machine Y)
 
-G90 G01 Z[#26+#601] F5400
+G90 G01 Z[#26+#601] F#676
 GOTO999
 
 
@@ -126,10 +126,10 @@ N801
 GOTO999
 
 N803
-G90 G01 Y#29 F5400 (Y to start point)
+G90 G01 Y#29 F#676 (Y to start point)
 
 N802
-G90 G53 G01 Z0 F7200
+G90 G53 G01 Z0 F#676
 G65 P910002 (sensor OFF)
 
 N800
@@ -154,11 +154,12 @@ N999 M99
 (as LHS)
 (#900019, #900020, #900021, #900022)
 (as RHS)
-(#408, #413, #601, #603, #604, #901011)
+(#408, #413, #601, #603, #604, #676, #678)
 (#501: hosei: touch sensor signal delay)
 (#503: hosei: probe center Y)
 (#512: probe radius)
 (#514: default skip speed)
+(#901011)
 
 
 (System variables)

@@ -26,7 +26,7 @@ G91 G31 X[#33*[#603+#604]] F#514
 (skip X+ or X-: #603+#604, speed #514)
 #749=#5001+#502+#33*[-#501+#512]
 (#749= block end X + hosei probe etc)
-G90 G01 X#748 F3600
+G90 G01 X#748 F#676
 (G90 G01 X: to start point)
 GOTO999 (to N999)
 
@@ -53,7 +53,7 @@ N999 M99
 (#502: hosei: probe center X)
 (#512: probe radius)
 (#514: default skip speed)
-(#603, #604)
+(#603, #604, #676)
 (as LHS)
 (#748, #749)
 

@@ -37,11 +37,11 @@ IF[#4111EQ50]GOTO005
 (if H#=50, go to N005)
 GOTO006
 N005 (for sensor)
-G91 G31 X[#32*COS[ABS[#02]]] Z-[#32*SIN[ABS[#02]]] F1500
+G91 G31 X[#32*COS[ABS[#02]]] Z-[#32*SIN[ABS[#02]]] F#678
 (XZ skip to the 1st dimple: Y: faceB-#603 or faceD+#603)
 GOTO007
 N006 (for kakou)
-G91 G01 X[#32*COS[ABS[#02]]] Z-[#32*SIN[ABS[#02]]] F5400
+G91 G01 X[#32*COS[ABS[#02]]] Z-[#32*SIN[ABS[#02]]] F#677
 (XZ to the 1st dimple: Y: faceB-5 or faceD+5)
 
 N007
@@ -65,16 +65,16 @@ N101
 IF[#31GE#730]GOTO008 (end loop)
 IF[#4111NE50]GOTO102
 (if H# is not 50, go to N102)
-G91 G31 X[-#04*COS[ABS[#02]]] Z[#04*SIN[ABS[#02]]] F1500
+G91 G31 X[-#04*COS[ABS[#02]]] Z[#04*SIN[ABS[#02]]] F#678
 GOTO103
-N102
-G91 G01 X[-#04*COS[ABS[#02]]] Z[#04*SIN[ABS[#02]]] F5400
+N102 (for kakou)
+G91 G01 X[-#04*COS[ABS[#02]]] Z[#04*SIN[ABS[#02]]] F#677
 N103
 #31=#31+1
 END1
 
 N008
-G90 G01 X#725 Z#726 F5400
+G90 G01 X#725 Z#726 F#677
 (XZ: to start point)
 GOTO999
 
@@ -105,7 +105,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#603, #717, #749)
+(#603, #676, #678, #717, #749)
 (as LHS)
 (#725-#730)
 (#900301-#900400 ,#900401-#900500)

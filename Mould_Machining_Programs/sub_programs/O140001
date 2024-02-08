@@ -83,10 +83,10 @@ IF[[ABS[#30]]GE[#23/2]]GOTO800
 IF[[ABS[#28]]GE[#24/2]]GOTO800
 (if |#28| >= X/2, go to N800)
 IF[#31EQ1]GOTO004
-G91 G01 X-#28 F5400
+G91 G01 X-#28 F#676
 GOTO005
 N004 (for Top)
-G91 G01 X#28 F5400
+G91 G01 X#28 F#676
 
 N005
 IF[#1005EQ1]GOTO801
@@ -97,13 +97,13 @@ M117 (sensor on/off)
 G04 X1. (wait 1.0s)
 
 N006
-G90 G31 Z[#26-#512+#30] F1500
+G90 G31 Z[#26-#512+#30] F#678
 (Z skip tanmen: Z -D/2)
 IF[#5003GT[#26-#512+#30]]GOTO802
 (if skip block end Z > tanmen Z -D/2+#30, to N802)
 
 N007
-G91 G31 X[#31*[#29-#512-#603]] F1500
+G91 G31 X[#31*[#29-#512-#603]] F#678
 (X skip: #31*[#29-D/2-#603])
 IF[[ABS[#5001-#32]+0.001]LT[ABS[#29-#512-#603]]]GOTO803
 (if |skipX-#32| < |#29-D/2-#603| to N803)
@@ -114,9 +114,9 @@ G91 G31 X[#31*[#603+#604]] F#514
 (#900024= block end X +#502+#31*[D/2-#501])
 
 N008
-G91 G01 X[#31*[-#29+#512-#501]+#502] F5400
+G91 G01 X[#31*[-#29+#512-#501]+#502] F#676
 (X to measured center)
-G91 G01 X-[#31*#28] F5400
+G91 G01 X-[#31*#28] F#676
 (X to measured tanmen center)
 IF[[ABS[#900024-#502]]GE[ABS[#29+#603-#501]]]GOTO800
 (if |#900024-#502|>=|#29-#603-#501|, go to N800)
@@ -124,7 +124,7 @@ IF[[ABS[#900024-#502]]GE[ABS[#29+#603-#501]]]GOTO800
 #[5201+[#33-53]*20]=#5021
 (current work origin X = current machine coordinate X)
 
-G90 G01 Z[#26+#601] F5400
+G90 G01 Z[#26+#601] F#676
 GOTO999
 
 
@@ -133,10 +133,10 @@ N801
 GOTO999
 
 N803
-G90 G01 X#32 F5400 (X to start point)
+G90 G01 X#32 F#676 (X to start point)
 
 N802
-G90 G53 G01 Z0 F7200
+G90 G53 G01 Z0 F#676
 G65 P910002 (sensor OFF)
 
 N800 #3000=121 (Argument Is Not Assigned)
@@ -162,11 +162,12 @@ N999 M99
 (as LHS)
 (#900024)
 (as RHS)
-(#403, #408, #601, #603, #604, #901011)
+(#403, #408, #601, #603, #604, #676, #678)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)
 (#514: default skip speed)
+(#901011)
 
 
 (System variables)

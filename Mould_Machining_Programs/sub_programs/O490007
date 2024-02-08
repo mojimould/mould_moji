@@ -34,7 +34,7 @@ IF[#19LE200]GOTO800
 
 N002
 S#19
-G91 G41 G01 D#07 X#01 Y[[#25/2]+#13-#01] F5400
+G91 G41 G01 D#07 X#01 Y[[#25/2]+#13-#01] F#677
 (hosei kouguKei, kougu #07)
 (X+: A)
 (Y+: Y/2+mekki-A)
@@ -89,6 +89,11 @@ N999 M99
 
 (as LHS)
 (#33)
+
+
+(Common variables)
+(as RHS)
+(#677)
 
 
 (System variables)

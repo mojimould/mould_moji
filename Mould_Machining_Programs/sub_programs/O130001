@@ -73,10 +73,10 @@ IF[[ABS[#31]]GE[#23/2]]GOTO812
 IF[[ABS[#29]]GE[#24/2]]GOTO812
 (if |#29| >= X/2, go to N812)
 IF[#32EQ1]GOTO004
-G91 G01 X-#29 F5400
+G91 G01 X-#29 F#676
 GOTO005
 N004
-G91 G01 X#29 F5400
+G91 G01 X#29 F#676
 
 N005
 IF[#09EQ#0]THEN #09=#514
@@ -94,13 +94,13 @@ M117 (sensor on/off)
 G04 X1. (wait 1.0s)
 
 N008
-G90 G31 Z[#26-#512+#31] F1500
+G90 G31 Z[#26-#512+#31] F#678
 (Z tanmen: Z-D/2+#31)
 IF[#5003GT[#26-#512+#31]]GOTO802
 (if skip block end Z > tanmen Z-D/2+#31, to N802)
 
 
-G91 G31 X-[#30-#512-#603] F1500
+G91 G31 X-[#30-#512-#603] F#678
 (X-: [AC naikei/2 -D/2 -#603])
 IF[[ABS[#5001-#28]+0.001]LT[ABS[#30-#512-#603]]]GOTO803
 (if |skipX-#28| < |AC naikei/2 -D/2 -#603|, to N803)
@@ -111,13 +111,13 @@ G91 G31 X-[#603+#604] F#09
 (#900014= X left side -D/2 +probe hosei)
 
 
-G91 G01 X#603 F3600 (X+: #603)
+G91 G01 X#603 F#676 (X+: #603)
 IF[[ABS[#900014-#501-#502]]GE[ABS[#30+#603]]]GOTO800
 (if |#900014|>=|X/2+#603|, go to N800)
-G90 G01 X#28 F5400 (X to start point)
+G90 G01 X#28 F#676 (X to start point)
 
 
-G91 G31 X[#30-#512-#603] F1500
+G91 G31 X[#30-#512-#603] F#678
 (X+: [AC gaikei/2 -D/2 -#603])
 IF[[ABS[#5001-#28]+0.001]LT[ABS[#30-#512-#603]]]GOTO803
 (if |skipX -#28| < |AC naikei/2 -D/2 -#603|, to N803)
@@ -128,7 +128,7 @@ G91 G31 X[#603+#604] F#09
 (#900015= X right side +D/2 +probe hosei)
 
 
-G91 G01 X-#603 F3600 (X-: #603)
+G91 G01 X-#603 F#676 (X-: #603)
 IF[[ABS[#900015+#501-#502]]GE[ABS[#30+#603]]]GOTO800
 (if |#900015| >= |X/2+#603| go to N800)
 
@@ -137,16 +137,16 @@ IF[[ABS[#900015+#501-#502]]GE[ABS[#30+#603]]]GOTO800
 (average: center)
 (difference: width)
 
-G90 G01 X#900016 F5400
+G90 G01 X#900016 F#676
 (X to measured center)
-G90 G01 X-[#32*#29] F5400
+G90 G01 X-[#32*#29] F#676
 (X to measured tanmen center)
 
 
 #[5201+[#33-53]*20]=#5021
 (current work origin X = current machine X)
 
-G90 G01 Z[#26+#601] F5400
+G90 G01 Z[#26+#601] F#676
 GOTO999
 
 
@@ -154,10 +154,10 @@ N801
 #3000=145 (Low battery)
 
 N803
-G90 G01 X#28 F5400 (X to start point)
+G90 G01 X#28 F#676 (X to start point)
 
 N802
-G90 G53 G01 Z0 F7200
+G90 G53 G01 Z0 F#676
 G65 P910002 (sensor OFF)
 
 N800
@@ -184,11 +184,12 @@ N999 M99
 (as LHS)
 (#900014, #900015, #900016, #900017)
 (as RHS)
-(#407, #412, #601, #603, #604, #901011)
+(#407, #412, #601, #603, #604, #676, #678)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)
 (#514: default skip speed)
+(#901011)
 
 
 (System variables)

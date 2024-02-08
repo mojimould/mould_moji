@@ -80,8 +80,8 @@ IF[#103LT0]GOTO800
 
 N009
 G90 G00 X#33 Y0
-G90 G43 G01 H#07 Z[#26+#601] F10800
-G90 G01 Z[#26-#03] S#19 F10800
+G90 G43 G01 H#07 Z[#26+#601] F#675
+G90 G01 Z[#26-#03] S#19 F#675
 (hosei kouguChou: #07)
 (hosei Z: Z-C)
 
@@ -106,13 +106,13 @@ GOTO017
 N013 (if #446=1)
 M05 (shujiku kaiten off)
 M09 (coolant off)
-G90 G01 Z[#26+#601] F10800
+G90 G01 Z[#26+#601] F#675
 M00 (for Bot)
 N014 (if #446=2)
 M05 (shujiku kaiten off)
 M09 (coolant off)
 G65 P900003 (for Bot)
-G90 G01 Z[#26+#601] F5400
+G90 G01 Z[#26+#601] F#677
 GOTO017
 N012 (for Top)
 IF[#430EQ1]GOTO015
@@ -121,13 +121,13 @@ GOTO017
 N015 (if #430=1)
 M05 (shujiku kaiten off)
 M09 (coolant off)
-G90 G01 Z[#26+#601] F10800
+G90 G01 Z[#26+#601] F#675
 M00 (for Top)
 N016 (if #430=2)
 M05 (shujiku kaiten off)
 M09 (coolant off)
 G65 P900003 (for Top)
-G90 G01 Z[#26+#601] F5400
+G90 G01 Z[#26+#601] F#677
 
 
 N017 (Shiage)
@@ -146,8 +146,8 @@ IF[#106GT3]THEN #106=3
 IF[#659LE0]THEN #106=#106-1
 (#106: Shiage kakou kaisuu)
 
-G90 G01 X#33 Y0 F5400
-G90 G43 G01 Z[#26-#03] S#19 F10800
+G90 G01 X#33 Y0 F#677
+G90 G43 G01 Z[#26-#03] S#19 F#675
 (hosei kouguChou: #07)
 (hosei Z: Z-C)
 
@@ -162,7 +162,7 @@ WHILE[#106GE0]DO2
 G65 P490007 D#07 X#24 Y#25 R#18 M#13 A#608 F#09 E#08 S#19
 END2
 
-G90 G01 X#33 Y0 F5400
+G90 G01 X#33 Y0 F#677
 
 N990
 M05 (shujiku kaiten off)
@@ -170,8 +170,8 @@ M09 (coolant off)
 
 N991
 S200
-G90 G43 G01 H#07 Z[#26+#601] F10800
-G90 G53 G01 Z0 F10800
+G90 G43 G01 H#07 Z[#26+#601] F#675
+G90 G53 G01 Z0 F#675
 GOTO999
 
 N800
@@ -205,7 +205,7 @@ N999 M99
 (as LHS)
 (#103, #104, #105, #106)
 (as RHS)
-(#429, #430, #431, #445, #446, #447, #601, #608, #658, #659)
+(#429, #430, #431, #445, #446, #447, #601, #608, #658, #659, #675, #677)
 (#901011)
 
 
