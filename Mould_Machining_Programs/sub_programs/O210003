@@ -13,6 +13,7 @@ IF[#23EQ#0]GOTO800
 IF[#23LT10]GOTO800
 IF[#24EQ#0]GOTO800
 IF[#24LT10]GOTO800
+IF[#20LT0]GOTO800
 IF[#25EQ#0]GOTO800
 IF[#25LT10]GOTO800
 IF[#26EQ#0]GOTO800
@@ -35,6 +36,7 @@ IF[#02GT0]GOTO800
 (if W < 10 or #0, go to N800)
 (if X < 10 or #0, go to N800)
 (if Y < 10 or #0, go to N800)
+(if T < 0, go to N800)
 (if Z = #0, go to N800)
 (if F < 0 or #0, go to N800)
 (if S < 0, go to N800)
@@ -60,6 +62,8 @@ IF[#21GT#04]GOTO800
 (if max[F, S] >= min[X, Y], go to N800)
 (if B < -15, go to N800)
 (if U > I, go to N800)
+
+IF[#20EQ#0]THEN #20=0
 
 IF[#4111EQ50]GOTO001
 IF[#4111EQ31]GOTO002
@@ -140,8 +144,8 @@ M03 (shujiku kaiten on)
 N009
 #717=4
 (#717: faces 1: A, 2: C, 3: B, 4: D)
-#718=#25/2-#703-#603
-#719=[#24/2-#703-#603]*COS[ABS[#02]]
+#718=#25/2+#20-#703-#603
+#719=[#24/2+#20-#703-#603]*COS[ABS[#02]]
 (#718, #719: face from -#603)
 
 N100 (loop on #717)
@@ -261,8 +265,9 @@ N999 M99
 (#06:K: Z pitch)
 (#17:Q: Z length between top and the 1st row)
 (#18:R: central curvature)
-(#23:W: furiwake Top)
-(#26:Z: sai-furiwake Top)
+(#20:T: mekki thickness mm)
+(#23:W: Top ori-furiwake)
+(#26:Z: Top sai-furiwake)
 (used as variables and passed arguments)
 (#13:M: number of rows)
 (used only as passed arguments)
