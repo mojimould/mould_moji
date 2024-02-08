@@ -244,10 +244,11 @@ G90 G57 G43 Z[500.016+#601] H31 #675
 (hosei KouguChou: #31)
 (Z= TopTanmen +#601)
 
-G57 G65 P210003 X156.863 Y154.839 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 R8922.7 A-0.642 B-2.130
+G57 G65 P210003 X156.863 Y154.839 T0.07 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 R8922.7 A-0.642 B-2.130
 (dimple kakou)
 (X: AC naikei of last row)
 (Y: BD naikei of last row)
+(T: mekki thickness mm)
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)
 (F: length of odd rows)
