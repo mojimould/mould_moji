@@ -3,10 +3,69 @@
 
 
 ここでは主に、端面外側および内側の\index{Rめんとり@R面取}\textbf{R面取}について考える。
+R面取加工では、\index{ボールエンドミル}ボールエンドミルの工具を用いて行われるのが一般的である。
+ボールエンドミルは\DMname には搭載しない予定であり、基本的にはR面取はハンドグラインダーを用いて人の手で行う。
+しかし面取の寸法が大きくなると、削る体積は3次関数的に増加する。
+そのため作業者にかかる負担も大きくなり、マシニング外での作業時間も大きく増えることになる。
 
+そこで、C面取加工で用いられる\index{テーパエンドミル}テーパエンドミルを用いて、R面取部分の一部を切削することを考える。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 5.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 25.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{R\TBW}
-(to be written...)
+\modHeadsection{テーパエンドミルによる面取}
+トップ端面およびボトム端面における外側R面取の大きさを、それぞれ$r_\mathrm{To}$, $r_\mathrm{Bo}$とする。
+このとき、片角$\xi_\mathrm e$のテーパエンドミルに対して、
+\begin{align*}
+  c_\mathrm{To} &= r_\mathrm{To}\left(1+\cot\xi_\mathrm e-\csc\xi_\mathrm e\right)\\
+  c_\mathrm{Bo} &= r_\mathrm{Bo}\left(1+\cot\xi_\mathrm e-\csc\xi_\mathrm e\right)
+\end{align*}
+のC面取とみなして加工を行うと、R面取に接する形で加工を行うことができる。
+内側R面取の大きさを$r_\mathrm{Ti}$, $r_\mathrm{Bi}$についても同様に、
+\begin{align*}
+  c_\mathrm{Ti} &= r_\mathrm{Ti}\left(1+\cot\xi_\mathrm e-\csc\xi_\mathrm e\right)\\
+  c_\mathrm{Bi} &= r_\mathrm{Bi}\left(1+\cot\xi_\mathrm e-\csc\xi_\mathrm e\right)
+\end{align*}
+とみなすことができる。
+特に、$\xi_\mathrm e = \nicefrac\pi{12}$\,($15^\circ$), $\nicefrac\pi6$\,($30^\circ$), $\nicefrac\pi4$\,($45^\circ$)のとき、それぞれ
+\begin{align*}
+  c_\mathrm{To} &= \big(3+\sqrt3-\sqrt6-\sqrt2\big)r_\mathrm{To} \sim 0.8683\cdot r_\mathrm{To}\\
+  c_\mathrm{To} &= \big(\sqrt3-1\big)r_\mathrm{To} \sim 0.7321\cdot r_\mathrm{To}\\
+  c_\mathrm{To} &= \big(2-\sqrt2\big)r_\mathrm{To} \sim 0.5858\cdot r_\mathrm{To}
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosoku}
+原点を中心とする半径$r_\mathrm{To}$の円の第一象限に対し、$y$軸との角度が$\xi_\mathrm e$となる接線を考えればよい。
+このとき、原点と接点を結んだ直線の傾きは$\tan\xi_\mathrm e$なので、接線の傾きは$-\cot\xi_\mathrm e$となる。
+またこの接線は接点($r_\mathrm{To}\cos\xi_\mathrm e$, $r_\mathrm{To}\sin\xi_\mathrm e$)あるいは(0, $r\sec\xi_\mathrm e$)等を通ることを用いると、接線$y = -\cot\xi_\mathrm e+r_\mathrm{To}\csc\xi_\mathrm e$が得られる。
+あとは$x = r_\mathrm{To}$のときの位置と、端点($r_\mathrm{To}$, $r_\mathrm{To}$)との差をみればよい。
+\end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 24.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection[中心座標\texorpdfstring{$X$}{X}の移動]{中心座標$X$の移動}
+C面取とみなして加工を行うため、外削のある場合を除いて$X$方向への移動を考える必要がある。
+移動の大きさは、通常のC面取の場合と同じである。
+\begin{align*}
+  \text{外面取 トップ側：}&~~
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-c_\mathrm{To}\right)^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\\
+  \text{外面取 ボトム側：}&~~
+  \sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-\left(f_\mathrm B-c_\mathrm{Bo}\right)^2}\ ,\\
+  \text{内面取 トップ側：}&~~
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-c_\mathrm{Ti}\right)^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\\
+  \text{内面取 ボトム側：}&~~
+  \sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-\left(f_\mathrm B-c_\mathrm{Bi}\right)^2}\ .
+\end{align*}
+
+
+

@@ -105,7 +105,7 @@ $p$は\index{じすう（NURBSきょくせん）@次数（NURBS曲線）}次数�
 %% subsection E.4.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{有理B-スプライン曲線}
-基底関数として、$N_{i, p}(u)$に対して\index{ウェイト（NURBSきょくせん）@ウェイト（NURBS曲線）}ウェイト（\index{重み（NURBSきょくせん）@重み（NURBS曲線）}重み）$w_i$\,($>0$)をつけた
+基底関数として、$N_{i, p}(u)$に対して\index{ウェイト（NURBSきょくせん）@ウェイト（NURBS曲線）}ウェイト（\index{おもみ（NURBSきょくせん）@重み（NURBS曲線）}重み）$w_i$\,($>0$)をつけた
 \begin{align*}
   \frac{N_{i, p}(u)w_i}{\displaystyle\sum_{j=1}^nN_{j, p}(u)w_j}
 \end{align*}
@@ -127,7 +127,7 @@ $p$は\index{じすう（NURBSきょくせん）@次数（NURBS曲線）}次数�
 \subsection{非一様有理B-スプライン曲線（NURBS曲線）}
 以上より、\index{ひいちようゆうりB-スプラインきょくせん@非一様有理B-スプライン曲線}非一様有理B-スプライン(Non-Uniform Rational B-Spline)曲線は、次のように定義される。
 \begin{align*}
-  C(u) = \frac{\displaystyle\sum_{i=1}^nN_{i, p}(u)w_iP_i}{\displaystyle\sum_{i=1}^nN_{i, p}(u)w_i}~~,\quad
+  C(u) = \frac{\displaystyle\sum_{i=1}^nN_{i, p}(u)w_iP_i}{\displaystyle\sum_{j=1}^nN_{j, p}(u)w_j}~~,\quad
   U = \left\{u_0, u_1, u_2, \cdots, u_{n+p+1}\right\}\ .
 \end{align*}
 $U$は\index{ひいちようノットベクトル@非一様ノットベクトル}非一様ノットベクトルである。
@@ -161,7 +161,7 @@ $U$は\index{ひいちようノットベクトル@非一様ノットベクトル
 一般的な\index{CAD}CADソフトウェアでは、曲線の描画の際に\index{NURBSきょくせん@NURBS曲線}NURBS曲線が用いられることが多い。
 改めてNURBS曲線を記述すると、
 \begin{align*}
-  C(u) = \frac{\displaystyle\sum_{i=1}^nN_{i, p}(u)w_iP_i}{\displaystyle\sum_{i=1}^nN_{i, p}(u)w_i}~~,\quad
+  C(u) = \frac{\displaystyle\sum_{i=1}^nN_{i, p}(u)w_iP_i}{\displaystyle\sum_{j=1}^nN_{j, p}(u)w_j}~~,\quad
   U = \left\{u_0, u_1, u_2, \cdots, u_{n+p+1}\right\}\ .
 \end{align*}
 このとき、\index{せいぎょてん（NURBSきょくせん）@制御点（NURBS曲線）}制御点$P_i$, \index{ウェイト（NURBSきょくせん）@ウェイト（NURBS曲線）}ウェイト$w_i$, \index{じすう（NURBSきょくせん）@次数（NURBS曲線）}次数$p$, \index{ノットベクトル}ノットベクトル$U$を決定することで、NURBS曲線が描画される。
@@ -202,7 +202,7 @@ $n$個の通過点$Q_j$\,($j = 1, 2, 3, \cdots, n$)および次数が$p$が与�
 $n$個のウェイトについては初期値としてすべて$w_i = 1$\,($i = 1, 2, \cdots, n$)とし、$n$個の制御点$P_i$については初期値としてそれぞれ$n$個の通過点$Q_j$とする。
 このとき、
 \begin{align*}
-  C(u) = \frac{\displaystyle\sum_{i=1}^nN_{i, p}(u)w_iP_i}{\displaystyle\sum_{i=1}^nN_{i, p}(u)w_i}
+  C(u) = \frac{\displaystyle\sum_{i=1}^nN_{i, p}(u)w_iP_i}{\displaystyle\sum_{j=1}^nN_{j, p}(u)w_j}
 \end{align*}
 として初期値に対するNURBS曲線をを得る。
 そして、適切な最適化手法を用いて、通過点を通るような最もよく近似するNURBS曲線が与えられるように$w_i$や$P_i$を調整する。

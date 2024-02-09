@@ -7,16 +7,18 @@ N001
 G49 G40 G80 G17 (cancel hosei)
 M05 (shujiku kaiten off)
 M09 (coolant off)
-G90 G53 G01 Z0 #675
+G90 G53 G01 Z0 F#675
 
 N002
-IF[#1005EQ1]GOTO820
-IF[#1004EQ0]GOTO003
+IF[#1005EQ0]GOTO003
+M00 (sensor low battery)
+N003
+IF[#1004EQ0]GOTO004
 (if low battery, go to N820)
-(if current sensor off, go to N003)
+(if current sensor off, go to N004)
 M117 (sensor off)
 
-N003
+N004
 IF[#402EQ200]GOTO#402
 IF[#402EQ300]GOTO#402
 IF[#402EQ400]GOTO#402
@@ -30,8 +32,8 @@ IF[#402EQ540]GOTO#402
 IF[#402EQ650]GOTO#402
 IF[#402EQ660]GOTO#402
 
-N004
-G90 G53 G01 X-5.501 Y-258.624 #676
+N005
+G90 G53 G01 X-5.501 Y-258.624 F#676
 M262 (palette rotate speed 25)
 M71 (palette #1)
 (M60) (palette change)
@@ -83,17 +85,18 @@ G40 G49 G80 S200 (cancel hosei, low gear)
 M19 (Shujiku orientation)
 G43 H50 (hosei kouguChou #50)
 
-G90 G54 G01 X0 Y0 #676
+G90 G54 G01 X0 Y0 F#676
 (G01 G54XY Bot Gaisaku center)
 
 G65 P910001 (sensor ON)
-IF[#1005EQ1]GOTO820
-(if low battery, go to N820)
-IF[#1004EQ1]GOTO103
+IF[#1005EQ0]GOTO103
+M00 (sensor low battery)
+N103
+IF[#1004EQ1]GOTO104
 M117
 
-N103
-G90 G54 G43 G01 Z[499.984+#601] H50 #676
+N104
+G90 G54 G43 G01 Z[499.984+#601] H50 F#676
 (hosei kouguChou #50)
 (Z= BotTanmen +#601)
 
@@ -111,7 +114,7 @@ IF[#1000EQ1]THEN #5261=-[#5221-#901005]+#901005+11.0
 (G56: Top Gaisaku center X)
 (G56X= -[G54X-tableCenterX]+tableCenterX+tooriShin)
 
-G90 G54 G01 X0 Y0 #676
+G90 G54 G01 X0 Y0 F#676
 (G55 XY Bot outside center)
 G43 H50 (hosei kouguChou #50)
 
@@ -123,7 +126,7 @@ G54 G65 P110002 Y183. Z499.984
 #5262=#5222 (G56Y=G54Y)
 (G56: Top Gaisaku center Y)
 
-G90 G55 G01 X0 Y0 #676
+G90 G55 G01 X0 Y0 F#676
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
@@ -133,9 +136,9 @@ G55 G65 P130001 X155. Z499.984 W600. R8922.7 M0.07
 (Z: Bot sai_furiwake)
 (W: Bot ori_furiwake)
 (R: central curvature)
-(M: mekki mm)
+(M: mekki thickness mm)
 
-G90 G55 G01 X0 Y0 #676
+G90 G55 G01 X0 Y0 F#676
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
@@ -143,20 +146,20 @@ G55 G65 P130002 Y153 Z499.984 M0.07
 (G55: Bot Y inside center)
 (Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
-(M: mekki mm)
+(M: mekki thickness mm)
 
 (Bottom sokutei end)
 (Top sokutei start)
 
-G90 G53 G01 Z0 #675
+G90 G53 G01 Z0 F#675
 M11 (4jiku unclamp)
 G90 G57 G00 B-0.642
 (G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
-G90 G57 G01 X0 Y0 #676
+G90 G57 G01 X0 Y0 F#676
 (G57XY Top Inside Center)
-G90 G57 G43 Z[500.016+#601] H50 #676
+G90 G57 G43 Z[500.016+#601] H50 F#676
 (hosei KouguChou: #50)
 (Z= TopTanmen +#601)
 
@@ -166,9 +169,9 @@ G57 G65 P130001 X156.863 Z500.016 W400. R8922.7 M0.07
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)
 (R: central curvature)
-(M: mekki mm)
+(M: mekki thickness mm)
 
-G90 G57 G01 X0 Y0 #676
+G90 G57 G01 X0 Y0 F#676
 (G57XY Top inside center)
 G43 H50 (hosei kouguChou #50)
 
@@ -176,7 +179,7 @@ G57 G65 P130002 Y154.839 Z500.016 M0.07
 (G57: Top Y inside center)
 (Y: BD naikei)
 (Z: Top sai_furiwake)
-(M: mekki mm)
+(M: mekki thickness mm)
 
 (mesurement end)
 IF[#184EQ0]GOTO200
@@ -187,15 +190,15 @@ N200
 (*** Dimple Measurement Start ***)
 
 
-G90 G53 G01 Z0 #675
+G90 G53 G01 Z0 F#675
 M11 (4jiku unclamp)
 G90 G57 G00 B-0.642
 (G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
-G90 G57 G01 X0 Y0 #676
+G90 G57 G01 X0 Y0 F#676
 (G57XY Top Inside Center)
-G90 G57 G43 G01 Z[500.016+#601] H50 #676
+G90 G57 G43 G01 Z[500.016+#601] H50 F#676
 (hosei KouguChou: #50)
 (Z= topTanmen+#601)
 
@@ -222,7 +225,7 @@ G04 X1.
 IF[#1004EQ0]GOTO201
 G65 P910002 (sensor OFF)
 N201
-G90 G53 G01 Z0 #675
+G90 G53 G01 Z0 F#675
 
 (dimple mesurement end)
 IF[#186EQ0]GOTO300
@@ -234,13 +237,13 @@ N300
 
 
 G49
-G90 G53 G01 Z0 #675
+G90 G53 G01 Z0 F#675
 T31 (Tslot R20)
 M06 (tool exchange)
 
 G90 G57 G00 X0 Y0
 (G57XY Top Inside Center)
-G90 G57 G43 Z[500.016+#601] H31 #675
+G90 G57 G43 Z[500.016+#601] H31 F#675
 (hosei KouguChou: #31)
 (Z= TopTanmen +#601)
 
@@ -278,7 +281,7 @@ N400
 
 
 G49
-G90 G53 G01 Z0 #675
+G90 G53 G01 Z0 F#675
 T02 (tanmen)
 M06 (tool exchange)
 
@@ -313,7 +316,7 @@ N410
 
 
 G49
-G90 G53 G01 Z0 #675
+G90 G53 G01 Z0 F#675
 T16 (gaisaku)
 M06 (tool exchange)
 
@@ -353,7 +356,7 @@ N420
 
 
 G49
-G90 G53 G01 Z0 #675
+G90 G53 G01 Z0 F#675
 T06 (mizo)
 M06 (tool exchange)
 
@@ -395,7 +398,7 @@ N430
 
 
 G49
-G90 G53 G01 Z0 #675
+G90 G53 G01 Z0 F#675
 T13 (mentori 45)
 M06 (tool exchange)
 
@@ -431,7 +434,7 @@ N500
 
 
 G49
-G90 G53 G01 Z0 #675
+G90 G53 G01 Z0 F#675
 T02 (tanmen)
 M06 (tool exchange)
 
@@ -452,7 +455,7 @@ G55 G65 P410000 D2. X155. Y153. Z499.984 R19.
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
-G90 G53 G01 Z0 #675
+G90 G53 G01 Z0 F#675
 
 (Bottom tammen end)
 IF[#196EQ1]GOTO501
@@ -470,7 +473,7 @@ N510
 
 
 G49
-G90 G53 G01 Z0 #675
+G90 G53 G01 Z0 F#675
 T16 (gaisaku)
 M06 (tool exchange)
 
@@ -510,7 +513,7 @@ N530
 
 
 G49
-G90 G53 G01 Z0 #675
+G90 G53 G01 Z0 F#675
 T11 (mentori 15)
 M06 (tool exchange)
 
@@ -546,7 +549,7 @@ N540
 
 
 G49
-G90 G53 G01 Z0 #675
+G90 G53 G01 Z0 F#675
 T11 (mentori 15)
 M06 (tool exchange)
 
@@ -576,10 +579,10 @@ G91 G28 Z0
 (Bottom Uchimentori end)
 IF[#199EQ1]GOTO541
 IF[#199EQ2]GOTO542
-GOTO005
+GOTO006
 N541
 M00 (if #199=1)
-GOTO005
+GOTO006
 N542
 G65 P900003 (if #199=2)
 
@@ -587,7 +590,7 @@ G65 P900003 (if #199=2)
 (Kakou Owari)
 
 
-N005
+N006
 IF[#403EQ0]GOTO990
 (if #403=0, go to N990)
 
@@ -642,10 +645,10 @@ G54 G65 P150002 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11.
 (K: Bot gaisaku length)
 (U: tooriShin X)
 
-G90 G54 G01 X#900030 Y#900026 #676
+G90 G54 G01 X#900030 Y#900026 F#676
 M00 (tooriShin Y end)
 
-G90 G53 G01 Z0 #676
+G90 G53 G01 Z0 F#676
 GOTO990
 
 (Alerm)
@@ -671,7 +674,7 @@ IF[#1004EQ0]GOTO991
 M117 (sensor on/off)
 
 N991
-G90 G53 G01 X-5.501 Y-258.624 #676
+G90 G53 G01 X-5.501 Y-258.624 F#676
 T01 (empty)
 M06 (tool exchange)
 M60 (palette change)
@@ -685,9 +688,9 @@ N999 M30
 
 (Common variables)
 (as LHS)
-(#901001, #901003, #901004, #901006)
+(#901001, #901003, #901004, #901007)
 (as RHS)
-(#402, #403, #601, #675)
+(#402, #403, #601, #675, #676)
 (#900021, #900024)
 
 

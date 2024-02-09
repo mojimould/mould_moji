@@ -81,10 +81,10 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
   \label{eq:constraintUpoint2}
   \sin\alpha_{\mathrm T_\mathrm i} = \frac{f_\mathrm T}{R_\mathrm i}, \qquad
   \sin\alpha_{\mathrm U_\mathrm B} = \frac l{R_\mathrm i}, \qquad
-  \tan\theta = \frac\delta{2l}~.
+  \tan\theta = \frac{\delta_s}{2l}~.
 \end{gather}
 \end{subequations}
-ここで$W_x$はモールドの(AC)外径、$\delta$は\index{スペーサあつ@スペーサ厚}スペーサの厚さ（\textbf{スペーサ厚}）である。
+ここで$W_x$はモールドの(AC)外径、$\delta_s$は\index{スペーサあつ@スペーサ厚}スペーサの厚さ（\textbf{スペーサ厚}）である。
 このときモールドを原点Oを中心に$\Omega$だけ回転し、さらに点U$_\mathrm B$($R_\mathrm i$, $-\alpha_{\mathrm U_\mathrm B}$)を中心に$-\theta$だけ回転すると、点T$_\mathrm i$($R_\mathrm i$, $\alpha_{\mathrm T_\mathrm i}$)は、
 %% label{eq:afterftUpoint}
 \begin{align}
@@ -121,15 +121,15 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
   R_\mathrm i\left\{\sin\alpha_{\mathrm T_\mathrm i} + \sin(\alpha_{\mathrm U_\mathrm B} + \theta) - \sin\alpha_{\mathrm U_\mathrm B}\right\}
   &= f_\mathrm T -l
      +R_\mathrm i\left(\sin\alpha_{\mathrm U_\mathrm B}\cos\theta + \cos\alpha_{\mathrm U_\mathrm B}\sin\theta\right)\\
-  &= f_\mathrm T -l+l\cdot\frac{2l}{\sqrt{4l^2+\delta^2}}
-     +\sqrt{R_\mathrm i^2-l^2}\cdot\frac{\delta}{\sqrt{4l^2+\delta^2}}\\
-  &= f_\mathrm T -l+\frac{2l^2+\delta\sqrt{R_\mathrm i^2-l^2}}{\sqrt{4l^2+\delta^2}}~.
+  &= f_\mathrm T -l+l\cdot\frac{2l}{\sqrt{4l^2+\delta_s^2}}
+     +\sqrt{R_\mathrm i^2-l^2}\cdot\frac{\delta_s}{\sqrt{4l^2+\delta_s^2}}\\
+  &= f_\mathrm T -l+\frac{2l^2+\delta_s\sqrt{R_\mathrm i^2-l^2}}{\sqrt{4l^2+\delta_s^2}}~.
 \end{align*}
-まとめると、厚さ$\delta$の\index{スペーサ}スペーサを入れた後のトップ側の\index{ふりわけちょう@振分長}振分長$f'_\mathrm T$は、
+まとめると、厚さ$\delta_s$の\index{スペーサ}スペーサを入れた後のトップ側の\index{ふりわけちょう@振分長}振分長$f'_\mathrm T$は、
 \begin{align*}
   f'_\mathrm T
   = f_\mathrm T -l
-    +\frac{2l^2+\delta\sqrt{\left(R_\mathrm c-\nicefrac{W_x}2\right)^2-l^2}}{\sqrt{4l^2+\delta^2}}~.
+    +\frac{2l^2+\delta_s\sqrt{\left(R_\mathrm c-\nicefrac{W_x}2\right)^2-l^2}}{\sqrt{4l^2+\delta_s^2}}~.
 \end{align*}
 
 
@@ -139,36 +139,36 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{振分長が均等になるスペーサ厚}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-トップ側とボトム側の\index{きんとうふりわけ@均等振分}振分長が同じになるとき、$\delta$は
+トップ側とボトム側の\index{きんとうふりわけ@均等振分}振分長が同じになるとき、$\delta_s$は
 \begin{align*}
   f'_\mathrm T - f_\mathrm T = \frac{f_\mathrm B - f_\mathrm T}2
 \end{align*}
 を満たす。
 これより、
 \begin{align*}
-  \frac{2l^2+\delta\sqrt{R_\mathrm i^2-l^2}}{\sqrt{4l^2+\delta^2}} = l'\qquad
+  \frac{2l^2+\delta_s\sqrt{R_\mathrm i^2-l^2}}{\sqrt{4l^2+\delta_s^2}} = l'\qquad
   \left(l' \equiv l + \frac{f_\mathrm B-f_\mathrm T}2\right)
 \end{align*}
 両辺を2乗すると、
 \begin{gather*}
-  4l^4+\delta^2\left(R_\mathrm i^2-l^2\right)+4l^2\delta\sqrt{R_\mathrm i^2-l^2}
-  = l'^2\left(4l^2+\delta^2\right)\\
+  4l^4+\delta_s^2\left(R_\mathrm i^2-l^2\right)+4l^2\delta_s\sqrt{R_\mathrm i^2-l^2}
+  = l'^2\left(4l^2+\delta_s^2\right)\\
   \longrightarrow\quad
-  \delta^2\left(R_\mathrm i^2-l^2-l'^2\right)
-  +4l^2\delta\sqrt{R_\mathrm i^2-l^2} -4l^2\left(l'^2 - l^2\right)
+  \delta_s^2\left(R_\mathrm i^2-l^2-l'^2\right)
+  +4l^2\delta_s\sqrt{R_\mathrm i^2-l^2} -4l^2\left(l'^2 - l^2\right)
   = 0.
 \end{gather*}
-$\delta > 0$より、
+$\delta_s > 0$より、
 \begin{align*}
-  \delta
+  \delta_s
   &= \frac{\sqrt{4l^4\left(R_\mathrm i^2-l^2\right)
                  +4l^2\left(R_\mathrm i^2-l^2-l'^2\right)\left(l'^2 - l^2\right)}
            -2l^2\sqrt{R_\mathrm i^2-l^2}}{R_\mathrm i^2-l^2-l'^2}\\
   &= 2l\cdot\frac{l'\sqrt{R_\mathrm i^2-l'^2}-l\sqrt{R_\mathrm i^2-l^2}}{R_\mathrm i^2-l^2-l'^2}
 \end{align*}
-まとめると、求める\index{スペーサあつ@スペーサ厚}スペーサ厚$\delta$は、
+まとめると、求める\index{スペーサあつ@スペーサ厚}スペーサ厚$\delta_s$は、
 \begin{align*}
-  \delta
+  \delta_s
   = 2l\cdot
     \frac{\displaystyle
           \left(l+\frac{f_\mathrm B-f_\mathrm T}2\right)\!
@@ -196,7 +196,7 @@ $\delta > 0$より、
 ただし、\pageeqref{eq:constraintUpoint2}は以下のようになる。
 \begin{align*}
   \sin\alpha_{\mathrm U_\mathrm B} = \frac{\bar l}{R_\mathrm i-\rho}\quad, \quad
-  \tan\psi = \frac\delta{2\bar l} \quad
+  \tan\psi = \frac{\delta_s}{2\bar l} \quad
   \left(~\bar l \equiv l-\frac\sigma2~\right).
 \end{align*}
 これを原点Oを中心に$\Omega$だけ回転し、さらに点U$_\mathrm B$($R_\mathrm i-\rho$, $-\alpha_{\mathrm U_\mathrm B}$)を中心に点T$_\mathrm i$($R_\mathrm i$, $\alpha_{\mathrm T_\mathrm i}$)を$-\theta$だけ回転すると、
@@ -236,7 +236,7 @@ $\delta > 0$より、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{受板の接点}
 \index{うけいた@受板}受板とモールドとの（トップ側の）接点は、$R_\mathrm ie^{i\alpha_{\mathrm U_\mathrm B}}$で与えられる。
-このとき厚さ$\delta$のスペーサを取付けると、U$_\mathrm B$を中心に回転するが、それに伴い受板における接点の位置も変化する。
+このとき厚さ$\delta_s$のスペーサを取付けると、U$_\mathrm B$を中心に回転するが、それに伴い受板における接点の位置も変化する。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -244,11 +244,11 @@ $\delta > 0$より、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{回転後のモールドの湾曲中心}
 %%%%%%%%%%%%%%%%%%%%%%%%%
-厚さ$\delta$の\index{スペーサ}スペーサを挟むと、トップ側における受板の円の中心U$_\mathrm B$は実軸方向に$\delta$だけ移動するので、
+厚さ$\delta_s$の\index{スペーサ}スペーサを挟むと、トップ側における受板の円の中心U$_\mathrm B$は実軸方向に$\delta_s$だけ移動するので、
 \begin{align*}
   R_\mathrm i'e^{i\alpha_{\mathrm U_\mathrm B}}
   \quad\longrightarrow\quad
-  \delta+R_\mathrm i'e^{i\alpha_{\mathrm U_\mathrm B}}\ .
+  \delta_s+R_\mathrm i'e^{i\alpha_{\mathrm U_\mathrm B}}\ .
 \end{align*}
 よって、それぞれの受板の中心U$_\mathrm B$, U$_\mathrm T$を結んだ線分U$_\mathrm B$U$_\mathrm T$は、U$_\mathrm B$を中心に$-\psi$だけ傾いた線分U$_\mathrm B'$U$_\mathrm T'$となる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
@@ -256,15 +256,15 @@ $\delta > 0$より、
 U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B$U$_\mathrm T$の長さ$\bar l$より長くなることに注意。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 回転後のモールドの\index{わんきょくちゅうしん@湾曲中心}湾曲中心は、この線分の垂直二等分線上にあり、またそれぞれの受板の中心から$R_\mathrm i'$の距離の位置にある。
-つまり、この傾いた線分U$_\mathrm B'$U$_\mathrm T'$の中点から、角度$\pi-\psi$, 大きさ$\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}$の位置に移動する。
+つまり、この傾いた線分U$_\mathrm B'$U$_\mathrm T'$の中点から、角度$\pi-\psi$, 大きさ$\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}$の位置に移動する。
 したがって、回転後における湾曲の円の中心O$'$は、
 %% label{eq:afterOrgin}
 \begin{align}
   \notag
-  & \frac\delta2+\sqrt{R_\mathrm i'^2-\bar l^2}
-    +\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}e^{i(\pi-\psi)}\\
-  & = \frac\delta2+\sqrt{R_\mathrm i'^2-\bar l^2}-\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi
-      +i\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi\ .
+  & \frac{\delta_s}2+\sqrt{R_\mathrm i'^2-\bar l^2}
+    +\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}e^{i(\pi-\psi)}\\
+  & = \frac{\delta_s}2+\sqrt{R_\mathrm i'^2-\bar l^2}-\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\cos\psi
+      +i\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\sin\psi\ .
     \label{eq:afterOrgin}
 \end{align}
 
@@ -275,24 +275,24 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \subsubsection{回転後の接点（トップ側）}
 回転後のトップ側における受板の中心U$_\mathrm T'$と\index{わんきょくちゅうしん@湾曲中心}湾曲中心O$'$との差をとると、
 \begin{align*}
-  \frac\delta2+\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi
-  +i\left\{\bar l-\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi\right\}
+  \frac{\delta_s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\cos\psi
+  +i\left\{\bar l-\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\sin\psi\right\}
   = R_\mathrm i'e^{i\alpha'_{\mathrm U_\mathrm T}}\ .
 \end{align*}
 ここで、
 \begin{align*}
   \tan\alpha'_{\mathrm U_\mathrm T}
-  = \frac{\displaystyle\bar l-\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi}
-         {\displaystyle\frac\delta2+\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi}\ .
+  = \frac{\displaystyle\bar l-\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\sin\psi}
+         {\displaystyle\frac{\delta_s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\cos\psi}\ .
 \end{align*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-これの大きさは、$\delta\cos\psi-2\bar l\sin\psi = 0$より、
+これの大きさは、$\delta_s\cos\psi-2\bar l\sin\psi = 0$より、
 \begin{align*}
-  \left\{\frac\delta2+\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi\right\}^{\!\!2}
-  +\left\{\bar l-\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi\right\}^{\!\!2}
+  \left\{\frac{\delta_s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\cos\psi\right\}^{\!\!2}
+  +\left\{\bar l-\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\sin\psi\right\}^{\!\!2}
   = R_\mathrm i'^2\ .
 \end{align*}
 \end{hosoku}
@@ -302,9 +302,9 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 よって、回転後の接点は以下で与えられる。
 \begin{align*}
   &  R_\mathrm ie^{i\alpha'_{\mathrm U_\mathrm T}}
-     +\frac\delta2+\sqrt{R_\mathrm i'^2-\bar l^2}-\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi
-     +i\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi\\
-  &= \delta+R_\mathrm i'e^{i\alpha_{\mathrm U_\mathrm B}}+\rho e^{i\alpha'_{\mathrm U_\mathrm T}}\ .
+     +\frac{\delta_s}2+\sqrt{R_\mathrm i'^2-\bar l^2}-\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\cos\psi
+     +i\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\sin\psi\\
+  &= \delta_s+R_\mathrm i'e^{i\alpha_{\mathrm U_\mathrm B}}+\rho e^{i\alpha'_{\mathrm U_\mathrm T}}\ .
 \end{align*}
 
 
@@ -314,23 +314,23 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \subsubsection{回転後の接点（ボトム側）}
 回転後のボトム側における受板の中心U$_\mathrm B$と\index{わんきょくちゅうしん@湾曲中心}湾曲中心O$'$との差をとると、
 \begin{align*}
-  -\frac\delta2+\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi
-  -i\left\{\bar l+\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi\right\}
+  -\frac{\delta_s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\cos\psi
+  -i\left\{\bar l+\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\sin\psi\right\}
   = R_\mathrm i'e^{-i\alpha'_{\mathrm U_\mathrm B}}
 \end{align*}
 ここで、
 \begin{align*}
   \tan\alpha'_{\mathrm U_\mathrm B}
-  = \frac{\displaystyle\bar l+\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi}
-         {\displaystyle-\frac\delta2+\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi}
+  = \frac{\displaystyle\bar l+\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\sin\psi}
+         {\displaystyle-\frac{\delta_s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\cos\psi}
 \end{align*}
 よって、回転後の接点は以下で与えられる。
 %% label{eq:afterUBcontact}
 \begin{align}
   \notag
   &  R_\mathrm ie^{-i\alpha'_{\mathrm U_\mathrm B}}
-     +\frac\delta2+\sqrt{R_\mathrm i'^2-\bar l^2}-\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi
-     +i\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi\\
+     +\frac{\delta_s}2+\sqrt{R_\mathrm i'^2-\bar l^2}-\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\cos\psi
+     +i\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\sin\psi\\
   &= R_\mathrm i'e^{-i\alpha_{\mathrm U_\mathrm B}}+\rho e^{-i\alpha'_{\mathrm U_\mathrm B}}
    \label{eq:afterUBcontact}
 \end{align}
@@ -338,11 +338,11 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-辺の長さが$R_i'$, $R_i'$, $2\bar l$の二等辺三角形$\triangle$OU$_\mathrm B$U$_\mathrm T$の部分が、回転後には辺の長さ$R_i'$, $R_i'$, $\sqrt{\delta^2+(2\bar l)^2}$の二等辺三角形$\triangle$O$'$U$_\mathrm B'$U$_\mathrm T'$となる。
+辺の長さが$R_i'$, $R_i'$, $2\bar l$の二等辺三角形$\triangle$OU$_\mathrm B$U$_\mathrm T$の部分が、回転後には辺の長さ$R_i'$, $R_i'$, $\sqrt{\delta_s^2+(2\bar l)^2}$の二等辺三角形$\triangle$O$'$U$_\mathrm B'$U$_\mathrm T'$となる。
 実際、$\cos2a = 1-2\sin^2\!a$より、
 \begin{align*}
   \sin^2\frac{\alpha'_{\mathrm U_\mathrm T}+\alpha'_{\mathrm U_\mathrm B}}2
-  = \frac{\delta^2+(2\bar l)^2}{4R_\mathrm i'^2}\ .
+  = \frac{\delta_s^2+(2\bar l)^2}{4R_\mathrm i'^2}\ .
 \end{align*}
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -355,7 +355,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% subsection 1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{スペーサによるモールドの回転角}
-厚さ$\delta$の\index{スペーサ}スペーサを挿入すると、\index{わんきょくちゅうしん@湾曲中心}湾曲中心Oは、U$_\mathrm B$を中心に$-\left(\alpha'_{\mathrm U_\mathrm B}\!-\alpha_{\mathrm U_\mathrm B}\right)$だけ回転する。
+厚さ$\delta_s$の\index{スペーサ}スペーサを挿入すると、\index{わんきょくちゅうしん@湾曲中心}湾曲中心Oは、U$_\mathrm B$を中心に$-\left(\alpha'_{\mathrm U_\mathrm B}\!-\alpha_{\mathrm U_\mathrm B}\right)$だけ回転する。
 実際、
 \begin{align*}
   -R_\mathrm i'e^{-i\alpha'_{\mathrm U_\mathrm B}}+R_\mathrm i'e^{-i\alpha_{\mathrm U_\mathrm B}}
@@ -371,11 +371,11 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 トップ側の接点U$_\mathrm T'$とボトム側の接点U$_\mathrm B'$の差をとると、
 \begin{align*}
   R_\mathrm i\!\left(e^{i\alpha_{\mathrm U_\mathrm T}'}-e^{-i\alpha'_{\mathrm U_\mathrm B}}\right)
-  &= \frac{R_\mathrm i'+\rho}{R_\mathrm i'}\left\{\delta+i(2\bar l)\right\}
-   = \frac{R_\mathrm i}{R_\mathrm i'}\sqrt{\delta^2+(2\bar l)^2}e^{i(\nicefrac\pi2-\psi)}\ .
+  &= \frac{R_\mathrm i'+\rho}{R_\mathrm i'}\left\{\delta_s+i(2\bar l)\right\}
+   = \frac{R_\mathrm i}{R_\mathrm i'}\sqrt{\delta_s^2+(2\bar l)^2}e^{i(\nicefrac\pi2-\psi)}\ .
 \end{align*}
-したがって、厚さ$\delta$のスペーサを挿入すると、両接点を通る直線は$-\psi$だけ傾くことがわかる。
-また、その長さは受板中心間U$_\mathrm T'$U$_\mathrm B'$の距離$\sqrt{\delta^2+(2\bar l)^2}$の$\nicefrac{R_i}{R_i'}$倍になっていることも確かめられる。
+したがって、厚さ$\delta_s$のスペーサを挿入すると、両接点を通る直線は$-\psi$だけ傾くことがわかる。
+また、その長さは受板中心間U$_\mathrm T'$U$_\mathrm B'$の距離$\sqrt{\delta_s^2+(2\bar l)^2}$の$\nicefrac{R_i}{R_i'}$倍になっていることも確かめられる。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -398,8 +398,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
   f'_\mathrm T
   = R_\mathrm i\sin\alpha_{\mathrm T_\mathrm i}
     +R_\mathrm i'\left(\sin\alpha'_{\mathrm U_\mathrm B}-\sin\alpha_{\mathrm U_\mathrm B}\right)
-  &= f_\mathrm T+\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\sin\psi\\
-  &= f_\mathrm T+\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac\delta{\sqrt{\delta^2+(2\bar l)^2}}\ .
+  &= f_\mathrm T+\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\sin\psi\\
+  &= f_\mathrm T+\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\frac{\delta_s}{\sqrt{\delta_s^2+(2\bar l)^2}}\ .
 \end{align*}
 
 
@@ -411,8 +411,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \begin{align*}
   & R_\mathrm i\cos\alpha_{\mathrm T_\mathrm i}
     -R_\mathrm i'(\cos\alpha'_{\mathrm U_\mathrm B}-\cos\alpha_{\mathrm U_\mathrm B})\\
-  & = \sqrt{R_\mathrm i^2-f_\mathrm T^2}+\frac\delta2+\sqrt{R_\mathrm i'^2-\bar l^2}
-      -\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\cos\psi
+  & = \sqrt{R_\mathrm i^2-f_\mathrm T^2}+\frac{\delta_s}2+\sqrt{R_\mathrm i'^2-\bar l^2}
+      -\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\cos\psi
 \end{align*}
 となる。
 よって、\index{スペーサ}スペーサを挿入することにより、モールドは水平・鉛直方向にそれぞれ、
@@ -421,9 +421,9 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \begin{alignat}{2}
   \label{eq:spacerMoveHdistance}
   \text{水平方向：}\quad
-  & \frac\delta2+\sqrt{R_\mathrm i'^2-\bar l^2}-\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta^2+(2\bar l)^2}}\\
+  & \frac{\delta_s}2+\sqrt{R_\mathrm i'^2-\bar l^2}-\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta_s^2+(2\bar l)^2}}\\
   \text{鉛直方向：}\quad
-  & \sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac\delta{\sqrt{\delta^2+(2\bar l)^2}}
+  & \sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\frac{\delta_s}{\sqrt{\delta_s^2+(2\bar l)^2}}
 \end{alignat}
 \end{subequations}
 だけ移動することがわかる。
@@ -435,21 +435,21 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% subsection 1.2.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{再振分長が均等になるスペーサ厚}
-トップ側とボトム側の\index{きんとうふりわけ@均等振分}振分長が同じになるとき、$\delta$は
+トップ側とボトム側の\index{きんとうふりわけ@均等振分}振分長が同じになるとき、$\delta_s$は
 \begin{align*}
-  \sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac\delta{\sqrt{\delta^2+(2\bar l)^2}} = f_d \qquad
+  \sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\frac{\delta_s}{\sqrt{\delta_s^2+(2\bar l)^2}} = f_d \qquad
   \left(f_d \equiv \frac{f_\mathrm B-f_\mathrm T}2\right)\ .
 \end{align*}
 を満たす。
 両辺を2乗して$-4$倍すると、
 \begin{align*}
-  \delta^2\left\{\delta^2+(2\bar l)^2-4R_\mathrm i'^2\right\}+4f_d^2\left\{\delta^2+(2\bar l)^2\right\}
-  & = \delta^4-2\left\{2R_\mathrm i'^2-2\bar l^2-2f_d^2\right\}\delta^2+4f_d^2(2\bar l)^2\\
+  \delta_s^2\left\{\delta_s^2+(2\bar l)^2-4R_\mathrm i'^2\right\}+4f_d^2\left\{\delta_s^2+(2\bar l)^2\right\}
+  & = \delta_s^4-2\left\{2R_\mathrm i'^2-2\bar l^2-2f_d^2\right\}\delta_s^2+4f_d^2(2\bar l)^2\\
   & = 0\ .
 \end{align*}
-したがって、$f_\mathrm T = f_\mathrm B$ ($f_d = 0$)のとき$\delta = 0$であることを考慮して、
+したがって、$f_\mathrm T = f_\mathrm B$ ($f_d = 0$)のとき$\delta_s = 0$であることを考慮して、
 \begin{align*}
-  \delta^2
+  \delta_s^2
   &= 2\left\{
        R_\mathrm i'^2-\bar l^2-f_d^2-\sqrt{\left(R_\mathrm i'^2-\bar l^2-f_d^2\right)^2-4f_d^2\bar l^2}\,
      \right\}\\
@@ -457,7 +457,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \end{align*}
 なお、これはモールドが水平・鉛直方向にそれぞれ、
 \begin{align*}
-  \text{水平方向：}~\frac\delta2+\sqrt{R_\mathrm i^2-\bar l^2}-\frac{2\bar l}{\delta}f_d\quad(\delta>0)\ , \qquad
+  \text{水平方向：}~\frac{\delta_s}2+\sqrt{R_\mathrm i^2-\bar l^2}-\frac{2\bar l}{\delta_s}f_d\quad(\delta_s>0)\ , \qquad
   \text{鉛直方向：}~\frac{f_\mathrm B-f_\mathrm T}2
 \end{align*}
 だけ移動することを意味する。
@@ -467,14 +467,14 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-改めてまとめると、厚さ$\delta$のスペーサを（トップ側に）挿入した後のトップ側の\index{ふりわけちょう@振分長}振分長$f_\mathrm T'$は、
+改めてまとめると、厚さ$\delta_s$のスペーサを（トップ側に）挿入した後のトップ側の\index{ふりわけちょう@振分長}振分長$f_\mathrm T'$は、
 \begin{align*}
   f_\mathrm T'
-  = f_\mathrm T+\sqrt{R_\mathrm i'^2-\frac{\delta^2+(2\bar l)^2}4}\frac\delta{\sqrt{\delta^2+(2\bar l)^2}}\ .
+  = f_\mathrm T+\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\frac{\delta_s}{\sqrt{\delta_s^2+(2\bar l)^2}}\ .
 \end{align*}
-トップ側とボトム側の\index{きんとうふりわけ@均等振分}振分長が均等になるときの\index{スペーサあつ@スペーサ厚}スペーサ厚$\delta'$は、
+トップ側とボトム側の\index{きんとうふりわけ@均等振分}振分長が均等になるときの\index{スペーサあつ@スペーサ厚}スペーサ厚$\delta_s'$は、
 \begin{align*}
-  \delta' = \sqrt{R_\mathrm i'^2-(\bar l-f_d)^2}-\sqrt{R_\mathrm i'^2-(\bar l+f_d)^2}\ .
+  \delta_s' = \sqrt{R_\mathrm i'^2-(\bar l-f_d)^2}-\sqrt{R_\mathrm i'^2-(\bar l+f_d)^2}\ .
 \end{align*}
 ここで、
 \begin{align*}

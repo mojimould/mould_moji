@@ -48,22 +48,23 @@ IF[#02GT0]GOTO800
 (if R = #0, go to N800)
 (if B > 0 or #0, go to N800)
 
-IF[#26LE[#901011/2]]GOTO800
 IF[#18LE#26]GOTO800
 IF[[#13-FIX[#13]]NE0]GOTO800
 IF[[#17+[#13-1]*#06]GE#26]GOTO800
 IF[[[#09+#19+ABS[#09-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]GOTO800
 IF[#02LT[-15]]GOTO800
 IF[#21GT#04]GOTO800
-(if Z <= #901011/2, go to N800)
+IF[#26LE[#901011/2]]GOTO800
 (if R <= Z, go to N800)
 (if M is not intger, go to N800)
 (if Q+[M-1]*K >= Z, go to N800)
 (if max[F, S] >= min[X, Y], go to N800)
 (if B < -15, go to N800)
 (if U > I, go to N800)
+(if Z <= #901011/2, go to N800)
 
 IF[#20EQ#0]THEN #20=0
+(if T = #0, then T = 0)
 
 IF[#4111EQ50]GOTO001
 IF[#4111EQ31]GOTO002
@@ -91,6 +92,19 @@ IF[#1000EQ0]THEN #30=#901001
 IF[#1000EQ1]THEN #30=#901005
 (#30: table center X)
 
+#705=#[5201+[#701-53]*20]-#30
+#706=#705*COS[ABS[#02]]+#26*SIN[ABS[#02]]
+#707=-#705*SIN[ABS[#02]]+#26*COS[ABS[#02]]
+(#705= current work origin X from table center)
+
+#708=#23-#17
+(Z: the 1st row before rotation)
+#709=SQRT[#18*#18-#708*#708]-SQRT[#18*#18-#23*#23]
+(the center of the 1st row before rotation)
+#710=#709*COS[ABS[#02]]-#17*SIN[ABS[#02]]
+#711=-#709*SIN[ABS[#02]]-#17*COS[ABS[#02]]
+(XZ: the center of the 1st row after rotation)
+
 N004
 M11 (4jiku unclamp)
 G90 G#701 G01 B[#01+#02]
@@ -98,35 +112,27 @@ G90 G#701 G01 B[#01+#02]
 M10 (4jiku clamp)
 
 G90 G01 Z[#26+#601] F#676
-#705=#[5201+[#701-53]*20]-#30
-#706=#705*COS[ABS[#02]]+#26*SIN[ABS[#02]]
-#707=-#705*SIN[ABS[#02]]+#26*COS[ABS[#02]]
-(#705= current work origin X from table center)
+(Z: tanmen+#601)
+
 G91 G01 X[#706-#705] Z[#707-#26-#702-#601] F#676
-(XZ to tanmen center)
+(XZ: tanmen center)
 
-#708=#5001
-#709=#5003
+#712=#5001
+#713=#5003
 (XZ block end: start point XZ)
-#710=#23-#17
-(Z: the 1st row before rotation)
-#711=SQRT[#18*#18-#710*#710]-SQRT[#18*#18-#23*#23]
-(the center of the 1st row before rotation)
-#712=#711*COS[ABS[#02]]-#17*SIN[ABS[#02]]
-#713=-#711*SIN[ABS[#02]]-#17*COS[ABS[#02]]
-(XZ: the center of the 1st row after rotation)
 
-IF[#4111NE50]GOTO005
-(if tool is not sensor, go to N005)
-IF[#1005EQ1]GOTO801
-IF[#1004EQ1]GOTO005
-(if low battery, go to N801)
-(if current sensor ON, go to N005)
+IF[#4111NE50]GOTO006
+(if tool is not sensor, go to N006)
+IF[#1005EQ0]GOTO005
+M00 (sensor low battery)
+N005
+IF[#1004EQ1]GOTO006
+(if current sensor ON, go to N006)
 M117 (sensor on/off)
 G04 X1.
 
-N005
-G91 G#704 X#712 Z#713 F#678
+N006
+G91 G#704 X#710 Z#711 F#678
 (XZ to the center of the 1st row after rotation)
 (if sensor G31, else G01)
 
@@ -201,7 +207,7 @@ G65 P220001 A1. X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 N204
 IF[#33GE#13]GOTO205
 (end loop for #33)
-#32=#710-[#33-1]*#06
+#32=#708-[#33-1]*#06
 (#32= the #33th row's Z from table center)
 #31=SQRT[#18*#18-[#32-#06]*[#32-#06]]-SQRT[#18*#18-#32*#32]
 G91 G#704 X[#31*COS[ABS[#02]]-#06*SIN[ABS[#02]]] Z-[#31*SIN[ABS[#02]]+#06*COS[ABS[#02]]] F#678
@@ -224,9 +230,9 @@ M09 (coolant off)
 N010
 G90 G01 X#714 Z[#716-#702] F#676
 (XZ: to the center of the 1st row)
-G90 G01 X#708 Z#709 F#676
+G90 G01 X#712 Z#713 F#676
 (XZ: to start point)
-G90 G01 Z[#709+#601] F#676
+G90 G01 Z[#713+#601] F#676
 GOTO999
 
 
@@ -244,7 +250,7 @@ M117 (sensor on/off)
 N803
 G90 G01 Z#716 F#678
 (XYZ: to the center of the 1st row)
-G90 G01 X#708 Z#709 F#678
+G90 G01 X#712 Z#713 F#678
 (XZ: to start point)
 
 N800

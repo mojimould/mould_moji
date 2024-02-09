@@ -9,12 +9,16 @@ N001
 
 IF[#33LT54]GOTO800
 IF[#33GT59]GOTO800
-(if work G# < 54 go to N800)
-(if work G# > 59 go to N800)
+IF[#33NE[FUP[#33]]]GOTO800
+(if work G# < 54, go to N800)
+(if work G# > 59, go to N800)
+(if work G# is not integer, go to N800)
 
 IF[#24EQ#0]GOTO800
 IF[#24LT10]GOTO800
 IF[#26EQ#0]GOTO800
+IF[#23EQ#0]GOTO800
+IF[#23LT10]GOTO800
 IF[#20EQ#0]GOTO800
 IF[#20LT1]GOTO800
 IF[#18EQ#0]GOTO800
@@ -22,9 +26,10 @@ IF[#13EQ#0]GOTO800
 IF[#13LT0]GOTO800
 IF[#13GT10]GOTO800
 (if X < 10 or #0, go to N800)
-(if Z = #0 go to, N800)
+(if Z = #0, go to, N800)
+(if W < 10 or #0, go to N800)
 (if T < 1 or #0, go to N800)
-(if R = #0 go to, N800)
+(if R = #0, go to, N800)
 (if M < 0 or M > 10 or #0, go to N800)
 
 IF[#18LE#26]GOTO800
@@ -56,11 +61,14 @@ IF[#33GT57]THEN #31=1
 IF[#33LT54]THEN #31=-1
 IF[#33LT55]THEN #31=-1
 (Top: #31=1, Bot: #31=-1)
-IF[#33GT56]THEN #30=#408
-IF[#33GT57]THEN #30=#408
-IF[#33LT54]THEN #30=#403
-IF[#33LT55]THEN #30=#403
+IF[#33GT56]THEN #30=#410
+IF[#33GT57]THEN #30=#410
+IF[#33LT54]THEN #30=#405
+IF[#33LT55]THEN #30=#405
 (Top: #30=#408, Bot: #30=#403)
+
+IF[[ABS[#30]]GE[#23/2]]GOTO800
+(if |#30| >= W/2, go to N800)
 
 N002
 #29=[#24/2]-#20+#13
@@ -73,36 +81,30 @@ N003
 IF[#30EQ#0]GOTO005
 IF[#30EQ0]GOTO005
 (if #30 = 0 or #0, go to N005)
-
-IF[#23LT10]GOTO800
-IF[#18LT10]GOTO800
-IF[[ABS[#30]]GE[#23/2]]GOTO800
-(if W,R < 10, go to N800)
-(if |#30| >= W/2, go to N800)
 #28=SQRT[#18*#18-[#23+#30]*[#23+#30]]-SQRT[#18*#18-#23*#23]
 IF[[ABS[#28]]GE[#24/2]]GOTO800
 (if |#28| >= X/2, go to N800)
-IF[#31EQ1]GOTO004
-G91 G01 X-#28 F#676
-GOTO005
-N004 (for Top)
-G91 G01 X#28 F#676
+
+N004
+G91 G01 X[#31*#28] F#676
 
 N005
-IF[#1005EQ1]GOTO801
-IF[#1004EQ1]GOTO006
+IF[#1005EQ0]GOTO006
+M00 (sensor low battery)
+N006
+IF[#1004EQ1]GOTO007
 (if low battery, go to N801)
-(if current sensor ON, go to N006)
+(if current sensor ON, go to N007)
 M117 (sensor on/off)
 G04 X1. (wait 1.0s)
 
-N006
+N007
 G90 G31 Z[#26-#512+#30] F#678
 (Z skip tanmen: Z -D/2)
 IF[#5003GT[#26-#512+#30]]GOTO802
 (if skip block end Z > tanmen Z -D/2+#30, to N802)
 
-N007
+N008
 G91 G31 X[#31*[#29-#512-#603]] F#678
 (X skip: #31*[#29-D/2-#603])
 IF[[ABS[#5001-#32]+0.001]LT[ABS[#29-#512-#603]]]GOTO803
@@ -113,8 +115,8 @@ G91 G31 X[#31*[#603+#604]] F#679
 #900024=#5001+#502+#31*[#512-#501]
 (#900024= block end X +#502+#31*[D/2-#501])
 
-N008
-G91 G01 X[#31*[-#29+#512-#501]+#502] F#676
+N009
+G90 G01 X[#900024-#31*#29] F#676
 (X to measured center)
 G91 G01 X-[#31*#28] F#676
 (X to measured tanmen center)
@@ -134,12 +136,17 @@ GOTO999
 
 N803
 G90 G01 X#32 F#676 (X to start point)
+G90 G53 G01 Z0 F#676
+G65 P910002 (sensor OFF)
+#3000=121 (Argument Is Not Assigned)
 
 N802
 G90 G53 G01 Z0 F#676
 G65 P910002 (sensor OFF)
+#3000=121 (Argument Is Not Assigned)
 
-N800 #3000=121 (Argument Is Not Assigned)
+N800
+#3000=121 (Argument Is Not Assigned)
 
 N999 M99
 
