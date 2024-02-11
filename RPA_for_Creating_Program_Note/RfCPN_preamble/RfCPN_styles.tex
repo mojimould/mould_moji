@@ -30,7 +30,7 @@
 \hypersetup{
 %  pdfcreationdate=date,
 %  pdfcreator={upLaTeX with hyperref}, % creator for PDF subjct field
-  pdftitle={RPA実現に向けたRDBSの設計と構築}, % title for PDF subjct field
+  pdftitle={RPAに向けたRDBSの構築と応用}, % title for PDF subjct field
   pdfsubject={プログラム作成業務の自動化}, % text for PDF subjct field
   pdfauthor={Kurahashi Nobuaki},  % text for PDF Author field
   pdfkeywords={
@@ -105,6 +105,15 @@
 \newcommand{\commonheadfoot}{
   \fancyhead{}
   \fancyfoot{}
+  \fancyfoot[C]{\tiny
+    \hyperref[part:I]{Part\,I}\quad
+    \hyperref[part:II]{Part\,II}\quad
+    \hyperref[part:III]{Part\,III}\quad
+    \hyperref[part:IV]{Part\,IV}\quad
+    \hyperref[part:V]{Part\,V}\quad
+    \hyperref[part:VI]{Part\,VI}\quad
+    \hyperref[part:VII]{Part\,VII}\quad
+    \hyperref[part:VIII]{Part\,VIII}}
   \fancyfoot[LO]{\tiny\customdate} % footer left fields for main odd pages
   \fancyfoot[RE]{\tiny\customdate} % footer right fields for main even pages
 }
@@ -124,8 +133,8 @@
 \fancypagestyle{plainheadfront}{
   \commonheadfoot
   %\fancyhead[C]{}
-  \fancyhead[LO]{\thepage}
-  \fancyhead[RE]{\thepage}
+  \fancyhead[LO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
+  \fancyhead[RE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
 }
 \fancypagestyle{plainhead}{
   \commonheadfoot
@@ -134,16 +143,16 @@
 }
 \fancypagestyle{plainheadback}{
   \commonheadfoot
-  \fancyhead[RO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
-  \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
+  \fancyhead[LO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
+  \fancyhead[RE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
 }
 \renewcommand*\frontmatter{%
   \if@twoside\cleardoubleoddpage\else\clearpage\fi
-  \@frontmattertrue\@mainmatterfalse\@backmatterfalse\pagenumbering{roman}\pagestyle{plainheadfront}%
+  \@frontmattertrue\@mainmatterfalse\@backmatterfalse\pagenumbering{arabic}\pagestyle{plainheadfront}%
 }
 \renewcommand*\mainmatter{%
   \if@twoside\cleardoubleoddpage\else\clearpage\fi
-  \@frontmatterfalse\@mainmattertrue\@backmatterfalse\pagenumbering{arabic}\pagestyle{main}%
+  \@frontmatterfalse\@mainmattertrue\@backmatterfalse\pagestyle{main}%
 }
 \renewcommand*\backmatter{%
   \if@openright\cleardoubleoddpage\else\clearpage\fi
@@ -198,7 +207,9 @@
   font={bf, large, sf},
   hypcap=false,
 }
-%%%%% STYLE OF TABLE OF CONTENTS %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF TOC %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\RedeclareSectionCommand[
 %  tocindent=0em,
 %  tocnumwidth=4.25em
@@ -218,9 +229,6 @@
 %  tocnumwidth=2.5em,
 %  tocentrynumberformat=\entrynumberwithdot
 %]{subsection}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF TOC %%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{tocdepth}{3}
 \renewcommand\contentsname{\texorpdfstring{\hbox to 1.9em{目次}}{目次}}
 \patchcmd{\l@part}{\begingroup}{\begingroup\begingroup\tikzset{every node/.style={rectangle,fill=blue!20,rounded corners}}}{}{}
@@ -231,7 +239,7 @@
 ]{tocline}{part}
 \DeclareTOCStyleEntry[
   level=\chaptertocdepth,
-  indent=0.9em, % エントリのインデントを調整
+  indent=0.85em, % エントリのインデントを調整
   numwidth=1.5em % エントリ番号の幅を調整
 ]{tocline}{chapter}
 \DeclareTOCStyleEntry[
@@ -247,9 +255,7 @@
   indent=8.31em, % エントリのインデントを調整
   numwidth=3.79em % エントリ番号の幅を調整
 ]{tocline}{subsubsection}
-\renewcommand*{\l@table}[2]{%
-  \@dottedtocline{1}{2.35em}{2.3em}{#1}{#2}%
-}
+\renewcommand*{\l@table}[2]{\@dottedtocline{1}{2.35em}{2.3em}{#1}{#2}}
 %%%%% STYLE OF LIST FOR APPENDIX %%%%%
 \AtBeginEnvironment{appendices}{%
   \@appendixtrue%
@@ -259,13 +265,13 @@
 }
 \AfterEndEnvironment{appendices}{%
   \patchcmd{\part}{\tocAPartSeparateline}{\relax}{}{}%
-  \addtocontents{toc}{\protect\newpage}% add page break before parts, except the first one
+  \addtocontents{toc}{\protect\cleardoublepage}% add page break before parts, except the first one
   \@appendixfalse%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF LOP %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand\listoflopname{\texorpdfstring{\hbox to 2.75em{大項目}}{大項目}}
+\renewcommand\listoflopname{\texorpdfstring{\hbox to 2.75em{大目次}}{大目次}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF LOF %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -357,20 +363,20 @@
     P900003, P910001, P910002},%
   emphstyle={[31]\bfseries\color{cyan}},%
 }
-\lstdefinestyle{Gcode-bundle}{
-  language=GcodeBasic,
-  nolol,
-  morekeywords={[120]WHILE, THEN, DO1, DO2, END1, END2},%
-  keywordstyle={[120]\fontfamily{pcr}\selectfont\bfseries},%
-  emph={[102]},
-  emphstyle={[102]\bfseries\color{blue}},
-  emph={[111]M10, M11, M19, M30, M32, M33, M48, M49,  M61, M62, M74, M78, M262},
-  emphstyle={[111]\fontfamily{pcr}\bfseries\color{yellow!100!green!80!black!100!}},
-  emph={[112]M98P9001},
-  emphstyle={[112]\bfseries\color{cyan}},
-  emph={[122]SIN, COS, SQRT, FIX, FUP, ABS},%
-  emphstyle={[122]\fontfamily{pcr}\selectfont\bfseries},%
-}
+%\lstdefinestyle{Gcode-bundle}{
+%  language=GcodeBasic,
+%  nolol,
+%  morekeywords={[120]WHILE, THEN, DO1, DO2, END1, END2},%
+%  keywordstyle={[120]\fontfamily{pcr}\selectfont\bfseries},%
+%  emph={[102]},
+%  emphstyle={[102]\bfseries\color{blue}},
+%  emph={[111]M10, M11, M19, M30, M32, M33, M48, M49,  M61, M62, M74, M78, M262},
+%  emphstyle={[111]\fontfamily{pcr}\bfseries\color{yellow!100!green!80!black!100!}},
+%  emph={[112]M98P9001},
+%  emphstyle={[112]\bfseries\color{cyan}},
+%  emph={[122]SIN, COS, SQRT, FIX, FUP, ABS},%
+%  emphstyle={[122]\fontfamily{pcr}\selectfont\bfseries},%
+%}
 %\lstdefinestyle{Gcode-ren}{
 %  language=GcodeBasic,
 %  nolol,
@@ -519,6 +525,7 @@
   tocindent=12em,%
   tocnumwidth=6em%
 ]{subparagraph}
+%%%%% 2 ROWS TABLE %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF TCBSET %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -642,6 +649,20 @@
     },
   },
 }
+\newenvironment{2columnstable}[3]
+{\commonTable{#1}{|c|Sl|}{\textbf{#2} & \textbf{#3}}{2}}
+{\endcommonTable}
+\newenvironment{3columnstable}[4]
+{\commonTable{#1}{|l|Sl|c|}{\textbf{#2} & \textbf{#3} & \textbf{#4}}{3}}
+{\endcommonTable}
+
+\newenvironment{2commonvariables}[3]
+{\commonvariables{#1}{|c|Sl|}{\textbf{#2} & \textbf{#3}}{2}}
+{\endcommonvariables}
+\newenvironment{3commonvariables}[4]
+{\commonvariables{#1}{|l|Sl|c|}{\textbf{#2} & \textbf{#3} & \textbf{#4}}{3}}
+{\endcommonvariables}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF TIKZSET %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -670,5 +691,12 @@
 %  every right delimiter/.style={xshift=-.5em},
 %  bmatrix/.style={matrix of math nodes, left delimiter=[, right delimiter=],},
 }
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% OTHER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\baselineskip{16pt}
+\setlength\normalbaselineskip{\baselineskip}
+\let\cleardoublepage\tmpcleardoublepage
+\let\clearpage\tmpclearpage
+\input{./RfCPN_preamble/RfCPN_title}
 \makeatother

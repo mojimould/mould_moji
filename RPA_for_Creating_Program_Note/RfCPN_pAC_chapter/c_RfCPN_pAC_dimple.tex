@@ -33,7 +33,7 @@
 
 \item
 \subparagraph*{\dimple の寸法}
-トップ端面から1列目までの距離を$q$, 鉛直・水平方向のピッチをそれぞれ$p_z$, $p_x$とし、$i$列目の長さをそれぞれ$d_i$とする。
+トップ端面から1列目までの距離を$q$, 鉛直・水平方向の\index{ピッチ（\dimple）@ピッチ（\dimple）}ピッチをそれぞれ$p_z$, $p_x$とし、$i$列目の長さをそれぞれ$d_i$とする。
 
 特に、奇数列目の長さが全て同じ場合はその長さを$d_\mathrm o$, 偶数列目の長さが全て同じ場合はその長さを$d_\mathrm e$とも表記する。
 （\pageautoref{fn:generallyDimpleN}および\pageautoref{hosoku:generallyDimpleN}参照）
@@ -88,7 +88,7 @@
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-内径テーパの$Z$方向のピッチ$\lambda_{i+1}-\lambda_i$は常に一定の場合が多い。
+内径テーパ表の\index{ピッチ（ないけいテーパひょう@ピッチ（内径テーパ表）}ピッチ$\lambda_{i+1}-\lambda_i$は常に一定の場合が多い。
 $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j \leqq z < \lambda_{j+1}$となる$j$は、
 \begin{align*}
   j = z \bDiv (\lambda_{i+1}-\lambda_i) = \left\lfloor\frac z{\lambda_{i+1}-\lambda_i}\right\rfloor
@@ -109,13 +109,13 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 商を表す記号は一般的な数学の教科書等ではあまり用いられないが、プログラミング言語等では$\bDiv$を用いられることがある。
 これに倣って、ここでは商には$\bDiv$, 余りには$\bmod$を用いている。
 
-　一般に、実数$a$, $b$ ($b\neq0$)に対して$a = bq+r$ ($0 \leqq r < |b|$)を満たす整数$q$を商、$r$を余りと呼び、このとき$a \bDiv b = q$および$a \bmod b = r$のように表される。
+　一般に、実数$a$, $b$ ($b\neq0$)に対して$a = bq+r$ ($0 \leqq r < |b|$)を満たす整数$q$を\index{しょう(div)@商($\bDiv$)}商、$r$を\index{あまり(mod)@余り($\bmod$)}余りと呼び、このとき$a \bDiv b = q$および$a \bmod b = r$のように表される。
 なお、ここでは簡単のため、$q \geqq 0$として考えることにする。
 \tcbline*
 \paragraph*{ガウス括弧}
-$\lfloor x\rfloor$は、$x \in R$ に対して$x$を超えない最大の整数。
+\index{ガウスかっこ@ガウス括弧}$\lfloor x\rfloor$は、$x \in R$ に対して$x$を超えない最大の整数。
 簡単にいうと、（$x > 0$の場合は）小数点以下を切り捨てた整数部分を表す。
-\index{ガウスかっこ@ガウス括弧}ガウス記号, \index{ゆかかんすう@床関数}床関数(floor function)などとも呼ばれる。
+\index{ガウスきごう@ガウス記号}ガウス記号, \index{ゆかかんすう@床関数}床関数(floor function)などとも呼ばれる。
 \end{Column}
 
 

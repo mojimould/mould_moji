@@ -167,11 +167,20 @@
 \newcounter{GlobalFootnote}% difine a counter Global Footnote
 %%%%% PART %%%%%
 \newcommand{\tablePartnname}{\thepart}
-\newtcolorbox[auto counter, number within=part]{tablePart}[2][]{Columnbox, title={\termblue{\tablePartnname：#2}}, #1, after title={}}
+\newtcolorbox[auto counter, number within=part]{tablePart}[2][]{%
+  Columnbox,
+  title={\termblue{\tablePartnname：#2}},
+  #1,
+  after title={}
+}
 %%%%% COLUMN %%%%%
 \newcommand{\Columnname}{Column}
 \newtcolorbox[auto counter, number within=chapter, list inside=loC]{Column}[2][]{%
-  Columnbox, title={#2}, #1, list entry={\numberline{~~\Columnname~\thetcbcounter}{\protect\hspace*{45pt}#2}}}
+  Columnbox,
+  title={#2},
+  #1,
+  list entry={\numberline{\protect\hspace*{13.5pt}\Columnname~\thetcbcounter}{\protect\hspace*{55pt}#2}}
+}
 %\newcommand{\tcb@cnt@Columnautorefname}{Column}
 %%%%% Formula %%%%%
 \newcommand{\Formulaname}{Eq.}
@@ -341,7 +350,81 @@
   \@mainmattertrue\pagestyle{main}
   \endgroup
 }
-%%%%% NOTATION TABLE %%%%%%%%%%%%%%%%%%
+%%%%% COMMON TABLE %%%%%%%%%%%%%%%%%%
+\newenvironment{commonTable}[4]
+{%
+  \rowcolors{3}{gray!15!}{white}
+  \setlength\cellspacetoplimit{5pt}
+  \setlength\cellspacebottomlimit{5pt}
+  \if\relax\detokenize{#1}\relax
+  \else
+    \setlength{\abovecaptionskip}{-5pt}
+    \modcaptionof{table}{#1} % 追加したキャプション
+    \addtocounter{table}{-1}
+  \fi
+  \setlength{\LTpre}{0pt}%
+  \setlength{\LTpost}{3pt}%
+  \setlength{\LTleft}{0pt}%
+  \setlength{\LTright}{\fill}%
+  \begin{longtable}{#2}
+  \hline
+  \rowcolor{orange!20}
+  #3\\
+  \hline
+  \endfirsthead
+  \hline
+  \rowcolor{orange!20}
+  #3\\
+  \hline
+  \endhead
+  \hline
+  \multicolumn{#4}{|r|}{\scriptsize 次ページへ続く} \\
+  \hline
+  \endfoot
+  \hline
+  \endlastfoot
+}
+{%
+  \end{longtable}
+}
+%%%%% COMMON VARIABLES TABLE %%%%%%%%%%%%%%%%%%
+\newenvironment{commonvariables}[4]
+{%
+  \setlength\cellspacetoplimit{5pt}
+  \setlength\cellspacebottomlimit{5pt}
+  \if\relax\detokenize{#1}\relax
+  \else
+    \setlength{\abovecaptionskip}{-5pt}
+    \modcaptionof{table}{#1} % 追加したキャプション
+    \addtocounter{table}{-1}
+  \fi
+  \setlength{\LTpre}{1pt}%
+  \setlength{\LTpost}{3pt}%
+  \setlength{\LTleft}{0pt}%
+  \setlength{\LTright}{\fill}%
+  \begin{longtable}{#2}
+  \hline
+  \rowcolor{orange!20}
+  #3\\
+  \hline
+  \endfirsthead
+  \hline
+  \rowcolor{orange!20}
+  #3\\
+  \hline
+  \endhead
+  \hline
+  \multicolumn{#4}{|r|}{\scriptsize 次ページへ続く} \\
+  \hline
+  \endfoot
+  \hline
+  \endlastfoot
+}
+{%
+  \end{longtable}
+}
+
+
 \newenvironment{Notation}[2]
 {%
   \rowcolors{3}{gray!10}{white}
@@ -357,7 +440,7 @@
   \begin{longtable}{|c|Sl|c|}
   \hline
   \rowcolor{orange!20}
-  \textbf{記号} & \textbf{内容}\hspace*{0.75\textwidth} & \textbf{#2}\\
+  \textbf{記号} & \textbf{内容}\hspace*{0.5\textwidth} & \textbf{#2}\\
   \hline
   \endfirsthead
   \hline

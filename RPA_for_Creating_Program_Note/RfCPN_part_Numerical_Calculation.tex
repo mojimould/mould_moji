@@ -19,23 +19,23 @@
 %% section 9.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{振分け}
-テーブルを$-\theta$だけ回転させたときのトップ・ボトム側の\index{ふりわけちょう@振分長}振分長$f'_\mathrm T$, $f'_\mathrm B$は、\pageeqref{eq:saifuriwake}より、
+テーブルを$-\theta$だけ回転させて調整したトップ・ボトム側の\index{ふりわけちょう@振分長}振分長$f'_\mathrm T$, $f'_\mathrm B$は、\pageeqref{eq:saifuriwake}より、
 \begin{align*}
-  f_\mathrm T' = f_\mathrm T+\varDelta'\!\sin\theta~~, \quad
+  f_\mathrm T' = f_\mathrm T+\varDelta_x'\!\sin\theta~~, \quad
   f_\mathrm B' = (f_\mathrm T+f_\mathrm B)-f_\mathrm T'\ .
 \end{align*}
 ジグ（長さ$2l$）からの\index{はりだしちょう@張出長}張出長に換算するならば、それぞれ
 \begin{align*}
-  f_\mathrm T+\varDelta'\!\sin\theta-l~~, \quad
+  f_\mathrm T+\varDelta_x'\!\sin\theta-l~~, \quad
   (f_\mathrm T+f_\mathrm B)-f_\mathrm T'-l\ .
 \end{align*}
 トップ側とボトム側の振分長が均等かつ平行になるときの\index{かたむきかく（ふりわけよう）@傾き角（振分け用）}回転角$\theta'$は、\pageeqref{eq:saifuriwakeangle}より、
 \begin{align*}
-  \sin\theta' = \frac{f_d}{\varDelta'}\ .
+  \sin\theta' = \frac{f_d}{\varDelta_x'}\ .
 \end{align*}
 ここで、
 \begin{align*}
-  \varDelta' = \varDelta+\sqrt{R_\mathrm i'-\bar l^2}\ , \quad
+  \varDelta_x' = \varDelta_x+\sqrt{R_\mathrm i'-\bar l^2}\ , \quad
   R_\mathrm i' = R_\mathrm c-\frac{W_x}2-\rho\ ,\quad
   \bar l = l-\frac\sigma2\ ,\quad
   f_d = \frac{f_\mathrm B-f_\mathrm T}2\ .
@@ -54,13 +54,13 @@
 \end{align*}
 トップ端およびボトム端における（$-\theta$回転後の）\index{そとがわちゅうしん@外側中心}外側中心の$X$位置は、\pageeqref{eq:tableTc}, \pageeqref{eq:tableBc}よりそれぞれ、
 \begin{align*}
-  \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta'\cos\theta~, \quad
-  \varDelta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2\ .
+  \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta_x'\cos\theta~, \quad
+  \varDelta_x'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2\ .
 \end{align*}
 トップ端およびボトム端における（$-\theta$回転後の）\index{わんきょくちゅうしん@湾曲中心}湾曲中心の$X$値は、\pageeqref{eq:tableTRc}, \pageeqref{eq:tableBRc}よりそれぞれ、
 \begin{align*}
-  \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\varDelta'\!\cos\theta~, \quad
-  \varDelta'\!\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}~.
+  \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\varDelta_x'\!\cos\theta~, \quad
+  \varDelta_x'\!\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}~.
 \end{align*}
 また、（計算上の）\index{うちがわちゅうしん@内側中心}内側中心はこの湾曲中心を持って代用してもよいものとする。
 
@@ -79,7 +79,7 @@
 \subsection{外削中心：ボトムA面肉厚基準の場合}
 \index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（てーぶるちゅうしん)@P（テーブル中心）}Pを原点としたボトム側外削径の中心$\mathfrak B_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterBt}より、
 \begin{align*}
-  \varDelta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
+  \varDelta_x'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
   -\frac{w_\mathrm B}2-\tau_\mathrm B+\frac{\mathfrak W_\mathrm B}2\ .
 \end{align*}
 このとき、計測したA側内面b$_\mathrm o'$の$X$座標が\pageeqref{eq:gaisakucenterBr}となるように、原点$\mathfrak B_\mathrm c'$を定める。
@@ -98,7 +98,7 @@
 \subsection{外削中心：トップA面肉厚基準の場合}
 \index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（てーぶるちゅうしん)@P（テーブル中心）}Pを原点としたトップ側外削径の中心$\mathfrak T_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterTt}より、
 \begin{align*}
-  \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta'\cos\theta
+  \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta_x'\cos\theta
   +\frac{w_\mathrm T}2+\tau_\mathrm T-\frac{\mathfrak W_\mathrm T}2\ .
 \end{align*}
 このとき、計測したA側内面t$_\mathrm o'$の$X$座標が\pageeqref{eq:gaisakucenterTr}となるように、原点$\mathfrak T_\mathrm c'$を定める。
@@ -185,7 +185,7 @@
 A側溝深さ$\kappa_d$に対し、\index{みぞちゅうしん@溝中心}溝中心の位置の$X$座標は\pageeqref{eq:mizocenterA}より、
 \begin{align*}
   \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}-\kappa_d-\frac{W_{mx}}2
-  -\varDelta\ .
+  -\varDelta_x\ .
 \end{align*}
 また\index{Aがわがいめん@A側外面}A側外面の\index{じっそくち@実測値}実測値を$\mathcal G_m$とすると、\pageeqref{eq:mizocenterAd}より、
 \begin{align*}

@@ -37,8 +37,7 @@
 %\clearpage
 \noindent\ttNum100\,-\ttNum110については、主に一時的な保存に用いるものとする。\\
 
-\modcaptionof{table}{\ttNum100\,-\ttNum110：一時保存値}
-\begin{twoCtable}{}
+\begin{2commonvariables}{\ttNum100\,-\ttNum110：一時保存値}{\ttNum 番号}{内容}
 \ttNum100 & 各工程 切削回数用 一時保存値（仕上げ前 全削り代$X$ or $Z$）\\\hline
 \ttNum101 & 各工程 切削回数用 一時保存値（仕上げ前 全削り代$Y$）\\\hline
 \ttNum102 & 各工程 切削回数用 一時保存値 (max[\ttNum100, \ttNum101])\\\hline
@@ -46,8 +45,9 @@
 \ttNum104 & 各工程 切削回数用 一時保存値（加工時 径$X$）\\\hline
 \ttNum105 & 各工程 切削回数用 一時保存値（加工時 径$Y$）\\\hline
 \ttNum106 & 各工程 切削回数用 一時保存値（仕上げ 切削回数）\\\hline
+\rowcolor{gray!20!}
 \ttNum107 & （以下 予備）\\
-\end{twoCtable}
+\end{2commonvariables}
 
 
 \clearpage
@@ -57,28 +57,33 @@
 \subsection{\ttNum175\,-\ttNum199：各工程後一時停止}
 \noindent\ttNum175\,-\ttNum199については、主に各工程後の確認のためのものとする。\\
 
-\modcaptionof{table}{\ttNum175\,-\ttNum199：各工程後一時停止}
-\begin{twoCtable}{}
-\ttNum175 & （以下 予備）\\\hline
-$\vdots$ & \qquad$\vdots$\\\hline
-\ttNum183 & （不使用）\\\hline
+\begin{3commonvariables}{\ttNum175\,-\ttNum199：各工程後一時停止}{\ttNum 番号}{内容}{初期値}
+\rowcolor{gray!20!}
+\ttNum175 & （以下 予備） &\\\hline
+\rowcolor{gray!20!}
+~~~$\vdots$ & \qquad$\vdots$ &\\\hline
+\rowcolor{gray!20!}
+\ttNum183 & （不使用） &\\\hline
 \ttNum184 & 芯出し測定後 一時停止 (0:non-stop, 1: \verb|M00|) & 0\\\hline
-\ttNum185 & （不使用）\\\hline
+\rowcolor{gray!20!}
+\ttNum185 & （不使用） &\\\hline
 \ttNum186 & \dimple 測定後 一時停止 (0:non-stop, 1: \verb|M00|) & 0\\\hline
 \ttNum187 & \dimple 加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
-\ttNum188 & （不使用）\\\hline
+\rowcolor{gray!20!}
+\ttNum188 & （不使用） &\\\hline
 \ttNum189 & トップ端面加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
 \ttNum190 & トップ外削加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
 \ttNum191 & トップ溝加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
 \ttNum192 & トップ外面取加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
 \ttNum193 & トップ内面取加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
 \ttNum194 & トップ座ぐり加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
-\ttNum195 & （不使用）\\\hline
+\rowcolor{gray!20!}
+\ttNum195 & （不使用） &\\\hline
 \ttNum196 & ボトム端面加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
 \ttNum197 & ボトム外削加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
 \ttNum198 & ボトム外面取加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
 \ttNum199 & ボトム内面取加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0
-\end{twoCtable}
+\end{3commonvariables}
 
 
 
@@ -97,44 +102,46 @@ $\vdots$ & \qquad$\vdots$\\\hline
 %% subsection 18.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum400\,-\ttNum424}
-\modcaptionof{table}{\ttNum400\,-\ttNum404：初期設定}
-\begin{twoCtable}{}
-\ttNum400 & トップ端面 全削り代\\\hline
-\ttNum401 & ボトム端面 全削り代\\\hline
+
+\begin{3commonvariables}{\ttNum400\,-\ttNum404：初期設定}{\ttNum 番号}{内容}{初期値}
+\ttNum400 & トップ端面 全削り代 &\\\hline
+\ttNum401 & ボトム端面 全削り代 &\\\hline
 \ttNum402 & 計測・加工 開始N番号 & 0\\\hline
 \ttNum403 & 通り芯測定(0:off, 1:on) & 0\\\hline
-\ttNum404 & （不使用）
-\end{twoCtable}
+\rowcolor{gray!20!}
+\ttNum404 & （不使用） &
+\end{3commonvariables}
 
-\modcaptionof{table}{\ttNum405\,-\ttNum414：測定時の調整（\dimple 除く）}
-\begin{twoCtable}{}
+\begin{3commonvariables}{\ttNum405\,-\ttNum414：測定時の調整（\dimple 除く）}{\ttNum 番号}{内容}{初期値}
 \ttNum405 & (\verb|G54|$X$)ボトム外$X$芯出し（両側・片側測定）測定位置$Z+$補正（$X$自動補正） & 0\\\hline
 \ttNum406 & (\verb|G54|$Y$)ボトム外$Y$芯出し（両側測定）測定位置$Z+$補正 & 0\\\hline
 \ttNum407 & (\verb|G55|$X$)ボトム内$X$芯出し（両側測定）測定位置$Z+$補正（$X$自動補正） & 0\\\hline
 \ttNum408 & (\verb|G55|$Y$)ボトム内$Y$芯出し（両側測定）測定位置$Z+$補正 & 0\\\hline
-\ttNum409 & （不使用）\\\hline
+\rowcolor{gray!20!}
+\ttNum409 & （不使用） &\\\hline
 \ttNum410 & (\verb|G56|$X$)トップ外$X$芯出し（両側・片側測定）測定位置$Z+$補正（$X$自動補正） & 0\\\hline
 \ttNum411 & (\verb|G56|$Y$)トップ外$Y$芯出し（両側測定）測定位置$Z+$補正 & 0\\\hline
 \ttNum412 & (\verb|G57|$X$)トップ内$X$芯出し（両側測定）測定位置$Z+$補正（$X$自動補正） & 0\\\hline
 \ttNum413 & (\verb|G57|$Y$)トップ内$Y$芯出し（両側測定）測定位置$Z+$補正 & 0\\\hline
-\ttNum414 & （不使用）
-\end{twoCtable}
+\rowcolor{gray!20!}
+\ttNum414 & （不使用） &
+\end{3commonvariables}
 
 
-%\clearpage
-\modcaptionof{table}{\ttNum415\,-\ttNum424：加工時の調整（端面・\dimple 除く）}
-\begin{twoCtable}{}
+\clearpage
+\begin{3commonvariables}{\ttNum415\,-\ttNum424：加工時の調整（端面・\dimple 除く）}{\ttNum 番号}{内容}{初期値}
 \ttNum415 & トップ外削 A面肉厚$+$補正（外削中心$X-$補正） & 0\\\hline
 \ttNum416 & トップ外削 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
 \ttNum417 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum418 & （不使用）\\\hline
+\rowcolor{gray!20!}
+\ttNum418 & （不使用） &\\\hline
 \ttNum419 & 溝位置$+$補正 & 0\\\hline
 \ttNum420 & 溝幅$+$補正 & 0\\\hline
 \ttNum421 & 溝A面深さ$+$補正（溝径中心$X-$補正） & 0\\\hline
 \ttNum422 & 溝幅$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\\hline
 \ttNum423 & 溝 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
 \ttNum424 & 溝 仕上げ加工 追加回数 (上限3) & 0
-\end{twoCtable}
+\end{3commonvariables}
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -142,34 +149,43 @@ $\vdots$ & \qquad$\vdots$\\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum425\,-\ttNum449}
 
-\modcaptionof{table}{\ttNum425\,-\ttNum449：加工時の調整（続き）}
-\begin{twoCtable}{}
+\begin{3commonvariables}{\ttNum425\,-\ttNum449：加工時の調整（続き）}{\ttNum 番号}{内容}{初期値}
 \ttNum425 & トップ外面取$X+$補正 & 0\\\hline
 \ttNum426 & トップ外面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
 \ttNum427 & トップ外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum428 & （不使用）\\\hline
+\rowcolor{gray!20!}
+\ttNum428 & （不使用） &\\\hline
 \ttNum429 & トップ内面取$X+$補正 & 0\\\hline
 \ttNum430 & トップ内面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
 \ttNum431 & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum432 & （不使用）\\\hline
+\rowcolor{gray!20!}
+\ttNum432 & （不使用） &\\\hline
+\rowcolor{gray!20!}
 \ttNum433 & （座ぐり$X+$補正用 予備） &\\\hline
+\rowcolor{gray!20!}
 \ttNum434 & （座ぐり 仕上げ前 一時停止用 予備） &\\\hline
+\rowcolor{gray!20!}
 \ttNum435 & （座ぐり 仕上げ加工 追加回数用 予備） &\\\hline
-\ttNum436 & （不使用）\\\hline
+\rowcolor{gray!20!}
+\ttNum436 & （不使用） &\\\hline
 \ttNum437 & ボトム外削 A面肉厚$+$補正（外削中心$X+$補正） & 0\\\hline
 \ttNum438 & ボトム外削 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
 \ttNum439 & ボトム外削 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum440 & （不使用）\\\hline
+\rowcolor{gray!20!}
+\ttNum440 & （不使用） &\\\hline
 \ttNum441 & ボトム外面取$X+$補正 & 0\\\hline
 \ttNum442 & ボトム外面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
 \ttNum443 & ボトム外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum444 & （不使用）\\\hline
+\rowcolor{gray!20!}
+\ttNum444 & （不使用） &\\\hline
 \ttNum445 & ボトム内面取$X+$補正 & 0\\\hline
 \ttNum446 & ボトム内面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:\verb|P90003|) & 0\\\hline
 \ttNum447 & ボトム内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\ttNum448 & （不使用）\\\hline
-\ttNum449 & （予備）
-\end{twoCtable}
+\rowcolor{gray!20!}
+\ttNum448 & （不使用） &\\\hline
+\rowcolor{gray!20!}
+\ttNum449 & （予備） &
+\end{3commonvariables}
 
 
 \clearpage
@@ -177,25 +193,29 @@ $\vdots$ & \qquad$\vdots$\\\hline
 %% subsection 18.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum450\,-\ttNum474}
-\modcaptionof{table}{\ttNum450\,-\ttNum474：\dimple 深さの調整}
-\begin{twoCtable}{}
+
+\begin{3commonvariables}{\ttNum450\,-\ttNum474：\dimple 深さの調整}{\ttNum 番号}{内容}{設定値}
 \ttNum450 & 工具\verb|T31|（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） & 0.06\\\hline
 \ttNum451 & 工具\verb|T31|（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） & 0.03\\\hline
 \ttNum452 & 工具\verb|T31|（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） & 0.06\\\hline
 \ttNum453 & 工具\verb|T31|（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） & 0.03\\\hline
-\ttNum454 & （不使用）\\\hline
-\ttNum455 & 工具\verb|T32|（Tスロット）A側\dimple~深さ補正値（深さに$+$補正）\\\hline
-\ttNum456 & 工具\verb|T32|（Tスロット）C側\dimple~深さ補正値（深さに$+$補正）\\\hline
-\ttNum457 & 工具\verb|T32|（Tスロット）B側\dimple~深さ補正値（深さに$+$補正）\\\hline
-\ttNum458 & 工具\verb|T32|（Tスロット）D側\dimple~深さ補正値（深さに$+$補正）\\\hline
-\ttNum459 & （不使用）\\\hline
-\ttNum460 & 工具\verb|T33|（Tスロット）A側\dimple~深さ補正値（深さに$+$補正）\\\hline
-\ttNum461 & 工具\verb|T33|（Tスロット）C側\dimple~深さ補正値（深さに$+$補正）\\\hline
-\ttNum462 & 工具\verb|T33|（Tスロット）B側\dimple~深さ補正値（深さに$+$補正）\\\hline
-\ttNum463 & 工具\verb|T33|（Tスロット）D側\dimple~深さ補正値（深さに$+$補正）\\\hline
-\ttNum464 & （不使用）\\\hline
-& （以下予備）
-\end{twoCtable}
+\rowcolor{gray!20!}
+\ttNum454 & （不使用） &\\\hline
+\ttNum455 & 工具\verb|T32|（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） &\\\hline
+\ttNum456 & 工具\verb|T32|（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） &\\\hline
+\ttNum457 & 工具\verb|T32|（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） &\\\hline
+\ttNum458 & 工具\verb|T32|（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） &\\\hline
+\rowcolor{gray!20!}
+\ttNum459 & （不使用） &\\\hline
+\ttNum460 & 工具\verb|T33|（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） &\\\hline
+\ttNum461 & 工具\verb|T33|（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） &\\\hline
+\ttNum462 & 工具\verb|T33|（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） &\\\hline
+\ttNum463 & 工具\verb|T33|（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） &\\\hline
+\rowcolor{gray!20!}
+\ttNum464 & （不使用） &\\\hline
+\rowcolor{gray!20!}
+& （以下予備） &
+\end{3commonvariables}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -215,10 +235,9 @@ $\vdots$ & \qquad$\vdots$\\\hline
 \modHeadsection{\ttNum500\,-\ttNum599：バンドルプログラムの使用コモン変数}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\ttNum500\,-\ttNum599については、主に\index{バンドルのプログラム}バンドルのプログラム(\index{O910x}O910xおよび\index{O93xx}O93xx)で使用されるものとする。\\
+\ttNum500\,-\ttNum599については、\index{バンドルのプログラム}バンドルのプログラム(O910xおよびO93xx)で使用されるものとする。\\
 
-\modcaptionof{table}{\ttNum500\,-\ttNum599：O910x, O93xx用}
-\begin{twoCtable}{}
+\begin{3commonvariables}{\ttNum500\,-\ttNum599：O910x, O93xx用}{\ttNum 番号}{内容}{設定値}
 \ttNum500 & 芯ずれ許容差 (O93xx) & 5.000\\\hline
 \ttNum501 & タッチセンサー信号遅れ補正 (O93xx) & 0.040\\\hline
 \ttNum502 & タッチセンサープローブ中心$X$補正 (O93xx) & -0.016507\\\hline
@@ -248,7 +267,7 @@ $\vdots$ & （以下不明） & \ttNum0\\\hline
 \ttNum533 & （不明） & 0.000\\\hline
 \ttNum534 & （不明） & 0.000\\\hline
 $\vdots$ & （以下不明） & \ttNum0
-\end{twoCtable}
+\end{3commonvariables}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -275,33 +294,48 @@ $\vdots$ & （以下不明） & \ttNum0
 \subsection{\ttNum600\,-\ttNum624：ワークと工具間の距離の調整}
 \ttNum600\,-\ttNum624については、主に製品と工具間の距離に関するものとする。\\
 
-\modcaptionof{table}{\ttNum600\,-\ttNum624：ワークと工具間の距離の調整}
-\begin{twoCtable}{}
-\ttNum600 & （予備）\\\hline
+\begin{3commonvariables}{\ttNum600\,-\ttNum624：ワークと工具間の距離の調整}{\ttNum}{内容}{設定値}
+\rowcolor{gray!20!}
+\ttNum600 & （予備） &\\\hline
 \ttNum601 & 工具 - 端面間 $Z$方向クリアランス平面間距離 & 100.0\\\hline
-\ttNum602 & （予備）\\\hline
+\rowcolor{gray!20!}
+\ttNum602 & （予備） &\\\hline
 \ttNum603 & タッチセンサー計測時の近付き量 & 10.0\\\hline
 \ttNum604 & タッチセンサー計測時の行過ぎ量 & 5.0\\\hline
-\ttNum605 & （予備）\\\hline
-\ttNum606 & （予備）\\\hline
+\rowcolor{gray!20!}
+\ttNum605 & （予備） &\\\hline
+\rowcolor{gray!20!}
+\ttNum606 & （予備） &\\\hline
 \ttNum607 & 外側加工面 法線方向クリアランス平面間距離 最小値 & 30.0\\\hline
 \ttNum608 & 内側加工面 法線方向クリアランス平面間距離 最小値 & 15.0\\\hline
-\ttNum609 & （予備）\\\hline
+\rowcolor{gray!20!}
+\ttNum609 & （予備） &\\\hline
 \ttNum610 & 端面加工用 内径輪郭径$-$補正量 & 5.0\\\hline
-\ttNum611 & （予備）\\\hline
-\ttNum612 & （外削加工用予備） \\\hline
-\ttNum613 & （予備）\\\hline
+\rowcolor{gray!20!}
+\ttNum611 & （予備） &\\\hline
+\rowcolor{gray!20!}
+\ttNum612 & （外削加工用予備） & \\\hline
+\rowcolor{gray!20!}
+\ttNum613 & （予備） &\\\hline
 \ttNum614 & 溝加工用 BD溝加工のみ時 AC方向クリアランス平面間距離 & \verb|GE| \ttNum607*1.5\\\hline
-\ttNum615 & （予備）\\\hline
-\ttNum616 & （外面取加工用予備） \\\hline
-\ttNum617 & （予備）\\\hline
-\ttNum618 & （内面取加工用予備） \\\hline
-\ttNum617 & （予備）\\\hline
-\ttNum618 & （座ぐり加工用予備） \\\hline
-\ttNum619 & （予備）\\\hline
-\ttNum620 & \dimple 加工用 加工近付き量 & 1 \\\hline
-& （以下予備）
-\end{twoCtable}
+\rowcolor{gray!20!}
+\ttNum615 & （予備） &\\\hline
+\rowcolor{gray!20!}
+\ttNum616 & （外面取加工用予備） & \\\hline
+\rowcolor{gray!20!}
+\ttNum617 & （予備） &\\\hline
+\rowcolor{gray!20!}
+\ttNum618 & （内面取加工用予備） &\\\hline
+\rowcolor{gray!20!}
+\ttNum617 & （予備） &\\\hline
+\rowcolor{gray!20!}
+\ttNum618 & （座ぐり加工用予備） &\\\hline
+\rowcolor{gray!20!}
+\ttNum619 & （予備） &\\\hline
+\ttNum620 & \dimple 加工用 加工近付き量 & 1.0 \\\hline
+\rowcolor{gray!20!}
+& （以下予備） &
+\end{3commonvariables}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -320,9 +354,9 @@ $\vdots$ & （以下不明） & \ttNum0
 \subsection{\ttNum650\,-\ttNum674：残り代および1回あたりの削り代}
 \ttNum650\,-\ttNum674については、各加工の残り代や1回あたりの削り代に関するものとする。\\
 
-\modcaptionof{table}{\ttNum650\,-\ttNum674：残り代および1回あたりの削り代}
-\begin{twoCtable}{}
+\begin{3commonvariables}{\ttNum650\,-\ttNum674：残り代および1回あたりの削り代}{\ttNum 番号}{内容}{設定値}
 \ttNum650 & 端面加工1回あたりの$Z$方向削り代 & 4.0\\\hline
+\rowcolor{gray!20!}
 \ttNum651 & （予備） & \\\hline
 \ttNum652 & 外削加工1回あたりの削り代（直径） & 2.0\\\hline
 \ttNum653 & 外削加工 仕上げ前 残り削り代（直径） & 1.0\\\hline
@@ -332,10 +366,13 @@ $\vdots$ & （以下不明） & \ttNum0
 \ttNum657 & 外面取加工 仕上げ前 残り削り代（直径） & 1.0\\\hline
 \ttNum658 & 内面取加工1回あたりの削り代（直径） & 2.0\\\hline
 \ttNum659 & 内面取加工 仕上げ前 残り削り代（直径） & 1.0\\\hline
+\rowcolor{gray!20!}
 \ttNum660 & （座ぐり加工用予備） & \\\hline
+\rowcolor{gray!20!}
 \ttNum661 & （座ぐり加工用予備） & \\\hline
-& （以下予備）
-\end{twoCtable}
+\rowcolor{gray!20!}
+& （以下予備） &
+\end{3commonvariables}
 
 
 \clearpage
@@ -345,15 +382,15 @@ $\vdots$ & （以下不明） & \ttNum0
 \subsection{\ttNum675\,-\ttNum699：工具の送り速さ}
 \ttNum675\,-\ttNum699については、工具の送り速さに関するものとする。\\
 
-\modcaptionof{table}{\ttNum675\,-\ttNum699：工具の送り速さ}
-\begin{twoCtable}{}
+\begin{3commonvariables}{\ttNum675\,-\ttNum699：工具の送り速さ}{\ttNum 番号}{内容}{設定値}
 \ttNum675 & $Z$最大送り速さ値（タッチセンサープローブ除く） & 12000\\\hline
 \ttNum676 & 最大送り速さ値（タッチセンサープローブ） & 5400\\\hline
 \ttNum677 & アプローチ・リトラクト送り速さ値（タッチセンサープローブ除く） & 6000\\\hline
 \ttNum678 & アプローチ・リトラクト送り速さ値（タッチセンサープローブ） & 1500\\\hline
 \ttNum679 & アプローチ送り速さ値（片側測定時） & 50\\\hline
 \ttNum680 & アプローチ送り速さ値（両側測定時） & 200\\\hline
-\ttNum681 & （予備）\\\hline
+\rowcolor{gray!20!}
+\ttNum681 & （予備） &\\\hline
 \ttNum682 & 端面加工 直線 & 900\\\hline
 \ttNum683 & 端面加工 コーナー & 900\\\hline
 \ttNum684 & 外削加工 直線 & 400\\\hline
@@ -364,12 +401,15 @@ $\vdots$ & （以下不明） & \ttNum0
 \ttNum689 & 外面取加工 コーナー & 400\\\hline
 \ttNum690 & 内面取加工 直線 & 400\\\hline
 \ttNum691 & 内面取加工 コーナー & 400\\\hline
+\rowcolor{gray!20!}
 \ttNum692 & （座ぐり加工 直線用 予備） & \\\hline
+\rowcolor{gray!20!}
 \ttNum693 & （座ぐり加工 コーナー用 予備） & \\\hline
 \ttNum694 & \dimple 表面アプローチ & 540\\\hline
 \ttNum695 & \dimple 加工  & 100\\\hline
-& （以下予備）
-\end{twoCtable}
+\rowcolor{gray!20!}
+& （以下予備） &
+\end{3commonvariables}
 
 
 
@@ -388,8 +428,8 @@ $\vdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum700\,-\ttNum724：内面溝レベル1サブプログラム用}
 
-\modcaptionof{table}{\ttNum700\,-\ttNum724：\dimple~レベル1サブプログラム用 (\DLone)}
-\begin{twoCtable}{}
+\begin{2commonvariables}{\ttNum700\,-\ttNum724：\dimple~レベル1サブプログラム用 (\DLone)}{\ttNum 番号}{内容}
+\rowcolor{gray!20!}
 \ttNum700 & （予備）\\\hline
 \ttNum701 & プログラム読込み時のワーク座標系(\ttNum4012)\\\hline
 \ttNum702 & 工具別$Z$補正(\verb|T50|:\ttNum512, \verb|T3|x:0)\\\hline
@@ -410,8 +450,9 @@ $\vdots$ & （以下不明） & \ttNum0
 \ttNum717 & 各面用ループ番号(1:A, 2:C, 3:B, 4:D)\\\hline
 \ttNum718 & BD内半径$-\text{\ttNum703}-10$\\\hline
 \ttNum719 & (AC内半径$-\text{\ttNum703}-10)\cos\phi$\\\hline
+\rowcolor{gray!20!}
 & （以下予備）
-\end{twoCtable}
+\end{2commonvariables}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -429,26 +470,27 @@ $\vdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum725\,-\ttNum749：内面溝レベル2, 3サブプログラム用}
 
-\modcaptionof{table}{\ttNum725\,-\ttNum744：\dimple~レベル2サブプログラム用 (\DLtwoAC, \DLtwoBD)}
-\begin{twoCtable}{}
+\begin{2commonvariables}{\ttNum725\,-\ttNum744：\dimple~レベル2サブプログラム用 (\DLtwoAC, \DLtwoBD)}{\ttNum 番号}{内容}
 \ttNum725 & プログラム読込時ブロックエンド$Y$ or $X$ (\ttNum5002, \ttNum5001)\\\hline
 \ttNum726 & プログラム読込時ブロックエンド$Z$ (\ttNum5003)\\\hline
 \ttNum727 & \dimple~偶数列の列数\\\hline
 \ttNum728 & \dimple~偶数列（一列）の\dimple~数\\\hline
 \ttNum729 & \dimple~奇数列（一列）の\dimple~数\\\hline
 \ttNum730 & \dimple~現在の列の\dimple~数\\\hline
+\rowcolor{gray!20!}
 & （以下予備）
-\end{twoCtable}
+\end{2commonvariables}
 
 
 %\clearpage
-\modcaptionof{table}{\ttNum745\,-\ttNum749：\dimple~測定用 (\DMLthreeAC, \DMLthreeBD)}
-\begin{twoCtable}{}
+\begin{2commonvariables}{\ttNum745\,-\ttNum749：\dimple~測定用 (\DMLthreeAC, \DMLthreeBD)}{\ttNum 番号}{内容}
+\rowcolor{gray!20!}
 \ttNum745 & （以下 予備）\\\hline
-$\vdots$ & \qquad$\vdots$\\\hline
+\rowcolor{gray!20!}
+~~~$\vdots$ & \qquad$\vdots$\\\hline
 \ttNum748 & プログラム読込時ブロックエンド$X$ or $Y$ (\ttNum5001, \ttNum5002)\\\hline
 \ttNum749 & \dimple~表面位置$X$ or $Y$測定値
-\end{twoCtable}
+\end{2commonvariables}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -475,86 +517,88 @@ $\vdots$ & \qquad$\vdots$\\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum900001\,-\ttNum900049：\dimple 以外}
 
-\modcaptionof{table}{\ttNum900001\,-\ttNum900005：外中心$X$測定用 (\MXOThickness)}
-\begin{twoCtable}{}
+\begin{2commonvariables}{\ttNum900001\,-\ttNum900005：外中心$X$測定用 (\MXOThickness)}{\ttNum 番号}{内容}
 \ttNum900001 & $X$外中心測定 $-X$側測定値\\\hline
 \ttNum900002 & $X$外中心測定 $+X$側測定値\\\hline
 \ttNum900003 & $X$外中心測定値\\\hline
 \ttNum900004 & $X$外中心測定 厚さ測定値\\\hline
+\rowcolor{gray!20!}
 \ttNum900005 & （予備）\\
-\end{twoCtable}
+\end{2commonvariables}
 
 
-\modcaptionof{table}{\ttNum900006\,-\ttNum900010：外中心$Y$測定用 (\MYOThickness)}
-\begin{twoCtable}{}
+\begin{2commonvariables}{\ttNum900006\,-\ttNum900010：外中心$Y$測定用 (\MYOThickness)}{\ttNum 番号}{内容}
 \ttNum900006 & $Y$外中心測定 $-Y$側測定値\\\hline
 \ttNum900007 & $Y$外中心測定 $+Y$側測定値\\\hline
 \ttNum900008 & $Y$外中心測定値\\\hline
 \ttNum900009 & $Y$外中心測定 厚さ測定値\\\hline
+\rowcolor{gray!20!}
 \ttNum900010 & （予備）\\
-\end{twoCtable}
+\end{2commonvariables}
 
 
 %\clearpage
-\modcaptionof{table}{\ttNum900011\,-\ttNum900013：溝中心$X$測定用 (\MXOface)}
-\begin{twoCtable}{}
+\begin{2commonvariables}{\ttNum900011\,-\ttNum900013：溝中心$X$測定用 (\MXOface)}{\ttNum 番号}{内容}
 \ttNum900011 & $X$溝中心測定 A側外面測定値\\\hline
+\rowcolor{gray!20!}
 \ttNum900012 & （予備）\\\hline
+\rowcolor{gray!20!}
 \ttNum900013 & （予備）\\
-\end{twoCtable}
+\end{2commonvariables}
 
 
 %\clearpage
-\modcaptionof{table}{\ttNum900014\,-\ttNum900018：内中心$X$測定用 (\MXIWidth)}
-\begin{twoCtable}{}
+\begin{2commonvariables}{\ttNum900014\,-\ttNum900018：内中心$X$測定用 (\MXIWidth)}{\ttNum 番号}{内容}
 \ttNum900014 & $X$内中心測定 $-X$側測定値\\\hline
 \ttNum900015 & $X$内中心測定 $+X$側測定値\\\hline
 \ttNum900016 & $X$内中心測定値\\\hline
 \ttNum900017 & $X$内中心測定 厚さ測定値\\\hline
+\rowcolor{gray!20!}
 \ttNum900018 & （予備）\\
-\end{twoCtable}
+\end{2commonvariables}
 
 
-%\clearpage
-\modcaptionof{table}{\ttNum900019\,-\ttNum900023：内中心$Y$測定用 (\MYIWidth)}
-\begin{twoCtable}{}
+\clearpage
+\begin{2commonvariables}{\ttNum900019\,-\ttNum900023：内中心$Y$測定用 (\MYIWidth)}{\ttNum 番号}{内容}
 \ttNum900019 & $Y$内中心測定 $-Y$側測定値\\\hline
 \ttNum900020 & $Y$内中心測定 $+Y$側測定値\\\hline
 \ttNum900021 & $Y$内中心測定値\\\hline
 \ttNum900022 & $Y$内中心測定 厚さ測定値\\\hline
+\rowcolor{gray!20!}
 \ttNum900023 & （予備）\\
-\end{twoCtable}
-
-
-\clearpage
-\modcaptionof{table}{\ttNum900024\,-\ttNum900026：外削中心$X$測定用 (\MXIface)}
-\begin{twoCtable}{}
-\ttNum900024 & $X$外削中心測定 内面測定値\\\hline
-\ttNum900025 & （予備）\\\hline
-\ttNum900026 & （予備）\\
-\end{twoCtable}
+\end{2commonvariables}
 
 
 %\clearpage
-\modcaptionof{table}{\ttNum900027\,-\ttNum900030：通り芯$X$測定用 (\MYcenterline)}
-\begin{twoCtable}{}
+\begin{2commonvariables}{\ttNum900024\,-\ttNum900026：外削中心$X$測定用 (\MXIface)}{\ttNum 番号}{内容}
+\ttNum900024 & $X$外削中心測定 内面測定値\\\hline
+\rowcolor{gray!20!}
+\ttNum900025 & （予備）\\\hline
+\rowcolor{gray!20!}
+\ttNum900026 & （予備）\\
+\end{2commonvariables}
+
+
+%\clearpage
+\begin{2commonvariables}{\ttNum900027\,-\ttNum900030：通り芯$X$測定用 (\MYcenterline)}{\ttNum 番号}{内容}
 \ttNum900027 & $Y$通り芯 ボトム側測定値\\\hline
 \ttNum900028 & $Y$通り芯 トップ側測定値\\\hline
 \ttNum900029 & $Y$通り芯 測定値\\\hline
+\rowcolor{gray!20!}
 \ttNum900030 & （予備）\\
-\end{twoCtable}
+\end{2commonvariables}
 
 
-\modcaptionof{table}{\ttNum900031\,-\ttNum900034：通り芯$X$測定用 (\MXcenterline)}
-\begin{twoCtable}{}
+\begin{2commonvariables}{\ttNum900031\,-\ttNum900034：通り芯$X$測定用 (\MXcenterline)}{\ttNum 番号}{内容}
 \ttNum900031 & $X$通り芯 トップ側測定値\\\hline
 \ttNum900032 & $X$通り芯 ボトム側測定値\\\hline
 \ttNum900033 & $X$通り芯 測定値\\\hline
+\rowcolor{gray!20!}
 \ttNum900034 & （予備）\\
-\end{twoCtable}
+\end{2commonvariables}
 
 
-%\clearpage
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 18.7.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -565,22 +609,20 @@ $\vdots$ & \qquad$\vdots$\\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\ttNum900101\,-\ttNum900300：\dimple AC面}
 
-\modcaptionof{table}{\ttNum900101\,-\ttNum900300：\dimple AC表面位置 測定値 (\DMLthreeAC)}
-\begin{twoCtable}{}
-\ttNum900101\,-\ttNum900200 & A側\dimple~表面位置$X$ 測定値（Tスロット）\\\hline
-\ttNum900201\,-\ttNum900300 & C側\dimple~表面位置$X$ 測定値（Tスロット）
-\end{twoCtable}
+\begin{2commonvariables}{\ttNum900101\,-\ttNum900300：\dimple AC表面位置 測定値 (\DMLthreeAC)}{\ttNum 番号}{内容}
+\ttNum900101\,-\ttNum900200 & A側\dimple~表面位置$X$ 測定値\\\hline
+\ttNum900201\,-\ttNum900300 & C側\dimple~表面位置$X$ 測定値
+\end{2commonvariables}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 18.7.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\ttNum900301\,-\ttNum900500：\dimple BD面}
 
-\modcaptionof{table}{\ttNum900301\,-\ttNum900500：\dimple BD表面位置 測定値 (\DMLthreeBD)}
-\begin{twoCtable}{}
-\ttNum900301\,-\ttNum900400 & B側\dimple~表面位置$Y$ 測定値（Tスロット）\\\hline
-\ttNum900401\,-\ttNum900500 & D側\dimple~表面位置$Y$ 測定値（Tスロット）
-\end{twoCtable}
+\begin{2commonvariables}{\ttNum900301\,-\ttNum900500：\dimple BD表面位置 測定値 (\DMLthreeBD)}{\ttNum 番号}{内容}
+\ttNum900301\,-\ttNum900400 & B側\dimple~表面位置$Y$ 測定値\\\hline
+\ttNum900401\,-\ttNum900500 & D側\dimple~表面位置$Y$ 測定値
+\end{2commonvariables}
 
 
 
@@ -593,29 +635,32 @@ $\vdots$ & \qquad$\vdots$\\\hline
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
 \ttNum901000\,-\ttNum901024については、主に\index{パレット}パレットや\index{ジグ}ジグに関するものとする。\\
 
-\modcaptionof{table}{\ttNum901000\,-\ttNum901024：主にパレット・ジグ}
-\begin{twoCtable}{}
-\ttNum901000 & （予備）\\\hline
+\begin{3commonvariables}{\ttNum901000\,-\ttNum901024：主にパレット・ジグ}{\ttNum 番号}{内容}{設定値}
+\rowcolor{gray!20!}
+\ttNum901000 & （予備） &\\\hline
 \ttNum901001 & パレット\ttNum1 ジグ中心機械座標$X$ & -550.019\\\hline
-\ttNum901002 & パレット\ttNum1 ジグ中心機械座標$Y$ & -740\\\hline
+\ttNum901002 & パレット\ttNum1 ジグ中心機械座標$Y$ & -740.0\\\hline
 \ttNum901003 & パレット\ttNum1 ジグ中心機械座標$Z$ & -1149.974\\\hline
 \ttNum901004 & パレット\ttNum1 ジグ中心機械座標$B$ & -0.073\\\hline
 \ttNum901005 & パレット\ttNum2 ジグ中心機械座標$X$ & -550.019\\\hline
-\ttNum901006 & パレット\ttNum2 ジグ中心機械座標$Y$ & -740\\\hline
+\ttNum901006 & パレット\ttNum2 ジグ中心機械座標$Y$ & -740.0\\\hline
 \ttNum901007 & パレット\ttNum2 ジグ中心機械座標$Z$ & -1149.974\\\hline
 \ttNum901008 & パレット\ttNum2 ジグ中心機械座標$B$ & -0.073\\\hline
 \ttNum901009 & 工具中心機械座標$C$ & 0\\\hline
-\ttNum901010 & （予備）\\\hline
+\rowcolor{gray!20!}
+\ttNum901010 & （予備） &\\\hline
 \hline
-\ttNum901011 & パレット\ttNum1 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向） & 660\\\hline
-\ttNum901012 & パレット\ttNum1 ジグ内側幅（機械座標系$B$0における$Z$方向） & 410\\\hline
-\ttNum901013 & パレット\ttNum1 ジグ幅（機械座標系$B$0における$X$方向） & 455\\\hline
-\ttNum901014 & （予備）\\\hline
-\ttNum901015 & パレット\ttNum2 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向） & 660\\\hline
-\ttNum901016 & パレット\ttNum2 ジグ内側幅（機械座標系$B$0における$Z$方向） & 410\\\hline
-\ttNum901017 & パレット\ttNum2 ジグ幅（機械座標系$B$0における$X$方向） & 455\\\hline
-& （以下予備）
-\end{twoCtable}
+\ttNum901011 & パレット\ttNum1 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向） & 660.0\\\hline
+\ttNum901012 & パレット\ttNum1 ジグ内側幅（機械座標系$B$0における$Z$方向） & 410.0\\\hline
+\ttNum901013 & パレット\ttNum1 ジグ幅（機械座標系$B$0における$X$方向） & 455.0\\\hline
+\rowcolor{gray!20!}
+\ttNum901014 & （予備） &\\\hline
+\ttNum901015 & パレット\ttNum2 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向） & 660.0\\\hline
+\ttNum901016 & パレット\ttNum2 ジグ内側幅（機械座標系$B$0における$Z$方向） & 410.0\\\hline
+\ttNum901017 & パレット\ttNum2 ジグ幅（機械座標系$B$0における$X$方向） & 455.0\\\hline
+\rowcolor{gray!20!}
+& （以下予備） &
+\end{3commonvariables}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -645,34 +690,42 @@ $\vdots$ & \qquad$\vdots$\\\hline
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
 \ttNum901100\,-\ttNum901149については、\index{こうぐ@工具}工具に関するもの（工具長や工具径およびその摩耗量を除く）とする。\\
 
-\modcaptionof{table}{\ttNum901100\,-\ttNum901149：工具}
-\begin{twoCtable}{}
-\ttNum901100 & （予備）\\\hline
-\hline
+\begin{3commonvariables}{\ttNum901100\,-\ttNum901149：工具}{\ttNum 番号}{内容}{設定値}
+\rowcolor{gray!20!}
+\ttNum901100 & （予備） &\\\hline
 \ttNum901101 & 工具\verb|T02|（フェイスミル）最大刃径（直径）DCX公称値$\phi'_\mathrm D$ & 113.5\\\hline
-\ttNum901102 & （端面加工工具用 予備）\\\hline
-\ttNum901103 & （端面加工工具用 予備）\\\hline
-\ttNum901104 & （端面加工工具用 予備）\\\hline
-\hline
+\rowcolor{gray!20!}
+\ttNum901102 & （端面加工工具用 予備） &\\\hline
+\rowcolor{gray!20!}
+\ttNum901103 & （端面加工工具用 予備） &\\\hline
+\rowcolor{gray!20!}
+\ttNum901104 & （端面加工工具用 予備） &\\\hline
 \ttNum901105 & 工具\verb|T06|（サイドカッター）厚さ$t$ & 7.0\\\hline
-\ttNum901106 & （溝加工工具用 予備）\\\hline
-\ttNum901107 & （溝加工工具用 予備）\\\hline
-\ttNum901108 & （溝加工工具用 予備）\\\hline
+\rowcolor{gray!20!}
+\ttNum901106 & （溝加工工具用 予備） &\\\hline
+\rowcolor{gray!20!}
+\ttNum901107 & （溝加工工具用 予備） &\\\hline
+\rowcolor{gray!20!}
+\ttNum901108 & （溝加工工具用 予備） &\\\hline
 \ttNum901109 & 工具\verb|T08|（サイドカッター）厚さ$t$ & 5.0\\\hline
-\ttNum901110 & （溝加工工具用 予備）\\\hline
-\ttNum901111 & （溝加工工具用 予備）\\\hline
-\ttNum901112 & （溝加工工具用 予備）\\\hline
-\hline
-\ttNum901113 & （以下 C面取加工工具用 予備）\\\hline
-$\vdots$ & \qquad$\vdots$\\\hline
-\hline
-\ttNum901121 & （以下 外削加工工具用 予備）\\\hline
-$\vdots$ & \qquad$\vdots$\\\hline
-\hline
-\ttNum901127 & \verb|T31| Tスロットカッターシャンク直径（公称値） & 25\\\hline
-\ttNum901128 & （以下 \dimple 加工工具用 予備）\\\hline
-$\vdots$ & \qquad$\vdots$
-\end{twoCtable}
+\rowcolor{gray!20!}
+\ttNum901110 & （溝加工工具用 予備） &\\\hline
+\rowcolor{gray!20!}
+\ttNum901111 & （溝加工工具用 予備） &\\\hline
+\rowcolor{gray!20!}
+\ttNum901112 & （溝加工工具用 予備） &\\\hline
+\rowcolor{gray!20!}
+\ttNum901113 & （以下 C面取加工工具用 予備） &\\\hline
+\rowcolor{gray!20!}
+~~~$\vdots$ & \qquad$\vdots$ &\\\hline
+\rowcolor{gray!20!}
+\ttNum901121 & （以下 外削加工工具用 予備） &\\\hline
+\rowcolor{gray!20!}
+~~~$\vdots$ & \qquad$\vdots$ &\\\hline
+\ttNum901127 & \verb|T31| Tスロットカッターシャンク直径（公称値） & 25.0\\\hline
+\rowcolor{gray!20!}
+\ttNum901128 & （以下 \dimple 加工工具用 予備） &\\
+\end{3commonvariables}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
