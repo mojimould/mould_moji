@@ -1,6 +1,7 @@
 %
 O909100 (tool length measurement)
 
+N001
 #01=#4001
 #02=#4003
 
@@ -14,29 +15,29 @@ G91 G28 Z0 M19
 G00 X#21 Y#22
 
 IF[#4012EQ54.1]GOTO20
-
 #03=5223+[#4012-54]*20
-GOTO21
+GOTO021
 
 N020
 #03=7003+[#4130-1]*20
+
 N021
 #04=ABS[#26+#504]
 
 M32
 G04 X2.
 G53
-/GOTO022
+GOTO022
 M00
 
 N022
 #05=#5043
 
-/G91 G31 P2 Z-#04 F#513
+G91 G31 P2 Z-#04 F#513
 
 IF[#5063LE[#05-#04]]GOTO800
 
-/G00 Z#504
+G00 Z#504
 
 #05=#5043-#504-#507
 
@@ -64,9 +65,9 @@ M99
 
 (as received arguments)
 (used only as variables)
-(#04:I: )
-(#05:J: )
-(#11:H: tool #)
+(#04:I: shift of the cutting edge X)
+(#05:J: shift of the cutting edge Y)
+(#11:H: the tool #)
 
 (as LHS)
 (#01, #02, #03, #04, #05)
@@ -75,8 +76,8 @@ M99
 (Common variables)
 (as RHS)
 (#504: measurement length)
-(#505: )
-(#507: )
+(#505: distance from the probe surface to Z0)
+(#507: tolerance for tool breakage detection)
 (#513: speed)
 (#514: measurement skip speed)
 (#516: sensor position X)

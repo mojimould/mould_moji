@@ -9,6 +9,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{基本事項}
 \begin{enumerate}[label=\Roman*), ref=\Roman*)]
+\item 工具収納可能本数：50本
+\item 工具選択方式：番地固定近回りランダム
+\item 最大工具寸法：$\phi125\times650$mm\\
+両隣のポット1個ずつが空の場合：$\phi320\times650$mm, ただし、$\phi250$を超える場合は2つ隣の工具は$\phi180$mm以下であること
+\item 最大工具質量（ツールホルダ含む）：30kg
+\item 許容最大モーメント（ゲージラインより）：30Nm
+\item 工具交換時間： Tool-to-Tool: 2.1s, Chip-to-Chip: 5.2s
+\end{enumerate}
+
+\modHeadsection{基本事項}
+\begin{enumerate}[label=\Roman*), ref=\Roman*)]
 \item 工具番号01は空とする
 \item 工具番号02-05は\index{たんめんかこう@端面加工}端面加工用の工具とする
 \item 工具番号06-09は\index{みぞかこう@溝加工}溝加工用の工具とする
@@ -30,7 +41,7 @@
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
 \dateTourokuKougu 時点において\index{とうろくこうぐ@登録工具}登録されている工具は以下の通りである\\
-\begin{2columnstable}{\DMname の登録工具}{Tコード}{使用工具}
+\begin{2columnstable}{\DMname の登録工具}{Tコード}{使用工具}{Sc}
 \verb|T01| & 空\\\hline
 \hline
 \verb|T02| & $\phi100$端面加工用フェイスミル\\\hline

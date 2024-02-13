@@ -344,7 +344,7 @@
   emph={[6]G04, G10, G13, G17, G49, G58, G65, G80},
   emphstyle={[6]\bfseries\color{cyan}},
   emph={[11]
-    T01, T02, T06, T11, T13, T16, T31, T50,
+    T01, T02, T06, T11, T12, T13, T16, T31, T32, T50,
     M00, M01, M03, M04, M05, M06, M08, M09,
     M10, M11, M19,
     M30, M32, M33,
@@ -649,31 +649,33 @@
     },
   },
 }
-\newenvironment{2columnstable}[3]{%
-  \setlength\cellspacetoplimit{2.0pt}%
-  \setlength\cellspacebottomlimit{2.0pt}%
-  \commonTable{#1}{|Sc|Sl|}{\textbf{#2} & \textbf{#3}}{2}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF TABLE %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{2columnstable}[4]{%
+  \setlength\cellspacetoplimit{4.5pt}%
+  \setlength\cellspacebottomlimit{4.5pt}%
+  \commonTable{#1}{|#4|Sl|}{\textbf{#2} & \textbf{#3}}{2}%
 }
 {\endcommonTable}
 \newenvironment{3columnstable}[7]{%
-  \setlength\cellspacetoplimit{2.0pt}%
-  \setlength\cellspacebottomlimit{2.0pt}%
+  \setlength\cellspacetoplimit{4.5pt}%
+  \setlength\cellspacebottomlimit{4.5pt}%
   \commonTable{#1}{|#5|#6|#7|}{\textbf{#2} & \textbf{#3} & \textbf{#4}}{3}%
 }
 {\endcommonTable}
 \newenvironment{2commonvariables}[3]{%
-  \setlength\cellspacetoplimit{2.0pt}%
-  \setlength\cellspacebottomlimit{2.0pt}%
+  \setlength\cellspacetoplimit{4.5pt}%
+  \setlength\cellspacebottomlimit{4.5pt}%
   \commonvariables{#1}{|Sc|Sl|}{\textbf{#2} & \textbf{#3}}{2}%
 }
 {\endcommonvariables}
 \newenvironment{3commonvariables}[4]{%
-  \setlength\cellspacetoplimit{2.0pt}%
-  \setlength\cellspacebottomlimit{2.0pt}%
+  \setlength\cellspacetoplimit{4.5pt}%
+  \setlength\cellspacebottomlimit{4.5pt}%
   \commonvariables{#1}{|Sc|Sl|Sc|}{\textbf{#2} & \textbf{#3} & \textbf{#4}}{3}%
 }
 {\endcommonvariables}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF TIKZSET %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
