@@ -230,9 +230,9 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ中心
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 11.7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 12.7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{面取}
+\modHeadsection{端面のC面取}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -252,44 +252,70 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ中心
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 04.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 12.7.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{端面の外側C面取}
-外削のない場合は、加工径の中心座標$X$をトップ側・ボトム側のそれぞれに対して以下だけ補正する。
+端面の外側C面取について、その大きさが小さい場合は、マシニングでの加工はせず手動で加工を行うものとする。
+
+マシニングを用いて加工する場合、外削のない場合は、加工径の中心座標$X$をトップ側・ボトム側のそれぞれに対して以下だけ補正する。
 \begin{align*}
   \text{トップ側：}&~~
-  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-c_\mathrm o\right)^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\\
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-c_\mathrm{To}\right)^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\\
   \text{ボトム側：}&~~
-  \sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-\left(f_\mathrm B-c_\mathrm o\right)^2}\ .
+  \sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-\left(f_\mathrm B-c_\mathrm{Bo}\right)^2}\ .
 \end{align*}
-ここで$c_\mathrm o$, $R_\mathrm c$, $f_\mathrm T$, $f_\mathrm B$はそれぞれ外側C面取の大きさ, 中心湾曲半径, トップ振分長, ボトム振分長を示す。
+ここで$c_\mathrm{To}$, $c_\mathrm{Bo}$, $R_\mathrm c$, $f_\mathrm T$, $f_\mathrm B$はそれぞれトップ端の外側C面取の大きさ, ボトム端の外側C面取の大きさ, 中心湾曲半径, トップ振分長, ボトム振分長を示す。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 04.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 12.7.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{端面の内側C面取}
-加工径の中心座標$X$をトップ側・ボトム側のそれぞれに対して以下だけ補正する。
+端面の内側C面取について、その大きさが小さい場合は、マシニングでの加工はせず手動で加工を行うものとする。
+
+マシニングを用いて加工する場合、加工径の中心座標$X$をトップ側・ボトム側のそれぞれに対して以下だけ補正する。
 \begin{align*}
   \text{トップ側：}&~~
-  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-c_\mathrm i\right)^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\\
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-c_\mathrm{Ti}\right)^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\\
   \text{ボトム側：}&~~
-  \sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-\left(f_\mathrm B-c_\mathrm i\right)^2}\ .
+  \sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-\left(f_\mathrm B-c_\mathrm{Bi}\right)^2}\ .
 \end{align*}
-ここで$c_\mathrm i$, $R_\mathrm c$, $f_\mathrm T$, $f_\mathrm B$はそれぞれ内側C面取の大きさ, 中心湾曲半径, トップ振分長, ボトム振分長を示す。
+ここで$c_\mathrm{Ti}$, $c_\mathrm{Bi}$, $R_\mathrm c$, $f_\mathrm T$, $f_\mathrm B$はそれぞれトップ端の内側C面取の大きさ, ボトム端の内側C面取の大きさ, 中心湾曲半径, トップ振分長, ボトム振分長を示す。
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 12.8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{端面のR面取}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 04.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 12.8.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{外側R面取\TBW}
-(to be written ...)
+\subsection{端面の外側R面取}
+トップ端およびボトム端の\index{そとがわRめんとり@外側R面取}外側R面取については、基本的にはマシニングでは行わず、手動で行うものとする。
+ただし、R面取が大きい場合、作業者の負担や作業時間を考慮して、その一部をテーパエンドミルを用いて加工してもよいものとする。
+
+このとき、トップ端およびボトム端における外側R面取の大きさ$r_\mathrm{To}$, $r_\mathrm{Bo}$, および片角$\xi_\mathrm e$のテーパエンドミルに対して、
+\begin{align*}
+  c_\mathrm{To} &= r_\mathrm{To}\left(1+\cot\xi_\mathrm e-\csc\xi_\mathrm e\right)\ ,\\
+  c_\mathrm{Bo} &= r_\mathrm{Bo}\left(1+\cot\xi_\mathrm e-\csc\xi_\mathrm e\right)
+\end{align*}
+のC面取とみなして、外側C面取加工を行うものとする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 04.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 12.8.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{内側R面取\TBW}
-(to be written ...)
+\subsection{端面の内側R面取}
+トップ端およびボトム端の\index{うちがわRめんとり@内側R面取}内側R面取については、基本的にはマシニングでは行わず、手動で行うものとする。
+ただし、R面取が大きい場合、作業者の負担や作業時間を考慮して、その一部をテーパエンドミルを用いて加工してもよいものとする。
 
-
+このとき、トップ端およびボトム端における内側R面取の大きさ$r_\mathrm{Ti}$, $r_\mathrm{Bi}$, および片角$\xi_\mathrm e$のテーパエンドミルに対して、
+\begin{align*}
+  c_\mathrm{Ti} &= r_\mathrm{Ti}\left(1+\cot\xi_\mathrm e-\csc\xi_\mathrm e\right)\ ,\\
+  c_\mathrm{Bi} &= r_\mathrm{Bi}\left(1+\cot\xi_\mathrm e-\csc\xi_\mathrm e\right)
+\end{align*}
+のC面取とみなして、内側C面取加工を行うものとする。
