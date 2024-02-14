@@ -1,8 +1,40 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
-ここでは\DMname の主な\index{Mコード}を記載する。
+ここでは\DMname の主な\index{Gコード}Gコードおよび\index{Mコード}Mコードを記載する。
 なお、使用の欄は、●は作成したプログラムで使用しているもの、◯はバンドルのプログラムのみで使用されているものを示す。\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section H.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{Gコード\TBW}
+\addtocontents{lot}{\protect\addvspace{3pt}}{}{}
+\addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{4columnstable}{使用したGコード\TBW}{番号}{グループ}{内容}{使用}{Sc}{Sc}{Sl}{Sc}
+\verb|G00| & 01 & 位置決め（早送り） & ●\\\hline
+\verb|G01| & 01 & 直線補間 & ●\\\hline
+\verb|G02| & 01 & 円弧補間（右回り） & \\\hline
+\verb|G03| & 01 & 円弧補間（左回り） & ●\\\hline
+\verb|G04| & 00 & ドウェル（待機時間） & ●\\\hline
+\verb|G17| & 02 & $XY$平面選択 & ●\\\hline
+\verb|G18| & 02 & $XZ$平面選択 & \\\hline
+\verb|G19| & 02 & $YZ$平面選択 & \\\hline
+\end{4columnstable}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section H.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{Mコード}
+\addtocontents{lot}{\protect\addvspace{3pt}}{}{}
+\addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
