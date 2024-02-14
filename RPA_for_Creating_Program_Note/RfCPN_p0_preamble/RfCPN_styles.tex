@@ -92,7 +92,6 @@
   \hrule\@width.75\columnwidth
   \kern2.6pt
 }
-\makesavenoteenv{twoCtable}
 \makesavenoteenv{longtable}
 \makesavenoteenv{tablePart}
 \makesavenoteenv{Column}
@@ -102,6 +101,7 @@
 %\pagestyle{fancy}
 \renewcommand{\headrulewidth}{1.5pt}
 \renewcommand{\footrulewidth}{0pt}
+%%%%% commonheadfoot %%%%%
 \newcommand{\commonheadfoot}{
   \fancyhead{}
   \fancyfoot{}
@@ -117,12 +117,15 @@
   \fancyfoot[LO]{\tiny\customdate} % footer left fields for main odd pages
   \fancyfoot[RE]{\tiny\customdate} % footer right fields for main even pages
 }
+%%%%% emptydate %%%%%
 \fancypagestyle{emptydate}{\renewcommand{\headrulewidth}{0pt}\commonheadfoot}
+%%%%% front %%%%%
 \fancypagestyle{front}{
   \commonheadfoot
   \fancyhead[RO]{\thepage}
   \fancyhead[LE]{\thepage}
 }
+%%%%% main %%%%%
 \fancypagestyle{main}{
   \commonheadfoot
   \fancyhead[RO]{\hyperref[sec:\thesection]{{\small\nouppercase\rightmark}}}
@@ -130,34 +133,41 @@
   \fancyhead[RE]{{\hyperref[part:\thepart]{\small\partname.\,\thepart}}~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
   \fancyhead[LE]{\hyperref[\ifx\@chapapp\appendixname app:\else chap:\fi\thechapter]{{\sffamily\bfseries\thechapter.\hskip0.75em\nouppercase\Chaptername}}} % header right fields for all main even pages
 }
+%%%%% plainheadfront %%%%%
 \fancypagestyle{plainheadfront}{
   \commonheadfoot
   %\fancyhead[C]{}
   \fancyhead[LO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
   \fancyhead[RE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
 }
+%%%%% plainhead %%%%%
 \fancypagestyle{plainhead}{
   \commonheadfoot
   \fancyhead[RO]{\hyperref[part:\thepart]{\small\partname.\,\thepart}~~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
   \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
 }
+%%%%% plainheadback %%%%%
 \fancypagestyle{plainheadback}{
   \commonheadfoot
   \fancyhead[LO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
   \fancyhead[RE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
 }
+%%%%% FOR FRONTMATTER %%%%%
 \renewcommand*\frontmatter{%
   \if@twoside\cleardoubleoddpage\else\clearpage\fi
   \@frontmattertrue\@mainmatterfalse\@backmatterfalse\pagenumbering{arabic}\pagestyle{plainheadfront}%
 }
+%%%%% FOR MAINMATTER %%%%%
 \renewcommand*\mainmatter{%
   \if@twoside\cleardoubleoddpage\else\clearpage\fi
   \@frontmatterfalse\@mainmattertrue\@backmatterfalse\pagestyle{main}%
 }
+%%%%% FOR BACKMATTER %%%%%
 \renewcommand*\backmatter{%
   \if@openright\cleardoubleoddpage\else\clearpage\fi
   \@frontmatterfalse\@mainmatterfalse\@backmattertrue\pagestyle{plainheadback}
 }
+%%%%% FOR THEINDEX %%%%%
 %\AtBeginEnvironment{theindex}{%
 %  \let\oldhyperpage\hyperpage
 %  \renewcommand{\hyperpage}[1]{\cdotfill~\oldhyperpage{#1}~}
@@ -231,26 +241,31 @@
 %]{subsection}
 \setcounter{tocdepth}{3}
 \renewcommand\contentsname{\texorpdfstring{\hbox to 1.9em{目次}}{目次}}
+%%%%% FOR PART %%%%%
 \patchcmd{\l@part}{\begingroup}{\begingroup\begingroup\tikzset{every node/.style={rectangle,fill=blue!20,rounded corners}}}{}{}
 \patchcmd{\l@part}{\endgroup}{\endgroup\endgroup}{}{}
 \DeclareTOCStyleEntry[
   indent=0em, % エントリのインデントを調整
   numwidth=2.35em % エントリ番号の幅を調整
 ]{tocline}{part}
+%%%%% FOR CHAPTER %%%%%
 \DeclareTOCStyleEntry[
   level=\chaptertocdepth,
   indent=0.85em, % エントリのインデントを調整
   numwidth=1.5em % エントリ番号の幅を調整
 ]{tocline}{chapter}
+%%%%% FOR SECTION %%%%%
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
   numwidth=2.71em % エントリ番号の幅を調整
 ]{tocline}{section}
+%%%%% FOR SUBSECTION %%%%%
 \DeclareTOCStyleEntry[
   indent=5.06em, % エントリのインデントを調整
   numwidth=3.25em % エントリ番号の幅を調整
 ]{tocline}{subsection}
+%%%%% FOR SUBSUBSECTION %%%%%
 \DeclareTOCStyleEntry[
   indent=8.31em, % エントリのインデントを調整
   numwidth=3.79em % エントリ番号の幅を調整
@@ -613,64 +628,39 @@
     segmentation style={draw=black!50!white},%
     after=\smallskip\noindent{\color{white}},%
   },
-  %%%%% TWOCTABLEBOX STYLE %%%%%
-  twoCtablebox/.style={%
-    breakable,%
-    enhanced,%
-    fonttitle=\bfseries,%
-    fontupper=\small\sffamily,%
-    colframe=black!50!black,%
-    colbacktitle=blue!10!white,%
-    coltitle=black,%
-    top=0pt,%
-    bottom=0pt,%
-    left=0pt,%
-    right=0pt,%
-    enlarge top by=-5pt,
-    enlarge bottom by=5pt,
-    before upper={%
-      \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
-      \let\oldfootnote=\footnote% \oldfootnote=\footnote
-      \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% define \footnote to \footnote using counter GlobalFootnote
-      \renewcommand\thempfootnote{\arabic{mpfootnote}}% arabic footnote
-%      \renewcommand{\arraystretch}{1.2}% 行の高さを調整
-      \setlength{\LTpre}{0pt}%
-      \setlength{\LTpost}{0pt}%
-      \setlength{\LTleft}{0pt}%
-      \setlength{\LTright}{0pt}%
-      \setlength\cellspacetoplimit{3.5pt}
-      \setlength\cellspacebottomlimit{3.5pt}
-      \begin{longtable}{@{}c|Sl@{\extracolsep{\fill}}c}%
-      \addtocounter{table}{-1}%
-    },%
-    after upper={%
-      \end{longtable}%
-      \setcounter{footnote}{\value{GlobalFootnote}}% footnoteValue=GlobalFootnoteValue
-      \let\footnote=\oldfootnote% \footnote=\oldfootnote
-    },
-  },
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF TABLE %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% 2columnstable %%%%%
 \newenvironment{2columnstable}[4]{%
   \setlength\cellspacetoplimit{4.5pt}%
   \setlength\cellspacebottomlimit{4.5pt}%
   \commonTable{#1}{|#4|Sl|}{\textbf{#2} & \textbf{#3}}{2}%
 }
 {\endcommonTable}
+%%%%% 3columnstable %%%%%
 \newenvironment{3columnstable}[7]{%
   \setlength\cellspacetoplimit{4.5pt}%
   \setlength\cellspacebottomlimit{4.5pt}%
   \commonTable{#1}{|#5|#6|#7|}{\textbf{#2} & \textbf{#3} & \textbf{#4}}{3}%
 }
 {\endcommonTable}
+%%%%% 4columnstable %%%%%
+\newenvironment{4columnstable}[9]{%
+  \setlength\cellspacetoplimit{4.5pt}%
+  \setlength\cellspacebottomlimit{4.5pt}%
+  \commonTable{#1}{|#6|#7|#8|#9|}{\textbf{#2} & \textbf{#3} & \textbf{#4} & \textbf{#5}}{4}%
+}
+{\endcommonTable}
+%%%%% 2commonvariables %%%%%
 \newenvironment{2commonvariables}[3]{%
   \setlength\cellspacetoplimit{4.5pt}%
   \setlength\cellspacebottomlimit{4.5pt}%
   \commonvariables{#1}{|Sc|Sl|}{\textbf{#2} & \textbf{#3}}{2}%
 }
 {\endcommonvariables}
+%%%%% 3commonvariables %%%%%
 \newenvironment{3commonvariables}[4]{%
   \setlength\cellspacetoplimit{4.5pt}%
   \setlength\cellspacebottomlimit{4.5pt}%
