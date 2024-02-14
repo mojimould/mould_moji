@@ -84,8 +84,8 @@ G90 G01 Z[#26-#03] S#19 F#675
 (hosei Z: Z-C)
 
 N010
-M03 (shujiku kaiten on)
-M08 (coolant on)
+M03 (spindle on)
+M08 (coolant #1 on)
 
 N100 (ShiageMae loop)
 WHILE[#103GE1]DO1
@@ -102,12 +102,12 @@ IF[#446EQ1]GOTO013
 IF[#446EQ2]GOTO014
 GOTO017
 N013 (if #446=1)
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 G90 G01 Z[#26+#601] F#675
 M00 (for Bot)
 N014 (if #446=2)
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 G65 P900003 (for Bot)
 G90 G01 Z[#26+#601] F#677
@@ -117,12 +117,12 @@ IF[#430EQ1]GOTO015
 IF[#430EQ2]GOTO016
 GOTO017
 N015 (if #430=1)
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 G90 G01 Z[#26+#601] F#675
 M00 (for Top)
 N016 (if #430=2)
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 G65 P900003 (for Top)
 G90 G01 Z[#26+#601] F#677
@@ -149,8 +149,8 @@ G90 G43 G01 Z[#26-#03] S#19 F#675
 (hosei kouguChou: #07)
 (hosei Z: Z-C)
 
-M03 (shujiku kaiten on)
-M08 (coolant on)
+M03 (spindle on)
+M08 (coolant #1 on)
 
 
 N200 (Shiage loop)
@@ -163,7 +163,7 @@ END2
 G90 G01 X#33 Y0 F#677
 
 N990
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 
 N991
@@ -173,7 +173,7 @@ G90 G53 G01 Z0 F#675
 GOTO999
 
 N800
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 #3000=100 (are the arguments OK?)
 
@@ -209,6 +209,10 @@ N999 M99
 (System variables)
 (#3000: alarm)
 (#4012)
+
+
+(Subprograms)
+(O490007, O900003)
 
 
 (Passed arguments)

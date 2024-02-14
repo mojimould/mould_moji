@@ -99,8 +99,8 @@ G42 D#07
 G91 G00 X-[#32/2]
 
 N102
-M03 (shujiku kaiten on)
-M08 (coolant on)
+M03 (spindle on)
+M08 (coolant #1 on)
 
 N103
 G90 G01 X[[#31/2]+#32*2] Y[#30/2] F#677
@@ -109,7 +109,7 @@ G90 G40 G00 X[[#31/2]+#32*3]
 END1
 
 N990
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 
 N991
@@ -119,7 +119,7 @@ GOTO999
 
 
 N800
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 #3000=100 (are the arguments OK?)
 
