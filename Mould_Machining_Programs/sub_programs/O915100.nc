@@ -3,7 +3,13 @@ O915100
 (warming up)
 
 N001
-G91 G28 Z0
+G49 G40 (cancel hosei)
+G80 G17
+S200
+M05 (spindle off)
+M09 (coolant off)
+M29 (chip conveyor off)
+G90 G53 G01 Z0 F#675
 G91 G28 X0 Y0
 
 N002
