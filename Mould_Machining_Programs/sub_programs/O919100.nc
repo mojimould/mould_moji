@@ -1,5 +1,5 @@
 %
-O909100 (tool length measurement)
+O919100 (tool length measurement)
 
 N001
 #01=#4001
@@ -70,7 +70,7 @@ M99
 (#11:H: the tool #)
 
 (as LHS)
-(#01, #02, #03, #04, #05)
+(#01, #02, #03, #04, #05, #21, #22, #24, #25, #26)
 
 
 (Common variables)

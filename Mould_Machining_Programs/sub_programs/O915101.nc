@@ -1,5 +1,5 @@
 %
-O905101
+O915101
 (the subprogram for warming up)
 
 N001
@@ -13,5 +13,6 @@ G91 G01 Y-920. F3680
 N003
 G91 G01 X1100. F4400
 G91 G01 Y920. F3680
-M99
+
+N999 M99
 %
