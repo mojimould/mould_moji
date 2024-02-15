@@ -1,6 +1,5 @@
 %
-O915101
-(the subprogram for warming up)
+O915101 (for warming up)
 
 N001
 G91 G01 Z-1030. F4120
