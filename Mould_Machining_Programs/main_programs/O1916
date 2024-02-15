@@ -676,7 +676,7 @@ IF[#1004EQ0]GOTO991
 M117 (sensor on/off)
 
 N991
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 M29 (chip conveyor off)
 G49 G40 (cancel hosei)

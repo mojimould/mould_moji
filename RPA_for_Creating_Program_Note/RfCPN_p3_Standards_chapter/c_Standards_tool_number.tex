@@ -4,12 +4,14 @@
 ここでは\DMname で使用する\index{こうぐばんごう@工具番号}工具番号（\index{Tコード}Tコード値）について記述する。
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 05.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{基本事項}
 \begin{enumerate}[label=\Roman*), ref=\Roman*)]
 \item 工具収納可能本数：50本
+\item 工具登録可能本数：200本
 \item 工具選択方式：番地固定近回りランダム
 \item 最大工具寸法：$\phi125\times650$mm\\
 両隣のポット1個ずつが空の場合：$\phi320\times650$mm, ただし、$\phi250$を超える場合は2つ隣の工具は$\phi180$mm以下であること
@@ -18,18 +20,29 @@
 \item 工具交換時間： Tool-to-Tool: 2.1s, Chip-to-Chip: 5.2s
 \end{enumerate}
 
-\modHeadsection{工具番号}
-\begin{enumerate}[label=\roman*), ref=\roman*)]
-\item 工具番号01は空とする
-\item 工具番号02-05は\index{たんめんかこう@端面加工}端面加工用の工具とする
-\item 工具番号06-09は\index{みぞかこう@溝加工}溝加工用の工具とする
-\item 工具番号11-15は\index{めんとりかこう@面取加工}面取加工用の工具とする
-\item 工具番号16-20は\index{がいさくかこう@外削加工}外削加工用の工具とする
-\item 工具番号31-35は\expandafterindex{\dimplekana かこう@\dimple 加工}\dimple 加工用の工具とする
-\item 工具番号36-40は\dimple 加工用の工具（\index{アングルヘッド}アングルヘッド）とする
-\item 工具番号41-45は\index{にがしみぞかこう@逃し溝加工}逃し溝加工用の工具とする
-\item 工具番号49, 50は測定用の工具とする
-\end{enumerate}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 14.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{工具番号の割当て}
+\addtocontents{lot}{\protect\addvspace{3pt}}{}{}
+\addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
+\index{こうぐばんごう@工具番号}工具番号は、以下の通りに割り当てるものとする。\\
+\begin{2columnstable}{\DMname の工具番号の振当て}{番号}{内容}{Sc}
+01 & （空）\\\hline
+02-05 & \index{たんめんかこう@端面加工}端面加工用の工具\\\hline
+06-10 & \index{みぞかこう@溝加工}溝加工用の工具\\\hline
+11-15 & \index{Cめんとりかこう@C面取加工}C面取加工用の工具\\\hline
+16-20 & \index{めんとりかこう@面取加工}面取加工用の工具\\\hline
+21-30 & （不使用）\\\hline
+31-35 & \expandafterindex{\dimplekana かこう@\dimple 加工}\dimple 加工用の工具\\\hline
+36-40 & \dimple 加工用の工具（\index{アングルヘッド}アングルヘッド）\\\hline
+41-45 & \index{にがしみぞかこう@逃し溝加工}逃し溝加工用の工具\\\hline
+46-48 & （不使用）\\\hline
+49, 50 & 測定用の工具（タッチセンサープローブ）
+\end{2columnstable}
 
 
 
@@ -40,7 +53,7 @@
 \modHeadsection{登録工具}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\dateTourokuKougu 時点において\index{とうろくこうぐ@登録工具}登録されている工具は以下の通りである\\
+\dateTourokuKougu 時点において、\index{とうろくこうぐ@登録工具}登録されている工具は以下の通りである。\\
 \begin{2columnstable}{\DMname の登録工具}{Tコード}{使用工具}{Sc}
 \verb|T01| & 空\\\hline
 \hline
