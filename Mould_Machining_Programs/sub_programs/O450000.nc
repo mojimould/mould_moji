@@ -79,7 +79,7 @@ IF[#103LT0]GOTO800
 N009
 G90 G00 X#33 Y0
 G90 G43 G01 H#07 Z[#26+#601] F#675
-G90 G01 Z[#26-#03] S#19 F#675
+G90 G01 Z[#26-#03] S#19 F#677
 (hosei kouguChou: #07)
 (hosei Z: Z-C)
 
@@ -105,13 +105,14 @@ N013 (if #446=1)
 M05 (spindle off)
 M09 (coolant off)
 G90 G01 Z[#26+#601] F#675
-M00 (for Bot)
+M00 (OK?)
+GOTO017
 N014 (if #446=2)
 M05 (spindle off)
 M09 (coolant off)
 G65 P900003 (for Bot)
-G90 G01 Z[#26+#601] F#677
 GOTO017
+
 N012 (for Top)
 IF[#430EQ1]GOTO015
 IF[#430EQ2]GOTO016
@@ -120,23 +121,23 @@ N015 (if #430=1)
 M05 (spindle off)
 M09 (coolant off)
 G90 G01 Z[#26+#601] F#675
-M00 (for Top)
+M00 (OK?)
+GOTO017
 N016 (if #430=2)
 M05 (spindle off)
 M09 (coolant off)
 G65 P900003 (for Top)
-G90 G01 Z[#26+#601] F#677
 
 
 N017 (Shiage)
 IF[#4012EQ57]THEN #33=#429
 IF[#4012EQ55]THEN #33=#445
-(Top: #33=#429. Bot: #33=#445)
+(Top: #33=#429, Bot: #33=#445)
 (#33: X +hosei)
 
-IF[#4012EQ56]THEN #106=FUP[#431]
-IF[#4012EQ54]THEN #106=FUP[#447]
-(Top: #106=FUP[#431]. Bot: #106=FUP[#447])
+IF[#4012EQ57]THEN #106=FUP[#431]
+IF[#4012EQ55]THEN #106=FUP[#447]
+(Top: #106=FUP[#431], Bot: #106=FUP[#447])
 
 IF[#106EQ#0]THEN #106=0
 IF[#106LT0]THEN #106=0
@@ -144,8 +145,9 @@ IF[#106GT3]THEN #106=3
 IF[#659LE0]THEN #106=#106-1
 (#106: Shiage kakou kaisuu)
 
-G90 G01 X#33 Y0 F#677
-G90 G43 G01 Z[#26-#03] S#19 F#675
+G90 G00 X#33 Y0
+G90 G43 G01 H#07 Z[#26+#601] F#675
+G90 G01 Z[#26-#03] S#19 F#677
 (hosei kouguChou: #07)
 (hosei Z: Z-C)
 

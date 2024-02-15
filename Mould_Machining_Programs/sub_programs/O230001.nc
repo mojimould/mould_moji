@@ -15,7 +15,7 @@ IF[#679EQ#0]GOTO800
 IF[#679NE50]GOTO800
 (if #679 is not 50.0 or #0, go to N800)
 
-IF[#1004EQ1]GOTO001
+IF[#1004EQ1]GOTO002
 M117 (if the sensor is off, turn on)
 G04 X1. (wait 1.0s)
 

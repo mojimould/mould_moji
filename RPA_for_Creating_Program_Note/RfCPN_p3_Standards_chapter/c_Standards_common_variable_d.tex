@@ -193,6 +193,15 @@ $\cdots$ & \qquad$\cdots$ &\\\hline
 %% subsection 18.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum450\,-\ttNum474}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosoku}
+\ttNum450-\ttNum453の値は2024/01/16時点のもの。
+\end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{3commonvariables}{\ttNum450\,-\ttNum474：\dimple 深さの調整}{番号}{内容}{設定値}
 \ttNum450 & 工具\verb|T31|（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） & 0.06\\\hline
@@ -216,15 +225,6 @@ $\cdots$ & \qquad$\cdots$ &\\\hline
 \rowcolor{unusingVariables}
 $\cdots$ & （以下予備） &
 \end{3commonvariables}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{hosoku}
-\ttNum450-\ttNum453の値は2024/01/16時点のもの。
-\end{hosoku}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -235,7 +235,16 @@ $\cdots$ & （以下予備） &
 \modHeadsection{\ttNum500\,-\ttNum599：バンドルプログラムの使用コモン変数}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-\ttNum500\,-\ttNum599については、\index{バンドルのプログラム}バンドルのプログラム(O910xおよびO93xx)で使用されるものとする。\\
+\ttNum500\,-\ttNum599については、\index{バンドルのプログラム}バンドルのプログラム(O910xおよびO93xx)で使用されており、作成したプログラムには用いていない。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosoku}
+これらの値は2023/09/26時点のもの。
+\end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{3commonvariables}{\ttNum500\,-\ttNum524：O910x, O93xx用}{番号}{内容\hspace*{0.71\textwidth}}{設定値}
 \ttNum500 & 芯ずれ許容差 (O93xx) & 5.000\\\hline
@@ -272,15 +281,6 @@ $\cdots$ & （以下不明） & \ttNum0\\\hline
 \ttNum534 & （不明） & 0.000\\\hline
 $\cdots$ & （以下不明） & \ttNum0
 \end{3commonvariables}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{hosoku}
-これらの値は2023/09/26時点のもの。
-\end{hosoku}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -451,7 +451,7 @@ $\cdots$ & （以下予備） &
 \ttNum714 & 傾き後\dimple1列目中心（ブロックエンド）$X$座標 (\ttNum5001)\\\hline
 \ttNum715 & 傾き後\dimple1列目中心（ブロックエンド）$Y$座標 (\ttNum5002)\\\hline
 \ttNum716 & 傾き後\dimple1列目中心（ブロックエンド）$Z$座標 (\ttNum5003)\\\hline
-\ttNum717 & 各面 ループ用数値(1:A, 2:C, 3:B, 4:D)\\\hline
+\ttNum717\color{red}$^*$ & 各面 ループ用数値(1:A, 2:C, 3:B, 4:D)\\\hline
 \ttNum718 & BD内半径$-\text{\ttNum703}-10$\\\hline
 \ttNum719 & (AC内半径$-\text{\ttNum703}-10)\cos\phi$\\\hline
 \rowcolor{unusingVariables}
@@ -461,7 +461,7 @@ $\cdots$ & （以下予備）
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-\ttNum717はレベル2サブプログラム(O220001, O220002)でも使用していることに注意。
+\ttNum717はレベル2サブプログラム(O220001, O220002)でRHSとして使用していることに注意。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -493,13 +493,13 @@ $\cdots$ & （以下予備）
 \rowcolor{unusingVariables}
 $\cdots$ & \qquad$\cdots$\\\hline
 \ttNum748 & プログラム読込時ブロックエンド$X$ or $Y$ (\ttNum5001, \ttNum5002)\\\hline
-\ttNum749 & \dimple~表面位置$X$ or $Y$測定値
+\ttNum749\color{red}$^*$ & \dimple~表面位置$X$ or $Y$測定値
 \end{2commonvariables}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-\ttNum749はレベル2サブプログラム(O220001, O220002)でも使用していることに注意。
+\ttNum749はレベル2サブプログラム(O220001, O220002)でRHSとして使用していることに注意。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -509,7 +509,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 11.7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 19.7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum900001\,-\ttNum900031, \ttNum900101\,-\ttNum900500：実測値\TBW}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
@@ -517,11 +517,11 @@ $\cdots$ & \qquad$\cdots$\\\hline
 \ttNum900001\,-\ttNum900500については、\index{じっそくち@実測値}実測値または計算値を格納する。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 18.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 19.7.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum900001\,-\ttNum900049：\dimple 以外}
 
-\begin{2commonvariables}{\ttNum900001\,-\ttNum900005：外中心$X$測定用 (\MXOThickness)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900001\,-\ttNum900005：外中心$X$ 両側測定用 (\MXOThickness)}{番号}{内容}
 \ttNum900001 & $X$外中心測定 $-X$側測定値\\\hline
 \ttNum900002 & $X$外中心測定 $+X$側測定値\\\hline
 \ttNum900003 & $X$外中心測定値\\\hline
@@ -531,7 +531,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 \end{2commonvariables}
 
 
-\begin{2commonvariables}{\ttNum900006\,-\ttNum900010：外中心$Y$測定用 (\MYOThickness)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900006\,-\ttNum900010：外中心$Y$ 両側測定用 (\MYOThickness)}{番号}{内容}
 \ttNum900006 & $Y$外中心測定 $-Y$側測定値\\\hline
 \ttNum900007 & $Y$外中心測定 $+Y$側測定値\\\hline
 \ttNum900008 & $Y$外中心測定値\\\hline
@@ -542,7 +542,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 
 
 %\clearpage
-\begin{2commonvariables}{\ttNum900011\,-\ttNum900013：溝中心$X$測定用 (\MXOface)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900011\,-\ttNum900013：溝中心$X$ 片側測定用 (\MXOface)}{番号}{内容}
 \ttNum900011 & $X$溝中心測定 A側外面測定値\\\hline
 \rowcolor{unusingVariables}
 \ttNum900012 & （予備）\\\hline
@@ -552,7 +552,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 
 
 %\clearpage
-\begin{2commonvariables}{\ttNum900014\,-\ttNum900018：内中心$X$測定用 (\MXIWidth)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900014\,-\ttNum900018：内中心$X$ 両側測定用 (\MXIWidth)}{番号}{内容}
 \ttNum900014 & $X$内中心測定 $-X$側測定値\\\hline
 \ttNum900015 & $X$内中心測定 $+X$側測定値\\\hline
 \ttNum900016 & $X$内中心測定値\\\hline
@@ -563,7 +563,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 
 
 \clearpage
-\begin{2commonvariables}{\ttNum900019\,-\ttNum900023：内中心$Y$測定用 (\MYIWidth)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900019\,-\ttNum900023：内中心$Y$ 両側測定用 (\MYIWidth)}{番号}{内容}
 \ttNum900019 & $Y$内中心測定 $-Y$側測定値\\\hline
 \ttNum900020 & $Y$内中心測定 $+Y$側測定値\\\hline
 \ttNum900021 & $Y$内中心測定値\\\hline
@@ -574,7 +574,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 
 
 %\clearpage
-\begin{2commonvariables}{\ttNum900024\,-\ttNum900026：外削中心$X$測定用 (\MXIface)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900024\,-\ttNum900026：外削中心$X$ 片側測定用 (\MXIface)}{番号}{内容}
 \ttNum900024 & $X$外削中心測定 内面測定値\\\hline
 \rowcolor{unusingVariables}
 \ttNum900025 & （予備）\\\hline
@@ -584,7 +584,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 
 
 %\clearpage
-\begin{2commonvariables}{\ttNum900027\,-\ttNum900030：通り芯$X$測定用 (\MYcenterline)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900027\,-\ttNum900030：通り芯$Y$ 片側測定用 (\MYcenterline)}{番号}{内容}
 \ttNum900027 & $Y$通り芯 ボトム側測定値\\\hline
 \ttNum900028 & $Y$通り芯 トップ側測定値\\\hline
 \ttNum900029 & $Y$通り芯 測定値\\\hline
@@ -593,7 +593,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 \end{2commonvariables}
 
 
-\begin{2commonvariables}{\ttNum900031\,-\ttNum900034：通り芯$X$測定用 (\MXcenterline)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900031\,-\ttNum900034：通り芯$X$ 片側測定用 (\MXcenterline)}{番号}{内容}
 \ttNum900031 & $X$通り芯 トップ側測定値\\\hline
 \ttNum900032 & $X$通り芯 ボトム側測定値\\\hline
 \ttNum900033 & $X$通り芯 測定値\\\hline
@@ -758,7 +758,7 @@ $\cdots$ & （以下 \dimple 加工工具用 予備） &\\
 \modHeadsection{未使用（使用可）のコモン変数}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-この章の各々の表に載せていないコモン変数は\dateUnusedVariables 時点において未使用であり、新たに用いても問題ない（他のプログラムと競合しない）。
+この章の各々の表に載せていないコモン変数は（\dateUnusedVariables 時点において）未使用であり、新たに用いても問題ない（他のプログラムと競合しない）。
 これらのコモン変数を、以下にまとめておく。
 \begin{enumerate}
 \item \ttNum475-\ttNum499
@@ -767,7 +767,7 @@ $\cdots$ & （以下 \dimple 加工工具用 予備） &\\
 \item \ttNum900050-\ttNum900100
 \item \ttNum900501-\ttNum900999
 \item \ttNum901025-\ttNum901999
-\item \ttNum901150-\ttNum907999
+\item \ttNum901150-\ttNum907399
 \end{enumerate}
 
 

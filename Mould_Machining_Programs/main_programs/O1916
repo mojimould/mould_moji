@@ -327,7 +327,7 @@ M06 (tool exchange)
 
 M11 (4jiku unclamp)
 G90 G56 G00 B-0.642
-(G57B parallel angle -0.642)
+(G56B parallel angle -0.642)
 M10 (4jiku clamp)
 
 M28 (chip conveyor on)
@@ -368,7 +368,7 @@ M06 (tool exchange)
 
 M11 (4jiku unclamp)
 G90 G56 G00 B-0.642
-(G57B parallel angle -0.642)
+(G56B parallel angle -0.642)
 M10 (4jiku clamp)
 
 M28 (chip conveyor on)
@@ -411,7 +411,7 @@ M06 (tool exchange)
 
 M11 (4jiku unclamp)
 G90 G56 G00 B-0.642
-(G57B parallel angle -0.642)
+(G56B parallel angle -0.642)
 M10 (4jiku clamp)
 
 M28 (chip conveyor on)
@@ -447,8 +447,8 @@ T02 (tanmen)
 M06 (tool exchange)
 
 M11 (4jiku unclamp)
-G90 G00 G54 B[180.0-0.642]
-(G54B parallel angle 179.358)
+G90 G00 G55 B[180.0-0.642]
+(G55B parallel angle 179.358)
 M10 (4jiku clamp)
 
 M28 (chip conveyor on)
@@ -592,6 +592,7 @@ M00 (if #199=1)
 GOTO006
 N542
 G65 P900003 (if #199=2)
+G49
 
 
 (Kakou Owari)

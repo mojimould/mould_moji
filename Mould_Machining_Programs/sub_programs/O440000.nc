@@ -89,7 +89,7 @@ N101
 G90 G00 X[[#104/2]+#31*3+#33] Y[#105/2]
 G42 D#07
 G91 G00 X-[#31/2]
-G90 G01 Z[#26-#03] S#19 F#675
+G90 G01 Z[#26-#03] S#19 F#677
 
 N102
 M03 (shujiku kaiten on)
@@ -111,7 +111,8 @@ N012 (if #442=1)
 M05 (shujiku kaiten off)
 M09 (coolant off)
 G90 G01 Z[#26+#601] F#675
-M00 (for Bot)
+M00 (OK?)
+GOTO016
 N013 (if #442=2)
 M05 (shujiku kaiten off)
 M09 (coolant off)
@@ -125,7 +126,8 @@ N014 (if #426=1)
 M05 (shujiku kaiten off)
 M09 (coolant off)
 G90 G01 Z[#26+#601] F#675
-M00 (for Top)
+M00 (OK?)
+GOTO016
 N015 (if #426=2)
 M05 (shujiku kaiten off)
 M09 (coolant off)
@@ -135,12 +137,12 @@ G65 P900003 (for Top)
 N016 (Shiage)
 IF[#4012EQ56]THEN #33=#425
 IF[#4012EQ54]THEN #33=#441
-(Top: #33=#425. Bot: #33=#441)
+(Top: #33=#425, Bot: #33=#441)
 (#33: X +hosei)
 
 IF[#4012EQ56]THEN #106=FUP[#427]
 IF[#4012EQ54]THEN #106=FUP[#443]
-(Top: #106=FUP[#427]. Bot: #106=FUP[#443])
+(Top: #106=FUP[#427], Bot: #106=FUP[#443])
 
 IF[#106EQ#0]THEN #106=0
 IF[#106LT0]THEN #106=0
@@ -159,7 +161,7 @@ N201
 G90 G00 X[[#24/2]+#31*3+#33] Y[#25/2]
 G42 D#07
 G91 G00 X-[#31/2]
-G90 G01 Z[#26-#03] S#19 F#675
+G90 G01 Z[#26-#03] S#19 F#677
 
 N202
 M03 (shujiku kaiten on)

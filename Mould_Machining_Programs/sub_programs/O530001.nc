@@ -22,7 +22,8 @@ IF[#695LE10]GOTO800
 #32=#[2400+#4111]+#[2600+#4111]
 (#32= hosei KouguKei + Mamou)
 
-IF[#04LT0]GOTO002 (if I < 0, go to N002)
+IF[#04LT0]GOTO002
+(if I < 0, go to N002)
 #31=1 (for A)
 (if I > 0, #31=1)
 IF[#4111EQ31]THEN #30=#450
