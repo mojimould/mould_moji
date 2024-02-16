@@ -84,22 +84,89 @@
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
 
-\begin{3commonvariables}{\ttNum4001-\ttNum4021: 直前までのブロックで指令されたG指令モーダル情報}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum4001 & & ◯\\\hline
-\ttNum4003 & & ◯\\\hline
-\ttNum4012 & ワーク座標系\ttNum{} (\verb|G#|) & ●
+\begin{3commonvariables}{\ttNum4001-\ttNum4019: 直前までのブロックで指令されたG指令モーダル情報}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum4001 & グループ01： & ◯\\\hline
+\ttNum4002 & グループ02： & \\\hline
+\ttNum4003 & グループ03： & ◯\\\hline
+\ttNum4004 & グループ04： & \\\hline
+\ttNum4005 & グループ05： & \\\hline
+\ttNum4006 & グループ06： & \\\hline
+\ttNum4007 & グループ07： & \\\hline
+\ttNum4008 & グループ08： & \\\hline
+\ttNum4009 & グループ09： & \\\hline
+\ttNum4010 & グループ10： & \\\hline
+\ttNum4011 & グループ11： & \\\hline
+\ttNum4012 & グループ12：ワーク座標系\ttNum & ● \\\hline
+\ttNum4013 & グループ13： & \\\hline
+\ttNum4014 & グループ14： & \\\hline
+\ttNum4015 & グループ15： & \\\hline
+\ttNum4016 & グループ16： & \\\hline
+\ttNum4017 & グループ17： & \\\hline
+\ttNum4018 & グループ18： & \\\hline
+\ttNum4019 & グループ19： & \\\hline
+\end{3commonvariables}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosoku}
+グループについては、\pageautoref{chap:VI.H}を参照。
+\end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{3commonvariables}{\ttNum4020-\ttNum4021}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\rowcolor{unusingVariables}
+\ttNum4020 & null & \\\hline
+\ttNum4021 & & \\
 \end{3commonvariables}
 
-\begin{3commonvariables}{\ttNum4101-\ttNum4120: 直前までのブロックで指令されたモーダル情報}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+
+\clearpage
+\begin{3commonvariables}{\ttNum4102-\ttNum4129: 直前までのブロックで指令されたモーダル情報}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum4102 &  & \\\hline
+\rowcolor{unusingVariables}
+\ttNum4103 & null & \\\hline
+\rowcolor{unusingVariables}
+$\cdots$ & $\cdots$ & \\\hline
 \ttNum4107 & \verb|D#| 工具径補正コード\ttNum & ●\\\hline
+\ttNum4108 &  & \\\hline
 \ttNum4109 & \verb|F#| Fコード\ttNum &\\\hline
+\rowcolor{unusingVariables}
+\ttNum4110 & null & \\\hline
 \ttNum4111 & \verb|H#| 工具長補正コード\ttNum & ●\\\hline
+\rowcolor{unusingVariables}
+\ttNum4112 & null & \\\hline
 \ttNum4113 & \verb|M#| Mコード\ttNum &\\\hline
 \ttNum4114 & \verb|N#| シーケンス\ttNum &\\\hline
 \ttNum4115 & \verb|O#| プログラム\ttNum &\\\hline
+\rowcolor{unusingVariables}
+\ttNum4116 & null & \\\hline
+\rowcolor{unusingVariables}
+$\cdots$ & $\cdots$ & \\\hline
 \ttNum4119 & \verb|S#| Sコード\ttNum &\\\hline
-\ttNum4120 & \verb|T#| 工具コード\ttNum &\\\hline
-\ttNum4130 & & ◯
+\ttNum4120 & \verb|T#| 工具コード\ttNum & \\\hline
+\ttNum4121 & null & \\\hline
+\rowcolor{unusingVariables}
+$\cdots$ & $\cdots$ & \\
+\end{3commonvariables}
+
+
+%\clearpage
+\begin{3commonvariables}{\ttNum4121-\ttNum4140}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum4130 & & ◯\\\hline
+\rowcolor{unusingVariables}
+\ttNum4131 & null & \\\hline
+\rowcolor{unusingVariables}
+$\cdots$ & $\cdots$ & \\
+\end{3commonvariables}
+
+
+%\clearpage
+\begin{3commonvariables}{\ttNum4999-\ttNum4999}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\rowcolor{unusingVariables}
+\ttNum4999 & null & \\
 \end{3commonvariables}
 
 
@@ -113,18 +180,24 @@
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
 
 \begin{3commonvariables}{\ttNum5001-\ttNum5328: 位置情報}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\rowcolor{unusingVariables}
+\ttNum5000 & null &\\\hline
 \ttNum500x\footnote{\ttNum500x:工具補正値が加味された値（ワーク座標系に表示される数値）。途中でスキップがオンになったときはそのときの値。}
-       & ブロック終点位置（現在のワーク座標系）1:X, 2:Y, 3:Z, 4:B, 5:C & ●\\\hline
-\ttNum502x & 現在の機械座標系の座標 1:X, 2:Y, 3:Z, 4:B, 5:C & ●\\\hline
-\ttNum504x & 現在のワーク座標系の座標 1:X, 2:Y, 3:Z, 4:B, 5:C & ●\\\hline
-\ttNum506x & スキップ座標 1:X, 2:Y, 3:Z, 4:B, 5:C（工具補正0とした値） & ●\\\hline
+       & ブロック終点位置（現在のワーク座標系）x=1-9 & ●\\\hline
+\rowcolor{unusingVariables}
+\ttNum5010 & null &\\\hline
+\rowcolor{unusingVariables}
+\ttNum5011 & null &\\\hline
+\ttNum502x & 現在の機械座標系の座標 x=1-9 & ●\\\hline
+\ttNum504x & 現在のワーク座標系の座標 x=1-9 & ●\\\hline
+\ttNum506x & スキップ座標 x=1-9（工具補正0とした値） & ●\\\hline
 \ttNum5203 & & ◯\\\hline
-\ttNum522x & ワーク座標系G54原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C & ●\\\hline
-\ttNum524x & ワーク座標系G55原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C & ●\\\hline
-\ttNum526x & ワーク座標系G56原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C & ●\\\hline
-\ttNum528x & ワーク座標系G57原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C & ●\\\hline
-\ttNum530x & ワーク座標系G58原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C &\\\hline
-\ttNum532x & ワーク座標系G59原点の機械座標 1:X, 2:Y, 3:Z, 4:B, 5:C &
+\ttNum522x & ワーク座標系G54原点の機械座標 x=1-9 & ●\\\hline
+\ttNum524x & ワーク座標系G55原点の機械座標 x=1-9 & ●\\\hline
+\ttNum526x & ワーク座標系G56原点の機械座標 x=1-9 & ●\\\hline
+\ttNum528x & ワーク座標系G57原点の機械座標 x=1-9 & ●\\\hline
+\ttNum530x & ワーク座標系G58原点の機械座標 x=1-9 &\\\hline
+\ttNum532x & ワーク座標系G59原点の機械座標 x=1-9
 \end{3commonvariables}
 
 
@@ -137,38 +210,50 @@
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
 
-\begin{3commonvariables}{\ttNum7001-\ttNum7003}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum7003 & & ◯\\
+\begin{3commonvariables}{\ttNum7000-\ttNum7009}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\rowcolor{unusingVariables}
+\ttNum7000 & null &\\\hline
+\ttNum700x & パレット中心の機械座標 x=1-9 & ◯\\
 \end{3commonvariables}
 
 
-
-%\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section A.07 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum10000\,-\ttNum11999\TBW}
-\addtocontents{lot}{\protect\addvspace{3pt}}{}{}
-\addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
-
-\begin{3commonvariables}{\ttNum10000-\ttNum11999}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum10000+xxx & 工具長補正 \ttNum xxx補正量（摩耗0とした値, xxx=1-200） & ◯\\\hline
-\ttNum11000+xxx & 工具長補正 \ttNum xxx摩耗 (xxx=1-200) & ◯
+\begin{3commonvariables}{\ttNum7010-\ttNum7100}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\rowcolor{unusingVariables}
+\ttNum7010 & null &\\\hline
+\rowcolor{unusingVariables}
+\ttNum7100 & null &\\
 \end{3commonvariables}
 
 
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section A.07 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\ttNum10000\,-\ttNum11999：工具長補正\TBW}
+\addtocontents{lot}{\protect\addvspace{3pt}}{}{}
+\addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
+
+\begin{3commonvariables}{\ttNum10000-\ttNum11999}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum10000+xxx & 工具長補正 \ttNum xxx補正量（摩耗0とした値, xxx=1-200） & ◯\\\hline
+\rowcolor{unusingVariables}
+\ttNum10201 & null &\\\hline
+\ttNum11000+xxx & 工具長 \ttNum xxx摩耗量 (xxx=1-200) & ◯
+\end{3commonvariables}
+
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section A.08 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum16000\,-\ttNum17999\TBW}
+\modHeadsection{\ttNum16000\,-\ttNum17999：工具径補正\TBW}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
 
 \begin{3commonvariables}{\ttNum16001-\ttNum17999}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum16000+xxx & & ◯\\\hline
-\ttNum17000+xxx & & ◯\\
+\ttNum16000+xxx & 工具径補正 \ttNum xxx補正量（摩耗0とした値, xxx=1-200） & ◯\\\hline
+\ttNum17000+xxx & 工具径 \ttNum xxx摩耗量 (xxx=1-200) & ◯\\
 \end{3commonvariables}
 
 
@@ -177,12 +262,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section A.09 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum100000\,-\ttNum100010\TBW}
+\modHeadsection{\ttNum100000\,-\ttNum100999\TBW}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
 
-\begin{3commonvariables}{\ttNum100000-\ttNum100010}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\begin{3commonvariables}{\ttNum100000-\ttNum100011}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
 \ttNum100000 & & ◯\\\hline
+\ttNum100001 & & \\\hline
 \ttNum100002 & & ◯\\\hline
-\ttNum100010 & & ◯\\
+\rowcolor{unusingVariables}
+\ttNum100003 & null & \\\hline
+\rowcolor{unusingVariables}
+$\cdots$ & $\cdots$ & \\\hline
+\ttNum100010 & & ◯\\\hline
+\rowcolor{unusingVariables}
+\ttNum100011 & null & \\
 \end{3commonvariables}
