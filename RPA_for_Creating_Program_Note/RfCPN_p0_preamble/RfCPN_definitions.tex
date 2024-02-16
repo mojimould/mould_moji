@@ -138,15 +138,15 @@
   \let\newpage\relax
   \ifx\relax#1\relax
     \ifx\@chapapp\appendixname
-      \chapter{#2\label{app:\thechapter}}%
+      \chapter{#2\label{app:\thepart.\thechapter}}%
     \else
-      \chapter{#2\label{chap:\thechapter}}%
+      \chapter{#2\label{chap:\thepart.\thechapter}}%
     \fi
   \else%
     \ifx\@chapapp\appendixname
-      \chapter[#1]{#2\label{app:\thechapter}}%
+      \chapter[#1]{#2\label{app:\thepart\thechapter}}%
     \else
-      \chapter[#1]{#2\label{chap:\thechapter}}%
+      \chapter[#1]{#2\label{chap:\thepart\thechapter}}%
     \fi
   \fi
   \thispagestyle{main}%
@@ -157,9 +157,9 @@
 %%%%% TO LABEL SECTION  %%%%%%
 \newcommand{\modHeadsection}[2][]{%
   \ifx\relax#1\relax
-    \section{#2\label{sec:\thesection}}%
+    \section{#2\label{sec:\thepart.\thesection}}%
   \else%
-    \section[#1]{#2\label{sec:\thesection}}%
+    \section[#1]{#2\label{sec:\thepart.\thesection}}%
   \fi
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -240,7 +240,8 @@ N300
 (*** Dimple Kakou Start ***)
 
 
-G90 G53 G01 G49 Z0 F#675
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#675
 G90 G53 G01 X-5.501 Y-258.624 F#676
 T31 (Tslot R20)
 M06 (tool exchange)
@@ -285,7 +286,8 @@ N400
 (*** Top Tanmen start ***)
 
 
-G90 G53 G01 G49 Z0 F#675
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#675
 T02 (tanmen)
 M06 (tool exchange)
 
@@ -320,7 +322,8 @@ N410
 (*** Top Gaisaku start ***)
 
 
-G90 G53 G01 G49 Z0 F#675
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#675
 T16 (gaisaku)
 M06 (tool exchange)
 
@@ -360,7 +363,8 @@ N420
 (*** Mizo start ***)
 
 
-G90 G53 G01 G49 Z0 F#675
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#675
 T06 (mizo)
 M06 (tool exchange)
 
@@ -402,7 +406,8 @@ N430
 (*** Top SotoMentori start ***)
 
 
-G90 G53 G01 G49 Z0 F#675
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#675
 T13 (mentori 45)
 M06 (tool exchange)
 
@@ -438,7 +443,8 @@ N500
 (*** Bottom Tanmen start ***)
 
 
-G90 G53 G01 G49 Z0 F#675
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#675
 T02 (tanmen)
 M06 (tool exchange)
 
@@ -477,7 +483,8 @@ N510
 (*** Bottom Gaisaku start ***)
 
 
-G90 G53 G01 G49 Z0 F#675
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#675
 T16 (gaisaku)
 M06 (tool exchange)
 
@@ -517,7 +524,8 @@ N530
 (*** Bottom SotoMentori start ***)
 
 
-G90 G53 G01 G49 Z0 F#675
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#675
 T11 (mentori 15)
 M06 (tool exchange)
 
@@ -553,7 +561,8 @@ N540
 (*** Bottom UchiMentori start ***)
 
 
-G90 G53 G01 G49 Z0 F#675
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#675
 T11 (mentori 15)
 M06 (tool exchange)
 
@@ -600,7 +609,8 @@ M00
 
 
 N650
-G90 G53 G01 G49 Z0 F#675
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#675
 G91 G30 X0 Y0
 M11 (4jiku unclamp)
 G90 G00 G54 B[-90-0.642]
@@ -629,7 +639,8 @@ M00
 
 
 N660
-G90 G53 G01 G49 Z0 F#675
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#675
 M11 (4jiku unclamp)
 G90 G54 G00 B[180-0.642]
 (G54 Bot:+Z, Top:-Z)
@@ -649,7 +660,8 @@ G54 G65 P150002 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11.
 G90 G54 G01 X#900030 Y#900026 F#676
 M00 (tooriShin Y end)
 
-G90 G53 G01 G49 Z0 F#675
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#675
 G90 G53 G01 X-5.501 Y-258.624 F#676
 GOTO990
 
@@ -688,6 +700,7 @@ G90 G53 G01 Z0 F#675
 G91 G30 X0 Y0
 T01 (empty)
 M06 (tool exchange)
+T50 (touch sensor)
 M60 (palette change)
 
 N999 M30

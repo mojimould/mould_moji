@@ -51,35 +51,39 @@ IF[#26LE[#901011/2]]GOTO800
 N005
 IF[#512EQ#0]GOTO800
 IF[#512LE0]GOTO800
+IF[#601EQ#0]GOTO800
+IF[#601LT50]GOTO800
 IF[#603EQ#0]GOTO800
 IF[#603LE0]GOTO800
 IF[#604EQ#0]GOTO800
 IF[#604LT0]GOTO800
 IF[#604GT20]GOTO800
-IF[#679EQ#0]GOTO800
 IF[#679NE50]GOTO800
 IF[#901011EQ#0]GOTO800
 IF[#901011LE100]GOTO800
 (if #512 <= 0 or #0 go to N800)
+(if #601 < 50 or #0, go to N800)
 (if #603 <= 0 or #0, go to N800)
 (if #604 < 0 or #604 > 20.0 or #0, go to N800)
-(if #679 is not 50.0 or #0, go to N800)
+(if #679 is not 50.0, go to N800)
 (if #901011 <= 100 or #0 go to N800)
 
 N006
 IF[#33GE56]THEN #31=1
 IF[#33LE55]THEN #31=-1
 (Top: #31=1, Bot: #31=-1)
-IF[#33GE56]THEN #30=#410+#03
-IF[#33LE55]THEN #30=#405+#03
-(Top: #30=#408+K, Bot: #30=#403+K)
+IF[#33GE56]THEN #30=#410-#03
+IF[#33LE55]THEN #30=#405-#03
+(Top: #30=#410-C, Bot: #30=#405-C)
+IF[[ABS[#30]]GE[#26/4]]GOTO800
 IF[[ABS[#30]]GE[#23/4]]GOTO800
+(if |#30| >= Z/4, go to N800)
 (if |#30| >= W/4, go to N800)
 
 N007
 #29=[#24/2]-#20+#13
 #28=SQRT[#18*#18-[#23-#03]*[#23-#03]]-SQRT[#18*#18-#23*#23]
-#27=SQRT[#18*#18-[#23-#03+#30]*[#23-#03+#30]]-SQRT[#18*#18-#23*#23]-#28
+#27=SQRT[#18*#18-[#23-#03-#30]*[#23-#03-#30]]-SQRT[#18*#18-#23*#23]-#28
 (#29=X/2-T+M)
 (#28: X hosei from C)
 (#27: X hosei from #30)
@@ -105,37 +109,39 @@ N010
 G90 G31 Z[#26-#512] F#678
 (Z skip: Z-#512)
 IF[#5003GT[#26-#512]]GOTO802
-(if skip block end Z > Z-#512, to N802)
+(if skip Z > Z-#512, to N802)
 
 G91 G31 X[#31*#28] Z-#03 F#678
-(Z skip to Z-#512-K)
-IF[#5001GT[#32+#31*#28]]GOTO803
+(X skip to #31*#28)
+(Z skip to Z-#512-C)
+IF[#5001GT[#32+#31*#28+0.001]]GOTO803
 IF[#5003GT[#26-#512-#03]]GOTO802
 (if skip X > #32+#31*#28, to N802)
-(if skip Z > Z-#512-K, to N802)
+(if skip Z > Z-#512-C, to N802)
 
-G91 G31 X[#31*#27] Z#30 F#678
-(Z skip to Z-#512-K+#30)
-IF[#5001GT[#32+#31*#28+#31*#27]]GOTO803
-IF[#5003GT[#26-#512-#03+#30]]GOTO802
+G91 G31 X[#31*#27] Z-#30 F#678
+(X skip to #31*[#28+#27])
+(Z skip to Z-#512-C-#30)
+IF[#5001GT[#32+#31*#28+#31*#27+0.001]]GOTO803
+IF[#5003GT[#26-#512-#03-#30]]GOTO802
 (if skip X > #32+#31*[#28+#27], to N802)
-(if skip block end Z > Z-#512-#03+#30, to N802)
+(if skip Z > Z-#512-#03-#30, to N802)
 
 N011
 G91 G31 X[#31*[#29-#512-#603]] F#678
 (X skip: #31*[#29-#512-#603])
 IF[[ABS[#5001-#32]+0.001]LT[ABS[#29-#512-#603]]]GOTO803
-(if |skipX-#32| < |#29-D/2-#603| to N803)
+(if |skipX-#32| < |#29-#512-#603|, go to N803)
 
 G91 G31 X[#31*[#603+#604]] F#679
 (X skip: #31*[#603+#604])
 #900024=#5001+#502+#31*[#512-#501]
-(#900024= block end X +#502+#31*[D/2-#501])
+(#900024= skip X +#502+#31*[#512-#501])
 
 N012
 G90 G01 X[#900024-#31*#29] F#676
 (X to measured center)
-G91 G01 X-[#31*#27] Z-#30 F#676
+G91 G01 X-[#31*#27] Z#30 F#676
 G91 G01 X-[#31*#28] Z#03 F#676
 (X to measured tanmen center)
 IF[[ABS[#900024-#502]]GE[ABS[#29+#603-#501]]]GOTO800
@@ -150,7 +156,8 @@ GOTO999
 
 
 N803
-G90 G01 X#32 F#676 (X to start point)
+G90 G01 X#32 F#676
+(X to start point)
 G90 G53 G01 Z0 F#676
 G65 P910002 (sensor OFF)
 #3000=121 (are the arguments or the mould OK?)
@@ -185,7 +192,7 @@ N999 M99
 (as LHS)
 (#900024)
 (as RHS)
-(#403, #408, #601, #603, #604, #676, #678, #679)
+(#405, #410, #601, #603, #604, #676, #678, #679)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)
@@ -193,7 +200,6 @@ N999 M99
 
 
 (System variables)
-(#0   : empty)
 (#1004: 0: sensor off, 1: on)
 (#1005: 0: sensor battery ok, 1: low battery)
 (#3000: alarm)
