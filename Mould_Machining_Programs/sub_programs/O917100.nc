@@ -44,6 +44,11 @@ T32 M06
 G65 P919100 H32 I-17.5 J6.
 M30
 
+N013 (for T50)
+T50 M06
+G65 P919100 H13
+M30
+
 (Used Variables and Programs)
 
 (Subprograms)
