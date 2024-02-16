@@ -292,7 +292,7 @@
 \renewcommand{\figurename}{図}
 \renewcommand{\figureautorefname}{\figurename} % figure --> 図
 %\AtBeginDocument{\renewcommand{\thefigure}{図}}
-%\renewcommand*\l@figure{\@dottedtocline{1}{1.8em}{3.2em}}
+\renewcommand*\l@figure{\@dottedtocline{1}{2.35em}{2.35em}}
 %\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF LOC %%%%%%%%%%%%%%%%%%%%%%%
@@ -303,7 +303,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listtablename{\texorpdfstring{\hbox to 2.75em{表目次}}{表目次}}
 \renewcommand{\tablename}{表}
-%\renewcommand*\l@table{\@dottedtocline{1}{0.0em}{2.35em}}
+\renewcommand*\l@table{\@dottedtocline{1}{0.0em}{2.35em}}
 \AtBeginDocument{\renewcommand{\thetable}{}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF LISTLINGS %%%%%%%%%%%%%%%%%
@@ -314,7 +314,7 @@
 %  \counterwithout{lstlisting}{chapter}
   \renewcommand{\thelstlisting}{}%
 }
-%\renewcommand*\l@lstlisting{\@dottedtocline{1}{1.0em}{3.2em}}
+\renewcommand*\l@lstlisting{\@dottedtocline{1}{0.0em}{2.35em}}
 \lstdefinelanguage{GcodeBasic}{
   sensitive=true,%
   basicstyle=\footnotesize\ttfamily\linespread{1}\selectfont,%
