@@ -8,35 +8,40 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section H.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{主なGコード}
+\modHeadsection{主なGコード\TBW}
 \addtocontents{lot}{\protect\addvspace{3pt}}{}{}
 \addcontentsline{lot}{section}{\numberline{\thesection}\Sectionname}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{4columnstable}{主なGコード：\DMname}{番号}{グループ}{内容}{使用}{Sc}{Sc}{Sl}{Sc}
+\begin{4columnstable}{主なGコード：\DMname\TBW}{番号}{グループ}{内容}{使用}{Sc}{Sc}{Sl}{Sc}
 \verb|G00| & 01 & 位置決め（早送り） & ●\\\hline
 \verb|G01| & 01 & 直線補間 & ●\\\hline
 \verb|G02| & 01 & 円弧補間（右回り） & ●\\\hline
 \verb|G03| & 01 & 円弧補間（左回り） & ●\\\hline
 \verb|G04| & 00 & ドウェル（待機時間） & ●\\\hline
 \verb|G10| & 00 & プログラマブルデータ入力（パラメータ入力） & ●\\\hline
+\verb|G15| & 18 &  & \\\hline
 \verb|G17| & 02 & $XY$平面 選択 & ●\\\hline
 \verb|G18| & 02 & $XZ$平面 選択 & \\\hline
 \verb|G19| & 02 & $YZ$平面 選択 & \\\hline
 \verb|G20| & 00 & 第1レファレンス点（機械原点）復帰 & ●\\\hline
+\verb|G21| & 06 &  & \\\hline
 \verb|G22| & 04 & 移動前ストロークチェック ON & ◯\\\hline
 \verb|G23| & 04 & 移動前ストロークチェック OFF & \\\hline
 \verb|G30| & 00 & 第2レファレンス点（工具交換位置）復帰 & ●\\\hline
 \verb|G31| & 00 & スキップ & ●\\\hline
 \verb|G40| & 07 & 工具径補正 キャンセル & ●\\\hline
+\verb|G40.1| & 15 &  & \\\hline
 \verb|G41| & 07 & 工具径補正 進行方向の左 & ●\\\hline
 \verb|G42| & 07 & 工具径補正 進行方向の右 & ●\\\hline
 \verb|G43| & 08 & 工具長補正$+$ & ●\\\hline
 \verb|G44| & 08 & 工具長補正$-$ & \\\hline
 \verb|G49| & 08 & 工具長補正 キャンセル & ●\\\hline
 \verb|G53| & 00 & 機械座標系 選択 & ●\\\hline
+\verb|G50| & 11 &  & \\\hline
+\verb|G50.1| & 19 &  & \\\hline
 \verb|G54| & 12 & ワーク座標系1 選択 & ●\\\hline
 \verb|G54.1| & 12 & 拡張ワーク座標系 選択 & ◯\\\hline
 \verb|G55| & 12 & ワーク座標系2 選択 & ●\\\hline
@@ -44,10 +49,16 @@
 \verb|G57| & 12 & ワーク座標系4 選択 & ●\\\hline
 \verb|G58| & 12 & ワーク座標系5 選択 & \\\hline
 \verb|G59| & 12 & ワーク座標系6 選択 & \\\hline
+\verb|G61.1| & 13 &  & \\\hline
 \verb|G65| & 00 & プログラムの単純呼出し（引数指定可） & ●\\\hline
+\verb|G67| & 14 &  & \\\hline
+\verb|G69| & 16 &  & \\\hline
 \verb|G80| & 09 & 固定サイクル キャンセル & ●\\\hline
 \verb|G90| & 03 & 絶対値指令 & ●\\\hline
-\verb|G91| & 03 & 増分値（相対値）指令 & ●
+\verb|G91| & 03 & 増分値（相対値）指令 & ●\\\hline
+\verb|G94| & 05 &  & \\\hline
+\verb|G97| & 17 &  & \\\hline
+\verb|G98| & 10 &  &
 \end{4columnstable}
 
 
