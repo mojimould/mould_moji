@@ -14,7 +14,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{3columnstable}{中心湾曲・振分長・外径・内径}{記号}{内容\hspace*{0.72\textwidth}~}{図面}{Sc}{Sl}{Sc}
+\begin{3columnstable}{中心湾曲・振分長・外径}{記号}{内容\hspace*{0.72\textwidth}~}{図面}{Sc}{Sl}{Sc}
 $R_\mathrm c$ & 中心湾曲半径 & ○\\\hline
 $R_\mathrm i$ & 内側（C面側）湾曲半径 & \\\hline
 $R_\mathrm o$ & 外側（A面側）湾曲半径 & \\\hline
@@ -24,12 +24,21 @@ $f_\mathrm T'$ & トップ振分長（調整後） &\\\hline
 $f_\mathrm B'$ & ボトム振分長（調整後） &\\\hline
 $f_\mathrm d$ & $\displaystyle \frac{f_\mathrm B-f_\mathrm T}2$ &\\\hline
 $W_x$ & AC外径 & ○\\\hline
-$W_y$ & BD外径 & ○\\\hline
-$W_\mathrm T$ & トップ端の水平方向外径 & ○\\\hline
+$W_y$ & BD外径 & ○
+\end{3columnstable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{3columnstable}{端面}{記号}{内容\hspace*{0.72\textwidth}~}{図面}{Sc}{Sl}{Sc}
+$W_\mathrm T$ & トップ端のAC水平方向外径 & ○\\\hline
 $w_\mathrm T$ & トップ端内径（略称） & ○\\\hline
 $w_\mathrm B$ & ボトム端内径（略称） & ○\\\hline
-$w_x$ & 端面AC内径（略称） & ○\\\hline
-$w_y$ & 端面BD内径（略称） & ○
+$w_x$ & 端面のAC内径（略称） & ○\\\hline
+$w_y$ & 端面のBD内径（略称） & ○\\\hline
+$\delta_w$ & 端面加工 輪郭調整用パラメータ &\\\hline
+$\tau_x$ & AC方向肉厚（略称） &
 \end{3columnstable}
 
 
@@ -58,7 +67,6 @@ $\mathfrak W_\mathrm T$ & トップ側AC外削径 & ○\\\hline
 $\mathfrak W_\mathrm B$ & トップ側BD外削径 & ○\\\hline
 $h_\mathrm T$ & トップ側外削長 & ○\\\hline
 $h_\mathrm B$ & ボトム側外削長 & ○\\\hline
-$\tau_y$ & BD方向肉厚（略称） &\\\hline
 $\tau_\mathrm T$ & トップ端A側肉厚（指定時） & ○\\\hline
 $\tau_\mathrm B$ & ボトム端A側肉厚（指定時） & ○\\\hline
 $\mu$ & めっき膜厚 & ○
@@ -91,10 +99,10 @@ $c_\mathrm{To}$ & トップ端面の外側C面取長 & ○\\\hline
 $c_\mathrm{Ti}$ & トップ端面の内側C面取長 & ○\\\hline
 $c_\mathrm{Bo}$ & ボトム端面の外側C面取長 & ○\\\hline
 $c_\mathrm{Bi}$ & ボトム端面の内側C面取長 & ○\\\hline
-$D_\mathrm e$ & テーパーエンドミル先端径（直径） & ○\\\hline
-$D_\mathrm r$ & テーパーエンドミル参照直径 &\\\hline
-$d_\mathrm e$ & テーパーエンドミル先端平面および参照直径平面間の距離 &\\\hline
-$\xi_\mathrm e$ & テーパーエンドミル片角 & ○\\\hline
+$D_\mathrm e$ & テーパエンドミル先端径（直径） & ○\\\hline
+$D_\mathrm r$ & テーパエンドミル参照直径 &\\\hline
+$d_\mathrm e$ & テーパエンドミル先端平面および参照直径平面間の距離 &\\\hline
+$\xi_\mathrm e$ & テーパエンドミル片角 & ○\\\hline
 \end{3columnstable}
 
 
@@ -216,7 +224,7 @@ $\sigma$ & 受板の幅 & ○\\\hline
 $R_\mathrm i'$ & $R_i-\rho$ &\\\hline
 $\bar l$ & $\displaystyle l-\frac\sigma2$ &\\\hline
 $l'$ & $l+f_\mathrm d$ &\\\hline
-$\delta_\mathrm s$ & スペーサの厚さ &\\\hline
+$\delta_\mathrm s$ & 振分長調整用スペーサの厚さ &\\\hline
 $\varDelta$ & $\mathrm U_\mathrm B$とテーブル中心$P$との水平距離 &\\\hline
 $\varDelta'$ & Oを原点としたテーブル中心$P$の水平距離 &\\\hline
 $\varDelta_y$ & ジグのワークが乗る部分の$Y$座標 & ◯
@@ -225,13 +233,12 @@ $\varDelta_y$ & ジグのワークが乗る部分の$Y$座標 & ◯
 
 \clearpage
 \begin{3columnstable}{工具}{記号}{内容\hspace*{0.72\textwidth}~}{図面}{Sc}{Sl}{Sc}
-$\delta_w$ & 端面加工 輪郭調整用パラメータ &\\\hline
 $\phi_\mathrm D$ & 端面加工用フェイスミル刃径（直径） & ○\\\hline
 $\phi_\mathrm D'$ & 端面加工用フェイスミル最大刃径（直径） & ○\\\hline
-$d_\mathrm e$ & テーパーエンドミル先端からの距離（参照直径用） &\\\hline
-$D_\mathrm r$ & テーパーエンドミル参照直径 &\\\hline
-$D_\mathrm e$ & テーパーエンドミル先端径（直径） & ○\\\hline
-$\xi_\mathrm e$ & テーパーエンドミル先端テーパー角度（片角） & ○
+$d_\mathrm e$ & テーパエンドミル先端からの距離（参照直径用） &\\\hline
+$D_\mathrm r$ & テーパエンドミル参照直径 &\\\hline
+$D_\mathrm e$ & テーパエンドミル先端径（直径） & ○\\\hline
+$\xi_\mathrm e$ & テーパエンドミル先端テーパー角度（片角） & ○
 \end{3columnstable}
 
 
