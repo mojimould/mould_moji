@@ -106,12 +106,12 @@
   \fancyhead{}
   \fancyfoot{}
   \fancyfoot[C]{\scriptsize
-    \hyperref[chap:III.19]{コモン変数}\quad
-    \hyperref[chap:III.A]{システム変数}\quad
-    \hyperref[part:IV]{解析計算}\quad
-    \hyperref[chap:VI.H]{Gコード}\quad
-    \hyperref[sec:VI.H.2]{Mコード}\quad
-    \hyperref[chap:VI.I]{プログラム}}
+    \hyperref[chap:IV.16]{コモン変数}\quad
+    \hyperref[chap:IV.A]{システム変数}\quad
+    \hyperref[part:V]{解析計算}\quad
+    \hyperref[chap:VII.H]{Gコード}\quad
+    \hyperref[sec:VII.H.2]{Mコード}\quad
+    \hyperref[chap:VII.I]{プログラム}}
   \fancyfoot[LO]{\tiny\customdate} % footer left fields for main odd pages
   \fancyfoot[RE]{\tiny\customdate} % footer right fields for main even pages
 }
@@ -278,7 +278,7 @@
 }
 \AfterEndEnvironment{appendices}{%
   \patchcmd{\part}{\tocAPartSeparateline}{\relax}{}{}%
-  \addtocontents{toc}{\protect\cleardoublepage}% add page break before parts, except the first one
+%  \addtocontents{toc}{\protect\cleardoublepage}% add page break before parts, except the first one
   \@appendixfalse%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -625,6 +625,43 @@
     skin last is subskin of={enhanced jigsaw}{drop lifted shadow={blue!100!white!50!}},%
     segmentation style={draw=black!50!white},%
     after=\smallskip\noindent{\color{white}},%
+  },
+  %%%%% PARTTOCSTYLE STYLE %%%%%
+  parttocstyle/.style 2 args={%
+    breakable,%
+    enhanced jigsaw,%
+    title={#1},%
+    fonttitle=\bfseries\Large,%
+    colback=yellow!5!white,%
+    colframe=red!50!black!75!,%
+    before=\par\bigskip\noindent,%
+    colbacktitle=red!50!yellow!75!black!75!,%
+    enlargepage flexible=\baselineskip,%
+    pad at break*=3mm,%
+    before skip=0mm,%
+    top=5mm,%
+    height fixed for=first and middle,%
+    watermark color=yellow!80!red!20!white,%
+    watermark text={\bfseries\Large{#2}},%
+    attach boxed title to top left={%
+      xshift=10mm,%
+      yshift=-0.25mm-\tcboxedtitleheight/2,%
+      yshifttext=2mm-\tcboxedtitleheight/2,%
+    },
+    boxed title style={%
+      enhanced,%
+      boxrule=0.5mm,%
+      frame code={%
+        \path[tcb fill frame] ([xshift=-4mm]frame.west) -- (frame.north west)
+        -- (frame.north east) -- ([xshift=4mm]frame.east)
+        -- (frame.south east) -- (frame.south west) -- cycle; },
+        interior code={ \path[tcb fill interior] ([xshift=-2mm]interior.west)
+        -- (interior.north west) -- (interior.north east)
+        -- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)
+        -- cycle;
+      },
+    },
+    drop fuzzy shadow,
   },
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

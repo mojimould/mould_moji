@@ -89,6 +89,7 @@
 
 
 \PartSeparateline{toc}%
+\addtocontents{toc}{\protect\vspace*{8mm}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -104,19 +105,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Part System Design %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Part Work Flow     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tPart{\DMname 稼働に向けて}{概要}{%
+\edef\temp{\protect{\the\numexpr\value{part}+1\relax}}
+\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\temp}]}
+\tPart{業務フローの明確化}{概要}{%
 \paragraph*{目標（なにがしたいか？）}
 ソフトウェアの視点から、横型マシニングセンタにおける\textbf{現在の業務の流れを明確に}する。
-そして\DMname の稼働に必要な\textbf{システム開発プロセスの計画を策定}する。
+それに基づき、\DMname\textbf{導入後の業務の流れを明確に}する。
 
 \tcbline*
 \paragraph*{手段（どうやって？）}
-作業員およびスタッフに聞き取りを行い、ソフトウェアの観点における現在の業務の流れを把握する。
-また、それに基づいて具体的な\textbf{要件定義}・\textbf{設計}・\textbf{実装}・\textbf{試験}・\textbf{保守}の内容を取り決める。
+作業員およびスタッフに詳しく聞き取りを行い、ソフトウェアの観点における現在の業務の流れを把握する。
+それに基づいて解決可能な課題を抽出し、改善を行った上で導入後の業務の流れを取り決める。
 
 \tcbline*
 \paragraph*{背景（なぜ？）}
@@ -124,20 +127,20 @@
 
 　しかしソフトウェアの観点から見ると、事態は惨憺たるものである。
 「ソフトウェア関する管理・業務」を行う部門はおろか、担当者（特に管理職）さえ社内に存在しない。
-そのため業務の流れすら体系的に把握されておらず、システムの開発プロセスの計画も事実上皆無に等しい。
-外注で作成したプログラムも、当社が具体的な要件定義すら行えず、実用に至っていない
+そのため業務の流れすら体系的に把握されておらず、したがって業務規程や開発プロセスの計画も事実上皆無に等しい
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{プログラム自体は尤もな内容であり、レベルも十分なものである。
-（第二製造室に関わらず）当社のソフトウェアに関する致命的なほどの無関心および能力の無さが顕わに露呈したものであり、自明な帰結である。}。
+\footnote{つまり、ソフトウェアの観点からすると、企業としての体をなしていない。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-　したがって、まずは業務の流れの把握し、システム開発プロセスの計画の策定を行うことが喫緊の課題である。
+　このような状況から、まずは最初の段階として、業務の流れの把握することから初めなければならない。
 
 \tcbline*
 \paragraph*{結論（どうなった？）}
-\MMname における業務の流れを把握し、それを基に\DMname の稼働に向けたソフトウェア視点によるシステム開発プロセスの計画を策定した。
+\MMname における業務の流れを明確化し、それに基づいて\DMname 導入後の業務の流れを取り決めた。
 }
-\input{./RfCPN_part/RfCPN_p1_System_Design}
+\input{./RfCPN_part/RfCPN_p1_Workflow}
+\addtocontents{toc}{\protect\end{tcolorbox}}
+\addtocontents{toc}{\protect\cleardoublepage} % add page break
 
 
 
@@ -150,6 +153,7 @@
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
 \tPart{諸規程の策定}{概要}{%
 \paragraph*{目標（なにがしたいか？）}
 ソフトウェアおよびソフトウェアエンジニアリングに関する業務を管理状態におく。
@@ -173,6 +177,46 @@
 ソフトウェアの観点のもと、\DMname 関連の業務が関わるソフトウェア開発・保守等の規程を策定した。
 }
 \input{./RfCPN_part/RfCPN_p2_Rules}
+\addtocontents{toc}{\protect\end{tcolorbox}}
+\addtocontents{toc}{\protect\cleardoublepage}% add page break
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Part Work Flow     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
+\tPart{要件定義}{概要}{%
+\paragraph*{目標（なにがしたいか？）}
+(to be written...)
+
+\tcbline*
+\paragraph*{手段（どうやって？）}
+(to be written...)
+
+\tcbline*
+\paragraph*{背景（なぜ？）}
+(to be written...)\\
+外注で作成したプログラムも、当社が具体的な要件定義すら行えず、実用に至っていない
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{プログラム自体は尤もな内容であり、レベルも十分なものである。
+（第二製造室に関わらず）当社のソフトウェアに関する致命的なほどの無関心および能力の無さが顕わに露呈したものであり、自明な帰結である。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+　したがって、システム開発プロセスの計画の策定を行うことが喫緊の課題である。
+
+\tcbline*
+\paragraph*{結論（どうなった？）}
+\MMname における業務の流れを把握し、それを基に\DMname の稼働に向けたソフトウェア視点によるシステム開発プロセスの計画を策定した。
+}
+%\input{./RfCPN_part/RfCPN_p1_System_Design}
+\addtocontents{toc}{\protect\end{tcolorbox}}
+\addtocontents{toc}{\protect\cleardoublepage}% add page break
 
 
 
@@ -185,6 +229,7 @@
 %%                %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
 \tPart[lot]{諸標準の策定}{概要}{%
 \paragraph*{目標（なにがしたいか？）}
 プログラムの記述に関して一定の基準・規則を設けることで、一貫性および効率性を向上する
@@ -211,6 +256,8 @@
 \DMname 関連のソフトウェア開発における、（ソフトウェアの観点による）寸法・コードの記述法・工具・保守等の標準を策定した。
 }
 \input{./RfCPN_part/RfCPN_p3_Standards_Coding}
+\addtocontents{toc}{\protect\end{tcolorbox}}
+\addtocontents{toc}{\protect\cleardoublepage}% add page break
 
 
 
@@ -222,6 +269,7 @@
 %%          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
 \tPart[lot]{幾何学性質の解析計算}{概要}{%
 \paragraph*{目標（なにがしたいか？）}
 マシニングにおけるモールドの加工に必要な幾何学的情報を抽象化（一般化）し、体系を構築する。
@@ -247,6 +295,8 @@
 \DMname のおける加工の際に必要なすべての幾何的情報を解析的に導出し、体系化した。
 }
 \input{./RfCPN_part/RfCPN_p4_Analytical_Calculation}
+\addtocontents{toc}{\protect\end{tcolorbox}}
+\addtocontents{toc}{\protect\cleardoublepage}% add page break
 
 
 
@@ -258,6 +308,7 @@
 %%         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
 \tPart{解析計算に基づく数値解析}{概要}{%
 \paragraph*{目標（なにがしたいか？）}
 明細ごとに異なる寸法・形状を持つすべてのモールドに対し、マシニングでの加工に必要な\textbf{数値情報および条件分岐情報等が自動的に得られるシステム}を構築する。
@@ -282,6 +333,8 @@
 各明細のモールドにおける固有数値情報の入力により、マシニングでの加工に必要な数値情報および条件分岐情報等が（人による手動計算を介することなく）自動的に得られるシステムを構築した。
 }
 \input{./RfCPN_part/RfCPN_p5_Numerical_Calculation}
+\addtocontents{toc}{\protect\end{tcolorbox}}
+\addtocontents{toc}{\protect\cleardoublepage}% add page break
 
 
 
@@ -293,6 +346,7 @@
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
 \tPart[lol]{各工程用自動化プログラム 取扱説明\TBW}{概要}{%
 \paragraph*{目標（なにがしたいか？）}
 (to be written...)
@@ -307,6 +361,8 @@
 (to be written...)
 }
 \input{./RfCPN_part/RfCPN_p6_Programs_Manual}
+\addtocontents{toc}{\protect\end{tcolorbox}}
+\addtocontents{toc}{\protect\cleardoublepage}% add page break
 
 
 
@@ -318,6 +374,7 @@
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
 \tPart{作業手順：マシニングの操作\TBW}{概要}{%
 \paragraph*{目標（なにがしたいか？）}
 (to be written...)
@@ -332,6 +389,8 @@
 (to be written...)
 }
 \input{./RfCPN_part/RfCPN_p7_Work_Procedure}
+\addtocontents{toc}{\protect\end{tcolorbox}}
+\addtocontents{toc}{\protect\cleardoublepage}% add page break
 
 
 
@@ -343,6 +402,7 @@
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
 \tPart{RDBSの構築\TBW}{概要}{%
 \paragraph*{目標（なにがしたいか？）}
 (to be written...)
@@ -357,6 +417,8 @@
 (to be written...)
 }
 %\input{./RfCPN_part/RfCPN_p8_Relational_Database}
+\addtocontents{toc}{\protect\end{tcolorbox}}
+%\addtocontents{toc}{\protect\cleardoublepage}% add page break
 
 
 
@@ -372,7 +434,7 @@
 \pagestyle{plainheadback}
 
 
-\PartSeparateline{toc}
+%\PartSeparateline{toc}
 \addtocontents{toc}{\protect\vspace*{10pt}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
