@@ -8,7 +8,7 @@
 \newcommand{\dateKouguSpeed}{2024/02/16\hx}
 \newcommand{\dateKouguRotation}{2024/02/16\hx}
 \newcommand{\dateUnusedVariables}{2024/02/16\hx}
-\setallpageWatermark{Copy}{atan(297/210)+5.1}{32.1}{0.08}
+\setallpageWatermark{Copy}{atan(297/210)+5.1}{32.1}{0.2}
 %\setallpageWatermark{Draft}{atan(297/210)+5.1}{25.3}
 %\RequirePackage{plautopatch}
 
@@ -111,14 +111,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \edef\temp{\protect{\the\numexpr\value{part}+1\relax}}
 \addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\temp}]}
-\tPart{業務フローの明確化}{概要}{%
+\tPart{業務フロー}{概要}{%
 \paragraph*{目標（なにがしたいか？）}
-ソフトウェアの視点から、横型マシニングセンタにおける\textbf{現在の業務の流れを明確に}する。
+\textbf{ソフトウェアの視点}から、横型マシニングセンタにおける\textbf{現在の業務の流れを明確に}する。
 それに基づき、\DMname\textbf{導入後の業務の流れを明確に}する。
 
 \tcbline*
 \paragraph*{手段（どうやって？）}
-作業員およびスタッフに詳しく聞き取りを行い、ソフトウェアの観点における現在の業務の流れを把握する。
+関係者に詳しく聞き取りを行い、ソフトウェアの観点における現在の業務の流れを把握する。
 それに基づいて解決可能な課題を抽出し、改善を行った上で導入後の業務の流れを取り決める。
 
 \tcbline*
@@ -129,14 +129,14 @@
 「ソフトウェア関する管理・業務」を行う部門はおろか、担当者（特に管理職）さえ社内に存在しない。
 そのため業務の流れすら体系的に把握されておらず、したがって業務規程や開発プロセスの計画も事実上皆無に等しい
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{つまり、ソフトウェアの観点からすると、企業としての体をなしていない。}。
+\footnote{つまり、ソフトウェアの観点からすると、もはや企業としての体をなしていない。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-　このような状況から、まずは最初の段階として、業務の流れの把握することから初めなければならない。
+　このような状況のため、まずは最初の段階として、業務の流れを把握することから初めなければならない。
 
 \tcbline*
 \paragraph*{結論（どうなった？）}
-\MMname における業務の流れを明確化し、それに基づいて\DMname 導入後の業務の流れを取り決めた。
+ソフトウェアの視点に立って\MMname における業務の流れを把握し、それに基づいて\DMname 導入後の業務の流れを取り決めた。
 }
 \input{./RfCPN_part/RfCPN_p1_Workflow}
 \addtocontents{toc}{\protect\end{tcolorbox}}
@@ -214,7 +214,7 @@
 \paragraph*{結論（どうなった？）}
 \MMname における業務の流れを把握し、それを基に\DMname の稼働に向けたソフトウェア視点によるシステム開発プロセスの計画を策定した。
 }
-%\input{./RfCPN_part/RfCPN_p1_System_Design}
+\input{./RfCPN_part/RfCPN_p3_Requirement_Definition}
 \addtocontents{toc}{\protect\end{tcolorbox}}
 \addtocontents{toc}{\protect\cleardoublepage}% add page break
 
@@ -255,7 +255,7 @@
 \paragraph*{結論（どうなった？）}
 \DMname 関連のソフトウェア開発における、（ソフトウェアの観点による）寸法・コードの記述法・工具・保守等の標準を策定した。
 }
-\input{./RfCPN_part/RfCPN_p3_Standards_Coding}
+\input{./RfCPN_part/RfCPN_p4_Standards_Coding}
 \addtocontents{toc}{\protect\end{tcolorbox}}
 \addtocontents{toc}{\protect\cleardoublepage}% add page break
 
@@ -294,7 +294,7 @@
 \paragraph*{結論（どうなった？）}
 \DMname のおける加工の際に必要なすべての幾何的情報を解析的に導出し、体系化した。
 }
-\input{./RfCPN_part/RfCPN_p4_Analytical_Calculation}
+\input{./RfCPN_part/RfCPN_p5_Analytical_Calculation}
 \addtocontents{toc}{\protect\end{tcolorbox}}
 \addtocontents{toc}{\protect\cleardoublepage}% add page break
 
@@ -332,7 +332,7 @@
 \paragraph*{結論（どうなった？）}
 各明細のモールドにおける固有数値情報の入力により、マシニングでの加工に必要な数値情報および条件分岐情報等が（人による手動計算を介することなく）自動的に得られるシステムを構築した。
 }
-\input{./RfCPN_part/RfCPN_p5_Numerical_Calculation}
+\input{./RfCPN_part/RfCPN_p6_Numerical_Calculation}
 \addtocontents{toc}{\protect\end{tcolorbox}}
 \addtocontents{toc}{\protect\cleardoublepage}% add page break
 
@@ -360,7 +360,7 @@
 \paragraph*{結論（どうなった？）}
 (to be written...)
 }
-\input{./RfCPN_part/RfCPN_p6_Programs_Manual}
+\input{./RfCPN_part/RfCPN_p7_Programs_Manual}
 \addtocontents{toc}{\protect\end{tcolorbox}}
 \addtocontents{toc}{\protect\cleardoublepage}% add page break
 
@@ -388,7 +388,7 @@
 \paragraph*{結論（どうなった？）}
 (to be written...)
 }
-\input{./RfCPN_part/RfCPN_p7_Work_Procedure}
+\input{./RfCPN_part/RfCPN_p8_Work_Procedure}
 \addtocontents{toc}{\protect\end{tcolorbox}}
 \addtocontents{toc}{\protect\cleardoublepage}% add page break
 
@@ -416,7 +416,7 @@
 \paragraph*{結論（どうなった？）}
 (to be written...)
 }
-%\input{./RfCPN_part/RfCPN_p8_Relational_Database}
+%\input{./RfCPN_part/RfCPN_p9_Relational_Database}
 \addtocontents{toc}{\protect\end{tcolorbox}}
 %\addtocontents{toc}{\protect\cleardoublepage}% add page break
 

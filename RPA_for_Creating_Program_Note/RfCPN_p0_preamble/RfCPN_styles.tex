@@ -126,10 +126,10 @@
 %%%%% main %%%%%
 \fancypagestyle{main}{
   \commonheadfoot
-  \fancyhead[RO]{\hyperref[sec:\thesection]{{\small\nouppercase\rightmark}}}
+  \fancyhead[RO]{\hyperref[sec:\thepart.\thesection]{{\small\nouppercase\rightmark}}}
   \fancyhead[LO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$~~{\hyperref[part:\thepart]{\small\partname.\,\thepart}}} % header right fields for all main odd pages
   \fancyhead[RE]{{\hyperref[part:\thepart]{\small\partname.\,\thepart}}~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
-  \fancyhead[LE]{\hyperref[\ifx\@chapapp\appendixname app:\else chap:\fi\thechapter]{{\sffamily\bfseries\thechapter.\hskip0.75em\nouppercase\Chaptername}}} % header right fields for all main even pages
+  \fancyhead[LE]{\hyperref[\ifx\@chapapp\appendixname app:\else chap:\fi\thepart.\thechapter]{{\sffamily\bfseries\thechapter.\hskip0.75em\nouppercase\Chaptername}}} % header right fields for all main even pages
 }
 %%%%% plainheadfront %%%%%
 \fancypagestyle{plainheadfront}{
@@ -632,16 +632,16 @@
     enhanced jigsaw,%
     title={#1},%
     fonttitle=\bfseries\Large,%
-    colback=yellow!5!white,%
-    colframe=red!50!black!75!,%
+    colback=yellow!3!white,%
+    colframe=red!40!black!60!,%
     before=\par\bigskip\noindent,%
-    colbacktitle=red!50!yellow!75!black!75!,%
+    colbacktitle=red!50!yellow!70!black!60!,%
     enlargepage flexible=\baselineskip,%
     pad at break*=3mm,%
     before skip=0mm,%
-    top=5mm,%
+    top=6mm,%
     height fixed for=first and middle,%
-    watermark color=yellow!80!red!20!white,%
+    watermark color=yellow!85!red!15!white,%
     watermark text={\bfseries\Large{#2}},%
     attach boxed title to top left={%
       xshift=10mm,%
