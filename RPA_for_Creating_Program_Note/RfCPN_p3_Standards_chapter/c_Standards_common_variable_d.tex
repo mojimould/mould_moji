@@ -125,9 +125,9 @@ $\cdots$ & \qquad$\cdots$ &\\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{hosoku}
-\ttNum405-\ttNum413は、端面の$Z$位置からの$-$補正。
-\end{hosoku}
+\begin{marker}
+\ttNum405-\ttNum413は、端面の$Z$位置からの$-$補正
+\end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -238,7 +238,7 @@ $\cdots$ & （以下予備） &
 %% section 18.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum500\,-\ttNum599：バンドルプログラムの使用コモン変数}
-\ttNum500\,-\ttNum599については、\index{バンドルのプログラム}バンドルのプログラム(O910xおよびO93xx)で使用されており、作成したプログラムには用いていない。
+\ttNum500\,-\ttNum599については、\index{バンドルのプログラム}バンドルのプログラム\myprg{O910x}\myprg{O93xx}で使用されており、作成したプログラムには用いていない。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -249,36 +249,32 @@ $\cdots$ & （以下予備） &
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{3commonvariables}{\ttNum500\,-\ttNum524：O910x, O93xx用}{番号}{内容\hspace*{0.71\textwidth}}{設定値}
-\ttNum500 & 芯ずれ許容差 (O93xx) & 5.000\\\hline
-\ttNum501 & タッチセンサー信号遅れ補正 (O93xx) & 0.040\\\hline
-\ttNum502 & タッチセンサープローブ中心$X$補正 (O93xx) & -0.016507\\\hline
-\ttNum503 & タッチセンサープローブ中心$Y$補正 (O93xx) & -0.068371\\\hline
-\ttNum504 & 測定距離 (O910x) & 5.000\\\hline
-\ttNum505 & プローブ表面からプログラムの加工原点($Z$0)までの距離 (O910x) & 785.529\\\hline
-\ttNum506 & 工具長の変化の許容差 (O910x) & 1.000\\\hline
-\ttNum507 & 工具破損検出の許容差 (O910x) & 1.000\\\hline
+\begin{3commonvariables}{\ttNum500\,-\ttNum524：\myprg{O910x}\myprg{O93xx}用}{番号}{内容\hspace*{0.71\textwidth}}{設定値}
+\ttNum500 & 芯ずれ許容差 \myprg{O93xx} & 5.000\\\hline
+\ttNum501 & タッチセンサー信号遅れ補正 \myprg{O93xx} & 0.040\\\hline
+\ttNum502 & タッチセンサープローブ中心$X$補正 \myprg{O93xx} & -0.016507\\\hline
+\ttNum503 & タッチセンサープローブ中心$Y$補正 \myprg{O93xx} & -0.068371\\\hline
+\ttNum504 & 測定距離 \myprg{O910x} & 5.000\\\hline
+\ttNum505 & プローブ表面からプログラムの加工原点($Z$0)までの距離 \myprg{O910x} & 785.529\\\hline
+\ttNum506 & 工具長の変化の許容差 \myprg{O910x} & 1.000\\\hline
+\ttNum507 & 工具破損検出の許容差 \myprg{O910x} & 1.000\\\hline
 \ttNum508 & （不明） & \ttNum0\\\hline
-\ttNum509 & Z座標系設定 (O93xx）& 441.432\\\hline
+\ttNum509 & Z座標系設定 \myprg{O93xx} & 441.432\\\hline
 \ttNum510 & （不明） & 270.000\\\hline
-\ttNum511 & インチ／ミリ切替 (O910x) & \ttNum0\\\hline
-\ttNum512 & タッチセンサープローブ半径$\mathrm{mm}$値 (O93xx) & 5.000\\\hline
-\ttNum513 & 移動時用の送り速さ値 (O910x) & 1000.000\\\hline
-\ttNum514 & スキップ(\verb|G31|)測定時用 送り速さ値 (O910x, O93xx) & 50.000\\\hline
+\ttNum511 & インチ／ミリ切替 \myprg{O910x} & \ttNum0\\\hline
+\ttNum512 & タッチセンサープローブ半径$\mathrm{mm}$値 \myprg{O93xx} & 5.000\\\hline
+\ttNum513 & 移動時用の送り速さ値 \myprg{O910x} & 1000.000\\\hline
+\ttNum514 & スキップ(\verb|G31|)測定時用 送り速さ値 \myprg{O910x}\myprg{O93xx} & 50.000\\\hline
 \ttNum515 & （不明） & \ttNum0\\\hline
-\ttNum516 & センサーの位置$X$座標 (O910x) & -30.374\\\hline
-\ttNum517 & センサーの位置$Y$座標 (O910x) & -913.761\\\hline
-\ttNum518 & センサーの位置$Z$座標 (O910x) & -785.529\\\hline
+\ttNum516 & センサーの位置$X$座標 \myprg{O910x} & -30.374\\\hline
+\ttNum517 & センサーの位置$Y$座標 \myprg{O910x} & -913.761\\\hline
+\ttNum518 & センサーの位置$Z$座標 \myprg{O910x} & -785.529\\\hline
 \ttNum519 & （不明） & 6.000\\\hline
-\ttNum520 & 拡張ワーク座標系 (O910x) & 1861.000\\\hline
+\ttNum520 & 拡張ワーク座標系 \myprg{O910x} & 1861.000\\\hline
 \ttNum521 & （不明） & 0.000\\\hline
 \ttNum522 & （不明） & 0.000\\\hline
-\ttNum523 & アプローチ時用の送り速さ値 (O910x) & 30.000\\\hline
-\ttNum524 & 測定時用の送り速さ値 (O910x) & 3.000\\\hline
-\end{3commonvariables}
-
-\clearpage
-\begin{3commonvariables}{\ttNum525\,-\ttNum599：O910x, O93xx用（続き）}{番号}{内容\hspace*{0.71\textwidth}}{設定値}
+\ttNum523 & アプローチ時用の送り速さ値 \myprg{O910x} & 30.000\\\hline
+\ttNum524 & 測定時用の送り速さ値 \myprg{O910x} & 3.000\\\hline
 $\cdots$ & （以下不明） & \ttNum0\\\hline
 \ttNum533 & （不明） & 0.000\\\hline
 \ttNum534 & （不明） & 0.000\\\hline
@@ -431,7 +427,7 @@ $\cdots$ & （以下予備） &
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum700\,-\ttNum724：内面溝レベル1サブプログラム用}
 
-\begin{2commonvariables}{\ttNum700\,-\ttNum724：\dimple~レベル1サブプログラム用 (\DLone)}{番号}{内容}
+\begin{2commonvariables}{\ttNum700\,-\ttNum724：\dimple~レベル1サブプログラム用 \DLone}{番号}{内容}
 \rowcolor{unusingVariables}
 \ttNum700 & （予備）\\\hline
 \ttNum701 & プログラム読込み時のワーク座標系(\ttNum4012)\\\hline
@@ -459,9 +455,9 @@ $\cdots$ & （以下予備）
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{hosoku}
-\ttNum717はレベル2サブプログラム(O220001, O220002)でRHSとして使用していることに注意。
-\end{hosoku}
+\begin{marker}
+\ttNum717はレベル2サブプログラム\DLtwoAC および\DLtwoBD でRHSとして使用していることに注意
+\end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -473,7 +469,7 @@ $\cdots$ & （以下予備）
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum725\,-\ttNum749：内面溝レベル2, 3サブプログラム用}
 
-\begin{2commonvariables}{\ttNum725\,-\ttNum744：\dimple~レベル2サブプログラム用 (\DLtwoAC, \DLtwoBD)}{番号}{内容}
+\begin{2commonvariables}{\ttNum725\,-\ttNum744：\dimple~レベル2サブプログラム用 \DLtwoAC\DLtwoBD}{番号}{内容}
 \ttNum725 & プログラム読込時ブロックエンド$Y$ or $X$ (\ttNum5002, \ttNum5001)\\\hline
 \ttNum726 & プログラム読込時ブロックエンド$Z$ (\ttNum5003)\\\hline
 \ttNum727 & \dimple~偶数列の列数\\\hline
@@ -486,7 +482,7 @@ $\cdots$ & （以下予備）
 
 
 %\clearpage
-\begin{2commonvariables}{\ttNum745\,-\ttNum749：\dimple~測定用 (\DMLthreeAC, \DMLthreeBD)}{番号}{内容}
+\begin{2commonvariables}{\ttNum745\,-\ttNum749：\dimple~測定用 \DMLthreeAC\DMLthreeBD}{番号}{内容}
 \rowcolor{unusingVariables}
 \ttNum745 & （以下 予備）\\\hline
 \rowcolor{unusingVariables}
@@ -497,9 +493,9 @@ $\cdots$ & \qquad$\cdots$\\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{hosoku}
-\ttNum749はレベル2サブプログラム(O220001, O220002)でRHSとして使用していることに注意。
-\end{hosoku}
+\begin{marker}
+\ttNum749はレベル2サブプログラム\DLtwoAC および\DLtwoBD でRHSとして使用していることに注意
+\end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -518,7 +514,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum900001\,-\ttNum900049：\dimple 以外}
 
-\begin{2commonvariables}{\ttNum900001\,-\ttNum900005：外中心$X$ 両側測定用 (\MXOThickness)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900001\,-\ttNum900005：外中心$X$ 両側測定用 \MXOThickness}{番号}{内容}
 \ttNum900001 & $X$外中心測定 $-X$側測定値\\\hline
 \ttNum900002 & $X$外中心測定 $+X$側測定値\\\hline
 \ttNum900003 & $X$外中心測定値\\\hline
@@ -528,7 +524,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 \end{2commonvariables}
 
 
-\begin{2commonvariables}{\ttNum900006\,-\ttNum900010：外中心$Y$ 両側測定用 (\MYOThickness)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900006\,-\ttNum900010：外中心$Y$ 両側測定用 \MYOThickness}{番号}{内容}
 \ttNum900006 & $Y$外中心測定 $-Y$側測定値\\\hline
 \ttNum900007 & $Y$外中心測定 $+Y$側測定値\\\hline
 \ttNum900008 & $Y$外中心測定値\\\hline
@@ -539,7 +535,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 
 
 %\clearpage
-\begin{2commonvariables}{\ttNum900011\,-\ttNum900013：溝中心$X$ 片側測定用 (\MXOface)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900011\,-\ttNum900013：溝中心$X$ 片側測定用 \MXOface}{番号}{内容}
 \ttNum900011 & $X$溝中心測定 A側外面測定値\\\hline
 \rowcolor{unusingVariables}
 \ttNum900012 & （予備）\\\hline
@@ -549,7 +545,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 
 
 %\clearpage
-\begin{2commonvariables}{\ttNum900014\,-\ttNum900018：内中心$X$ 両側測定用 (\MXIWidth)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900014\,-\ttNum900018：内中心$X$ 両側測定用 \MXIWidth}{番号}{内容}
 \ttNum900014 & $X$内中心測定 $-X$側測定値\\\hline
 \ttNum900015 & $X$内中心測定 $+X$側測定値\\\hline
 \ttNum900016 & $X$内中心測定値\\\hline
@@ -560,7 +556,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 
 
 \clearpage
-\begin{2commonvariables}{\ttNum900019\,-\ttNum900023：内中心$Y$ 両側測定用 (\MYIWidth)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900019\,-\ttNum900023：内中心$Y$ 両側測定用 \MYIWidth}{番号}{内容}
 \ttNum900019 & $Y$内中心測定 $-Y$側測定値\\\hline
 \ttNum900020 & $Y$内中心測定 $+Y$側測定値\\\hline
 \ttNum900021 & $Y$内中心測定値\\\hline
@@ -571,7 +567,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 
 
 %\clearpage
-\begin{2commonvariables}{\ttNum900024\,-\ttNum900026：外削中心$X$ 片側測定用 (\MXIface)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900024\,-\ttNum900026：外削中心$X$ 片側測定用 \MXIface}{番号}{内容}
 \ttNum900024 & $X$外削中心測定 内面測定値\\\hline
 \rowcolor{unusingVariables}
 \ttNum900025 & （予備）\\\hline
@@ -581,7 +577,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 
 
 %\clearpage
-\begin{2commonvariables}{\ttNum900027\,-\ttNum900030：通り芯$Y$ 片側測定用 (\MYcenterline)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900027\,-\ttNum900030：通り芯$Y$ 片側測定用 \MYcenterline}{番号}{内容}
 \ttNum900027 & $Y$通り芯 ボトム側測定値\\\hline
 \ttNum900028 & $Y$通り芯 トップ側測定値\\\hline
 \ttNum900029 & $Y$通り芯 測定値\\\hline
@@ -590,7 +586,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 \end{2commonvariables}
 
 
-\begin{2commonvariables}{\ttNum900031\,-\ttNum900034：通り芯$X$ 片側測定用 (\MXcenterline)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900031\,-\ttNum900034：通り芯$X$ 片側測定用 \MXcenterline}{番号}{内容}
 \ttNum900031 & $X$通り芯 トップ側測定値\\\hline
 \ttNum900032 & $X$通り芯 ボトム側測定値\\\hline
 \ttNum900033 & $X$通り芯 測定値\\\hline
@@ -610,7 +606,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\ttNum900101\,-\ttNum900300：\dimple AC面}
 
-\begin{2commonvariables}{\ttNum900101\,-\ttNum900300：\dimple AC表面位置 測定値 (\DMLthreeAC)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900101\,-\ttNum900300：\dimple AC表面位置 測定値 \DMLthreeAC}{番号}{内容}
 \ttNum900101\,-\ttNum900200 & A側\dimple~表面位置$X$ 測定値\\\hline
 \ttNum900201\,-\ttNum900300 & C側\dimple~表面位置$X$ 測定値
 \end{2commonvariables}
@@ -620,7 +616,7 @@ $\cdots$ & \qquad$\cdots$\\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\ttNum900301\,-\ttNum900500：\dimple BD面}
 
-\begin{2commonvariables}{\ttNum900301\,-\ttNum900500：\dimple BD表面位置 測定値 (\DMLthreeBD)}{番号}{内容}
+\begin{2commonvariables}{\ttNum900301\,-\ttNum900500：\dimple BD表面位置 測定値 \DMLthreeBD}{番号}{内容}
 \ttNum900301\,-\ttNum900400 & B側\dimple~表面位置$Y$ 測定値\\\hline
 \ttNum900401\,-\ttNum900500 & D側\dimple~表面位置$Y$ 測定値
 \end{2commonvariables}
@@ -736,7 +732,7 @@ $\cdots$ & （以下 \dimple 加工工具用 予備） &\\
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-工具長・工具径・工具の摩耗量といったオフセットの値は、\pageautoref{sec:A.2}を参照。
+工具長・工具径・工具の摩耗量といったオフセットの値は、\pageautoref{sec:IV.A.2}を参照。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

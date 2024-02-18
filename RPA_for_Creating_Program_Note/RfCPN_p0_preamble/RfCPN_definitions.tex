@@ -76,7 +76,7 @@
 \definecolor{wwqqcc} {rgb}{0.4, 0, 0.8}
 \definecolor{qqzzqq} {rgb}{0, 0.6, 0}
 \definecolor{ffwwqq} {rgb}{1, 0.4, 0}
-\colorlet{unusingVariables}{gray!25!}
+\colorlet{unusingVariables}{gray!35!}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% REF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -163,7 +163,7 @@
   \fi
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% NEWCOLORBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% NEWTCOLORBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcounter{GlobalFootnote}% difine a counter Global Footnote
 %%%%% PART %%%%%
@@ -198,6 +198,49 @@
 \definecolor{hosoku}{cmyk}{0, 0, 0, .1}
 \newtcolorbox[auto counter, number within=chapter]{hosoku}[1][]{hosokubox, #1}
 \newcommand{\tcb@cnt@hosokuautorefname}{補足}
+%%%%% MARKER %%%%%
+\newtcolorbox{marker}[1][]{enhanced,
+  before skip balanced=2mm,after skip balanced=3mm,
+  boxrule=0.4pt,left=5mm,right=2mm,top=1mm,bottom=1mm,
+  colback=yellow!50,
+  colframe=yellow!20!black,
+  sharp corners,rounded corners=southeast,arc is angular,arc=3mm,
+  underlay={%
+    \path[fill=tcbcolback!80!black] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[draw=tcbcolframe,shorten <=-0.05mm,shorten >=-0.05mm] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[fill=yellow!50!black,draw=none] (interior.south west) rectangle node[white]{\Huge\bfseries !} ([xshift=4mm]interior.north west);
+    },
+  drop fuzzy shadow,#1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% NEWTCBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtcbox{\myprg}{
+  enhanced,
+  nobeforeafter,
+  tcbox raise base,
+  boxrule=0.4pt,
+  top=0mm,
+  bottom=0mm,
+  right=0mm,
+  left=4mm,
+  arc=1pt,
+  boxsep=3pt,
+  left skip=2pt,
+  right skip=2pt,
+  before upper={\vphantom{dl}},
+  colframe=blue!50!black,
+  coltext=blue!25!black,
+  colback=blue!10!white,
+  fontupper=\ttfamily,
+  overlay={%
+    \begin{tcbclipinterior}\fill[blue!75!green!50!white] (frame.south west)
+    rectangle node[text=white, font=\sffamily\bfseries\tiny, rotate=90] {Prg} ([xshift=4mm]frame.north west);\end{tcbclipinterior}%
+  },
+}
+\robustify{\myprg}
+\pdfstringdefDisableCommands{%
+  \def\myprg#1{`#1'}%
+}
 %%%%% OTHER TIKZ DEFINITION %%%%%%%%%%%%%%%%%%
 \def\pgfname{\textsc{pgf}}
 \def\tikzname{Ti\textit{k}Z}
@@ -290,36 +333,66 @@
 \let\Sectionmark\sectionmark
 \def\sectionmark#1{\def\Sectionname{#1}\Sectionmark{#1}}
 %%%%% TO PRG NAME %%%%%%
-\newcommand\MainEx{O1916} % main program example
-\newcommand\MXOThickness{O110001} % X outer center measurement
-\newcommand\MYOThickness{O110002} % Y outer center measurement
-\newcommand\MXOface{O120001} % keyway X reference surface measurement
-\newcommand\MXIWidth{O130001} % X inner center measurement
-\newcommand\MYIWidth{O130002} % Y inner center measurement
-\newcommand\MXIface{O140001} % outer cut X reference surface measurement
-\newcommand\MYcenterline{O150002} % Y centerline measurement
-\newcommand\MXcenterline{O150003} % X centerline measurement (Z measurement)
-\newcommand\DLone{O210003} % for dimple level 1
-\newcommand\DLtwoAC{O220001} % for dimple level 2 AC
-\newcommand\DLtwoBD{O220002} % for dimple level 2 BD
-\newcommand\DMLthreeAC{O230001} % for dimple level 3 AC measurement
-\newcommand\DMLthreeBD{O230002} % for dimple level 3 BD measurement
-\newcommand\KTanmenRight{O410000} % end face left turn
-\newcommand\KGaisakuRLeft{O420000} % outer cut left turn
-\newcommand\KMizoConerLeft{O430000} % keyway left turn
-\newcommand\KSotoMentoriRLeft{O440000} % 外側面取用 左回り
-\newcommand\KUchiMentoriRLeft{O450000} % 内側面取用 左回り
-\newcommand\KOLeftAR{O490005} % 外 左回り above right
-\newcommand\KILeftAC{O490007} % 内 右回り above center
-\newcommand\DKLthreeAC{O530001} % 内面溝 加工用 レベル3 AC
-\newcommand\DKLthreeBD{O530002} % 内面溝 加工用 レベル3 BD
-\newcommand\OpauseCheck{O900003} % move and pause in front of the door
-\newcommand\OsensorOn{O910001} % touch sensor ON
-\newcommand\OsensorOff{O910002} % touch sensor OFF
-\newcommand\OwarmingupA{O915100} % for warming up
-\newcommand\Owarmingup{O915101} % subprg for warming up
-\newcommand\OtoolLengthA{O917100} % specified tool length correction auto measurement
-\newcommand\OtoolLength{O919100} % tool length correction auto measure
+\newcommand\nameMainEx{O1916} % main program example
+\newcommand\MainEx{\myprg{\nameMainEx}}
+\newcommand\nameMXOThickness{O110001} % X outer center measurement
+\newcommand\MXOThickness{\myprg{\nameMXOThickness}}
+\newcommand\nameMYOThickness{O110002} % Y outer center measurement
+\newcommand\MYOThickness{\myprg{\nameMYOThickness}}
+\newcommand\nameMXOface{O120001} % keyway X reference surface measurement
+\newcommand\MXOface{\myprg{\nameMXOface}}
+\newcommand\nameMXIWidth{O130001} % X inner center measurement
+\newcommand\MXIWidth{\myprg{\nameMXIWidth}}
+\newcommand\nameMYIWidth{O130002} % Y inner center measurement
+\newcommand\MYIWidth{\myprg{\nameMYIWidth}}
+\newcommand\nameMXIface{O140001} % outer cut X reference surface measurement
+\newcommand\MXIface{\myprg{\nameMXIface}}
+\newcommand\nameMYcenterline{O150002} % Y centerline measurement
+\newcommand\MYcenterline{\myprg{\nameMYcenterline}}
+\newcommand\nameMXcenterline{O150003} % X centerline measurement (Z measurement)
+\newcommand\MXcenterline{\myprg{\nameMXcenterline}}
+\newcommand\nameDLone{O210003} % for dimple level 1
+\newcommand\DLone{\myprg{\nameDLone}}
+\newcommand\nameDLtwoAC{O220001} % for dimple level 2 AC
+\newcommand\DLtwoAC{\myprg{\nameDLtwoAC}}
+\newcommand\nameDLtwoBD{O220002} % for dimple level 2 BD
+\newcommand\DLtwoBD{\myprg{\nameDLtwoBD}}
+\newcommand\nameDMLthreeAC{O230001} % for dimple level 3 AC measurement
+\newcommand\DMLthreeAC{\myprg{\nameDMLthreeAC}}
+\newcommand\nameDMLthreeBD{O230002} % for dimple level 3 BD measurement
+\newcommand\DMLthreeBD{\myprg{\nameDMLthreeBD}}
+\newcommand\nameKTanmenRight{O410000} % end face left turn
+\newcommand\KTanmenRight{\myprg{\nameKTanmenRight}}
+\newcommand\nameKGaisakuRLeft{O420000} % outer cut left turn
+\newcommand\KGaisakuRLeft{\myprg{\nameKGaisakuRLeft}}
+\newcommand\nameKMizoConerLeft{O430000} % keyway left turn
+\newcommand\KMizoConerLeft{\myprg{\nameKMizoConerLeft}}
+\newcommand\nameKSotoMentoriRLeft{O440000} % 外側面取用 左回り
+\newcommand\KSotoMentoriRLeft{\myprg{\nameKSotoMentoriRLeft}}
+\newcommand\nameKUchiMentoriRLeft{O450000} % 内側面取用 左回り
+\newcommand\KUchiMentoriRLeft{\myprg{\nameKUchiMentoriRLeft}}
+\newcommand\nameKOLeftAR{O490005} % 外 左回り above right
+\newcommand\KOLeftAR{\myprg{\nameKOLeftAR}}
+\newcommand\nameKILeftAC{O490007} % 内 右回り above center
+\newcommand\KILeftAC{\myprg{\nameKILeftAC}}
+\newcommand\nameDKLthreeAC{O530001} % 内面溝 加工用 レベル3 AC
+\newcommand\DKLthreeAC{\myprg{\nameDKLthreeAC}}
+\newcommand\nameDKLthreeBD{O530002} % 内面溝 加工用 レベル3 BD
+\newcommand\DKLthreeBD{\myprg{\nameDKLthreeBD}}
+\newcommand\nameOpauseCheck{O900003} % move and pause in front of the door
+\newcommand\OpauseCheck{\myprg{\nameOpauseCheck}}
+\newcommand\nameOsensorOn{O910001} % touch sensor ON
+\newcommand\OsensorOn{\myprg{\nameOsensorOn}}
+\newcommand\nameOsensorOff{O910002} % touch sensor OFF
+\newcommand\OsensorOff{\myprg{\nameOsensorOff}}
+\newcommand\nameOwarmingupA{O915100} % for warming up
+\newcommand\OwarmingupA{\myprg{\nameOwarmingupA}}
+\newcommand\nameOwarmingup{O915101} % subprg for warming up
+\newcommand\Owarmingup{\myprg{\nameOwarmingup}}
+\newcommand\nameOtoolLengthA{O917100} % specified tool length correction auto measurement
+\newcommand\OtoolLengthA{\myprg{\nameOtoolLengthA}}
+\newcommand\nameOtoolLength{O919100} % tool length correction auto measure
+\newcommand\OtoolLength{\myprg{\nameOtoolLength}}
 %%%%% FIR INDEX %%%%%%%%%%%%%%%%%%
 \newcommand{\expandafterindex}{\expandafter\index\expandafter}
 %%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
@@ -332,6 +405,7 @@
 \newcommand\cf{{\itshape cf.\,}}
 \newcommand{\TBW}{\texorpdfstring{\small{\color{red}\,*}}{}}
 %%%%% FOR PART WITH TABLE %%%%%%%%%%%%%%%%%%
+%\newcommand*{\globaladdcontentsline}[3]{\addtocontents{#1}{\protect\contentsline{#2}{#3}{\thepage}}}
 \newcommand{\tPart}[4][]{
   \begingroup
   \clearrightpage
@@ -340,7 +414,9 @@
   \let\newpage\relax
   \part{#2\label{part:\thepart}}
   \addcontentsline{lop}{part}{\protect\numberline{\thepart}#2}%
-  \ifx#1\relax\else\addcontentsline{#1}{part}{\protect\numberline{\thepart}#2}\fi
+  \ifx#1\relax\else%
+    \foreach \x in {#1}{\addcontentsline{\x}{part}{\protect\numberline{\thepart}#2}}%
+  \fi
   \let\newpage\oldnewpage
   \clearpage
 %  \@openrightfalse
@@ -363,8 +439,8 @@
     \modcaptionof{table}{#1} % 追加したキャプション
     \addtocounter{table}{-1}
   \fi
-  \setlength{\LTpre}{0pt}%
-  \setlength{\LTpost}{3pt}%
+  \setlength{\LTpre}{3pt}%
+  \setlength{\LTpost}{5pt}%
   \setlength{\LTleft}{0pt}%
   \setlength{\LTright}{\fill}%
   \begin{longtable}{#2}
@@ -398,7 +474,7 @@
     \addtocounter{table}{-1}
   \fi
   \setlength{\LTpre}{1pt}%
-  \setlength{\LTpost}{3pt}%
+  \setlength{\LTpost}{5pt}%
   \setlength{\LTleft}{0pt}%
   \setlength{\LTright}{\fill}%
   \begin{longtable}{#2}
