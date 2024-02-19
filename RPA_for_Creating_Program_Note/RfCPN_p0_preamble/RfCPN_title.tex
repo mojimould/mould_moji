@@ -1,6 +1,6 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
-\titlehead{\hfill\small\customdate}
+\titlehead{\hfill\small　発行日時 (Publication date): \customdate}
 
 \subject{\Large--- プログラム作成業務の自動化 ---}
 
@@ -8,11 +8,21 @@
 
 \subtitle{\ \\(\thisdocumentversion)}
 
+
 \date{}
 
-\publishers{}
-
 \author{\ \\\small Author: Kurahashi Nobuaki}
+
+\publishers{%
+\begin{marker}
+\scriptsize\normalfont
+本書は一時的に複製されたものです。
+発行日から6ヶ月以上経過したもの、または新たなバージョンのものが存在する場合は、本書は速やかに破棄してください。
+\tcbline*
+This document is a temporary copy.
+If more than 6 months have passed since the publication date, or if a new version exists, please dispose of this document promptly.
+\end{marker}%
+}
 
 \uppertitleback{\small
 This document was created using \TeX{} (\linkLaTeX\kern.15em2$_{\textstyle\varepsilon}$), specifically utilizing tools such as \linkTeXLive{} 2023, up\LaTeX, \linkBibLaTeX\ (\linkBiber), \linkupmendex, \linkPGFTikZ, and many useful packages.\\
@@ -51,5 +61,5 @@ even while navigating solo and finding my way in the quiet corners.
 Copyright © 2023, 2024.\\
 This document and the system are owned by the individual writer, not any corporation. All rights reserved.
 \end{spacing}
-\thispagestyle{emptydate}
+\thispagestyle{emptydate}%
 }}
