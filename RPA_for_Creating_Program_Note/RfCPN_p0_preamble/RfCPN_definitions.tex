@@ -430,50 +430,33 @@
   \endgroup
 }
 %%%%% COMMON TABLE %%%%%%%%%%%%%%%%%%
+%\NewTblrEnviron{commonTable}[3]
+%{%
+%  \begin{longtblr}[
+%    note{a} = {次ページへ続く},
+%    row{1} = {orange!20},
+%    row{Z} = {gray!15,white},
+%    rowhead = 1,
+%    abovesep = 3pt, % corresponds to \LTpre
+%    belowsep = 5pt, % corresponds to \LTpost
+%    lmargin = 0pt, % corresponds to \LTleft
+%    rmargin = \fill, % corresponds to \LTright
+%  ]{#1}
+%  #2\\
+%}
+%{%
+%  \end{longtblr}
+%}
 \newenvironment{commonTable}[4]
 {%
   \rowcolors{3}{gray!15!}{white}
   \if\relax\detokenize{#1}\relax
   \else
-%    \setlength{\abovecaptionskip}{-3pt}
+    \setlength{\abovecaptionskip}{-3pt}
     \modcaptionof{table}{#1} % 追加したキャプション
     \addtocounter{table}{-1}
   \fi
   \setlength{\LTpre}{3pt}%
-  \setlength{\LTpost}{5pt}%
-  \setlength{\LTleft}{0pt}%
-  \setlength{\LTright}{\fill}%
-  \begin{longtable}{#2}
-  \hline
-  \rowcolor{orange!20}
-  #3\\
-  \hline
-  \endfirsthead
-  \hline
-  \rowcolor{orange!20}
-  #3\\
-  \hline
-  \endhead
-  \hline
-  \multicolumn{#4}{|r|}{\scriptsize 次ページへ続く} \\
-  \hline
-  \endfoot
-  \hline
-  \endlastfoot
-}
-{%
-  \end{longtable}
-}
-%%%%% COMMON VARIABLES TABLE %%%%%%%%%%%%%%%%%%
-\newenvironment{commonvariables}[4]
-{%
-  \if\relax\detokenize{#1}\relax
-  \else
-%    \setlength{\abovecaptionskip}{-2pt}
-    \modcaptionof{table}{#1} % 追加したキャプション
-    \addtocounter{table}{-1}
-  \fi
-  \setlength{\LTpre}{1pt}%
   \setlength{\LTpost}{5pt}%
   \setlength{\LTleft}{0pt}%
   \setlength{\LTright}{\fill}%

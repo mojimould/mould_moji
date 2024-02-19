@@ -33,13 +33,18 @@ A, B, Cにはそれぞれ\ttNum1, \ttNum2, \ttNum3が割り当てられ、I, J, 
 %% section F.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{引数アドレスとローカル変数}
-\DMname では基本的に引数指定Iを用いるものとする。
-引数指定Iのほうが直感的でわかりやすく、また変数の数も21個あれば十分賄えるからである。\\
+原則として、引数の数が22個以上必要でない限り、\DMname では引数指定Iを用いるものとする。\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{2columnstable}{引数指定I\TBW}{記号}{ローカル変数\hspace*{0.2\textwidth}~}{Sc}
+%\begin{tcolorbox}[enhanced jigsaw,breakable,size=title,
+%colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,
+%title=My breakable box,pad at break=1mm, break at=-\baselineskip/0pt ]
+%a
+%\end{tcolorbox}
+%\begin{multicols}{2}
+\begin{2columnstable}{引数指定I\TBW}{|Sc|Sl|}{記号}{ローカル変数\hspace*{0.2\textwidth}~}
 A & \verb|#01|\\\hline
 B & \verb|#02|\\\hline
 C & \verb|#03|\\\hline
@@ -62,13 +67,14 @@ X & \verb|#24|\\\hline
 Y & \verb|#25|\\\hline
 Z & \verb|#26|
 \end{2columnstable}
+%\end{multicols}
 
 
 %\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{2columnstable}{通常は使用できない引数\TBW}{記号}{ローカル変数\hspace*{0.2\textwidth}~}{Sc}
+\begin{2columnstable}{通常は使用できない引数\TBW}{|Sc|Sl|}{記号}{ローカル変数\hspace*{0.2\textwidth}~}
 G & \verb|#10|\\\hline
 L & \verb|#12|\\\hline
 N & \verb|#14|\\\hline

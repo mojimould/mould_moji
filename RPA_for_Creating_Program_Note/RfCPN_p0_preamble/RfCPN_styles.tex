@@ -671,37 +671,37 @@
 \newenvironment{2columnstable}[4]{%
   \setlength\cellspacetoplimit{4.5pt}%
   \setlength\cellspacebottomlimit{4.5pt}%
-  \commonTable{#1}{|#4|Sl|}{\textbf{#2} & \textbf{#3}}{2}%
+  \commonTable{#1}{#2}{\textbf{#3} & \textbf{#4}}{2}%
 }
 {\endcommonTable}
+%\NewTblrEnviron{2columnstable}[4]
+%{%
+%  \if\relax\detokenize{#1}\relax
+%  \else
+%    \setlength{\abovecaptionskip}{-3pt}
+%    \modcaptionof{table}{#1} % 追加したキャプション
+%    \addtocounter{table}{-1}
+%  \fi
+%  \begin{commonTable}{#2}{\textbf{#3} & \textbf{#4}}{2}
+%    \SetCell[r=2]{c} % corresponds to \cellspacetoplimit and \cellspacebottomlimit
+%}
+%{%
+%  \end{commonTable}
+%}
 %%%%% 3columnstable %%%%%
-\newenvironment{3columnstable}[7]{%
+\newenvironment{3columnstable}[5]{%
   \setlength\cellspacetoplimit{4.5pt}%
   \setlength\cellspacebottomlimit{4.5pt}%
-  \commonTable{#1}{|#5|#6|#7|}{\textbf{#2} & \textbf{#3} & \textbf{#4}}{3}%
+  \commonTable{#1}{#2}{\textbf{#3} & \textbf{#4} & \textbf{#5}}{3}%
 }
 {\endcommonTable}
 %%%%% 4columnstable %%%%%
-\newenvironment{4columnstable}[9]{%
+\newenvironment{4columnstable}[6]{%
   \setlength\cellspacetoplimit{4.5pt}%
   \setlength\cellspacebottomlimit{4.5pt}%
-  \commonTable{#1}{|#6|#7|#8|#9|}{\textbf{#2} & \textbf{#3} & \textbf{#4} & \textbf{#5}}{4}%
+  \commonTable{#1}{#2}{\textbf{#3} & \textbf{#4} & \textbf{#5} & \textbf{#6}}{4}%
 }
 {\endcommonTable}
-%%%%% 2commonvariables %%%%%
-\newenvironment{2commonvariables}[3]{%
-  \setlength\cellspacetoplimit{4.5pt}%
-  \setlength\cellspacebottomlimit{4.5pt}%
-  \commonvariables{#1}{|Sc|Sl|}{\textbf{#2} & \textbf{#3}}{2}%
-}
-{\endcommonvariables}
-%%%%% 3commonvariables %%%%%
-\newenvironment{3commonvariables}[4]{%
-  \setlength\cellspacetoplimit{4.5pt}%
-  \setlength\cellspacebottomlimit{4.5pt}%
-  \commonvariables{#1}{|Sc|Sl|Sc|}{\textbf{#2} & \textbf{#3} & \textbf{#4}}{3}%
-}
-{\endcommonvariables}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF TIKZSET %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
