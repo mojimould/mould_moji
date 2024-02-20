@@ -66,7 +66,7 @@ G90 G53 G00 B0
 M10 (B-axis clamp)
 M29 (chip conveyor off)
 
-N999 M02
+N999 M30
 
 
 T01
@@ -89,6 +89,10 @@ M30
 %
 
 (Used Variables and Programs)
+
+(Common variables)
+(as RHS)
+(#675, #676)
 
 
 (Subprograms)

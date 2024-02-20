@@ -2,62 +2,69 @@
 O919100 (tool length measurement)
 
 N001
-#01=#4001
-#02=#4003
-
-#24=#516 (X)
-#25=#517 (Y)
 #26=-820. (Z)
-#21=#24-#5021+#04
-#22=#25-#5022+#05
-
-G91 G28 Z0 M19
-G00 X#21 Y#22
-
-IF[#4012EQ54.1]GOTO20
-#03=5223+[#4012-54]*20
-GOTO021
-
-N020
-#03=7003+[#4130-1]*20
-
-N021
-#04=ABS[#26+#504]
-
-M32
-G04 X2.
-G53
-GOTO022
-M00
-
-N022
-#05=#5043
-
-G91 G31 P2 Z-#04 F#513
-
-IF[#5063LE[#05-#04]]GOTO800
-
-G00 Z#504
-
-#05=#5043-#504-#507
-
-G91 G31 P2 Z[-#504-#507-#507] F#514
-
-IF[#5063LE#05]GOTO800
-#[11000+#11]=0
-#[10000+#11]=#5063+#[#03]+#5203+#505
-G91 G28 Z0
-M33
-GOTO002
-
-N800
-G91 G28 Z0
-M33
-#3000=141 (tool measurement alarm)
+#21=#516-#5021+#04
+#22=#517-#5022+#05
 
 N002
-G#01 G#02
-M99
+G90 G53 G01 Z0 F#675
+M19 (spindle orientation)
+IF[#4120EQ50]GOTO003
+G90 G53 G00 X#21 Y#22
+GOTO004
+N003
+G90 G53 G01 X#21 Y#22 F#676
+
+N004
+IF[#4012EQ54.1]THEN #03=7003+[#4130-1]*20
+IF[#4012NE54.1]THEN #03=5223+[#4012-54]*20
+
+N005
+#06=ABS[#26+#504]
+#07=#5043
+
+N006
+M32 (open sensor and ON)
+G04 X1.5 (wait 1.5s)
+
+N007
+G91 G53 G31 P2 Z-#06 F#513
+(skip Z to sensor)
+IF[#5063LE[#07-#06]]GOTO800
+
+N008
+G91 G53 G01 Z#504
+(Z retract)
+
+N009
+#08=#5043-#504-#507
+IF[#5063LE#08]GOTO800
+
+N010
+G91 G31 P2 Z[-#504-#507-#507] F#679
+(skip Z to sensor)
+
+#[10000+#11]=#5063+#[#03]+#5203+#505
+#[11000+#11]=0
+(set tool length and wear)
+
+N990
+G90 G53 G01 Z0 F#675
+M33 (close sensor)
+IF[#4120EQ50]GOTO992
+G91 G30 X0 Y0
+GOTO999
+N992
+G90 G53 G01 X-5.501 Y-258.624 F#676
+GOTO999
+
+
+N800
+G90 G53 G01 Z0 F#675
+M33 (close sensor)
+#3000=141 (tool measurement alarm)
+
+N999 M99
 
 (Used Variables and Programs)
 
@@ -70,7 +77,7 @@ M99
 (#11:H: the tool #)
 
 (as LHS)
-(#01, #02, #03, #04, #05, #21, #22, #24, #25, #26)
+(#03, #04, #05, #06, #07, #08, #21, #22, #26)
 
 
 (Common variables)
@@ -79,15 +86,14 @@ M99
 (#505: distance from the probe surface to Z0)
 (#507: tolerance for tool breakage detection)
 (#513: speed)
-(#514: measurement skip speed)
 (#516: sensor position X)
 (#517: sensor position Y)
+(#675, #676)
+(#679: measurement skip speed)
 
 
 (System variables)
 (#3000: alarm)
-(#4001: )
-(#4003: )
 (#4012: current work coordinate G#)
 (#4130: )
 (#5021: current machine coordinate X)

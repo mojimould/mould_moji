@@ -250,36 +250,45 @@ $\cdots$ & （以下予備） &
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{3columnstable}[white]{\ttNum500\,-\ttNum524：\myprg{O910x}\myprg{O93xx}用}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.71\textwidth}}{設定値}
-\ttNum500 & 芯ずれ許容差 \myprg{O93xx} & 5.000\\\hline
+\ttNum500 & 芯ずれ許容差 \myprg{O93xx} & 5\\\hline
 \ttNum501 & タッチセンサー信号遅れ補正 \myprg{O93xx} & 0.040\\\hline
 \ttNum502 & タッチセンサープローブ中心$X$補正 \myprg{O93xx} & -0.016507\\\hline
 \ttNum503 & タッチセンサープローブ中心$Y$補正 \myprg{O93xx} & -0.068371\\\hline
-\ttNum504 & 測定距離 \myprg{O910x} & 5.000\\\hline
+\ttNum504 & 測定距離 \myprg{O910x} & 5\\\hline
 \ttNum505 & プローブ表面からプログラムの加工原点($Z$0)までの距離 \myprg{O910x} & 785.529\\\hline
-\ttNum506 & 工具長の変化の許容差 \myprg{O910x} & 1.000\\\hline
-\ttNum507 & 工具破損検出の許容差 \myprg{O910x} & 1.000\\\hline
+\ttNum506 & 工具長の変化の許容差 \myprg{O910x} & 1.0\\\hline
+\ttNum507 & 工具破損検出の許容差 \myprg{O910x} & 1.0\\\hline
 \ttNum508 & （不明） & \ttNum0\\\hline
 \ttNum509 & Z座標系設定 \myprg{O93xx} & 441.432\\\hline
-\ttNum510 & （不明） & 270.000\\\hline
+\ttNum510 & （不明） & 270\\\hline
 \ttNum511 & インチ／ミリ切替 \myprg{O910x} & \ttNum0\\\hline
-\ttNum512 & タッチセンサープローブ半径$\mathrm{mm}$値 \myprg{O93xx} & 5.000\\\hline
-\ttNum513 & 移動時用の送り速さ値 \myprg{O910x} & 1000.000\\\hline
-\ttNum514 & スキップ(\verb|G31|)測定時用 送り速さ値 \myprg{O910x}\myprg{O93xx} & 50.000\\\hline
+\ttNum512 & タッチセンサープローブ半径$\mathrm{mm}$値 \myprg{O93xx} & 5.0\\\hline
+\ttNum513 & 移動時用の送り速さ値 \myprg{O910x} & 1000\\\hline
+\ttNum514 & スキップ(\verb|G31|)測定時用 送り速さ値 \myprg{O910x}\myprg{O93xx} & 50\\\hline
 \ttNum515 & （不明） & \ttNum0\\\hline
 \ttNum516 & センサーの位置$X$座標 \myprg{O910x} & -30.374\\\hline
 \ttNum517 & センサーの位置$Y$座標 \myprg{O910x} & -913.761\\\hline
 \ttNum518 & センサーの位置$Z$座標 \myprg{O910x} & -785.529\\\hline
-\ttNum519 & （不明） & 6.000\\\hline
-\ttNum520 & 拡張ワーク座標系 \myprg{O910x} & 1861.000\\\hline
-\ttNum521 & （不明） & 0.000\\\hline
-\ttNum522 & （不明） & 0.000\\\hline
-\ttNum523 & アプローチ時用の送り速さ値 \myprg{O910x} & 30.000\\\hline
-\ttNum524 & 測定時用の送り速さ値 \myprg{O910x} & 3.000\\\hline
+\ttNum519 & （不明） & 6\\\hline
+\ttNum520 & 拡張ワーク座標系 \myprg{O910x} & 1861\\\hline
+\ttNum521 & （不明） & 0\\\hline
+\ttNum522 & （不明） & 0\\\hline
+\ttNum523 & アプローチ時用の送り速さ値 \myprg{O910x} & 30\\\hline
+\ttNum524 & 測定時用の送り速さ値 \myprg{O910x} & 3\\\hline
 $\cdots$ & （以下不明） & \ttNum0\\\hline
-\ttNum533 & （不明） & 0.000\\\hline
-\ttNum534 & （不明） & 0.000\\\hline
+\ttNum533 & （不明） & 0\\\hline
+\ttNum534 & （不明） & 0\\\hline
 $\cdots$ & （以下不明） & \ttNum0
 \end{3columnstable}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+\ttNum501, \ttNum502, \ttNum503, \ttNum504, \ttNum505, \ttNum507, \ttNum512, \ttNum513, \ttNum516, \ttNum517は作成したプログラムでもRHSとして使用していることに注意。
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -380,16 +389,18 @@ $\cdots$ & （以下予備） &
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 11.5.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum675\,-\ttNum699：工具の送り速さ}
+\subsection{\ttNum675\,-\ttNum699：工具の送り速さ\TBW}
 \ttNum675\,-\ttNum699については、工具の送り速さに関するものとする。\\
 
-\begin{3columnstable}[white]{\ttNum675\,-\ttNum699：工具の送り速さ}{|Sc|Sl|Sc|}{番号}{内容}{設定値}
+\begin{3columnstable}[white]{\ttNum675\,-\ttNum699：工具の送り速さ\TBW}{|Sc|Sl|Sc|}{番号}{内容}{設定値}
 \ttNum675 & $Z$最大送り速さ値（タッチセンサープローブ除く） & 12000\\\hline
 \ttNum676 & 最大送り速さ値（タッチセンサープローブ） & 5400\\\hline
 \ttNum677 & アプローチ・リトラクト送り速さ値（タッチセンサープローブ除く） & 6000\\\hline
-\ttNum678 & アプローチ・リトラクト送り速さ値（タッチセンサープローブ） & 1500\\\hline
-\ttNum679 & アプローチ送り速さ値（片側測定時） & 50\\\hline
-\ttNum680 & アプローチ送り速さ値（両側測定時） & 200\\\hline
+\ttNum678 & アプローチ送り速さ値（タッチセンサープローブ） & 1500\\\hline
+\ttNum679 & 測定時アプローチ送り速さ値（片側測定） & 50\\\hline
+\ttNum680 & 測定時アプローチ送り速さ値（両側測定） & 200\\\hline
+\rowcolor{unusingVariables}
+\ttNum\TBW & 工具長測定用 送り速さ値 & 1000\\\hline
 \rowcolor{unusingVariables}
 \ttNum681 & （予備） &\\\hline
 \ttNum682 & 端面加工 直線 & 900\\\hline

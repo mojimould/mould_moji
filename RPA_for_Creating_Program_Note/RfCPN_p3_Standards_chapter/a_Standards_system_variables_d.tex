@@ -41,10 +41,10 @@
 \modHeadsection{\ttNum2000\,-\ttNum2999\TBW}
 
 \begin{3columnstable}[white]{\ttNum2001-\ttNum2800: 工具補正}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum2000+xxx & 工具長補正 \ttNum xxx補正量（摩耗0とした値, xxx=1-200） & ●\\\hline
-\ttNum2200+xxx & 工具長補正 \ttNum xxx摩耗 (xxx=1-200) & ●\\\hline
-\ttNum2400+xxx & 工具径補正 \ttNum xxx補正量（摩耗0とした値, xxx=1-200） & ●\\\hline
-\ttNum2600+xxx & 工具径補正 \ttNum xxx摩耗 (xxx=1-200) & ●
+\ttNum2000+xxx & 工具長補正 \ttNum xxx補正量 [xxx=1-200]（摩耗0とした値） & ●\\\hline
+\ttNum2200+xxx & 工具長補正 \ttNum xxx摩耗 [xxx=1-200] & ●\\\hline
+\ttNum2400+xxx & 工具径補正 \ttNum xxx補正量 [xxx=1-200]（摩耗0とした値） & ●\\\hline
+\ttNum2600+xxx & 工具径補正 \ttNum xxx摩耗 [xxx=1-200] & ●
 \end{3columnstable}
 
 
@@ -77,25 +77,25 @@
 \modHeadsection{\ttNum4000\,-\ttNum4999\TBW}
 
 \begin{3columnstable}[white]{\ttNum4001-\ttNum4020: 直前までのブロックで指令されたG指令モーダル情報}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum4001 & グループ01： & ◯\\\hline
-\ttNum4002 & グループ02： & \\\hline
-\ttNum4003 & グループ03： & ◯\\\hline
-\ttNum4004 & グループ04： & \\\hline
-\ttNum4005 & グループ05： & \\\hline
-\ttNum4006 & グループ06： & \\\hline
-\ttNum4007 & グループ07： & \\\hline
-\ttNum4008 & グループ08： & \\\hline
-\ttNum4009 & グループ09： & \\\hline
-\ttNum4010 & グループ10： & \\\hline
-\ttNum4011 & グループ11： & \\\hline
-\ttNum4012 & グループ12：ワーク座標系\ttNum & ● \\\hline
-\ttNum4013 & グループ13： & \\\hline
-\ttNum4014 & グループ14： & \\\hline
-\ttNum4015 & グループ15： & \\\hline
-\ttNum4016 & グループ16： & \\\hline
-\ttNum4017 & グループ17： & \\\hline
-\ttNum4018 & グループ18： & \\\hline
-\ttNum4019 & グループ19： & \\\hline
+\ttNum4001 & グループ01：\verb|G00|, \verb|G01|, \verb|G02|, \verb|G03| & ◯\\\hline
+\ttNum4002 & グループ02：選択平面\verb|G17|, \verb|G18|, \verb|G19| & \\\hline
+\ttNum4003 & グループ03：\verb|G90|, \verb|G91| & ◯\\\hline
+\ttNum4004 & グループ04：\verb|G22|, \verb|G23| & \\\hline
+\ttNum4005 & グループ05：\verb|G94| & \\\hline
+\ttNum4006 & グループ06：\verb|G21| & \\\hline
+\ttNum4007 & グループ07：工具径補正\verb|G40|, \verb|G41|, \verb|G43| & \\\hline
+\ttNum4008 & グループ08：工具長補正\verb|G43|, \verb|G44|, \verb|G49| & \\\hline
+\ttNum4009 & グループ09：固定サイクル\verb|G80| & \\\hline
+\ttNum4010 & グループ10：\verb|G98| & \\\hline
+\ttNum4011 & グループ11：スケーリング\verb|G50| & \\\hline
+\ttNum4012 & グループ12：ワーク座標系\verb|G54|-\verb|G59|, \verb|G54.1|  & ● \\\hline
+\ttNum4013 & グループ13：高精度制御\verb|G61.1| & \\\hline
+\ttNum4014 & グループ14：\verb|G67| & \\\hline
+\ttNum4015 & グループ15：法線制御\verb|G40.1| & \\\hline
+\ttNum4016 & グループ16：\verb|G69| & \\\hline
+\ttNum4017 & グループ17：周速一定制御\verb|G97| & \\\hline
+\ttNum4018 & グループ18：極座標指令\verb|G15| & \\\hline
+\ttNum4019 & グループ19：G指令ミラーイメージ\verb|G50.1| & \\\hline
 \rowcolor{unusingVariables}
 \ttNum4020 & null & \\
 \end{3columnstable}
@@ -103,7 +103,8 @@
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-グループについては、\pageautoref{chap:VII.H}を参照。
+グループについては\pageautoref{chap:VII.H}を参照。
+ここでは主な\verb|G#|を挙げている。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -174,21 +175,21 @@ $\cdots$ & $\cdots$ & \\
 \rowcolor{unusingVariables}
 \ttNum5000 & null &\\\hline
 \ttNum500x\footnote{\ttNum500x:工具補正値が加味された値（ワーク座標系に表示される数値）。途中でスキップがオンになったときはそのときの値。}
-       & ブロック終点位置（現在のワーク座標系）x=1-9 & ●\\\hline
+       & ブロック終点位置（現在のワーク座標系）[x=1-9] & ●\\\hline
 \rowcolor{unusingVariables}
 \ttNum5010 & null &\\\hline
 \rowcolor{unusingVariables}
 \ttNum5011 & null &\\\hline
-\ttNum502x & 現在の機械座標系の座標 x=1-9 & ●\\\hline
-\ttNum504x & 現在のワーク座標系の座標 x=1-9 & ●\\\hline
-\ttNum506x & スキップ座標 x=1-9（工具補正0とした値） & ●\\\hline
+\ttNum502x & 現在の機械座標系の座標 [x=1-9] & ●\\\hline
+\ttNum504x & 現在のワーク座標系の座標 [x=1-9] & ●\\\hline
+\ttNum506x & スキップ座標 [x=1-9]（工具補正0とした値） & ●\\\hline
 \ttNum5203 & & ◯\\\hline
-\ttNum522x & ワーク座標系G54原点の機械座標 x=1-9 & ●\\\hline
-\ttNum524x & ワーク座標系G55原点の機械座標 x=1-9 & ●\\\hline
-\ttNum526x & ワーク座標系G56原点の機械座標 x=1-9 & ●\\\hline
-\ttNum528x & ワーク座標系G57原点の機械座標 x=1-9 & ●\\\hline
-\ttNum530x & ワーク座標系G58原点の機械座標 x=1-9 &\\\hline
-\ttNum532x & ワーク座標系G59原点の機械座標 x=1-9 &
+\ttNum522x & ワーク座標系G54原点の機械座標 [x=1-9] & ●\\\hline
+\ttNum524x & ワーク座標系G55原点の機械座標 [x=1-9] & ●\\\hline
+\ttNum526x & ワーク座標系G56原点の機械座標 [x=1-9] & ●\\\hline
+\ttNum528x & ワーク座標系G57原点の機械座標 [x=1-9] & ●\\\hline
+\ttNum530x & ワーク座標系G58原点の機械座標 [x=1-9] &\\\hline
+\ttNum532x & ワーク座標系G59原点の機械座標 [x=1-9] &
 \end{3columnstable}
 
 
@@ -202,7 +203,7 @@ $\cdots$ & $\cdots$ & \\
 \begin{3columnstable}[white]{\ttNum7000-\ttNum7009}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
 \rowcolor{unusingVariables}
 \ttNum7000 & null &\\\hline
-\ttNum700x & パレット中心の機械座標 x=1-9 & ◯\\
+\ttNum700x & パレット中心の機械座標 [x=1-9] & ◯\\
 \end{3columnstable}
 
 
@@ -222,10 +223,10 @@ $\cdots$ & $\cdots$ & \\
 \modHeadsection{\ttNum10000\,-\ttNum11999：工具長補正\TBW}
 
 \begin{3columnstable}[white]{\ttNum10000-\ttNum11999}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum10000+xxx & 工具長補正 \ttNum xxx補正量（摩耗0とした値, xxx=1-200） & ◯\\\hline
+\ttNum10000+xxx & 工具長補正 \ttNum xxx補正量 [xxx=1-200]（摩耗0とした値) & ◯\\\hline
 \rowcolor{unusingVariables}
 \ttNum10201 & null &\\\hline
-\ttNum11000+xxx & 工具長 \ttNum xxx摩耗量 (xxx=1-200) & ◯
+\ttNum11000+xxx & 工具長 \ttNum xxx摩耗量 [xxx=1-200] & ◯
 \end{3columnstable}
 
 
@@ -237,8 +238,8 @@ $\cdots$ & $\cdots$ & \\
 \modHeadsection{\ttNum16000\,-\ttNum17999：工具径補正\TBW}
 
 \begin{3columnstable}[white]{\ttNum16001-\ttNum17999}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum16000+xxx & 工具径補正 \ttNum xxx補正量（摩耗0とした値, xxx=1-200） & ◯\\\hline
-\ttNum17000+xxx & 工具径 \ttNum xxx摩耗量 (xxx=1-200) & ◯\\
+\ttNum16000+xxx & 工具径補正 \ttNum xxx補正量 [xxx=1-200]（摩耗0とした値） & ◯\\\hline
+\ttNum17000+xxx & 工具径 \ttNum xxx摩耗量 [xxx=1-200] & ◯\\
 \end{3columnstable}
 
 
