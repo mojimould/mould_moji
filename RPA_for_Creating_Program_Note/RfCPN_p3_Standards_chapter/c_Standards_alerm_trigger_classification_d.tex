@@ -8,19 +8,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 17.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{アラームの分類：\DMname\TBW}
-\DMname で使用される\index{アラームへんすう@アラーム変数}アラーム変数\hx\ttNum3000の値は、以下のように分類する。\\
+\modHeadsection{アラームの分類：\DMname}
+\DMname で使用される\index{アラームへんすう@アラーム変数}アラーム変数\hx\ttNum3000の値は、以下のように分類される。\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Alerm Classification %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{3columnstable}{\DMname のアラーム番号の分類\TBW}{|Sc|Sl|Sl|}{番号}{メッセージ}{異常の内容}
-001 & pallet alarm & パレット\\\hline
-002 & touch sensor alarm & センサー(\verb|T50|)\\\hline
-100 & work coordinate is not assigned & ワーク座標\\\hline
-200 & argument is not assigned & 引数\\
+\begin{3columnstable}{\DMname のアラーム番号の分類}{|Sc|Sl|Sl|}{番号}{メッセージ}{異常の内容}
+001 & pallet alarm & パレット\ttNum\\\hline
+002 & touch sensor alarm & \verb|T50|タッチセンサープローブ\\\hline
+003 & tool measurement alarm & 工具長補正計測\\\hline
+100 & work coordinate is not assigned & ワーク座標系指定なし\\\hline
+200 & argument is not assigned & 引数指定なし\\\hline
+201 & are the arguments OK? & 引数の値\\\hline
+202 & are the arguments OK? & 引数の値の関係\\\hline
+203 & are the common variables OK? & コモン変数の値\\\hline
+204 & is the measurement value OK? & 測定値の値\\\hline
 \end{3columnstable}
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Alerm Classification %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -38,5 +44,5 @@
 142 & Tool-Brake\\\hline
 143 & Check-X,Y-Axis-Command-Value, Work-Coordinate-Setting-Error\\\hline
 145 & MP10/MP12/MP60-Low-Battery\\\hline
-146 & MP10/MP12/MP60-Alarm
+146 & MP10/MP12/MP60-Alarm\\
 \end{2columnstable}
