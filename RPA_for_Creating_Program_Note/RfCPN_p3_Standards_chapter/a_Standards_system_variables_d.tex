@@ -3,7 +3,7 @@
 
 ここでは\DMname の主な\index{システムへんすう@システム変数}システム変数を記載する。
 なお、使用の欄は、●は作成したプログラムで使用しているもの、◯はバンドルのプログラムのみで使用されているものを示す。
-
+また、nullは存在しないシステム変数を示す。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -42,9 +42,9 @@
 
 \begin{3columnstable}[white]{\ttNum2001-\ttNum2800: 工具補正}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
 \ttNum2000+xxx & 工具長補正 \ttNum xxx補正量 [xxx=1-200]（摩耗0とした値） & ●\\\hline
-\ttNum2200+xxx & 工具長補正 \ttNum xxx摩耗 [xxx=1-200] & ●\\\hline
+\ttNum2200+xxx & 工具長補正 \ttNum xxx摩耗量 [xxx=1-200] & ●\\\hline
 \ttNum2400+xxx & 工具径補正 \ttNum xxx補正量 [xxx=1-200]（摩耗0とした値） & ●\\\hline
-\ttNum2600+xxx & 工具径補正 \ttNum xxx摩耗 [xxx=1-200] & ●
+\ttNum2600+xxx & 工具径補正 \ttNum xxx摩耗量 [xxx=1-200] & ●
 \end{3columnstable}
 
 
@@ -55,13 +55,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum3000\,-\ttNum3999\TBW}
 
-\begin{3columnstable}[white]{\ttNum3000: アラーム}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum3000 & アラーム & ●
+\begin{3columnstable}[white]{\ttNum3000-\ttNum3005}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum3000 & アラーム & ●\\\hline
+\ttNum3001 &  & \\\hline
+\ttNum3002 &  & \\\hline
+\ttNum3003 & & ◯\\\hline
+\ttNum3004 & & \\\hline
+\rowcolor{unusingVariables}
+\ttNum3005 & null & \\
 \end{3columnstable}
 
-\begin{3columnstable}[white]{\ttNum3003: \TBW}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum3003 & & ◯\\\hline
-\ttNum3006 & & ◯
+\begin{3columnstable}[white]{\ttNum3006: \TBW}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum3006 & & ◯\\
 \end{3columnstable}
 
 \begin{3columnstable}[white]{\ttNum3011-\ttNum3011: 時計・時刻}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
@@ -203,7 +208,9 @@ $\cdots$ & $\cdots$ & \\
 \begin{3columnstable}[white]{\ttNum7000-\ttNum7009}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
 \rowcolor{unusingVariables}
 \ttNum7000 & null &\\\hline
-\ttNum700x & パレット中心の機械座標 [x=1-9] & ◯\\
+\ttNum700x & パレット中心の機械座標 [x=1-9] & ◯\\\hline
+\ttNum702x & パレット中心の機械座標 [x=1-9] & \\\hline
+\ttNum704x & [x=1-9] & \\\hline
 \end{3columnstable}
 
 
@@ -226,7 +233,7 @@ $\cdots$ & $\cdots$ & \\
 \ttNum10000+xxx & 工具長補正 \ttNum xxx補正量 [xxx=1-200]（摩耗0とした値) & ◯\\\hline
 \rowcolor{unusingVariables}
 \ttNum10201 & null &\\\hline
-\ttNum11000+xxx & 工具長 \ttNum xxx摩耗量 [xxx=1-200] & ◯
+\ttNum11000+xxx & 工具長補正 \ttNum xxx摩耗量 [xxx=1-200] & ◯
 \end{3columnstable}
 
 
@@ -239,7 +246,7 @@ $\cdots$ & $\cdots$ & \\
 
 \begin{3columnstable}[white]{\ttNum16001-\ttNum17999}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
 \ttNum16000+xxx & 工具径補正 \ttNum xxx補正量 [xxx=1-200]（摩耗0とした値） & ◯\\\hline
-\ttNum17000+xxx & 工具径 \ttNum xxx摩耗量 [xxx=1-200] & ◯\\
+\ttNum17000+xxx & 工具径補正 \ttNum xxx摩耗量 [xxx=1-200] & ◯\\
 \end{3columnstable}
 
 
