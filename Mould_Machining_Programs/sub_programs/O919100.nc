@@ -10,10 +10,10 @@ N002
 G90 G53 G01 Z0 F#675
 M19 (spindle orientation)
 IF[#4120EQ50]GOTO003
-G90 G53 G00 X#21 Y#22
+G91 G53 G00 X#21 Y#22
 GOTO004
 N003
-G90 G53 G01 X#21 Y#22 F#676
+G91 G53 G01 X#21 Y#22 F#676
 
 N004
 IF[#4012EQ54.1]THEN #03=7003+[#4130-1]*20
@@ -108,6 +108,6 @@ N999 M99
 (#5303: G58 origin Z)
 (#5323: G59 origin Z)
 (#7003: )
-(#10000-#10200: hosei kouguChou # 100-200)
-(#11000-#11200: mamou kouguChou # 100-200)
+(#10000-#10200: hosei kouguChou #100-200)
+(#11000-#11200: mamou kouguChou #100-200)
 %
