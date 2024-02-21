@@ -2,7 +2,7 @@
 
 \makeatletter
 
-\input{RfCPN_p0_preamble/RfCPN_pictures}
+\input{RfCPN_a0_preamble/RfCPN_pictures}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% DATE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -427,7 +427,7 @@
 %  \@openrightfalse
   \let\oldnewpage\newpage
   \let\newpage\relax
-  \part{#2\label{part:\the\value{part}}}
+  \part{#2\label{part:\thepart}}
   \addcontentsline{lop}{part}{\protect\numberline{\thepart}#2}%
   \ifx#1\relax\else%
     \foreach \x in {#1}{\addcontentsline{\x}{part}{\protect\numberline{\thepart}#2}}%
