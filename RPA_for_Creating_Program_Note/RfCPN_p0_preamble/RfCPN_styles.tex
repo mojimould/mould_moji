@@ -544,11 +544,6 @@
 %%%%% FOR STYLE OF TCBSET %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{myheadercolor}{rgb}{0.68, 0.85, 0.90}
-\newcommand{\tocpartpagebox}[1]{%
-  \node[draw, red!40!black!60!, line width=0.5mm, fill=red!50!yellow!70!black!60!, anchor=east,
-        font=\sffamily\bfseries\Large, text=white, inner sep=2mm, rounded corners,
-       ] at ([xshift=-7.5mm]frame.north east) {#1};
-}
 \tcbset{%
   %%%%% COLUMNBOX STYLE %%%%%
   Tabularbox/.style={%
@@ -632,44 +627,40 @@
     after=\smallskip\noindent{\color{white}},%
   },
   %%%%% PARTTOCSTYLE STYLE %%%%%
-  parttocstyle/.style 2 args={%
+  tocpartstyle/.style={%
     breakable,%
     enhanced jigsaw,%
-    title={#1},%
-    fonttitle=\sffamily\bfseries\Large,%
+    fonttitle=\sffamily\bfseries\large,%
     colback=yellow!3!white,%
     colframe=red!40!black!60!,%
     before=\par\bigskip\noindent,%
-    colbacktitle=red!50!yellow!70!black!60!,%
+%    colbacktitle=red!50!yellow!70!black!60!,%
     enlargepage flexible=\baselineskip,%
     pad at break*=3mm,%
     before skip=0mm,%
-    top=6mm,%
+    top=4mm,%
     height fixed for=first and middle,%
     watermark color=yellow!85!red!15!white,%
-    watermark text={\bfseries\Large{#2}},%
-    attach boxed title to top left={%
-      xshift=7.5mm,%
-      yshift=-0.25mm-\tcboxedtitleheight/2,%
-      yshifttext=2mm-\tcboxedtitleheight/2,%
-    },
-    underlay first={\tocpartpagebox{#1}},
-    underlay unbroken={\tocpartpagebox{#1}},
-    boxed title style={%
-      enhanced,%
-      boxrule=0.5mm,%
-      frame code={%
-        \path[tcb fill frame] ([xshift=-4mm]frame.west) -- (frame.north west)
-        -- (frame.north east) -- ([xshift=4mm]frame.east)
-        -- (frame.south east) -- (frame.south west) -- cycle;
-      },
-      interior code={
-        \path[tcb fill interior] ([xshift=-2mm]interior.west)
-        -- (interior.north west) -- (interior.north east)
-        -- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)
-        -- cycle;
-      },
-    },
+%    attach boxed title to top left={%
+%      xshift=7.5mm,%
+%      yshift=-0.25mm-\tcboxedtitleheight/2,%
+%      yshifttext=2mm-\tcboxedtitleheight/2,%
+%    },
+%    boxed title style={%
+%      enhanced,%
+%      boxrule=0.5mm,%
+%      frame code={%
+%        \path[tcb fill frame] ([xshift=-4mm]frame.west) -- (frame.north west)
+%        -- (frame.north east) -- ([xshift=4mm]frame.east)
+%        -- (frame.south east) -- (frame.south west) -- cycle;
+%      },
+%      interior code={
+%        \path[tcb fill interior] ([xshift=-2mm]interior.west)
+%        -- (interior.north west) -- (interior.north east)
+%        -- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)
+%        -- cycle;
+%      },
+%    },
     drop fuzzy shadow,
   },
 }

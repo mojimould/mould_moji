@@ -103,6 +103,7 @@
 
 
 
+\edef\temppartnum{\protect{\the\numexpr\value{part}+1\relax}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,43 +111,13 @@
 %%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\edef\temp{\protect{\the\numexpr\value{part}+1\relax}}
-\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\temp}]}
-\tPart{業務フロー}{概要}{%
-\paragraph*{目標（なにがしたいか？）}
-\textbf{ソフトウェアの視点}から、横型マシニングセンタにおける\textbf{現在の業務の流れを明確に}する。
-それに基づき、新たなマシニング\textbf{導入後の業務の流れを明確に}する。
-
-\tcbline*
-\paragraph*{手段（どうやって？）}
-関係者に詳しく聞き取りを行い、ソフトウェアの観点における現在の業務の流れを把握する。
-それに基づいて解決可能な課題を抽出し、改善を行った上で導入後の業務の流れを取り決める。
-
-\tcbline*
-\paragraph*{背景（なぜ？）}
-新たなマシニングについて、ハードウェア視点では大きな問題はないという形で設置に至った。
-
-　しかしソフトウェアの観点から見ると、事態は惨憺たるものである。
-「ソフトウェア関する管理・業務」を行う部門はおろか、担当者（特に管理職）さえ社内に存在しない。
-そのため業務の流れすら体系的に把握されておらず、したがって\index{ぎょうむきてい@業務規程}業務規程や開発プロセスの計画も事実上皆無に等しい
-%% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{つまり、ソフトウェアの観点からすると、もはや企業としての体をなしていない。}。
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-　このような状況のため、システム開発プロセスの最初期の段階である、\index{ぎょうむフロー@業務フロー}\textbf{業務フロー}の把握から初めなければならない。
-
-\tcbline*
-\paragraph*{結論（どうなった？）}
-ソフトウェアの視点に立って\MMname における業務の流れを把握し、それに基づいて\DMname 導入後の業務の流れを取り決めた。
-}
 \input{./RfCPN_part/RfCPN_p1_Workflow}
-\addtocontents{toc}{\protect\end{tcolorbox}}
+
+
+
+
+
 \addtocontents{toc}{\protect\cleardoublepage} % add page break
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -154,36 +125,13 @@
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
-\tPart{諸規程の策定}{概要}{%
-\paragraph*{目標（なにがしたいか？）}
-ソフトウェアおよびソフトウェアエンジニアリングに関する\textbf{業務を管理状態に}おく。
-\tcbline*
-\paragraph*{手段（どうやって？）}
-マシニングを用いる業務が関わる（特にソフトウェア視点による）\textbf{規程の策定}を試みる。
-\tcbline*
-\paragraph*{背景（なぜ？）}
-すべての業務において、何の決まりごともなく管理状態におくことは不可能である。
-
-　しかし現時点（\DMname 設置時点）において、「ソフトウェアエンジニアリングに関する管理・業務を行う部門」は存在しておらず、専任の担当者さえも存在しない。
-そのため、\textbf{ソフトウェアエンジニアリング視点による規程も存在しない}
-%% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{「ソフトウェア」を「ハードウェア」に置き換えてみると、これがどれほどの異常事態であるかがわかる。}。
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-事実、社内のほとんどの業務におけるシステム化や自動化について、その\index{ようけんていぎ@要件定義}\textbf{要件定義を行うことすらままならない}状態が長く放置されている。
-
-　したがって、（\DMname 関連に限らず）こうした視点による規程を設けることは焦眉の課題である。
-\tcbline*
-\paragraph*{結論（どうなった？）}
-ソフトウェアの観点のもと、\DMname 関連の業務が関わるソフトウェア開発・保守等の規程を策定した。
-}
 \input{./RfCPN_part/RfCPN_p2_Rules}
-\addtocontents{toc}{\protect\end{tcolorbox}}
+
+
+
+
+
 \addtocontents{toc}{\protect\cleardoublepage}% add page break
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -191,38 +139,13 @@
 %%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
-\tPart{要件定義}{概要}{%
-\paragraph*{目標（なにがしたいか？）}
-(to be written...)
-
-\tcbline*
-\paragraph*{手段（どうやって？）}
-(to be written...)
-
-\tcbline*
-\paragraph*{背景（なぜ？）}
-(to be written...)\\
-外注で作成したプログラムも、当社が具体的な要件定義すら行えず、実用に至っていない
-%% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{プログラム自体は尤もな内容であり、レベルも十分なものである。
-（第二製造室に関わらず）当社のソフトウェアに関する致命的なほどの無関心および能力の無さが顕わに露呈したものであり、自明な帰結である。}。
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-　したがって、システム開発プロセスの計画の策定を行うことが喫緊の課題である。
-
-\tcbline*
-\paragraph*{結論（どうなった？）}
-\MMname における業務の流れを把握し、それを基に\DMname の稼働に向けたソフトウェア視点によるシステム開発プロセスの計画を策定した。
-}
 \input{./RfCPN_part/RfCPN_p3_Requirement_Definition}
-\addtocontents{toc}{\protect\end{tcolorbox}}
+
+
+
+
+
 \addtocontents{toc}{\protect\cleardoublepage}% add page break
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -230,39 +153,13 @@
 %%                %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
-\tPart[lot,loC]{諸標準の策定}{概要}{%
-\paragraph*{目標（なにがしたいか？）}
-プログラムの記述に関して一定の基準・規則を設けることで、一貫性および効率性を向上する
-\tcbline*
-\paragraph*{手段（どうやって？）}
-\DMname についての（特にソフトウェアの観点による）\textbf{諸標準の策定}を試みる。
-\tcbline*
-\paragraph*{背景（なぜ？）}
-プログラムの記述には、一般にG-codeが用いられる。
-一方で、G-codeの記述に関してはその規格が多岐にわたり統一された標準が存在しない。
-そのため、記述に際して社内の標準を参照する必要がある。
-
-しかし、現時点(\DMname 設置時点)において、マシニングに関連した（ソフトウェア視点による）\textbf{社内の標準はほとんど存在しない}
-%% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{つまり、マシニングについては長年にわたり管理業務が事実上放棄されている。
-またその皺寄せの大部分が、作業者（一般職）に押し付けられている。}。
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-　したがって、プログラムの記述に関する標準の策定が急務である。
-これにより、プログラムの記述における一貫性と効率性が向上し、業務の効率化（外注を含む）とコスト削減が期待される。
-また標準を設けることにより、G-codeの記述に関する混乱を解消し、より高品質なソフトウェア開発を実現するための重要なステップとなる。
-\tcbline*
-\paragraph*{結論（どうなった？）}
-\DMname 関連のソフトウェア開発における、（ソフトウェアの観点による）寸法・コードの記述法・工具・保守等の標準を策定した。
-}
 \input{./RfCPN_part/RfCPN_p4_Standards_Coding}
-\addtocontents{toc}{\protect\end{tcolorbox}}
+
+
+
+
+
 \addtocontents{toc}{\protect\cleardoublepage}% add page break
-
-
-
-
 \PartSeparateline{lot}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -271,38 +168,13 @@
 %%          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
-\tPart[lof,lot,loC]{幾何学性質の解析計算}{概要}{%
-\paragraph*{目標（なにがしたいか？）}
-マシニングにおけるモールドの加工に必要な幾何学的情報を抽象化（一般化）し、体系を構築する。
-\tcbline*
-\paragraph*{手段（どうやって？）}
-マシニング内におけるモールドや工具等の幾何学的性質を抽象化（一般化）し、加工の際に必要となる位置・距離等の\textbf{解析的な導出}を試みる。
-\tcbline*
-\paragraph*{背景(なぜ？)}
-ソフトウェアの観点から見た場合、高精度な加工を実現にはマシニング内におけるモールドや工具の\textbf{幾何学的性質}を正確に把握することが不可欠であることは言うまでもない。
-マシニングセンタの操作・指示はこうした特性の理解が前提であり、いわば``常識"と言っても過言ではない
-%% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{さらに、\index{CAD}CAD, \index{CAM}CAMを利用するというのであれば、これに加えてCADによる\index{3Dモデリング}3Dモデリングの技術、およびそれに伴うCAMの操作・設定技術も習熟しなければならず、教育コストが大きくかかることは容易に推測される。}。
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-　モールドの場合、必要な幾何学的性質のほとんどが直線または円で記述されるため、その体系化は（複雑ではあるが）難しいものではない。
-しかし現時点（\DMname 設置時点）において、こうした性質の\textbf{体系化はほぼ全くなされていない}。
-実際、\textbf{明細ごとに対応}をしている状態にある。
-
-　したがって、（少なくとも実際の加工に関わる程度の）幾何学的性質の把握・体系化は急務である。
-またこれにより品質や生産性の低下が大きく抑えられることが期待される。
-\tcbline*
-\paragraph*{結論（どうなった？）}
-\DMname のおける加工の際に必要なすべての幾何的情報を解析的に導出し、体系化した。
-}
 \input{./RfCPN_part/RfCPN_p5_Analytical_Calculation}
-\addtocontents{toc}{\protect\end{tcolorbox}}
+
+
+
+
+
 \addtocontents{toc}{\protect\cleardoublepage}% add page break
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -310,37 +182,12 @@
 %%         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
-\tPart{解析計算に基づく数値解析}{概要}{%
-\paragraph*{目標（なにがしたいか？）}
-明細ごとに異なる寸法・形状を持つすべてのモールドに対し、マシニングでの加工に必要な\textbf{数値情報および条件分岐情報等が自動的に得られるシステム}を構築する。
-\tcbline*
-\paragraph*{手段（どうやって？）}
-前段階で導出した\textbf{解析的な情報}を用いて、各明細における具体的な\textbf{数値的な情報}に変換するシステムの構築を試みる。
-\tcbline*
-\paragraph*{背景（なぜ？）}
-一般に、個々の製品や工具等の寸法は異なり、明細ごとに固有の寸法・形状を持つ。
-実際の加工（プログラムの作成）の際には、それらをすべて考慮して計算した\textbf{具体的な数値情報}を指定する必要がある。
-
-　こうした数値情報は\textbf{明細ごとに膨大にある}が、現時点（\DMname 設置時点）において、こうした手続きは\textbf{明細ごとに手作業}で行われている
-%% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{さらには、「\index{ずめん@図面}図面の作成後、それを見てプログラムを作成する」という明らかに異常な（奇妙な）事態が放置され続けている。}。
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-　したがって、こうした手続きのシステム化を行い、可能な限り\textbf{自動化}することが喫緊の課題である。
-そうすることで、\textbf{危険を伴う作業の削減（安全性の向上）}や、\textbf{品質の低下の防止}に大きく寄与できることが期待される。
-また副次的効果として、作業効率・人的資源・安全(security)・保守などのいずれの観点からみた\textbf{能率の低下の防止}にも大きく貢献することも自ずと期待される。
-\tcbline*
-\paragraph*{結論（どうなった？）}
-各明細のモールドにおける固有数値情報の入力により、マシニングでの加工に必要な数値情報および条件分岐情報等が（人による手動計算を介することなく）自動的に得られるシステムを構築した。
-}
 \input{./RfCPN_part/RfCPN_p6_Numerical_Calculation}
-\addtocontents{toc}{\protect\end{tcolorbox}}
+
+
+
+
 \addtocontents{toc}{\protect\cleardoublepage}% add page break
-
-
-
-
 \PartSeparateline{lot}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -349,27 +196,13 @@
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
-\tPart[lot,lol]{各工程用自動化プログラム 取扱説明\TBW}{概要}{%
-\paragraph*{目標（なにがしたいか？）}
-(to be written...)
-\tcbline*
-\paragraph*{手段（どうやって？）}
-(to be written...)
-\tcbline*
-\paragraph*{背景（なぜ？）}
-(to be written...)
-\tcbline*
-\paragraph*{結論（どうなった？）}
-(to be written...)
-}
 \input{./RfCPN_part/RfCPN_p7_Programs_Manual}
-\addtocontents{toc}{\protect\end{tcolorbox}}
+
+
+
+
+
 \addtocontents{toc}{\protect\cleardoublepage}% add page break
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -377,27 +210,13 @@
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
-\tPart{作業手順：マシニングの操作\TBW}{概要}{%
-\paragraph*{目標（なにがしたいか？）}
-(to be written...)
-\tcbline*
-\paragraph*{手段（どうやって？）}
-(to be written...)
-\tcbline*
-\paragraph*{背景（なぜ？）}
-(to be written...)
-\tcbline*
-\paragraph*{結論（どうなった？）}
-(to be written...)
-}
 \input{./RfCPN_part/RfCPN_p8_Work_Procedure}
-\addtocontents{toc}{\protect\end{tcolorbox}}
+
+
+
+
+
 \addtocontents{toc}{\protect\cleardoublepage}% add page break
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -405,26 +224,14 @@
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\addtocontents{toc}{\protect\begin{tcolorbox}[parttocstyle={Contents}{\the\numexpr\value{part}+1\relax}]}
-\tPart{RDBSの構築\TBW}{概要}{%
-\paragraph*{目標（なにがしたいか？）}
-(to be written...)
-\tcbline*
-\paragraph*{手段（どうやって？）}
-(to be written...)
-\tcbline*
-\paragraph*{背景（なぜ？）}
-(to be written...)
-\tcbline*
-\paragraph*{結論（どうなった？）}
-(to be written...)
-}
-%\input{./RfCPN_part/RfCPN_p9_Relational_Database}
-\addtocontents{toc}{\protect\end{tcolorbox}}
+\input{./RfCPN_part/RfCPN_p9_Relational_Database}
+
+
+
+
+
+
 %\addtocontents{toc}{\protect\cleardoublepage}% add page break
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -432,9 +239,11 @@
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\clearpage
+\clearrightpage
 \backmatter
 \pagestyle{plainheadback}
+
+
 
 
 %\PartSeparateline{toc}
@@ -447,6 +256,8 @@
 \phantomsection
 \addchaptertocentry{}{\listfigurename}{}%
 \listoffigures\thispagestyle{plainheadback}
+
+
 
 
 \clearpage
@@ -462,6 +273,7 @@
 \listoftoc{loC}\thispagestyle{plainheadback}
 \let\cleardoublepage\tmpcleardoublepage
 \endgroup
+
 
 
 
@@ -497,6 +309,7 @@
 {\small\printindex\thispagestyle{plainheadback}}
 \let\cleardoublepage\tmpcleardoublepage
 \endgroup
+
 
 
 

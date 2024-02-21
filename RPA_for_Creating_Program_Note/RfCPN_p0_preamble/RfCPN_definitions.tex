@@ -193,6 +193,19 @@
 %%%%% TABBOX %%%%%
 \newtcolorbox{Tabbox}[1][]{Tabularbox, #1}
 %\renewcommand{\tableautorefname}{表}
+%%%%% TOCPART %%%%%
+\newcommand{\tocpartpagebox}[1]{%
+  \node[draw, red!40!black!60!, line width=0.5mm, fill=red!50!yellow!70!black!60!, anchor=east,
+        font=\sffamily\bfseries\large, text=white, inner sep=2mm, rounded corners,
+       ] at ([xshift=-5mm]frame.north east) {#1};
+}
+\newtcolorbox{tocPart}[1]{%
+  tocpartstyle,%
+%  title={#1},%
+  watermark text={\bfseries\Large{#1}},%
+%  underlay first={\tocpartpagebox{\pageref{#3}}},
+%  underlay unbroken={\tocpartpagebox{\pageref{#3}}},
+}
 %%%%% HOSOKU %%%%%
 \newcommand{\hosokuname}{補}
 \definecolor{hosoku}{cmyk}{0, 0, 0, .1}
@@ -406,13 +419,15 @@
 \newcommand{\TBW}{\texorpdfstring{\small{\color{red}\,*}}{}}
 %%%%% FOR PART WITH TABLE %%%%%%%%%%%%%%%%%%
 %\newcommand*{\globaladdcontentsline}[3]{\addtocontents{#1}{\protect\contentsline{#2}{#3}{\thepage}}}
-\newcommand{\tPart}[4][]{
+\newcommand{\tPart}[4][]{%
+  \def\temppartnum{\the\numexpr\value{part}+1}%
+%  \def\temppartpage{part:\the\numexpr\value{part}+1}%
   \begingroup
   \clearrightpage
 %  \@openrightfalse
   \let\oldnewpage\newpage
   \let\newpage\relax
-  \part{#2\label{part:\thepart}}
+  \part{#2\label{part:\the\value{part}}}
   \addcontentsline{lop}{part}{\protect\numberline{\thepart}#2}%
   \ifx#1\relax\else%
     \foreach \x in {#1}{\addcontentsline{\x}{part}{\protect\numberline{\thepart}#2}}%
