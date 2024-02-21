@@ -98,84 +98,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% HEADER AND FOOTER %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\pagestyle{fancy}
-\renewcommand{\headrulewidth}{1.5pt}
-\renewcommand{\footrulewidth}{0pt}
-%%%%% commonheadfoot %%%%%
-\newcommand{\commonheadfoot}{
-  \fancyhead{}
-  \fancyfoot{}
-  \fancyfoot[C]{\scriptsize
-    \hyperref[chap:IV.16]{コモン変数}\quad
-    \hyperref[chap:IV.A]{システム変数}\quad
-    \hyperref[part:V]{解析計算}\quad
-    \hyperref[chap:VII.H]{Gコード}\quad
-    \hyperref[sec:VII.H.2]{Mコード}\quad
-    \hyperref[chap:VII.I]{プログラム}}
-  \fancyfoot[LO]{\tiny\customdate} % footer left fields for main odd pages
-  \fancyfoot[RE]{\tiny\customdate} % footer right fields for main even pages
-}
-%%%%% emptydate %%%%%
-\fancypagestyle{emptydate}{\renewcommand{\headrulewidth}{0pt}\commonheadfoot}
-%%%%% front %%%%%
-\fancypagestyle{front}{
-  \commonheadfoot
-  \fancyhead[RO]{\thepage}
-  \fancyhead[LE]{\thepage}
-}
-%%%%% main %%%%%
-\fancypagestyle{main}{
-  \commonheadfoot
-  \fancyhead[RO]{\hyperref[sec:\thepart.\thesection]{{\small\nouppercase\rightmark}}}
-  \fancyhead[LO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$~~{\hyperref[part:\thepart]{\small\partname.\,\thepart}}} % header right fields for all main odd pages
-  \fancyhead[RE]{{\hyperref[part:\thepart]{\small\partname.\,\thepart}}~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
-  \fancyhead[LE]{\hyperref[\ifx\@chapapp\appendixname app:\else chap:\fi\thepart.\thechapter]{{\sffamily\bfseries\thechapter.\hskip0.75em\nouppercase\Chaptername}}} % header right fields for all main even pages
-}
-%%%%% plainheadfront %%%%%
-\fancypagestyle{plainheadfront}{
-  \commonheadfoot
-  %\fancyhead[C]{}
-  \fancyhead[LO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
-  \fancyhead[RE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
-}
-%%%%% plainhead %%%%%
-\fancypagestyle{plainhead}{
-  \commonheadfoot
-  \fancyhead[RO]{\hyperref[part:\thepart]{\small\partname.\,\thepart}~~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
-  \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
-}
-%%%%% plainheadback %%%%%
-\fancypagestyle{plainheadback}{
-  \commonheadfoot
-  \fancyhead[LO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
-  \fancyhead[RE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
-}
-%%%%% FOR FRONTMATTER %%%%%
-\renewcommand*\frontmatter{%
-  \if@twoside\cleardoubleoddpage\else\clearpage\fi
-  \@frontmattertrue\@mainmatterfalse\@backmatterfalse\pagenumbering{arabic}\pagestyle{plainheadfront}%
-}
-%%%%% FOR MAINMATTER %%%%%
-\renewcommand*\mainmatter{%
-  \if@twoside\cleardoubleoddpage\else\clearpage\fi
-  \@frontmatterfalse\@mainmattertrue\@backmatterfalse\pagestyle{main}%
-}
-%%%%% FOR BACKMATTER %%%%%
-\renewcommand*\backmatter{%
-  \if@openright\cleardoubleoddpage\else\clearpage\fi
-  \@frontmatterfalse\@mainmatterfalse\@backmattertrue\pagestyle{plainheadback}
-}
-%%%%% FOR THEINDEX %%%%%
-%\AtBeginEnvironment{theindex}{%
-%  \let\oldhyperpage\hyperpage
-%  \renewcommand{\hyperpage}[1]{\cdotfill~\oldhyperpage{#1}~}
-%}
-\AtEndEnvironment{theindex}{%
-  \thispagestyle{plainheadback}
-  \pagestyle{plainheadback}
-}
-%%%%% WATERMARK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\AddLayersToPageStyle{@everystyle@}{WatermarkLayer}
+\input{./RfCPN_a0_preamble/RfCPN_styles_pagestyles}
 %%%%% SETLIST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlist[enumerate]{listparindent=\parindent, parsep=0pt, partopsep=0pt, topsep=3pt, itemsep=3pt, leftmargin=*}
 \setlist[enumerate, 1]{leftmargin=\leftmargini}
@@ -273,7 +196,7 @@
 \AtBeginEnvironment{appendices}{%
   \@appendixtrue%
   \patchcmd{\part}{\newpage}{\relax}{}{}%
-  \pretocmd{\part}{\tocAPartSeparateline{toc}{15pt}{-10pt}}{}{}{}% add page break before parts, except part 1
+  \pretocmd{\part}{\addtocontents{toc}{\protect\tcbline*}}{}{}{}% add page break before parts, except part 1
  % \patchcmd{\part}{\tableAPartSeparateline}{\relax}{}{}%
 }
 \AfterEndEnvironment{appendices}{%
@@ -308,101 +231,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF LISTLINGS %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\lstlistlistingname}{プログラム 目次}
-\renewcommand{\lstlistingname}{{\scshape Prg: }}
-\AtBeginDocument{%
-%  \counterwithout{lstlisting}{chapter}
-  \renewcommand{\thelstlisting}{}%
-}
-\renewcommand*\l@lstlisting{\@dottedtocline{1}{0.0em}{2.35em}}
-\lstdefinelanguage{GcodeBasic}{
-  sensitive=true,%
-  basicstyle=\footnotesize\ttfamily\linespread{1}\selectfont,%
-  abovecaptionskip=0pt,
-  belowcaptionskip=0pt,
-%  aboveskip=0\baselineskip,
-%  belowskip=0\baselineskip,
-  numbers=left,%
-  numbersep=6pt,%
-  numberstyle=\ttfamily\scriptsize\color{black!75!},%
-  breaklines=true,%
-  breakindent=3pt,%
-  postbreak=\mbox{\textcolor{blue}{$\hookrightarrow$}\,},%
-  frame=single,%
-  columns=fixed,%
-  basewidth=0.53em,%
-  lineskip=-1.2pt,
-  comment=[l]{(},%
-  commentstyle=\footnotesize\color{black!60!green!100}\slshape,%
-  stringstyle={},%
-  alsoletter={},%
-  keywords={},%
-  keywordstyle=\bfseries,%
-}
-\lstdefinestyle{Gcode-more}{
-  language=GcodeBasic,
-  nolol,
-  morekeywords={[20]IF, GOTO, THEN, WHILE, DO1, DO2, END1, END2},%
-  keywordstyle={[20]\fontfamily{pcr}\selectfont\bfseries},%
-  emph={G90, G91},
-  emphstyle={\bfseries\color{red}},
-  emph={[2]G53, G54, G55, G56, G57},
-  emphstyle={[2]\bfseries\color{blue}},
-  emph={[3]G40, G41, G42, G43, G44},
-  emphstyle={[3]\bfseries\color{orange}},
-  emph={[4]G00, G01, G02, G03, G31},
-  emphstyle={[4]\bfseries\color{magenta}},
-  emph={[5]G28, G30},
-  emphstyle={[5]\bfseries\color{violet}},
-  emph={[6]G04, G10, G13, G17, G49, G58, G65, G80, M98},
-  emphstyle={[6]\bfseries\color{cyan}},
-  emph={[11]
-    T01, T02, T06, T11, T12, T13, T16, T31, T32, T50,
-    M00, M01, M02, M03, M04, M05, M06, M07, M08, M09,
-    M10, M11, M19,
-    M28, M29,
-    M30, M32, M33,
-    M48, M49,
-    M60, M61, M62, M63,
-    M71, M72, M73, M74, M78, M79,
-    M99,
-    M117, M151, M214, M262},
-  emphstyle={[11]\fontfamily{pcr}\bfseries\color{yellow!100!green!80!black!100!}},
-  emph={[22]SIN, COS, SQRT, FIX, FUP, ROUND, ABS},%
-  emphstyle={[22]\fontfamily{pcr}\selectfont\bfseries},%
-  emph={[31]
-    P140001, P110002, P130001, P130002, P150002, P150003,
-    P210003, P220001, P220002, P230001, P230002, P530001, P530002,
-    P410000, P420000, P430000, P440000, P450000, P490005, P490007,
-    P900003, P905100, P905101, P907100, P909100, P910001, P910002},%
-  emphstyle={[31]\bfseries\color{cyan}},%
-}
-%\lstdefinestyle{Gcode-bundle}{
-%  language=GcodeBasic,
-%  nolol,
-%  morekeywords={[120]WHILE, THEN, DO1, DO2, END1, END2},%
-%  keywordstyle={[120]\fontfamily{pcr}\selectfont\bfseries},%
-%  emph={[102]},
-%  emphstyle={[102]\bfseries\color{blue}},
-%  emph={[111]M10, M11, M19, M30, M32, M33, M48, M49,  M61, M62, M74, M78, M262},
-%  emphstyle={[111]\fontfamily{pcr}\bfseries\color{yellow!100!green!80!black!100!}},
-%  emph={[112]M98P9001},
-%  emphstyle={[112]\bfseries\color{cyan}},
-%  emph={[122]SIN, COS, SQRT, FIX, FUP, ABS},%
-%  emphstyle={[122]\fontfamily{pcr}\selectfont\bfseries},%
-%}
-%\lstdefinestyle{Gcode-ren}{
-%  language=GcodeBasic,
-%  nolol,
-%  morekeywords={[220]IF, WHILE, THEN, DO1, DO2, END1, END2},%
-%  keywordstyle={[220]\fontfamily{pcr}\selectfont\bfseries},%
-%  emph={[202]},
-%  emphstyle={[202]\bfseries\color{blue}},
-%  emph={[211]M0, M5, M19, M32, M33, M99, M214},
-%  emphstyle={[211]\fontfamily{pcr}\bfseries\color{yellow!100!green!80!black!100!}},
-%  emph={[222]SIN, COS, TAN, ATAN, SQRT, FIX, FUP, ROUND, DPRNT},%
-%  emphstyle={[222]\fontfamily{pcr}\selectfont\bfseries},%
-%}
+\input{./RfCPN_a0_preamble/RfCPN_styles_listlings}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF INDEX %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -539,131 +368,6 @@
   tocindent=12em,%
   tocnumwidth=6em%
 ]{subparagraph}
-%%%%% 2 ROWS TABLE %%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF TCBSET %%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\definecolor{myheadercolor}{rgb}{0.68, 0.85, 0.90}
-\tcbset{%
-  %%%%% COLUMNBOX STYLE %%%%%
-  Tabularbox/.style={%
-    fonttitle=\gtfamily\bfseries,%
-    breakable,%
-    enhanced jigsaw,%
-    left=.5ex,%
-    right=.5ex,%
-    bicolor,%
-    colbacklower=black!10!white,%
-    before upper={%
-      \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
-      \let\oldfootnote=\footnote% \oldfootnote=\footnote
-      \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% define \footnote to \footnote using counter GlobalFootnote
-      \renewcommand\thempfootnote{\arabic{mpfootnote}}% arabic footnote
-    },
-    after upper={%
-      \setcounter{footnote}{\value{GlobalFootnote}}% footnoteValue=GlobalFootnoteValue
-      \let\footnote=\oldfootnote% \footnote=\oldfootnote
-    },
-  },%
-  %%%%% COLUMNBOX STYLE %%%%%
-  Columnbox/.style={%
-    Tabularbox,
-    colback=black!02!white!,%
-    after title=\hfill\termblue{\Columnname~\thetcbcounter},%
-  },%
-  %%%%% FORMULA STYLE %%%%%
-  Formulabox/.style={%
-    Tabularbox,
-    after title=\hfill\termblue{\Formulaname~\thetcbcounter},%
-  },%
-  %%%%% FIGUREBOX STYLE %%%%%
-  Figurebox/.style={%
-    notitle,%
-    height=\textwidth,
-%    width=\textwidth,
-    center upper,%
-    center lower,%
-    arc=5pt,%
-    outer arc=2pt,%
-    boxrule=1pt,%
-    boxsep=3mm,%
-    valign=center,%
-    halign=center,%
-    left=0pt,%
-    right=0pt,%
-    colback=green!3!white,%
-    colframe=black!25!white,%
-    before={\centering},
-  },
-  %%%%% HIGHLIGHT MATH STYLE %%%%%
-%  highlight math/.style={%
-%    enhanced,%
-%    arc=2pt,%
-%    boxrule=0pt,%
-%    frame hidden,%
-%    fuzzy halo=1pt with blue,%
-%    left=0pt,%
-%    right=0pt,%
-%    top=.4mm,%
-%    bottom=.4mm,%
-%    colback=yellow!40!white,%
-%  },%
-  %%%%% HOSOKUBOX STYLE %%%%%
-  hosokubox/.style={%
-    title={\termblue{\hosokuname~\thetcbcounter}~},%
-    attach title to upper,%
-    breakable,%
-    enhanced jigsaw,%
-    size=fbox,%
-    arc=0pt,%
-    middle=1mm,%
-    colback=hosoku,%
-    colframe=hosoku,%
-    drop lifted shadow={blue!100!white!50!},%
-    skin first is subskin of={enhanced jigsaw}{no shadow},%
-    skin middle is subskin of={enhanced jigsaw}{no shadow},%
-    skin last is subskin of={enhanced jigsaw}{drop lifted shadow={blue!100!white!50!}},%
-    segmentation style={draw=black!50!white},%
-    after=\smallskip\noindent{\color{white}},%
-  },
-  %%%%% PARTTOCSTYLE STYLE %%%%%
-  tocpartstyle/.style={%
-    breakable,%
-    enhanced jigsaw,%
-    fonttitle=\sffamily\bfseries\large,%
-    colback=yellow!3!white,%
-    colframe=red!40!black!60!,%
-    before=\par\bigskip\noindent,%
-%    colbacktitle=red!50!yellow!70!black!60!,%
-    enlargepage flexible=\baselineskip,%
-    pad at break*=3mm,%
-    before skip=0mm,%
-    top=4mm,%
-    height fixed for=first and middle,%
-    watermark color=yellow!85!red!15!white,%
-%    attach boxed title to top left={%
-%      xshift=7.5mm,%
-%      yshift=-0.25mm-\tcboxedtitleheight/2,%
-%      yshifttext=2mm-\tcboxedtitleheight/2,%
-%    },
-%    boxed title style={%
-%      enhanced,%
-%      boxrule=0.5mm,%
-%      frame code={%
-%        \path[tcb fill frame] ([xshift=-4mm]frame.west) -- (frame.north west)
-%        -- (frame.north east) -- ([xshift=4mm]frame.east)
-%        -- (frame.south east) -- (frame.south west) -- cycle;
-%      },
-%      interior code={
-%        \path[tcb fill interior] ([xshift=-2mm]interior.west)
-%        -- (interior.north west) -- (interior.north east)
-%        -- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)
-%        -- cycle;
-%      },
-%    },
-    drop fuzzy shadow,
-  },
-}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF TABLE %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -730,6 +434,10 @@
 %  every right delimiter/.style={xshift=-.5em},
 %  bmatrix/.style={matrix of math nodes, left delimiter=[, right delimiter=],},
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF TCBSET %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./RfCPN_a0_preamble/RfCPN_styles_tcbset}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% OTHER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
