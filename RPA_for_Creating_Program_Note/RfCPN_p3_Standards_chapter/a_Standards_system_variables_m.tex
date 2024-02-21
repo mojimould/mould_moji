@@ -3,31 +3,138 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 13.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section A.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\ttNum1000\,-\ttNum1999}
+
+\begin{3columnstable}[white]{\ttNum1000-\ttNum1133：インターフェース信号}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum1000 & PMCからカスタムマクロへの信号入力 1ビット目 &\\\hline
+\ttNum1001 & PMCからカスタムマクロへの信号入力 2ビット目 &\\\hline
+$\cdots$ & $\cdots$ &\\\hline
+\ttNum1015 & PMCからカスタムマクロへの信号入力 15ビット目 &\\\hline
+\ttNum1032 & PMCからカスタムマクロへの信号16ビット 一括読取り &\\\hline
+\ttNum1100 & カスタムマクロからPMCへの信号出力 1ビット目 &\\\hline
+\ttNum1101 & カスタムマクロからPMCへの信号出力 2ビット目 &\\\hline
+$\cdots$ & $\cdots$ &\\\hline
+\ttNum1115 & カスタムマクロからPMCへの信号出力 15ビット目 &\\\hline
+\ttNum1132 & カスタムマクロからPMCへの信号16ビット 一括書込み &\\\hline
+\ttNum1133 & カスタムマクロからPMCへの信号32ビット 一括書込み &\\
+\end{3columnstable}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section A.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\ttNum3000\,-\ttNum3999}
+
+\begin{3columnstable}[white]{\ttNum3000：アラーム}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum3000 & アラーム &\\
+\end{3columnstable}
+
+\begin{3columnstable}[white]{\ttNum3001, \ttNum3002：稼働時間}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum3001 & タイマー[ms] (2147483648ms to 0s) & \\\hline
+\ttNum3002 & 稼働時間[ms] (9544.371767h to 0s) & \\
+\end{3columnstable}
+
+\begin{3columnstable}[white]{\ttNum3003, \ttNum3004：自動運転制御}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum3003 & 自動運転制御（シングルブロック・補助機能完了） & \\\hline
+\ttNum3004 & 自動運転制御（フィードホールド・送り速さオーバーライド・イグザクトストップ） & \\
+\end{3columnstable}
+
+\begin{3columnstable}[white]{\ttNum3005：セッティングデータ}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum3005 & セッティングデータ & \\
+\end{3columnstable}
+
+\begin{3columnstable}[white]{\ttNum3007：ミラーイメージ}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum3007 & ミラーイメージ & \\
+\end{3columnstable}
+
+\begin{3columnstable}[white]{\ttNum3011, \ttNum3012: 時刻}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum3011 & 現在の年月日(yyyymmdd) & \\\hline
+\ttNum3012 & 現在の時刻(hhmmss) &
+\end{3columnstable}
+
+\clearpage
+\begin{3columnstable}[white]{\ttNum3901, \ttNum3902}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum3901 & 加工部品数（終了数） & \\\hline
+\ttNum3902 & 所要部品数（目標数） &
+\end{3columnstable}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section B.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum4000\,-\ttNum4999}
 
-\begin{2columnstable}[white]{\ttNum4111-\ttNum4120: 直前までのブロックで指令されたモーダル情報}{|Sc|Sl|}{番号}{内容\hspace*{0.72\textwidth}~}
-\ttNum4111 & \verb|H#| 工具長補正コード\ttNum\\\hline
-\ttNum4120 & \verb|T#| 工具コード\ttNum
-\end{2columnstable}
+\begin{3columnstable}[white]{\ttNum4001-\ttNum4022：直前までのブロックで指令されたG指令モーダル情報}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum4001 & グループ01：\verb|G00|-\verb|G03|, \verb|G02.2|, \verb|G02.3|, \verb|G03.2|, \verb|G03.3|, \verb|G33|, \verb|G77|-\verb|G79| &\\\hline
+\ttNum4002 & グループ02：選択平面\verb|G17|, \verb|G18|, \verb|G19| & \\\hline
+\ttNum4003 & グループ03：\verb|G90|, \verb|G91| & \\\hline
+\ttNum4004 & グループ04：ストアードストロークチェック\verb|G22|, \verb|G23| & \\\hline
+\ttNum4005 & グループ05：\verb|G94|, \verb|G95| & \\\hline
+\ttNum4006 & グループ06：\verb|G20|, \verb|G21| & \\\hline
+\ttNum4007 & グループ07：工具径補正\verb|G40|, \verb|G41|, \verb|G43| & \\\hline
+\ttNum4008 & グループ08：工具長補正\verb|G43|, \verb|G44|, \verb|G49| & \\\hline
+\ttNum4009 & グループ09：固定サイクル\verb|G73|, \verb|G74|, \verb|G76|, \verb|G80|-\verb|G89| & \\\hline
+\ttNum4010 & グループ10：\verb|G98|, \verb|G99| & \\\hline
+\ttNum4011 & グループ11：スケーリング\verb|G50|, \verb|G51| & \\\hline
+\ttNum4012 & グループ12：\verb|G65|, \verb|G66|, \verb|G67| & \\\hline
+\ttNum4013 & グループ13：周速一定制御\verb|G96|, \verb|G97| & \\\hline
+\ttNum4014 & グループ14：ワーク座標系\verb|G54|-\verb|G59|, \verb|G54.1| &  \\\hline
+\ttNum4015 & グループ15：\verb|G61|-\verb|G64| & \\\hline
+\ttNum4016 & グループ16：\verb|G68|, \verb|G69| & \\\hline
+\ttNum4017 & グループ17：極座標指令\verb|G15|, \verb|G16| & \\\hline
+\ttNum4018 & グループ18 & \\\hline
+\ttNum4019 & グループ19：法線方向制御\verb|G40.1|, \verb|G41.1|, \verb|G42.1| & \\\hline
+\ttNum4020 & グループ20：インフィード制御\verb|G160|, \verb|G161| & \\\hline
+\ttNum4021 & グループ21 & \\\hline
+\ttNum4022 & グループ22： プログラマブルミラーイメージ\verb|G50.1|, \verb|G51.1| &\\
+\end{3columnstable}
+
+\clearpage
+\begin{3columnstable}[white]{\ttNum4102-\ttNum4130：直前までのブロックで指令されたモーダル情報}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum4102 & \verb|B#| Bコード & \\\hline
+\ttNum4107 & \verb|D#| 工具径補正Dコード\ttNum & \\\hline
+\ttNum4109 & \verb|F#| 送り速さFコード\ttNum &\\\hline
+\ttNum4111 & \verb|H#| 工具長補正Hコード\ttNum & \\\hline
+\ttNum4113 & \verb|M#| 補助機能Mコード\ttNum &\\\hline
+\ttNum4114 & \verb|N#| シーケンス番号Nコード\ttNum &\\\hline
+\ttNum4115 & \verb|O#| プログラム番号Oコード\ttNum &\\\hline
+\ttNum4119 & \verb|S#| スピンドル回転数Sコード\ttNum &\\\hline
+\ttNum4120 & \verb|T#| 工具番号Tコード\ttNum & \\\hline
+\ttNum4130 & \verb|G54.1| \verb|P#| 追加ワーク座標系Pコード & \\
+\end{3columnstable}
 
 
+
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 13.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section B.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum5000\,-\ttNum5999}
 
-\begin{2columnstable}[white]{\ttNum5021-\ttNum5328: 位置情報}{|Sc|Sl|}{番号}{内容\hspace*{0.72\textwidth}~}
-\ttNum502x & 現在の機械座標系の座標 1:X, 2:Y, 3:Z, 4:B\\\hline
-\ttNum504x & 現在のワーク座標系の座標 1:X, 2:Y, 3:Z, 4:B\\\hline
-\ttNum506x & スキップ座標 1:X, 2:Y, 3:Z, 4:B（工具補正0とした値）\\\hline
-\ttNum522x & ワーク座標系G54原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
-\ttNum524x & ワーク座標系G55原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
-\ttNum526x & ワーク座標系G56原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
-\ttNum528x & ワーク座標系G57原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
-\ttNum530x & ワーク座標系G58原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\\hline
-\ttNum532x & ワーク座標系G59原点の機械座標 1:X, 2:Y, 3:Z, 4:B\\
-\end{2columnstable}
+\begin{3columnstable}[white]{\ttNum5001-\ttNum5108: 位置情報}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum500x\footnote{\ttNum500x:工具補正値が加味された値（ワーク座標系に表示される数値）。途中でスキップがオンになったときはそのときの値。}
+       & ブロック終点位置（現在のワーク座標系）[x=1-8 (9-20:\,null)] & \\\hline
+\ttNum502x & 現在の機械座標系の座標 [x=1-8 (9-20:\,null)] & \\\hline
+\ttNum504x & 現在のワーク座標系の座標 [x=1-8 (9-20:\,null)] & \\\hline
+\ttNum506x & スキップ座標 [x=1-8 (9-20:\,null)]（工具補正0とした値） & \\\hline
+\ttNum508x & 工具長補正量 [x=1-8 (9-20:\,null)] & \\\hline
+\ttNum510x & サーボ位置偏差量 [x=1-8 (9-20:\,null)] & \\
+\end{3columnstable}
+
+\begin{3columnstable}[white]{\ttNum5201-\ttNum5340: ワーク原点オフセット量}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\ttNum520x & 外部ワーク原点オフセット量 [x=1-8 (9-20:\,null)] & \\\hline
+\ttNum522x & ワーク座標系G54原点の機械座標 [x=1-8 (9-20:\,null)] & \\\hline
+\ttNum524x & ワーク座標系G55原点の機械座標 [x=1-8 (9-20:\,null)] & \\\hline
+\ttNum526x & ワーク座標系G56原点の機械座標 [x=1-8 (9-20:\,null)] & \\\hline
+\ttNum528x & ワーク座標系G57原点の機械座標 [x=1-8 (9-20:\,null)] & \\\hline
+\ttNum530x & ワーク座標系G58原点の機械座標 [x=1-8 (9-20:\,null)] &\\\hline
+\ttNum532x & ワーク座標系G59原点の機械座標 [x=1-8 (9-20:\,null)] &\\
+\end{3columnstable}
 
 
