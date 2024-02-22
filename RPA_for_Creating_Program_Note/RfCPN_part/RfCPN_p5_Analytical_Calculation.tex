@@ -1,9 +1,6 @@
 %!TEX root = ./RPA_for_Creating_Program_Note.tex
 
 
-
-
-
 \addtocontents{toc}{\protect\cleardoublepage}
 \PartSeparateline{lot}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12,7 +9,7 @@
 %%                             %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \addtocontents{toc}{\protect\begin{tocPart}{\temppartnum}}%
-\tPart[lof,lot,loC]{幾何学性質の解析計算}{概要}{%
+\tPart[lot,lof,loC]{幾何学性質の解析計算}{概要}{%
 \paragraph*{目標（なにがしたいか？）}
 マシニングにおけるモールドの加工に必要な幾何学的情報を抽象化（一般化）し、体系を構築する。
 \tcbline*
@@ -45,8 +42,7 @@
 %% chapter 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadchapter{振分け}
-\addcontentsline{loC}{chapter}{\protect\numberline{\thechapter}{\Chaptername}}
+\modHeadchapter[loC,lof]{振分け}
 \input{RfCPN_p4_Analytical_Calculation_chapter/c_RfCPN_furiwake}
 
 
@@ -57,8 +53,7 @@
 %% chapter 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadchapter{端面（外径）}
-\addcontentsline{loC}{chapter}{\protect\numberline{\thechapter}{\Chaptername}}
+\modHeadchapter[loC]{端面（外径）}
 \input{RfCPN_p4_Analytical_Calculation_chapter/c_RfCPN_end_face}
 
 
@@ -81,8 +76,7 @@
 %% chapter 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadchapter{溝}
-\addcontentsline{loC}{chapter}{\protect\numberline{\thechapter}{\Chaptername}}
+\modHeadchapter[loC]{溝}
 \input{RfCPN_p4_Analytical_Calculation_chapter/c_RfCPN_keyway}
 
 
@@ -126,8 +120,7 @@
 %% chapter 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadchapter{\dimple}
-\addcontentsline{loC}{chapter}{\protect\numberline{\thechapter}{\Chaptername}}
+\modHeadchapter[loC]{\dimple}
 \input{RfCPN_p4_Analytical_Calculation_chapter/c_RfCPN_dimple}
 
 
@@ -138,8 +131,7 @@
 %% chapter 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadchapter{通り芯}
-\addcontentsline{loC}{chapter}{\protect\numberline{\thechapter}{\Chaptername}}
+\modHeadchapter[loC]{通り芯}
 \input{RfCPN_p4_Analytical_Calculation_chapter/c_RfCPN_centerline}
 
 
@@ -149,8 +141,7 @@
 %% Chapter 9  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadchapter{内径}
-\addcontentsline{lot}{chapter}{\protect\numberline{\thechapter}{\Chaptername}}
+\modHeadchapter[lot]{内径}
 \input{RfCPN_p4_Analytical_Calculation_chapter/c_RfCPN_inner_diameter}
 
 
@@ -197,8 +188,7 @@
 %% Appendix A %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadchapter{アイソパラメトリック曲線}
-\addcontentsline{loC}{chapter}{\protect\numberline{\thechapter}{\Chaptername}}
+\modHeadchapter[loC]{アイソパラメトリック曲線}
 \input{./RfCPN_p4_Analytical_Calculation_chapter/a_RfCPN_NURBS}
 
 
@@ -220,8 +210,7 @@
 %% NOTATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadchapter{表記 一覧}
-\addcontentsline{lot}{chapter}{\protect\numberline{\thechapter}{\Chaptername}}
+\modHeadchapter[lot]{表記 一覧}
 {\small\input{./RfCPN_p4_Analytical_Calculation_chapter/a_RfCPN_Notation}}
 
 
@@ -234,3 +223,4 @@
 %%          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \addtocontents{toc}{\protect\end{tocPart}}
+\clearrightpage

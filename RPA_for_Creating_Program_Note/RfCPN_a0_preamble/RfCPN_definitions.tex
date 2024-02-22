@@ -123,6 +123,32 @@
 \newcommand\PartSeparateline[1]{\addtocontents{#1}{\protect\par\protect\hrulefill\protect\par\protect\vspace*{-10pt}}}%
 \newcommand\tocAPartSeparateline[3]{\addtocontents{#1}{\protect\par\protect\vspace*{#2}\protect\hrule width 0.5\linewidth\protect\par\protect\vspace*{#3}}}%
 %\newcommand\tableAPartSeparateline{\tocAPartSeparateline{lot}{2pt}{2pt}}
+%%%%% tPart %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tPart}[4][]{%
+  \def\temppartnum{\the\numexpr\value{part}+1}%
+%  \def\temppartpage{part:\the\numexpr\value{part}+1}%
+  \begingroup
+  \clearrightpage
+%  \@openrightfalse
+  \let\oldnewpage\newpage
+  \let\newpage\relax
+  \part{#2\label{part:\thepart}}
+  \addcontentsline{lop}{part}{\protect\numberline{\thepart}#2}%
+  \ifx#1\relax\else%
+    \foreach \x in {#1}{\addcontentsline{\x}{part}{\protect\numberline{\thepart}#2}}%
+  \fi
+  \let\newpage\oldnewpage
+  \clearpage
+%  \@openrightfalse
+  \thispagestyle{emptydate}
+  \vspace*{0.1\textheight}%
+  \begin{tablePart}{#3}
+  #4
+  \end{tablePart}%
+%  \@openrightfalse
+  \@mainmattertrue\pagestyle{main}
+  \endgroup
+}
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Appendixpart}{
   \clearrightpage
@@ -136,18 +162,13 @@
 \newcommand{\modHeadchapter}[2][]{%
   \clearrightpage\clearleftpage
   \let\newpage\relax
-  \ifx\relax#1\relax
-    \ifx\@chapapp\appendixname
-      \chapter{#2\label{app:\thepart.\thechapter}}%
-    \else
-      \chapter{#2\label{chap:\thepart.\thechapter}}%
-    \fi
-  \else%
-    \ifx\@chapapp\appendixname
-      \chapter[#1]{#2\label{app:\thepart\thechapter}}%
-    \else
-      \chapter[#1]{#2\label{chap:\thepart\thechapter}}%
-    \fi
+  \ifx\@chapapp\appendixname
+    \chapter{#2\label{app:\thepart.\thechapter}}%
+  \else
+    \chapter{#2\label{chap:\thepart.\thechapter}}%
+  \fi
+  \ifx#1\relax\else%
+    \foreach \x in {#1}{\addcontentsline{\x}{chapter}{\protect\numberline{\thechapter}#2}}%
   \fi
   \thispagestyle{main}%
   \indentspace%
@@ -418,32 +439,6 @@
 \newcommand\cf{{\itshape cf.\,}}
 \newcommand{\TBW}{\texorpdfstring{\small{\color{red}\,*}}{}}
 %%%%% FOR PART WITH TABLE %%%%%%%%%%%%%%%%%%
-%\newcommand*{\globaladdcontentsline}[3]{\addtocontents{#1}{\protect\contentsline{#2}{#3}{\thepage}}}
-\newcommand{\tPart}[4][]{%
-  \def\temppartnum{\the\numexpr\value{part}+1}%
-%  \def\temppartpage{part:\the\numexpr\value{part}+1}%
-  \begingroup
-  \clearrightpage
-%  \@openrightfalse
-  \let\oldnewpage\newpage
-  \let\newpage\relax
-  \part{#2\label{part:\thepart}}
-  \addcontentsline{lop}{part}{\protect\numberline{\thepart}#2}%
-  \ifx#1\relax\else%
-    \foreach \x in {#1}{\addcontentsline{\x}{part}{\protect\numberline{\thepart}#2}}%
-  \fi
-  \let\newpage\oldnewpage
-  \clearpage
-%  \@openrightfalse
-  \thispagestyle{emptydate}
-  \vspace*{0.1\textheight}%
-  \begin{tablePart}{#3}
-  #4
-  \end{tablePart}%
-%  \@openrightfalse
-  \@mainmattertrue\pagestyle{main}
-  \endgroup
-}
 %%%%% COMMON TABLE %%%%%%%%%%%%%%%%%%
 %\NewTblrEnviron{commonTable}[3]
 %{%
