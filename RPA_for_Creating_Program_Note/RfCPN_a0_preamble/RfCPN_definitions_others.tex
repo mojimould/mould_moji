@@ -1,0 +1,122 @@
+%!TEX root = ../RPA_for_Creating_Program_Note.tex
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\ttNum{\ifmmode{\text{\texttt\#}}\else\texttt\#\fi}
+\newcommand\cf{{\itshape cf.\,}}
+\newcommand{\TBW}{\texorpdfstring{\small{\color{red}\,*}}{}}
+%%%%% COLOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ai}     {rgb}{0.2039, 0.3765, 0.4314}
+\definecolor{kon}    {rgb}{0.0000, 0.2000, 0.4000}
+\definecolor{konpeki}{rgb}{0.0902, 0.5098, 0.7333}
+\definecolor{moegi}  {rgb}{0.3020, 0.5961, 0.1882}
+\definecolor{sssec}  {rgb}{0.7333, 0.5, 0.7333}
+\definecolor{sora}   {rgb}{0.1451, 0.7216, 0.8039}
+\definecolor{sumire} {rgb}{0.3882, 0.2157, 0.5922}
+\definecolor{wwqqcc} {rgb}{0.4, 0, 0.8}
+\definecolor{qqzzqq} {rgb}{0, 0.6, 0}
+\definecolor{ffwwqq} {rgb}{1, 0.4, 0}
+\colorlet{unusingVariables}{gray!35!}
+%%%%% DATE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\customtoday}{\the\year/\two@digits{\the\month}/\two@digits{\the\day}}
+\newcommand{\customdate}{\customtoday\ \currenttime\ (\jadayofweek{\the\year}{\the\month}{\the\day})}
+\newcommand{\customtodayap}{\ifnum\currenthour<12 \customtoday\,a.m.\else\customtoday\,p.m.\fi}
+%%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
+\newcommand{\DMname}{Dマシニング}
+\newcommand{\MMname}{Mマシニング}
+\newcommand{\dimple}{ディンプル}
+\newcommand{\dimplekana}{ディンプル}
+%%%%% TO PRG NAME %%%%%%
+\newcommand\nameMainEx{O1916} % main program example
+\newcommand\MainEx{\prgbox{\nameMainEx}}
+\newcommand\nameMXOThickness{O110001} % X outer center measurement
+\newcommand\MXOThickness{\prgbox{\nameMXOThickness}}
+\newcommand\nameMYOThickness{O110002} % Y outer center measurement
+\newcommand\MYOThickness{\prgbox{\nameMYOThickness}}
+\newcommand\nameMXOface{O120001} % keyway X reference surface measurement
+\newcommand\MXOface{\prgbox{\nameMXOface}}
+\newcommand\nameMXIWidth{O130001} % X inner center measurement
+\newcommand\MXIWidth{\prgbox{\nameMXIWidth}}
+\newcommand\nameMYIWidth{O130002} % Y inner center measurement
+\newcommand\MYIWidth{\prgbox{\nameMYIWidth}}
+\newcommand\nameMXIface{O140001} % outer cut X reference surface measurement
+\newcommand\MXIface{\prgbox{\nameMXIface}}
+\newcommand\nameMYcenterline{O150002} % Y centerline measurement
+\newcommand\MYcenterline{\prgbox{\nameMYcenterline}}
+\newcommand\nameMXcenterline{O150003} % X centerline measurement (Z measurement)
+\newcommand\MXcenterline{\prgbox{\nameMXcenterline}}
+\newcommand\nameDLone{O210003} % for dimple level 1
+\newcommand\DLone{\prgbox{\nameDLone}}
+\newcommand\nameDLtwoAC{O220001} % for dimple level 2 AC
+\newcommand\DLtwoAC{\prgbox{\nameDLtwoAC}}
+\newcommand\nameDLtwoBD{O220002} % for dimple level 2 BD
+\newcommand\DLtwoBD{\prgbox{\nameDLtwoBD}}
+\newcommand\nameDMLthreeAC{O230001} % for dimple level 3 AC measurement
+\newcommand\DMLthreeAC{\prgbox{\nameDMLthreeAC}}
+\newcommand\nameDMLthreeBD{O230002} % for dimple level 3 BD measurement
+\newcommand\DMLthreeBD{\prgbox{\nameDMLthreeBD}}
+\newcommand\nameKTanmenRight{O410000} % end face left turn
+\newcommand\KTanmenRight{\prgbox{\nameKTanmenRight}}
+\newcommand\nameKGaisakuRLeft{O420000} % outer cut left turn
+\newcommand\KGaisakuRLeft{\prgbox{\nameKGaisakuRLeft}}
+\newcommand\nameKMizoConerLeft{O430000} % keyway left turn
+\newcommand\KMizoConerLeft{\prgbox{\nameKMizoConerLeft}}
+\newcommand\nameKSotoMentoriRLeft{O440000} % 外側面取用 左回り
+\newcommand\KSotoMentoriRLeft{\prgbox{\nameKSotoMentoriRLeft}}
+\newcommand\nameKUchiMentoriRLeft{O450000} % 内側面取用 左回り
+\newcommand\KUchiMentoriRLeft{\prgbox{\nameKUchiMentoriRLeft}}
+\newcommand\nameKOLeftAR{O490005} % 外 左回り above right
+\newcommand\KOLeftAR{\prgbox{\nameKOLeftAR}}
+\newcommand\nameKILeftAC{O490007} % 内 右回り above center
+\newcommand\KILeftAC{\prgbox{\nameKILeftAC}}
+\newcommand\nameDKLthreeAC{O530001} % 内面溝 加工用 レベル3 AC
+\newcommand\DKLthreeAC{\prgbox{\nameDKLthreeAC}}
+\newcommand\nameDKLthreeBD{O530002} % 内面溝 加工用 レベル3 BD
+\newcommand\DKLthreeBD{\prgbox{\nameDKLthreeBD}}
+\newcommand\nameOpauseCheck{O900003} % move and pause in front of the door
+\newcommand\OpauseCheck{\prgbox{\nameOpauseCheck}}
+\newcommand\nameOsensorOn{O910001} % touch sensor ON
+\newcommand\OsensorOn{\prgbox{\nameOsensorOn}}
+\newcommand\nameOsensorOff{O910002} % touch sensor OFF
+\newcommand\OsensorOff{\prgbox{\nameOsensorOff}}
+\newcommand\nameOwarmingupA{O915100} % for warming up
+\newcommand\OwarmingupA{\prgbox{\nameOwarmingupA}}
+\newcommand\nameOwarmingup{O915101} % subprg for warming up
+\newcommand\Owarmingup{\prgbox{\nameOwarmingup}}
+\newcommand\nameOtoolLengthA{O917100} % specified tool length correction auto measurement
+\newcommand\OtoolLengthA{\prgbox{\nameOtoolLengthA}}
+\newcommand\nameOtoolLength{O919100} % tool length correction auto measure
+\newcommand\OtoolLength{\prgbox{\nameOtoolLength}}
+%%%%% LINK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\linkLaTeX}{\href{https://www.latex-project.org/}{\LaTeX}}
+\newcommand{\linkLaTeXProject}{\href{https://www.latex-project.org/}{\LaTeX\ Project}}
+\newcommand{\linkAMS}{\href{https://www.latex-project.org/}{American Mathematical Society}}
+\newcommand{\linkTeXLive}{\href{https://tug.org/texlive/}{\TeX\ Live}}
+\newcommand{\linkTeXUsersGroup}{\href{http://www.tug.org/}{\TeX\ Users Group}}
+\newcommand{\linkBibLaTeX}{\href{https://ctan.org/pkg/biblatex}{Bib\LaTeX}}
+\newcommand{\linkBiber}{\href{https://ctan.org/pkg/biber}{Biber}}
+\newcommand{\linkupmendex}{\href{https://ctan.org/pkg/upmendex}{upmendex}}
+\newcommand{\linkPGFTikZ}{\href{https://github.com/pgf-tikz/pgf}{\pgfname/\tikzname}}
+\newcommand{\linkTeXStudio}{\href{https://texstudio.org/}{\TeX\ Studio}}
+\newcommand{\linkSumatraPDF}{\href{https://www.sumatrapdfreader.org/}{Sumatra PDF}}
+\newcommand{\linkVSCode}{\href{https://code.visualstudio.com/}{VS Code}}
+\newcommand{\linkWolframAlpha}{\href{https://www.wolframalpha.com/}{Wolfram\textbar Alpha}}
+\newcommand{\linkWolfram}{\href{https://www.wolfram.com/}{Wolfram Research}}
+\newcommand{\linkExcel}{\href{https://www.microsoft.com/ja-jp/microsoft-365/excel}{Excel}}
+\newcommand{\linkMicrosoftCopilot}{\href{https://www.bing.com/}{Microsoft Copilot}}
+\newcommand{\linkMicrosoftCorp}{\href{https://www.microsoft.com/}{Microsoft Corporation}}
+\newcommand{\linkPython}{\href{https://www.python.org/}{Python}}
+\newcommand{\linkPythonSF}{\href{https://www.python.org/psf-landing/}{Python Software Foundation}}
+\newcommand{\linkGitHub}{\href{https://github.com/}{GitHub}}
+\newcommand{\linkGitHubDesktop}{\href{https://desktop.github.com/}{GitHub Desktop}}
+\newcommand{\linkGitHubInc}{\href{https://github.com/}{GitHub, Inc}}
+\newcommand{\linkDocker}{\href{https://www.docker.com/}{Docker}}
+\newcommand{\linkDockerInc}{\href{https://www.docker.com/}{Docker, Inc}}
+\newcommand{\linkUbuntu}{\href{https://ubuntu.com/}{Ubuntu}}
+\newcommand{\linkCanonicalLtd}{\href{https://canonical.com/}{Canonical Ltd}}
+\newcommand{\linkSQLite}{\href{https://www.sqlite.org/}{SQLite}}
+\newcommand{\linkSQLiteConsortium}{\href{https://www.sqlite.org/consortium.html}{SQLite Consortium}}
+\newcommand{\linkChatGPT}{\href{https://openai.com/chatgpt}{ChatGPT}}
+\newcommand{\linkOpenAI}{\href{https://www.openai.com/}{OpenAI}}
