@@ -28,8 +28,8 @@ IF[#26LE[#901011/2]]GOTO800
 
 IF[#901011EQ#0]GOTO800
 IF[#901011LE100]GOTO800
-IF[#601EQ#0]GOTO800
-IF[#601LT50]GOTO800
+IF[#600EQ#0]GOTO800
+IF[#600LT50]GOTO800
 IF[#603EQ#0]GOTO800
 IF[#603LE0]GOTO800
 IF[#604EQ#0]GOTO800
@@ -39,7 +39,7 @@ IF[#679EQ#0]GOTO800
 IF[#679LE0]GOTO800
 IF[#679GT50]GOTO800
 (if #901011 <= 100 or #0, go to N800)
-(if #601 < 50 or #0, go to N800)
+(if #600 < 50 or #0, go to N800)
 (if #603 <= 0 or #0, go to N800)
 (if #604 < 0 or #604 > 20.0 or #0, go to N800)
 (if #679 <= 0 or #0, go to N800)
@@ -74,8 +74,8 @@ M117 (sensor on/off)
 G04 X1. (wait 1.0s)
 
 N003
-G90 G54 G43 G31 Z[#5221-#33-#21+[#20/2]+#601] H50 F#676
-(Z skip: topGaisakuCmen +#601)
+G90 G54 G43 G31 Z[#5221-#33-#21+[#20/2]+#600] H50 F#676
+(Z skip: topGaisakuCmen +#600)
 G90 G54 G31 Z[#5221-#33-#21+[#20/2]+#603] F#678
 (Z skip: topGaisakuCmen +#603)
 IF[#5003GT[#5221-#33-#21+[#20/2]+#603]]GOTO802
@@ -92,8 +92,8 @@ G90 G53 G01 Z0 F#675
 G90 G53 G01 X[-#26+[#06/2]+#33] F#676
 (X: -Z+K/2 from table center)
 
-G90 G54 G43 G31 Z[#5221-#33+[#20/2]+#601] H50 F#676
-(Z skip: botGaisakuCmen +#601)
+G90 G54 G43 G31 Z[#5221-#33+[#20/2]+#600] H50 F#676
+(Z skip: botGaisakuCmen +#600)
 G90 G54 G31 Z[#5221-#33+[#02/2]+#603] F#678
 (G54 Z skip: botGaisakuCmen Z+#603)
 IF[#5003GT[#5221-#33+[#02/2]+#603]]GOTO802
@@ -155,7 +155,7 @@ N999 M99
 (#900031, #900032, #900033)
 (as RHS)
 (#501: hosei: touch sensor signal delay)
-(#601, #603, #604, #675, #676, #678, #679)
+(#600, #603, #604, #675, #676, #678, #679)
 (#901001, #901003, #901005, #901007, #901011)
 
 

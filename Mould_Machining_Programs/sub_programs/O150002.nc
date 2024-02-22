@@ -30,8 +30,8 @@ IF[#901011EQ#0]GOTO800
 IF[#901011LE0]GOTO800
 IF[#512EQ#0]GOTO800
 IF[#512LE0]GOTO800
-IF[#601EQ#0]GOTO800
-IF[#601LT50]GOTO800
+IF[#600EQ#0]GOTO800
+IF[#600LT50]GOTO800
 IF[#603EQ#0]GOTO800
 IF[#603LE0]GOTO800
 IF[#604EQ#0]GOTO800
@@ -42,7 +42,7 @@ IF[#679LE0]GOTO800
 IF[#679GT50]GOTO800
 (if #901011 <= 0 or #0, go to N800)
 (if #512 <= 0 or #0, go to N800)
-(if #601 < 50 or #0, go to N800)
+(if #600 < 50 or #0, go to N800)
 (if #603 <= 0 or #0, go to N800)
 (if #604 < 0 or #604 > 20.0 or #0, go to N800)
 (if #679 <= 0 or #0, go to N800)
@@ -66,8 +66,8 @@ N002
 G49
 G90 G53 G01 Z0 F#675
 G90 G54 G01 X0 Y[[#02/2]+#512+#603] F#676
-G90 G54 G43 G01 Z[#26+#601] H50 F#676
-(G43 Z: tanmen + #601)
+G90 G54 G43 G01 Z[#26+#600] H50 F#676
+(G43 Z: Z+#600)
 
 IF[#1005EQ1]GOTO801
 IF[#1004EQ1]GOTO003
@@ -104,7 +104,7 @@ G90 G54 G01 Y[[#20/2]+#512+#603] F#676
 (X: top gaisaku center)
 (Y: top gaisaku Bmen +#603)
 
-G90 G54 G43 G01 Z[#23+#601] H50 F#676
+G90 G54 G43 G01 Z[#23+#600] H50 F#676
 G90 G54 G31 Z[#23-[#13/2]-#512] F#678
 (G54 Z skip: W-M/2-#512)
 IF[#5003GT[#23-[#13/2]-#512]]GOTO802
@@ -171,7 +171,7 @@ N999 M99
 (as LHS)
 (#900027, #900028, #900029)
 (as RHS)
-(#601, #603, #604, #675, #676, #678, #679)
+(#600, #603, #604, #675, #676, #678, #679)
 (#501: hosei: touch sensor signal delay)
 (#503: hosei: probe center Y)
 (#512: probe radius)

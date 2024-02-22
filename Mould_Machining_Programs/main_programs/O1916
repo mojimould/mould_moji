@@ -99,9 +99,9 @@ IF[#1004EQ1]GOTO104
 M117
 
 N104
-G90 G54 G43 G01 Z[499.984+#601] H50 F#676
+G90 G54 G43 G01 Z[499.984+#600] H50 F#676
 (hosei kouguChou #50)
-(Z= BotTanmen +#601)
+(Z= BotTanmen +#600)
 
 G54 G65 P140001 X180.95 Z499.984 W600.0 T13.16 C10. R8922.7 M0.07
 (G54: Bot X Gaisaku center)
@@ -163,9 +163,9 @@ M10 (4jiku clamp)
 
 G90 G57 G01 X0 Y0 F#676
 (G57XY Top Inside Center)
-G90 G57 G43 Z[500.016+#601] H50 F#676
+G90 G57 G43 Z[500.016+#600] H50 F#676
 (hosei KouguChou: #50)
-(Z= TopTanmen +#601)
+(Z= TopTanmen +#600)
 
 G57 G65 P130001 X156.863 Z500.016 W400. R8922.7 M0.07
 (G57: Top X inside center)
@@ -202,9 +202,9 @@ M10 (4jiku clamp)
 
 G90 G57 G01 X0 Y0 F#676
 (G57XY Top Inside Center)
-G90 G57 G43 G01 Z[500.016+#601] H50 F#676
+G90 G57 G43 G01 Z[500.016+#600] H50 F#676
 (hosei KouguChou: #50)
-(Z= topTanmen+#601)
+(Z= topTanmen+#600)
 
 G57 G65 P210003 X156.863 Y154.839 T0.07 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 R8922.7 A-0.642 B-2.130
 (dimple measurement)
@@ -248,9 +248,9 @@ M06 (tool exchange)
 
 G90 G57 G00 X0 Y0
 (G57XY Top Inside Center)
-G90 G57 G43 Z[500.016+#601] H31 F#675
+G90 G57 G43 Z[500.016+#600] H31 F#675
 (hosei KouguChou: #31)
-(Z= TopTanmen +#601)
+(Z= TopTanmen +#600)
 
 M28 (chip conveyor on)
 G57 G65 P210003 X156.863 Y154.839 T0.07 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 R8922.7 A-0.642 B-2.130
@@ -714,7 +714,7 @@ N999 M30
 (as LHS)
 (#901001, #901003, #901004, #901005, #901007, #901008)
 (as RHS)
-(#402, #403, #601, #675, #676)
+(#402, #403, #600, #675, #676)
 (#900021, #900024)
 
 

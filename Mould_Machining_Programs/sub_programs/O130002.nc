@@ -33,8 +33,8 @@ IF[#26LE[#901011/2]]GOTO800
 N005
 IF[#512EQ#0]GOTO800
 IF[#512LE1]GOTO800
-IF[#601EQ#0]GOTO800
-IF[#601LT50]GOTO800
+IF[#600EQ#0]GOTO800
+IF[#600LT50]GOTO800
 IF[#603EQ#0]GOTO800
 IF[#603LE0]GOTO800
 IF[#604EQ#0]GOTO800
@@ -45,7 +45,7 @@ IF[#680LE10]GOTO800
 IF[#901011EQ#0]GOTO800
 IF[#901011LE100]GOTO800
 (if #512 <= 1 or #0, go to N800)
-(if #601 < 50 or #0, go to N800)
+(if #600 < 50 or #0, go to N800)
 (if #603 <= 0 or #0, go to N800)
 (if #604 < 0 or #604 > 20.0 or #0, go to N800)
 (if #680 <= 10 or #0, go to N800)
@@ -131,7 +131,7 @@ IF[[ABS[#900020+#501-#503]]GE[ABS[#29+#603]]]GOTO800
 (current work origin Y = current machine Y)
 
 N990
-G90 G01 Z[#26+#601] F#675
+G90 G01 Z[#26+#600] F#675
 GOTO999
 
 
@@ -167,7 +167,7 @@ N999 M99
 (as LHS)
 (#900019, #900020, #900021, #900022)
 (as RHS)
-(#408, #413, #601, #603, #604, #675, #676, #678, #680)
+(#408, #413, #600, #603, #604, #675, #676, #678, #680)
 (#501: hosei: touch sensor signal delay)
 (#503: hosei: probe center Y)
 (#512: probe radius)
