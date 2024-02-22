@@ -13,7 +13,7 @@
 %% subsection 10.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{引数指定I}
-\index{ひきすうしていI@引数指定I}引数指定Iでは、引数アドレスとしてA-Zのアルファベットをそれぞれ1回ずつ用いることができる。
+\index{ひきすうしていI@引数指定I}引数指定Iでは、\index{ひきすうアドレス@引数アドレス}引数アドレスとしてA-Zのアルファベットをそれぞれ1回ずつ用いることができる。
 そのため使用できる引数の数は、アルファベットの数(26個)である。
 ただし、通常はG, L, N, O, Pは用いることができず、実質的に21個が使用可能な数である。
 
@@ -33,18 +33,14 @@ A, B, Cにはそれぞれ\ttNum1, \ttNum2, \ttNum3が割り当てられ、I, J, 
 %% section F.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{引数アドレスとローカル変数}
-原則として、引数の数が22個以上必要でない限り、\DMname では引数指定Iを用いるものとする。\\
+原則として、引数の数が22個以上必要でない限り、\DMname では引数指定Iを用いるものとする。
 
+\noindent
+\begin{minipage}[t]{0.30\textwidth}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{tcolorbox}[enhanced jigsaw,breakable,size=title,
-%colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,
-%title=My breakable box,pad at break=1mm, break at=-\baselineskip/0pt ]
-%a
-%\end{tcolorbox}
-%\begin{multicols}{2}
-\begin{2columnstable}{引数指定I\TBW}{|Sc|Sl|}{記号}{ローカル変数\hspace*{0.2\textwidth}~}
+\begin{2columnstable}{引数指定I}{|Sc|Sc|}{記号}{変数}
 A & \verb|#01|\\\hline
 B & \verb|#02|\\\hline
 C & \verb|#03|\\\hline
@@ -65,21 +61,60 @@ V & \verb|#22|\\\hline
 W & \verb|#23|\\\hline
 X & \verb|#24|\\\hline
 Y & \verb|#25|\\\hline
-Z & \verb|#26|
-\end{2columnstable}
-%\end{multicols}
-
-
-%\clearpage
+Z & \verb|#26|\\\hline
+\end{2columnstable}%
+\end{minipage}
+\begin{minipage}[t]{0.35\textwidth}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{2columnstable}{通常は使用できない引数\TBW}{|Sc|Sl|}{記号}{ローカル変数\hspace*{0.2\textwidth}~}
+\begin{2columnstable}{通常指定不可な引数}{|Sc|Sc|}{記号}{変数}
 G & \verb|#10|\\\hline
 L & \verb|#12|\\\hline
 N & \verb|#14|\\\hline
 O & \verb|#15|\\\hline
-P & \verb|#16|
-\end{2columnstable}
-
+P & \verb|#16|\\\hline
+\end{2columnstable}%
+\end{minipage}
+\vrule\hfill
+\begin{minipage}[t]{0.30\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{2columnstable}{引数指定II}{|Sc|Sc|}{記号}{変数}
+A & \verb|#01|\\\hline
+B & \verb|#02|\\\hline
+C & \verb|#03|\\\hline
+I$_1$ & \verb|#04|\\\hline
+J$_1$ & \verb|#05|\\\hline
+K$_1$ & \verb|#06|\\\hline
+I$_2$ & \verb|#07|\\\hline
+J$_2$ & \verb|#08|\\\hline
+K$_2$ & \verb|#09|\\\hline
+I$_3$ & \verb|#10|\\\hline
+J$_3$ & \verb|#11|\\\hline
+K$_3$ & \verb|#12|\\\hline
+I$_4$ & \verb|#13|\\\hline
+J$_4$ & \verb|#14|\\\hline
+K$_4$ & \verb|#15|\\\hline
+I$_5$ & \verb|#16|\\\hline
+J$_5$ & \verb|#17|\\\hline
+K$_5$ & \verb|#18|\\\hline
+I$_6$ & \verb|#19|\\\hline
+J$_6$ & \verb|#20|\\\hline
+K$_6$ & \verb|#21|\\\hline
+I$_7$ & \verb|#22|\\\hline
+J$_7$ & \verb|#23|\\\hline
+K$_7$ & \verb|#24|\\\hline
+I$_8$ & \verb|#25|\\\hline
+J$_8$ & \verb|#26|\\\hline
+K$_8$ & \verb|#27|\\\hline
+I$_9$ & \verb|#28|\\\hline
+J$_9$ & \verb|#29|\\\hline
+K$_9$ & \verb|#30|\\\hline
+I$_{10}$ & \verb|#31|\\\hline
+J$_{10}$ & \verb|#32|\\\hline
+K$_{10}$ & \verb|#33|\\\hline
+\end{2columnstable}%
+\end{minipage}
 
