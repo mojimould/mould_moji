@@ -8,8 +8,9 @@
 \let\tmpcleardoublepage\cleardoublepage
 \let\tmpclearpage\clearpage
 \let\tmpnewpage\newpage
-\input{RfCPN_a0_preamble/RfCPN_packages}
-\input{RfCPN_a0_preamble/RfCPN_definitions}
+\input{./RfCPN_a0_preamble/RfCPN_packages}
+\input{./RfCPN_a0_preamble/RfCPN_definitions}
+\input{./RfCPN_a0_preamble/RfCPN_title}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% GEOMETRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -378,20 +379,6 @@
   \commonTable{#1}{#2}{#3}{\textbf{#4} & \textbf{#5}}{2}%
 }
 {\endcommonTable}
-%\NewTblrEnviron{2columnstable}[4]
-%{%
-%  \if\relax\detokenize{#1}\relax
-%  \else
-%    \setlength{\abovecaptionskip}{-3pt}
-%    \modcaptionof{table}{#1} % 追加したキャプション
-%    \addtocounter{table}{-1}
-%  \fi
-%  \begin{commonTable}{#2}{\textbf{#3} & \textbf{#4}}{2}
-%    \SetCell[r=2]{c} % corresponds to \cellspacetoplimit and \cellspacebottomlimit
-%}
-%{%
-%  \end{commonTable}
-%}
 %%%%% 3columnstable %%%%%
 \newenvironment{3columnstable}[6][gray!15!]{%
   \setlength\cellspacetoplimit{4.5pt}%
@@ -445,5 +432,4 @@
 \setlength\normalbaselineskip{\baselineskip}
 \let\cleardoublepage\tmpcleardoublepage
 \let\clearpage\tmpclearpage
-\input{./RfCPN_a0_preamble/RfCPN_title}
 \makeatother
