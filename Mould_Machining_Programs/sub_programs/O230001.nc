@@ -26,8 +26,8 @@ IF[#04LT0]THEN #33=-1
 (for C, #33=1)
 
 N003
-G91 G31 X[#33*[#603+#604]] F#679
-(skip X+ or X-: #603+#604, speed #679)
+G91 G31 X[#33*[#602+#604]] F#679
+(skip X+ or X-: #602+#604, speed #679)
 #749=#5001+#502+#33*[-#501+#512]
 (#749= block end X + hosei probe etc)
 G90 G01 X#748 F#676
@@ -56,7 +56,7 @@ N999 M99
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)
-(#603, #604, #676, #679)
+(#602, #604, #676, #679)
 (as LHS)
 (#748, #749)
 
