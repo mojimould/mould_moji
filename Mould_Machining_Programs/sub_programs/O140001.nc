@@ -151,7 +151,7 @@ IF[[ABS[#900024-#502]]GE[ABS[#29+#603-#501]]]GOTO800
 (current work origin X = current machine coordinate X)
 
 N990
-G90 G01 Z[#26+#601] F#676
+G90 G01 Z[#26+#601] F#675
 GOTO999
 
 
@@ -192,7 +192,7 @@ N999 M99
 (as LHS)
 (#900024)
 (as RHS)
-(#405, #410, #601, #603, #604, #676, #678, #679)
+(#405, #410, #601, #603, #604, #675, #676, #678, #679)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)

@@ -153,7 +153,7 @@ IF[[ABS[#900015+#501-#502]]GE[ABS[#29+#603]]]GOTO800
 (current work origin X = current machine X)
 
 N990
-G90 G01 Z[#26+#601] F#676
+G90 G01 Z[#26+#601] F#675
 GOTO999
 
 
@@ -191,7 +191,7 @@ N999 M99
 (as LHS)
 (#900014, #900015, #900016, #900017)
 (as RHS)
-(#407, #412, #601, #603, #604, #676, #678, #680)
+(#407, #412, #601, #603, #604, #675, #676, #678, #680)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)
