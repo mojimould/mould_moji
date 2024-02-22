@@ -206,17 +206,20 @@ BD方向の内径$w_{\mathrm B\lambda}'$についても同様である。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{溝深さ}
 トップ側に外削がなく、かつ\index{Aがわみぞふかさ@A側溝深さ}A側溝深さが\index{こうさ@公差}公差のある寸法$\kappa_d'$を持つ場合、溝幅中央における溝A側面とA側外面との距離$\kappa_d$は以下のものとみなす。
-\begin{align*}
+\begin{gather*}
   \kappa_d
-  &= \frac{2\kappa_d'-\kappa_w\sin\zeta}{1+\cos^2\zeta}\cos\zeta
-     +\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
-     -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}\ ,\\
+  = \frac{2\kappa_d'-\kappa_w\sin\zeta}{1+\cos^2\zeta}\cos\zeta
+    +\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+    -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}\\[3pt]
+  \left(
   \tan\zeta
-  &= \frac{\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\kappa_w\right)^2}
-           -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}}
-          {\kappa_w}\qquad
-     \left(R_\mathrm o = R_\mathrm c+\frac{W_x}2\right)
-\end{align*}
+  = \frac{\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\kappa_w\right)^2}
+          -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}}
+         {\kappa_w}
+    ~~, \quad
+    R_\mathrm o = R_\mathrm c+\frac{W_x}2
+  \right).
+\end{gather*}
 $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ中心湾曲半径, 外径, トップ振分長, 溝位置, 溝幅を示す。
 なお、$(\nicefrac{f_\mathrm T}{R_\mathrm c})^2$が十分小さい場合は、
 \begin{align*}
