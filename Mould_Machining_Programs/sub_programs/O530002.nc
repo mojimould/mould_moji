@@ -9,12 +9,12 @@ IF[#05EQ0]GOTO800
 (if J = 0 or empty, go to N800)
 
 IF[#620LT0]GOTO800
-IF[#694EQ#0]GOTO800
-IF[#694LE10]GOTO800
-IF[#695EQ#0]GOTO800
-IF[#695LE10]GOTO800
-(if #694 <= 10 or #0, go to N800)
-(if #695 <= 10 or #0, go to N800)
+IF[#670EQ#0]GOTO800
+IF[#670LE10]GOTO800
+IF[#671EQ#0]GOTO800
+IF[#671LE10]GOTO800
+(if #670 <= 10 or #0, go to N800)
+(if #671 <= 10 or #0, go to N800)
 (if #620 < 0, go to N800)
 
 #33=#5042
@@ -47,10 +47,10 @@ IF[#4111EQ33]THEN #30=#463
 N008
 G90 G01 Y[#23-#31*[#32+#620]] F#651
 (Y+: #23-#32-#620 or Y-: #23+#32+#620)
-G91 G01 Y[#31*[#620+#30]] F#694
-G91 G01 Y[#31*#21] F#695
-(Y+ or Y-: #620+hosei, speed #694)
-(Y+ or Y-: U, speed #695)
+G91 G01 Y[#31*[#620+#30]] F#670
+G91 G01 Y[#31*#21] F#671
+(Y+ or Y-: #620+hosei, speed #670)
+(Y+ or Y-: U, speed #671)
 G90 G01 Y#33 F#651
 (G90 G01 Y: to start point)
 GOTO999 (to N999)
@@ -76,7 +76,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#452, #453, #457, #458, #462, #463, #620, #651, #694, #695)
+(#452, #453, #457, #458, #462, #463, #620, #651, #670, #671)
 
 
 (System variables)
