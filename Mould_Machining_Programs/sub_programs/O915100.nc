@@ -9,7 +9,7 @@ S200
 M05 (spindle off)
 M09 (coolant off)
 M29 (chip conveyor off)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 G90 G53 G01 X-5.501 Y-258.624 F#676
 
 
@@ -92,7 +92,7 @@ M30
 
 (Common variables)
 (as RHS)
-(#675, #676)
+(#650, #676)
 
 
 (Subprograms)

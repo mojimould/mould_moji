@@ -7,7 +7,7 @@ N001
 #22=#517-#5022+#05
 
 N002
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 M19 (spindle orientation)
 IF[#4120EQ50]GOTO003
 G91 G53 G00 X#21 Y#22
@@ -54,7 +54,7 @@ IF[#11EQ32]THEN #[10000+#11]=#5063+#[#03]+#5203+#505-#901129/2
 (set tool length and wear)
 
 N990
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 M33 (close sensor)
 IF[#11EQ50]GOTO992
 G91 G30 X0 Y0
@@ -65,7 +65,7 @@ GOTO999
 
 
 N800
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 M33 (close sensor and off)
 #3000=141 (tool measurement alarm)
 
@@ -93,7 +93,7 @@ N999 M99
 (#513: speed)
 (#516: sensor position X)
 (#517: sensor position Y)
-(#675, #676)
+(#650, #676)
 (#679: measurement skip speed)
 (#901113, #901115, #901117, #901127, #901129)
 

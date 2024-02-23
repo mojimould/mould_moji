@@ -10,7 +10,7 @@ S200
 M05 (spindle off)
 M09 (coolant off)
 M29 (chip conveyor off)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 
 N002
 IF[#1005EQ0]GOTO003
@@ -155,7 +155,7 @@ G55 G65 P130002 Y153 Z499.984 M0.07
 (Bottom sokutei end)
 (Top sokutei start)
 
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 M11 (4jiku unclamp)
 G90 G57 G00 B-0.642
 (G57B parallel angle -0.642)
@@ -194,7 +194,7 @@ N200
 (*** Dimple Measurement Start ***)
 
 
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 M11 (4jiku unclamp)
 G90 G57 G00 B-0.642
 (G57B parallel angle -0.642)
@@ -229,7 +229,7 @@ G04 X1.5 (wait 1.5s)
 IF[#1004EQ0]GOTO201
 G65 P910002 (sensor OFF)
 N201
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 
 (dimple mesurement end)
 IF[#186EQ0]GOTO300
@@ -241,14 +241,14 @@ N300
 
 
 G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 G90 G53 G01 X-5.501 Y-258.624 F#676
 T31 (Tslot R20)
 M06 (tool exchange)
 
 G90 G57 G00 X0 Y0
 (G57XY Top Inside Center)
-G90 G57 G43 Z[500.016+#600] H31 F#675
+G90 G57 G43 Z[500.016+#600] H31 F#650
 (hosei KouguChou: #31)
 (Z= TopTanmen +#600)
 
@@ -287,7 +287,7 @@ N400
 
 
 G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 T02 (tanmen)
 M06 (tool exchange)
 
@@ -323,7 +323,7 @@ N410
 
 
 G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 T16 (gaisaku)
 M06 (tool exchange)
 
@@ -364,7 +364,7 @@ N420
 
 
 G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 T06 (mizo)
 M06 (tool exchange)
 
@@ -407,7 +407,7 @@ N430
 
 
 G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 T13 (mentori 45)
 M06 (tool exchange)
 
@@ -444,7 +444,7 @@ N500
 
 
 G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 T02 (tanmen)
 M06 (tool exchange)
 
@@ -466,7 +466,7 @@ G55 G65 P410000 D2. X155. Y153. Z499.984 R19.
 
 M05 (shujiku kaiten off)
 M09 (coolant off)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 
 (Bottom tammen end)
 IF[#196EQ1]GOTO501
@@ -484,7 +484,7 @@ N510
 
 
 G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 T16 (gaisaku)
 M06 (tool exchange)
 
@@ -525,7 +525,7 @@ N530
 
 
 G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 T11 (mentori 15)
 M06 (tool exchange)
 
@@ -562,7 +562,7 @@ N540
 
 
 G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 T11 (mentori 15)
 M06 (tool exchange)
 
@@ -610,7 +610,7 @@ M00
 
 N650
 G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 G91 G30 X0 Y0
 M11 (4jiku unclamp)
 G90 G00 G54 B[-90-0.642]
@@ -640,7 +640,7 @@ M00
 
 N660
 G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 M11 (4jiku unclamp)
 G90 G54 G00 B[180-0.642]
 (G54 Bot:+Z, Top:-Z)
@@ -661,7 +661,7 @@ G90 G54 G01 X#900030 Y#900026 F#676
 M00 (tooriShin Y end)
 
 G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 G90 G53 G01 X-5.501 Y-258.624 F#676
 GOTO990
 
@@ -696,7 +696,7 @@ G80 G17
 S200
 
 N992
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 G91 G30 X0 Y0
 T01 (empty)
 M06 (tool exchange)
@@ -714,7 +714,7 @@ N999 M30
 (as LHS)
 (#901001, #901003, #901004, #901005, #901007, #901008)
 (as RHS)
-(#402, #403, #600, #675, #676)
+(#402, #403, #600, #650, #676)
 (#900021, #900024)
 
 

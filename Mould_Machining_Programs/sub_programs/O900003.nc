@@ -2,7 +2,7 @@
 O900003 (pause and check)
 
 N001
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 
 #33=#4012
 #32=#5001
@@ -25,13 +25,13 @@ G91 G00 B90.0
 M10 (4jiku clamp)
 
 N005
-G90 G53 G01 Z-1000.0 F#675
+G90 G53 G01 Z-1000.0 F#650
 
 N006
 M00 (OK?)
 
 N007
-G90 G53 G01 Z0 F#675
+G90 G53 G01 Z0 F#650
 
 N008
 M11 (4jiku unclamp)
@@ -54,7 +54,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#675)
+(#650)
 
 
 (System variables)
