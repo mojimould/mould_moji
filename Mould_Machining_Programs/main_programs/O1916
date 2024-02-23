@@ -414,14 +414,12 @@ M10 (4jiku clamp)
 M28 (chip conveyor on)
 G56 G65 P440000 D13. X180.95 Y180.95 Z500.016 C1. R18.
 (O440000: Sotogawa 1shuu Corner R, ar HidariMawari)
-(default: S=1800.)
 (D: hosei kouguKei&Chou #)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
 (Z: Top sai_furiwake)
 (C: mentori C)
 (R: corner R)
-(S*: kaitenSuu)
 
 (Top SotoMentori end)
 IF[#192EQ1]GOTO431
@@ -529,14 +527,12 @@ M10 (4jiku clamp)
 M28 (chip conveyor on)
 G54 G65 P440000 D11. X180.95 Y180.95 Z499.984 C4.0 R18.
 (O440000: Sotogawa 1shuu Corner R, ar HidariMawari)
-(default: S=1800.)
 (D: hosei kouguKei&Chou #)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
 (Z: Top sai_furiwake)
 (C: mentori C)
 (R: corner R)
-(S*: kaitenSuu)
 
 (Bottom SotoMentori end)
 IF[#198EQ1]GOTO531

@@ -27,19 +27,16 @@ IF[#4012EQ54]THEN #33=#441
 (Top: #33=#425. Bot: #33=#441)
 (#33: X +hosei)
 
-N003
-IF[#19EQ#0]THEN #19=1800
-(default: S=1800)
-
 N004
 IF[#664EQ#0]GOTO800
 IF[#664LE10]GOTO800
 IF[#665EQ#0]GOTO800
 IF[#665LE10]GOTO800
-IF[#19LT200]GOTO800
+IF[#678EQ#0]GOTO800
+IF[#678LE200]GOTO800
 (if #664 <= 10 or #0, go to N800)
 (if #665 <= 10 or #0, go to N800)
-(if S < 200, go to N800)
+(if #678 <= 200 or #0, go to N800)
 
 N005
 IF[#07LT11]GOTO800
@@ -89,15 +86,15 @@ N101
 G90 G00 X[[#104/2]+#31*3+#33] Y[#105/2]
 G42 D#07
 G91 G00 X-[#31/2]
-G90 G01 Z[#26-#03] S#19 F#651
+G90 G01 Z[#26-#03] S#678 F#651
 
 N102
-M03 (shujiku kaiten on)
+M03 (spindle on)
 M08 (coolant on)
 
 N103
 G90 G01 X[[#104/2]+#31*2+#33] Y[#105/2] F#651
-G65 P490005 K1. R#18 X#104 Y#105 D#31 F#664 E#665 S#19
+G65 P490005 K1. R#18 X#104 Y#105 D#31 F#664 E#665 S#678
 G90 G40 G00 X[[#104/2]+#31*3+#33]
 END1
 
@@ -108,13 +105,13 @@ IF[#442EQ1]GOTO012
 IF[#442EQ2]GOTO013
 GOTO016
 N012 (if #442=1)
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 G90 G01 Z[#26+#600] F#650
 M00 (OK?)
 GOTO016
 N013 (if #442=2)
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 G65 P900003 (for Bot)
 GOTO016
@@ -123,13 +120,13 @@ IF[#426EQ1]GOTO014
 IF[#426EQ2]GOTO015
 GOTO016
 N014 (if #426=1)
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 G90 G01 Z[#26+#600] F#650
 M00 (OK?)
 GOTO016
 N015 (if #426=2)
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 G65 P900003 (for Top)
 
@@ -161,20 +158,20 @@ N201
 G90 G00 X[[#24/2]+#31*3+#33] Y[#25/2]
 G42 D#07
 G91 G00 X-[#31/2]
-G90 G01 Z[#26-#03] S#19 F#651
+G90 G01 Z[#26-#03] S#678 F#651
 
 N202
-M03 (shujiku kaiten on)
+M03 (spindle on)
 M08 (coolant on)
 
 N203
 G90 G01 X[[#24/2]+#31*2+#33] Y[#25/2] F#651
-G65 P490005 K1. R#18 X#24 Y#25 D#31 F#664 E#665 S#19
+G65 P490005 K1. R#18 X#24 Y#25 D#31 F#664 E#665 S#678
 G90 G40 G00 X[[#24/2]+#31*3+#33]
 END2
 
 N990
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 
 N991
@@ -185,7 +182,7 @@ GOTO999
 
 
 N800
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 #3000=100 (are the arguments OK?)
 
@@ -202,8 +199,6 @@ N999 M99
 (#24:X: AC gaikei)
 (#25:Y: BD gaikei)
 (#26:Z: sai-furiwake)
-(as received hidden arguments)
-(#19:S: kaitenSuu)
 
 (as LHS)
 (#30, #31, #32, #33)
@@ -213,7 +208,7 @@ N999 M99
 (as LHS)
 (#103, #104, #105, #106)
 (as RHS)
-(#425, #426, #427, #441, #442, #443, #600, #605, #631, #632, #650, #651, #664, #665)
+(#425, #426, #427, #441, #442, #443, #600, #605, #631, #632, #650, #651, #664, #665, #678)
 (#901011)
 
 
@@ -229,5 +224,5 @@ N999 M99
 
 
 (Passed arguments)
-(#18, #19, #24, #25, #31, #104, #105, #664, #665)
+(#18, #24, #25, #31, #104, #105, #664, #665, #678)
 %
