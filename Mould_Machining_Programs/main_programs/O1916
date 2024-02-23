@@ -563,7 +563,6 @@ M28 (chip conveyor on)
 G55 G65 P450000 D11. X155. Y153. Z499.984 C10. R3.5 M0.07
 (Bot Uchi Chamfer)
 (O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
-(default: S=1800.)
 (D: hosei kougu #)
 (X: AC naikei)
 (Y: BD naikei)
@@ -571,7 +570,6 @@ G55 G65 P450000 D11. X155. Y153. Z499.984 C10. R3.5 M0.07
 (C: mentori length C)
 (R: corner R)
 (M: mekki mm)
-(S*: kaitenSuu)
 
 (Bottom Uchimentori end)
 IF[#199EQ1]GOTO541
