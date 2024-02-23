@@ -41,7 +41,7 @@ G91 G31 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F#678
 (YZ skip to the 1st dimple: X: faceA-#602 or faceC+#602)
 GOTO007
 N006 (for kakou)
-G91 G01 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F#677
+G91 G01 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F#651
 (YZ to the 1st dimple: X: faceA-5 or faceC+5)
 
 N007
@@ -68,13 +68,13 @@ IF[#4111NE50]GOTO102
 G91 G31 Y#04 F#678
 GOTO103
 N102 (for kakou)
-G91 G01 Y#04 F#677
+G91 G01 Y#04 F#651
 N103
 #31=#31+1
 END1
 
 N008
-G90 G01 Y#725 Z#726 F#677
+G90 G01 Y#725 Z#726 F#651
 (YZ: to start point)
 GOTO999
 
@@ -106,7 +106,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#602, #677, #678, #717, #749)
+(#602, #651, #678, #717, #749)
 (as LHS)
 (#725-#730)
 (#900101-#900200 ,#900201-#900300)
