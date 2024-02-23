@@ -333,7 +333,7 @@ M10 (4jiku clamp)
 M28 (chip conveyor on)
 G56 G65 P420000 D16. R18. X180.95 Y180.95 U185. V183. Z500.016 K32.0 M12.05 W8.05
 (O420000: Sotogawa 1shuu Corner R, ar HidariMawari)
-(default: S=930, M=0, W=0)
+(default: M=0, W=0)
 (D: hosei kouguKei&Chou #)
 (R: corner R)
 (X: AC gaisakuKei)
@@ -344,7 +344,6 @@ G56 G65 P420000 D16. R18. X180.95 Y180.95 U185. V183. Z500.016 K32.0 M12.05 W8.0
 (K: gaisaku Length)
 (M*: mizoIchi)
 (W*: mizoHaba)
-(S*: kaitensuu)
 
 (Top gaisaku end)
 IF[#190EQ1]GOTO411
@@ -492,7 +491,7 @@ M10 (4jiku clamp)
 M28 (chip conveyor on)
 G54 G65 P420000 D16. X180.95 Y180.95 U185. V185. Z499.984 R18. K25.0
 (O420000: Sotogawa 1shuu Corner R, al HidariMawari)
-(default: S=930, M=0, W=0)
+(default: M=0, W=0)
 (D: hosei kouguKei&Chou #)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
@@ -503,7 +502,6 @@ G54 G65 P420000 D16. X180.95 Y180.95 U185. V185. Z499.984 R18. K25.0
 (K: gaisaku Length)
 (M*: mizoIchi)
 (W*: mizoHaba)
-(S*: kaitensuu)
 
 (Bottom gaisaku end)
 IF[#197EQ1]GOTO511
