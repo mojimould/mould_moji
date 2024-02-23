@@ -28,7 +28,7 @@ M32 (open sensor and ON)
 G04 X1.5 (wait 1.5s)
 
 N007
-G91 G53 G31 P2 Z-#06 F#513
+G91 G53 G31 P2 Z-#06 F#654
 (skip Z to sensor)
 IF[#5063LE[#07-#06]]GOTO800
 
@@ -90,10 +90,10 @@ N999 M99
 (#504: measurement length)
 (#505: distance from the probe surface to Z0)
 (#507: tolerance for tool breakage detection)
-(#513: speed)
 (#516: sensor position X)
 (#517: sensor position Y)
 (#650, #652)
+(#654: aproach speed)
 (#679: measurement skip speed)
 (#901113, #901115, #901117, #901127, #901129)
 
