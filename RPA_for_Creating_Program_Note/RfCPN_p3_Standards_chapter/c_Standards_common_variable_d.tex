@@ -109,16 +109,16 @@ $\cdots$ & \qquad$\cdots$ &\\\hline
 \end{3columnstable}
 
 \begin{3columnstable}[white]{\ttNum405\,-\ttNum414：測定時の調整（\dimple 除く）}{|Sc|Sl|Sc|}{番号}{内容}{初期値}
-\ttNum405 & (\verb|G54|$X$)ボトム外$X$芯出し（両側・片側測定）測定位置$Z-$補正（$X$自動補正） & 0\\\hline
-\ttNum406 & (\verb|G54|$Y$)ボトム外$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\\hline
-\ttNum407 & (\verb|G55|$X$)ボトム内$X$芯出し（両側測定）測定位置$Z-$補正（$X$自動補正） & 0\\\hline
-\ttNum408 & (\verb|G55|$Y$)ボトム内$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\\hline
+\ttNum405 & \verb|G54|$X$：ボトム外$X$芯出し（両側・片側測定）測定位置$Z-$補正（$X$自動補正） & 0\\\hline
+\ttNum406 & \verb|G54|$Y$：ボトム外$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\\hline
+\ttNum407 & \verb|G55|$X$：ボトム内$X$芯出し（両側測定）測定位置$Z-$補正（$X$自動補正） & 0\\\hline
+\ttNum408 & \verb|G55|$Y$：ボトム内$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\\hline
 \rowcolor{unusingVariables}
 \ttNum409 & （不使用） &\\\hline
-\ttNum410 & (\verb|G56|$X$)トップ外$X$芯出し（両側・片側測定）測定位置$Z-$補正（$X$自動補正） & 0\\\hline
-\ttNum411 & (\verb|G56|$Y$)トップ外$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\\hline
-\ttNum412 & (\verb|G57|$X$)トップ内$X$芯出し（両側測定）測定位置$Z-$補正（$X$自動補正） & 0\\\hline
-\ttNum413 & (\verb|G57|$Y$)トップ内$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\\hline
+\ttNum410 & \verb|G56|$X$：トップ外$X$芯出し（両側・片側測定）測定位置$Z-$補正（$X$自動補正） & 0\\\hline
+\ttNum411 & \verb|G56|$Y$：トップ外$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\\hline
+\ttNum412 & \verb|G57|$X$：トップ内$X$芯出し（両側測定）測定位置$Z-$補正（$X$自動補正） & 0\\\hline
+\ttNum413 & \verb|G57|$Y$：トップ内$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\\hline
 \rowcolor{unusingVariables}
 \ttNum414 & （不使用） &
 \end{3columnstable}
@@ -126,7 +126,7 @@ $\cdots$ & \qquad$\cdots$ &\\\hline
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-\MXIface（\index{がいさくちゅうしん@外削中心}外削中心測定）の場合、測定位置$Z$は端面$Z$位置でないことに注意
+\index{がいさくちゅうしん@外削中心}外削中心測定\MXIface で内面取がある場合、測定位置$Z$は端面$Z$位置でないことに注意
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -250,7 +250,7 @@ $\cdots$ & （以下予備） &
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{3columnstable}[white]{\ttNum500\,-\ttNum524：\prgbox{O910x}\prgbox{O93xx}用}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.71\textwidth}}{設定値}
+\begin{3columnstable}[white]{\ttNum500\,-\ttNum574：\prgbox{O910x}\prgbox{O93xx}用}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.71\textwidth}}{設定値}
 \ttNum500 & 芯ずれ許容差 \prgbox{O93xx} & 5\\\hline
 \ttNum501 & タッチセンサー信号遅れ補正 \prgbox{O93xx} & 0.040\\\hline
 \ttNum502 & タッチセンサープローブ中心$X$補正 \prgbox{O93xx} & -0.016507\\\hline
@@ -445,7 +445,7 @@ $\cdots$ & （以下予備） &
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum700\,-\ttNum724：内面溝レベル1サブプログラム用}
 
-\begin{2columnstable}[white]{\ttNum700\,-\ttNum724：\dimple~レベル1サブプログラム用 \DLone}{|Sc|Sl|}{番号}{内容}
+\begin{2columnstable}[white]{\ttNum700\,-\ttNum724：\dimple~\DLone 用}{|Sc|Sl|}{番号}{内容}
 \rowcolor{unusingVariables}
 \ttNum700 & （予備）\\\hline
 \ttNum701 & プログラム読込み時のワーク座標系(\ttNum4012)\\\hline
@@ -487,7 +487,7 @@ $\cdots$ & （以下予備）
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum725\,-\ttNum749：内面溝レベル2, 3サブプログラム用}
 
-\begin{2columnstable}[white]{\ttNum725\,-\ttNum744：\dimple~レベル2サブプログラム用 \DLtwoAC\DLtwoBD}{|Sc|Sl|}{番号}{内容}
+\begin{2columnstable}[white]{\ttNum725\,-\ttNum744：\dimple~\DLtwoAC\DLtwoBD 用}{|Sc|Sl|}{番号}{内容}
 \ttNum725 & プログラム読込時ブロックエンド$Y$ or $X$ (\ttNum5002, \ttNum5001)\\\hline
 \ttNum726 & プログラム読込時ブロックエンド$Z$ (\ttNum5003)\\\hline
 \ttNum727 & \dimple~偶数列の列数\\\hline
@@ -500,7 +500,7 @@ $\cdots$ & （以下予備）
 
 
 %\clearpage
-\begin{2columnstable}[white]{\ttNum745\,-\ttNum749：\dimple~測定用 \DMLthreeAC\DMLthreeBD}{|Sc|Sl|}{番号}{内容}
+\begin{2columnstable}[white]{\ttNum745\,-\ttNum749：\dimple~測定~\DMLthreeAC\DMLthreeBD 用}{|Sc|Sl|}{番号}{内容}
 \rowcolor{unusingVariables}
 \ttNum745 & （以下 予備）\\\hline
 \rowcolor{unusingVariables}
