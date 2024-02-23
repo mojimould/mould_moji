@@ -139,10 +139,10 @@ G91 G31 X[#31*[#602+#603]] F#679
 (#900024= skip X +#502+#31*[#512-#501])
 
 N012
-G90 G01 X[#900024-#31*#29] F#676
+G90 G01 X[#900024-#31*#29] F#652
 (X to measured center)
-G91 G01 X-[#31*#27] Z#30 F#676
-G91 G01 X-[#31*#28] Z#03 F#676
+G91 G01 X-[#31*#27] Z#30 F#652
+G91 G01 X-[#31*#28] Z#03 F#652
 (X to measured tanmen center)
 IF[[ABS[#900024-#502]]GE[ABS[#29+#602-#501]]]GOTO800
 (if |#900024-#502|>=|#29-#602-#501|, go to N800)
@@ -156,14 +156,14 @@ GOTO999
 
 
 N803
-G90 G01 X#32 F#676
+G90 G01 X#32 F#652
 (X to start point)
-G90 G53 G01 Z0 F#676
+G90 G53 G01 Z0 F#652
 G65 P910002 (sensor OFF)
 #3000=121 (are the arguments or the mould OK?)
 
 N802
-G90 G53 G01 Z0 F#676
+G90 G53 G01 Z0 F#652
 G65 P910002 (sensor OFF)
 #3000=121 (are the arguments or the mould OK?)
 
@@ -192,7 +192,7 @@ N999 M99
 (as LHS)
 (#900024)
 (as RHS)
-(#405, #410, #600, #602, #603, #650, #676, #678, #679)
+(#405, #410, #600, #602, #603, #650, #652, #678, #679)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
 (#512: probe radius)

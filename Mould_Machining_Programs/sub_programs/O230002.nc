@@ -30,7 +30,7 @@ G91 G31 Y[#33*[#602+#603]] F#679
 (skip Y+ or Y-: #602+#603, speed #679)
 #749=#5002+#503+#33*[-#501+#512]
 (#749= block end Y + hosei probe etc)
-G90 G01 Y#748 F#676
+G90 G01 Y#748 F#652
 (G90 G01 Y: to start point)
 GOTO999 (to N999)
 
@@ -56,7 +56,7 @@ N999 M99
 (#501: hosei: touch sensor signal delay)
 (#503: hosei: probe center Y)
 (#512: probe radius)
-(#602, #603, #676, #679)
+(#602, #603, #652, #679)
 (as LHS)
 (#748, #749)
 

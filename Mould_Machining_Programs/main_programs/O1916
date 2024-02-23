@@ -36,7 +36,7 @@ IF[#402EQ650]GOTO#402
 IF[#402EQ660]GOTO#402
 
 N005
-G90 G53 G01 X-5.501 Y-258.624 F#676
+G90 G53 G01 X-5.501 Y-258.624 F#652
 M262 (palette rotate speed 25)
 M71 (palette #1)
 (M60) (palette change)
@@ -88,7 +88,7 @@ G40 G49 G80 S200 (cancel hosei, low gear)
 M19 (Shujiku orientation)
 G43 H50 (hosei kouguChou #50)
 
-G90 G54 G01 X0 Y0 F#676
+G90 G54 G01 X0 Y0 F#652
 (G01 G54XY Bot Gaisaku center)
 
 G65 P910001 (sensor ON)
@@ -99,7 +99,7 @@ IF[#1004EQ1]GOTO104
 M117
 
 N104
-G90 G54 G43 G01 Z[499.984+#600] H50 F#676
+G90 G54 G43 G01 Z[499.984+#600] H50 F#652
 (hosei kouguChou #50)
 (Z= BotTanmen +#600)
 
@@ -118,7 +118,7 @@ IF[#1000EQ1]THEN #5261=-[#5221-#901005]+#901005+11.0
 (G56: Top Gaisaku center X)
 (G56X= -[G54X-tableCenterX]+tableCenterX+tooriShin)
 
-G90 G54 G01 X0 Y0 F#676
+G90 G54 G01 X0 Y0 F#652
 (G55 XY Bot outside center)
 G43 H50 (hosei kouguChou #50)
 
@@ -130,7 +130,7 @@ G54 G65 P110002 Y183. Z499.984
 #5262=#5222 (G56Y=G54Y)
 (G56: Top Gaisaku center Y)
 
-G90 G55 G01 X0 Y0 F#676
+G90 G55 G01 X0 Y0 F#652
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
@@ -142,7 +142,7 @@ G55 G65 P130001 X155. Z499.984 W600. R8922.7 M0.07
 (R: central curvature)
 (M: mekki thickness mm)
 
-G90 G55 G01 X0 Y0 F#676
+G90 G55 G01 X0 Y0 F#652
 (G55 XY Bot inside center)
 G43 H50 (hosei kouguChou #50)
 
@@ -161,9 +161,9 @@ G90 G57 G00 B-0.642
 (G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
-G90 G57 G01 X0 Y0 F#676
+G90 G57 G01 X0 Y0 F#652
 (G57XY Top Inside Center)
-G90 G57 G43 Z[500.016+#600] H50 F#676
+G90 G57 G43 Z[500.016+#600] H50 F#652
 (hosei KouguChou: #50)
 (Z= TopTanmen +#600)
 
@@ -175,7 +175,7 @@ G57 G65 P130001 X156.863 Z500.016 W400. R8922.7 M0.07
 (R: central curvature)
 (M: mekki thickness mm)
 
-G90 G57 G01 X0 Y0 F#676
+G90 G57 G01 X0 Y0 F#652
 (G57XY Top inside center)
 G43 H50 (hosei kouguChou #50)
 
@@ -200,9 +200,9 @@ G90 G57 G00 B-0.642
 (G57B parallel angle -0.642)
 M10 (4jiku clamp)
 
-G90 G57 G01 X0 Y0 F#676
+G90 G57 G01 X0 Y0 F#652
 (G57XY Top Inside Center)
-G90 G57 G43 G01 Z[500.016+#600] H50 F#676
+G90 G57 G43 G01 Z[500.016+#600] H50 F#652
 (hosei KouguChou: #50)
 (Z= topTanmen+#600)
 
@@ -242,7 +242,7 @@ N300
 
 G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
-G90 G53 G01 X-5.501 Y-258.624 F#676
+G90 G53 G01 X-5.501 Y-258.624 F#652
 T31 (Tslot R20)
 M06 (tool exchange)
 
@@ -657,12 +657,12 @@ G54 G65 P150002 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11.
 (K: Bot gaisaku length)
 (U: tooriShin X)
 
-G90 G54 G01 X#900030 Y#900026 F#676
+G90 G54 G01 X#900030 Y#900026 F#652
 M00 (tooriShin Y end)
 
 G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
-G90 G53 G01 X-5.501 Y-258.624 F#676
+G90 G53 G01 X-5.501 Y-258.624 F#652
 GOTO990
 
 (Alerm)
@@ -714,7 +714,7 @@ N999 M30
 (as LHS)
 (#901001, #901003, #901004, #901005, #901007, #901008)
 (as RHS)
-(#402, #403, #600, #650, #676)
+(#402, #403, #600, #650, #652)
 (#900021, #900024)
 
 
