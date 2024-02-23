@@ -252,7 +252,6 @@ G90 G57 G43 Z[500.016+#600] H31 F#650
 (hosei KouguChou: #31)
 (Z= TopTanmen +#600)
 
-M28 (chip conveyor on)
 G57 G65 P210003 X156.863 Y154.839 T0.07 Z500.016 W400. F102. S85. Q90. I17. K20. M6. U0.31 R8922.7 A-0.642 B-2.130
 (dimple kakou)
 (X: AC naikei of last row)

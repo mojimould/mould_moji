@@ -105,6 +105,10 @@ IF[#1000EQ1]THEN #30=#901005
 #711=-#709*SIN[ABS[#02]]-#17*COS[ABS[#02]]
 (XZ: the center of the 1st row after rotation)
 
+
+(kokokara G01)
+
+
 N004
 M11 (4jiku unclamp)
 G90 G#701 G01 B[#01+#02]
@@ -129,7 +133,7 @@ N005
 IF[#1004EQ1]GOTO006
 (if current sensor ON, go to N006)
 M117 (sensor on/off)
-G04 X1.
+G04 X1.5 (wait 1.5s)
 
 N006
 G91 G#704 X#710 Z#711 F#653
@@ -143,9 +147,10 @@ G91 G#704 X#710 Z#711 F#653
 
 IF[#4111EQ50]GOTO009
 (if sensor, go to N009)
-S2000
-M03 (shujiku kaiten on)
-(M08 coolant on)
+S#681
+M03 (spindle on)
+M08 (coolant on)
+M28 (chip conveyor on)
 
 N009
 #717=4
@@ -224,7 +229,7 @@ GOTO100
 
 N104
 IF[#4111EQ50]GOTO010
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 
 N010
@@ -237,7 +242,7 @@ GOTO999
 
 
 N801
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 #3000=145 (Sensor Low battery)
 
@@ -254,7 +259,7 @@ G90 G01 X#712 Z#713 F#653
 (XZ: to start point)
 
 N800
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 #3000=121 (are the arguments or the mould OK?)
 
@@ -290,7 +295,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#512, #600, #602, #652, #653, #901001, #901005, #901011)
+(#512, #600, #602, #652, #653, #681, #901001, #901005, #901011)
 (as LHS)
 (#701-#719)
 
