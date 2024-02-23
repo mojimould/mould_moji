@@ -33,15 +33,18 @@
 \newtcolorbox{Tabbox}[1][]{Tabularbox, #1}
 %\renewcommand{\tableautorefname}{表}
 %%%%% TOCPART %%%%%
-\newcommand{\tocpartpagebox}[1]{%
-  \node[draw, red!40!black!60!, line width=0.5mm, fill=red!50!yellow!70!black!60!, anchor=east,
-        font=\sffamily\bfseries\large, text=white, inner sep=2mm, rounded corners,
-       ] at ([xshift=-5mm]frame.north east) {#1};
-}
-\newtcolorbox{tocPart}[1]{%
-  tocpartstyle,%
-%  title={#1},%
+%\newcommand{\tocpagebox}[1]{%
+%  \node[draw, red!40!black!60!, line width=0.5mm, fill=red!50!yellow!70!black!60!, anchor=east,
+%        font=\sffamily\bfseries\large, text=white, inner sep=2mm, rounded corners,
+%       ] at ([xshift=-5mm]frame.north east) {#1};
+%}
+\newtcolorbox{tocBox}[1]{%
+  tocstyle,%
   watermark text={\bfseries\Large{#1}},%
+}
+\newtcolorbox{lopBox}[1]{%
+  lopstyle,%
+  title={#1},%
 %  underlay first={\tocpartpagebox{\pageref{#3}}},
 %  underlay unbroken={\tocpartpagebox{\pageref{#3}}},
 }

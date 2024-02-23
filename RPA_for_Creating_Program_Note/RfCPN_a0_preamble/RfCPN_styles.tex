@@ -62,10 +62,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \allowdisplaybreaks
 %%%%% TO NO PAGE BREAK IN TOC %%%
-%\pretocmd{\modHeadchapter}{\addtocontents{lot}{\protect\nopagebreak}}{}{}
 %\pretocmd{\modHeadsection}{\ifnum\value{section}=0\addtocontents{lot}{\protect\nopagebreak}\fi}{}{}
-%\pretocmd{\subsection}{\ifnum\value{subsection}=0\addtocontents{toc}{\protect\nopagebreak[4]}\fi}{}{}
-%\pretocmd{\subsubsection}{\ifnum\value{subsubsection}=0\addtocontents{toc}{\protect\nopagebreak}\fi}{}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% UNIT LENGTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -147,20 +144,6 @@
 %  tocnumwidth=4.25em
 %]{part}
 %\addtokomafont{partentry}{\def\autodot{}}
-%\RedeclareSectionCommand[
-%  tocindent=1.5em,
-%  tocnumwidth=1.5em
-%]{chapter}
-%\RedeclareSectionCommand[
-%  tocindent=3em,
-%  tocnumwidth=2.5em,
-%  tocentrynumberformat=\entrynumberwithdot
-%]{section}
-%\RedeclareSectionCommand[
-%  tocindent=4.5em,
-%  tocnumwidth=2.5em,
-%  tocentrynumberformat=\entrynumberwithdot
-%]{subsection}
 \setcounter{tocdepth}{3}
 \renewcommand\contentsname{\texorpdfstring{\hbox to 1.9em{目次}}{目次}}
 %%%%% FOR PART %%%%%
@@ -369,30 +352,6 @@
   tocindent=12em,%
   tocnumwidth=6em%
 ]{subparagraph}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF TABLE %%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% 2columnstable %%%%%
-\newenvironment{2columnstable}[5][gray!15!]{%
-  \setlength\cellspacetoplimit{4.5pt}%
-  \setlength\cellspacebottomlimit{4.5pt}%
-  \commonTable{#1}{#2}{#3}{\textbf{#4} & \textbf{#5}}{2}%
-}
-{\endcommonTable}
-%%%%% 3columnstable %%%%%
-\newenvironment{3columnstable}[6][gray!15!]{%
-  \setlength\cellspacetoplimit{4.5pt}%
-  \setlength\cellspacebottomlimit{4.5pt}%
-  \commonTable{#1}{#2}{#3}{\textbf{#4} & \textbf{#5} & \textbf{#6}}{3}%
-}
-{\endcommonTable}
-%%%%% 4columnstable %%%%%
-\newenvironment{4columnstable}[7][gray!15!]{%
-  \setlength\cellspacetoplimit{4.5pt}%
-  \setlength\cellspacebottomlimit{4.5pt}%
-  \commonTable{#1}{#2}{#3}{\textbf{#4} & \textbf{#5} & \textbf{#6} & \textbf{#7}}{4}%
-}
-{\endcommonTable}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF TIKZSET %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
