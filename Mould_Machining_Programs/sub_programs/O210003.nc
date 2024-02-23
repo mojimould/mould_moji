@@ -132,7 +132,7 @@ M117 (sensor on/off)
 G04 X1.
 
 N006
-G91 G#704 X#710 Z#711 F#678
+G91 G#704 X#710 Z#711 F#653
 (XZ to the center of the 1st row after rotation)
 (if sensor G31, else G01)
 
@@ -165,19 +165,19 @@ IF[#717EQ1]GOTO103
 (if C, to N102)
 (if A, to N103)
 (for face D)
-G91 G#704 Y-#718 F#678
+G91 G#704 Y-#718 F#653
 IF[#5002GT[-#718]]GOTO802
 GOTO200
 N101 (for face B)
-G91 G#704 Y#718 F#678
+G91 G#704 Y#718 F#653
 IF[#5002LT#718]GOTO802
 GOTO200
 N102 (for face C)
-G91 G#704 X-#719 F#678
+G91 G#704 X-#719 F#653
 IF[#5001GT[#714-#719+0.001]]GOTO802
 GOTO200
 N103 (for face A)
-G91 G#704 X#719 F#678
+G91 G#704 X#719 F#653
 IF[#5001LT[#714+#719-0.001]]GOTO802
 
 N200
@@ -210,7 +210,7 @@ IF[#33GE#13]GOTO205
 #32=#708-[#33-1]*#06
 (#32= the #33th row's Z from table center)
 #31=SQRT[#18*#18-[#32-#06]*[#32-#06]]-SQRT[#18*#18-#32*#32]
-G91 G#704 X[#31*COS[ABS[#02]]-#06*SIN[ABS[#02]]] Z-[#31*SIN[ABS[#02]]+#06*COS[ABS[#02]]] F#678
+G91 G#704 X[#31*COS[ABS[#02]]-#06*SIN[ABS[#02]]] Z-[#31*SIN[ABS[#02]]+#06*COS[ABS[#02]]] F#653
 (current work XY: the center of the #33+1th row)
 #33=#33+1 (#33 to current row +1)
 END1
@@ -242,15 +242,15 @@ M09 (coolant off)
 #3000=145 (Sensor Low battery)
 
 N802
-G90 G01 X#714 Y#715 F#678
+G90 G01 X#714 Y#715 F#653
 IF[#1004EQ0]GOTO803
 (if current sensor OFF, go to N803)
 M117 (sensor on/off)
 
 N803
-G90 G01 Z#716 F#678
+G90 G01 Z#716 F#653
 (XYZ: to the center of the 1st row)
-G90 G01 X#712 Z#713 F#678
+G90 G01 X#712 Z#713 F#653
 (XZ: to start point)
 
 N800
@@ -290,7 +290,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#512, #600, #602, #652, #901001, #901005, #901011)
+(#512, #600, #602, #652, #653, #901001, #901005, #901011)
 (as LHS)
 (#701-#719)
 

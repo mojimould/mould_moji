@@ -37,7 +37,7 @@ IF[#4111EQ50]GOTO005
 (if H#=50, go to N005)
 GOTO006
 N005 (for sensor)
-G91 G31 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F#678
+G91 G31 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F#653
 (YZ skip to the 1st dimple: X: faceA-#602 or faceC+#602)
 GOTO007
 N006 (for kakou)
@@ -65,7 +65,7 @@ N101
 IF[#31GE#730]GOTO008 (end loop)
 IF[#4111NE50]GOTO102
 (if H# is not 50, go to N102)
-G91 G31 Y#04 F#678
+G91 G31 Y#04 F#653
 GOTO103
 N102 (for kakou)
 G91 G01 Y#04 F#651
@@ -106,7 +106,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#602, #651, #678, #717, #749)
+(#602, #651, #653, #717, #749)
 (as LHS)
 (#725-#730)
 (#900101-#900200 ,#900201-#900300)

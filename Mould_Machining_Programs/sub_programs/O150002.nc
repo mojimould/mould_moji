@@ -77,7 +77,7 @@ M117 (sensor on/off)
 G04 X1.5 (wait 1.5s)
 
 N003
-G90 G54 G31 Z[#26-[#06/2]-#512] F#678
+G90 G54 G31 Z[#26-[#06/2]-#512] F#653
 (G54 Z skip: BotTanmen Z-K/2-#512)
 IF[#5003GT[#26-[#06/2]-#512]]GOTO802
 (if skip block end Z > BotTanmen Z-K/2-#512, to N802)
@@ -105,7 +105,7 @@ G90 G54 G01 Y[[#20/2]+#512+#602] F#652
 (Y: top gaisaku Bmen +#602)
 
 G90 G54 G43 G01 Z[#23+#600] H50 F#652
-G90 G54 G31 Z[#23-[#13/2]-#512] F#678
+G90 G54 G31 Z[#23-[#13/2]-#512] F#653
 (G54 Z skip: W-M/2-#512)
 IF[#5003GT[#23-[#13/2]-#512]]GOTO802
 (if skip block end Z > W-#512-M/2+#32, to N802)
@@ -171,7 +171,7 @@ N999 M99
 (as LHS)
 (#900027, #900028, #900029)
 (as RHS)
-(#600, #602, #603, #650, #652, #678, #679)
+(#600, #602, #603, #650, #652, #653, #679)
 (#501: hosei: touch sensor signal delay)
 (#503: hosei: probe center Y)
 (#512: probe radius)
