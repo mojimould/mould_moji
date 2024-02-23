@@ -298,7 +298,7 @@ M10 (4jiku clamp)
 
 M28 (chip conveyor on)
 G57 G65 P410000 D2. X156.863 Y154.839 Z500.016 R19.
-(O410000: XY naikei sotogawa-#610 1shuu Coner R, ar MigiMawari)
+(O410000: XY naikei sotogawa-#608 1shuu Coner R, ar MigiMawari)
 (default: S=950)
 (D: hosei kouguKei&Chou #)
 (X: Top AC naikei)
@@ -455,7 +455,7 @@ M10 (4jiku clamp)
 
 M28 (chip conveyor on)
 G55 G65 P410000 D2. X155. Y153. Z499.984 R19.
-(O410000: XY naikei sotogawa-#610 1shuu Coner R, ar MigiMawari)
+(O410000: XY naikei sotogawa-#608 1shuu Coner R, ar MigiMawari)
 (default: S=950)
 (D: hosei kouguKei&Chou #)
 (X: Bot AC naikei)

@@ -1,6 +1,6 @@
 %
 O410000
-(Tanmen naikei-#610 Coner R, ar MigiMawari 1shuu)
+(Tanmen naikei-#608 Coner R, ar MigiMawari 1shuu)
 
 N001
 IF[#07EQ#0]GOTO800
@@ -57,7 +57,7 @@ IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 IF[#100EQ#0]GOTO800
 IF[#100LT1]GOTO800
 IF[#106LE0]GOTO800
-IF[#610LT1]GOTO800
+IF[#608LT1]GOTO800
 IF[#650EQ#0]GOTO800
 IF[#650LE0]GOTO800
 IF[#650GT5]GOTO800
@@ -68,23 +68,23 @@ IF[[#650*#106]LT0]GOTO800
 (if R >= min[X/4, Y/4], go to N800)
 (if #100 < 1 or #0, go to N800)
 (if #106 <= 0, go to N800)
-(if #610 < 1, go to N800)
+(if #608 < 1, go to N800)
 (if #650 <= 0 or #650 > 5 or #650 = #0, go to N800)
 (if #650*#106 < 0, go to N800)
 
 N006
 #33=#[2400+#07]+#[2600+#07]
 #32=[#605+#33+ABS[#605-#33]]/2
-#31=#24-[#610*2]
-#30=#25-[#610*2]
+#31=#24-[#608*2]
+#30=#25-[#608*2]
 IF[#32LE0]GOTO800
 (#32: max[#605, hosei kouguKei])
-(#31: X-#610*2)
-(#30: Y-#610*2)
+(#31: X-#608*2)
+(#30: Y-#608*2)
 
 N007
-IF[#610GE#33]GOTO800
-(if #610 >= kouguKei, go to N800)
+IF[#608GE#33]GOTO800
+(if #608 >= kouguKei, go to N800)
 
 
 (kokokara G00)
@@ -151,7 +151,7 @@ N999 M99
 (as LHS)
 (#100, #106)
 (as RHS)
-(#400, #401, #600, #605, #610, #650, #675, #677, #682, #683)
+(#400, #401, #600, #605, #608, #650, #675, #677, #682, #683)
 (#901011, #901101)
 
 
