@@ -41,7 +41,7 @@ N009
 IF[#5063LE#08]GOTO800
 
 N010
-G91 G31 P2 Z[-#504-#507-#507] F#679
+G91 G31 P2 Z[-#504-#507-#507] F#656
 (skip Z to sensor)
 
 #[10000+#11]=#5063+#[#03]+#5203+#505
@@ -94,7 +94,7 @@ N999 M99
 (#517: sensor position Y)
 (#650, #652)
 (#654: aproach speed)
-(#679: measurement skip speed)
+(#656: measurement skip speed)
 (#901113, #901115, #901117, #901127, #901129)
 
 

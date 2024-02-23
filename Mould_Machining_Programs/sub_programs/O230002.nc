@@ -11,9 +11,9 @@ IF[#05EQ#0]GOTO800
 IF[#05EQ0]GOTO800
 (if J = 0 or empty, to N800)
 
-IF[#679EQ#0]GOTO800
-IF[#679NE50]GOTO800
-(if #679 is not 50.0 or #0, go to N800)
+IF[#656EQ#0]GOTO800
+IF[#656NE50]GOTO800
+(if #656 is not 50.0 or #0, go to N800)
 
 IF[#1004EQ1]GOTO002
 M117 (if the sensor is off, turn on)
@@ -26,8 +26,8 @@ IF[#05LT0]THEN #33=-1
 (for D, #33=1)
 
 N003
-G91 G31 Y[#33*[#602+#603]] F#679
-(skip Y+ or Y-: #602+#603, speed #679)
+G91 G31 Y[#33*[#602+#603]] F#656
+(skip Y+ or Y-: #602+#603, speed #656)
 #749=#5002+#503+#33*[-#501+#512]
 (#749= block end Y + hosei probe etc)
 G90 G01 Y#748 F#652
@@ -56,7 +56,7 @@ N999 M99
 (#501: hosei: touch sensor signal delay)
 (#503: hosei: probe center Y)
 (#512: probe radius)
-(#602, #603, #652, #679)
+(#602, #603, #652, #656)
 (as LHS)
 (#748, #749)
 
