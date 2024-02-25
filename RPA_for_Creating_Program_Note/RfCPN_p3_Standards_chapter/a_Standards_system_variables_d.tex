@@ -70,9 +70,9 @@ $\cdots$ & $\cdots$ & \\
 \modHeadsection{\ttNum2000\,-\ttNum2999\TBW}
 
 \begin{3columnstable}[white]{\ttNum2001-\ttNum2800: 工具補正}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum2001+xxx & 工具長補正 \ttNum xxx補正量 [xxx=1-200]（摩耗0とした値） & ●\\\hline
+\ttNum2001+xxx & 工具長補正 \ttNum xxx補正量 [xxx=1-200]（摩耗量0とした値） & ●\\\hline
 \ttNum2201+xxx & 工具長補正 \ttNum xxx摩耗量 [xxx=1-200] & ●\\\hline
-\ttNum2401+xxx & 工具径補正 \ttNum xxx補正量 [xxx=1-200]（摩耗0とした値） & ●\\\hline
+\ttNum2401+xxx & 工具径補正 \ttNum xxx補正量 [xxx=1-200]（摩耗量0とした値） & ●\\\hline
 \ttNum2601+xxx & 工具径補正 \ttNum xxx摩耗量 [xxx=1-200] & ●
 \end{3columnstable}
 
@@ -88,7 +88,7 @@ $\cdots$ & $\cdots$ & \\
 \ttNum3000 & アラーム & ●\\
 \end{3columnstable}
 
-\begin{3columnstable}[white]{\ttNum3001, \ttNum3002：稼働時間\TBW}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\begin{3columnstable}[white]{\ttNum3001, \ttNum3002：稼働時間}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
 \ttNum3001 & 通電時間[ms] & \\\hline
 \ttNum3002 & 稼働時間[ms] & \\
 \end{3columnstable}
@@ -113,7 +113,7 @@ $\cdots$ & $\cdots$ & \\
 \ttNum3012 & 現在の時刻(hhmmss) &
 \end{3columnstable}
 
-\begin{3columnstable}[white]{\ttNum3901, \ttNum3902\TBW}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\begin{3columnstable}[white]{\ttNum3901, \ttNum3902}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
 \ttNum3901 & 加工部品数 & \\\hline
 \ttNum3902 & 所要部品数 &
 \end{3columnstable}
@@ -130,7 +130,7 @@ $\cdots$ & $\cdots$ & \\
 \ttNum4000 & & \\
 \end{3columnstable}
 
-\begin{3columnstable}[white]{\ttNum4001-\ttNum4020：直前までのブロックで指令されたG指令モーダル情報}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\begin{3columnstable}[white]{\ttNum4001-\ttNum4020：直前に指令されたG指令モーダル情報}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
 \ttNum4001 & グループ01：\verb|G00|, \verb|G01|, \verb|G02|, \verb|G03| & ◯\\\hline
 \ttNum4002 & グループ02：選択平面\verb|G17|, \verb|G18|, \verb|G19| & \\\hline
 \ttNum4003 & グループ03：\verb|G90|, \verb|G91| & ◯\\\hline
@@ -169,7 +169,7 @@ $\cdots$ & $\cdots$ & \\
 \end{3columnstable}
 
 \clearpage
-\begin{3columnstable}[white]{\ttNum4101-\ttNum4130：直前までのブロックで指令されたモーダル情報}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\begin{3columnstable}[white]{\ttNum4101-\ttNum4130：直前に指令されたモーダル情報}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
 \rowcolor{unusingVariables}
 \ttNum4101 & null & \\\hline
 \ttNum4102 &  & \\\hline
@@ -179,7 +179,7 @@ $\cdots$ & $\cdots$ & \\
 $\cdots$ & $\cdots$ & \\\hline
 \ttNum4107 & \verb|D#| 工具径補正\index{Dコード}Dコード\ttNum & ●\\\hline
 \ttNum4108 &  & \\\hline
-\ttNum4109 & \verb|F#| \index{Fコード}Fコード\ttNum &\\\hline
+\ttNum4109 & \verb|F#| 送り速さ\index{Fコード}Fコード\ttNum &\\\hline
 \rowcolor{unusingVariables}
 \ttNum4110 & null & \\\hline
 \ttNum4111 & \verb|H#| 工具長補正\index{Hコード}Hコード\ttNum & ●\\\hline
