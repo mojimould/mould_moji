@@ -55,3 +55,14 @@
 \edef\temppartnum{\protect{\the\numexpr\value{part}+1\relax}}
 %\PartSeparateline{toc}%
 \addtocontents{toc}{\protect\vspace*{6mm}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MAINMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+\addtocontents{lop}{\begin{lopBox}{第1編：マシニング稼働に向けて}}%
+\addtocontents{lof}{\begin{lofBox}}%
+\addtocontents{lot}{\begin{lotBox}}%
+\addtocontents{lol}{\begin{lolBox}}%
+\addtocontents{loC}{\begin{loCBox}}%

@@ -2,13 +2,14 @@
 
 
 \addtocontents{toc}{\protect\cleardoublepage}
-\PartSeparateline{lot}%
+\addtocontents{lot}{\protect\tcbline*}
+\addtocontents{loC}{\protect\tcbline*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                             %%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Part Analytical Calculation %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                             %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\addtocontents{toc}{\protect\begin{tocBox}{\temppartnum}}%
+\addtocontents{toc}{\protect\begin{tocBox}{\tmppartnum}}%
 \tPart[lot,lof,loC]{幾何学性質の解析計算}{概要}{%
 \paragraph*{目標（なにがしたいか？）}
 マシニングにおけるモールドの加工に必要な幾何学的情報を抽象化（一般化）し、体系を構築する。

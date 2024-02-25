@@ -1,6 +1,13 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
+\addtocontents{lop}{\end{lopBox}}%
+\addtocontents{lof}{\end{lofBox}}%
+\addtocontents{lot}{\end{lotBox}}%
+\addtocontents{lol}{\end{lolBox}}%
+\addtocontents{loC}{\end{loCBox}}%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% BACKMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -45,7 +52,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \printbibheading
 \begingroup
-\let\cleardoublepage\relax  % \cleardoublepageを無効にする
+\let\cleardoublepage\relax
 \addchaptertocentry{}{\bibname}
 {\footnotesize%
 \printbibliography[type=article, heading=articles]%
@@ -62,9 +69,9 @@
 %%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begingroup
-\let\cleardoublepage\relax  % \cleardoublepageを無効にする
+\let\cleardoublepage\relax
 \addchaptertocentry{}{\indexname}
-{\small\printindex\thispagestyle{plainheadback}}
+{\small\printindex}
 \let\cleardoublepage\tmpcleardoublepage
 \endgroup
 
