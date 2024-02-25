@@ -12,6 +12,21 @@
 \newif\if@frontmatter%\@frontmattertrue
 \newif\if@appendix%\@appendixfalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DIMENSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifluatex
+  \usepackage{luatexja}
+  \ltjsetparameter{kanjiskip=0.0pt plus 0.4pt minus 0.5pt}
+  \ltjsetparameter{xkanjiskip=2.40555pt plus 1.0pt minus 1.0pt}
+  \newcommand{\hk}{\hspace{\ltjgetparameter{kanjiskip}}}
+  \newcommand{\hx}{\hspace{\ltjgetparameter{xkanjiskip}}}
+\else
+  \setlength{\kanjiskip}{0.0pt plus 0.4pt minus 0.5pt}
+  \setlength{\xkanjiskip}{2.40555pt plus 1.0pt minus 1.0pt}
+  \newcommand{\hk}{\hspace{\kanjiskip}}
+  \newcommand{\hx}{\hspace{\xkanjiskip}}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% CLEARLEFTPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\thispageNum}{\the\value{page}}
@@ -38,27 +53,6 @@
   \fi
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% DIMENSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ifluatex
-  \usepackage{luatexja}
-  \ltjsetparameter{kanjiskip=0.0pt plus 0.4pt minus 0.5pt}
-  \ltjsetparameter{xkanjiskip=2.40555pt plus 1.0pt minus 1.0pt}
-  \newcommand{\hk}{\hspace{\ltjgetparameter{kanjiskip}}}
-  \newcommand{\hx}{\hspace{\ltjgetparameter{xkanjiskip}}}
-\else
-  \setlength{\kanjiskip}{0.0pt plus 0.4pt minus 0.5pt}
-  \setlength{\xkanjiskip}{2.40555pt plus 1.0pt minus 1.0pt}
-  \newcommand{\hk}{\hspace{\kanjiskip}}
-  \newcommand{\hx}{\hspace{\xkanjiskip}}
-\fi
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% CDOTFILL LIKE TOC %%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\newcommand\cdotfill{%
-%  \leaders\hbox{$\m@th\mkern\@dotsep mu\hbox{$\cdot$}\mkern \@dotsep mu$}\hfill\kern\z@
-%}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% REF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% AUTOREFNAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -78,13 +72,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR LISTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% CAPTOINOF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\abovecaptionskip}{0pt}
-\newcommand{\modcaptionof}[2]{%
-  \captionof{#1}{%
-    \csname #1name\endcsname\thechapter.%
-    \ifnum\value{#1}<10 0\fi
-      \arabic{#1}. #2}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,8 +92,12 @@
 %\newcommand\tocAPartSeparateline[3]{\addtocontents{#1}{\protect\par\protect\vspace*{#2}\protect\hrule width 0.5\linewidth\protect\par\protect\vspace*{#3}}}%
 %\newcommand\tableAPartSeparateline{\tocAPartSeparateline{lot}{2pt}{2pt}}
 %%%%% tPart %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{tocwatermark}
+\setcounter{tocwatermark}{1}
+\def\tmppartnum{\Roman{tocwatermark}}%
 \newcommand{\tPart}[4][]{%
-  \def\temppartnum{\the\numexpr\value{part}+1}%
+  \addtocounter{tocwatermark}{1}
+  \def\tmppartnum{\Roman{tocwatermark}}%
 %  \def\temppartpage{part:\the\numexpr\value{part}+1}%
   \begingroup
   \clearrightpage
@@ -114,6 +105,7 @@
   \let\oldnewpage\newpage
   \let\newpage\relax
   \part{#2\label{part:\thepart}}
+  \addtocontents{lop}{\protect\vspace*{-2.5mm}}%
   \addcontentsline{lop}{part}{\protect\numberline{\thepart}#2}%
   \ifx#1\relax\else%
     \foreach \x in {#1}{\addcontentsline{\x}{part}{\protect\numberline{\thepart}#2}}%
@@ -164,10 +156,19 @@
     \section[#1]{#2\label{sec:\thepart.\thesection}}%
   \fi
 }
+%%%%% CAPTOINOF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\abovecaptionskip}{0pt}
+\newcommand{\modcaptionof}[2]{%
+  \captionof{#1}{%
+    \csname #1name\endcsname\thechapter.%
+    \ifnum\value{#1}<10 0\fi
+      \arabic{#1}. #2}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% NEW ENVIRONMENT %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./RfCPN_a0_preamble/RfCPN_definitions_newenvironments}
 %%%%% NEWTCOLORBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{./RfCPN_a0_preamble/RfCPN_definitions_newtcolorbox}
+\input{./RfCPN_a0_preamble/RfCPN_definitions_newtcolorboxes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% NEWTCBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -259,61 +260,3 @@
 %%%%% FOR INDEX %%%%%%%%%%%%%%%%%%
 \newcommand{\expandafterindex}{\expandafter\index\expandafter}
 %%%%% FOR PART WITH TABLE %%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% NEW ENVIRONMENT %%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% COMMONTABLE %%%%%%%%%%%%%%%%%%
-\newenvironment{commonTable}[5]{%
-  \rowcolors{3}{#1}{white}
-  \if\relax\detokenize{#2}\relax
-  \else
-%    \setlength{\abovecaptionskip}{0pt}
-    \modcaptionof{table}{#2} % 追加したキャプション
-    \addtocounter{table}{-1}
-  \fi
-  \setlength{\LTpre}{3pt}%
-  \setlength{\LTpost}{5pt}%
-  \setlength{\LTleft}{0pt}%
-  \setlength{\LTright}{\fill}%
-  \begin{longtable}{#3}
-  \hline
-  \rowcolor{orange!20}
-  #4\\
-  \hline
-  \endfirsthead
-  \hline
-  \rowcolor{orange!20}
-  #4\\
-  \hline
-  \endhead
-  \hline
-  \multicolumn{#5}{|r|}{\scriptsize 次ページへ続く} \\
-  \hline
-  \endfoot
-  \hline
-  \endlastfoot
-}
-{%
-  \end{longtable}
-}
-%%%%% 2columnstable %%%%%
-\newenvironment{2columnstable}[5][gray!15!]{%
-  \setlength\cellspacetoplimit{4.5pt}%
-  \setlength\cellspacebottomlimit{4.5pt}%
-  \commonTable{#1}{#2}{#3}{\textbf{#4} & \textbf{#5}}{2}%
-}
-{\endcommonTable}
-%%%%% 3columnstable %%%%%
-\newenvironment{3columnstable}[6][gray!15!]{%
-  \setlength\cellspacetoplimit{4.5pt}%
-  \setlength\cellspacebottomlimit{4.5pt}%
-  \commonTable{#1}{#2}{#3}{\textbf{#4} & \textbf{#5} & \textbf{#6}}{3}%
-}
-{\endcommonTable}
-%%%%% 4columnstable %%%%%
-\newenvironment{4columnstable}[7][gray!15!]{%
-  \setlength\cellspacetoplimit{4.5pt}%
-  \setlength\cellspacebottomlimit{4.5pt}%
-  \commonTable{#1}{#2}{#3}{\textbf{#4} & \textbf{#5} & \textbf{#6} & \textbf{#7}}{4}%
-}
-{\endcommonTable}

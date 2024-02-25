@@ -1,0 +1,61 @@
+%!TEX root = ../RPA_for_Creating_Program_Note.tex
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% NEW ENVIRONMENT %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% COMMONTABLE %%%%%%%%%%%%%%%%%%
+\newenvironment{commonTable}[5]{%
+  \rowcolors{3}{#1}{white}
+  \if\relax\detokenize{#2}\relax
+  \else
+%    \setlength{\abovecaptionskip}{0pt}
+    \modcaptionof{table}{#2} % 追加したキャプション
+    \addtocounter{table}{-1}
+  \fi
+  \setlength{\LTpre}{3pt}%
+  \setlength{\LTpost}{5pt}%
+  \setlength{\LTleft}{0pt}%
+  \setlength{\LTright}{\fill}%
+  \begin{longtable}{#3}
+  \hline
+  \rowcolor{orange!20}
+  #4\\
+  \hline
+  \endfirsthead
+  \hline
+  \rowcolor{orange!20}
+  #4\\
+  \hline
+  \endhead
+  \hline
+  \multicolumn{#5}{|r|}{\scriptsize 次ページへ続く} \\
+  \hline
+  \endfoot
+  \hline
+  \endlastfoot
+}
+{%
+  \end{longtable}
+}
+%%%%% 2columnstable %%%%%
+\newenvironment{2columnstable}[5][gray!15!]{%
+  \setlength\cellspacetoplimit{4.5pt}%
+  \setlength\cellspacebottomlimit{4.5pt}%
+  \commonTable{#1}{#2}{#3}{\textbf{#4} & \textbf{#5}}{2}%
+}
+{\endcommonTable}
+%%%%% 3columnstable %%%%%
+\newenvironment{3columnstable}[6][gray!15!]{%
+  \setlength\cellspacetoplimit{4.5pt}%
+  \setlength\cellspacebottomlimit{4.5pt}%
+  \commonTable{#1}{#2}{#3}{\textbf{#4} & \textbf{#5} & \textbf{#6}}{3}%
+}
+{\endcommonTable}
+%%%%% 4columnstable %%%%%
+\newenvironment{4columnstable}[7][gray!15!]{%
+  \setlength\cellspacetoplimit{4.5pt}%
+  \setlength\cellspacebottomlimit{4.5pt}%
+  \commonTable{#1}{#2}{#3}{\textbf{#4} & \textbf{#5} & \textbf{#6} & \textbf{#7}}{4}%
+}
+{\endcommonTable}
