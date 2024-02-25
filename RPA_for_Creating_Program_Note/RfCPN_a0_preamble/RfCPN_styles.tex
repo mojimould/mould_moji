@@ -1,8 +1,6 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% DOCUMENTCLASS %%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[11pt, twoside, open=any]{scrbook}
 
 \let\tmpcleardoublepage\cleardoublepage
@@ -10,75 +8,23 @@
 \let\tmpnewpage\newpage
 \input{./RfCPN_a0_preamble/RfCPN_packages}
 \input{./RfCPN_a0_preamble/RfCPN_definitions}
+%%%%% BASIC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./RfCPN_a0_preamble/RfCPN_styles_basic}
+%%%%% TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{./RfCPN_a0_preamble/RfCPN_title}
+%%%%% PAGESTYLES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./RfCPN_a0_preamble/RfCPN_styles_pagestyles}
+%%%%% FOR STYLE OF TOC %%%%%%%%%%%%%%%%%%%%%%%
+\input{./RfCPN_a0_preamble/RfCPN_styles_list_toc}
+%%%%% FOR STYLE OF OTHER LISTS %%%%%%%%%%%%%%%
+\input{./RfCPN_a0_preamble/RfCPN_styles_list_other}
+%%%%% FOR STYLE OF COMPONENTS %%%%%%%%%%%%%%%
+\input{./RfCPN_a0_preamble/RfCPN_styles_components}
+%%%%% FOR STYLE OF LISTLISTINGS %%%%%%%%%%%%%%%
+\input{./RfCPN_a0_preamble/RfCPN_styles_listlistings}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% GEOMETRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\geometry{
-  a4paper, % paper size
-  centering,
-  textwidth={6.5in},
-  includehead,  % include the head of the page
-%  headheight = 13.6pt,
-  includefoot,  % include the foot of the page
-  top=15.0truemm,
-  bottom=-0.5truemm,
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% HEYPERSETUP %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\hypersetup{
-%  pdfcreationdate=date,
-%  pdfcreator={upLaTeX with hyperref}, % creator for PDF subjct field
-  pdftitle={RPAに向けたRDBSの構築と応用}, % title for PDF subjct field
-  pdfsubject={プログラム作成業務の自動化}, % text for PDF subjct field
-  pdfauthor={Kurahashi Nobuaki},  % text for PDF Author field
-  pdfkeywords={
-    mold,
-    mould,
-    RDB,
-    RDBS,
-    RPA,
-  }, % keywords
-%  pdfproducer=producer, % dvipdfmx
-  linktoc=all,
-%  linktocpage=false,   % (if it is true) make page number, not text, be link on TOC, LOF and LOT
-  pdfcenterwindow=false, % position the document window center of the screen
-  pdffitwindow=true,     % resize document window to fit document size
-  bookmarksnumbered=true,
-  bookmarksopen=true, %bookmarks open
-  pdfstartview={FitH}, % Fit, FitV, FitH, FitB
-  pdfpagemode=UseThumbs, % set default mode of PDF display
-  unicode=true,
-  pdfencoding=unicode,   % PDFDocEncoding or Unicode
-  colorlinks=true,     % color links
-  linkcolor=ai,      % color of links
-  urlcolor=ai,         % color of urls
-  citecolor=sora,      % color of citation links
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% DISPLAYBREAK %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\allowdisplaybreaks
-%%%%% TO NO PAGE BREAK IN TOC %%%
-%\pretocmd{\modHeadsection}{\ifnum\value{section}=0\addtocontents{lot}{\protect\nopagebreak}\fi}{}{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% UNIT LENGTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\unitlength}{1pt}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% LINESPREAD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\linespread{1.15}\selectfont
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% PARINDENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\indentspace}{\setlength\parindent{11pt}}
-\indentspace
-%\def \globalscale {0.83}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOOTNOTE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR FOOTNOTE %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand*{\footnoteautorefname}{脚注}
 \interfootnotelinepenalty=10000
@@ -94,16 +40,13 @@
 \makesavenoteenv{tablePart}
 \makesavenoteenv{Column}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% HEADER AND FOOTER %%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{./RfCPN_a0_preamble/RfCPN_styles_pagestyles}
 %%%%% SETLIST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlist[enumerate]{listparindent=\parindent, parsep=0pt, partopsep=0pt, topsep=3pt, itemsep=3pt, leftmargin=*}
 \setlist[enumerate, 1]{leftmargin=\leftmargini}
-%%%%% EQUATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\theequation}{\thesection.\arabic{equation}}
-\@addtoreset{equation}{section}
-%%%%% CAPTION STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% CAPTION STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \captionsetup[figure]{%
   width=.8\textwidth,
   format=hang,
@@ -137,222 +80,6 @@
   hypcap=false,
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF TOC %%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\RedeclareSectionCommand[
-%  tocindent=0em,
-%  tocnumwidth=4.25em
-%]{part}
-%\addtokomafont{partentry}{\def\autodot{}}
-\setcounter{tocdepth}{3}
-\renewcommand\contentsname{\texorpdfstring{\hbox to 1.9em{目次}}{目次}}
-%%%%% FOR PART %%%%%
-\patchcmd{\l@part}{\begingroup}{\begingroup\begingroup\tikzset{every node/.style={rectangle,fill=blue!20,rounded corners}}}{}{}
-\patchcmd{\l@part}{\endgroup}{\endgroup\endgroup}{}{}
-\DeclareTOCStyleEntry[
-  indent=0em, % エントリのインデントを調整
-  numwidth=2.35em % エントリ番号の幅を調整
-]{tocline}{part}
-%%%%% FOR CHAPTER %%%%%
-\DeclareTOCStyleEntry[
-  level=\chaptertocdepth,
-  indent=0.85em, % エントリのインデントを調整
-  numwidth=1.5em % エントリ番号の幅を調整
-]{tocline}{chapter}
-%%%%% FOR SECTION %%%%%
-\DeclareTOCStyleEntry[
-  level=\sectiontocdepth,
-  indent=2.35em, % エントリのインデントを調整
-  numwidth=2.71em % エントリ番号の幅を調整
-]{tocline}{section}
-%%%%% FOR SUBSECTION %%%%%
-\DeclareTOCStyleEntry[
-  indent=5.06em, % エントリのインデントを調整
-  numwidth=3.25em % エントリ番号の幅を調整
-]{tocline}{subsection}
-%%%%% FOR SUBSUBSECTION %%%%%
-\DeclareTOCStyleEntry[
-  indent=8.31em, % エントリのインデントを調整
-  numwidth=3.79em % エントリ番号の幅を調整
-]{tocline}{subsubsection}
-\renewcommand*{\l@table}[2]{\@dottedtocline{1}{2.35em}{2.3em}{#1}{#2}}
-%%%%% STYLE OF LIST FOR APPENDIX %%%%%
-\AtBeginEnvironment{appendices}{%
-  \@appendixtrue%
-  \patchcmd{\part}{\newpage}{\relax}{}{}%
-  \pretocmd{\part}{\addtocontents{toc}{\protect\tcbline*}}{}{}{}% add page break before parts, except part 1
- % \patchcmd{\part}{\tableAPartSeparateline}{\relax}{}{}%
-}
-\AfterEndEnvironment{appendices}{%
-  \patchcmd{\part}{\tocAPartSeparateline}{\relax}{}{}%
-%  \addtocontents{toc}{\protect\cleardoublepage}% add page break before parts, except the first one
-  \@appendixfalse%
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF LOP %%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand\listoflopname{\texorpdfstring{\hbox to 2.75em{大目次}}{大目次}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF LOF %%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand\listfigurename{\texorpdfstring{\hbox to 2.75em{図目次}}{図目次}}
-\renewcommand{\figurename}{図}
-\renewcommand{\figureautorefname}{\figurename} % figure --> 図
-%\AtBeginDocument{\renewcommand{\thefigure}{図}}
-\renewcommand*\l@figure{\@dottedtocline{1}{2.35em}{2.35em}}
-%\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF LOC %%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand\listofloCname{Column一覧}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF LOT %%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand\listtablename{\texorpdfstring{\hbox to 2.75em{表目次}}{表目次}}
-\renewcommand{\tablename}{表}
-\renewcommand*\l@table{\@dottedtocline{1}{0.0em}{2.35em}}
-\AtBeginDocument{\renewcommand{\thetable}{}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF LISTLINGS %%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{./RfCPN_a0_preamble/RfCPN_styles_listlings}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF INDEX %%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\indexname}{\texorpdfstring{\hbox to 1.9em{索引}}{索引}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF BIBLATEX %%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\bibname}{\texorpdfstring{\hbox to 3.75em{参考文献}}{参考文献}}
-\ExecuteBibliographyOptions{
-  sorting=none,
-  defernumbers=false,
-%  refsegment=chapter,
-  hyperref=true,
-  block=nbpar,
-  subentry=true,
-  citecounter=true,
-}
-\appto\bibfont{\footnotesize\setstretch{1.1}}
-\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}\hspace{-6pt}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF PART %%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\partautorefname}{part}  % part --> part
-\renewcommand\partpagestyle{emptydate}
-%\renewcommand*{\partformat}{\begin{gtfamily}\thepart\end{gtfamily}}
-%\renewcommand{\partname}{}
-%\renewcommand{\thepart}{第\hspace{2truemm}\Roman{part}\hspace{2truemm}部} %
-%\renewcommand*{\addparttocentry}[2]{\addtocentrydefault{part}{#1}{第#2部}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF CHAPTER %%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\chapterautorefname}{章}  % chapter --> 章
-\renewcommand\chapterpagestyle{\if@frontmatter plainheadfront\else plainhead\fi}
-\renewcommand*{\chapterformat}{%
-  \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
-                      baseline=-8.5pt]
-    \node[fill=\if@appendix white\else Maroon!65\fi,
-          text=\if@appendix Maroon!65\else white\fi,
-          signal from=east,
-          inner sep=5pt,
-          text height=1.5ex,
-          text depth=2pt]
-      at (0, 0) {\LARGE{\fontfamily{pplx}\bfseries\,\thepart.~\thechapter~~\relax}};
-  \end{tikzpicture}~~%
-}
-%%%%% STYLE OF APPENDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\setthesection}{\Alph{section}}
-%\renewcommand{\appendixname}{補\hskip0.5em 遺} % appendix --> 補 遺
-\renewcommand{\appendixautorefname}{補遺\!} % appendix --> 補遺
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF SECTION %%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\sectionautorefname}{節\!} % section --> 節
-\setcounter{secnumdepth}{4}
-\renewcommand*{\sectionformat}{%
-  \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
-                      baseline=-5.25pt]
-    \node[fill=Green!65!,
-          text=white,
-          signal from=east,
-          inner sep=5pt,
-          text height=1.3ex,
-          text depth=0pt]
-      at (0, 0) {\Large{\fontfamily{pplx}\bfseries\,\thesection~\relax}};
-  \end{tikzpicture}~~%
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF SUBSECTION %%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\subsectionautorefname}{\sectionautorefname} % subsection --> section
-\renewcommand*{\subsectionformat}{%
-  \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
-                      baseline=-4pt]
-    \node[fill=blue!50!,
-          text=white,
-          signal from=east,
-          inner sep=5pt,
-          text height=1.25ex,
-          text depth=0pt]
-      at (0, 0) {\large{\fontfamily{pplx}\bfseries\,\thesubsection~\relax}};
-  \end{tikzpicture}~~%
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF SUBSUBSECTION %%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\subsubsectionautorefname}{\sectionautorefname} % subsubsection --> section
-\renewcommand*{\subsubsectionformat}{%
-  \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
-                      baseline=-3.75pt]
-    \node[fill=Green!50!Blue!40!,
-          text=white,
-          signal from=east,
-          inner sep=5pt,
-          text height=1.25ex,
-          text depth=0pt]
-      at (0, 0) {\small{\fontfamily{pplx}\bfseries\,\thesubsubsection~\relax}};
-  \end{tikzpicture}~~%
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF PARAGRAPH %%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%for scrbook.cls
-\RedeclareSectionCommand[%
-  style=section,%
-  level=4,%
-  indent=0pt,%
-  afterindent=false,
-  beforeskip=3.25ex \@plus1ex \@minus.2ex,%
-  afterskip=0.1ex \@plus.1ex \@minus.1ex,% -1em から変更
-  tocindentfollows=subsubsection,%
-  tocstyle=section,%
-  tocindent=10em,%
-  tocnumwidth=5em,% def: 5em
-  font=\raggedsection\normalfont\sectfont\gtfamily\nobreak\sball{blue}~
-]{paragraph}
-%for book.cls
-%\renewcommand\paragraph[1]{%
-%  \@startsection{paragraph}{\paragraphnumdepth}{0pt}%
-%  {3.25ex \@plus1ex \@minus.2ex}% \@plus, \@minusは伸び縮みできるスペースの長さ
-%  {0.1ex\@plus.1ex \@minus.1ex}% ここが正だと改行されて、値だけ垂直スペースが入る
-%  {\raggedsection\normalfont\sectfont\gtfamily\nobreak\size@paragraph\sball{blue}~}{#1}\noindent
-%}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF SUBPARAGRAPH %%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RedeclareSectionCommand[%
-  style=section,%
-  level=5,%
-  indent=0pt, % default: \scr@parindent,%
-  afterindent=false,
-  beforeskip=0.5ex \@plus1ex \@minus.2ex,% 3.25ex \@plus1ex \@minus .2ex から変更
-  afterskip=0.1ex \@plus.1ex \@minus.1ex,% -1em から変更
-  tocstyle=section,%
-  tocindent=12em,%
-  tocnumwidth=6em%
-]{subparagraph}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF TIKZSET %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tikzset{
@@ -380,9 +107,7 @@
 %  every right delimiter/.style={xshift=-.5em},
 %  bmatrix/.style={matrix of math nodes, left delimiter=[, right delimiter=],},
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF TCBSET %%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{./RfCPN_a0_preamble/RfCPN_styles_tcbset}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% OTHER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

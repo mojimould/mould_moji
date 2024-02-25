@@ -1,0 +1,39 @@
+%!TEX root = ../RPA_for_Creating_Program_Note.tex
+
+
+%%%%% FOR STYLE OF LOF %%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\listfigurename{\texorpdfstring{\hbox to 2.75em{図目次}}{図目次}}
+\renewcommand{\figurename}{図}
+\renewcommand{\figureautorefname}{\figurename} % figure --> 図
+%\AtBeginDocument{\renewcommand{\thefigure}{図}}
+\renewcommand*\l@figure{\@dottedtocline{1}{2.35em}{2.35em}}
+%\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
+%%%%% FOR STYLE OF LOT %%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\listtablename{\texorpdfstring{\hbox to 2.75em{表目次}}{表目次}}
+\renewcommand{\tablename}{表}
+\renewcommand*\l@table{\@dottedtocline{1}{0.0em}{2.35em}}
+\AtBeginDocument{\renewcommand{\thetable}{}}
+%%%%% FOR STYLE OF LOP %%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\listoflopname{\texorpdfstring{\hbox to 2.75em{大目次}}{大目次}}
+%%%%% FOR STYLE OF LOC %%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\listofloCname{Column一覧}
+%%%%% FOR STYLE OF LOL %%%%%%%%%%%%%%%%%
+\renewcommand{\lstlistlistingname}{プログラム 目次}
+\renewcommand{\lstlistingname}{{\scshape Prg: }}
+
+%%%%% FOR STYLE OF INDEX %%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\indexname}{\texorpdfstring{\hbox to 1.9em{索引}}{索引}}
+\renewcommand\indexpagestyle{plainheadback}
+%%%%% FOR STYLE OF BIBLATEX %%%%%%%%%%%%%%%%%%
+\renewcommand{\bibname}{\texorpdfstring{\hbox to 3.75em{参考文献}}{参考文献}}
+\ExecuteBibliographyOptions{
+  sorting=none,
+  defernumbers=false,
+%  refsegment=chapter,
+  hyperref=true,
+  block=nbpar,
+  subentry=true,
+  citecounter=true,
+}
+\appto\bibfont{\footnotesize\setstretch{1.1}}
+\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}\hspace{-6pt}}

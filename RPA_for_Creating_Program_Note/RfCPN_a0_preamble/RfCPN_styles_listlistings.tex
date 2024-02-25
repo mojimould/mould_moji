@@ -1,11 +1,7 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF LISTLINGS %%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\lstlistlistingname}{プログラム 目次}
-\renewcommand{\lstlistingname}{{\scshape Prg: }}
+%%%%% LISTLINGS STYLE %%%%%%%%%%%%%%%%%
 \AtBeginDocument{%
 %  \counterwithout{lstlisting}{chapter}
   \renewcommand{\thelstlisting}{}%
@@ -13,14 +9,14 @@
 %\renewcommand*\l@lstlisting{\@dottedtocline{1}{0em}{2.35em}}
 \lstdefinelanguage{GcodeBasic}{
   sensitive=true,%
-  basicstyle=\footnotesize\ttfamily\linespread{1}\selectfont,%
+  basicstyle=\small\ttfamily\linespread{1}\selectfont,%
   abovecaptionskip=0pt,
   belowcaptionskip=0pt,
 %  aboveskip=0\baselineskip,
 %  belowskip=0\baselineskip,
   numbers=left,%
   numbersep=6pt,%
-  numberstyle=\ttfamily\scriptsize\color{black!75!},%
+  numberstyle=\ttfamily\small\color{black!75!},%
   breaklines=true,%
   breakindent=3pt,%
   postbreak=\mbox{\textcolor{blue}{$\hookrightarrow$}\,},%
@@ -29,7 +25,7 @@
   basewidth=0.53em,%
   lineskip=-1.2pt,
   comment=[l]{(},%
-  commentstyle=\footnotesize\color{black!60!green!100}\slshape,%
+  commentstyle=\small\color{black!60!green!100}\slshape,%
   stringstyle={},%
   alsoletter={},%
   keywords={},%

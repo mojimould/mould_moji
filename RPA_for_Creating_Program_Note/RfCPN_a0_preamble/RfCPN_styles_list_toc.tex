@@ -1,0 +1,55 @@
+%!TEX root = ../RPA_for_Creating_Program_Note.tex
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF TOC %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\RedeclareSectionCommand[
+%  tocindent=0em,
+%  tocnumwidth=4.25em
+%]{part}
+%\addtokomafont{partentry}{\def\autodot{}}
+\setcounter{tocdepth}{3}
+\renewcommand\contentsname{\texorpdfstring{\hbox to 1.9em{目次}}{目次}}
+%%%%% FOR PART %%%%%
+\patchcmd{\l@part}{\begingroup}{\begingroup\begingroup\tikzset{every node/.style={rectangle,fill=blue!20,rounded corners}}}{}{}
+\patchcmd{\l@part}{\endgroup}{\endgroup\endgroup}{}{}
+\DeclareTOCStyleEntry[
+  indent=0em, % エントリのインデントを調整
+  numwidth=2.35em % エントリ番号の幅を調整
+]{tocline}{part}
+%%%%% FOR CHAPTER %%%%%
+\DeclareTOCStyleEntry[
+  level=\chaptertocdepth,
+  indent=0.85em, % エントリのインデントを調整
+  numwidth=1.5em % エントリ番号の幅を調整
+]{tocline}{chapter}
+%%%%% FOR SECTION %%%%%
+\DeclareTOCStyleEntry[
+  level=\sectiontocdepth,
+  indent=2.35em, % エントリのインデントを調整
+  numwidth=2.71em % エントリ番号の幅を調整
+]{tocline}{section}
+%%%%% FOR SUBSECTION %%%%%
+\DeclareTOCStyleEntry[
+  indent=5.06em, % エントリのインデントを調整
+  numwidth=3.25em % エントリ番号の幅を調整
+]{tocline}{subsection}
+%%%%% FOR SUBSUBSECTION %%%%%
+\DeclareTOCStyleEntry[
+  indent=8.31em, % エントリのインデントを調整
+  numwidth=3.79em % エントリ番号の幅を調整
+]{tocline}{subsubsection}
+\renewcommand*{\l@table}[2]{\@dottedtocline{1}{2.35em}{2.3em}{#1}{#2}}
+%%%%% STYLE OF LIST FOR APPENDIX %%%%%
+\AtBeginEnvironment{appendices}{%
+  \@appendixtrue%
+  \patchcmd{\part}{\newpage}{\relax}{}{}%
+  \pretocmd{\part}{\addtocontents{toc}{\protect\tcbline*}}{}{}{}% add page break before parts, except part 1
+ % \patchcmd{\part}{\tableAPartSeparateline}{\relax}{}{}%
+}
+\AfterEndEnvironment{appendices}{%
+  \patchcmd{\part}{\tocAPartSeparateline}{\relax}{}{}%
+%  \addtocontents{toc}{\protect\cleardoublepage}% add page break before parts, except the first one
+  \@appendixfalse%
+}

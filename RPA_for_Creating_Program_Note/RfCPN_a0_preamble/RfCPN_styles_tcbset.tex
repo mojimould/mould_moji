@@ -87,7 +87,13 @@
     segmentation style={draw=black!50!white},%
     after=\smallskip\noindent{\color{white}},%
   },
-  %%%%% LIST STYLE %%%%%
+  %%%%% ISSUEBOX STYLE %%%%%
+  Issuebox/.style={%
+    Tabularbox,
+    colback=black!02!white!,%
+    after title=\hfill\termblue{\issuename},%
+  },%
+  %%%%% LIST COMMON STYLE %%%%%
   listcommonstyle/.style={%
     breakable,%
     enhanced jigsaw,%
@@ -100,21 +106,33 @@
     height fixed for=first and middle,%
     drop fuzzy shadow,
   },
-  %%%%% TOCPARTSTYLE STYLE %%%%%
+  %%%%% TOCSTYLE STYLE %%%%%
   tocstyle/.style={%
     listcommonstyle,
-    colback=yellow!3!white,%
-    colframe=red!40!black!60!,%
-    watermark color=yellow!85!red!15!white,%
+    colback=green!0.5!white,%
+    colframe=green!40!black!60!,%
+    watermark color=green!60!yellow!13!white,%
   },
-  %%%%% TOCPARTSTYLE STYLE %%%%%
+  %%%%% LOCSTYLE STYLE %%%%%
+  lofstyle/.style={%
+    listcommonstyle,
+    colback=cyan!1!white,%
+    colframe=cyan!80!black!100!,%
+  },
+  %%%%% LOTSTYLE STYLE %%%%%
+  lotstyle/.style={lofstyle},
+  %%%%% LOTSTYLE STYLE %%%%%
+  lolstyle/.style={lofstyle},
+  %%%%% LOCSTYLE STYLE %%%%%
+  loCstyle/.style={lofstyle},
+  %%%%% LOPSTYLE STYLE %%%%%
   lopstyle/.style={%
     listcommonstyle,
     fonttitle=\sffamily\bfseries\large,%
-    colback=yellow!3!white,%
+    colback=yellow!2!white,%
     colframe=red!40!black!60!,%
     colbacktitle=red!50!yellow!70!black!60!,%
-    top=5mm,
+    top=8mm,
     bottom=4mm,
     after skip=5mm,
     attach boxed title to top left={%
