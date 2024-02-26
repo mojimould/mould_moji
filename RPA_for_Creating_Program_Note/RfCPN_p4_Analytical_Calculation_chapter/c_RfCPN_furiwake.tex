@@ -2,7 +2,7 @@
 
 
 
-振分けの長さ（\index{ふりわけちょう@振分長}\textbf{振分長}）は、トップ側とボトム側では一般に異なる。
+\index{ふりわけ@振分け}振分けの長さ（\index{ふりわけちょう@振分長}\textbf{振分長}）は、トップ側とボトム側では一般に異なる。
 しかし、加工をする際には\index{ジグのちゅうしん@ジグの中心}ジグの中心に対して両者の長さの差が小さいほうが一般的には好都合である。
 そうした場合の対処法として、ここでは以下のような2つの方法を考える。
 \begin{enumerate}
@@ -11,9 +11,9 @@
 \item
 適当な角度に\index{テーブル}テーブルを回転することで、双方の振分長を調節
 \end{enumerate}
-このとき、モールドがどのように移動するかを考える。
+このとき、モールド（\index{ワーク}ワーク）がどのように移動するかを考える。
 
-基本的な考え方として、\index{ちゅうしんわんきょく@中心湾曲}\textbf{中心湾曲}半径$R$の円の中心を原点として$\Omega$だけ回転し、次にモールドとの（スペーサを入れてない側の）接点を中心に$-\theta$だけ回転したと考えることができる。
+基本的な考え方として、\index{ちゅうしんわんきょく@中心湾曲}\textbf{中心湾曲}半径$R_\mathrm c$の円の中心を原点として$\Omega$だけ回転し、次にモールドとの（スペーサを装着していない側の）接点を中心に$-\theta$だけ回転したと考えることができる。
 なお、ここでは話の簡単化のため、もとの振分けではトップ側よりボトム側の振分長のほうが長いものとする。
 
 
@@ -63,7 +63,7 @@
 %% subsection 1.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{スペーサを用いた再振分け}
-\index{モールド}モールドの湾曲における円の中心\index{O（わんきょくちゅうしん）@O（湾曲中心）}Oを\index{げんてん@原点}原点とした\index{ふくそすうへいめん@複素数平面}複素数平面を考える
+\index{モールド}モールドの湾曲における円の中心\index{O（わんきょくちゅうしん）@O（湾曲中心）}Oを\index{げんてん@原点}原点とした\index{ふくそへいめん@複素平面}複素平面を考える
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここでは$0 < R_\mathrm c < \infty$ ($0 < \nicefrac1{R_\mathrm c} < \infty$)としている。
 $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわち\index{わんきょくのないモールド@湾曲のないモールド}湾曲のないまっすぐなモールドの場合は、別途考える必要がある。}。
@@ -187,8 +187,8 @@ $\delta_\mathrm s > 0$より、
 %% section 20.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{受板がある場合}
-ジグのモールドと接する部品（\index{うけいた@受板}\textbf{受板}）の大きさを考慮した場合を考える。
-モールドに接する側の面が半径$\rho$の円弧、虚軸方向の厚みが$\sigma$とする。
+\index{ジグ}ジグの\index{ワーク}ワークと接する部品（\index{うけいた@受板}\textbf{受板}）の大きさを考慮した場合を考える。
+ワークに接する側の面は半径$\rho$の円弧（\index{うけいたの径@受板の径}受板の径）, 虚軸方向の厚み（\index{うけいたのはば@受板の幅}受板の幅）は$\sigma$とする。
 また受板の虚軸負方向側の面は、ジグのそれと同じ平面上にあるものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -204,7 +204,7 @@ $\delta_\mathrm s > 0$より、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\index{うけいたの径@受板の径}受板の径の中心を改めてU$_\mathrm B$とし、また原点に対する偏角を改めて$-\alpha_{\mathrm U_\mathrm B}$とすると、これはU$_\mathrm B$($R_\mathrm i-\rho$, $-\alpha_{\mathrm U_\mathrm B}$)と表すことができる。
+\index{うけいたのちゅうしん@受板の中心}受板の径の中心を改めてU$_\mathrm B$とし、また原点に対する\index{へんかく（うけいた）@偏角（受板）}偏角を改めて$-\alpha_{\mathrm U_\mathrm B}$とすると、これはU$_\mathrm B$($R_\mathrm i-\rho$, $-\alpha_{\mathrm U_\mathrm B}$)と表すことができる。
 ただし、\pageeqref{eq:constraintUpoint2}は以下のようになる。
 \begin{align*}
   \sin\alpha_{\mathrm U_\mathrm B} = \frac{\bar l}{R_\mathrm i-\rho}\quad, \quad
@@ -247,7 +247,7 @@ $\delta_\mathrm s > 0$より、
 %% subsection 20.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{受板の接点}
-\index{うけいた@受板}受板とモールドとの（トップ側の）接点は、$R_\mathrm ie^{i\alpha_{\mathrm U_\mathrm B}}$で与えられる。
+\index{うけいた@受板}受板とワークとの（トップ側の）接点は、$R_\mathrm ie^{i\alpha_{\mathrm U_\mathrm B}}$で与えられる。
 このとき厚さ$\delta_\mathrm s$のスペーサを取付けると、U$_\mathrm B$を中心に回転するが、それに伴い受板における接点の位置も変化する。
 
 
@@ -256,7 +256,7 @@ $\delta_\mathrm s > 0$より、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{回転後のモールドの湾曲中心}
 %%%%%%%%%%%%%%%%%%%%%%%%%
-厚さ$\delta_\mathrm s$の\index{スペーサ}スペーサを挟むと、トップ側における受板の円の中心U$_\mathrm B$は実軸方向に$\delta_\mathrm s$だけ移動するので、
+厚さ$\delta_\mathrm s$の\index{スペーサ}スペーサを挟むと、トップ側における\index{うけいたのちゅうしん@受板の中心}受板の円の中心U$_\mathrm B$は実軸方向に$\delta_\mathrm s$だけ移動するので、
 \begin{align*}
   R_\mathrm i'e^{i\alpha_{\mathrm U_\mathrm B}}
   \quad\longrightarrow\quad
@@ -267,9 +267,9 @@ $\delta_\mathrm s > 0$より、
 \footnote{%
 U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B$U$_\mathrm T$の長さ$\bar l$より長くなることに注意。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-回転後のモールドの\index{わんきょくちゅうしん@湾曲中心}湾曲中心は、この線分の垂直二等分線上にあり、またそれぞれの受板の中心から$R_\mathrm i'$の距離の位置にある。
+\index{かいてんごのわんきょくちゅうしん@回転後の湾曲中心}回転後のワークの湾曲中心は、この線分の垂直二等分線上にあり、またそれぞれの受板の中心から$R_\mathrm i'$の距離の位置にある。
 つまり、この傾いた線分U$_\mathrm B'$U$_\mathrm T'$の中点から、角度$\pi-\psi$, 大きさ$\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}$の位置に移動する。
-したがって、回転後における湾曲の円の中心O$'$は、
+したがって、回転後における湾曲中心O$'$は、
 %% label{eq:afterOrgin}
 \begin{align}
   \notag
@@ -285,7 +285,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% subsubsection 19.2.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{回転後の接点（トップ側）}
-回転後のトップ側における受板の中心U$_\mathrm T'$と\index{わんきょくちゅうしん@湾曲中心}湾曲中心O$'$との差をとると、
+\index{かいてんごのうけいたのちゅうしん@回転後の受板の中心}回転後のトップ側における受板の中心U$_\mathrm T'$と\index{かいてんごのわんきょくちゅうしん@回転後の湾曲中心}湾曲中心O$'$との差をとると、
 \begin{align*}
   \frac{\delta_\mathrm s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\cos\psi
   +i\left\{\bar l-\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\sin\psi\right\}
@@ -374,7 +374,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
   &= R_\mathrm i'(\cos\alpha_{\mathrm U_\mathrm B}-\cos\alpha'_{\mathrm U_\mathrm B})
      +iR_\mathrm i'(\sin\alpha'_{\mathrm U_\mathrm B}-\sin\alpha_{\mathrm U_\mathrm B})
 \end{align*}
-であり、これは回転後の湾曲中心\pageeqref{eq:afterOrgin}に一致する。
+であり、これは\index{かいてんごのわんきょくちゅうしん@回転後の湾曲中心}回転後の湾曲中心\pageeqref{eq:afterOrgin}に一致する。
 つまり、$\alpha'_{\mathrm U_\mathrm B}\!-\alpha_{\mathrm U_\mathrm B}$が$\theta$に相当する。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -427,7 +427,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
       -\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\cos\psi
 \end{align*}
 となる。
-よって、\index{スペーサ}スペーサを挿入することにより、モールドは水平・鉛直方向にそれぞれ、
+よって、\index{スペーサ}スペーサを挿入することにより、ワークは水平・鉛直方向にそれぞれ、
 \begin{subequations}
 %% label{eq:spacerMoveHdistance}
 \begin{alignat}{2}
@@ -467,7 +467,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
      \right\}\\
   &= \left(\sqrt{R_\mathrm i'^2-(\bar l-f_d)^2}-\sqrt{R_\mathrm i'^2-(\bar l+f_d)^2}\,\right)^{\!\!2}.
 \end{align*}
-なお、これはモールドが水平・鉛直方向にそれぞれ、
+なお、これはワークが水平・鉛直方向にそれぞれ、
 \begin{align*}
   \text{水平方向：}~\frac{\delta_\mathrm s}2+\sqrt{R_\mathrm i^2-\bar l^2}-\frac{2\bar l}{\delta_\mathrm s}f_d\quad(\delta_\mathrm s>0)\ , \qquad
   \text{鉛直方向：}~\frac{f_\mathrm B-f_\mathrm T}2
@@ -479,7 +479,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-改めてまとめると、厚さ$\delta_\mathrm s$のスペーサを（トップ側に）挿入した後のトップ側の\index{ふりわけちょう@振分長}振分長$f_\mathrm T'$は、
+改めてまとめると、厚さ$\delta_\mathrm s$のスペーサを（トップ側に）挿入した後の\index{トップふりわけちょう@トップ振分長}トップ側の振分長$f_\mathrm T'$は、
 \begin{align*}
   f_\mathrm T'
   = f_\mathrm T+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{\delta_\mathrm s}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}}\ .
@@ -509,10 +509,10 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 これまでトップ・ボトム振分長の差を小さくするために\index{スペーサ}スペーサを用いる手法を考えてきた。
 スペーサを取付けることは、本質的にはボトム側の\index{うけいた@受板}受板の点U$_\mathrm B$を中心に回転しているということである。
 このとき回転の中心はU$_\mathrm B$である必要はなく、他の点でも問題ない。
-したがって、スペーサを用いて回転をしなくても、テーブルそのものを回転するという手法が考えられる。
+したがって、スペーサを用いて回転をしなくても、\index{テーブル}テーブルそのものを回転するという手法が考えられる。
 これは回転の中心が、受板の点U$_\mathrm B$から\index{テーブルちゅうしん@テーブル中心}\textbf{テーブル中心}Pに変わることに相当する。
 
-受板の円の中心U$_\mathrm B$と、テーブル中心Pとの実軸方向の距離を$\varDelta$とすると、テーブル中心Pの$X$座標$\varDelta'$は次で与えられる。
+\index{うけいたのちゅうしん@受板の中心}受板の中心U$_\mathrm B$と、テーブル中心Pとの実軸方向の距離を$\varDelta$とすると、テーブル中心Pの$X$座標$\varDelta'$は次で与えられる。
 %% label{eq:tableCenter}
 \begin{align}
   \label{eq:tableCenter}
@@ -550,7 +550,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% subsubsection 21.3.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{回転後のモールドの湾曲中心}
-回転後のモールドの\index{わんきょくちゅうしん@湾曲中心}湾曲中心O$'$は、点Pを中心に$-\theta$だけ回転するので、
+\index{かいてんごのわんきょくちゅうしん@回転後の湾曲中心}回転後の湾曲中心O$'$は、点Pを中心に$-\theta$だけ回転するので、
 \begin{align*}
   \varDelta'\!\left(1-e^{-i\theta}\right) = \varDelta'(1-\cos\theta)+i\varDelta'\sin\theta\ .
 \end{align*}
@@ -593,7 +593,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% subsection 21.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{回転後の振分長}
-回転後のトップ側の振分長$f_\mathrm T'$は、\pageeqref{eq:afterfttable}の虚部を見ればよいので、
+回転後の\index{トップさいふりわけちょう@トップ再振分長}トップ側の振分長$f_\mathrm T'$は、\pageeqref{eq:afterfttable}の虚部を見ればよいので、
 \begin{subequations}
 \label{eq:saifuriwake}
 \begin{align}
@@ -601,7 +601,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
   = f_\mathrm T+\varDelta'\sin\theta
   = f_\mathrm T+\left(\varDelta+\sqrt{R_\mathrm i'-\bar l^2}\right)\sin\theta\ .
 \end{align}
-同様に、ボトムの振分長$f_\mathrm B'$は、符号に注意して、
+同様に、\index{ボトムさいふりわけちょう@ボトム再振分長}ボトムの振分長$f_\mathrm B'$は、符号に注意して、
 \begin{align}
   f_\mathrm B' = f_\mathrm B-\varDelta'\sin\theta = (f_\mathrm T+f_\mathrm B)-f_\mathrm T'\ .
 \end{align}
@@ -610,7 +610,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-テーブル中心Pによる回転は振分長に影響しない（端面を水平に戻す）ので、湾曲中心Oによる回転だけが影響する。
+\index{テーブルちゅうしん@テーブル中心}テーブル中心Pによる回転は\index{ふりわけちょう@振分長}振分長に影響しない（\index{たんめん@端面}端面を水平に戻す）ので、\index{わんきょくちゅうしん@湾曲中心}湾曲中心Oによる回転だけが影響する。
 よって、振分長は$\varDelta'\sin\theta$だけ変化する。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -642,11 +642,11 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-改めてまとめると、テーブルを$-\theta$だけ傾けた後のトップ側の振分長$f_\mathrm T'$は、
+改めてまとめると、テーブルを$-\theta$だけ傾けた後の\index{トップさいふりわけちょう@トップ再振分長}トップ側の振分長$f_\mathrm T'$は、
 \begin{align*}
   f_\mathrm T' = f_\mathrm T+\left(\varDelta+\sqrt{R_\mathrm i'-\bar l^2}\right)\!\sin\theta\ .
 \end{align*}
-トップ側とボトム側の振分長が均等になるときの回転角$\theta'$は、
+トップ側とボトム側の振分長が均等になるときの\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}傾き角$\theta'$は、
 \begin{align*}
   \sin\theta' = \frac{f_\mathrm B-f_\mathrm T}{2\left(\varDelta+\sqrt{R_\mathrm i'-\bar l^2}\right)}\ .
 \end{align*}
@@ -671,7 +671,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \index{わんきょくのないモールド@湾曲のないモールド}湾曲のないモールド($R_\mathrm c^{-1}= 0$)については、回転して調整する必要性がないため、スペーサによる調整も回転による調整も必要がない。
 つまり$\delta_\mathrm s = 0$あるいは$\theta = 0$である。
 
-このとき、トップ側およびボトム側の振分長を同じにするには、単純に$f_d$だけ移動すればよい。
+このとき、\index{きんとうふりわけ@均等振分}トップ側およびボトム側の振分長を同じにするには、単純に$f_d$だけ移動すればよい。
 
 ~\vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
