@@ -70,9 +70,6 @@
     {\eqref{#1}~[p.\pageref{#1}]}%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR LISTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Articlename}{論文}
@@ -88,9 +85,7 @@
 %%%%% FOR TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% TOC LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand\PartSeparateline[1]{\addtocontents{#1}{\protect\par\protect\hrulefill\protect\par\protect\vspace*{-10pt}}}%
-%\newcommand\tocAPartSeparateline[3]{\addtocontents{#1}{\protect\par\protect\vspace*{#2}\protect\hrule width 0.5\linewidth\protect\par\protect\vspace*{#3}}}%
-%\newcommand\tableAPartSeparateline{\tocAPartSeparateline{lot}{2pt}{2pt}}
+%\newcommand\PartSeparateline[1]{\addtocontents{#1}{\protect\par\protect\hrulefill\protect\par\protect\vspace*{-10pt}}}%
 %%%%% tPart %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcounter{tocwatermark}
 \setcounter{tocwatermark}{1}
@@ -148,7 +143,6 @@
   \let\newpage\tmpnewpage
 }
 %%%%% FOR SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% TO LABEL SECTION  %%%%%%
 \newcommand{\modHeadsection}[2][]{%
   \ifx\relax#1\relax
     \section{#2\label{sec:\thepart.\thesection}}%
@@ -209,18 +203,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% DECLARE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% DECLAREMATHOPERATOR %%%%%%%%%%%%%%%%%%%%
-\DeclareMathOperator{\IP}{Im}
-\DeclareMathOperator{\RP}{Re}
-%%%%% DECLAREROBUSTCOMMAND %%%%%%%%%%%%%%%%%%%%
-\DeclareRobustCommand{\bDiv}{\nonscript\mskip-\medmuskip\mkern5mu\mathbin
-  {\operator@font div}\penalty900
-  \mkern5mu\nonscript\mskip-\medmuskip}
-\DeclareRobustCommand{\pod}[1]{\allowbreak
-  \if@display\mkern18mu\else\mkern8mu\fi(#1)}
-\DeclareRobustCommand{\pDiv}[1]{\pod{{\operator@font div}\mkern6mu#1}}
-\DeclareRobustCommand{\Div}[1]{\allowbreak\if@display\mkern18mu
-  \else\mkern12mu\fi{\operator@font div}\,\,#1}
 %%%%% DECLARENEWTOC %%%%%%%%%%%%%%%%%%%%
 \DeclareNewTOC[owner=\jobname, name=Part]{lop}
 \DeclareNewTOC[owner=\jobname, name=Column]{loC}
@@ -257,6 +239,3 @@
 \newcommand\Sectionname{} % initialize \Sectionname
 \let\Sectionmark\sectionmark
 \def\sectionmark#1{\def\Sectionname{#1}\Sectionmark{#1}}
-%%%%% FOR INDEX %%%%%%%%%%%%%%%%%%
-\newcommand{\expandafterindex}{\expandafter\index\expandafter}
-%%%%% FOR PART WITH TABLE %%%%%%%%%%%%%%%%%%

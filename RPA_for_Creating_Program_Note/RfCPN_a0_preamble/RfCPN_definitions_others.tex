@@ -7,6 +7,8 @@
 \newcommand\ttNum{\ifmmode{\text{\texttt\#}}\else\texttt\#\fi}
 \newcommand\cf{{\itshape cf.\,}}
 \newcommand{\TBW}{\texorpdfstring{\small{\color{red}\,*}}{}}
+%%%%% FOR INDEX %%%%%%%%%%%%%%%%%%
+\newcommand{\expandafterindex}{\expandafter\index\expandafter}
 %%%%% COLOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{ai}     {rgb}{0.2039, 0.3765, 0.4314}
 \definecolor{kon}    {rgb}{0.0000, 0.2000, 0.4000}
@@ -23,6 +25,18 @@
 \newcommand{\customtoday}{\the\year/\two@digits{\the\month}/\two@digits{\the\day}}
 \newcommand{\customdate}{\customtoday\ \currenttime\ (\jadayofweek{\the\year}{\the\month}{\the\day})}
 \newcommand{\customtodayap}{\ifnum\currenthour<12 \customtoday\,a.m.\else\customtoday\,p.m.\fi}
+%%%%% DECLAREMATHOPERATOR %%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\IP}{Im}
+\DeclareMathOperator{\RP}{Re}
+%%%%% DECLAREROBUSTCOMMAND %%%%%%%%%%%%%%%%%%%%
+\DeclareRobustCommand{\bDiv}{\nonscript\mskip-\medmuskip\mkern5mu\mathbin
+  {\operator@font div}\penalty900
+  \mkern5mu\nonscript\mskip-\medmuskip}
+\DeclareRobustCommand{\pod}[1]{\allowbreak
+  \if@display\mkern18mu\else\mkern8mu\fi(#1)}
+\DeclareRobustCommand{\pDiv}[1]{\pod{{\operator@font div}\mkern6mu#1}}
+\DeclareRobustCommand{\Div}[1]{\allowbreak\if@display\mkern18mu
+  \else\mkern12mu\fi{\operator@font div}\,\,#1}
 %%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
 \newcommand{\DMname}{Dマシニング}
 \newcommand{\MMname}{Mマシニング}

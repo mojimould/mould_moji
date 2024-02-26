@@ -5,15 +5,7 @@
 %%%%% FOR STYLE OF TCBSET %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tcbset{%
-  %%%%% COLUMNBOX STYLE %%%%%
-  Tabularbox/.style={%
-    fonttitle=\gtfamily\bfseries,%
-    breakable,%
-    enhanced jigsaw,%
-    left=.5ex,%
-    right=.5ex,%
-    bicolor,%
-    colbacklower=black!10!white,%
+  tcbcommon/.style={%
     before upper={%
       \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
       \let\oldfootnote=\footnote% \oldfootnote=\footnote
@@ -24,6 +16,17 @@
       \setcounter{footnote}{\value{GlobalFootnote}}% footnoteValue=GlobalFootnoteValue
       \let\footnote=\oldfootnote% \footnote=\oldfootnote
     },
+  },
+  %%%%% COLUMNBOX STYLE %%%%%
+  Tabularbox/.style={%
+    tcbcommon,
+    fonttitle=\gtfamily\bfseries,%
+    breakable,%
+    enhanced jigsaw,%
+    left=.5ex,%
+    right=.5ex,%
+    bicolor,%
+    colbacklower=black!10!white,%
     after=\smallskip\noindent,
   },%
   %%%%% COLUMNBOX STYLE %%%%%
@@ -80,6 +83,7 @@
 %  },%
   %%%%% HOSOKUBOX STYLE %%%%%
   hosokubox/.style={%
+    tcbcommon,
     title={\termblue{\hosokuname~\thetcbcounter}~},%
     attach title to upper,%
     breakable,%
