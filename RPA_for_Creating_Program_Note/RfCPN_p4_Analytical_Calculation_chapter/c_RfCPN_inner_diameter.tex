@@ -25,13 +25,21 @@
 となることが知られている\cite{1986KO}。\\
 
 \modcaptionof{table}{化学組成の含有量}
-\begin{tabular}[t]{|c|c|c|c|c|c|c|}
-  \hline
-  鋼材(wt\%) & C & Si & Mn & P & S
-  \\\hline
-  \index{JISコード（がんゆうりょう）}JISコード（含有量） & 0.1 & 0.5 & 0.6 & 0.7 & 0.8
-  \\\hline
-\end{tabular}
+\begin{longtblr}[
+  theme=commontblr,
+  entry=none,
+  label=none,
+  presep=0pt,
+]{%
+  hlines,
+  vlines,
+  vline{2}={1pt},
+  colspec={lX[c]X[c]X[c]X[c]X[c]},
+}
+  鋼材 & C & Si & Mn & P & S
+  \\
+  \index{JISコード（がんゆうりょう）}JISコード（含有量wt\%） & 0.1 & 0.5 & 0.6 & 0.7 & 0.8
+\end{longtblr}
 
 
 \clearpage
