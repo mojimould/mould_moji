@@ -38,10 +38,8 @@
     after title=\hfill\termblue{\Formulaname~\thetcbcounter},%
   },%
   %%%%% FIGUREBOX STYLE %%%%%
-  Figurebox/.style={%
+  Figurecommonbox/.style={%
     notitle,%
-    height=\textwidth,
-%    width=\textwidth,
     center upper,%
     center lower,%
     arc=5pt,%
@@ -55,6 +53,17 @@
     colback=green!3!white,%
     colframe=black!25!white,%
     before={\centering},
+  },
+  %%%%% FIGUREBOX STYLE %%%%%
+  Figurelnadscapebox/.style={%
+    Figurecommonbox,
+    height fill,
+  },
+  %%%%% FIGUREBOX STYLE %%%%%
+  Figurebox/.style={%
+    Figurecommonbox,
+    height=\textheight,
+    width=\textwidth,
   },
   %%%%% HIGHLIGHT MATH STYLE %%%%%
 %  highlight math/.style={%

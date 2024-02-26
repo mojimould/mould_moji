@@ -37,7 +37,7 @@
 \setlength{\textheight}{\oldtextwidth}
 \begin{figure}[p]
 \centering
-\begin{Figbox}
+\begin{Figlandscape}
 \resizebox{\linewidth}{!}{\adjustbox{max height=\textheight}{\mouldCoordinate}}%
 \captionsetup{width=.75\textwidth}
 \captionof{figure}[湾曲中心Oを原点とした複素平面上のモールド]
@@ -47,7 +47,7 @@
    $\alpha_{\mathrm T_\mathrm o}$, $\alpha_{\mathrm T_\mathrm i}$, $\alpha_{\mathrm U_\mathrm B}$は角度を示す。%
    \label{fig:mouldOnComplexPlane1}%
    }
-\end{Figbox}%
+\end{Figlandscape}%
 \end{figure}%
 \end{landscape}%
 \setlength{\textwidth}{\oldtextwidth}
@@ -190,7 +190,20 @@ $\delta_\mathrm s > 0$より、
 ジグのモールドと接する部品（\index{うけいた@受板}\textbf{受板}）の大きさを考慮した場合を考える。
 モールドに接する側の面が半径$\rho$の円弧、虚軸方向の厚みが$\sigma$とする。
 また受板の虚軸負方向側の面は、ジグのそれと同じ平面上にあるものとする。
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[p]%
+\begin{Figbox}[valign=top]%
+\resizebox{\linewidth-15pt}{!}{\mouldwithukeita}%
+\captionsetup{width=.75\textwidth}
+\vfill~
+\captionof{figure}[受板がある場合\TeX]{受板がある場合\label{fig:mouldwithukeita}}
+\end{Figbox}%
+\end{figure}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \index{うけいたの径@受板の径}受板の径の中心を改めてU$_\mathrm B$とし、また原点に対する偏角を改めて$-\alpha_{\mathrm U_\mathrm B}$とすると、これはU$_\mathrm B$($R_\mathrm i-\rho$, $-\alpha_{\mathrm U_\mathrm B}$)と表すことができる。
 ただし、\pageeqref{eq:constraintUpoint2}は以下のようになる。
 \begin{align*}
@@ -269,7 +282,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 1.2.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 19.2.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{回転後の接点（トップ側）}
 回転後のトップ側における受板の中心U$_\mathrm T'$と\index{わんきょくちゅうしん@湾曲中心}湾曲中心O$'$との差をとると、
