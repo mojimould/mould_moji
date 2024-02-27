@@ -18,7 +18,8 @@
 % Layout and Table Settings
 \usepackage{geometry} % Provides an easy and flexible user interface to customize page layout.
 \usepackage{array} % Extends array and tabular environments.
-\usepackage{longtable} % Allows tables to break across pages.
+\usepackage{tabularray} % Allows tables to break across pages.
+\UseTblrLibrary{booktabs, diagbox}
 \usepackage{colortbl} % Adds color to LaTeX tables.
 
 % Graphics and Color Settings
@@ -82,8 +83,6 @@
 
 % Loop
 \usepackage{pgffor} % Foreach loop structure.
-%\usepackage{datatool}
-%\usepackage{calc}
 
 % Arrow
 \usepackage{extarrows} % Extra Arrows beyond those provided in AMSmath.
@@ -94,14 +93,8 @@
 % Box Adjustment
 \usepackage{adjustbox} % Graphics package-alike macros for "general" boxes.
 
-\usepackage{tabularray}
-\UseTblrLibrary{booktabs}
-
+%
 \usepackage{subfiles}
-
-% lines for table
-%\usepackage{booktabs}
-\usepackage{cellspace}
 
 % List Display
 \usepackage{jvlisting} % For including code listings with Japanese comments.
@@ -112,7 +105,7 @@
 %%%%% TIKZ LIBRARY etc %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Arrows
 %\usetikzlibrary{arrows} % Arrow tip library.
-%\usetikzlibrary{arrows.meta} % Advanced arrow tip library.
+\usetikzlibrary{arrows.meta} % Advanced arrow tip library.
 % Calculations
 \usetikzlibrary{calc} % Coordinate calculations.
 % Decorations
