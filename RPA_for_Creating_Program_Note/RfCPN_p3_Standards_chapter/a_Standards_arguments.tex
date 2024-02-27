@@ -32,89 +32,83 @@ A, B, Cにはそれぞれ\ttNum1, \ttNum2, \ttNum3が割り当てられ、I, J, 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section F.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{引数アドレスとローカル変数}
+\modHeadsection{引数アドレスとそのローカル変数}
 原則として、引数の数が22個以上必要でない限り、\DMname では引数指定Iを用いるものとする。
 
-\noindent
-\begin{minipage}[t]{0.30\textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection C.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{引数指定I 一覧}
+\index{ひきすうアドレス（ひきすうしていI）@引数アドレス（引数指定I）}引数指定Iの引数アドレスとそれに対応する\index{ローカルへんすう（ひきすう）@ローカル変数（引数）}ローカル変数は以下の通りである。\\
+\noindent%
+\begin{minipage}[t]{0.666\textwidth}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{2columnstable}{引数指定I}{|Sc|Sc|}{記号}{変数}
-A & \verb|#01|\\\hline
-B & \verb|#02|\\\hline
-C & \verb|#03|\\\hline
-D & \verb|#07|\\\hline
-E & \verb|#08|\\\hline
-F & \verb|#09|\\\hline
-H & \verb|#11|\\\hline
-I & \verb|#04|\\\hline
-J & \verb|#05|\\\hline
-K & \verb|#06|\\\hline
-M & \verb|#13|\\\hline
-Q & \verb|#17|\\\hline
-R & \verb|#18|\\\hline
-S & \verb|#19|\\\hline
-T & \verb|#20|\\\hline
-U & \verb|#21|\\\hline
-V & \verb|#22|\\\hline
-W & \verb|#23|\\\hline
-X & \verb|#24|\\\hline
-Y & \verb|#25|\\\hline
-Z & \verb|#26|\\\hline
-\end{2columnstable}%
-\end{minipage}
-\begin{minipage}[t]{0.35\textwidth}
+\begin{twocolbreaktblr}{引数指定I}{cc|[3pt, white]|cc|[3pt, white]|cc|[3pt, white]|cc}
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+記号 & 変数 & 記号 & 変数 & 記号 & 変数 & 記号 & 変数\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+A & \ttfamily\#01 & H & \ttfamily\#11 & R & \ttfamily\#18 & X & \ttfamily\#24\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+B & \ttfamily\#02 & I & \ttfamily\#04 & S & \ttfamily\#19 & Y & \ttfamily\#25\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+C & \ttfamily\#03 & J & \ttfamily\#05 & T & \ttfamily\#20 & Z & \ttfamily\#26\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+D & \ttfamily\#07 & K & \ttfamily\#06 & U & \ttfamily\#21\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+E & \ttfamily\#08 & M & \ttfamily\#13 & V & \ttfamily\#22\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+F & \ttfamily\#09 & Q & \ttfamily\#17 & W & \ttfamily\#23\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+\end{twocolbreaktblr}%
+\end{minipage}%
+\begin{minipage}[t]{0.333\textwidth}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{2columnstable}{通常指定不可な引数}{|Sc|Sc|}{記号}{変数}
-G & \verb|#10|\\\hline
-L & \verb|#12|\\\hline
-N & \verb|#14|\\\hline
-O & \verb|#15|\\\hline
-P & \verb|#16|\\\hline
-\end{2columnstable}%
+\begin{multicollongtblr}{通常指定不可な引数}{cc}
+記号 & 変数\\
+G & \ttfamily\#10\\
+L & \ttfamily\#12\\
+N & \ttfamily\#14\\
+O & \ttfamily\#15\\
+P & \ttfamily\#16\\
+\end{multicollongtblr}%
 \end{minipage}
-\vrule\hfill
-\begin{minipage}[t]{0.30\textwidth}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection C.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{引数指定II 一覧}
+\index{ひきすうアドレス（ひきすうしていII）@引数アドレス（引数指定II）}引数指定IIの引数アドレスとそれに対応するローカル変数は以下の通りである。
+なお、I, J, Kの添字は便宜上記述したものであり、実際のプログラムにはすべて同じI, J, Kの記号を用いる。\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{2columnstable}{引数指定II}{|Sc|Sc|}{記号}{変数}
-A & \verb|#01|\\\hline
-B & \verb|#02|\\\hline
-C & \verb|#03|\\\hline
-I$_1$ & \verb|#04|\\\hline
-J$_1$ & \verb|#05|\\\hline
-K$_1$ & \verb|#06|\\\hline
-I$_2$ & \verb|#07|\\\hline
-J$_2$ & \verb|#08|\\\hline
-K$_2$ & \verb|#09|\\\hline
-I$_3$ & \verb|#10|\\\hline
-J$_3$ & \verb|#11|\\\hline
-K$_3$ & \verb|#12|\\\hline
-I$_4$ & \verb|#13|\\\hline
-J$_4$ & \verb|#14|\\\hline
-K$_4$ & \verb|#15|\\\hline
-I$_5$ & \verb|#16|\\\hline
-J$_5$ & \verb|#17|\\\hline
-K$_5$ & \verb|#18|\\\hline
-I$_6$ & \verb|#19|\\\hline
-J$_6$ & \verb|#20|\\\hline
-K$_6$ & \verb|#21|\\\hline
-I$_7$ & \verb|#22|\\\hline
-J$_7$ & \verb|#23|\\\hline
-K$_7$ & \verb|#24|\\\hline
-I$_8$ & \verb|#25|\\\hline
-J$_8$ & \verb|#26|\\\hline
-K$_8$ & \verb|#27|\\\hline
-I$_9$ & \verb|#28|\\\hline
-J$_9$ & \verb|#29|\\\hline
-K$_9$ & \verb|#30|\\\hline
-I$_{10}$ & \verb|#31|\\\hline
-J$_{10}$ & \verb|#32|\\\hline
-K$_{10}$ & \verb|#33|\\\hline
-\end{2columnstable}%
-\end{minipage}
+\begin{twocolbreaktblr}{引数指定II}{cc|[3pt, white]|cc|[3pt, white]|cc|[3pt, white]|cc}
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+記号 & 変数 & 記号 & 変数 & 記号 & 変数 & 記号 & 変数\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+A & \ttfamily\#01 & I$_3$ & \ttfamily\#10 & I$_6$ & \ttfamily\#19 & I$_9$ & \ttfamily\#28\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+B & \ttfamily\#02 & J$_3$ & \ttfamily\#11 & J$_6$ & \ttfamily\#20 & J$_9$ & \ttfamily\#29\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+C & \ttfamily\#03 & K$_3$ & \ttfamily\#12 & K$_6$ & \ttfamily\#21 & K$_9$ & \ttfamily\#30\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+I$_1$ & \ttfamily\#04 & I$_4$ & \ttfamily\#13 & I$_7$ & \ttfamily\#22 & I$_{10}$ & \ttfamily\#31\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+J$_1$ & \ttfamily\#05 & J$_4$ & \ttfamily\#14 & J$_7$ & \ttfamily\#23 & J$_{10}$ & \ttfamily\#32\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+K$_1$ & \ttfamily\#06 & K$_4$ & \ttfamily\#15 & K$_7$ & \ttfamily\#24 & K$_{10}$ & \ttfamily\#33\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+I$_2$ & \ttfamily\#07 & I$_5$ & \ttfamily\#16 & I$_8$ & \ttfamily\#25\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+J$_2$ & \ttfamily\#08 & J$_5$ & \ttfamily\#17 & J$_8$ & \ttfamily\#26\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+K$_2$ & \ttfamily\#09 & K$_5$ & \ttfamily\#18 & K$_8$ & \ttfamily\#27\\
+\cmidrule[r=0]{1-2}\cmidrule[lr=0]{3-4}\cmidrule[lr=0]{5-6}\cmidrule[l=0]{7-8}
+\end{twocolbreaktblr}%
 

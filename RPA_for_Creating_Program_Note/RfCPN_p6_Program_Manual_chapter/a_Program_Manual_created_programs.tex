@@ -8,53 +8,58 @@
 \modHeadsection{作成したプログラム 一覧}
 \DMname において作成したプログラム（メインプログラムを除く）は以下のとおりである。\\
 
-\begin{3columnstable}{作成したプログラム一覧：芯出し測定}{|Sc|Sl|Sl|}{O番号}{内容}{使用prg}
-\MXOThickness & 測定 両側 外側中心$X$ & \OsensorOff\\\hline
-\MYOThickness & 測定 両側 外側中心$Y$ & \OsensorOff\\\hline
-\MXIWidth     & 測定 両側 内側中心$X$ & \OsensorOff\\\hline
-\MYIWidth     & 測定 両側 内側中心$Y$ & \OsensorOff\\\hline
+\begin{multicollongtblr}{作成したプログラム一覧：芯出し測定}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用prg\\
+\MXOThickness & 測定 両側 外側中心$X$ & \OsensorOff\\
+\MYOThickness & 測定 両側 外側中心$Y$ & \OsensorOff\\
+\MXIWidth     & 測定 両側 内側中心$X$ & \OsensorOff\\
+\MYIWidth     & 測定 両側 内側中心$Y$ & \OsensorOff\\
 \MXIface      & 測定 片側 外削中心$X$ C面方向 & \OsensorOff\\
-\end{3columnstable}
+\end{multicollongtblr}
 
 
-\begin{3columnstable}{作成したプログラム一覧：通り芯測定}{|Sc|Sl|Sl|}{O番号}{内容}{使用prg}
-\MYcenterline & 測定 片側 通り芯$Y$ & \OsensorOff\\\hline
+\begin{multicollongtblr}{作成したプログラム一覧：通り芯測定}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用prg\\
+\MYcenterline & 測定 片側 通り芯$Y$ & \OsensorOff\\
 \MXcenterline & 測定 片側 通り芯$X$ $Z$方向 & \OsensorOff\\
-\end{3columnstable}
+\end{multicollongtblr}
 
 
-\begin{3columnstable}{作成したプログラム一覧：加工（\dimple 以外）}{|Sc|Sl|Sl|}{O番号}{内容}{使用prg}
-\KTanmenRight      & 加工 端面 コーナーR 右回り1周 & \KOLeftAR\\\hline
-\KGaisakuRLeft     & 加工 外削 コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\\hline
-\KMizoConerLeft    & 加工 溝 左回り1周 & \KOLeftAR\OpauseCheck\\\hline
-\KSotoMentoriRLeft & 加工 外面取 コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\\hline
-\KUchiMentoriRLeft & 加工 内面取 コーナーR 左回り1周 & \KILeftAC\OpauseCheck\\\hline
-\KOLeftAR   & 外側 左回り1周 右上始まり & \\\hline
+\begin{multicollongtblr}{作成したプログラム一覧：加工（\dimple 以外）}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用prg\\
+\KTanmenRight      & 加工 端面 コーナーR 右回り1周 & \KOLeftAR\\
+\KGaisakuRLeft     & 加工 外削 コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
+\KMizoConerLeft    & 加工 溝 左回り1周 & \KOLeftAR\OpauseCheck\\
+\KSotoMentoriRLeft & 加工 外面取 コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
+\KUchiMentoriRLeft & 加工 内面取 コーナーR 左回り1周 & \KILeftAC\OpauseCheck\\
+\KOLeftAR   & 外側 左回り1周 右上始まり & \\
 \KILeftAC   & 内側 左回り1周 中央上始まり & \\
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 \clearpage
-\begin{3columnstable}{作成したプログラム一覧：\dimple}{|Sc|Sl|Sl|}{O番号}{内容}{使用prg}
-\DLone      & \dimple ：移動 各列の中心上 & \DLtwoAC\DLtwoBD\\\hline
-\DLtwoAC    & \dimple ：移動 AC面 列内の各\dimple 上 & \DMLthreeAC\DKLthreeAC\\\hline
-\DLtwoBD    & \dimple ：移動 BC面 列内の各\dimple 上 & \DMLthreeBD\DKLthreeBD\\\hline
-\DMLthreeAC & \dimple ：測定 AC内表面$X$ & \OsensorOff\\\hline
-\DMLthreeBD & \dimple ：測定 BD内表面$Y$ & \OsensorOff\\\hline
-\DKLthreeAC & \dimple ：加工 AC内表面$X$ & \\\hline
+\begin{multicollongtblr}{作成したプログラム一覧：\dimple}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用prg\\
+\DLone      & \dimple ：移動 各列の中心上 & \DLtwoAC\DLtwoBD\\
+\DLtwoAC    & \dimple ：移動 AC面 列内の各\dimple 上 & \DMLthreeAC\DKLthreeAC\\
+\DLtwoBD    & \dimple ：移動 BC面 列内の各\dimple 上 & \DMLthreeBD\DKLthreeBD\\
+\DMLthreeAC & \dimple ：測定 AC内表面$X$ & \OsensorOff\\
+\DMLthreeBD & \dimple ：測定 BD内表面$Y$ & \OsensorOff\\
+\DKLthreeAC & \dimple ：加工 AC内表面$X$ & \\
 \DKLthreeBD & \dimple ：加工 BD内表面$Y$ & \\
-\end{3columnstable}
+\end{multicollongtblr}
 
 
-\begin{3columnstable}{作成したプログラム一覧：その他}{|Sc|Sl|Sl|}{O番号}{内容}{使用prg}
-\OpauseCheck  & 移動 加工後確認用：$90^\circ$回転 扉前一時停止 & \\\hline
-\OsensorOn    & タッチセンサー電源ON & \\\hline
-\OsensorOff   & タッチセンサー電源OFF &\\\hline
-\OwarmingupA  & 暖機運転 & \Owarmingup\\\hline
-\Owarmingup   & 暖機運転用サブプログラム & \\\hline
-\OtoolLengthA & 登録工具 工具長自動測定 & \OtoolLength\\\hline
+\begin{multicollongtblr}{作成したプログラム一覧：その他}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用prg\\
+\OpauseCheck  & 移動 加工後確認用：$90^\circ$回転 扉前一時停止 & \\
+\OsensorOn    & タッチセンサー電源ON & \\
+\OsensorOff   & タッチセンサー電源OFF &\\
+\OwarmingupA  & 暖機運転 & \Owarmingup\\
+\Owarmingup   & 暖機運転用サブプログラム & \\
+\OtoolLengthA & 登録工具 工具長自動測定 & \OtoolLength\\
 \OtoolLength  & 工具長 自動測定用サブプログラム &\\
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 

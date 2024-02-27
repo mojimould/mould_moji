@@ -35,17 +35,18 @@
 %\clearpage
 \noindent\ttNum100\,-\ttNum110については、主に一時的な保存に用いるものとする。\\
 
-\begin{2columnstable}[white]{\ttNum100\,-\ttNum110：一時保存値}{|Sc|Sl|}{番号}{内容}
-\ttNum100 & 各工程 切削回数用 一時保存値（仕上げ前 全削り代$X$ or $Z$）\\\hline
-\ttNum101 & 各工程 切削回数用 一時保存値（仕上げ前 全削り代$Y$）\\\hline
-\ttNum102 & 各工程 切削回数用 一時保存値 (max[\ttNum100, \ttNum101])\\\hline
-\ttNum103 & 各工程 切削回数用 一時保存値（仕上げ前 切削回数）\\\hline
-\ttNum104 & 各工程 切削回数用 一時保存値（加工時 径$X$）\\\hline
-\ttNum105 & 各工程 切削回数用 一時保存値（加工時 径$Y$）\\\hline
-\ttNum106 & 各工程 切削回数用 一時保存値（仕上げ 切削回数）\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum100\,-\ttNum110：一時保存値}{cX[l]}
+変数 & 内容\\
+\ttNum100 & 各工程 切削回数用 一時保存値（仕上げ前 全削り代$X$ or $Z$）\\
+\ttNum101 & 各工程 切削回数用 一時保存値（仕上げ前 全削り代$Y$）\\
+\ttNum102 & 各工程 切削回数用 一時保存値 (max[\ttNum100, \ttNum101])\\
+\ttNum103 & 各工程 切削回数用 一時保存値（仕上げ前 切削回数）\\
+\ttNum104 & 各工程 切削回数用 一時保存値（加工時 径$X$）\\
+\ttNum105 & 各工程 切削回数用 一時保存値（加工時 径$Y$）\\
+\ttNum106 & 各工程 切削回数用 一時保存値（仕上げ 切削回数）\\
+\SetRow{unusingVariables}
 $\cdots$ & （以下 予備）\\
-\end{2columnstable}
+\end{multicollongtblr}
 
 
 \clearpage
@@ -55,33 +56,34 @@ $\cdots$ & （以下 予備）\\
 \subsection{\ttNum175\,-\ttNum199：各工程後一時停止}
 \noindent\ttNum175\,-\ttNum199については、主に各工程後の確認のためのものとする。\\
 
-\begin{3columnstable}[white]{\ttNum175\,-\ttNum199：各工程後一時停止}{|Sc|Sl|Sc|}{番号}{内容}{初期値}
-\rowcolor{unusingVariables}
-\ttNum175 & （以下 予備） &\\\hline
-\rowcolor{unusingVariables}
-$\cdots$ & \qquad$\cdots$ &\\\hline
-\rowcolor{unusingVariables}
-\ttNum183 & （不使用） &\\\hline
-\ttNum184 & 芯出し測定後 一時停止 (0:non-stop, 1: \verb|M00|) & 0\\\hline
-\rowcolor{unusingVariables}
-\ttNum185 & （不使用） &\\\hline
-\ttNum186 & \dimple 測定後 一時停止 (0:non-stop, 1: \verb|M00|) & 0\\\hline
-\ttNum187 & \dimple 加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
-\rowcolor{unusingVariables}
-\ttNum188 & （不使用） &\\\hline
-\ttNum189 & トップ端面加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
-\ttNum190 & トップ外削加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
-\ttNum191 & トップ溝加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
-\ttNum192 & トップ外面取加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
-\ttNum193 & トップ内面取加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
-\ttNum194 & トップ座ぐり加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
-\rowcolor{unusingVariables}
-\ttNum195 & （不使用） &\\\hline
-\ttNum196 & ボトム端面加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
-\ttNum197 & ボトム外削加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
-\ttNum198 & ボトム外面取加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0\\\hline
-\ttNum199 & ボトム内面取加工後 一時停止 (0:non-stop, 1: \verb|M00|, 2:\verb|O900003|) & 0
-\end{3columnstable}
+\begin{multicollongtblr}[white]{\ttNum175\,-\ttNum199：各工程後一時停止}{cX[l]c}
+変数 & 内容 & 初期値\\
+\SetRow{unusingVariables}
+\ttNum175 & （以下 予備） &\\
+\SetRow{unusingVariables}
+$\cdots$ & \qquad$\cdots$ &\\
+\SetRow{unusingVariables}
+\ttNum183 & （不使用） &\\
+\ttNum184 & 芯出し測定後 一時停止 (0:non-stop, 1: {\ttfamily M00}) & 0\\
+\SetRow{unusingVariables}
+\ttNum185 & （不使用） &\\
+\ttNum186 & \dimple 測定後 一時停止 (0:non-stop, 1: {\ttfamily M00}) & 0\\
+\ttNum187 & \dimple 加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
+\SetRow{unusingVariables}
+\ttNum188 & （不使用） &\\
+\ttNum189 & トップ端面加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
+\ttNum190 & トップ外削加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
+\ttNum191 & トップ溝加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
+\ttNum192 & トップ外面取加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
+\ttNum193 & トップ内面取加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
+\ttNum194 & トップ座ぐり加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
+\SetRow{unusingVariables}
+\ttNum195 & （不使用） &\\
+\ttNum196 & ボトム端面加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
+\ttNum197 & ボトム外削加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
+\ttNum198 & ボトム外面取加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
+\ttNum199 & ボトム内面取加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0
+\end{multicollongtblr}
 
 
 
@@ -99,29 +101,31 @@ $\cdots$ & \qquad$\cdots$ &\\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum400\,-\ttNum424}
 
-\begin{3columnstable}[white]{\ttNum400\,-\ttNum404：初期設定}{|Sc|Sl|Sc|}{番号}{内容}{初期値}
-\ttNum400 & トップ端面 全削り代 &\\\hline
-\ttNum401 & ボトム端面 全削り代(0 or \ttNum0: \ttNum400) &\\\hline
-\ttNum402 & 計測・加工 開始N番号 & 0\\\hline
-\ttNum403 & 通り芯測定(0:off, 1:on) & 0\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum400\,-\ttNum404：初期設定}{cX[l]c}
+変数 & 内容 & 初期値\\
+\ttNum400 & トップ端面 全削り代 &\\
+\ttNum401 & ボトム端面 全削り代(0 or \ttNum0: \ttNum400) &\\
+\ttNum402 & 計測・加工 開始N番号 & 0\\
+\ttNum403 & 通り芯測定(0:off, 1:on) & 0\\
+\SetRow{unusingVariables}
 \ttNum404 & （不使用） &\\
-\end{3columnstable}
+\end{multicollongtblr}
 
-\begin{3columnstable}[white]{\ttNum405\,-\ttNum414：測定時の調整（\dimple 除く）}{|Sc|Sl|Sc|}{番号}{内容}{初期値}
-\ttNum405 & \verb|G54|$X$：ボトム外$X$芯出し（両側・片側測定）測定位置$Z-$補正（$X$自動補正） & 0\\\hline
-\ttNum406 & \verb|G54|$Y$：ボトム外$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\\hline
-\ttNum407 & \verb|G55|$X$：ボトム内$X$芯出し（両側測定）測定位置$Z-$補正（$X$自動補正） & 0\\\hline
-\ttNum408 & \verb|G55|$Y$：ボトム内$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\\hline
-\rowcolor{unusingVariables}
-\ttNum409 & （不使用） &\\\hline
-\ttNum410 & \verb|G56|$X$：トップ外$X$芯出し（両側・片側測定）測定位置$Z-$補正（$X$自動補正） & 0\\\hline
-\ttNum411 & \verb|G56|$Y$：トップ外$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\\hline
-\ttNum412 & \verb|G57|$X$：トップ内$X$芯出し（両側測定）測定位置$Z-$補正（$X$自動補正） & 0\\\hline
-\ttNum413 & \verb|G57|$Y$：トップ内$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum405\,-\ttNum414：測定時の調整（\dimple 除く）}{cX[l]c}
+変数 & 内容 & 初期値\\
+\ttNum405 & {\ttfamily G54}$X$：ボトム外$X$芯出し（両側・片側測定）測定位置$Z-$補正（$X$自動補正） & 0\\
+\ttNum406 & {\ttfamily G54}$Y$：ボトム外$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\
+\ttNum407 & {\ttfamily G55}$X$：ボトム内$X$芯出し（両側測定）測定位置$Z-$補正（$X$自動補正） & 0\\
+\ttNum408 & {\ttfamily G55}$Y$：ボトム内$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\
+\SetRow{unusingVariables}
+\ttNum409 & （不使用） &\\
+\ttNum410 & {\ttfamily G56}$X$：トップ外$X$芯出し（両側・片側測定）測定位置$Z-$補正（$X$自動補正） & 0\\
+\ttNum411 & {\ttfamily G56}$Y$：トップ外$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\
+\ttNum412 & {\ttfamily G57}$X$：トップ内$X$芯出し（両側測定）測定位置$Z-$補正（$X$自動補正） & 0\\
+\ttNum413 & {\ttfamily G57}$Y$：トップ内$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\
+\SetRow{unusingVariables}
 \ttNum414 & （不使用） &\\
-\end{3columnstable}
+\end{multicollongtblr}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -134,19 +138,20 @@ $\cdots$ & \qquad$\cdots$ &\\\hline
 
 
 \clearpage
-\begin{3columnstable}[white]{\ttNum415\,-\ttNum424：加工時の調整（端面・\dimple 除く）}{|Sc|Sl|Sc|}{番号}{内容}{初期値}
-\ttNum415 & トップ外削 A面肉厚$+$補正（外削中心$X-$補正） & 0\\\hline
-\ttNum416 & トップ外削 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:扉前\verb|M00|) & 0\\\hline
-\ttNum417 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\rowcolor{unusingVariables}
-\ttNum418 & （不使用） &\\\hline
-\ttNum419 & 溝位置$+$補正（溝幅不変） & 0\\\hline
-\ttNum420 & 溝幅$+$補正 & 0\\\hline
-\ttNum421 & 溝A面深さ$+$補正（溝径中心$X-$補正） & 0\\\hline
-\ttNum422 & 溝幅$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\\hline
-\ttNum423 & 溝 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:扉前\verb|M00|) & 0\\\hline
+\begin{multicollongtblr}[white]{\ttNum415\,-\ttNum424：加工時の調整（端面・\dimple 除く）}{cX[l]c}
+変数 & 内容 & 初期値\\
+\ttNum415 & トップ外削 A面肉厚$+$補正（外削中心$X-$補正） & 0\\
+\ttNum416 & トップ外削 仕上げ前 一時停止 (0:non-stop, 1:{\ttfamily M00}, 2:扉前{\ttfamily M00}) & 0\\
+\ttNum417 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\
+\SetRow{unusingVariables}
+\ttNum418 & （不使用） &\\
+\ttNum419 & 溝位置$+$補正（溝幅不変） & 0\\
+\ttNum420 & 溝幅$+$補正 & 0\\
+\ttNum421 & 溝A面深さ$+$補正（溝径中心$X-$補正） & 0\\
+\ttNum422 & 溝幅$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\
+\ttNum423 & 溝 仕上げ前 一時停止 (0:non-stop, 1:{\ttfamily M00}, 2:扉前{\ttfamily M00}) & 0\\
 \ttNum424 & 溝 仕上げ加工 追加回数 (上限3) & 0
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 \clearpage
@@ -155,43 +160,44 @@ $\cdots$ & \qquad$\cdots$ &\\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum425\,-\ttNum449}
 
-\begin{3columnstable}[white]{\ttNum425\,-\ttNum449：加工時の調整（続き）}{|Sc|Sl|Sc|}{番号}{内容}{初期値}
-\ttNum425 & トップ外面取$X+$補正 & 0\\\hline
-\ttNum426 & トップ外面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:扉前\verb|M00|) & 0\\\hline
-\ttNum427 & トップ外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\rowcolor{unusingVariables}
-\ttNum428 & （不使用） &\\\hline
-\ttNum429 & トップ内面取$X+$補正 & 0\\\hline
-\ttNum430 & トップ内面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:扉前\verb|M00|) & 0\\\hline
-\ttNum431 & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\rowcolor{unusingVariables}
-\ttNum432 & （不使用） &\\\hline
-\rowcolor{unusingVariables}
-\ttNum433 & （座ぐり$X+$補正用 予備） &\\\hline
-\rowcolor{unusingVariables}
-\ttNum434 & （座ぐり 仕上げ前 一時停止用 予備） &\\\hline
-\rowcolor{unusingVariables}
-\ttNum435 & （座ぐり 仕上げ加工 追加回数用 予備） &\\\hline
-\rowcolor{unusingVariables}
-\ttNum436 & （不使用） &\\\hline
-\ttNum437 & ボトム外削 A面肉厚$+$補正（外削中心$X+$補正） & 0\\\hline
-\ttNum438 & ボトム外削 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:扉前\verb|M00|) & 0\\\hline
-\ttNum439 & ボトム外削 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\rowcolor{unusingVariables}
-\ttNum440 & （不使用） &\\\hline
-\ttNum441 & ボトム外面取$X+$補正 & 0\\\hline
-\ttNum442 & ボトム外面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:扉前\verb|M00|) & 0\\\hline
-\ttNum443 & ボトム外面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\rowcolor{unusingVariables}
-\ttNum444 & （不使用） &\\\hline
-\ttNum445 & ボトム内面取$X+$補正 & 0\\\hline
-\ttNum446 & ボトム内面取 仕上げ前 一時停止 (0:non-stop, 1:\verb|M00|, 2:扉前\verb|M00|) & 0\\\hline
-\ttNum447 & ボトム内面取 仕上げ加工 追加回数 (上限3) & 0\\\hline
-\rowcolor{unusingVariables}
-\ttNum448 & （不使用） &\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum425\,-\ttNum449：加工時の調整（続き）}{cX[l]c}
+変数 & 内容 & 初期値\\
+\ttNum425 & トップ外面取$X+$補正 & 0\\
+\ttNum426 & トップ外面取 仕上げ前 一時停止 (0:non-stop, 1:{\ttfamily M00}, 2:扉前{\ttfamily M00}) & 0\\
+\ttNum427 & トップ外面取 仕上げ加工 追加回数 (上限3) & 0\\
+\SetRow{unusingVariables}
+\ttNum428 & （不使用） &\\
+\ttNum429 & トップ内面取$X+$補正 & 0\\
+\ttNum430 & トップ内面取 仕上げ前 一時停止 (0:non-stop, 1:{\ttfamily M00}, 2:扉前{\ttfamily M00}) & 0\\
+\ttNum431 & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\
+\SetRow{unusingVariables}
+\ttNum432 & （不使用） &\\
+\SetRow{unusingVariables}
+\ttNum433 & （座ぐり$X+$補正用 予備） &\\
+\SetRow{unusingVariables}
+\ttNum434 & （座ぐり 仕上げ前 一時停止用 予備） &\\
+\SetRow{unusingVariables}
+\ttNum435 & （座ぐり 仕上げ加工 追加回数用 予備） &\\
+\SetRow{unusingVariables}
+\ttNum436 & （不使用） &\\
+\ttNum437 & ボトム外削 A面肉厚$+$補正（外削中心$X+$補正） & 0\\
+\ttNum438 & ボトム外削 仕上げ前 一時停止 (0:non-stop, 1:{\ttfamily M00}, 2:扉前{\ttfamily M00}) & 0\\
+\ttNum439 & ボトム外削 仕上げ加工 追加回数 (上限3) & 0\\
+\SetRow{unusingVariables}
+\ttNum440 & （不使用） &\\
+\ttNum441 & ボトム外面取$X+$補正 & 0\\
+\ttNum442 & ボトム外面取 仕上げ前 一時停止 (0:non-stop, 1:{\ttfamily M00}, 2:扉前{\ttfamily M00}) & 0\\
+\ttNum443 & ボトム外面取 仕上げ加工 追加回数 (上限3) & 0\\
+\SetRow{unusingVariables}
+\ttNum444 & （不使用） &\\
+\ttNum445 & ボトム内面取$X+$補正 & 0\\
+\ttNum446 & ボトム内面取 仕上げ前 一時停止 (0:non-stop, 1:{\ttfamily M00}, 2:扉前{\ttfamily M00}) & 0\\
+\ttNum447 & ボトム内面取 仕上げ加工 追加回数 (上限3) & 0\\
+\SetRow{unusingVariables}
+\ttNum448 & （不使用） &\\
+\SetRow{unusingVariables}
 \ttNum449 & （予備） &
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 \clearpage
@@ -209,28 +215,29 @@ $\cdots$ & \qquad$\cdots$ &\\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{3columnstable}[white]{\ttNum450\,-\ttNum474：\dimple の深さ調整}{|Sc|Sl|Sc|}{番号}{内容}{設定値}
-\ttNum450 & 工具\verb|T31|（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） & 0.06\\\hline
-\ttNum451 & 工具\verb|T31|（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） & 0.03\\\hline
-\ttNum452 & 工具\verb|T31|（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） & 0.06\\\hline
-\ttNum453 & 工具\verb|T31|（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） & 0.03\\\hline
-\rowcolor{unusingVariables}
-\ttNum454 & （不使用） &\\\hline
-\ttNum455 & 工具\verb|T32|（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） &\\\hline
-\ttNum456 & 工具\verb|T32|（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） &\\\hline
-\ttNum457 & 工具\verb|T32|（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） &\\\hline
-\ttNum458 & 工具\verb|T32|（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） &\\\hline
-\rowcolor{unusingVariables}
-\ttNum459 & （不使用） &\\\hline
-\ttNum460 & 工具\verb|T33|（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） &\\\hline
-\ttNum461 & 工具\verb|T33|（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） &\\\hline
-\ttNum462 & 工具\verb|T33|（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） &\\\hline
-\ttNum463 & 工具\verb|T33|（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） &\\\hline
-\rowcolor{unusingVariables}
-\ttNum464 & （不使用） &\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum450\,-\ttNum474：\dimple の深さ調整}{cX[l]c}
+変数 & 内容 & 初期値\\
+\ttNum450 & 工具{\ttfamily T31}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） & 0.06\\
+\ttNum451 & 工具{\ttfamily T31}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） & 0.03\\
+\ttNum452 & 工具{\ttfamily T31}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） & 0.06\\
+\ttNum453 & 工具{\ttfamily T31}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） & 0.03\\
+\SetRow{unusingVariables}
+\ttNum454 & （不使用） &\\
+\ttNum455 & 工具{\ttfamily T32}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum456 & 工具{\ttfamily T32}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum457 & 工具{\ttfamily T32}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum458 & 工具{\ttfamily T32}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） &\\
+\SetRow{unusingVariables}
+\ttNum459 & （不使用） &\\
+\ttNum460 & 工具{\ttfamily T33}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum461 & 工具{\ttfamily T33}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum462 & 工具{\ttfamily T33}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum463 & 工具{\ttfamily T33}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） &\\
+\SetRow{unusingVariables}
+\ttNum464 & （不使用） &\\
+\SetRow{unusingVariables}
 $\cdots$ & （以下予備） &
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 
@@ -250,37 +257,38 @@ $\cdots$ & （以下予備） &
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{3columnstable}[white]{\ttNum500\,-\ttNum574：\prgbox{O910x}\prgbox{O93xx}用}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.71\textwidth}}{設定値}
-\ttNum500 & 芯ずれ許容差 \prgbox{O93xx} & 5\\\hline
-\ttNum501 & タッチセンサー信号遅れ補正 \prgbox{O93xx} & 0.040\\\hline
-\ttNum502 & タッチセンサープローブ中心$X$補正 \prgbox{O93xx} & -0.016507\\\hline
-\ttNum503 & タッチセンサープローブ中心$Y$補正 \prgbox{O93xx} & -0.068371\\\hline
-\ttNum504 & 測定距離 \prgbox{O910x} & 5\\\hline
-\ttNum505 & プローブ表面からプログラムの加工原点($Z$0)までの距離 \prgbox{O910x} & 785.529\\\hline
-\ttNum506 & 工具長の変化の許容差 \prgbox{O910x} & 1.0\\\hline
-\ttNum507 & 工具破損検出の許容差 \prgbox{O910x} & 1.0\\\hline
-\ttNum508 & （不明） & \ttNum0\\\hline
-\ttNum509 & $Z$座標系設定 \prgbox{O93xx} & 441.432\\\hline
-\ttNum510 & （不明） & 270\\\hline
-\ttNum511 & インチ／ミリ切替 \prgbox{O910x} & \ttNum0\\\hline
-\ttNum512 & タッチセンサープローブ半径$\mathrm{mm}$値 \prgbox{O93xx} & 5.0\\\hline
-\ttNum513 & 移動時用の送り速さ値 \prgbox{O910x} & 1000\\\hline
-\ttNum514 & スキップ(\verb|G31|)測定時用 送り速さ値 \prgbox{O910x}\prgbox{O93xx} & 50\\\hline
-\ttNum515 & （不明） & \ttNum0\\\hline
-\ttNum516 & センサーの位置$X$座標 \prgbox{O910x} & -30.374\\\hline
-\ttNum517 & センサーの位置$Y$座標 \prgbox{O910x} & -913.761\\\hline
-\ttNum518 & センサーの位置$Z$座標 \prgbox{O910x} & -785.529\\\hline
-\ttNum519 & （不明） & 6\\\hline
-\ttNum520 & 拡張ワーク座標系 \prgbox{O910x} & 1861\\\hline
-\ttNum521 & （不明） & 0\\\hline
-\ttNum522 & （不明） & 0\\\hline
-\ttNum523 & アプローチ時用の送り速さ値 \prgbox{O910x} & 30\\\hline
-\ttNum524 & 測定時用の送り速さ値 \prgbox{O910x} & 3\\\hline
-$\cdots$ & （以下不明） & \ttNum0\\\hline
-\ttNum533 & （不明） & 0\\\hline
-\ttNum534 & （不明） & 0\\\hline
+\begin{multicollongtblr}[white]{\ttNum500\,-\ttNum574：\prgbox{O910x}\prgbox{O93xx}用}{cX[l]c}
+変数 & 内容 & 設定値\\
+\ttNum500 & 芯ずれ許容差 \prgbox{O93xx} & 5\\
+\ttNum501 & タッチセンサー信号遅れ補正 \prgbox{O93xx} & 0.040\\
+\ttNum502 & タッチセンサープローブ中心$X$補正 \prgbox{O93xx} & -0.016507\\
+\ttNum503 & タッチセンサープローブ中心$Y$補正 \prgbox{O93xx} & -0.068371\\
+\ttNum504 & 測定距離 \prgbox{O910x} & 5\\
+\ttNum505 & プローブ表面からプログラムの加工原点($Z$0)までの距離 \prgbox{O910x} & 785.529\\
+\ttNum506 & 工具長の変化の許容差 \prgbox{O910x} & 1.0\\
+\ttNum507 & 工具破損検出の許容差 \prgbox{O910x} & 1.0\\
+\ttNum508 & （不明） & \ttNum0\\
+\ttNum509 & $Z$座標系設定 \prgbox{O93xx} & 441.432\\
+\ttNum510 & （不明） & 270\\
+\ttNum511 & インチ／ミリ切替 \prgbox{O910x} & \ttNum0\\
+\ttNum512 & タッチセンサープローブ半径$\mathrm{mm}$値 \prgbox{O93xx} & 5.0\\
+\ttNum513 & 移動時用の送り速さ値 \prgbox{O910x} & 1000\\
+\ttNum514 & スキップ({\ttfamily G31})測定時用 送り速さ値 \prgbox{O910x}\prgbox{O93xx} & 50\\
+\ttNum515 & （不明） & \ttNum0\\
+\ttNum516 & センサーの位置$X$座標 \prgbox{O910x} & -30.374\\
+\ttNum517 & センサーの位置$Y$座標 \prgbox{O910x} & -913.761\\
+\ttNum518 & センサーの位置$Z$座標 \prgbox{O910x} & -785.529\\
+\ttNum519 & （不明） & 6\\
+\ttNum520 & 拡張ワーク座標系 \prgbox{O910x} & 1861\\
+\ttNum521 & （不明） & 0\\
+\ttNum522 & （不明） & 0\\
+\ttNum523 & アプローチ時用の送り速さ値 \prgbox{O910x} & 30\\
+\ttNum524 & 測定時用の送り速さ値 \prgbox{O910x} & 3\\
+$\cdots$ & （以下不明） & \ttNum0\\
+\ttNum533 & （不明） & 0\\
+\ttNum534 & （不明） & 0\\
 $\cdots$ & （以下不明） & \ttNum0
-\end{3columnstable}
+\end{multicollongtblr}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -306,45 +314,46 @@ $\cdots$ & （以下不明） & \ttNum0
 \subsection{\ttNum600\,-\ttNum624：ワークと工具間の距離の調整}
 \ttNum600\,-\ttNum624については、主に\index{ワーク}ワークと工具間の距離に関するものとする。\\
 
-\begin{3columnstable}[white]{\ttNum600\,-\ttNum624：ワークと工具間の距離の調整}{|Sc|Sl|Sc|}{番号}{内容}{設定値}
-\ttNum600 & 工具 - 端面間 $Z$方向クリアランス平面間距離 & 100.0\\\hline
-\rowcolor{unusingVariables}
-\ttNum601 & （予備） &\\\hline
-\ttNum602 & タッチセンサー計測時の近付き量 & 9.0\\\hline
-\ttNum603 & タッチセンサー計測時の行過ぎ量 & 3.0\\\hline
-\rowcolor{unusingVariables}
-\ttNum604 & （予備） &\\\hline
-\ttNum605 & 外側加工面 法線方向クリアランス平面間距離 最小値 & 30.0\\\hline
-\ttNum606 & 内側加工面 法線方向クリアランス平面間距離 最小値 & 15.0\\\hline
-\rowcolor{unusingVariables}
-\ttNum607 & （予備） &\\\hline
-\ttNum608 & 端面加工用 内径輪郭径$-$補正量 & 5.0\\\hline
-\rowcolor{unusingVariables}
-\ttNum609 & （予備） &\\\hline
-\rowcolor{unusingVariables}
-\ttNum610 & （外削加工用予備） & \\\hline
-\rowcolor{unusingVariables}
-\ttNum611 & （予備） &\\\hline
-\rowcolor{unusingVariables}
-\ttNum612 & （溝加工用予備） & \\\hline
-\rowcolor{unusingVariables}
-\ttNum613 & （予備） &\\\hline
-\rowcolor{unusingVariables}
-\ttNum614 & （外面取加工用予備） & \\\hline
-\rowcolor{unusingVariables}
-\ttNum615 & （予備） &\\\hline
-\rowcolor{unusingVariables}
-\ttNum616 & （内面取加工用予備） &\\\hline
-\rowcolor{unusingVariables}
-\ttNum617 & （予備） &\\\hline
-\rowcolor{unusingVariables}
-\ttNum618 & （座ぐり加工用予備） &\\\hline
-\rowcolor{unusingVariables}
-\ttNum619 & （予備） &\\\hline
-\ttNum620 & \dimple 加工用 加工近付き量 & 1.0 \\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum600\,-\ttNum624：ワークと工具間の距離の調整}{cX[l]c}
+変数 & 内容 & 設定値\\
+\ttNum600 & 工具 - 端面間 $Z$方向クリアランス平面間距離 & 100.0\\
+\SetRow{unusingVariables}
+\ttNum601 & （予備） &\\
+\ttNum602 & タッチセンサー計測時の近付き量 & 9.0\\
+\ttNum603 & タッチセンサー計測時の行過ぎ量 & 3.0\\
+\SetRow{unusingVariables}
+\ttNum604 & （予備） &\\
+\ttNum605 & 外側加工面 法線方向クリアランス平面間距離 最小値 & 30.0\\
+\ttNum606 & 内側加工面 法線方向クリアランス平面間距離 最小値 & 15.0\\
+\SetRow{unusingVariables}
+\ttNum607 & （予備） &\\
+\ttNum608 & 端面加工用 内径輪郭径$-$補正量 & 5.0\\
+\SetRow{unusingVariables}
+\ttNum609 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum610 & （外削加工用予備） & \\
+\SetRow{unusingVariables}
+\ttNum611 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum612 & （溝加工用予備） & \\
+\SetRow{unusingVariables}
+\ttNum613 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum614 & （外面取加工用予備） & \\
+\SetRow{unusingVariables}
+\ttNum615 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum616 & （内面取加工用予備） &\\
+\SetRow{unusingVariables}
+\ttNum617 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum618 & （座ぐり加工用予備） &\\
+\SetRow{unusingVariables}
+\ttNum619 & （予備） &\\
+\ttNum620 & \dimple 加工用 加工時近付き量 & 1.0 \\
+\SetRow{unusingVariables}
 $\cdots$ & （以下予備） &
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 \clearpage
@@ -354,25 +363,26 @@ $\cdots$ & （以下予備） &
 \subsection{\ttNum625\,-\ttNum649：残り代および1回あたりの削り代}
 \ttNum625\,-\ttNum649については、各加工の\index{のこりけずりしろ@残り削り代}残り削り代や\index{1かいあたりのけずりしろ@1回あたりの削り代}1回あたりの削り代に関するものとする。\\
 
-\begin{3columnstable}[white]{\ttNum625\,-\ttNum649：残り代および1回あたりの削り代}{|Sc|Sl|Sc|}{番号}{内容}{設定値}
-\ttNum625 & 端面加工1回あたりの$Z$方向削り代 & 4.0\\\hline
-\rowcolor{unusingVariables}
-\ttNum626 & （予備） & \\\hline
-\ttNum627 & 外削加工1回あたりの削り代（直径） & 2.0\\\hline
-\ttNum628 & 外削加工 仕上げ前 残り削り代（直径） & 1.0\\\hline
-\ttNum629 & 溝加工1回あたりの削り代（溝深さ） & 5.0\\\hline
-\ttNum630 & 溝加工 仕上げ前 残り削り代（直径） & 1.0\\\hline
-\ttNum631 & 外面取加工1回あたりの削り代（直径） & 2.0\\\hline
-\ttNum632 & 外面取加工 仕上げ前 残り削り代（直径） & 1.0\\\hline
-\ttNum633 & 内面取加工1回あたりの削り代（直径） & 2.0\\\hline
-\ttNum634 & 内面取加工 仕上げ前 残り削り代（直径） & 1.0\\\hline
-\rowcolor{unusingVariables}
-\ttNum635 & （座ぐり加工用予備） & \\\hline
-\rowcolor{unusingVariables}
-\ttNum636 & （座ぐり加工用予備） & \\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum625\,-\ttNum649：残り代および1回あたりの削り代}{cX[l]c}
+変数 & 内容 & 初期値\\
+\ttNum625 & 端面加工1回あたりの$Z$方向削り代 & 4.0\\
+\SetRow{unusingVariables}
+\ttNum626 & （予備） & \\
+\ttNum627 & 外削加工1回あたりの削り代（直径） & 2.0\\
+\ttNum628 & 外削加工 仕上げ前 残り削り代（直径） & 1.0\\
+\ttNum629 & 溝加工1回あたりの削り代（溝深さ） & 5.0\\
+\ttNum630 & 溝加工 仕上げ前 残り削り代（直径） & 1.0\\
+\ttNum631 & 外面取加工1回あたりの削り代（直径） & 2.0\\
+\ttNum632 & 外面取加工 仕上げ前 残り削り代（直径） & 1.0\\
+\ttNum633 & 内面取加工1回あたりの削り代（直径） & 2.0\\
+\ttNum634 & 内面取加工 仕上げ前 残り削り代（直径） & 1.0\\
+\SetRow{unusingVariables}
+\ttNum635 & （座ぐり加工用予備） & \\
+\SetRow{unusingVariables}
+\ttNum636 & （座ぐり加工用予備） & \\
+\SetRow{unusingVariables}
 $\cdots$ & （以下予備） &
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 \clearpage
@@ -382,33 +392,34 @@ $\cdots$ & （以下予備） &
 \subsection{\ttNum650\,-\ttNum674：工具の送り速さ}
 \ttNum650\,-\ttNum674については、工具の\index{おくりはやさ@送り速さ}送り速さに関するものとする。\\
 
-\begin{3columnstable}[white]{\ttNum650\,-\ttNum674：工具の送り速さ}{|Sc|Sl|Sc|}{番号}{内容}{設定値}
-\ttNum650 & 早送り$Z$：\verb|T50|アプローチ以外 & 12000\\\hline
-\ttNum651 & アプローチ・$XY$リトラクト：\verb|T50|以外 & 6000\\\hline
-\ttNum652 & 早送り$XY$：\verb|T50|, 早送り$Z$：\verb|T50|アプローチ & 5400\\\hline
-\ttNum653 & アプローチ：\verb|T50| & 1500\\\hline
-\ttNum654 & アプローチ：工具長測定 & 1000\\\hline
-\ttNum655 & 測定時アプローチ：\verb|T50|（両側測定） & 200\\\hline
-\ttNum656 & 測定時アプローチ：\verb|T50|（片側測定） & 50\\\hline
-\rowcolor{unusingVariables}
-\ttNum657 & （不使用） &\\\hline
-\ttNum658 & 端面加工：直線 & 900\\\hline
-\ttNum659 & 端面加工：コーナー & 900\\\hline
-\ttNum660 & 外削加工：直線 & 400\\\hline
-\ttNum661 & 外削加工：コーナー & 400\\\hline
-\ttNum662 & 溝加工：直線 & 500\\\hline
-\ttNum663 & 溝加工：コーナー & 400\\\hline
-\ttNum664 & 外面取加工：直線 & 500\\\hline
-\ttNum665 & 外面取加工：コーナー & 400\\\hline
-\ttNum666 & 内面取加工：直線 & 400\\\hline
-\ttNum667 & 内面取加工：コーナー & 400\\\hline
-\ttNum668 & 座ぐり加工：直線 & 40\\\hline
-\ttNum669 & 座ぐり加工：コーナー & 40\\\hline
-\ttNum670 & \dimple 加工：表面アプローチ & 540\\\hline
-\ttNum671 & \dimple 加工：加工 & 100\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum650\,-\ttNum674：工具の送り速さ}{cX[l]c}
+変数 & 内容 & 設定値\\
+\ttNum650 & 早送り$Z$：{\ttfamily T50}アプローチ以外 & 12000\\
+\ttNum651 & アプローチ・$XY$リトラクト：{\ttfamily T50}以外 & 6000\\
+\ttNum652 & 早送り$XY$：{\ttfamily T50}, 早送り$Z$：{\ttfamily T50}アプローチ & 5400\\
+\ttNum653 & アプローチ：{\ttfamily T50} & 1500\\
+\ttNum654 & アプローチ：工具長測定 & 1000\\
+\ttNum655 & 測定時アプローチ：{\ttfamily T50}（両側測定） & 200\\
+\ttNum656 & 測定時アプローチ：{\ttfamily T50}（片側測定） & 50\\
+\SetRow{unusingVariables}
+\ttNum657 & （不使用） &\\
+\ttNum658 & 端面加工：直線 & 900\\
+\ttNum659 & 端面加工：コーナー & 900\\
+\ttNum660 & 外削加工：直線 & 400\\
+\ttNum661 & 外削加工：コーナー & 400\\
+\ttNum662 & 溝加工：直線 & 500\\
+\ttNum663 & 溝加工：コーナー & 400\\
+\ttNum664 & 外面取加工：直線 & 500\\
+\ttNum665 & 外面取加工：コーナー & 400\\
+\ttNum666 & 内面取加工：直線 & 400\\
+\ttNum667 & 内面取加工：コーナー & 400\\
+\ttNum668 & 座ぐり加工：直線 & 40\\
+\ttNum669 & 座ぐり加工：コーナー & 40\\
+\ttNum670 & \dimple 加工：表面アプローチ & 540\\
+\ttNum671 & \dimple 加工：加工 & 100\\
+\SetRow{unusingVariables}
 $\cdots$ & （以下予備） &
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 \clearpage
@@ -418,17 +429,18 @@ $\cdots$ & （以下予備） &
 \subsection{\ttNum675\,-\ttNum699：スピンドルの回転数（切削時）}
 \ttNum675\,-\ttNum699については、切削時の工具の\index{スピンドルかいてんすう@スピンドル回転数}スピンドル回転数に関するものとする。\\
 
-\begin{3columnstable}[white]{\ttNum675\,-\ttNum699：スピンドル回転数（切削時）}{|Sc|Sl|Sc|}{番号}{内容}{設定値}
-\ttNum675 & 端面加工 & 950\\\hline
-\ttNum676 & 外削加工 & 930\\\hline
-\ttNum677 & 溝加工 & 930\\\hline
-\ttNum678 & 外面取加工 & 1800\\\hline
-\ttNum679 & 内面取加工 & 1800\\\hline
-\ttNum680 & 座ぐり加工 & 500\\\hline
-\ttNum681 & \dimple 加工 & 2000\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum675\,-\ttNum699：スピンドル回転数（切削時）}{cX[l]c}
+変数 & 内容 & 設定値\\
+\ttNum675 & 端面加工 & 950\\
+\ttNum676 & 外削加工 & 930\\
+\ttNum677 & 溝加工 & 930\\
+\ttNum678 & 外面取加工 & 1800\\
+\ttNum679 & 内面取加工 & 1800\\
+\ttNum680 & 座ぐり加工 & 500\\
+\ttNum681 & \dimple 加工 & 2000\\
+\SetRow{unusingVariables}
 $\cdots$ & （以下予備） &
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 
@@ -445,31 +457,32 @@ $\cdots$ & （以下予備） &
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum700\,-\ttNum724：\dimple~サブプログラム\DLone 用}
 
-\begin{2columnstable}[white]{\ttNum700\,-\ttNum724：\dimple~移動 \DLone 用}{|Sc|Sl|}{番号}{内容}
-\rowcolor{unusingVariables}
-\ttNum700 & （予備）\\\hline
-\ttNum701 & プログラム読込み時のワーク座標系(\ttNum4012)\\\hline
-\ttNum702 & 工具別$Z$補正(\verb|T50|:\ttNum512, \verb|T3|x:0)\\\hline
-\ttNum703 & 工具別$XY$補正(\verb|T50|:\ttNum512, \verb|T3|x:\ttNum[2400+\ttNum4111]+\ttNum[2600+\ttNum4111])\\\hline
-\ttNum704 & 工具別移動\verb|G#| (\verb|T50|:31, \verb|T3|x:1)\\\hline
-\ttNum705 & テーブル中心からワーク座標(\ttNum701)原点までの$X$距離\\\hline
-\ttNum706 & 傾き後のトップ端面中心（機械座標）$X$ (\cf\pageeqref{eq:afterPhiTCenterFromO})\\\hline
-\ttNum707 & テーブル中心から傾き後のトップ端面中心までの$Z$距離 (\cf\pageeqref{eq:afterPhiTCenterFromO})\\\hline
-\ttNum708 & 傾き後トップ端中心（ブロックエンド）$X$座標(\ttNum5001)\\\hline
-\ttNum709 & 傾き後トップ端中心（ブロックエンド）$Z$座標(\ttNum5003)\\\hline
-\ttNum710 & テーブル中心から\dimple1列目までの$Z$距離$Z-q$\\\hline
-\ttNum711 & トップ端中心から\dimple1列目中心までの$X$距離(\cf\pageeqref{eq:dimpleCenterDistance})\\\hline
-\ttNum712 & 傾き後\dimple1列目中心$X$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\\hline
-\ttNum713 & 傾き後\dimple1列目中心$Z$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\\hline
-\ttNum714 & 傾き後\dimple1列目中心（ブロックエンド）$X$座標 (\ttNum5001)\\\hline
-\ttNum715 & 傾き後\dimple1列目中心（ブロックエンド）$Y$座標 (\ttNum5002)\\\hline
-\ttNum716 & 傾き後\dimple1列目中心（ブロックエンド）$Z$座標 (\ttNum5003)\\\hline
-\ttNum717\color{red}$^*$ & 各面 ループ用数値(1:A, 2:C, 3:B, 4:D)\\\hline
-\ttNum718 & BD内半径$-\text{\ttNum703}-10$\\\hline
-\ttNum719 & (AC内半径$-\text{\ttNum703}-10)\cos\phi$\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum700\,-\ttNum724：\dimple~移動 \DLone 用}{cX[l]}
+変数 & 内容\\
+\SetRow{unusingVariables}
+\ttNum700 & （予備）\\
+\ttNum701 & プログラム読込み時のワーク座標系(\ttNum4012)\\
+\ttNum702 & 工具別$Z$補正({\ttfamily T50}:\ttNum512, {\ttfamily T3}x:0)\\
+\ttNum703 & 工具別$XY$補正({\ttfamily T50}:\ttNum512, {\ttfamily T3}x:\ttNum[2400+\ttNum4111]+\ttNum[2600+\ttNum4111])\\
+\ttNum704 & 工具別移動{\ttfamily G\#} ({\ttfamily T50}:31, {\ttfamily T3}x:1)\\
+\ttNum705 & テーブル中心からワーク座標(\ttNum701)原点までの$X$距離\\
+\ttNum706 & 傾き後のトップ端面中心（機械座標）$X$ (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
+\ttNum707 & テーブル中心から傾き後のトップ端面中心までの$Z$距離 (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
+\ttNum708 & 傾き後トップ端中心（ブロックエンド）$X$座標(\ttNum5001)\\
+\ttNum709 & 傾き後トップ端中心（ブロックエンド）$Z$座標(\ttNum5003)\\
+\ttNum710 & テーブル中心から\dimple1列目までの$Z$距離$Z-q$\\
+\ttNum711 & トップ端中心から\dimple1列目中心までの$X$距離(\cf\pageeqref{eq:dimpleCenterDistance})\\
+\ttNum712 & 傾き後\dimple1列目中心$X$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\
+\ttNum713 & 傾き後\dimple1列目中心$Z$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\
+\ttNum714 & 傾き後\dimple1列目中心（ブロックエンド）$X$座標 (\ttNum5001)\\
+\ttNum715 & 傾き後\dimple1列目中心（ブロックエンド）$Y$座標 (\ttNum5002)\\
+\ttNum716 & 傾き後\dimple1列目中心（ブロックエンド）$Z$座標 (\ttNum5003)\\
+\ttNum717\color{red}$^*$ & 各面 ループ用数値(1:A, 2:C, 3:B, 4:D)\\
+\ttNum718 & BD内半径$-\text{\ttNum703}-10$\\
+\ttNum719 & (AC内半径$-\text{\ttNum703}-10)\cos\phi$\\
+\SetRow{unusingVariables}
 $\cdots$ & （以下予備）
-\end{2columnstable}
+\end{multicollongtblr}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -487,27 +500,29 @@ $\cdots$ & （以下予備）
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum725\,-\ttNum749：\dimple~サブプログラム\DLtwoAC\DLtwoBD 用}
 
-\begin{2columnstable}[white]{\ttNum725\,-\ttNum744：\dimple~移動 \DLtwoAC\DLtwoBD 用}{|Sc|Sl|}{番号}{内容}
-\ttNum725 & プログラム読込時ブロックエンド$Y$ or $X$ (\ttNum5002, \ttNum5001)\\\hline
-\ttNum726 & プログラム読込時ブロックエンド$Z$ (\ttNum5003)\\\hline
-\ttNum727 & \dimple~偶数列の列数\\\hline
-\ttNum728 & \dimple~偶数列（一列）の\dimple~数\\\hline
-\ttNum729 & \dimple~奇数列（一列）の\dimple~数\\\hline
-\ttNum730 & \dimple~現在の列の\dimple~数\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum725\,-\ttNum744：\dimple~移動 \DLtwoAC\DLtwoBD 用}{cX[l]}
+変数 & 内容\\
+\ttNum725 & プログラム読込時ブロックエンド$Y$ or $X$ (\ttNum5002, \ttNum5001)\\
+\ttNum726 & プログラム読込時ブロックエンド$Z$ (\ttNum5003)\\
+\ttNum727 & \dimple~偶数列の列数\\
+\ttNum728 & \dimple~偶数列（一列）の\dimple~数\\
+\ttNum729 & \dimple~奇数列（一列）の\dimple~数\\
+\ttNum730 & \dimple~現在の列の\dimple~数\\
+\SetRow{unusingVariables}
 $\cdots$ & （以下予備）
-\end{2columnstable}
+\end{multicollongtblr}
 
 
 %\clearpage
-\begin{2columnstable}[white]{\ttNum745\,-\ttNum749：\dimple~測定~\DMLthreeAC\DMLthreeBD 用}{|Sc|Sl|}{番号}{内容}
-\rowcolor{unusingVariables}
-\ttNum745 & （以下 予備）\\\hline
-\rowcolor{unusingVariables}
-$\cdots$ & \qquad$\cdots$\\\hline
-\ttNum748 & プログラム読込時ブロックエンド$X$ or $Y$ (\ttNum5001, \ttNum5002)\\\hline
+\begin{multicollongtblr}[white]{\ttNum745\,-\ttNum749：\dimple~測定~\DMLthreeAC\DMLthreeBD 用}{cX[l]}
+変数 & 内容\\
+\SetRow{unusingVariables}
+\ttNum745 & （以下 予備）\\
+\SetRow{unusingVariables}
+$\cdots$ & \qquad$\cdots$\\
+\ttNum748 & プログラム読込時ブロックエンド$X$ or $Y$ (\ttNum5001, \ttNum5002)\\
 \ttNum749\color{red}$^*$ & \dimple~表面位置$X$ or $Y$測定値
-\end{2columnstable}
+\end{multicollongtblr}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -533,85 +548,93 @@ $\cdots$ & \qquad$\cdots$\\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum900001\,-\ttNum900049：\dimple 以外}
 
-\begin{2columnstable}[white]{\ttNum900001\,-\ttNum900005：外中心$X$ 両側測定用 \MXOThickness}{|Sc|Sl|}{番号}{内容}
-\ttNum900001 & $X$外中心測定 $-X$側測定値\\\hline
-\ttNum900002 & $X$外中心測定 $+X$側測定値\\\hline
-\ttNum900003 & $X$外中心測定値\\\hline
-\ttNum900004 & $X$外中心測定 厚さ測定値\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum900001\,-\ttNum900005：外中心$X$ 両側測定用 \MXOThickness}{cX[l]}
+変数 & 内容\\
+\ttNum900001 & $X$外中心測定 $-X$側測定値\\
+\ttNum900002 & $X$外中心測定 $+X$側測定値\\
+\ttNum900003 & $X$外中心測定値\\
+\ttNum900004 & $X$外中心測定 厚さ測定値\\
+\SetRow{unusingVariables}
 \ttNum900005 & （予備）\\
-\end{2columnstable}
+\end{multicollongtblr}
 
 
-\begin{2columnstable}[white]{\ttNum900006\,-\ttNum900010：外中心$Y$ 両側測定用 \MYOThickness}{|Sc|Sl|}{番号}{内容}
-\ttNum900006 & $Y$外中心測定 $-Y$側測定値\\\hline
-\ttNum900007 & $Y$外中心測定 $+Y$側測定値\\\hline
-\ttNum900008 & $Y$外中心測定値\\\hline
-\ttNum900009 & $Y$外中心測定 厚さ測定値\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum900006\,-\ttNum900010：外中心$Y$ 両側測定用 \MYOThickness}{cX[l]}
+変数 & 内容\\
+\ttNum900006 & $Y$外中心測定 $-Y$側測定値\\
+\ttNum900007 & $Y$外中心測定 $+Y$側測定値\\
+\ttNum900008 & $Y$外中心測定値\\
+\ttNum900009 & $Y$外中心測定 厚さ測定値\\
+\SetRow{unusingVariables}
 \ttNum900010 & （予備）\\
-\end{2columnstable}
+\end{multicollongtblr}
 
 
 %\clearpage
-\begin{2columnstable}[white]{\ttNum900011\,-\ttNum900013：溝中心$X$ 片側測定用 \MXOface}{|Sc|Sl|}{番号}{内容}
-\ttNum900011 & $X$溝中心測定 A側外面測定値\\\hline
-\rowcolor{unusingVariables}
-\ttNum900012 & （予備）\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum900011\,-\ttNum900013：溝中心$X$ 片側測定用 \MXOface}{cX[l]}
+変数 & 内容\\
+\ttNum900011 & $X$溝中心測定 A側外面測定値\\
+\SetRow{unusingVariables}
+\ttNum900012 & （予備）\\
+\SetRow{unusingVariables}
 \ttNum900013 & （予備）\\
-\end{2columnstable}
+\end{multicollongtblr}
 
 
 %\clearpage
-\begin{2columnstable}[white]{\ttNum900014\,-\ttNum900018：内中心$X$ 両側測定用 \MXIWidth}{|Sc|Sl|}{番号}{内容}
-\ttNum900014 & $X$内中心測定 $-X$側測定値\\\hline
-\ttNum900015 & $X$内中心測定 $+X$側測定値\\\hline
-\ttNum900016 & $X$内中心測定値\\\hline
-\ttNum900017 & $X$内中心測定 厚さ測定値\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum900014\,-\ttNum900018：内中心$X$ 両側測定用 \MXIWidth}{cX[l]}
+変数 & 内容\\
+\ttNum900014 & $X$内中心測定 $-X$側測定値\\
+\ttNum900015 & $X$内中心測定 $+X$側測定値\\
+\ttNum900016 & $X$内中心測定値\\
+\ttNum900017 & $X$内中心測定 厚さ測定値\\
+\SetRow{unusingVariables}
 \ttNum900018 & （予備）\\
-\end{2columnstable}
+\end{multicollongtblr}
 
 
 \clearpage
-\begin{2columnstable}[white]{\ttNum900019\,-\ttNum900023：内中心$Y$ 両側測定用 \MYIWidth}{|Sc|Sl|}{番号}{内容}
-\ttNum900019 & $Y$内中心測定 $-Y$側測定値\\\hline
-\ttNum900020 & $Y$内中心測定 $+Y$側測定値\\\hline
-\ttNum900021 & $Y$内中心測定値\\\hline
-\ttNum900022 & $Y$内中心測定 厚さ測定値\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum900019\,-\ttNum900023：内中心$Y$ 両側測定用 \MYIWidth}{cX[l]}
+変数 & 内容\\
+\ttNum900019 & $Y$内中心測定 $-Y$側測定値\\
+\ttNum900020 & $Y$内中心測定 $+Y$側測定値\\
+\ttNum900021 & $Y$内中心測定値\\
+\ttNum900022 & $Y$内中心測定 厚さ測定値\\
+\SetRow{unusingVariables}
 \ttNum900023 & （予備）\\
-\end{2columnstable}
+\end{multicollongtblr}
 
 
 %\clearpage
-\begin{2columnstable}[white]{\ttNum900024\,-\ttNum900026：外削中心$X$ 片側測定用 \MXIface}{|Sc|Sl|}{番号}{内容}
-\ttNum900024 & $X$外削中心測定 内面測定値\\\hline
-\rowcolor{unusingVariables}
-\ttNum900025 & （予備）\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum900024\,-\ttNum900026：外削中心$X$ 片側測定用 \MXIface}{cX[l]}
+変数 & 内容\\
+\ttNum900024 & $X$外削中心測定 内面測定値\\
+\SetRow{unusingVariables}
+\ttNum900025 & （予備）\\
+\SetRow{unusingVariables}
 \ttNum900026 & （予備）\\
-\end{2columnstable}
+\end{multicollongtblr}
 
 
 %\clearpage
-\begin{2columnstable}[white]{\ttNum900027\,-\ttNum900030：通り芯$Y$ 片側測定用 \MYcenterline}{|Sc|Sl|}{番号}{内容}
-\ttNum900027 & $Y$通り芯 ボトム側測定値\\\hline
-\ttNum900028 & $Y$通り芯 トップ側測定値\\\hline
-\ttNum900029 & $Y$通り芯 測定値\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum900027\,-\ttNum900030：通り芯$Y$ 片側測定用 \MYcenterline}{cX[l]}
+変数 & 内容\\
+\ttNum900027 & $Y$通り芯 ボトム側測定値\\
+\ttNum900028 & $Y$通り芯 トップ側測定値\\
+\ttNum900029 & $Y$通り芯 測定値\\
+\SetRow{unusingVariables}
 \ttNum900030 & （予備）\\
-\end{2columnstable}
+\end{multicollongtblr}
 
 
-\begin{2columnstable}[white]{\ttNum900031\,-\ttNum900034：通り芯$X$ 片側測定用 \MXcenterline}{|Sc|Sl|}{番号}{内容}
-\ttNum900031 & $X$通り芯 トップ側測定値\\\hline
-\ttNum900032 & $X$通り芯 ボトム側測定値\\\hline
-\ttNum900033 & $X$通り芯 測定値\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum900031\,-\ttNum900034：通り芯$X$ 片側測定用 \MXcenterline}{cX[l]}
+変数 & 内容\\
+\ttNum900031 & $X$通り芯 トップ側測定値\\
+\ttNum900032 & $X$通り芯 ボトム側測定値\\
+\ttNum900033 & $X$通り芯 測定値\\
+\SetRow{unusingVariables}
 \ttNum900034 & （予備）\\
-\end{2columnstable}
+\end{multicollongtblr}
 
 
 \clearpage
@@ -625,20 +648,22 @@ $\cdots$ & \qquad$\cdots$\\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\ttNum900101\,-\ttNum900300：\dimple AC面}
 
-\begin{2columnstable}[white]{\ttNum900101\,-\ttNum900300：\dimple AC表面位置 測定値 \DMLthreeAC}{|Sc|Sl|}{番号}{内容}
-\ttNum900101\,-\ttNum900200 & A側\dimple~表面位置$X$ 測定値\\\hline
+\begin{multicollongtblr}[white]{\ttNum900101\,-\ttNum900300：\dimple AC表面位置 測定値 \DMLthreeAC}{cX[l]}
+変数 & 内容\\
+\ttNum900101\,-\ttNum900200 & A側\dimple~表面位置$X$ 測定値\\
 \ttNum900201\,-\ttNum900300 & C側\dimple~表面位置$X$ 測定値
-\end{2columnstable}
+\end{multicollongtblr}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 18.7.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\ttNum900301\,-\ttNum900500：\dimple BD面}
 
-\begin{2columnstable}[white]{\ttNum900301\,-\ttNum900500：\dimple BD表面位置 測定値 \DMLthreeBD}{|Sc|Sl|}{番号}{内容}
-\ttNum900301\,-\ttNum900400 & B側\dimple~表面位置$Y$ 測定値\\\hline
+\begin{multicollongtblr}[white]{\ttNum900301\,-\ttNum900500：\dimple BD表面位置 測定値 \DMLthreeBD}{cX[l]}
+変数 & 内容\\
+\ttNum900301\,-\ttNum900400 & B側\dimple~表面位置$Y$ 測定値\\
 \ttNum900401\,-\ttNum900500 & D側\dimple~表面位置$Y$ 測定値
-\end{2columnstable}
+\end{multicollongtblr}
 
 
 
@@ -649,32 +674,33 @@ $\cdots$ & \qquad$\cdots$\\\hline
 \modHeadsection{\ttNum901000\,-\ttNum901024：パレット・ジグ}
 \ttNum901000\,-\ttNum901024については、主に\index{パレット}パレットや\index{ジグ}ジグに関するものとする。\\
 
-\begin{3columnstable}[white]{\ttNum901000\,-\ttNum901024：主にパレット・ジグ}{|Sc|Sl|Sc|}{番号}{内容}{設定値}
-\rowcolor{unusingVariables}
-\ttNum901000 & （予備） &\\\hline
-\ttNum901001 & パレット\ttNum1 ジグ中心機械座標$X$ & -550.019\\\hline
-\ttNum901002 & パレット\ttNum1 ジグ中心機械座標$Y$ & -740.0\\\hline
-\ttNum901003 & パレット\ttNum1 ジグ中心機械座標$Z$ & -1149.974\\\hline
-\ttNum901004 & パレット\ttNum1 ジグ中心機械座標$B$ & 0.073\\\hline
-\ttNum901005 & パレット\ttNum2 ジグ中心機械座標$X$ & -550.019\\\hline
-\ttNum901006 & パレット\ttNum2 ジグ中心機械座標$Y$ & -739.555\\\hline
-\ttNum901007 & パレット\ttNum2 ジグ中心機械座標$Z$ & -1149.974\\\hline
-\ttNum901008 & パレット\ttNum2 ジグ中心機械座標$B$ & 0.073\\\hline
-\ttNum901009 & 工具中心機械座標$C$ & 0\\\hline
-\rowcolor{unusingVariables}
-\ttNum901010 & （予備） &\\\hline
-\hline
-\ttNum901011 & パレット\ttNum1 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向） & 660.0\\\hline
-\ttNum901012 & パレット\ttNum1 ジグ内側幅（機械座標系$B$0における$Z$方向） & 410.0\\\hline
-\ttNum901013 & パレット\ttNum1 ジグ幅（機械座標系$B$0における$X$方向） & 455.0\\\hline
-\rowcolor{unusingVariables}
-\ttNum901014 & （予備） &\\\hline
-\ttNum901015 & パレット\ttNum2 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向） & 660.0\\\hline
-\ttNum901016 & パレット\ttNum2 ジグ内側幅（機械座標系$B$0における$Z$方向） & 410.0\\\hline
-\ttNum901017 & パレット\ttNum2 ジグ幅（機械座標系$B$0における$X$方向） & 455.0\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum901000\,-\ttNum901024：主にパレット・ジグ}{cX[l]c}
+変数 & 内容 & 設定値\\
+\SetRow{unusingVariables}
+\ttNum901000 & （予備） &\\
+\ttNum901001 & パレット\ttNum1 ジグ中心機械座標$X$ & -550.019\\
+\ttNum901002 & パレット\ttNum1 ジグ中心機械座標$Y$ & -740.0\\
+\ttNum901003 & パレット\ttNum1 ジグ中心機械座標$Z$ & -1149.974\\
+\ttNum901004 & パレット\ttNum1 ジグ中心機械座標$B$ & 0.073\\
+\ttNum901005 & パレット\ttNum2 ジグ中心機械座標$X$ & -550.019\\
+\ttNum901006 & パレット\ttNum2 ジグ中心機械座標$Y$ & -739.555\\
+\ttNum901007 & パレット\ttNum2 ジグ中心機械座標$Z$ & -1149.974\\
+\ttNum901008 & パレット\ttNum2 ジグ中心機械座標$B$ & 0.073\\
+\ttNum901009 & 工具中心機械座標$C$ & 0\\
+\SetRow{unusingVariables}
+\ttNum901010 & （予備） &\\
+
+\ttNum901011 & パレット\ttNum1 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向） & 660.0\\
+\ttNum901012 & パレット\ttNum1 ジグ内側幅（機械座標系$B$0における$Z$方向） & 410.0\\
+\ttNum901013 & パレット\ttNum1 ジグ幅（機械座標系$B$0における$X$方向） & 455.0\\
+\SetRow{unusingVariables}
+\ttNum901014 & （予備） &\\
+\ttNum901015 & パレット\ttNum2 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向） & 660.0\\
+\ttNum901016 & パレット\ttNum2 ジグ内側幅（機械座標系$B$0における$Z$方向） & 410.0\\
+\ttNum901017 & パレット\ttNum2 ジグ幅（機械座標系$B$0における$X$方向） & 455.0\\
+\SetRow{unusingVariables}
 $\cdots$ & （以下予備） &
-\end{3columnstable}
+\end{multicollongtblr}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -700,54 +726,55 @@ $\cdots$ & （以下予備） &
 %% section 11.9 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum901100\,-\ttNum901149：工具}
-\ttNum901100\,-\ttNum901149については、\index{こうぐ@工具}工具に関するもの（工具長や工具径およびその摩耗量を除く）とする。\\
+\ttNum901100\,-\ttNum901149については、\index{こうぐ@工具}工具に関するもの（工具長や工具径およびその摩耗量を除く）とする。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosoku}
+工具長・工具径・工具の摩耗量といったオフセットの値は、\pageautoref{sec:IV.A.2}を参照
+\end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{3columnstable}[white]{\ttNum901100\,-\ttNum901149：工具}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.71\textwidth}}{設定値}
-\rowcolor{unusingVariables}
-\ttNum901100 & （予備） &\\\hline
-\ttNum901101 & 工具\verb|T02|（フェイスミル）最大刃径（直径）DCX公称値$\phi'_\mathrm D$ & 113.5\\\hline
-\rowcolor{unusingVariables}
-$\cdots$ & （端面加工工具\verb|T02|-\verb|T05|用 予備） &\\\hline
-\ttNum901105 & 工具\verb|T06|（サイドカッター）厚さ$t$ & 7.0\\\hline
-\rowcolor{unusingVariables}
-$\cdots$ & （溝加工工具\verb|T06|, \verb|T07|用 予備） &\\\hline
-\ttNum901109 & 工具\verb|T08|（サイドカッター）厚さ$t$ & 5.0\\\hline
-\rowcolor{unusingVariables}
-$\cdots$ & （溝加工工具\verb|T08|, \verb|T10|用 予備） &\\\hline
-\ttNum901113 & 工具\verb|T11|（テーパエンドミル）参照直径用 工具長補正値 & 2.0\\\hline
-\rowcolor{unusingVariables}
-\ttNum901114 & （工具\verb|T11|用 予備） &\\\hline
-\ttNum901115 & 工具\verb|T12|（テーパエンドミル）参照直径用 工具長補正値 & 2.0\\\hline
-\rowcolor{unusingVariables}
-\ttNum901116 & （工具\verb|T12|用 予備） &\\\hline
-\ttNum901117 & 工具\verb|T13|（テーパエンドミル）参照直径用 工具長補正値 & 2.0\\\hline
-\rowcolor{unusingVariables}
-$\cdots$ & （面取加工工具\verb|T13|-\verb|T15|用 予備） &\\\hline
-\rowcolor{unusingVariables}
-\ttNum901121 & （以下 外削加工工具用 予備） &\\\hline
-\rowcolor{unusingVariables}
-$\cdots$ & $\cdots$ &\\\hline
-\ttNum901127 & 工具\verb|T31|（Tスロットカッター）厚さ & 8.0\\\hline
-\ttNum901128 & 工具\verb|T31|（Tスロットカッター）シャンク直径（公称値） & 25.0\\\hline
-\ttNum901129 & 工具\verb|T32|（Tスロットカッター）厚さ & 8.0\\\hline
-\ttNum901130 & 工具\verb|T32|（Tスロットカッター）シャンク直径（公称値） & 25.0\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum901100\,-\ttNum901149：工具}{cX[l]c}
+変数 & 内容 & 初期値\\
+\SetRow{unusingVariables}
+\ttNum901100 & （予備） &\\
+\ttNum901101 & 工具{\ttfamily T02}（フェイスミル）最大刃径（直径）DCX公称値$\phi'_\mathrm D$ & 113.5\\
+\SetRow{unusingVariables}
+$\cdots$ & （端面加工工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
+\ttNum901105 & 工具{\ttfamily T06}（サイドカッター）厚さ$t$ & 7.0\\
+\SetRow{unusingVariables}
+$\cdots$ & （溝加工工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
+\ttNum901109 & 工具{\ttfamily T08}（サイドカッター）厚さ$t$ & 5.0\\
+\SetRow{unusingVariables}
+$\cdots$ & （溝加工工具{\ttfamily T08}, {\ttfamily T10}用 予備） &\\
+\ttNum901113 & 工具{\ttfamily T11}（テーパエンドミル）参照直径用 工具長補正値 & 2.0\\
+\SetRow{unusingVariables}
+\ttNum901114 & （工具{\ttfamily T11}用 予備） &\\
+\ttNum901115 & 工具{\ttfamily T12}（テーパエンドミル）参照直径用 工具長補正値 & 2.0\\
+\SetRow{unusingVariables}
+\ttNum901116 & （工具{\ttfamily T12}用 予備） &\\
+\ttNum901117 & 工具{\ttfamily T13}（テーパエンドミル）参照直径用 工具長補正値 & 2.0\\
+\SetRow{unusingVariables}
+$\cdots$ & （面取加工工具{\ttfamily T13}-{\ttfamily T15}用 予備） &\\
+\SetRow{unusingVariables}
+\ttNum901121 & （以下 外削加工工具用 予備） &\\
+\SetRow{unusingVariables}
+$\cdots$ & $\cdots$ &\\
+\ttNum901127 & 工具{\ttfamily T31}（Tスロットカッター）厚さ & 8.0\\
+\ttNum901128 & 工具{\ttfamily T31}（Tスロットカッター）シャンク直径（公称値） & 25.0\\
+\ttNum901129 & 工具{\ttfamily T32}（Tスロットカッター）厚さ & 8.0\\
+\ttNum901130 & 工具{\ttfamily T32}（Tスロットカッター）シャンク直径（公称値） & 25.0\\
+\SetRow{unusingVariables}
 $\cdots$ & （以下 \dimple 加工工具用 予備） &\\
-\end{3columnstable}
+\end{multicollongtblr}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
 \index{タッチセンサープローブのじく@タッチセンサープローブの軸}タッチセンサープローブの軸の半径：3.75
-\end{hosoku}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{hosoku}
-工具長・工具径・工具の摩耗量といったオフセットの値は、\pageautoref{sec:IV.A.2}を参照。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

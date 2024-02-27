@@ -12,55 +12,58 @@
 \modHeadsection{バンドルのプログラム 一覧}
 \index{バンドルのプログラム}バンドルのプログラムは以下のとおりである。\\
 
-\begin{3columnstable}{\prgbox{O7000}-\prgbox{O7313}}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.6\textwidth}~}{使用prg}
-\prgbox{O7000} & パラメータの設定 &\\\hline
-\prgbox{O7100} & 工具長補正値 自動計測 & \prgbox{O9100}\\\hline
-\prgbox{O7101} & 工具長オフセット量の修正 & \prgbox{O9101}\\\hline
-\prgbox{O7102} & 工具破損検出 & \prgbox{O9102}\\\hline
-\prgbox{O7103} & 自動工具径測定 & \prgbox{O9103}\\\hline
-\prgbox{O7300} & \ttNum502, \ttNum503の測定 & \prgbox{O9300}\\\hline
-\prgbox{O7301} &  & \prgbox{O9301}\\\hline
-\prgbox{O7302} &  & \prgbox{O9302}\\\hline
-\prgbox{O7303} &  & \prgbox{O9303}\\\hline
-\prgbox{O7310} &  & \prgbox{O9310}\\\hline
-\prgbox{O7311} &  & \prgbox{O9311}\\\hline
-\prgbox{O7312} &  & \prgbox{O9312}\\\hline
-\prgbox{O7313} & \texorpdfstring{$Z$}{Z}軸座標設定 & \prgbox{O9313}
-\end{3columnstable}
+\begin{multicollongtblr}{\prgbox{O7000}-\prgbox{O7313}}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用prg\\
+\prgbox{O7000} & パラメータの設定 &\\
+\prgbox{O7100} & 工具長補正値 自動計測 & \prgbox{O9100}\\
+\prgbox{O7101} & 工具長オフセット量の修正 & \prgbox{O9101}\\
+\prgbox{O7102} & 工具破損検出 & \prgbox{O9102}\\
+\prgbox{O7103} & 自動工具径測定 & \prgbox{O9103}\\
+\prgbox{O7300} & \ttNum502, \ttNum503の測定 & \prgbox{O9300}\\
+\prgbox{O7301} &  & \prgbox{O9301}\\
+\prgbox{O7302} &  & \prgbox{O9302}\\
+\prgbox{O7303} &  & \prgbox{O9303}\\
+\prgbox{O7310} &  & \prgbox{O9310}\\
+\prgbox{O7311} &  & \prgbox{O9311}\\
+\prgbox{O7312} &  & \prgbox{O9312}\\
+\prgbox{O7313} & $Z$軸座標設定 & \prgbox{O9313}
+\end{multicollongtblr}
 
-\begin{2columnstable}{\prgbox{O8123}}{|Sc|Sl|}{番号}{内容\hspace*{0.72\textwidth}~}
-\prgbox{O8123} & 初期加工原点設定\verb|G54|, \verb|G55|, \verb|G56|, \verb|G57|\\\hline
-\prgbox{O8998} & パレット認識マクロ用 変数値\\\hline
-\prgbox{O8999} & パレット入換え
-\end{2columnstable}
+\begin{multicollongtblr}{\prgbox{O8123}}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用prg\\
+\prgbox{O8123} & 初期加工原点設定{\ttfamily G54}, {\ttfamily G55}, {\ttfamily G56}, {\ttfamily G57} &\\
+\prgbox{O8998} & パレット認識マクロ用 変数値 &\\
+\prgbox{O8999} & パレット入換え &
+\end{multicollongtblr}
 
 \clearpage
-\begin{3columnstable}{\prgbox{O9001}-\prgbox{O9393}}{|Sc|Sl|Sl|}{番号}{内容}{使用prg}
-\prgbox{O9001} & 自動パレット交換 &\\\hline
-\prgbox{O9002} & No.1パレット & \prgbox{O9001}\\\hline
-\prgbox{O9003} & No.2パレット & \prgbox{O9001}\\\hline
-\prgbox{O9006} & 自動工具交換 &\\\hline
-\prgbox{O9020} & パレット認識マクロ & \prgbox{O8998}\\\hline
-\prgbox{O9021} & No.1パレットの選択確認 &\\\hline
-\prgbox{O9022} & No.2パレットの選択確認 &\\\hline
-\prgbox{O9100} & 工具長補正値 自動測定 &\\\hline
-\prgbox{O9101} & 工具長オフセット量の修正 &\\\hline
-\prgbox{O9102} & 工具破損検出 &\\\hline
-\prgbox{O9103} & 自動工具径測定 &\\\hline
-\prgbox{O9200} & パラメタ確認 &\\\hline
-\prgbox{O9300} & プローブの倒れの補正量の測定 & \prgbox{O9392}\prgbox{O9393}\\\hline
-\prgbox{O9301} & 自動\texorpdfstring{$XYZ$}{XYZ}端面芯出し & \prgbox{O9390}\prgbox{O9391}\prgbox{O9392}\prgbox{O9393}\\\hline
-\prgbox{O9302} & 自動内円芯出し & \prgbox{O9392}\prgbox{O9393}\\\hline
-\prgbox{O9303} & 自動外円芯出し & \prgbox{O9392}\prgbox{O9393}\\\hline
-\prgbox{O9310} & 手動\texorpdfstring{$XY$}{XY}端面芯出し & \prgbox{O9392}\prgbox{O9393}\\\hline
-\prgbox{O9311} & 手動内円芯出し & \prgbox{O9392}\prgbox{O9393}\\\hline
-\prgbox{O9312} & 手動外円芯出し & \prgbox{O9392}\prgbox{O9393}\\\hline
-\prgbox{O9313} & \texorpdfstring{$Z$}{Z}座標系設定 & \prgbox{O9392}\prgbox{O9393}\\\hline
-\prgbox{O9390} &  & \prgbox{O9392}\\\hline
-\prgbox{O9391} &  & \prgbox{O9392}\\\hline
-\prgbox{O9392} &  &\\\hline
+\begin{multicollongtblr}{\prgbox{O9001}-\prgbox{O9393}}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用prg\\
+\prgbox{O9001} & 自動パレット交換 &\\
+\prgbox{O9002} & No.1パレット & \prgbox{O9001}\\
+\prgbox{O9003} & No.2パレット & \prgbox{O9001}\\
+\prgbox{O9006} & 自動工具交換 &\\
+\prgbox{O9020} & パレット認識マクロ & \prgbox{O8998}\\
+\prgbox{O9021} & No.1パレットの選択確認 &\\
+\prgbox{O9022} & No.2パレットの選択確認 &\\
+\prgbox{O9100} & 工具長補正値 自動測定 &\\
+\prgbox{O9101} & 工具長オフセット量の修正 &\\
+\prgbox{O9102} & 工具破損検出 &\\
+\prgbox{O9103} & 自動工具径測定 &\\
+\prgbox{O9200} & パラメタ確認 &\\
+\prgbox{O9300} & プローブの倒れの補正量の測定 & \prgbox{O9392}\prgbox{O9393}\\
+\prgbox{O9301} & 自動$XYZ$端面芯出し & \prgbox{O9390}\prgbox{O9391}\prgbox{O9392}\prgbox{O9393}\\
+\prgbox{O9302} & 自動内円芯出し & \prgbox{O9392}\prgbox{O9393}\\
+\prgbox{O9303} & 自動外円芯出し & \prgbox{O9392}\prgbox{O9393}\\
+\prgbox{O9310} & 手動$XY$端面芯出し & \prgbox{O9392}\prgbox{O9393}\\
+\prgbox{O9311} & 手動内円芯出し & \prgbox{O9392}\prgbox{O9393}\\
+\prgbox{O9312} & 手動外円芯出し & \prgbox{O9392}\prgbox{O9393}\\
+\prgbox{O9313} & $Z$座標系設定 & \prgbox{O9392}\prgbox{O9393}\\
+\prgbox{O9390} &  & \prgbox{O9392}\\
+\prgbox{O9391} &  & \prgbox{O9392}\\
+\prgbox{O9392} &  &\\
 \prgbox{O9393} &  &
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 

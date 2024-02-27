@@ -11,55 +11,58 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum1000\,-\ttNum1999\TBW}
 
-\begin{3columnstable}[white]{\ttNum1000-\ttNum1003：\index{パレット}{パレット}\TBW}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum1000 & パレットNo.1~~0:in, 1:out & ●\\\hline
-\ttNum1001 & パレットNo.2~~0:in, 1:out & ◯\\\hline
-\ttNum1002 & & ◯\\\hline
+\begin{multicollongtblr}[white]{\ttNum1000-\ttNum1003：\index{パレット}{パレット}\TBW}{cX[l]c}
+変数 & 内容 & 使用\\
+\ttNum1000 & パレットNo.1~~0:in, 1:out & ●\\
+\ttNum1001 & パレットNo.2~~0:in, 1:out & ◯\\
+\ttNum1002 & & ◯\\
 \ttNum1003 & & ◯\\
-\end{3columnstable}
+\end{multicollongtblr}
 
-\begin{3columnstable}[white]{\ttNum1004-\ttNum1005：タッチセンサー電源}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum1004 & タッチセンサー電源~~0: off, 1: on & ●\\\hline
-\ttNum1005 & タッチセンサー電池残量~~0: OK, 1: low & ●
-\end{3columnstable}
+\begin{multicollongtblr}[white]{\ttNum1004-\ttNum1005：タッチセンサー電源}{cX[l]c}
+変数 & 内容 & 使用\\
+\ttNum1004 & タッチセンサー電源~~0: off, 1: on & ●\\
+\ttNum1005 & タッチセンサー電池残量~~0: OK, 1: low & ●\\
+\end{multicollongtblr}
 
 \clearpage
-\begin{3columnstable}[white]{\ttNum1006-\ttNum1040：\TBW}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum1006 & & \\\hline
-\ttNum1007 & & \\\hline
-\ttNum1008 & & \\\hline
-\ttNum1009 & & \\\hline
-\ttNum1010 & & ◯\\\hline
-\ttNum1011 & & ◯\\\hline
-\ttNum1012 & & ◯\\\hline
-\ttNum1013 & & ◯\\\hline
-\ttNum1014 & & ◯\\\hline
-\ttNum1015 & & ◯\\\hline
-\ttNum1016 & & \\\hline
-\ttNum1017 & & \\\hline
-\ttNum1018 & & \\\hline
-\ttNum1019 & & \\\hline
-\ttNum1020 & & \\\hline
-\ttNum1021 & & \\\hline
-\ttNum1022 & & \\\hline
-\ttNum1023 & & \\\hline
-\ttNum1024 & & \\\hline
-\ttNum1025 & & \\\hline
-\ttNum1026 & & \\\hline
-\ttNum1027 & & \\\hline
-\ttNum1028 & & \\\hline
-\ttNum1029 & & \\\hline
-\ttNum1030 & & \\\hline
-\ttNum1031 & & \\\hline
-\ttNum1032 & & \\\hline
-\ttNum1033 & & \\\hline
-\ttNum1034 & & \\\hline
-\ttNum1035 & & \\\hline
-\rowcolor{unusingVariables}
-\ttNum1036 & null & \\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum1006-\ttNum1040：\TBW}{cX[l]c}
+変数 & 内容 & 使用\\
+\ttNum1006 & & \\
+\ttNum1007 & & \\
+\ttNum1008 & & \\
+\ttNum1009 & & \\
+\ttNum1010 & & ◯\\
+\ttNum1011 & & ◯\\
+\ttNum1012 & & ◯\\
+\ttNum1013 & & ◯\\
+\ttNum1014 & & ◯\\
+\ttNum1015 & & ◯\\
+\ttNum1016 & & \\
+\ttNum1017 & & \\
+\ttNum1018 & & \\
+\ttNum1019 & & \\
+\ttNum1020 & & \\
+\ttNum1021 & & \\
+\ttNum1022 & & \\
+\ttNum1023 & & \\
+\ttNum1024 & & \\
+\ttNum1025 & & \\
+\ttNum1026 & & \\
+\ttNum1027 & & \\
+\ttNum1028 & & \\
+\ttNum1029 & & \\
+\ttNum1030 & & \\
+\ttNum1031 & & \\
+\ttNum1032 & & \\
+\ttNum1033 & & \\
+\ttNum1034 & & \\
+\ttNum1035 & & \\
+\SetRow{unusingVariables}
+\ttNum1036 & null & \\
+\SetRow{unusingVariables}
 $\cdots$ & $\cdots$ & \\
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 
@@ -69,12 +72,13 @@ $\cdots$ & $\cdots$ & \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum2000\,-\ttNum2999\TBW}
 
-\begin{3columnstable}[white]{\ttNum2001-\ttNum2800: 工具補正}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum2001+xxx & 工具長補正 \ttNum xxx補正量 [xxx=1-200]（摩耗量0とした値） & ●\\\hline
-\ttNum2201+xxx & 工具長補正 \ttNum xxx摩耗量 [xxx=1-200] & ●\\\hline
-\ttNum2401+xxx & 工具径補正 \ttNum xxx補正量 [xxx=1-200]（摩耗量0とした値） & ●\\\hline
-\ttNum2601+xxx & 工具径補正 \ttNum xxx摩耗量 [xxx=1-200] & ●
-\end{3columnstable}
+\begin{multicollongtblr}[white]{\ttNum2001-\ttNum2800: 工具補正}{cX[l]c}
+変数 & 内容 & 使用\\
+\ttNum2001+xxx & 工具長補正 \ttNum xxx補正量 [xxx=1-200]（摩耗量0とした値） & ●\\
+\ttNum2201+xxx & 工具長補正 \ttNum xxx摩耗量 [xxx=1-200] & ●\\
+\ttNum2401+xxx & 工具径補正 \ttNum xxx補正量 [xxx=1-200]（摩耗量0とした値） & ●\\
+\ttNum2601+xxx & 工具径補正 \ttNum xxx摩耗量 [xxx=1-200] & ●\\
+\end{multicollongtblr}
 
 
 
@@ -84,39 +88,46 @@ $\cdots$ & $\cdots$ & \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum3000\,-\ttNum3999\TBW}
 
-\begin{3columnstable}[white]{\ttNum3000：アラーム}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\begin{multicollongtblr}[white]{\ttNum3000：アラーム}{cX[l]c}
+変数 & 内容 & 使用\\
 \ttNum3000 & アラーム & ●\\
-\end{3columnstable}
+\end{multicollongtblr}
 
-\begin{3columnstable}[white]{\ttNum3001, \ttNum3002：稼働時間}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum3001 & 通電時間[ms] & \\\hline
+\begin{multicollongtblr}[white]{\ttNum3001, \ttNum3002：稼働時間}{cX[l]c}
+変数 & 内容 & 使用\\
+\ttNum3001 & 通電時間[ms] & \\
 \ttNum3002 & 稼働時間[ms] & \\
-\end{3columnstable}
+\end{multicollongtblr}
 
-\begin{3columnstable}[white]{\ttNum3003-\ttNum3005\TBW}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum3003 & & ◯\\\hline
-\ttNum3004 & & \\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum3003-\ttNum3005\TBW}{cX[l]c}
+変数 & 内容 & 使用\\
+\ttNum3003 & & ◯\\
+\ttNum3004 & & \\
+\SetRow{unusingVariables}
 \ttNum3005 & null & \\
-\end{3columnstable}
+\end{multicollongtblr}
 
-\begin{3columnstable}[white]{\ttNum3006: \TBW}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\begin{multicollongtblr}[white]{\ttNum3006: \TBW}{cX[l]c}
+変数 & 内容 & 使用\\
 \ttNum3006 & & ◯\\
-\end{3columnstable}
+\end{multicollongtblr}
 
-\begin{3columnstable}[white]{\ttNum3007: \TBW}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\begin{multicollongtblr}[white]{\ttNum3007: \TBW}{cX[l]c}
+変数 & 内容 & 使用\\
 \ttNum3007 & & ◯\\
-\end{3columnstable}
+\end{multicollongtblr}
 
-\begin{3columnstable}[white]{\ttNum3011, \ttNum3012: 時刻}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum3011 & 現在の年月日(yyyymmdd) & \\\hline
+\begin{multicollongtblr}[white]{\ttNum3011, \ttNum3012: 時刻}{cX[l]c}
+変数 & 内容 & 使用\\
+\ttNum3011 & 現在の年月日(yyyymmdd) & \\
 \ttNum3012 & 現在の時刻(hhmmss) &
-\end{3columnstable}
+\end{multicollongtblr}
 
-\begin{3columnstable}[white]{\ttNum3901, \ttNum3902}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum3901 & 加工部品数 & \\\hline
+\begin{multicollongtblr}[white]{\ttNum3901, \ttNum3902}{cX[l]c}
+変数 & 内容 & 使用\\
+\ttNum3901 & 加工部品数 & \\
 \ttNum3902 & 所要部品数 &
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 
@@ -126,33 +137,35 @@ $\cdots$ & $\cdots$ & \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum4000\,-\ttNum4999\TBW}
 
-\begin{3columnstable}[white]{\ttNum4000}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\begin{multicollongtblr}[white]{\ttNum4000}{cX[l]c}
+変数 & 内容 & 使用\\
 \ttNum4000 & & \\
-\end{3columnstable}
+\end{multicollongtblr}
 
-\begin{3columnstable}[white]{\ttNum4001-\ttNum4020：直前に指令されたG指令モーダル情報}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum4001 & グループ01：\verb|G00|, \verb|G01|, \verb|G02|, \verb|G03| & ◯\\\hline
-\ttNum4002 & グループ02：選択平面\verb|G17|, \verb|G18|, \verb|G19| & \\\hline
-\ttNum4003 & グループ03：\verb|G90|, \verb|G91| & ◯\\\hline
-\ttNum4004 & グループ04：\verb|G22|, \verb|G23| & \\\hline
-\ttNum4005 & グループ05：\verb|G94| & \\\hline
-\ttNum4006 & グループ06：\verb|G21| & \\\hline
-\ttNum4007 & グループ07：工具径補正\verb|G40|, \verb|G41|, \verb|G43| & \\\hline
-\ttNum4008 & グループ08：工具長補正\verb|G43|, \verb|G44|, \verb|G49| & \\\hline
-\ttNum4009 & グループ09：固定サイクル\verb|G80| & \\\hline
-\ttNum4010 & グループ10：\verb|G98| & \\\hline
-\ttNum4011 & グループ11：スケーリング\verb|G50| & \\\hline
-\ttNum4012 & グループ12：ワーク座標系\verb|G54|-\verb|G59|, \verb|G54.1|  & ● \\\hline
-\ttNum4013 & グループ13：高精度制御\verb|G61.1| & \\\hline
-\ttNum4014 & グループ14：\verb|G67| & \\\hline
-\ttNum4015 & グループ15：法線制御\verb|G40.1| & \\\hline
-\ttNum4016 & グループ16：\verb|G69| & \\\hline
-\ttNum4017 & グループ17：周速一定制御\verb|G97| & \\\hline
-\ttNum4018 & グループ18：極座標指令\verb|G15| & \\\hline
-\ttNum4019 & グループ19：\verb|G|指令ミラーイメージ\verb|G50.1| & \\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum4001-\ttNum4020：直前に指令されたG指令モーダル情報}{cX[l]c}
+変数 & 内容 & 使用\\
+\ttNum4001 & グループ01：{\ttfamily G00}, {\ttfamily G01}, {\ttfamily G02}, {\ttfamily G03} & ◯\\
+\ttNum4002 & グループ02：選択平面{\ttfamily G17}, {\ttfamily G18}, {\ttfamily G19} & \\
+\ttNum4003 & グループ03：{\ttfamily G90}, {\ttfamily G91} & ◯\\
+\ttNum4004 & グループ04：{\ttfamily G22}, {\ttfamily G23} & \\
+\ttNum4005 & グループ05：{\ttfamily G94} & \\
+\ttNum4006 & グループ06：{\ttfamily G21} & \\
+\ttNum4007 & グループ07：工具径補正{\ttfamily G40}, {\ttfamily G41}, {\ttfamily G43} & \\
+\ttNum4008 & グループ08：工具長補正{\ttfamily G43}, {\ttfamily G44}, {\ttfamily G49} & \\
+\ttNum4009 & グループ09：固定サイクル{\ttfamily G80} & \\
+\ttNum4010 & グループ10：{\ttfamily G98} & \\
+\ttNum4011 & グループ11：スケーリング{\ttfamily G50} & \\
+\ttNum4012 & グループ12：ワーク座標系{\ttfamily G54}-{\ttfamily G59}, {\ttfamily G54.1}  & ● \\
+\ttNum4013 & グループ13：高精度制御{\ttfamily G61.1} & \\
+\ttNum4014 & グループ14：{\ttfamily G67} & \\
+\ttNum4015 & グループ15：法線制御{\ttfamily G40.1} & \\
+\ttNum4016 & グループ16：{\ttfamily G69} & \\
+\ttNum4017 & グループ17：周速一定制御{\ttfamily G97} & \\
+\ttNum4018 & グループ18：極座標指令{\ttfamily G15} & \\
+\ttNum4019 & グループ19：{\ttfamily G}指令ミラーイメージ{\ttfamily G50.1} & \\
+\SetRow{unusingVariables}
 \ttNum4020 & null & \\
-\end{3columnstable}
+\end{multicollongtblr}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -164,42 +177,44 @@ $\cdots$ & $\cdots$ & \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{3columnstable}[white]{\ttNum4021-\ttNum4021}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
+\begin{multicollongtblr}[white]{\ttNum4021-\ttNum4021}{cX[l]c}
+変数 & 内容 & 使用\\
 \ttNum4021 & & \\
-\end{3columnstable}
+\end{multicollongtblr}
 
 \clearpage
-\begin{3columnstable}[white]{\ttNum4101-\ttNum4130：直前に指令されたモーダル情報}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\rowcolor{unusingVariables}
-\ttNum4101 & null & \\\hline
-\ttNum4102 &  & \\\hline
-\rowcolor{unusingVariables}
-\ttNum4103 & null & \\\hline
-\rowcolor{unusingVariables}
-$\cdots$ & $\cdots$ & \\\hline
-\ttNum4107 & \verb|D#| 工具径補正\index{Dコード}Dコード\ttNum & ●\\\hline
-\ttNum4108 &  & \\\hline
-\ttNum4109 & \verb|F#| 送り速さ\index{Fコード}Fコード\ttNum &\\\hline
-\rowcolor{unusingVariables}
-\ttNum4110 & null & \\\hline
-\ttNum4111 & \verb|H#| 工具長補正\index{Hコード}Hコード\ttNum & ●\\\hline
-\rowcolor{unusingVariables}
-\ttNum4112 & null & \\\hline
-\ttNum4113 & \verb|M#| 補助機能\index{Mコード}Mコード\ttNum &\\\hline
-\ttNum4114 & \verb|N#| シーケンス番号\index{Nコード}Nコード &\\\hline
-\ttNum4115 & \verb|O#| プログラム番号\index{Oコード}Oコード &\\\hline
-\rowcolor{unusingVariables}
-\ttNum4116 & null & \\\hline
-\rowcolor{unusingVariables}
-$\cdots$ & $\cdots$ & \\\hline
-\ttNum4119 & \verb|S#| スピンドル回転数\index{Sコード}Sコード\ttNum &\\\hline
-\ttNum4120 & \verb|T#| 工具番号\index{Tコード}Tコード\ttNum & \\\hline
-\rowcolor{unusingVariables}
-\ttNum4121 & null & \\\hline
-\rowcolor{unusingVariables}
-$\cdots$ & $\cdots$ & \\\hline
-\ttNum4130 & \verb|G54.1| \verb|P#| 追加ワーク座標系\index{Pコード（ついかワークざひょうけい@Pコード（追加ワーク座標系）}Pコード & ◯\\
-\end{3columnstable}
+\begin{multicollongtblr}[white]{\ttNum4101-\ttNum4130：直前に指令されたモーダル情報}{cX[l]c}
+変数 & 内容 & 使用\\
+\SetRow{unusingVariables}
+\ttNum4101 & null & \\
+\ttNum4102 &  & \\
+\SetRow{unusingVariables}
+\ttNum4103 & null & \\
+\SetRow{unusingVariables}
+$\cdots$ & $\cdots$ & \\
+\ttNum4107 & {\ttfamily D\#} 工具径補正\index{Dコード}Dコード & ●\\
+\ttNum4108 &  & \\
+\ttNum4109 & {\ttfamily F\#} 送り速さ\index{Fコード}Fコード &\\
+\SetRow{unusingVariables}
+\ttNum4110 & null & \\
+\ttNum4111 & {\ttfamily H\#} 工具長補正\index{Hコード}Hコード & ●\\
+\SetRow{unusingVariables}
+\ttNum4112 & null & \\
+\ttNum4113 & {\ttfamily M\#} 補助機能\index{Mコード}Mコード &\\
+\ttNum4114 & {\ttfamily N\#} シーケンス番号\index{Nコード}Nコード &\\
+\ttNum4115 & {\ttfamily O\#} プログラム番号\index{Oコード}Oコード &\\
+\SetRow{unusingVariables}
+\ttNum4116 & null & \\
+\SetRow{unusingVariables}
+$\cdots$ & $\cdots$ & \\
+\ttNum4119 & {\ttfamily S\#} スピンドル回転数\index{Sコード}Sコード &\\
+\ttNum4120 & {\ttfamily T\#} 工具番号\index{Tコード}Tコード & \\
+\SetRow{unusingVariables}
+\ttNum4121 & null & \\
+\SetRow{unusingVariables}
+$\cdots$ & $\cdots$ & \\
+\ttNum4130 & {\ttfamily G54.1} {\ttfamily P\#} 追加ワーク座標系\index{Pコード（ついかワークざひょうけい@Pコード（追加ワーク座標系）}Pコード & ◯\\
+\end{multicollongtblr}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -211,18 +226,20 @@ $\cdots$ & $\cdots$ & \\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\clearpage
-\begin{3columnstable}[white]{\ttNum4131-\ttNum4140}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\rowcolor{unusingVariables}
-\ttNum4131 & null & \\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum4131-\ttNum4140}{cX[l]c}
+変数 & 内容 & 使用\\
+\SetRow{unusingVariables}
+\ttNum4131 & null & \\
+\SetRow{unusingVariables}
 $\cdots$ & $\cdots$ & \\
-\end{3columnstable}
+\end{multicollongtblr}
 
 %\clearpage
-\begin{3columnstable}[white]{\ttNum4999-\ttNum4999}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum4999-\ttNum4999}{cX[l]c}
+変数 & 内容 & 使用\\
+\SetRow{unusingVariables}
 \ttNum4999 & null & \\
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 
@@ -232,27 +249,33 @@ $\cdots$ & $\cdots$ & \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum5000\,-\ttNum5999\TBW}
 
-\begin{3columnstable}[white]{\ttNum5000-\ttNum5081：位置情報}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\rowcolor{unusingVariables}
-\ttNum5000 & null &\\\hline
-\ttNum500x\footnote{\ttNum500x:工具補正値が加味された値（ワーク座標系に表示される数値）。途中でスキップがオンになったときはそのときの値。}
-       & ブロック終点位置（現在のワーク座標系）[x=1-9 (10-20:\,null)] & ●\\\hline
-\ttNum502x & 現在の機械座標系の座標 [x=1-9 (10-20:\,null)] & ●\\\hline
-\ttNum504x & 現在のワーク座標系の座標 [x=1-9 (10-20:\,null)] & ●\\\hline
-\ttNum506x & スキップ座標 [x=1-9 (10-20:\,null)]（工具補正0とした値） & ●\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum5000-\ttNum5081：位置情報}{cX[l]c}
+変数 & 内容 & 使用\\
+\SetRow{unusingVariables}
+\ttNum5000 & null &\\
+\ttNum500x & ブロック終点位置（現在のワーク座標系）[x=1-9 (10-20:\,null)] & ●\\
+\ttNum502x & 現在の機械座標系の座標 [x=1-9 (10-20:\,null)] & ●\\
+\ttNum504x & 現在のワーク座標系の座標 [x=1-9 (10-20:\,null)] & ●\\
+\ttNum506x & スキップ座標 [x=1-9 (10-20:\,null)]（工具補正0とした値） & ●\\
+\SetRow{unusingVariables}
 \ttNum5081 & null &\\
-\end{3columnstable}
+\end{multicollongtblr}
 
-\begin{3columnstable}[white]{\ttNum5201-\ttNum5340：ワーク原点オフセット量}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum520x & 外部ワーク原点オフセット量 [x=1-9 (10-20:\,null)] & ◯\\\hline
-\ttNum522x & ワーク座標系\verb|G54|原点の機械座標 [x=1-9 (10-20:\,null)] & ●\\\hline
-\ttNum524x & ワーク座標系\verb|G55|原点の機械座標 [x=1-9 (10-20:\,null)] & ●\\\hline
-\ttNum526x & ワーク座標系\verb|G56|原点の機械座標 [x=1-9 (10-20:\,null)] & ●\\\hline
-\ttNum528x & ワーク座標系\verb|G57|原点の機械座標 [x=1-9 (10-20:\,null)] & ●\\\hline
-\ttNum530x & ワーク座標系\verb|G58|原点の機械座標 [x=1-9 (10-20:\,null)] &\\\hline
-\ttNum532x & ワーク座標系\verb|G59|原点の機械座標 [x=1-9 (10-20:\,null)] &\\
-\end{3columnstable}
+\begin{marker}
+\ttNum500x:工具補正値が加味された値（ワーク座標系に表示される数値）\\
+途中でスキップがオンになったときはそのときの値
+\end{marker}
+
+\begin{multicollongtblr}[white]{\ttNum5201-\ttNum5340：ワーク原点オフセット量}{cX[l]c}
+変数 & 内容 & 使用\\
+\ttNum520x & 外部ワーク原点オフセット量 [x=1-9 (10-20:\,null)] & ◯\\
+\ttNum522x & ワーク座標系{\ttfamily G54}原点の機械座標 [x=1-9 (10-20:\,null)] & ●\\
+\ttNum524x & ワーク座標系{\ttfamily G55}原点の機械座標 [x=1-9 (10-20:\,null)] & ●\\
+\ttNum526x & ワーク座標系{\ttfamily G56}原点の機械座標 [x=1-9 (10-20:\,null)] & ●\\
+\ttNum528x & ワーク座標系{\ttfamily G57}原点の機械座標 [x=1-9 (10-20:\,null)] & ●\\
+\ttNum530x & ワーク座標系{\ttfamily G58}原点の機械座標 [x=1-9 (10-20:\,null)] &\\
+\ttNum532x & ワーク座標系{\ttfamily G59}原点の機械座標 [x=1-9 (10-20:\,null)] &\\
+\end{multicollongtblr}
 
 
 
@@ -260,13 +283,15 @@ $\cdots$ & $\cdots$ & \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section A.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum6000\,-\ttNum6011}
-\begin{3columnstable}[white]{\ttNum6000-\ttNum6011}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\rowcolor{unusingVariables}
-\ttNum6000 & null &\\\hline
-\rowcolor{unusingVariables}
+\modHeadsection{\ttNum6000\,-\ttNum6011\TBW}
+
+\begin{multicollongtblr}[white]{\ttNum6000-\ttNum6011}{cX[l]c}
+変数 & 内容 & 使用\\
+\SetRow{unusingVariables}
+\ttNum6000 & null &\\
+\SetRow{unusingVariables}
 $\cdots$ & null &\\
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 
@@ -274,20 +299,21 @@ $\cdots$ & null &\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section A.07 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum7000\,-\ttNum8920}
+\modHeadsection{\ttNum7000\,-\ttNum8999\TBW}
 
-\begin{3columnstable}[white]{\ttNum7000-\ttNum8920}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\rowcolor{unusingVariables}
-\ttNum7000 & null &\\\hline
-\ttNum700x & \verb|G54.1 P01|原点オフセット量 [x=1-9 (10-20:\,null)] & ◯\\\hline
-\ttNum702x & \verb|G54.1 P02|原点オフセット量 [x=1-9 (10-20:\,null)] & \\\hline
-$\cdots$ & $\cdots$ & \\\hline
-\ttNum890x & \verb|G54.1 P96|原点オフセット量 [x=1-9 (10-20:\,null)] & \\\hline
-\rowcolor{unusingVariables}
-\ttNum8921 & null &\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum7000-\ttNum8920}{cX[l]c}
+変数 & 内容 & 使用\\
+\SetRow{unusingVariables}
+\ttNum7000 & null &\\
+\ttNum700x & {\ttfamily G54.1 P01}原点オフセット量 [x=1-9 (10-20:\,null)] & ◯\\
+\ttNum702x & {\ttfamily G54.1 P02}原点オフセット量 [x=1-9 (10-20:\,null)] & \\
+$\cdots$ & $\cdots$ & \\
+\ttNum890x & {\ttfamily G54.1 P96}原点オフセット量 [x=1-9 (10-20:\,null)] & \\
+\SetRow{unusingVariables}
+\ttNum8921 & null &\\
+\SetRow{unusingVariables}
 \ttNum8999 & null &\\
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 
@@ -297,12 +323,13 @@ $\cdots$ & $\cdots$ & \\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum9000\,-\ttNum9999\TBW}
 
-\begin{3columnstable}[white]{\ttNum9000-\ttNum9999}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\rowcolor{unusingVariables}
-\ttNum9000 & null & \\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum9000-\ttNum9999}{cX[l]c}
+変数 & 内容 & 使用\\
+\SetRow{unusingVariables}
+\ttNum9000 & null & \\
+\SetRow{unusingVariables}
 \ttNum9999 & null & \\
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 
@@ -312,68 +339,72 @@ $\cdots$ & $\cdots$ & \\\hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum10000\,-\ttNum11999：工具長補正\TBW}
 
-\begin{3columnstable}[white]{\ttNum10000-\ttNum11999}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\rowcolor{unusingVariables}
-\ttNum10000 & null &\\\hline
-\ttNum10000+xxx & 工具長補正 \ttNum xxx補正量 [xxx=1-200]（摩耗0とした値) & ◯\\\hline
-\rowcolor{unusingVariables}
-\ttNum10201 & null &\\\hline
-\rowcolor{unusingVariables}
-\ttNum10202 & null &\\\hline
-\rowcolor{unusingVariables}
-\ttNum11000 & null &\\\hline
+\begin{multicollongtblr}[white]{\ttNum10000-\ttNum11999}{cX[l]c}
+変数 & 内容 & 使用\\
+\SetRow{unusingVariables}
+\ttNum10000 & null &\\
+\ttNum10000+xxx & 工具長補正 \ttNum xxx補正量 [xxx=1-200]（摩耗0とした値) & ◯\\
+\SetRow{unusingVariables}
+\ttNum10201 & null &\\
+\SetRow{unusingVariables}
+\ttNum10202 & null &\\
+\SetRow{unusingVariables}
+\ttNum11000 & null &\\
 \ttNum11000+xxx & 工具長補正 \ttNum xxx摩耗量 [xxx=1-200] & ◯
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 
-%\clearpage
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section A.09 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum14000\,-\ttNum14999\TBW}
 
-\begin{3columnstable}[white]{\ttNum14001-\ttNum14001}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\rowcolor{unusingVariables}
-\ttNum14000 & null &\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum14001-\ttNum14001}{cX[l]c}
+変数 & 内容 & 使用\\
+\SetRow{unusingVariables}
+\ttNum14000 & null &\\
+\SetRow{unusingVariables}
 \ttNum14001 & null &\\
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 
-\clearpage
+%\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section A.10 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum16000\,-\ttNum17999：工具径補正\TBW}
 
-\begin{3columnstable}[white]{\ttNum16001-\ttNum17999}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\rowcolor{unusingVariables}
-\ttNum16000 & null &\\\hline
-\ttNum16000+xxx & 工具径補正 \ttNum xxx補正量 [xxx=1-200]（摩耗0とした値） & ◯\\\hline
-\rowcolor{unusingVariables}
-\ttNum17000 & null &\\\hline
+\begin{multicollongtblr}[white]{\ttNum16001-\ttNum17999}{cX[l]c}
+変数 & 内容 & 使用\\
+\SetRow{unusingVariables}
+\ttNum16000 & null &\\
+\ttNum16000+xxx & 工具径補正 \ttNum xxx補正量 [xxx=1-200]（摩耗0とした値） & ◯\\
+\SetRow{unusingVariables}
+\ttNum17000 & null &\\
 \ttNum17000+xxx & 工具径補正 \ttNum xxx摩耗量 [xxx=1-200] & ◯\\
-\end{3columnstable}
+\end{multicollongtblr}
 
 
 
-\clearpage
+%\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section A.11 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum100000\,-\ttNum100999\TBW}
 
-\begin{3columnstable}[white]{\ttNum100000-\ttNum100011}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.65\textwidth}~}{使用}
-\ttNum100000 & & ◯\\\hline
-\ttNum100001 & & \\\hline
-\ttNum100002 & & ◯\\\hline
-\rowcolor{unusingVariables}
-\ttNum100003 & null & \\\hline
-\rowcolor{unusingVariables}
-$\cdots$ & $\cdots$ & \\\hline
-\ttNum100010 & & ◯\\\hline
-\rowcolor{unusingVariables}
+\begin{multicollongtblr}[white]{\ttNum100000-\ttNum100011}{cX[l]c}
+変数 & 内容 & 使用\\
+\ttNum100000 & & ◯\\
+\ttNum100001 & & \\
+\ttNum100002 & & ◯\\
+\SetRow{unusingVariables}
+\ttNum100003 & null & \\
+\SetRow{unusingVariables}
+$\cdots$ & $\cdots$ & \\
+\ttNum100010 & & ◯\\
+\SetRow{unusingVariables}
 \ttNum100011 & null & \\
-\end{3columnstable}
+\end{multicollongtblr}

@@ -150,38 +150,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% sequence numbers %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{2columnstable}{シーケンス番号 一覧（メインプログラム）\TBW}{|Sc|Sl|}{N番号}{内容}
-\verb|N001| & プログラムの始まり\\\hline
-\hline
-\verb|N10x| & タッチセンサー計測（芯出し）\\\hline
-\hline
-\verb|N20x| & タッチセンサー計測（\dimple）\\\hline
-\verb|N25x| & タッチセンサー計測（逃し溝）\\\hline
-\hline
-\verb|N30x| & \dimple 加工\\\hline
-\verb|N35x| & 逃し溝加工\\\hline
-\hline
-\verb|N40x| & トップ端面加工\\\hline
-\verb|N41x| & トップ外削加工\\\hline
-\verb|N42x| & 溝加工\\\hline
-\verb|N43x| & トップ外面取加工\\\hline
-\verb|N44x| & トップ内面取加工\\\hline
-\verb|N45x| & 座ぐり加工\\\hline
-\hline
-\verb|N500| & ボトム端面加工\\\hline
-\verb|N51x| & ボトム外削加工\\\hline
-\verb|N52x| & ボトム外面取加工\\\hline
-\verb|N53x| & ボトム内面取加工\\\hline
-\hline
-\verb|N65x| & タッチセンサー計測（通り芯$X$）\\\hline
-\verb|N66x| & タッチセンサー計測（通り芯$Y$）\\\hline
-\hline
-\verb|N80x| & 引数によるエラー\\\hline
-\verb|N81x|\TBW & \\\hline
-\verb|N82x| & パレットまたはタッチセンサーによるエラー\\\hline
-\hline
-\verb|N99x| & プログラム終了の工程\\\hline
-\verb|N999| & プログラム終了(\verb|M02|または\verb|M30|または\verb|M99|)
-\end{2columnstable}
+\begin{multicollongtblr}{シーケンス番号 一覧（メインプログラム）\TBW}{cX[l]}
+N番号 & 内容\\
+\ttfamily N001 & プログラムの始まり\\
+\ttfamily N10x & タッチセンサー計測（芯出し）\\
+\ttfamily N20x & タッチセンサー計測（\dimple）\\
+\ttfamily N25x & タッチセンサー計測（逃し溝）\\
+\ttfamily N30x & \dimple 加工\\
+\ttfamily N35x & 逃し溝加工\\
+\ttfamily N40x & トップ端面加工\\
+\ttfamily N41x & トップ外削加工\\
+\ttfamily N42x & 溝加工\\
+\ttfamily N43x & トップ外面取加工\\
+\ttfamily N44x & トップ内面取加工\\
+\ttfamily N45x & 座ぐり加工\\
+\ttfamily N500 & ボトム端面加工\\
+\ttfamily N51x & ボトム外削加工\\
+\ttfamily N52x & ボトム外面取加工\\
+\ttfamily N53x & ボトム内面取加工\\
+\ttfamily N65x & タッチセンサー計測（通り芯$X$）\\
+\ttfamily N66x & タッチセンサー計測（通り芯$Y$）\\
+\ttfamily N80x & 引数によるエラー\\
+\ttfamily N81x\TBW & \\
+\ttfamily N82x & パレットまたはタッチセンサーによるエラー\\
+\ttfamily N99x & プログラム終了の工程\\
+\ttfamily N999 & プログラム終了({\ttfamily M02}または{\ttfamily M30}または{\ttfamily M99})
+\end{multicollongtblr}
 
 

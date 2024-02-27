@@ -19,12 +19,12 @@
   \setlength{\LTright}{\fill}%
   \begin{longtable}{#3}
   \hline
-  \rowcolor{orange!20}
+  \rowcolor{orange!20!}
   #4\\
   \hline
   \endfirsthead
   \hline
-  \rowcolor{orange!20}
+  \rowcolor{orange!20!}
   #4\\
   \hline
   \endhead
@@ -38,24 +38,55 @@
 {%
   \end{longtable}
 }
-%%%%% 2columnstable %%%%%
-\newenvironment{2columnstable}[5][gray!15!]{%
-  \setlength\cellspacetoplimit{4.5pt}%
-  \setlength\cellspacebottomlimit{4.5pt}%
-  \commonTable{#1}{#2}{#3}{\textbf{#4} & \textbf{#5}}{2}%
+%%%%% multicollongtblr %%%%%
+\DefTblrTemplate{contfoot-text}{default}{\small（次のページへ続く）}%
+\DefTblrTemplate{conthead-text}{default}{}%
+\newenvironment{multicollongtblr}[3][gray!15!]{%
+\captionsetup[table]{justification=raggedright}%
+\modcaptionof{table}{#2}%
+\begin{longtblr}[
+  theme=commonlongtblr,
+  entry=none,
+  label=none,
+  presep=0pt,
+  postsep=5pt,
+]{%
+  hlines,
+  vlines,
+  hline{2}={0.75pt},
+  colspec={#3},
+  rowhead=1,
+  row{odd}={#1},
+  row{1}={orange!20!, font=\sffamily\bfseries},
+  abovesep=3pt,
+  belowsep=1.5pt,
+  leftsep=4pt,
+  rightsep=4pt,
 }
-{\endcommonTable}
-%%%%% 3columnstable %%%%%
-\newenvironment{3columnstable}[6][gray!15!]{%
-  \setlength\cellspacetoplimit{4.5pt}%
-  \setlength\cellspacebottomlimit{4.5pt}%
-  \commonTable{#1}{#2}{#3}{\textbf{#4} & \textbf{#5} & \textbf{#6}}{3}%
+}{%
+\end{longtblr}
 }
-{\endcommonTable}
-%%%%% 4columnstable %%%%%
-\newenvironment{4columnstable}[7][gray!15!]{%
-  \setlength\cellspacetoplimit{4.5pt}%
-  \setlength\cellspacebottomlimit{4.5pt}%
-  \commonTable{#1}{#2}{#3}{\textbf{#4} & \textbf{#5} & \textbf{#6} & \textbf{#7}}{4}%
+%%%%% multicolbreaklongtblr %%%%%
+\newenvironment{twocolbreaktblr}[3][gray!15!]{%
+\captionsetup[table]{justification=raggedright}%
+\modcaptionof{table}{#2}%
+\begin{tblr}[
+  theme=commonlongtblr,
+  entry=none,
+  label=none,
+  presep=0pt,
+  postsep=5pt,
+]{%
+  vlines,
+  colspec={#3},
+  rowhead=1,
+  row{odd}={#1},
+  row{1}={orange!20!, font=\sffamily\bfseries},
+  abovesep=3pt,
+  belowsep=1.5pt,
+  leftsep=4pt,
+  rightsep=4pt,
 }
-{\endcommonTable}
+}{%
+\end{tblr}
+}

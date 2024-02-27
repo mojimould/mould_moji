@@ -19,52 +19,53 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{4columnstable}{主なGコード：\DMname}{|Sc|Sc|Sl|Sc|}{番号}{グループ}{内容}{使用}
-\verb|G00| & 01 & 位置決め（早送り） & ●\\\hline
-\verb|G01| & 01 & 直線補間 & ●\\\hline
-\verb|G02| & 01 & 円弧補間・ヘリカル補間（右回り） & ●\\\hline
-\verb|G03| & 01 & 円弧補間・ヘリカル補間（左回り） & ●\\\hline
-\verb|G04| & 00 & ドウェル（待機時間） & ●\\\hline
-\verb|G10| & 00 & プログラマブルデータ入力（パラメータ入力） & ●\\\hline
-\verb|G15| & 18 & 極座標指令OFF & \\\hline
-\verb|G17| & 02 & $XY$平面 選択 & ●\\\hline
-\verb|G18| & 02 & $XZ$平面 選択 & \\\hline
-\verb|G19| & 02 & $YZ$平面 選択 & \\\hline
-\verb|G21| & 06 & メトリック指令 & \\\hline
-\verb|G22| & 04 & 移動前ストロークチェック ON & ◯\\\hline
-\verb|G23| & 04 & 移動前ストロークチェック OFF & \\\hline
-\verb|G28| & 00 & 第1レファレンス点（機械原点）への復帰 & ●\\\hline
-\verb|G29| & 00 & レファレンス点からの復帰 & \\\hline
-\verb|G30| & 00 & 第2レファレンス点（工具交換位置）復帰 & ●\\\hline
-\verb|G31| & 00 & スキップ & ●\\\hline
-\verb|G40| & 07 & 工具径補正なし & ●\\\hline
-\verb|G40.1| & 15 & 法線制御OFF & \\\hline
-\verb|G41| & 07 & 工具径補正 進行方向の左 & ●\\\hline
-\verb|G42| & 07 & 工具径補正 進行方向の右 & ●\\\hline
-\verb|G43| & 08 & 工具長補正$+$ & ●\\\hline
-\verb|G44| & 08 & 工具長補正$-$ & \\\hline
-\verb|G49| & 08 & 工具長補正なし & ●\\\hline
-\verb|G50| & 11 & スケーリングOFF & \\\hline
-\verb|G50.1| & 19 & \verb*|G|指令ミラーイメージOFF & \\\hline
-\verb|G53| & 00 & 機械座標系 選択 & ●\\\hline
-\verb|G54| & 12 & ワーク座標系1 選択 & ●\\\hline
-\verb|G54.1| & 12 & 拡張ワーク座標系 選択 & ◯\\\hline
-\verb|G55| & 12 & ワーク座標系2 選択 & ●\\\hline
-\verb|G56| & 12 & ワーク座標系3 選択 & ●\\\hline
-\verb|G57| & 12 & ワーク座標系4 選択 & ●\\\hline
-\verb|G58| & 12 & ワーク座標系5 選択 & \\\hline
-\verb|G59| & 12 & ワーク座標系6 選択 & \\\hline
-\verb|G61.1| & 13 & 高精度制御ON & \\\hline
-\verb|G65| & 00 & プログラム（ユーザマクロ）の単純呼出し（引数指定可） & ●\\\hline
-\verb|G67| & 14 & ユーザマクロ モーダル呼出し なし & \\\hline
-\verb|G69| & 16 &  & \\\hline
-\verb|G80| & 09 & 固定サイクルなし & ●\\\hline
-\verb|G90| & 03 & 絶対値指令 & ●\\\hline
-\verb|G91| & 03 & 増分値（相対値）指令 & ●\\\hline
-\verb|G94| & 05 & 毎分送り（非同期送り） & \\\hline
-\verb|G97| & 17 & 周速一定制御OFF & \\\hline
-\verb|G98| & 10 & 固定サイクルイニシャルレベル復帰 &
-\end{4columnstable}
+\begin{multicollongtblr}{主なGコード：\DMname}{ccX[l]c}
+{\ttfamily G}番号 & グループ & 内容 & 使用\\
+{\ttfamily G00} & 01 & 位置決め（早送り） & ●\\
+{\ttfamily G01} & 01 & 直線補間 & ●\\
+{\ttfamily G02} & 01 & 円弧補間・ヘリカル補間（右回り） & ●\\
+{\ttfamily G03} & 01 & 円弧補間・ヘリカル補間（左回り） & ●\\
+{\ttfamily G04} & 00 & ドウェル（待機時間） & ●\\
+{\ttfamily G10} & 00 & プログラマブルデータ入力（パラメータ入力） & ●\\
+{\ttfamily G15} & 18 & 極座標指令OFF & \\
+{\ttfamily G17} & 02 & $XY$平面 選択 & ●\\
+{\ttfamily G18} & 02 & $XZ$平面 選択 & \\
+{\ttfamily G19} & 02 & $YZ$平面 選択 & \\
+{\ttfamily G21} & 06 & メトリック指令 & \\
+{\ttfamily G22} & 04 & 移動前ストロークチェック ON & ◯\\
+{\ttfamily G23} & 04 & 移動前ストロークチェック OFF & \\
+{\ttfamily G28} & 00 & 第1レファレンス点（機械原点）への復帰 & ●\\
+{\ttfamily G29} & 00 & レファレンス点からの復帰 & \\
+{\ttfamily G30} & 00 & 第2レファレンス点（工具交換位置）復帰 & ●\\
+{\ttfamily G31} & 00 & スキップ & ●\\
+{\ttfamily G40} & 07 & 工具径補正なし & ●\\
+{\ttfamily G40.1} & 15 & 法線制御OFF & \\
+{\ttfamily G41} & 07 & 工具径補正 進行方向の左 & ●\\
+{\ttfamily G42} & 07 & 工具径補正 進行方向の右 & ●\\
+{\ttfamily G43} & 08 & 工具長補正$+$ & ●\\
+{\ttfamily G44} & 08 & 工具長補正$-$ & \\
+{\ttfamily G49} & 08 & 工具長補正なし & ●\\
+{\ttfamily G50} & 11 & スケーリングOFF & \\
+{\ttfamily G50.1} & 19 & {\ttfamily G}指令ミラーイメージOFF & \\
+{\ttfamily G53} & 00 & 機械座標系 選択 & ●\\
+{\ttfamily G54} & 12 & ワーク座標系1 選択 & ●\\
+{\ttfamily G54.1} & 12 & 拡張ワーク座標系 選択 & ◯\\
+{\ttfamily G55} & 12 & ワーク座標系2 選択 & ●\\
+{\ttfamily G56} & 12 & ワーク座標系3 選択 & ●\\
+{\ttfamily G57} & 12 & ワーク座標系4 選択 & ●\\
+{\ttfamily G58} & 12 & ワーク座標系5 選択 & \\
+{\ttfamily G59} & 12 & ワーク座標系6 選択 & \\
+{\ttfamily G61.1} & 13 & 高精度制御ON & \\
+{\ttfamily G65} & 00 & プログラム（ユーザマクロ）の単純呼出し（引数指定可） & ●\\
+{\ttfamily G67} & 14 & ユーザマクロ モーダル呼出し なし & \\
+{\ttfamily G69} & 16 &  & \\
+{\ttfamily G80} & 09 & 固定サイクルなし & ●\\
+{\ttfamily G90} & 03 & 絶対値指令 & ●\\
+{\ttfamily G91} & 03 & 増分値（相対値）指令 & ●\\
+{\ttfamily G94} & 05 & 毎分送り（非同期送り） & \\
+{\ttfamily G97} & 17 & 周速一定制御OFF & \\
+{\ttfamily G98} & 10 & 固定サイクルイニシャルレベル復帰 &
+\end{multicollongtblr}
 
 
 
@@ -78,46 +79,47 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{3columnstable}{主なMコード：\DMname}{|Sc|Sl|Sc|}{番号}{内容\hspace*{0.72\textwidth}~}{使用}
-\verb|M00| & プログラムの一時停止 & ●\\\hline
-\verb|M01| & プログラムの一時停止（オプショナル） &\\\hline
-\verb|M02| & プログラムの終了 & ●\\\hline
-\verb|M03| & 主軸回転起動（スピンドル正転） & ●\\\hline
-\verb|M04| & 主軸回転起動（スピンドル逆転） & ◯\\\hline
-\verb|M05| & 主軸回転停止 & ●\\\hline
-\verb|M06| & 工具交換 & ●\\\hline
-\verb|M07| & 切削油（クーラント）No.2（センタースルー）ON & ●\\\hline
-\verb|M08| & 切削油（クーラント）No.1（ノズル）ON & ●\\\hline
-\verb|M09| & 切削油（クーラント）およびエアブローOFF & ●\\\hline
-\verb|M10| & 4軸（B軸）クランプ & ●\\\hline
-\verb|M11| & 4軸（B軸）アンクランプ & ●\\\hline
-\verb|M19| & 主軸定位置停止（オリエンテーション） & ●\\\hline
-\verb|M28| & チップコンベアON & ●\\\hline
-\verb|M29| & チップコンベアOFF & ●\\\hline
-\verb|M30| & プログラムのリセットおよびリワインド & ●\\\hline
-\verb|M32| & 工具長測定装置ON（カバー開閉・前進・上下動作含む） & ◯\\\hline
-\verb|M33| & 工具長測定装置OFF（カバー開閉・前進・上下動作含む） & ◯\\\hline
-\verb|M43| & 完了確認無し主軸回転起動（スピンドル正転） & \\\hline
-\verb|M44| & 完了確認無し主軸回転起動（スピンドル逆転） & \\\hline
-\verb|M48| & オーバーライド無視キャンセル & ◯\\\hline
-\verb|M49| & オーバーライド無視 & ◯\\\hline
-\verb|M60| & パレットの入換え & ●\\\hline
-\verb|M61| & パレット旋回No.1側 & ◯\\\hline
-\verb|M62| & パレット旋回No.2側 & ◯\\\hline
-\verb|M70| & 工具スキップ & \\\hline
-\verb|M71| & パレットNo.1搬入 & ●\\\hline
-\verb|M72| & パレットNo.2搬入 & ●\\\hline
-\verb|M73| & パレット上昇 & ◯\\\hline
-\verb|M74| & パレット加工 & ◯\\\hline
-\verb|M78| & パレットクランプ & ◯\\\hline
-\verb|M79| & パレットアンクランプ & ◯\\\hline
-\verb|M98| & プログラムの呼出し（引数指定不可） & ●\\\hline
-\verb|M99| & プログラムの復帰 & ●\\\hline
-\verb|M117| & タッチプローブセンサー電源スイッチ & ●\\\hline
-\verb|M151| & スピンドルスルーエアーブロー（常時ON） & ●\\\hline
-\verb|M219| & 完了確認なし主軸定位置停止（オリエンテーション） & \\\hline
-\verb|M260| & パレット旋回速さ100\% & \\\hline
-\verb|M261| & パレット旋回速さ50\% & \\\hline
-\verb|M262| & パレット旋回速さ25\% & ◯\\\hline
-\verb|M263| & パレット旋回速さ3\% & \\
-\end{3columnstable}
+\begin{multicollongtblr}{主なMコード：\DMname}{cX[l]c}
+{\ttfamily M}番号 & 内容 & 使用\\
+{\ttfamily M00} & プログラムの一時停止 & ●\\
+{\ttfamily M01} & プログラムの一時停止（オプショナル） &\\
+{\ttfamily M02} & プログラムの終了 & ●\\
+{\ttfamily M03} & 主軸回転起動（スピンドル正転） & ●\\
+{\ttfamily M04} & 主軸回転起動（スピンドル逆転） & ◯\\
+{\ttfamily M05} & 主軸回転停止 & ●\\
+{\ttfamily M06} & 工具交換 & ●\\
+{\ttfamily M07} & 切削油（クーラント）No.2（センタースルー）ON & ●\\
+{\ttfamily M08} & 切削油（クーラント）No.1（ノズル）ON & ●\\
+{\ttfamily M09} & 切削油（クーラント）およびエアブローOFF & ●\\
+{\ttfamily M10} & 4軸（B軸）クランプ & ●\\
+{\ttfamily M11} & 4軸（B軸）アンクランプ & ●\\
+{\ttfamily M19} & 主軸定位置停止（オリエンテーション） & ●\\
+{\ttfamily M28} & チップコンベアON & ●\\
+{\ttfamily M29} & チップコンベアOFF & ●\\
+{\ttfamily M30} & プログラムのリセットおよびリワインド & ●\\
+{\ttfamily M32} & 工具長測定装置ON（カバー開閉・前進・上下動作含む） & ◯\\
+{\ttfamily M33} & 工具長測定装置OFF（カバー開閉・前進・上下動作含む） & ◯\\
+{\ttfamily M43} & 完了確認無し主軸回転起動（スピンドル正転） & \\
+{\ttfamily M44} & 完了確認無し主軸回転起動（スピンドル逆転） & \\
+{\ttfamily M48} & オーバーライド無視キャンセル & ◯\\
+{\ttfamily M49} & オーバーライド無視 & ◯\\
+{\ttfamily M60} & パレットの入換え & ●\\
+{\ttfamily M61} & パレット旋回No.1側 & ◯\\
+{\ttfamily M62} & パレット旋回No.2側 & ◯\\
+{\ttfamily M70} & 工具スキップ & \\
+{\ttfamily M71} & パレットNo.1搬入 & ●\\
+{\ttfamily M72} & パレットNo.2搬入 & ●\\
+{\ttfamily M73} & パレット上昇 & ◯\\
+{\ttfamily M74} & パレット加工 & ◯\\
+{\ttfamily M78} & パレットクランプ & ◯\\
+{\ttfamily M79} & パレットアンクランプ & ◯\\
+{\ttfamily M98} & プログラムの呼出し（引数指定不可） & ●\\
+{\ttfamily M99} & プログラムの復帰 & ●\\
+{\ttfamily M117} & タッチプローブセンサー電源スイッチ & ●\\
+{\ttfamily M151} & スピンドルスルーエアーブロー（常時ON） & ●\\
+{\ttfamily M219} & 完了確認なし主軸定位置停止（オリエンテーション） & \\
+{\ttfamily M260} & パレット旋回速さ100\% & \\
+{\ttfamily M261} & パレット旋回速さ50\% & \\
+{\ttfamily M262} & パレット旋回速さ25\% & ◯\\
+{\ttfamily M263} & パレット旋回速さ3\% & \\
+\end{multicollongtblr}
