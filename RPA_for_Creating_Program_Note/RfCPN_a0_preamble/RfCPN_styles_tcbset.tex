@@ -19,7 +19,6 @@
   },
   %%%%% COLUMNBOX STYLE %%%%%
   Tabularbox/.style={%
-    tcbcommon,
     fonttitle=\gtfamily\bfseries,%
     breakable,%
     enhanced jigsaw,%
@@ -28,6 +27,7 @@
     bicolor,%
     colbacklower=black!10!white,%
     after=\smallskip\noindent,
+    tcbcommon,
   },%
   %%%%% COLUMNBOX STYLE %%%%%
   Columnbox/.style={%
@@ -83,9 +83,8 @@
 %  },%
   %%%%% HOSOKUBOX STYLE %%%%%
   hosokubox/.style={%
-    tcbcommon,
     title={\termblue{\hosokuname~\thetcbcounter}~},%
-    attach title to upper,%
+    detach title,%
     breakable,%
     enhanced jigsaw,%
     size=fbox,%
@@ -99,6 +98,17 @@
     skin last is subskin of={enhanced jigsaw}{drop lifted shadow={blue!100!white!50!}},%
     segmentation style={draw=black!50!white},%
     after=\smallskip\noindent{\color{white}},%
+    before upper={%
+      \tcbtitle%
+      \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
+      \let\oldfootnote=\footnote% \oldfootnote=\footnote
+      \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% define \footnote to \footnote using counter GlobalFootnote
+      \renewcommand\thempfootnote{\arabic{mpfootnote}}% arabic footnote
+    },
+    after upper={%
+      \setcounter{footnote}{\value{GlobalFootnote}}% footnoteValue=GlobalFootnoteValue
+      \let\footnote=\oldfootnote% \footnote=\oldfootnote
+    },
   },
   %%%%% ISSUEBOX STYLE %%%%%
   Issuebox/.style={%

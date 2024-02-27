@@ -119,7 +119,7 @@
                     every node/.style={scale=0.4},
                     >={Latex[length=1mm, width=0.75mm]},]
 % 値の計算
-\pgfmathsetmacro{\Ax}{11.0}      %A:T_iのx座標
+\pgfmathsetmacro{\Ax}{12}      %A:T_iのx座標
 \pgfmathsetmacro{\Ay}{3.5}       %A:T_iのy座標
 \pgfmathsetmacro{\Bx}{2.0+(\Ax)} %B:T_oのx座標
 \pgfmathsetmacro{\Cy}{-4.2}      %C:B_iのy座標
@@ -135,9 +135,9 @@
 \pgfmathsetmacro{\Fx}{sqrt((\Rc)^2-(\Cy)^2)} %F:湾曲中心線ボトム端のx座標
 \pgfmathsetmacro{\TUx}{sqrt((\Ri)^2-(\TUb)^2)}  %TUx:テーブル-モールド内側との交点のx座標
 \pgfmathsetmacro{\TUxo}{sqrt((\Ro)^2-(\TUb)^2)} %TUxo:テーブル-モールド外側との交点x座標
-\pgfmathsetmacro{\Uw}{0.7} %Uw:受板の幅
+\pgfmathsetmacro{\Uw}{0.75} %Uw:受板の幅
 \pgfmathsetmacro{\Ul}{0.65} %Ul:受板の長さ
-\pgfmathsetmacro{\Ur}{0.55} %Uw:受板の半径
+\pgfmathsetmacro{\Ur}{0.6} %Uw:受板の半径
 \pgfmathsetmacro{\Ub}{\Ri*sin(asin((\TUb-\Uw/2)/(\Ri-\Ur)))}     %Ub:受板-モールド接点のy座標
 \pgfmathsetmacro{\Ux}{sqrt((\Ri)^2-(\Ub)^2)}  %TUx:受板-モールド接点のx座標
 \pgfmathsetmacro{\Ucx}{\Ux-sqrt((\Ur)^2-((\Uw)/2-(\TUb-\Ub))^2)} %Uw:受板の半径
@@ -196,9 +196,9 @@
 \fill (TUc) circle (1pt);
 \fill (BUc) circle (1pt);
 % 点にラベルを付ける
-\node at (Ut) [right] {U$_\mathrm T$};
-\node at (Ub) [right] {U$_\mathrm B$};
-\node at (TUc) [above] {U$_\mathrm c$};
-\node at (BUc) [below] {U$_\mathrm c$};
+\node at (Ut) [right] {$R_\mathrm ie^{i\alpha_{\mathrm U_\mathrm T}}$};
+\node at (Ub) [right] {$R_\mathrm ie^{i\alpha_{\mathrm U_\mathrm B}}$};
+\node at (TUc) [above] {U$_\mathrm T$};
+\node at (BUc) [below] {U$_\mathrm B$};
 \end{tikzpicture}%
 }

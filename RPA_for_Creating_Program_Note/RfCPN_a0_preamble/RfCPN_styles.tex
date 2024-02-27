@@ -36,7 +36,7 @@
   \hrule\@width.75\columnwidth
   \kern2.6pt
 }
-\makesavenoteenv{longtable}
+%\makesavenoteenv{longtable}
 \makesavenoteenv{tablePart}
 \makesavenoteenv{hosoku}
 \makesavenoteenv{Column}
@@ -114,6 +114,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% NEWTBLRTHEME %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NewTblrTheme{commontblr}{
+}
+\NewTblrTheme{commonlongtblr}{
+  \SetTblrStyle{firsthead}{font=\sffamily\bfseries}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
