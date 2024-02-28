@@ -103,9 +103,10 @@ G90 G54 G43 G01 Z[499.984+#600] H50 F#652
 (hosei kouguChou #50)
 (Z= BotTanmen +#600)
 
-G54 G65 P140001 X180.95 Z499.984 W600.0 T13.16 C10. R8922.7 M0.07
+G54 G65 P140001 X180.95 I155.000 Z499.984 W600.0 T13.16 C10. R8922.7 M0.07
 (G54: Bot X Gaisaku center)
 (X: Bot AC gaisakuKei)
+(I: Bot AC naiKei)
 (Z: Bot sai_furiwake)
 (W: Bot ori_furiwake)
 (T: Bot A nikuatsu at measurement depth)

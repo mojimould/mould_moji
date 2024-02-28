@@ -18,6 +18,8 @@ IF[#33NE[FUP[#33]]]GOTO800
 N003
 IF[#24EQ#0]GOTO800
 IF[#24LT10]GOTO800
+IF[#04EQ#0]GOTO800
+IF[#04LT10]GOTO800
 IF[#26EQ#0]GOTO800
 IF[#23EQ#0]GOTO800
 IF[#23LT10]GOTO800
@@ -29,6 +31,7 @@ IF[#13EQ#0]GOTO800
 IF[#13LT0]GOTO800
 IF[#13GT10]GOTO800
 (if X < 10 or #0, go to N800)
+(if I < 10 or #0, go to N800)
 (if Z = #0, go to, N800)
 (if W < 10 or #0, go to N800)
 (if T < 1 or #0, go to N800)
@@ -38,11 +41,13 @@ IF[#13GT10]GOTO800
 
 N004
 IF[#18LE#26]GOTO800
+IF[#24LE[#04+#20]]GOTO800
 IF[#20LE#13]GOTO800
 IF[#20GE[#24/2]]GOTO800
 IF[#03GE[#26/4]]GOTO800
 IF[#26LE[#901011/2]]GOTO800
 (if R <= Z, go to N800)
+(if X <= I+T, go to N800)
 (if T <= M, go to N800)
 (if T >= X/2, go to N800)
 (if C >= Z/4, go to N800)
@@ -82,8 +87,8 @@ IF[[ABS[#30]]GE[#23/4]]GOTO800
 
 N007
 #29=[#24/2]-#20+#13
-#28=SQRT[#18*#18-[#23-#03]*[#23-#03]]-SQRT[#18*#18-#23*#23]
-#27=SQRT[#18*#18-[#23-#03-#30]*[#23-#03-#30]]-SQRT[#18*#18-[#23-#03]*[#23-#03]]
+#28=SQRT[[#18+#04/2]*[#18+#04/2]-[#23-#03]*[#23-#03]]-SQRT[[#18+#04/2]*[#18+#04/2]-#23*#23]
+#27=SQRT[[#18+#04/2]*[#18+#04/2]-[#23-#03-#30]*[#23-#03-#30]]-SQRT[[#18+#04/2]*[#18+#04/2]-[#23-#03]*[#23-#03]]
 (#29=X/2-T+M)
 (#28: X hosei from tanmen to C)
 (#27: X hosei from C to #30)
@@ -142,8 +147,7 @@ N012
 G90 G01 X[#900024-#31*#29] F#652
 (X to measured center)
 G91 G01 X-[#31*#27] Z#30 F#652
-G91 G01 X-[#31*#28] Z#03 F#652
-(X to measured tanmen center)
+(X to measured center at Z-C)
 IF[[ABS[#900024-#502]]GE[ABS[#29+#602-#501]]]GOTO800
 (if |#900024-#502|>=|#29-#602-#501|, go to N800)
 
@@ -177,6 +181,7 @@ N999 M99
 (Local variables)
 (as received arguments)
 (#03:C: measurement depth from tanmen)
+(#04:I: AC naiKei)
 (#13:M: mekki mm)
 (#18:R: central curvature)
 (#20:T: A-nikuatsu)
