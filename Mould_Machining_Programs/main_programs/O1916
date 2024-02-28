@@ -455,7 +455,7 @@ G55 G65 P410000 D2. X155. Y153. Z499.984 R19.
 (Z: Bot sai_furiwake)
 (R: sotogawa corner R)
 
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 G90 G53 G01 Z0 F#650
 
@@ -653,18 +653,27 @@ GOTO990
 
 (Alerm)
 N820
-M05 (shujiku kaiten off)
 M09 (coolant off)
+S6000
+G04 X1.0s (wait 2.0s)
+M05 (spindle off)
+S200
 #3000=145 (MP60-Low battery)
 
 N821
-M05 (shujiku kaiten off)
 M09 (coolant off)
+S6000
+G04 X1.0s (wait 2.0s)
+M05 (spindle off)
+S200
 #3000=146 (is the palette# is ok?)
 
 N800
-M05 (shujiku kaiten off)
 M09 (coolant off)
+S6000
+G04 X1.0s (wait 2.0s)
+M05 (spindle off)
+S200
 #3000=100 (are the arguments OK?)
 
 
@@ -674,16 +683,16 @@ IF[#1004EQ0]GOTO991
 M117 (sensor on/off)
 
 N991
-M05 (spindle off)
 M09 (coolant off)
 M29 (chip conveyor off)
 G49 G40 (cancel hosei)
 G80 G17
-S200
 
 N992
 G90 G53 G01 Z0 F#650
 G91 G30 X0 Y0
+M05 (spindle off)
+S200
 T01 (empty)
 M06 (tool exchange)
 T50 (touch sensor)

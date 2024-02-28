@@ -51,12 +51,12 @@ M98 P915101 L7
 
 N990
 M09 (coolant off)
+G91 G30 X0 Y0 Z0
+T01 (tool #01)
 G04 X5.0 (wait 5.0s)
 M05 (spindle off)
 
 N991
-G91 G30 X0 Y0 Z0
-T01 (tool #01)
 M06 (tool exchange)
 T50 (tool #50)
 
@@ -67,6 +67,7 @@ M10 (B-axis clamp)
 M29 (chip conveyor off)
 
 N999 M30
+
 
 
 T01

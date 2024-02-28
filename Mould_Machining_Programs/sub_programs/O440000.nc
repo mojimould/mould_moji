@@ -105,14 +105,15 @@ IF[#442EQ1]GOTO012
 IF[#442EQ2]GOTO013
 GOTO016
 N012 (if #442=1)
-M05 (spindle off)
 M09 (coolant off)
+S6000
 G90 G01 Z[#26+#600] F#650
+G04 X1.0s (wait 1.0s)
+M05 (spindle off)
+S200
 M00 (OK?)
 GOTO016
 N013 (if #442=2)
-M05 (spindle off)
-M09 (coolant off)
 G65 P900003 (for Bot)
 GOTO016
 N011 (for Top)
@@ -120,14 +121,15 @@ IF[#426EQ1]GOTO014
 IF[#426EQ2]GOTO015
 GOTO016
 N014 (if #426=1)
-M05 (spindle off)
 M09 (coolant off)
+S6000
 G90 G01 Z[#26+#600] F#650
+G04 X1.0s (wait 1.0s)
+M05 (spindle off)
+S200
 M00 (OK?)
 GOTO016
 N015 (if #426=2)
-M05 (spindle off)
-M09 (coolant off)
 G65 P900003 (for Top)
 
 
@@ -171,19 +173,23 @@ G90 G40 G00 X[[#24/2]+#31*3+#33]
 END2
 
 N990
-M05 (spindle off)
 M09 (coolant off)
+S6000
 
 N991
-S200
 G90 G43 G01 H#07 Z[#26+#600] F#650
 G90 G53 G01 Z0 F#650
+M05 (spindle off)
+S200
 GOTO999
 
 
 N800
-M05 (spindle off)
 M09 (coolant off)
+S6000
+G04 X1.0 (wait 2.0s)
+M05 (spindle off)
+S200
 #3000=100 (are the arguments OK?)
 
 N999 M99

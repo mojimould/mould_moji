@@ -2,6 +2,8 @@
 O900003 (pause and check)
 
 N001
+M09 (coolant off)
+S6000
 G90 G53 G01 Z0 F#650
 
 #33=#4012
@@ -23,6 +25,8 @@ N004
 M11 (4jiku unclamp)
 G91 G00 B90.0
 M10 (4jiku clamp)
+M05 (spindle off)
+S200
 
 N005
 G90 G53 G01 Z-1030.0 F#650
