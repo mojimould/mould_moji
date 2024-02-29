@@ -105,26 +105,25 @@ $\cdots$ & \qquad$\cdots$ &\\
 変数 & 内容 & 初期値\\
 \ttNum400 & トップ端面 全削り代 &\\
 \ttNum401 & ボトム端面 全削り代(0 or \ttNum0: \ttNum400) &\\
-\ttNum402 & 計測・加工 開始N番号 & 0\\
-\ttNum403 & 通り芯測定(0:off, 1:on) & 0\\
+\ttNum402 & 通り芯測定(0:off, 1:on) & 0\\
 \SetRow{unusingVariables}
-\ttNum404 & （不使用） &\\
+\ttNum403 & （不使用） &\\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}[white]{\ttNum405\,-\ttNum414：測定時の調整（\dimple 除く）}{cX[l]c}
 変数 & 内容 & 初期値\\
-\ttNum405 & {\ttfamily G54}$X$：ボトム外$X$芯出し（両側・片側測定）測定位置$Z-$補正（$X$自動補正） & 0\\
-\ttNum406 & {\ttfamily G54}$Y$：ボトム外$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\
-\ttNum407 & {\ttfamily G55}$X$：ボトム内$X$芯出し（両側測定）測定位置$Z-$補正（$X$自動補正） & 0\\
-\ttNum408 & {\ttfamily G55}$Y$：ボトム内$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\
+\ttNum404 & {\ttfamily G54}$X$：ボトム外$X$芯出し（両側・片側測定）測定位置$Z-$補正（$X$自動補正） & 0\\
+\ttNum405 & {\ttfamily G54}$Y$：ボトム外$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\
+\ttNum406 & {\ttfamily G55}$X$：ボトム内$X$芯出し（両側測定）測定位置$Z-$補正（$X$自動補正） & 0\\
+\ttNum407 & {\ttfamily G55}$Y$：ボトム内$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\
 \SetRow{unusingVariables}
-\ttNum409 & （不使用） &\\
-\ttNum410 & {\ttfamily G56}$X$：トップ外$X$芯出し（両側・片側測定）測定位置$Z-$補正（$X$自動補正） & 0\\
-\ttNum411 & {\ttfamily G56}$Y$：トップ外$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\
-\ttNum412 & {\ttfamily G57}$X$：トップ内$X$芯出し（両側測定）測定位置$Z-$補正（$X$自動補正） & 0\\
-\ttNum413 & {\ttfamily G57}$Y$：トップ内$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\
+\ttNum408 & （不使用） &\\
+\ttNum409 & {\ttfamily G56}$X$：トップ外$X$芯出し（両側・片側測定）測定位置$Z-$補正（$X$自動補正） & 0\\
+\ttNum410 & {\ttfamily G56}$Y$：トップ外$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\
+\ttNum411 & {\ttfamily G57}$X$：トップ内$X$芯出し（両側測定）測定位置$Z-$補正（$X$自動補正） & 0\\
+\ttNum412 & {\ttfamily G57}$Y$：トップ内$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\
 \SetRow{unusingVariables}
-\ttNum414 & （不使用） &\\
+\ttNum413 & （不使用） &\\
 \end{multicollongtblr}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -209,7 +208,7 @@ $\cdots$ & \qquad$\cdots$ &\\
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-\ttNum450-\ttNum453の値は2024/01/16時点のもの
+\ttNum461-\ttNum464の値は2024/01/16時点のもの
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -217,26 +216,46 @@ $\cdots$ & \qquad$\cdots$ &\\
 
 \begin{multicollongtblr}[white]{\ttNum450\,-\ttNum474：\dimple の深さ調整}{cX[l]c}
 変数 & 内容 & 初期値\\
-\ttNum450 & 工具{\ttfamily T31}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） & 0.06\\
-\ttNum451 & 工具{\ttfamily T31}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） & 0.03\\
-\ttNum452 & 工具{\ttfamily T31}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） & 0.06\\
-\ttNum453 & 工具{\ttfamily T31}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） & 0.03\\
 \SetRow{unusingVariables}
-\ttNum454 & （不使用） &\\
-\ttNum455 & 工具{\ttfamily T32}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） &\\
-\ttNum456 & 工具{\ttfamily T32}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） &\\
-\ttNum457 & 工具{\ttfamily T32}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） &\\
-\ttNum458 & 工具{\ttfamily T32}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum450 & （予備） &\\
 \SetRow{unusingVariables}
-\ttNum459 & （不使用） &\\
-\ttNum460 & 工具{\ttfamily T33}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） &\\
-\ttNum461 & 工具{\ttfamily T33}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） &\\
-\ttNum462 & 工具{\ttfamily T33}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） &\\
-\ttNum463 & 工具{\ttfamily T33}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） &\\
+$\cdots$ & $\cdots$ &\\
 \SetRow{unusingVariables}
-\ttNum464 & （不使用） &\\
+\ttNum460 & （不使用） &\\
+\ttNum461 & 工具{\ttfamily T31}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） & 0.06\\
+\ttNum462 & 工具{\ttfamily T31}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） & 0.03\\
+\ttNum463 & 工具{\ttfamily T31}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） & 0.06\\
+\ttNum464 & 工具{\ttfamily T31}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） & 0.03\\
 \SetRow{unusingVariables}
-$\cdots$ & （以下予備） &
+\ttNum465 & （不使用） &\\
+\ttNum466 & 工具{\ttfamily T32}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum467 & 工具{\ttfamily T32}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum468 & 工具{\ttfamily T32}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum469 & 工具{\ttfamily T32}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） &\\
+\SetRow{unusingVariables}
+\ttNum470 & （不使用） &\\
+\ttNum471 & 工具{\ttfamily T33}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum472 & 工具{\ttfamily T33}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum473 & 工具{\ttfamily T33}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum474 & 工具{\ttfamily T33}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） &\\
+\end{multicollongtblr}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 17.3.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\ttNum475\,-\ttNum499}
+
+\begin{multicollongtblr}[white]{\ttNum450\,-\ttNum474：\dimple の深さ調整}{cX[l]c}
+変数 & 内容 & 初期値\\
+\ttNum475 & 計測・加工 開始N番号 & 0\\
+\SetRow{unusingVariables}
+\ttNum476 & （予備） &\\
+\SetRow{unusingVariables}
+$\cdots$ & $\cdots$ &\\
+\SetRow{unusingVariables}
+\ttNum499 & （予備） &\\
 \end{multicollongtblr}
 
 
@@ -790,7 +809,6 @@ $\cdots$ & （以下 \dimple 加工工具用 予備） &\\
 この章の各々の表に載せていない\index{コモンへんすう（みしよう）@コモン変数（未使用）}コモン変数は（\dateUnusedVariables 時点において）未使用であり、新たに用いても問題ない（他のプログラムと競合しない）。
 これらのコモン変数を、以下にまとめておく。
 \begin{enumerate}
-\item[-] \ttNum475-\ttNum499
 \item[-] \ttNum575-\ttNum599
 \item[-] \ttNum750-\ttNum999
 \item[-] \ttNum900050-\ttNum900100
