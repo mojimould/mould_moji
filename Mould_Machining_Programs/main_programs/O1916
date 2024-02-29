@@ -49,10 +49,10 @@ M71 (palette #1)
 N100 (for palette #1)
 IF[#1000NE0]GOTO101
 (if NOT p#1, to N101)
-G90 G10 L2 P1 X-527.732 Y-648.500 Z#901003 B#901004
-G90 G10 L2 P2 X-526.889 Y-648.500 Z#901003 B#901004
-G90 G10 L2 P3 X-561.306 Y-648.500 Z#901003 B#901004
-G90 G10 L2 P4 X-561.923 Y-648.500 Z#901003 B#901004
+G90 G10 L2 P1 X-527.818 Y-648.500 Z#901003 B#901004
+G90 G10 L2 P2 X-526.897 Y-648.500 Z#901003 B#901004
+G90 G10 L2 P3 X-561.220 Y-648.500 Z#901003 B#901004
+G90 G10 L2 P4 X-561.916 Y-648.500 Z#901003 B#901004
 (G54 Bot Gaisaku Center)
 (G55 Bot Inside Center)
 (G56 Top Gaisaku Center)
@@ -61,10 +61,10 @@ GOTO102
 N101 (for palette #2)
 IF[#1000NE1]GOTO821
 (if the current palette is NOT #2, go to N821)
-G90 G10 L2 P1 X-527.732 Y-648.500 Z#901007 B#901008
-G90 G10 L2 P2 X-526.889 Y-648.500 Z#901007 B#901008
-G90 G10 L2 P3 X-561.306 Y-648.500 Z#901007 B#901008
-G90 G10 L2 P4 X-561.923 Y-648.500 Z#901007 B#901008
+G90 G10 L2 P1 X-527.818 Y-648.500 Z#901007 B#901008
+G90 G10 L2 P2 X-526.897 Y-648.500 Z#901007 B#901008
+G90 G10 L2 P3 X-561.220 Y-648.500 Z#901007 B#901008
+G90 G10 L2 P4 X-561.916 Y-648.500 Z#901007 B#901008
 (G54 Bot Gaisaku Center)
 (G55 Bot Inside Center)
 (G56 Top Gaisaku Center)
@@ -560,16 +560,18 @@ G90 G00 G55 B[180.0-0.642]
 M10 (4jiku clamp)
 
 M28 (chip conveyor on)
-G55 G65 P450000 D11. X155. Y153. Z499.984 C10. R3.5 M0.07
+G55 G65 P450000 D11. X155. Y153. Z499.984 W600.0 R3.5 M0.07 C10. Q8922.7
 (Bot Uchi Chamfer)
 (O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
 (D: hosei kougu #)
 (X: AC naikei)
 (Y: BD naikei)
 (Z: Bot sai_furiwake)
-(C: mentori length C)
+(W: Bot ori_furiwake)
 (R: corner R)
 (M: mekki mm)
+(C: mentori length C)
+(Q: central curvature)
 
 (Bottom Uchimentori end)
 IF[#199EQ1]GOTO541
@@ -607,10 +609,10 @@ M10 (4jiku clamp)
 T50 (touch sensor)
 M06
 
-G54 G65 P150003 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11.
+G54 G65 P150003 W500.016 Z499.984 T180.95 B180.95 M12.05 K25. U11.
 (O150003: tooriShin X)
 (W: Top sai_furiwake)
-(Z: Top sai_furiwake)
+(Z: Bot sai_furiwake)
 (T: Top AC gaisakuKei)
 (B: Bot AC gaisakuKei)
 (M: mizoIchi)
@@ -633,7 +635,7 @@ G90 G54 G00 B[180-0.642]
 (B parallel angle 179.358)
 M10 (4jiku clamp)
 
-G54 G65 P150002 W500.016 Z499.084 T180.95 B180.95 M12.05 K25. U11.
+G54 G65 P150002 W500.016 Z499.984 T180.95 B180.95 M12.05 K25. U11.
 (O150002: toorishin Y)
 (W: Top sai_furiwake)
 (Z: Bot sai_furiwake)
