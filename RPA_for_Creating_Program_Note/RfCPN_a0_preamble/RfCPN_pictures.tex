@@ -5,7 +5,7 @@
 %%%%% MOULDCOODINATE %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\mouldCoordinate{%
-\begin{tikzpicture}[scale=1, every node/.style={scale=0.8}]
+\begin{tikzpicture}[scale=1, every node/.style={scale=0.75}]
 % 値の計算
 \pgfmathsetmacro{\Ax}{9.6} %A:T_iのx座標
 \pgfmathsetmacro{\Ay}{3.5} %A:T_iのy座標
@@ -24,7 +24,7 @@
 \pgfmathsetmacro{\Hx}{1+(\Ri)} %H:テーブルの中心
 \pgfmathsetmacro{\Ix}{1.90} %I:テーブルx方向の長さの半分
 % 座標系を描画
-\draw[-latex, line width=0.5pt] (-0.4, 0) -- (14.5, 0) node[below] {\textbf{Re}};
+\draw[-latex, line width=0.5pt] (-0.4, 0) -- (14.4, 0) node[below] {\textbf{Re}};
 \draw[-latex, line width=0.5pt] (0, -4) -- (0, 4) node[below right] {\textbf{Im}};
 % 座標を定義
 \coordinate (O) at (  0, 0); % 原点
@@ -48,16 +48,16 @@
 \coordinate (Lt) at (\Hx+\Ix+0.4, \Ub);
 \coordinate (Lb) at (\Hx+\Ix+0.4, -\Ub);
 \coordinate (Lc) at (\Hx+\Ix+0.4, 0);
-\coordinate (Fc) at (\Hx+\Ix+1.0, 0);
-\coordinate (Ft) at (\Hx+\Ix+1.0, \Ay);
-\coordinate (Fb) at (\Hx+\Ix+1.0, \Cy);
+\coordinate (Fc) at (\Hx+\Ix+0.9, 0);
+\coordinate (Ft) at (\Hx+\Ix+0.9, \Ay);
+\coordinate (Fb) at (\Hx+\Ix+0.9, \Cy);
 % 点を描画
 \fill (O) circle (2pt);
 \fill (A) circle (2pt);
 \fill (B) circle (2pt);
 \fill (C) circle (2pt);
 \fill (D) circle (2pt);
-\fill (E) circle (2pt);
+%\fill (E) circle (2pt);
 \fill (Rc) circle (2pt);
 \fill (Ro) circle (2pt);
 \fill (Ri) circle (2pt);
@@ -101,13 +101,13 @@
 % 角度
 \draw[line width=0.5pt, fill=ffwwqq, fill opacity=0.1]
   let \p1=(Ri), \p2=(A), \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)}
-   in (\n1:2) arc (\n1:\n2:2) node[midway, right, opacity=1] {$\alpha_{\mathrm T_\mathrm i}$} -- (O);
+   in (\n1:1.75) arc (\n1:\n2:1.75) node[midway, right, opacity=1] {$\alpha_{\mathrm T_\mathrm i}$} -- (O);
 \draw[line width=0.5pt, fill=qqzzqq, fill opacity=0.1]
   let \p1=(Ro), \p2=(B), \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)}
-  in (\n1:3.2) arc (\n1:\n2:3.2) node[midway, right, opacity=1] {$\alpha_{\mathrm T_\mathrm o}$} -- (O) -- cycle ;
+  in (\n1:2.75) arc (\n1:\n2:2.75) node[midway, right, opacity=1] {$\alpha_{\mathrm T_\mathrm o}$} -- (O) -- cycle ;
 \draw[line width=0.5pt, fill=wwqqcc, fill opacity=0.1]
   let \p1=(Ri), \p2=(Ub), \n1={atan2(\y1,\x1)}, \n2={atan2(\y2,\x2)}
-  in (\n1:2.7) arc (\n1:\n2:2.7) node[midway, right, opacity=1] {$\alpha_{\mathrm U_\mathrm B}$} -- (O);
+  in (\n1:2.5) arc (\n1:\n2:2.5) node[midway, right, opacity=1] {$\alpha_{\mathrm U_\mathrm B}$} -- (O);
 \end{tikzpicture}%
 }
 
@@ -115,8 +115,8 @@
 %%%%% MOULDWITHUKEITA %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\mouldwithukeita{%
-\begin{tikzpicture}[scale=0.5,
-                    every node/.style={scale=0.4},
+\begin{tikzpicture}[scale=1,
+                    every node/.style={scale=0.5},
                     >={Latex[length=1mm, width=0.75mm]},]
 % 値の計算
 \pgfmathsetmacro{\Ax}{12}                    %A:T_iのx座標

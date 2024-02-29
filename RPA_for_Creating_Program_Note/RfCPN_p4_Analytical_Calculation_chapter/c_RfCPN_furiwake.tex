@@ -7,13 +7,13 @@
 そうした場合の対処法として、ここでは以下のような2つの方法を考える。
 \begin{enumerate}
 \item
-適当な厚さの\index{スペーサ}\textbf{スペーサ}を\index{モールドとジグのせってん@モールドとジグの接点}モールドとジグの接点に取り付けることで、双方の振分長を調節
+適当な厚さの\index{スペーサ}\textbf{スペーサ}を\index{ワークとジグのせってん@ワークとジグの接点}ワークとジグの接点に取り付けることで、双方の振分長を調節
 \item
 適当な角度に\index{テーブル}テーブルを回転することで、双方の振分長を調節
 \end{enumerate}
-このとき、モールド（\index{ワーク}ワーク）がどのように移動するかを考える。
+このとき、\index{ワーク}ワークがどのように移動するかを考える。
 
-基本的な考え方として、\index{ちゅうしんわんきょく@中心湾曲}\textbf{中心湾曲}半径$R_\mathrm c$の円の中心を原点として$\Omega$だけ回転し、次にモールドとの（スペーサを装着していない側の）接点を中心に$-\theta$だけ回転したと考えることができる。
+基本的な考え方として、\index{ちゅうしんわんきょく@中心湾曲}\textbf{中心湾曲}半径$R_\mathrm c$の円の中心を原点として$\Omega$だけ回転し、次にワークとの（スペーサを装着していない側の）接点を中心に$-\theta$だけ回転したと考えることができる。
 なお、ここでは話の簡単化のため、もとの振分けではトップ側よりボトム側の振分長のほうが長いものとする。
 
 
@@ -23,7 +23,7 @@
 %% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{ジグの接点部が点の場合}
-まずは簡単のため、\index{ジグ}ジグの\index{モールド}モールドとの接点部（\pageautoref{fig:mouldOnComplexPlane1}のU$_\mathrm T$, U$_\mathrm B$の部分）は点であるとして考える。
+まずは簡単のため、\index{ジグ}ジグの\index{ワーク}ワークとの接点部（\pageautoref{fig:mouldOnComplexPlane1}のU$_\mathrm T$, U$_\mathrm B$の部分）は点であるとして考える。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -41,7 +41,7 @@
 \resizebox{\linewidth}{!}{\adjustbox{max height=\textheight}{\mouldCoordinate}}%
 \captionsetup{width=.75\textwidth}
 \captionof{figure}[湾曲中心Oを原点とした複素平面上のモールド]
-  {湾曲中心Oを原点とした複素平面上のモールド\newline
+  {\index{わんきょくちゅうしん@湾曲中心}湾曲中心Oを\index{げんてんO@原点O}原点とした\index{ふくそへいめん@複素平面}複素平面上のモールド\newline
    T$_\mathrm o$, T$_\mathrm i$, B$_\mathrm o$, B$_\mathrm i$, U$_\mathrm T$, U$_\mathrm B$は点、%
    $R_\mathrm c$, $R_\mathrm o$, $R_\mathrm i$, $f_\mathrm T$, $f_\mathrm B$, $l$は長さ、%
    $\alpha_{\mathrm T_\mathrm o}$, $\alpha_{\mathrm T_\mathrm i}$, $\alpha_{\mathrm U_\mathrm B}$は角度を示す。%
@@ -63,7 +63,7 @@
 %% subsection 1.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{スペーサを用いた再振分け}
-\index{モールド}モールドの湾曲における円の中心\index{O（わんきょくちゅうしん）@O（湾曲中心）}Oを\index{げんてん@原点}原点とした\index{ふくそへいめん@複素平面}複素平面を考える
+\index{モールド}モールドの湾曲における円の中心\index{O（わんきょくちゅうしん）@O（湾曲中心）}Oを\index{げんてんO@原点O}原点とした\index{ふくそへいめん@複素平面}複素平面を考える
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここでは$0 < R_\mathrm c < \infty$ ($0 < \nicefrac1{R_\mathrm c} < \infty$)としている。
 $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわち\index{わんきょくのないモールド@湾曲のないモールド}湾曲のないまっすぐなモールドの場合は、別途考える必要がある。}。
@@ -195,7 +195,7 @@ $\delta_\mathrm s > 0$より、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[p]%
 \begin{Figbox}[valign=top]%
-\resizebox{\linewidth-15pt}{!}{\mouldwithukeita}%
+\resizebox{\linewidth-35pt}{!}{\mouldwithukeita}%
 \vfill~
 \captionof{figure}[受板がある場合]{%
  \index{うけいた@受板}受板がある場合\newline
@@ -208,7 +208,7 @@ $\delta_\mathrm s > 0$より、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\index{うけいたのちゅうしん@受板の中心}受板の径の中心を改めてU$_\mathrm B$とし、また原点に対する\index{へんかく（うけいた）@偏角（受板）}偏角を改めて$-\alpha_{\mathrm U_\mathrm B}$とすると、これはU$_\mathrm B$($R_\mathrm i-\rho$, $-\alpha_{\mathrm U_\mathrm B}$)と表すことができる。
+\index{うけいたのちゅうしん@受板の中心}受板の径の中心を改めてU$_\mathrm B$とし、また\index{げんてんO@原点O}原点Oに対する\index{へんかく（うけいた）@偏角（受板）}偏角を改めて$-\alpha_{\mathrm U_\mathrm B}$とすると、これはU$_\mathrm B$($R_\mathrm i-\rho$, $-\alpha_{\mathrm U_\mathrm B}$)と表すことができる。
 ただし、\pageeqref{eq:constraintUpoint2}は以下のようになる。
 \begin{align*}
   \sin\alpha_{\mathrm U_\mathrm B} = \frac{\bar l}{R_\mathrm i-\rho}\quad, \quad
@@ -523,14 +523,14 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
   \varDelta'
   = \varDelta+R_\mathrm i'\cos\alpha_{\mathrm U_\mathrm B} = \varDelta+\sqrt{R_\mathrm i'^2-\bar l^2}\ .
 \end{align}
-\index{トップがわのCがわたんてん@トップ側のC側端点}トップ側のC側端点T$_\mathrm i$($R_\mathrm i$, $\alpha_{\mathrm T_\mathrm i}$)を、原点Oを中心に$\Omega$だけ回転し、さらに点P\,($\varDelta'$, $0$)を中心に$-\theta$だけ回転すると、
+\index{トップがわのCがわそとたんてん@トップ側のC側外端点}トップ側のC側外端点T$_\mathrm i$($R_\mathrm i$, $\alpha_{\mathrm T_\mathrm i}$)を、原点Oを中心に$\Omega$だけ回転し、さらに点P\,($\varDelta'$, $0$)を中心に$-\theta$だけ回転すると、
 \begin{align}
   \label{eq:afterfttable}
   e^{-i\theta}\left\{R_\mathrm i^{i(\alpha_{\mathrm T_\mathrm i}+\Omega)}-\varDelta'\right\}+\varDelta'
   = R_\mathrm ie^{i(\alpha_{\mathrm T_\mathrm i}+\Omega-\theta)}+\varDelta'\left(1-e^{-i\theta}\right)
 \end{align}
 に移動する。
-同様に、\index{トップがわのAがわたんてん@トップ側のA側端点}トップ側のA側端点T$_\mathrm o$($R_\mathrm o$, $\alpha_{\mathrm T_\mathrm o}$)は、
+同様に、\index{トップがわのAがわそとたんてん@トップ側のA側外端点}トップ側のA側外端点T$_\mathrm o$($R_\mathrm o$, $\alpha_{\mathrm T_\mathrm o}$)は、
 \begin{align*}
   e^{-i\theta}\!\left\{R_\mathrm o^{i(\alpha_{\mathrm T_\mathrm o}+\Omega)}-\varDelta'\right\}+\varDelta'
   = R_\mathrm ie^{i(\alpha_{\mathrm T_\mathrm o}+\Omega-\theta)}+\varDelta'\!\left(1-e^{-i\theta}\right)
@@ -563,7 +563,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% subsubsection 21.3.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{回転後の接点}
-回転後におけるトップ側の受板との接点は、点Pを中心に$-\theta$だけ回転するので、
+回転後におけるトップ側の\index{ワークとうけいたのせってん@ワークと受板の接点}受板との接点は、点Pを中心に$-\theta$だけ回転するので、
 \begin{align*}
   &  e^{-i\theta}\!\left(R_\mathrm ie^{i\alpha_{\mathrm U_\mathrm B}}-\varDelta'\right)+\varDelta'\\
   &= R_\mathrm ie^{i(\alpha_{\mathrm U_\mathrm B}-\theta)}+\varDelta'\!\left(1-e^{-i\theta}\right)\\
@@ -586,7 +586,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
   2R_\mathrm i\sin\alpha_{\mathrm U_\mathrm B}\sin\theta+2iR_\mathrm i\sin\alpha_{\mathrm U_\mathrm B}\cos\theta
   = \frac{R_\mathrm i}{R_\mathrm i'}(2\bar l)e^{i(\pi-\theta)}
 \end{align*}
-となり、受板の両中心間（長さ$2\bar l$）を結んだ線分を$\nicefrac{R_\mathrm i}{R_\mathrm i'}$倍し、虚軸から$-\theta$だけ傾けたものになっていることがわかる。
+となり、\index{うけいたのちゅうしん@受板の中心}受板の両中心間（長さ$2\bar l$）を結んだ線分を$\nicefrac{R_\mathrm i}{R_\mathrm i'}$倍し、虚軸から$-\theta$だけ傾けたものになっていることがわかる。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
