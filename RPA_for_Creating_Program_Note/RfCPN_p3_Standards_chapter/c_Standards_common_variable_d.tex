@@ -53,36 +53,35 @@ $\cdots$ & （以下 予備）\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 18.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum175\,-\ttNum199：各工程後一時停止}
-\noindent\ttNum175\,-\ttNum199については、主に各工程後の確認のためのものとする。\\
+\subsection{\ttNum175\,-\ttNum199：各工程用 補助機能}
+\noindent\ttNum175\,-\ttNum199については、使用頻度が低いと思われる機能のものとする。\\
 
-\begin{multicollongtblr}[white]{\ttNum175\,-\ttNum199：各工程後一時停止}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum175\,-\ttNum199}{cX[l]c}
 変数 & 内容 & 初期値\\
+\ttNum175 & 計測・加工 開始N番号 & 0\\
 \SetRow{unusingVariables}
-\ttNum175 & （以下 予備） &\\
+\ttNum176 & （不使用） &\\
+\ttNum177 & 芯出し測定後 一時停止 (0:{\ttfamily M00}, 1:non-stop) & 1\\
+\ttNum178 & \dimple 測定後 一時停止 (0:{\ttfamily M00}, 1:non-stop) & 1\\
+\ttNum179 & トップ端面加工後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum180 & ボトム端面加工後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
-$\cdots$ & \qquad$\cdots$ &\\
+\ttNum181 & （不使用） &\\
+\ttNum182 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum183 & 溝 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum184 & トップ外面取 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum185 & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
-\ttNum183 & （不使用） &\\
-\ttNum184 & 芯出し測定後 一時停止 (0:non-stop, 1: {\ttfamily M00}) & 0\\
+\ttNum186\TBW & （座ぐり 仕上げ加工 追加回数用 予備） & 0\\
 \SetRow{unusingVariables}
-\ttNum185 & （不使用） &\\
-\ttNum186 & \dimple 測定後 一時停止 (0:non-stop, 1: {\ttfamily M00}) & 0\\
-\ttNum187 & \dimple 加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
+\ttNum187 & （不使用） &\\
+\ttNum188 & ボトム外削 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum189 & ボトム外面取 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum190 & ボトム内面取 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
-\ttNum188 & （不使用） &\\
-\ttNum189 & トップ端面加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
-\ttNum190 & トップ外削加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
-\ttNum191 & トップ溝加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
-\ttNum192 & トップ外面取加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
-\ttNum193 & トップ内面取加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
-\ttNum194 & トップ座ぐり加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
+\ttNum191 & （以下 予備） &\\
 \SetRow{unusingVariables}
-\ttNum195 & （不使用） &\\
-\ttNum196 & ボトム端面加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
-\ttNum197 & ボトム外削加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
-\ttNum198 & ボトム外面取加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0\\
-\ttNum199 & ボトム内面取加工後 一時停止 (0:non-stop, 1: {\ttfamily M00}, 2:{\ttfamily O900003}) & 0
+$\cdots$ & $\cdots$ &\\
 \end{multicollongtblr}
 
 
@@ -101,7 +100,7 @@ $\cdots$ & \qquad$\cdots$ &\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum400\,-\ttNum424}
 
-\begin{multicollongtblr}[white]{\ttNum400\,-\ttNum404：初期設定}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum400\,-\ttNum403：初期設定}{cX[l]c}
 変数 & 内容 & 初期値\\
 \ttNum400 & トップ端面 全削り代 &\\
 \ttNum401 & ボトム端面 全削り代(0 or \ttNum0: \ttNum400) &\\
@@ -110,7 +109,7 @@ $\cdots$ & \qquad$\cdots$ &\\
 \ttNum403 & （不使用） &\\
 \end{multicollongtblr}
 
-\begin{multicollongtblr}[white]{\ttNum405\,-\ttNum414：測定時の調整（\dimple 除く）}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum404\,-\ttNum413：測定時の調整（\dimple 除く）}{cX[l]c}
 変数 & 内容 & 初期値\\
 \ttNum404 & {\ttfamily G54}$X$：ボトム外$X$芯出し（両側・片側測定）測定位置$Z-$補正（$X$自動補正） & 0\\
 \ttNum405 & {\ttfamily G54}$Y$：ボトム外$Y$芯出し（両側測定）測定位置$Z-$補正 & 0\\
@@ -137,19 +136,22 @@ $\cdots$ & \qquad$\cdots$ &\\
 
 
 \clearpage
-\begin{multicollongtblr}[white]{\ttNum415\,-\ttNum424：加工時の調整（端面・\dimple 除く）}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum414\,-\ttNum424：加工時の調整（端面・\dimple 除く）\TBW}{cX[l]c}
 変数 & 内容 & 初期値\\
-\ttNum415 & トップ外削 A面肉厚$+$補正（外削中心$X-$補正） & 0\\
-\ttNum416 & トップ外削 仕上げ前 一時停止 (0:non-stop, 1:{\ttfamily M00}, 2:扉前{\ttfamily M00}) & 0\\
-\ttNum417 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum414 & トップ外削 A面肉厚$+$補正（外削中心$X-$補正） & 0\\
+\SetRow{unusingVariables}
+\ttNum415\TBW & （トップ外削径補正用 予備） &\\
+\ttNum416 & トップ外削 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum417 & トップ外削 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum418 & （不使用） &\\
 \ttNum419 & 溝位置$+$補正（溝幅不変） & 0\\
 \ttNum420 & 溝幅$+$補正 & 0\\
 \ttNum421 & 溝A面深さ$+$補正（溝径中心$X-$補正） & 0\\
-\ttNum422 & 溝幅$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\
-\ttNum423 & 溝 仕上げ前 一時停止 (0:non-stop, 1:{\ttfamily M00}, 2:扉前{\ttfamily M00}) & 0\\
-\ttNum424 & 溝 仕上げ加工 追加回数 (上限3) & 0
+\SetRow{unusingVariables}
+\ttNum422\TBW & （溝径補正用 予備） & 0\\
+\ttNum423 & 溝 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum424 & 溝 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \end{multicollongtblr}
 
 
@@ -162,40 +164,40 @@ $\cdots$ & \qquad$\cdots$ &\\
 \begin{multicollongtblr}[white]{\ttNum425\,-\ttNum449：加工時の調整（続き）}{cX[l]c}
 変数 & 内容 & 初期値\\
 \ttNum425 & トップ外面取$X+$補正 & 0\\
-\ttNum426 & トップ外面取 仕上げ前 一時停止 (0:non-stop, 1:{\ttfamily M00}, 2:扉前{\ttfamily M00}) & 0\\
-\ttNum427 & トップ外面取 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
-\ttNum428 & （不使用） &\\
-\ttNum429 & トップ内面取$X+$補正 & 0\\
-\ttNum430 & トップ内面取 仕上げ前 一時停止 (0:non-stop, 1:{\ttfamily M00}, 2:扉前{\ttfamily M00}) & 0\\
-\ttNum431 & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum426\TBW & （トップ外面取径用 予備） & 0\\
+\ttNum427 & トップ外面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum428 & トップ外面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
-\ttNum432 & （不使用） &\\
+\ttNum429 & （不使用） &\\
+\ttNum430 & トップ内面取$X+$補正 & 0\\
 \SetRow{unusingVariables}
-\ttNum433 & （座ぐり$X+$補正用 予備） &\\
+\ttNum431\TBW & （トップ内面取径用 予備） & 0\\
+\ttNum432 & トップ内面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum433 & トップ内面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
-\ttNum434 & （座ぐり 仕上げ前 一時停止用 予備） &\\
+\ttNum434 & （不使用） &\\
 \SetRow{unusingVariables}
-\ttNum435 & （座ぐり 仕上げ加工 追加回数用 予備） &\\
+\ttNum435 & （不使用） &\\
+\ttNum436 & ボトム外削 A面肉厚$+$補正（外削中心$X+$補正） & 0\\
 \SetRow{unusingVariables}
-\ttNum436 & （不使用） &\\
-\ttNum437 & ボトム外削 A面肉厚$+$補正（外削中心$X+$補正） & 0\\
-\ttNum438 & ボトム外削 仕上げ前 一時停止 (0:non-stop, 1:{\ttfamily M00}, 2:扉前{\ttfamily M00}) & 0\\
-\ttNum439 & ボトム外削 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum437\TBW & （ボトム外削径補正用 予備） & 0\\
+\ttNum438 & ボトム外削 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum439 & ボトム外削 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum440 & （不使用） &\\
 \ttNum441 & ボトム外面取$X+$補正 & 0\\
-\ttNum442 & ボトム外面取 仕上げ前 一時停止 (0:non-stop, 1:{\ttfamily M00}, 2:扉前{\ttfamily M00}) & 0\\
-\ttNum443 & ボトム外面取 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
-\ttNum444 & （不使用） &\\
-\ttNum445 & ボトム内面取$X+$補正 & 0\\
-\ttNum446 & ボトム内面取 仕上げ前 一時停止 (0:non-stop, 1:{\ttfamily M00}, 2:扉前{\ttfamily M00}) & 0\\
-\ttNum447 & ボトム内面取 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum442\TBW & （ボトム外面取径用 予備） & 0\\
+\ttNum443 & ボトム外面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum444 & ボトム外面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
-\ttNum448 & （不使用） &\\
+\ttNum445 & （不使用） &\\
+\ttNum446 & ボトム内面取$X+$補正 & 0\\
 \SetRow{unusingVariables}
-\ttNum449 & （予備） &
+\ttNum447\TBW & （ボトム内面取径用 予備） & 0\\
+\ttNum448 & ボトム内面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum449 & ボトム内面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \end{multicollongtblr}
 
 
@@ -208,7 +210,7 @@ $\cdots$ & \qquad$\cdots$ &\\
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-\ttNum461-\ttNum464の値は2024/01/16時点のもの
+\ttNum461-\ttNum464の値は2024/02/29時点のもの
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -220,6 +222,7 @@ $\cdots$ & \qquad$\cdots$ &\\
 \ttNum450 & （予備） &\\
 \SetRow{unusingVariables}
 $\cdots$ & $\cdots$ &\\
+\ttNum459 & \dimple 加工後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum460 & （不使用） &\\
 \ttNum461 & 工具{\ttfamily T31}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） & 0.06\\
@@ -247,15 +250,23 @@ $\cdots$ & $\cdots$ &\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum475\,-\ttNum499}
 
-\begin{multicollongtblr}[white]{\ttNum450\,-\ttNum474：\dimple の深さ調整}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum475\,-\ttNum499}{cX[l]c}
 変数 & 内容 & 初期値\\
-\ttNum475 & 計測・加工 開始N番号 & 0\\
+\ttNum475 & 溝幅$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\
 \SetRow{unusingVariables}
-\ttNum476 & （予備） &\\
+\ttNum476 & （不使用） &\\
+\SetRow{unusingVariables}
+\ttNum477\TBW & （トップ座ぐり$X+$補正用 予備） & 0\\
+\SetRow{unusingVariables}
+\ttNum478\TBW & （トップ座ぐり径 補正用 予備） & 0\\
+\ttNum479 & トップ座ぐり 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum480 & トップ座ぐり 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\SetRow{unusingVariables}
+\ttNum481 & （不使用） &\\
+\SetRow{unusingVariables}
+\ttNum482 & （以下 予備） &\\
 \SetRow{unusingVariables}
 $\cdots$ & $\cdots$ &\\
-\SetRow{unusingVariables}
-\ttNum499 & （予備） &\\
 \end{multicollongtblr}
 
 
@@ -265,12 +276,12 @@ $\cdots$ & $\cdots$ &\\
 %% section 18.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum500\,-\ttNum574：バンドルプログラムの使用コモン変数}
-\ttNum500\,-\ttNum574については、\index{バンドルのプログラム}バンドルのプログラム\prgbox{O910x}\prgbox{O93xx}で使用されており、作成したプログラムには用いていない。
+\ttNum500\,-\ttNum574については、主に\index{バンドルのプログラム}バンドルのプログラム\prgbox{O910x}\prgbox{O93xx}で使用されているものである。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-これらの値は2023/09/26時点のもの
+これらの値は2023/09/26機械設置時に入力されていたもの
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
