@@ -645,7 +645,7 @@ G54 G65 P150002 W500.016 Z499.984 T180.95 B180.95 M12.05 K25. U11.
 (K: Bot gaisaku length)
 (U: tooriShin X)
 
-G90 G54 G01 X#900030 Y#900026 F#652
+G90 G54 G01 X#900033 Y#900026 F#652
 M00 (tooriShin Y end)
 
 G49 G40 (cancel hosei)
@@ -697,7 +697,6 @@ M05 (spindle off)
 S200
 T01 (empty)
 M06 (tool exchange)
-T50 (touch sensor)
 M60 (palette change)
 
 N999 M30
