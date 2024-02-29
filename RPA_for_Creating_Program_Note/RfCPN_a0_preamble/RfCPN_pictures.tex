@@ -115,34 +115,35 @@
 %%%%% MOULDWITHUKEITA %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\mouldwithukeita{%
-\begin{tikzpicture}[scale=1,
+\begin{tikzpicture}[scale=0.5,
                     every node/.style={scale=0.4},
                     >={Latex[length=1mm, width=0.75mm]},]
 % 値の計算
-\pgfmathsetmacro{\Ax}{12}      %A:T_iのx座標
-\pgfmathsetmacro{\Ay}{3.5}       %A:T_iのy座標
-\pgfmathsetmacro{\Bx}{2.0+(\Ax)} %B:T_oのx座標
-\pgfmathsetmacro{\Cy}{-4.2}      %C:B_iのy座標
-\pgfmathsetmacro{\TUb}{2.4}      %TUb:テーブル-モールドの交点y座標
-\pgfmathsetmacro{\Ix}{2.7} %I:テーブルx方向の長さの半分
+\pgfmathsetmacro{\Ax}{12}                    %A:T_iのx座標
+\pgfmathsetmacro{\Ay}{3.5}                   %A:T_iのy座標
+\pgfmathsetmacro{\Bx}{2.0+(\Ax)}             %B:T_oのx座標
+\pgfmathsetmacro{\Cy}{-4.2}                  %C:B_iのy座標
+\pgfmathsetmacro{\TUb}{2.4}                  %TUb:テーブル-モールドの交点y座標
+\pgfmathsetmacro{\Ix}{2.7}                   %I:テーブルx方向の長さの半分
+\pgfmathsetmacro{\Uw}{0.75}                  %Uw:受板の幅
+\pgfmathsetmacro{\Ul}{0.45}                  %Ul:受板の長さ
+\pgfmathsetmacro{\Ur}{1.35}                   %Uw:受板の半径
 \pgfmathsetmacro{\Ri}{sqrt((\Ax)^2+(\Ay)^2)} %R_iの長さ
-\pgfmathsetmacro{\Hx}{0.1+(\Ri)} %H:テーブルの中心
-\pgfmathsetmacro{\Cx}{sqrt((\Ri)^2-(\Cy)^2)} %C:B_iのx座標
-\pgfmathsetmacro{\Ro}{sqrt((\Bx)^2+(\Ay)^2)} %R_oの長さ
-\pgfmathsetmacro{\Dx}{sqrt((\Ro)^2-(\Cy)^2)} %D:B_oのx座標
-\pgfmathsetmacro{\Rc}{(\Ri+\Ro)/2}           %R_cの長さ
-\pgfmathsetmacro{\Ex}{sqrt((\Rc)^2-(\Ay)^2)} %E:湾曲中心線トップ端のx座標
-\pgfmathsetmacro{\Fx}{sqrt((\Rc)^2-(\Cy)^2)} %F:湾曲中心線ボトム端のx座標
+\pgfmathsetmacro{\Hx}{0.1+(\Ri)}             %H:テーブルの中心
+% 値の計算
+\pgfmathsetmacro{\Cx}{sqrt((\Ri)^2-(\Cy)^2)}    %C:B_iのx座標
+\pgfmathsetmacro{\Ro}{sqrt((\Bx)^2+(\Ay)^2)}    %R_oの長さ
+\pgfmathsetmacro{\Dx}{sqrt((\Ro)^2-(\Cy)^2)}    %D:B_oのx座標
+\pgfmathsetmacro{\Rc}{(\Ri+\Ro)/2}              %R_cの長さ
+\pgfmathsetmacro{\Ex}{sqrt((\Rc)^2-(\Ay)^2)}    %E:湾曲中心線トップ端のx座標
+\pgfmathsetmacro{\Fx}{sqrt((\Rc)^2-(\Cy)^2)}    %F:湾曲中心線ボトム端のx座標
 \pgfmathsetmacro{\TUx}{sqrt((\Ri)^2-(\TUb)^2)}  %TUx:テーブル-モールド内側との交点のx座標
 \pgfmathsetmacro{\TUxo}{sqrt((\Ro)^2-(\TUb)^2)} %TUxo:テーブル-モールド外側との交点x座標
-\pgfmathsetmacro{\Uw}{0.75} %Uw:受板の幅
-\pgfmathsetmacro{\Ul}{0.65} %Ul:受板の長さ
-\pgfmathsetmacro{\Ur}{0.6} %Uw:受板の半径
-\pgfmathsetmacro{\Ub}{\Ri*sin(asin((\TUb-\Uw/2)/(\Ri-\Ur)))}     %Ub:受板-モールド接点のy座標
-\pgfmathsetmacro{\Ux}{sqrt((\Ri)^2-(\Ub)^2)}  %TUx:受板-モールド接点のx座標
+\pgfmathsetmacro{\Ub}{\Ri*sin(asin((\TUb-\Uw/2)/(\Ri-\Ur)))} %Ub:ボトム側受板-モールド接点のy座標
+\pgfmathsetmacro{\Ux}{sqrt((\Ri)^2-(\Ub)^2)}    %Ux:トップ側受板-モールド接点のx座標
 \pgfmathsetmacro{\Ucx}{\Ux-sqrt((\Ur)^2-((\Uw)/2-(\TUb-\Ub))^2)} %Uw:受板の半径
 \pgfmathsetmacro{\TBUx}{\Ucx+sqrt((\Ur)^2-((\Uw)/2)^2)} %TBUx:テーブルと受板の交点x座標
-% 座標を定義
+% 座標の定義
 \coordinate (A) at (\Ax, \Ay); %
 \coordinate (B) at (\Bx, \Ay);
 \coordinate (C) at (\Cx, \Cy);
@@ -189,7 +190,7 @@
 \draw[fill=gray!15!] let \p1=(BUc), \p2=(BU), \p3=(TBU), \n1={atan2(\y2-\y1,\x2-\x1)}, \n2={atan2(\y3-\y1,\x3-\x1)},
     in (TBU) -- (TBUex) -- (BUex) -- (BU) arc[start angle=\n1, end angle=\n2, radius=\Ur] -- cycle;
 \draw[<->] (BUc) -- (Ub) node[midway, above] {$\rho$};
-\draw[<->] ([xshift=-1.25mm]TBUex) -- ([xshift=-1.25mm]BUex) node[midway, left] {$\sigma$};
+\draw[<->] ([xshift=-1.25mm]TTUex) -- ([xshift=-1.25mm]TUex) node[midway, left] {$\sigma$};
 % 点を描画
 \fill (Ut) circle (1pt);
 \fill (Ub) circle (1pt);

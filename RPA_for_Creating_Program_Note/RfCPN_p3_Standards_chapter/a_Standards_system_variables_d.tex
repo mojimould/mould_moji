@@ -26,7 +26,7 @@
 \end{multicollongtblr}
 
 \clearpage
-\begin{multicollongtblr}[white]{\ttNum1006-\ttNum1040：\TBW}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum1006-\ttNum1041：\TBW}{cX[l]c}
 変数 & 内容 & 使用\\
 \ttNum1006 & & \\
 \ttNum1007 & & \\
@@ -74,6 +74,8 @@ $\cdots$ & $\cdots$ & \\
 
 \begin{multicollongtblr}[white]{\ttNum2001-\ttNum2800: 工具補正}{cX[l]c}
 変数 & 内容 & 使用\\
+\SetRow{unusingVariables}
+\ttNum2000 & null & \\
 \ttNum2001+xxx & 工具長補正 \ttNum xxx補正量 [xxx=1-200]（摩耗量0とした値） & ●\\
 \ttNum2201+xxx & 工具長補正 \ttNum xxx摩耗量 [xxx=1-200] & ●\\
 \ttNum2401+xxx & 工具径補正 \ttNum xxx補正量 [xxx=1-200]（摩耗量0とした値） & ●\\
@@ -219,7 +221,8 @@ $\cdots$ & $\cdots$ & \\
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-操作ディスプレイ（プログラム画面右側）に表示されたモーダル情報と異なる場合があるので注意
+操作ディスプレイ（プログラム画面右側）に表示された\index{モーダルじょうほう@モーダル情報}モーダル情報の\index{Tコード}{\ttfamily T}番号および\index{Mコード}{\ttfamily M}番号は、正しい番号が反映されない\index{バグ}バグがあるので注意\\
+\index{Hコード}{\ttfamily H}番号, \index{Dコード}{\ttfamily D}番号は反映されている
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -328,6 +331,12 @@ $\cdots$ & $\cdots$ & \\
 \SetRow{unusingVariables}
 \ttNum9000 & null & \\
 \SetRow{unusingVariables}
+$\cdots$ & $\cdots$ & \\
+\SetRow{unusingVariables}
+\ttNum9010 & null & \\
+\SetRow{unusingVariables}
+\ttNum9998 & null & \\
+\SetRow{unusingVariables}
 \ttNum9999 & null & \\
 \end{multicollongtblr}
 
@@ -361,7 +370,7 @@ $\cdots$ & $\cdots$ & \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum14000\,-\ttNum14999\TBW}
 
-\begin{multicollongtblr}[white]{\ttNum14001-\ttNum14001}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum14000-\ttNum14001}{cX[l]c}
 変数 & 内容 & 使用\\
 \SetRow{unusingVariables}
 \ttNum14000 & null &\\
