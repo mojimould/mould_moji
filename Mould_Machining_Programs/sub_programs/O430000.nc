@@ -156,7 +156,7 @@ IF[#423EQ2]GOTO014
 GOTO016
 N013 (if #423=1)
 M09 (coolant off)
-S6000
+S2599
 G90 G01 Z[#26+#600] F#650
 G04 X1.0 (wait 1.0s)
 M05 (spindle off)
@@ -224,19 +224,17 @@ END2
 
 N017
 M09 (coolant off)
-S6000
 
 N018
 G90 G43 G01 H#07 Z[#26+#600] F#650
 G90 G53 G01 Z0 F#650
 M05 (spindle off)
-S200
 GOTO999
 
 N800
 M09 (coolant off)
-S6000
-G04 X1.0s (wait 2.0s)
+S2599
+G04 X1.0 (wait 1.0s)
 M05 (spindle off)
 S200
 #3000=100 (are the arguments OK?)

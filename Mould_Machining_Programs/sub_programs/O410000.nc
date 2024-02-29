@@ -112,19 +112,17 @@ END1
 
 N990
 M09 (coolant off)
-S6000
 
 N991
 G90 G43 G01 H#07 Z[#26+#600] F#650
 G90 G53 G01 Z0 F#650
 M05 (spindle off)
-S200
 GOTO999
 
 
 N800
 M09 (coolant off)
-S6000
+S2599
 G04 X1.0 (wait 2.0s)
 M05 (spindle off)
 S200

@@ -3,7 +3,7 @@ O900003 (pause and check)
 
 N001
 M09 (coolant off)
-S6000
+S2599
 G90 G53 G01 Z0 F#650
 
 #33=#4012
