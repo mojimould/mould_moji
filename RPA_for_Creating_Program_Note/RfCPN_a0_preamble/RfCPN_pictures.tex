@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% MOULDCOODINATE %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\mouldCoordinate{%
+\newcommand\mouldCoordinate{%
 \begin{tikzpicture}[scale=1, every node/.style={scale=0.75}]
 % 値の計算
 \pgfmathsetmacro{\Ax}{9.6} %A:T_iのx座標
@@ -114,7 +114,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% MOULDWITHUKEITA %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\mouldwithukeita{%
+\newcommand\mouldwithukeita{%
 \begin{tikzpicture}[scale=1,
                     every node/.style={scale=0.5},
                     >={Latex[length=1mm, width=0.75mm]},]
