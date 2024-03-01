@@ -73,9 +73,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{使用変数\TBW}
 
-\paragraph*{\prgbox{O7000}}
-コモン変数(LHS):
-\ttNum500, \ttNum501, \ttNum504, \ttNum505, \ttNum506, \ttNum507, \ttNum512, \ttNum513, \ttNum514, \ttNum516, \ttNum517, \ttNum518, \ttNum519, \ttNum523, \ttNum524
+\begin{multicollongtblr}[white]{使用コモン変数：バンドルのプログラム}{ccX[l]}
+{\ttfamily O}番号 & \SetCell[c=2]{l}使用コモン変数\\
+\prgbox{O7000} & LHS & \ttNum500, \ttNum501, \ttNum504, \ttNum505, \ttNum506, \ttNum507, \ttNum512, \ttNum513, \ttNum514, \ttNum516, \ttNum517, \ttNum518,\newline
+                       \ttNum519, \ttNum523, \ttNum524\\
+\prgbox{O9006} & LHS & \ttNum137, \ttNum138, \ttNum139\\
+\SetCell[r=2]{c}
+\prgbox{O9020} & LHS & \ttNum149\\
+               & RHS & \ttNum101, \ttNum102\\
+\prgbox{O9100} & RHS & \ttNum504, \ttNum505, \ttNum507, \ttNum513, \ttNum514, \ttNum516, \ttNum517\\
+\prgbox{O9101} & RHS & \ttNum504, \ttNum506, \ttNum513, \ttNum514, \ttNum516, \ttNum517, \ttNum518\\
+\prgbox{O9102} & RHS & \ttNum504, \ttNum506, \ttNum507, \ttNum513, \ttNum514, \ttNum516, \ttNum517, \ttNum518\\
+\prgbox{O9103} & RHS & \ttNum516, \ttNum517, \ttNum519, \ttNum523, \ttNum524\\
+\end{multicollongtblr}
+
 
 \paragraph*{\prgbox{O9001}}
 システム変数:
@@ -85,12 +96,9 @@
 システム変数: \ttNum1001
 
 \paragraph*{\prgbox{O9006}}
-コモン変数(LHS): \ttNum137, \ttNum138, \ttNum139 \quad
 システム変数: \ttNum4003, \ttNum4107, \ttNum4111
 
 \paragraph*{\prgbox{O9020}}
-コモン変数(LHS): \ttNum149 \quad
-コモン変数(RHS): \ttNum101, \ttNum102 \quad
 システム変数: \ttNum1001
 
 \paragraph*{\prgbox{O9021}, \prgbox{O9022}}
@@ -101,24 +109,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\prgbox{O9100}-\prgbox{O9103}：自動工具長測定・工具破損検出}
 \begin{hosoku}\small
-コモン変数(RHS): \ttNum504, \ttNum505, \ttNum507, \ttNum513, \ttNum514, \ttNum516, \ttNum517\\
 システム変数(RHS): \ttNum4001, \ttNum4003, \ttNum4012, \ttNum4130, \ttNum5021, \ttNum5022, \ttNum5043, \ttNum5063, \ttNum5203\\
 システム変数(LHS): \ttNum100xx, \ttNum110xx
 \end{hosoku}
 
 \begin{hosoku}\small
-コモン変数(RHS): \ttNum504, \ttNum506, \ttNum513, \ttNum514, \ttNum516, \ttNum517, \ttNum518\\
 システム変数(RHS): \ttNum4001, \ttNum4003, \ttNum4111, \ttNum5021, \ttNum5022, \ttNum5023, \ttNum5043, \ttNum5063, \ttNum100xx, \ttNum110xx\\
 システム変数(LHS): \ttNum100xx
 \end{hosoku}
 
 \begin{hosoku}\small
-コモン変数(RHS): \ttNum504, \ttNum506, \ttNum507, \ttNum513, \ttNum514, \ttNum516, \ttNum517, \ttNum518\\
 システム変数: \ttNum4001, \ttNum4003, \ttNum4111, \ttNum5021, \ttNum5022, \ttNum5023, \ttNum5043, \ttNum5063, \ttNum100xx, \ttNum110xx
 \end{hosoku}
 
 \begin{hosoku}\small
-コモン変数(RHS): \ttNum516, \ttNum517, \ttNum519, \ttNum523, \ttNum524\\
 システム変数(RHS): \ttNum4001, \ttNum4003, \ttNum5021, \ttNum5022, \ttNum5041, \ttNum5042, \ttNum5043, \ttNum5061, \ttNum5062\\
 システム変数(LHS): \ttNum160xx, \ttNum170xx
 \end{hosoku}
