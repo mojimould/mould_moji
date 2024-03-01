@@ -6,24 +6,61 @@
 %% section H.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{作成したプログラム 一覧}
-\DMname において作成したプログラム（メインプログラムを除く）は以下のとおりである。\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection H.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{メインプログラムの例}
+\DMname において作成した\index{メインプログラム}メインプログラムは以下のとおりである
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{ここでいうメインプログラムとは、\index{せいひんばんごう@製品番号}製品場号と同一の\index{プログラムばんごう@プログラム番号}プログラム番号のものを指す。
+ただし、ここでは例として挙げているので、プログラム番号は製品番号のものではない。}。\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multicollongtblr}{作成したプログラム一覧：メインプログラム}{clX[l]}
+{\ttfamily O}番号 & \SetCell[c=2]{l}使用prg\\
+\SetCell[r=5]{c}
+\MainExOne & 芯出し & \MYOThickness\MXIWidth\MYIWidth\MXIface\\
+           & 通り芯 & \MXcenterline\MYcenterline\\
+           & \dimple & \DLone\\
+           & 加工 & \KTanmenRight\KGaisakuRLeft\KMizoConerLeft\KSotoMentoriRLeft\KUchiMentoriRLeft\\
+           & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
+\hline
+\SetCell[r=4]{c}
+\MainExTwo & 芯出し & \MXOThickness\MYOThickness\MXIWidth\MYIWidth\\
+           & \dimple & \DLone\\
+           & 加工 & \KTanmenRight\KMizoConerLeft\KSotoMentoriRLeft\KUchiMentoriRLeft\\
+           & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
+\end{multicollongtblr}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection H.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{サブプログラム}
+\DMname において作成した\index{サブプログラム}サブプログラムは以下のとおりである
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{ここでいうサブプログラムとは、\index{せいひんばんごう@製品番号}製品場号と同一の\index{プログラムばんごう@プログラム番号}プログラム番号以外のものを指す。}。\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{multicollongtblr}{作成したプログラム一覧：芯出し測定}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \MXOThickness & 測定 両側 外側中心$X$ & \OsensorOff\\
 \MYOThickness & 測定 両側 外側中心$Y$ & \OsensorOff\\
+\MXOface      & 測定 片側 溝中心$X$ & \OsensorOff\\
 \MXIWidth     & 測定 両側 内側中心$X$ & \OsensorOff\\
 \MYIWidth     & 測定 両側 内側中心$Y$ & \OsensorOff\\
 \MXIface      & 測定 片側 外削中心$X$ C面方向 & \OsensorOff\\
 \end{multicollongtblr}
 
-
+%\clearpage
 \begin{multicollongtblr}{作成したプログラム一覧：通り芯測定}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \MYcenterline & 測定 片側 通り芯$Y$ & \OsensorOff\\
-\MXcenterline & 測定 片側 通り芯$X$ $Z$方向 & \OsensorOff\\
+\MXcenterline & 測定 片側 通り芯$X$（$Z$方向測定） & \OsensorOff\\
 \end{multicollongtblr}
-
 
 \begin{multicollongtblr}{作成したプログラム一覧：加工（\dimple 以外）}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
@@ -36,7 +73,6 @@
 \KILeftAC   & 内側 左回り1周 中央上始まり & \\
 \end{multicollongtblr}
 
-
 \clearpage
 \begin{multicollongtblr}{作成したプログラム一覧：\dimple}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
@@ -48,7 +84,6 @@
 \DKLthreeAC & \dimple ：加工 AC内表面$X$ & \\
 \DKLthreeBD & \dimple ：加工 BD内表面$Y$ & \\
 \end{multicollongtblr}
-
 
 \begin{multicollongtblr}{作成したプログラム一覧：その他}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
@@ -63,7 +98,7 @@
 
 
 
-\clearpage
+\clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section G.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,8 +109,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MXOThickness %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MainEx：両外削・外面取・内面取・内面溝あり}
-\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/main_programs/\nameMainEx}
+\modcaptionof{lstlisting}{\MainExOne：両外削・外面取・内面取・内面溝あり}
+\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/main_programs/\nameMainExOne}
 
 
 \clearrightpage
