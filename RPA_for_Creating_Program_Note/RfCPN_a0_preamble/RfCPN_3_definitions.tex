@@ -1,0 +1,114 @@
+%!TEX root = ../RPA_for_Creating_Program_Note.tex
+
+
+
+\input{./RfCPN_a0_preamble/RfCPN_3_definitions_0_basic}
+
+%%%%% DECLARENEWLAYER %%%%%%%%%%%%%%%%%%%%
+\newcommand{\setallpageWatermark}[4]{%
+  \DeclareNewLayer[
+    foreground,
+    page,
+    contents={%
+      \begin{tikzpicture}[remember picture, overlay]
+        \node[rotate=#2, scale=#3, anchor=center, opacity=#4, text=lightgray] at (current page.center){\scshape#1};%
+      \end{tikzpicture}%
+    }%
+  ]{WatermarkLayer}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% REF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% AUTOREFNAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand{\subfigureautorefname}{\figureautorefname} % subfigure --> figure
+%\newcommand{\subtableautorefname}{\tableautorefname}
+%%%%% PAGEREF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\pageautoref}[1]{%
+  \ifthenelse{\equal{\pageref{#1}}{\thepage}}%
+    {\autoref{#1}}%
+    {\autoref{#1}~[p.\pageref{#1}]}%
+}
+\newcommand{\pageeqref}[1]{%
+  \ifthenelse{\equal{\pageref{#1}}{\thepage}}%
+    {\eqref{#1}}%
+    {\eqref{#1}~[p.\pageref{#1}]}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% tPart %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{tocwatermark}
+\setcounter{tocwatermark}{1}
+\def\tmppartnum{\Roman{tocwatermark}}%
+\newcommand{\tPart}[4][]{%
+  \addtocounter{tocwatermark}{1}
+  \def\tmppartnum{\Roman{tocwatermark}}%
+%  \def\temppartpage{part:\the\numexpr\value{part}+1}%
+  \begingroup
+  \clearrightpage
+%  \@openrightfalse
+  \let\oldnewpage\newpage
+  \let\newpage\relax
+  \part{#2\label{part:\thepart}}
+  \addtocontents{lop}{\protect\vspace*{-2.5mm}}%
+  \addcontentsline{lop}{part}{\protect\numberline{\thepart}#2}%
+  \ifx#1\relax\else%
+    \foreach \x in {#1}{\addcontentsline{\x}{part}{\protect\numberline{\thepart}#2}}%
+  \fi
+  \let\newpage\oldnewpage
+  \clearpage
+%  \@openrightfalse
+  \thispagestyle{emptydate}
+  \vspace*{0.1\textheight}%
+  \begin{tablePart}{#3}
+  #4
+  \end{tablePart}%
+%  \@openrightfalse
+  \@mainmattertrue\pagestyle{main}
+  \endgroup
+}
+%%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Appendixpart}{
+  \clearrightpage
+  \part*{\partname\ \thepart\hx の補遺\label{Apart:\thepart}}
+  \addcontentsline{toc}{part}{\partname\ \thepart\hx の補遺}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% AUTO LABELING %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR CHAPTER OR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\modHeadchapter}[2][]{%
+  \clearrightpage\clearleftpage
+  \let\newpage\relax
+  \ifx\@chapapp\appendixname
+    \chapter{#2\label{app:\thepart.\thechapter}}%
+  \else
+    \chapter{#2\label{chap:\thepart.\thechapter}}%
+  \fi
+  \ifx#1\relax\else%
+    \foreach \x in {#1}{\addcontentsline{\x}{chapter}{\protect\numberline{\thechapter}#2}}%
+  \fi
+  \thispagestyle{main}%
+  \indentspace%
+  \let\newpage\tmpnewpage
+}
+%%%%% FOR SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\modHeadsection}[2][]{%
+  \ifx\relax#1\relax
+    \section{#2\label{sec:\thepart.\thesection}}%
+  \else%
+    \section[#1]{#2\label{sec:\thepart.\thesection}}%
+  \fi
+}
+%%%%% CAPTOINOF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\abovecaptionskip}{0pt}
+\newcommand{\modcaptionof}[2]{%
+  \captionof{#1}{%
+    \csname #1name\endcsname\thechapter.%
+    \ifnum\value{#1}<10 0\fi
+      \arabic{#1}. #2}}
+
+\input{./RfCPN_a0_preamble/RfCPN_3_definitions_newenvironments}
+\input{./RfCPN_a0_preamble/RfCPN_3_definitions_newtcboxes}
+\input{./RfCPN_a0_preamble/RfCPN_3_definitions_newtcolorboxes}
+\input{./RfCPN_a0_preamble/RfCPN_3_definitions_others}

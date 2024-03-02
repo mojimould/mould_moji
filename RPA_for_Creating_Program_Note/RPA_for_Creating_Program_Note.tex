@@ -1,6 +1,16 @@
 %!TEX encoding = UTF-8 Unicode
 
-\input{RfCPN_a0_preamble/RfCPN_styles}
+%%%%% DOCUMENTCLASS %%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt, twoside, open=any]{scrbook}
+
+\makeatletter
+\input{./RfCPN_a0_preamble/RfCPN_1_packages}
+\addbibresource{./RfCPN_a0_preamble/RfCPN_2_reference.bib}
+\input{./RfCPN_a0_preamble/RfCPN_3_definitions}
+\input{./RfCPN_a0_preamble/RfCPN_4_styles}
+\input{./RfCPN_a0_preamble/RfCPN_5_pictures}
+\input{./RfCPN_a0_preamble/RfCPN_6_title}
+\makeatother
 
 \usepackage{refcheck}
 \newcommand{\thisdocumentversion}{version 0.1.0}

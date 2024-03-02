@@ -1,0 +1,31 @@
+%!TEX root = ../RPA_for_Creating_Program_Note.tex
+
+
+%%%%% NEWTCBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtcbox{\prgbox}{
+  enhanced,
+  nobeforeafter,
+  tcbox raise base,
+  boxrule=0.4pt,
+  top=0mm,
+  bottom=0mm,
+  right=0mm,
+  left=4mm,
+  arc=1pt,
+  boxsep=3pt,
+  left skip=2pt,
+  right skip=2pt,
+  before upper={\vphantom{dl}},
+  colframe=blue!50!black,
+  coltext=blue!25!black,
+  colback=blue!10!white,
+  fontupper=\ttfamily,
+  overlay={%
+    \begin{tcbclipinterior}\fill[blue!75!green!50!white] (frame.south west)
+    rectangle node[text=white, font=\sffamily\bfseries\tiny, rotate=90] {Prg} ([xshift=4mm]frame.north west);\end{tcbclipinterior}%
+  },
+}
+\robustify{\prgbox}
+\pdfstringdefDisableCommands{%
+  \def\prgbox#1{`#1'}%
+}

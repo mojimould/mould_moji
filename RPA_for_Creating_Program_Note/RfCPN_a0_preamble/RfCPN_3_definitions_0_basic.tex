@@ -1,0 +1,70 @@
+%!TEX root = ../RPA_for_Creating_Program_Note.tex
+
+
+\let\tmpcleardoublepage\cleardoublepage
+\let\tmpclearpage\clearpage
+\let\tmpnewpage\newpage
+
+%%%%% NEWIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\if@backmatter%\@backmattertrue
+\newif\if@frontmatter%\@frontmattertrue
+\newif\if@appendix%\@appendixfalse
+%%%%% DIMENSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifluatex
+  \usepackage{luatexja}
+  \ltjsetparameter{kanjiskip=0.0pt plus 0.4pt minus 0.5pt}
+  \ltjsetparameter{xkanjiskip=2.40555pt plus 1.0pt minus 1.0pt}
+  \newcommand{\hk}{\hspace{\ltjgetparameter{kanjiskip}}}
+  \newcommand{\hx}{\hspace{\ltjgetparameter{xkanjiskip}}}
+\else
+  \setlength{\kanjiskip}{0.0pt plus 0.4pt minus 0.5pt}
+  \setlength{\xkanjiskip}{2.40555pt plus 1.0pt minus 1.0pt}
+  \newcommand{\hk}{\hspace{\kanjiskip}}
+  \newcommand{\hx}{\hspace{\xkanjiskip}}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% CLEARLEFTPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\thispageNum}{\the\value{page}}
+\newcommand{\clearleftpage}{%
+  \if@twoside%
+    \ifodd\thispageNum%
+      \clearpage%
+    \else
+      \cleardoublepage%
+    \fi
+  \else%
+    \clearpage%
+  \fi
+}
+\newcommand{\clearrightpage}{%
+  \if@twoside%
+    \ifodd\thispageNum%
+      \cleardoublepage%
+    \else%
+      \clearpage%
+    \fi
+  \else%
+    \clearpage%
+  \fi
+}
+%%%%% DECLARENEWTOC %%%%%%%%%%%%%%%%%%%%
+\DeclareNewTOC[owner=\jobname, name=Part]{lop}
+\DeclareNewTOC[owner=\jobname, name=Column]{loC}
+%%%%% TO GET CHAPTER TITLE %%%%%%
+\newcommand\Chaptername{} % initialize \Chaptername
+\let\old@chapter\@chapter
+\def\@chapter[#1]#2{\gdef\Chaptername{#2}\old@chapter[#1]{#2}}
+%%%%% TO GET SECTION TITLE %%%%%%
+\newcommand\Sectionname{} % initialize \Sectionname
+\let\Sectionmark\sectionmark
+\def\sectionmark#1{\def\Sectionname{#1}\Sectionmark{#1}}
+%%%%% FOR REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Articlename}{論文}
+\newcommand{\Bookname}{書籍}
+\newcommand{\OnlineSourcename}{ウェブサイト}
+\defbibheading{articles}[\Articlename]{\section*{#1}}
+\defbibheading{online}[\OnlineSourcename]{\section*{#1}}
+\DeclareFieldFormat{urldate}{%
+  (\textbf{urlseen~}\thefield{urlyear}/\ifnum\thefield{urlmonth}<10 0\fi\thefield{urlmonth})%
+}

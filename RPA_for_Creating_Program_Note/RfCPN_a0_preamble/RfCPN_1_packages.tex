@@ -1,137 +1,76 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
-% Encoding and Language Settings
+%%% Encoding and Language Settings
 \usepackage[utf8]{inputenc} % Allows input of utf8 characters.
 \usepackage{babel} % Multilingual support for LaTeX.
 \usepackage[japanese]{pxbabel} % Japanese support for babel.
 \usepackage[style=english]{csquotes} % Context sensitive quotation facilities.
-
-% Font and Math Settings
+%%% Font and Math Settings
 %\usepackage[T1]{fontenc} % for _ in \jobname
 \usepackage{amsmath, amssymb} % Enhanced math support in LaTeX.
 \usepackage{eulervm} % Euler virtual math fonts.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% DOTFILL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\patchcmd{\@dottedtocline}{\hbox{.}}{\hbox{$\cdot$}}{}{}
-% Layout and Table Settings
+%%% Layout and Table Settings
 \usepackage{geometry} % Provides an easy and flexible user interface to customize page layout.
 \usepackage{array} % Extends array and tabular environments.
-\usepackage{tabularray} % Allows tables to break across pages.
-\UseTblrLibrary{booktabs, diagbox}
 \usepackage{colortbl} % Adds color to LaTeX tables.
-
-% Graphics and Color Settings
+\usepackage{tabularray} % Allows tables to break across pages.
+%%% Graphics and Color Settings
 \usepackage[dvipsnames]{xcolor} % Provides driver-independent color extensions for LaTeX and pdfLaTeX.
 %%% tikz, pgf %%%
 \def\pgfsysdriver{pgfsys-dvipdfmx.def} % Specifies the driver for PGF, a lower-level language for creating graphics.
 \usepackage{pgfplots} % A tool to create 2D and 3D plots in LaTeX.
-\pgfplotsset{compat=1.18} % Specifies the version of pgfplots to use for compatibility.
-
-% Box Settings
+%\pgfplotsset{compat=1.18} % Specifies the version of pgfplots to use for compatibility.
+%%% Box Settings
 \usepackage[most]{tcolorbox} % Provides an environment for colored and framed text boxes with a heading line.
 \usepackage{tikzpagenodes}
-
-% Bibliography Settings
+%%% Bibliography Settings
 \usepackage[backend=biber, style=numeric-comp, natbib=true]{biblatex} % references
-\addbibresource{./RfCPN_a0_preamble/RfCPN_reference.bib}
-
-% List Settings
+%%% List Settings
 \usepackage{enumitem} % Control layout of itemize, enumerate, description.
-
-% Footnote
+%%% Footnote
 \usepackage{footnotehyper} % Improve on LaTeX's footnote handling.
-
-% Make index
+%%% Make index
 \usepackage{makeidx}
 \makeindex
-
-% Hyperlink Settings
+%%% Hyperlink Settings
 \usepackage[dvipdfmx]{hyperref} % Adds support for hyperlinks.
 \usepackage{pxjahyper} % Adjusts hyperref for pLaTeX and upLaTeX.
-
-% Header and Footer Settings
+%%% Header and Footer Settings
 \usepackage{scrlayer-fancyhdr} % Combines the features of fancyhdr with KOMA-Script's scrlayer.
-
-% Date and Time
+%%% Date and Time
 \usepackage{datetime} % Date and time handling.
 \usepackage{bxjaholiday} % Support for Japanese holidays.
-
-% Page Layout
+%%% Page Layout
 \usepackage{lastpage} % Reference last page for Page N of M type footers.
 \usepackage{pdflscape} % Make landscape pages display as landscape.
 \usepackage{afterpage} % Execute command after the next page break.
-
-% Table of Contents and Headers
+%%% Table of Contents and Headers
 \usepackage{titletoc} % Alternative headings for toc/lof/lot.
 \usepackage{appendix} % Extra control of appendices.
-
-% Caption
+%%% Caption
 \usepackage{caption} % Customizes captions in floating environments.
 %\usepackage{subcaption} % Support for sub-captions.
-
-% Line Spacing
+%%% Line Spacing
 \usepackage{setspace} % Set space between lines.
-
-% Citation
+%%% Citation
 %\usepackage{cite} % Improved citation handling.
 %\usepackage{cleveref} % Intelligent cross-referencing.
-
-% Conditional Processing
+%%% Conditional Processing
 \usepackage{ifthen} % Conditional commands.
-
-% Loop
+%%% Loop
 \usepackage{pgffor} % Foreach loop structure.
-
-% Arrow
+%%% Arrow
 \usepackage{extarrows} % Extra Arrows beyond those provided in AMSmath.
-
-% Units
+%%% Units
 \usepackage{units} % Typeset units.
-
-% Box Adjustment
+%%% Box Adjustment
 \usepackage{adjustbox} % Graphics package-alike macros for "general" boxes.
-
-%
+%%%
 \usepackage{subfiles}
-
-% List Display
+%%% List Display
 \usepackage{jvlisting} % For including code listings with Japanese comments.
-
-% Other
+%%% Other
 \usepackage{scrhack} % Fix koma-script interaction with other packages.
 
-%%%%% TIKZ LIBRARY etc %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Arrows
-%\usetikzlibrary{arrows} % Arrow tip library.
-\usetikzlibrary{arrows.meta} % Advanced arrow tip library.
-% Calculations
-\usetikzlibrary{calc} % Coordinate calculations.
-% Chains
-%\usetikzlibrary{chains} % Coordinate calculations.
-% Decorations
-%\usetikzlibrary{decorations} % General decoration library.
-%\usetikzlibrary{decorations.fractals} % Fractal decorations.
-%\usetikzlibrary{decorations.markings} % Arbitrary markings on paths.
-%\usetikzlibrary{decorations.pathmorphing} % "Morphing" decorations.
-%\usetikzlibrary{decorations.shapes} % Shape decorations.
-%\usetikzlibrary{decorations.text} % Text decorations.
-%\usepgfmodule{decorations} % Decoration library module.
-% Matrix
-%\usetikzlibrary{matrix} % Matrix library.
-% Plot Marks
-%\usetikzlibrary{plotmarks} % Plot mark library.
-% Positioning
-%\usetikzlibrary{positioning} % Improved positioning of nodes.
-% Shadows
-%\usetikzlibrary{shadows} % Shadow library.
-% Shapes
-\usetikzlibrary{shapes} % Shape library.
-% Trees
-%\usetikzlibrary{trees} % Tree library.
-% tcolorbox Libraries
-\tcbuselibrary{listings} % Enables the use of listings within tcolorboxes.
-\tcbuselibrary{breakable} % Allows tcolorboxes to break across pages.
-%\tcbuselibrary{skins} % Provides additional skins to customize the appearance of tcolorboxes.
-%\tcbuselibrary{theorems} % Provides theorem environments within tcolorboxes.
+%%%%% LIBRARY and MODULE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./RfCPN_a0_preamble/RfCPN_1_packages_library_module}

@@ -1,9 +1,7 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% GEOMETRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \geometry{
   a4paper, % paper size
   centering,
@@ -14,9 +12,7 @@
   top=15.0truemm,
   bottom=-0.5truemm,
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% HEYPERSETUP %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hypersetup{
 %  pdfcreationdate=date,
 %  pdfcreator={upLaTeX with hyperref}, % creator for PDF subjct field
@@ -26,6 +22,9 @@
   pdfkeywords={
     mold,
     mould,
+    G-code,
+    NC program,
+    Machining center,
     RDB,
     RDBS,
     RPA,
@@ -46,23 +45,66 @@
   urlcolor=ai,         % color of urls
   citecolor=sora,      % color of citation links
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% DISPLAYBREAK %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \allowdisplaybreaks
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% UNIT LENGTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\unitlength}{1pt}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% LINESPREAD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \linespread{1.15}\selectfont
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% PARINDENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\indentspace}{\setlength\parindent{11pt}}
 \indentspace
 %%%%% EQUATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\theequation}{\thesection.\arabic{equation}}
 \@addtoreset{equation}{section}
+%%%%% FOR FOOTNOTE %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand*{\footnoteautorefname}{脚注}
+\interfootnotelinepenalty=10000
+\counterwithout{footnote}{chapter}
+\def\@makefnmark{\hbox{}\hbox{\@textsuperscript{\normalfont\@thefnmark}}\hbox{}}
+\deffootnote[1em]{1em}{1em}{\textsuperscript{\thefootnotemark}}
+\renewcommand\footnoterule{%
+  \kern3pt
+  \hrule\@width.75\columnwidth
+  \kern2.6pt
+}
+\makesavenoteenv{tablePart}
+\makesavenoteenv{hosoku}
+\makesavenoteenv{Column}
+%%%%% SETLIST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlist[enumerate]{listparindent=\parindent, parsep=0pt, partopsep=0pt, topsep=3pt, itemsep=3pt, leftmargin=*}
+\setlist[enumerate, 1]{leftmargin=\leftmargini}
+%%%%% CAPTION STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup[figure]{%
+  width=.9\textwidth,
+  format=hang,
+  labelfont={bf, sf},
+  labelsep={colon},
+  labelformat=simple,
+  aboveskip=3pt,
+%  font={small},
+}
+\captionsetup[lstlisting]{
+  justification=raggedright,
+  singlelinecheck=false,
+  position=above,
+  aboveskip=1.1pt,
+  belowskip=0pt,
+  labelformat={empty},
+  labelfont={bf, sf},
+  labelsep={space},
+  font={bf, large, sf},
+  hypcap=false,
+}
+\captionsetup[table]{
+  justification=raggedright,
+  singlelinecheck=false,
+  position=above,
+  aboveskip=4pt,
+  belowskip=5pt,
+  labelformat={empty},
+  labelfont={bf, sf},
+  labelsep={space},
+  font={bf, large, sf},
+  hypcap=false,
+}
