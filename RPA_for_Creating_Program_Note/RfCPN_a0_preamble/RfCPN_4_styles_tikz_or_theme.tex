@@ -27,8 +27,26 @@
 %  every right delimiter/.style={xshift=-.5em},
 %  bmatrix/.style={matrix of math nodes, left delimiter=[, right delimiter=],},
 }
-%%%%% TCBSET %%%%%%%%%%%%%%%%%%%%
+
+%%%%% FOR TCBOX %%%%%%%%%%%%%%%%%%%%
 \tcbset{%
+  commonbox/.style={%
+    enhanced,
+    nobeforeafter,
+    tcbox raise base,
+    boxrule=0.4pt,
+    top=0mm,
+    bottom=0mm,
+    right=0mm,
+    left=4mm,
+    arc=1pt,
+    boxsep=3pt,
+    left skip=2pt,
+    right skip=2pt,
+    before upper={\vphantom{dl}},
+    fontupper=\ttfamily,
+  },
+%%%%% FOR TCOLORBOX %%%%%%%%%%%%%%%%%%%%
   tcbcommon/.style={%
     before upper={%
       \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
