@@ -5,12 +5,31 @@
 
 \makeatletter
 \input{./RfCPN_a0_preamble/RfCPN_1_packages}
+\input{./RfCPN_a0_preamble/RfCPN_1_packages_library_module}
 \addbibresource{./RfCPN_a0_preamble/RfCPN_2_reference.bib}
-\input{./RfCPN_a0_preamble/RfCPN_3_definitions}
-\input{./RfCPN_a0_preamble/RfCPN_4_styles}
+
+\input{./RfCPN_a0_preamble/RfCPN_3_definitions_0_basic}
+\input{./RfCPN_a0_preamble/RfCPN_3_definitions_newcommand_simple}
+\input{./RfCPN_a0_preamble/RfCPN_3_definitions_newcommand}
+\input{./RfCPN_a0_preamble/RfCPN_3_definitions_newenvironments}
+\input{./RfCPN_a0_preamble/RfCPN_3_definitions_newtcboxes}
+\input{./RfCPN_a0_preamble/RfCPN_3_definitions_newtcolorboxes}
+
+\input{./RfCPN_a0_preamble/RfCPN_4_styles_0_basic}
+\input{./RfCPN_a0_preamble/RfCPN_4_styles_pagestyles}
+\input{./RfCPN_a0_preamble/RfCPN_4_styles_list_toc}
+\input{./RfCPN_a0_preamble/RfCPN_4_styles_list_other}
+\input{./RfCPN_a0_preamble/RfCPN_4_styles_components}
+\input{./RfCPN_a0_preamble/RfCPN_4_styles_listlistings}
+\input{./RfCPN_a0_preamble/RfCPN_4_styles_tikz_or_theme}
+
 \input{./RfCPN_a0_preamble/RfCPN_5_pictures}
 \input{./RfCPN_a0_preamble/RfCPN_6_title}
 \makeatother
+\setlength\baselineskip{16pt}
+\setlength\normalbaselineskip{\baselineskip}
+\let\cleardoublepage\tmpcleardoublepage
+\let\clearpage\tmpclearpage
 
 \usepackage{refcheck}
 \newcommand{\thisdocumentversion}{version 0.1.0}
@@ -23,66 +42,24 @@
 %\RequirePackage{plautopatch}
 
 \begin{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% TITLE and   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% FRONTMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TITLE and FRONTMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{RfCPN_a1_front_and_backmatter/RfCPN_frontmatter}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Part Work Flow     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MAINMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subfile{./RfCPN_part/RfCPN_p1_Workflow}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Part Rules    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subfile{./RfCPN_part/RfCPN_p2_Rules}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Part Requirement Definition %%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subfile{./RfCPN_part/RfCPN_p3_Requirement_Definition}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Part Standards %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subfile{./RfCPN_part/RfCPN_p4_Standards}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Part Analytical Calculation %%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subfile{./RfCPN_part/RfCPN_p5_Analytical_Calculation}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Part Numerical Calculation %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subfile{./RfCPN_part/RfCPN_p6_Numerical_Calculation}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Part MANUAL   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subfile{./RfCPN_part/RfCPN_p7_Programs_Manual}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Part Work Procedure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subfile{./RfCPN_part/RfCPN_p8_Work_Procedure}
 \addtocontents{lop}{\end{lopBox}}%
 
-
 \addtocontents{lop}{\begin{lopBox}{第2編：作業の自動化に向けて}}%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Part RDB %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subfile{./RfCPN_part/RfCPN_p9_Relational_Database}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% BACKMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subfile{RfCPN_a1_front_and_backmatter/RfCPN_backmatter}
 
 \end{document}

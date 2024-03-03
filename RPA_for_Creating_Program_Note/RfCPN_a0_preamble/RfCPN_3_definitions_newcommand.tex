@@ -1,9 +1,6 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
-
-\input{./RfCPN_a0_preamble/RfCPN_3_definitions_0_basic}
-
 %%%%% DECLARENEWLAYER %%%%%%%%%%%%%%%%%%%%
 \newcommand{\setallpageWatermark}[4]{%
   \DeclareNewLayer[
@@ -16,9 +13,6 @@
     }%
   ]{WatermarkLayer}
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% REF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% AUTOREFNAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\newcommand{\subfigureautorefname}{\figureautorefname} % subfigure --> figure
 %\newcommand{\subtableautorefname}{\tableautorefname}
@@ -33,9 +27,6 @@
     {\eqref{#1}}%
     {\eqref{#1}~[p.\pageref{#1}]}%
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% tPart %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcounter{tocwatermark}
 \setcounter{tocwatermark}{1}
@@ -107,8 +98,3 @@
     \csname #1name\endcsname\thechapter.%
     \ifnum\value{#1}<10 0\fi
       \arabic{#1}. #2}}
-
-\input{./RfCPN_a0_preamble/RfCPN_3_definitions_newenvironments}
-\input{./RfCPN_a0_preamble/RfCPN_3_definitions_newtcboxes}
-\input{./RfCPN_a0_preamble/RfCPN_3_definitions_newtcolorboxes}
-\input{./RfCPN_a0_preamble/RfCPN_3_definitions_others}
