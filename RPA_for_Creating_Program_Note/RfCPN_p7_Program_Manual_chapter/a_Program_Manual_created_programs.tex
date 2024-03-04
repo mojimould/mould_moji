@@ -1,6 +1,7 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
-\setcounter{lstlisting}{0}
 
+
+\setcounter{lstlisting}{0}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section H.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -13,10 +14,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{メインプログラムの例}
 \DMname において作成した\index{メインプログラム}メインプログラムは以下のとおりである
-%% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{ここでいうメインプログラムとは、\index{せいひんばんごう@製品番号}製品場号と同一の\index{プログラムばんごう@プログラム番号}プログラム番号のものを指す。
-ただし、ここでは例として挙げているので、プログラム番号は製品番号のものではない。}。\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+なお、ここでは\MMname の\expandafterindex{No.1パレット（\MMname）@No.1パレット（\MMname）}No.1パレットで加工を行うものを対象とする
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+ここでいうメインプログラムとは、\index{せいひんばんごう@製品番号}製品場号と同一の\index{プログラムばんごう@プログラム番号}プログラム番号のものを指す。
+ただし、ここでは例として挙げているので、\pageautoref{subsec:notopenwork}に則り、プログラム番号は本来のものから変更している。
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{multicollongtblr}{作成したプログラム一覧：メインプログラム}{clX[l]}
 {\ttfamily O}番号 & \SetCell[c=2]{l}使用prg\\
@@ -39,11 +47,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection H.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{サブプログラム}
+\subsection{サブプログラム 一覧}
 \DMname において作成した\index{サブプログラム}サブプログラムは以下のとおりである
-%% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{ここでいうサブプログラムとは、\index{せいひんばんごう@製品番号}製品場号と同一の\index{プログラムばんごう@プログラム番号}プログラム番号以外のものを指す。}。\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+ここでいうサブプログラムとは、\index{せいひんばんごう@製品番号}製品場号と同一の\index{プログラムばんごう@プログラム番号}プログラム番号以外のものを指す。
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{multicollongtblr}{作成したプログラム一覧：芯出し測定}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
@@ -103,14 +117,23 @@
 %% section G.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{メインプログラムの例}
-\index{メインプログラム}メインプログラムについては、個々の明細の情報（社内機密情報）を含む。
+\index{メインプログラム}メインプログラムについては、個々の\index{めいさい@明細}明細の情報（社内機密情報）を含む。
 そのため、\pageautoref{subsec:notopenwork}に則り、記載は代表的・典型的なものに留める。\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \MXOThickness %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MainExOne %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MainExOne：両外削・外面取・内面取・内面溝あり}
+\modcaptionof{lstlisting}{\MainExOne：両外削・外面取・内面取・\dimple あり}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/main_programs/\nameMainExOne}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MainExTwo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MainExTwo：外面取・内面取・\dimple あり\TBW}
+%\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/main_programs/\nameMainExTwo}
+
 
 
 \clearrightpage
@@ -138,7 +161,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MYOThickness %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MXOface\,:測定 片側 溝中心\texorpdfstring{$X$}{X}\TBW}
+\modcaptionof{lstlisting}{\MXOface\,:測定 片側 溝中心\texorpdfstring{$X$}{X}（A側外面側測定）\TBW}
 %\lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameMXOface.nc}
 
 
@@ -162,7 +185,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MXface %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MXIface\,:測定 片側 外削中心\texorpdfstring{$X$}{X} C面方向}
+\modcaptionof{lstlisting}{\MXIface\,:測定 片側 外削中心\texorpdfstring{$X$}{X}（C側内面測定）}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameMXIface.nc}
 
 
@@ -170,7 +193,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MYcenterline %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MYcenterline\,:測定 片側 通り芯\texorpdfstring{$Y$}{Y}}
+\modcaptionof{lstlisting}{\MYcenterline\,:測定 片側 通り芯\texorpdfstring{$Y$}{Y}（B側外削面測定）}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameMYcenterline.nc}
 
 
@@ -178,7 +201,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MXcenterline  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MXcenterline\,:測定 片側 通り芯\texorpdfstring{$X$}{X} $Z$方向}
+\modcaptionof{lstlisting}{\MXcenterline\,:測定 片側 通り芯\texorpdfstring{$X$}{X}（C側外削面$Z$測定）}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameMXcenterline.nc}
 
 
@@ -240,7 +263,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KILeftAC\,:内側 左回り1周 中央上始まり \texttt{G41}工具径補正あり}
+\modcaptionof{lstlisting}{\KILeftAC\,:内側 左回り1周 中央上始まり}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameKILeftAC.nc}
 
 
@@ -323,7 +346,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \OpauseCheck %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\OpauseCheck\,:移動 加工後確認用：\texorpdfstring{$\boldsymbol{90^\circ}$}{90°}回転 扉前一時停止}
+\modcaptionof{lstlisting}{\OpauseCheck\,：\texorpdfstring{$\boldsymbol{90^\circ}$}{90°}回転 扉前一時停止}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameOpauseCheck.nc}
 
 
