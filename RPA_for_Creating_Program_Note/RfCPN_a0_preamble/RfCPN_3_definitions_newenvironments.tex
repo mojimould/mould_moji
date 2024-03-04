@@ -44,13 +44,14 @@
 \newenvironment{multicollongtblr}[3][gray!15!]{%
 \captionsetup[table]{justification=raggedright}%
 \modcaptionof{table}{#2}%
-\begin{longtblr}[
+\begin{longtblr}[%
   theme=commonlongtblr,
   entry=none,
   label=none,
   presep=0pt,
   postsep=5pt,
 ]{%
+  width=\linewidth,
   hlines,
   vlines,
   hline{2}={0.75pt},
