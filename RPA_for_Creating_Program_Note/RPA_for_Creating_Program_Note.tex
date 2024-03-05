@@ -25,6 +25,7 @@
 
 \input{./RfCPN_a0_preamble/RfCPN_5_pictures}
 \input{./RfCPN_a0_preamble/RfCPN_6_title}
+\makeindex
 \makeatother
 \setlength\baselineskip{16pt}
 \setlength\normalbaselineskip{\baselineskip}
@@ -46,6 +47,7 @@
 \input{RfCPN_a1_front_and_backmatter/RfCPN_frontmatter}
 
 %% MAINMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{lop}{\begin{lopBox}{第1編：マシニング稼働に向けて}}%
 \subfile{./RfCPN_part/RfCPN_p1_Workflow}
 \subfile{./RfCPN_part/RfCPN_p2_Rules}
 \subfile{./RfCPN_part/RfCPN_p3_Requirement_Definition}
@@ -58,6 +60,7 @@
 
 \addtocontents{lop}{\begin{lopBox}{第2編：作業の自動化に向けて}}%
 \subfile{./RfCPN_part/RfCPN_p9_Relational_Database}
+\addtocontents{lop}{\end{lopBox}}%
 
 %% BACKMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subfile{RfCPN_a1_front_and_backmatter/RfCPN_backmatter}

@@ -18,20 +18,19 @@
 \usepackage[dvipsnames]{xcolor} % Provides driver-independent color extensions for LaTeX and pdfLaTeX.
 %%% tikz, pgf %%%
 \def\pgfsysdriver{pgfsys-dvipdfmx.def} % Specifies the driver for PGF, a lower-level language for creating graphics.
-\usepackage{pgfplots} % A tool to create 2D and 3D plots in LaTeX.
+%\usepackage{pgfplots} % A tool to create 2D and 3D plots in LaTeX.
 %\pgfplotsset{compat=1.18} % Specifies the version of pgfplots to use for compatibility.
-%%% Box Settings
-\usepackage[most]{tcolorbox} % Provides an environment for colored and framed text boxes with a heading line. includeing pgf, tikz
+%%% Box Settings %%%
+\usepackage[most]{tcolorbox} % includeing pgf, tikz
 \usepackage{tikzpagenodes}
 %%% Bibliography Settings
 \usepackage[backend=biber, style=numeric-comp, natbib=true]{biblatex} % references
 %%% List Settings
 \usepackage{enumitem} % Control layout of itemize, enumerate, description.
 %%% Footnote
-\usepackage{footnotehyper} % Improve on LaTeX's footnote handling.
+\usepackage{footnotehyper} % Improve on footnote handling.
 %%% Make index
 \usepackage{makeidx}
-\makeindex
 %%% Hyperlink Settings
 \usepackage[dvipdfmx]{hyperref} % Adds support for hyperlinks.
 \usepackage{pxjahyper} % Adjusts hyperref for pLaTeX and upLaTeX.
@@ -49,12 +48,8 @@
 \usepackage{appendix} % Extra control of appendices.
 %%% Caption
 \usepackage{caption} % Customizes captions in floating environments.
-%\usepackage{subcaption} % Support for sub-captions.
 %%% Line Spacing
 \usepackage{setspace} % Set space between lines.
-%%% Citation
-%\usepackage{cite} % Improved citation handling.
-%\usepackage{cleveref} % Intelligent cross-referencing.
 %%% Conditional Processing
 \usepackage{ifthen} % Conditional commands.
 %%% Loop
