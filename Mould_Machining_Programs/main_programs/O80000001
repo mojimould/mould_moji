@@ -290,6 +290,8 @@ G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
 T02 (tanmen)
 M06 (tool exchange)
+G43 H02
+(hosei KouguChou: #02)
 
 M11 (B-axis unclamp)
 G90 G57 G00 B-0.642
@@ -324,6 +326,8 @@ G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
 T16 (gaisaku)
 M06 (tool exchange)
+G43 H16
+(hosei KouguChou: #16)
 
 M11 (B-axis unclamp)
 G90 G56 G00 B-0.642
@@ -331,16 +335,16 @@ G90 G56 G00 B-0.642
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G56 G65 P420000 D16. R18. X180.95 Y180.95 U185. V183. Z500.016 K32.0 M12.05 W8.05
+G56 G65 P420000 D16. X180.95 Y180.95 U185. V183. Z500.016 R18. K32.0 M12.05 W8.05
 (O420000: Sotogawa 1shuu Corner R, ar HidariMawari)
 (default: M=0, W=0)
-(D: hosei kouguKei&Chou #)
-(R: corner R)
+(D: kougu #)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
 (U: AC gaiKei)
 (V: BD gaiKei)
 (Z: Top sai_furiwake)
+(R: corner R)
 (K: gaisaku Length)
 (M*: mizoIchi)
 (W*: mizoHaba)
