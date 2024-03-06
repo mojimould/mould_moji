@@ -26,9 +26,9 @@
 \index{テーブル}テーブルを$-\theta$だけ回転させて調整したトップ・ボトム側の\index{さいふりわけちょう@再振分長}振分長$f'_\mathrm T$, $f'_\mathrm B$は、\pageeqref{eq:saifuriwake}より、
 \begin{align*}
   \text{トップ端：}\quad
-  & f_\mathrm T' = f_\mathrm T+\varDelta_x'\!\sin\theta\ ,\\
+  & \HLbox{f_\mathrm T' = f_\mathrm T+\varDelta_x'\!\sin\theta}\ ,\\
   \text{ボトム端：}\quad
-  & f_\mathrm B' = (f_\mathrm T+f_\mathrm B)-f_\mathrm T'\ .
+  & \HLbox{f_\mathrm B' = (f_\mathrm T+f_\mathrm B)-f_\mathrm T'}\ .
 \end{align*}
 
 
@@ -39,9 +39,9 @@
 テーブルを$-\theta$だけ回転させた後の\index{ジグ}ジグ（長さ$2l$）からの\index{さいはりだしちょう@再張出長}張出長に換算すると、それぞれ
 \begin{align*}
   \text{トップ端：}\quad
-  & f_\mathrm T'-l\ ,\\
+  & \HLbox{f_\mathrm T'-l}\ ,\\
   \text{ボトム端：}\quad
-  & f_\mathrm B'-l\ .
+  & \HLbox{f_\mathrm B'-l}\ .
 \end{align*}
 
 
@@ -51,7 +51,7 @@
 \subsection{均等振分角}
 トップ側とボトム側の振分長が均等かつ平行になるときの\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}回転角$\theta'$は、\pageeqref{eq:saifuriwakeangle}より、
 \begin{align*}
-  \sin\theta' = \frac{f_d}{\varDelta_x'}\ .
+  \theta' = \HLbox{\sin^{-1}\frac{f_d}{\varDelta_x'}}\ .
 \end{align*}
 
 
@@ -69,7 +69,7 @@
 \subsection{外側中心\texorpdfstring{$Y$}{Y}}
 \index{ジグ}ジグの底の$Y$座標を$\varDelta_y$とすると、\index{そとがわちゅうしんY@外側中心$Y$}外側中心$Y$座標は、
 \begin{align*}
-  \varDelta_y+\frac{W_y}2\ .
+  \HLbox{\varDelta_y+\frac{W_y}2}\ .
 \end{align*}
 
 
@@ -79,10 +79,14 @@
 \subsection{端面の外側中心\texorpdfstring{$X$}{X}}
 トップ端およびボトム端における（$-\theta$回転後の）\index{そとがわちゅうしん（たんめん）@外側中心（端面）}外側中心の$X$位置は、\pageeqref{eq:tableTc}, \pageeqref{eq:tableBc}よりそれぞれ、
 \begin{align*}
-  \text{トップ端：}\quad
-  & \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta_x'\cos\theta~,\\
-  \text{ボトム端：}\quad
-  & \varDelta_x'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2\ .
+  \text{トップ側：}\quad
+  & \HLbox{%
+      \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta_x'\cos\theta%
+    }~,\\
+  \text{ボトム側：}\quad
+  & \HLbox{%
+      \varDelta_x'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2%
+    }\ .
 \end{align*}
 
 
@@ -92,10 +96,10 @@
 \subsection{端面の湾曲中心\texorpdfstring{$X$}{X}}
 トップ端およびボトム端における（$-\theta$回転後の）\index{わんきょくちゅうしん（たんめん）@湾曲中心（端面）}湾曲中心の$X$値は、\pageeqref{eq:tableTRc}, \pageeqref{eq:tableBRc}よりそれぞれ、
 \begin{align*}
-  \text{トップ端：}\quad
-  & \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\varDelta_x'\!\cos\theta~,\\
-  \text{ボトム端：}\quad
-  & \varDelta_x'\!\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}~.
+  \text{トップ側：}\quad
+  & \HLbox{\sqrt{R_\mathrm c^2-f_\mathrm T^2}-\varDelta_x'\!\cos\theta}~,\\
+  \text{ボトム側：}\quad
+  & \HLbox{\varDelta_x'\!\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}}~.
 \end{align*}
 
 
@@ -120,16 +124,21 @@
 \subsection{外削中心：ボトムA面肉厚基準の場合}
 \index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした\index{ボトムがわのがいさくちゅうしん@ボトム側の外削中心}ボトム側外削中心$\mathfrak B_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterBt}より、
 \begin{align*}
-  \varDelta_x'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
-  -\frac{w_\mathrm B}2-\tau_\mathrm B+\frac{\mathfrak W_\mathrm B}2\ .
+  \HLbox{%
+    \varDelta_x'\cos\theta
+    -\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
+    -\frac{w_\mathrm B}2
+    -\tau_\mathrm B
+    +\frac{\mathfrak W_\mathrm B}2
+  }\ .
 \end{align*}
 このとき、計測したA側内面b$_\mathrm o'$の$X$座標が\pageeqref{eq:gaisakucenterBr}となるように、原点$\mathfrak B_\mathrm c'$を定める。
 \begin{align*}
-  -\left(\frac{\mathfrak W_\mathrm B}2-\tau_\mathrm B+\mu\right).
+  \HLbox{-\left(\frac{\mathfrak W_\mathrm B}2-\tau_\mathrm B+\mu\right)}.
 \end{align*}
 トップ側にも外削がある場合、計測で定めた$\mathfrak B_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Bx}$および\index{とおりしん@通り芯}通り芯$T_x$を用いて\pageeqref{eq:BbasedTx}で与えられる。
 \begin{align*}
-  -\mathcal G_{Bx}+T_x\ .
+  \HLbox{-\mathcal G_{Bx}+T_x}\ .
 \end{align*}
 
 
@@ -139,16 +148,21 @@
 \subsection{外削中心：トップA面肉厚基準の場合}
 \index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした\index{トップがわのがいさくちゅうしん@トップ側の外削中心}トップ側外削中心$\mathfrak T_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterTt}より、
 \begin{align*}
-  \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta_x'\cos\theta
-  +\frac{w_\mathrm T}2+\tau_\mathrm T-\frac{\mathfrak W_\mathrm T}2\ .
+  \HLbox{%
+    \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2
+    -\varDelta_x'\cos\theta
+    +\frac{w_\mathrm T}2
+    +\tau_\mathrm T
+    -\frac{\mathfrak W_\mathrm T}2
+  }\ .
 \end{align*}
 このとき、計測したA側内面t$_\mathrm o'$の$X$座標が\pageeqref{eq:gaisakucenterTr}となるように、原点$\mathfrak T_\mathrm c'$を定める。
 \begin{align*}
-  \frac{\mathfrak W_\mathrm T}2-\tau_\mathrm T+\mu~.
+  \HLbox{\frac{\mathfrak W_\mathrm T}2-\tau_\mathrm T+\mu}~.
 \end{align*}
 ボトム側にも外削がある場合、計測で定めた$\mathfrak T_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Tx}$および\index{とおりしん@通り芯}通り芯$T_x$を用いて\pageeqref{eq:TbasedTx}で与えられる。
 \begin{align*}
-  -\mathcal G_{Tx}+T_x
+  \HLbox{-\mathcal G_{Tx}+T_x}
 \end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -162,7 +176,7 @@
 \subsubsection{ボトムの外削}
 ボトム側の外削における\index{こうぐ@工具}工具の先端の$Z$座標は、\index{ボトムがわのがいさくちょう@ボトム側の外削長}ボトム側の外削長を$h_\mathrm B$として、
 \begin{align*}
-  f_\mathrm B'-h_\mathrm B\ .
+  \HLbox{f_\mathrm B'-h_\mathrm B}\ .
 \end{align*}
 
 \clearpage
@@ -172,8 +186,8 @@
 \subsubsection{トップの外削}
 トップ側の外削における工具の先端の$Z$座標は、\index{トップがわのがいさくちょう@トップ側の外削長}トップ側の外削長, \index{みぞいち@溝位置}溝位置, \index{みぞはば@溝幅}溝幅をそれぞれ$h_\mathrm T$, $\kappa_p$, $\kappa_w$として、
 \begin{alignat*}{3}
-  & f_\mathrm T'-h_\mathrm T & \quad & \Big(\text{if}~h_\mathrm T > \kappa_p+\kappa_w\Big)\\
-  & f_\mathrm T'-\left(\kappa_p+1[\mathrm{mm}]\right) & \quad  & \Big(\text{if}~h_\mathrm T = \kappa_p+\kappa_w\Big)
+  & \HLbox{f_\mathrm T'-h_\mathrm T} & \quad & \Big(\text{if}~h_\mathrm T > \kappa_p+\kappa_w\Big)\\
+  & \HLbox{f_\mathrm T'-\left(\kappa_p+1[\mathrm{mm}]\right)} & \quad  & \Big(\text{if}~h_\mathrm T = \kappa_p+\kappa_w\Big)
 \end{alignat*}
 
 
@@ -195,19 +209,21 @@
 %% subsection 30.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{溝中心\texorpdfstring{$Z$}{Z}}
-\index{みぞいち@溝位置}溝位置$\kappa_p$および\index{みぞはば@溝幅}溝幅$\kappa_w$に対し、\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした\index{みぞちゅうしん@溝中心}溝の中心の$Z$座標は、\pageeqref{eq:mizocenterZ}より
+\index{みぞいち@溝位置}溝位置$\kappa_p$および\index{みぞはば@溝幅}溝幅$\kappa_w$に対し、\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした\index{みぞちゅうしん@溝中心}溝の中心M$'$の$Z$座標は、\pageeqref{eq:mizocenterZ}より
 \begin{align*}
-  f_\mathrm T'-\kappa_p-\frac{\kappa_w}2\ .
+  \HLbox{f_\mathrm T'-\kappa_p-\frac{\kappa_w}2}\ .
 \end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 30.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{湾曲中心が基準の場合}
-トップ端における湾曲中心T$_{R_\mathrm c}'$と溝中心M$'$との$X$方向の差は、\pageeqref{eq:difTopMizoCenter}より、
+\index{トップたんのそとがわちゅうしん@トップ端の外側中心}トップ端の外側中心T$_\mathrm c'$と溝中心M$'$との$X$方向の差は、\pageeqref{eq:difTopMizoCenter}より、
 \begin{align*}
-  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
-  -\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ .
+  \HLbox{%
+    \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+    -\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2%
+  }\ .
 \end{align*}
 
 
@@ -229,36 +245,44 @@
 \subsubsection{外削のない場合}
 \index{Aがわみぞふかさ@A側溝深さ}A側溝深さ$\kappa_d$は、その測定値$\kappa_d'$が\index{ずめん（モールド）@図面（モールド）}図面上の値となるように与えられるものとする。このとき\pageeqref{eq:keydepthDif1}より、
 \begin{align*}
-  \kappa_d
-  &= \frac{2\kappa_d'-\kappa_w\sin\zeta}{1+\cos^2\zeta}\cos\zeta
-     +\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
-     -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}\ .
+  \HLbox{%
+    \kappa_d
+    = \frac{2\kappa_d'-\kappa_w\sin\zeta}{1+\cos^2\zeta}\cos\zeta
+      +\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+      -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}%
+  }\ .
 \end{align*}
 ここで$\zeta$は\pageeqref{eq:angleZeta}より、
 \begin{align*}
-  \tan\zeta
-  = \frac{\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\kappa_w\right)^2}
-          -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}}
-         {\kappa_w}\ .
+  \HLbox{%
+    \tan\zeta
+    = \frac{\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\kappa_w\right)^2}
+            -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}}
+           {\kappa_w}%
+  }\ .
 \end{align*}
 A側溝深さ$\kappa_d$に対し、\index{みぞちゅうしん@溝中心}溝中心の位置の$X$座標は\pageeqref{eq:mizocenterA}より、
 \begin{align*}
-  \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}-\kappa_d-\frac{W_{mx}}2
-  -\varDelta_x\ .
+  \HLbox{%
+    \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^{\!2}}
+    -\kappa_d
+    -\frac{W_{mx}}2
+    -\varDelta_x%
+  }\ .
 \end{align*}
-また\index{Aがわがいめん（みぞはばちゅうしん）@A側外面（溝幅中心）}A側外面の\index{じっそくち@実測値}実測値を$\mathcal G_m$とすると、\pageeqref{eq:mizocenterAd}より、
+また\index{Aがわがいめん（みぞはばちゅうしん）@A側外面（溝幅中心）}A側外面の\index{じっそくち@実測値}実測値を$\mathcal G_m$とすると、溝中心と$G_m$との$X$座標の差は、\pageeqref{eq:mizocenterAd}より、
 \begin{align*}
-  \mathcal G_m-\frac{W_{mx}}2-\kappa_d\ .
+  \HLbox{-\frac{W_{mx}}2-\kappa_d}\ .
 \end{align*}
 
-%\clearpage
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 30.4.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{外削のある場合}
-\index{Aがわみぞふかさ@A側溝深さ}A側溝深さ$\kappa_d$に対し、トップ外削$X$中心を$\mathcal G_{\mathrm Tx}$とすると、\index{みぞちゅうしん@溝中心}溝中心の位置の$X$座標は\pageeqref{eq:mizocenterAG}より、
+\index{Aがわみぞふかさ@A側溝深さ}A側溝深さ$\kappa_d$に対し、トップ外削$X$中心を$\mathcal G_{\mathrm Tx}$とすると、$\mathcal G_{\mathrm Tx}$と\index{みぞちゅうしん@溝中心}溝中心との$X$座標の差は、\pageeqref{eq:mizocenterAG}より、
 \begin{align*}
-  \mathcal G_{\mathrm Tx}+\frac{\mathfrak W_x}2-\kappa_d-\frac{W_{mx}}2\ .
+  \HLbox{\frac{\mathfrak W_x}2-\kappa_d-\frac{W_{mx}}2}\ .
 \end{align*}
 
 
