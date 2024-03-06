@@ -22,9 +22,9 @@ N003
 G91 G28 G00 X0 Y0
 
 N004
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G91 G00 B90.0
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 M05 (spindle off)
 S200
 
@@ -38,9 +38,9 @@ N007
 G90 G53 G01 Z0 F#650
 
 N008
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G91 G00 B-90.0
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 GOTO999
 

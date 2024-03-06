@@ -94,10 +94,10 @@ G90 G53 G01 Z0 F#650
 IF[[ABS[#900027-#501-#503]]LE[ABS[[#02/2]-#602]]]GOTO800
 (if |#900027|<=|B/2-#602|, go to N800)
 
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G91 G00 B180.
 (rotate 180 deg)
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 G91 G01 X[-2*[#5221-#33]+#21] F#652
 G90 G54 G01 Y[[#20/2]+#512+#602] F#652

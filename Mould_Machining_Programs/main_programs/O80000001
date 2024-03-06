@@ -71,11 +71,11 @@ G90 G10 L2 P4 X-561.916 Y-648.500 Z#901007 B#901008
 (G57 Top Inside Center)
 
 N102
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G90 G54 G00 B[180.0-0.642]
 (G54 Bottom Gaisaku)
 (B parallel angle 179.358)
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 
 (Bottom sokutei start)
@@ -157,10 +157,10 @@ G55 G65 P130002 Y153 Z499.984 M0.07
 (Top sokutei start)
 
 G90 G53 G01 Z0 F#650
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G90 G57 G00 B-0.642
 (G57B parallel angle -0.642)
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 G90 G57 G01 X0 Y0 F#652
 (G57XY Top Inside Center)
@@ -196,10 +196,10 @@ N200
 
 
 G90 G53 G01 Z0 F#650
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G90 G57 G00 B-0.642
 (G57B parallel angle -0.642)
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 G90 G57 G01 X0 Y0 F#652
 (G57XY Top Inside Center)
@@ -291,10 +291,10 @@ G90 G53 G01 Z0 F#650
 T02 (tanmen)
 M06 (tool exchange)
 
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G90 G57 G00 B-0.642
 (G57B parallel angle -0.642)
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 M28 (chip conveyor on)
 G57 G65 P410000 D2. X156.863 Y154.839 Z500.016 R19.
@@ -325,10 +325,10 @@ G90 G53 G01 Z0 F#650
 T16 (gaisaku)
 M06 (tool exchange)
 
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G90 G56 G00 B-0.642
 (G56B parallel angle -0.642)
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 M28 (chip conveyor on)
 G56 G65 P420000 D16. R18. X180.95 Y180.95 U185. V183. Z500.016 K32.0 M12.05 W8.05
@@ -365,10 +365,10 @@ G90 G53 G01 Z0 F#650
 T06 (mizo)
 M06 (tool exchange)
 
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G90 G56 G00 B-0.642
 (G56B parallel angle -0.642)
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 M28 (chip conveyor on)
 G56 G65 P430000 D6. K1. C#0 R14. X172.90 Y172.90 U180.95 V180.95 Z500.016 M12.05 W8.05
@@ -406,10 +406,10 @@ G90 G53 G01 Z0 F#650
 T13 (mentori 45)
 M06 (tool exchange)
 
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G90 G56 G00 B-0.642
 (G56B parallel angle -0.642)
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 M28 (chip conveyor on)
 G56 G65 P440000 D13. X180.95 Y180.95 Z500.016 C1. R18.
@@ -441,10 +441,10 @@ G90 G53 G01 Z0 F#650
 T02 (tanmen)
 M06 (tool exchange)
 
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G90 G00 G55 B[180.0-0.642]
 (G55B parallel angle 179.358)
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 M28 (chip conveyor on)
 G55 G65 P410000 D2. X155. Y153. Z499.984 R19.
@@ -479,10 +479,10 @@ G90 G53 G01 Z0 F#650
 T16 (gaisaku)
 M06 (tool exchange)
 
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G90 G00 G54 B[180.0-0.642]
 (G54B parallel angle 179.358)
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 M28 (chip conveyor on)
 G54 G65 P420000 D16. X180.95 Y180.95 U185. V185. Z499.984 R18. K25.0
@@ -519,10 +519,10 @@ G90 G53 G01 Z0 F#650
 T11 (mentori 15)
 M06 (tool exchange)
 
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G90 G00 G54 B[180.0-0.642]
 (G54B parallel angle 179.358)
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 M28 (chip conveyor on)
 G54 G65 P440000 D11. X180.95 Y180.95 Z499.984 C4.0 R18.
@@ -554,10 +554,10 @@ G90 G53 G01 Z0 F#650
 T11 (mentori 15)
 M06 (tool exchange)
 
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G90 G00 G55 B[180.0-0.642]
 (G55B parallel angle 179.358)
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 M28 (chip conveyor on)
 G55 G65 P450000 D11. X155. Y153. Z499.984 W600.0 R3.5 M0.07 C10. Q8922.7
@@ -600,11 +600,11 @@ N650
 G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
 G91 G30 X0 Y0
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G90 G00 G54 B[-90-0.642]
 (G54 Top:+X, Bot:-X)
 (B parallel angle -90.642)
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 T50 (touch sensor)
 M06
@@ -629,11 +629,11 @@ M00
 N660
 G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
-M11 (4jiku unclamp)
+M11 (B-axis unclamp)
 G90 G54 G00 B[180-0.642]
 (G54 Bot:+Z, Top:-Z)
 (B parallel angle 179.358)
-M10 (4jiku clamp)
+M10 (B-axis clamp)
 
 G54 G65 P150002 W500.016 Z499.984 T180.95 B180.95 M12.05 K25. U11.
 (O150002: toorishin Y)
