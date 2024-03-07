@@ -3,7 +3,6 @@ O430000
 (Mizo Corner R or C, ar HidariMawari 1shuu)
 
 N001
-IF[#07EQ#0]GOTO800
 IF[#21EQ#0]GOTO800
 IF[#21LT10]GOTO800
 IF[#22EQ#0]GOTO800
@@ -13,13 +12,16 @@ IF[#13EQ#0]GOTO800
 IF[#13LE1]GOTO800
 IF[#11LT#0]GOTO800
 IF[#11LE1]GOTO800
-(if D = #0, go to N800)
 (if U < 10 or #0, go to N800)
 (if Y < 10 or #0, go to N800)
 (if V < 10 or #0, go to N800)
 (if Z = #0, go to N800)
 (if M < 1, or #0, go to N800)
 (if H < 1, or #0, go to N800)
+
+IF[#01EQ0]GOTO002
+IF[#01EQ1]GOTO002
+GOTO800
 
 N002
 IF[#06EQ1]GOTO003
@@ -62,15 +64,16 @@ IF[#677LT200]GOTO800
 (if #677 < 200 or #0, go to N800)
 
 N008
-IF[#07LT6]GOTO800
-IF[#07GT10]GOTO800
-IF[[FIX[#07]]NE#07]GOTO800
+IF[#4120EQ#0]GOTO800
+IF[#4120LT6]GOTO800
+IF[#4120GT10]GOTO800
+IF[[FIX[#4120]]NE#4120]GOTO800
 IF[#22GE#25]GOTO800
 IF[[#26-#13-#11-#419-#420]LE[#901011/2]]GOTO800
 IF[[ABS[#419]]GE[#13/2]]GOTO800
 IF[[ABS[#420]]GE[#11/2]]GOTO800
 IF[[ABS[#421]]GE[[#21-#24]/2]]GOTO800
-(if D < 6 or D > 10 or D is not integer, go to N800)
+(if T# < 6 or > 10 or not integer or #0, go to N800)
 (if V >= Y, go to N800)
 (if Z-M-H-#419-#420 <= #901011/2, go to N800)
 (if |#419| >= M/2, go to N800)
@@ -80,21 +83,21 @@ IF[[ABS[#421]]GE[[#21-#24]/2]]GOTO800
 N009
 #33=#24
 IF[#06EQ4]THEN #33=#21
-#32=[#605+#[2400+#07]+#[2600+#07]+ABS[#605-#[2400+#07]+#[2600+#07]]]/2
+#32=[#605+#[2400+#4120]+#[2600+#4120]+ABS[#605-[#[2400+#4120]+#[2600+#4120]]]]/2
 IF[#32LE1]GOTO800
 (#32: max[#605, hosei kouguKei])
 
 N010
-IF[#07EQ6]THEN #31=#901105
-IF[#07EQ7]THEN #31=#901107
-IF[#07EQ8]THEN #31=#901109
-IF[#07EQ9]THEN #31=#901111
+IF[#4120EQ6]THEN #31=#901105
+IF[#4120EQ7]THEN #31=#901107
+IF[#4120EQ8]THEN #31=#901109
+IF[#4120EQ9]THEN #31=#901111
 IF[#31LE1]GOTO800
 (#31: kougu Thickness)
 
 #30=0
 IF[#01EQ0]THEN #30=SQRT[#17*#17-[#23-[#13+#419]-[[#11+#420]/2]]*[#23-[#13+#419]-[[#11+#420]/2]]]-SQRT[#17*#17-#23*#23]
-(hosei center)
+(#30: X hosei from keyway center)
 
 N011
 #100=#21-#33
@@ -111,7 +114,7 @@ IF[#103LT0]GOTO800
 (kokokara G00)
 
 
-G90 G43 G01 H#07 Z[#26+#600] F#650
+G90 G43 G01 H#4120 Z[#26+#600] F#650
 
 N100 (ShiageMae loop)
 WHILE[#103GE1]DO1
@@ -122,7 +125,7 @@ IF[#06EQ4]THEN #104=#21+#630+[#629*2]*#103
 
 N101 (top side)
 G90 G00 X[[#104/2]+#32*3+#30-#421] Y[#105/2]
-G42 D#07
+G42 D#4120
 G91 G00 X-[#32/2]
 G90 G01 Z[#26-#13-#419-#31] S#677 F#650
 
@@ -139,7 +142,7 @@ N104 (center)
 IF[#475NE3]GOTO106
 G90 G01 Z[#26-[#13+#419+[#11+#420+#31]/2]] S#677 F#650
 G90 G00 Y[#105/2]
-G42 D#07
+G42 D#4120
 G91 G00 X-[#32/2]
 
 N105
@@ -150,7 +153,7 @@ G90 G40 G00 X[[#104/2]+#32*3+#30-#421]
 N106 (bot side)
 G90 G01 Z[#26-#13-#11-#419-#420] S#677 F#650
 G90 G00 Y[#105/2]
-G42 D#07
+G42 D#4120
 G91 G00 X-[#32/2]
 
 N107
@@ -186,7 +189,7 @@ IF[#630LE0]THEN #106=#106-1
 (#106: Siage +kaisuu)
 
 N016
-G90 G43 G01 H#07 Z[#26+#600] F#650
+G90 G43 G01 H#4120 Z[#26+#600] F#650
 
 N200 (Shiage loop)
 WHILE[#106GE0]DO2
@@ -194,7 +197,7 @@ WHILE[#106GE0]DO2
 
 N201
 G90 G00 X[[#33/2]+#32*3+#30-#421] Y[#25/2]
-G42 D#07
+G42 D#4120
 G91 G00 X-[#32/2]
 G90 G01 Z[#26-#13-#419-#31] S#677 F#650
 
@@ -211,7 +214,7 @@ N204
 IF[#475NE3]GOTO206
 G90 G01 Z[#26-[#13+#419+[#11+#420+#31]/2]] S#677 F#650
 G90 G00 Y[#25/2]
-G42 D#07
+G42 D#4120
 G91 G00 X-[#32/2]
 
 N205
@@ -222,7 +225,7 @@ G90 G40 G00 X[[#33/2]+#32*3+#30-#421]
 N206
 G90 G01 Z[#26-#13-#11-#419-#420] S#677 F#650
 G90 G00 Y[#25/2]
-G42 D#07
+G42 D#4120
 G91 G00 X-[#32/2]
 
 N207
@@ -236,7 +239,7 @@ N017
 M09 (coolant off)
 
 N018
-G90 G43 G01 H#07 Z[#26+#600] F#650
+G90 G43 G01 H#4120 Z[#26+#600] F#650
 G90 G53 G01 Z0 F#650
 M05 (spindle off)
 GOTO999
@@ -259,7 +262,6 @@ N999 M99
 (#01:A: Top gaisaku check: 0:not exist, 1:exist)
 (#06:K: key type: 1:R, 2:C, 3:rec, 4:BDonly)
 (#03:C: corner C)
-(#07:D: kouguKei&Chou hosei)
 (#11:H: mizoHaba)
 (#13:M: mizoIchi)
 (#17:Q: central curvature)
@@ -287,6 +289,7 @@ N999 M99
 (#24xx: #xx kouguKei)
 (#26xx: #xx kouguKeiMamou)
 (#3000: alarm)
+(#4120: current T#)
 
 
 (Subprograms)
