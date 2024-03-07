@@ -3,7 +3,6 @@ O420000
 (Gaisaku, ar HidariMawari 1shuu)
 
 N001
-IF[#07EQ#0]GOTO800
 IF[#24EQ#0]GOTO800
 IF[#24LT10]GOTO800
 IF[#25EQ#0]GOTO800
@@ -15,7 +14,6 @@ IF[#06EQ#0]GOTO800
 IF[#06LT1]GOTO800
 IF[#18EQ#0]GOTO800
 IF[#18LT0.1]GOTO800
-(if D = #0, go to N800)
 (if X < 10 or #0, go to N800)
 (if Y < 10 or #0, go to N800)
 (if U = #0, go to N800)
@@ -53,13 +51,14 @@ IF[#676LE200]GOTO800
 (if #676 <= 200 or #0, go to N800)
 
 N005
-IF[#07LT16]GOTO800
-IF[#07GT20]GOTO800
-IF[[FIX[#07]]NE#07]GOTO800
+IF[#4120EQ#0]GOTO800
+IF[#4120LT16]GOTO800
+IF[#4120GT20]GOTO800
+IF[[FIX[#4120]]NE#4120]GOTO800
 IF[[#26-#06]LE[#901011/2]]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 IF[ABS[#33]GE#18]GOTO800
-(if D < 16 or D > 20 or D is not integer, go to N800)
+(if T# < 16 or > 20 or not integer or #0, go to N800)
 (if Z-K <= #901011/2, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
 (if |#33| >= R, go to N800)
@@ -71,7 +70,7 @@ IF[#06LE[#13+#23]]THEN #32=#13+1
 (if K <= M+W, #32=M+1)
 
 N007
-#31=#[2400+#07]+#[2600+#07]
+#31=#[2400+#4120]+#[2600+#4120]
 #30=[#605+#31+ABS[#605-#31]]/2
 IF[#30LE0]GOTO800
 (#30: max[#605, hosei kouguKei])
@@ -92,7 +91,7 @@ IF[#103LT0]GOTO800
 
 
 N009
-G90 G43 G01 H#07 Z[#26+#600] F#650
+G90 G43 G01 H#4120 Z[#26+#600] F#650
 
 N100 (ShiageMae loop)
 WHILE[#103GE1]DO1
@@ -102,7 +101,7 @@ WHILE[#103GE1]DO1
 
 N101
 G90 G00 X[[#104/2]+#30*3+#33] Y[#105/2]
-G42 D#07
+G42 D#4120
 G91 G00 X-[#30/2]
 G90 G01 Z[#26-#32] S#676 F#650
 
@@ -170,7 +169,7 @@ IF[#628LE0]THEN #106=#106-1
 (#106: Shiage kakou kaisuu)
 
 
-G90 G43 G01 H#07 Z[#26+#600] F#650
+G90 G43 G01 H#4120 Z[#26+#600] F#650
 
 N200 (Shiage loop)
 WHILE[#106GE0]DO2
@@ -178,7 +177,7 @@ WHILE[#106GE0]DO2
 
 N201
 G90 G00 X[[#24/2]+#30*3+#33] Y[#25/2] F#650
-G42 D#07
+G42 D#4120
 G91 G00 X-[#30/2] F#650
 G90 G01 Z[#26-#32] S#676 F#651
 
@@ -197,7 +196,7 @@ N990
 M09 (coolant off)
 
 N991
-G90 G43 G01 H#07 Z[#26+#600] F#650
+G90 G43 G01 H#4120 Z[#26+#600] F#650
 G90 G53 G01 Z0 F#650
 M05 (spindle off)
 GOTO999
@@ -219,7 +218,6 @@ N999 M99
 
 (as received arguments)
 (#06:K: gaisaku Length)
-(#07:D: kouguKei&Chou hosei)
 (#18:R: corner R)
 (#21:U: AC gaiKei)
 (#22:V: BD gaiKei)
@@ -247,6 +245,7 @@ N999 M99
 (#26xx: #xx kouguKeiMamou)
 (#3000: alarm)
 (#4012: current work coordinate G#)
+(#4120: current T#)
 
 
 (Subprograms)
