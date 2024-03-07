@@ -84,8 +84,8 @@ M10 (B-axis clamp)
 T50 (touch sensor)
 M06 (tool exchange)
 
-G40 G49 G80 S200 (cancel hosei, low gear)
-M19 (Shujiku orientation)
+G40 G49 G80 G17 S200 (cancel hosei, low gear)
+M19 (Spindle orientation)
 G43 H50 (hosei kouguChou #50)
 
 G90 G54 G01 X0 Y0 F#652
@@ -246,6 +246,7 @@ G90 G53 G01 Z0 F#650
 G90 G53 G01 X-5.501 Y-258.624 F#652
 T31 (Tslot R20)
 M06 (tool exchange)
+G43 H#4120 (hosei KouguChou: T#)
 
 G90 G57 G00 X0 Y0
 (G57XY Top Inside Center)
@@ -290,8 +291,7 @@ G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
 T02 (tanmen)
 M06 (tool exchange)
-G43 H02
-(hosei KouguChou: #02)
+G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G57 G00 B-0.642
@@ -299,9 +299,8 @@ G90 G57 G00 B-0.642
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G57 G65 P410000 D2. X156.863 Y154.839 Z500.016 R19.
+G57 G65 P410000 X156.863 Y154.839 Z500.016 R19.
 (O410000: XY naikei sotogawa-#608 1shuu Coner R, ar MigiMawari)
-(D: hosei kouguKei&Chou #)
 (X: Top AC naikei)
 (Y: Top BD naikei)
 (Z: Top sai_furiwake)
@@ -326,8 +325,7 @@ G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
 T16 (gaisaku)
 M06 (tool exchange)
-G43 H16
-(hosei KouguChou: #16)
+G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G56 G00 B-0.642
@@ -335,10 +333,9 @@ G90 G56 G00 B-0.642
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G56 G65 P420000 D16. X180.95 Y180.95 U185. V183. Z500.016 R18. K32.0 M12.05 W8.05
+G56 G65 P420000 X180.95 Y180.95 U185. V183. Z500.016 R18.0 K32.0 M12.05 W8.05
 (O420000: Sotogawa 1shuu Corner R, ar HidariMawari)
 (default: M=0, W=0)
-(D: kougu #)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
 (U: AC gaiKei)
@@ -368,6 +365,7 @@ G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
 T06 (mizo)
 M06 (tool exchange)
+G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G56 G00 B-0.642
@@ -375,10 +373,10 @@ G90 G56 G00 B-0.642
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G56 G65 P430000 D6. K1. C#0 R14. X172.90 Y172.90 U180.95 V180.95 Z500.016 M12.05 W8.05
+G56 G65 P430000 A1.0 K1.0 C#0 R14. X172.90 Y172.90 U180.95 V180.95 Z500.016 W400.0 Q8922.7 M12.05 H8.05
 (mizoIchi: 487.966, mizoHaba: 479.916)
 (O430000: Mizo, ar HidariMawari)
-(D: hosei kouguKei&Chou #)
+(A: Top gaisaku check: 0:not exist, 1:exist)
 (K: key type: 1:R, 2:C, 3:rec, 4:BDonly)
 (C: coner C)
 (R: coner R)
@@ -387,8 +385,10 @@ G56 G65 P430000 D6. K1. C#0 R14. X172.90 Y172.90 U180.95 V180.95 Z500.016 M12.05
 (U: AC gaisakuKei)
 (V: BD gaisakuKei)
 (Z: Top sai_furiwake)
+(W: Top ori_furiwake)
+(Q: central curvature)
 (M: mizoIchi)
-(W: mizoHaba)
+(H: mizoHaba)
 
 (mizo kakou end)
 IF[#424EQ0]GOTO421
@@ -409,6 +409,7 @@ G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
 T13 (mentori 45)
 M06 (tool exchange)
+G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G56 G00 B-0.642
@@ -416,14 +417,17 @@ G90 G56 G00 B-0.642
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G56 G65 P440000 D13. X180.95 Y180.95 Z500.016 C1. R18.
+G56 G65 P440000 A1.0 B0.0 X180.95 Y180.95 Z500.016 W400.0 Q8922.7 K1.0 R18.0
 (O440000: Sotogawa 1shuu Corner R, ar HidariMawari)
-(D: hosei kouguKei&Chou #)
+(A: Top gaisaku: 0:not exists, 1:exists)
+(B: mentori type: 0:C, 1:R)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
 (Z: Top sai_furiwake)
-(C: mentori C)
-(R: corner R)
+(W: Top ori_furiwake)
+(Q: central curvature)
+(K: mentori C or R length)
+(R: gaisakuKei corner R)
 
 (Top SotoMentori end)
 IF[#428EQ0]GOTO431
@@ -444,6 +448,7 @@ G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
 T02 (tanmen)
 M06 (tool exchange)
+G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G00 G55 B[180.0-0.642]
@@ -451,7 +456,7 @@ G90 G00 G55 B[180.0-0.642]
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G55 G65 P410000 D2. X155. Y153. Z499.984 R19.
+G55 G65 P410000 D#4120 X155. Y153. Z499.984 R19.
 (O410000: XY naikei sotogawa-#608 1shuu Coner R, ar MigiMawari)
 (D: hosei kouguKei&Chou #)
 (X: Bot AC naikei)
@@ -482,6 +487,7 @@ G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
 T16 (gaisaku)
 M06 (tool exchange)
+G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G00 G54 B[180.0-0.642]
@@ -489,7 +495,7 @@ G90 G00 G54 B[180.0-0.642]
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G54 G65 P420000 D16. X180.95 Y180.95 U185. V185. Z499.984 R18. K25.0
+G54 G65 P420000 D#4120 X180.95 Y180.95 U185. V185. Z499.984 R18. K25.0
 (O420000: Sotogawa 1shuu Corner R, al HidariMawari)
 (default: M=0, W=0)
 (D: hosei kouguKei&Chou #)
@@ -522,6 +528,7 @@ G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
 T11 (mentori 15)
 M06 (tool exchange)
+G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G00 G54 B[180.0-0.642]
@@ -529,13 +536,13 @@ G90 G00 G54 B[180.0-0.642]
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G54 G65 P440000 D11. X180.95 Y180.95 Z499.984 C4.0 R18.
+G54 G65 P440000 D#4120 X180.95 Y180.95 Z499.984 K4.0 R18.
 (O440000: Sotogawa 1shuu Corner R, ar HidariMawari)
 (D: hosei kouguKei&Chou #)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
 (Z: Top sai_furiwake)
-(C: mentori C)
+(K: mentori C or R length)
 (R: corner R)
 
 (Bottom SotoMentori end)
@@ -557,6 +564,7 @@ G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
 T11 (mentori 15)
 M06 (tool exchange)
+G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G00 G55 B[180.0-0.642]
@@ -564,7 +572,7 @@ G90 G00 G55 B[180.0-0.642]
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G55 G65 P450000 D11. X155. Y153. Z499.984 W600.0 R3.5 M0.07 C10. Q8922.7
+G55 G65 P450000 D#4120 X155. Y153. Z499.984 W600.0 R3.5 M0.07 C10. Q8922.7
 (Bot Uchi Chamfer)
 (O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
 (D: hosei kougu #)
@@ -611,7 +619,11 @@ G90 G00 G54 B[-90-0.642]
 M10 (B-axis clamp)
 
 T50 (touch sensor)
-M06
+M06 (tool exchange)
+
+G40 G49 G80 G17 S200 (cancel hosei, low gear)
+M19 (Spindle orientation)
+G43 H50 (hosei KouguChou: #50)
 
 G54 G65 P150003 W500.016 Z499.984 T180.95 B180.95 M12.05 K25. U11.
 (O150003: tooriShin X)
@@ -661,7 +673,7 @@ GOTO990
 N820
 M09 (coolant off)
 S2599
-G04 X1.0 (wait 2.0s)
+G04 X1.0 (wait 1.0s)
 M05 (spindle off)
 S200
 #3000=145 (MP60-Low battery)
@@ -669,7 +681,7 @@ S200
 N821
 M09 (coolant off)
 S2599
-G04 X1.0 (wait 2.0s)
+G04 X1.0 (wait 1.0s)
 M05 (spindle off)
 S200
 #3000=146 (is the palette# is ok?)
@@ -677,7 +689,7 @@ S200
 N800
 M09 (coolant off)
 S2599
-G04 X1.0 (wait 2.0s)
+G04 X1.0 (wait 1.0s)
 M05 (spindle off)
 S200
 #3000=100 (are the arguments OK?)
@@ -720,6 +732,7 @@ N999 M30
 
 (System variables)
 (#1000, #1004, #1005, #3000)
+(#4120)
 (#5221, #5222, #5261, #5262)
 
 

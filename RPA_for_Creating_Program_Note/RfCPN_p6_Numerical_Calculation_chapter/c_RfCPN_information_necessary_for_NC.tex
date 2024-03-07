@@ -4,7 +4,10 @@
 寸法・形状等の数値情報や条件分岐情報は、明細ごとに固有である。
 そのため、その固有情報は入力する必要がある。
 ここではそうした入力する必要のある情報をまとめておく。
-なお、入力する数値情報に関しては、原則として図面上の寸法をそのまま入力する形となるような方針とする。
+なお、入力する数値情報に関しては、原則として図面上の寸法をそのまま入力する形となるような方針とする
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{ただし、これらの値にはそれぞれの公差が考慮されている。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -14,10 +17,10 @@
 \modHeadsection{湾曲・振分けに関する入力数値}
 
 \begin{multicollongtblr}{入力情報：湾曲・振分け}{X[l]c}
-内容 & カテゴリ\\
-中心湾曲 &\\
-トップ振分長 &\\
-ボトム振分長 &\\
+内容 & 型\\
+中心湾曲 & float\\
+トップ振分長 & float\\
+ボトム振分長 & float\\
 \end{multicollongtblr}
 
 
@@ -28,16 +31,17 @@
 \modHeadsection{外形・内形に関する入力数値}
 
 \begin{multicollongtblr}{入力情報：外形}{X[l]c}
-内容 & カテゴリ\\
-AC外径 &\\
-BD外径 &\\
-外形 コーナーR &\\
+内容 & 型\\
+AC外径 & float\\
+BD外径 & float\\
+外形 コーナーR & float\\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}{入力情報：内形}{X[l]c}
-内容 & カテゴリ\\
-内面めっき膜厚 &\\
-内形テーパ表 Taper No. &\\
+内容 & 型\\
+内面めっき膜厚 & float\\
+内形テーパ表 Taper No. & list\\
+内形 コーナーR & float\\
 \end{multicollongtblr}
 
 
@@ -49,84 +53,145 @@ BD外径 &\\
 \modHeadsection{外削に関する入力数値}
 
 \begin{multicollongtblr}{入力情報：ボトム外削}{X[l]c}
-内容 & カテゴリ\\
-ボトム外削の有無 &\\
-テーパの有無 &\\
-ボトム外削 A側肉厚 &\\
-ボトム外削 AC径 &\\
-ボトム外削 BD径 &\\
-ボトム外削長 &\\
-ボトム外削 コーナーR &\\
+内容 & 型\\
+ボトム外削の有無 & boolean\\
+面取の有無 & boolean\\
+ボトム外削 A側肉厚 & float\\
+ボトム外削 AC径 & float\\
+ボトム外削 BD径 & float\\
+ボトム外削長 & float\\
+ボトム外削 コーナーR & float\\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}{入力情報：トップ外削}{X[l]c}
-内容 & カテゴリ\\
-トップ外削の有無 &\\
-テーパの有無 &\\
-トップ外削 A側肉厚 &\\
-トップ外削 AC径 &\\
-トップ外削 BD径 &\\
-トップ外削長 &\\
-トップ外削 コーナーR &\\
+内容 & 型\\
+トップ外削の有無 & boolean\\
+面取の有無 & boolean\\
+トップ外削 A側肉厚 & float\\
+トップ外削 AC径 & float\\
+トップ外削 BD径 & float\\
+トップ外削長 & float\\
+トップ外削 コーナーR & float\\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}{入力情報：両外削}{X[l]c}
-内容 & カテゴリ\\
-中心基準 &\\
-通り芯 &\\
+内容 & 型\\
+中心基準 & enum\\
+通り芯 & float\\
 \end{multicollongtblr}
 
 
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 31.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 31.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{溝に関する入力数値}
 
 \begin{multicollongtblr}{入力情報：溝}{X[l]c}
-内容 & カテゴリ\\
-A側溝深さ指定 有無 &\\
-溝AC径 &\\
-溝BD径 &\\
-溝位置 &\\
-溝幅 &\\
-A側溝深さ &\\
-溝 コーナーR &\\
-溝 コーナーC &\\
+内容 & 型\\
+溝の種類 & enum\\
+A側溝深さ指定 有無 & boolean\\
+溝AC径 & float\\
+溝BD径 & float\\
+溝位置 & float\\
+溝幅 & float\\
+A側溝深さ & float\\
+溝 コーナーR & float\\
+溝 コーナーC & float\\
 \end{multicollongtblr}
 
 
 
 %\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 31.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 31.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\dimple に関する入力数値}
 
 \begin{multicollongtblr}{入力情報：\dimple}{X[l]c}
-内容 & カテゴリ\\
-トップ端と\dimple1列目までの距離 &\\
-\dimple 鉛直方向ピッチ &\\
-\dimple 水平方向ピッチ &\\
-\dimple 奇数列の長さ &\\
-\dimple 偶数列の長さ &\\
-\dimple 列数 &\\
-\dimple 深さ &\\
-\dimple 半径（工具小半径） &\\
+内容 & 型\\
+トップ端と\dimple1列目までの距離 & float\\
+\dimple 鉛直方向ピッチ & float\\
+\dimple 水平方向ピッチ & float\\
+\dimple 奇数列の長さ & float\\
+\dimple 偶数列の長さ & float\\
+\dimple 列数 & enum\\
+\dimple 深さ & float\\
+\dimple 半径（工具小半径） & float\\
 \end{multicollongtblr}
 
 
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 31.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 31.6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{端面の面取に関する入力数値\TBW}
+\modHeadsection{端面の面取に関する入力数値}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 31.6.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ボトム端の面取に関する入力情報}
+
+\begin{multicollongtblr}{入力情報：ボトム端 外C面取}{X[l]c}
+内容 & 型\\
+ボトム端 外C面取の有無 & boolean\\
+ボトム端 外C面取長 & float\\
+ボトム端 外C面取 角度 & float\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{入力情報：ボトム端 外R面取}{X[l]c}
+内容 & 型\\
+ボトム端 外R面取の有無 & boolean\\
+ボトム端 外R面取長 & float\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{入力情報：ボトム端 内C面取}{X[l]c}
+内容 & 型\\
+ボトム端 内C面取の有無 & boolean\\
+ボトム端 内C面取長 & float\\
+ボトム端 内C面取 角度 & integer\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{入力情報：ボトム端 内R面取}{X[l]c}
+内容 & 型\\
+ボトム端 内R面取の有無 & boolean\\
+ボトム端 内R面取長 & float\\
+\end{multicollongtblr}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 31.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{トップ端の面取に関する入力情報}
 
 \begin{multicollongtblr}{入力情報：トップ端 外C面取}{X[l]c}
-内容 & カテゴリ\\
- &\\
+内容 & 型\\
+トップ端 外C面取の有無 & boolean\\
+トップ端 外C面取長 & float\\
+トップ端 外C面取 角度 & integer\\
 \end{multicollongtblr}
 
-\clearpage
+\begin{multicollongtblr}{入力情報：トップ端 外R面取}{X[l]c}
+内容 & 型\\
+トップ端 外R面取の有無 & boolean\\
+トップ端 外R面取長 & float\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{入力情報：トップ端 内C面取}{X[l]c}
+内容 & 型\\
+トップ端 内C面取の有無 & boolean\\
+トップ端 内C面取長 & float\\
+トップ端 内C面取 角度 & integer\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{入力情報：トップ端 内R面取}{X[l]c}
+内容 & 型\\
+トップ端 内R面取の有無 & boolean\\
+トップ端 内R面取長 & float\\
+\end{multicollongtblr}
+
+\clearrightpage

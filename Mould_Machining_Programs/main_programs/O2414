@@ -313,9 +313,8 @@ G90 G57 G00 B-0.000
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G57 G65 P410000 D#4120 X135.578 Y135.578 Z400.00 R12.0
+G57 G65 P410000 X135.578 Y135.578 Z400.00 R12.0
 (O410000: XY naikei sotogawa-#608 1shuu Coner R, ar MigiMawari)
-(D: kougu T#)
 (X: Top AC naikei)
 (Y: Top BD naikei)
 (Z: Top sai_furiwake)
@@ -324,10 +323,10 @@ G57 G65 P410000 D#4120 X135.578 Y135.578 Z400.00 R12.0
 (Top tammen end)
 IF[#179EQ0]GOTO401
 IF[#179EQ2]GOTO402
-GOTO410
+GOTO420
 N401
 M00 (if #179=0)
-GOTO410
+GOTO420
 N402
 G65 P900003 (if #179=2)
 
@@ -348,11 +347,9 @@ G90 G56 G00 B-0.000
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G56 G65 P430000 D#4120 A0.0 K4.0 C#0 R#0 X#0 Y147.800 U152.800 V152.800 Z400.00 W400.0 Q5932.950 M24.050 H9.050
-(mizoIchi: 487.966, mizoHaba: 479.916)
+G56 G65 P430000 A0.0 K4.0 C#0 R#0 X#0 Y147.800 U152.800 V152.800 Z400.00 W400.0 Q5932.950 M24.050 H9.050
 (O430000: Mizo, ar HidariMawari)
-(D: hosei kouguKei&Chou #)
-(A: Top gaisaku check: 0:not exist, 1:exist)
+(A: Top gaisaku: 0:not exists, 1:exists)
 (K: key type: 1:R, 2:C, 3:rec, 4:BDonly)
 (C: coner C)
 (R: coner R)
@@ -389,28 +386,70 @@ G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G56 G00 B-0.000
-(G56B parallel angle -0.000)
 M10 (B-axis clamp)
+(G56B parallel angle -0.000)
 
 M28 (chip conveyor on)
-G56 G65 P440000 D#4120 X180.95 Y180.95 Z400.00 C1. R18.
+G56 G65 P440000 A0.0 B0.0 X152.800 Y152.800 Z400.00 W400.0 Q5932.950 K1.0 R12.0
 (O440000: Sotogawa 1shuu Corner R, ar HidariMawari)
-(D: hosei kouguKei&Chou #)
-(X: AC gaisakuKei)
-(Y: BD gaisakuKei)
+(A: Top gaisaku: 0:not exists, 1:exists)
+(B: mentori type: 0:C, 1:R)
+(X: AC gaiKei)
+(Y: BD gaiKei)
 (Z: Top sai_furiwake)
-(C: mentori C)
-(R: corner R)
+(W: Top ori_furiwake)
+(Q: central curvature)
+(K: mentori C or R length)
+(R: gaiKei corner R)
 
 (Top SotoMentori end)
 IF[#428EQ0]GOTO431
 IF[#428EQ2]GOTO432
-GOTO500
+GOTO440
 N431
 M00 (if #428=1)
-GOTO500
+GOTO440
 N432
 G65 P900003 (if #428=2)
+
+
+N440
+(*** Top UchiMentori start ***)
+
+
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#650
+T13 (mentori 45)
+M06 (tool exchange)
+G43 H#4120 (hosei KouguChou: T#)
+
+M11 (B-axis unclamp)
+G90 G57 G00 B-0.000
+M10 (B-axis clamp)
+(G57B parallel angle -0.000)
+
+M28 (chip conveyor on)
+G57 G65 P450000 B0.0 X135.578 Y135.578 Z400.00 W400.0 Q5932.950 K1.0 R4.0 M0.08
+(O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
+(B: mentori type: 0:C, 1:R)
+(X: AC naikei)
+(Y: BD naikei)
+(Z: Bot sai_furiwake)
+(W: Bot ori_furiwake)
+(Q: central curvature)
+(K: mentori C or R length)
+(R: corner R)
+(M: mekki mm)
+
+(Bottom Uchimentori end)
+IF[#433EQ0]GOTO441
+IF[#433EQ2]GOTO442
+GOTO500
+N441
+M00 (if #433=0)
+GOTO500
+N442
+G65 P900003 (if #433=2)
 
 
 N500
@@ -444,53 +483,12 @@ G90 G53 G01 Z0 F#650
 (Bottom tammen end)
 IF[#180EQ0]GOTO501
 IF[#180EQ2]GOTO502
-GOTO510
+GOTO530
 N501
 M00 (if #180=0)
-GOTO510
+GOTO530
 N502
 G65 P900003 (if #180=2)
-
-
-N510
-(*** Bottom Gaisaku start ***)
-
-
-G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#650
-T16 (gaisaku)
-M06 (tool exchange)
-G43 H#4120 (hosei KouguChou: T#)
-
-M11 (B-axis unclamp)
-G90 G00 G54 B[180.0-0.000]
-(G54B parallel angle 179.358)
-M10 (B-axis clamp)
-
-M28 (chip conveyor on)
-G54 G65 P420000 D#4120 X180.95 Y180.95 U185. V185. Z400.0000 R18. K25.0
-(O420000: Sotogawa 1shuu Corner R, al HidariMawari)
-(default: M=0, W=0)
-(D: hosei kouguKei&Chou #)
-(X: AC gaisakuKei)
-(Y: BD gaisakuKei)
-(U: AC gaiKei)
-(V: BD gaiKei)
-(Z: Top sai_furiwake)
-(R: corner R)
-(K: gaisaku Length)
-(M*: mizoIchi)
-(W*: mizoHaba)
-
-(Bottom gaisaku end)
-IF[#439EQ0]GOTO511
-IF[#439EQ2]GOTO512
-GOTO530
-N511
-M00 (if #439=0)
-GOTO530
-N512
-G65 P900003 (if #439=2)
 
 
 N530
@@ -499,7 +497,7 @@ N530
 
 G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
-T11 (mentori 15)
+T12 (mentori 30)
 M06 (tool exchange)
 G43 H#4120 (hosei KouguChou: T#)
 
@@ -509,13 +507,12 @@ G90 G00 G54 B[180.0-0.000]
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G54 G65 P440000 D#4120 X180.95 Y180.95 Z400.0000 C4.0 R18.
+G54 G65 P440000 X180.95 Y180.95 Z400.0000 K4.0 R18.
 (O440000: Sotogawa 1shuu Corner R, ar HidariMawari)
-(D: hosei kouguKei&Chou #)
 (X: AC gaisakuKei)
 (Y: BD gaisakuKei)
 (Z: Top sai_furiwake)
-(C: mentori C)
+(K: mentori C or R length)
 (R: corner R)
 
 (Bottom SotoMentori end)
@@ -639,7 +636,7 @@ N999 M30
 
 (System variables)
 (#1000, #1004, #1005, #3000)
-(#5221, #5222, #5261, #5262)
+(#4120)
 
 
 (Subprograms)
