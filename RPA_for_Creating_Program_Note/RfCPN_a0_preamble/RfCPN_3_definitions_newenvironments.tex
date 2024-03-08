@@ -4,40 +4,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% NEW ENVIRONMENT %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% COMMONTABLE %%%%%%%%%%%%%%%%%%
-\newenvironment{commonTable}[5]{%
-  \rowcolors{3}{#1}{white}
-  \if\relax\detokenize{#2}\relax
-  \else
-%    \setlength{\abovecaptionskip}{0pt}
-    \modcaptionof{table}{#2} % 追加したキャプション
-    \addtocounter{table}{-1}
-  \fi
-  \setlength{\LTpre}{3pt}%
-  \setlength{\LTpost}{5pt}%
-  \setlength{\LTleft}{0pt}%
-  \setlength{\LTright}{\fill}%
-  \begin{longtable}{#3}
-  \hline
-  \rowcolor{orange!20!}
-  #4\\
-  \hline
-  \endfirsthead
-  \hline
-  \rowcolor{orange!20!}
-  #4\\
-  \hline
-  \endhead
-  \hline
-  \multicolumn{#5}{|r|}{\scriptsize 次ページへ続く} \\
-  \hline
-  \endfoot
-  \hline
-  \endlastfoot
-}
-{%
-  \end{longtable}
-}
 %%%%% multicollongtblr %%%%%
 \DefTblrTemplate{contfoot-text}{default}{\small［次のページへ続く］}%
 \DefTblrTemplate{conthead-text}{default}{}%
