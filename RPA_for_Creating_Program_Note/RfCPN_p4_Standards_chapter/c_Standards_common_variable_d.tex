@@ -136,11 +136,10 @@ $\cdots$ & $\cdots$ &\\
 
 
 \clearpage
-\begin{multicollongtblr}[white]{\ttNum414\,-\ttNum424：加工時の調整（端面・\dimple 除く）\TBW}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum414\,-\ttNum424：加工時の調整（端面・\dimple 除く）}{cX[l]c}
 変数 & 内容 & 初期値\\
 \ttNum414 & トップ外削 A面肉厚$+$補正（外削中心$X-$補正） & 0\\
-\SetRow{unusingVariables}
-\ttNum415\TBW & （トップ外削径補正用 予備） &\\
+\ttNum415 & トップ外削径（直径）$+$補正 & 0\\
 \ttNum416 & トップ外削 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \ttNum417 & トップ外削 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
@@ -148,8 +147,7 @@ $\cdots$ & $\cdots$ &\\
 \ttNum419 & 溝位置$+$補正（溝幅不変） & 0\\
 \ttNum420 & 溝幅$+$補正 & 0\\
 \ttNum421 & 溝A面深さ$+$補正（溝径中心$X-$補正） & 0\\
-\SetRow{unusingVariables}
-\ttNum422\TBW & （溝径補正用 予備） & 0\\
+\ttNum422 & 溝径（直径）$+$補正 & 0\\
 \ttNum423 & 溝 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \ttNum424 & 溝 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \end{multicollongtblr}
@@ -164,15 +162,13 @@ $\cdots$ & $\cdots$ &\\
 \begin{multicollongtblr}[white]{\ttNum425\,-\ttNum449：加工時の調整（続き）}{cX[l]c}
 変数 & 内容 & 初期値\\
 \ttNum425 & トップ外面取$X+$補正 & 0\\
-\SetRow{unusingVariables}
-\ttNum426\TBW & （トップ外面取径用 予備） & 0\\
+\ttNum426 & トップ外面取径（直径）$+$補正 & 0\\
 \ttNum427 & トップ外面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \ttNum428 & トップ外面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum429 & （不使用） &\\
 \ttNum430 & トップ内面取$X+$補正 & 0\\
-\SetRow{unusingVariables}
-\ttNum431\TBW & （トップ内面取径用 予備） & 0\\
+\ttNum431 & （トップ内面取径用 予備） & 0\\
 \ttNum432 & トップ内面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \ttNum433 & トップ内面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
@@ -180,22 +176,19 @@ $\cdots$ & $\cdots$ &\\
 \SetRow{unusingVariables}
 \ttNum435 & （不使用） &\\
 \ttNum436 & ボトム外削 A面肉厚$+$補正（外削中心$X+$補正） & 0\\
-\SetRow{unusingVariables}
-\ttNum437\TBW & （ボトム外削径補正用 予備） & 0\\
+\ttNum437 & ボトム外削径（直径）$+$補正 & 0\\
 \ttNum438 & ボトム外削 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \ttNum439 & ボトム外削 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum440 & （不使用） &\\
 \ttNum441 & ボトム外面取$X+$補正 & 0\\
-\SetRow{unusingVariables}
-\ttNum442\TBW & （ボトム外面取径用 予備） & 0\\
+\ttNum442 & ボトム外面取径（直径）$+$補正 & 0\\
 \ttNum443 & ボトム外面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \ttNum444 & ボトム外面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum445 & （不使用） &\\
 \ttNum446 & ボトム内面取$X+$補正 & 0\\
-\SetRow{unusingVariables}
-\ttNum447\TBW & （ボトム内面取径用 予備） & 0\\
+\ttNum447 & （ボトム内面取径用 予備） & 0\\
 \ttNum448 & ボトム内面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \ttNum449 & ボトム内面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \end{multicollongtblr}
