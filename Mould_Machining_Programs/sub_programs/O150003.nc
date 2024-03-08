@@ -1,6 +1,7 @@
 %
 O150003 (X centerline measurement)
 
+N001
 IF[#23EQ#0]GOTO800
 IF[#26EQ#0]GOTO800
 IF[#20EQ#0]GOTO800
@@ -21,11 +22,6 @@ IF[#21LT0]GOTO800
 (if K <= 0 or #0, go to N800)
 (if U < 0 or #0, go to N800)
 
-IF[#23LE[#901011/2]]GOTO800
-IF[#26LE[#901011/2]]GOTO800
-(if W <= #901011/2, go to N800)
-(if Z <= #901011/2, go to N800)
-
 IF[#901011EQ#0]GOTO800
 IF[#901011LE100]GOTO800
 IF[#600EQ#0]GOTO800
@@ -45,15 +41,17 @@ IF[#656GT50]GOTO800
 (if #656 <= 0 or #0, go to N800)
 (if #656 > 50. or #0, go to N800)
 
-IF[#1000NE0]GOTO001
-(if NOT p#1, to N001)
-#33=#901001 (p#1 X table center)
-#32=#901003 (p#1 Z table center)
-GOTO002
+IF[#23LE[#901011/2]]GOTO800
+IF[#26LE[#901011/2]]GOTO800
+(if W <= #901011/2, go to N800)
+(if Z <= #901011/2, go to N800)
 
-N001
-#33=#901005 (p#2 X table center)
-#32=#901007 (p#2 Z table center)
+IF[#1000EQ0]THEN #33=#901001
+IF[#1000EQ1]THEN #33=#901005
+(#33: X table center)
+IF[#1000EQ0]THEN #32=#901003
+IF[#1000EQ1]THEN #32=#901007
+(#32: Z table center)
 
 
 (kokokara G01)
@@ -160,7 +158,7 @@ N999 M99
 
 
 (System variables)
-(#0   : empty)
+(#1000: 0: palette #1, 1: palette #2)
 (#1004: 0: sensor off, 1: on)
 (#1005: 0: sensor battery ok, 1: low battery)
 (#3000: alarm)

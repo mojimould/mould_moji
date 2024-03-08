@@ -304,7 +304,7 @@ G57 G65 P410000 X156.863 Y154.839 Z500.016 R19.
 (X: Top AC naikei)
 (Y: Top BD naikei)
 (Z: Top sai_furiwake)
-(R: sotogawa corner R or C)
+(R: sotogawa corner R)
 
 (Top tammen end)
 IF[#179EQ0]GOTO401
@@ -336,13 +336,13 @@ M28 (chip conveyor on)
 G56 G65 P420000 X180.95 Y180.95 U185. V183. Z500.016 R18.0 K32.0 M12.05 W8.05
 (O420000: Sotogawa 1shuu Corner R, ar HidariMawari)
 (default: M=0, W=0)
-(X: AC gaisakuKei)
-(Y: BD gaisakuKei)
+(X: Top AC gaisakuKei)
+(Y: Top BD gaisakuKei)
 (U: AC gaiKei)
 (V: BD gaiKei)
 (Z: Top sai_furiwake)
-(R: corner R)
-(K: gaisaku Length)
+(R: Top gaisaku corner R)
+(K: Top gaisaku Length)
 (M*: mizoIchi)
 (W*: mizoHaba)
 
@@ -378,12 +378,12 @@ G56 G65 P430000 A1.0 K1.0 C#0 R14. X172.90 Y172.90 U180.95 V180.95 Z500.016 W400
 (O430000: Mizo, ar HidariMawari)
 (A: Top gaisaku check: 0:not exist, 1:exist)
 (K: key type: 1:R, 2:C, 3:rec, 4:BDonly)
-(C: coner C)
-(R: coner R)
+(C: mizo coner C)
+(R: mizo coner R)
 (X: AC mizoKei)
 (Y: BD mizoKei)
-(U: AC gaisakuKei)
-(V: BD gaisakuKei)
+(U: Top AC gaisakuKei)
+(V: Top BD gaisakuKei)
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)
 (Q: central curvature)
@@ -421,13 +421,13 @@ G56 G65 P440000 A1.0 B0.0 X180.95 Y180.95 Z500.016 W400.0 Q8922.7 K1.0 R18.0
 (O440000: Sotogawa 1shuu Corner R, ar HidariMawari)
 (A: Top gaisaku: 0:not exists, 1:exists)
 (B: mentori type: 0:C, 1:R)
-(X: AC gaisakuKei)
-(Y: BD gaisakuKei)
+(X: Top AC gaisakuKei)
+(Y: Top BD gaisakuKei)
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)
 (Q: central curvature)
-(K: mentori C or R length)
-(R: gaisakuKei corner R)
+(K: Top gaisaku mentori C or R length)
+(R: Top gaisaku corner R)
 
 (Top SotoMentori end)
 IF[#428EQ0]GOTO431
@@ -456,9 +456,8 @@ G90 G00 G55 B[180.0-0.642]
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G55 G65 P410000 D#4120 X155. Y153. Z499.984 R19.
+G55 G65 P410000 X155. Y153. Z499.984 R19.
 (O410000: XY naikei sotogawa-#608 1shuu Coner R, ar MigiMawari)
-(D: hosei kouguKei&Chou #)
 (X: Bot AC naikei)
 (Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
@@ -495,17 +494,16 @@ G90 G00 G54 B[180.0-0.642]
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G54 G65 P420000 D#4120 X180.95 Y180.95 U185. V185. Z499.984 R18. K25.0
+G54 G65 P420000 X180.95 Y180.95 U185. V185. Z499.984 R18. K25.0
 (O420000: Sotogawa 1shuu Corner R, al HidariMawari)
 (default: M=0, W=0)
-(D: hosei kouguKei&Chou #)
-(X: AC gaisakuKei)
-(Y: BD gaisakuKei)
+(X: Bot AC gaisakuKei)
+(Y: Bot BD gaisakuKei)
 (U: AC gaiKei)
 (V: BD gaiKei)
-(Z: Top sai_furiwake)
-(R: corner R)
-(K: gaisaku Length)
+(Z: Bot sai_furiwake)
+(R: Bot gaisaku corner R)
+(K: Bot gaisaku Length)
 (M*: mizoIchi)
 (W*: mizoHaba)
 
@@ -532,18 +530,21 @@ G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G00 G54 B[180.0-0.642]
-(G54B parallel angle 179.358)
 M10 (B-axis clamp)
+(G54B parallel angle 179.358)
 
 M28 (chip conveyor on)
-G54 G65 P440000 D#4120 X180.95 Y180.95 Z499.984 K4.0 R18.
+G54 G65 P440000 A1.0 B0.0 X180.95 Y180.95 Z499.984 W600.0 Q8922.7 K4.0 R18.
 (O440000: Sotogawa 1shuu Corner R, ar HidariMawari)
-(D: hosei kouguKei&Chou #)
-(X: AC gaisakuKei)
-(Y: BD gaisakuKei)
-(Z: Top sai_furiwake)
-(K: mentori C or R length)
-(R: corner R)
+(A: Bot gaisaku: 0:not exists, 1:exists)
+(B: mentori type: 0:C, 1:R)
+(X: Bot AC gaisakuKei)
+(Y: Bot BD gaisakuKei)
+(Z: Bot sai_furiwake)
+(W: Bot ori_furiwake)
+(Q: central curvature)
+(K: Bot gaisaku mentori C or R length)
+(R: Bot gaisaku corner R)
 
 (Bottom SotoMentori end)
 IF[#444EQ0]GOTO531
@@ -568,22 +569,21 @@ G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G00 G55 B[180.0-0.642]
-(G55B parallel angle 179.358)
 M10 (B-axis clamp)
+(G55B parallel angle 179.358)
 
 M28 (chip conveyor on)
-G55 G65 P450000 D#4120 X155. Y153. Z499.984 W600.0 R3.5 M0.07 C10. Q8922.7
-(Bot Uchi Chamfer)
+G55 G65 P450000 B0.0 X155.000 Y153.000 Z499.984 W600.0 Q8922.70 K10.0 R3.5 M0.07
 (O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
-(D: hosei kougu #)
-(X: AC naikei)
-(Y: BD naikei)
+(B: mentori type: 0:C, 1:R)
+(X: Bot AC naikei)
+(Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
 (W: Bot ori_furiwake)
-(R: corner R)
-(M: mekki mm)
-(C: mentori length C)
 (Q: central curvature)
+(K: Bot mentori C or R length)
+(R: Bot uchigawa corner R)
+(M: mekki thickness mm)
 
 (Bottom Uchimentori end)
 IF[#449EQ0]GOTO541
@@ -610,18 +610,18 @@ M00
 
 N650
 G49 G40 (cancel hosei)
+G80 G17
+S200 (low gear)
 G90 G53 G01 Z0 F#650
 G91 G30 X0 Y0
 M11 (B-axis unclamp)
 G90 G00 G54 B[-90-0.642]
+M10 (B-axis clamp)
 (G54 Top:+X, Bot:-X)
 (B parallel angle -90.642)
-M10 (B-axis clamp)
 
 T50 (touch sensor)
 M06 (tool exchange)
-
-G40 G49 G80 G17 S200 (cancel hosei, low gear)
 M19 (Spindle orientation)
 G43 H50 (hosei KouguChou: #50)
 
