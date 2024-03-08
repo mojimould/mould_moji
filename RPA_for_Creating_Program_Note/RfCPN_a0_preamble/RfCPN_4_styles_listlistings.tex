@@ -9,9 +9,9 @@
 %\renewcommand*\l@lstlisting{\@dottedtocline{1}{0em}{2.35em}}
 \lstdefinelanguage{GcodeBasic}{
   sensitive=true,%
-  basicstyle=\small\ttfamily\linespread{1}\selectfont,%
+  basicstyle=\ttfamily\linespread{1}\selectfont,%
   abovecaptionskip=0pt,
-  belowcaptionskip=0pt,
+  belowcaptionskip=2pt,
 %  aboveskip=0\baselineskip,
 %  belowskip=0\baselineskip,
   numbers=left,%
@@ -25,7 +25,7 @@
   basewidth=0.53em,%
   lineskip=-1.2pt,
   comment=[l]{(},%
-  commentstyle=\small\color{black!60!green!100}\slshape,%
+  commentstyle=\color{black!60!green!100}\slshape,%
   stringstyle={},%
   alsoletter={},%
   keywords={},%
@@ -63,7 +63,7 @@
   emph={[22]SIN, COS, SQRT, FIX, FUP, ROUND, ABS},%
   emphstyle={[22]\fontfamily{pcr}\selectfont\bfseries},%
   emph={[31]
-    P140001, P110002, P130001, P130002, P150002, P150003,
+    P110001, P110002, P130001, P130002, P140001, P150002, P150003,
     P210003, P220001, P220002, P230001, P230002, P530001, P530002,
     P410000, P420000, P430000, P440000, P450000, P490005, P490007,
     P900003, P915101, P919100, P910001, P910002},%

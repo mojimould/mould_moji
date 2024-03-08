@@ -82,30 +82,91 @@ $T_x$, $T_y$ ($T_x \geqq 0$)を機内で測定する際は、C面が工具側に
 
 
 \clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 7.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{回転中心とのずれの考慮\TBW}
+パレットの回転中心座標($X$, $Z$)に対して、ジグの回転中心の位置が($\delta x$, $\delta z$)だけずれている場合、パレットを$-\theta$だけ回転すると、
+\begin{align*}
+  \left[
+    \begin{array}{c}
+      x'\\
+      z'
+    \end{array}
+  \right]
+  = \left[
+    \begin{array}{cc}
+      \cos\theta & \sin\theta\\
+      -\sin\theta & \cos\theta
+    \end{array}
+  \right]\!\!
+  \left[
+    \begin{array}{c}
+      x+\delta x\\
+      z+\delta z
+    \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      (x+\delta x)\cos\theta+(z+\delta z)\sin\theta\\
+      -(x+\delta x)\sin\theta+(z+\delta z)\cos\theta
+    \end{array}
+  \right].
+\end{align*}
+また、ずれによる差分は、
+\begin{align*}
+  \left[
+    \begin{array}{c}
+      \delta x\cos\theta+\delta z\sin\theta\\
+      -\delta x\sin\theta+\delta z\cos\theta
+    \end{array}
+  \right].
+\end{align*}
+特に、$\theta = \pi$のとき、
+\begin{align*}
+  \left[
+    \begin{array}{c}
+      -\delta x\cos\theta\\
+      -\delta z\cos\theta
+    \end{array}
+  \right]
+\end{align*}
+となる。
+
+
+
+
+%\clearpage
 ~\vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Column}{外削前の通り芯測定}
+\begin{Column}{C側面の測定}
 通常、外削をせずに\index{Xほうこうのとおりしん@$X$方向の通り芯}通り芯の測定を行うことはない。
 ただ、プログラムの試運転などで動きをみるといった可能性はありうるので、外削を行っていない状態で測定する場合についても述べておく。
 なお、ここではテーブルを回転して振分長の調整を行った場合、かつボトムの外削が基準の場合を考える。
 このとき、測定するC側外面の位置は、\pageeqref{eq:tableTi}, \pageeqref{eq:tableBRi}より、
 \begin{align*}
   \text{トップ側：}
-  \left[
+  & \left[
     \begin{array}{c}
       \displaystyle f_\mathrm T'-\frac{\kappa_p}2\\[5pt]
-      \mathcal G_{\mathrm By}-T_y\\[3pt]
-      \displaystyle \varDelta'\!\cos\theta-\sqrt{R_\mathrm i^2-\left(f_\mathrm T-\frac{\kappa_p}2\right)^{\!\!2}}
+      G_{\mathrm By}-T_y\\[3pt]
+      \displaystyle
+      -G_{\mathrm Tx}
+      -\sqrt{R_\mathrm c^2-f_\mathrm T^2}
+      +\sqrt{R_\mathrm c^2-\left(f_\mathrm T-\frac\kappa2\right)^{\!2}}
     \end{array}
-  \right], ~~
+    \right],\\
   \text{ボトム側：}
-  \left[
+  & \left[
     \begin{array}{c}
       \displaystyle -f_\mathrm B'+\frac{h_\mathrm B}2\\[5pt]
-      \mathcal G_{\mathrm By}\\[3pt]
-      \displaystyle \varDelta'\!\cos\theta-\sqrt{R_\mathrm i^2-\left(f_\mathrm B-\frac{h_\mathrm B}2\right)^{\!\!2}}
+      G_{\mathrm By}\\[3pt]
+      \displaystyle
+      G_{\mathrm Bx}
+      -\sqrt{R_\mathrm c^2-f_\mathrm B^2}
+      +\sqrt{R_\mathrm c^2-\left(f_\mathrm B-\frac{h_\mathrm B}2\right)^{\!2}}
     \end{array}
     \right].
 \end{align*}
