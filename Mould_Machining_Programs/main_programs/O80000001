@@ -639,7 +639,7 @@ G54 G65 P150003 W500.016 Z499.984 T180.95 B180.95 M12.05 K25. U11.
 
 
 (*** TooriShin Y start ***)
-M00 
+M00 (is the tooriShin X OK?)
 
 
 N660
@@ -661,9 +661,10 @@ G54 G65 P150002 W500.016 Z499.984 T180.95 B180.95 M12.05 K25. U11.
 (K: Bot gaisaku length)
 (U: tooriShin X)
 
-G90 G54 G01 X#900033 Y#900026 F#652
-M00 (tooriShin Y end)
+G90 G54 G01 X#900033 Y#900029 F#652
+M00 (is the tooriShin Y OK?)
 
+#402=0 (torishin measurement off)
 G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
 G90 G53 G01 X-5.501 Y-258.624 F#652
