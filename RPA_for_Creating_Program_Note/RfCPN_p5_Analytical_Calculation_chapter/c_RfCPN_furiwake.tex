@@ -27,32 +27,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newlength{\oldtextwidth}
-\newlength{\oldtextheight}
-\setlength{\oldtextwidth}{\textwidth}
-\setlength{\oldtextheight}{\textheight}
-\afterpage{%
-\begin{landscape}
-\setlength{\textwidth}{\oldtextwidth}
-\setlength{\textheight}{\oldtextwidth}
 \begin{figure}[p]
-\centering
+\centering%
 \begin{Figlandscape}
-\resizebox{\linewidth}{!}{\adjustbox{max height=\textheight}{\mouldCoordinate}}%
-\captionsetup{width=.75\textwidth}
-\captionof{figure}[湾曲中心Oを原点とした複素平面上のモールド]
-  {\index{わんきょくちゅうしん@湾曲中心}湾曲中心Oを\index{げんてんO@原点O}原点とした\index{ふくそへいめん@複素平面}複素平面上のモールド\newline
-   T$_\mathrm o$, T$_\mathrm i$, B$_\mathrm o$, B$_\mathrm i$, U$_\mathrm T$, U$_\mathrm B$は点、%
-   $R_\mathrm c$, $R_\mathrm o$, $R_\mathrm i$, $f_\mathrm T$, $f_\mathrm B$, $l$は長さ、%
-   $\alpha_{\mathrm T_\mathrm o}$, $\alpha_{\mathrm T_\mathrm i}$, $\alpha_{\mathrm U_\mathrm B}$は角度を示す。%
-   \label{fig:mouldOnComplexPlane1}%
-   }
+\captionsetup{width=.75\textheight}
+\begin{adjustbox}{%
+  addcode={\begin{minipage}{\textheight}\centering}{%
+    \captionof{figure}[湾曲中心Oを原点とした複素平面上のモールド]{%
+      \index{わんきょくちゅうしん@湾曲中心}湾曲中心Oを\index{げんてんO@原点O}原点とした\index{ふくそへいめん@複素平面}複素平面上のモールド\newline
+      T$_\mathrm o$, T$_\mathrm i$, B$_\mathrm o$, B$_\mathrm i$, U$_\mathrm T$, U$_\mathrm B$は点、%
+      $R_\mathrm c$, $R_\mathrm o$, $R_\mathrm i$, $f_\mathrm T$, $f_\mathrm B$, $l$は長さ、%
+      $\alpha_{\mathrm T_\mathrm o}$, $\alpha_{\mathrm T_\mathrm i}$, $\alpha_{\mathrm U_\mathrm B}$は角度を示す。%
+      \label{fig:mouldOnComplexPlane1}%
+    }%
+    \end{minipage}%
+  },
+  rotate=90,
+  max width=\textwidth,
+  max height=\textheight,
+  keepaspectratio}
+\includegraphics{./RfCPN_a1_pictures/RfCPN_p5_pictures/mouldoverall.pdf}
+\end{adjustbox}
 \end{Figlandscape}%
-\end{figure}%
-\end{landscape}%
-\setlength{\textwidth}{\oldtextwidth}
-\setlength{\textheight}{\oldtextheight}%
-}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -195,7 +192,7 @@ $\delta_\mathrm s > 0$より、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[p]%
 \begin{Figbox}[valign=top]%
-\resizebox{\linewidth-35pt}{!}{\mouldwithukeita}%
+\resizebox{\linewidth-35pt}{!}{\includegraphics{./RfCPN_a1_pictures/RfCPN_p5_pictures/mouldUkeita.pdf}}%
 \vfill~
 \captionof{figure}[受板がある場合]{%
  \index{うけいた@受板}受板がある場合\newline
