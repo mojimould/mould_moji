@@ -1,6 +1,15 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
+%%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
+\newcommand{\DMname}{Dマシニング}
+\newcommand{\MMname}{Mマシニング}
+\newcommand{\dimple}{ディンプル}
+\newcommand{\dimplekana}{ディンプル}
+%%%%% LOGO %%%%%%%%%%%%%%%%%%
+\newcommand\BibLaTeX{{\textrm{B\kern-.05em{\textsc{i\kern-.025em b}}\LaTeX}}}
+\newcommand\pgflogo{\textsc{pgf}}
+\newcommand\tikzlogo{Ti\textit{k}Z}
 %%%%% FOR INDEX %%%%%%%%%%%%%%%%%%
 \newcommand{\expandafterindex}{\expandafter\index\expandafter}
 %%%%% DATE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -11,8 +20,6 @@
 \newcommand\ttNum{\ifmmode{\text{\texttt\#}}\else\texttt\#\fi}
 \newcommand\cf{{\itshape cf.\,}}
 \newcommand{\TBW}{\texorpdfstring{\small{\color{red}\,*}}{}}
-\newcommand\pgflogo{\textsc{pgf}}
-\newcommand\tikzlogo{Ti\textit{k}Z}
 %%%%% OTHER TIKZ DEFINITION %%%%%%%%%%%%%%%%%%
 \tikzfading[name=fade ball, inner color=transparent!60, outer color=transparent!30]
 \newcommand\sball[1]{\tikz \shade [ball color=#1, path fading=fade ball] (0,0) circle (.7ex);}
@@ -21,121 +28,3 @@
 %%%%% DECLAREMATHOPERATOR %%%%%%%%%%%%%%%%%%%%
 \DeclareMathOperator{\IP}{Im}
 \DeclareMathOperator{\RP}{Re}
-%%%%% DECLAREROBUSTCOMMAND %%%%%%%%%%%%%%%%%%%%
-\DeclareRobustCommand{\bDiv}{\nonscript\mskip-\medmuskip\mkern5mu\mathbin
-  {\operator@font div}\penalty900
-  \mkern5mu\nonscript\mskip-\medmuskip}
-\DeclareRobustCommand{\pod}[1]{\allowbreak
-  \if@display\mkern18mu\else\mkern8mu\fi(#1)}
-\DeclareRobustCommand{\pDiv}[1]{\pod{{\operator@font div}\mkern6mu#1}}
-\DeclareRobustCommand{\Div}[1]{\allowbreak\if@display\mkern18mu
-  \else\mkern12mu\fi{\operator@font div}\,\,#1}
-%%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
-\newcommand{\DMname}{Dマシニング}
-\newcommand{\MMname}{Mマシニング}
-\newcommand{\dimple}{ディンプル}
-\newcommand{\dimplekana}{ディンプル}
-%%%%% TO PRG NAME %%%%%%
-\newcommand\nameMainExOne{O80000001} % main program example
-\newcommand\MainExOne{\expandafterindex{\nameMainExOne}\prgbox{\nameMainExOne}}
-\newcommand\nameMainExTwo{O2414} % main program example
-\newcommand\MainExTwo{\expandafterindex{\nameMainExTwo}\prgbox{\nameMainExTwo}}
-\newcommand\nameMXOThickness{O110001} % X outer center measurement
-\newcommand\MXOThickness{\expandafterindex{\nameMXOThickness}\prgbox{\nameMXOThickness}}
-\newcommand\nameMYOThickness{O110002} % Y outer center measurement
-\newcommand\MYOThickness{\expandafterindex{\nameMYOThickness}\prgbox{\nameMYOThickness}}
-\newcommand\nameMXOface{O120001} % keyway X reference surface measurement
-\newcommand\MXOface{\expandafterindex{\nameMXOface}\prgbox{\nameMXOface}}
-\newcommand\nameMXIWidth{O130001} % X inner center measurement
-\newcommand\MXIWidth{\expandafterindex{\nameMXIWidth}\prgbox{\nameMXIWidth}}
-\newcommand\nameMYIWidth{O130002} % Y inner center measurement
-\newcommand\MYIWidth{\expandafterindex{\nameMYIWidth}\prgbox{\nameMYIWidth}}
-\newcommand\nameMXIface{O140001} % outer cut X reference surface measurement
-\newcommand\MXIface{\expandafterindex{\nameMXIface}\prgbox{\nameMXIface}}
-\newcommand\nameMYcenterline{O150002} % Y centerline measurement
-\newcommand\MYcenterline{\expandafterindex{\nameMYcenterline}\prgbox{\nameMYcenterline}}
-\newcommand\nameMXcenterline{O150003} % X centerline measurement (Z measurement)
-\newcommand\MXcenterline{\expandafterindex{\nameMXcenterline}\prgbox{\nameMXcenterline}}
-\newcommand\nameDLone{O210003} % for dimple level 1
-\newcommand\DLone{\expandafterindex{\nameDLone}\prgbox{\nameDLone}}
-\newcommand\nameDLtwoAC{O220001} % for dimple level 2 AC
-\newcommand\DLtwoAC{\expandafterindex{\nameDLtwoAC}\prgbox{\nameDLtwoAC}}
-\newcommand\nameDLtwoBD{O220002} % for dimple level 2 BD
-\newcommand\DLtwoBD{\expandafterindex{\nameDLtwoBD}\prgbox{\nameDLtwoBD}}
-\newcommand\nameDMLthreeAC{O230001} % for dimple level 3 AC measurement
-\newcommand\DMLthreeAC{\expandafterindex{\nameDMLthreeAC}\prgbox{\nameDMLthreeAC}}
-\newcommand\nameDMLthreeBD{O230002} % for dimple level 3 BD measurement
-\newcommand\DMLthreeBD{\expandafterindex{\nameDMLthreeBD}\prgbox{\nameDMLthreeBD}}
-\newcommand\nameKTanmenRight{O410000} % end face left turn
-\newcommand\KTanmenRight{\expandafterindex{\nameKTanmenRight}\prgbox{\nameKTanmenRight}}
-\newcommand\nameKGaisakuRLeft{O420000} % outer cut left turn
-\newcommand\KGaisakuRLeft{\expandafterindex{\nameKGaisakuRLeft}\prgbox{\nameKGaisakuRLeft}}
-\newcommand\nameKMizoConerLeft{O430000} % keyway left turn
-\newcommand\KMizoConerLeft{\expandafterindex{\nameKMizoConerLeft}\prgbox{\nameKMizoConerLeft}}
-\newcommand\nameKSotoMentoriRLeft{O440000} % 外側面取用 左回り
-\newcommand\KSotoMentoriRLeft{\expandafterindex{\nameKSotoMentoriRLeft}\prgbox{\nameKSotoMentoriRLeft}}
-\newcommand\nameKUchiMentoriRLeft{O450000} % 内側面取用 左回り
-\newcommand\KUchiMentoriRLeft{\expandafterindex{\nameKUchiMentoriRLeft}\prgbox{\nameKUchiMentoriRLeft}}
-\newcommand\nameKOLeftAR{O490005} % 外 左回り above right
-\newcommand\KOLeftAR{\expandafterindex{\nameKOLeftAR}\prgbox{\nameKOLeftAR}}
-\newcommand\nameKILeftAC{O490007} % 内 右回り above center
-\newcommand\KILeftAC{\expandafterindex{\nameKILeftAC}\prgbox{\nameKILeftAC}}
-\newcommand\nameDKLthreeAC{O530001} % 内面溝 加工用 レベル3 AC
-\newcommand\DKLthreeAC{\expandafterindex{\nameDKLthreeAC}\prgbox{\nameDKLthreeAC}}
-\newcommand\nameDKLthreeBD{O530002} % 内面溝 加工用 レベル3 BD
-\newcommand\DKLthreeBD{\expandafterindex{\nameDKLthreeBD}\prgbox{\nameDKLthreeBD}}
-\newcommand\nameOpauseCheck{O900003} % move and pause in front of the door
-\newcommand\OpauseCheck{\expandafterindex{\nameOpauseCheck}\prgbox{\nameOpauseCheck}}
-\newcommand\nameOsensorOn{O910001} % touch sensor ON
-\newcommand\OsensorOn{\expandafterindex{\nameOsensorOn}\prgbox{\nameOsensorOn}}
-\newcommand\nameOsensorOff{O910002} % touch sensor OFF
-\newcommand\OsensorOff{\expandafterindex{\nameOsensorOff}\prgbox{\nameOsensorOff}}
-\newcommand\nameOwarmingupA{O915100} % for warming up
-\newcommand\OwarmingupA{\expandafterindex{\nameOwarmingupA}\prgbox{\nameOwarmingupA}}
-\newcommand\nameOwarmingup{O915101} % subprg for warming up
-\newcommand\Owarmingup{\expandafterindex{\nameOwarmingup}\prgbox{\nameOwarmingup}}
-\newcommand\nameOtoolLengthA{O917100} % specified tool length correction auto measurement
-\newcommand\OtoolLengthA{\expandafterindex{\nameOtoolLengthA}\prgbox{\nameOtoolLengthA}}
-\newcommand\nameOtoolLength{O919100} % tool length correction auto measure
-\newcommand\OtoolLength{\expandafterindex{\nameOtoolLength}\prgbox{\nameOtoolLength}}
-%%%%% LINK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\linkLaTeX}{\href{https://www.latex-project.org/}{\LaTeX}}
-\newcommand{\linkLaTeXProject}{\href{https://www.latex-project.org/}{\LaTeX\ Project}}
-\newcommand{\linkAMS}{\href{https://www.latex-project.org/}{American Mathematical Society}}
-\newcommand{\linkTeXLive}{\href{https://tug.org/texlive/}{\TeX\ Live}}
-\newcommand{\linkTeXUsersGroup}{\href{http://www.tug.org/}{\TeX\ Users Group}}
-\newcommand{\linkBibLaTeX}{\href{https://ctan.org/pkg/biblatex}{Bib\LaTeX}}
-\newcommand{\linkBiber}{\href{https://ctan.org/pkg/biber}{Biber}}
-\newcommand{\linkupmendex}{\href{https://ctan.org/pkg/upmendex}{upmendex}}
-\newcommand{\linkPGFTikZ}{\href{https://github.com/pgf-tikz/pgf}{\pgflogo/\tikzlogo}}
-\newcommand{\linkTeXStudio}{\href{https://texstudio.org/}{\TeX\ Studio}}
-\newcommand{\linkSumatraPDF}{\href{https://www.sumatrapdfreader.org/}{Sumatra PDF}}
-\newcommand{\linkVSCode}{\href{https://code.visualstudio.com/}{VS Code}}
-\newcommand{\linkWolframAlpha}{\href{https://www.wolframalpha.com/}{Wolfram\textbar Alpha}}
-\newcommand{\linkWolfram}{\href{https://www.wolfram.com/}{Wolfram Research}}
-\newcommand{\linkExcel}{\href{https://www.microsoft.com/ja-jp/microsoft-365/excel}{Excel}}
-\newcommand{\linkMicrosoftCopilot}{\href{https://www.bing.com/}{Microsoft Copilot}}
-\newcommand{\linkMicrosoftCorp}{\href{https://www.microsoft.com/}{Microsoft Corporation}}
-\newcommand{\linkPython}{\href{https://www.python.org/}{Python}}
-\newcommand{\linkPythonSF}{\href{https://www.python.org/psf-landing/}{Python Software Foundation}}
-\newcommand{\linkGitHub}{\href{https://github.com/}{GitHub}}
-\newcommand{\linkGitHubDesktop}{\href{https://desktop.github.com/}{GitHub Desktop}}
-\newcommand{\linkGitHubInc}{\href{https://github.com/}{GitHub, Inc}}
-\newcommand{\linkDocker}{\href{https://www.docker.com/}{Docker}}
-\newcommand{\linkDockerInc}{\href{https://www.docker.com/}{Docker, Inc}}
-\newcommand{\linkUbuntu}{\href{https://ubuntu.com/}{Ubuntu}}
-\newcommand{\linkCanonicalLtd}{\href{https://canonical.com/}{Canonical Ltd}}
-\newcommand{\linkSQLite}{\href{https://www.sqlite.org/}{SQLite}}
-\newcommand{\linkSQLiteConsortium}{\href{https://www.sqlite.org/consortium.html}{SQLite Consortium}}
-\newcommand{\linkChatGPT}{\href{https://openai.com/chatgpt}{ChatGPT}}
-\newcommand{\linkOpenAI}{\href{https://www.openai.com/}{OpenAI}}
-%%%%% LINK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\newcommand\nextsectionlink[1]{\addtocounter{section}\@ne
-%                               \hyperlink{section.\thechapter.\the\c@section}{#1}%
-%                               \addtocounter{section}{-\@ne}}
-%\newcommand\previoussectionlink[1]{\addtocounter{section}{-\@ne}
-%                                   \hyperlink{section.\thechapter.\the\c@section}{#1}%
-%                                   \addtocounter{section}{\@ne}}
-%\newcommand\previouschapterlink[1]{\addtocounter{chapter}{-\@ne}
-%                                   \hyperlink{chapter.\the\c@chapter}{#1}%
-%                                   \addtocounter{chapter}{\@ne}}
