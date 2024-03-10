@@ -1,14 +1,16 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
+
+\usepackage{luatexja}
 %%% Encoding and Language Settings
-\usepackage[utf8]{inputenc} % Allows input of utf8 characters. including xcolor
+\usepackage{luatexja-fontspec} % Allows input of utf8 characters. including xcolor
 \usepackage{babel} % Multilingual support for LaTeX.
-\usepackage[japanese]{pxbabel} % Japanese support for babel.
+%\usepackage[japanese]{pxbabel} % Japanese support for babel.
 \usepackage[style=english]{csquotes} % Context sensitive quotation facilities.
 %%% Font and Math Settings
-%\usepackage[T1]{fontenc} % for _ in \jobname
 \usepackage{amsmath, amssymb} % Enhanced math support in LaTeX. including amstext
-\usepackage{eulervm} % Euler virtual math fonts.
+\usepackage{unicode-math}
+\usepackage{hologo} % use logo about TeX, LaTeX and so on
 %%% Layout and Table Settings
 \usepackage{geometry} % Provides an easy and flexible user interface to customize page layout.
 \usepackage{array} % Extends array and tabular environments.
@@ -16,13 +18,12 @@
 \usepackage{tabularray} % Allows tables to break across pages. including xcolor, expl3
 %%% Graphics and Color Settings
 \usepackage[dvipsnames]{xcolor} % Provides driver-independent color extensions for LaTeX and pdfLaTeX.
-%%% tikz, pgf %%%
-\def\pgfsysdriver{pgfsys-dvipdfmx.def} % Specifies the driver for PGF, a lower-level language for creating graphics.
-%\usepackage{pgfplots} % A tool to create 2D and 3D plots in LaTeX.
-%\pgfplotsset{compat=1.18} % Specifies the version of pgfplots to use for compatibility.
 %%% Box Settings %%%
 \usepackage[most]{tcolorbox} % includeing pgf, tikz
 \usepackage{tikzpagenodes}
+%%% tikz, pgf %%%
+\def\pgfsysdriver{pgfsys-luatex.def} % Specifies the driver for PGF, a lower-level language for creating graphics.
+\usepackage{pgfplots} % A tool to create 2D and 3D plots in LaTeX.
 %%% Bibliography Settings
 \usepackage[backend=biber, style=numeric-comp, natbib=true]{biblatex} % references
 %%% List Settings
@@ -32,16 +33,15 @@
 %%% Make index
 \usepackage{makeidx}
 %%% Hyperlink Settings
-\usepackage[dvipdfmx]{hyperref} % Adds support for hyperlinks.
-\usepackage{pxjahyper} % Adjusts hyperref for pLaTeX and upLaTeX.
+\usepackage[unicode, hidelinks]{hyperref} % Adds support for hyperlinks.
 %%% Header and Footer Settings
 \usepackage{scrlayer-fancyhdr} % Combines the features of fancyhdr with KOMA-Script's scrlayer.
 %%% Date and Time
 \usepackage{datetime} % Date and time handling.
 \usepackage{bxjaholiday} % Support for Japanese holidays.
 %%% Page Layout
-\usepackage{lastpage} % Reference last page for Page N of M type footers.
-\usepackage{pdflscape} % Make landscape pages display as landscape.
+%\usepackage{lastpage} % Reference last page for Page N of M type footers.
+%\usepackage{pdflscape} % Make landscape pages display as landscape.
 \usepackage{afterpage} % Execute command after the next page break.
 %%% Table of Contents and Headers
 \usepackage{titletoc} % Alternative headings for toc/lof/lot.

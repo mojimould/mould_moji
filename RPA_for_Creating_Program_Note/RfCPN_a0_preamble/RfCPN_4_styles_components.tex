@@ -10,18 +10,19 @@
 %\renewcommand*{\addparttocentry}[2]{\addtocentrydefault{part}{#1}{第#2部}}
 
 %%%%% FOR STYLE OF CHAPTER %%%%%
+\renewcommand{\thechapter}{\ifnum\value{chapter}<10 0\fi\arabic{chapter}}
 \renewcommand{\chapterautorefname}{章}  % chapter --> 章
 \renewcommand\chapterpagestyle{\if@frontmatter plainheadfront\else plainhead\fi}
 \renewcommand*{\chapterformat}{%
   \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
-                      baseline=-8.5pt]
+                      baseline=-7.75pt] % +: title up, -: title down
     \node[fill=\if@appendix white\else Maroon!65\fi,
           text=\if@appendix Maroon!65\else white\fi,
           signal from=east,
           inner sep=5pt,
           text height=1.5ex,
           text depth=2pt]
-      at (0, 0) {\LARGE{\fontfamily{pplx}\bfseries\,\thepart.~\thechapter~~\relax}};
+      at (0, 0) {\LARGE{\sffamily\bfseries\,\thepart.\,\thechapter\,\relax}};
   \end{tikzpicture}~~%
 }
 %%%%% STYLE OF APPENDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -34,14 +35,14 @@
 \setcounter{secnumdepth}{4}
 \renewcommand*{\sectionformat}{%
   \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
-                      baseline=-5.25pt]
+                      baseline=-4.8pt]
     \node[fill=Green!65!,
           text=white,
           signal from=east,
           inner sep=5pt,
-          text height=1.3ex,
+          text height=1.33ex,
           text depth=0pt]
-      at (0, 0) {\Large{\fontfamily{pplx}\bfseries\,\thesection~\relax}};
+      at (0, 0) {\Large{\sffamily\bfseries\,\thesection~\relax}};
   \end{tikzpicture}~~%
 }
 
@@ -56,7 +57,7 @@
           inner sep=5pt,
           text height=1.25ex,
           text depth=0pt]
-      at (0, 0) {\large{\fontfamily{pplx}\bfseries\,\thesubsection~\relax}};
+      at (0, 0) {\large{\sffamily\bfseries\,\thesubsection~\relax}};
   \end{tikzpicture}~~%
 }
 
@@ -71,7 +72,7 @@
           inner sep=5pt,
           text height=1.25ex,
           text depth=0pt]
-      at (0, 0) {\small{\fontfamily{pplx}\bfseries\,\thesubsubsection~\relax}};
+      at (0, 0) {\small{\sffamily\bfseries\,\thesubsubsection~\relax}};
   \end{tikzpicture}~~%
 }
 
