@@ -1,6 +1,15 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
+%%%%% DECLAREROBUSTCOMMAND %%%%%%%%%%%%%%%%%%%%
+\DeclareRobustCommand{\bDiv}{\nonscript\mskip-\medmuskip\mkern5mu\mathbin
+  {\operator@font div}\penalty900
+  \mkern5mu\nonscript\mskip-\medmuskip}
+\DeclareRobustCommand{\pod}[1]{\allowbreak
+  \if@display\mkern18mu\else\mkern8mu\fi(#1)}
+\DeclareRobustCommand{\pDiv}[1]{\pod{{\operator@font div}\mkern6mu#1}}
+\DeclareRobustCommand{\Div}[1]{\allowbreak\if@display\mkern18mu
+  \else\mkern12mu\fi{\operator@font div}\,\,#1}
 %%%%% DECLARENEWLAYER %%%%%%%%%%%%%%%%%%%%
 \newcommand{\setallpageWatermark}[4]{%
   \DeclareNewLayer[
@@ -69,7 +78,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR CHAPTER OR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\modHeadchapter}[2][]{%
-  \clearrightpage\clearleftpage
+  \clearrightpage
   \let\newpage\relax
   \ifx\@chapapp\appendixname
     \chapter{#2\label{app:\thepart.\thechapter}}%
