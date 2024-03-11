@@ -34,13 +34,14 @@
 
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 22.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{湾曲中心が基準の場合}
 \index{トップたんのわんきょくちゅうしん@トップ端の湾曲中心}トップ端における湾曲中心T$_{R_\mathrm c}'$と溝中心M$'$との$x$方向の差は、
 \begin{align*}
-  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\bar\kappa_w\right)^{\!2}}
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\bar\kappa_w\right)^2}
   -\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ .
 \end{align*}
 実際の計測では、湾曲中心T$_{R_\mathrm c}'$ではなく\index{トップたんのそとがわちゅうしん@トップ端の外側中心}トップ端面の外側中心T$_\mathrm c'$が測定されるので、T$_\mathrm c'$とM$'$との$x$方向の差を考える必要がある。
@@ -48,7 +49,7 @@
 %% label{eq:difTopMizoCenter}
 \begin{align}
   \label{eq:difTopMizoCenter}
-  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\bar\kappa_w\right)^{\!2}}
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\bar\kappa_w\right)^2}
   -\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2\ .
 \end{align}
 
@@ -103,7 +104,7 @@
 
 
 
-%\clearpage
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -335,30 +336,30 @@ $R\to\infty$ ($R^{-1}\to0$)に対して、
 もう少し詳しく見ると、\index{テイラーてんかい@テイラー展開}テイラー展開（\index{マクローリンてんかい@マクローリン展開}マクローリン展開）\pageautoref{formula:taylorexpansion}より、
 \begin{align*}
   \tan\zeta
-  = \frac{R_\mathrm o}{\kappa_w}\!
+  = \frac{R_\mathrm o}{\kappa_w}
      \left\{
-     \sqrt{1-\left(\frac{f_\mathrm T-\kappa_p-\kappa_w}{R_\mathrm o}\right)^{\!\!2}}
-     -\sqrt{1-\left(\frac{f_\mathrm T-\kappa_p}{R_\mathrm o}\right)^{\!\!2}}
+     \sqrt{1-\left(\frac{f_\mathrm T-\kappa_p-\kappa_w}{R_\mathrm o}\right)^2}
+     -\sqrt{1-\left(\frac{f_\mathrm T-\kappa_p}{R_\mathrm o}\right)^2}
      \right\}
-  = \frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}+o\!\left(R_\mathrm o^{-3}\right)
+  = \frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}+o\left(R_\mathrm o^{-3}\right)
 \end{align*}
 であり、これより、
 \begin{align*}
-  \sin\zeta = \frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}+o\!\left(R_\mathrm o^{-3}\right)~~, \quad
-  \cos\zeta = 1-\frac12\!\left(\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}\right)^{\!\!2}
-              +o\!\left(R_\mathrm o^{-4}\right)
+  \sin\zeta = \frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}+o\left(R_\mathrm o^{-3}\right)~~, \quad
+  \cos\zeta = 1-\frac12\left(\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}\right)^2
+              +o\left(R_\mathrm o^{-4}\right)
 \end{align*}
 したがって、
 \begin{align*}
   \kappa_d
   &= \kappa_d'-\frac{\kappa_w}2\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}
-     +R_\mathrm o\!
+     +R_\mathrm o
       \left\{
-      \sqrt{1-\left(\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}\right)^{\!\!2}}
-      -\sqrt{1-\left(\frac{f_\mathrm T-\kappa_p}{R_\mathrm o}\right)^{\!\!2}}
+      \sqrt{1-\left(\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}\right)^2}
+      -\sqrt{1-\left(\frac{f_\mathrm T-\kappa_p}{R_\mathrm o}\right)^2}
       \right\}\\
   &= \kappa_d'+\frac{\kappa_w^2}{8R_\mathrm o}
-     +o\!\left(R_\mathrm o^{-3}\right)\ .
+     +o\left(R_\mathrm o^{-3}\right)\ .
 \end{align*}
 これから、$\kappa_d > \kappa_d'$であることがわかる。
 \end{Column}

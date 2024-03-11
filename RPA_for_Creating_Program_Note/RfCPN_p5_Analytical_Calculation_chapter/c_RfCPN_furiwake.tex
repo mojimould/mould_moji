@@ -72,7 +72,7 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
 \begin{gather}
   \label{eq:constraintUpoint1}
   R_\mathrm o - R_\mathrm c = R_\mathrm c - R_\mathrm i = \frac{W_x}2~, \qquad
-  \IP\!\left(R_\mathrm oe^{i\alpha_{\mathrm T_\mathrm o}} - R_\mathrm ie^{i\alpha_{\mathrm T_\mathrm i}}\right)
+  \IP\left(R_\mathrm oe^{i\alpha_{\mathrm T_\mathrm o}} - R_\mathrm ie^{i\alpha_{\mathrm T_\mathrm i}}\right)
   = 0~,\\
   \label{eq:constraintUpoint2}
   \sin\alpha_{\mathrm T_\mathrm i} = \frac{f_\mathrm T}{R_\mathrm i}, \qquad
@@ -85,7 +85,7 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
 %% label{eq:afterftUpoint}
 \begin{align}
   \notag
-  & e^{-i\theta}\!\left\{R_\mathrm ie^{i(\alpha_{\mathrm T_\mathrm i} + \Omega)} - R_\mathrm ie^{-i\alpha_{\mathrm U_\mathrm B}}\right\}
+  & e^{-i\theta}\left\{R_\mathrm ie^{i(\alpha_{\mathrm T_\mathrm i} + \Omega)} - R_\mathrm ie^{-i\alpha_{\mathrm U_\mathrm B}}\right\}
     +R_\mathrm ie^{-i\alpha_{\mathrm U_\mathrm B}}\\
   &= R_\mathrm i
      \left\{
@@ -167,15 +167,14 @@ $\delta_\mathrm s > 0$より、
   \delta_\mathrm s
   = 2l\cdot
     \frac{\displaystyle
-          \left(l+\frac{f_\mathrm B-f_\mathrm T}2\right)\!
-          \sqrt{\left(R_\mathrm c-\frac{W_x}2\right)^{\!\!2}
-                -\left(l+\frac{f_\mathrm B-f_\mathrm T}2\right)^{\!\!2}}
-          -l\sqrt{\left(R_\mathrm c-\frac{W_x}2\right)^{\!\!2}-l^2}}
+          \left(l+\frac{f_\mathrm B-f_\mathrm T}2\right)
+          \sqrt{\left(R_\mathrm c-\frac{W_x}2\right)^2
+                -\left(l+\frac{f_\mathrm B-f_\mathrm T}2\right)^2}
+          -l\sqrt{\left(R_\mathrm c-\frac{W_x}2\right)^2-l^2}}
          {\displaystyle
-          \left(R_\mathrm c-\frac{W_x}2\right)^{\!\!2}-l^2
-          -\left(l+\frac{f_\mathrm B-f_\mathrm T}2\right)^{\!\!2}}~.
+          \left(R_\mathrm c-\frac{W_x}2\right)^2-l^2
+          -\left(l+\frac{f_\mathrm B-f_\mathrm T}2\right)^2}~.
 \end{align*}
-
 
 
 
@@ -236,12 +235,11 @@ $\delta_\mathrm s > 0$より、
 に移動する。
 したがって、これらの差
 \begin{align*}
-  e^{i(\Omega-\theta)}\!
+  e^{i(\Omega-\theta)}
   \left(R_\mathrm oe^{i\alpha_{\mathrm T_\mathrm o}} - R_\mathrm ie^{i\alpha_{\mathrm T_\mathrm i}}\right)
 \end{align*}
 の虚部が$0$であればよい。
 つまり、\pageeqref{eq:constraintUpoint1}より、受板がある場合も$\Omega = \theta$である。
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -282,6 +280,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \end{align}
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 19.2.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -304,8 +303,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \begin{hosoku}
 これの大きさは、$\delta_\mathrm s\cos\psi-2\bar l\sin\psi = 0$より、
 \begin{align*}
-  \left\{\frac{\delta_\mathrm s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\cos\psi\right\}^{\!\!2}
-  +\left\{\bar l-\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\sin\psi\right\}^{\!\!2}
+  \left\{\frac{\delta_\mathrm s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\cos\psi\right\}^2
+  +\left\{\bar l-\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\sin\psi\right\}^2
   = R_\mathrm i'^2\ .
 \end{align*}
 \end{hosoku}
@@ -363,7 +362,6 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -383,7 +381,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \begin{hosoku}
 トップ側の接点U$_\mathrm T'$とボトム側の接点U$_\mathrm B'$の差をとると、
 \begin{align*}
-  R_\mathrm i\!\left(e^{i\alpha_{\mathrm U_\mathrm T}'}-e^{-i\alpha'_{\mathrm U_\mathrm B}}\right)
+  R_\mathrm i\left(e^{i\alpha_{\mathrm U_\mathrm T}'}-e^{-i\alpha'_{\mathrm U_\mathrm B}}\right)
   &= \frac{R_\mathrm i'+\rho}{R_\mathrm i'}\left\{\delta_\mathrm s+i(2\bar l)\right\}
    = \frac{R_\mathrm i}{R_\mathrm i'}\sqrt{\delta_\mathrm s^2+(2\bar l)^2}e^{i(\nicefrac\pi2-\psi)}\ .
 \end{align*}
@@ -400,7 +398,6 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{スペーサによる再振分け}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 1.2.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -414,7 +411,6 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
   &= f_\mathrm T+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\sin\psi\\
   &= f_\mathrm T+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{\delta_\mathrm s}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}}\ .
 \end{align*}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 1.2.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -443,7 +439,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 
 
 
-\clearpage
+%\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 1.2.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -466,7 +462,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
   &= 2\left\{
        R_\mathrm i'^2-\bar l^2-f_d^2-\sqrt{\left(R_\mathrm i'^2-\bar l^2-f_d^2\right)^2-4f_d^2\bar l^2}\,
      \right\}\\
-  &= \left(\sqrt{R_\mathrm i'^2-(\bar l-f_d)^2}-\sqrt{R_\mathrm i'^2-(\bar l+f_d)^2}\,\right)^{\!\!2}.
+  &= \left(\sqrt{R_\mathrm i'^2-(\bar l-f_d)^2}-\sqrt{R_\mathrm i'^2-(\bar l+f_d)^2}\,\right)^2.
 \end{align*}
 なお、これはワークが水平・鉛直方向にそれぞれ、
 \begin{align*}
@@ -474,8 +470,6 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
   \text{鉛直方向：}~\frac{f_\mathrm B-f_\mathrm T}2
 \end{align*}
 だけ移動することを意味する。
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -535,7 +529,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 に移動する。
 したがって、これらの差
 \begin{align*}
-  e^{i(\Omega-\theta)}\!
+  e^{i(\Omega-\theta)}
   \left(R_\mathrm oe^{i\alpha_{\mathrm T_\mathrm o}}-R_\mathrm ie^{i\alpha_{\mathrm T_\mathrm i}}\right)
 \end{align*}
 の虚部が$0$であればよい。
@@ -562,14 +556,14 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \subsubsection{回転後の接点}
 回転後におけるトップ側の\index{ワークとうけいたのせってん@ワークと受板の接点}受板との接点は、点Pを中心に$-\theta$だけ回転するので、
 \begin{align*}
-  &  e^{-i\theta}\!\left(R_\mathrm ie^{i\alpha_{\mathrm U_\mathrm B}}-\varDelta'\right)+\varDelta'\\
+  &  e^{-i\theta}\left(R_\mathrm ie^{i\alpha_{\mathrm U_\mathrm B}}-\varDelta'\right)+\varDelta'\\
   &= R_\mathrm ie^{i(\alpha_{\mathrm U_\mathrm B}-\theta)}+\varDelta'\!\left(1-e^{-i\theta}\right)\\
   &= R_\mathrm i\cos(\alpha_{\mathrm U_\mathrm B}-\theta)+\varDelta'(1-\cos\theta)
      +i\left\{R_\mathrm i\sin(\alpha_{\mathrm U_\mathrm B}-\theta)+i\varDelta'\sin\theta\right\}\ .
 \end{align*}
 同様に、ボトム側の受板との接点は、
 \begin{align*}
-  &  e^{-i\theta}\!\left(R_\mathrm ie^{-i\alpha_{\mathrm U_\mathrm B}}-\varDelta'\right)+\varDelta'\\
+  &  e^{-i\theta}\left(R_\mathrm ie^{-i\alpha_{\mathrm U_\mathrm B}}-\varDelta'\right)+\varDelta'\\
   &= R_\mathrm ie^{-i(\alpha_{\mathrm U_\mathrm B}+\theta)}+\varDelta'\!\left(1-e^{-i\theta}\right)\\
   &= R_\mathrm i\cos(\alpha_{\mathrm U_\mathrm B}+\theta)+\varDelta'(1-\cos\theta)
      -i\left\{R_\mathrm i\sin(\alpha_{\mathrm U_\mathrm B}+\theta)-i\varDelta'\sin\theta\right\}\ .
@@ -620,7 +614,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 なお、\pageeqref{eq:afterfttable}の実部は、
 \begin{align*}
   R_\mathrm i\cos\alpha_{\mathrm T_\mathrm i}+\varDelta'(1-\cos\theta)
-  = \sqrt{R_\mathrm i^2-\bar l^2}+\left(\varDelta+\sqrt{R_\mathrm i'-\bar l^2}\right)\!(1-\cos\theta)\ .
+  = \sqrt{R_\mathrm i^2-\bar l^2}+\left(\varDelta+\sqrt{R_\mathrm i'-\bar l^2}\right)(1-\cos\theta)\ .
 \end{align*}
 となるので、実軸の正方向に動くことがわかる。
 
@@ -645,7 +639,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \begin{hosoku}
 改めてまとめると、テーブルを$-\theta$だけ傾けた後の\index{トップさいふりわけちょう@トップ再振分長}トップ側の振分長$f_\mathrm T'$は、
 \begin{align*}
-  f_\mathrm T' = f_\mathrm T+\left(\varDelta+\sqrt{R_\mathrm i'-\bar l^2}\right)\!\sin\theta\ .
+  f_\mathrm T' = f_\mathrm T+\left(\varDelta+\sqrt{R_\mathrm i'-\bar l^2}\right)\sin\theta\ .
 \end{align*}
 トップ側とボトム側の振分長が均等になるときの\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}傾き角$\theta'$は、
 \begin{align*}

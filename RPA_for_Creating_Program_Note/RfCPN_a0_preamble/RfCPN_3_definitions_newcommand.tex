@@ -69,7 +69,7 @@
 }
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Appendixpart}{
-  \clearrightpage
+  \cleardoublepage
   \part*{\partname\ \thepart\hx の補遺\label{Apart:\thepart}}
   \addcontentsline{toc}{part}{\partname\ \thepart\hx の補遺}
 }
@@ -78,7 +78,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR CHAPTER OR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\modHeadchapter}[2][]{%
-  \clearrightpage
+  \cleardoublepage
   \let\newpage\relax
   \ifx\@chapapp\appendixname
     \chapter{#2\label{app:\thepart.\thechapter}}%

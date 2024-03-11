@@ -315,8 +315,8 @@ $Z$座標についてはどの面も$j$に依らないことがわかる。
 \subsection{傾き角}
 \index{トップがわのAがわうちたんてん@トップ側のA側内端点}A側内面トップ端と、\expandafterindex{Aがわないめん（\dimplekana1れつめ）@A側内面（\dimple1列目）}A側内面のトップ端から$q$の位置との$x$方向の差は、
 \begin{align*}
-  \sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm Aq}}2\right)^{\!\!2}-(f_\mathrm T-q)^2}
-  -\sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm A0}}2\right)^{\!\!2}-f_\mathrm T^2}
+  \sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2}
+  -\sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm A0}}2\right)^2-f_\mathrm T^2}
 \end{align*}
 で与えられる。
 このとき、これが負になる場合は傾ける必要はなく、正となる場合のみ傾ける。
@@ -328,8 +328,8 @@ $Z$座標についてはどの面も$j$に依らないことがわかる。
   \text{正の場合：}&&\quad
   \tan\phi
   &= \frac{\displaystyle
-           \sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm Aq}}2\right)^{\!\!2}-(f_\mathrm T-q)^2}
-           -\sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm A0}}2\right)^{\!\!2}-f_\mathrm T^2}}q\\[8pt]
+           \sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2}
+           -\sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm A0}}2\right)^2-f_\mathrm T^2}}q\\[8pt]
   \text{負の場合：}&&
   \phi
   &= 0
@@ -342,8 +342,8 @@ $Z$座標についてはどの面も$j$に依らないことがわかる。
 \begin{Column}{傾き角が負となるモールド}
 $\phi < 0$となるのは、
 \begin{align*}
-  & \left(R_\mathrm c+\frac{w'_{\mathrm Aq}}2\right)^{\!\!2}-(f_\mathrm T-q)^2
-    < \left(R_\mathrm c+\frac{w'_{\mathrm A0}}2\right)^{\!\!2}-f_\mathrm T^2\\
+  & \left(R_\mathrm c+\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2
+    < \left(R_\mathrm c+\frac{w'_{\mathrm A0}}2\right)^2-f_\mathrm T^2\\
   \longrightarrow~~
   & \frac{w_{\mathrm A0}-w_{\mathrm Aq}}2
     \left(2R_\mathrm c+\frac{w_{\mathrm A0}'+w_{\mathrm Aq}'}2\right)
@@ -379,17 +379,17 @@ $\phi < 0$となるのは、
 \end{enumerate}
 C側内面のトップ端から$q$の位置と、C側内面のトップ端から$q+(m-1)p_z$の位置との$x$方向の差は、
 \begin{align*}
-  \sqrt{\left(R_\mathrm c-\frac{w'_{\mathrm Aq+(m-1)p_z}}2\right)^{\!\!2}
+  \sqrt{\left(R_\mathrm c-\frac{w'_{\mathrm Aq+(m-1)p_z}}2\right)^2
         -\left\{f_\mathrm T-q-(m-1)p_z\right\}^2}
-  -\sqrt{\left(R_\mathrm c-\frac{w'_{\mathrm Aq}}2\right)^{\!\!2}-(f_\mathrm T-q)^2}
+  -\sqrt{\left(R_\mathrm c-\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2}
 \end{align*}
 これより、C側\dimple に対する傾き角$\phi_\mathrm C$ ($\phi_\mathrm C > 0$)は、
 \begin{align*}
   \tan\phi_\mathrm C
   = \frac{\displaystyle
-          \sqrt{\left(R_\mathrm c-\frac{w'_{\mathrm Aq+(m-1)p_z}}2\right)^{\!2}
+          \sqrt{\left(R_\mathrm c-\frac{w'_{\mathrm Aq+(m-1)p_z}}2\right)^2
                 -\left\{f_\mathrm T-q-(m-1)p_z\right\}^2}
-          -\sqrt{\left(R_\mathrm c-\frac{w'_{\mathrm Aq}}2\right)^{\!2}-(f_\mathrm T-q)^2}}
+          -\sqrt{\left(R_\mathrm c-\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2}}
          {(m-1)p_z}
 \end{align*}
 で与えられる。
@@ -630,8 +630,8 @@ A側内面のトップ端からの（$X$方向の）距離は、\index{トップ
   \text{複号}
   \left\{
   \begin{array}{rl}
-    \!\text{上}\!\!\!& \text{： A面}\\
-    \!\text{下}\!\!\!& \text{： C面}\\
+    \!\text{上}\!\!\!\!& \text{： A面}\\
+    \!\text{下}\!\!\!\!& \text{： C面}\\
   \end{array}
   \right.
   \right).
@@ -641,7 +641,7 @@ A側内面のトップ端からの（$X$方向の）距離は、\index{トップ
 
 
 
-\paragraph*{$j$方向の差分}\noindent
+\paragraph*{$j$方向の差分}
 $Y$方向の隣同士の差分、すなわち$i$を固定したときの$j$番目と$j+1$番目の位置の差分は、
 \begin{align*}
   \left[
@@ -661,7 +661,8 @@ $Y$方向の隣同士の差分、すなわち$i$を固定したときの$j$番�
 \end{align*}
 
 
-\paragraph*{$i$方向の差分}\noindent
+\clearpage
+\paragraph*{$i$方向の差分}
 $Z$方向の隣同士の差分、すなわち$j$を固定したときの$i$番目と$i+1$番目の位置の差分については、
 \begin{align*}
  &\left[
@@ -676,11 +677,11 @@ $Z$方向の隣同士の差分、すなわち$j$を固定したときの$i$番�
  &= \left[
     \begin{array}{c}
       \displaystyle
-      \left(\mathcal L_{i+1, i}+\frac{w'_{\mathrm Aq+ip_z}-w'_{\mathrm Aq+(i-1)p_z}}2\right)\!\cos\phi
+      \left(\mathcal L_{i+1, i}+\frac{w'_{\mathrm Aq+ip_z}-w'_{\mathrm Aq+(i-1)p_z}}2\right)\cos\phi
       -p_z\sin\phi\\[6pt]
       \displaystyle-\frac{d_{i+1}-d_i}2\\[6pt]
       \displaystyle
-      -\left(\mathcal L_{i+1, i}+\frac{w'_{\mathrm Aq+ip_z}-w'_{\mathrm Aq+(i-1)p_z}}2\right)\!\sin\phi
+      -\left(\mathcal L_{i+1, i}+\frac{w'_{\mathrm Aq+ip_z}-w'_{\mathrm Aq+(i-1)p_z}}2\right)\sin\phi
       -p_z\cos\phi
     \end{array}
     \right]\ .
@@ -760,8 +761,8 @@ $X$成分の差分の大きさが（$\mathcal L_{i+1, i}$からみて）A面（�
   \text{複号}
   \left\{
   \begin{array}{rl}
-    \!+\!\!\!& \text{： B面}\\
-    \!-\!\!\!& \text{： D面}\\
+    \!+\!\!\!\!& \text{： B面}\\
+    \!-\!\!\!\!& \text{： D面}\\
   \end{array}
   \right.
   \right).
@@ -803,9 +804,9 @@ B面に対する$Z$方向の隣同士の差分、すなわち$j$を固定した�
   \right]\\
  &= \left[
     \begin{array}{c}
-      \displaystyle\left(\mathcal L_{i+1, i}+\frac{d_{i+1}-d_i}2\right)\!\cos\phi-p_z\sin\phi\\[10pt]
+      \displaystyle\left(\mathcal L_{i+1, i}+\frac{d_{i+1}-d_i}2\right)\cos\phi-p_z\sin\phi\\[10pt]
       \displaystyle\frac{w'_{\mathrm Bq+ip_z}-w'_{\mathrm Bq+(i-1)p_z}}2\\[8pt]
-      \displaystyle-\left(\mathcal L_{i+1, i}+\frac{d_{i+1}-d_i}2\right)\!\cos\phi-p_z\cos\phi
+      \displaystyle-\left(\mathcal L_{i+1, i}+\frac{d_{i+1}-d_i}2\right)\cos\phi-p_z\cos\phi
     \end{array}
     \right]\ .
 \end{align*}
