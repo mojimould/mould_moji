@@ -79,7 +79,7 @@ IF[#31LE0]GOTO800
 (#31: max[#605, hosei kouguKei])
 
 IF[#4012EQ56]THEN #30=SQRT[#17*#17-[#23-#32]*[#23-#32]]-SQRT[#17*#17-#23*#23]
-IF[#4012EQ54]THEN #30=-SQRT[#17*#17-[#23-#32]*[#23-#32]]-SQRT[#17*#17-#23*#23]
+IF[#4012EQ54]THEN #30=-SQRT[#17*#17-[#23-#32]*[#23-#32]]+SQRT[#17*#17-#23*#23]
 IF[#01EQ1]THEN #30=0
 (#30: X hosei from K)
 
@@ -141,7 +141,7 @@ S2599
 G90 G01 Z[#26+#600] F#650
 G04 X1.0 (wait 1.0s)
 M05 (spindle off)
-S200
+S35
 M00 (OK?)
 GOTO019
 N016 (if #443=2)
@@ -157,7 +157,7 @@ S2599
 G90 G01 Z[#26+#600] F#650
 G04 X1.0 (wait 1.0s)
 M05 (spindle off)
-S200
+S35
 M00 (OK?)
 GOTO019
 N018 (if #427=2)
@@ -224,7 +224,7 @@ M09 (coolant off)
 S2599
 G04 X1.0 (wait 1.0s)
 M05 (spindle off)
-S200
+S35
 #3000=100 (are the arguments OK?)
 
 N999 M99

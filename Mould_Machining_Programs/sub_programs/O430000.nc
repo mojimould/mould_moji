@@ -4,20 +4,19 @@ O430000
 
 N001
 IF[#21EQ#0]GOTO800
-IF[#21LT10]GOTO800
+IF[#21LE10]GOTO800
 IF[#22EQ#0]GOTO800
-IF[#22LT10]GOTO800
+IF[#22LE10]GOTO800
 IF[#26EQ#0]GOTO800
 IF[#13EQ#0]GOTO800
 IF[#13LE1]GOTO800
 IF[#11LT#0]GOTO800
 IF[#11LE1]GOTO800
-(if U < 10 or #0, go to N800)
-(if Y < 10 or #0, go to N800)
-(if V < 10 or #0, go to N800)
+(if U <= 10 or #0, go to N800)
+(if V <= 10 or #0, go to N800)
 (if Z = #0, go to N800)
-(if M < 1, or #0, go to N800)
-(if H < 1, or #0, go to N800)
+(if M <= 1, or #0, go to N800)
+(if H <= 1, or #0, go to N800)
 
 IF[#01EQ0]GOTO002
 IF[#01EQ1]GOTO002
@@ -69,18 +68,18 @@ IF[#4120EQ#0]GOTO800
 IF[#4120LT6]GOTO800
 IF[#4120GT10]GOTO800
 IF[[FIX[#4120]]NE#4120]GOTO800
-IF[#22GE#25]GOTO800
+IF[#25GE#22]GOTO800
 IF[[#26-#13-#11-#419-#420]LE[#901011/2]]GOTO800
 IF[[ABS[#419]]GE[#13/2]]GOTO800
 IF[[ABS[#420]]GE[#11/2]]GOTO800
-IF[[ABS[#421]]GE[[#21-#24]/2]]GOTO800
+IF[[ABS[#421]]GE[[#22-#25]/2]]GOTO800
 (if |#422| >= 10, go to N800)
 (if T# < 6 or > 10 or not integer or #0, go to N800)
-(if V >= Y, go to N800)
+(if Y >= V, go to N800)
 (if Z-M-H-#419-#420 <= #901011/2, go to N800)
 (if |#419| >= M/2, go to N800)
 (if |#420| >= H/2, go to N800)
-(if |#421| >= [U-X]/2, go to N800)
+(if |#421| >= [V-Y]/2, go to N800)
 
 N009
 #33=#24+#422
@@ -178,7 +177,7 @@ S2599
 G90 G01 Z[#26+#600] F#650
 G04 X1.0 (wait 1.0s)
 M05 (spindle off)
-S200
+S35
 M00
 N014 (if #423=2)
 G65 P900003
@@ -259,7 +258,7 @@ M09 (coolant off)
 S2599
 G04 X1.0 (wait 1.0s)
 M05 (spindle off)
-S200
+S35
 #3000=100 (are the arguments OK?)
 
 N999 M99

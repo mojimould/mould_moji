@@ -26,7 +26,7 @@ M11 (B-axis unclamp)
 G91 G00 B90.0
 M10 (B-axis clamp)
 M05 (spindle off)
-S200
+S35
 
 N005
 G90 G53 G01 Z-1030.0 F#650

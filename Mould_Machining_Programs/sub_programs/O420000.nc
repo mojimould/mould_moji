@@ -136,7 +136,7 @@ S2599
 G90 G01 Z[#26+#600] F#650
 G04 X1.0 (wait 1.0s)
 M05 (spindle off)
-S200
+S35
 M00 (for Bot)
 N013 (if #438=2)
 M09 (coolant off)
@@ -154,7 +154,7 @@ S2599
 G90 G01 Z[#26+#600] F#650
 G04 X1.0 (wait 1.0s)
 M05 (spindle off)
-S200
+S35
 M00 (for Top)
 N015 (if #416=2)
 G65 P900003 (for Top)
@@ -221,7 +221,7 @@ M09 (coolant off)
 S2599
 G04 X1.0 (wait 2.0s)
 M05 (spindle off)
-S200
+S35
 #3000=100 (are the arguments OK?)
 
 N999 M99

@@ -124,7 +124,7 @@ M09 (coolant off)
 S2599
 G04 X1.0 (wait 2.0s)
 M05 (spindle off)
-S200
+S35
 #3000=100 (are the arguments OK?)
 
 N999 M99

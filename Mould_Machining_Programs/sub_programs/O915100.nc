@@ -5,7 +5,7 @@ N001 (initialize)
 G49 G40 (cancel hosei)
 G80 (cancel cycle)
 G17 (select XY)
-S200
+S35
 M05 (spindle off)
 M09 (coolant off)
 M29 (chip conveyor off)

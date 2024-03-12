@@ -6,7 +6,7 @@ O80000001
 N001
 G49 G40 (cancel hosei)
 G80 G17
-S200
+S35
 M05 (spindle off)
 M09 (coolant off)
 M29 (chip conveyor off)
@@ -84,7 +84,7 @@ M10 (B-axis clamp)
 T50 (touch sensor)
 M06 (tool exchange)
 
-G40 G49 G80 G17 S200 (cancel hosei, low gear)
+G40 G49 G80 G17 S35 (cancel hosei, low gear)
 M19 (Spindle orientation)
 G43 H50 (hosei kouguChou #50)
 
@@ -611,7 +611,7 @@ M00
 N650
 G49 G40 (cancel hosei)
 G80 G17
-S200 (low gear)
+S35 (low gear)
 G90 G53 G01 Z0 F#650
 G91 G30 X0 Y0
 M11 (B-axis unclamp)
@@ -676,7 +676,7 @@ M09 (coolant off)
 S2599
 G04 X1.0 (wait 1.0s)
 M05 (spindle off)
-S200
+S35
 #3000=145 (MP60-Low battery)
 
 N821
@@ -684,7 +684,7 @@ M09 (coolant off)
 S2599
 G04 X1.0 (wait 1.0s)
 M05 (spindle off)
-S200
+S35
 #3000=146 (is the palette# is ok?)
 
 N800
@@ -692,7 +692,7 @@ M09 (coolant off)
 S2599
 G04 X1.0 (wait 1.0s)
 M05 (spindle off)
-S200
+S35
 #3000=100 (are the arguments OK?)
 
 
@@ -711,7 +711,7 @@ N992
 G90 G53 G01 Z0 F#650
 G91 G30 X0 Y0
 M05 (spindle off)
-S200
+S35
 T01 (empty)
 M06 (tool exchange)
 M60 (palette change)

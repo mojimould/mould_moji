@@ -8,7 +8,7 @@ O2414
 N001
 G49 G40 (cancel hosei)
 G80 G17
-S200
+S35
 M05 (spindle off)
 M09 (coolant off)
 M29 (chip conveyor off)
@@ -82,7 +82,7 @@ M10 (B-axis clamp)
 T50 (touch sensor)
 M06 (tool exchange)
 
-G40 G49 G80 S200 (cancel hosei, low gear)
+G40 G49 G80 S35 (cancel hosei, low gear)
 M19 (Spindle orientation)
 G43 H50 (hosei kouguChou #50)
 
@@ -111,7 +111,7 @@ G90 G54 G01 X0 Y0 F#652
 (G55 XY Bot outside center)
 G43 H50 (hosei kouguChou #50)
 
-G54 G65 P110002 Y152.800. Z400.0000
+G54 G65 P110002 Y152.800 Z400.0000
 (G54: Bot Y Outside center)
 (Y: Bot BD gaikei)
 (Z: Bot sai_furiwake)
@@ -165,7 +165,7 @@ G90 G56 G01 X0 Y0 F#652
 (G56 XY Top outside center)
 G43 H50 (hosei kouguChou #50)
 
-G56 G65 P110002 Y152.800. Z400.000
+G56 G65 P110002 Y152.800 Z400.000
 (G56: Top Y Outside center)
 (Y: Top BD gaikei)
 (Z: Top sai_furiwake)
@@ -207,7 +207,7 @@ T50 (touch sensor)
 M06 (tool exchange)
 
 N201
-G40 G80 S200 (cancel hosei, low gear)
+G40 G80 S35 (cancel hosei, low gear)
 M19 (Spindle orientation)
 G43 H50 (hosei kouguChou #50)
 
@@ -587,7 +587,7 @@ N992
 M09 (coolant off)
 M29 (chip conveyor off)
 M05 (spindle off)
-S200
+S35
 
 N993
 M60 (palette change)
@@ -602,7 +602,7 @@ M09 (coolant off)
 S2599
 G04 X1.0 (wait 2.0s)
 M05 (spindle off)
-S200
+S35
 #3000=145 (MP60-Low battery)
 
 N821
@@ -610,7 +610,7 @@ M09 (coolant off)
 S2599
 G04 X1.0 (wait 2.0s)
 M05 (spindle off)
-S200
+S35
 #3000=146 (is the palette# is ok?)
 
 N800
@@ -618,7 +618,7 @@ M09 (coolant off)
 S2599
 G04 X1.0 (wait 2.0s)
 M05 (spindle off)
-S200
+S35
 #3000=100 (are the arguments OK?)
 
 N999 M30
