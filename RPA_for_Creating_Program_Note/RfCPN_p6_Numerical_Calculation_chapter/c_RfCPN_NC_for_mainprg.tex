@@ -12,7 +12,7 @@
 \modHeadsection{再振分長・再張出長・均等振分角の数値情報}
 各パラメータを以下とする。
 \begin{align*}
-  \varDelta_x' = \varDelta_x+\sqrt{R_\mathrm i'-\bar l^2}\ , \quad
+  \Delta_x' = \Delta_x+\sqrt{R_\mathrm i'-\bar l^2}\ , \quad
   R_\mathrm i' = R_\mathrm c-\frac{W_x}2-\rho\ ,\quad
   \bar l = l-\frac\sigma2\ ,\quad
   f_d = \frac{f_\mathrm B-f_\mathrm T}2\ .
@@ -26,7 +26,7 @@
 \index{テーブル}テーブルを$-\theta$だけ回転させて調整したトップ・ボトム側の\index{さいふりわけちょう@再振分長}振分長$f'_\mathrm T$, $f'_\mathrm B$は、\pageeqref{eq:saifuriwake}より、
 \begin{align*}
   \text{トップ側：}\quad
-  & \HLbox{f_\mathrm T' = f_\mathrm T+\varDelta_x'\!\sin\theta}\ ,\\
+  & \HLbox{f_\mathrm T' = f_\mathrm T+\Delta_x'\!\sin\theta}\ ,\\
   \text{ボトム側：}\quad
   & \HLbox{f_\mathrm B' = (f_\mathrm T+f_\mathrm B)-f_\mathrm T'}\ .
 \end{align*}
@@ -52,9 +52,9 @@
 $f'_\mathrm T$および$f'_\mathrm B$が均等になり、かつトップ側およびボトム側の\index{たんめん@端面}端面が$X$軸方向に平行になるときの\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}回転角$\theta_\mathrm T'$, $\theta_\mathrm B'$は、\pageeqref{eq:saifuriwakeangle}よりそれぞれ、
 \begin{align*}
   \text{トップ側：}\quad
-  & \HLbox{\theta_\mathrm T' = -\sin^{-1}\frac{f_d}{\varDelta_x'}}\ ,\\
+  & \HLbox{\theta_\mathrm T' = -\sin^{-1}\frac{f_d}{\Delta_x'}}\ ,\\
   \text{ボトム側：}\quad
-  & \HLbox{\theta_\mathrm B' = \pi-\sin^{-1}\frac{f_d}{\varDelta_x'}}\ .
+  & \HLbox{\theta_\mathrm B' = \pi-\sin^{-1}\frac{f_d}{\Delta_x'}}\ .
 \end{align*}
 
 
@@ -78,7 +78,7 @@ $f'_\mathrm T$および$f'_\mathrm B$が均等になり、かつトップ側お�
 \index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした、（$-\theta$回転後の）\index{ボトムたんのそとがわちゅうしん@ボトム端の外側中心}ボトム端の外径中心の$X$位置は、\pageeqref{eq:tableBc}より、
 \begin{align*}
   \HLbox{%
-    \varDelta_x'\cos\theta
+    \Delta_x'\cos\theta
     -\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2%
   }\ .
 \end{align*}
@@ -90,7 +90,7 @@ $f'_\mathrm T$および$f'_\mathrm B$が均等になり、かつトップ側お�
 \index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした、（$-\theta$回転後の）\index{ボトムAがわにくあつ@ボトムA側肉厚}ボトムA側肉厚を\index{きじゅん（ボトムAがわにくあつ）@基準（ボトムA側肉厚）}基準とした\index{ボトムがわのがいさくちゅうしん@ボトム側の外削中心}ボトム側の外削中心$\mathfrak B_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterBt}より、
 \begin{align*}
   \HLbox{%
-    \varDelta_x'\cos\theta
+    \Delta_x'\cos\theta
     -\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
     -\frac{w_\mathrm B}2
     -\tau_\mathrm B
@@ -107,7 +107,7 @@ $f'_\mathrm T$および$f'_\mathrm B$が均等になり、かつトップ側お�
   \HLbox{%
     -\left(
       \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2
-      -\varDelta_x'\cos\theta
+      -\Delta_x'\cos\theta
       +\frac{w_\mathrm T}2
       +\tau_\mathrm T
       -\frac{\mathfrak W_\mathrm T}2
@@ -128,7 +128,7 @@ $f'_\mathrm T$および$f'_\mathrm B$が均等になり、かつトップ側お�
 \subsubsection{ボトム端の湾曲中心\texorpdfstring{$X$}{X}}
 \index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした、（$-\theta$回転後の）\index{ボトムたんのわんきょくちゅうしん@ボトム端の湾曲中心}ボトム端の湾曲中心の$X$値は、\pageeqref{eq:tableBRc}より、
 \begin{align*}
-  \HLbox{\varDelta_x'\!\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}}~.
+  \HLbox{\Delta_x'\!\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}}~.
 \end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -151,7 +151,7 @@ $f'_\mathrm T$および$f'_\mathrm B$が均等になり、かつトップ側お�
 \index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした、（$-\theta$回転後の\index{トップたんのそとがわちゅうしん@トップ端の外側中心}外側中心の$X$位置は、\pageeqref{eq:tableTc}より、
 \begin{align*}
   \HLbox{%
-    \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\varDelta_x'\cos\theta%
+    \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\Delta_x'\cos\theta%
   }~.
 \end{align*}
 
@@ -163,7 +163,7 @@ $f'_\mathrm T$および$f'_\mathrm B$が均等になり、かつトップ側お�
 \begin{align*}
   \HLbox{%
     -\left(
-      \varDelta_x'\cos\theta
+      \Delta_x'\cos\theta
       -\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
       -\frac{w_\mathrm B}2
       -\tau_\mathrm B
@@ -181,7 +181,7 @@ $f'_\mathrm T$および$f'_\mathrm B$が均等になり、かつトップ側お�
 \begin{align*}
   \HLbox{%
     \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2
-    -\varDelta_x'\cos\theta
+    -\Delta_x'\cos\theta
     +\frac{w_\mathrm T}2
     +\tau_\mathrm T
     -\frac{\mathfrak W_\mathrm T}2
@@ -198,7 +198,7 @@ $f'_\mathrm T$および$f'_\mathrm B$が均等になり、かつトップ側お�
     \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^2}
     -\kappa_d
     -\frac{W_{mx}}2
-    -\varDelta_x%
+    -\Delta_x%
   }\\[9pt]
   \left(
   \begin{array}{rl}
@@ -229,7 +229,7 @@ $f'_\mathrm T$および$f'_\mathrm B$が均等になり、かつトップ側お�
 \subsubsection{トップ端の湾曲中心\texorpdfstring{$X$}{X}}
 \index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした、（$-\theta$回転後の）\index{トップたんのわんきょくちゅうしん@トップ端の湾曲中心}トップ端の湾曲中心の$X$値は、\pageeqref{eq:tableTRc}より、
 \begin{align*}
-  \HLbox{\sqrt{R_\mathrm c^2-f_\mathrm T^2}-\varDelta_x'\!\cos\theta}~.
+  \HLbox{\sqrt{R_\mathrm c^2-f_\mathrm T^2}-\Delta_x'\!\cos\theta}~.
 \end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -243,7 +243,7 @@ $f'_\mathrm T$および$f'_\mathrm B$が均等になり、かつトップ側お�
 %% subsection 30.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{外側中心・内側中心\texorpdfstring{$Y$}{Y}}
-\index{ジグ}ジグの底の$Y$座標を$\varDelta_y$とすると、\index{そとがわちゅうしんY@外側中心$Y$}外側中心および\index{うちがわちゅうしんY@内側中心$Y$}内側中心$Y$座標は、
+\index{ジグ}ジグの底の$Y$座標を$\Delta_y$とすると、\index{そとがわちゅうしんY@外側中心$Y$}外側中心および\index{うちがわちゅうしんY@内側中心$Y$}内側中心$Y$座標は、
 \begin{align*}
-  \HLbox{\varDelta_y+\frac{W_y}2}\ .
+  \HLbox{\Delta_y+\frac{W_y}2}\ .
 \end{align*}

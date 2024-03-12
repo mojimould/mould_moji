@@ -147,6 +147,7 @@ S35
 M00 (OK?)
 GOTO017
 N014 (if #448=2)
+M09 (coolant off)
 G90 G01 Z[#26+#600] F#650
 G65 P900003 (for Bot)
 GOTO017
@@ -164,6 +165,7 @@ M05 (spindle off)
 M00 (OK?)
 GOTO017
 N016 (if #432=2)
+M09 (coolant off)
 G90 G01 Z[#26+#600] F#650
 G65 P900003 (for Top)
 
