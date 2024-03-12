@@ -33,6 +33,11 @@ IF[[#13/2]EQ#727]THEN #32=#19/2
 N004
 #730=[#32*2]/#04+1
 (#730= the # of dimple for current row)
+
+
+(kokokara G31 or G01)
+
+
 IF[#4111EQ50]GOTO005
 (if H#=50, go to N005)
 GOTO006
@@ -42,7 +47,7 @@ G91 G31 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F#653
 GOTO007
 N006 (for kakou)
 G91 G01 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F#651
-(YZ to the 1st dimple: X: faceA-5 or faceC+5)
+(YZ to the 1st dimple: X: faceA-#602 or faceC+#602)
 
 N007
 #31=1
