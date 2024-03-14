@@ -402,8 +402,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum600 & 工具 - 端面間 $Z$方向クリアランス平面間距離 & 100.0\\
 \SetRow{unusingVariables}
 \ttNum601 & （予備） &\\
-\ttNum602 & タッチセンサー計測時の近付き量 & 10.0\\
-\ttNum603 & タッチセンサー計測時の行過ぎ量 & 3.0\\
+\ttNum602 & タッチセンサープローブ計測時（\dimple 除く）の近付き量 & 10.0\\
+\ttNum603 & タッチセンサープローブ計測時の行過ぎ量 & 3.0\\
 \SetRow{unusingVariables}
 \ttNum604 & （予備） &\\
 \ttNum605 & 外側加工面 法線方向クリアランス平面間距離 最小値 & 30.0\\
@@ -433,9 +433,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum618 & （座ぐり加工用予備） &\\
 \SetRow{unusingVariables}
 \ttNum619 & （予備） &\\
-\ttNum620 & \dimple 加工用 加工時近付き量 & 1.0 \\
-\SetRow{unusingVariables}
-\ttNum621 & （予備） &\\
+\ttNum620 & \dimple 測定時近付き量 & 10.0 \\
+\ttNum621 & \dimple 加工時近付き量 & 1.0 \\
 \SetRow{unusingVariables}
 \ttNum622 & （予備） &\\
 \SetRow{unusingVariables}
@@ -726,8 +725,8 @@ $\cdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 19.7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum900001\,-\ttNum900031, \ttNum900101\,-\ttNum900500：実測値}
-\ttNum900001\,-\ttNum900500については、\index{じっそくち@実測値}実測値または計算値を格納する。
+\modHeadsection{\ttNum900000\,-\ttNum900031, \ttNum900101\,-\ttNum900500：実測値}
+\ttNum900000\,-\ttNum900500については、\index{じっそくち@実測値}実測値または計算値を格納する。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -737,6 +736,8 @@ $\cdots$ & （以下不明） & \ttNum0
 
 \begin{multicollongtblr}[white]{\ttNum900001\,-\ttNum900005：外中心$X$ 両側測定用 \MXOThickness}{cX[l]}
 変数 & 内容\\
+\SetRow{unusingVariables}
+\ttNum900000 & （予備）\\
 \ttNum900001 & $X$外中心測定 $-X$側測定値\\
 \ttNum900002 & $X$外中心測定 $+X$側測定値\\
 \ttNum900003 & $X$外中心測定値\\
@@ -933,7 +934,7 @@ $\cdots$ & （以下不明） & \ttNum0
 %% section 17.9 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum901050\,-\ttNum901074：タッチセンサーブローブ}
-\ttNum901050\,-\ttNum901074については、主に工具{\ttfamily T50}\index{タッチセンサープローブ}タッチセンサープローブおよび\index{こうぐそくてい@工具測定}工具測定用\index{タッチセンサーブローブ（こうぐそくてい）@タッチセンサーブローブ（工具測定）}タッチセンサーブローブに関するものとする。\\
+\ttNum901050\,-\ttNum901074については、主に工具{\ttfamily T50}\index{タッチセンサープローブ}タッチセンサープローブおよび\index{こうぐそくてい@工具測定}工具測定用\index{タッチセンサーブローブ（こうぐそくてい）@タッチセンサーブローブ（工具測定）}タッチセンサーブローブに関するものとする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1030,11 +1031,11 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum901108 & （溝加工工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
 \ttNum901109 & 工具{\ttfamily T08}（サイドカッター）厚さ$t$ & 5.0\\
 \SetRow{unusingVariables}
-\ttNum901110 & （溝加工工具{\ttfamily T08}, {\ttfamily T10}用 予備） &\\
+\ttNum901110 & （溝加工工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901111 & （溝加工工具{\ttfamily T08}, {\ttfamily T10}用 予備） &\\
+\ttNum901111 & （溝加工工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901112 & （溝加工工具{\ttfamily T08}, {\ttfamily T10}用 予備） &\\
+\ttNum901112 & （溝加工工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
 \ttNum901113 & 工具{\ttfamily T11}（テーパエンドミル）参照直径用 工具長補正値 & 2.0\\
 \SetRow{unusingVariables}
 \ttNum901114 & （工具{\ttfamily T11}用 予備） &\\
@@ -1049,13 +1050,13 @@ $\cdots$ & （以下不明） & \ttNum0
 \SetRow{unusingVariables}
 \ttNum901120 & （面取加工工具{\ttfamily T13}-{\ttfamily T15}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901121 & （外削加工工具用 予備） &\\
+\ttNum901121 & （外削加工工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901122 & （外削加工工具用 予備） &\\
+\ttNum901122 & （外削加工工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901123 & （外削加工工具用 予備） &\\
+\ttNum901123 & （外削加工工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901124 & （外削加工工具用 予備） &\\
+\ttNum901124 & （外削加工工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
 \end{multicollongtblr}
 
 \clearpage
@@ -1067,9 +1068,9 @@ $\cdots$ & （以下不明） & \ttNum0
 \begin{multicollongtblr}[white]{\ttNum901124\,-\ttNum901149：工具（{\ttfamily T50}除く）続き}{cX[l]c}
 変数 & 内容 & 初期値\\
 \SetRow{unusingVariables}
-\ttNum901125 & （外削加工工具用 予備） &\\
+\ttNum901125 & （外削加工工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901126 & （外削加工工具用 予備） &\\
+\ttNum901126 & （外削加工工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
 \ttNum901127 & 工具{\ttfamily T31}（Tスロットカッター）厚さ & 8.0\\
 \ttNum901128 & 工具{\ttfamily T31}（Tスロットカッター）シャンク直径（公称値） & 25.0\\
 \ttNum901129 & 工具{\ttfamily T32}（Tスロットカッター）厚さ & 8.0\\
@@ -1159,7 +1160,7 @@ $\cdots$ & （以下不明） & \ttNum0
 ・$X$については、ジグの当たる点の凸部と端部（$Z$方向は目分量）\\
 ・$Y$については、モールドの底が当たる面\\
 ・$Z$については、$X0$ $Y-850.$における、ジグとの接点\\
-※これらの値に、\index{タッチセンサープローブせんたんきゅう@タッチセンサープローブ先端球}タッチセンサー先端球の半径を加減する必要がある
+※これらの値に、\index{タッチセンサープローブせんたんきゅう@タッチセンサープローブ先端球}タッチセンサープローブ先端球の半径を加減する必要がある
 \end{tcolorbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
