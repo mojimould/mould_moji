@@ -52,10 +52,12 @@ G90 G10 L2 P1 X-519.770 Y[[152.800/2]+#901002] Z#901003 B#901004
 G90 G10 L2 P2 X-519.773 Y[[152.800/2]+#901002] Z#901003 B#901004
 G90 G10 L2 P3 X-580.268 Y[[152.800/2]+#901002] Z#901003 B#901004
 G90 G10 L2 P4 X-580.265 Y[[152.800/2]+#901002] Z#901003 B#901004
+G90 G10 L2 P5 X-578.758 Y[[152.800/2]+#901002] Z#901003 B#901004
 (G54 Bot Outside Center)
 (G55 Bot Inside Center)
 (G56 Top Outside Center)
 (G57 Top Inside Center)
+(G58 Mizo Center)
 GOTO102
 N101 (for palette #2)
 IF[#1000NE1]GOTO821
@@ -64,10 +66,12 @@ G90 G10 L2 P1 X-519.770 Y[[152.800/2]+#901006] Z#901007 B#901008
 G90 G10 L2 P2 X-519.773 Y[[152.800/2]+#901006] Z#901007 B#901008
 G90 G10 L2 P3 X-580.268 Y[[152.800/2]+#901006] Z#901007 B#901008
 G90 G10 L2 P4 X-580.265 Y[[152.800/2]+#901006] Z#901007 B#901008
+G90 G10 L2 P5 X-578.758 Y[[152.800/2]+#901006] Z#901007 B#901008
 (G54 Bot Outside Center)
 (G55 Bot Inside Center)
 (G56 Top Outside Center)
 (G57 Top Inside Center)
+(G58 Mizo Center)
 
 N102
 M11 (B-axis unclamp)
@@ -191,6 +195,23 @@ G57 G65 P130002 Y135.578 Z400.000 M0.08
 (Y: BD naikei)
 (Z: Top sai_furiwake)
 (M: mekki thickness mm)
+
+G90 G58 G01 X0 Y0 F#652
+(G58XY Top mizo center)
+G43 H50 (hosei kouguChou #50)
+
+G58 G65 P120001 X147.800 U152.800 Z400.000 M24.05 H9.050 I3.00
+(G58: Mizo X center)
+(X: AC mizoKei)
+(U: Top AC gaiKei)
+(Z: Top sai_furiwake)
+(M: mizoIchi)
+(H: mizoHaba)
+(I: A-side mizoFukasa)
+
+#5302=#5262 (G58Y=G56Y)
+(G58: Top Y Outside center Y)
+
 
 (mesurement end)
 IF[#177EQ1]GOTO200
@@ -348,12 +369,12 @@ M06 (tool exchange)
 G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
-G90 G56 G00 B-0.000
-(G56B parallel angle -0.000)
+G90 G58 G00 B-0.000
+(G58B parallel angle -0.000)
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G56 G65 P430000 A0.0 K4.0 C#0 R#0 X#0 Y147.800 U152.800 V152.800 Z400.000 W400.0 Q5932.950 M24.050 H9.050
+G58 G65 P430000 A0.0 K4.0 C#0 R#0 X#0 Y147.800 U152.800 V152.800 Z400.000 W400.0 Q5932.950 M24.050 H9.050
 (O430000: Mizo, ar HidariMawari)
 (A: Top gaisaku: 0:not exists, 1:exists)
 (K: key type: 1:R, 2:C, 3:rec, 4:BDonly)
@@ -636,7 +657,7 @@ N999 M30
 
 (Common variables)
 (as LHS)
-(#901001, #901002, #901003, #901004, #901005, #901006, #901007, #901008)
+(#901001, #901003, #901004, #901005, #901007, #901008)
 (as RHS)
 (#175, #177, #178, #179, #180, #402, #417, #424, #428, #439, #444, #449, #459, #600, #650, #652)
 (#900021, #900024)
