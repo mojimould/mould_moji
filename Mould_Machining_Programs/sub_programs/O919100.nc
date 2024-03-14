@@ -3,8 +3,8 @@ O919100 (tool length measurement)
 
 N001
 #26=#901064 (Z)
-#21=#516-#5021+#04
-#22=#517-#5022+#05
+#21=#901062-#5021+#04
+#22=#901063-#5022+#05
 
 N002
 G90 G53 G01 Z0 F#650
@@ -93,8 +93,8 @@ N999 M99
 (#901057: measurement length)
 (#901058: distance from the probe surface to Z0)
 (#901060: tolerance for tool breakage detection)
-(#516: sensor position X)
-(#517: sensor position Y)
+(#901062: sensor position X)
+(#901063: sensor position Y)
 (#901064: sensor position Z)
 (#901113, #901115, #901117, #901127, #901129)
 
