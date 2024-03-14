@@ -8,12 +8,8 @@ N001
 (#32= block end X: start position X)
 
 N002
-IF[#33LT56]GOTO800
-IF[#33GT59]GOTO800
-IF[#33NE[FUP[#33]]]GOTO800
-(if work G# < 56 go to N800)
-(if work G# > 59 go to N800)
-(if work G# is not integer, go to N800)
+IF[#33NE58]GOTO800
+(if work G# is not 58, go to N800)
 
 N003
 IF[#21EQ#0]GOTO800
@@ -27,8 +23,8 @@ IF[#26LE[#901011/2]]GOTO800
 (if Z <= #901011/2, go to N800)
 
 N005
-IF[#512EQ#0]GOTO800
-IF[#512LE1]GOTO800
+IF[#901148EQ#0]GOTO800
+IF[#901148LE1]GOTO800
 IF[#600EQ#0]GOTO800
 IF[#600LT50]GOTO800
 IF[#602EQ#0]GOTO800
@@ -39,7 +35,7 @@ IF[#603GT20]GOTO800
 IF[#656NE50]GOTO800
 IF[#901011EQ#0]GOTO800
 IF[#901011LT660]GOTO800
-(if #512 <= 1 or #0, go to N800)
+(if #901148 <= 1 or #0, go to N800)
 (if #600 < 50 or #0, go to N800)
 (if #602 <= 0 or #0, go to N800)
 (if #603 < 0 or #603 > 20.0 or #0, go to N800)
@@ -60,25 +56,25 @@ G04 X1.5 (wait 1.5s)
 
 
 N010
-G91 G01 X[[#21/2]+#512+#602] F#652
-(X-: [U/2 +#512+#602])
+G91 G01 X[[#21/2]+#901148+#602] F#652
+(X-: [U/2 +#901148+#602])
 
-G90 G31 Z[#26-#512-[#13+#419]-[[#11+#420]/2]] F#653
-(Z skip: Z-#512-M-H/2)
-IF[#5003GT[#26-#512-[#13+#419]-[[#11+#420]/2]]]GOTO802
-(if skip Z > Z-#512-M-H/2, to N802)
+G90 G31 Z[#26-#901148-[#13+#419]-[[#11+#420]/2]] F#653
+(Z skip: Z-#901148-M-H/2)
+IF[#5003GT[#26-#901148-[#13+#419]-[[#11+#420]/2]]]GOTO802
+(if skip Z > Z-#901148-M-H/2, to N802)
 
 N011
 G91 G31 X-[#602+#603] F#656
 (X- skip: #602+#603)
-#900011=#5001-#512+#501+#502
-(#900011= A-face: block end -#512 +probe hosei)
+#900011=#5001-#901148+#501+#502
+(#900011= A-face: block end -#901148 +probe hosei)
 
 N012
 G91 G01 X[#602+#603] F#652
 (X+: #602+#603)
 G90 G01 Z[#26+#600] F#650
-(Z+: Z+#512+#600)
+(Z+: Z+#901148+#600)
 IF[[ABS[#900011-#501-#502]]LE[ABS[[#21/2]-#602]]]GOTO800
 (if |#900011 -probe hosei|<=|U/2-#602|, go to N800)
 
@@ -124,8 +120,8 @@ N999 M99
 (#600, #602, #603, #650, #652, #653, #656)
 (#501: hosei: touch sensor signal delay)
 (#502: hosei: probe center X)
-(#512: probe radius)
 (#900011, #901011)
+(#901148: probe radius)
 
 
 (System variables)
