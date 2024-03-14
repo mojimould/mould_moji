@@ -2,7 +2,7 @@
 O919100 (tool length measurement)
 
 N001
-#26=-820. (Z)
+#26=#901064 (Z)
 #21=#516-#5021+#04
 #22=#517-#5022+#05
 
@@ -20,7 +20,7 @@ IF[#4012EQ54.1]THEN #03=7003+[#4130-1]*20
 IF[#4012NE54.1]THEN #03=5223+[#4012-54]*20
 
 N005
-#06=ABS[#26+#504]
+#06=ABS[#26+#901057]
 #07=#5043
 
 N006
@@ -33,15 +33,15 @@ G91 G53 G31 P2 Z-#06 F#654
 IF[#5063LE[#07-#06]]GOTO800
 
 N008
-G91 G53 G01 Z#504
+G91 G53 G01 Z#901057
 (Z retract)
 
 N009
-#08=#5043-#504-#507
+#08=#5043-#901057-#507
 IF[#5063LE#08]GOTO800
 
 N010
-G91 G31 P2 Z[-#504-#507-#507] F#656
+G91 G31 P2 Z[-#901057-#507-#507] F#656
 (skip Z to sensor)
 
 #[10000+#11]=#5063+#[#03]+#5203+#505
@@ -87,14 +87,15 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#504: measurement length)
+(#650, #652)
+(#654: aproach speed)
+(#656: measurement skip speed)
+(#901057: measurement length)
 (#505: distance from the probe surface to Z0)
 (#507: tolerance for tool breakage detection)
 (#516: sensor position X)
 (#517: sensor position Y)
-(#650, #652)
-(#654: aproach speed)
-(#656: measurement skip speed)
+(#901064: sensor position Z)
 (#901113, #901115, #901117, #901127, #901129)
 
 
