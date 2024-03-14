@@ -876,23 +876,22 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum901009 & 工具中心機械座標$C$ & 0\\
 \SetRow{unusingVariables}
 \ttNum901010 & （予備） &\\
-
-\ttNum901011 & パレット\ttNum1 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向） & 660.0\\
-\ttNum901012 & パレット\ttNum1 ジグ内側幅（機械座標系$B$0における$Z$方向） & 410.0\\
-\ttNum901013 & パレット\ttNum1 ジグ幅（機械座標系$B$0における$X$方向） & 455.0\\
+\ttNum901011 & パレット\ttNum1 ジグ外側幅$2l$（機械座標系$B$0 $Z$方向） & 660.0\\
+\ttNum901012 & パレット\ttNum1 ジグ内側幅（機械座標系$B$0 $Z$方向） & 410.0\\
+\ttNum901013 & パレット\ttNum1 ジグ幅（機械座標系$B$0 $X$方向） & 455.0\\
 \SetRow{unusingVariables}
-\ttNum901014 & （予備） &\\
-\ttNum901015 & パレット\ttNum2 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向） & 660.0\\
-\ttNum901016 & パレット\ttNum2 ジグ内側幅（機械座標系$B$0における$Z$方向） & 410.0\\
-\ttNum901017 & パレット\ttNum2 ジグ幅（機械座標系$B$0における$X$方向） & 455.0\\
+\ttNum901014 & パレット\ttNum1 ジグ底面-固定用ボルト取付具間距離（高さ, $Y$方向） &\\
 \SetRow{unusingVariables}
-\ttNum901018 & （予備） &\\
+\ttNum901015 & パレット\ttNum1 ジグ底面-固定用ボルト取付具間距離（幅, 機械座標系$B$0 $X$方向） &\\
 \SetRow{unusingVariables}
-\ttNum901019 & （予備） &\\
+\ttNum901016 & （予備） &\\
+\ttNum901017 & パレット\ttNum2 ジグ外側幅$2l$（機械座標系$B$0における$Z$方向） & 660.0\\
+\ttNum901018 & パレット\ttNum2 ジグ内側幅（機械座標系$B$0における$Z$方向） & 410.0\\
+\ttNum901019 & パレット\ttNum2 ジグ幅（機械座標系$B$0における$X$方向） & 455.0\\
 \SetRow{unusingVariables}
-\ttNum901020 & （予備） &\\
+\ttNum901020 & パレット\ttNum2 ジグ底面-固定用ボルト取付具間距離（高さ, $Y$方向） &\\
 \SetRow{unusingVariables}
-\ttNum901021 & （予備） &\\
+\ttNum901021 & パレット\ttNum2 ジグ底面-固定用ボルト取付具間距離（幅, 機械座標系$B$0 $X$方向） &\\
 \SetRow{unusingVariables}
 \ttNum901022 & （予備） &\\
 \SetRow{unusingVariables}
@@ -931,6 +930,58 @@ $\cdots$ & （以下不明） & \ttNum0
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 17.9 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\ttNum901050\,-\ttNum901074：タッチセンサーブローブ}
+\ttNum901050\,-\ttNum901074については、主に工具{\ttfamily T50}\index{タッチセンサープローブ}タッチセンサープローブおよび\index{こうぐそくてい@工具測定}工具測定用\index{タッチセンサーブローブ（こうぐそくてい）@タッチセンサーブローブ（工具測定）}タッチセンサーブローブに関するものとする。\\
+
+\begin{multicollongtblr}[white]{\ttNum901050\,-\ttNum901074：工具{\ttfamily T50}および工具測定用タッチセンサーブローブ}{cX[l]c}
+変数 & 内容 & 初期値\\
+\ttNum901050 & {\ttfamily T50}先端球 半径 & 5.0\\
+\ttNum901051 & {\ttfamily T50}軸部分 半径 & 3.75\\
+\SetRow{unusingVariables}
+\ttNum901052 & （予備） &\\
+\ttNum901053 & 信号遅れ補正（送り速さ50mm/min時） & 0.040\\
+\ttNum901054 & {\ttfamily T50}中心$X$補正 & -0.016507\\
+\ttNum901055 & {\ttfamily T50}中心$Y$補正 & -0.068371\\
+\SetRow{unusingVariables}
+\ttNum901056 & （予備） &\\
+\ttNum901057 & 測定距離 & 5\\
+\ttNum901058 & プローブ表面からプログラムの加工原点($Z$0)までの距離 & 785.529\\
+\SetRow{unusingVariables}
+\ttNum901059 & （予備） &\\
+\ttNum901060 & 工具破損検出の許容差 & 1.0\\
+\SetRow{unusingVariables}
+\ttNum901061 & （予備） &\\
+\ttNum901062 & 工具測定用タッチセンサーの位置$X$ & -30.374\\
+\ttNum901063 & 工具測定用タッチセンサーの位置$Y$ & -913.761\\
+\ttNum901064 & 工具測定用タッチセンサーの位置$Z$ & -785.529\\
+\SetRow{unusingVariables}
+\ttNum901065 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum901066 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum901067 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum901068 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum901069 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum901070 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum901071 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum901072 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum901073 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum901074 & （予備） &\\
+\end{multicollongtblr}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 11.9 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\ttNum901100\,-\ttNum901149：工具}
@@ -950,7 +1001,7 @@ $\cdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum901100\,-\ttNum901124}
 
-\begin{multicollongtblr}[white]{\ttNum901100\,-\ttNum901124：工具}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum901100\,-\ttNum901124：工具（{\ttfamily T50}除く）}{cX[l]c}
 変数 & 内容 & 初期値\\
 \SetRow{unusingVariables}
 \ttNum901100 & （予備） &\\
@@ -1004,7 +1055,7 @@ $\cdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ttNum901125\,-\ttNum901149}
 
-\begin{multicollongtblr}[white]{\ttNum901124\,-\ttNum901149：工具（続き）}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum901124\,-\ttNum901149：工具（{\ttfamily T50}除く）続き}{cX[l]c}
 変数 & 内容 & 初期値\\
 \SetRow{unusingVariables}
 \ttNum901125 & （外削加工工具用 予備） &\\
@@ -1046,8 +1097,10 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum901146 & （予備） &\\
 \SetRow{unusingVariables}
 \ttNum901147 & （予備） &\\
-\ttNum901148 & 工具{\ttfamily T50}（タッチセンサープローブ）先端球 半径 & 5.0\\
-\ttNum901149 & 工具{\ttfamily T50}（タッチセンサープローブ）軸部分 半径 & 3.75\\
+\SetRow{unusingVariables}
+\ttNum901148 & （予備） &\\
+\SetRow{unusingVariables}
+\ttNum901149 & （予備） &\\
 \end{multicollongtblr}
 
 
@@ -1064,7 +1117,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \item[-] \ttNum750-\ttNum999
 \item[-] \ttNum900050-\ttNum900100
 \item[-] \ttNum900501-\ttNum900999
-\item[-] \ttNum901025-\ttNum901999
+\item[-] \ttNum901025-\ttNum901049
+\item[-] \ttNum901075-\ttNum901999
 \item[-] \ttNum901150-\ttNum907399
 \end{enumerate}
 

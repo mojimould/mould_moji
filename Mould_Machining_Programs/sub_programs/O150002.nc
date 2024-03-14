@@ -28,8 +28,8 @@ IF[#26LE[#901011/2]]GOTO800
 
 IF[#901011EQ#0]GOTO800
 IF[#901011LE0]GOTO800
-IF[#901148EQ#0]GOTO800
-IF[#901148LE0]GOTO800
+IF[#901050EQ#0]GOTO800
+IF[#901050LE0]GOTO800
 IF[#600EQ#0]GOTO800
 IF[#600LT50]GOTO800
 IF[#602EQ#0]GOTO800
@@ -41,7 +41,7 @@ IF[#656EQ#0]GOTO800
 IF[#656LE0]GOTO800
 IF[#656GT50]GOTO800
 (if #901011 <= 0 or #0, go to N800)
-(if #901148 <= 0 or #0, go to N800)
+(if #901050 <= 0 or #0, go to N800)
 (if #600 < 50 or #0, go to N800)
 (if #602 <= 0 or #0, go to N800)
 (if #603 < 0 or #603 > 20.0 or #0, go to N800)
@@ -65,7 +65,7 @@ N001
 N002
 G49
 G90 G53 G01 Z0 F#650
-G90 G54 G01 X0 Y[[#02/2]+#901148+#602] F#652
+G90 G54 G01 X0 Y[[#02/2]+#901050+#602] F#652
 G90 G54 G43 G01 Z[#26+#600] H50 F#652
 (G43 Z: Z+#600)
 
@@ -77,15 +77,15 @@ M117 (sensor on/off)
 G04 X1.5 (wait 1.5s)
 
 N003
-G90 G54 G31 Z[#26-[#06/2]-#901148] F#653
-(G54 Z skip: BotTanmen Z-K/2-#901148)
-IF[#5003GT[#26-[#06/2]-#901148]]GOTO802
-(if skip block end Z > BotTanmen Z-K/2-#901148, to N802)
+G90 G54 G31 Z[#26-[#06/2]-#901050] F#653
+(G54 Z skip: BotTanmen Z-K/2-#901050)
+IF[#5003GT[#26-[#06/2]-#901050]]GOTO802
+(if skip block end Z > BotTanmen Z-K/2-#901050, to N802)
 
 G91 G31 Y-[#602+#603] F#656
 (Y- skip: #602+#603)
-#900027=#5002-#901148+#501+#503
-(#900027= Y bot above side -#901148 +probe hosei)
+#900027=#5002-#901050+#501+#503
+(#900027= Y bot above side -#901050 +probe hosei)
 
 G91 G01 Y[#602+#603] F#652
 (Y+: #602+#603)
@@ -100,20 +100,20 @@ G91 G00 B180.
 M10 (B-axis clamp)
 
 G91 G01 X[-2*[#5221-#33]+#21] F#652
-G90 G54 G01 Y[[#20/2]+#901148+#602] F#652
+G90 G54 G01 Y[[#20/2]+#901050+#602] F#652
 (X: top gaisaku center)
 (Y: top gaisaku Bmen +#602)
 
 G90 G54 G43 G01 Z[#23+#600] H50 F#652
-G90 G54 G31 Z[#23-[#13/2]-#901148] F#653
-(G54 Z skip: W-M/2-#901148)
-IF[#5003GT[#23-[#13/2]-#901148]]GOTO802
-(if skip block end Z > W-#901148-M/2+#32, to N802)
+G90 G54 G31 Z[#23-[#13/2]-#901050] F#653
+(G54 Z skip: W-M/2-#901050)
+IF[#5003GT[#23-[#13/2]-#901050]]GOTO802
+(if skip block end Z > W-#901050-M/2+#32, to N802)
 
 G91 G31 Y-[#602+#603] F#656
 (Y-: #602+#603)
-#900028=#5002-#901148+#501+#503
-(#900028= Y top above side -#901148 +probe hosei)
+#900028=#5002-#901050+#501+#503
+(#900028= Y top above side -#901050 +probe hosei)
 
 G91 G01 Y[#602+#603] F#652
 (Y+: #602+#603)
@@ -175,7 +175,7 @@ N999 M99
 (#501: hosei: touch sensor signal delay)
 (#503: hosei: probe center Y)
 (#901001, #901003, #901005, #901007, #901011)
-(#901148: probe radius)
+(#901050: probe radius)
 
 
 (System variables)
