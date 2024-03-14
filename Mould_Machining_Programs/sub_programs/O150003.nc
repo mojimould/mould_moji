@@ -83,7 +83,7 @@ G91 G31 Z-[#602+#603] F#656
 (Z- skip: #602+#603)
 IF[#5003LE[#5221-#33-#21+[#20/2]-#602]]GOTO802
 (if skip block end Z <= Cmen Z-#602, to N802)
-#900031=#5003+#501
+#900031=#5003+#901053
 (#900031= Z top side +probe hosei)
 
 G90 G53 G01 Z0 F#650
@@ -101,7 +101,7 @@ G91 G31 Z-[#602+#603] F#656
 (Z- skip: #602+#603)
 IF[#5003LE[#5221-#33+[#20/2]-#602]]GOTO802
 (if skip block end Z <= Cmen Z-#602, to N802)
-#900032=#5003+#501
+#900032=#5003+#901053
 (#900032= Z bot side + probe hosei)
 
 G90 G53 G01 Z0 F#650
@@ -152,9 +152,9 @@ N999 M99
 (as LHS)
 (#900031, #900032, #900033)
 (as RHS)
-(#501: hosei: touch sensor signal delay)
 (#600, #602, #603, #650, #652, #653, #656)
 (#901001, #901003, #901005, #901007, #901011)
+(#901053: hosei: touch sensor signal delay)
 
 
 (System variables)

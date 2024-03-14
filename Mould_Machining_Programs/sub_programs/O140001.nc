@@ -140,16 +140,16 @@ IF[[ABS[#5001-#32]+0.001]LT[ABS[#29-#901050-#602]]]GOTO803
 
 G91 G31 X[#31*[#602+#603]] F#656
 (X skip: #31*[#602+#603])
-#900024=#5001+#502+#31*[#901050-#501]
-(#900024= skip X +#502+#31*[#901050-#501])
+#900024=#5001+#502+#31*[#901050-#901053]
+(#900024= skip X +#502+#31*[#901050-#901053])
 
 N012
 G90 G01 X[#900024-#31*#29] F#652
 (X to measured center)
 G91 G01 X-[#31*#27] Z#30 F#652
 (X to measured center at Z-C)
-IF[[ABS[#900024-#502]]GE[ABS[#29+#602-#501]]]GOTO800
-(if |#900024-#502|>=|#29-#602-#501|, go to N800)
+IF[[ABS[#900024-#502]]GE[ABS[#29+#602-#901053]]]GOTO800
+(if |#900024-#502|>=|#29-#602-#901053|, go to N800)
 
 #[5201+[#33-53]*20]=#5021
 (current work origin X = current machine coordinate X)
@@ -198,10 +198,10 @@ N999 M99
 (#900024)
 (as RHS)
 (#404, #409, #600, #602, #603, #650, #652, #653, #656)
-(#501: hosei: touch sensor signal delay)
-(#502: hosei: probe center X)
 (#901011)
 (#901050: probe radius)
+(#901053: hosei: touch sensor signal delay)
+(#502: hosei: probe center X)
 
 
 (System variables)
