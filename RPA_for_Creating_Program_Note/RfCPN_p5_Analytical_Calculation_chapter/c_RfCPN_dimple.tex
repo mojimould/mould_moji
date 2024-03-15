@@ -185,7 +185,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 \end{align*}
 で与えられる。
 これは\index{タッチセンサープローブ}タッチセンサープローブによる\expandafterindex{そくていかいしてん（\dimplekana）@測定開始点（\dimple）}測定の開始点として用いることができる。
-一方で、それ以外の作業では、\index{トップたんのないけいちゅうしん@トップ端の内径中心}トップ端における内径の中心座標$g_t$を直接測定するので、それを用いることにする
+一方で、それ以外の作業では、\index{トップたんのないけいちゅうしん@トップ端の内径中心}トップ端における内径の中心座標$g_\mathrm T$を直接測定するので、それを用いることにする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{これは\index{ちゅうしんわんきょくせん@中心湾曲線}中心湾曲線上にない点であるが、\index{こうさ@公差}公差の範囲内であるものとして、ここではこれで代用する。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -199,30 +199,30 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
   \text{A面（$+X$方向）：}
   & \displaystyle
     \left(
-      g_{tx}+\mathcal L_0+\frac{w'_{\mathrm Aq}}2~,~
-      g_{ty}~,~
-      f_t'-q
+      g_{\mathrm Tx}+\mathcal L_0+\frac{w'_{\mathrm Aq}}2~,~
+      g_{\mathrm Ty}~,~
+      f_\mathrm T'-q
     \right),\\[12pt]
   \text{C面（$-X$方向）：}
   & \displaystyle
     \left(
-      g_{tx}+\mathcal L_0-\frac{w'_{\mathrm Aq}}2~,~
-      g_{ty}~,~
-      f_t'-q
+      g_{\mathrm Tx}+\mathcal L_0-\frac{w'_{\mathrm Aq}}2~,~
+      g_{\mathrm Ty}~,~
+      f_\mathrm T'-q
     \right),\\[12pt]
   \text{B面（$+Y$方向）：}
   & \displaystyle
     \left(
-      g_{tx}+\mathcal L_0~,~
-      g_{ty}+\frac{w'_{\mathrm Bq}}2~,~
-      f_t'-q
+      g_{\mathrm Tx}+\mathcal L_0~,~
+      g_{\mathrm Ty}+\frac{w'_{\mathrm Bq}}2~,~
+      f_\mathrm T'-q
     \right),\\[12pt]
   \text{D面（$-Y$方向）：}
   & \displaystyle
     \left(
-      g_{tx}+\mathcal L_0~,~
-      g_{ty}-\frac{w'_{\mathrm Bq}}2~,~
-      f_t'-q
+      g_{\mathrm Tx}+\mathcal L_0~,~
+      g_{\mathrm Ty}-\frac{w'_{\mathrm Bq}}2~,~
+      f_\mathrm T'-q
     \right).
 \end{array}
 \end{align*}
@@ -254,15 +254,15 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
   \notag
   \text{A面：}\quad
   \mathcal D_{xi,\mathrm A}
-  &= g_{tx}+\mathcal L_i+\frac{w'_{\mathrm Aq+(i-1)p_z}}2\\
+  &= g_{\mathrm Tx}+\mathcal L_i+\frac{w'_{\mathrm Aq+(i-1)p_z}}2\\
   \label{eq:dPosXBefore}
   \text{C面：}\quad
   \mathcal D_{xi,\mathrm C}
-  &= g_{tx}+\mathcal L_i-\frac{w'_{\mathrm Aq+(i-1)p_z}}2\\
+  &= g_{\mathrm Tx}+\mathcal L_i-\frac{w'_{\mathrm Aq+(i-1)p_z}}2\\
   \notag
   \text{B, D面：}\quad
   \mathcal D_{xij,\mathrm B}
-  &= g_{tx}+\mathcal L_i+\frac{d_i}2-(j-1)p_x
+  &= g_{\mathrm Tx}+\mathcal L_i+\frac{d_i}2-(j-1)p_x
 \end{align}
 なお、A・C面については$j$に依らないことがわかる。
 そのため、たとえば$\mathcal D_{xij,\mathrm A}$ではなく、$\mathcal D_{xi,\mathrm A}$のように表記している。
@@ -278,13 +278,13 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 \begin{alignat}{3}
   \notag
   \text{A, C面：}\quad
-  && \mathcal D_{yij,\mathrm A} &= g_{ty}-\frac{d_i}2+(j-1)p_x\\
+  && \mathcal D_{yij,\mathrm A} &= g_{\mathrm Ty}-\frac{d_i}2+(j-1)p_x\\
   \label{eq:dPosYBefore}
   \text{B面：}\quad
-  && \mathcal D_{yi,\mathrm B} &= g_{ty}+\frac{w'_{\mathrm Bq+(i-1)p_z}}2\\
+  && \mathcal D_{yi,\mathrm B} &= g_{\mathrm Ty}+\frac{w'_{\mathrm Bq+(i-1)p_z}}2\\
   \notag
   \text{D面：}\quad
-  && \mathcal D_{yi,\mathrm D} &= g_{ty}-\frac{w'_{\mathrm Bq+(i-1)p_z}}2
+  && \mathcal D_{yi,\mathrm D} &= g_{\mathrm Ty}-\frac{w'_{\mathrm Bq+(i-1)p_z}}2
 \end{alignat}
 B・D面については$j$に依らないことがわかる。
 
@@ -298,7 +298,7 @@ B・D面については$j$に依らないことがわかる。
 \begin{align}
   \label{eq:dPosZBefore}
   \text{A, B, C, D面：}\quad
-  \mathcal D_{zi} = f_t'-q-(i-1)p_z
+  \mathcal D_{zi} = f_\mathrm T'-q-(i-1)p_z
 \end{align}
 $Z$座標についてはどの面も$j$に依らないことがわかる。
 
@@ -409,9 +409,9 @@ B, D側\dimple において、その$X$座標がA側内面に最も近いもの�
 これらの$X$座標は\pageeqref{eq:dPosXBefore}よりそれぞれ、
 \begin{align*}
   m-1\text{列目：}&\quad
-  g_{tx}+\mathcal L_{m-1}+\frac{d_{m-1}}2\\
+  g_{\mathrm Tx}+\mathcal L_{m-1}+\frac{d_{m-1}}2\\
   m\text{列目：}&\quad
-  g_{tx}+\mathcal L_m+\frac{d_m}2
+  g_{\mathrm Tx}+\mathcal L_m+\frac{d_m}2
 \end{align*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -464,16 +464,16 @@ A側内面のトップ端からの（$X$方向の）距離は、\index{トップ
 \modHeadsection{傾き後の\dimple}
 機内での回転は\index{テーブルちゅうしん@テーブル中心}テーブル中心Pを\index{げんてんP@原点P}原点として行われる。
 また\dimple の加工は\index{トップたんのないけいちゅうしん@トップ端の内径中心}トップ端における内径中心を基準にして切削を行う。
-傾ける前の\index{トップたんのないけいちゅうしん@トップ端の内径中心}トップ端内径中心$g_t$の座標は実測により（Pを中心とした$XYZ$直交座標でいうところの）[$g_{tx}$, $g_{ty}$, $f_t'$]で与えられる
+傾ける前の\index{トップたんのないけいちゅうしん@トップ端の内径中心}トップ端内径中心$g_\mathrm T$の座標は実測により（Pを中心とした$XYZ$直交座標でいうところの）[$g_{\mathrm Tx}$, $g_{\mathrm Ty}$, $f_\mathrm T'$]で与えられる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここではこれをテーブル中心Pを原点とした座標値として取り扱っている。
-しかし、計測では機械座標系の値として$g_t$が与えられる。
-たとえば\DMname の場合、$g_t$は通常（今の場合はテーブル中心Pより負側に湾曲中心があることが多いので）負の値として得られることに注意。
+しかし、計測では機械座標系の値として$g_\mathrm T$が与えられる。
+たとえば\DMname の場合、$g_\mathrm T$は通常（今の場合はテーブル中心Pより負側に湾曲中心があることが多いので）負の値として得られることに注意。
 （ここでの計測では$XY$成分のみであり、$Z$については計測しないことにも注意。）}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-このとき、テーブルを角度$-\phi$だけ傾けた後のトップ端内面中心の座標$g'_t$は
+このとき、テーブルを角度$-\phi$だけ傾けた後のトップ端内面中心の座標$g'_\mathrm T$は
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{これらをワーク座標原点としてもよいし、ワーク座標原点$g_t$はそのままで各面ごとに傾けてもよい。
+\footnote{これらをワーク座標原点としてもよいし、ワーク座標原点$g_\mathrm T$はそのままで各面ごとに傾けてもよい。
 ここでは後者の方法で加工を行うものとする。}、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% label{eq:afterPhiTCenterFromO}
@@ -481,20 +481,20 @@ A側内面のトップ端からの（$X$方向の）距離は、\index{トップ
   \label{eq:afterPhiTCenterFromO}
   \left[
   \begin{array}{c}
-    g_{tx}'\\
-    g_{ty}'\\
-    g_{tz}'
+    g_{\mathrm Tx}'\\
+    g_{\mathrm Ty}'\\
+    g_{\mathrm Tz}'
   \end{array}
   \right]
   =\left[
    \begin{array}{c}
-     g_{tx}\cos\phi+f_t'\sin\phi\\
-     g_{ty}\\
-     -g_{tx}\sin\phi+f_t'\cos\phi
+     g_{\mathrm Tx}\cos\phi+f_\mathrm T'\sin\phi\\
+     g_{\mathrm Ty}\\
+     -g_{\mathrm Tx}\sin\phi+f_\mathrm T'\cos\phi
    \end{array}
    \right].
    \end{align}
-同様に、$i$列目における（傾ける前の）湾曲中心の位置は、[$g_{tx}+\mathcal L_i$, $g_{ty}$, $f_t'-q-(i-1)p_z$]で与えられる
+同様に、$i$列目における（傾ける前の）湾曲中心の位置は、[$g_{\mathrm Tx}+\mathcal L_i$, $g_{\mathrm Ty}$, $f_\mathrm T'-q-(i-1)p_z$]で与えられる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここではトップ端における湾曲中心を、トップ端における内径中心と同一視している。}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -502,9 +502,9 @@ A側内面のトップ端からの（$X$方向の）距離は、\index{トップ
 \begin{align*}
   \left[
   \begin{array}{c}
-    (g_{tx}+\mathcal L_i)\cos\phi+\{f_t'-q-(i-1)p_z\}\sin\phi\\
-    g_{ty}\\
-    -(g_{tx}+\mathcal L_i)\sin\phi+\{f_t'-q-(i-1)p_z\}\cos\phi
+    (g_{\mathrm Tx}+\mathcal L_i)\cos\phi+\{f_\mathrm T'-q-(i-1)p_z\}\sin\phi\\
+    g_{\mathrm Ty}\\
+    -(g_{\mathrm Tx}+\mathcal L_i)\sin\phi+\{f_\mathrm T'-q-(i-1)p_z\}\cos\phi
   \end{array}
   \right].
 \end{align*}
@@ -609,7 +609,7 @@ A側内面のトップ端からの（$X$方向の）距離は、\index{トップ
     \end{array}
     \right].
 \end{alignat*}
-特に、各列の中央（各列の\expandafterindex{わんきょくちゅうしん（\dimplekana）@湾曲中心（\dimple）}湾曲中心）$[g_{tx}+\mathcal L_i, g_{ty}, f_t'-q-(i-1)p_z]$を原点としてみた場合の位置は、
+特に、各列の中央（各列の\expandafterindex{わんきょくちゅうしん（\dimplekana）@湾曲中心（\dimple）}湾曲中心）$[g_{\mathrm Tx}+\mathcal L_i, g_{\mathrm Ty}, f_\mathrm T'-q-(i-1)p_z]$を原点としてみた場合の位置は、
 \begin{align*}
   \left[
   \begin{array}{c}
@@ -738,12 +738,12 @@ $X$成分の差分の大きさが（$\mathcal L_{i+1, i}$からみて）A面（�
     \end{array}
     \right].
 \end{alignat*}
-特に、各列の中央（各列の湾曲中心）$[g_{tx}+\mathcal L_i, g_{ty}, f_t'-q-(i-1)p_z]$を原点としてみた場合の位置は、
+特に、各列の中央（各列の湾曲中心）$[g_{\mathrm Tx}+\mathcal L_i, g_{\mathrm Ty}, f_\mathrm T'-q-(i-1)p_z]$を原点としてみた場合の位置は、
 \begin{align*}
   \left[
   \begin{array}{c}
     \displaystyle \left\{\frac{d_i}2-(j-1)p_z\right\}\cos\phi\\
-    \displaystyle \pm\frac{w_{Bq+(i-1)p_z}'}2\\
+    \displaystyle \pm\frac{w_{\mathrm Bq+(i-1)p_z}'}2\\
     \displaystyle -\left\{\frac{d_i}2-(j-1)p_z\right\}\sin\phi
   \end{array}
   \right]\qquad
