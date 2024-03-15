@@ -244,13 +244,14 @@ G90 G40 G00 X[[#33/2]+#31*3+#29-#421]
 END2
 
 
-N017
+N990
 M09 (coolant off)
-
-N018
 G90 G43 G01 H#4120 Z[#26+#600] F#650
+S2599
 G90 G53 G01 Z0 F#650
+G04 X1.0 (wait 1.0s)
 M05 (spindle off)
+S35
 GOTO999
 
 N800

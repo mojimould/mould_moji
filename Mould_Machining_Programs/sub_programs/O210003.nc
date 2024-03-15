@@ -232,8 +232,8 @@ GOTO100
 
 N104
 IF[#4111EQ50]GOTO010
-M05 (spindle off)
 M09 (coolant off)
+S35
 
 N010
 G90 G01 X#714 Z[#716-#702] F#652
@@ -241,6 +241,11 @@ G90 G01 X#714 Z[#716-#702] F#652
 G90 G01 X#712 Z#713 F#652
 (XZ: to start point)
 G90 G01 Z[#713+#600] F#652
+S2599
+G90 G53 G01 Z0 F#650
+G04 X1.0 (wait 1.0s)
+M05 (spindle off)
+S35
 GOTO999
 
 
