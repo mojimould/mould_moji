@@ -171,6 +171,10 @@
   },%
   %%%%% LIST COMMON STYLE %%%%%
   listcommonstyle/.style={%
+    parskip/.style={
+        before={\par\pagebreak[0]\parindent=0pt},
+        after={\parfillskip=0pt\par},
+    },
     breakable,%
     enhanced jigsaw,%
     before=\par\bigskip\noindent,%

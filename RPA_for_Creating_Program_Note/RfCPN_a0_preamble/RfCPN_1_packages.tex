@@ -5,7 +5,6 @@
 %%% Encoding and Language Settings
 \usepackage{luatexja-fontspec} % Allows input of utf8 characters. including xcolor
 \usepackage{babel} % Multilingual support for LaTeX.
-%\usepackage[japanese]{pxbabel} % Japanese support for babel.
 \usepackage[style=english]{csquotes} % Context sensitive quotation facilities.
 %%% Font and Math Settings
 \usepackage{amsmath, amssymb} % Enhanced math support in LaTeX. including amstext
@@ -17,11 +16,12 @@
 \usepackage{colortbl} % Adds color to LaTeX tables.
 \usepackage{tabularray} % Allows tables to break across pages. including xcolor, expl3
 %%% Graphics and Color Settings
-\usepackage{svg}
+%\usepackage{svg}
 \usepackage[dvipsnames]{xcolor} % Provides driver-independent color extensions for LaTeX and pdfLaTeX.
 %%% Box Settings %%%
 \usepackage[most]{tcolorbox} % includeing pgf, tikz
 \usepackage{tikzpagenodes}
+\usepackage[parfill]{parskip}
 %%% tikz, pgf %%%
 \def\pgfsysdriver{pgfsys-luatex.def} % Specifies the driver for PGF, a lower-level language for creating graphics.
 \usepackage{pgfplots} % A tool to create 2D and 3D plots in LaTeX.
@@ -60,7 +60,7 @@
 %%%
 \usepackage{subfiles}
 %%% List Display
-\usepackage{jvlisting} % For including code listings with Japanese comments.
+%\usepackage{jvlisting} % For including code listings with Japanese comments.
 %%% Header and Footer Settings
 \usepackage{scrlayer-fancyhdr} % Combines the features of fancyhdr with KOMA-Script's scrlayer.
 %%% Other
