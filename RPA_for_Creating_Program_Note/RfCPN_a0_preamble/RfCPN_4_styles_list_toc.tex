@@ -40,16 +40,13 @@
   indent=8.56em, % エントリのインデントを調整
   numwidth=4.4em % エントリ番号の幅を調整
 ]{tocline}{subsubsection}
-\renewcommand*{\l@table}[2]{\@dottedtocline{1}{2.35em}{2.3em}{#1}{#2}}
 %%%%% STYLE OF LIST FOR APPENDIX %%%%%
 \AtBeginEnvironment{appendices}{%
   \@appendixtrue%
   \patchcmd{\part}{\newpage}{\relax}{}{}%
   \pretocmd{\part}{\addtocontents{toc}{\protect\tcbline*}}{}{}{}% add page break before parts, except part 1
- % \patchcmd{\part}{\tableAPartSeparateline}{\relax}{}{}%
 }
 \AfterEndEnvironment{appendices}{%
   \patchcmd{\part}{\tocAPartSeparateline}{\relax}{}{}%
-%  \addtocontents{toc}{\protect\cleardoublepage}% add page break before parts, except the first one
   \@appendixfalse%
 }
