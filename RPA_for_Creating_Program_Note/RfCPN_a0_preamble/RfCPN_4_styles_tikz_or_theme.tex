@@ -52,7 +52,7 @@
     before upper={%
       \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
       \let\oldfootnote=\footnote% \oldfootnote=\footnote
-      \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% define \footnote to \footnote using counter GlobalFootnote
+      \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% using counter GlobalFootnote
       \renewcommand\thempfootnote{\arabic{mpfootnote}}% arabic footnote
     },
     after upper={%
@@ -149,7 +149,7 @@
       \tcbtitle%
       \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
       \let\oldfootnote=\footnote% \oldfootnote=\footnote
-      \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% define \footnote to \footnote using counter GlobalFootnote
+      \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% using counter GlobalFootnote
       \renewcommand\thempfootnote{\arabic{mpfootnote}}% arabic footnote
     },
     after upper={%
