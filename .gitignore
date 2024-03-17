@@ -1,0 +1,16 @@
+
+*.toc
+*.synctex
+*.synctex(busy)
+*.lop
+*.lol
+*.lot
+*.lof
+*.loC
+*.ind
+*.ilg
+*.idx
+*.blg
+*.bcf
+*.bbl
+*.aux
