@@ -1,11 +1,11 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
+%%%%% WATERMARK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AddLayersToPageStyle{@everystyle@}{WatermarkLayer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% HEADER AND FOOTER %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% WATERMARK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\AddLayersToPageStyle{@everystyle@}{WatermarkLayer}
 %\pagestyle{fancy}
 \renewcommand{\headrulewidth}{1.5pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -74,10 +74,6 @@
   \@frontmatterfalse\@mainmatterfalse\@backmattertrue\pagestyle{plainheadback}
 }
 %%%%% FOR THEINDEX %%%%%
-%\AtBeginEnvironment{theindex}{%
-%  \let\oldhyperpage\hyperpage
-%  \renewcommand{\hyperpage}[1]{\cdotfill~\oldhyperpage{#1}~}
-%}
 \AtEndEnvironment{theindex}{%
   \thispagestyle{plainheadback}
   \pagestyle{plainheadback}

@@ -4,10 +4,6 @@
 %%%%% FOR STYLE OF PART %%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\partautorefname}{part}  % part --> part
 \renewcommand\partpagestyle{emptydate}
-%\renewcommand*{\partformat}{\begin{gtfamily}\thepart\end{gtfamily}}
-%\renewcommand{\partname}{}
-%\renewcommand{\thepart}{第\hspace{2truemm}\Roman{part}\hspace{2truemm}部} %
-%\renewcommand*{\addparttocentry}[2]{\addtocentrydefault{part}{#1}{第#2部}}
 
 %%%%% FOR STYLE OF CHAPTER %%%%%
 \renewcommand{\thechapter}{\ifnum\value{chapter}<10 0\fi\arabic{chapter}}
@@ -27,11 +23,10 @@
 }
 %%%%% STYLE OF APPENDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\setthesection}{\Alph{section}}
-%\renewcommand{\appendixname}{補\hskip0.5em 遺} % appendix --> 補 遺
 \renewcommand{\appendixautorefname}{補遺\!} % appendix --> 補遺
 
 %%%%% FOR STYLE OF SECTION %%%%%%%%%%%%%%%%%%%
-\renewcommand{\sectionautorefname}{節\!} % section --> 節
+\renewcommand{\sectionautorefname}{section\!} % section --> 節
 \setcounter{secnumdepth}{4}
 \renewcommand*{\sectionformat}{%
   \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
