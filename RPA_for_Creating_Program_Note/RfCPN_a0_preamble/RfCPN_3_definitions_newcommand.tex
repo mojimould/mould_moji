@@ -43,10 +43,8 @@
 \newcommand{\tPart}[4][]{%
   \addtocounter{tocwatermark}{1}
   \def\tmppartnum{\Roman{tocwatermark}}%
-%  \def\temppartpage{part:\the\numexpr\value{part}+1}%
   \begingroup
   \clearrightpage
-%  \@openrightfalse
   \let\oldnewpage\newpage
   \let\newpage\relax
   \part{#2\label{part:\thepart}}
@@ -73,6 +71,7 @@
   \part*{\partname\ \thepart\hx の補遺\label{Apart:\thepart}}
   \addcontentsline{toc}{part}{\partname\ \thepart\hx の補遺}
 }
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% AUTO LABELING %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

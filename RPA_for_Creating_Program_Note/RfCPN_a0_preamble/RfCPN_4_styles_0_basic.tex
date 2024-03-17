@@ -15,7 +15,7 @@
 %%%%% HEYPERSETUP %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hypersetup{
 %  pdfcreationdate=date,
-%  pdfcreator={upLaTeX with hyperref}, % creator for PDF subjct field
+%  pdfcreator={luaLaTeX with hyperref}, % creator for PDF subjct field
   pdftitle={RPAに向けたRDBSの構築と応用}, % title for PDF subjct field
   pdfsubject={プログラム作成業務の自動化}, % text for PDF subjct field
   pdfauthor={Kurahashi Nobuaki},  % text for PDF Author field
@@ -25,11 +25,8 @@
     G-code,
     NC program,
     Machining center,
-    RDB,
-    RDBS,
-    RPA,
-  }, % keywords
-%  pdfproducer=producer, % dvipdfmx
+  },
+  pdfproducer=producer,
   linktoc=all,
 %  linktocpage=false,   % (if it is true) make page number, not text, be link on TOC, LOF and LOT
   pdfcenterwindow=false, % position the document window center of the screen
@@ -41,7 +38,7 @@
   unicode=true,
   pdfencoding=unicode,   % PDFDocEncoding or Unicode
   colorlinks=true,     % color links
-  linkcolor=ai,      % color of links
+  linkcolor=ai,        % color of links
   urlcolor=ai,         % color of urls
   citecolor=sora,      % color of citation links
 }

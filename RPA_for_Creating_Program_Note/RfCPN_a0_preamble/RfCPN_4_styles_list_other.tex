@@ -2,18 +2,18 @@
 
 
 %%%%% FOR STYLE OF LOT %%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand\listtablename{\texorpdfstring{\hbox to 2.75em{表目次}}{表目次}}
+\renewcommand\listtablename{\texorpdfstring{\hbox to 3em{表目次}}{表目次}}
 \renewcommand{\tablename}{表}
 \renewcommand*\l@table{\@dottedtocline{1}{0.0em}{2.35em}}
 \AtBeginDocument{\renewcommand{\thetable}{}}
 
 %%%%% FOR STYLE OF LOF %%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand\listfigurename{\texorpdfstring{\hbox to 2.75em{図目次}}{図目次}}
+\renewcommand\listfigurename{\texorpdfstring{\hbox to 3em{図目次}}{図目次}}
 \renewcommand{\figurename}{図}
+\let\l@figure\l@section
 \renewcommand{\figureautorefname}{\figurename} % figure --> 図
 \renewcommand*\l@figure{\@dottedtocline{1}{0.0em}{2.35em}}
-\AtBeginDocument{\renewcommand{\thefigure}{}}
-%\renewcommand*{\l@subfigure}{\@dottedxxxline{\ext@subfigure}{2}{4.7em}{2.3em}}
+\AtBeginDocument{\renewcommand{\thefigure}{\figurename}}
 
 %%%%% FOR STYLE OF LOP %%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listoflopname{\texorpdfstring{\hbox to 2.75em{大目次}}{大目次}}
@@ -23,22 +23,21 @@
 \renewcommand{\lstlistingname}{{\scshape Prg: }}
 \let\l@lstlisting\l@section
 \renewcommand*\l@lstlisting{\@dottedtocline{1}{0.0em}{2.35em}}
-\AtBeginDocument{\renewcommand{\thelstlisting}{}}
+\AtBeginDocument{\renewcommand{\thelstlisting}{\lstlistingname}}
 
 %%%%% FOR STYLE OF LOC %%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listofloCname{Column一覧}
 
 %%%%% FOR STYLE OF INDEX %%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\indexname}{\texorpdfstring{\hbox to 1.9em{索引}}{索引}}
+\renewcommand{\indexname}{\texorpdfstring{\hbox to 2em{索引}}{索引}}
 \renewcommand\indexpagestyle{plainheadback}
 \newcommand\symbolindexname{記号・数字}
 
 %%%%% FOR STYLE OF BIBLATEX %%%%%%%%%%%%%%%%%%
-\renewcommand{\bibname}{\texorpdfstring{\hbox to 3.75em{参考文献}}{参考文献}}
+\renewcommand{\bibname}{\texorpdfstring{\hbox to 4em{参考文献}}{参考文献}}
 \ExecuteBibliographyOptions{
   sorting=none,
   defernumbers=false,
-%  refsegment=chapter,
   hyperref=true,
   block=nbpar,
   subentry=true,

@@ -5,6 +5,7 @@
 %%% Encoding and Language Settings
 \usepackage{luatexja-fontspec} % Allows input of utf8 characters. including xcolor
 \usepackage{babel} % Multilingual support for LaTeX.
+%\usepackage[japanese]{pxbabel} % Japanese support for babel.
 \usepackage[style=english]{csquotes} % Context sensitive quotation facilities.
 %%% Font and Math Settings
 \usepackage{amsmath, amssymb} % Enhanced math support in LaTeX. including amstext
@@ -16,21 +17,22 @@
 \usepackage{colortbl} % Adds color to LaTeX tables.
 \usepackage{tabularray} % Allows tables to break across pages. including xcolor, expl3
 %%% Graphics and Color Settings
+\usepackage{svg}
 \usepackage[dvipsnames]{xcolor} % Provides driver-independent color extensions for LaTeX and pdfLaTeX.
 %%% Box Settings %%%
 \usepackage[most]{tcolorbox} % includeing pgf, tikz
 \usepackage{tikzpagenodes}
 %%% tikz, pgf %%%
-\def\pgfsysdriver{pgfsys-luatex.def} % Specifies the driver for PGF, a lower-level language for creating graphics.
+\def\pgfsysdriver{pgfsys-luatex.def} % Specifies the driver for PGF
 \usepackage{pgfplots} % A tool to create 2D and 3D plots in LaTeX.
 %%% Bibliography Settings
 \usepackage[backend=biber, style=numeric-comp, natbib=true]{biblatex} % references
+%%% Make index
+\usepackage{makeidx}
 %%% List Settings
 \usepackage{enumitem} % Control layout of itemize, enumerate, description.
 %%% Footnote
 \usepackage{footnotehyper} % Improve on footnote handling.
-%%% Make index
-\usepackage{makeidx}
 %%% Hyperlink Settings
 \usepackage[unicode, hidelinks]{hyperref} % Adds support for hyperlinks.
 %%% Date and Time
