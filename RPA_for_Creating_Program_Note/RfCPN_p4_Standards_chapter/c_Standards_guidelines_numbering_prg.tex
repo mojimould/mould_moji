@@ -14,8 +14,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{プログラム番号の基本事項}
 \begin{enumerate}[label=\Roman*., ref=\Roman*]
-\item プログラム番号は8桁の半角英数字で表される(\verb+(a-zA-Z|\d){8}+)
-\item 原則として、プログラム番号には半角数字のみを用いる(\verb|\d{8}|)
+\item プログラム番号は8桁の半角英数字で表される({\ttfamily(a-zA-Z|\textbackslash d){8}})
+\item 原則として、プログラム番号には半角数字のみを用いる({\ttfamily\textbackslash d{8}})
 \item プログラム番号には右から順に1桁目, 2桁目, ..., 8桁目と数えるものとする
 \item\label{item:PNbasicGE4}プログラム番号は4桁までは左側0埋めを行い、5桁目以上の左側0埋めの有無は問わない
 \end{enumerate}
@@ -38,7 +38,7 @@
 \modHeadsection{番号付け：8, 7桁目}
 \index{7けため（プログラムばんごう）@7桁目（プログラム番号）}7桁目および\index{8けため（プログラムばんごう）@8桁目（プログラム番号）}8桁目はともに0とする。
 
-これに伴い、\ref{item:PNbasicGE4}に基づき、以下では0埋めを省略してすべてのプログラム番号を6桁の数字 (\verb|\d{6}|)で表す。
+これに伴い、\ref{item:PNbasicGE4}に基づき、以下では0埋めを省略してすべてのプログラム番号を6桁の数字 ({\ttfamily\textbackslash d{6}})で表す。
 
 
 \clearpage
@@ -53,7 +53,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{6桁目：0}
 6桁目が0のものは、原則として\index{メインプログラム}メインプログラムとする。
-このとき、下5桁は製品の\index{ずめんばんごう@図面番号}図面番号（番号部分・右詰め, \verb|\d{5}|）とする
+このとき、下5桁は製品の\index{ずめんばんごう@図面番号}図面番号（番号部分・右詰め, {\ttfamily\textbackslash d{5}}）とする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{稀に、図面番号にアルファベットが含まれるものが存在する。
 その場合は、その都度に別途対応する。}。
@@ -65,12 +65,12 @@
 \subsection{6桁目：0, 9以外}
 6桁目が0, 9以外の場合は、以下のように分類する。
 \begin{enumerate}[label=\arabic*., ref=\arabic*, start=1]
-\item\label{item:6Mmain} 測定（\dimple 以外）を行うプログラム(\verb|1\d{5}|)
-\item\label{item:6MD} 測定（\dimple）を行うプログラム(\verb|2\d{5}|)
+\item\label{item:6Mmain} 測定（\dimple 以外）を行うプログラム({\ttfamily1\textbackslash d{5}})
+\item\label{item:6MD} 測定（\dimple）を行うプログラム({\ttfamily2\textbackslash d{5}})
 %\item\label{item:6MN} 測定（逃し溝）を行うプログラム
 \setcounter{enumi}{3}
-\item\label{item:6Kmain} 加工（\dimple 以外）を行うプログラム(\verb|4\d{5}|)
-\item\label{item:6KD} 加工（\dimple）を行うプログラム(\verb|5\d{5}|)
+\item\label{item:6Kmain} 加工（\dimple 以外）を行うプログラム({\ttfamily4\textbackslash d{5}})
+\item\label{item:6KD} 加工（\dimple）を行うプログラム({\ttfamily5\textbackslash d{5}})
 %\item\label{item:6KN} 加工（逃し溝）を行うプログラム
 \end{enumerate}
 複数の用途での使用が想定されるものに対しては、番号の若いほうに合わせる。
@@ -81,7 +81,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{6桁目：9}
 6桁目が9のものは、製品の計測・加工に直接関係しないプログラムとする。
-このとき、下5桁はその都度に別途考慮し番号付けを行う。(\verb|9\d{5}|)
+このとき、下5桁はその都度に別途考慮し番号付けを行う。({\ttfamily9\textbackslash d{5}})
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -103,32 +103,32 @@
 \begin{enumerate}[label=\alph*)]
 \item 6桁目が\ref{item:6Mmain}（\dimple 以外の測定）の場合、5桁目を以下にように分類する
   \begin{enumerate}[label=\arabic*., ref=\arabic*, start=1]
-  \item\label{item:5MCOBsZ} 芯出しにおいて、$Z$一定で($X$または$Y$の)外側両面を測定するプログラム(\verb|11\d{4}|)
-  \item\label{item:5MCOO} \index{しんだし@芯出し}芯出しにおいて、($XY$)外側片面を測定するプログラム(\verb|12\d{4}|)
-  \item\label{item:5MCIB} 芯出しにおいて、$Z$一定で($X$または$Y$の)内側両面を測定するプログラム(\verb|13\d{4}|)
-  \item\label{item:5MCIO} 芯出しにおいて、($XY$)内側片面を測定するプログラム(\verb|14\d{4}|)
-  \item\label{item:5MCL} \index{とおりしん@通り芯}通り芯を測定するプログラム(\verb|15\d{5}|)
+  \item\label{item:5MCOBsZ} 芯出しにおいて、$Z$一定で($X$または$Y$の)外側両面を測定するプログラム({\ttfamily 11\textbackslash d{4}})
+  \item\label{item:5MCOO} \index{しんだし@芯出し}芯出しにおいて、($XY$)外側片面を測定するプログラム({\ttfamily 12\textbackslash d{4}})
+  \item\label{item:5MCIB} 芯出しにおいて、$Z$一定で($X$または$Y$の)内側両面を測定するプログラム({\ttfamily 13\textbackslash d{4}})
+  \item\label{item:5MCIO} 芯出しにおいて、($XY$)内側片面を測定するプログラム({\ttfamily 14\textbackslash d{4}})
+  \item\label{item:5MCL} \index{とおりしん@通り芯}通り芯を測定するプログラム({\ttfamily 15\textbackslash d{5}})
   \end{enumerate}
 \item 6桁目が\ref{item:6MD}, \ref{item:6KD}（\dimple の測定, 加工）の場合、5桁目を以下のように分類する
   \begin{enumerate}[label=\arabic*., ref=\arabic*]
-  \item 主に、\expandafterindex{\dimplekana@\dimple}\dimple の行と中心湾曲線上の交点への移動を繰返すプログラム(\verb|21\d{4}|)
-%  \item \dimple において、各内面方向への($X$または$Y$方向)の移動を繰返すプログラム(\verb|22\d{4}|)
-  \item 主に、\dimple の個々の行方向の移動を繰返すプログラム(\verb|22\d{4}|)
-  \item 主に、\dimple の個々の深さ方向に測定または加工するプログラム(\verb|[25]3\d{4}|)
-%  \item 主にレベル4の階層で用いるプログラム(\verb|[2356]4\d{4}|)
+  \item 主に、\expandafterindex{\dimplekana@\dimple}\dimple の行と中心湾曲線上の交点への移動を繰返すプログラム({\ttfamily 21\textbackslash d{4}})
+%  \item \dimple において、各内面方向への($X$または$Y$方向)の移動を繰返すプログラム({\ttfamily 22\textbackslash d{4}})
+  \item 主に、\dimple の個々の行方向の移動を繰返すプログラム({\ttfamily 22\textbackslash d{4}})
+  \item 主に、\dimple の個々の深さ方向に測定または加工するプログラム({\ttfamily [25]3\textbackslash d{4}})
+%  \item 主にレベル4の階層で用いるプログラム(c)
   \end{enumerate}
 %  複数の用途での使用が想定されるものに対しては、番号の若いほうに合わせる。
 \item 6桁目が\ref{item:6Kmain}（\dimple 以外の加工）の場合、5桁目を以下にように分類する
   \begin{enumerate}[label=\arabic*., ref=\arabic*, start=1]
-%  \item\label{item:5Kaux} 加工の種類に依存しない加工のプログラム(\verb|40\d{4}|)
-  \item\label{item:5KF} 主に、\index{たんめんかこう@端面加工}端面加工の位置決めを行うプログラム(\verb|41\d{4}|)
-  \item\label{item:5KO} 主に、\index{がいさくかこう@外削加工}外削加工の位置決めを行うプログラム(\verb|42\d{4}|)
-  \item\label{item:5KK} 主に、\index{みぞかこう@溝加工}溝加工の位置決めを行うプログラム(\verb|43\d{4}|)
-  \item\label{item:5KCO} 主に、（端面部）\index{そとがわCめんとりかこう（たんめん）@外側C面取加工（端面）}外側\index{Cめんとりかこう@C面取加工}C面取加工の位置決めを行うプログラム(\verb|44\d{4}|)
-  \item\label{item:5KCI} 主に、（端面部）\index{うちがわCめんとりかこう（たんめん）@内側C面取加工（端面）}内側C面取加工の位置決めを行うプログラム(\verb|45\d{4}|)
-%  \item\label{item:5KZ} 座ぐりの加工のプログラム(\verb|46\d{4}|)
+%  \item\label{item:5Kaux} 加工の種類に依存しない加工のプログラム(\ttfamily{40\textbackslash d{4}})
+  \item\label{item:5KF} 主に、\index{たんめんかこう@端面加工}端面加工の位置決めを行うプログラム({\ttfamily 41\textbackslash d{4}})
+  \item\label{item:5KO} 主に、\index{がいさくかこう@外削加工}外削加工の位置決めを行うプログラム({\ttfamily 42\textbackslash d{4}})
+  \item\label{item:5KK} 主に、\index{みぞかこう@溝加工}溝加工の位置決めを行うプログラム({\ttfamily 43\textbackslash d{4}})
+  \item\label{item:5KCO} 主に、（端面部）\index{そとがわCめんとりかこう（たんめん）@外側C面取加工（端面）}外側\index{Cめんとりかこう@C面取加工}C面取加工の位置決めを行うプログラム({\ttfamily 44\textbackslash d{4}})
+  \item\label{item:5KCI} 主に、（端面部）\index{うちがわCめんとりかこう（たんめん）@内側C面取加工（端面）}内側C面取加工の位置決めを行うプログラム({\ttfamily 45\textbackslash d{4}})
+%  \item\label{item:5KZ} 座ぐりの加工のプログラム(\ttfamily{46\textbackslash d{4}})
   \setcounter{enumii}{8}
-  \item 主に、位置決め後、実際に加工を行うプログラム(\verb|49\d{4}|)
+  \item 主に、位置決め後、実際に加工を行うプログラム({\ttfamily 49\textbackslash d{4}})
   \end{enumerate}
 \end{enumerate}
 
@@ -139,14 +139,14 @@
 \modHeadsection{番号付け：4桁目}
 （6桁目が\ref{item:6Mmain}, \ref{item:6MD}, \ref{item:6Kmain}, \ref{item:6KD}の場合）\index{4けため（プログラムばんごう）@4桁目（プログラム番号）}4桁目は、以下のように分類する。
 \begin{enumerate}[label=\alph*), ref=\alph*)]
-\item 6桁目が\ref{item:6Kmain}\hx 以外の場合、4桁目は0とする(\verb|[126][1-5]0\d{3}|)
+\item 6桁目が\ref{item:6Kmain}\hx 以外の場合、4桁目は0とする({\ttfamily{[126][1-5]0\textbackslash d{3}}})
 \item 6桁目が\ref{item:6Kmain}（\dimple 以外の加工）の場合、4桁目を以下にように分類する
   \begin{enumerate}[label=\alph{enumi}\,-\arabic*), leftmargin=\leftmargini]
-  \item 5桁目が\ref{item:5KO}（外削加工）以外の場合、4桁目は0とする(\verb|4[13-59]0\d{3}|)
+  \item 5桁目が\ref{item:5KO}（外削加工）以外の場合、4桁目は0とする({\ttfamily{4[13-59]0\textbackslash d{3}}})
   \item 5桁目が\ref{item:5KO}（外削加工）の場合、4桁目を以下のように分類する
     \begin{enumerate}[label=\arabic*., ref=\arabic*, start=0, leftmargin=*]
-    \item 端面に垂直方向の外削加工のプログラム(\verb|420\d{3}|)
-    \item 湾曲に沿った方向の外削加工のプログラム(\verb|421\d{3}|)
+    \item 端面に垂直方向の外削加工のプログラム({\ttfamily{420\textbackslash d{3}}})
+    \item 湾曲に沿った方向の外削加工のプログラム({\ttfamily{421\textbackslash d{3}}})
     \end{enumerate}
   \end{enumerate}
 \end{enumerate}
@@ -157,7 +157,7 @@
 %% section 12.6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{番号付け：3, 2桁目}
-（6桁目が\ref{item:6Mmain}, \ref{item:6MD}, \ref{item:6Kmain}, \ref{item:6KD}\hx の場合の）\index{3けため（プログラムばんごう）@3桁目（プログラム番号）}3桁目および\index{2けため（プログラムばんごう）@2桁目（プログラム番号）}2桁目はともに0とする。(\verb|[1245][1-69][01]0{2}\d|)
+（6桁目が\ref{item:6Mmain}, \ref{item:6MD}, \ref{item:6Kmain}, \ref{item:6KD}\hx の場合の）\index{3けため（プログラムばんごう）@3桁目（プログラム番号）}3桁目および\index{2けため（プログラムばんごう）@2桁目（プログラム番号）}2桁目はともに0とする。({\ttfamily{[1245][1-69][01]0{2}\textbackslash d}})
 
 
 \clearpage
@@ -167,11 +167,11 @@
 \modHeadsection{番号付け：1桁目}
 （6桁目が\ref{item:6Mmain}, \ref{item:6MD}, \ref{item:6Kmain}, \ref{item:6KD}\hx の場合の）\index{1けため（プログラムばんごう）@1桁目（プログラム番号）}1桁目は、以下のように分類する。
 \begin{enumerate}[label=\arabic*.]
-\item 主に$X$方向に測定または加工するプログラム(\verb|[125][1-69]0{3}1|)
-\item 主に$Y$方向に測定または加工するプログラム(\verb|[125][1-69]0{3}2|)
-\item 主に$Z$方向に測定または加工するプログラム(\verb|[125][1-69]0{3}3|)
-\item 工具から見て右回り（$XY$面）に、主に外側から加工するプログラム(\verb|[125][1-69]0{3}4|)
-\item 工具から見て左回り（$XY$面）に、主に外側から加工するプログラム(\verb|[125][1-69]0{3}5|)
-\item 工具から見て右回り（$XY$面）に、主に内側から加工するプログラム(\verb|[125][1-69]0{3}6|)
-\item 工具から見て左回り（$XY$面）に、主に内側から加工するプログラム(\verb|[125][1-69]0{3}7|)
+\item 主に$X$方向に測定または加工するプログラム({\ttfamily{[125][1-69]0{3}1}})
+\item 主に$Y$方向に測定または加工するプログラム({\ttfamily{[125][1-69]0{3}2}})
+\item 主に$Z$方向に測定または加工するプログラム({\ttfamily{[125][1-69]0{3}3}})
+\item 工具から見て右回り（$XY$面）に、主に外側から加工するプログラム({\ttfamily{[125][1-69]0{3}4}})
+\item 工具から見て左回り（$XY$面）に、主に外側から加工するプログラム({\ttfamily{[125][1-69]0{3}5}})
+\item 工具から見て右回り（$XY$面）に、主に内側から加工するプログラム({\ttfamily{[125][1-69]0{3}6}})
+\item 工具から見て左回り（$XY$面）に、主に内側から加工するプログラム({\ttfamily{[125][1-69]0{3}7}})
 \end{enumerate}
