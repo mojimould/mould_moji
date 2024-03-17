@@ -14,3 +14,7 @@
 *.bcf
 *.bbl
 *.aux
+*.run.xml
+*.synctex.gz
+RPA_for_Creating_Program_Note/RPA_for_Creating_Program_Note.log
+RPA_for_Creating_Program_Note/RPA_for_Creating_Program_Note.out
