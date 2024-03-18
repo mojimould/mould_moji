@@ -38,10 +38,9 @@
 \begingroup
 \let\cleardoublepage\relax
 \addchaptertocentry{}{\bibname}
-{\footnotesize%
-\printbibliography[type=manual, heading=manual]%
-\printbibliography[type=article, heading=articles]%
-\printbibliography[type=online, heading=online]%
+{\footnotesize %\printbibliography[type=manual, heading=subbibintoc, title={Manuals}]%
+\printbibliography[type=online, heading=subbibintoc, title={Onlines}]%
+\printbibliography[type=article, heading=subbibintoc, title={Article}]%
 \thispagestyle{plainheadback}}
 \let\cleardoublepage\tmpcleardoublepage
 \endgroup
@@ -50,6 +49,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% INDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\nocite{2023Tantau}
+\nocite{2024Thomas}
+\nocite{2024Jianrui}
 \begingroup
 \let\cleardoublepage\relax
 \addchaptertocentry{}{\indexname}
