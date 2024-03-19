@@ -45,3 +45,10 @@
 }
 \appto\bibfont{\footnotesize\setstretch{1.1}}
 \DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}\hspace{-6pt}}
+\DeclareFieldFormat{date}{%
+  \thefield{year}%
+  \iffieldundef{month}{}{/}%
+  \iffieldundef{month}{}{\two@digits{\thefield{month}}}%
+  \iffieldundef{day}{}{/}%
+  \iffieldundef{day}{}{\two@digits{\thefield{day}}}%
+}

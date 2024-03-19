@@ -34,9 +34,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\nocite{2023Tantau}
-\nocite{2024Thomas}
-\nocite{2024Jianrui}
+\nocite{package:2023Tantau}
+\nocite{package:2024Thomas}
+\nocite{package:2024Jianrui}
 \printbibheading
 \begingroup
 \let\cleardoublepage\relax
@@ -44,6 +44,8 @@
 {\footnotesize%
 \printbibliography[type=online, heading=subbibintoc, title={Onlines}]%
 \printbibliography[type=article, heading=subbibintoc, title={Article}]%
+\clearpage
+\printbibliography[type=manual, heading=subbibintoc, title={Stylefiles}]%
 \thispagestyle{plainheadback}}
 \let\cleardoublepage\tmpcleardoublepage
 \endgroup
