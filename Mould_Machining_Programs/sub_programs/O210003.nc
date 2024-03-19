@@ -67,7 +67,9 @@ IF[#26LE[#901011/2]]GOTO800
 (if Z <= #901011/2, go to N800)
 
 IF[#20EQ#0]THEN #20=0
-(if T = #0, then T = 0)
+IF[#19EQ0]THEN #13=1
+(if T=#0, then T=0)
+(if S=0, then M=1)
 
 IF[#4111EQ50]GOTO001
 IF[#4111EQ31]GOTO002
@@ -82,13 +84,13 @@ GOTO800
 N001 (if sensor)
 #702=#901050 (Z hosei)
 #703=#901050 (XY hosei)
-#704=31 (G#)
+#704=31 (G31)
 GOTO003
 N002 (if Tslot)
 #702=0 (Z hosei)
 #703=#[2400+#4111]+#[2600+#4111]
 (XY hosei: the KouguHankei)
-#704=1 (G#)
+#704=1 (G01)
 
 N003
 IF[#1000EQ0]THEN #30=#901001

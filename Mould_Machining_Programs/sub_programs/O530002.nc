@@ -1,7 +1,7 @@
 %
 O530002 (for BD dimples kakou)
 (level 3: kakou dimple)
-(J > 0: Y+, J < 0: Y-)
+(J > 0: B, J < 0: D)
 
 N001
 IF[#05EQ#0]GOTO800

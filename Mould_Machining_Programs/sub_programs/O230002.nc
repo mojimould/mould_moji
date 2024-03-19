@@ -1,7 +1,7 @@
 %
 O230002 (for BD dimples measurement)
 (level 3: measurement dimple)
-(J > 0: Y+, J < 0: Y-)
+(J > 0: B, J < 0: D)
 
 N001
 #748=#5002
@@ -11,9 +11,8 @@ IF[#05EQ#0]GOTO800
 IF[#05EQ0]GOTO800
 (if J = 0 or empty, to N800)
 
-IF[#656EQ#0]GOTO800
 IF[#656NE50]GOTO800
-(if #656 is not 50.0 or #0, go to N800)
+(if #656 is not 50.0, go to N800)
 
 IF[#1004EQ1]GOTO002
 M117 (if the sensor is off, turn on)

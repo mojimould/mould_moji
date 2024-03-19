@@ -1,7 +1,7 @@
 %
 O230001 (for AC dimples measurement)
 (level 3: measurement dimple)
-(I > 0: X+, I < 0: X-)
+(I > 0: A, I < 0: C)
 
 N001
 #748=#5001
@@ -11,9 +11,8 @@ IF[#04EQ#0]GOTO800
 IF[#04EQ0]GOTO800
 (if I = 0 or empty, to N800)
 
-IF[#656EQ#0]GOTO800
 IF[#656NE50]GOTO800
-(if #656 is not 50.0 or #0, go to N800)
+(if #656 is not 50.0, go to N800)
 
 IF[#1004EQ1]GOTO002
 M117 (if the sensor is off, turn on)

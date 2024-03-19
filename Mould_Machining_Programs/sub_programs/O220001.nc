@@ -50,7 +50,7 @@ G91 G01 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F#651
 (YZ to the 1st dimple: X: faceA-#620 or faceC+#620)
 
 N007
-#31=1
+#31=1 (loop #)
 #30=900001+#717*100+#727*#729+FIX[[#13-1]/2]*#728
 (#30: numbering for dimples)
 (A:#900101-, C:#900201-)

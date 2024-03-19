@@ -1,7 +1,7 @@
 %
 O530001 (for AC dimples kakou)
 (level 3: kakou dimple)
-(I > 0: Y+, I < 0: Y-)
+(I > 0: A, I < 0: C)
 
 N001
 IF[#04EQ#0]GOTO800
@@ -24,8 +24,8 @@ IF[#671LE10]GOTO800
 
 IF[#04LT0]GOTO002
 (if I < 0, go to N002)
-#31=1 (for A)
-(if I > 0, #31=1)
+#31=1
+(if for A, #31=1)
 IF[#4111EQ31]THEN #30=#461
 IF[#4111EQ32]THEN #30=#466
 IF[#4111EQ33]THEN #30=#471
@@ -35,8 +35,8 @@ IF[#4111EQ33]THEN #30=#471
 GOTO008
 
 N002
-#31=-1 (for C)
-(if I < 0, #31=-1)
+#31=-1
+(if for C, #31=-1)
 IF[#4111EQ31]THEN #30=#462
 IF[#4111EQ32]THEN #30=#467
 IF[#4111EQ33]THEN #30=#472

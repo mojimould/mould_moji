@@ -180,7 +180,7 @@ G43 H50 (hosei kouguChou #50)
 
 G57 G65 P130001 X134.100 Z400.000 W400.0 R5932.950 M0.08
 (G57: Top X inside center)
-(X: AC naikei)
+(X: TOP AC naikei)
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)
 (R: central curvature)
@@ -192,7 +192,7 @@ G43 H50 (hosei kouguChou #50)
 
 G57 G65 P130002 Y134.100 Z400.000 M0.08
 (G57: Top Y inside center)
-(Y: BD naikei)
+(Y: TOP BD naikei)
 (Z: Top sai_furiwake)
 (M: mekki thickness mm)
 
