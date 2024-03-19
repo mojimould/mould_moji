@@ -23,7 +23,7 @@ N002
 IF[#04GT0]THEN #33=1
 IF[#04LT0]THEN #33=-1
 (for A, #33=1)
-(for C, #33=1)
+(for C, #33=-1)
 
 
 (kokokara G31)

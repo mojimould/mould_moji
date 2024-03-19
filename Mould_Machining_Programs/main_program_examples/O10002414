@@ -197,7 +197,7 @@ G57 G65 P130002 Y134.100 Z400.000 M0.08
 (M: mekki thickness mm)
 
 G90 G58 G01 X0 Y0 F#652
-(G58XY Top mizo center)
+(G58XY mizo center)
 G43 H50 (hosei kouguChou #50)
 
 G58 G65 P120001 X147.800 U152.800 Z400.000 M24.05 H9.050 I3.00
@@ -370,16 +370,16 @@ G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G58 G00 B-0.000
-(G58B parallel angle -0.000)
 M10 (B-axis clamp)
+(G58B parallel angle -0.000)
 
 M28 (chip conveyor on)
 G58 G65 P430000 A0.0 K2.0 C3.0 R#0 X147.800 Y147.800 U152.800 V152.800 Z400.000 W400.0 Q5932.950 M24.050 H9.050
 (O430000: Mizo, ar HidariMawari)
 (A: Top gaisaku: 0:not exists, 1:exists)
 (K: key type: 1:R, 2:C, 3:rec, 4:BDonly)
-(C: coner C)
-(R: coner R)
+(C: mizo coner C)
+(R: mizo coner R)
 (X: AC mizoKei)
 (Y: BD mizoKei)
 (U: AC gaiKei)

@@ -59,7 +59,7 @@ G91 G01 X-[#24+#07*2-#03] F#09
 G91 G01 X-#03 Y-#03 F#08
 (al corner: C#03 X-Y-)
 G91 G01 Y-[#25-#03*2] F#09
-(l:Y-)
+(l: Y-)
 G91 G01 X#03 Y-#03 F#08
 (bl corner: C#03 X+Y-)
 G91 G01 X[#24-#03*2] F#09
@@ -69,29 +69,29 @@ G91 G01 X#03 Y#03 F#08
 G91 G01 Y[#25-#03*2] F#09
 (r: Y+)
 G91 G01 X-#03 Y#03 F#08
-(ar corner: R#03 X-Y+)
+(ar corner: C#03 X-Y+)
 G91 G01 X-[#07*2] Y[#07*2] F[#09*3]
 (X-Y+)
 GOTO999
 
 N005 (for rec)
 G91 G01 X-[#24+#07*2] F#09
-(a:X-)
+(a: X-)
 G91 G01 Y-#25 F#09
-(l:Y-)
+(l: Y-)
 G91 G01 X#24 F#09
 (b: X+)
 G91 G01 Y#25 F#09
-(Y+)
+(r: Y+)
 G91 G01 Y[#07*2] F[#09*3]
 (Y+)
 GOTO999
 
 N006 (for BD only)
 G91 G01 X-[#24+#07*2+[#07*1.5]] F#09
-(a:X-)
+(a: X-)
 G91 G00 Y-#25
-(l:Y-)
+(l: Y-)
 G91 G01 X[#24+#07*3] F#09
 (b: X+)
 G91 G00 Y[#25+#07*2]
@@ -100,7 +100,7 @@ GOTO999
 
 
 N800
-M05 (shujiku kaiten off)
+M05 (spindle kaiten off)
 M09 (coolant off)
 #3000=100 (are the arguments OK?)
 

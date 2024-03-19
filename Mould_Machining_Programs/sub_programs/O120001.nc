@@ -68,20 +68,20 @@ N011
 G91 G31 X-[#602+#603] F#656
 (X- skip: #602+#603)
 #900011=#5001-#901050+#901053+#901054
-(#900011= A-face: block end -#901050 +probe hosei)
+(#900011= A-face: skip X -#901050 +probe hosei)
 
 N012
 G91 G01 X[#602+#603] F#652
 (X+: #602+#603)
 G90 G01 Z[#26+#600] F#650
-(Z+: Z+#901050+#600)
+(Z: Z+#600)
 IF[[ABS[#900011-#901053-#901054]]LE[ABS[[#21/2]-#602]]]GOTO800
 (if |#900011 -probe hosei|<=|U/2-#602|, go to N800)
 
 G90 G01 X[#900011-#04-[#24/2]] F#652
 (X to mizo center)
 #[5201+[#33-53]*20]=#5021
-(current work origin X = current machine X)
+(current work origin X = current machine coordinate X)
 GOTO999
 
 

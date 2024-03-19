@@ -115,8 +115,8 @@ IF[#1000EQ1]THEN #30=#901005
 N004
 M11 (B-axis unclamp)
 G90 G#701 G01 B[#01+#02]
-(current work B: G90 #01+#02 deg)
 M10 (B-axis clamp)
+(current work B: G90 #01+#02 deg)
 
 G90 G01 Z[#26+#600] F#652
 (Z: Z+#600)

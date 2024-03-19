@@ -612,10 +612,10 @@ $\cdots$ & （以下不明） & \ttNum0
 変数 & 内容\\
 \SetRow{unusingVariables}
 \ttNum700 & （予備）\\
-\ttNum701 & プログラム読込み時のワーク座標系(\ttNum4012)\\
-\ttNum702 & 工具別$Z$補正({\ttfamily T50}:\ttNum512, {\ttfamily T3}x:0)\\
-\ttNum703 & 工具別$XY$補正({\ttfamily T50}:\ttNum512, {\ttfamily T3}x:\ttNum[2400+\ttNum4111]+\ttNum[2600+\ttNum4111])\\
-\ttNum704 & 工具別移動{\ttfamily G\#} ({\ttfamily T50}:31, {\ttfamily T3}x:1)\\
+\ttNum701 & プログラム読込時のワーク座標系(\ttNum4012)\\
+\ttNum702 & 工具別$Z$補正({\ttfamily T50}:\ttNum901050, {\ttfamily T3x}:0)\\
+\ttNum703 & 工具別$XY$補正({\ttfamily T50}:\ttNum901050, {\ttfamily T3x}:\ttNum[2400+\ttNum4111]+\ttNum[2600+\ttNum4111])\\
+\ttNum704 & 工具別移動{\ttfamily G\ttNum} ({\ttfamily T50}:31, {\ttfamily T3x}:01)\\
 \ttNum705 & テーブル中心からワーク座標(\ttNum701)原点までの$X$距離\\
 \ttNum706 & 傾き後のトップ端面中心（機械座標）$X$ (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
 \ttNum707 & テーブル中心から傾き後のトップ端面中心までの$Z$距離 (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
@@ -629,8 +629,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum715 & 傾き後\dimple1列目中心（ブロックエンド）$Y$座標 (\ttNum5002)\\
 \ttNum716 & 傾き後\dimple1列目中心（ブロックエンド）$Z$座標 (\ttNum5003)\\
 \ttNum717\color{red}$^*$ & 各面 ループ用数値(1:A, 2:C, 3:B, 4:D)\\
-\ttNum718 & BD内半径$-\text{\ttNum703}-\text{\ttNum602}$\\
-\ttNum719 & (AC内半径$-\text{\ttNum703}-\text{\ttNum602})\cos\phi$\\
+\ttNum718 & BD内半径$+$めっき膜厚$-\text{\ttNum703}-\text{\ttNum620}$\\
+\ttNum719 & (AC内半径$+$めっき膜厚$-\text{\ttNum703}-\text{\ttNum620}\text)\cos\phi$\\
 \SetRow{unusingVariables}
 \ttNum720 & （予備）\\
 \SetRow{unusingVariables}
