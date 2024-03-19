@@ -180,7 +180,7 @@ G43 H50 (hosei kouguChou #50)
 
 G57 G65 P130001 X134.100 Z400.000 W400.0 R5932.950 M0.08
 (G57: Top X inside center)
-(X: TOP AC naikei)
+(X: Top AC naikei)
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)
 (R: central curvature)
@@ -192,7 +192,7 @@ G43 H50 (hosei kouguChou #50)
 
 G57 G65 P130002 Y134.100 Z400.000 M0.08
 (G57: Top Y inside center)
-(Y: TOP BD naikei)
+(Y: Top BD naikei)
 (Z: Top sai_furiwake)
 (M: mekki thickness mm)
 
@@ -297,8 +297,8 @@ G65 P900003
 N302
 G57 G65 P210003 X134.100 Y134.100 T0.08 Z400.000 W400.0 F81.2 S92.8 Q153.0 I11.6 K20.0 M4.0 U0.31 R5932.950 A-0.000 B-3.190
 (dimple kakou)
-(X: AC naikei of last row)
-(Y: BD naikei of last row)
+(X: Top AC naikei)
+(Y: Top BD naikei)
 (T: mekki thickness mm)
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)
@@ -657,7 +657,7 @@ N999 M30
 
 (Common variables)
 (as LHS)
-(#901001, #901003, #901004, #901005, #901007, #901008)
+(#901001, #901002, #901003, #901004, #901005, #901006, #901007, #901008)
 (as RHS)
 (#175, #177, #178, #179, #180, #402, #417, #424, #428, #439, #444, #449, #459, #600, #650, #652)
 (#900021, #900024)
