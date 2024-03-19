@@ -10,10 +10,10 @@
 %%%%% FOR STYLE OF LOF %%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listfigurename{\texorpdfstring{\hbox to 3em{図目次}}{図目次}}
 \renewcommand{\figurename}{図}
-\let\l@figure\l@section
+%\let\l@figure\l@section
 \renewcommand{\figureautorefname}{\figurename} % figure --> 図
 \renewcommand*\l@figure{\@dottedtocline{1}{0.0em}{2.35em}}
-\AtBeginDocument{\renewcommand{\thefigure}{\figurename}}
+\AtBeginDocument{\renewcommand{\thefigure}{}}
 
 %%%%% FOR STYLE OF LOP %%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listoflopname{\texorpdfstring{\hbox to 2.75em{大目次}}{大目次}}
@@ -21,9 +21,9 @@
 %%%%% FOR STYLE OF LOL %%%%%%%%%%%%%%%%%
 \renewcommand{\lstlistlistingname}{プログラム 目次}
 \renewcommand{\lstlistingname}{{\scshape Prg: }}
-\let\l@lstlisting\l@section
+%\let\l@lstlisting\l@section
 \renewcommand*\l@lstlisting{\@dottedtocline{1}{0.0em}{2.35em}}
-\AtBeginDocument{\renewcommand{\thelstlisting}{\lstlistingname}}
+\AtBeginDocument{\renewcommand{\thelstlisting}{}}
 
 %%%%% FOR STYLE OF LOC %%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listofloCname{Column一覧}

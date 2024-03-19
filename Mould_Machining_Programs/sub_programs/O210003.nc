@@ -252,8 +252,8 @@ GOTO999
 
 
 N801
-M05 (spindle off)
 M09 (coolant off)
+M05 (spindle off)
 #3000=145 (Sensor Low battery)
 
 N802
@@ -269,8 +269,8 @@ G90 G01 X#712 Z#713 F#653
 (XZ: to start point)
 
 N800
-M05 (spindle off)
 M09 (coolant off)
+M05 (spindle off)
 #3000=121 (are the arguments or the mould OK?)
 
 N999 M99

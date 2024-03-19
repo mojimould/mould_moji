@@ -56,8 +56,9 @@ G90 G01 X#33 F#651
 GOTO999 (to N999)
 
 N800
+M09 (coolant off)
+M05 (spindle off)
 #3000=121 (Argument Is Not Assigned)
-M00 (are arguments ok?)
 
 N999 M99
 
