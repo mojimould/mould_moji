@@ -200,7 +200,7 @@ G90 G58 G01 X0 Y0 F#652
 (G58XY mizo center)
 G43 H50 (hosei kouguChou #50)
 
-G58 G65 P120001 X147.800 U152.800 Z400.000 M24.05 H9.050 I3.00
+G58 G65 P120001 X147.800 U152.800 Z400.000 M24.05 H9.05 I3.00
 (G58: Mizo X center)
 (X: AC mizoKei)
 (U: Top AC gaiKei)
@@ -228,14 +228,15 @@ T50 (touch sensor)
 M06 (tool exchange)
 
 N201
-G40 G80 S35 (cancel hosei, low gear)
+G40 G80 (cancel hosei)
+S35 (low gear)
 M19 (Spindle orientation)
 G43 H50 (hosei kouguChou #50)
 
 M11 (B-axis unclamp)
 G90 G57 G00 B-0.000
-(G57B parallel angle -0.000)
 M10 (B-axis clamp)
+(G57B parallel angle -0.000)
 
 G90 G57 G01 X0 Y0 F#652
 (G57XY Top Inside Center)
@@ -245,8 +246,8 @@ G90 G57 G01 Z[400.000+#600] F#652
 
 G57 G65 P210003 X135.578 Y135.578 T0.08 Z400.000 W400.0 F92.8 S81.2 Q133.0 I11.6 K20.0 M5.0 U0.31 R5932.950 A-0.000 B-3.041
 (dimple measurement)
-(X: AC naikei: Top-tanmen)
-(Y: BD naikei: Top-tanmen)
+(X: Top AC naikei)
+(Y: Top BD naikei)
 (T: mekki thickness mm)
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)
@@ -285,14 +286,15 @@ M06 (tool exchange)
 G43 H#4120 (hosei KouguChou: T#)
 
 G90 G57 G00 X0 Y0
-(G57XY Top Inside Center)
 G90 G57 Z[400.000+#600] F#650
+(G57XY Top Inside Center)
 (Z= TopTanmen +#600)
 
 N301 (test kakou for the depth)
 IF[#402EQ0]GOTO302
-G57 G65 P210003 X135.578 Y135.578 T0.08 Z400.000 W400.0 F0 S0 Q133.0 I11.6 K20.0 M1.0 U0.2 R5932.950 A-0.000 B-3.041
+G57 G65 P210003 X135.578 Y135.578 T0.08 Z400.000 W400.0 F92.8 S81.2 Q133.0 I11.6 K20.0 M1.0 U0.20 R5932.950 A-0.000 B-3.041
 G65 P900003
+G43 H#4120 (hosei KouguChou: T#)
 
 G90 G57 G00 X0 Y0
 G90 G57 Z[400.000+#600] F#650
@@ -379,12 +381,12 @@ M10 (B-axis clamp)
 (G58B parallel angle -0.000)
 
 M28 (chip conveyor on)
-G58 G65 P430000 A0.0 K2.0 C3.0 R#0 X147.800 Y147.800 U152.800 V152.800 Z400.000 W400.0 Q5932.950 M24.050 H9.050
+G58 G65 P430000 A0.0 K2.0 C3.0 R#0 X147.800 Y147.800 U152.800 V152.800 Z400.000 W400.0 Q5932.950 M24.05 H9.05
 (O430000: Mizo, ar HidariMawari)
 (A: Top gaisaku: 0:not exists, 1:exists)
 (K: key type: 1:R, 2:C, 3:rec, 4:BDonly)
-(C: mizo coner C)
-(R: mizo coner R)
+(C: mizo corner C)
+(R: mizo corner R)
 (X: AC mizoKei)
 (Y: BD mizoKei)
 (U: AC gaiKei)
@@ -496,12 +498,12 @@ G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G00 G55 B[180.0-0.000]
-(G55B parallel angle 179.358)
+(G55B parallel angle 180.000)
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
 G55 G65 P410000 X134.100 Y134.100 Z400.0000 R4.0
-(O410000: XY naikei sotogawa-#608 1shuu Coner R, ar MigiMawari)
+(O410000: XY naikei sotogawa-#608 1shuu Corner R, ar MigiMawari)
 (X: Bot AC naikei)
 (Y: Bot BD naikei)
 (Z: Bot sai_furiwake)

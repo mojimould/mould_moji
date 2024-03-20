@@ -200,7 +200,7 @@ G90 G58 G01 X0 Y0 F#652
 (G58XY mizo center)
 G43 H50 (hosei kouguChou #50)
 
-G58 G65 P120001 X147.800 U152.800 Z400.000 M10.0 H9.00 I3.00
+G58 G65 P120001 X147.800 U152.800 Z400.000 M24.05 H9.05 I3.00
 (G58: Mizo X center)
 (X: AC mizoKei)
 (U: Top AC gaiKei)
@@ -228,14 +228,15 @@ T50 (touch sensor)
 M06 (tool exchange)
 
 N201
-G40 G80 S35 (cancel hosei, low gear)
+G40 G80 (cancel hosei)
+S35 (low gear)
 M19 (Spindle orientation)
 G43 H50 (hosei kouguChou #50)
 
 M11 (B-axis unclamp)
 G90 G57 G00 B-0.000
-(G57B parallel angle -0.000)
 M10 (B-axis clamp)
+(G57B parallel angle -0.000)
 
 G90 G57 G01 X0 Y0 F#652
 (G57XY Top Inside Center)
@@ -245,8 +246,8 @@ G90 G57 G01 Z[400.000+#600] F#652
 
 G57 G65 P210003 X134.100 Y134.100 T0.08 Z400.000 W400.0 F92.8 S81.2 Q13.0 I11.6 K20.0 M2.0 U0.31 R5932.950 A-0.000 B-3.796
 (dimple measurement)
-(X: AC naikei: Top-tanmen)
-(Y: BD naikei: Top-tanmen)
+(X: Top AC naikei)
+(Y: Top BD naikei)
 (T: mekki thickness mm)
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)
@@ -497,12 +498,12 @@ G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G00 G55 B[180.0-0.000]
-(G55B parallel angle 179.358)
+(G55B parallel angle 180.000)
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
 G55 G65 P410000 X135.578 Y135.578 Z400.0000 R4.0
-(O410000: XY naikei sotogawa-#608 1shuu Coner R, ar MigiMawari)
+(O410000: XY naikei sotogawa-#608 1shuu Corner R, ar MigiMawari)
 (X: Bot AC naikei)
 (Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
