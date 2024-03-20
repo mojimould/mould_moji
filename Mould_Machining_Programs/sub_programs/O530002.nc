@@ -18,14 +18,14 @@ IF[#671LE10]GOTO800
 (if #621 < 0, go to N800)
 
 #33=#5042
-(#33= current work X: start point Y)
+(#33= current work Y: start point Y)
 #32=#[2400+#4111]+#[2600+#4111]
 (#32= hosei KouguKei + Mamou)
 
 IF[#05LT0]GOTO002
 (if J < 0, go to N002)
-#31=1 (for B)
-(if J > 0, #31=1)
+#31=1
+(for B, #31=1)
 IF[#4111EQ31]THEN #30=#463
 IF[#4111EQ32]THEN #30=#468
 IF[#4111EQ33]THEN #30=#473
@@ -35,8 +35,8 @@ IF[#4111EQ33]THEN #30=#473
 GOTO008
 
 N002
-#31=-1 (for D)
-(if J < 0, #31=-1)
+#31=-1
+(for D, #31=-1)
 IF[#4111EQ31]THEN #30=#464
 IF[#4111EQ32]THEN #30=#469
 IF[#4111EQ33]THEN #30=#474
@@ -50,15 +50,17 @@ IF[#4111EQ33]THEN #30=#474
 
 N008
 G90 G01 Y[#23-#31*[#32+#621]] F#651
-(Y+: #23-#32-#621 or Y-: #23+#32+#621)
 G91 G01 Y[#31*[#621+#30]] F#670
 G91 G01 Y[#31*#21] F#671
 G04 X0.1 (wait 0.1s)
+(Y+: #23-#32-#621 or Y-: #23+#32+#621)
 (Y+ or Y-: #621+hosei, speed #670)
 (Y+ or Y-: U, speed #671)
+
 G90 G01 Y#33 F#651
 (G90 G01 Y: to start point)
-GOTO999 (to N999)
+GOTO999
+
 
 N800
 M09 (coolant off)
