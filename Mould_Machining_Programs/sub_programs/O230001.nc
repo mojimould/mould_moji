@@ -16,7 +16,7 @@ IF[#656NE50]GOTO800
 
 IF[#1004EQ1]GOTO002
 M117 (if the sensor is off, turn on)
-G04 X1. (wait 1.0s)
+G04 X1.0 (wait 1.0s)
 
 N002
 IF[#04GT0]THEN #33=1
@@ -30,12 +30,13 @@ IF[#04LT0]THEN #33=-1
 
 N003
 G91 G31 X[#33*[#620+#603]] F#656
-(skip X+ or X-: #620+#603, speed #656)
+(skip X+ or X-: #620+#603)
 #749=#5001+#901054+#33*[-#901053+#901050]
 (#749= block end X + hosei probe etc)
 G90 G01 X#748 F#652
 (G90 G01 X: to start point)
-GOTO999 (to N999)
+GOTO999
+
 
 N800
 G65 P910002 (sensor OFF)
