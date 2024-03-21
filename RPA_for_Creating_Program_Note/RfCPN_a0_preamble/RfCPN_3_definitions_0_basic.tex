@@ -9,16 +9,12 @@
 \graphicspath{{./RfCPN_a1_pictures/}}
 %\svgpath{{./RfCPN_a1_pictures/}}
 %%%%% FONT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setmathfont{Euler Math}
-\setmathfont{EulerMath}[math-style=ISO,version=normal]
-\setmathfont{EulerMath}[version=bold,math-style=ISO,FakeBold = 3]
-\setmathfont{Latin Modern Math}[math-style=ISO,version=normal]
-\setmathfont{Latin Modern Math}[version=bold,math-style=ISO,FakeBold = 3]
-\setmathfont[range=\leq]{Latin Modern Math}
-\setmathfont[range=\geq]{Latin Modern Math}
+\newfontfamily\pplx{Palatino Linotype}[BoldFont=Palatino Linotype, BoldFeatures={FakeBold=2}]
+%\setmathfont{Euler Math}
+\setmathfont[BoldFont=Euler Math, BoldFeatures={FakeBold=2}]{Euler Math}
+\setmathfont[range={\leq, \geq}]{Latin Modern Math}
 \setmathfont[range={up/num, bfup/num}, Scale=MatchUppercase]{Latin Modern Math}
-\setsansjfont{IPAexGothic}
-\newfontfamily\pplx{Palatino Linotype}
+\setsansjfont[BoldFont=IPAexGothic, BoldFeatures={FakeBold=2}]{IPAexGothic}
 %%%%% NEWIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\if@backmatter%\@backmattertrue
 \newif\if@frontmatter%\@frontmattertrue
