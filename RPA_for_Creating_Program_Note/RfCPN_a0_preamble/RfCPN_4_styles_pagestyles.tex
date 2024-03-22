@@ -7,71 +7,89 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% HEADER AND FOOTER %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\setheadsepline{1.5pt}
-%\setfootsepline{0pt}
-\renewcommand{\headrulewidth}{1.5pt}
-\renewcommand{\footrulewidth}{0pt}
+\clearpairofpagestyles
+\automark[chapter]{chapter}
+\automark[section]{section}
+\setkomafont{pageheadfoot}{\normalfont}
+\setkomafont{pagenumber}{\normalfont}
 %%%%% commonheadfoot %%%%%
 \newcommand{\commonheadfoot}{
-  %\ihead{}
-  %\chead{}
-  %\ohead{}
-  \fancyhead{}
-  %\ifoot{}
-%  \cfoot{\scriptsize
-%    \hyperref[chap:IV.17]{コモン変数}\quad
-%    \hyperref[chap:IV.A]{システム変数}\quad
-%    \hyperref[chap:V.20]{解析計算}\quad
-%    \hyperref[chap:VII.I]{Gコード}\quad
-%    \hyperref[sec:VII.I.2]{Mコード}\quad
-%    \hyperref[chap:VII.K]{プログラム}%
-%  }
-  %\ofoot{}
-  \fancyfoot{}
-  \fancyfoot[C]{\scriptsize
+  \lofoot{\tiny\customdate}% odd left
+  \cofoot{\scriptsize
     \hyperref[chap:IV.17]{コモン変数}\quad
     \hyperref[chap:IV.A]{システム変数}\quad
     \hyperref[chap:V.20]{解析計算}\quad
     \hyperref[chap:VII.I]{Gコード}\quad
     \hyperref[sec:VII.I.2]{Mコード}\quad
-    \hyperref[chap:VII.K]{プログラム}}
-  \fancyfoot[LO]{\tiny\customdate} % footer left fields for main odd pages
-  \fancyfoot[RE]{\tiny\customdate} % footer right fields for main even pages
+    \hyperref[chap:VII.K]{プログラム}%
+  }% odd center
+  \rofoot{}% odd right
+  \lefoot{}% even left
+  \cefoot{\scriptsize
+    \hyperref[chap:IV.17]{コモン変数}\quad
+    \hyperref[chap:IV.A]{システム変数}\quad
+    \hyperref[chap:V.20]{解析計算}\quad
+    \hyperref[chap:VII.I]{Gコード}\quad
+    \hyperref[sec:VII.I.2]{Mコード}\quad
+    \hyperref[chap:VII.K]{プログラム}%
+  }% even center
+  \refoot{\tiny\customdate}
 }
 %%%%% emptydate %%%%%
-\fancypagestyle{emptydate}{\renewcommand{\headrulewidth}{0pt}\commonheadfoot}
+\newpairofpagestyles{emptydate}{%
+  \clearpairofpagestyles
+  \commonheadfoot%
+  \RemoveLayersFromPageStyle{emptydate}{emptydate.head.below.line}
+}
 %%%%% front %%%%%
-\fancypagestyle{front}{
-  \commonheadfoot
-  \fancyhead[RO]{\thepage}
-  \fancyhead[LE]{\thepage}
+\newpairofpagestyles{front}{%
+  \lohead{}% odd, left
+  \cohead{}% odd, center
+  \rohead{\thepage}% odd, right
+  \lehead{\thepage}% even, left
+  \cehead{}% even, center
+  \rehead{}% even, right
+  \commonheadfoot%
 }
 %%%%% main %%%%%
-\fancypagestyle{main}{
-  \commonheadfoot
-  \fancyhead[RO]{\hyperref[sec:\thepart.\thesection]{{\small\nouppercase\rightmark}}}
-  \fancyhead[LO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$~~{\hyperref[part:\thepart]{\small\partname.\,\thepart}}} % header right fields for all main odd pages
-  \fancyhead[RE]{{\hyperref[part:\thepart]{\small\partname.\,\thepart}}~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$} % header right fields for all main odd pages
-  \fancyhead[LE]{\hyperref[\ifx\@chapapp\appendixname app:\else chap:\fi\thepart.\thechapter]{{\sffamily\bfseries\thechapter.\hskip0.75em\nouppercase\Chaptername}}} % header right fields for all main even pages
+\newpairofpagestyles{main}{%
+  \lohead{$\nicefrac{\thepage\,}{\pageref{LastPage}}$~~{\hyperref[part:\thepart]{\small\partname.\,\thepart}}}% odd, left
+  \cohead{}% odd, center
+  \rohead{\hyperref[sec:\thepart.\thesection]{{\small\rightmark}}}% odd, right
+  \lehead{\hyperref[\ifx\@chapapp\appendixname app:\else chap:\fi\thepart.\thechapter]{{\sffamily\bfseries\thechapter.\hskip0.75em\Chaptername}}}% even, left
+  \cehead{}% even, center
+  \rehead{{\hyperref[part:\thepart]{\small\partname.\,\thepart}}~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$}% even, right
+  \commonheadfoot%
 }
 %%%%% plainheadfront %%%%%
-\fancypagestyle{plainheadfront}{
-  \commonheadfoot
-  %\fancyhead[C]{}
-  \fancyhead[LO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
-  \fancyhead[RE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
+\newpairofpagestyles{plainheadfront}{%
+  \lohead{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}% odd, left
+  \cohead{}% odd, center
+  \rohead{}% odd, right
+  \lehead{}% even, left
+  \cehead{}% even, center
+  \rehead{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}% even, right
+  \commonheadfoot%
 }
 %%%%% plainhead %%%%%
-\fancypagestyle{plainhead}{
-  \commonheadfoot
-  \fancyhead[RO]{\hyperref[part:\thepart]{\small\partname.\,\thepart}~~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
-  \fancyhead[LE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
+\newpairofpagestyles{plainhead}{%
+  \lohead{}% odd, left
+  \cohead{}% odd, center
+  \rohead{{\small\partname.\,\thepart}~~~$\nicefrac{\thepage\,}{\pageref{LastPage}}$}% odd, right
+  \lehead{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}% even, left
+  \cehead{}% even, center
+  \rehead{}% even, right
+  \commonheadfoot%
 }
 %%%%% plainheadback %%%%%
-\fancypagestyle{plainheadback}{
-  \commonheadfoot
-  \fancyhead[LO]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
-  \fancyhead[RE]{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}
+\newpairofpagestyles{plainheadback}{%
+  \lohead{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}% odd, left
+  \cohead{}% odd, center
+  \rohead{}% odd, right
+  \lehead{}% even, left
+  \cehead{}% even, center
+  \rehead{$\nicefrac{\thepage\,}{\pageref{LastPage}}$}% even, right
+  \commonheadfoot%
 }
 
 %%%%% FOR FRONTMATTER %%%%%

@@ -2,6 +2,7 @@
 
 
 \usepackage{luatexja}
+%\usepackage{luacode}
 %%% Encoding and Language Settings
 \usepackage{luatexja-fontspec} % Allows input of utf8 characters. including xcolor
 \usepackage{babel} % Multilingual support for LaTeX.
@@ -59,7 +60,7 @@
 %%%
 \usepackage{subfiles}
 %%% Header and Footer Settings
-%\usepackage{scrlayer-scrpage} % Combines the features of fancyhdr with KOMA-Script's scrlayer.
-\usepackage{scrlayer-fancyhdr} % Combines the features of fancyhdr with KOMA-Script's scrlayer.
+\usepackage[automark, headsepline=1.5pt, footsepline=0pt]{scrlayer-scrpage}
 %%% Other
 %\usepackage{scrhack} % Fix koma-script interaction with other packages.
+%\usepackage{silence}
