@@ -10,18 +10,6 @@
 \DeclareRobustCommand{\pDiv}[1]{\pod{{\operator@font div}\mkern6mu#1}}
 \DeclareRobustCommand{\Div}[1]{\allowbreak\if@display\mkern18mu
   \else\mkern12mu\fi{\operator@font div}\,\,#1}
-%%%%% DECLARENEWLAYER %%%%%%%%%%%%%%%%%%%%
-\newcommand{\setallpageWatermark}[4]{%
-  \DeclareNewLayer[
-    foreground,
-    page,
-    contents={%
-      \begin{tikzpicture}[remember picture, overlay]
-        \node[rotate=#2, scale=#3, anchor=center, opacity=#4, text=lightgray] at (current page.center){\scshape#1};%
-      \end{tikzpicture}%
-    }%
-  ]{WatermarkLayer}
-}
 %%%%% AUTOREFNAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\newcommand{\subfigureautorefname}{\figureautorefname}
 %\newcommand{\subtableautorefname}{\tableautorefname}
@@ -47,7 +35,7 @@
   \clearrightpage
   \let\oldnewpage\newpage
   \let\newpage\relax
-  \part{#2\label{part:\thepart}}
+  \part{#2\label{part:\thepart}\vphantom{\ref{part:\thepart}}}
   \addtocontents{lop}{\protect\vspace*{-2.5mm}}%
   \addcontentsline{lop}{part}{\protect\numberline{\thepart}#2}%
   \ifx#1\relax\else%
@@ -68,7 +56,7 @@
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Appendixpart}{
   \cleardoublepage
-  \part*{\partname\ \thepart\hx の補遺\label{Apart:\thepart}}
+  \part*{\partname\ \thepart\hx の補遺\label{Apart:\thepart}\vphantom{\ref{Apart:\thepart}}}
   \addcontentsline{toc}{part}{\partname\ \thepart\hx の補遺}
 }
 
@@ -79,25 +67,25 @@
 \newcommand{\modHeadchapter}[2][]{%
   \cleardoublepage
   \let\newpage\relax
-  \ifx\@chapapp\appendixname
-    \chapter{#2\label{app:\thepart.\thechapter}}%
-  \else
-    \chapter{#2\label{chap:\thepart.\thechapter}}%
-  \fi
+  \ifx\@chapapp\appendixname%
+    \chapter{#2\label{app:\thepart.\thechapter}\vphantom{\ref{app:\thepart.\thechapter}}}%
+  \else%
+    \chapter{#2\label{chap:\thepart.\thechapter}\vphantom{\ref{chap:\thepart.\thechapter}}}%
+  \fi%
   \ifx#1\relax\else%
     \foreach \x in {#1}{\addcontentsline{\x}{chapter}{\protect\numberline{\thechapter}#2}}%
-  \fi
+  \fi%
   \thispagestyle{main}%
   \indentspace%
-  \let\newpage\tmpnewpage
+  \let\newpage\tmpnewpage%
 }
 %%%%% FOR SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\modHeadsection}[2][]{%
   \ifx\relax#1\relax
-    \section{#2\label{sec:\thepart.\thesection}}%
+    \section{#2\label{sec:\thepart.\thesection}\vphantom{\ref{sec:\thepart.\thesection}}}%
   \else%
-    \section[#1]{#2\label{sec:\thepart.\thesection}}%
-  \fi
+    \section[#1]{#2\label{sec:\thepart.\thesection}\vphantom{\ref{sec:\thepart.\thesection}}}%
+  \fi%
 }
 %%%%% CAPTOINOF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\abovecaptionskip}{0pt}

@@ -1,6 +1,19 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
+%%%%% DECLARENEWLAYER %%%%%%%%%%%%%%%%%%%%
+\newcommand{\setallpageWatermark}[4]{%
+  \DeclareNewLayer[
+    foreground,
+    page,
+    contents={%
+      \begin{tikzpicture}[remember picture, overlay]
+        \node[rotate=#2, scale=#3, anchor=center, opacity=#4, text=lightgray] at (current page.center){\scshape#1};%
+      \end{tikzpicture}%
+    }%
+  ]{WatermarkLayer}
+}
+
 %%%%% WATERMARK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AddLayersToPageStyle{@everystyle@}{WatermarkLayer}
 
