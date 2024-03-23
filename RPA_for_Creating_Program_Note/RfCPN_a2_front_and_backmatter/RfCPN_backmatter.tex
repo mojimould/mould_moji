@@ -37,15 +37,16 @@
 \nocite{package:2023Tantau}
 \nocite{package:2024Thomas}
 \nocite{package:2024Jianrui}
-\printbibheading
 \begingroup
 \let\cleardoublepage\relax
-\addchaptertocentry{}{\bibname}
 {\footnotesize%
-\printbibliography[type=online, heading=subbibintoc, title={\OnlineSourcename}]%
-\printbibliography[type=article, heading=subbibintoc, title={\Articlename}]%
-%\clearpage
-\printbibliography[type=manual, heading=subbibintoc, title={\Manualname}]%
+\printbibheading[title={\bibname}, heading=bibnumbered]
+\printbibheading[title={\citedworksname}, heading=subbibintoc]
+\printbibliography[title={\OnlineSourcename}, heading=subsubbibintoc, keyword={citedwork}, type=online]
+\printbibliography[title={\Articlename}, heading=subsubbibintoc, keyword={citedwork}, type=article]
+
+\printbibheading[title={\referencesname}, heading=subbibintoc]
+\printbibliography[title={\Manualname}, heading=subsubbibintoc, keyword={reference}, type=manual]%
 \thispagestyle{plainheadback}}
 \let\cleardoublepage\tmpcleardoublepage
 \endgroup
