@@ -1,68 +1,41 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
+\newcommand{\newprgcommand}[2]{%
+  \expandafter\newcommand\csname name#1\endcsname{#2}%
+  \expandafter\newcommand\csname #1\endcsname{\expandafterindex{\nameMainExOne}\prgbox{\csname name#1\endcsname}}%
+}
 %%%%% TO MAIN PRG NAME %%%%%%
-\newcommand\nameMainExOne{O80000001} % main program example
-\newcommand\MainExOne{\expandafterindex{\nameMainExOne}\prgbox{\nameMainExOne}}
-\newcommand\nameMainExTwo{O80000002} % main program example
-\newcommand\MainExTwo{\expandafterindex{\nameMainExTwo}\prgbox{\nameMainExTwo}}
+\newprgcommand{MainExOne}{O80000001} % main program example 1
+\newprgcommand{MainExTwo}{O80000002} % main program example 2
 
 %%%%% TO SUB PRG NAME %%%%%%
-\newcommand\nameMXOThickness{O110001} % X outer center measurement
-\newcommand\MXOThickness{\expandafterindex{\nameMXOThickness}\prgbox{\nameMXOThickness}}
-\newcommand\nameMYOThickness{O110002} % Y outer center measurement
-\newcommand\MYOThickness{\expandafterindex{\nameMYOThickness}\prgbox{\nameMYOThickness}}
-\newcommand\nameMXOface{O120001} % keyway X reference surface measurement
-\newcommand\MXOface{\expandafterindex{\nameMXOface}\prgbox{\nameMXOface}}
-\newcommand\nameMXIWidth{O130001} % X inner center measurement
-\newcommand\MXIWidth{\expandafterindex{\nameMXIWidth}\prgbox{\nameMXIWidth}}
-\newcommand\nameMYIWidth{O130002} % Y inner center measurement
-\newcommand\MYIWidth{\expandafterindex{\nameMYIWidth}\prgbox{\nameMYIWidth}}
-\newcommand\nameMXIface{O140001} % outer cut X reference surface measurement
-\newcommand\MXIface{\expandafterindex{\nameMXIface}\prgbox{\nameMXIface}}
-\newcommand\nameMYcenterline{O150002} % Y centerline measurement
-\newcommand\MYcenterline{\expandafterindex{\nameMYcenterline}\prgbox{\nameMYcenterline}}
-\newcommand\nameMXcenterline{O150003} % X centerline measurement (Z measurement)
-\newcommand\MXcenterline{\expandafterindex{\nameMXcenterline}\prgbox{\nameMXcenterline}}
-\newcommand\nameDLone{O210003} % for dimple level 1
-\newcommand\DLone{\expandafterindex{\nameDLone}\prgbox{\nameDLone}}
-\newcommand\nameDLtwoAC{O220001} % for dimple level 2 AC
-\newcommand\DLtwoAC{\expandafterindex{\nameDLtwoAC}\prgbox{\nameDLtwoAC}}
-\newcommand\nameDLtwoBD{O220002} % for dimple level 2 BD
-\newcommand\DLtwoBD{\expandafterindex{\nameDLtwoBD}\prgbox{\nameDLtwoBD}}
-\newcommand\nameDMLthreeAC{O230001} % for dimple level 3 AC measurement
-\newcommand\DMLthreeAC{\expandafterindex{\nameDMLthreeAC}\prgbox{\nameDMLthreeAC}}
-\newcommand\nameDMLthreeBD{O230002} % for dimple level 3 BD measurement
-\newcommand\DMLthreeBD{\expandafterindex{\nameDMLthreeBD}\prgbox{\nameDMLthreeBD}}
-\newcommand\nameKTanmenRight{O410000} % end face left turn
-\newcommand\KTanmenRight{\expandafterindex{\nameKTanmenRight}\prgbox{\nameKTanmenRight}}
-\newcommand\nameKGaisakuRLeft{O420000} % outer cut left turn
-\newcommand\KGaisakuRLeft{\expandafterindex{\nameKGaisakuRLeft}\prgbox{\nameKGaisakuRLeft}}
-\newcommand\nameKMizoConerLeft{O430000} % keyway left turn
-\newcommand\KMizoConerLeft{\expandafterindex{\nameKMizoConerLeft}\prgbox{\nameKMizoConerLeft}}
-\newcommand\nameKSotoMentoriRLeft{O440000} % 外側面取用 左回り
-\newcommand\KSotoMentoriRLeft{\expandafterindex{\nameKSotoMentoriRLeft}\prgbox{\nameKSotoMentoriRLeft}}
-\newcommand\nameKUchiMentoriRLeft{O450000} % 内側面取用 左回り
-\newcommand\KUchiMentoriRLeft{\expandafterindex{\nameKUchiMentoriRLeft}\prgbox{\nameKUchiMentoriRLeft}}
-\newcommand\nameKOLeftAR{O490005} % 外 左回り above right
-\newcommand\KOLeftAR{\expandafterindex{\nameKOLeftAR}\prgbox{\nameKOLeftAR}}
-\newcommand\nameKILeftAC{O490007} % 内 右回り above center
-\newcommand\KILeftAC{\expandafterindex{\nameKILeftAC}\prgbox{\nameKILeftAC}}
-\newcommand\nameDKLthreeAC{O530001} % 内面溝 加工用 レベル3 AC
-\newcommand\DKLthreeAC{\expandafterindex{\nameDKLthreeAC}\prgbox{\nameDKLthreeAC}}
-\newcommand\nameDKLthreeBD{O530002} % 内面溝 加工用 レベル3 BD
-\newcommand\DKLthreeBD{\expandafterindex{\nameDKLthreeBD}\prgbox{\nameDKLthreeBD}}
-\newcommand\nameOpauseCheck{O900003} % move and pause in front of the door
-\newcommand\OpauseCheck{\expandafterindex{\nameOpauseCheck}\prgbox{\nameOpauseCheck}}
-\newcommand\nameOsensorOn{O910001} % touch sensor ON
-\newcommand\OsensorOn{\expandafterindex{\nameOsensorOn}\prgbox{\nameOsensorOn}}
-\newcommand\nameOsensorOff{O910002} % touch sensor OFF
-\newcommand\OsensorOff{\expandafterindex{\nameOsensorOff}\prgbox{\nameOsensorOff}}
-\newcommand\nameOwarmingupA{O915100} % for warming up
-\newcommand\OwarmingupA{\expandafterindex{\nameOwarmingupA}\prgbox{\nameOwarmingupA}}
-\newcommand\nameOwarmingup{O915101} % subprg for warming up
-\newcommand\Owarmingup{\expandafterindex{\nameOwarmingup}\prgbox{\nameOwarmingup}}
-\newcommand\nameOtoolLengthA{O917100} % specified tool length correction auto measurement
-\newcommand\OtoolLengthA{\expandafterindex{\nameOtoolLengthA}\prgbox{\nameOtoolLengthA}}
-\newcommand\nameOtoolLength{O919100} % tool length correction auto measure
-\newcommand\OtoolLength{\expandafterindex{\nameOtoolLength}\prgbox{\nameOtoolLength}}
+\newprgcommand{MXOThickness}{O110001} % X outer center measurement
+\newprgcommand{MYOThickness}{O110002} % Y outer center measurement
+\newprgcommand{MXOface}{O120001} % keyway X reference surface measurement
+\newprgcommand{MXIWidth}{O130001} % X inner center measurement
+\newprgcommand{MYIWidth}{O130002} % Y inner center measurement
+\newprgcommand{MXIface}{O140001} % outer cut X reference surface measurement
+\newprgcommand{MYcenterline}{O150002} % Y centerline measurement
+\newprgcommand{MXcenterline}{O150003} % X centerline measurement (Z measurement)
+\newprgcommand{DLone}{O210003} % for dimple level 1
+\newprgcommand{DLtwoAC}{O220001} % for dimple level 2 AC
+\newprgcommand{DLtwoBD}{O220002} % for dimple level 2 BD
+\newprgcommand{DMLthreeAC}{O230001} % for dimple level 3 AC measurement
+\newprgcommand{DMLthreeBD}{O230002} % for dimple level 3 BD measurement
+\newprgcommand{KTanmenRight}{O410000} % end face left turn
+\newprgcommand{KGaisakuRLeft}{O420000} % outer cut left turn
+\newprgcommand{KMizoConerLeft}{O430000} % keyway left turn
+\newprgcommand{KSotoMentoriRLeft}{O440000} % 外側面取用 左回り
+\newprgcommand{KUchiMentoriRLeft}{O450000} % 内側面取用 左回り
+\newprgcommand{KOLeftAR}{O490005} % 外 左回り above right
+\newprgcommand{KILeftAC}{O490007} % 内 右回り above center
+\newprgcommand{DKLthreeAC}{O530001} % 内面溝 加工用 レベル3 AC
+\newprgcommand{DKLthreeBD}{O530002} % 内面溝 加工用 レベル3 BD
+\newprgcommand{OpauseCheck}{O900003} % move and pause in front of the door
+\newprgcommand{OsensorOn}{O910001} % touch sensor ON
+\newprgcommand{OsensorOff}{O910002} % touch sensor OFF
+\newprgcommand{OwarmingupA}{O915100} % for warming up
+\newprgcommand{Owarmingup}{O915101} % subprg for warming up
+\newprgcommand{OtoolLengthA}{O917100} % specified tool length correction auto measurement
+\newprgcommand{OtoolLength}{O919100} % tool length correction auto measure
