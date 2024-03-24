@@ -8,16 +8,14 @@
 %%%%% GRAPHICSPATH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \graphicspath{{./RfCPN_a1_pictures/}}
 %%%%% FONT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newfontfamily\pplx{Palatino Linotype}[BoldFont=Palatino Linotype, BoldFeatures={FakeBold=2}]
-%\setmathfont{Euler Math}
 \setmathfont[BoldFont=Euler Math, BoldFeatures={FakeBold=2}]{Euler Math}
-\setmathfont[range={\leq, \geq}]{Latin Modern Math}
-\setmathfont[range={up/num, bfup/num}, Scale=MatchUppercase]{Latin Modern Math}
+\setmathfont[range={\leq, \geq},  BoldFont=*, BoldFeatures={FakeBold=2}]{Latin Modern Math}
+\setmathfont[range={up/num, bfup/num}, Scale=MatchUppercase, BoldFont=*, BoldFeatures={FakeBold=2}]{Latin Modern Math}
 \setsansjfont[BoldFont=IPAexGothic, BoldFeatures={FakeBold=2}]{IPAexGothic}
 %%%%% NEWIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\if@backmatter%\@backmattertrue
 \newif\if@frontmatter%\@frontmattertrue
-\newif\if@appendix%\@appendixfalse
+\newif\if@appendix%\@appendixtrue
 %%%%%% DIMENSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ltjsetparameter{kanjiskip=0.0pt plus 0.4pt minus 0.5pt}
 \ltjsetparameter{xkanjiskip=2.40555pt plus 1.0pt minus 1.0pt}
@@ -60,7 +58,7 @@
 \def\sectionmark#1{\def\Sectionname{#1}\Sectionmark{#1}}
 %%%%% FOR REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Articlename}{論文}
-\newcommand{\Bookname}{書籍}
+\newcommand{\Bookname}{\sball{green}書籍}
 \newcommand{\OnlineSourcename}{ウェブサイト}
 \newcommand{\Manualname}{マニュアル}
 \DeclareFieldFormat{urldate}{%
