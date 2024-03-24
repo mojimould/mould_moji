@@ -26,26 +26,20 @@
 \setkomafont{pageheadfoot}{\normalfont}
 \setkomafont{pagenumber}{\normalfont}
 %%%%% commonheadfoot %%%%%
+\newcommand{\commoncfoot}{\scriptsize
+  \hyperref[chap:VI.37]{コモン変数}\quad
+  \hyperref[chap:VI.A]{システム変数}\quad
+  \hyperref[part:VII]{解析計算}\quad
+  \hyperref[chap:IX.I]{Gコード}\quad
+  \hyperref[sec:IX.I.2]{Mコード}\quad
+  \hyperref[chap:IX.K]{プログラム}%
+}
 \newcommand{\commonheadfoot}{
   \lofoot{\tiny\customdate}% odd left
-  \cofoot{\scriptsize
-    \hyperref[chap:IV.17]{コモン変数}\quad
-    \hyperref[chap:IV.A]{システム変数}\quad
-    \hyperref[chap:V.20]{解析計算}\quad
-    \hyperref[chap:VII.I]{Gコード}\quad
-    \hyperref[sec:VII.I.2]{Mコード}\quad
-    \hyperref[chap:VII.K]{プログラム}%
-  }% odd center
+  \cofoot{\commoncfoot}% odd center
   \rofoot{}% odd right
   \lefoot{}% even left
-  \cefoot{\scriptsize
-    \hyperref[chap:IV.17]{コモン変数}\quad
-    \hyperref[chap:IV.A]{システム変数}\quad
-    \hyperref[chap:V.20]{解析計算}\quad
-    \hyperref[chap:VII.I]{Gコード}\quad
-    \hyperref[sec:VII.I.2]{Mコード}\quad
-    \hyperref[chap:VII.K]{プログラム}%
-  }% even center
+  \cefoot{\commoncfoot}% even center
   \refoot{\tiny\customdate}
 }
 %%%%% emptydate %%%%%
