@@ -13,8 +13,6 @@
     }%
   ]{WatermarkLayer}
 }
-
-%%%%% WATERMARK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AddLayersToPageStyle{@everystyle@}{WatermarkLayer}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,12 +25,12 @@
 \setkomafont{pagenumber}{\normalfont}
 %%%%% commonheadfoot %%%%%
 \newcommand{\commoncfoot}{\scriptsize
-  \hyperref[chap:VI.37]{コモン変数}\quad
-  \hyperref[chap:VI.A]{システム変数}\quad
-  \hyperref[part:VII]{解析計算}\quad
-  \hyperref[chap:IX.I]{Gコード}\quad
-  \hyperref[sec:IX.I.2]{Mコード}\quad
-  \hyperref[chap:IX.K]{プログラム}%
+  \hyperref[chap:commonvariablesDM]{コモン変数}\quad
+  \hyperref[chap:systemvariablesDM]{システム変数}\quad
+  \hyperref[chap:ACfuriwake]{解析計算}\quad
+  \hyperref[chap:GcodeDM]{Gコード}\quad
+  \hyperref[sec:McodeDM]{Mコード}\quad
+  \hyperref[chap:createdGcodeDM]{プログラム}%
 }
 \newcommand{\commonheadfoot}{
   \lofoot{\tiny\customdate}% odd left

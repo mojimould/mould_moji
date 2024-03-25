@@ -8,9 +8,14 @@
 %%%%% GRAPHICSPATH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \graphicspath{{./RfCPN_a1_pictures/}}
 %%%%% FONT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setmainfont[%
+  SmallCapsFont={Latin Modern Roman},
+%  SmallCapsFeatures={Letters=SmallCaps},
+  ]{Latin Modern Roman}
 \setmathfont[BoldFont=Euler Math, BoldFeatures={FakeBold=2}]{Euler Math}
 \setmathfont[range={\leq, \geq},  BoldFont=*, BoldFeatures={FakeBold=2}]{Latin Modern Math}
-\setmathfont[range={up/num, bfup/num}, Scale=MatchUppercase, BoldFont=*, BoldFeatures={FakeBold=2}]{Latin Modern Math}
+\setmathfont[range={up/num, bfup/num}, Scale=MatchUppercase, BoldFont=*, BoldFeatures={FakeBold=2}]
+            {Latin Modern Math}
 \setsansjfont[BoldFont=IPAexGothic, BoldFeatures={FakeBold=2}]{IPAexGothic}
 %%%%% NEWIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\if@backmatter%\@backmattertrue

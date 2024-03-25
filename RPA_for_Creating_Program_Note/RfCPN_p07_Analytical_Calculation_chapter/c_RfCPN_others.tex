@@ -10,12 +10,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{回転中心とのずれの考慮}
 パレットの回転中心座標($X$, $Z$)に対して、ジグの中心の位置が($\delta x$, $\delta z$)だけずれている場合を考える。
-このとき、任意の点($x$, $z$)はパレットを$-\theta$だけ回転すると、
+このとき、任意の点($X$, $Z$)はパレットを$-\theta$だけ回転すると、
 \begin{align*}
   \left[
     \begin{array}{c}
-      x'\\
-      z'
+      X'\\
+      Z'
     \end{array}
   \right]
   = \left[
@@ -26,14 +26,14 @@
   \right]\!\!
   \left[
     \begin{array}{c}
-      x+\delta x\\
-      z+\delta z
+      X+\delta x\\
+      Z+\delta z
     \end{array}
   \right]
   = \left[
     \begin{array}{c}
-      (x+\delta x)\cos\theta+(z+\delta z)\sin\theta\\
-      -(x+\delta x)\sin\theta+(z+\delta z)\cos\theta
+      (X+\delta x)\cos\theta+(Z+\delta z)\sin\theta\\
+      -(X+\delta x)\sin\theta+(Z+\delta z)\cos\theta
     \end{array}
   \right].
 \end{align*}
@@ -74,6 +74,7 @@
 \end{align*}
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 27.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

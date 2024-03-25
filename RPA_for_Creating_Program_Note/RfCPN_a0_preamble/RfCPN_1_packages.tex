@@ -1,7 +1,6 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
-%%% Font and Math Settings
 \usepackage{luatexja}
 \usepackage{luatexja-fontspec} % Allows input of utf8 characters. including xcolor
 \usepackage{babel} % Multilingual support for LaTeX.
@@ -11,68 +10,46 @@
 \usepackage{hologo} % use logo about TeX, LaTeX and so on
 \usepackage{extarrows} % Extra Arrows beyond those provided in AMSmath.
 
-%%% Layout and Table Settings
 \usepackage{geometry} % Provides an easy and flexible user interface to customize page layout.
 \usepackage{array} % Extends array and tabular environments.
 \usepackage{tabularray} % Allows tables to break across pages. including xcolor, expl3
 
-%%% Graphics and Color Settings
 \usepackage[dvipsnames]{xcolor} % Provides driver-independent color extensions.
 
-%%% Box Settings %%%
 \usepackage[most]{tcolorbox} % includeing pgf, tikz
 \usepackage{adjustbox} % Graphics package-alike macros for "general" boxes.
+\usepackage{setspace} % Set space between lines.
 
-%%% tikz, pgf %%%
 \usepackage{tikzpagenodes}
 \def\pgfsysdriver{pgfsys-luatex.def} % Specifies the driver for PGF
 \usepackage{pgfplots} % A tool to create 2D and 3D plots in LaTeX.
 
-%%% Bibliography Settings
 \usepackage[backend=biber, style=numeric-comp, natbib=true]{biblatex}
-
-%%% Make index
 \usepackage{makeidx}
 
-%%% List Settings
 \usepackage{enumitem} % Control layout of enumerate
 
-%%% Footnote
 \usepackage{footnotehyper} % Improve on footnote handling.
 
-%%% Hyperlink Settings
 \usepackage[unicode, hidelinks]{hyperref} % Adds support for hyperlinks.
 
-%%% Date and Time
 \usepackage{datetime} % Date and time handling.
 \usepackage{bxjaholiday} % Support for Japanese holidays.
 
-%%% Page Layout
 \usepackage{lastpage} % Reference last page for Page N of M type footers.
 
-%%% Table of Contents
 \usepackage{titletoc} % Alternative headings for toc/lof/lot.
 \usepackage{appendix} % Extra control of appendices.
 
-%%% Caption
 \usepackage{caption} % Customizes captions in floating environments.
 
-%%% Line Spacing
-\usepackage{setspace} % Set space between lines.
-
-%%% Conditional Processing and Loop
 \usepackage{ifthen} % Conditional commands.
 \usepackage{pgffor} % Foreach loop structure.
 
-%%% Units
 \usepackage{units} % Typeset units.
 
-%%% Subfiles
 \usepackage{subfiles}
 
-%%% Header and Footer Settings
 \usepackage[automark, headsepline=1.5pt, footsepline=0pt]{scrlayer-scrpage}
-
-%%% Other
 %\usepackage{scrhack} % Fix koma-script interaction with other packages.
 %\usepackage{silence}
