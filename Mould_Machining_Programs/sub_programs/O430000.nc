@@ -100,8 +100,8 @@ IF[#30LE1]GOTO800
 (#30: kougu Thickness)
 
 #29=0
-IF[#01EQ0]THEN #29=SQRT[#17*#17-[#23-[#13+#419]-[[#11+#420]/2]]*[#23-[#13+#419]-[[#11+#420]/2]]]-SQRT[#17*#17-#23*#23]
-IF[#4012EQ58]THEN #29=0
+IF[#01EQ0]THEN #29=SQRT[#17*#17-[#23-[#13+#419]-[[#11+#420]/2]]*[#23-[#13+#419]-[[#11+#420]/2]]]-SQRT[#17*#17-#23*#23]+[#11*#11]/[8*#17]
+IF[#4012EQ58]THEN #29=[#11*#11]/[8*#17]
 (#29: X hosei from keyway center)
 
 N011
@@ -250,7 +250,7 @@ M09 (coolant off)
 G90 G43 G01 H#4120 Z[#26+#600] F#650
 S2599
 G90 G53 G01 Z0 F#650
-G04 X1.0 (wait 1.0s)
+G04 X1.5 (wait 1.5s)
 M05 (spindle off)
 S35
 GOTO999
@@ -258,7 +258,7 @@ GOTO999
 N800
 M09 (coolant off)
 S2599
-G04 X1.0 (wait 1.0s)
+G04 X1.5 (wait 1.5s)
 M05 (spindle off)
 S35
 #3000=100 (are the arguments OK?)
