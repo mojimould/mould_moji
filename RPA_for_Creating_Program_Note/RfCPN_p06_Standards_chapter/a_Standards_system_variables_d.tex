@@ -28,7 +28,7 @@
 \end{multicollongtblr}
 
 \clearpage
-\begin{multicollongtblr}[white]{\ttNum1006-\ttNum1041：\TBW}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum1006-\ttNum1050：\TBW}{cX[l]c}
 変数 & 内容 & 使用\\
 \ttNum1006 & & \\
 \ttNum1007 & & \\
@@ -67,7 +67,7 @@ $\cdots$ & $\cdots$ & \\
 \end{multicollongtblr}
 
 \clearpage
-\begin{multicollongtblr}[white]{\ttNum1100-\ttNum1111\TBW}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum1100-\ttNum1119\TBW}{cX[l]c}
 変数 & 内容 & 使用\\
 \ttNum1100 & & \\
 \ttNum1101 & & \\
@@ -81,6 +81,14 @@ $\cdots$ & $\cdots$ & \\
 \ttNum1109 & & \\
 \ttNum1110 & & \\
 \ttNum1111 & & \\
+\ttNum1112 & & \\
+\ttNum1113 & & \\
+\ttNum1114 & & \\
+\ttNum1115 & & \\
+\ttNum1116 & & \\
+\ttNum1117 & & \\
+\ttNum1118 & & \\
+\ttNum1119 & & \\
 \end{multicollongtblr}
 
 
@@ -99,6 +107,8 @@ $\cdots$ & $\cdots$ & \\
 \ttNum2201+xxx & 工具長補正 \ttNum xxx摩耗量 [xxx=1-200] & ●\\
 \ttNum2401+xxx & 工具径補正 \ttNum xxx補正量 [xxx=1-200]（摩耗量0とした値） & ●\\
 \ttNum2601+xxx & 工具径補正 \ttNum xxx摩耗量 [xxx=1-200] & ●\\
+\SetRow{unusingVariables}
+\ttNum2801 & null & \\
 \end{multicollongtblr}
 
 
@@ -136,6 +146,12 @@ $\cdots$ & $\cdots$ & \\
 \begin{multicollongtblr}[white]{\ttNum3007: \TBW}{cX[l]c}
 変数 & 内容 & 使用\\
 \ttNum3007 & & ◯\\
+\SetRow{unusingVariables}
+\ttNum3008 & null & \\
+\SetRow{unusingVariables}
+\ttNum3009 & null & \\
+\SetRow{unusingVariables}
+\ttNum3010 & null & \\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}[white]{\ttNum3011, \ttNum3012: 時刻}{cX[l]c}
@@ -146,8 +162,10 @@ $\cdots$ & $\cdots$ & \\
 
 \begin{multicollongtblr}[white]{\ttNum3901, \ttNum3902}{cX[l]c}
 変数 & 内容 & 使用\\
-\ttNum3901 & 加工部品数 & \\
-\ttNum3902 & 所要部品数 &
+\ttNum3901 & 加工部品数 &\\
+\ttNum3902 & 所要部品数 &\\
+\SetRow{unusingVariables}
+\ttNum3903 & null & \\
 \end{multicollongtblr}
 
 
@@ -204,8 +222,10 @@ $\cdots$ & $\cdots$ & \\
 \end{multicollongtblr}
 
 \clearpage
-\begin{multicollongtblr}[white]{\ttNum4101-\ttNum4130：直前に指令されたモーダル情報}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum4100-\ttNum4130：直前に指令されたモーダル情報}{cX[l]c}
 変数 & 内容 & 使用\\
+\SetRow{unusingVariables}
+\ttNum4100 & null & \\
 \SetRow{unusingVariables}
 \ttNum4101 & null & \\
 \ttNum4102 &  & \\
@@ -248,7 +268,7 @@ $\cdots$ & $\cdots$ & \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\clearpage
-\begin{multicollongtblr}[white]{\ttNum4131-\ttNum4140}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum4131-\ttNum4141}{cX[l]c}
 変数 & 内容 & 使用\\
 \SetRow{unusingVariables}
 \ttNum4131 & null & \\
@@ -257,8 +277,10 @@ $\cdots$ & $\cdots$ & \\
 \end{multicollongtblr}
 
 %\clearpage
-\begin{multicollongtblr}[white]{\ttNum4999-\ttNum4999}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum4998-\ttNum4999}{cX[l]c}
 変数 & 内容 & 使用\\
+\SetRow{unusingVariables}
+\ttNum4998 & null & \\
 \SetRow{unusingVariables}
 \ttNum4999 & null & \\
 \end{multicollongtblr}
@@ -279,8 +301,15 @@ $\cdots$ & $\cdots$ & \\
 \ttNum502x & 現在の機械座標系の座標 [x=1-9 (10-20:\,null)] & ●\\
 \ttNum504x & 現在のワーク座標系の座標 [x=1-9 (10-20:\,null)] & ●\\
 \ttNum506x & スキップ座標 [x=1-9 (10-20:\,null)]（工具補正0とした値） & ●\\
+\ttNum508x & [x=1-9 (10-20:\,null)] &\\
+\ttNum510x & [x=1-9 (10-20:\,null)] &\\
 \SetRow{unusingVariables}
-\ttNum5081 & null &\\
+\ttNum5121 & null &\\
+\SetRow{unusingVariables}
+\ttNum5141 & null &\\
+\ttNum516x & [x=1-9 (10-20:\,null)] &\\
+\SetRow{unusingVariables}
+\ttNum5181 & null &\\
 \end{multicollongtblr}
 
 \begin{marker}
@@ -297,6 +326,8 @@ $\cdots$ & $\cdots$ & \\
 \ttNum528x & ワーク座標系{\ttfamily G57}原点の機械座標 [x=1-9 (10-20:\,null)] & ●\\
 \ttNum530x & ワーク座標系{\ttfamily G58}原点の機械座標 [x=1-9 (10-20:\,null)] & ●\\
 \ttNum532x & ワーク座標系{\ttfamily G59}原点の機械座標 [x=1-9 (10-20:\,null)] &\\
+\SetRow{unusingVariables}
+\ttNum5341 & null &\\
 \end{multicollongtblr}
 
 
@@ -352,7 +383,9 @@ $\cdots$ & $\cdots$ & ◯\\
 \SetRow{unusingVariables}
 $\cdots$ & $\cdots$ & \\
 \SetRow{unusingVariables}
-\ttNum9010 & null & \\
+\ttNum9011 & null & \\
+\SetRow{unusingVariables}
+\ttNum9997 & null & \\
 \SetRow{unusingVariables}
 \ttNum9998 & null & \\
 \SetRow{unusingVariables}
