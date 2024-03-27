@@ -8,12 +8,10 @@ N001
 (#32= block end X: start position Y)
 
 N002
-IF[#33LT54]GOTO800
-IF[#33GT59]GOTO800
-IF[#33NE[FUP[#33]]]GOTO800
-(if work G# < 54 go to N800)
-(if work G# > 59 go to N800)
-(if work G# is not integer, go to N800)
+IF[#33EQ54]GOTO003
+IF[#33EQ56]GOTO003
+GOTO800
+(if work G# is neither 54 nor 56, go to N800)
 
 N003
 IF[#25EQ#0]GOTO800
@@ -48,8 +46,8 @@ IF[#901011LE100]GOTO800
 (if #901011 <= 100 or #0, go to N800)
 
 N006
-IF[#33GE56]THEN #31=#410
-IF[#33LE55]THEN #31=#405
+IF[#33EQ56]THEN #31=#410
+IF[#33EQ54]THEN #31=#405
 (Top: #31=#410, Bot: #31=#405)
 IF[[ABS[#31]]GE[#26/4]]GOTO800
 (if |#31| >= Z/4, go to N800)
@@ -118,9 +116,11 @@ IF[[ABS[#900007-#901053-#901055]]LE[ABS[[#25/2]-#602]]]GOTO800
 
 N015
 #900008=[#900007+#900006]/2
-#900009=#900007-#900006
-(average: center)
-(difference: thickness)
+IF[#33EQ56]THEN #900009=#900007-#900006
+IF[#33EQ54]THEN #900010=#900007-#900006
+(#900008: center)
+(#900009: length for top)
+(#900010: length for bot)
 
 N018
 G90 G01 Y#900008 F#652
@@ -160,7 +160,7 @@ N999 M99
 
 (Common variables)
 (as LHS)
-(#900006, #900007, #900008, #900009)
+(#900006, #900007, #900008, #900009, #900010)
 (as RHS)
 (#405, #410, #600, #602, #603, #650, #652, #653, #655)
 (#901011)
