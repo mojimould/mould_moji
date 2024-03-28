@@ -55,28 +55,20 @@ GOTO999
 
 N004 (for C)
 G91 G01 X-[#24+#07*2-#03] F#09
-G04 X0.1 (wait 0.1s)
 (a: X-)
 G91 G01 X-#03 Y-#03 F#08
-G04 X0.1 (wait 0.1s)
 (al corner: C#03 X-Y-)
 G91 G01 Y-[#25-#03*2] F#09
-G04 X0.1 (wait 0.1s)
 (l: Y-)
 G91 G01 X#03 Y-#03 F#08
-G04 X0.1 (wait 0.1s)
 (bl corner: C#03 X+Y-)
 G91 G01 X[#24-#03*2] F#09
-G04 X0.1 (wait 0.1s)
 (b: X+)
 G91 G01 X#03 Y#03 F#08
-G04 X0.1 (wait 0.1s)
 (br corner: C#03 X+Y+)
 G91 G01 Y[#25-#03*2] F#09
-G04 X0.1 (wait 0.1s)
 (r: Y+)
 G91 G01 X-#03 Y#03 F#08
-G04 X0.1 (wait 0.1s)
 (ar corner: C#03 X-Y+)
 G91 G01 X-[#07*2] Y[#07*2] F[#09*4]
 (X-Y+)
