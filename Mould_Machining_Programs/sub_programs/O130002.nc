@@ -8,12 +8,10 @@ N001
 (#32= block end X: start position Y)
 
 N002
-IF[#33LT54]GOTO800
-IF[#33GT59]GOTO800
-IF[#33NE[FUP[#33]]]GOTO800
-(if work G# < 54 go to N800)
-(if work G# > 59 go to N800)
-(if work G# is not integer, go to N800)
+IF[#33EQ55]GOTO003
+IF[#33EQ57]GOTO003
+GOTO800
+(if work G# is neither 55 nor 57, go to N800)
 
 N003
 IF[#25EQ#0]GOTO800
@@ -52,14 +50,14 @@ IF[#901011LE100]GOTO800
 (if #901011 <= 100 or #0, go to N800)
 
 N006
-IF[#33GE56]THEN #31=1
-IF[#33LE55]THEN #31=-1
+IF[#33EQ57]THEN #31=1
+IF[#33EQ55]THEN #31=-1
 (Top: #31=1, Bot: #31=-1)
-IF[#33GE56]THEN #30=#412
-IF[#33LE55]THEN #30=#407
+IF[#33EQ57]THEN #30=#412
+IF[#33EQ55]THEN #30=#407
 (Top: #30=#412, Bot: #30=#407)
-IF[[ABS[#30]]GT#26/4]GOTO800
-(if |#30| > Z/4, go to N800)
+IF[[ABS[#30]]GE[#26/4]]GOTO800
+(if |#30| >= Z/4, go to N800)
 
 N007
 #29=#25/2+#13
@@ -117,9 +115,11 @@ G91 G31 Y[#602+#603] F#655
 
 N014
 #900023=[#900022+#900021]/2
-#900024=#900022-#900021
-(average: center)
-(difference: width)
+IF[#33EQ57]THEN #900024=#900022-#900021
+IF[#33EQ55]THEN #900025=#900022-#900021
+(#900023: center)
+(#900024: length for top)
+(#900025: length for bot)
 
 N015
 G90 G01 Y#900023 F#652
@@ -165,7 +165,7 @@ N999 M99
 
 (Common variables)
 (as LHS)
-(#900021, #900022, #900023, #900024)
+(#900021, #900022, #900023, #900024, #900025)
 (as RHS)
 (#407, #412, #600, #602, #603, #650, #652, #653, #655)
 (#901011)
@@ -177,11 +177,10 @@ N999 M99
 (System variables)
 (#1004: 0: sensor off, 1: on)
 (#1005: 0: sensor battery ok, 1: low battery)
-(#2050: hosei #50 KouguChou)
 (#3000: alarm)
 (#4012: current work coordinate G#)
-(#5002: current work block end point Y)
-(#5003: current work block end point Z)
+(#5002: current work block end Y)
+(#5003: current work block end Z)
 (#5022: current machine coordinate Y)
 (#5242: G55 Y)
 (#5282: G57 Y)

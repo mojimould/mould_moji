@@ -175,7 +175,7 @@ N999 M99
 (#18:R: central curvature)
 (#23:W: ori_furiwake)
 (#24:X: X outside width)
-(#26:Z: sai_furiwake)
+(#26:Z: sai-furiwake)
 
 (as LHS)
 (#29, #30, #31, #32, #33)
