@@ -1,10 +1,6 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
-\let\tmpcleardoublepage\cleardoublepage
-\let\tmpclearpage\clearpage
-\let\tmpnewpage\newpage
-
 %%%%% GRAPHICSPATH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \graphicspath{{./RfCPN_a1_pictures/}}
 %%%%% FONT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12,7 +8,7 @@
 \setmathfont[range={\leq, \geq},  BoldFont=*, BoldFeatures={FakeBold=2}]{Latin Modern Math}
 \setmathfont[range={up/num, bfup/num}, Scale=MatchUppercase, BoldFont=*, BoldFeatures={FakeBold=2}]
             {Latin Modern Math}
-\setmainjfont[BoldFont=IPAexGothic, BoldFeatures={FakeBold=2}]{IPAexMincho}
+%\setmainjfont[BoldFont=IPAexGothic, BoldFeatures={FakeBold=3}]{IPAexMincho}
 \setsansjfont[BoldFont=IPAexGothic, BoldFeatures={FakeBold=2}]{IPAexGothic}
 %%%%% NEWIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\if@backmatter%\@backmattertrue
@@ -23,6 +19,11 @@
 \ltjsetparameter{xkanjiskip=2.40555pt plus 1.0pt minus 1.0pt}
 \newcommand{\hk}{\hspace{\glueexpr\ltjgetparameter{kanjiskip}\relax}}
 \newcommand{\hx}{\hspace{\glueexpr\ltjgetparameter{xkanjiskip}\relax}}
+
+%%%%% TMPPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\let\tmpcleardoublepage\cleardoublepage
+\let\tmpclearpage\clearpage
+\let\tmpnewpage\newpage
 %%%%% CLEARRIGHTPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\clearrightpage}{%
   \if@twoside%
