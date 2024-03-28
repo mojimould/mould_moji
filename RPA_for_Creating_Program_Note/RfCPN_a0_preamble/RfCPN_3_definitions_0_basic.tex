@@ -12,15 +12,8 @@
 \setmathfont[range={\leq, \geq},  BoldFont=*, BoldFeatures={FakeBold=2}]{Latin Modern Math}
 \setmathfont[range={up/num, bfup/num}, Scale=MatchUppercase, BoldFont=*, BoldFeatures={FakeBold=2}]
             {Latin Modern Math}
+\setmainjfont[BoldFont=IPAexGothic, BoldFeatures={FakeBold=2}]{IPAexMincho}
 \setsansjfont[BoldFont=IPAexGothic, BoldFeatures={FakeBold=2}]{IPAexGothic}
-\newfontfamily\SCfamily[
-  SmallCapsFont={Latin Modern Roman},
-  BoldFeatures={SmallCapsFont={Latin Modern Roman}, FakeBold=2}
-]{Latin Modern Roman}
-\newfontface\SCface[
-  SmallCapsFont={Latin Modern Roman},
-  BoldFeatures={SmallCapsFont={Latin Modern Roman}, FakeBold=2}
-]{Latin Modern Roman}
 %%%%% NEWIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\if@backmatter%\@backmattertrue
 \newif\if@frontmatter%\@frontmattertrue
@@ -30,18 +23,6 @@
 \ltjsetparameter{xkanjiskip=2.40555pt plus 1.0pt minus 1.0pt}
 \newcommand{\hk}{\hspace{\glueexpr\ltjgetparameter{kanjiskip}\relax}}
 \newcommand{\hx}{\hspace{\glueexpr\ltjgetparameter{xkanjiskip}\relax}}
-%%%%% CLEARLEFTPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\clearleftpage}{%
-  \if@twoside%
-    \ifodd\numexpr\thepage\relax%
-      \clearpage%
-    \else
-      \cleardoublepage%
-    \fi
-  \else%
-    \clearpage%
-  \fi
-}
 %%%%% CLEARRIGHTPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\clearrightpage}{%
   \if@twoside%
