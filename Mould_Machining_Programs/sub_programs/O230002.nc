@@ -31,6 +31,7 @@ IF[#05LT0]THEN #33=-1
 N003
 G91 G31 Y[#33*[#620+#603]] F#656
 (skip Y+ or Y-: #620+#603)
+IF[ABS[#5002-#748]GT[#620+#603]]GOTO800
 #749=#5002+#901055+#33*[-#901053+#901050]
 (#749= block end Y + hosei probe etc)
 G90 G01 Y#748 F#652
@@ -39,8 +40,9 @@ GOTO999
 
 
 N800
+G90 G01 Y#748 F#656
 G65 P910002 (sensor OFF)
-#3000=121 (Argument Is Not Assigned)
+#3000=121 (something wrong)
 
 N999 M99
 
