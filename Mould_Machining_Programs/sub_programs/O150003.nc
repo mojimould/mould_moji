@@ -73,17 +73,17 @@ G04 X1. (wait 1.0s)
 
 N003
 G90 G54 G43 G31 Z[#5221-#33-#21+[#20/2]+#600] H50 F#652
-(Z skip: topGaisakuCmen +#600)
 G90 G54 G31 Z[#5221-#33-#21+[#20/2]+#602] F#653
-(Z skip: topGaisakuCmen +#602)
 IF[#5003GT[#5221-#33-#21+[#20/2]+#602]]GOTO802
+(Z skip: topGaisakuCmen +#600)
+(Z skip: topGaisakuCmen +#602)
 (if skip block end Z > Cmen Z+#602, to N802)
 
 G91 G31 Z-[#602+#603] F#656
-(Z- skip: #602+#603)
-IF[#5003LE[#5221-#33-#21+[#20/2]-#602]]GOTO802
-(if skip block end Z <= Cmen Z-#602, to N802)
+IF[#5003LE[#5221-#33-#21+[#20/2]-#603]]GOTO802
 #900034=#5003+#901053
+(Z- skip: #602+#603)
+(if skip block end Z <= Cmen Z-#603, to N802)
 (#900034= Z top side +probe hosei)
 
 G90 G53 G01 Z0 F#650
@@ -91,17 +91,17 @@ G90 G53 G01 X[-#26+[#06/2]+#33] F#652
 (X: -Z+K/2 from table center)
 
 G90 G54 G43 G31 Z[#5221-#33+[#20/2]+#600] H50 F#652
-(Z skip: botGaisakuCmen +#600)
 G90 G54 G31 Z[#5221-#33+[#02/2]+#602] F#653
-(G54 Z skip: botGaisakuCmen Z+#602)
 IF[#5003GT[#5221-#33+[#02/2]+#602]]GOTO802
+(Z skip: botGaisakuCmen +#600)
+(G54 Z skip: botGaisakuCmen Z+#602)
 (if skip block end Z > Cmen Z+#602, to N802)
 
 G91 G31 Z-[#602+#603] F#656
-(Z- skip: #602+#603)
-IF[#5003LE[#5221-#33+[#20/2]-#602]]GOTO802
-(if skip block end Z <= Cmen Z-#602, to N802)
+IF[#5003LE[#5221-#33+[#20/2]-#603]]GOTO802
 #900035=#5003+#901053
+(Z- skip: #602+#603)
+(if skip block end Z <= Cmen Z-#602, to N802)
 (#900035= Z bot side + probe hosei)
 
 G90 G53 G01 Z0 F#650

@@ -30,11 +30,11 @@ IF[#04LT0]THEN #33=-1
 
 N003
 G91 G31 X[#33*[#620+#603]] F#656
-(skip X+ or X-: #620+#603)
-IF[ABS[#5001-#748]GT[#620+#603]]GOTO800
+IF[ABS[#5001-#748]GE[#620+#603]]GOTO800
 #749=#5001+#901054+#33*[-#901053+#901050]
-(#749= block end X + hosei probe etc)
 G90 G01 X#748 F#652
+(skip X+ or X-: #620+#603)
+(#749= block end X + hosei probe etc)
 (G90 G01 X: to start point)
 GOTO999
 
