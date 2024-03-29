@@ -47,6 +47,7 @@ IF[#02GT0]GOTO800
 (if R = #0, go to N800)
 (if B > 0 or #0, go to N800)
 
+IF[#09EQ#19]GOTO800
 IF[#620EQ#0]GOTO800
 IF[#620LT2]GOTO800
 IF[#18LE#26]GOTO800
@@ -56,6 +57,7 @@ IF[[[#09+#19+ABS[#09-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]GOTO800
 IF[#02LT[-15]]GOTO800
 IF[#21GT#04]GOTO800
 IF[#26LE[#901011/2]]GOTO800
+(if F = S, go to N800)
 (if #620 < 2 or #0, go to N800)
 (if R <= Z, go to N800)
 (if M is not intger, go to N800)
@@ -203,19 +205,19 @@ IF[#724EQ1]GOTO107
 (#724=2, for C)
 (#724=1, for A)
 (face D)
-G65 P220002 A-1. F#09 S#19 I#04 K#06 U0.2 B#02 M#33
+G65 P220002 A-1. F#09 S#19 I#04 K#06 U0.2 B#02 M1.0
 (for D: moving along row)
 GOTO108
 N105 (face B)
-G65 P220002 A1. F#09 S#19 I#04 K#06 U0.2 B#02 M#33
+G65 P220002 A1. F#09 S#19 I#04 K#06 U0.2 B#02 M1.0
 (for B: moving along row)
 GOTO108
 N106 (face C)
-G65 P220001 A-1. X#24 F#09 S#19 I#04 K#06 U0.2 B#02 M#33
+G65 P220001 A-1. X#24 F#09 S#19 I#04 K#06 U0.2 B#02 M1.0
 (for C: moving along row)
 GOTO108
 N107 (face A)
-G65 P220001 A1. X#24 F#09 S#19 I#04 K#06 U0.2 B#02 M#33
+G65 P220001 A1. X#24 F#09 S#19 I#04 K#06 U0.2 B#02 M1.0
 (for A: moving along row)
 
 N108
@@ -289,10 +291,33 @@ N201 (loop on #724)
 G90 G01 X#713 Y#714 Z#715 F#652
 (XYZ: to the center of the 1st row)
 
+IF[#724EQ3]GOTO202
+IF[#724EQ2]GOTO203
+IF[#724EQ1]GOTO204
+(if B, to N202)
+(if C, to N203)
+(if A, to N204)
+(for face D)
+G91 G#703 Y-#716 F#653
+IF[#5002GT[-#716]]GOTO802
+GOTO205
+N202 (for face B)
+G91 G#703 Y#716 F#653
+IF[#5002LT#716]GOTO802
+GOTO205
+N203 (for face C)
+G91 G#703 X-#717 F#653
+IF[#5001GT[#713-#717+0.001]]GOTO802
+GOTO205
+N204 (for face A)
+G91 G#703 X#717 F#653
+IF[#5001LT[#713+#717-0.001]]GOTO802
+
 
 (start loop for #33)
 
 
+N205
 #33=1 (#33: current row)
 WHILE[#33LE#13]DO1
 IF[#724EQ3]GOTO300
@@ -317,8 +342,8 @@ N302 (face A)
 G65 P220001 A1. X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for A: moving along row)
 N303
-IF[#33GE#13]GOTO202
-(if #33 >= #13, go to N202)
+IF[#33GE#13]GOTO206
+(if #33 >= #13, go to N206)
 #32=#707-[#33-1]*#06
 (#32= the #33th row's Z from table center)
 #31=SQRT[#18*#18-[#32-#06]*[#32-#06]]-SQRT[#18*#18-#32*#32]
@@ -331,7 +356,7 @@ END1
 (end loop for #33)
 
 
-N202
+N206
 #724=#724-1 (changing face)
 IF[#724LE0]GOTO014
 GOTO201
