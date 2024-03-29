@@ -5,9 +5,8 @@ O210003 (for dimple measurement & kakou)
 #700=#4012
 (#700: current work coordinate G#)
 
-IF[#700LT54]GOTO800 
-IF[#700GT59]GOTO800
-(if work G# < 54 or G# > 59, go to N800)
+IF[#700NE57]GOTO800 
+(if work G# is not 57, go to N800)
 
 IF[#23EQ#0]GOTO800
 IF[#23LT10]GOTO800
@@ -156,12 +155,20 @@ M08 (coolant on)
 M28 (chip conveyor on)
 
 N009
-#724=4
-(#724: faces 1: A, 2: C, 3: B, 4: D)
 #716=#25/2+#20-#702-#620
 #717=[#24/2+#20-#702-#620]*COS[ABS[#02]]
 (#716, #717: face from -#620)
 
+
+IF[#4111EQ50]GOTO200
+IF[#402EQ0]GOTO200
+
+
+(start loop for the 1st #724)
+
+
+#724=4
+(#724: faces 1: A, 2: C, 3: B, 4: D)
 N100 (loop on #724)
 G90 G01 X#713 Y#714 Z#715 F#652
 (XYZ: to the center of the 1st row)
@@ -175,46 +182,143 @@ IF[#724EQ1]GOTO103
 (for face D)
 G91 G#703 Y-#716 F#653
 IF[#5002GT[-#716]]GOTO802
-GOTO200
+GOTO104
 N101 (for face B)
 G91 G#703 Y#716 F#653
 IF[#5002LT#716]GOTO802
-GOTO200
+GOTO104
 N102 (for face C)
 G91 G#703 X-#717 F#653
 IF[#5001GT[#713-#717+0.001]]GOTO802
-GOTO200
+GOTO104
 N103 (for face A)
 G91 G#703 X#717 F#653
 IF[#5001LT[#713+#717-0.001]]GOTO802
 
+N104
+IF[#724EQ3]GOTO105
+IF[#724EQ2]GOTO106
+IF[#724EQ1]GOTO107
+(#724=3, for B)
+(#724=2, for C)
+(#724=1, for A)
+(face D)
+G65 P220002 A-1. F#09 S#19 I#04 K#06 U0.2 B#02 M#33
+(for D: moving along row)
+GOTO108
+N105 (face B)
+G65 P220002 A1. F#09 S#19 I#04 K#06 U0.2 B#02 M#33
+(for B: moving along row)
+GOTO108
+N106 (face C)
+G65 P220001 A-1. X#24 F#09 S#19 I#04 K#06 U0.2 B#02 M#33
+(for C: moving along row)
+GOTO108
+N107 (face A)
+G65 P220001 A1. X#24 F#09 S#19 I#04 K#06 U0.2 B#02 M#33
+(for A: moving along row)
+
+N108
+#724=#724-1 (changing face)
+IF[#724LE0]GOTO010
+GOTO100
+
+
+(end loop for the 1st #724)
+
+
+N010
+IF[#4111EQ50]GOTO011
+M09 (coolant off)
+S35
+
+N011
+G90 G01 X#713 Z[#715-#701] F#652
+(XZ: to the center of the 1st row)
+G90 G01 X#711 Z#712 F#652
+(XZ: to start point)
+G90 G01 Z[#712+#600] F#652
+S2599
+G90 G53 G01 Z0 F#650
+G04 X1.5 (wait 1.5s)
+M05 (spindle off)
+S35
+G65 P900003
+(pause in front of the door)
+
+G43 H#4120 (hosei KouguChou: T#)
+
+G90 G00 X0 Y0
+G90 G01 Z[#26+#600] F#652
+(XY Top Inside Center)
+(Z= TopTanmen +#600)
+
+G91 G01 X[#705-#704] Z[#706-#26-#701-#600] F#652
+(XZ: tanmen center)
+
+IF[#4111NE50]GOTO013
+(if tool is not sensor, go to N013)
+IF[#1005EQ0]GOTO012
+M00 (sensor low battery)
+N012
+IF[#1004EQ1]GOTO013
+(if current sensor ON, go to N013)
+M117 (sensor on/off)
+G04 X1.5 (wait 1.5s)
+
+N013
+G91 G#703 X#709 Z#710 F#653
+(XZ to the center of the 1st row after rotation)
+(if sensor G31, else G01)
+
+IF[#4111EQ50]GOTO200
+(if sensor, go to N200)
+S#681
+M03 (spindle on)
+M08 (coolant on)
+M28 (chip conveyor on)
+
+
 N200
+(start loop for the 2nd #724)
+
+
+#724=4
+(#724: faces 1: A, 2: C, 3: B, 4: D)
+N201 (loop on #724)
+G90 G01 X#713 Y#714 Z#715 F#652
+(XYZ: to the center of the 1st row)
+
+
+(start loop for #33)
+
+
 #33=1 (#33: current row)
-WHILE[#33LE#13]DO1 (loop on #33)
-IF[#724EQ3]GOTO201
-IF[#724EQ2]GOTO202
-IF[#724EQ1]GOTO203
+WHILE[#33LE#13]DO1
+IF[#724EQ3]GOTO300
+IF[#724EQ2]GOTO301
+IF[#724EQ1]GOTO302
 (#724=3, for B)
 (#724=2, for C)
 (#724=1, for A)
 (face D)
 G65 P220002 A-1. F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for D: moving along row)
-GOTO204
-N201 (face B)
+GOTO303
+N300 (face B)
 G65 P220002 A1. F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for B: moving along row)
-GOTO204
-N202 (face C)
+GOTO303
+N301 (face C)
 G65 P220001 A-1. X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for C: moving along row)
-GOTO204
-N203 (face A)
+GOTO303
+N302 (face A)
 G65 P220001 A1. X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for A: moving along row)
-N204
-IF[#33GE#13]GOTO205
-(end loop for #33)
+N303
+IF[#33GE#13]GOTO202
+(if #33 >= #13, go to N202)
 #32=#707-[#33-1]*#06
 (#32= the #33th row's Z from table center)
 #31=SQRT[#18*#18-[#32-#06]*[#32-#06]]-SQRT[#18*#18-#32*#32]
@@ -223,19 +327,25 @@ G91 G#703 X[#31*COS[ABS[#02]]-#06*SIN[ABS[#02]]] Z-[#31*SIN[ABS[#02]]+#06*COS[AB
 #33=#33+1 (#33 to current row +1)
 END1
 
-N205
+
+(end loop for #33)
+
+
+N202
 #724=#724-1 (changing face)
-IF[#724LE0]GOTO104
-(end loop for #724)
-GOTO100
+IF[#724LE0]GOTO014
+GOTO201
 
 
-N104
-IF[#4111EQ50]GOTO010
+(end loop for the 2nd #724)
+
+
+N014
+IF[#4111EQ50]GOTO016
 M09 (coolant off)
 S35
 
-N010
+N016
 G90 G01 X#713 Z[#715-#701] F#652
 (XZ: to the center of the 1st row)
 G90 G01 X#711 Z#712 F#652
