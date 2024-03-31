@@ -1,0 +1,50 @@
+%!TEX root = ../RPA_for_Creating_Program_Note.tex
+
+
+%%%%% PMBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtcbox{\PMbox}{%
+  commonbox,
+  enlarge top by=2pt,
+  top=0pt,
+  bottom=0pt,
+  colframe=green!50!black,
+  colback=green!10!white,
+  overlay={%
+    \begin{tcbclipinterior}%
+      \fill[green!80!blue!50!black!50!] (frame.south west)
+      rectangle node[text=white, font=\bfseries\tiny, rotate=90] {PM} ([xshift=4mm]frame.north west);
+    \end{tcbclipinterior}%
+  },
+}
+\robustify{\PMbox}
+\pdfstringdefDisableCommands{%
+  \def\PMbox#1{`#1'}%
+}
+
+%%%%% NEWPRGCOMMAND %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\newPMcommand}[3]{%
+  \expandafter\newcommand\csname name#1\endcsname{\expandafterindex{#3@#2}#2}%
+  \expandafter\newcommand\csname #1\endcsname{\PMbox{\csname name#1\endcsname}}%
+}
+
+%%%%% TO PARAMETER NAME %%%%%%
+\newPMcommand{DrawingExists}{図面の有無}{ずめんのうむ}
+\newPMcommand{DrawingNumber}{図面番号}{ずめんばんごう}
+
+\newPMcommand{TopOutCutExists}{トップ外削の有無}{トップがいさくのうむ}
+\newPMcommand{BottomInCutExists}{ボトム外削の有無}{ボトムがいさくのうむ}
+\newPMcommand{TopOutCutShape}{トップ外削の種類}{トップがいさくのしゅるい}
+\newPMcommand{BottomOutCutShape}{ボトム外削の種類}{ボトムがいさくのしゅるい}
+
+\newPMcommand{KeywayType}{溝の種類}{みぞのしゅるい}
+\newPMcommand{KeywayPos}{溝位置}{みぞいち}
+\newPMcommand{KeywayWidth}{溝幅}{みぞはば}
+\newPMcommand{KeywayDepth}{溝深さ}{みぞふかさ}
+
+\newPMcommand{ChamferType}{面取の種類}{めんとりのしゅるい}
+\newPMcommand{CChamferLength}{C面取長}{Cめんとりちょう}
+\newPMcommand{CChamferAngle}{C面取角}{Cめんとりかく}
+\newPMcommand{RChamferLength}{R面取長}{Rめんとりちょう}
+
+\newPMcommand{EndFaceBoringExists}{端面座ぐりの有無}{たんめんざくりのうむ}
+\newPMcommand{EndFaceBoringCorner}{端面座ぐりコーナーR}{たんめんざくりコーナーR}
