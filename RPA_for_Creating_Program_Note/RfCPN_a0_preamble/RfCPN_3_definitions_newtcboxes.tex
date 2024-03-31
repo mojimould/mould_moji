@@ -1,46 +1,8 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
-%%%%% PRGBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% HLBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtcbox{\HLbox}{%
   highlight math,
 }
 \robustify{\HLbox}
-
-%%%%% PRGBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtcbox{\prgbox}{%
-  commonbox,
-  colframe=blue!50!black,
-  coltext=blue!25!black,
-  colback=blue!10!white,
-  overlay={%
-    \begin{tcbclipinterior}%
-      \fill[blue!75!green!50!white] (frame.south west)
-      rectangle node[text=white, font=\bfseries\tiny, rotate=90] {Prg} ([xshift=4mm]frame.north west);
-    \end{tcbclipinterior}%
-  },
-}
-\robustify{\prgbox}
-\pdfstringdefDisableCommands{%
-  \def\prgbox#1{`#1'}%
-}
-
-%%%%% PARAMETRTBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtcbox{\PMbox}{%
-  commonbox,
-  enlarge top by=2pt,
-  top=0pt,
-  bottom=0pt,
-  colframe=green!50!black,
-  colback=green!10!white,
-  overlay={%
-    \begin{tcbclipinterior}%
-      \fill[green!80!blue!50!black!50!] (frame.south west)
-      rectangle node[text=white, font=\bfseries\tiny, rotate=90] {PM} ([xshift=4mm]frame.north west);
-    \end{tcbclipinterior}%
-  },
-}
-\robustify{\PMbox}
-\pdfstringdefDisableCommands{%
-  \def\PMbox#1{`#1'}%
-}
