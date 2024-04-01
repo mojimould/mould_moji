@@ -6,11 +6,11 @@
 %%%%% FONT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setmainjfont[BoldFont={HaranoAjiGothic}, BoldFeatures={FakeBold=2}]{HaranoAjiMincho}
 \setsansjfont{HaranoAjiGothic}
-\setmonojfont{HaranoAjiMincho}
+%\setmonojfont{HaranoAjiMincho}
 %\setmainfont{Latin Modern Roman}
 %\setsansfont{Latin Modern Sans}
 %\setmonofont{Latin Modern Mono}
-\setmathfont[BoldFont=Euler Math, BoldFeatures={FakeBold=2}]{Euler Math}
+\setmathfont[BoldFont=*, BoldFeatures={FakeBold=2}]{Euler Math}
 \setmathfont[range={\leq, \geq},  BoldFont=*, BoldFeatures={FakeBold=2}]{Latin Modern Math}
 \setmathfont[range={up/num, bfup/num}, Scale=MatchUppercase, BoldFont=*, BoldFeatures={FakeBold=2}]{Latin Modern Math}
 %%%%% NEWIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -30,9 +30,7 @@
 %%%%% CLEARRIGHTPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\clearrightpage}{%
   \if@twoside%
-    \ifodd\numexpr\thepage\relax\cleardoublepage%
-    \else\clearpage%
-    \fi
+    \ifodd\numexpr\thepage\relax\cleardoublepage\else\clearpage\fi
   \else\clearpage%
   \fi
 }
