@@ -27,9 +27,25 @@
   \expandafter\newcommand\csname #1\endcsname{\PMbox{\csname name#1\endcsname}}%
 }
 
-%%%%% TO PARAMETER NAME %%%%%%
+%%%%% TO PARAMETER NAME %%%
 \newPMcommand{DrawingExists}{図面の有無}{ずめんのうむ}
 \newPMcommand{DrawingNumber}{図面番号}{ずめんばんごう}
+
+\newPMcommand{CurvatureExists}{湾曲の有無}{わんきょくのうむ}
+\newPMcommand{CenterCurvature}{中心湾曲}{ちゅうしんわんきょく}
+
+\newPMcommand{ACOD}{AC外径}{ACがいけい}
+\newPMcommand{BDOD}{BD外径}{BDがいけい}
+\newPMcommand{ODCornerR}{外径コーナーR}{がいけいコーナーR}
+
+\newPMcommand{TopEndFace}{トップ端面}{トップたんめん}
+\newPMcommand{BottomEndFace}{ボトム端面}{ボトムたんめん}
+\newPMcommand{TopEndACID}{トップ端AC内径}{トップたんACないけい}
+\newPMcommand{TopEndBDID}{トップ端BD内径}{トップたんBDないけい}
+\newPMcommand{BottomEndACID}{ボトム端AC内径}{ボトムたんACないけい}
+\newPMcommand{BottomEndBDID}{ボトム端BD内径}{ボトムたんBDないけい}
+\newPMcommand{TopEndIDCornerR}{トップ端内径コーナーR}{トップたんないけいコーナーR}
+\newPMcommand{BottomEndIDCornerR}{ボトム端内径コーナーR}{ボトムたんないけいコーナーR}
 
 \newPMcommand{TopOutCutExists}{トップ外削の有無}{トップがいさくのうむ}
 \newPMcommand{BottomInCutExists}{ボトム外削の有無}{ボトムがいさくのうむ}
@@ -39,7 +55,11 @@
 \newPMcommand{KeywayType}{溝の種類}{みぞのしゅるい}
 \newPMcommand{KeywayPos}{溝位置}{みぞいち}
 \newPMcommand{KeywayWidth}{溝幅}{みぞはば}
-\newPMcommand{KeywayDepth}{溝深さ}{みぞふかさ}
+\newPMcommand{AsideKeywayDepth}{A側溝深さ}{Aがわみぞふかさ}
+\newPMcommand{KeywayACOD}{溝AC径}{みぞACけい}
+\newPMcommand{KeywayBDOD}{溝BD径}{みぞBDけい}
+\newPMcommand{KeywayCornerC}{溝コーナーC}{みぞコーナーC}
+\newPMcommand{KeywayCornerR}{溝コーナーR}{みぞコーナーR}
 
 \newPMcommand{ChamferType}{面取の種類}{めんとりのしゅるい}
 \newPMcommand{CChamferLength}{C面取長}{Cめんとりちょう}
@@ -47,4 +67,4 @@
 \newPMcommand{RChamferLength}{R面取長}{Rめんとりちょう}
 
 \newPMcommand{EndFaceBoringExists}{端面座ぐりの有無}{たんめんざくりのうむ}
-\newPMcommand{EndFaceBoringCorner}{端面座ぐりコーナーR}{たんめんざくりコーナーR}
+\newPMcommand{EndFaceBoringCornerR}{端面座ぐりコーナーR}{たんめんざくりコーナーR}

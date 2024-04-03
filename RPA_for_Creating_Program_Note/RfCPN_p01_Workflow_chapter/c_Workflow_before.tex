@@ -158,7 +158,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \EndFaceBoringExists%
-\EndFaceBoringCorner%
+\EndFaceBoringCornerR%
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -173,12 +173,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{端面における寸法}
 \begin{enumerate}
 \item \index{こうさ（ぜんちょう）@公差（全長）}全長の公差を確認し、\index{トップふりわけちょう@トップ振分長}トップ振分長および\index{ボトムふりわけちょう@ボトム振分長}ボトム振分長の\index{こうさ（ふりわけちょう）@公差（振分長）}公差の判断を行う
 \item トップ側・ボトム側の\index{ふりわけちょう@振分長}振分長を確認し、\index{スペーサ}スペーサによる調整が必要か判断を行う
 \item 使用するスペーサおよび\index{さいふりわけちょう@再振分長}再振分長は、専用の計算\index{プログラム(Excel VBA)}プログラム(\index{Excel VBA}Excel VBA)を用いて決定する
-\item \index{がいけい@外径}外径・\index{にくあつ（たんめん）@肉厚（端面）}端面部の肉厚・\index{コーナーR（たんめん）@コーナーR（端面）}コーナーRの大きさを確認し、それに応じて\index{こうぐけいほせいち@工具径補正値}工具径補正値を決定する
+\item \index{がいけい@外径}外径・\index{にくあつ（たんめん）@肉厚（端面）}端面部の肉厚・\index{たんめんそとがわコーナーR@端面外側コーナーR}端面外側コーナーRの大きさを確認し、それに応じて\index{こうぐけいほせいち@工具径補正値}工具径補正値を決定する
 \item 振分長に応じて、$Z$方向の\index{クリアランスへいめん（Zほうこう）@クリアランス平面（$Z$方向）}クリアランス平面の位置を決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -186,16 +187,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{再振分長}
-\PMbox{全長}\PMbox{トップ振分長}\PMbox{ボトム振分長}\PMbox{AC外径}\PMbox{ジグの長さ}\PMbox{受板の幅}
+\PMbox{全長}\PMbox{トップ振分長}\PMbox{ボトム振分長}\ACOD\PMbox{ジグの長さ}\PMbox{受板の幅}
 \tcbline*
-\paragraph*{トップ端面}
-\PMbox{トップ再振分長}\PMbox{AC外径}\PMbox{BD外径}\PMbox{外径コーナーR}\\
-\PMbox{トップ端AC内径}\PMbox{トップ端BD内径}\\
+\paragraph*{\nameTopEndFace}
+\PMbox{トップ再振分長}\ACOD\BDOD\ODCornerR\\
+\TopEndACID\TopEndBDID\\
 \PMbox{トップ側$Z$方向クリアランス平面距離}
 \tcbline*
-\paragraph*{ボトム端面}
-\PMbox{ボトム再振分長}\PMbox{AC外径}\PMbox{BD外径}\PMbox{外径コーナーR}\\
-\PMbox{ボトム端AC内径}\PMbox{ボトム端BD内径}\\
+\paragraph*{\nameBottomEndFace}
+\PMbox{ボトム再振分長}\ACOD\BDOD\ODCornerR\\
+\BottomEndACID\BottomEndBDID\\
 \PMbox{ボトム側$Z$方向クリアランス平面距離}
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -220,29 +221,29 @@
 \paragraph*{ボトム側の外削のみの場合}
 \PMbox{ボトム外削AC径}\PMbox{ボトム外削BD径}\PMbox{ボトム外削コーナーR}\\
 \PMbox{ボトム外削長}\\
-\PMbox{ボトム端AC内径}\PMbox{ボトム側A側肉厚}\PMbox{めっき膜厚}
+\BottomEndACID\PMbox{ボトム側A側肉厚}\PMbox{めっき膜厚}
 \tcbline*
 \paragraph*{トップ側の外削のみの場合}
 \PMbox{トップ外削AC径}\PMbox{トップ外削BD径}\PMbox{トップ外削コーナーR}\\
-\PMbox{トップ外削長}\PMbox{溝位置}\PMbox{溝幅}\\
-\PMbox{トップ端AC内径}\PMbox{トップ外削A側肉厚}\PMbox{めっき膜厚}
+\PMbox{トップ外削長}\KeywayPos\KeywayWidth\\
+\TopEndACID\PMbox{トップ外削A側肉厚}\PMbox{めっき膜厚}
 \tcbline*
 \paragraph*{両方に外削があり、ボトム側が基準の場合}
 \PMbox{ボトム外削AC径}\PMbox{ボトム外削BD径}\PMbox{ボトム外削コーナーR}\\
 \PMbox{ボトム外削長}\\
-\PMbox{ボトム端AC内径}\PMbox{ボトム外削A側肉厚}\PMbox{めっき膜厚}\\
+\BottomEndACID\PMbox{ボトム外削A側肉厚}\PMbox{めっき膜厚}\\
 \PMbox{トップ外削AC径}\PMbox{トップ外削BD径}\PMbox{トップ外削コーナーR}\\
-\PMbox{トップ外削長}\PMbox{溝位置}\PMbox{溝幅}\PMbox{通り芯}
+\PMbox{トップ外削長}\KeywayPos\KeywayWidth\PMbox{通り芯}
 \tcbline*
 \paragraph*{両方に外削があり、トップ側が基準の場合}
 \PMbox{トップ外削AC径}\PMbox{トップ外削BD径}\PMbox{トップ外削コーナーR}\\
-\PMbox{トップ外削長}\PMbox{溝位置}\PMbox{溝幅}\\
-\PMbox{トップ端AC内径}\PMbox{トップ外削A側肉厚}\PMbox{めっき膜厚}\\
+\PMbox{トップ外削長}\KeywayPos\KeywayWidth\\
+\TopEndACID\PMbox{トップ外削A側肉厚}\PMbox{めっき膜厚}\\
 \PMbox{ボトム外削AC径}\PMbox{ボトム外削BD径}\PMbox{ボトム外削コーナーR}\\
 \PMbox{ボトム外削長}\PMbox{通り芯}
 \tcbline*
 \paragraph*{湾曲に沿った外削の場合}
-（以上に加えて）\PMbox{中心湾曲}
+（以上に加えて）\CenterCurvature
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -256,22 +257,22 @@
 \begin{enumerate}
 \item \index{みぞのけいじょう@溝の形状}溝の形状を確認し、必要に応じて加工における径の決定する
 \item \index{きじゅん（みぞちゅうしん）@基準（溝中心）}溝中心の基準を確認し、\index{みぞちゅうしん@溝中心}溝中心の$X$位置を手動で計算し、決定する
-\item \index{みぞはば@溝幅}溝幅を確認し、\index{かこうかいすう（みぞはば）@加工回数（溝幅）}加工の回数を決定する
+\item \index{みぞはば@溝幅}\nameKeywayWidth を確認し、\index{かこうかいすう（みぞはば）@加工回数（溝幅）}加工の回数を決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{湾曲中心が基準の場合}
-\PMbox{溝AC径}\PMbox{溝BD径}\PMbox{溝位置}\PMbox{溝幅}\PMbox{中心湾曲}\\
-\PMbox{溝コーナーR}または\PMbox{溝コーナーC}
+\KeywayACOD\KeywayBDOD\KeywayPos\KeywayWidth\CenterCurvature\\
+\KeywayCornerR または\KeywayCornerC
 \tcbline*
 \paragraph*{外削中心が基準の場合}
-\PMbox{溝AC径}\PMbox{溝BD径}\PMbox{溝位置}\PMbox{溝幅}\\
-\PMbox{溝コーナーR}または\PMbox{溝コーナーC}
+\KeywayACOD\KeywayBDOD\KeywayPos\KeywayWidth\\
+\KeywayCornerR または\KeywayCornerC
 \tcbline*
 \paragraph*{A側溝深さが基準の場合}
-（以上に加えて）\PMbox{A側溝深さ}
+（以上に加えて）\AsideKeywayDepth
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -291,25 +292,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{トップ端外側C面取：外削のない場合}
-\PMbox{AC外径}\PMbox{BD外径}\PMbox{トップ端外側C面取長}\PMbox{外径コーナーR}
+\ACOD\BDOD\PMbox{トップ端外側C面取長}\ODCornerR
 \tcbline*
 \paragraph*{トップ端外側C面取：外削のある場合}
 \PMbox{トップ外削AC径}\PMbox{トップ外削BD径}\PMbox{トップ端外削コーナーR}\\
 \PMbox{トップ端外側C面取長}
 \tcbline*
 \paragraph*{ボトム端外側C面取：外削のない場合}
-\PMbox{AC外径}\PMbox{BD外径}\PMbox{ボトム端外側C面取長}\PMbox{外径コーナーR}
+\ACOD\BDOD\PMbox{ボトム端外側C面取長}\ODCornerR
 \tcbline*
 \paragraph*{ボトム端外側C面取：外削のある場合}
 \PMbox{ボトム外削AC径}\PMbox{ボトム外削BD径}\PMbox{ボトム端外削コーナーR}\\
 \PMbox{ボトム端外側C面取長}
 \tcbline*
 \paragraph*{トップ端内側C面取}
-\PMbox{トップ端AC内径}\PMbox{トップ端BD内径}\PMbox{トップ端内径コーナーR}\\
+\TopEndACID\TopEndBDID\TopEndIDCornerR\\
 \PMbox{トップ端内側C面取長}\PMbox{めっき膜厚}
 \tcbline*
 \paragraph*{ボトム端内側C面取}
-\PMbox{ボトム端AC内径}\PMbox{ボトム端BD内径}\PMbox{ボトム端内径コーナーR}\\
+\BottomEndACID\BottomEndBDID\BottomEndIDCornerR\\
 \PMbox{ボトム端内側C面取長}\PMbox{めっき膜厚}
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -320,13 +321,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.3.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{座ぐりにおける寸法\TBW}
+\subsubsection{端面座ぐりにおける寸法\TBW}
 (to be written...)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\PMbox{座ぐりの位置}\PMbox{座ぐり長}\PMbox{座ぐりコーナーR}\PMbox{座ぐり深さ}\PMbox{トップAC外径}
+\PMbox{端面座ぐりの位置}\PMbox{端面座ぐり長}\EndFaceBoringCornerR\PMbox{端面座ぐり深さ}\\
+\ACOD
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -368,7 +370,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{ワーク固定用ボルト}
-\PMbox{AC外径}\PMbox{BD外径}\\
+\ACOD\BDOD\\
 \PMbox{ジグ床面とボルト取付具（上）間の距離}\PMbox{受板とボルト取付具（横）間の距離}
 \tcbline*
 \paragraph*{端面の削り代}
