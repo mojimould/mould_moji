@@ -572,7 +572,7 @@ M10 (B-axis clamp)
 (G55B parallel angle 179.358)
 
 M28 (chip conveyor on)
-G55 G65 P450000 B0.0 X155.000 Y153.000 Z499.984 W600.0 Q8922.70 K10.0 R3.5 M0.07
+G55 G65 P450000 B0.0 X155.000 Y153.000 Z499.984 W600.0 Q8922.70 K10.0 R3.5
 (O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
 (B: mentori type: 0:C, 1:R)
 (X: Bot AC naikei)
@@ -582,7 +582,6 @@ G55 G65 P450000 B0.0 X155.000 Y153.000 Z499.984 W600.0 Q8922.70 K10.0 R3.5 M0.07
 (Q: central curvature)
 (K: Bot mentori C or R length)
 (R: Bot uchigawa corner R)
-(M: mekki thickness mm)
 
 (Bottom Uchimentori end)
 IF[#449EQ0]GOTO541

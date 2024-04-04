@@ -462,7 +462,7 @@ M10 (B-axis clamp)
 (G57B parallel angle -0.000)
 
 M28 (chip conveyor on)
-G57 G65 P450000 B0.0 X135.578 Y135.578 Z400.000 W400.0 Q5932.950 K1.0 R4.0 M0.08
+G57 G65 P450000 B0.0 X135.578 Y135.578 Z400.000 W400.0 Q5932.950 K1.0 R4.0
 (O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
 (B: mentori type: 0:C, 1:R)
 (X: Top AC naikei)
@@ -472,7 +472,6 @@ G57 G65 P450000 B0.0 X135.578 Y135.578 Z400.000 W400.0 Q5932.950 K1.0 R4.0 M0.08
 (Q: central curvature)
 (K: Top uchigawa mentori C or R length)
 (R: Top uchigawa corner R)
-(M: mekki thickness mm)
 
 (Top Uchimentori end)
 IF[#433EQ0]GOTO441
@@ -574,7 +573,7 @@ M10 (B-axis clamp)
 (G55B parallel angle 180.000)
 
 M28 (chip conveyor on)
-G55 G65 P450000 B0.0 X134.100 Y134.100 Z400.0000 W400.00 Q5932.950 K8.0 R4.0 M0.08
+G55 G65 P450000 B0.0 X134.100 Y134.100 Z400.0000 W400.00 Q5932.950 K8.0 R4.0
 (O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
 (B: mentori type: 0:C, 1:R)
 (X: Bot AC naikei)
@@ -584,7 +583,6 @@ G55 G65 P450000 B0.0 X134.100 Y134.100 Z400.0000 W400.00 Q5932.950 K8.0 R4.0 M0.
 (Q: central curvature)
 (K: Bot uchi mentori length C)
 (R: Bot uchigawa corner R)
-(M: mekki thickness mm)
 
 (Bottom Uchimentori end)
 IF[#449EQ0]GOTO541
