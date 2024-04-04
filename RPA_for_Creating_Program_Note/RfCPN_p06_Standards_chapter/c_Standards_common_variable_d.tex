@@ -79,15 +79,15 @@
 \ttNum181 & （不使用） &\\
 \ttNum182 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\
 \ttNum183 & 溝 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum184 & トップ外面取 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum185 & トップ内面取 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum184 & トップ側 端面外C面取 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum185 & トップ側 端面内C面取 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
-\ttNum186\TBW & （座ぐり 仕上げ加工 追加回数用 予備） & 0\\
+\ttNum186\TBW & （端面座ぐり 仕上げ加工 追加回数用 予備） & 0\\
 \SetRow{unusingVariables}
 \ttNum187 & （不使用） &\\
 \ttNum188 & ボトム外削 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum189 & ボトム外面取 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum190 & ボトム内面取 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum189 & ボトム側 端面外C面取 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum190 & ボトム側 端面内C面取 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
 \ttNum191 & （不使用） &\\
 \SetRow{unusingVariables}
@@ -161,7 +161,7 @@
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-\index{がいさくちゅうしんそくてい@外削中心測定}外削中心測定\MXIface で\index{うちめんとり@内面取}内面取がある場合、測定位置$Z$は端面の$Z$位置でないことに注意
+\index{がいさくちゅうしんそくてい@外削中心測定}外削中心測定\MXIface で\index{たんめんうちめんとり@端面内面取}端面内面取がある場合、測定位置$Z$は端面の$Z$位置でないことに注意
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -176,16 +176,16 @@
 
 \begin{multicollongtblr}[white]{\ttNum425\,-\ttNum449：補助機能（使用頻度 高）続き}{cX[l]c}
 変数 & 内容 & 初期値\\
-\ttNum425 & トップ外面取$X+$補正 & 0\\
-\ttNum426 & トップ外面取径（直径）$+$補正 & 0\\
-\ttNum427 & トップ外面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum428 & トップ外面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum425 & トップ側 端面外C面取$X+$補正 & 0\\
+\ttNum426 & トップ側 端面外C面取径（直径）$+$補正 & 0\\
+\ttNum427 & トップ側 端面外C面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum428 & トップ側 端面外C面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum429 & （不使用） &\\
-\ttNum430 & トップ内面取$X+$補正 & 0\\
-\ttNum431 & トップ内面取径（直径）$+$補正 & 0\\
-\ttNum432 & トップ内面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum433 & トップ内面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum430 & トップ側 端面内C面取$X+$補正 & 0\\
+\ttNum431 & トップ側 端面内C面取径（直径）$+$補正 & 0\\
+\ttNum432 & トップ側 端面内C面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum433 & トップ側 端面内C面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum434 & （不使用） &\\
 \SetRow{unusingVariables}
@@ -196,16 +196,16 @@
 \ttNum439 & ボトム外削 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum440 & （不使用） &\\
-\ttNum441 & ボトム外面取$X+$補正 & 0\\
-\ttNum442 & ボトム外面取径（直径）$+$補正 & 0\\
-\ttNum443 & ボトム外面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum444 & ボトム外面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum441 & ボトム側 端面外C面取$X+$補正 & 0\\
+\ttNum442 & ボトム側 端面外C面取径（直径）$+$補正 & 0\\
+\ttNum443 & ボトム側 端面外C面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum444 & ボトム側 端面外C面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum445 & （不使用） &\\
-\ttNum446 & ボトム内面取$X+$補正 & 0\\
-\ttNum447 & ボトム内面取径（直径）$+$補正 & 0\\
-\ttNum448 & ボトム内面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum449 & ボトム内面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum446 & ボトム側 端面内C面取$X+$補正 & 0\\
+\ttNum447 & ボトム側 端面内C面取径（直径）$+$補正 & 0\\
+\ttNum448 & ボトム側 端面内C面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum449 & ボトム側 端面内C面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \end{multicollongtblr}
 
 
@@ -278,11 +278,11 @@
 \SetRow{unusingVariables}
 \ttNum476 & （不使用） &\\
 \SetRow{unusingVariables}
-\ttNum477\TBW & （トップ座ぐり$X+$補正用 予備） & 0\\
+\ttNum477\TBW & （端面座ぐり$X+$補正用 予備） & 0\\
 \SetRow{unusingVariables}
-\ttNum478\TBW & （トップ座ぐり径 補正用 予備） & 0\\
-\ttNum479 & トップ座ぐり 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum480 & トップ座ぐり 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum478\TBW & （端面座ぐり径 補正用 予備） & 0\\
+\ttNum479 & 端面座ぐり 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum480 & 端面座ぐり 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum481 & （不使用） &\\
 \SetRow{unusingVariables}
@@ -423,15 +423,15 @@ $\cdots$ & （以下不明） & \ttNum0
 \SetRow{unusingVariables}
 \ttNum613 & （予備） &\\
 \SetRow{unusingVariables}
-\ttNum614 & （外面取加工用予備） & \\
+\ttNum614 & （端面外C面取加工用予備） & \\
 \SetRow{unusingVariables}
 \ttNum615 & （予備） &\\
 \SetRow{unusingVariables}
-\ttNum616 & （内面取加工用予備） &\\
+\ttNum616 & （端面内C面取加工用予備） &\\
 \SetRow{unusingVariables}
 \ttNum617 & （予備） &\\
 \SetRow{unusingVariables}
-\ttNum618 & （座ぐり加工用予備） &\\
+\ttNum618 & （端面座ぐり加工用予備） &\\
 \SetRow{unusingVariables}
 \ttNum619 & （予備） &\\
 \ttNum620 & \dimple 測定時近付き量 & 10.0 \\
@@ -461,14 +461,14 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum628 & 外削加工 仕上げ前 残り削り代（直径） & 1.0\\
 \ttNum629 & 溝加工1回あたりの削り代（溝深さ） & 5.0\\
 \ttNum630 & 溝加工 仕上げ前 残り削り代（直径） & 1.0\\
-\ttNum631 & 外面取加工1回あたりの削り代（直径） & 2.000\\
-\ttNum632 & 外面取加工 仕上げ前 残り削り代（直径） & 1.155\\
-\ttNum633 & 内面取加工1回あたりの削り代（直径） & 2.387\\
-\ttNum634 & 内面取加工 仕上げ前 残り削り代（直径） & 1.0\\
+\ttNum631 & 端面外C面取加工1回あたりの削り代（直径） & 2.000\\
+\ttNum632 & 端面外C面取加工 仕上げ前 残り削り代（直径） & 1.155\\
+\ttNum633 & 端面内C面取加工1回あたりの削り代（直径） & 2.387\\
+\ttNum634 & 端面内C面取加工 仕上げ前 残り削り代（直径） & 1.0\\
 \SetRow{unusingVariables}
-\ttNum635 & （座ぐり加工用予備） & \\
+\ttNum635 & （端面座ぐり加工用予備） & \\
 \SetRow{unusingVariables}
-\ttNum636 & （座ぐり加工用予備） & \\
+\ttNum636 & （端面座ぐり加工用予備） & \\
 \SetRow{unusingVariables}
 \ttNum637 & （予備） & \\
 \SetRow{unusingVariables}
@@ -522,14 +522,14 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum661 & 外削加工：コーナー & 400\\
 \ttNum662 & 溝加工：直線 & 500\\
 \ttNum663 & 溝加工：コーナー & 400\\
-\ttNum664 & 外面取加工：直線 & 500\\
-\ttNum665 & 外面取加工：コーナー & 400\\
-\ttNum666 & 内面取加工：直線 & 400\\
-\ttNum667 & 内面取加工：コーナー & 400\\
-\ttNum668 & 座ぐり加工：直線 & 40\\
-\ttNum669 & 座ぐり加工：コーナー & 40\\
-\ttNum670 & \dimple 測定：表面アプローチ & 600\\
-\ttNum671 & \dimple 加工：加工 & 100\\
+\ttNum664 & 端面外C面取加工：直線 & 500\\
+\ttNum665 & 端面外C面取加工：コーナー & 400\\
+\ttNum666 & 端面内C面取加工：直線 & 400\\
+\ttNum667 & 端面内C面取加工：コーナー & 400\\
+\ttNum668 & 端面座ぐり加工：直線 & 40\\
+\ttNum669 & 端面座ぐり加工：コーナー & 40\\
+\ttNum670 & 内面\dimple 測定：表面アプローチ & 600\\
+\ttNum671 & 内面\dimple 加工：加工 & 100\\
 \SetRow{unusingVariables}
 \ttNum672 & （予備） & \\
 \SetRow{unusingVariables}
@@ -551,10 +551,10 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum675 & 端面加工 & 950\\
 \ttNum676 & 外削加工 & 930\\
 \ttNum677 & 溝加工 & 930\\
-\ttNum678 & 外面取加工 & 1800\\
-\ttNum679 & 内面取加工 & 1800\\
-\ttNum680 & 座ぐり加工 & 500\\
-\ttNum681 & \dimple 加工 & 2000\\
+\ttNum678 & 端面外C面取加工 & 1800\\
+\ttNum679 & 端面内C面取加工 & 1800\\
+\ttNum680 & 端面座ぐり加工 & 500\\
+\ttNum681 & 内面\dimple 加工 & 2000\\
 \SetRow{unusingVariables}
 \ttNum682 & （予備） & \\
 \SetRow{unusingVariables}
