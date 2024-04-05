@@ -67,7 +67,7 @@
 \noindent\ttNum175\,-\ttNum199については、使用頻度が低いと思われる\index{ほじょきのう（コモンへんすう）@補助機能（コモン変数）}補助機能のものとする。\\
 
 \begin{multicollongtblr}[white]{\ttNum175\,-\ttNum199：補助機能（使用頻度 低）}{cX[l]c}
-変数 & 内容 & 初期値\\
+変数 & 内容 & 設定例\\
 \ttNum175 & 測定・加工 開始N番号 & 0\\
 \SetRow{unusingVariables}
 \ttNum176 & （不使用） &\\
@@ -126,7 +126,7 @@
 \subsection{\ttNum400\,-\ttNum424：初期設定および調整}
 
 \begin{multicollongtblr}[white]{\ttNum400\,-\ttNum424：補助機能（使用頻度 高）}{cX[l]c}
-変数 & 内容 & 初期値\\
+変数 & 内容 & 設定例\\
 \ttNum400 & トップ端面 全削り代 &\\
 \ttNum401 & ボトム端面 全削り代(0 or \ttNum0: \ttNum400) &\\
 \ttNum402 & \expandafterindex{\dimplekana しそくてい@\dimple 試測定}\dimple 試測定, 通り芯測定(0:off, 1:on) & 0\\
@@ -175,7 +175,7 @@
 \subsection{\ttNum425\,-\ttNum449：初期設定および調整（続き）}
 
 \begin{multicollongtblr}[white]{\ttNum425\,-\ttNum449：補助機能（使用頻度 高）続き}{cX[l]c}
-変数 & 内容 & 初期値\\
+変数 & 内容 & 設定例\\
 \ttNum425 & トップ側 端面外C面取$X+$補正 & 0\\
 \ttNum426 & トップ側 端面外C面取径（直径）$+$補正 & 0\\
 \ttNum427 & トップ側 端面外C面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
@@ -225,7 +225,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{multicollongtblr}[white]{\ttNum450\,-\ttNum474：\dimple の深さ調整}{cX[l]c}
-変数 & 内容 & 初期値\\
+変数 & 内容 & 設定例\\
 \SetRow{unusingVariables}
 \ttNum450 & （予備） &\\
 \SetRow{unusingVariables}
@@ -247,22 +247,22 @@
 \ttNum459 & \dimple 加工後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum460 & （不使用） &\\
-\ttNum461 & 工具{\ttfamily T31}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） & \\
-\ttNum462 & 工具{\ttfamily T31}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） & \\
-\ttNum463 & 工具{\ttfamily T31}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） & \\
-\ttNum464 & 工具{\ttfamily T31}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） & \\
+\ttNum461 & 工具{\ttfamily T31}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） & -0.065\\
+\ttNum462 & 工具{\ttfamily T31}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） & -0.06\\
+\ttNum463 & 工具{\ttfamily T31}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） & -0.08\\
+\ttNum464 & 工具{\ttfamily T31}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） & -0.03\\
 \SetRow{unusingVariables}
 \ttNum465 & （不使用） &\\
-\ttNum466 & 工具{\ttfamily T32}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） &\\
-\ttNum467 & 工具{\ttfamily T32}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） &\\
-\ttNum468 & 工具{\ttfamily T32}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） &\\
-\ttNum469 & 工具{\ttfamily T32}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum466 & 工具{\ttfamily T32}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） & 0.00\\
+\ttNum467 & 工具{\ttfamily T32}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） & 0.00\\
+\ttNum468 & 工具{\ttfamily T32}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） & 0.00\\
+\ttNum469 & 工具{\ttfamily T32}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） & 0.00\\
 \SetRow{unusingVariables}
 \ttNum470 & （不使用） &\\
-\ttNum471 & 工具{\ttfamily T33}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） &\\
-\ttNum472 & 工具{\ttfamily T33}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） &\\
-\ttNum473 & 工具{\ttfamily T33}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） &\\
-\ttNum474 & 工具{\ttfamily T33}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） &\\
+\ttNum471 & 工具{\ttfamily T33}（Tスロット）A側\dimple~深さ補正値（深さに$+$補正） & 0.00\\
+\ttNum472 & 工具{\ttfamily T33}（Tスロット）C側\dimple~深さ補正値（深さに$+$補正） & 0.00\\
+\ttNum473 & 工具{\ttfamily T33}（Tスロット）B側\dimple~深さ補正値（深さに$+$補正） & 0.00\\
+\ttNum474 & 工具{\ttfamily T33}（Tスロット）D側\dimple~深さ補正値（深さに$+$補正） & 0.00\\
 \end{multicollongtblr}
 
 
@@ -273,7 +273,7 @@
 \subsection{\ttNum475\,-\ttNum499：各工程用 補助機能（該当明細 少）}
 
 \begin{multicollongtblr}[white]{\ttNum475\,-\ttNum499：補助機能（該当明細 少）}{cX[l]c}
-変数 & 内容 & 初期値\\
+変数 & 内容 & 設定例\\
 \ttNum475 & 溝幅$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\
 \SetRow{unusingVariables}
 \ttNum476 & （不使用） &\\
@@ -340,6 +340,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+\ttNum500-\ttNum574は作成したプログラムでは使用していない。
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{multicollongtblr}[white]{\ttNum500\,-\ttNum574：\prgbox{O910x}\prgbox{O93xx}用}{cX[l]c}
 変数 & 内容 & 設定値\\
@@ -373,15 +382,6 @@ $\cdots$ & （以下不明） & \ttNum0\\
 \ttNum534 & （不明） & 0\\
 $\cdots$ & （以下不明） & \ttNum0
 \end{multicollongtblr}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{hosoku}
-\ttNum500-\ttNum574は作成したプログラムでは使用していない。
-\end{hosoku}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -399,11 +399,11 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum600\,-\ttNum624については、主に\index{ワーク}ワークと工具間の距離に関するものとする。\\
 
 \begin{multicollongtblr}[white]{\ttNum600\,-\ttNum624：ワークと工具間の距離の調整}{cX[l]c}
-変数 & 内容 & 設定値\\
+変数 & 内容 & 設定例\\
 \ttNum600 & 工具 - 端面間 $Z$方向クリアランス平面間距離 & 100.0\\
 \SetRow{unusingVariables}
 \ttNum601 & （予備） &\\
-\ttNum602 & タッチセンサープローブ測定時（\dimple 除く）の近付き量 & 10.0\\
+\ttNum602 & タッチセンサープローブ測定時（\dimple 除く）の近付き量 & 8.0\\
 \ttNum603 & タッチセンサープローブ測定時の行過ぎ量 & 3.0\\
 \SetRow{unusingVariables}
 \ttNum604 & （予備） &\\
@@ -434,7 +434,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum618 & （端面座ぐり加工用予備） &\\
 \SetRow{unusingVariables}
 \ttNum619 & （予備） &\\
-\ttNum620 & \dimple 測定時近付き量 & 10.0 \\
+\ttNum620 & \dimple 測定時近付き量 & 4.0 \\
 \ttNum621 & \dimple 加工時近付き量 & 2.0 \\
 \SetRow{unusingVariables}
 \ttNum622 & （予備） &\\
@@ -453,7 +453,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum625\,-\ttNum649については、各加工の\index{のこりけずりしろ@残り削り代}残り削り代や\index{1かいあたりのけずりしろ@1回あたりの削り代}1回あたりの削り代に関するものとする。\\
 
 \begin{multicollongtblr}[white]{\ttNum625\,-\ttNum649：残り代および1回あたりの削り代}{cX[l]c}
-変数 & 内容 & 初期値\\
+変数 & 内容 & 設定例\\
 \ttNum625 & 端面加工1回あたりの$Z$方向削り代 & 4.0\\
 \SetRow{unusingVariables}
 \ttNum626 & （予備） & \\
@@ -506,13 +506,13 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum650\,-\ttNum674については、工具の\index{おくりはやさ@送り速さ}送り速さに関するものとする。\\
 
 \begin{multicollongtblr}[white]{\ttNum650\,-\ttNum674：工具の送り速さ}{cX[l]c}
-変数 & 内容 & 設定値\\
+変数 & 内容 & 設定例\\
 \ttNum650 & 早送り$Z$：{\ttfamily T50}アプローチ以外 & 15000\\
-\ttNum651 & アプローチ・$XY$リトラクト：{\ttfamily T50}以外 & 6000\\
-\ttNum652 & 早送り$XY$：{\ttfamily T50}, 早送り$Z$：{\ttfamily T50}アプローチ & 5400\\
+\ttNum651 & アプローチ・$XY$リトラクト：{\ttfamily T50}以外 & 6600\\
+\ttNum652 & 早送り$XY$：{\ttfamily T50}, 早送り$Z$：{\ttfamily T50}アプローチ & 6000\\
 \ttNum653 & アプローチ：{\ttfamily T50} & 1500\\
 \ttNum654 & アプローチ：工具長測定 & 960\\
-\ttNum655 & 測定時アプローチ：{\ttfamily T50}（両側測定） & 200\\
+\ttNum655 & 測定時アプローチ：{\ttfamily T50}（両側測定） & 50\\
 \ttNum656 & 測定時アプローチ：{\ttfamily T50}（片側測定） & 50\\
 \SetRow{unusingVariables}
 \ttNum657 & （不使用） &\\
@@ -547,7 +547,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum675\,-\ttNum699については、切削時の工具の\index{しゅじくかいてんすう@主軸回転数}主軸回転数に関するものとする。\\
 
 \begin{multicollongtblr}[white]{\ttNum675\,-\ttNum699：主軸回転数（切削時）}{cX[l]c}
-変数 & 内容 & 設定値\\
+変数 & 内容 & 設定例\\
 \ttNum675 & 端面加工 & 950\\
 \ttNum676 & 外削加工 & 930\\
 \ttNum677 & 溝加工 & 930\\
@@ -867,7 +867,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum901000\,-\ttNum901024については、主に\index{パレット}パレットや\index{ジグ}ジグに関するものとする。\\
 
 \begin{multicollongtblr}[white]{\ttNum901000\,-\ttNum901024：主にパレット・ジグ}{cX[l]c}
-変数 & 内容 & 設定値\\
+変数 & 内容 & 設定例\\
 \SetRow{unusingVariables}
 \ttNum901000 & （予備） &\\
 \ttNum901001 & パレット\ttNum1 ジグ中心機械座標$X$ & -550.019\\
@@ -948,7 +948,7 @@ $\cdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{multicollongtblr}[white]{\ttNum901050\,-\ttNum901074：工具{\ttfamily T50}および工具測定用タッチセンサーブローブ}{cX[l]c}
-変数 & 内容 & 初期値\\
+変数 & 内容 & 設定例\\
 \ttNum901050 & {\ttfamily T50}先端球 半径 & 5.0\\
 \ttNum901051 & {\ttfamily T50}軸部分 半径 & 3.75\\
 \SetRow{unusingVariables}
@@ -1014,7 +1014,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \subsection{\ttNum901100\,-\ttNum901124}
 
 \begin{multicollongtblr}[white]{\ttNum901100\,-\ttNum901124：工具（{\ttfamily T50}除く）}{cX[l]c}
-変数 & 内容 & 初期値\\
+変数 & 内容 & 設定例\\
 \SetRow{unusingVariables}
 \ttNum901100 & （予備） &\\
 \ttNum901101 & 工具{\ttfamily T02}（フェイスミル）最大刃径（直径）DCX公称値$\phi'_\mathrm D$ & 113.5\\
@@ -1068,7 +1068,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \subsection{\ttNum901125\,-\ttNum901149}
 
 \begin{multicollongtblr}[white]{\ttNum901124\,-\ttNum901149：工具（{\ttfamily T50}除く）続き}{cX[l]c}
-変数 & 内容 & 初期値\\
+変数 & 内容 & 設定例\\
 \SetRow{unusingVariables}
 \ttNum901125 & （外削加工工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
 \SetRow{unusingVariables}
