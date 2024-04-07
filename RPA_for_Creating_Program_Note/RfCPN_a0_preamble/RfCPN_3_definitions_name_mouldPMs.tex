@@ -1,6 +1,23 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
+%%%%% NEWNAMECOMMAND %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\newNamecommand}[3]{%
+  \expandafter\newcommand\csname name#1\endcsname{\expandafterindex{#3@#2}#2}%
+  \expandafter\newcommand\csname #1\endcsname{\csname name#1\endcsname}%
+}
+%%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
+\newcommand{\DMname}{Dマシニングセンタ}
+\newcommand{\DMnamekana}{Dマシニングセンタ}
+\newNamecommand{DMCname}{\DMname}{\DMnamekana}
+\newcommand{\MMname}{Mマシニングセンタ}
+\newcommand{\MMnamekana}{Mマシニングセンタ}
+\newNamecommand{MMCname}{\MMname}{\MMnamekana}
+\newcommand{\dimple}{内面ディンプル}
+\newcommand{\dimplekana}{ないめんディンプル}
+\newNamecommand{Dimple}{\dimple}{\dimplekana}
+
+
 %%%%% PMBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtcbox{\PMbox}{%
   commonbox,

@@ -2,7 +2,7 @@
 
 
 
-\modHeadchapter[lot]{工具の送り速さ（Sコード値）}
+\modHeadchapter[lot]{工具の送り速さ（Fコード値）}
 工具の移動には、主に{\ttfamily G00}, {\ttfamily G01}, {\ttfamily G02}, {\ttfamily G03}, {\ttfamily G31}が用いられる。
 一般に、
 \begin{enumerate}
@@ -53,11 +53,11 @@
 \begin{enumerate}[label=\Roman*., ref=\Roman*]
 \item \label{item:FDTS} 原則として、{\ttfamily G00}を用いた移動はしない
 \item \ref{item:FDTS}に伴い、{\ttfamily G28}, {\ttfamily G30}を（直接的に）用いた移動はしない
-\item {\ttfamily G01}を位置決め（早送り）として用いるものとし、送り速さは{\ttfamily F5400}以下とする
+\item {\ttfamily G01}を位置決め（早送り）として用いるものとし、送り速さは{\ttfamily F6000}以下とする
 \item ワークへの\index{アプローチ}アプローチの際は、{\ttfamily G31}を用いるものとし、送り速さは{\ttfamily F1500}以下とする
 \item 測定の際の\index{スキップ}スキップ({\ttfamily G31})の送り速さは、測定の仕方に応じて以下のものとする
   \begin{enumerate}
-  \item \index{しんごうおくれほせい@信号遅れ補正}信号遅れ補正を考慮する必要があるような場合は、送り速さはF50とする
+  \item \index{しんごうおくれほせい@信号遅れ補正}信号遅れ補正を考慮する必要があるような場合は、送り速さは{\ttfamily F50}とする
   \item 信号遅れ補正を考慮する必要がない場合は、送り速さは{\ttfamily F50}以上{\ttfamily F300}以下とする
   \end{enumerate}
 \item $XY$方向におけるワークからの\index{リトラクト}リトラクトの際は{\ttfamily G01}を用いるものとする。
@@ -93,14 +93,14 @@
 
 \begin{multicollongtblr}{工具の送り速さ設定値 一覧}{X[l]cc}
 内容 & 速さ値 & \ttfamily G\ttNum\\
-早送り$XY$：{\ttfamily T50}以外 & 60000 & \ttfamily G00\\
+早送り$XY$：{\ttfamily T50}以外 & 20000 & \ttfamily G00\\
 早送り$XY$：{\ttfamily T50}    & 6000 & \\
 早送り$Z$：{\ttfamily T50}アプローチ以外 & 18000 &\\
 早送り$Z$：{\ttfamily T50}アプローチ    & 6000 & \\
 アプローチ：{\ttfamily T50}以外 & 6600 & \\
 アプローチ：{\ttfamily T50}    & 1500 & \ttfamily G31\\
 アプローチ：工具長測定 & 1000 & \ttfamily G31\\
-測定時アプローチ：{\ttfamily T50}片側測定 & 50 & \ttfamily G31\\
+測定時アプローチ：{\ttfamily T50}片側測定 & 200 & \ttfamily G31\\
 測定時アプローチ：{\ttfamily T50}両側測定 & 50 & \ttfamily G31\\
 \hline
 端面加工：直線             & 1200 &\\

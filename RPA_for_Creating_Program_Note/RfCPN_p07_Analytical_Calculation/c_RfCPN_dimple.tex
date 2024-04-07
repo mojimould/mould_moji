@@ -4,8 +4,8 @@
 \modHeadchapter[loC]{\dimple の幾何}
 ここでは主に内面の\expandafterindex{\dimplekana@\dimple}\textbf{\dimple}に関する測定・加工に必要な\expandafterindex{きかがくてきせいしつ（\dimplekana）@幾何学的性質（\dimple）}幾何学的性質を考える。
 
-なお、\dimple の加工は\MMname で行うことはできず、\DMname のみで行う。
-また\DMname では、\index{ふりわけちょう@振分長}振分長の調整について\index{スペーサ}スペーサを用いた方法は行わず、\index{テーブル}テーブルの回転を用いた方法のみで行う方針である。
+なお、\dimple の加工は\MMCname で行うことはできず、\DMCname のみで行う。
+また\DMCname では、\index{ふりわけちょう@振分長}振分長の調整について\index{スペーサ}スペーサを用いた方法は行わず、\index{テーブル}テーブルの回転を用いた方法のみで行う方針である。
 したがって、スペーサを用いた方法の場合は考慮する必要がない。
 そのため以降では、（\dimple に関する測定・加工については）テーブルを$-\theta$だけ回転した場合についてのみを考えることにする。
 
@@ -15,7 +15,7 @@
 %% section 26.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\dimple の表記法}
-初めに、\dimple に関する\expandafterindex{ひょうき（\dimple）@表記（\dimple）}表記を簡単にまとめておく。
+初めに、\dimple に関する\expandafterindex{ひょうき（\dimplekana）@表記（\dimple）}表記を簡単にまとめておく。
 なお\dimple はトップ側にあるため、トップ側が工具側に向いているものとして話を進める。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -29,11 +29,11 @@
 
 \item
 \subparagraph*{列内の個数の数えかた}
-各々の\expandafterindex{れつ（\dimple）@列（\dimple）}列の\dimple の\expandafterindex{こすう（\dimple）@個数（\dimple）}は、AC面側については工具側からみて下から順に、BD面については工具側からみて右から順に1つ目，2つ目，…のように数える。
+各々の\expandafterindex{れつ（\dimplekana）@列（\dimple）}列の\dimple の\expandafterindex{こすう（\dimplekana）@個数（\dimple）}は、AC面側については工具側からみて下から順に、BD面については工具側からみて右から順に1つ目，2つ目，…のように数える。
 
 \item
 \subparagraph*{\dimple の寸法}
-\expandafterindex{トップたんと\dimple1れつめとのきょり@トップ端と\dimple1列目との距離}トップ端から1列目までの距離を$q$, 鉛直・水平方向の\expandafterindex{ピッチ（\dimplekana）@ピッチ（\dimple）}ピッチをそれぞれ$p_z$, $p_x$とし、\expandafterindex{iれつめのながさ（\dimplekana）@$i$列目の長さ（\dimple）}$i$列目の長さをそれぞれ$d_i$とする。
+\expandafterindex{トップたんと\dimplekana1れつめとのきょり@トップ端と\dimple1列目との距離}トップ端から1列目までの距離を$q$, 鉛直・水平方向の\expandafterindex{ピッチ（\dimplekana）@ピッチ（\dimple）}ピッチをそれぞれ$p_z$, $p_x$とし、\expandafterindex{iれつめのながさ（\dimplekana）@$i$列目の長さ（\dimple）}$i$列目の長さをそれぞれ$d_i$とする。
 
 特に、\expandafterindex{きすうれつめのながさ（\dimplekana）@奇数列目の長さ（\dimple）}奇数列目の長さが全て同じ場合はその長さを$d_\mathrm o$, \expandafterindex{ぐうすうれつめのながさ（\dimplekana）@偶数列目の長さ（\dimple）}偶数列目の長さが全て同じ場合はその長さを$d_\mathrm e$とも表記する。
 （\pageautoref{fn:generallyDimpleN}および\pageautoref{hosoku:generallyDimpleN}参照）
@@ -152,11 +152,11 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-ここでは\dimple の工具として、\index{Tスロットカッター}Tスロットカッターを考えている。
+ここでは\dimple 加工用の工具として、\index{Tスロットカッター}Tスロットカッターを考えている。
 しかし、当然ながら\index{こうぐけい@工具径}工具径は有限であるため、いくら適切に傾けたところで限界はある。
 ここではその限界として、A側内面のトップ端の$X$座標と、それと最も$X$座標が近い\dimple との（$X$方向の）距離を算出する。
 そしてそれを工具径と比べることで、どこまでの範囲を加工するかを決定する。
-加工できない部分に\dimple がある場合は、別の工具（\index{アングルヘッド}アングルヘッド）を使用して加工を行う。
+加工できない部分に\dimple がある場合は、別の工具（\index{アングルヘッド}アングルヘッド）等を使用して加工を行う。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -471,7 +471,7 @@ A側内面のトップ端からの（$X$方向の）距離は、\index{トップ
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここではこれをテーブル中心Pを原点とした座標値として取り扱っている。
 しかし、測定では機械座標系の値として$g_\mathrm T$が与えられる。
-たとえば\DMname の場合、$g_\mathrm T$は通常（今の場合はテーブル中心Pより負側に湾曲中心があることが多いので）負の値として得られることに注意。
+たとえば\dimple の場合、$g_\mathrm T$は通常（今の場合はテーブル中心Pより負側に湾曲中心があることが多いので）負の値として得られることに注意。
 （ここでの測定では$XY$成分のみであり、$Z$については測定しないことにも注意。）}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 このとき、テーブルを角度$-\phi$だけ傾けた後のトップ端内面中心の座標$g'_\mathrm T$は

@@ -1,16 +1,15 @@
-
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
-\modHeadchapter[lot]{コモン変数（\DMname）\label{chap:commonvariablesDM}}
-ここでは\DMname の加工システムで使用している\expandafterindex{コモンへんすう（\DMname）@コモン変数（\DMname）}コモン変数について述べる。
+\modHeadchapter[lot]{コモン変数（\DMCname）\label{chap:commonvariablesDM}}
+ここでは\DMCname の加工システムで使用している\expandafterindex{コモンへんすう（\DMname）@コモン変数（\DMname）}コモン変数について述べる。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 11.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{コモン変数の範囲}
-\DMname で使用可能なコモン変数は以下のとおりである。
+\DMCname で使用可能なコモン変数は以下のとおりである。
 \begin{enumerate}
 \item \ttNum100\,-\ttNum199
 \item \ttNum400\,-\ttNum999
@@ -528,8 +527,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum667 & 端面内C面取加工：コーナー & 400\\
 \ttNum668 & 端面座ぐり加工：直線 & 40\\
 \ttNum669 & 端面座ぐり加工：コーナー & 40\\
-\ttNum670 & 内面\dimple 測定：表面アプローチ & 600\\
-\ttNum671 & 内面\dimple 加工：加工 & 100\\
+\ttNum670 & \dimple 測定：表面アプローチ & 600\\
+\ttNum671 & \dimple 加工：加工 & 100\\
 \SetRow{unusingVariables}
 \ttNum672 & （予備） & \\
 \SetRow{unusingVariables}
@@ -554,7 +553,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum678 & 端面外C面取加工 & 1800\\
 \ttNum679 & 端面内C面取加工 & 1800\\
 \ttNum680 & 端面座ぐり加工 & 500\\
-\ttNum681 & 内面\dimple 加工 & 2000\\
+\ttNum681 & \dimple 加工 & 2000\\
 \SetRow{unusingVariables}
 \ttNum682 & （予備） & \\
 \SetRow{unusingVariables}
@@ -1133,37 +1132,3 @@ $\cdots$ & （以下不明） & \ttNum0
 \item[-] \ttNum901075-\ttNum901999
 \item[-] \ttNum901150-\ttNum907399
 \end{enumerate}
-
-
-%\clearpage
-\vfill
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{tcolorbox}[title={2023/07/28時点の\MMname 実測値}, fonttitle=\gtfamily\bfseries]
-\begin{align*}
-  \text{Bot ($B=0$)}
-  \left\{
-  \begin{array}{rl}
-    X: & 97.790 \sim 99.930\\
-    Y: & -823.850\\
-    Z: & -634.620
-  \end{array}
-  \right.\quad
-  \text{Top ($B=180.$)}
-  \left\{
-  \begin{array}{rl}
-    X: & -97.980 \sim -99.570\\
-    Y: & -823.780\\
-    Z: & -634.720
-  \end{array}
-  \right.
-\end{align*}\\
-・$X$については、ジグの当たる点の凸部と端部（$Z$方向は目分量）\\
-・$Y$については、モールドの底が当たる面\\
-・$Z$については、$X0$ $Y-850.$における、ジグとの接点\\
-※これらの値に、\index{タッチセンサープローブせんたんきゅう@タッチセンサープローブ先端球}タッチセンサープローブ先端球の半径を加減する必要がある
-\end{tcolorbox}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
