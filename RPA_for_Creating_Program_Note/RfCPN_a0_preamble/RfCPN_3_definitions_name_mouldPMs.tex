@@ -3,19 +3,15 @@
 
 %%%%% NEWNAMECOMMAND %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\newNamecommand}[3]{%
-  \expandafter\newcommand\csname name#1\endcsname{\expandafterindex{#3@#2}#2}%
-  \expandafter\newcommand\csname #1\endcsname{\csname name#1\endcsname}%
+  \expandafter\newcommand\csname yomi#1\endcsname{#3}%
+  \expandafter\newcommand\csname name#1\endcsname{#2}%
+  \expandafter\newcommand\csname #1\endcsname{\expandafterindex{#3@#2}#2}%
 }
 %%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
-\newcommand{\DMname}{Dマシニングセンタ}
-\newcommand{\DMnamekana}{Dマシニングセンタ}
-\newNamecommand{DMCname}{\DMname}{\DMnamekana}
-\newcommand{\MMname}{Mマシニングセンタ}
-\newcommand{\MMnamekana}{Mマシニングセンタ}
-\newNamecommand{MMCname}{\MMname}{\MMnamekana}
-\newcommand{\dimple}{内面ディンプル}
-\newcommand{\dimplekana}{ないめんディンプル}
-\newNamecommand{Dimple}{\dimple}{\dimplekana}
+\newNamecommand{DMC}{Dマシニングセンタ}{Dマシニングセンタ}
+\newNamecommand{MMC}{Mマシニングセンタ}{Mマシニングセンタ}
+\newNamecommand{Dimple}{内面ディンプル}{ないめんディンプル}
+\newNamecommand{Keyway}{キー溝}{キーみぞ}
 
 
 %%%%% PMBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -40,8 +36,9 @@
 
 %%%%% NEWPRGCOMMAND %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\newPMcommand}[3]{%
-  \expandafter\newcommand\csname name#1\endcsname{\expandafterindex{#3@#2}#2}%
-  \expandafter\newcommand\csname #1\endcsname{\PMbox{\csname name#1\endcsname}}%
+  \expandafter\newcommand\csname yomi#1\endcsname{#3}%
+  \expandafter\newcommand\csname name#1\endcsname{#2}%
+  \expandafter\newcommand\csname #1\endcsname{\expandafterindex{#3@#2}\PMbox{\csname name#1\endcsname}}%
 }
 
 %%%%% TO PARAMETER NAME %%%
@@ -49,7 +46,7 @@
 \newPMcommand{DrawingNumber}{図面番号}{ずめんばんごう}
 
 \newPMcommand{CurvatureExists}{湾曲の有無}{わんきょくのうむ}
-\newPMcommand{CenterCurvature}{中心湾曲}{ちゅうしんわんきょく}
+\newPMcommand{CenterCurvature}{中心湾曲半径}{ちゅうしんわんきょくはんけい}
 
 \newPMcommand{ACOD}{AC外径}{ACがいけい}
 \newPMcommand{BDOD}{BD外径}{BDがいけい}
@@ -69,14 +66,14 @@
 \newPMcommand{TopOutCutShape}{トップ外削の種類}{トップがいさくのしゅるい}
 \newPMcommand{BottomOutCutShape}{ボトム外削の種類}{ボトムがいさくのしゅるい}
 
-\newPMcommand{KeywayType}{溝の種類}{みぞのしゅるい}
-\newPMcommand{KeywayPos}{溝位置}{みぞいち}
-\newPMcommand{KeywayWidth}{溝幅}{みぞはば}
-\newPMcommand{AsideKeywayDepth}{A側溝深さ}{Aがわみぞふかさ}
-\newPMcommand{KeywayACOD}{溝AC径}{みぞACけい}
-\newPMcommand{KeywayBDOD}{溝BD径}{みぞBDけい}
-\newPMcommand{KeywayCornerC}{溝コーナーC}{みぞコーナーC}
-\newPMcommand{KeywayCornerR}{溝コーナーR}{みぞコーナーR}
+\newPMcommand{KeywayType}{\nameKeyway の種類}{\yomiKeyway のしゅるい}
+\newPMcommand{KeywayPos}{キー溝位置長}{キーみぞいちちょう}
+\newPMcommand{KeywayWidth}{キー溝幅}{キーみぞはば}
+\newPMcommand{AsideKeywayDepth}{A側キー溝深さ}{Aがわキーみぞふかさ}
+\newPMcommand{KeywayACOD}{キー溝AC径}{キーみぞACけい}
+\newPMcommand{KeywayBDOD}{キー溝BD径}{キーみぞBDけい}
+\newPMcommand{KeywayCornerC}{キー溝コーナーC}{キーみぞコーナーC}
+\newPMcommand{KeywayCornerR}{キー溝コーナーR}{キーみぞコーナーR}
 
 \newPMcommand{ChamferType}{面取の種類}{めんとりのしゅるい}
 \newPMcommand{CChamferLength}{C面取長}{Cめんとりちょう}

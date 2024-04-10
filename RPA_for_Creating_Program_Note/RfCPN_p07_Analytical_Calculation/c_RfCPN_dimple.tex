@@ -1,41 +1,41 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
-\modHeadchapter[loC]{\dimple の幾何}
-ここでは主に内面の\expandafterindex{\dimplekana@\dimple}\textbf{\dimple}に関する測定・加工に必要な\expandafterindex{きかがくてきせいしつ（\dimplekana）@幾何学的性質（\dimple）}幾何学的性質を考える。
+\modHeadchapter[loC]{\Dimple の幾何}
+ここでは主に\Dimple に関する測定・加工に必要な\expandafterindex{きかがくてきせいしつ（\yomiDimple）@幾何学的性質（\nameDimple）}幾何学的性質を考える。
 
-なお、\dimple の加工は\MMCname で行うことはできず、\DMCname のみで行う。
-また\DMCname では、\index{ふりわけちょう@振分長}振分長の調整について\index{スペーサ}スペーサを用いた方法は行わず、\index{テーブル}テーブルの回転を用いた方法のみで行う方針である。
+なお、\Dimple の加工は\MMC で行うことはできず、\DMC のみで行う。
+また\DMC では、\index{ふりわけちょう@振分長}振分長の調整について\index{スペーサ}スペーサを用いた方法は行わず、\index{テーブル}テーブルの回転を用いた方法のみで行う方針である。
 したがって、スペーサを用いた方法の場合は考慮する必要がない。
-そのため以降では、（\dimple に関する測定・加工については）テーブルを$-\theta$だけ回転した場合についてのみを考えることにする。
+そのため以降では、（\Dimple に関する測定・加工については）テーブルを$-\theta$だけ回転した場合についてのみを考えることにする。
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 26.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\dimple の表記法}
-初めに、\dimple に関する\expandafterindex{ひょうき（\dimplekana）@表記（\dimple）}表記を簡単にまとめておく。
-なお\dimple はトップ側にあるため、トップ側が工具側に向いているものとして話を進める。
+\modHeadsection{\Dimple の表記法}
+初めに、\Dimple に関する\expandafterindex{ひょうき（\yomiDimple）@表記（\nameDimple）}表記を簡単にまとめておく。
+なお\Dimple はトップ側にあるため、トップ側が工具側に向いているものとして話を進める。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% tcolorbox %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{tcolorbox}[title={\dimple に関する表記法}, fonttitle=\gtfamily\bfseries, breakable, enhanced jigsaw]
+\begin{tcolorbox}[title={\Dimple に関する表記法}, fonttitle=\gtfamily\bfseries, breakable, enhanced jigsaw]
 \begin{enumerate}
 \item
 \subparagraph*{列の数えかた}
-\dimple が$m$列あるとき、トップ側から順に1列目, 2列目, …，$m$列目のように数える。
+\Dimple が$m$列あるとき、トップ側から順に1列目, 2列目, …，$m$列目のように数える。
 
 \item
 \subparagraph*{列内の個数の数えかた}
-各々の\expandafterindex{れつ（\dimplekana）@列（\dimple）}列の\dimple の\expandafterindex{こすう（\dimplekana）@個数（\dimple）}は、AC面側については工具側からみて下から順に、BD面については工具側からみて右から順に1つ目，2つ目，…のように数える。
+各々の\expandafterindex{れつ（\yomiDimple）@列（\nameDimple）}列の\Dimple の\expandafterindex{こすう（\yomiDimple）@個数（\nameDimple）}は、AC面側については工具側からみて下から順に、BD面については工具側からみて右から順に1つ目，2つ目，…のように数える。
 
 \item
-\subparagraph*{\dimple の寸法}
-\expandafterindex{トップたんと\dimplekana1れつめとのきょり@トップ端と\dimple1列目との距離}トップ端から1列目までの距離を$q$, 鉛直・水平方向の\expandafterindex{ピッチ（\dimplekana）@ピッチ（\dimple）}ピッチをそれぞれ$p_z$, $p_x$とし、\expandafterindex{iれつめのながさ（\dimplekana）@$i$列目の長さ（\dimple）}$i$列目の長さをそれぞれ$d_i$とする。
+\subparagraph*{\Dimple の寸法}
+\expandafterindex{トップたんと\yomiDimple1れつめとのきょり@トップ端と\Dimple1列目との距離}トップ端から1列目までの距離を$q$, 鉛直・水平方向の\expandafterindex{ピッチ（\yomiDimple）@ピッチ（\nameDimple）}ピッチをそれぞれ$p_z$, $p_x$とし、\expandafterindex{iれつめのながさ（\yomiDimple）@$i$列目の長さ（\nameDimple）}$i$列目の長さをそれぞれ$d_i$とする。
 
-特に、\expandafterindex{きすうれつめのながさ（\dimplekana）@奇数列目の長さ（\dimple）}奇数列目の長さが全て同じ場合はその長さを$d_\mathrm o$, \expandafterindex{ぐうすうれつめのながさ（\dimplekana）@偶数列目の長さ（\dimple）}偶数列目の長さが全て同じ場合はその長さを$d_\mathrm e$とも表記する。
+特に、\expandafterindex{きすうれつめのながさ（\yomiDimple）@奇数列目の長さ（\nameDimple）}奇数列目の長さが全て同じ場合はその長さを$d_\mathrm o$, \expandafterindex{ぐうすうれつめのながさ（\yomiDimple）@偶数列目の長さ（\nameDimple）}偶数列目の長さが全て同じ場合はその長さを$d_\mathrm e$とも表記する。
 （\pageautoref{fn:generallyDimpleN}および\pageautoref{hosoku:generallyDimpleN}参照）
 
 \item
@@ -67,11 +67,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-このとき$m$列目の\dimple の個数$n_m$は、$n_m = \nicefrac{d_m}{p_x}+1$となる
+このとき$m$列目の\Dimple の個数$n_m$は、$n_m = \nicefrac{d_m}{p_x}+1$となる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \phantomsection
 \footnote{\label{fn:generallyDimpleN}%
-たいていの場合、\expandafterindex{きすうれつのこすう（\dimplekana）@奇数列の個数（\dimple）}奇数列の個数は全て同じ数$n_\mathrm o$であり、\expandafterindex{ぐうすうれつのこすう（\dimplekana）@偶数列の個数（\dimple）}偶数列の個数も全て同じ$n_\mathrm e$である。
+たいていの場合、\expandafterindex{きすうれつのこすう（\yomiDimple）@奇数列の個数（\nameDimple）}奇数列の個数は全て同じ数$n_\mathrm o$であり、\expandafterindex{ぐうすうれつのこすう（\yomiDimple）@偶数列の個数（\nameDimple）}偶数列の個数も全て同じ$n_\mathrm e$である。
 また$|n_\mathrm o-n_\mathrm d| = 1$である。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -126,19 +126,19 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\dimple 加工の基本方針}
-\dimple の加工における留意事項の1つに、モールドの内面（特にトップ端）と工具が接触してしまう\index{アンダーカット}アンダーカットというものがある
+\modHeadsection{\Dimple 加工の基本方針}
+\Dimple の加工における留意事項の1つに、モールドの内面（特にトップ端）と工具が接触してしまう\index{アンダーカット}アンダーカットというものがある
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{\dimple の測定・加工ではとりわけアンダーカットが生じやすい、という意味である。
+\footnote{\Dimple の測定・加工ではとりわけアンダーカットが生じやすい、という意味である。
 その他の測定・加工についても当然アンダーカットは十分に生じうる。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 特にA面側は工具へ向かう方向に\index{わんきょく@湾曲}湾曲があるため、アンダーカットが生じやすい。
 そこで、アンダーカットを避けつつ加工ができるようにするため、モールドをいくらか（湾曲と反対側に）傾けて加工を行う。
-その\expandafterindex{かたむきかく（\dimplekana）@傾き角（\dimple）}傾き角$\phi$ ($0 \leq \phi < \nicefrac\pi2$)について、ここでは次の2点を基準に考えることにする。
-\begin{tcolorbox}[title=A面の\dimple, fonttitle=\gtfamily\bfseries]
+その\expandafterindex{かたむきかく（\yomiDimple）@傾き角（\nameDimple）}傾き角$\phi$ ($0 \leq \phi < \nicefrac\pi2$)について、ここでは次の2点を基準に考えることにする。
+\begin{tcolorbox}[title=A面の\Dimple, fonttitle=\gtfamily\bfseries]
 \begin{enumerate}
 \item[a)] A側内面のトップ端点
-\item[b)] A側内面の\dimple1列目（トップ端から$q$）の位置
+\item[b)] A側内面の\Dimple1列目（トップ端から$q$）の位置
 \end{enumerate}
 \end{tcolorbox}\noindent
 この2点を通る直線と鉛直方向との角度を、傾き角$-\phi$とする
@@ -152,11 +152,11 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-ここでは\dimple 加工用の工具として、\index{Tスロットカッター}Tスロットカッターを考えている。
+ここでは\Dimple 加工用の工具として、\index{Tスロットカッター}Tスロットカッターを考えている。
 しかし、当然ながら\index{こうぐけい@工具径}工具径は有限であるため、いくら適切に傾けたところで限界はある。
-ここではその限界として、A側内面のトップ端の$X$座標と、それと最も$X$座標が近い\dimple との（$X$方向の）距離を算出する。
+ここではその限界として、A側内面のトップ端の$X$座標と、それと最も$X$座標が近い\Dimple との（$X$方向の）距離を算出する。
 そしてそれを工具径と比べることで、どこまでの範囲を加工するかを決定する。
-加工できない部分に\dimple がある場合は、別の工具（\index{アングルヘッド}アングルヘッド）等を使用して加工を行う。
+加工できない部分に\Dimple がある場合は、別の工具（\index{アングルヘッド}アングルヘッド）等を使用して加工を行う。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -173,7 +173,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-以下ではこの傾き角$\phi$と、回転後の\dimple や内面の位置を定量的に与えることを試みる。
+以下ではこの傾き角$\phi$と、回転後の\Dimple や内面の位置を定量的に与えることを試みる。
 
 
 
@@ -181,18 +181,18 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%6
 %% section 6.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\dimple の位置と傾き角（傾き前）}
+\modHeadsection{\Dimple の位置と傾き角（傾き前）}
 \pageeqref{eq:tableTRc}より、テーブルを$-\theta$傾けて振分長の調整を行った場合、テーブル中心Pを原点とした\index{ちゅうしんわんきょくせん@中心湾曲線}中心湾曲線のトップ端における$X$座標は、
 \begin{align*}
   R_\mathrm c\cos\alpha_\mathrm c-\Delta'\cos\theta = \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\Delta'\cos\theta
 \end{align*}
 で与えられる。
-これは\index{タッチセンサープローブ}タッチセンサープローブによる\expandafterindex{そくていかいしてん（\dimplekana）@測定開始点（\dimple）}測定の開始点として用いることができる。
+これは\index{タッチセンサープローブ}タッチセンサープローブによる\expandafterindex{そくていかいしてん（\yomiDimple）@測定開始点（\nameDimple）}測定の開始点として用いることができる。
 一方で、それ以外の作業では、\index{トップたんのないけいちゅうしん@トップ端の内径中心}トップ端における内径の中心座標$g_\mathrm T$を直接測定するので、それを用いることにする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{これは\index{ちゅうしんわんきょくせん@中心湾曲線}中心湾曲線上にない点であるが、\index{こうさ@公差}公差の範囲内であるものとして、ここではこれで代用する。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-よって、テーブル中心Pを原点とした場合における、\expandafterindex{\dimplekana1れつめ@\dimple1列目}\dimple1列目中央の（だいたいの）位置
+よって、テーブル中心Pを原点とした場合における、\expandafterindex{\yomiDimple1れつめ@\Dimple1列目}\Dimple1列目中央の（だいたいの）位置
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{$w_{\mathrm Aq}$, $w_{\mathrm Bq}$は\index{わんきょくちゅうしん@湾曲中心}湾曲中心\index{O（わんきょくちゅうしん）@O（湾曲中心）}O(0, 0)方向への長さであるため正確ではないことに注意。}\relax
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -229,7 +229,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
     \right).
 \end{array}
 \end{align*}
-ここで、\expandafterindex{\dimplekana iれつめ@\dimple$i$列目}$i$列目の湾曲中心と\index{トップたんのわんきょくちゅうしん@トップ端の湾曲中心}トップ端の湾曲中心との$X$座標の差を、
+ここで、\expandafterindex{\yomiDimple iれつめ@\Dimple$i$列目}$i$列目の湾曲中心と\index{トップたんのわんきょくちゅうしん@トップ端の湾曲中心}トップ端の湾曲中心との$X$座標の差を、
 %% label{eq:}
 \begin{align}
   \label{eq:dimpleCenterDistance}
@@ -250,8 +250,8 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 5.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\dimple の\texorpdfstring{$X$}{X}座標（傾き前）}
-テーブル中心Pを原点としたとき、傾き前の\expandafterindex{\dimplekana iれつめjばんめ@\dimple$i$列目$j$番目}$i$列目$j$番目の\dimple の$X$座標は、
+\subsection{\Dimple の\texorpdfstring{$X$}{X}座標（傾き前）}
+テーブル中心Pを原点としたとき、傾き前の\expandafterindex{\yomiDimple iれつめjばんめ@\nameDimple$i$列目$j$番目}$i$列目$j$番目の\Dimple の$X$座標は、
 %% label{eq:dPosXBefore}
 \begin{align}
   \notag
@@ -275,8 +275,8 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 5.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\dimple の\texorpdfstring{$Y$}{Y}座標（傾き前）}
-テーブル中心Pを原点としたとき、傾き前の\expandafterindex{\dimplekana iれつめjばんめ@\dimple$i$列目$j$番目}$i$列目$j$番目の\dimple の$Y$座標は、
+\subsection{\Dimple の\texorpdfstring{$Y$}{Y}座標（傾き前）}
+テーブル中心Pを原点としたとき、傾き前の\expandafterindex{\yomiDimple iれつめjばんめ@\nameDimple$i$列目$j$番目}$i$列目$j$番目の\Dimple の$Y$座標は、
 %% label{eq:dPosYBefore}
 \begin{alignat}{3}
   \notag
@@ -295,8 +295,8 @@ B・D面については$j$に依らないことがわかる。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 5.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\dimple の\texorpdfstring{$Z$}{Z}座標（傾き前）}
-テーブル中心Pを原点としたとき、傾き前の\expandafterindex{\dimplekana iれつめjばんめ@\dimple$i$列目$j$番目}$i$列目$j$番目の\dimple の$Z$座標は、
+\subsection{\Dimple の\texorpdfstring{$Z$}{Z}座標（傾き前）}
+テーブル中心Pを原点としたとき、傾き前の\expandafterindex{\yomiDimple iれつめjばんめ@\nameDimple$i$列目$j$番目}$i$列目$j$番目の\Dimple の$Z$座標は、
 %% label{eq:dPosZBefore}
 \begin{align}
   \label{eq:dPosZBefore}
@@ -310,14 +310,14 @@ $Z$座標についてはどの面も$j$に依らないことがわかる。
 %% subsection 5.3.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{傾き角}
-\index{トップがわのAがわうちたんてん@トップ側のA側内端点}A側内面トップ端と、\expandafterindex{Aがわないめん（\dimplekana1れつめ）@A側内面（\dimple1列目）}A側内面のトップ端から$q$の位置との$x$方向の差は、
+\index{トップがわのAがわうちたんてん@トップ側のA側内端点}A側内面トップ端と、\expandafterindex{Aがわないめん（\yomiDimple1れつめ）@A側内面（\nameDimple1列目）}A側内面のトップ端から$q$の位置との$x$方向の差は、
 \begin{align*}
   \sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2}
   -\sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm A0}}2\right)^2-f_\mathrm T^2}
 \end{align*}
 で与えられる。
 このとき、これが負になる場合は傾ける必要はなく、正となる場合のみ傾ける。
-したがってその\index{かたむきかく（\dimplekana）@傾き角（\dimple）}傾き角$\phi$は、
+したがってその\index{かたむきかく（\yomiDimple）@傾き角（\nameDimple）}傾き角$\phi$は、
 %% label{eq:dKatamuki}
 \begin{subequations}
 \label{eq:dKatamuki}
@@ -361,18 +361,18 @@ $\phi < 0$となるのは、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Column}{C側\dimple の傾き角}
-\expandafterindex{Cがわ\dimplekana@C側\dimple}C側\dimple については傾斜が外側に向いているため、傾けなくとも\index{アンダーカット}アンダーカットの心配はない。
-しかし、傾けたまま加工をすると形状が歪になってしまうため、\dimple の形状をより円に近い形にするためには傾いていないほうが望ましい。
+\begin{Column}{C側\Dimple の傾き角}
+\expandafterindex{Cがわ\yomiDimple@C側\nameDimple}C側\Dimple については傾斜が外側に向いているため、傾けなくとも\index{アンダーカット}アンダーカットの心配はない。
+しかし、傾けたまま加工をすると形状が歪になってしまうため、\Dimple の形状をより円に近い形にするためには傾いていないほうが望ましい。
 また一方で、面によって傾ける傾けないを分けると、プログラムが複雑になる（\index{じょうけんぶんき@条件分岐}条件分岐が増える）要因にもなる。
-そのためここでは、どの面の\dimple に対しても同じ角度$\phi$を用いて加工を行うことにする。
+そのためここでは、どの面の\Dimple に対しても同じ角度$\phi$を用いて加工を行うことにする。
 \tcbline*
-なお、C面に対する\dimple の形状をできるだけよいものにするには、\index{Cがわないめんテーパ@C側内面テーパ}C側の内面テーパに基づいた角度を用いるほうが望ましい。
-そのため、C側\dimple に対する\expandafterindex{かたむきかく（Cがわ\dimplekana）@傾き角（C側\dimple）}傾き角$\phi_\mathrm C$についても（1つの例として）与えておく。
+なお、C面に対する\Dimple の形状をできるだけよいものにするには、\index{Cがわないめんテーパ@C側内面テーパ}C側の内面テーパに基づいた角度を用いるほうが望ましい。
+そのため、C側\Dimple に対する\expandafterindex{かたむきかく（Cがわ\yomiDimple）@傾き角（C側\nameDimple）}傾き角$\phi_\mathrm C$についても（1つの例として）与えておく。
 具体的には、以下の2点を基準として角度$\phi_\mathrm C$を取ることとする。
 \begin{enumerate}
-\item[a)] C側内面の\dimple1列目（トップ端から$q$）の位置
-\item[b)] C側内面の\dimple$m$列目（トップ端から$q+(m-1)p_z$）の位置
+\item[a)] C側内面の\Dimple1列目（トップ端から$q$）の位置
+\item[b)] C側内面の\Dimple$m$列目（トップ端から$q+(m-1)p_z$）の位置
 \end{enumerate}
 C側内面のトップ端から$q$の位置と、C側内面のトップ端から$q+(m-1)p_z$の位置との$x$方向の差は、
 \begin{align*}
@@ -380,7 +380,7 @@ C側内面のトップ端から$q$の位置と、C側内面のトップ端から
         -\left\{f_\mathrm T-q-(m-1)p_z\right\}^2}
   -\sqrt{\left(R_\mathrm c-\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2}
 \end{align*}
-これより、C側\dimple に対する傾き角$\phi_\mathrm C$ ($\phi_\mathrm C > 0$)は、
+これより、C側\Dimple に対する傾き角$\phi_\mathrm C$ ($\phi_\mathrm C > 0$)は、
 \begin{align*}
   \tan\phi_\mathrm C
   = \frac{\displaystyle
@@ -407,8 +407,8 @@ C側内面のトップ端から$q$の位置と、C側内面のトップ端から
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 26.3.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{B, D面の\dimple の位置（傾き前）}
-B, D側\dimple において、その$X$座標がA側内面に最も近いものは、$m-1$列目または$m$列目の1番目の\dimple である。
+\subsection{B, D面の\Dimple の位置（傾き前）}
+B, D側\Dimple において、その$X$座標がA側内面に最も近いものは、$m-1$列目または$m$列目の1番目の\Dimple である。
 これらの$X$座標は\pageeqref{eq:dPosXBefore}よりそれぞれ、
 \begin{align*}
   m-1\text{列目：}&\quad
@@ -440,13 +440,13 @@ A側内面のトップ端からの（$X$方向の）距離は、\index{トップ
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Column}{B, D側\dimple 加工で考慮すべき点}
+\begin{Column}{B, D側\Dimple 加工で考慮すべき点}
 \paragraph*{工具径とシャンク径}
 \index{アンダーカット}アンダーカットが生じるのは主に\index{トップがわのAがわうちたんてん@トップ側のA側内端点}（A側内面の）トップ端なので、実際には\index{こうぐけい@工具径}工具径（工具の切削する部分）ではなく\index{シャンクけい（Tスロットカッター）@シャンク径（Tスロットカッター）}シャンク径等（工具のトップ端に相当する箇所）でよい。
-そのため工具径よりシャンク径のほうが小さい場合は、より広い範囲の（B, D面の）\dimple を傾けずに切削することが可能となる。
+そのため工具径よりシャンク径のほうが小さい場合は、より広い範囲の（B, D面の）\Dimple を傾けずに切削することが可能となる。
 \tcbline*
 \paragraph*{端面の削り代}
-\dimple の測定・加工は、端面を切削する前に行う。
+\Dimple の測定・加工は、端面を切削する前に行う。
 そのため測定・加工の際は、\index{ぜんけずりしろ（トップたんめん）@全削り代（トップ端面）}端面の削り代の分だけ大きい（長い）ことに注意する必要がある。
 削り代の分だけ\index{わんきょく@湾曲}湾曲も加味する必要があり、特に\index{Aがわないめん（トップがわ）@A側内面（トップ側）}A側内面と工具とのアンダーカットに留意しなければならない。
 \tcbline*
@@ -464,14 +464,14 @@ A側内面のトップ端からの（$X$方向の）距離は、\index{トップ
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 7.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{傾き後の\dimple}
+\modHeadsection{傾き後の\Dimple}
 機内での回転は\index{テーブルちゅうしん@テーブル中心}テーブル中心Pを\index{げんてんP@原点P}原点として行われる。
-また\dimple の加工は\index{トップたんのないけいちゅうしん@トップ端の内径中心}トップ端における内径中心を基準にして切削を行う。
+また\Dimple の加工は\index{トップたんのないけいちゅうしん@トップ端の内径中心}トップ端における内径中心を基準にして切削を行う。
 傾ける前の\index{トップたんのないけいちゅうしん@トップ端の内径中心}トップ端内径中心$g_\mathrm T$の座標は実測により（Pを中心とした$XYZ$直交座標でいうところの）[$g_{\mathrm Tx}$, $g_{\mathrm Ty}$, $f_\mathrm T'$]で与えられる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここではこれをテーブル中心Pを原点とした座標値として取り扱っている。
 しかし、測定では機械座標系の値として$g_\mathrm T$が与えられる。
-たとえば\dimple の場合、$g_\mathrm T$は通常（今の場合はテーブル中心Pより負側に湾曲中心があることが多いので）負の値として得られることに注意。
+たとえば\Dimple の場合、$g_\mathrm T$は通常（今の場合はテーブル中心Pより負側に湾曲中心があることが多いので）負の値として得られることに注意。
 （ここでの測定では$XY$成分のみであり、$Z$については測定しないことにも注意。）}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 このとき、テーブルを角度$-\phi$だけ傾けた後のトップ端内面中心の座標$g'_\mathrm T$は
@@ -577,9 +577,9 @@ A側内面のトップ端からの（$X$方向の）距離は、\index{トップ
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 5.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{傾き後の\dimple（A, C面側）}
-\expandafterindex{かたむきかく（\dimplekana）@傾き角（\dimple）}傾ける角度$\phi$は\pageeqref{eq:dKatamuki}で与えられる。
-このとき、傾けた後のAおよびC面側に対する$i$列目$j$番目の\dimple の位置は、\pageeqref{eq:dPosXBefore}, \eqref{eq:dPosYBefore}, \pageeqref{eq:dPosZBefore}より、
+\subsection{傾き後の\Dimple（A, C面側）}
+\expandafterindex{かたむきかく（\yomiDimple）@傾き角（\nameDimple）}傾ける角度$\phi$は\pageeqref{eq:dKatamuki}で与えられる。
+このとき、傾けた後のAおよびC面側に対する$i$列目$j$番目の\Dimple の位置は、\pageeqref{eq:dPosXBefore}, \eqref{eq:dPosYBefore}, \pageeqref{eq:dPosZBefore}より、
 \begin{alignat*}{3}
   \text{A面：}&~~&
   \left[
@@ -612,7 +612,7 @@ A側内面のトップ端からの（$X$方向の）距離は、\index{トップ
     \end{array}
     \right].
 \end{alignat*}
-特に、各列の中央（各列の\expandafterindex{わんきょくちゅうしん（\dimplekana）@湾曲中心（\dimple）}湾曲中心）$[g_{\mathrm Tx}+\mathcal L_i, g_{\mathrm Ty}, f_\mathrm T'-q-(i-1)p_z]$を原点としてみた場合の位置は、
+特に、各列の中央（各列の\expandafterindex{わんきょくちゅうしん（\yomiDimple）@湾曲中心（\nameDimple）}湾曲中心）$[g_{\mathrm Tx}+\mathcal L_i, g_{\mathrm Ty}, f_\mathrm T'-q-(i-1)p_z]$を原点としてみた場合の位置は、
 \begin{align*}
   \left[
   \begin{array}{c}
@@ -707,8 +707,8 @@ $X$成分の差分の大きさが（$\mathcal L_{i+1, i}$からみて）A面（�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 5.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{傾き後の\dimple（B, D面側）}
-傾けた後のBおよびD面側に対する$i$列目$j$番目の\dimple の位置は、A面側のときと同様に、
+\subsection{傾き後の\Dimple（B, D面側）}
+傾けた後のBおよびD面側に対する$i$列目$j$番目の\Dimple の位置は、A面側のときと同様に、
 \begin{alignat*}{3}
   \text{B面：}&~~&
   \left[

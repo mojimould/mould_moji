@@ -2,7 +2,7 @@
 
 
 \modHeadchapter{プログラムの番号付け}
-ここでは\DMname で使用する\index{プログラムばんごう@プログラム番号}プログラム番号（\index{Oコード}Oコード）についての規則を与える
+ここでは\DMC で使用する\index{プログラムばんごう@プログラム番号}プログラム番号（\index{Oコード}Oコード）についての規則を与える
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{機械設置時に付属の\index{バンドルのプログラム}バンドルのプログラムについてはこの限りではない。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -65,12 +65,12 @@
 \subsection{6桁目：0, 9以外}
 6桁目が0, 9以外の場合は、以下のように分類する。
 \begin{enumerate}[label=\arabic*., ref=\arabic*, start=1]
-\item\label{item:6Mmain} 測定（\dimple 以外）を行うプログラム({\ttfamily1\textbackslash d{5}})
-\item\label{item:6MD} 測定（\dimple）を行うプログラム({\ttfamily2\textbackslash d{5}})
+\item\label{item:6Mmain} 測定（\Dimple 以外）を行うプログラム({\ttfamily1\textbackslash d{5}})
+\item\label{item:6MD} 測定（\Dimple）を行うプログラム({\ttfamily2\textbackslash d{5}})
 %\item\label{item:6MN} 測定（逃し溝）を行うプログラム
 \setcounter{enumi}{3}
-\item\label{item:6Kmain} 加工（\dimple 以外）を行うプログラム({\ttfamily4\textbackslash d{5}})
-\item\label{item:6KD} 加工（\dimple）を行うプログラム({\ttfamily5\textbackslash d{5}})
+\item\label{item:6Kmain} 加工（\Dimple 以外）を行うプログラム({\ttfamily4\textbackslash d{5}})
+\item\label{item:6KD} 加工（\Dimple）を行うプログラム({\ttfamily5\textbackslash d{5}})
 %\item\label{item:6KN} 加工（逃し溝）を行うプログラム
 \end{enumerate}
 複数の用途での使用が想定されるものに対しては、番号の若いほうに合わせる。
@@ -101,7 +101,7 @@
 \index{5けため（プログラムばんごう）@5桁目（プログラム番号）}5桁目は、以下のように分類する。
 なお、以降では6桁目が\ref{item:6Mmain}, \ref{item:6MD}, \ref{item:6Kmain}, \ref{item:6KD}の場合のみについて記述する
 \begin{enumerate}[label=\alph*)]
-\item 6桁目が\ref{item:6Mmain}（\dimple 以外の測定）の場合、5桁目を以下にように分類する
+\item 6桁目が\ref{item:6Mmain}（\Dimple 以外の測定）の場合、5桁目を以下にように分類する
   \begin{enumerate}[label=\arabic*., ref=\arabic*, start=1]
   \item%\label{item:5MCOBsZ}
     芯出しにおいて、$Z$一定で($X$または$Y$の)外側両面を測定するプログラム({\ttfamily 11\textbackslash d{4}})
@@ -114,16 +114,16 @@
   \item%\label{item:5MCL}
     \index{とおりしん@通り芯}通り芯を測定するプログラム({\ttfamily 15\textbackslash d{5}})
   \end{enumerate}
-\item 6桁目が\ref{item:6MD}, \ref{item:6KD}（\dimple の測定, 加工）の場合、5桁目を以下のように分類する
+\item 6桁目が\ref{item:6MD}, \ref{item:6KD}（\Dimple の測定, 加工）の場合、5桁目を以下のように分類する
   \begin{enumerate}[label=\arabic*., ref=\arabic*]
-  \item 主に、\expandafterindex{\dimplekana@\dimple}\dimple の行と中心湾曲線上の交点への移動を繰返すプログラム({\ttfamily 21\textbackslash d{4}})
-%  \item \dimple において、各内面方向への($X$または$Y$方向)の移動を繰返すプログラム({\ttfamily 22\textbackslash d{4}})
-  \item 主に、\dimple の個々の行方向の移動を繰返すプログラム({\ttfamily 22\textbackslash d{4}})
-  \item 主に、\dimple の個々の深さ方向に測定または加工するプログラム({\ttfamily [25]3\textbackslash d{4}})
+  \item 主に、\Dimple の行と中心湾曲線上の交点への移動を繰返すプログラム({\ttfamily 21\textbackslash d{4}})
+%  \item \Dimple において、各内面方向への($X$または$Y$方向)の移動を繰返すプログラム({\ttfamily 22\textbackslash d{4}})
+  \item 主に、\Dimple の個々の行方向の移動を繰返すプログラム({\ttfamily 22\textbackslash d{4}})
+  \item 主に、\Dimple の個々の深さ方向に測定または加工するプログラム({\ttfamily [25]3\textbackslash d{4}})
 %  \item 主にレベル4の階層で用いるプログラム(c)
   \end{enumerate}
 %  複数の用途での使用が想定されるものに対しては、番号の若いほうに合わせる。
-\item 6桁目が\ref{item:6Kmain}（\dimple 以外の加工）の場合、5桁目を以下にように分類する
+\item 6桁目が\ref{item:6Kmain}（\Dimple 以外の加工）の場合、5桁目を以下にように分類する
   \begin{enumerate}[label=\arabic*., ref=\arabic*, start=1]
 %  \item\label{item:5Kaux} 加工の種類に依存しない加工のプログラム(\ttfamily{40\textbackslash d{4}})
   \item%\label{item:5KF}
@@ -149,7 +149,7 @@
 （6桁目が\ref{item:6Mmain}, \ref{item:6MD}, \ref{item:6Kmain}, \ref{item:6KD}の場合）\index{4けため（プログラムばんごう）@4桁目（プログラム番号）}4桁目は、以下のように分類する。
 \begin{enumerate}[label=\alph*), ref=\alph*)]
 \item 6桁目が\ref{item:6Kmain}\hx 以外の場合、4桁目は0とする({\ttfamily{[126][1-5]0\textbackslash d{3}}})
-\item 6桁目が\ref{item:6Kmain}（\dimple 以外の加工）の場合、4桁目を以下にように分類する
+\item 6桁目が\ref{item:6Kmain}（\Dimple 以外の加工）の場合、4桁目を以下にように分類する
   \begin{enumerate}[label=\alph{enumi}\,-\arabic*), leftmargin=\leftmargini]
   \item 5桁目が\ref{item:5KO}（外削加工）以外の場合、4桁目は0とする({\ttfamily{4[13-59]0\textbackslash d{3}}})
   \item 5桁目が\ref{item:5KO}（外削加工）の場合、4桁目を以下のように分類する
