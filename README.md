@@ -9,4 +9,4 @@
     - These are the G-code programs used for actual machining.
 
 <sub>Copyright © 2023, 2024.</sub>
-<sub>These documents are owned by the individual writer, not any corporation. All rights reserved. However, unless the use is substantially similar to the original work, you are free to use it without permission. (I would appreciate it if you could contact me when using it.)</sub>
+<sub>These documents are owned by the individual writer, not any corporation. All rights reserved.</sub>
