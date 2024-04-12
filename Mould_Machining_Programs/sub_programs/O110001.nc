@@ -29,12 +29,12 @@ N004
 IF[#33EQ54]GOTO005
 IF[#13LE1]GOTO800
 IF[#11LE1]GOTO800
-IF[ABS[#419]LE1]GOTO800
-IF[ABS[#420]LE1]GOTO800
+IF[ABS[#419]GE1]GOTO800
+IF[ABS[#420]GE1]GOTO800
 (if M <= 1, go to N800)
 (if H <= 1, go to N800)
-(if |#419| <= 1, go to N800)
-(if |#420| <= 1, go to N800)
+(if |#419| >= 1, go to N800)
+(if |#420| >= 1, go to N800)
 
 N005
 IF[#18LE#26]GOTO800
