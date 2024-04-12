@@ -39,7 +39,7 @@
 \item \expandafterindex{\yomiKeyway かこう@\nameKeyway 加工}\Keyway 加工
 \item \index{たんめんそとがわCめんとりかこう@端面外側C面取加工}端面外側C面取加工
 \item \index{たんめんうちがわCめんとりかこう@端面内側C面取加工}端面内側C面取加工
-\item \index{たんめんざぐりかこう@端面座ぐり加工}端面座ぐり加工
+\item \expandafterindex{\yomiTanmenZaguri かこう@\nameTanmenZaguri 加工}\nameTanmenZaguri 加工
 \item \index{インローかこう@インロー加工}インロー加工
 \end{enumerate}
 
@@ -72,8 +72,8 @@
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\DrawingExists%
-\DrawingNumber%
+\PMDrawingExists%
+\PMDrawingNumber%
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,10 +106,10 @@
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\TopOutCutExists%
-\BottomInCutExists%
-\TopOutCutShape%
-\BottomOutCutShape%
+\PMTopOutCutExists%
+\PMBottomInCutExists%
+\PMTopOutCutShape%
+\PMBottomOutCutShape%
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -129,9 +129,9 @@
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\KeywayType%
-\TopOutCutExists%
-\KeywayWidth%
+\PMKeywayType%
+\PMTopOutCutExists%
+\PMKeywayWidth%
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -151,7 +151,10 @@
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\ChamferType\CChamferLength\CChamferAngle\TopOutCutExists
+\PMChamferType%
+\PMCChamferLength%
+\PMCChamferAngle%
+\PMTopOutCutExists%
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,14 +164,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.2.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{端面座ぐり部分\TBW}
+\subsubsection{\TanmenZaguri 部分\TBW}
 (to be written...)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\EndFaceBoringExists%
-\EndFaceBoringCornerR%
+\PMEndFaceBoringExists%
+\PMEndFaceBoringCornerR%
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -200,13 +203,13 @@
 \PMbox{全長}\PMbox{トップ振分長}\PMbox{ボトム振分長}\ACOD\PMbox{ジグの長さ}\PMbox{受板の幅}
 \tcbline*
 \paragraph*{\nameTopEndFace}
-\PMbox{トップ再振分長}\ACOD\BDOD\ODCornerR\\
-\TopEndACID\TopEndBDID\\
+\PMbox{トップ再振分長}\PMACOD\PMBDOD\PMODCornerR\\
+\PMTopEndACID\PMTopEndBDID\\
 \PMbox{トップ側$Z$方向クリアランス平面距離}
 \tcbline*
 \paragraph*{\nameBottomEndFace}
-\PMbox{ボトム再振分長}\ACOD\BDOD\ODCornerR\\
-\BottomEndACID\BottomEndBDID\\
+\PMbox{ボトム再振分長}\PMACOD\PMBDOD\PMODCornerR\\
+\PMBottomEndACID\PMBottomEndBDID\\
 \PMbox{ボトム側$Z$方向クリアランス平面距離}
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -231,29 +234,29 @@
 \paragraph*{ボトム側の外削のみの場合}
 \PMbox{ボトム外削AC径}\PMbox{ボトム外削BD径}\PMbox{ボトム外削コーナーR}\\
 \PMbox{ボトム外削長}\\
-\BottomEndACID\PMbox{ボトム側A側肉厚}\PMbox{めっき膜厚}
+\PMBottomEndACID\PMbox{ボトム側A側肉厚}\PMbox{めっき膜厚}
 \tcbline*
 \paragraph*{トップ側の外削のみの場合}
 \PMbox{トップ外削AC径}\PMbox{トップ外削BD径}\PMbox{トップ外削コーナーR}\\
-\PMbox{トップ外削長}\KeywayPos\KeywayWidth\\
-\TopEndACID\PMbox{トップ外削A側肉厚}\PMbox{めっき膜厚}
+\PMbox{トップ外削長}\PMKeywayPos\PMKeywayWidth\\
+\PMTopEndACID\PMbox{トップ外削A側肉厚}\PMbox{めっき膜厚}
 \tcbline*
 \paragraph*{両方に外削があり、ボトム側が基準の場合}
 \PMbox{ボトム外削AC径}\PMbox{ボトム外削BD径}\PMbox{ボトム外削コーナーR}\\
 \PMbox{ボトム外削長}\\
-\BottomEndACID\PMbox{ボトム外削A側肉厚}\PMbox{めっき膜厚}\\
+\PMBottomEndACID\PMbox{ボトム外削A側肉厚}\PMbox{めっき膜厚}\\
 \PMbox{トップ外削AC径}\PMbox{トップ外削BD径}\PMbox{トップ外削コーナーR}\\
-\PMbox{トップ外削長}\KeywayPos\KeywayWidth\PMbox{通り芯}
+\PMbox{トップ外削長}\PMKeywayPos\PMKeywayWidth\PMbox{通り芯}
 \tcbline*
 \paragraph*{両方に外削があり、トップ側が基準の場合}
 \PMbox{トップ外削AC径}\PMbox{トップ外削BD径}\PMbox{トップ外削コーナーR}\\
-\PMbox{トップ外削長}\KeywayPos\KeywayWidth\\
-\TopEndACID\PMbox{トップ外削A側肉厚}\PMbox{めっき膜厚}\\
+\PMbox{トップ外削長}\PMKeywayPos\PMKeywayWidth\\
+\PMTopEndACID\PMbox{トップ外削A側肉厚}\PMbox{めっき膜厚}\\
 \PMbox{ボトム外削AC径}\PMbox{ボトム外削BD径}\PMbox{ボトム外削コーナーR}\\
 \PMbox{ボトム外削長}\PMbox{通り芯}
 \tcbline*
 \paragraph*{湾曲に沿った外削の場合}
-（以上に加えて）\CenterCurvature
+（以上に加えて）\PMCenterCurvature
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -274,15 +277,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{湾曲中心が基準の場合}
-\KeywayACOD\KeywayBDOD\KeywayPos\KeywayWidth\CenterCurvature\\
-\KeywayCornerR または\KeywayCornerC
+\PMKeywayACOD\PMKeywayBDOD\PMKeywayPos\PMKeywayWidth\PMCenterCurvature\\
+\PMKeywayCornerR または\PMKeywayCornerC
 \tcbline*
 \paragraph*{外削中心が基準の場合}
-\KeywayACOD\KeywayBDOD\KeywayPos\KeywayWidth\\
-\KeywayCornerR または\KeywayCornerC
+\PMKeywayACOD\PMKeywayBDOD\PMKeywayPos\PMKeywayWidth\\
+\PMKeywayCornerR または\PMKeywayCornerC
 \tcbline*
 \paragraph*{A側溝深さが基準の場合}
-（以上に加えて）\AsideKeywayDepth
+（以上に加えて）\PMAsideKeywayDepth
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -302,25 +305,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{トップ端外側C面取：外削のない場合}
-\ACOD\BDOD\PMbox{トップ端外側C面取長}\ODCornerR
+\PMACOD\PMBDOD\PMbox{トップ端外側C面取長}\PMODCornerR
 \tcbline*
 \paragraph*{トップ端外側C面取：外削のある場合}
 \PMbox{トップ外削AC径}\PMbox{トップ外削BD径}\PMbox{トップ端外削コーナーR}\\
 \PMbox{トップ端外側C面取長}
 \tcbline*
 \paragraph*{ボトム端外側C面取：外削のない場合}
-\ACOD\BDOD\PMbox{ボトム端外側C面取長}\ODCornerR
+\PMACOD\PMBDOD\PMbox{ボトム端外側C面取長}\PMODCornerR
 \tcbline*
 \paragraph*{ボトム端外側C面取：外削のある場合}
 \PMbox{ボトム外削AC径}\PMbox{ボトム外削BD径}\PMbox{ボトム端外削コーナーR}\\
 \PMbox{ボトム端外側C面取長}
 \tcbline*
 \paragraph*{トップ端内側C面取}
-\TopEndACID\TopEndBDID\TopEndIDCornerR\\
+\PMTopEndACID\PMTopEndBDID\PMTopEndIDCornerR\\
 \PMbox{トップ端内側C面取長}\PMbox{めっき膜厚}
 \tcbline*
 \paragraph*{ボトム端内側C面取}
-\BottomEndACID\BottomEndBDID\BottomEndIDCornerR\\
+\PMBottomEndACID\PMBottomEndBDID\PMBottomEndIDCornerR\\
 \PMbox{ボトム端内側C面取長}\PMbox{めっき膜厚}
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -331,13 +334,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.3.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{端面座ぐりにおける寸法\TBW}
+\subsubsection{\TanmenZaguri における寸法\TBW}
 (to be written...)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\PMbox{端面座ぐりの位置}\PMbox{端面座ぐり長}\EndFaceBoringCornerR\PMbox{端面座ぐり深さ}\\
+\PMbox{\nameTanmenZaguri の位置}\PMbox{\nameTanmenZaguri 長}\PMEndFaceBoringCornerR\PMbox{\nameTanmenZaguri 深さ}\\
 \ACOD
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -380,7 +383,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{ワーク固定用ボルト}
-\ACOD\BDOD\\
+\PMACOD\PMBDOD\\
 \PMbox{ジグ床面とボルト取付具（上）間の距離}\PMbox{受板とボルト取付具（横）間の距離}
 \tcbline*
 \paragraph*{端面の削り代}
@@ -463,7 +466,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{端面の外側C面取加工中}
+\subsection{端面外側C面取加工中}
 \begin{enumerate}
 \item 必要に応じて\index{しあげかこう（そとがわCめんとり）@仕上げ加工（外側C面取）}仕上加工前に\index{いちじていし（プログラム）@一時停止（プログラム）}一時停止を行い、\index{Cめんとり@C面取}C面取の測定・位置の確認を行う
 \item C面取の位置を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
@@ -475,7 +478,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{端面の内側C面取加工中}
+\subsection{端面内側C面取加工中}
 \begin{enumerate}
 \item 必要に応じて\index{しあげかこう（うちがわCめんとり）@仕上げ加工（内側C面取）}仕上加工前に\index{いちじていし@一時停止}一時停止を行い、C面取の測定・位置の確認を行う
 \item C面取の位置を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
@@ -487,7 +490,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{座ぐり加工中\TBW}
+\subsection{\TanmenZaguri 加工中\TBW}
 (to be written...)
 
 

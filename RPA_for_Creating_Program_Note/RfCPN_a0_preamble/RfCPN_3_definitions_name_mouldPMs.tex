@@ -12,6 +12,7 @@
 \newNamecommand{MMC}{Mマシニングセンタ}{Mマシニングセンタ}
 \newNamecommand{Dimple}{内面ディンプル}{ないめんディンプル}
 \newNamecommand{Keyway}{キー溝}{キーみぞ}
+\newNamecommand{TanmenZaguri}{端面座ぐり}{たんめんざぐり}
 
 
 %%%%% PMBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -38,7 +39,8 @@
 \newcommand{\newPMcommand}[3]{%
   \expandafter\newcommand\csname yomi#1\endcsname{#3}%
   \expandafter\newcommand\csname name#1\endcsname{#2}%
-  \expandafter\newcommand\csname #1\endcsname{\expandafterindex{#3@#2}\PMbox{\csname name#1\endcsname}}%
+  \expandafter\newcommand\csname #1\endcsname{\expandafterindex{#3@#2}\csname name#1\endcsname}%
+  \expandafter\newcommand\csname PM#1\endcsname{\expandafterindex{#3@#2}\PMbox{\csname name#1\endcsname}}%
 }
 
 %%%%% TO PARAMETER NAME %%%
@@ -67,18 +69,18 @@
 \newPMcommand{BottomOutCutShape}{ボトム外削の種類}{ボトムがいさくのしゅるい}
 
 \newPMcommand{KeywayType}{\nameKeyway の種類}{\yomiKeyway のしゅるい}
-\newPMcommand{KeywayPos}{キー溝位置長}{キーみぞいちちょう}
-\newPMcommand{KeywayWidth}{キー溝幅}{キーみぞはば}
-\newPMcommand{AsideKeywayDepth}{A側キー溝深さ}{Aがわキーみぞふかさ}
-\newPMcommand{KeywayACOD}{キー溝AC径}{キーみぞACけい}
-\newPMcommand{KeywayBDOD}{キー溝BD径}{キーみぞBDけい}
-\newPMcommand{KeywayCornerC}{キー溝コーナーC}{キーみぞコーナーC}
-\newPMcommand{KeywayCornerR}{キー溝コーナーR}{キーみぞコーナーR}
+\newPMcommand{KeywayPos}{\nameKeyway 位置長}{\yomiKeyway いちちょう}
+\newPMcommand{KeywayWidth}{\nameKeyway 幅}{\yomiKeyway はば}
+\newPMcommand{AsideKeywayDepth}{A側\nameKeyway 深さ}{Aがわ\yomiKeyway ふかさ}
+\newPMcommand{KeywayACOD}{\nameKeyway AC径}{\yomiKeyway ACけい}
+\newPMcommand{KeywayBDOD}{\nameKeyway BD径}{\yomiKeyway BDけい}
+\newPMcommand{KeywayCornerC}{\nameKeyway コーナーC}{\yomiKeyway コーナーC}
+\newPMcommand{KeywayCornerR}{\nameKeyway コーナーR}{\yomiKeyway コーナーR}
 
 \newPMcommand{ChamferType}{面取の種類}{めんとりのしゅるい}
 \newPMcommand{CChamferLength}{C面取長}{Cめんとりちょう}
 \newPMcommand{CChamferAngle}{C面取角}{Cめんとりかく}
 \newPMcommand{RChamferLength}{R面取長}{Rめんとりちょう}
 
-\newPMcommand{EndFaceBoringExists}{端面座ぐりの有無}{たんめんざくりのうむ}
-\newPMcommand{EndFaceBoringCornerR}{端面座ぐりコーナーR}{たんめんざくりコーナーR}
+\newPMcommand{EndFaceBoringExists}{\nameTanmenZaguri の有無}{\yomiTanmenZaguri のうむ}
+\newPMcommand{EndFaceBoringCornerR}{\nameTanmenZaguri コーナーR}{\yomiTanmenZaguri コーナーR}
