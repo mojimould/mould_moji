@@ -44,13 +44,6 @@
 \newcommand\Sectionname{} % initialize \Sectionname
 \let\Sectionmark\sectionmark
 \def\sectionmark#1{\def\Sectionname{#1}\Sectionmark{#1}}
-%%%%% FOR REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%
-\DeclareLanguageMapping{japanese}{english}
-\newcommand{\Articlename}{論文}
-\newcommand{\Bookname}{書籍}
-\newcommand{\OnlineSourcename}{ウェブサイト}
-\newcommand{\Manualname}{マニュアル}
-\DeclareFieldFormat{urldate}{(urlseen~\thefield{urlyear}/\ifnum\thefield{urlmonth}<10 0\fi\thefield{urlmonth})}
 %%%%% GEOMETRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \geometry{
   a4paper, % paper size

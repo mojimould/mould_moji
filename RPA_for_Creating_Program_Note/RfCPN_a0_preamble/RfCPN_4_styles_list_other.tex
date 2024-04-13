@@ -35,9 +35,16 @@
 \newcommand\symbolindexname{記号・数字}
 
 %%%%% FOR STYLE OF BIBLATEX %%%%%%%%%%%%%%%%%%
+\DeclareLanguageMapping{japanese}{english}
 \renewcommand{\bibname}{\texorpdfstring{\hbox to 4em{文献一覧}}{文献一覧}}
 \newcommand{\referencesname}{参考文献}
 \newcommand{\citedworksname}{参照文献}
+\newcommand{\Articlename}{論文}
+\newcommand{\Bookname}{書籍}
+\newcommand{\OnlineSourcename}{ウェブサイト}
+\newcommand{\Manualname}{マニュアル}
+\DeclareFieldFormat{title}{``#1"}
+\DeclareFieldFormat{urldate}{(urlseen~\thefield{urlyear}/\ifnum\thefield{urlmonth}<10 0\fi\thefield{urlmonth})}
 \ExecuteBibliographyOptions{
   sorting=none,
   defernumbers=false,
