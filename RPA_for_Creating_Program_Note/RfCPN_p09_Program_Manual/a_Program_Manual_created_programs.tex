@@ -94,8 +94,8 @@
 \DLtwoBD    & \Dimple ：移動 BC面 列内の各\Dimple 上 & \DMLthreeBD\DKLthreeBD\\
 \DMLthreeAC & \Dimple ：測定 AC内表面$X$ & \OsensorOff\\
 \DMLthreeBD & \Dimple ：測定 BD内表面$Y$ & \OsensorOff\\
-\DKLthreeAC & \Dimple ：加工 AC内表面$X$ & \\
-\DKLthreeBD & \Dimple ：加工 BD内表面$Y$ & \\
+\DKLthreeAC & \Dimple ：加工 AC内表面$X$ & -\\
+\DKLthreeBD & \Dimple ：加工 BD内表面$Y$ & -\\
 \end{multicollongtblr}
 
 \clearpage
@@ -106,19 +106,19 @@
 \KMizoConerLeft    & 加工 溝 左回り1周 & \KOLeftAR\OpauseCheck\\
 \KSotoMentoriRLeft & 加工 外面取 コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
 \KUchiMentoriRLeft & 加工 内面取 コーナーR 左回り1周 & \KILeftAC\OpauseCheck\\
-\KOLeftAR   & 外側 左回り1周 右上始まり & \\
-\KILeftAC   & 内側 左回り1周 中央上始まり & \\
+\KOLeftAR   & 外側 左回り1周 右上始まり & -\\
+\KILeftAC   & 内側 左回り1周 中央上始まり & -\\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}{作成したプログラム一覧：その他}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
-\OpauseCheck  & 移動・加工後確認用：90$^\circ$回転 扉前一時停止 & \\
-\OsensorOn    & タッチセンサー電源ON & \\
-\OsensorOff   & タッチセンサー電源OFF &\\
+\OpauseCheck  & 移動・加工後確認用：90$^\circ$回転 扉前一時停止 & -\\
+\OsensorOn    & タッチセンサー電源ON & -\\
+\OsensorOff   & タッチセンサー電源OFF & -\\
 \OwarmingupA  & 暖機運転 & \Owarmingup\\
 \Owarmingup   & 暖機運転用サブプログラム & \\
 \OtoolLengthA & 登録工具 工具長自動測定 & \OtoolLength\\
-\OtoolLength  & 工具長 自動測定用サブプログラム &\\
+\OtoolLength  & 工具長 自動測定用サブプログラム & -\\
 \end{multicollongtblr}
 
 
@@ -294,7 +294,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DLone %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DLone\,:\Dimple ：移動 各列の中心上}
+\modcaptionof{lstlisting}{\DLone\,:移動 各\Dimple 列の中心上}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameDLone.nc}
 
 
@@ -302,7 +302,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DLtwoAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DLtwoAC\,:\Dimple ：移動 AC面 列内の各\Dimple 上}
+\modcaptionof{lstlisting}{\DLtwoAC\,:移動 AC面 列内の各\Dimple 上}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameDLtwoAC.nc}
 
 
@@ -310,7 +310,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DLtwoBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DLtwoBD\,:\Dimple ：移動 BC面 列内の各\Dimple 上}
+\modcaptionof{lstlisting}{\DLtwoBD\,:移動 BD面 列内の各\Dimple 上}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameDLtwoBD.nc}
 
 
@@ -318,7 +318,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DMLthreeAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DMLthreeAC\,:\Dimple ：測定 AC内表面\texorpdfstring{$X$}{X}}
+\modcaptionof{lstlisting}{\DMLthreeAC\,:測定 AC面 \Dimple 位置\texorpdfstring{$X$}{X}}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameDMLthreeAC.nc}
 
 
@@ -326,7 +326,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DMLthreeBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DMLthreeBD\,:\Dimple ：測定 BD内表面\texorpdfstring{$Y$}{Y}}
+\modcaptionof{lstlisting}{\DMLthreeBD\,:測定 BD面 \Dimple 位置\texorpdfstring{$Y$}{Y}}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameDMLthreeBD.nc}
 
 
@@ -334,7 +334,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DKLthreeAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DKLthreeAC\,:\Dimple ：加工 AC内表面\texorpdfstring{$X$}{X}}
+\modcaptionof{lstlisting}{\DKLthreeAC\,:加工 AC面 \Dimple\texorpdfstring{$X$}{X}}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameDKLthreeAC.nc}
 
 
@@ -342,7 +342,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DKLthreeBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DKLthreeBD\,:\Dimple ：加工 BD内表面\texorpdfstring{$Y$}{Y}}
+\modcaptionof{lstlisting}{\DKLthreeBD\,:加工 BD面 \Dimple\texorpdfstring{$Y$}{Y}}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameDKLthreeBD.nc}
 
 
