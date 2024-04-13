@@ -21,7 +21,7 @@
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-ここでいうメインプログラムとは、\index{せいひんばんごう@製品番号}製品場号と同一の\index{プログラムばんごう@プログラム番号}プログラム番号のものを指す。
+ここでいうメインプログラムとは、\index{ずめんばんごう@図面番号}図面場号と同一の\index{プログラムばんごう@プログラム番号}プログラム番号のものを指す。
 ただし、ここでは例として挙げているので、\pageautoref{subsec:notopenwork}に伴い、プログラム番号は本来のものから変更している。
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -30,17 +30,26 @@
 
 \begin{multicollongtblr}{作成したプログラム一覧：メインプログラムの例}{clX[l]}
 {\ttfamily O}番号 & \SetCell[c=2]{l}使用prg\\
-\SetCell[r=5]{c}
-\MainExOne & 芯出し & \MYOThickness\MXIWidth\MYIWidth\MXIface\\
+\SetCell[r=10]{c}
+\MainExOne & 外側芯出し・幅 & \MYOThickness\MXIface\\
+           & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
            & 通り芯 & \MXcenterline\MYcenterline\\
            & \Dimple & \DLone\\
-           & 加工 & \KTanmenRight\KGaisakuRLeft\KMizoConerLeft\KSotoMentoriRLeft\KUchiMentoriRLeft\\
+           & 端面 & \KTanmenRight\\
+           & 外削 & \KGaisakuRLeft\\
+           & \nameKeyway & \KMizoConerLeft\\
+           & 外C面取 & \KSotoMentoriRLeft\\
+           & 内C面取 & \KUchiMentoriRLeft\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
 \hline
-\SetCell[r=4]{c}
-\MainExTwo & 芯出し & \MXOThickness\MYOThickness\MXOface\MXIWidth\MYIWidth\\
+\SetCell[r=8]{c}
+\MainExTwo & 外側芯出し・幅 & \MXOThickness\MYOThickness\MXOface\\
+           & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
            & \Dimple & \DLone\\
-           & 加工 & \KTanmenRight\KMizoConerLeft\KSotoMentoriRLeft\KUchiMentoriRLeft\\
+           & 端面 & \KTanmenRight\\
+           & \nameKeyway & \KMizoConerLeft\\
+           & 外C面取 & \KSotoMentoriRLeft\\
+           & 内C面取 & \KUchiMentoriRLeft\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
 \end{multicollongtblr}
 
@@ -61,13 +70,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{multicollongtblr}{作成したプログラム一覧：芯出し測定}{cX[l]l}
+\begin{multicollongtblr}{作成したプログラム一覧：芯出し・幅測定}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
-\MXOThickness & 測定 両側 外側中心$X$ & \OsensorOff\\
-\MYOThickness & 測定 両側 外側中心$Y$ & \OsensorOff\\
+\MXOThickness & 測定 両側 外側中心・幅$X$ & \OsensorOff\\
+\MYOThickness & 測定 両側 外側中心・幅$Y$ & \OsensorOff\\
 \MXOface      & 測定 片側 溝中心$X$（トップA側外面測定） & \OsensorOff\\
-\MXIWidth     & 測定 両側 内側中心$X$ & \OsensorOff\\
-\MYIWidth     & 測定 両側 内側中心$Y$ & \OsensorOff\\
+\MXIWidth     & 測定 両側 内側中心・幅$X$ & \OsensorOff\\
+\MYIWidth     & 測定 両側 内側中心・幅$Y$ & \OsensorOff\\
 \MXIface      & 測定 片側 外削中心$X$（C側内面方向測定） & \OsensorOff\\
 \end{multicollongtblr}
 
