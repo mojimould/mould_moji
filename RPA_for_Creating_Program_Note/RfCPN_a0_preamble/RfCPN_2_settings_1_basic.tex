@@ -2,7 +2,7 @@
 
 
 %%%%% GRAPHICSPATH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\graphicspath{{./RfCPN_a1_pictures/}}
+\graphicspath{{./RfCPN_a1_includefiles/RfCPN_2_pictures/}}
 %%%%% FONT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setmainjfont[BoldFont={HaranoAjiGothic}, BoldFeatures={FakeBold=2}]{HaranoAjiMincho}
 \setsansjfont{HaranoAjiGothic}
@@ -99,6 +99,7 @@
 \@addtoreset{equation}{section}
 %%%%% FOR FOOTNOTE %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand*{\footnoteautorefname}{脚注}
+%\renewcommand{\thefootnote}{\ifnum\value{footnote}<10 0\fi\arabic{footnote}}
 \interfootnotelinepenalty=10000
 \counterwithout{footnote}{chapter}
 \def\@makefnmark{\hbox{}\hbox{\@textsuperscript{\normalfont\@thefnmark}}\hbox{}}

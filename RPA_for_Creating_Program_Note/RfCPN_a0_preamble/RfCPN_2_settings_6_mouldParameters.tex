@@ -1,0 +1,81 @@
+%!TEX root = ../RPA_for_Creating_Program_Note.tex
+
+
+%%%%% NEWNAMECOMMAND %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\newNamecommand}[3]{%
+  \expandafter\newcommand\csname yomi#1\endcsname{#3}%
+  \expandafter\newcommand\csname name#1\endcsname{#2}%
+  \expandafter\newcommand\csname #1\endcsname{\expandafterindex{#3@#2}#2}%
+}
+%%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
+\newNamecommand{DMC}{Dマシニングセンタ}{Dマシニングセンタ}
+\newNamecommand{MMC}{Mマシニングセンタ}{Mマシニングセンタ}
+\newNamecommand{OutcutLength}{外削長}{がいさくちょう}
+\newNamecommand{Keyway}{キー溝}{キーみぞ}
+\newNamecommand{KeywayCenter}{キー溝中心}{キーみぞちゅうしん}
+\newNamecommand{KeywayDiameter}{キー溝径}{キーみぞけい}
+\newNamecommand{KeywayDepth}{キー溝深さ}{キーみぞふかさ}
+\newNamecommand{Dimple}{内面ディンプル}{ないめんディンプル}
+\newNamecommand{ReliefGroove}{逃がし溝}{にがしみぞ}
+\newNamecommand{TanmenZaguri}{端面座ぐり}{たんめんざぐり}
+
+
+%%%%% NEWPRGCOMMAND %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\newGPMcommand}[3]{%
+  \expandafter\newcommand\csname yomi#1\endcsname{#3}%
+  \expandafter\newcommand\csname name#1\endcsname{#2}%
+  \expandafter\newcommand\csname #1\endcsname{\expandafterindex{#3@#2}\csname name#1\endcsname}%
+  \expandafter\newcommand\csname PM#1\endcsname{\expandafterindex{#3@#2}\GPMbox{\csname name#1\endcsname}}%
+}
+
+%%%%% TO PARAMETER NAME %%%
+%%% DRAWING %%%
+\newGPMcommand{DrawingExists}{図面の有無}{ずめんのうむ}
+\newGPMcommand{DrawingNumber}{図面番号}{ずめんばんごう}
+
+%%% CenterCurvature %%%
+\newGPMcommand{CenterCurvatureExists}{中心湾曲の有無}{わんきょくのうむ}
+\newGPMcommand{CenterCurvature}{中心湾曲半径}{ちゅうしんわんきょくはんけい}
+
+%%% OUTERDIAMETER %%%
+\newGPMcommand{ACOD}{AC外径}{ACがいけい}
+\newGPMcommand{BDOD}{BD外径}{BDがいけい}
+\newGPMcommand{ODCornerR}{外径コーナーR}{がいけいコーナーR}
+
+%%% ENDFACE %%%
+\newGPMcommand{TopEndFace}{トップ端面}{トップたんめん}
+\newGPMcommand{BottomEndFace}{ボトム端面}{ボトムたんめん}
+\newGPMcommand{TopEndACID}{トップ端AC内径}{トップたんACないけい}
+\newGPMcommand{TopEndBDID}{トップ端BD内径}{トップたんBDないけい}
+\newGPMcommand{BottomEndACID}{ボトム端AC内径}{ボトムたんACないけい}
+\newGPMcommand{BottomEndBDID}{ボトム端BD内径}{ボトムたんBDないけい}
+\newGPMcommand{TopEndIDCornerR}{トップ端内径コーナーR}{トップたんないけいコーナーR}
+\newGPMcommand{BottomEndIDCornerR}{ボトム端内径コーナーR}{ボトムたんないけいコーナーR}
+
+%%% OUTCUT %%%
+\newGPMcommand{TopOutcutExists}{トップ外削の有無}{トップがいさくのうむ}
+\newGPMcommand{BottomOutcutExists}{ボトム外削の有無}{ボトムがいさくのうむ}
+\newGPMcommand{TopOutcutType}{トップ外削の種類}{トップがいさくのしゅるい}
+\newGPMcommand{BottomOutcutShape}{ボトム外削の種類}{ボトムがいさくのしゅるい}
+\newGPMcommand{TopOutcutLength}{トップ側の外削長}{トップがわのがいさくちょう}
+\newGPMcommand{BottomOutcutLength}{ボトム側の外削長}{ボトムがわのがいさくちょう}
+
+%%% KEYWAT %%%
+\newGPMcommand{KeywayType}{\nameKeyway の種類}{\yomiKeyway のしゅるい}
+\newGPMcommand{KeywayPos}{\nameKeyway 位置長}{\yomiKeyway いちちょう}
+\newGPMcommand{KeywayWidth}{\nameKeyway 幅}{\yomiKeyway はば}
+\newGPMcommand{AsideKeywayDepth}{A側\nameKeyway 深さ}{Aがわ\yomiKeyway ふかさ}
+\newGPMcommand{KeywayACOD}{\nameKeyway AC径}{\yomiKeyway ACけい}
+\newGPMcommand{KeywayBDOD}{\nameKeyway BD径}{\yomiKeyway BDけい}
+\newGPMcommand{KeywayCornerC}{\nameKeyway コーナーC}{\yomiKeyway コーナーC}
+\newGPMcommand{KeywayCornerR}{\nameKeyway コーナーR}{\yomiKeyway コーナーR}
+
+%%% CHANMFER %%%
+\newGPMcommand{ChamferType}{面取の種類}{めんとりのしゅるい}
+\newGPMcommand{CChamferLength}{C面取長}{Cめんとりちょう}
+\newGPMcommand{CChamferAngle}{C面取角}{Cめんとりかく}
+\newGPMcommand{RChamferLength}{R面取長}{Rめんとりちょう}
+
+%%% ENDFACEBORING %%%
+\newGPMcommand{EndFaceBoringExists}{\nameTanmenZaguri の有無}{\yomiTanmenZaguri のうむ}
+\newGPMcommand{EndFaceBoringCornerR}{\nameTanmenZaguri コーナーR}{\yomiTanmenZaguri コーナーR}

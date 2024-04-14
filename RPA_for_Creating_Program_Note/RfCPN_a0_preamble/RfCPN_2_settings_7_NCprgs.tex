@@ -1,24 +1,6 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
-%%%%% PRGBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtcbox{\Gprgbox}{%
-  commonbox,
-  colframe=blue!50!black,
-  coltext=blue!25!black,
-  colback=blue!10!white,
-  overlay={%
-    \begin{tcbclipinterior}%
-      \fill[blue!75!green!50!white] (frame.south west)
-      rectangle node[text=white, font=\bfseries\tiny, rotate=90] {{\fontspec{Latin Modern Sans}Prg}} ([xshift=4mm]frame.north west);
-    \end{tcbclipinterior}%
-  },
-}
-\robustify{\Gprgbox}
-\pdfstringdefDisableCommands{%
-  \def\Gprgbox#1{`#1'}%
-}
-
 %%%%% NEWPRGCOMMAND %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\newGprgcommand}[2]{%
   \expandafter\newcommand\csname name#1\endcsname{#2}%
