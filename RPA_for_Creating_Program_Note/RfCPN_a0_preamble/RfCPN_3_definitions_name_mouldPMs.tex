@@ -15,6 +15,26 @@
 \newNamecommand{TanmenZaguri}{端面座ぐり}{たんめんざぐり}
 
 
+%%%%% FOR TCBOX %%%%%%%%%%%%%%%%%%%%
+\tcbset{%
+  commonbox/.style={%
+    enhanced,
+    nobeforeafter,
+    tcbox raise base,
+    boxrule=0.4pt,
+    top=0mm,
+    bottom=0mm,
+    right=0mm,
+    left=4mm,
+    arc=1pt,
+    boxsep=3pt,
+    left skip=2pt,
+    right skip=2pt,
+    before upper={\vphantom{dl}},
+    fontupper=\ttfamily,
+  },
+}
+
 %%%%% PMBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtcbox{\PMbox}{%
   commonbox,
@@ -26,7 +46,7 @@
   overlay={%
     \begin{tcbclipinterior}%
       \fill[green!80!blue!50!black!50!] (frame.south west)
-      rectangle node[text=white, font=\bfseries\tiny, rotate=90] {PM} ([xshift=4mm]frame.north west);
+      rectangle node[text=white, font=\bfseries\tiny, rotate=90] {{\fontspec{Latin Modern Sans}PM}} ([xshift=4mm]frame.north west);
     \end{tcbclipinterior}%
   },
 }
