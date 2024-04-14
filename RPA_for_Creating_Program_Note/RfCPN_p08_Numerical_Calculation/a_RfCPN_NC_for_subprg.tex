@@ -64,13 +64,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 30.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{外削長}
+\subsection{\OutcutLength}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 30.3.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{ボトムの外削}
-ボトム側の外削における\index{こうぐ@工具}工具の先端の$Z$座標は、\index{ボトムがわのがいさくちょう@ボトム側の外削長}ボトム側の外削長を$h_\mathrm B$として、
+ボトム側の外削における\index{こうぐ@工具}工具の先端の$Z$座標は、\BottomOutcutLength を$h_\mathrm B$として、
 \begin{align*}
   \HLbox{f_\mathrm B'-h_\mathrm B}\ .
 \end{align*}
@@ -80,7 +80,7 @@
 %% subsubsection 30.3.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{トップの外削}
-トップ側の外削における工具の先端の$Z$座標は、\index{トップがわのがいさくちょう@トップ側の外削長}トップ側の外削長, \index{みぞいち@溝位置}溝位置, \index{みぞはば@溝幅}溝幅をそれぞれ$h_\mathrm T$, $\kappa_p$, $\kappa_w$として、
+トップ側の外削における工具の先端の$Z$座標は、\TopOutcutLength, \KeywayPos, \KeywayWidth をそれぞれ$h_\mathrm T$, $\kappa_p$, $\kappa_w$として、
 \begin{alignat*}{3}
   & \HLbox{f_\mathrm T'-h_\mathrm T} & \quad & \Big(\text{if}~h_\mathrm T > \kappa_p+\kappa_w\Big)\\
   & \HLbox{f_\mathrm T'-\left(\kappa_p+1[\mathrm{mm}]\right)} & \quad  & \Big(\text{if}~h_\mathrm T = \kappa_p+\kappa_w\Big)
@@ -100,14 +100,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 30.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{溝の数値情報}
+\modHeadsection{\Keyway の数値情報}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 30.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{溝中心\texorpdfstring{$Z$}{Z}}
-\index{みぞいち@溝位置}溝位置$\kappa_p$および\index{みぞはば@溝幅}溝幅$\kappa_w$に対し、\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした\index{みぞちゅうしん@溝中心}溝の中心M$'$の$Z$座標は、\pageeqref{eq:mizocenterZ}より
+\subsection{\KeywayCenter\texorpdfstring{$Z$}{Z}}
+\KeywayPos$\kappa_p$および\KeywayWidth$\kappa_w$に対し、\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした\KeywayCenter M$'$の$Z$座標は、\pageeqref{eq:mizocenterZ}より
 \begin{align*}
   \HLbox{f_\mathrm T'-\kappa_p-\frac{\kappa_w}2}\ .
 \end{align*}
@@ -117,7 +117,7 @@
 %% subsection 30.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{湾曲中心が基準の場合}
-\index{トップたんのそとがわちゅうしん@トップ端の外側中心}トップ端の外側中心T$_\mathrm c'$と溝中心M$'$との$X$方向の差は、\pageeqref{eq:difTopMizoCenter}より、
+\index{トップたんのそとがわちゅうしん@トップ端の外側中心}トップ端の外側中心T$_\mathrm c'$と\KeywayCenter M$'$との$X$方向の差は、\pageeqref{eq:difTopMizoCenter}より、
 \begin{align*}
   \HLbox{%
     \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^2}
@@ -130,19 +130,19 @@
 %% subsection 30.4.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{外削中心が基準の場合}
-\index{みぞちゅうしん@溝中心}溝の中心は\index{トップがわのがいさくちゅうしん@トップ側の外削中心}トップ側の外削中心とする。
+\KeywayCenter は\index{トップがわのがいさくちゅうしん@トップ側の外削中心}トップ側の外削中心とする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 30.4.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{A側溝深さ指定の場合}
+\subsection{\AsideKeywayDepth 指定の場合}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 30.4.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{外削のない場合}
-\index{Aがわみぞふかさ@A側溝深さ}A側溝深さ$\kappa_d$は、その測定値$\kappa_d'$が\index{ずめん（モールド）@図面（モールド）}図面上の値となるように与えられるものとする。このとき\pageeqref{eq:keydepthDif1}より、
+\AsideKeywayDepth$\kappa_d$は、その測定値$\kappa_d'$が\index{ずめん（モールド）@図面（モールド）}図面上の値となるように与えられるものとする。このとき\pageeqref{eq:keydepthDif1}より、
 \begin{align*}
   \HLbox{%
     \kappa_d
@@ -160,7 +160,7 @@
            {\kappa_w}%
   }\ .
 \end{align*}
-A側溝深さ$\kappa_d$に対し、\index{みぞちゅうしん@溝中心}溝中心の位置の$X$座標は\pageeqref{eq:mizocenterA}より、
+\AsideKeywayDepth$\kappa_d$に対し、\KeywayCenter の位置の$X$座標は\pageeqref{eq:mizocenterA}より、
 \begin{align*}
   \HLbox{%
     \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^2}
@@ -169,7 +169,7 @@ A側溝深さ$\kappa_d$に対し、\index{みぞちゅうしん@溝中心}溝中
     -\Delta_x%
   }\ .
 \end{align*}
-また\index{Aがわがいめん（みぞはばちゅうしん）@A側外面（溝幅中心）}A側外面の\index{じっそくち@実測値}実測値を$\mathcal G_m$とすると、溝中心と$G_m$との$X$座標の差は、\pageeqref{eq:mizocenterAd}より、
+また\expandafterindex{Aがわがいめん（\yomiKeywayCenter）@A側外面（\nameKeywayCenter）}A側外面の\index{じっそくち@実測値}実測値を$\mathcal G_m$とすると、\KeywayCenter と$G_m$との$X$座標の差は、\pageeqref{eq:mizocenterAd}より、
 \begin{align*}
   \HLbox{-\frac{W_{mx}}2-\kappa_d}\ .
 \end{align*}
@@ -179,7 +179,7 @@ A側溝深さ$\kappa_d$に対し、\index{みぞちゅうしん@溝中心}溝中
 %% subsubsection 30.4.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{外削のある場合}
-\index{Aがわみぞふかさ@A側溝深さ}A側溝深さ$\kappa_d$に対し、トップ外削$X$中心を$\mathcal G_{\mathrm Tx}$とすると、$\mathcal G_{\mathrm Tx}$と\index{みぞちゅうしん@溝中心}溝中心との$X$座標の差は、\pageeqref{eq:mizocenterAG}より、
+\AsideKeywayDepth$\kappa_d$に対し、トップ外削$X$中心を$\mathcal G_{\mathrm Tx}$とすると、$\mathcal G_{\mathrm Tx}$と\KeywayCenter との$X$座標の差は、\pageeqref{eq:mizocenterAG}より、
 \begin{align*}
   \HLbox{\frac{\mathfrak W_x}2-\kappa_d-\frac{W_{mx}}2}\ .
 \end{align*}
@@ -190,7 +190,7 @@ A側溝深さ$\kappa_d$に対し、\index{みぞちゅうしん@溝中心}溝中
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{端面の外側C面取の数値情報\TBW}
+\modHeadsection{端面外C面取の数値情報\TBW}
 (to be written...)
 
 
@@ -199,7 +199,7 @@ A側溝深さ$\kappa_d$に対し、\index{みぞちゅうしん@溝中心}溝中
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{端面の内側C面取の数値情報\TBW}
+\modHeadsection{端面内C面取の数値情報\TBW}
 (to be written...)
 
 
@@ -207,7 +207,7 @@ A側溝深さ$\kappa_d$に対し、\index{みぞちゅうしん@溝中心}溝中
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{端面の外側R面取の数値情報\TBW}
+\modHeadsection{端面外R面取の数値情報\TBW}
 (to be written...)
 
 
@@ -216,7 +216,7 @@ A側溝深さ$\kappa_d$に対し、\index{みぞちゅうしん@溝中心}溝中
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{端面の内側R面取の数値情報\TBW}
+\modHeadsection{端面内R面取の数値情報\TBW}
 (to be written...)
 
 

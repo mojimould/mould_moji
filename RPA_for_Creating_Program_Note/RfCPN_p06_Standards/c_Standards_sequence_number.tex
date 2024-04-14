@@ -44,7 +44,7 @@
 \modHeadsection{メインプログラムのシーケンス番号}
 \DMC において、\index{メインプログラム}メインプログラム
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{ここでいうメインプログラムとは、下5桁が\index{ずめんばんごう@図面番号}図面番号と一致するものを指す。}
+\footnote{ここでいうメインプログラムとは、下5桁が\DrawingNumber と一致するものを指す。}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 は\index{さぎょうしゃ@作業者}作業者が実際に設定を変更したり、途中の箇所から始めたりし得る。
 そのため、メインプログラムについては各作業（測定・加工）ごとにシーケンス番号を割り振ることにする。
@@ -53,8 +53,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 14.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{N100：測定（\Dimple ・逃し溝以外）}
-\index{タッチセンサープローブ}タッチセンサープローブを用いた測定（\Dimple ・逃し溝を除く）を行う工程のシーケンス番号は100番台とする。
+\subsection{N100：測定（\Dimple ・\ReliefGroove 以外）}
+\index{タッチセンサープローブ}タッチセンサープローブを用いた測定（\Dimple ・\ReliefGroove を除く）を行う工程のシーケンス番号は100番台とする。
 これには以下の\index{こうてい@工程}工程が含まれ、これらは2桁目の番号で区別される。
 \begin{enumerate}
 \item[100:] 芯出し測定
@@ -68,23 +68,23 @@
 %% subsection 14.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{N200：測定（\Dimple）}
-\Dimple および\index{にがしみぞ@逃し溝}逃し溝に関する\index{タッチセンサープローブ}タッチセンサープローブを用いた測定を行う工程のシーケンス番号は200番台とする。
+\Dimple および\ReliefGroove に関する\index{タッチセンサープローブ}タッチセンサープローブを用いた測定を行う工程のシーケンス番号は200番台とする。
 これには以下の工程が含まれ、これらは2桁目の番号で区別される。
 \begin{enumerate}
 \item[200:] \Dimple 測定
-\item[250:] 逃し溝測定
+\item[250:] \ReliefGroove 測定
 \end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 14.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{N300：\Dimple ・逃し溝加工}
-\Dimple および\index{にがしみぞかこう@逃し溝加工}逃し溝加工を行う工程のシーケンス番号は300番台とする。
+\subsection{N300：\Dimple ・\ReliefGroove 加工}
+\Dimple および\expandafterindex{\yomiReliefGroove かこう@\nameReliefGroove 加工}\nameReliefGroove 加工を行う工程のシーケンス番号は300番台とする。
 これには以下の工程が含まれ、これらは2桁目の番号で区別される。
 \begin{enumerate}
 \item[300:] \Dimple 加工
-\item[350:] 逃し溝加工
+\item[350:] \ReliefGroove 加工
 \end{enumerate}
 
 
@@ -97,7 +97,7 @@
 \begin{enumerate}
 \item[400:] トップ端面加工
 \item[410:] トップ外削加工
-\item[420:] 溝加工
+\item[420:] \Keyway 加工
 \item[430:] トップ外面取加工
 \item[440:] トップ内面取加工
 \item[450:] \TanmenZaguri 加工
@@ -155,12 +155,12 @@ N番号 & 内容\\
 \ttfamily N001 & プログラムの始まり\\
 \ttfamily N10x & タッチセンサープローブ測定（芯出し）\\
 \ttfamily N20x & タッチセンサープローブ測定（\Dimple）\\
-\ttfamily N25x & タッチセンサープローブ測定（逃し溝）\\
+\ttfamily N25x & タッチセンサープローブ測定（\ReliefGroove）\\
 \ttfamily N30x & \Dimple 加工\\
-\ttfamily N35x & 逃し溝加工\\
+\ttfamily N35x & \ReliefGroove　加工\\
 \ttfamily N40x & トップ端面加工\\
 \ttfamily N41x & トップ外削加工\\
-\ttfamily N42x & 溝加工\\
+\ttfamily N42x & \Keyway 加工\\
 \ttfamily N43x & トップ外面取加工\\
 \ttfamily N44x & トップ内面取加工\\
 \ttfamily N45x & \TanmenZaguri 加工\\

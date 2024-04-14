@@ -1,7 +1,7 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
-\modHeadchapter{現状の横型マシニングセンタの業務フロー}
+\modHeadchapter[lot]{現状の横型マシニングセンタの業務フロー}
 新たに導入する\index{よこがたマシニングセンタ@横型マシニングセンタ}横型マシニングセンタ（以下、\textbf{\DMC}）での工程は、\Dimple の測定・加工を除けば三菱製横型マシニングセンタ（以下、\textbf{\MMC}）と大まかには同様である。
 そこで、まずは\MMC ではどのようなフローで業務が行われているかを（ソフトウェアの観点から）みることにする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -16,34 +16,28 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{marker}
-ここで挙げている必要なパラメータ（\index{すんぽう@寸法}寸法）には、その\index{こうさ@公差}公差も考慮されているものとする。
-\end{marker}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{加工の種類\TBW}
-\MMC では主に以下のような加工が行われる。
-\begin{enumerate}[label={-}]
-\item \index{たんめんかこう@端面加工}端面加工
-\item \index{がいさくかこう@外削加工}外削加工
-\item \expandafterindex{\yomiKeyway かこう@\nameKeyway 加工}\Keyway 加工
-\item \index{たんめんそとがわCめんとりかこう@端面外側C面取加工}端面外側C面取加工
-\item \index{たんめんうちがわCめんとりかこう@端面内側C面取加工}端面内側C面取加工
-\item \expandafterindex{\yomiTanmenZaguri かこう@\nameTanmenZaguri 加工}\nameTanmenZaguri 加工
-\item \index{インローかこう@インロー加工}インロー加工
-\end{enumerate}
+\modHeadsection{\MMC における工程の種類\TBW}
+\MMC について、直接ワークに対する測定・加工に関するものに着目すると、主に以下のような工程が行われる。\\
+
+\begin{multicollongtblr}{ワークに直接関わる主な工程の種類（\MMC）}{X[l] X[l]}
+測定 & 加工\\
+端面外側AC方向 芯出し（外側 両側$X$測定） & \index{たんめんかこう@端面加工}端面加工\\
+端面外側BD方向 芯出し（外側 両側$Y$測定） & \index{がいさくかこう@外削加工}外削加工\\
+外削AC方向 芯出し（内側 片側$X$測定） & \expandafterindex{\yomiKeyway かこう@\nameKeyway 加工}\Keyway 加工\\
+端面内側AC方向 芯出し（内側 両側$X$測定） & \index{たんめんそとCめんとりかこう@端面外C面取加工}端面外C面取加工\\
+端面内側BD方向 芯出し（内側 両側$Y$測定） & \index{たんめんうちCめんとりかこう@端面内C面取加工}端面内C面取加工\\
+通り心AC方向 測定（外側 片側$Z$測定） & \expandafterindex{\yomiTanmenZaguri かこう@\nameTanmenZaguri 加工}\nameTanmenZaguri 加工\\
+通り心BD方向 測定（外側 片側$Y$測定） & \index{インローかこう@インロー加工}インロー加工\\
+\end{multicollongtblr}
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -58,6 +52,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{加工の流れ（加工前）\TBW}
 \MMC において、ある\index{めいさい（モールド）@明細（モールド）}明細のモールドを加工をする際に、以下のような流れで作業が行われる。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+ここで挙げている必要なパラメータ（\index{すんぽう@寸法}寸法）には、その\index{こうさ@公差}公差も考慮されているものとする。
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,10 +109,10 @@
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\PMTopOutCutExists%
-\PMBottomInCutExists%
-\PMTopOutCutShape%
-\PMBottomOutCutShape%
+\PMTopOutcutExists%
+\PMBottomOutcutExists%
+\PMTopOutcutType%
+\PMBottomOutcutShape%
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -130,14 +133,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \PMKeywayType%
-\PMTopOutCutExists%
+\PMTopOutcutExists%
 \PMKeywayWidth%
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\clearpage
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.2.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -154,7 +157,7 @@
 \PMChamferType%
 \PMCChamferLength%
 \PMCChamferAngle%
-\PMTopOutCutExists%
+\PMTopOutcutExists%
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -200,17 +203,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{再振分長}
-\PMbox{全長}\PMbox{トップ振分長}\PMbox{ボトム振分長}\ACOD\PMbox{ジグの長さ}\PMbox{受板の幅}
+\GPMbox{全長}\GPMbox{トップ振分長}\GPMbox{ボトム振分長}\PMACOD\GPMbox{ジグの長さ}\GPMbox{受板の幅}
 \tcbline*
 \paragraph*{\nameTopEndFace}
-\PMbox{トップ再振分長}\PMACOD\PMBDOD\PMODCornerR\\
+\GPMbox{トップ再振分長}\PMACOD\PMBDOD\PMODCornerR\\
 \PMTopEndACID\PMTopEndBDID\\
-\PMbox{トップ側$Z$方向クリアランス平面距離}
+\GPMbox{トップ側$Z$方向クリアランス平面距離}
 \tcbline*
 \paragraph*{\nameBottomEndFace}
-\PMbox{ボトム再振分長}\PMACOD\PMBDOD\PMODCornerR\\
+\GPMbox{ボトム再振分長}\PMACOD\PMBDOD\PMODCornerR\\
 \PMBottomEndACID\PMBottomEndBDID\\
-\PMbox{ボトム側$Z$方向クリアランス平面距離}
+\GPMbox{ボトム側$Z$方向クリアランス平面距離}
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -222,7 +225,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{外削における寸法}
 \begin{enumerate}
-\item \index{がいさくちょう@外削長}外削長と\Keyway の位置を確認し、実際に加工する外削の長さの判断を行う
+\item \OutcutLength と\Keyway の位置を確認し、実際に加工する外削の長さの判断を行う
 \item トップ側・ボトム側の両方に外削のある場合は、どちら側が\index{きじゅん（がいさくちゅうしん）@基準（外削中心）}基準であるのかを確認する
 \item \index{ないけい（たんめん）@内径（端面）}端面の内径・\index{Aがわにくあつ（がいさく）@A側肉厚（外削）}外削部のA側肉厚・内面の\index{めっきまくあつ@めっき膜厚}めっき膜厚から、\index{がいさくちゅうしん@外削中心}外削中心$X$位置用のパラメータを手動による計算で決定する
 \item \index{わんきょくにそったがいさく@湾曲に沿った外削}湾曲に沿った外削の場合は、\index{かたむきかく（がいさく）@傾き角（外削）}傾き角を手動による計算で決定する
@@ -232,28 +235,28 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{ボトム側の外削のみの場合}
-\PMbox{ボトム外削AC径}\PMbox{ボトム外削BD径}\PMbox{ボトム外削コーナーR}\\
-\PMbox{ボトム外削長}\\
-\PMBottomEndACID\PMbox{ボトム側A側肉厚}\PMbox{めっき膜厚}
+\GPMbox{ボトム外削AC径}\GPMbox{ボトム外削BD径}\GPMbox{ボトム外削コーナーR}\\
+\GPMbox{\BottomOutcutLength}\\
+\PMBottomEndACID\GPMbox{ボトム側A側肉厚}\GPMbox{めっき膜厚}
 \tcbline*
 \paragraph*{トップ側の外削のみの場合}
-\PMbox{トップ外削AC径}\PMbox{トップ外削BD径}\PMbox{トップ外削コーナーR}\\
-\PMbox{トップ外削長}\PMKeywayPos\PMKeywayWidth\\
-\PMTopEndACID\PMbox{トップ外削A側肉厚}\PMbox{めっき膜厚}
+\GPMbox{トップ外削AC径}\GPMbox{トップ外削BD径}\GPMbox{トップ外削コーナーR}\\
+\GPMbox{\TopOutcutLength}\PMKeywayPos\PMKeywayWidth\\
+\PMTopEndACID\GPMbox{トップ外削A側肉厚}\GPMbox{めっき膜厚}
 \tcbline*
 \paragraph*{両方に外削があり、ボトム側が基準の場合}
-\PMbox{ボトム外削AC径}\PMbox{ボトム外削BD径}\PMbox{ボトム外削コーナーR}\\
-\PMbox{ボトム外削長}\\
-\PMBottomEndACID\PMbox{ボトム外削A側肉厚}\PMbox{めっき膜厚}\\
-\PMbox{トップ外削AC径}\PMbox{トップ外削BD径}\PMbox{トップ外削コーナーR}\\
-\PMbox{トップ外削長}\PMKeywayPos\PMKeywayWidth\PMbox{通り芯}
+\GPMbox{ボトム外削AC径}\GPMbox{ボトム外削BD径}\GPMbox{ボトム外削コーナーR}\\
+\GPMbox{\BottomOutcutLength}\\
+\PMBottomEndACID\GPMbox{ボトム外削A側肉厚}\GPMbox{めっき膜厚}\\
+\GPMbox{トップ外削AC径}\GPMbox{トップ外削BD径}\GPMbox{トップ外削コーナーR}\\
+\GPMbox{\TopOutcutLength}\PMKeywayPos\PMKeywayWidth\GPMbox{通り芯}
 \tcbline*
 \paragraph*{両方に外削があり、トップ側が基準の場合}
-\PMbox{トップ外削AC径}\PMbox{トップ外削BD径}\PMbox{トップ外削コーナーR}\\
-\PMbox{トップ外削長}\PMKeywayPos\PMKeywayWidth\\
-\PMTopEndACID\PMbox{トップ外削A側肉厚}\PMbox{めっき膜厚}\\
-\PMbox{ボトム外削AC径}\PMbox{ボトム外削BD径}\PMbox{ボトム外削コーナーR}\\
-\PMbox{ボトム外削長}\PMbox{通り芯}
+\GPMbox{トップ外削AC径}\GPMbox{トップ外削BD径}\GPMbox{トップ外削コーナーR}\\
+\GPMbox{\TopOutcutLength}\PMKeywayPos\PMKeywayWidth\\
+\PMTopEndACID\GPMbox{トップ外削A側肉厚}\GPMbox{めっき膜厚}\\
+\GPMbox{ボトム外削AC径}\GPMbox{ボトム外削BD径}\GPMbox{ボトム外削コーナーR}\\
+\GPMbox{\BottomOutcutLength}\GPMbox{通り芯}
 \tcbline*
 \paragraph*{湾曲に沿った外削の場合}
 （以上に加えて）\PMCenterCurvature
@@ -267,10 +270,9 @@
 %% subsubsection 01.1.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\Keyway における寸法}
-\begin{enumerate}
-\item \index{みぞのしゅるい@溝の種類}溝の種類を確認し、必要に応じて加工における径の決定する
-\item \index{きじゅん（みぞちゅうしん）@基準（溝中心）}溝中心の基準を確認し、\index{みぞちゅうしん@溝中心}溝中心の$X$位置を手動で計算し、決定する
-\item \index{みぞはば@溝幅}\nameKeywayWidth を確認し、\index{かこうかいすう（みぞはば）@加工回数（溝幅）}加工の回数を決定する
+\begin{enumerate}\item \KeywayType を確認し、必要に応じて加工における径の決定する
+\item \index{きじゅん（\yomiKeywayCenter）@基準（\nameKeywayCenter）}\nameKeywayCenter の基準を確認し、\KeywayCenter の$X$位置を手動で計算し、決定する
+\item \KeywayWidth を確認し、\index{かこうかいすう（\yomiKeywayWidth）@加工回数（\nameKeywayWidth）}加工の回数を決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -284,7 +286,7 @@
 \PMKeywayACOD\PMKeywayBDOD\PMKeywayPos\PMKeywayWidth\\
 \PMKeywayCornerR または\PMKeywayCornerC
 \tcbline*
-\paragraph*{A側溝深さが基準の場合}
+\paragraph*{\AsideKeywayDepth が基準の場合}
 （以上に加えて）\PMAsideKeywayDepth
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -297,34 +299,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{端面の面取における寸法}
 \begin{enumerate}
-\item \index{そとがわCめんとり（たんめん）@外側C面取}端面の外側C面取の場合は、\index{がいさくのうむ@外削の有無}外削の有無を確認し、加工の径を決定する
-\item \index{Cめんとり（がいさくせんたん）@C面取（外削先端）}外削先端部のC面取の場合は、\index{がいさくのけいじょう@外削の形状}外削の形状を確認し、\index{こうぐ（がいさく）@工具（外削）}工具を決定する
+\item \index{たんめんそとCめんとり@端面外C面取}端面外C面取の場合は、\index{がいさくのうむ@外削の有無}外削の有無を確認し、加工の径を決定する
+\item \index{Cめんとり（がいさくせんたん）@C面取（外削先端）}外削先端部C面取の場合は、\index{がいさくのけいじょう@外削の形状}外削の形状を確認し、\index{こうぐ（がいさく）@工具（外削）}工具を決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\paragraph*{トップ端外側C面取：外削のない場合}
-\PMACOD\PMBDOD\PMbox{トップ端外側C面取長}\PMODCornerR
+\paragraph*{トップ端面外C面取：外削のない場合}
+\PMACOD\PMBDOD\GPMbox{トップ端面外C面取長}\PMODCornerR
 \tcbline*
-\paragraph*{トップ端外側C面取：外削のある場合}
-\PMbox{トップ外削AC径}\PMbox{トップ外削BD径}\PMbox{トップ端外削コーナーR}\\
-\PMbox{トップ端外側C面取長}
+\paragraph*{トップ端面外C面取：外削のある場合}
+\GPMbox{トップ外削AC径}\GPMbox{トップ外削BD径}\GPMbox{トップ端面外削コーナーR}\\
+\GPMbox{トップ端面外C面取長}
 \tcbline*
-\paragraph*{ボトム端外側C面取：外削のない場合}
-\PMACOD\PMBDOD\PMbox{ボトム端外側C面取長}\PMODCornerR
+\paragraph*{ボトム端面外C面取：外削のない場合}
+\PMACOD\PMBDOD\GPMbox{ボトム端面外C面取長}\PMODCornerR
 \tcbline*
-\paragraph*{ボトム端外側C面取：外削のある場合}
-\PMbox{ボトム外削AC径}\PMbox{ボトム外削BD径}\PMbox{ボトム端外削コーナーR}\\
-\PMbox{ボトム端外側C面取長}
+\paragraph*{ボトム端面外C面取：外削のある場合}
+\GPMbox{ボトム外削AC径}\GPMbox{ボトム外削BD径}\GPMbox{ボトム端面外削コーナーR}\\
+\GPMbox{ボトム端面外C面取長}
 \tcbline*
-\paragraph*{トップ端内側C面取}
+\paragraph*{トップ端面内C面取}
 \PMTopEndACID\PMTopEndBDID\PMTopEndIDCornerR\\
-\PMbox{トップ端内側C面取長}\PMbox{めっき膜厚}
+\GPMbox{トップ端面内C面取長}\GPMbox{めっき膜厚}
 \tcbline*
-\paragraph*{ボトム端内側C面取}
+\paragraph*{ボトム端面内C面取}
 \PMBottomEndACID\PMBottomEndBDID\PMBottomEndIDCornerR\\
-\PMbox{ボトム端内側C面取長}\PMbox{めっき膜厚}
+\GPMbox{ボトム端面内C面取長}\GPMbox{めっき膜厚}
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -340,7 +342,7 @@
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\PMbox{\nameTanmenZaguri の位置}\PMbox{\nameTanmenZaguri 長}\PMEndFaceBoringCornerR\PMbox{\nameTanmenZaguri 深さ}\\
+\GPMbox{\nameTanmenZaguri の位置}\GPMbox{\nameTanmenZaguri 長}\PMEndFaceBoringCornerR\GPMbox{\nameTanmenZaguri 深さ}\\
 \ACOD
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -384,11 +386,11 @@
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{ワーク固定用ボルト}
 \PMACOD\PMBDOD\\
-\PMbox{ジグ床面とボルト取付具（上）間の距離}\PMbox{受板とボルト取付具（横）間の距離}
+\GPMbox{ジグ床面とボルト取付具（上）間の距離}\GPMbox{受板とボルト取付具（横）間の距離}
 \tcbline*
 \paragraph*{端面の削り代}
-\PMbox{ジグの長さ}\PMbox{トップ再振分長}\PMbox{ボトム再振分長}\PMbox{端面加工1回あたりの削り代}\\
-\PMbox{トップ側張出長実測値}\PMbox{ボトム側張出長実測値}
+\GPMbox{ジグの長さ}\GPMbox{トップ再振分長}\GPMbox{ボトム再振分長}\GPMbox{端面加工1回あたりの削り代}\\
+\GPMbox{トップ側張出長実測値}\GPMbox{ボトム側張出長実測値}
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -455,22 +457,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\Keyway 加工中}
 \begin{enumerate}
-\item 必要に応じて\expandafterindex{しあげかこう（\yomiKeyway）@仕上げ加工（\nameKeyway）}仕上加工前に\index{いちじていし（プログラム）@一時停止（プログラム）}一時停止を行い、\index{Aがわみぞふかさ@A側溝深さ}A側溝深さおよび\index{みぞけい@溝径}溝径の測定を行う
-\item A側溝深さを調整する場合は、該当する\index{しんだしそくてい（みぞちゅうしん）@芯出し測定（溝中心）}芯出し測定部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
-\item 溝径を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
+\item 必要に応じて\expandafterindex{しあげかこう（\yomiKeyway）@仕上げ加工（\nameKeyway）}仕上加工前に\index{いちじていし（プログラム）@一時停止（プログラム）}一時停止を行い、\AsideKeywayDepth および\KeywayDiameter の測定を行う
+\item \AsideKeywayDepth を調整する場合は、該当する\index{しんだしそくてい（\yomiKeywayCenter）@芯出し測定（\nameKeywayCenter）}芯出し測定部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
+\item \KeywayDiameter を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \item \expandafterindex{かこうかいすう（\yomiKeyway）@加工回数（\nameKeyway）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
-\item 必要に応じて、\index{ブロックゲージ}ブロックゲージによる\index{みぞはば@溝幅}溝幅の測定を行う
+\item 必要に応じて、\index{ブロックゲージ}ブロックゲージによる\KeywayWidth　の測定を行う
 \end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{端面外側C面取加工中}
+\subsection{端面外C面取加工中}
 \begin{enumerate}
-\item 必要に応じて\index{しあげかこう（そとがわCめんとり）@仕上げ加工（外側C面取）}仕上加工前に\index{いちじていし（プログラム）@一時停止（プログラム）}一時停止を行い、\index{Cめんとり@C面取}C面取の測定・位置の確認を行う
+\item 必要に応じて\index{しあげかこう（たんめんそとCめんとり）@仕上げ加工（端面外C面取）}仕上加工前に\index{いちじていし（プログラム）@一時停止（プログラム）}一時停止を行い、\index{Cめんとり@C面取}C面取の測定・位置の確認を行う
 \item C面取の位置を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
-\item \index{かこうかいすう（たんめんそとがわCめんとり）@加工回数（端面外側C面取）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
+\item \index{かこうかいすう（たんめんそとCめんとり）@加工回数（端面外C面取）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \end{enumerate}
 
 
@@ -478,11 +480,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{端面内側C面取加工中}
+\subsection{端面内C面取加工中}
 \begin{enumerate}
-\item 必要に応じて\index{しあげかこう（うちがわCめんとり）@仕上げ加工（内側C面取）}仕上加工前に\index{いちじていし@一時停止}一時停止を行い、C面取の測定・位置の確認を行う
+\item 必要に応じて\index{しあげかこう（たんめんうちがわCめんとり）@仕上げ加工（端面内C面取）}仕上加工前に\index{いちじていし@一時停止}一時停止を行い、C面取の測定・位置の確認を行う
 \item C面取の位置を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
-\item \index{かこうかいすう（たんめんうちがわCめんとり）@加工回数（端面内側C面取）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
+\item \index{かこうかいすう（たんめんうちCめんとり）@加工回数（端面内C面取）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \end{enumerate}
 
 

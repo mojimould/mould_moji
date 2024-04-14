@@ -21,7 +21,7 @@
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-ここでいうメインプログラムとは、\index{ずめんばんごう@図面番号}図面場号と同一の\index{プログラムばんごう@プログラム番号}プログラム番号のものを指す。
+ここでいうメインプログラムとは、\DrawingNumber　と同一の\index{プログラムばんごう@プログラム番号}プログラム番号のものを指す。
 ただし、ここでは例として挙げているので、\pageautoref{subsec:notopenwork}に伴い、プログラム番号は本来のものから変更している。
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -38,8 +38,8 @@
            & 端面 & \KTanmenRight\\
            & 外削 & \KGaisakuRLeft\\
            & \nameKeyway & \KMizoConerLeft\\
-           & 外C面取 & \KSotoMentoriRLeft\\
-           & 内C面取 & \KUchiMentoriRLeft\\
+           & 端面外C面取 & \KSotoMentoriRLeft\\
+           & 端面内C面取 & \KUchiMentoriRLeft\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
 \hline
 \SetCell[r=8]{c}
@@ -48,8 +48,8 @@
            & \Dimple & \DLone\\
            & 端面 & \KTanmenRight\\
            & \nameKeyway & \KMizoConerLeft\\
-           & 外C面取 & \KSotoMentoriRLeft\\
-           & 内C面取 & \KUchiMentoriRLeft\\
+           & 端面外C面取 & \KSotoMentoriRLeft\\
+           & 端面内C面取 & \KUchiMentoriRLeft\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
 \end{multicollongtblr}
 
@@ -64,7 +64,7 @@
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-ここでいうサブプログラムとは、\index{せいひんばんごう@製品番号}製品場号と同一の\index{プログラムばんごう@プログラム番号}プログラム番号以外のものを指す。
+ここでいうサブプログラムとは、\DrawingNumber　と同一の\index{プログラムばんごう@プログラム番号}プログラム番号以外のものを指す。
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,7 +74,7 @@
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \MXOThickness & 測定 両側 外側中心・幅$X$ & \OsensorOff\\
 \MYOThickness & 測定 両側 外側中心・幅$Y$ & \OsensorOff\\
-\MXOface      & 測定 片側 溝中心$X$（トップA側外面測定） & \OsensorOff\\
+\MXOface      & 測定 片側 \KeywayCenter$X$（トップA側外面測定） & \OsensorOff\\
 \MXIWidth     & 測定 両側 内側中心・幅$X$ & \OsensorOff\\
 \MYIWidth     & 測定 両側 内側中心・幅$Y$ & \OsensorOff\\
 \MXIface      & 測定 片側 外削中心$X$（C側内面方向測定） & \OsensorOff\\
@@ -103,9 +103,9 @@
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \KTanmenRight      & 加工 端面 コーナーR 右回り1周 & \KOLeftAR\\
 \KGaisakuRLeft     & 加工 外削 コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
-\KMizoConerLeft    & 加工 溝 左回り1周 & \KOLeftAR\OpauseCheck\\
-\KSotoMentoriRLeft & 加工 外面取 コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
-\KUchiMentoriRLeft & 加工 内面取 コーナーR 左回り1周 & \KILeftAC\OpauseCheck\\
+\KMizoConerLeft    & 加工 \Keyway{} 左回り1周 & \KOLeftAR\OpauseCheck\\
+\KSotoMentoriRLeft & 加工 端面外C面取 コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
+\KUchiMentoriRLeft & 加工 端面内C面取 コーナーR 左回り1周 & \KILeftAC\OpauseCheck\\
 \KOLeftAR   & 外側 左回り1周 右上始まり & -\\
 \KILeftAC   & 内側 左回り1周 中央上始まり & -\\
 \end{multicollongtblr}
@@ -176,7 +176,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MYOThickness %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MXOface\,:測定 片側 溝中心\texorpdfstring{$X$}{X}（A側外面側測定）}
+\modcaptionof{lstlisting}{\MXOface\,:測定 片側 \KeywayCenter\texorpdfstring{$X$}{X}（A側外面側測定）}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameMXOface.nc}
 
 \clearrightpage
@@ -248,7 +248,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KMizoConerLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KMizoConerLeft\,:加工 溝 左回り1周}
+\modcaptionof{lstlisting}{\KMizoConerLeft\,:加工 \Keyway{} 左回り1周}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameKMizoConerLeft.nc}
 
 
@@ -256,7 +256,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KSotoMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KSotoMentoriRLeft\,:加工 外面取 コーナーR 左回り1周}
+\modcaptionof{lstlisting}{\KSotoMentoriRLeft\,:加工 端面外C面取 コーナーR 左回り1周}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameKSotoMentoriRLeft.nc}
 
 
@@ -264,7 +264,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KUchiMentoriRLeft\,:加工 内面取 コーナーR 左回り1周}
+\modcaptionof{lstlisting}{\KUchiMentoriRLeft\,:加工 端面内C面取 コーナーR 左回り1周}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameKUchiMentoriRLeft.nc}
 
 

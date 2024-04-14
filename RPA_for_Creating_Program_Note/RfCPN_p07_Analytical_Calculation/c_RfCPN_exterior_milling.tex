@@ -5,14 +5,14 @@
 ここでは主に、\index{がいさく@外削}\textbf{外削}に関する測定・加工に必要な\expandafterindex{きかがくてきせいしつ（がいさく）@幾何学的性質（外削）}幾何学的性質を考える。
 
 \index{モールド}モールドに\index{がいさく@外削}\textbf{外削}があるときは、たいていの場合、\index{Aがわにくあつ@A側肉厚}A面側の\textbf{肉厚}を\index{きじゅん（がいさくちゅうしん）@基準（外削中心）}基準として考えることが多い。
-\index{ないけい（たんめん）@内径（端面）}トップ・ボトム端における\textbf{内径}をそれぞれ$w_\mathrm T$, $w_\mathrm B$, \index{がいさくけい@外削径}\textbf{外削径}をそれぞれ$\mathfrak W_\mathrm T$, $\mathfrak W_\mathrm B$, \index{Aがわにくあつ@A側肉厚}A側肉厚をそれぞれ$\tau_\mathrm T$, $\tau_\mathrm B$, \index{うちがわCめんとり（たんめん）@内側C面取（端面）}端面の内側C面取の垂直方向の大きさをそれぞれ$c_\mathrm{Ti}$, $c_\mathrm{Bi}$とする。
+\index{ないけい（たんめん）@内径（端面）}トップ・ボトム端における\textbf{内径}をそれぞれ$w_\mathrm T$, $w_\mathrm B$, \index{がいさくけい@外削径}\textbf{外削径}をそれぞれ$\mathfrak W_\mathrm T$, $\mathfrak W_\mathrm B$, \index{Aがわにくあつ@A側肉厚}A側肉厚をそれぞれ$\tau_\mathrm T$, $\tau_\mathrm B$, \index{たんめんうちCめんとり@端面内C面取}端面内C面取の垂直方向の大きさをそれぞれ$c_\mathrm{Ti}$, $c_\mathrm{Bi}$とする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-端面に内側C面取がある場合、肉厚$\tau_\mathrm T$, $\tau_\mathrm B$は、\index{たんめん@端面}端面から\index{Cめんとりちょう@C面取長}C面取長$c_\mathrm{Ti}$または$c_\mathrm{Bi}$の位置における\index{すんぽう（Cめんとり）@寸法（C面取）}寸法が与えられる。
-\index{うちがわRめんとり（たんめん）@内側R面取（端面）}内側R面取の場合も同様。
-なお、\index{めんとり@面取}面取がない場合は、その\index{すんぽう（めんとり）@寸法（面取）}寸法を0（すなわち端面部）とする。
+端面内C面取がある場合、肉厚$\tau_\mathrm T$, $\tau_\mathrm B$は、\index{たんめん@端面}端面から\index{Cめんとりちょう@C面取長}C面取長$c_\mathrm{Ti}$または$c_\mathrm{Bi}$の位置における\index{すんぽう（Cめんとり）@寸法（C面取）}寸法が与えられる。
+\index{たんめんうちRめんとり@端面内R面取}端面内R面取の場合も同様。
+なお、\index{めんとり@面取}面取がない場合は、その\index{めんとりちょう@面取長}面取長を0（すなわち端面部）とする。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -186,14 +186,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{トップ側の外削長}
-トップ側の\index{がいさくちょう@外削長}外削長に関しては、基本的には\index{ふりわけちょう@振分長}振分長$f_\mathrm T$から外削長$h_\mathrm T$を引いた位置に$Z$座標を合わせればよい。
+\modHeadsection{\TopOutcutLength}
+\TopOutcutLength に関しては、基本的には\index{ふりわけちょう@振分長}振分長$f_\mathrm T$から\TopOutcutLength$h_\mathrm T$を引いた位置に$Z$座標を合わせればよい。
 すなわち、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pを\index{げんてんP@原点P}原点として$Z$座標を
 \begin{align*}
   f_\mathrm T - h_\mathrm T
 \end{align*}
 とすればよい。
-ただし、外削長$h_\mathrm T$が\index{みぞいち@溝位置}溝位置$\kappa_p$と\index{みぞはば@溝幅}溝幅$\kappa_w$の和に一致する場合は、\index{がいさくちょう@外削長}外削長を$\kappa_p+1$mmとして切削する
+ただし、\TopOutcutLength$h_\mathrm T$が\KeywayPos$\kappa_p$と\KeywayWidth$\kappa_w$の和に一致する場合は、\TopOutcutLength を$\kappa_p+1$mmとして切削する
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{$f_\mathrm T-(\kappa_p+\kappa_w) < Z < f_\mathrm T-\kappa_p$であれば問題ない。
 1mmとしているのは慣例によるものである。}。
@@ -230,7 +230,7 @@
   \tan\theta_\mathrm{Bo} &= \frac{x_\mathrm{Bo}}{f_\mathrm B'}\ .
 \end{alignat*}
 \end{subequations}
-\index{ボトムがわのがいさくちょう@ボトム側の外削長}ボトムの外削長を$h_\mathrm B$とすると、外削部分の\index{かたむき（がいさく）@傾き（外削）}傾きはボトム端から距離$\nicefrac{h_\mathrm B}2$の断面に平行になる形にとるので、そのときの\index{かたむきかく（がいさく）@傾き角（外削）}傾き角$\theta_b$は、
+\BottomOutcutLength を$h_\mathrm B$とすると、外削部分の\index{かたむき（がいさく）@傾き（外削）}傾きはボトム端から距離$\nicefrac{h_\mathrm B}2$の断面に平行になる形にとるので、そのときの\index{かたむきかく（がいさく）@傾き角（外削）}傾き角$\theta_b$は、
 \begin{align*}
   \sin\theta_b = \frac{f_\mathrm B'-\nicefrac{h_\mathrm B}2}{R_\mathrm c}
 \end{align*}

@@ -77,7 +77,7 @@
 \SetRow{unusingVariables}
 \ttNum181 & （不使用） &\\
 \ttNum182 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum183 & 溝 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum183 & \Keyway 仕上げ加工 追加回数 (上限3) & 0\\
 \ttNum184 & トップ側 端面外C面取 仕上げ加工 追加回数 (上限3) & 0\\
 \ttNum185 & トップ側 端面内C面取 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
@@ -149,12 +149,12 @@
 \ttNum417 & トップ外削 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum418 & （不使用） &\\
-\ttNum419 & 溝位置$+$補正（溝幅不変） & 0\\
-\ttNum420 & 溝幅$+$補正 & 0\\
-\ttNum421 & 溝A面深さ$+$補正（溝径中心$X-$補正） & 0\\
-\ttNum422 & 溝径（直径）$+$補正 & 0\\
-\ttNum423 & 溝 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum424 & 溝 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum419 & \KeywayPos$+$補正（\KeywayWidth 不変） & 0\\
+\ttNum420 & \KeywayWidth$+$補正 & 0\\
+\ttNum421 & \AsideKeywayDepth$+$補正（\KeywayCenter$X-$補正） & 0\\
+\ttNum422 & \KeywayDiameter（直径）$+$補正 & 0\\
+\ttNum423 & \Keyway 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum424 & \Keyway 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \end{multicollongtblr}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -273,7 +273,7 @@
 
 \begin{multicollongtblr}[white]{\ttNum475\,-\ttNum499：補助機能（該当明細 少）}{cX[l]c}
 変数 & 内容 & 設定例\\
-\ttNum475 & 溝幅$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\
+\ttNum475 & \KeywayWidth$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\
 \SetRow{unusingVariables}
 \ttNum476 & （不使用） &\\
 \SetRow{unusingVariables}
@@ -418,7 +418,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \SetRow{unusingVariables}
 \ttNum611 & （予備） &\\
 \SetRow{unusingVariables}
-\ttNum612 & （溝加工用予備） & \\
+\ttNum612 & （\Keyway 加工用予備） & \\
 \SetRow{unusingVariables}
 \ttNum613 & （予備） &\\
 \SetRow{unusingVariables}
@@ -458,8 +458,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum626 & （予備） & \\
 \ttNum627 & 外削加工1回あたりの削り代（直径） & 2.0\\
 \ttNum628 & 外削加工 仕上げ前 残り削り代（直径） & 1.0\\
-\ttNum629 & 溝加工1回あたりの削り代（溝深さ） & 5.0\\
-\ttNum630 & 溝加工 仕上げ前 残り削り代（直径） & 1.0\\
+\ttNum629 & \Keyway 加工1回あたりの削り代（\KeywayDepth） & 5.0\\
+\ttNum630 & \Keyway 加工 仕上げ前 残り削り代（直径） & 1.0\\
 \ttNum631 & 端面外C面取加工1回あたりの削り代（直径） & 2.000\\
 \ttNum632 & 端面外C面取加工 仕上げ前 残り削り代（直径） & 1.000\\
 \ttNum633 & 端面内C面取加工1回あたりの削り代（直径） & 2.000\\
@@ -519,8 +519,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum659 & 端面加工：コーナー & 900\\
 \ttNum660 & 外削加工：直線 & 400\\
 \ttNum661 & 外削加工：コーナー & 400\\
-\ttNum662 & 溝加工：直線 & 500\\
-\ttNum663 & 溝加工：コーナー & 400\\
+\ttNum662 & \Keyway 加工：直線 & 500\\
+\ttNum663 & \Keyway 加工：コーナー & 400\\
 \ttNum664 & 端面外C面取加工：直線 & 500\\
 \ttNum665 & 端面外C面取加工：コーナー & 400\\
 \ttNum666 & 端面内C面取加工：直線 & 400\\
@@ -549,7 +549,7 @@ $\cdots$ & （以下不明） & \ttNum0
 変数 & 内容 & 設定例\\
 \ttNum675 & 端面加工 & 950\\
 \ttNum676 & 外削加工 & 930\\
-\ttNum677 & 溝加工 & 930\\
+\ttNum677 & \Keyway 加工 & 930\\
 \ttNum678 & 端面外C面取加工 & 1800\\
 \ttNum679 & 端面内C面取加工 & 1800\\
 \ttNum680 & \TanmenZaguri 加工 & 500\\
@@ -759,9 +759,9 @@ $\cdots$ & （以下不明） & \ttNum0
 
 
 %\clearpage
-\begin{multicollongtblr}[white]{\ttNum900012\,-\ttNum900014：溝中心$X$ 片側測定用 \MXOface}{cX[l]}
+\begin{multicollongtblr}[white]{\ttNum900012\,-\ttNum900014：\KeywayCenter$X$ 片側測定用 \MXOface}{cX[l]}
 変数 & 内容\\
-\ttNum900012 & $X$溝中心測定 A側外面測定値\\
+\ttNum900012 & $X$\KeywayCenter　測定 A側外面測定値\\
 \SetRow{unusingVariables}
 \ttNum900013 & （予備）\\
 \SetRow{unusingVariables}
@@ -1017,18 +1017,18 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum901104 & （端面加工工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
 \ttNum901105 & 工具{\ttfamily T06}（サイドカッター）厚さ$t$ & 6.9\\
 \SetRow{unusingVariables}
-\ttNum901106 & （溝加工工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
+\ttNum901106 & （\Keyway 加工工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901107 & （溝加工工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
+\ttNum901107 & （\Keyway 加工工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901108 & （溝加工工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
+\ttNum901108 & （\Keyway 加工工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
 \ttNum901109 & 工具{\ttfamily T08}（サイドカッター）厚さ$t$ & 5.0\\
 \SetRow{unusingVariables}
-\ttNum901110 & （溝加工工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
+\ttNum901110 & （\Keyway 加工工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901111 & （溝加工工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
+\ttNum901111 & （\Keyway 加工工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901112 & （溝加工工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
+\ttNum901112 & （\Keyway 加工工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
 \ttNum901113 & 工具{\ttfamily T11}（テーパエンドミル）参照直径用 工具長補正値 & 2.0\\
 \SetRow{unusingVariables}
 \ttNum901114 & （工具{\ttfamily T11}用 予備） &\\

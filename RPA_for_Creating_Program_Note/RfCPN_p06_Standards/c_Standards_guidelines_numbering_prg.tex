@@ -53,9 +53,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{6桁目：0}
 6桁目が0のものは、原則として\index{メインプログラム}メインプログラムとする。
-このとき、下5桁は製品の\index{ずめんばんごう@図面番号}図面番号（番号部分・右詰め, {\ttfamily\textbackslash d{5}}）とする
+このとき、下5桁は製品の\DrawingNumber（番号部分・右詰め, {\ttfamily\textbackslash d{5}}）とする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{稀に、図面番号にアルファベットが含まれるものが存在する。
+\footnote{稀に、\DrawingNumber にアルファベットが含まれるものが存在する。
 その場合は、その都度に別途対応する。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -67,11 +67,11 @@
 \begin{enumerate}[label=\arabic*., ref=\arabic*, start=1]
 \item\label{item:6Mmain} 測定（\Dimple 以外）を行うプログラム({\ttfamily1\textbackslash d{5}})
 \item\label{item:6MD} 測定（\Dimple）を行うプログラム({\ttfamily2\textbackslash d{5}})
-%\item\label{item:6MN} 測定（逃し溝）を行うプログラム
+%\item\label{item:6MN} 測定（\ReliefGroove）を行うプログラム
 \setcounter{enumi}{3}
 \item\label{item:6Kmain} 加工（\Dimple 以外）を行うプログラム({\ttfamily4\textbackslash d{5}})
 \item\label{item:6KD} 加工（\Dimple）を行うプログラム({\ttfamily5\textbackslash d{5}})
-%\item\label{item:6KN} 加工（逃し溝）を行うプログラム
+%\item\label{item:6KN} 加工（\ReliefGroove）を行うプログラム
 \end{enumerate}
 複数の用途での使用が想定されるものに対しては、番号の若いほうに合わせる。
 
@@ -130,11 +130,11 @@
     主に、\index{たんめんかこう@端面加工}端面加工の位置決めを行うプログラム({\ttfamily 41\textbackslash d{4}})
   \item\label{item:5KO} 主に、\index{がいさくかこう@外削加工}外削加工の位置決めを行うプログラム({\ttfamily 42\textbackslash d{4}})
   \item%\label{item:5KK}
-    主に、\index{みぞかこう@溝加工}溝加工の位置決めを行うプログラム({\ttfamily 43\textbackslash d{4}})
+    主に、\expandafterindex{\yomiKeyway かこう@\nameKeyway 加工}\nameKeyway 加工の位置決めを行うプログラム({\ttfamily 43\textbackslash d{4}})
   \item%\label{item:5KCO}
-    主に、（端面部）\index{そとがわCめんとりかこう（たんめん）@外側C面取加工（端面）}外側\index{Cめんとりかこう@C面取加工}C面取加工の位置決めを行うプログラム({\ttfamily 44\textbackslash d{4}})
+    主に、\index{たんめんそとCめんとりかこう@端面外C面取加工}端面外C面取加工の位置決めを行うプログラム({\ttfamily 44\textbackslash d{4}})
   \item%\label{item:5KCI}
-    主に、（端面部）\index{うちがわCめんとりかこう（たんめん）@内側C面取加工（端面）}内側C面取加工の位置決めを行うプログラム({\ttfamily 45\textbackslash d{4}})
+    主に、\index{たんめんうちCめんとりかこう@端面内C面取加工}端面内C面取加工の位置決めを行うプログラム({\ttfamily 45\textbackslash d{4}})
 %  \item\label{item:5KZ} \TanmenZaguri の加工のプログラム(\ttfamily{46\textbackslash d{4}})
   \setcounter{enumii}{8}
   \item 主に、位置決め後、実際に加工を行うプログラム({\ttfamily 49\textbackslash d{4}})
