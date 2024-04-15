@@ -81,7 +81,7 @@
 \ttNum184 & トップ側 端面外C面取 仕上げ加工 追加回数 (上限3) & 0\\
 \ttNum185 & トップ側 端面内C面取 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
-\ttNum186\TBW & （\TanmenZaguri{} 仕上げ加工 追加回数用 予備） & 0\\
+\ttNum186\TBW & （\EndFaceBoring{} 仕上げ加工 追加回数用 予備） & 0\\
 \SetRow{unusingVariables}
 \ttNum187 & （不使用） &\\
 \ttNum188 & ボトム外削 仕上げ加工 追加回数 (上限3) & 0\\
@@ -277,11 +277,11 @@
 \SetRow{unusingVariables}
 \ttNum476 & （不使用） &\\
 \SetRow{unusingVariables}
-\ttNum477\TBW & （\TanmenZaguri$X+$補正用 予備） & 0\\
+\ttNum477\TBW & （\EndFaceBoring$X+$補正用 予備） & 0\\
 \SetRow{unusingVariables}
-\ttNum478\TBW & （\TanmenZaguri 径 補正用 予備） & 0\\
-\ttNum479 & \TanmenZaguri{} 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum480 & \TanmenZaguri{} 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum478\TBW & （\EndFaceBoring 径 補正用 予備） & 0\\
+\ttNum479 & \EndFaceBoring{} 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum480 & \EndFaceBoring{} 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum481 & （不使用） &\\
 \SetRow{unusingVariables}
@@ -430,7 +430,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \SetRow{unusingVariables}
 \ttNum617 & （予備） &\\
 \SetRow{unusingVariables}
-\ttNum618 & （\TanmenZaguri 加工用予備） &\\
+\ttNum618 & （\EndFaceBoring 加工用予備） &\\
 \SetRow{unusingVariables}
 \ttNum619 & （予備） &\\
 \ttNum620 & \Dimple 測定時近付き量 & 4.0 \\
@@ -465,9 +465,9 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum633 & 端面内C面取加工1回あたりの削り代（直径） & 2.000\\
 \ttNum634 & 端面内C面取加工 仕上げ前 残り削り代（直径） & 1.000\\
 \SetRow{unusingVariables}
-\ttNum635 & （\TanmenZaguri 加工用予備） & \\
+\ttNum635 & （\EndFaceBoring 加工用予備） & \\
 \SetRow{unusingVariables}
-\ttNum636 & （\TanmenZaguri 加工用予備） & \\
+\ttNum636 & （\EndFaceBoring 加工用予備） & \\
 \SetRow{unusingVariables}
 \ttNum637 & （予備） & \\
 \SetRow{unusingVariables}
@@ -506,29 +506,29 @@ $\cdots$ & （以下不明） & \ttNum0
 
 \begin{multicollongtblr}[white]{\ttNum650\,-\ttNum674：工具の送り速さ}{cX[l]c}
 変数 & 内容 & 設定例\\
-\ttNum650 & 早送り$Z$：{\ttfamily T50}アプローチ以外 & 15000\\
-\ttNum651 & アプローチ・$XY$リトラクト：{\ttfamily T50}以外 & 6600\\
-\ttNum652 & 早送り$XY$：{\ttfamily T50}, 早送り$Z$：{\ttfamily T50}アプローチ & 6000\\
-\ttNum653 & アプローチ：{\ttfamily T50} & 1500\\
-\ttNum654 & アプローチ：工具長測定 & 960\\
-\ttNum655 & 測定時アプローチ：{\ttfamily T50}（両側芯出し測定） & 200\\
-\ttNum656 & 測定時アプローチ：{\ttfamily T50}（片側測定） & 50\\
+\ttNum650 & 早送り$Z$：{\ttfamily T50}アプローチ以外 & \SpindleRapidTraverseZ\\
+\ttNum651 & アプローチ・$XY$リトラクト：{\ttfamily T50}以外 & \SpindleRapidAproachFeedRateZ\\
+\ttNum652 & 早送り$XY$：{\ttfamily T50}, 早送り$Z$：{\ttfamily T50}アプローチ & \SensorRapidTraverseXY\\
+\ttNum653 & アプローチ：{\ttfamily T50} & \SensorRapidAproachFeedRateZ\\
+\ttNum654 & アプローチ：工具長測定 & \ToolLengthMeasurementFeedRateZ\\
+\ttNum655 & 測定時アプローチ：{\ttfamily T50}（両側芯出し測定） & \CenterMeasurementFeedRate\\
+\ttNum656 & 測定時アプローチ：{\ttfamily T50}（片側測定） & \PosMeasurementFeedRate\\
 \SetRow{unusingVariables}
 \ttNum657 & （不使用） &\\
-\ttNum658 & 端面加工：直線 & 900\\
-\ttNum659 & 端面加工：コーナー & 900\\
-\ttNum660 & 外削加工：直線 & 400\\
-\ttNum661 & 外削加工：コーナー & 400\\
-\ttNum662 & \Keyway 加工：直線 & 500\\
-\ttNum663 & \Keyway 加工：コーナー & 400\\
-\ttNum664 & 端面外C面取加工：直線 & 500\\
-\ttNum665 & 端面外C面取加工：コーナー & 400\\
-\ttNum666 & 端面内C面取加工：直線 & 400\\
-\ttNum667 & 端面内C面取加工：コーナー & 400\\
-\ttNum668 & \TanmenZaguri 加工：直線 & 40\\
-\ttNum669 & \TanmenZaguri 加工：コーナー & 40\\
-\ttNum670 & \Dimple 測定：表面アプローチ & 600\\
-\ttNum671 & \Dimple 加工：加工 & 100\\
+\ttNum658 & 端面加工：直線 & \EndFaceLinearFeedRate\\
+\ttNum659 & 端面加工：コーナー & \EndFaceCornerFeedRate\\
+\ttNum660 & 外削加工：直線 & \OutcutLinearFeedRate\\
+\ttNum661 & 外削加工：コーナー & \OutcutCornerFeedRate\\
+\ttNum662 & \Keyway 加工：直線 & \KeywayLinearFeedRate\\
+\ttNum663 & \Keyway 加工：コーナー & \KeywayCornerFeedRate\\
+\ttNum664 & 端面外C面取加工：直線 & \OutChamferLinearFeedRate\\
+\ttNum665 & 端面外C面取加工：コーナー & \OutChamferCornerFeedRate\\
+\ttNum666 & 端面内C面取加工：直線 & \InChamferLinearFeedRate\\
+\ttNum667 & 端面内C面取加工：コーナー & \InChamferCornerFeedRate\\
+\ttNum668 & \EndFaceBoring 加工：直線 & \EndFaceBoringLinearFeedRate\\
+\ttNum669 & \EndFaceBoring 加工：コーナー & \EndFaceBoringCornerFeedRate\\
+\ttNum670 & \Dimple 測定：表面アプローチ & \DimpleApproachFeedRate\\
+\ttNum671 & \Dimple 加工：加工 & \DimpleProcessFeedRate\\
 \SetRow{unusingVariables}
 \ttNum672 & （予備） & \\
 \SetRow{unusingVariables}
@@ -547,13 +547,13 @@ $\cdots$ & （以下不明） & \ttNum0
 
 \begin{multicollongtblr}[white]{\ttNum675\,-\ttNum699：主軸回転数（切削時）}{cX[l]c}
 変数 & 内容 & 設定例\\
-\ttNum675 & 端面加工 & 950\\
-\ttNum676 & 外削加工 & 930\\
-\ttNum677 & \Keyway 加工 & 930\\
-\ttNum678 & 端面外C面取加工 & 1800\\
-\ttNum679 & 端面内C面取加工 & 1800\\
-\ttNum680 & \TanmenZaguri 加工 & 500\\
-\ttNum681 & \Dimple 加工 & 2000\\
+\ttNum675 & 端面加工 & \EndFaceSpindleSpeed\\
+\ttNum676 & 外削加工 & \OutcutSpindleSpeed\\
+\ttNum677 & \Keyway 加工 & \KeywaySpindleSpeed\\
+\ttNum678 & 端面外C面取加工 & \OutChamferSpindleSpeed\\
+\ttNum679 & 端面内C面取加工 & \InChamferSpindleSpeed\\
+\ttNum680 & \EndFaceBoring 加工 & \EndFaceBoringSpindleSpeed\\
+\ttNum681 & \Dimple 加工 & \DimpleSpindleSpeed\\
 \SetRow{unusingVariables}
 \ttNum682 & （予備） & \\
 \SetRow{unusingVariables}
@@ -945,8 +945,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \SetRow{unusingVariables}
 \ttNum901052 & （予備） &\\
 \ttNum901053 & 信号遅れ補正（送り速さ50mm/min時） & 0.040\\
-\ttNum901054 & {\ttfamily T50}中心$X$補正 & -0.016507\\
-\ttNum901055 & {\ttfamily T50}中心$Y$補正 & -0.12\\
+\ttNum901054 & {\ttfamily T50}中心$X+$補正 & -0.016507\\
+\ttNum901055 & {\ttfamily T50}中心$Y+$補正 & -0.12\\
 \SetRow{unusingVariables}
 \ttNum901056 & （予備） &\\
 \ttNum901057 & 測定距離 & 5\\
@@ -1065,15 +1065,13 @@ $\cdots$ & （以下不明） & \ttNum0
 \SetRow{unusingVariables}
 \ttNum901126 & （外削加工工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
 \ttNum901127 & 工具{\ttfamily T31}（Tスロットカッター）厚さ & 8.0\\
-\ttNum901128 & 工具{\ttfamily T31}（Tスロットカッター）シャンク直径（公称値） & 25.0\\
-\ttNum901129 & 工具{\ttfamily T32}（Tスロットカッター）厚さ & 8.0\\
-\ttNum901130 & 工具{\ttfamily T32}（Tスロットカッター）シャンク直径（公称値） & 25.0\\
-\SetRow{unusingVariables}
-\ttNum901132 & （\Dimple 加工工具用 予備） &\\
-\SetRow{unusingVariables}
-\ttNum901133 & （\Dimple 加工工具用 予備） &\\
-\SetRow{unusingVariables}
-\ttNum901134 & （\Dimple 加工工具用 予備） &\\
+\ttNum901128 & 工具{\ttfamily T31}（Tスロットカッター）シャンク直径 & 25.0\\
+\ttNum901129 & 工具{\ttfamily T31}（Tスロットカッター）中心$X+$補正 & 0.00\\
+\ttNum901130 & 工具{\ttfamily T31}（Tスロットカッター）中心$Y+$補正 & 0.02\\
+\ttNum901131 & 工具{\ttfamily T32}（Tスロットカッター）厚さ & 8.0\\
+\ttNum901132 & 工具{\ttfamily T32}（Tスロットカッター）シャンク直径 & 25.0\\
+\ttNum901133 & 工具{\ttfamily T32}（Tスロットカッター）中心$X+$補正 & 0.00\\
+\ttNum901134 & 工具{\ttfamily T32}（Tスロットカッター）中心$Y+$補正 & 0.00\\
 \SetRow{unusingVariables}
 \ttNum901135 & （\Dimple 加工工具用 予備） &\\
 \SetRow{unusingVariables}
@@ -1081,7 +1079,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \SetRow{unusingVariables}
 \ttNum901137 & （\Dimple 加工工具用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901138 & （予備） &\\
+\ttNum901138 & （\Dimple 加工工具用 予備） &\\
 \SetRow{unusingVariables}
 \ttNum901139 & （予備） &\\
 \SetRow{unusingVariables}
