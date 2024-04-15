@@ -161,6 +161,8 @@ N009
 #717=[#24/2+#20-#702-#620]*COS[ABS[#02]]
 (#716, #717: face from -#620)
 
+#718=FIX[#21*10]/10-0.1
+(#718=FIX[U*10]/10-0.1)
 
 IF[#4111EQ50]GOTO200
 IF[#402EQ0]GOTO200
@@ -205,19 +207,19 @@ IF[#724EQ1]GOTO107
 (#724=2, for C)
 (#724=1, for A)
 (face D)
-G65 P220002 A-1. F#09 S#19 I#04 K#06 U0.2 B#02 M1.0
+G65 P220002 A-1. F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for D: moving along row)
 GOTO108
 N105 (face B)
-G65 P220002 A1. F#09 S#19 I#04 K#06 U0.2 B#02 M1.0
+G65 P220002 A1. F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for B: moving along row)
 GOTO108
 N106 (face C)
-G65 P220001 A-1. X#24 F#09 S#19 I#04 K#06 U0.2 B#02 M1.0
+G65 P220001 A-1. X#24 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for C: moving along row)
 GOTO108
 N107 (face A)
-G65 P220001 A1. X#24 F#09 S#19 I#04 K#06 U0.2 B#02 M1.0
+G65 P220001 A1. X#24 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for A: moving along row)
 
 N108
@@ -440,7 +442,7 @@ N999 M99
 (as RHS)
 (#600, #620, #652, #653, #681, #901001, #901005, #901011, #901050)
 (as LHS)
-(#700-#717, #724)
+(#700-#718, #724)
 
 
 (System variables)
