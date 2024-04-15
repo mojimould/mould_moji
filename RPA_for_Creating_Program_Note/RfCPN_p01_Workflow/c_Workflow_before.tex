@@ -147,8 +147,8 @@
 \subsubsection{端面面取部分}
 \index{たんめんめんとりかこう@端面面取加工}端面の面取加工については、全明細に存在し、明細により種類の違いが存在する。
 \begin{enumerate}
-\item 種類が\index{Cめんとり@C面取}C面取であれば、その\index{すんぽう（Cめんとり）@寸法（C面取）}寸法により\index{マシニングセンタ}マシニングセンタによる加工を行うか判断を行う
-\item \index{たんめんCめんとり@端面C面取}C面取の角度を確認し、使用する\index{こうぐ（Cめんとり）@工具（C面取）}工具を決定する
+\item 種類が\index{Cめんとり@C面取}C面取であれば、その\index{Cめんとりちょう@C面取長}C面取長により\index{マシニングセンタ}マシニングセンタによる加工を行うか判断を行う
+\item \index{たんめんCめんとりかくど@端面C面取角度}端面C面取角度を確認し、使用する\index{こうぐ（Cめんとり）@工具（C面取）}工具を決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -203,16 +203,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{再振分長}
-\GPMbox{全長}\GPMbox{トップ振分長}\GPMbox{ボトム振分長}\PMACOD\GPMbox{ジグの長さ}\GPMbox{受板の幅}
+\GPMbox{全長}
+\GPMbox{トップ振分長}
+\GPMbox{ボトム振分長}
+\PMACOD
+\GPMbox{ジグの長さ}
+\GPMbox{受板の幅}
 \tcbline*
 \paragraph*{\nameTopEndFace}
-\GPMbox{トップ再振分長}\PMACOD\PMBDOD\PMODCornerR\\
-\PMTopEndACID\PMTopEndBDID\\
+\GPMbox{トップ再振分長}
+\PMACOD
+\PMBDOD
+\PMODCornerR\\
+\PMTopEndACID
+\PMTopEndBDID\\
 \GPMbox{トップ側$Z$方向クリアランス平面距離}
 \tcbline*
 \paragraph*{\nameBottomEndFace}
-\GPMbox{ボトム再振分長}\PMACOD\PMBDOD\PMODCornerR\\
-\PMBottomEndACID\PMBottomEndBDID\\
+\GPMbox{ボトム再振分長}
+\PMACOD
+\PMBDOD
+\PMODCornerR\\
+\PMBottomEndACID
+\PMBottomEndBDID\\
 \GPMbox{ボトム側$Z$方向クリアランス平面距離}
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -227,7 +240,7 @@
 \begin{enumerate}
 \item \OutcutLength と\Keyway の位置を確認し、実際に加工する外削の長さの判断を行う
 \item トップ側・ボトム側の両方に外削のある場合は、どちら側が\index{きじゅん（がいさくちゅうしん）@基準（外削中心）}基準であるのかを確認する
-\item \index{ないけい（たんめん）@内径（端面）}端面の内径・\index{Aがわにくあつ（がいさく）@A側肉厚（外削）}外削部のA側肉厚・内面の\index{めっきまくあつ@めっき膜厚}めっき膜厚から、\index{がいさくちゅうしん@外削中心}外削中心$X$位置用のパラメータを手動による計算で決定する
+\item \index{ないけい（たんめん）@内径（端面）}端面の内径・\index{Aがわにくあつ（がいさく）@A側肉厚（外削）}外削部のA側肉厚・内面の\PlatingThk から、\index{がいさくちゅうしん@外削中心}外削中心$X$位置用のパラメータを手動による計算で決定する
 \item \index{わんきょくにそったがいさく@湾曲に沿った外削}湾曲に沿った外削の場合は、\index{かたむきかく（がいさく）@傾き角（外削）}傾き角を手動による計算で決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -237,24 +250,24 @@
 \paragraph*{ボトム側の外削のみの場合}
 \GPMbox{ボトム外削AC径}\GPMbox{ボトム外削BD径}\GPMbox{ボトム外削コーナーR}\\
 \GPMbox{\BottomOutcutLength}\\
-\PMBottomEndACID\GPMbox{ボトム側A側肉厚}\GPMbox{めっき膜厚}
+\PMBottomEndACID\GPMbox{ボトム側A側肉厚}\PMPlatingThk
 \tcbline*
 \paragraph*{トップ側の外削のみの場合}
 \GPMbox{トップ外削AC径}\GPMbox{トップ外削BD径}\GPMbox{トップ外削コーナーR}\\
 \GPMbox{\TopOutcutLength}\PMKeywayPos\PMKeywayWidth\\
-\PMTopEndACID\GPMbox{トップ外削A側肉厚}\GPMbox{めっき膜厚}
+\PMTopEndACID\GPMbox{トップ外削A側肉厚}\PMPlatingThk
 \tcbline*
 \paragraph*{両方に外削があり、ボトム側が基準の場合}
 \GPMbox{ボトム外削AC径}\GPMbox{ボトム外削BD径}\GPMbox{ボトム外削コーナーR}\\
 \GPMbox{\BottomOutcutLength}\\
-\PMBottomEndACID\GPMbox{ボトム外削A側肉厚}\GPMbox{めっき膜厚}\\
+\PMBottomEndACID\GPMbox{ボトム外削A側肉厚}\PMPlatingThk\\
 \GPMbox{トップ外削AC径}\GPMbox{トップ外削BD径}\GPMbox{トップ外削コーナーR}\\
 \GPMbox{\TopOutcutLength}\PMKeywayPos\PMKeywayWidth\GPMbox{通り芯}
 \tcbline*
 \paragraph*{両方に外削があり、トップ側が基準の場合}
 \GPMbox{トップ外削AC径}\GPMbox{トップ外削BD径}\GPMbox{トップ外削コーナーR}\\
 \GPMbox{\TopOutcutLength}\PMKeywayPos\PMKeywayWidth\\
-\PMTopEndACID\GPMbox{トップ外削A側肉厚}\GPMbox{めっき膜厚}\\
+\PMTopEndACID\GPMbox{トップ外削A側肉厚}\PMPlatingThk\\
 \GPMbox{ボトム外削AC径}\GPMbox{ボトム外削BD径}\GPMbox{ボトム外削コーナーR}\\
 \GPMbox{\BottomOutcutLength}\GPMbox{通り芯}
 \tcbline*
@@ -322,11 +335,11 @@
 \tcbline*
 \paragraph*{トップ端面内C面取}
 \PMTopEndACID\PMTopEndBDID\PMTopEndIDCornerR\\
-\GPMbox{トップ端面内C面取長}\GPMbox{めっき膜厚}
+\GPMbox{トップ端面内C面取長}\PMPlatingThk
 \tcbline*
 \paragraph*{ボトム端面内C面取}
 \PMBottomEndACID\PMBottomEndBDID\PMBottomEndIDCornerR\\
-\GPMbox{ボトム端面内C面取長}\GPMbox{めっき膜厚}
+\GPMbox{ボトム端面内C面取長}\PMPlatingThk
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
