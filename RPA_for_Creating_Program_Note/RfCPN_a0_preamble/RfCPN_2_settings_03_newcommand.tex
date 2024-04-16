@@ -58,7 +58,14 @@
 %  bmatrix/.style={matrix of math nodes, left delimiter=[, right delimiter=],},
 }
 \tikzfading[name=fade ball, inner color=transparent!60, outer color=transparent!30]
-\newcommand\sball[1]{\tikz \shade [ball color=#1, path fading=fade ball] (0,0) circle (.7ex);}
+\newcommand{\sarrow}[1][blue]{%
+  \tikz\draw[decorate,
+             decoration={shape backgrounds, shape=dart, shape size=2.0mm},
+             color=#1,
+             fill=#1,
+             path fading=fade ball] (0, 0);
+}
+\newcommand\sball[1]{\tikz\shade[ball color=#1, path fading=fade ball] (0,0) circle (.7ex);}
 \newcommand\terminal[2]{\tikz[baseline=(a.base)] \node (a) [terminal, bottom color=#2] {\small #1};}
 \newcommand\termblue[1]{\terminal{\color{blue}\fontsize{8pt}{0pt}\textbf{#1}}{gray!25}\hskip6pt}
 %%%%% DECLAREROBUSTCOMMAND %%%%%%%%%%%%%%%%%%%%
@@ -117,8 +124,6 @@
   \endgroup
 }
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\AtBeginEnvironment{appendices}{\clearrightpage}
-\AtEndEnvironment{appendices}{\clearrightpage}
 \newcommand{\Appendixpart}{
   \cleardoublepage
   \part*{\partname\ \thepart\hx の補遺\label{Apart:\thepart}\vphantom{\ref{Apart:\thepart}}}
