@@ -34,7 +34,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{送り速さの基本事項}
 \begin{enumerate}
-\item $X$, $Y$, $Z$方向の\index{いちぎめ@位置決め}位置決め（\index{はやおくり@早送り}早送り）{\ttfamily G00}の\index{おくりはやさ@送り速さ}送り速さデフォルト値：60000mm/min
+\item $X$, $Y$, $Z$方向の\index{いちぎめ@位置決め}位置決め（\index{はやおくり@早送り}早送り）{\ttfamily G00}の\index{おくりはやさ@送り速さ}送り速さ設定値：20000mm/min
 \item $B$方向の\index{はやおくり（Bじく）@早送り（B軸）}早送り{\ttfamily G00}の送り速さデフォルト値：$12000^\circ$/min ($\sim 33.33$回転/min)
 \item $X$, $Y$, $Z$方向の指定できる送り速さ値の範囲：$0\sim60000$mm/min
 \item 設定可能な最小単位：0.1mm/min
@@ -80,10 +80,10 @@
 \begin{enumerate}[label=\Roman*., ref=\Roman*]
 \item $X$, $Y$方向の移動は、{\ttfamily G00}を用いてもよい
 \item $Z$方向の移動は、原則として、{\ttfamily G00}を用いた移動はしない
-\item $Z$方向の送り速さは、{\ttfamily F15000}以下とする
-\item \index{ワーク}ワークへの\index{アプローチ}アプローチの際は、{\ttfamily G01}を用いるものとし、速さは{\ttfamily F6000}以下とする
+\item $Z$方向の送り速さは、{\ttfamily F\SpindleRapidTraverseXY}以下とする
+\item \index{ワーク}ワークへの\index{アプローチ}アプローチの際は、{\ttfamily G01}を用いるものとし、速さは{\ttfamily F\SpindleRapidAproachFeedRateZ}以下とする
 \item 加工の際は、それぞれの加工や状況に応じて適切なFコード値を設定する
-\item ワークからの\index{リトラクト}リトラクトの際は{\ttfamily G01}を用いるものとし、速さは{\ttfamily F12000}以下とする。
+\item ワークからの\index{リトラクト}リトラクトの際は{\ttfamily G01}を用いるものとし、速さは{\ttfamily F\SpindleRapidTraverseXY}以下とする。
 \end{enumerate}
 
 
@@ -103,16 +103,16 @@
 測定時アプローチ：{\ttfamily T50}両側測定 & \CenterMeasurementFeedRate & \ttfamily G31\\
 測定時アプローチ：{\ttfamily T50}片側測定 & \PosMeasurementFeedRate & \ttfamily G31\\
 \hline
-端面加工：直線             & \EndFaceLinearFeedRate &\\
-端面加工：コーナー          & \EndFaceCornerFeedRate &\\
-外削加工：直線             & \OutcutLinearFeedRate &\\
-外削加工：コーナー          & \OutcutCornerFeedRate &\\
-\Keyway 加工：直線        & \KeywayLinearFeedRate &\\
-\Keyway 加工：コーナー     & \KeywayCornerFeedRate &\\
-外C面取加工：直線           & \OutChamferLinearFeedRate &\\
-外C面取加工：コーナー        & \OutChamferCornerFeedRate &\\
-内C面取加工：直線           & \InChamferLinearFeedRate &\\
-内C面取加工：コーナー        & \InChamferCornerFeedRate &\\
+端面加工：直線         & \EndFaceLinearFeedRate &\\
+端面加工：コーナー      & \EndFaceCornerFeedRate &\\
+外削加工：直線         & \OutcutLinearFeedRate &\\
+外削加工：コーナー      & \OutcutCornerFeedRate &\\
+\Keyway 加工：直線    & \KeywayLinearFeedRate &\\
+\Keyway 加工：コーナー & \KeywayCornerFeedRate &\\
+外C面取加工：直線      & \OutChamferLinearFeedRate &\\
+外C面取加工：コーナー   & \OutChamferCornerFeedRate &\\
+内C面取加工：直線      & \InChamferLinearFeedRate &\\
+内C面取加工：コーナー   & \InChamferCornerFeedRate &\\
 \EndFaceBoring 加工：直線    & \EndFaceBoringLinearFeedRate &\\
 \EndFaceBoring 加工：コーナー & \EndFaceBoringCornerFeedRate &\\
 \Dimple 加工：表面アプローチ & \DimpleApproachFeedRate &\\
