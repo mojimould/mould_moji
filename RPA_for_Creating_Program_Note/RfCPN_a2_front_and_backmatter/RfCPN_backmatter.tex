@@ -37,6 +37,7 @@
 \nocite{package:2023Tantau}
 \nocite{package:2024Thomas}
 \nocite{package:2024Jianrui}
+\WarningFilter{biblatex}{Split bibliography}
 \begingroup
 \let\cleardoublepage\relax
 {\footnotesize%
@@ -47,7 +48,8 @@
 
 \printbibheading[title={\referencesname}, heading=subbibintoc]
 \printbibliography[title={\Manualname}, heading=subsubbibintoc, keyword={reference}, type=manual]%
-\thispagestyle{plainheadback}}
+\thispagestyle{plainheadback}%
+}%
 \let\cleardoublepage\tmpcleardoublepage
 \endgroup
 

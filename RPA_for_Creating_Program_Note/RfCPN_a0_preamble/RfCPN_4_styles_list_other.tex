@@ -36,6 +36,7 @@
 
 %%%%% FOR STYLE OF BIBLATEX %%%%%%%%%%%%%%%%%%
 \DeclareLanguageMapping{japanese}{english}
+%\DefineBibliographyStrings{english}{in={in}}
 \renewcommand{\bibname}{\texorpdfstring{\hbox to 4em{文献一覧}}{文献一覧}}
 \newcommand{\referencesname}{参考文献}
 \newcommand{\citedworksname}{参照文献}
@@ -46,6 +47,8 @@
 \DeclareFieldFormat{title}{``#1"}
 \DeclareFieldFormat{urldate}{(urlseen~\thefield{urlyear}/\ifnum\thefield{urlmonth}<10 0\fi\thefield{urlmonth})}
 \ExecuteBibliographyOptions{
+  language=auto,
+  autolang=other,
   sorting=none,
   defernumbers=false,
   hyperref=true,
