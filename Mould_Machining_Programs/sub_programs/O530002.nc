@@ -8,6 +8,13 @@ IF[#05EQ#0]GOTO800
 IF[#05EQ0]GOTO800
 (if J = 0 or empty, go to N800)
 
+N002
+IF[#4111EQ31]GOTO003
+IF[#4111EQ32]GOTO003
+IF[#4111EQ33]GOTO003
+GOTO800
+
+N003
 IF[#621LT0]GOTO800
 IF[#670EQ#0]GOTO800
 IF[#670LE10]GOTO800
@@ -17,32 +24,34 @@ IF[#671LE10]GOTO800
 (if #671 <= 10 or #0, go to N800)
 (if #621 < 0, go to N800)
 
+N004
 #33=#5042
-(#33= current work Y: start point Y)
 #32=#[2400+#4111]+#[2600+#4111]
-(#32= hosei KouguKei + Mamou)
+(#33= current work Y: start point Y)
+(#32= KouguKei + Mamou)
 
-IF[#05LT0]GOTO002
-(if J < 0, go to N002)
+N006
+IF[#05LT0]GOTO007
+(if J < 0, go to N007)
 #31=1
 (for B, #31=1)
-IF[#4111EQ31]THEN #30=#463
-IF[#4111EQ32]THEN #30=#468
-IF[#4111EQ33]THEN #30=#473
-(if H#=31, #30=#463)
-(if H#=32, #30=#468)
-(if H#=33, #30=#473)
+IF[#4111EQ31]THEN #29=#463
+IF[#4111EQ32]THEN #29=#468
+IF[#4111EQ33]THEN #29=#473
+(if H#=31, #29=#463)
+(if H#=32, #29=#468)
+(if H#=33, #29=#473)
 GOTO008
 
-N002
+N007
 #31=-1
 (for D, #31=-1)
-IF[#4111EQ31]THEN #30=#464
-IF[#4111EQ32]THEN #30=#469
-IF[#4111EQ33]THEN #30=#474
-(if H#=31, #30=#464)
-(if H#=32, #30=#469)
-(if H#=33, #30=#474)
+IF[#4111EQ31]THEN #29=#464
+IF[#4111EQ32]THEN #29=#469
+IF[#4111EQ33]THEN #29=#474
+(if H#=31, #29=#464)
+(if H#=32, #29=#469)
+(if H#=33, #29=#474)
 
 
 (kokokara G01)
@@ -50,7 +59,7 @@ IF[#4111EQ33]THEN #30=#474
 
 N008
 G90 G01 Y[#23-#31*[#32+#621]] F#651
-G91 G01 Y[#31*[#621+#30]] F#670
+G91 G01 Y[#31*[#621+#29]] F#670
 G91 G01 Y[#31*#21] F#671
 G04 X0.1 (wait 0.1s)
 (Y+: #23-#32-#621 or Y-: #23+#32+#621)
@@ -79,7 +88,7 @@ N999 M99
 (#23:W: the position of the dimple)
 
 (as LHS)
-(#30, #31, #32, #33)
+(#29, #31, #32, #33)
 
 
 (Common variables)
