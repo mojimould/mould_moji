@@ -95,7 +95,7 @@
   \clearrightpage
   \let\oldnewpage\newpage
   \let\newpage\relax
-  \part{#2\label{part:\thepart}\vphantom{\ref{part:\thepart}}}
+  \part{\label{part:\thepart}#2\vphantom{\ref{part:\thepart}}}
   \addtocontents{lop}{\protect\vspace*{-2.5mm}}%
   \addcontentsline{lop}{part}{\protect\numberline{\thepart}#2}%
   \ifx#1\relax\else%
@@ -117,6 +117,8 @@
   \endgroup
 }
 %%%%% PART FOR APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AtBeginEnvironment{appendices}{\clearrightpage}
+\AtEndEnvironment{appendices}{\clearrightpage}
 \newcommand{\Appendixpart}{
   \cleardoublepage
   \part*{\partname\ \thepart\hx の補遺\label{Apart:\thepart}\vphantom{\ref{Apart:\thepart}}}
