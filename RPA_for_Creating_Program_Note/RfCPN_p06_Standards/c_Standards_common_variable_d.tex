@@ -248,7 +248,7 @@
 \ttNum460 & （不使用） &\\
 \ttNum461 & 工具{\ttfamily T31}（Tスロット）A側\Dimple~深さ補正値（深さに$+$補正） & -0.065\\
 \ttNum462 & 工具{\ttfamily T31}（Tスロット）C側\Dimple~深さ補正値（深さに$+$補正） & -0.06\\
-\ttNum463 & 工具{\ttfamily T31}（Tスロット）B側\Dimple~深さ補正値（深さに$+$補正） & -0.04\\
+\ttNum463 & 工具{\ttfamily T31}（Tスロット）B側\Dimple~深さ補正値（深さに$+$補正） & -0.035\\
 \ttNum464 & 工具{\ttfamily T31}（Tスロット）D側\Dimple~深さ補正値（深さに$+$補正） & -0.08\\
 \SetRow{unusingVariables}
 \ttNum465 & （不使用） &\\
@@ -613,7 +613,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum701 & 工具別$Z$補正({\ttfamily T50}:\ttNum901050, {\ttfamily T3x}:0)\\
 \ttNum702 & 工具別$XY$補正({\ttfamily T50}:\ttNum901050, {\ttfamily T3x}:\ttNum[2400+\ttNum4111]+\ttNum[2600+\ttNum4111])\\
 \ttNum703 & 工具別{\ttfamily G\ttNum} ({\ttfamily T50}:31, {\ttfamily T3x}:01)\\
-\ttNum704 & テーブル中心からワーク座標(\ttNum701)原点までの$X$距離\\
+\ttNum704 & テーブル中心からワーク座標(\ttNum700)原点までの$X$距離\\
 \ttNum705 & 傾き後のトップ端面中心（機械座標）$X$ (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
 \ttNum706 & テーブル中心から傾き後のトップ端面中心までの$Z$距離 (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
 \ttNum707 & テーブル中心から\Dimple1列目までの$Z$距離$Z-q$\\
@@ -625,8 +625,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum713 & 傾き後\Dimple1列目中心（ブロックエンド）$X$座標 (\ttNum5001)\\
 \ttNum714 & 傾き後\Dimple1列目中心（ブロックエンド）$Y$座標 (\ttNum5002)\\
 \ttNum715 & 傾き後\Dimple1列目中心（ブロックエンド）$Z$座標 (\ttNum5003)\\
-\ttNum716 & BD内半径$+$\PlatingThk$-\text{\ttNum703}-\text{\ttNum620}$\\
-\ttNum717 & (AC内半径$+$\PlatingThk$-\text{\ttNum703}-\text{\ttNum620}\text)\cos\phi$\\
+\ttNum716 & BD内半径$+$\PlatingThk$-\text{\ttNum702}-\text{\ttNum620}$\\
+\ttNum717 & (AC内半径$+$\PlatingThk$-\text{\ttNum702}-\text{\ttNum620}\text)\cos\phi$\\
 \ttNum718 & 試加工用\Dimple 深さ（\Dimple 深さ$-0.1$）\\
 \SetRow{unusingVariables}
 \ttNum719 & （予備）\\
@@ -1066,7 +1066,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum901127 & 工具{\ttfamily T31}（Tスロットカッター）厚さ & 8.0\\
 \ttNum901128 & 工具{\ttfamily T31}（Tスロットカッター）シャンク直径 & 25.0\\
 \ttNum901129 & 工具{\ttfamily T31}（Tスロットカッター）中心$X+$補正 & 0.00\\
-\ttNum901130 & 工具{\ttfamily T31}（Tスロットカッター）中心$Y+$補正 & 0.025\\
+\ttNum901130 & 工具{\ttfamily T31}（Tスロットカッター）中心$Y+$補正 & -0.025\\
 \ttNum901131 & 工具{\ttfamily T32}（Tスロットカッター）厚さ & 8.0\\
 \ttNum901132 & 工具{\ttfamily T32}（Tスロットカッター）シャンク直径 & 25.0\\
 \ttNum901133 & 工具{\ttfamily T32}（Tスロットカッター）中心$X+$補正 & 0.00\\
@@ -1075,10 +1075,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum901135 & （\Dimple 加工工具用 予備） &\\
 \SetRow{unusingVariables}
 \ttNum901136 & （\Dimple 加工工具用 予備） &\\
-\SetRow{unusingVariables}
-\ttNum901137 & （\Dimple 加工工具用 予備） &\\
-\SetRow{unusingVariables}
-\ttNum901138 & （\Dimple 加工工具用 予備） &\\
+\ttNum901137 & 工具{\ttfamily T33}（Tスロットカッター）中心$X+$補正 & 0.00\\
+\ttNum901138 & 工具{\ttfamily T33}（Tスロットカッター）中心$Y+$補正 & 0.00\\
 \SetRow{unusingVariables}
 \ttNum901139 & （予備） &\\
 \SetRow{unusingVariables}
