@@ -207,7 +207,7 @@
 \GPMbox{トップ振分長}
 \GPMbox{ボトム振分長}
 \PMACOD
-\GPMbox{ジグの長さ}
+\PMJigLength
 \GPMbox{受板の幅}
 \tcbline*
 \paragraph*{\nameTopEndFace}
@@ -248,28 +248,56 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{ボトム側の外削のみの場合}
-\GPMbox{ボトム外削AC径}\GPMbox{ボトム外削BD径}\GPMbox{ボトム外削コーナーR}\\
+\GPMbox{ボトム外削AC径}
+\GPMbox{ボトム外削BD径}
+\GPMbox{ボトム外削コーナーR}\\
 \GPMbox{\BottomOutcutLength}\\
-\PMBottomEndACID\GPMbox{ボトム側A側肉厚}\PMPlatingThk
+\PMBottomEndACID
+\GPMbox{ボトム側A側肉厚}
+\PMPlatingThk
 \tcbline*
 \paragraph*{トップ側の外削のみの場合}
-\GPMbox{トップ外削AC径}\GPMbox{トップ外削BD径}\GPMbox{トップ外削コーナーR}\\
-\GPMbox{\TopOutcutLength}\PMKeywayPos\PMKeywayWidth\\
-\PMTopEndACID\GPMbox{トップ外削A側肉厚}\PMPlatingThk
+\GPMbox{トップ外削AC径}
+\GPMbox{トップ外削BD径}
+\GPMbox{トップ外削コーナーR}\\
+\PMTopOutcutLength
+\PMKeywayPos
+\PMKeywayWidth\\
+\PMTopEndACID
+\GPMbox{トップ外削A側肉厚}
+\PMPlatingThk
 \tcbline*
 \paragraph*{両方に外削があり、ボトム側が基準の場合}
-\GPMbox{ボトム外削AC径}\GPMbox{ボトム外削BD径}\GPMbox{ボトム外削コーナーR}\\
-\GPMbox{\BottomOutcutLength}\\
-\PMBottomEndACID\GPMbox{ボトム外削A側肉厚}\PMPlatingThk\\
-\GPMbox{トップ外削AC径}\GPMbox{トップ外削BD径}\GPMbox{トップ外削コーナーR}\\
-\GPMbox{\TopOutcutLength}\PMKeywayPos\PMKeywayWidth\GPMbox{通り芯}
+\GPMbox{ボトム外削AC径}
+\GPMbox{ボトム外削BD径}
+\GPMbox{ボトム外削コーナーR}\\
+\PMBottomOutcutLength\\
+\PMBottomEndACID
+\GPMbox{ボトム外削A側肉厚}
+\PMPlatingThk\\
+\GPMbox{トップ外削AC径}
+\GPMbox{トップ外削BD径}
+\GPMbox{トップ外削コーナーR}\\
+\PMTopOutcutLength
+\PMKeywayPos
+\PMKeywayWidth
+\GPMbox{通り芯}
 \tcbline*
 \paragraph*{両方に外削があり、トップ側が基準の場合}
-\GPMbox{トップ外削AC径}\GPMbox{トップ外削BD径}\GPMbox{トップ外削コーナーR}\\
-\GPMbox{\TopOutcutLength}\PMKeywayPos\PMKeywayWidth\\
-\PMTopEndACID\GPMbox{トップ外削A側肉厚}\PMPlatingThk\\
-\GPMbox{ボトム外削AC径}\GPMbox{ボトム外削BD径}\GPMbox{ボトム外削コーナーR}\\
-\GPMbox{\BottomOutcutLength}\GPMbox{通り芯}
+\GPMbox{トップ外削AC径}
+\GPMbox{トップ外削BD径}
+\GPMbox{トップ外削コーナーR}\\
+\PMTopOutcutLength
+\PMKeywayPos
+\PMKeywayWidth\\
+\PMTopEndACID
+\GPMbox{トップ外削A側肉厚}
+\PMPlatingThk\\
+\GPMbox{ボトム外削AC径}
+\GPMbox{ボトム外削BD径}
+\GPMbox{ボトム外削コーナーR}\\
+\GPMbox{\BottomOutcutLength}
+\GPMbox{通り芯}
 \tcbline*
 \paragraph*{湾曲に沿った外削の場合}
 （以上に加えて）\PMCenterCurvature
@@ -292,11 +320,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{湾曲中心が基準の場合}
-\PMKeywayACOD\PMKeywayBDOD\PMKeywayPos\PMKeywayWidth\PMCenterCurvature\\
+\PMKeywayACOD
+\PMKeywayBDOD
+\PMKeywayPos
+\PMKeywayWidth
+\PMCenterCurvature\\
 \PMKeywayCornerR または\PMKeywayCornerC
 \tcbline*
 \paragraph*{外削中心が基準の場合}
-\PMKeywayACOD\PMKeywayBDOD\PMKeywayPos\PMKeywayWidth\\
+\PMKeywayACOD
+\PMKeywayBDOD
+\PMKeywayPos
+\PMKeywayWidth\\
 \PMKeywayCornerR または\PMKeywayCornerC
 \tcbline*
 \paragraph*{\AsideKeywayDepth が基準の場合}
@@ -320,26 +355,42 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{トップ端面外C面取：外削のない場合}
-\PMACOD\PMBDOD\GPMbox{トップ端面外C面取長}\PMODCornerR
+\PMACOD
+\PMBDOD
+\GPMbox{トップ端面外C面取長}
+\PMODCornerR
 \tcbline*
 \paragraph*{トップ端面外C面取：外削のある場合}
-\GPMbox{トップ外削AC径}\GPMbox{トップ外削BD径}\GPMbox{トップ端面外削コーナーR}\\
+\GPMbox{トップ外削AC径}
+\GPMbox{トップ外削BD径}
+\GPMbox{トップ端面外削コーナーR}\\
 \GPMbox{トップ端面外C面取長}
 \tcbline*
 \paragraph*{ボトム端面外C面取：外削のない場合}
-\PMACOD\PMBDOD\GPMbox{ボトム端面外C面取長}\PMODCornerR
+\PMACOD
+\PMBDOD
+\GPMbox{ボトム端面外C面取長}
+\PMODCornerR
 \tcbline*
 \paragraph*{ボトム端面外C面取：外削のある場合}
-\GPMbox{ボトム外削AC径}\GPMbox{ボトム外削BD径}\GPMbox{ボトム端面外削コーナーR}\\
+\GPMbox{ボトム外削AC径}
+\GPMbox{ボトム外削BD径}
+\GPMbox{ボトム端面外削コーナーR}\\
 \GPMbox{ボトム端面外C面取長}
 \tcbline*
 \paragraph*{トップ端面内C面取}
-\PMTopEndACID\PMTopEndBDID\PMTopEndIDCornerR\\
-\GPMbox{トップ端面内C面取長}\PMPlatingThk
+\PMTopEndACID
+\PMTopEndBDID
+\PMTopEndIDCornerR\\
+\GPMbox{トップ端面内C面取長}
+\PMPlatingThk
 \tcbline*
 \paragraph*{ボトム端面内C面取}
-\PMBottomEndACID\PMBottomEndBDID\PMBottomEndIDCornerR\\
-\GPMbox{ボトム端面内C面取長}\PMPlatingThk
+\PMBottomEndACID
+\PMBottomEndBDID
+\PMBottomEndIDCornerR\\
+\GPMbox{ボトム端面内C面取長}
+\PMPlatingThk
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -355,7 +406,10 @@
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\GPMbox{\nameEndFaceBoring の位置}\GPMbox{\nameEndFaceBoring 長}\PMEndFaceBoringCornerR\GPMbox{\nameEndFaceBoring 深さ}\\
+\GPMbox{\nameEndFaceBoring の位置}
+\GPMbox{\nameEndFaceBoring 長}
+\PMEndFaceBoringCornerR
+\GPMbox{\nameEndFaceBoring 深さ}\\
 \PMACOD
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -369,7 +423,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{プログラムの入力}
 \begin{enumerate}
-\item 原則として、\index{プログラムばんごう@プログラム番号}プログラム番号は\index{せいひんばんごう@製品番号}製品番号と一致させる\\
+\item 原則として、\index{プログラムばんごう@プログラム番号}プログラム番号は\DrawingExists と一致させる\\
 ただし、加工内容が同一のものである場合は、既存のプログラムをそのまま流用する
 \item 各々の加工部分およびその形状に対する\index{サブプログラム}サブプログラムを決定する
 \item 各々のサブプログラムに対し、適切な寸法値を手動で計算する
@@ -398,12 +452,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{ワーク固定用ボルト}
-\PMACOD\PMBDOD\\
-\GPMbox{ジグ床面とボルト取付具（上）間の距離}\GPMbox{受板とボルト取付具（横）間の距離}
+\PMACOD
+\PMBDOD\\
+\GPMbox{ジグ床面とボルト取付具（上）間の距離}
+\GPMbox{受板とボルト取付具（横）間の距離}
 \tcbline*
 \paragraph*{端面の削り代}
-\GPMbox{ジグの長さ}\GPMbox{トップ再振分長}\GPMbox{ボトム再振分長}\GPMbox{端面加工1回あたりの削り代}\\
-\GPMbox{トップ側張出長実測値}\GPMbox{ボトム側張出長実測値}
+\PMJigLength
+\GPMbox{トップ再振分長}
+\GPMbox{ボトム再振分長}
+\GPMbox{端面加工1回あたりの削り代}\\
+\GPMbox{トップ側張出長実測値}
+\GPMbox{ボトム側張出長実測値}
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
