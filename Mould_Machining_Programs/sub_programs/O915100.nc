@@ -58,7 +58,6 @@ M05 (spindle off)
 
 N991
 M06 (tool exchange)
-T50 (tool #50)
 
 N992
 M11 (B-axis unclamp)
