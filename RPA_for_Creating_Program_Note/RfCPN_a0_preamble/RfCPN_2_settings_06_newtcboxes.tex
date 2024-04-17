@@ -52,7 +52,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtcbox{\GPMbox}{%
   commonbox,
-  enlarge top by=2pt,
+  enlarge top by=1.5pt,
   top=0pt,
   bottom=0pt,
   colframe=green!50!black,
@@ -74,13 +74,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtcbox{\Gprgbox}{%
   commonbox,
+  enlarge top by=-0.5pt,
+  top=0pt,
+  bottom=0pt,
   colframe=blue!50!black,
   coltext=blue!25!black,
   colback=blue!10!white,
   overlay={%
     \begin{tcbclipinterior}%
       \fill[blue!75!green!50!white] (frame.south west)
-      rectangle node[text=white, font=\bfseries\tiny, rotate=90] {{\fontspec{Latin Modern Sans}Prg}} ([xshift=4mm]frame.north west);
+      rectangle node[text=white, font=\bfseries\tiny, rotate=90] {{\fontspec{Latin Modern Sans}GP}} ([xshift=4mm]frame.north west);
     \end{tcbclipinterior}%
   },
 }
