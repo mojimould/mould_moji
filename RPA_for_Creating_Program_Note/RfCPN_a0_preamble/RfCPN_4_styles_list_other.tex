@@ -5,14 +5,15 @@
 \renewcommand\listtablename{\texorpdfstring{\hbox to 3em{表目次}}{表目次}}
 \renewcommand{\tablename}{表}
 \renewcommand{\tableautorefname}{\tablename}
-\renewcommand*\l@table{\@dottedtocline{1}{0.0em}{2.35em}}
+%\let\l@table\l@section
+%\renewcommand*\l@table{\@dottedtocline{1}{0.0em}{2.35em}}
 \AtBeginDocument{\renewcommand{\thetable}{}}
 
 %%%%% FOR STYLE OF LOF %%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listfigurename{\texorpdfstring{\hbox to 3em{図目次}}{図目次}}
 \renewcommand{\figurename}{図}
-%\let\l@figure\l@section
 \renewcommand{\figureautorefname}{\figurename}
+\let\l@figure\l@section
 %\renewcommand*\l@figure{\@dottedtocline{1}{0.0em}{2.35em}}
 %\AtBeginDocument{\renewcommand{\thefigure}{}}
 
@@ -23,7 +24,7 @@
 \renewcommand{\lstlistlistingname}{プログラム 目次}
 \renewcommand{\lstlistingname}{{Prg:} }
 %\let\l@lstlisting\l@section
-\renewcommand*\l@lstlisting{\@dottedtocline{1}{0.0em}{2.35em}}
+%\renewcommand*\l@lstlisting{\@dottedtocline{1}{0.0em}{2.35em}}
 \AtBeginDocument{\renewcommand{\thelstlisting}{}}
 
 %%%%% FOR STYLE OF LOC %%%%%%%%%%%%%%%%%%%%%%%
