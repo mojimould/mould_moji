@@ -35,7 +35,7 @@
 
 %%% CenterCurvature %%%
 \newGPMcommand{CenterCurvatureExists}{中心湾曲の有無}{わんきょくのうむ}
-\newGPMcommand{CenterCurvature}{中心湾曲半径}{ちゅうしんわんきょくはんけい}
+\newGPMcommand{CenterCurvatureRadius}{中心湾曲半径}{ちゅうしんわんきょくはんけい}
 
 %%% OUTERDIAMETER %%%
 \newGPMcommand{ACOD}{AC外径}{ACがいけい}
@@ -60,8 +60,14 @@
 \newGPMcommand{BottomOutcutExists}{ボトム外削の有無}{ボトムがいさくのうむ}
 \newGPMcommand{TopOutcutType}{トップ外削の種類}{トップがいさくのしゅるい}
 \newGPMcommand{BottomOutcutShape}{ボトム外削の種類}{ボトムがいさくのしゅるい}
-\newGPMcommand{TopOutcutLength}{トップ外削長}{トップがいさくちょう}
-\newGPMcommand{BottomOutcutLength}{ボトム外削長}{ボトムがいさくちょう}
+\newGPMcommand{TopOutcutAC}{トップ外削AC径}{トップがいさくACけい}
+\newGPMcommand{TopOutcutBD}{トップ外削BD径}{トップがいさくBDけい}
+\newGPMcommand{BottomOutcutAC}{ボトム外削AC径}{ボトムがいさくACけい}
+\newGPMcommand{BottomOutcutBD}{ボトム外削BD径}{ボトムがいさくBDけい}
+\newGPMcommand{TopOutcutCornerR}{トップ外削コーナーR}{トップがいさくコーナーR}
+\newGPMcommand{BottomOutcutConerR}{ボトム外削コーナーR}{ボトムがいさくコーナーR}
+\newGPMcommand{TopOutcutLength}{トップ\nameOutcutLength}{トップ\yomiOutcutLength}
+\newGPMcommand{BottomOutcutLength}{ボトム\nameOutcutLength}{ボトム\yomiOutcutLength}
 
 %%% KEYWAT %%%
 \newGPMcommand{KeywayType}{\nameKeyway の種類}{\yomiKeyway のしゅるい}
