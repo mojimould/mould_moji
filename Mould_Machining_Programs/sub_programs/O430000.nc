@@ -305,6 +305,7 @@ N999 M99
 (#24xx: #xx kouguKei)
 (#26xx: #xx kouguKeiMamou)
 (#3000: alarm)
+(#4012: current work coordinate G#)
 (#4120: current T#)
 
 
