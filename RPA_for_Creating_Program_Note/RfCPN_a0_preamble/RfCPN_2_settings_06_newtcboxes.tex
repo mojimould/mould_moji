@@ -52,15 +52,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtcbox{\GPMbox}{%
   commonbox,
-  enlarge top by=1.5pt,
+  enlarge top by=2.5pt,
   top=0pt,
   bottom=0pt,
+  left=3.2mm,
   colframe=green!50!black,
   colback=green!10!white,
   overlay={%
     \begin{tcbclipinterior}%
-      \fill[green!80!blue!50!black!50!] (frame.south west)
-      rectangle node[text=white, font=\bfseries\tiny, rotate=90] {{\fontspec{Latin Modern Sans}PM}} ([xshift=4mm]frame.north west);
+      \fill[green!80!blue!50!black!50!] ([xshift=-0.025mm]frame.south west)
+      rectangle node[text=white, font=\bfseries\tiny, rotate=90] {{\fontspec{Latin Modern Sans}PM}} ([xshift=3.5mm]frame.north west);
     \end{tcbclipinterior}%
   },
 }
@@ -77,13 +78,14 @@
   enlarge top by=-0.5pt,
   top=0pt,
   bottom=0pt,
+  left=3.1mm,
   colframe=blue!50!black,
   coltext=blue!25!black,
   colback=blue!10!white,
   overlay={%
     \begin{tcbclipinterior}%
-      \fill[blue!75!green!50!white] (frame.south west)
-      rectangle node[text=white, font=\bfseries\tiny, rotate=90] {{\fontspec{Latin Modern Sans}GP}} ([xshift=4mm]frame.north west);
+      \fill[blue!75!green!50!white] ([xshift=-0.025mm]frame.south west)
+      rectangle node[text=white, font=\bfseries\tiny, rotate=90] {{\fontspec{Latin Modern Sans}GP}} ([xshift=3.5mm]frame.north west);
     \end{tcbclipinterior}%
   },
 }
