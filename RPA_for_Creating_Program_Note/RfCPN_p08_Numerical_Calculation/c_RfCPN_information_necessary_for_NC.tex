@@ -19,7 +19,7 @@
 
 \begin{multicollongtblr}{入力情報：湾曲・振分け}{X[l]c}
 内容 & 型\\
-中心湾曲の有無 & boolean\\
+\DrawingExists & boolean\\
 \CenterCurvatureRadius & float\\
 トップ振分長 & float\\
 ボトム振分長 & float\\
@@ -34,9 +34,9 @@
 
 \begin{multicollongtblr}{入力情報：外形}{X[l]c}
 内容 & 型\\
-AC外径 & float\\
-BD外径 & float\\
-外形 コーナーR & float\\
+\ACOD & float\\
+\BDOD & float\\
+\ODCornerR & float\\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}{入力情報：内形}{X[l]c}
@@ -48,7 +48,7 @@ BD外径 & float\\
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-\index{ないけいテーパひょう@内径テーパ表}内径テーパ表には、\index{ないけいコーナーR@内形コーナーR}内形コーナーRの数値情報も記載されているものとする。
+\index{ないけいテーパひょう@内径テーパ表}内径テーパ表には、\index{ないけいコーナーR@内形コーナーR}内形コーナーRの\index{すんぽう（ないけいコーナーR）@寸法（内形コーナーR）}寸法情報も記載されているものとする。
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -64,24 +64,24 @@ BD外径 & float\\
 
 \begin{multicollongtblr}{入力情報：ボトム外削}{X[l]c}
 内容 & 型\\
-ボトム外削の有無 & boolean\\
-面取の有無 & boolean\\
+\BottomOutcutExists & boolean\\
+\BottomOutcutType & enum\\
 ボトム外削 A側肉厚 & float\\
-ボトム外削 AC径 & float\\
-ボトム外削 BD径 & float\\
+\BottomOutcutAC & float\\
+\BottomOutcutBD & float\\
 \BottomOutcutLength & float\\
-ボトム外削 コーナーR & float\\
+\BottomOutcutConerR & float\\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}{入力情報：トップ外削}{X[l]c}
 内容 & 型\\
-トップ外削の有無 & boolean\\
-面取の有無 & boolean\\
+\TopOutcutExists & boolean\\
+\TopOutcutType & enum\\
 トップ外削 A側肉厚 & float\\
-トップ外削 AC径 & float\\
-トップ外削 BD径 & float\\
+\TopOutcutAC & float\\
+\TopOutcutBD & float\\
 \TopOutcutLength & float\\
-トップ外削 コーナーR & float\\
+\TopOutcutCornerR & float\\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}{入力情報：両外削}{X[l]c}

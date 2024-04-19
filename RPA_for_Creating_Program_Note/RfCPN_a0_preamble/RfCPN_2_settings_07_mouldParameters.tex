@@ -10,14 +10,16 @@
 %%%%% MACHINING NAME %%%%%%%%%%%%%%%%%%
 \newNamecommand{DMC}{Dマシニングセンタ}{Dマシニングセンタ}
 \newNamecommand{MMC}{Mマシニングセンタ}{Mマシニングセンタ}
+
 \newNamecommand{OutcutLength}{外削長}{がいさくちょう}
 \newNamecommand{Keyway}{キー溝}{キーみぞ}
-\newNamecommand{KeywayCenter}{キー溝中心}{キーみぞちゅうしん}
-\newNamecommand{KeywayDiameter}{キー溝径}{キーみぞけい}
-\newNamecommand{KeywayDepth}{キー溝深さ}{キーみぞふかさ}
+\newNamecommand{KeywayCenter}{\nameKeyway 中心}{\yomiKeyway ちゅうしん}
+\newNamecommand{KeywayDiameter}{\nameKeyway 径}{\yomiKeyway けい}
+\newNamecommand{KeywayDepth}{\nameKeyway 深さ}{\yomiKeyway ふかさ}
+\newNamecommand{EndFaceChamfer}{端面C面取}{たんめんCめんとり}
+\newNamecommand{EndFaceBoring}{端面座ぐり}{たんめんざぐり}
 \newNamecommand{Dimple}{内面ディンプル}{ないめんディンプル}
 \newNamecommand{ReliefGroove}{逃がし溝}{にがしみぞ}
-\newNamecommand{EndFaceBoring}{端面座ぐり}{たんめんざぐり}
 % 内面テーパ付湾曲付R直方筒 Inner Taper R-Rectangular Tube with Curvature
 
 %%%%% NEWPRGCOMMAND %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -38,8 +40,8 @@
 \newGPMcommand{CenterCurvatureRadius}{中心湾曲半径}{ちゅうしんわんきょくはんけい}
 
 %%% OUTERDIAMETER %%%
-\newGPMcommand{ACOD}{AC外径}{ACがいけい}
-\newGPMcommand{BDOD}{BD外径}{BDがいけい}
+\newGPMcommand{ACOD}{外側AC径}{そとがわACけい}
+\newGPMcommand{BDOD}{外側BD径}{そとがわBDけい}
 \newGPMcommand{ODCornerR}{外径コーナーR}{がいけいコーナーR}
 
 %%% OUTERDIAMETER %%%
@@ -59,7 +61,7 @@
 \newGPMcommand{TopOutcutExists}{トップ外削の有無}{トップがいさくのうむ}
 \newGPMcommand{BottomOutcutExists}{ボトム外削の有無}{ボトムがいさくのうむ}
 \newGPMcommand{TopOutcutType}{トップ外削の種類}{トップがいさくのしゅるい}
-\newGPMcommand{BottomOutcutShape}{ボトム外削の種類}{ボトムがいさくのしゅるい}
+\newGPMcommand{BottomOutcutType}{ボトム外削の種類}{ボトムがいさくのしゅるい}
 \newGPMcommand{TopOutcutAC}{トップ外削AC径}{トップがいさくACけい}
 \newGPMcommand{TopOutcutBD}{トップ外削BD径}{トップがいさくBDけい}
 \newGPMcommand{BottomOutcutAC}{ボトム外削AC径}{ボトムがいさくACけい}
@@ -81,9 +83,12 @@
 
 %%% CHANMFER %%%
 \newGPMcommand{ChamferType}{面取の種類}{めんとりのしゅるい}
-\newGPMcommand{CChamferLength}{C面取長}{Cめんとりちょう}
-\newGPMcommand{CChamferAngle}{C面取角}{Cめんとりかく}
-\newGPMcommand{RChamferLength}{R面取長}{Rめんとりちょう}
+\newGPMcommand{TopOutCChamferLength}{トップ端外C面取長}{トップたんめんCめんとりちょう}
+\newGPMcommand{TopOutCChamferAngle}{トップ端外C面取角}{トップたんそとCめんとりかく}
+\newGPMcommand{BottomOutCChamferLength}{ボトム端外C面取長}{ボトムたんそとCめんとりちょう}
+\newGPMcommand{BottomOutCChamferAngle}{ボトム端外C面取角}{ボトムたんそとCめんとりかく}
+\newGPMcommand{TopOutRChamferLength}{トップ外R面取長}{トップそとRめんとりちょう}
+\newGPMcommand{BottomOutRChamferLength}{ボトム外R面取長}{ボトムそとRめんとりちょう}
 
 %%% ENDFACEBORING %%%
 \newGPMcommand{EndFaceBoringExists}{\nameEndFaceBoring の有無}{\yomiEndFaceBoring のうむ}
