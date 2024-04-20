@@ -1,20 +1,20 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
-\modHeadchapter[loC,lof]{全長および振分けの幾何\label{chap:ACfuriwake}\vphantom{\ref{chap:ACfuriwake}}}
-\index{ふりわけ@振分け}振分けの長さ（\index{ふりわけちょう@振分長}\textbf{振分長}）は、トップ側とボトム側では一般に異なる。
+\modHeadchapter[loC,lof]{\WorkTotalLength および振分けの幾何\label{chap:ACfuriwake}\vphantom{\ref{chap:ACfuriwake}}}
+\index{ふりわけ@振分け}振分けの長さ（\textbf{\AlocationLength}）は、トップ側とボトム側では一般に異なる。
 しかし、加工をする際には\index{ジグのちゅうしん@ジグの中心}ジグの中心に対して両者の長さの差が小さいほうが一般的には好都合である。
 そうした場合の対処法として、ここでは以下のような2つの方法を考える。
 \begin{enumerate}
 \item
-適当な厚さの\index{スペーサ}\textbf{スペーサ}を\index{ワークとジグのせってん@ワークとジグの接点}ワークとジグの接点に取り付けることで、双方の振分長を調節
+適当な厚さの\index{スペーサ}\textbf{スペーサ}を\index{ワークとジグのせってん@ワークとジグの接点}ワークとジグの接点に取り付けることで、双方の\AlocationLength を調節
 \item
-適当な角度に\index{テーブル}テーブルを回転することで、双方の振分長を調節
+適当な角度に\index{テーブル}テーブルを回転することで、双方の\AlocationLength を調節
 \end{enumerate}
 このとき、\index{ワーク}ワークがどのように移動するかを考える。
 
 基本的な考え方として、\textbf{\CenterCurvatureRadius}$R_\mathrm c$の円の中心を原点として$\Omega$だけ回転し、次にワークとの（スペーサを装着していない側の）接点を中心に$-\theta$だけ回転したと考えることができる。
-なお、ここでは話の簡単化のため、もとの振分けではトップ側よりボトム側の振分長のほうが長いものとする。
+なお、ここでは話の簡単化のため、もとの振分けではトップ側よりボトム側の\AlocationLength のほうが長いものとする。
 
 
 
@@ -110,7 +110,7 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
 \footnote{ここでは$0 \leq \Omega, \theta < \nicefrac \pi2$としている。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-スペーサを入れた後の（トップ側の）振分長は、\pageeqref{eq:afterftUpoint}の虚部を見ればよい。
+スペーサを入れた後の（トップ側の）\AlocationLength は、\pageeqref{eq:afterftUpoint}の虚部を見ればよい。
 \begin{align*}
   R_\mathrm i\left\{\sin\alpha_{\mathrm T_\mathrm i} + \sin(\alpha_{\mathrm U_\mathrm B} + \theta) - \sin\alpha_{\mathrm U_\mathrm B}\right\}
   &= f_\mathrm T -l
@@ -119,7 +119,7 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
      +\sqrt{R_\mathrm i^2-l^2}\cdot\frac{\delta_\mathrm s}{\sqrt{4l^2+\delta_\mathrm s^2}}\\
   &= f_\mathrm T -l+\frac{2l^2+\delta_\mathrm s\sqrt{R_\mathrm i^2-l^2}}{\sqrt{4l^2+\delta_\mathrm s^2}}~.
 \end{align*}
-まとめると、厚さ$\delta_\mathrm s$の\index{スペーサ}スペーサを入れた後のトップ側の\index{ふりわけちょう@振分長}振分長$f'_\mathrm T$は、
+まとめると、厚さ$\delta_\mathrm s$の\index{スペーサ}スペーサを入れた後のトップ側の\AlocationLength$f'_\mathrm T$は、
 \begin{align*}
   f'_\mathrm T
   = f_\mathrm T -l
@@ -130,9 +130,9 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 1.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{振分長が均等になるスペーサ厚}
+\subsection{\AlocationLength が均等になるスペーサ厚}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-トップ側とボトム側の\index{きんとうふりわけ@均等振分}振分長が同じになるとき、$\delta_\mathrm s$は
+トップ側とボトム側の\index{きんとうふりわけ@均等振分}\AlocationLength が同じになるとき、$\delta_\mathrm s$は
 \begin{align*}
   f'_\mathrm T - f_\mathrm T = \frac{f_\mathrm B - f_\mathrm T}2
 \end{align*}
@@ -395,8 +395,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 1.2.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{再振分長}
-\index{スペーサ}スペーサを入れた後のトップ側の\index{ふりわけちょう@振分長}振分長（\index{さいふりわけちょう@再振分長}\textbf{再振分長}）$f'_\mathrm T$は、\pageeqref{eq:afterftUfinite}の虚部を見ればよい。
+\subsubsection{\ReAlocationLength}
+\index{スペーサ}スペーサを入れた後のトップ側の\AlocationLength（\textbf{\ReAlocationLength}）$f'_\mathrm T$は、\pageeqref{eq:afterftUfinite}の虚部を見ればよい。
 回転角は$-(\alpha'_{\mathrm U_\mathrm B}-\alpha_{\mathrm U_\mathrm B})$なので、
 \begin{align*}
   f'_\mathrm T
@@ -436,8 +436,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 1.2.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{再振分長が均等になるスペーサ厚}
-トップ側とボトム側の\index{きんとうふりわけ@均等振分}振分長が同じになるとき、$\delta_\mathrm s$は
+\subsection{\ReAlocationLength が均等になるスペーサ厚}
+トップ側とボトム側の\index{きんとうふりわけ@均等振分}\AlocationLength が同じになるとき、$\delta_\mathrm s$は
 \begin{align*}
   \sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{\delta_\mathrm s}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}} = f_d \qquad
   \left(f_d \equiv \frac{f_\mathrm B-f_\mathrm T}2\right)\ .
@@ -467,12 +467,12 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-改めてまとめると、厚さ$\delta_\mathrm s$のスペーサを（トップ側に）挿入した後の\index{トップふりわけちょう@トップ振分長}トップ側の振分長$f_\mathrm T'$は、
+改めてまとめると、厚さ$\delta_\mathrm s$のスペーサを（トップ側に）挿入した後の\TopAlocationLength$f_\mathrm T'$は、
 \begin{align*}
   f_\mathrm T'
   = f_\mathrm T+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{\delta_\mathrm s}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}}\ .
 \end{align*}
-トップ側とボトム側の\index{きんとうふりわけ@均等振分}振分長が均等になるときの\index{スペーサあつ@スペーサ厚}スペーサ厚$\delta_\mathrm s'$は、
+トップ側とボトム側の\index{きんとうふりわけ@均等振分}\AlocationLength が均等になるときの\index{スペーサあつ@スペーサ厚}スペーサ厚$\delta_\mathrm s'$は、
 \begin{align*}
   \delta_\mathrm s' = \sqrt{R_\mathrm i'^2-(\bar l-f_d)^2}-\sqrt{R_\mathrm i'^2-(\bar l+f_d)^2}\ .
 \end{align*}
@@ -493,8 +493,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 21.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{テーブルの回転による振分長の調節}
-これまでトップ・ボトム振分長の差を小さくするために\index{スペーサ}スペーサを用いる手法を考えてきた。
+\modHeadsection{テーブルの回転による\AlocationLength の調節}
+これまで\TopAlocationLength・\BottomAlocationLength の差を小さくするために\index{スペーサ}スペーサを用いる手法を考えてきた。
 スペーサを取付けることは、本質的にはボトム側の\index{うけいた@受板}受板の点U$_\mathrm B$を中心に回転しているということである。
 このとき回転の中心はU$_\mathrm B$である必要はなく、他の点でも問題ない。
 したがって、スペーサを用いて回転をしなくても、\index{テーブル}テーブルそのものを回転するという手法が考えられる。
@@ -580,8 +580,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 21.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{回転後の振分長}
-回転後の\index{トップさいふりわけちょう@トップ再振分長}トップ側の振分長$f_\mathrm T'$は、\pageeqref{eq:afterfttable}の虚部を見ればよいので、
+\subsection{回転後の\AlocationLength}
+回転後の\TopReAlocationLength$f_\mathrm T'$は、\pageeqref{eq:afterfttable}の虚部を見ればよいので、
 \begin{subequations}
 %\label{eq:saifuriwake}
 \begin{align}
@@ -590,7 +590,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
   = f_\mathrm T+\Delta'\sin\theta
   = f_\mathrm T+\left(\Delta+\sqrt{R_\mathrm i'-\bar l^2}\right)\sin\theta\ .
 \end{align}
-同様に、\index{ボトムさいふりわけちょう@ボトム再振分長}ボトムの振分長$f_\mathrm B'$は、符号に注意して、
+同様に、\BottomReAlocationLength$f_\mathrm B'$は、符号に注意して、
 \begin{align}
   f_\mathrm B' = f_\mathrm B-\Delta'\sin\theta = (f_\mathrm T+f_\mathrm B)-f_\mathrm T'\ .
 \end{align}
@@ -599,8 +599,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-\index{テーブルちゅうしん@テーブル中心}テーブル中心Pによる回転は\index{ふりわけちょう@振分長}振分長に影響しない（\index{たんめん@端面}端面を水平に戻す）ので、\index{わんきょくちゅうしん@湾曲中心}湾曲中心Oによる回転だけが影響する。
-よって、振分長は$\Delta'\sin\theta$だけ変化する。
+\index{テーブルちゅうしん@テーブル中心}テーブル中心Pによる回転は\AlocationLength に影響しない（\index{たんめん@端面}端面を水平に戻す）ので、\index{わんきょくちゅうしん@湾曲中心}湾曲中心Oによる回転だけが影響する。
+よって、\AlocationLength は$\Delta'\sin\theta$だけ変化する。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -616,13 +616,13 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 21.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{振分長を指定したときの回転角}
-トップ側の振分長が$f_\mathrm T'$となる回転角$\theta$は、\pageeqref{eq:saifuriwakeT}より、
+\subsection{\AlocationLength を指定したときの回転角}
+トップ側の\AlocationLength が$f_\mathrm T'$となる回転角$\theta$は、\pageeqref{eq:saifuriwakeT}より、
 \begin{align*}
   \sin\theta = \frac{f_\mathrm T'-f_\mathrm T}{\Delta'}
 \end{align*}
 で与えられる。
-特に、トップ側およびボトム側の\index{きんとうふりわけ@均等振分}振分長が同じになるとき、$\theta$は
+特に、トップ側およびボトム側の\index{きんとうふりわけ@均等振分}\AlocationLength が同じになるとき、$\theta$は
 \begin{align*}
   \Delta'\sin\theta = f_d \qquad \left(f_d \equiv \frac{f_\mathrm B-f_\mathrm T}2\right)
 \end{align*}
@@ -636,11 +636,11 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-改めてまとめると、テーブルを$-\theta$だけ傾けた後の\index{トップさいふりわけちょう@トップ再振分長}トップ側の振分長$f_\mathrm T'$は、
+改めてまとめると、テーブルを$-\theta$だけ傾けた後の\TopReAlocationLength$f_\mathrm T'$は、
 \begin{align*}
   f_\mathrm T' = f_\mathrm T+\left(\Delta+\sqrt{R_\mathrm i'-\bar l^2}\right)\sin\theta\ .
 \end{align*}
-トップ側とボトム側の振分長が均等になるときの\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}傾き角$\theta'$は、
+トップ側とボトム側の\AlocationLength が均等になるときの\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}傾き角$\theta'$は、
 \begin{align*}
   \sin\theta' = \frac{f_\mathrm B-f_\mathrm T}{2\left(\Delta+\sqrt{R_\mathrm i'-\bar l^2}\right)}\ .
 \end{align*}
@@ -665,7 +665,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \index{わんきょくのないモールド@湾曲のないモールド}湾曲のないモールド($R_\mathrm c^{-1}= 0$)については、回転して調整する必要性がないため、スペーサによる調整も回転による調整も必要がない。
 つまり$\delta_\mathrm s = 0$あるいは$\theta = 0$である。
 
-このとき、\index{きんとうふりわけ@均等振分}トップ側およびボトム側の振分長を同じにするには、単純に$f_d$だけ移動すればよい。
+このとき、\index{きんとうふりわけ@均等振分}トップ側およびボトム側の\AlocationLength を同じにするには、単純に$f_d$だけ移動すればよい。
 
 ~\vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

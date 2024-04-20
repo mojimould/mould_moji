@@ -54,22 +54,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 10.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{全長および振分長に関する寸法}
+\modHeadsection{\WorkTotalLength および\AlocationLength に関する寸法}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 10.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{全長と振分長の公差の関係}
-\index{ふりわけちょう@振分長}振分長の\index{こうさ（ふりわけちょう）@公差（振分長）}公差については、\index{ぜんちょう（モールド）@全長（モールド）}全長の\index{こうさ（ぜんちょう）@公差（全長）}公差を\index{トップふりわけちょう@トップ振分長}トップ振分長と\index{ボトムふりわけちょう@ボトム振分長}ボトム振分長とで等分配する。
+\subsection{\WorkTotalLength と\AlocationLength の公差の関係}
+\AlocationLength の\index{こうさ（\yomiAlocationLength）@公差（\nameAlocationLength）}公差については、\WorkTotalLength の\index{こうさ（\yomiWorkTotalLength）@公差（\nameWorkTotalLength）}公差を\TopAlocationLength　と\BottomAlocationLength　とで等分配する。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-たとえば、全長が$1000^{\phantom +0}_{-1.0}$でトップ振分長が200であれば、全長の公差分$-0.5$を等分配し、それぞれ$-0.25$, $-0.25$とする。
-つまり、トップ振分長は199.75, ボトム振分長は799.75とする
+たとえば、\WorkTotalLength が$1000^{\phantom +0}_{-1.0}$で\TopAlocationLength が200であれば、\WorkTotalLength の公差分$-0.5$を等分配し、それぞれ$-0.25$, $-0.25$とする。
+つまり、\TopAlocationLength は199.75, \BottomAlocationLength は799.75とする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{\index{ふりわけちゅうしん@振分中心}振分中心からのずれとして考えると、振分長に依らず等分配するのが自然、と捉えることができる。}。
+\footnote{\index{ふりわけちゅうしん@振分中心}振分中心からのずれとして考えると、\AlocationLength に依らず等分配するのが自然、と捉えることができる。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -80,13 +80,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 10.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{振分長が括弧寸法の場合}
-片方の振分長が\index{かっこすんぽう@括弧寸法}括弧寸法の場合は、全長の公差をそのまま括弧寸法に割り当てる。
+\subsection{\AlocationLength が括弧寸法の場合}
+片方の\AlocationLength が\index{かっこすんぽう@括弧寸法}括弧寸法の場合は、\WorkTotalLength の公差をそのまま括弧寸法に割り当てる。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-たとえば、全長が$1000^{\phantom +0}_{-1.0}$でトップ振分長が200, ボトム振分長が(800)であれば、トップ振分長は200, ボトム振分長は799.5とする。
+たとえば、\WorkTotalLength が$1000^{\phantom +0}_{-1.0}$で\TopAlocationLength が200, \BottomAlocationLength が(800)であれば、\TopAlocationLength は200, \BottomAlocationLength は799.5とする。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,14 +97,14 @@
 %% subsection 11.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{振分の調整}
-\index{ふりわけちょう@振分長}振分長の調整を行う場合は、\index{スペーサ}スペーサまたは\index{テーブルかいてん（ふりわけちょうせい）@テーブル回転（振分調整）}テーブル回転のどちらかを用いて行うものとする。
+\AlocationLength の調整を行う場合は、\index{スペーサ}スペーサまたは\index{テーブルかいてん（ふりわけちょうせい）@テーブル回転（振分調整）}テーブル回転のどちらかを用いて行うものとする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{スペーサによる調整}
 スペーサは原則として\index{ジグ}ジグのトップ側の\index{うけいた@受板}受板に設置する。
-厚さ$\delta_\mathrm s$の\index{スペーサ}スペーサによる調整を行う場合、もともとのトップ振分長$f_\mathrm T$に対し、\index{トップふりわけちょう@トップ振分長}トップ側の振分長（\index{トップさいふりわけちょう@トップ再振分長}トップ再振分長）$f'_\mathrm T$を以下のように調整する。
+厚さ$\delta_\mathrm s$の\index{スペーサ}スペーサによる調整を行う場合、もともとの\TopAlocationLength$f_\mathrm T$に対し、トップ側の\AlocationLength（\TopReAlocationLength）$f'_\mathrm T$を以下のように調整する。
 \begin{align*}
   f'_\mathrm T
   = f_\mathrm T
@@ -117,7 +117,7 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$はそれぞれ\CenterCurvatureRadius
 %% subsubsection 01.1.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{テーブル回転による調整}
-\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}角度$\theta$だけテーブル回転をして調整を行う場合は、もともとの\index{トップふりわけちょう@トップ振分長}トップ振分長$f_\mathrm T$に対し、トップ側の振分長（\index{トップさいふりわけちょう@トップ再振分長}再振分長）$f'_\mathrm T$を以下のように調整する。
+\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}角度$\theta$だけテーブル回転をして調整を行う場合は、もともとの\TopAlocationLength$f_\mathrm T$に対し、トップ側の\AlocationLength（\TopReAlocationLength）$f'_\mathrm T$を以下のように調整する。
 \begin{align*}
   f_\mathrm T'
   = f_\mathrm T+\left(\Delta+\sqrt{R_\mathrm i'-\bar l^2}\right)\sin\theta\qquad
@@ -132,7 +132,7 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurva
 %% section 13.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{外径に関する寸法}
-\nameCenterCurvatureRadius を$R_\mathrm c$, トップ振分長を$f_\mathrm T$, 外径を$W_x$とすると、\nameTopEndFace 部の水平方向の長さ$W_\mathrm T$は以下で与えられる。（\nameBottomEndFace 部も同様）
+\nameCenterCurvatureRadius を$R_\mathrm c$, \TopAlocationLength を$f_\mathrm T$, 外径を$W_x$とすると、\nameTopEndFace 部の水平方向の長さ$W_\mathrm T$は以下で与えられる。（\nameBottomEndFace 部も同様）
 \begin{align*}
   W_\mathrm T
   = \sqrt{\left(R_\mathrm c+\frac{W_x}2\right)^2-f_\mathrm T^2}
@@ -155,13 +155,13 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurva
 %% subsection 04.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{内径テーパ表の公差}
-\index{ないけいテーパひょう@内径テーパ表}内径テーパ表を参照する際は、\index{ぜんちょう@全長}全長の\index{こうさ@公差}公差は考慮しないものとする。
+\index{ないけいテーパひょう@内径テーパ表}内径テーパ表を参照する際は、\WorkTotalLength の\index{こうさ@公差}公差は考慮しないものとする。
 また、トップ端からの距離の\index{ピッチ（ないけいテーパひょう）@ピッチ（内径テーパ表）}ピッチも、同様に公差は考慮しないものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-たとえば、全長が$800^{+0.5}_{\phantom -0}$, トップ振分長が400, ピッチが25である場合を考える。
+たとえば、\WorkTotalLength が$800^{+0.5}_{\phantom -0}$, \TopAlocationLength が400, ピッチが25である場合を考える。
 このとき、トップ端は\index{ふりわけちゅうしん@振分中心}振分中心から400の位置にあり、ピッチは25であるものとし、両端についてはそれを適宜延長して調整する。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -369,7 +369,7 @@ BD方向の内径$w_{\mathrm B\lambda}'$についても同様である。
     R_\mathrm o = R_\mathrm c+\frac{W_x}2
   \right).
 \end{gather*}
-$R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\CenterCurvatureRadius, 外径, トップ振分長, \KeywayPos, \KeywayWidth　を示す。
+$R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\CenterCurvatureRadius, 外径, \TopAlocationLength, \KeywayPos, \KeywayWidth　を示す。
 
 なお、$(\nicefrac{f_\mathrm T}{R_\mathrm c})^2$が十分小さい場合は、
 \begin{align*}
@@ -456,7 +456,7 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
   \text{ボトム側：}&~~
   \sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-\left(f_\mathrm B-c_\mathrm{Bo}\right)^2}\ .
 \end{align*}
-ここで$c_\mathrm{To}$, $c_\mathrm{Bo}$, $R_\mathrm c$, $f_\mathrm T$, $f_\mathrm B$はそれぞれトップ端面外C面取長, ボトム端面外C面取長, \CenterCurvatureRadius, トップ振分長, ボトム振分長を示す。
+ここで$c_\mathrm{To}$, $c_\mathrm{Bo}$, $R_\mathrm c$, $f_\mathrm T$, $f_\mathrm B$はそれぞれトップ端面外C面取長, ボトム端面外C面取長, \CenterCurvatureRadius, \TopAlocationLength, \BottomAlocationLength を示す。
 
 
 \clearpage
@@ -482,7 +482,7 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
   \text{ボトム側：}&~~
   \sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-\left(f_\mathrm B-c_\mathrm{Bi}\right)^2}\ .
 \end{align*}
-ここで$c_\mathrm{Ti}$, $c_\mathrm{Bi}$, $R_\mathrm c$, $f_\mathrm T$, $f_\mathrm B$はそれぞれトップ端面内C面取長, ボトム端面内C面取長, \CenterCurvatureRadius, トップ振分長, ボトム振分長を示す。
+ここで$c_\mathrm{Ti}$, $c_\mathrm{Bi}$, $R_\mathrm c$, $f_\mathrm T$, $f_\mathrm B$はそれぞれトップ端面内C面取長, ボトム端面内C面取長, \CenterCurvatureRadius, \TopAlocationLength, \BottomAlocationLength を示す。
 
 
 
@@ -620,7 +620,7 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
            -\sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm A0}}2\right)^2-f_\mathrm T^2}}q
 \end{align*}
 とする。
-ここで$w'_{\mathrm A0}$, $w'_{\mathrm Aq}$は（\PlatingThk$\mu$を考慮した）トップ端におけるAC方向の内径およびトップ端から距離$q$におけるAC方向の内径を示し、$R_\mathrm c$, $f_\mathrm T$はそれぞれ\CenterCurvatureRadius, トップ振分長を示す。
+ここで$w'_{\mathrm A0}$, $w'_{\mathrm Aq}$は（\PlatingThk$\mu$を考慮した）トップ端におけるAC方向の内径およびトップ端から距離$q$におけるAC方向の内径を示し、$R_\mathrm c$, $f_\mathrm T$はそれぞれ\CenterCurvatureRadius, \TopAlocationLength を示す。
 
 ただし、$\phi < 0$となる場合は、$\phi = 0$とみなすものとする。
 

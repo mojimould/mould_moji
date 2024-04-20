@@ -5,7 +5,7 @@
 ここでは主に\Dimple に関する測定・加工に必要な\expandafterindex{きかがくてきせいしつ（\yomiDimple）@幾何学的性質（\nameDimple）}幾何学的性質を考える。
 
 なお、\Dimple の加工は\MMC で行うことはできず、\DMC のみで行う。
-また\DMC では、\index{ふりわけちょう@振分長}振分長の調整について\index{スペーサ}スペーサを用いた方法は行わず、\index{テーブル}テーブルの回転を用いた方法のみで行う方針である。
+また\DMC では、\AlocationLength の調整について\index{スペーサ}スペーサを用いた方法は行わず、\index{テーブル}テーブルの回転を用いた方法のみで行う方針である。
 したがって、スペーサを用いた方法の場合は考慮する必要がない。
 そのため以降では、（\Dimple に関する測定・加工については）テーブルを$-\theta$だけ回転した場合についてのみを考えることにする。
 
@@ -22,7 +22,7 @@
 %% tcolorbox %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{tcolorbox}[title={\Dimple に関する表記法}, fonttitle=\gtfamily\bfseries, breakable, enhanced jigsaw]
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item
 \subparagraph*{列の数えかた}
 \Dimple が$m$列あるとき、トップ側から順に1列目, 2列目, …，$m$列目のように数える。
@@ -136,14 +136,14 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 そこで、アンダーカットを避けつつ加工ができるようにするため、モールドをいくらか（湾曲と反対側に）傾けて加工を行う。
 その\expandafterindex{かたむきかく（\yomiDimple）@傾き角（\nameDimple）}傾き角$\phi$ ($0 \leq \phi < \nicefrac\pi2$)について、ここでは次の2点を基準に考えることにする。
 \begin{tcolorbox}[title=A面の\Dimple, fonttitle=\gtfamily\bfseries]
-\begin{enumerate}
-\item[a)] A側内面のトップ端点
-\item[b)] A側内面の\Dimple1列目（トップ端から$q$）の位置
+\begin{enumerate}[label=\sarrow]
+\item A側内面のトップ端点
+\item A側内面の\Dimple1列目（トップ端から$q$）の位置
 \end{enumerate}
 \end{tcolorbox}\noindent
 この2点を通る直線と鉛直方向との角度を、傾き角$-\phi$とする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{振分長の調整に用いたテーブルの\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}傾き角$\theta$と混同しないように注意。}。
+\footnote{\AlocationLength の調整に用いたテーブルの\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}傾き角$\theta$と混同しないように注意。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 なお、\TopEndACID　は$w'_{\mathrm A0}$で代用してもよいものとする。
 このとき$\phi > 0$となる（C面側に傾く）場合は$\phi$だけ傾けて加工を行う。
@@ -182,7 +182,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %% section 6.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\Dimple の位置と傾き角（傾き前）}
-\pageeqref{eq:tableTRc}より、テーブルを$-\theta$傾けて振分長の調整を行った場合、テーブル中心Pを原点とした\index{ちゅうしんわんきょくせん@中心湾曲線}中心湾曲線のトップ端における$X$座標は、
+\pageeqref{eq:tableTRc}より、テーブルを$-\theta$傾けて\AlocationLength の調整を行った場合、テーブル中心Pを原点とした\index{ちゅうしんわんきょくせん@中心湾曲線}中心湾曲線のトップ端における$X$座標は、
 \begin{align*}
   R_\mathrm c\cos\alpha_\mathrm c-\Delta'\cos\theta = \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\Delta'\cos\theta
 \end{align*}
@@ -353,7 +353,7 @@ $\phi < 0$となるのは、
 \item \index{ないけいテーパ@内径テーパ}内径テーパがきつい（$w_{\mathrm A0}-w_{\mathrm Aq}$が大きい）
 \item \index{ないけい@内径}内径・\PlatingThk が大きい（$w_\mathrm A'$が大きい）
 \end{enumerate}
-たとえば、曲率0 ($R = +\infty$)の\index{モールド}モールド、つまり（\index{がいけい（モールド）@外形（モールド）}外形が）まっすぐの\index{わんきょくのないモールド@湾曲のないモールド}湾曲のないモールドなどが、これに該当する。
+たとえば、曲率0 ($R = +\infty$)の\index{モールド}モールド、つまり（\index{がいけい（ワーク）@外形（ワーク）}外形が）まっすぐの\index{わんきょくのないモールド@湾曲のないモールド}湾曲のないモールドなどが、これに該当する。
 \end{Column}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

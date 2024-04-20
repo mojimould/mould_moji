@@ -67,7 +67,7 @@
 %% subsection 01.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{図面の確認}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item 対象となる明細の\index{ずめん（モールド）@図面（モールド）}図面を用意する
 \item 他に内容が類似する明細の図面があれば、それも併せて用意する
 \end{enumerate}
@@ -99,7 +99,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{外削部分}
 \index{がいさくかこう@外削加工}外削の加工については、明細により\index{がいさくのうむ@外削の有無}外削の有無または\index{がいさくのけいじょう@外削の種類}種類の違いが存在する。
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item トップ側またはボトム側の外削の有無を確認する
 \item 外削の種類を確認し、使用する\index{こうぐ（がいさく）@工具（外削）}工具を決定する
 \item \index{わんきょくにそったがいさく@湾曲に沿った外削}外削が湾曲に沿ったものかどうかも確認する
@@ -124,7 +124,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\Keyway 部分}
 \expandafterindex{\yomiKeyway かこう@\nameKeyway 加工}\Keyway の加工については、全明細のトップ側に存在し、明細により種類の違いが存在する。
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item \nameKeywayType を確認し、使用する\expandafterindex{サブプログラム（\yomiKeyway）@サブプログラム（\nameKeyway）}サブプログラムの判断を行う
 \item \nameKeywayWidth を確認し、使用する\expandafterindex{こうぐ（\yomiKeyway）@工具（\nameKeyway）}工具の判断を行う
 \end{enumerate}
@@ -146,7 +146,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{端面面取部分}
 \index{たんめんめんとりかこう@端面面取加工}端面の面取加工については、全明細に存在し、明細により種類の違いが存在する。
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item 種類が\index{Cめんとり@C面取}C面取であれば、その\index{Cめんとりちょう@C面取長}C面取長により\index{マシニングセンタ}マシニングセンタによる加工を行うか判断を行う
 \item \index{たんめんCめんとりかく@端面C面取角}端面C面取角を確認し、使用する\index{こうぐ（Cめんとり）@工具（C面取）}工具を決定する
 \end{enumerate}
@@ -194,27 +194,27 @@
 %% subsubsection 01.1.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{端面における寸法}
-\begin{enumerate}
-\item \index{こうさ（ぜんちょう）@公差（全長）}全長の公差を確認し、\index{トップふりわけちょう@トップ振分長}トップ振分長および\index{ボトムふりわけちょう@ボトム振分長}ボトム振分長の\index{こうさ（ふりわけちょう）@公差（振分長）}公差の判断を行う
-\item トップ側・ボトム側の\index{ふりわけちょう@振分長}振分長を確認し、\index{スペーサ}スペーサによる調整が必要か判断を行う
-\item 使用するスペーサおよび\index{さいふりわけちょう@再振分長}再振分長は、専用の計算\index{プログラム(Excel VBA)}プログラム(\index{Excel VBA}Excel VBA)を用いて決定する
+\begin{enumerate}[label=\sarrow]
+\item \index{こうさ（\yomiWorkTotalLength）@公差（\nameWorkTotalLength）}\nameWorkTotalLength の公差を確認し、\TopAlocationLength および\BottomAlocationLength の\index{こうさ（\yomiAlocationLength）@公差（\nameAlocationLength）}公差の判断を行う
+\item \TopAlocationLength・\BottomAlocationLength を確認し、\index{スペーサ}スペーサによる調整が必要か判断を行う
+\item 使用するスペーサおよび\ReAlocationLength は、専用の計算\index{プログラム(Excel VBA)}プログラム(\index{Excel VBA}Excel VBA)を用いて決定する
 \item \index{がいけい@外径}外径・\index{にくあつ（たんめん）@肉厚（端面）}端面部の肉厚・\index{たんめんそとがわコーナーR@端面外側コーナーR}端面外側コーナーRの大きさを確認し、それに応じて\index{こうぐけいほせいち@工具径補正値}工具径補正値を決定する
-\item 振分長に応じて、$Z$方向の\index{クリアランスへいめん（Zほうこう）@クリアランス平面（$Z$方向）}クリアランス平面の位置を決定する
+\item \ReAlocationLength に応じて、$Z$方向の\index{クリアランスへいめん（Zほうこう）@クリアランス平面（$Z$方向）}クリアランス平面の位置を決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\paragraph*{再振分長}
-\GPMbox{全長}
-\GPMbox{トップ振分長}
-\GPMbox{ボトム振分長}
+\paragraph*{\ReAlocationLength}
+\PMWorkTotalLength
+\PMTopAlocationLength
+\PMBottomAlocationLength
 \PMACOD
 \PMJigLength
 \GPMbox{受板の幅}
 \tcbline*
 \paragraph*{\nameTopEndFace}
-\GPMbox{トップ再振分長}
+\PMTopReAlocationLength
 \PMACOD
 \PMBDOD
 \PMODCornerR\\
@@ -223,7 +223,7 @@
 \GPMbox{トップ側$Z$方向クリアランス平面距離}
 \tcbline*
 \paragraph*{\nameBottomEndFace}
-\GPMbox{ボトム再振分長}
+\PMBottomReAlocationLength
 \PMACOD
 \PMBDOD
 \PMODCornerR\\
@@ -243,7 +243,7 @@
 %% subsubsection 01.1.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{外削における寸法}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item \OutcutLength と\Keyway の位置を確認し、実際に加工する外削の長さの判断を行う
 \item トップ側・ボトム側の両方に外削のある場合は、どちら側が\index{きじゅん（がいさくちゅうしん）@基準（外削中心）}基準であるのかを確認する
 \item \index{ないけい（たんめん）@内径（端面）}端面の内径・\index{Aがわにくあつ（がいさく）@A側肉厚（外削）}外削部のA側肉厚・内面の\PlatingThk から、\index{がいさくちゅうしん@外削中心}外削中心$X$位置用のパラメータを手動による計算で決定する
@@ -317,7 +317,8 @@
 %% subsubsection 01.1.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\Keyway における寸法}
-\begin{enumerate}\item \KeywayType を確認し、必要に応じて加工における径の決定する
+\begin{enumerate}[label=\sarrow]
+\item \KeywayType を確認し、必要に応じて加工における径の決定する
 \item \index{きじゅん（\yomiKeywayCenter）@基準（\nameKeywayCenter）}\nameKeywayCenter の基準を確認し、\KeywayCenter の$X$位置を手動で計算し、決定する
 \item \KeywayWidth を確認し、\index{かこうかいすう（\yomiKeywayWidth）@加工回数（\nameKeywayWidth）}加工の回数を決定する
 \end{enumerate}
@@ -352,7 +353,7 @@
 %% subsubsection 01.1.3.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{端面の面取における寸法}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item \index{たんめんそとCめんとり@端面外C面取}端面外C面取の場合は、\index{がいさくのうむ@外削の有無}外削の有無を確認し、加工の径を決定する
 \item \index{Cめんとり（がいさくせんたん）@C面取（外削先端）}外削先端部C面取の場合は、\index{がいさくのけいじょう@外削の形状}外削の形状を確認し、\index{こうぐ（がいさく）@工具（外削）}工具を決定する
 \end{enumerate}
@@ -429,13 +430,13 @@
 %% subsection 01.1.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{プログラムの入力}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item 原則として、\index{プログラムばんごう@プログラム番号}プログラム番号は\DrawingExists と一致させる\\
 ただし、加工内容が同一のものである場合は、既存のプログラムをそのまま流用する
 \item 各々の加工部分およびその形状に対する\index{サブプログラム}サブプログラムを決定する
 \item 各々のサブプログラムに対し、適切な寸法値を手動で計算する
 \item 各々のサブプログラムに対し、計算した寸法値・\index{こうぐばんごう@工具番号}工具番号・\index{おくりはやさ@送り速さ}送り速さ・\index{しゅじくかいてんすう@主軸回転数}主軸回転数を格納する
-\item \index{さいふりわけちょう@再振分長}再振分長の寸法に応じて、\index{クリアランスへいめん（Zほうこう）@クリアランス平面（$Z$方向）}$Z$方向クリアランス平面の位置を決定する
+\item \ReAlocationLength の寸法に応じて、\index{クリアランスへいめん（Zほうこう）@クリアランス平面（$Z$方向）}$Z$方向クリアランス平面の位置を決定する
 \item マシニングセンタの操作画面にて\index{メインプログラム}メインプログラムを直接編集し、必要なコードまたは数値を記入する
 \item 必要に応じて、\index{いちじていし（プログラム）@一時停止（プログラム）}一時停止用のコードを代入する
 \item \index{こうぐけいほせい@工具径補正}工具径または\index{こうぐちょうほせい@工具長補正}工具長の補正が必要な場合は、別途専用画面にて手動で編集を行う
@@ -447,10 +448,10 @@
 %% subsection 01.1.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ワークの設置}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item \index{スペーサ}スペーサが必要な場合は、適切なスペーサを\index{ジグ}ジグの\index{うけいた@受板}受板に設置する
 \item \index{ワーク}ワークの大きさを考慮して、\index{ワークこていようボルト@ワーク固定用ボルト}ワーク固定用ボルトの長さを目分量で適宜決定し、ジグに設置する
-\item \index{さいふりわけちょう@再振分長}再振分長に応じた位置に\index{ワーク}ワークを設置し、固定する
+\item \ReAlocationLength に応じた位置に\index{ワーク}ワークを設置し、固定する
 \item トップ側およびボトム側の、ジグからの\index{はりだしちょう@張出長}張出長を\index{メジャー}メジャーを用いて測定する
 \item 測定した張出長から、\index{たんめんかこう@端面加工}端面加工における\index{ぜんけずりしろ（たんめん）@全削り代（端面）}全削り代を手動でおおまかに計算する
 \end{enumerate}
@@ -466,8 +467,8 @@
 \tcbline*
 \paragraph*{端面の削り代}
 \PMJigLength
-\GPMbox{トップ再振分長}
-\GPMbox{ボトム再振分長}
+\PMTopReAlocationLength
+\PMBottomReAlocationLength
 \GPMbox{端面加工1回あたりの削り代}\\
 \GPMbox{トップ側張出長実測値}
 \GPMbox{ボトム側張出長実測値}
@@ -482,7 +483,7 @@
 %% subsection 01.1.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ワーク設置後の調整}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item トップ側およびボトム側の\index{ぜんけずりしろ（たんめん）@全削り代（端面）}全削り代に応じて、\index{かこうかいすう（たんめんかこう）@加工回数（端面加工）}端面加工の回数を設定する
 \item トップ端およびボトム端の\index{がいけいちゅうしん@外径中心}外径中心の位置を\index{メジャー}メジャーで測定する
 \item 測定した中心位置を用いて、\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の設定を行う
@@ -504,7 +505,7 @@
 %% subsection 01.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{芯出し測定後}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item 各々の\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の測定後、必要に応じてワーク座標系原点の設定変更を行う
 \item 各々の測定箇所の$Z$位置の変更を、必要に応じて行う
 \end{enumerate}
@@ -515,7 +516,7 @@
 %% subsection 01.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{端面加工中}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item 必要に応じて、\index{1かいあたりのけずりしろ（たんめん）@1回あたりの削り代（端面）}1回あたりの削り代を調整する
 \end{enumerate}
 
@@ -524,7 +525,7 @@
 %% subsection 01.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{外削加工中}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item 必要に応じて\index{しあげかこう（がいさく）@仕上げ加工（外削）}仕上加工前に\index{いちじていし（プログラム）@一時停止（プログラム）}一時停止を行い、\index{Aがわにくあつ@A側肉厚}A側肉厚および\index{がいさくけい@外削径}外削径の測定を行う
 \item A側肉厚を調整する場合は、該当する\index{しんだしそくてい（がいさくちゅうしん@芯出し測定（外削中心）}芯出し測定部分のパラメータをメインプログラムから直接手動で編集する
 \item \index{がいさくけい@外削径}外削径を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面から\index{メインプログラム}メインプログラムを直接手動で編集する
@@ -536,7 +537,7 @@
 %% subsection 01.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\Keyway 加工中}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item 必要に応じて\expandafterindex{しあげかこう（\yomiKeyway）@仕上げ加工（\nameKeyway）}仕上加工前に\index{いちじていし（プログラム）@一時停止（プログラム）}一時停止を行い、\AsideKeywayDepth および\KeywayDiameter の測定を行う
 \item \AsideKeywayDepth を調整する場合は、該当する\index{しんだしそくてい（\yomiKeywayCenter）@芯出し測定（\nameKeywayCenter）}芯出し測定部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \item \KeywayDiameter を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
@@ -549,7 +550,7 @@
 %% subsection 01.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{端面外C面取加工中}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item 必要に応じて\index{しあげかこう（たんめんそとCめんとり）@仕上げ加工（端面外C面取）}仕上加工前に\index{いちじていし（プログラム）@一時停止（プログラム）}一時停止を行い、\index{Cめんとり@C面取}C面取の測定・位置の確認を行う
 \item C面取の位置を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \item \index{かこうかいすう（たんめんそとCめんとり）@加工回数（端面外C面取）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
@@ -561,7 +562,7 @@
 %% subsection 01.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{端面内C面取加工中}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item 必要に応じて\index{しあげかこう（たんめんうちがわCめんとり）@仕上げ加工（端面内C面取）}仕上加工前に\index{いちじていし@一時停止}一時停止を行い、C面取の測定・位置の確認を行う
 \item C面取の位置を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \item \index{かこうかいすう（たんめんうちCめんとり）@加工回数（端面内C面取）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
@@ -588,7 +589,7 @@
 %% subsection 01.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ワークの取外し}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item 必要に応じて、\index{ワークこていようボルト@ワーク固定用ボルト}ワーク固定用ボルトを緩める前に、各種\index{そくていき@測定器}測定器で\index{すんぽう@寸法}寸法を確認する
 \item クーラント用の液およびエアーブローを用いて軽く洗浄を行い、固定用ボルトを緩めて\index{ワーク}ワークを取り出し、軽く拭取りを行う
 \item \index{リフター}リフターまたは\index{クレーン}クレーンを用いて、\index{めんとりようさぎょうだい@面取用作業台}面取用作業台にワークを移動する
@@ -599,7 +600,7 @@
 %% subsection 01.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{外観の確認・寸法の検査}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item \index{がいかん（ワーク）@外観（ワーク）}外観に異常がないか確認を行う
 \item \index{そくていき@測定器}測定器を用いて\index{すんぽう@寸法}寸法の確認を行う
 \item 所定の用紙に、指定箇所の\index{こうさ@公差}公差を考慮した寸法値を、手動で計算を行い手動で記入する
@@ -611,7 +612,7 @@
 %% subsection 01.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{手動による仕上げ加工}
-\begin{enumerate}
+\begin{enumerate}[label=\sarrow]
 \item 所定の寸法の\index{めんとり（たんめん）@面取（端面）}端面の面取を、\index{てもちけんまき@手持ち研磨機}手持ち研磨機を用いて手動で行う
 \item \index{ばり}ばり等を除去を、\index{やすり}やすりを用いて全体的に手動で行う
 \item \index{にくあつ（たんめん）@肉厚（端面）}端面の肉厚に応じて\index{こくいん@刻印}刻印の大きさを決定する
