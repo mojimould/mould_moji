@@ -2,7 +2,7 @@
 
 
 \modHeadchapter[loC]{\Keyway の幾何}
-ここでは主に、\textbf{\KeywayWidth}に関する測定・加工に必要な\expandafterindex{きかがくてきせいしつ（\yomiKeyway）@幾何学的性質（\nameKeyway）}幾何学的性質を考える。
+ここでは主に、\textbf{\Keyway}に関する測定・加工に必要な\expandafterindex{きかてきせいしつ（\yomiKeyway）@幾何的性質（\nameKeyway）}幾何的性質を考える。
 
 
 
@@ -12,7 +12,7 @@
 \modHeadsection{\Keyway の基本事項}
 \textbf{\Keyway}に関しては、その基準が以下のように与えられる場合が考えられる。
 \begin{enumerate}[label=\sarrow]
-\item \KeywayCenter Mが、モールドの\index{わんきょくちゅうしんせん@湾曲中心線}湾曲中心線上にある場合
+\item \KeywayCenter Mが、ワークの\index{わんきょくちゅうしんせん@湾曲中心線}湾曲中心線上にある場合
 \item \KeywayCenter Mが、（トップ側）\index{がいさくちゅうしん@外削中心}外削径の中心線上にある場合
 \item \AsideKeywayDepth に指定がある場合
 \end{enumerate}
@@ -68,10 +68,7 @@
 となる。
 なお実際の作業では、簡単のため、トップ端面の外側中心T$_\mathrm c'$を測定し、それをトップ端面における湾曲中心T$_{R_\mathrm c}'$とみなして\KeywayCenter M$'$の位置を計算することが多い。
 実測した外側中心の$X$・$Y$座標$G_{\mathrm Tx}$, $G_{\mathrm Ty}$を湾曲中心のそれとみなすと、機内における\KeywayCenter M$'$の位置は、テーブル中心Pを原点として、
-%% label{eq:Mreal}
-\begin{subequations}
-  \label{eq:Mreal}
-\begin{align}
+\begin{align*}
   \left(
     G_{\mathrm Tx}
     +\sqrt{R_\mathrm c^2-(f_\mathrm T-\bar\kappa_w)^2}
@@ -79,15 +76,16 @@
     G_{\mathrm Ty}~,~
     f_\mathrm T'-\bar\kappa_w
   \right).
-\end{align}
+\end{align*}
 湾曲中心とみなさずに正確に求めるなら、これに\pageeqref{eq:TRc-Tc}を引けばよい。
 その場合の$X$座標は、
+%% label{eq:Mreal}
 \begin{align}
+  \label{eq:Mreal}
   G_{\mathrm Tx}
   +\sqrt{R_\mathrm c^2-(f_\mathrm T-\bar\kappa_w)^2}
   -\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2\ .
 \end{align}
-\end{subequations}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
