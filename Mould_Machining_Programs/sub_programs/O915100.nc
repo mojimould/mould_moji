@@ -55,6 +55,7 @@ G91 G30 X0 Y0 Z0
 T01 (tool #01)
 G04 X5.0 (wait 5.0s)
 M05 (spindle off)
+S35
 
 N991
 M06 (tool exchange)
