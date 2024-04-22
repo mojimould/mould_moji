@@ -2,7 +2,7 @@
 
 
 \modHeadchapter{\EndFaceChamfer の幾何}
-ここでは主に、\index{テーパエンドミル}テーパエンドミルを用いた、\index{たんめんそとCめんとり@端面外C面取}\textbf{端面外C面取}および\index{たんめんうちCめんとり@端面内C面取}\textbf{端面内C面取}に関する測定・加工に必要な\expandafterindex{きかてきせいしつ（\yomiEndFaceChamfer）@幾何的性質（\nameEndFaceChamfer）}幾何的性質を考える。
+ここでは主に、\index{テーパエンドミル}テーパエンドミルを用いた、\textbf{\EndFaceOutChamfer}および\textbf{\EndFaceInChamfer}に関する測定・加工に必要な\expandafterindex{きかてきせいしつ（\yomiEndFaceChamfer）@幾何的性質（\nameEndFaceChamfer）}幾何的性質を考える。
 
 
 
@@ -10,14 +10,14 @@
 %% section 23.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\EndFaceChamfer の寸法}
-\index{トップたんめんそとCめんとり@トップ端面外C面取}トップ端面外C面取および\index{トップたんめんうちCめんとり@トップ端面側内C面取}トップ端面内C面取の大きさをそれぞれ$c_\mathrm{To}$, $c_\mathrm{Ti}$とする。
+\TopEndFaceOutChamferLength および\TopEndFaceInChamferLength をそれぞれ$c_\mathrm{To}$, $c_\mathrm{Ti}$とする。
 ここで$c_\mathrm{To}$や$c_\mathrm{Ti}$は、端面に垂直な方向の距離とする。
-このとき、片角$\xi_\mathrm e$\,($>0$)の\index{テーパエンドミル}テーパエンドミルに対して、C面取の$XY$方向の距離は、
+このとき、片角$\xi_\mathrm e$\,($>0$)の\index{テーパエンドミル}テーパエンドミルに対して、$XY$方向の\EndFaceChamferLength は、
 \begin{align*}
   c_\mathrm{To}\tan\xi_\mathrm e\qquad\text{および}\qquad c_\mathrm{Ti}\tan\xi_\mathrm e
 \end{align*}
 で与えられる。
-\index{ボトムたんめんそとCめんとり@ボトム端面外C面取}ボトム端面外C面取および\index{ボトムたんめんうちCめんとり@ボトム端面内C面取}ボトム端面内C面取の大きさ$c_\mathrm{Bo}$, $c_\mathrm{Bi}$についても同様である。
+\BottomEndFaceOutChamferLength および\TopEndFaceInChamferLength$c_\mathrm{Bo}$, $c_\mathrm{Bi}$についても同様である。
 
 
 
@@ -70,7 +70,7 @@
 %% section 23.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{中心座標\texorpdfstring{$X$}{X}の移動\TBW}
-\index{がいさく@外削}外削があり、かつ\index{たんめんそとCめんとり@端面外C面取}端面外C面取の場合であれば、Cの大きさに依らず加工径の中心座標($XY$)は変わらない。
+\index{がいさく@外削}外削があり、かつ\EndFaceOutChamfer　の場合であれば、Cの大きさに依らず加工径の中心座標($XY$)は変わらない。
 一方、外削のない場合は、中心の$X$座標はCの大きさに応じて湾曲中心線に沿って移動する。
 このとき\index{たんめん@端面}端面と面取先端部との中心座標($X$)の差
 %% footnote %%%%%%%%%%%%%%%%%%%%%
@@ -83,7 +83,7 @@
   \text{ボトム側：}&~~
   \sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-\left(f_\mathrm B-c_\mathrm{Bo}\right)^2}\ .
 \end{align*}
-これは内C面取でも同様であり、
+これは\EndFaceInChamfer でも同様であり、
 \begin{align*}
   \text{トップ側：}&~~
   \sqrt{R_\mathrm c^2-\left(f_\mathrm T-c_\mathrm{Ti}\right)^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\\

@@ -38,8 +38,8 @@
            & 端面 & \KTanmenRight\\
            & 外削 & \KGaisakuRLeft\\
            & \nameKeyway & \KMizoConerLeft\\
-           & 端面外C面取 & \KSotoMentoriRLeft\\
-           & 端面内C面取 & \KUchiMentoriRLeft\\
+           & \EndFaceOutChamfer & \KSotoMentoriRLeft\\
+           & \EndFaceInChamfer & \KUchiMentoriRLeft\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
 \hline
 \SetCell[r=8]{c}
@@ -48,8 +48,8 @@
            & \Dimple & \DLone\\
            & 端面 & \KTanmenRight\\
            & \nameKeyway & \KMizoConerLeft\\
-           & 端面外C面取 & \KSotoMentoriRLeft\\
-           & 端面内C面取 & \KUchiMentoriRLeft\\
+           & \EndFaceOutChamfer & \KSotoMentoriRLeft\\
+           & \EndFaceInChamfer & \KUchiMentoriRLeft\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
 \end{multicollongtblr}
 
@@ -104,8 +104,8 @@
 \KTanmenRight      & 加工 端面 コーナーR 右回り1周 & \KOLeftAR\\
 \KGaisakuRLeft     & 加工 外削 コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
 \KMizoConerLeft    & 加工 \Keyway{} 左回り1周 & \KOLeftAR\OpauseCheck\\
-\KSotoMentoriRLeft & 加工 端面外C面取 コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
-\KUchiMentoriRLeft & 加工 端面内C面取 コーナーR 左回り1周 & \KILeftAC\OpauseCheck\\
+\KSotoMentoriRLeft & 加工 \EndFaceOutChamfer コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
+\KUchiMentoriRLeft & 加工 \EndFaceInChamfer{} コーナーR 左回り1周 & \KILeftAC\OpauseCheck\\
 \KOLeftAR   & 外側 左回り1周 右上始まり & -\\
 \KILeftAC   & 内側 左回り1周 中央上始まり & -\\
 \end{multicollongtblr}
@@ -256,7 +256,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KSotoMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KSotoMentoriRLeft\,:加工 端面外C面取 コーナーR 左回り1周}
+\modcaptionof{lstlisting}{\KSotoMentoriRLeft\,:加工 \EndFaceOutChamfer{} コーナーR 左回り1周}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameKSotoMentoriRLeft.nc}
 
 
@@ -264,7 +264,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KUchiMentoriRLeft\,:加工 端面内C面取 コーナーR 左回り1周}
+\modcaptionof{lstlisting}{\KUchiMentoriRLeft\,:加工 \EndFaceInChamfer{} コーナーR 左回り1周}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameKUchiMentoriRLeft.nc}
 
 

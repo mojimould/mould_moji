@@ -78,15 +78,15 @@
 \ttNum181 & （不使用） &\\
 \ttNum182 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\
 \ttNum183 & \Keyway 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum184 & トップ側 端面外C面取 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum185 & トップ側 端面内C面取 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum184 & \expandafterindex{トップ\yomiEndFaceOutChamfer@トップ\nameEndFaceOutChamfer}トップ\nameEndFaceOutChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum185 & トップ\nameEndFaceInChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
 \ttNum186\TBW & （\EndFaceBoring{} 仕上げ加工 追加回数用 予備） & 0\\
 \SetRow{unusingVariables}
 \ttNum187 & （不使用） &\\
 \ttNum188 & ボトム外削 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum189 & ボトム側 端面外C面取 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum190 & ボトム側 端面内C面取 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum189 & \expandafterindex{ボトム\yomiEndFaceOutChamfer@ボトム\nameEndFaceOutChamfer}ボトム\nameEndFaceOutChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum190 & ボトム\nameEndFaceInChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
 \ttNum191 & （不使用） &\\
 \SetRow{unusingVariables}
@@ -175,16 +175,16 @@
 
 \begin{multicollongtblr}[white]{\ttNum425\,-\ttNum449：補助機能（使用頻度 高）続き}{cX[l]c}
 変数 & 内容 & 設定例\\
-\ttNum425 & トップ側 端面外C面取$X+$補正 & 0\\
-\ttNum426 & トップ側 端面外C面取径（直径）$+$補正 & 0\\
-\ttNum427 & トップ側 端面外C面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum428 & トップ側 端面外C面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum425 & \expandafterindex{トップ\yomiEndFaceOutChamfer@トップ\nameEndFaceOutChamfer}トップ\nameEndFaceOutChamfer$X+$補正 & 0\\
+\ttNum426 & \expandafterindex{トップ\yomiEndFaceOutChamfer@トップ\nameEndFaceOutChamfer}トップ\nameEndFaceOutChamfer 径（直径）$+$補正 & 0\\
+\ttNum427 & \expandafterindex{トップ\yomiEndFaceOutChamfer@トップ\nameEndFaceOutChamfer}トップ\nameEndFaceOutChamfer{} 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum428 & \expandafterindex{トップ\yomiEndFaceOutChamfer@トップ\nameEndFaceOutChamfer}トップ\nameEndFaceOutChamfer{} 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum429 & （不使用） &\\
-\ttNum430 & トップ側 端面内C面取$X+$補正 & 0\\
-\ttNum431 & トップ側 端面内C面取径（直径）$+$補正 & 0\\
-\ttNum432 & トップ側 端面内C面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum433 & トップ側 端面内C面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum430 & トップ\EndFaceInChamfer$X+$補正 & 0\\
+\ttNum431 & トップ\EndFaceInChamfer 径（直径）$+$補正 & 0\\
+\ttNum432 & トップ\EndFaceInChamfer{} 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum433 & トップ\EndFaceInChamfer{} 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum434 & （不使用） &\\
 \SetRow{unusingVariables}
@@ -195,16 +195,16 @@
 \ttNum439 & ボトム外削 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum440 & （不使用） &\\
-\ttNum441 & ボトム側 端面外C面取$X+$補正 & 0\\
-\ttNum442 & ボトム側 端面外C面取径（直径）$+$補正 & 0\\
-\ttNum443 & ボトム側 端面外C面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum444 & ボトム側 端面外C面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum441 & \expandafterindex{ボトム\yomiEndFaceOutChamfer@ボトム\nameEndFaceOutChamfer}ボトム\nameEndFaceOutChamfer$X+$補正 & 0\\
+\ttNum442 & \expandafterindex{ボトム\yomiEndFaceOutChamfer@ボトム\nameEndFaceOutChamfer}ボトム\nameEndFaceOutChamfer 径（直径）$+$補正 & 0\\
+\ttNum443 & \expandafterindex{ボトム\yomiEndFaceOutChamfer@ボトム\nameEndFaceOutChamfer}ボトム\nameEndFaceOutChamfer{} 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum444 & \expandafterindex{ボトム\yomiEndFaceOutChamfer@ボトム\nameEndFaceOutChamfer}ボトム\nameEndFaceOutChamfer{} 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum445 & （不使用） &\\
-\ttNum446 & ボトム側 端面内C面取$X+$補正 & 0\\
-\ttNum447 & ボトム側 端面内C面取径（直径）$+$補正 & 0\\
-\ttNum448 & ボトム側 端面内C面取 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum449 & ボトム側 端面内C面取 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum446 & ボトム側 \EndFaceInChamfer$X+$補正 & 0\\
+\ttNum447 & ボトム側 \EndFaceInChamfer{}径（直径）$+$補正 & 0\\
+\ttNum448 & ボトム側 \EndFaceInChamfer{} 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum449 & ボトム側 \EndFaceInChamfer{} 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \end{multicollongtblr}
 
 
@@ -422,11 +422,11 @@ $\cdots$ & （以下不明） & \ttNum0
 \SetRow{unusingVariables}
 \ttNum613 & （予備） &\\
 \SetRow{unusingVariables}
-\ttNum614 & （端面外C面取加工用予備） & \\
+\ttNum614 & （\EndFaceOutChamfer 加工用予備） & \\
 \SetRow{unusingVariables}
 \ttNum615 & （予備） &\\
 \SetRow{unusingVariables}
-\ttNum616 & （端面内C面取加工用予備） &\\
+\ttNum616 & （\EndFaceInChamfer{}加工用予備） &\\
 \SetRow{unusingVariables}
 \ttNum617 & （予備） &\\
 \SetRow{unusingVariables}
@@ -460,10 +460,10 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum628 & 外削加工 仕上げ前 残り削り代（直径） & 1.0\\
 \ttNum629 & \Keyway 加工1回あたりの削り代（\KeywayDepth） & 5.0\\
 \ttNum630 & \Keyway 加工 仕上げ前 残り削り代（直径） & 1.0\\
-\ttNum631 & 端面外C面取加工1回あたりの削り代（直径） & 2.000\\
-\ttNum632 & 端面外C面取加工 仕上げ前 残り削り代（直径） & 1.000\\
-\ttNum633 & 端面内C面取加工1回あたりの削り代（直径） & 2.000\\
-\ttNum634 & 端面内C面取加工 仕上げ前 残り削り代（直径） & 1.000\\
+\ttNum631 & \EndFaceOutChamfer 加工1回あたりの削り代（直径） & 2.000\\
+\ttNum632 & \EndFaceOutChamfer 加工 仕上げ前 残り削り代（直径） & 1.000\\
+\ttNum633 & \EndFaceInChamfer{}加工1回あたりの削り代（直径） & 2.000\\
+\ttNum634 & \EndFaceInChamfer{}加工 仕上げ前 残り削り代（直径） & 1.000\\
 \SetRow{unusingVariables}
 \ttNum635 & （\EndFaceBoring 加工用予備） & \\
 \SetRow{unusingVariables}
@@ -521,10 +521,10 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum661 & 外削加工：コーナー & \OutcutCornerFeedRate\\
 \ttNum662 & \Keyway 加工：直線 & \KeywayLinearFeedRate\\
 \ttNum663 & \Keyway 加工：コーナー & \KeywayCornerFeedRate\\
-\ttNum664 & 端面外C面取加工：直線 & \OutChamferLinearFeedRate\\
-\ttNum665 & 端面外C面取加工：コーナー & \OutChamferCornerFeedRate\\
-\ttNum666 & 端面内C面取加工：直線 & \InChamferLinearFeedRate\\
-\ttNum667 & 端面内C面取加工：コーナー & \InChamferCornerFeedRate\\
+\ttNum664 & \EndFaceOutChamfer 加工：直線 & \OutChamferLinearFeedRate\\
+\ttNum665 & \EndFaceOutChamfer 加工：コーナー & \OutChamferCornerFeedRate\\
+\ttNum666 & \EndFaceInChamfer 加工：直線 & \InChamferLinearFeedRate\\
+\ttNum667 & \EndFaceInChamfer 加工：コーナー & \InChamferCornerFeedRate\\
 \ttNum668 & \EndFaceBoring 加工：直線 & \EndFaceBoringLinearFeedRate\\
 \ttNum669 & \EndFaceBoring 加工：コーナー & \EndFaceBoringCornerFeedRate\\
 \ttNum670 & \Dimple 測定：表面アプローチ & \DimpleApproachFeedRate\\
@@ -550,8 +550,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum675 & 端面加工 & \EndFaceSpindleSpeed\\
 \ttNum676 & 外削加工 & \OutcutSpindleSpeed\\
 \ttNum677 & \Keyway 加工 & \KeywaySpindleSpeed\\
-\ttNum678 & 端面外C面取加工 & \OutChamferSpindleSpeed\\
-\ttNum679 & 端面内C面取加工 & \InChamferSpindleSpeed\\
+\ttNum678 & \EndFaceOutChamfer 加工 & \OutChamferSpindleSpeed\\
+\ttNum679 & \EndFaceInChamfer 加工 & \InChamferSpindleSpeed\\
 \ttNum680 & \EndFaceBoring 加工 & \EndFaceBoringSpindleSpeed\\
 \ttNum681 & \Dimple 加工 & \DimpleSpindleSpeed\\
 \SetRow{unusingVariables}
@@ -992,7 +992,7 @@ $\cdots$ & （以下不明） & \ttNum0
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-工具長・工具径・工具の摩耗量といったオフセットの値は、\pageautoref{sec:VI.A.2}を参照
+工具長・工具径・工具の摩耗量といったオフセットの値は、\index{システムへんすう@システム変数}システム変数を参照
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

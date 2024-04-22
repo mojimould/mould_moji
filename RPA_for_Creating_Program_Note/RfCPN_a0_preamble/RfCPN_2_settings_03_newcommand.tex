@@ -3,7 +3,7 @@
 
 %%%%% COLOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{ai}     {rgb}{0.2039, 0.3765, 0.4314}
-\definecolor{hosoku}{cmyk}{0, 0, 0, .1}
+\definecolor{hosoku} {cmyk}{0, 0, 0, .1}
 \definecolor{kon}    {rgb}{0.0000, 0.2000, 0.4000}
 \definecolor{konpeki}{rgb}{0.0902, 0.5098, 0.7333}
 \definecolor{moegi}  {rgb}{0.3020, 0.5961, 0.1882}
@@ -20,7 +20,8 @@
 \newcommand{\customdate}{\customtoday\ \currenttime\ (\jadayofweek{\the\year}{\the\month}{\the\day})}
 \newcommand{\customtodayap}{\ifnum\currenthour<12 \customtoday\,a.m.\else\customtoday\,p.m.\fi}
 %%%%% FOR INDEX %%%%%%%%%%%%%%%%%%
-\newcommand{\expandafterindex}{\expandafter\index\expandafter}
+\NewDocumentCommand{\expandafterindex}{m}{\index{#1}}
+\pdfstringdefDisableCommands{\def\expandafterindex#1{}}
 %%%%% DECLAREMATHOPERATOR %%%%%%%%%%%%%%%%%%%%
 \DeclareMathOperator{\IP}{Im}
 \DeclareMathOperator{\RP}{Re}
