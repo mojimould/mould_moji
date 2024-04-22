@@ -26,6 +26,7 @@
 \renewcommand{\appendixautorefname}{補遺\!}
 
 %%%%% FOR STYLE OF SECTION %%%%%%%%%%%%%%%%%%%
+\renewcommand{\thesection}{\thechapter.\ifnum\value{section}<10 0\fi\arabic{section}}
 \renewcommand{\sectionautorefname}{節\!}
 \setcounter{secnumdepth}{4}
 \renewcommand*{\sectionformat}{%
