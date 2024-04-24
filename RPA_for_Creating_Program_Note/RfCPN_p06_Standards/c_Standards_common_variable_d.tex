@@ -72,8 +72,8 @@
 \ttNum176 & （不使用） &\\
 \ttNum177 & 芯出し測定後 一時停止 (0:{\ttfamily M00}, 1:non-stop) & 1\\
 \ttNum178 & \Dimple 測定後 一時停止 (0:{\ttfamily M00}, 1:non-stop) & 1\\
-\ttNum179 & トップ端面加工後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum180 & ボトム端面加工後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum179 & トップ端面削加工後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum180 & ボトム端面削加工後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum181 & （不使用） &\\
 \ttNum182 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\
@@ -410,7 +410,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum606 & 内側加工面 法線方向クリアランス平面間距離 最小値 & 15.0\\
 \SetRow{unusingVariables}
 \ttNum607 & （予備） &\\
-\ttNum608 & 端面加工用 内径輪郭径$-$補正量 & 5.0\\
+\ttNum608 & 端面削加工用 内径輪郭径$-$補正量 & 5.0\\
 \SetRow{unusingVariables}
 \ttNum609 & （予備） &\\
 \SetRow{unusingVariables}
@@ -453,7 +453,7 @@ $\cdots$ & （以下不明） & \ttNum0
 
 \begin{multicollongtblr}[white]{\ttNum625\,-\ttNum649：残り代および1回あたりの削り代}{cX[l]c}
 変数 & 内容 & 設定例\\
-\ttNum625 & 端面加工1回あたりの$Z$方向削り代 & 4.0\\
+\ttNum625 & 端面削加工1回あたりの$Z$方向削り代 & 4.0\\
 \SetRow{unusingVariables}
 \ttNum626 & （予備） & \\
 \ttNum627 & 外削加工1回あたりの削り代（直径） & 2.0\\
@@ -515,8 +515,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum656 & 測定時アプローチ：{\ttfamily T50}（片側測定） & \PosMeasurementFeedRate\\
 \SetRow{unusingVariables}
 \ttNum657 & （不使用） &\\
-\ttNum658 & 端面加工：直線 & \EndFaceLinearFeedRate\\
-\ttNum659 & 端面加工：コーナー & \EndFaceCornerFeedRate\\
+\ttNum658 & 端面削加工：直線 & \EndFaceLinearFeedRate\\
+\ttNum659 & 端面削加工：コーナー & \EndFaceCornerFeedRate\\
 \ttNum660 & 外削加工：直線 & \OutcutLinearFeedRate\\
 \ttNum661 & 外削加工：コーナー & \OutcutCornerFeedRate\\
 \ttNum662 & \Keyway 加工：直線 & \KeywayLinearFeedRate\\
@@ -547,7 +547,7 @@ $\cdots$ & （以下不明） & \ttNum0
 
 \begin{multicollongtblr}[white]{\ttNum675\,-\ttNum699：主軸回転数（切削時）}{cX[l]c}
 変数 & 内容 & 設定例\\
-\ttNum675 & 端面加工 & \EndFaceSpindleSpeed\\
+\ttNum675 & 端面削加工 & \EndFaceSpindleSpeed\\
 \ttNum676 & 外削加工 & \OutcutSpindleSpeed\\
 \ttNum677 & \Keyway 加工 & \KeywaySpindleSpeed\\
 \ttNum678 & \EndFaceOutChamfer 加工 & \OutChamferSpindleSpeed\\
@@ -1009,11 +1009,11 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum901100 & （予備） &\\
 \ttNum901101 & 工具{\ttfamily T02}（フェイスミル）最大刃径（直径）DCX公称値$\phi'_\mathrm D$ & 113.5\\
 \SetRow{unusingVariables}
-\ttNum901102 & （端面加工工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
+\ttNum901102 & （端面削加工工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901103 & （端面加工工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
+\ttNum901103 & （端面削加工工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901104 & （端面加工工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
+\ttNum901104 & （端面削加工工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
 \ttNum901105 & 工具{\ttfamily T06}（サイドカッター）厚さ$t$ & 6.9\\
 \SetRow{unusingVariables}
 \ttNum901106 & （\Keyway 加工工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\

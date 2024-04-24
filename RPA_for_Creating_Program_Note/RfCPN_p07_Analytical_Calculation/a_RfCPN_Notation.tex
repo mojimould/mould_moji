@@ -41,7 +41,7 @@ $w_\mathrm T$ & トップ端内径（略称） & ○\\
 $w_\mathrm B$ & ボトム端内径（略称） & ○\\
 $w_x$ & 端面のAC内径（略称） & ○\\
 $w_y$ & 端面のBD内径（略称） & ○\\
-$\delta_w$ & 端面加工 輪郭調整用パラメータ &\\
+$\delta_w$ & 端面削加工 輪郭調整用パラメータ &\\
 $\tau_x$ & AC方向肉厚（略称） &\\
 \end{multicollongtblr}
 
@@ -102,7 +102,7 @@ $\zeta$ & 測定時の測定器の傾き角 &\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{multicollongtblr}{端面のC面取}{cX[l]c}
+\begin{multicollongtblr}{\EndFaceChamfer}{cX[l]c}
 記号 & 内容 & 図面\\
 $c_\mathrm{To}$ & \TopEndFaceOutChamferLength & ○\\
 $c_\mathrm{Ti}$ & \TopEndFaceInChamferLength & ○\\
@@ -118,12 +118,12 @@ $\xi_\mathrm e$ & テーパエンドミル片角 & ○\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{multicollongtblr}{端面のR面取}{cX[l]c}
+\begin{multicollongtblr}{\EndFaceRoundChamfer}{cX[l]c}
 記号 & 内容 & 図面\\
-$r_\mathrm{To}$ & トップ端面外R面取長 & ○\\
-$r_\mathrm{Ti}$ & トップ端面内R面取長 & ○\\
-$r_\mathrm{Bo}$ & ボトム端面外R面取長 & ○\\
-$r_\mathrm{Bi}$ & ボトム端面内R面取長 & ○\\
+$r_\mathrm{To}$ & \TopEndFaceOutRoundChamferRadius & ○\\
+$r_\mathrm{Ti}$ & \TopEndFaceInRoundChamferRadius & ○\\
+$r_\mathrm{Bo}$ & \BottomEndFaceOutRoundChamferRadius & ○\\
+$r_\mathrm{Bi}$ & \BottomFaceInRoundChamferRadius & ○\\
 \end{multicollongtblr}
 
 \clearpage
@@ -233,8 +233,8 @@ $\Delta_y$ & ジグのワークが乗る部分の$Y$座標 & ◯\\
 %\clearpage
 \begin{multicollongtblr}{工具}{cX[l]c}
 記号 & 内容 & 図面\\
-$\phi_\mathrm D$ & 端面加工用フェイスミル刃径（直径） & ○\\
-$\phi_\mathrm D'$ & 端面加工用フェイスミル最大刃径（直径） & ○\\
+$\phi_\mathrm D$ & 端面削加工用フェイスミル刃径（直径） & ○\\
+$\phi_\mathrm D'$ & 端面削加工用フェイスミル最大刃径（直径） & ○\\
 $d_\mathrm e$ & テーパエンドミル先端からの距離（参照直径用） &\\
 $D_\mathrm r$ & テーパエンドミル参照直径 &\\
 $D_\mathrm e$ & テーパエンドミル先端径（直径） & ○\\
