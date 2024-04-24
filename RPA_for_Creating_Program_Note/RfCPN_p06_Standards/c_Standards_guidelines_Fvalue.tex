@@ -6,12 +6,12 @@
 工具の移動には、主に{\ttfamily G00}, {\ttfamily G01}, {\ttfamily G02}, {\ttfamily G03}, {\ttfamily G31}が用いられる。
 一般に、
 \begin{enumerate}[label=\sarrow]
-\item {\ttfamily G00}は主に\index{はやおくり@早送り}早送りに使用されることが多い
+\item {\ttfamily G00}は主に\index{はやおくり（おくりはやさ）@早送り（送り速さ）}早送りに使用されることが多い
 \item {\ttfamily G01}は直線状に移動し、主に切削の際の送りに使用されることが多い
 \item {\ttfamily G02}, {\ttfamily G03}は円弧状に移動し、主に切削の際の送りに使用されることが多い
 \item {\ttfamily G31}は主に測定の際の\index{スキップきのう@スキップ機能}スキップ機能に伴って使用されることが多い
 \end{enumerate}
-{\ttfamily G00}は\index{さいだいおくりはやさ@最大送り速さ}最大送り速さで移動し、その速さは（Fコード値では）指定することはできない。
+{\ttfamily G00}は\index{さいだいおくりはやさ@最大送り速さ}最大送り速さで移動し、その速さは（\index{Fコードち@Fコード値}Fコード値では）指定することはできない。
 {\ttfamily G01}, {\ttfamily G02}, {\ttfamily G03}, {\ttfamily G31}はその送りの速さを\index{Fコードち@Fコード値}Fコード値で指定することができる。
 
 なお、{\ttfamily G28}, {\ttfamily G30}では{\ttfamily G00}によって移動する。
@@ -74,8 +74,8 @@
 %% section 10.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{タッチセンサープローブ以外の工具}
-\DMC では、$Z$方向については\index{テーブル}テーブル（\index{パレット（\yomiDMC）@パレット（\nameDMC）}パレット）が移動する。
-したがって、\index{Zほうこうのおくりはやさ@$Z$方向の送り速さ}$Z$方向の送り速さを大きくして移動すると、その加速度によってテーブル上の\index{ジグ}ジグが動いてしまう恐れがある。
+\DMC では、$Z$方向については\index{テーブル}テーブル（\expandafterindex{パレット（\yomiDMC）@パレット（\nameDMC）}パレット）が移動する。
+したがって、\index{おくりはやさ（Zほうこう）@送り速さ（$Z$方向）}$Z$方向の送り速さを大きくして移動すると、その加速度によってテーブル上の\index{ジグ}ジグが動いてしまう恐れがある。
 そのため、$Z$方向の送り速さに関しては$X$, $Y$方向の送り速さより低めに設定する。
 \begin{enumerate}[label=\Roman*., ref=\Roman*]
 \item $X$, $Y$方向の移動は、{\ttfamily G00}を用いてもよい
