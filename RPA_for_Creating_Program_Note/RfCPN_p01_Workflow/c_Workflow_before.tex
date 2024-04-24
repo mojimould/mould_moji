@@ -32,8 +32,8 @@
 外削AC方向 芯出し（内側 片側$X$測定） & \expandafterindex{\yomiKeyway かこう@\nameKeyway 加工}\Keyway 加工\\
 端面内側AC方向 芯出し（内側 両側$X$測定） & \expandafterindex{\yomiEndFaceOutChamfer かこう@\nameEndFaceOutChamfer 加工}\nameEndFaceOutChamfer 加工\\
 端面内側BD方向 芯出し（内側 両側$Y$測定） & \index{\yomiEndFaceInChamfer かこう@\nameEndFaceInChamfer 加工}\nameEndFaceInChamfer 加工\\
-通り心AC方向 測定（外側 片側$Z$測定） & \expandafterindex{\yomiEndFaceBoring かこう@\nameEndFaceBoring 加工}\nameEndFaceBoring 加工\\
-通り心BD方向 測定（外側 片側$Y$測定） & \index{インローかこう@インロー加工}インロー加工\\
+\CenterlineEndFaceDifAC 測定（外側 片側$Z$測定） & \expandafterindex{\yomiEndFaceBoring かこう@\nameEndFaceBoring 加工}\nameEndFaceBoring 加工\\
+\CenterlineEndFaceDifBD 測定（外側 片側$Y$測定） & \index{インローかこう@インロー加工}インロー加工\\
 \end{multicollongtblr}
 
 
@@ -42,7 +42,7 @@
 %% section 1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{使用ソフトウェアおよびツール\TBW}
-\MMC による加工については、基本的に\MMC 本体を用いてプログラム等の作成・編集やパラメータの変更等は人手で直接行う。
+\MMC による加工については、基本的に\MMC 本体を用いてNCプログラム等の作成・編集やパラメータの変更等は人手で直接行う。
 
 
 
@@ -287,7 +287,7 @@
 \PMTopOutcutLength\\
 \PMKeywayPos
 \PMKeywayWidth
-\GPMbox{通り芯}
+\PMCenterlineEndFaceDifAC
 \tcbline*
 \paragraph*{両方に外削があり、トップ側が基準の場合}
 \PMTopOutcutAC
@@ -302,8 +302,8 @@
 \PMBottomOutcutAC
 \PMBottomOutcutBD
 \PMBottomOutcutConerR
-\PMBottomOutcutLength
-\GPMbox{通り芯}
+\PMBottomOutcutLength\\
+\PMCenterlineEndFaceDifAC
 \tcbline*
 \paragraph*{湾曲に沿った外削の場合}
 （以上に加えて）\PMCenterCurvatureRadius
@@ -429,16 +429,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.1.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{プログラムの入力}
+\subsection{NCプログラムの入力}
 \begin{enumerate}[label=\sarrow]
 \item 原則として、\index{プログラムばんごう@プログラム番号}プログラム番号は\DrawingExists と一致させる\\
-ただし、加工内容が同一のものである場合は、既存のプログラムをそのまま流用する
+ただし、加工内容が同一のものである場合は、既存のNCプログラムをそのまま流用する
 \item 各々の加工部分およびその形状に対する\index{サブプログラム}サブプログラムを決定する
 \item 各々のサブプログラムに対し、適切な寸法値を手動で計算する
 \item 各々のサブプログラムに対し、計算した寸法値・\index{こうぐばんごう@工具番号}工具番号・\index{おくりはやさ@送り速さ}送り速さ・\index{しゅじくかいてんすう@主軸回転数}主軸回転数を格納する
 \item \ReAlocationLength の寸法に応じて、\index{クリアランスへいめん（Zほうこう）@クリアランス平面（$Z$方向）}$Z$方向クリアランス平面の位置を決定する
 \item マシニングセンタの操作画面にて\index{メインプログラム}メインプログラムを直接編集し、必要なコードまたは数値を記入する
-\item 必要に応じて、\index{いちじていし（プログラム）@一時停止（プログラム）}一時停止用のコードを代入する
+\item 必要に応じて、\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止用のコードを代入する
 \item \index{こうぐけいほせい@工具径補正}工具径または\index{こうぐちょうほせい@工具長補正}工具長の補正が必要な場合は、別途専用画面にて手動で編集を行う
 \end{enumerate}
 
@@ -488,9 +488,9 @@
 \item トップ端およびボトム端の\index{がいけいちゅうしん@外径中心}外径中心の位置を\index{メジャー}メジャーで測定する
 \item 測定した中心位置を用いて、\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の設定を行う
 \item \expandafterindex{テーブルのかいてんちゅうしん（\yomiMMC）@テーブルの回転中心（\nameMMC）}テーブルの回転中心とのずれを考慮して、端面の$Z$方向の長さを調整する
-\item \index{とおりしん@通り芯}通り芯がある場合\expandafterindex{テーブルのかいてんちゅうしん（\yomiMMC）@テーブルの回転中心（\nameMMC）}テーブルの回転中心とのずれを考慮して、\index{がいさくけいのちゅうしん@外削径の中心}の$X$方向の長さを調整する
+\item \CenterlineEndFaceDif がある場合\expandafterindex{テーブルのかいてんちゅうしん（\yomiMMC）@テーブルの回転中心（\nameMMC）}テーブルの回転中心とのずれを考慮して、\index{がいさくけいのちゅうしん@外削径の中心}の$X$方向の長さを調整する
 \end{enumerate}
-これらの設定は、マシニングセンタの操作画面から\index{メインプログラム}メインプログラムを直接手動で編集する形で行われる。
+これらの設定は、\MMC の操作画面から\index{メインプログラム}メインプログラムを直接手動で編集する形で行われる。
 
 
 
@@ -526,7 +526,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{外削加工中}
 \begin{enumerate}[label=\sarrow]
-\item 必要に応じて\index{しあげかこう（がいさく）@仕上げ加工（外削）}仕上加工前に\index{いちじていし（プログラム）@一時停止（プログラム）}一時停止を行い、\index{Aがわにくあつ@A側肉厚}A側肉厚および\index{がいさくけい@外削径}外削径の測定を行う
+\item 必要に応じて\index{しあげかこう（がいさく）@仕上げ加工（外削）}仕上加工前に\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止を行い、\index{Aがわにくあつ@A側肉厚}A側肉厚および\index{がいさくけい@外削径}外削径の測定を行う
 \item A側肉厚を調整する場合は、該当する\index{しんだしそくてい（がいさくちゅうしん@芯出し測定（外削中心）}芯出し測定部分のパラメータをメインプログラムから直接手動で編集する
 \item \index{がいさくけい@外削径}外削径を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面から\index{メインプログラム}メインプログラムを直接手動で編集する
 \item \index{かこうかいすう（がいさく）@加工回数（外削）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
@@ -538,7 +538,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\Keyway 加工中}
 \begin{enumerate}[label=\sarrow]
-\item 必要に応じて\expandafterindex{しあげかこう（\yomiKeyway）@仕上げ加工（\nameKeyway）}仕上加工前に\index{いちじていし（プログラム）@一時停止（プログラム）}一時停止を行い、\AsideKeywayDepth および\KeywayDiameter の測定を行う
+\item 必要に応じて\expandafterindex{しあげかこう（\yomiKeyway）@仕上げ加工（\nameKeyway）}仕上加工前に\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止を行い、\AsideKeywayDepth および\KeywayDiameter の測定を行う
 \item \AsideKeywayDepth を調整する場合は、該当する\index{しんだしそくてい（\yomiKeywayCenter）@芯出し測定（\nameKeywayCenter）}芯出し測定部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \item \KeywayDiameter を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \item \expandafterindex{かこうかいすう（\yomiKeyway）@加工回数（\nameKeyway）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
@@ -551,7 +551,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFaceOutChamfer 加工中}
 \begin{enumerate}[label=\sarrow]
-\item 必要に応じて\expandafterindex{しあげかこう（\yomiEndFaceOutChamfer）@仕上げ加工（\nameEndFaceOutChamfer）}仕上加工前に\index{いちじていし（プログラム）@一時停止（プログラム）}一時停止を行い、\EndFaceOutChamfer の測定・位置の確認を行う
+\item 必要に応じて\expandafterindex{しあげかこう（\yomiEndFaceOutChamfer）@仕上げ加工（\nameEndFaceOutChamfer）}仕上加工前に\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止を行い、\EndFaceOutChamfer の測定・位置の確認を行う
 \item \EndFaceOutChamfer の位置を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \item \expandafterindex{かこうかいすう（\yomiEndFaceOutChamfer）@加工回数（\nameEndFaceOutChamfer）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \end{enumerate}

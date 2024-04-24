@@ -1,17 +1,17 @@
 %!TEX root = ../RPA_for_Creating_Program_Note.tex
 
 
-\modHeadchapter[loC]{通り芯の幾何}
+\modHeadchapter[loC]{\CenterlineEndFaceDif の幾何}
 トップ・ボトムの両方に\index{がいさく@外削}外削がある場合を考える。
 通常、それぞれの外削の中心は個別に決められはせず、片方の中心の位置を基準として、もう片方の中心が定められる。
-これらの中心の位置の差（\textbf{通り芯}
+これらの中心の位置の差（\textbf{\CenterlineEndFaceDif}
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{通常、通り芯(centerline)というのはその名の通り中心線を表すことが多い。
-しかし、ここでは\index{トップがわのがいさくちゅうしん@トップ側の外削中心}トップ側外削中心と\index{ボトムがわのがいさくちゅうしん@ボトム側の外削中心}ボトム側外削中心との位置の差を表す用語として「通り芯」と呼んでいる。}）
+\footnote{通常、\CenterlineEndFaceDif(centerline)というのはその名の通り中心線を表すことが多い。
+しかし、ここでは\index{トップがわのがいさくちゅうしん@トップ側の外削中心}トップ側外削中心と\index{ボトムがわのがいさくちゅうしん@ボトム側の外削中心}ボトム側外削中心との位置の差を表す用語として「\CenterlineEndFaceDif」と呼んでいる。}）
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 $T_x$, $T_y$ ($T_x \geq 0$)を機内で測定する際は、C面が工具側に向くようにテーブルを$\pm$90$^\circ$回転（$B$軸回転）し、\index{タッチセンサープローブ}タッチセンサープローブを用いてそれぞれの外削部の$Z$座標および$Y$座標を見ることで測定する。
 
-ここでは、この通り芯の測定に必要な位置等について定量的に求める。
+ここでは、この\expandafterindex{\yomiCenterlineEndFaceDif そくてい@\nameCenterlineEndFaceDif 測定}\nameCenterlineEndFaceDif の測定に必要な位置等について定量的に求める。
 なお、\index{テーブルちゅうしん@テーブル中心}テーブルの中心Pを原点として考えることにする。
 またC面が工具側に向くように$B$軸を（\verb|G91|にて）$\pm$90$^\circ$回転した状態であるとする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
@@ -31,7 +31,7 @@ $T_x$, $T_y$ ($T_x \geq 0$)を機内で測定する際は、C面が工具側に�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 は、それぞれ
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{通常、\index{Yほうこうの通り芯@$Y$方向の通り芯}$Y$方向の通り芯は$T_y = 0$である。}
+\footnote{通常、\CenterlineEndFaceDifBD は$T_y = 0$である。}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
   \label{eq:centerlineB}
@@ -87,8 +87,8 @@ $T_x$, $T_y$ ($T_x \geq 0$)を機内で測定する際は、C面が工具側に�
 %% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Column}{C側面の測定}
-通常、外削をせずに\index{Xほうこうのとおりしん@$X$方向の通り芯}通り芯の測定を行うことはない。
-ただ、\index{プログラム(G-code)}プログラムの\index{しうんてん@試運転}試運転などで動きをみるといった可能性はありうるので、\index{がいさくかこう@外削加工}外削加工を行っていない状態で\index{そくてい（とおりしん）@測定（通り芯）}測定する場合についても述べておく。
+通常、外削をせずに\CenterlineEndFaceDifAC の測定を行うことはない。
+ただ、\index{NCプログラム}NCプログラムの\index{しうんてん@試運転}試運転などで動きをみるといった可能性はありうるので、\index{がいさくかこう@外削加工}外削加工を行っていない状態で\index{そくてい（\yomiCenterlineEndFaceDif）@測定（\nameCenterlineEndFaceDif）}測定する場合についても述べておく。
 なお、ここでは\index{テーブル}テーブルを回転して\AlocationLength の調整を行った場合、かつボトムの外削（\index{Aがわにくあつ@A側肉厚}A側肉厚）が基準の場合を考える。
 このとき、測定するC側外面の位置は、\pageeqref{eq:tableTi}, \pageeqref{eq:tableBRi}より、
 \begin{align*}

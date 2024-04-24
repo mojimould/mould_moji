@@ -19,7 +19,7 @@
 
 \begin{multicollongtblr}{入力情報：湾曲・振分け}{X[l]c}
 内容 & 型\\
-\DrawingExists & boolean\\
+\CenterCurvatureExists & boolean\\
 \CenterCurvatureRadius & float\\
 \TopAlocationLength & float\\
 \BottomAlocationLength & float\\
@@ -86,8 +86,8 @@
 
 \begin{multicollongtblr}{入力情報：両外削}{X[l]c}
 内容 & 型\\
-中心基準 & enum\\
-通り芯 & float\\
+外削中心基準 & enum\\
+\CenterlineEndFaceDif & float\\
 \end{multicollongtblr}
 
 
@@ -137,13 +137,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 30.6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{端面の面取に関する入力数値}
+\modHeadsection{端面面取に関する入力数値}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 30.6.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{ボトム端の面取に関する入力情報}
+\subsection{ボトム端面面取に関する入力情報}
 
 \begin{multicollongtblr}{入力情報：ボトム\nameEndFaceOutChamfer}{X[l]c}
 内容 & 型\\
@@ -177,7 +177,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 30.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{トップ端の面取に関する入力情報}
+\subsection{トップ端面面取に関する入力情報}
 
 \begin{multicollongtblr}{入力情報：トップ\nameEndFaceOutChamfer}{X[l]c}
 内容 & 型\\
@@ -204,5 +204,20 @@
 \TopEndFaceInRoundChamferExists & boolean\\
 \TopEndFaceInRoundChamferRadius & float\\
 \end{multicollongtblr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 30.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\EndFaceBoring に関する入力情報}
+
+\begin{multicollongtblr}{入力情報：\EndFaceBoring}{X[l]c}
+内容 & 型\\
+\EndFaceBoringExists & boolean\\
+\EndFaceBoringWidth & float\\
+\EndFaceBoringDepth & float\\
+\EndFaceBoringCornerR & float\\
+\EndFaceBoringLength & float\\
+\end{multicollongtblr}
+
 
 \clearrightpage

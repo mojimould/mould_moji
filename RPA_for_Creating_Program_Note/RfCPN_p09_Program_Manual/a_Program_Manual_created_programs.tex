@@ -33,7 +33,7 @@
 \SetCell[r=10]{c}
 \MainExOne & 外側芯出し・幅 & \MYOThickness\MXIface\\
            & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
-           & 通り芯 & \MXcenterline\MYcenterline\\
+           & \CenterlineEndFaceDif & \MXcenterline\MYcenterline\\
            & \Dimple & \DLone\\
            & 端面 & \KTanmenRight\\
            & 外削 & \KGaisakuRLeft\\
@@ -81,10 +81,10 @@
 \end{multicollongtblr}
 
 %\clearpage
-\begin{multicollongtblr}{作成したプログラム一覧：通り芯測定}{cX[l]l}
+\begin{multicollongtblr}{作成したプログラム一覧：\expandafterindex{\yomiCenterlineEndFaceDif そくてい@\nameCenterlineEndFaceDif 測定}\nameCenterlineEndFaceDif 測定}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
-\MYcenterline & 測定 片側 通り芯$Y$（B側外削面測定） & \OsensorOff\\
-\MXcenterline & 測定 片側 通り芯$X$（C側外削面 $Z$方向測定） & \OsensorOff\\
+\MYcenterline & 測定 片側 \CenterlineEndFaceDifBD（B側外削面 $Y$方向測定） & \OsensorOff\\
+\MXcenterline & 測定 片側 \CenterlineEndFaceDifAC（C側外削面 $Z$方向測定） & \OsensorOff\\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}{作成したプログラム一覧：\Dimple}{cX[l]l}
@@ -205,12 +205,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection E.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{通り芯測定用サブプログラム}
+\subsection{\expandafterindex{サブプログラム（\yomiCenterlineEndFaceDif）@サブプログラム（\nameCenterlineEndFaceDif）}\nameCenterlineEndFaceDif 測定用サブプログラム}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MYcenterline %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MYcenterline\,:測定 片側 通り芯\texorpdfstring{$Y$}{Y}（B側外削面測定）}
+\modcaptionof{lstlisting}{\MYcenterline\,:測定 片側 \CenterlineEndFaceDifBD（B側外削面$Y$測定）}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameMYcenterline.nc}
 
 
@@ -218,7 +218,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MXcenterline  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MXcenterline\,:測定 片側 通り芯\texorpdfstring{$X$}{X}（C側外削面$Z$測定）}
+\modcaptionof{lstlisting}{\MXcenterline\,:測定 片側 \CenterlineEndFaceDifAC（C側外削面$Z$測定）}
 \lstinputlisting[style=Gcode-more]{../Mould_Machining_Programs/sub_programs/\nameMXcenterline.nc}
 
 

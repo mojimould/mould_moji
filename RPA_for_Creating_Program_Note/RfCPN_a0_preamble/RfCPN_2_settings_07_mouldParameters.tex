@@ -16,6 +16,7 @@
 \newNamecommand{ReAlocationLength}{再振分長}{さいふりわけちょう}
 
 \newNamecommand{OutcutLength}{外削長}{がいさくちょう}
+\newNamecommand{CenterlineEndFaceDif}{通り芯}{とおりしん}
 
 \newNamecommand{Keyway}{キー溝}{キーみぞ}
 \newNamecommand{KeywayCenter}{\nameKeyway 中心}{\yomiKeyway ちゅうしん}
@@ -38,7 +39,7 @@
 
 \newNamecommand{EndFaceInChamfer}{端面内C面取}{たんめんうちCめんとり}
 \newNamecommand{EndFaceInChamferLength}{\nameEndFaceInChamfer 長}{\yomiEndFaceInChamfer ちょう}
-\newNamecommand{EndFaceInChamferAngle}{\nameEndFaceInChamfer 長}{\yomiEndFaceInChamfer ちょう}
+\newNamecommand{EndFaceInChamferAngle}{\nameEndFaceInChamfer 角}{\yomiEndFaceInChamfer かく}
 
 \newNamecommand{EndFaceInRoundChamfer}{端面内R面取}{たんめんうちRめんとり}
 \newNamecommand{EndFaceInRoundChamferRadius}{\nameEndFaceInRoundChamfer 長}{\yomiEndFaceInRoundChamfer ちょう}
@@ -101,6 +102,8 @@
 \newGPMcommand{BottomOutcutConerR}{ボトム外削コーナーR}{ボトムがいさくコーナーR}
 \newGPMcommand{TopOutcutLength}{トップ\nameOutcutLength}{トップ\yomiOutcutLength}
 \newGPMcommand{BottomOutcutLength}{ボトム\nameOutcutLength}{ボトム\yomiOutcutLength}
+\newGPMcommand{CenterlineEndFaceDifAC}{\nameCenterlineEndFaceDif AC方向}{\yomiCenterlineEndFaceDif ACほうこう}
+\newGPMcommand{CenterlineEndFaceDifBD}{\nameCenterlineEndFaceDif BD方向}{\yomiCenterlineEndFaceDif BDほうこう}
 
 %%% KEYWAY %%%
 \newGPMcommand{KeywayType}{\nameKeyway の種類}{\yomiKeyway のしゅるい}
@@ -126,8 +129,8 @@
 \newGPMcommand{BottomEndFaceOutChamferLength}{ボトム\nameEndFaceOutChamferLength}{ボトム\yomiEndFaceOutChamferLength}
 \newGPMcommand{BottomEndFaceOutChamferAngle}{ボトム\nameEndFaceOutChamferAngle}{ボトム\yomiEndFaceOutChamferAngle}
 
-\newGPMcommand{BottomEndFaceOutRoundChamferExists}{ボトム\nameEndFaceInRoundChamfer の有無}{ボトム\yomiEndFaceInRoundChamfer うむ}
-\newGPMcommand{BottomEndFaceOutRoundChamferRadius}{ボトム\nameEndFaceInRoundChamferRadius}{ボトム\yomiEndFaceInRoundChamferRadius}
+\newGPMcommand{BottomEndFaceOutRoundChamferExists}{ボトム\nameEndFaceOutRoundChamfer の有無}{ボトム\yomiEndFaceOutRoundChamfer うむ}
+\newGPMcommand{BottomEndFaceOutRoundChamferRadius}{ボトム\nameEndFaceOutRoundChamferRadius}{ボトム\yomiEndFaceOutRoundChamferRadius}
 
 \newGPMcommand{TopEndFaceInChamferExists}{トップ\nameEndFaceInChamfer の有無}{トップ\yomiEndFaceInChamfer のうむ}
 \newGPMcommand{TopEndFaceInChamferLength}{トップ\nameEndFaceInChamferLength}{トップ\yomiEndFaceInChamferLength}
@@ -145,7 +148,13 @@
 
 %%% ENDFACEBORING %%%
 \newGPMcommand{EndFaceBoringExists}{\nameEndFaceBoring の有無}{\yomiEndFaceBoring のうむ}
+\newGPMcommand{EndFaceBoringWidth}{\nameEndFaceBoring 幅}{\yomiEndFaceBoring はば}
+\newGPMcommand{EndFaceBoringDepth}{\nameEndFaceBoring 深さ}{\yomiEndFaceBoring ふかさ}
 \newGPMcommand{EndFaceBoringCornerR}{\nameEndFaceBoring コーナーR}{\yomiEndFaceBoring コーナーR}
+\newGPMcommand{EndFaceBoringLength}{\nameEndFaceBoring 長}{\yomiEndFaceBoring 長}
+
+%%% Dimple %%%
+\newGPMcommand{DimpleDepth}{\nameDimple 深さ}{\yomiDimple 深さ}
 
 %%% JIG %%%
 \newGPMcommand{JigLength}{ジグの長さ}{ジグのながさ}
