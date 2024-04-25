@@ -5,8 +5,8 @@
 - **Mould hyper-CAD_template**
     - These are template files for drawing mould in hyper-CAD.
 
-- **G-code Programs**
-    - These are the G-code programs used for actual machining.
+- **NC Programs**
+    - These are the NC programs used for actual machining.
 
 <sub>Copyright © 2023, 2024.</sub>
 <sub>These documents are owned by the individual writer, not any corporation. All rights reserved.</sub>
