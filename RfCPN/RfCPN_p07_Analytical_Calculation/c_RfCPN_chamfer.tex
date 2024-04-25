@@ -1,0 +1,119 @@
+%!TEX root = ../RfCPN.tex
+
+
+\modHeadchapter{\EndFaceChamfer の幾何}
+ここでは主に、\index{テーパエンドミル}テーパエンドミルを用いた、\textbf{\EndFaceOutChamfer}および\textbf{\EndFaceInChamfer}に関する測定・加工に必要な\expandafterindex{きかてきせいしつ（\yomiEndFaceChamfer）@幾何的性質（\nameEndFaceChamfer）}幾何的性質を考える。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 23.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\EndFaceChamfer の寸法}
+\TopEndFaceOutChamferLength および\TopEndFaceInChamferLength をそれぞれ$c_\mathrm{To}$, $c_\mathrm{Ti}$とする。
+ここで$c_\mathrm{To}$や$c_\mathrm{Ti}$は、端面に垂直な方向の距離とする。
+このとき、片角$\xi_\mathrm e$\,($>0$)の\index{テーパエンドミル}テーパエンドミルに対して、$XY$方向の\EndFaceChamferLength は、
+\begin{align*}
+  c_\mathrm{To}\tan\xi_\mathrm e\qquad\text{および}\qquad c_\mathrm{Ti}\tan\xi_\mathrm e
+\end{align*}
+で与えられる。
+\BottomEndFaceOutChamferLength および\TopEndFaceInChamferLength$c_\mathrm{Bo}$, $c_\mathrm{Bi}$についても同様である。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 23.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{テーパエンドミルの参照直径}
+\index{テーパエンドミル}テーパエンドミルは、その名の通り\index{テーパ（テーパエンドミル）}テーパの付いた工具であり、先端が平坦になっているものも多い。
+しかし、先端部分を\index{こうぐちょう@工具長}工具長として設定すると、その部分が段差となり\index{テーパかこう@テーパ加工}テーパ加工を適切に行うことができない。
+そのため、先端部分から一定の距離$d_\mathrm e$だけずらした箇所を\index{こうぐちょう@工具長}工具長として設定し、またその箇所の直径（\index{さんしょうちょっけい（テーパエンドミル）@参照直径（テーパエンドミル）}\textbf{参照直径}）$D_\mathrm r$を\index{こうぐちょっけい（テーパエンドミル）@工具直径（テーパエンドミル）}工具直径として補正を行うことが推奨される。
+
+ここで、先端径（直径）
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{先端が平坦でなく尖っている場合は$D_\mathrm e = 0$とする。}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+およびテーパ角（片角）をそれぞれ$D_\mathrm e$, $\xi_\mathrm e$とすると、参照直径$D_\mathrm r$は
+\begin{align*}
+  D_\mathrm r = D_\mathrm e+2d_\mathrm e\tan\xi_\mathrm e
+\end{align*}
+で与えられる。
+通常、\index{こうぐけいほせい@工具径補正}工具径補正は工具の半径を用いて行うので、工具径を
+\begin{align*}
+  \frac{D_\mathrm r}2 = \frac{D_\mathrm e}2+d_\mathrm e\tan\xi_\mathrm e
+\end{align*}
+として設定すればよい。
+あるいは、先端径を基準としてそこから補正を行う形にする場合は、その差
+\begin{align*}
+  \frac{D_\mathrm r}2-\frac{D_\mathrm e}2 = d_\mathrm e\tan\xi_\mathrm e
+\end{align*}
+だけ補正すればよい。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosoku}
+なお、$\xi_\mathrm e = \nicefrac\pi{12}$\,($15^\circ$), $\nicefrac\pi6$\,($30^\circ$), $\nicefrac\pi4$\,($45^\circ$)のとき、それぞれ
+\begin{align*}
+  \tan\frac\pi{12} = 2-\sqrt3\ , \quad
+  \tan\frac\pi6 = \frac1{\sqrt3}\ , \quad
+  \tan\frac\pi4 = 1\ .
+\end{align*}
+\end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 23.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{中心座標\texorpdfstring{$X$}{X}の移動\TBW}
+\index{がいさく@外削}外削があり、かつ\EndFaceOutChamfer　の場合であれば、Cの大きさに依らず加工径の中心座標($XY$)は変わらない。
+一方、外削のない場合は、中心の$X$座標はCの大きさに応じて湾曲中心線に沿って移動する。
+このとき\index{たんめん@端面}端面と面取先端部との中心座標($X$)の差
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{どちらの場合も端面が工具側にある場合を考えている。}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+は、
+\begin{align*}
+  \text{トップ側：}&~~
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-c_\mathrm{To}\right)^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\\
+  \text{ボトム側：}&~~
+  \sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-\left(f_\mathrm B-c_\mathrm{Bo}\right)^2}\ .
+\end{align*}
+これは\EndFaceInChamfer でも同様であり、
+\begin{align*}
+  \text{トップ側：}&~~
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-c_\mathrm{Ti}\right)^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\\
+  \text{ボトム側：}&~~
+  \sqrt{R_\mathrm c^2-f_\mathrm B^2}-\sqrt{R_\mathrm c^2-\left(f_\mathrm B-c_\mathrm{Bi}\right)^2}\ .
+\end{align*}
+
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 25.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{面取長の補正}
+\index{たんめんめんとりかこう@端面面取加工}端面面取加工では、$Z$方向の\index{めんとりちょう@面取長}面取長が揃う形になるように加工を行う。
+このとき、単純に\index{ないけいちゅうしん（たんめん）@内径中心（端面）}内径中心を\index{きじゅん（めんとりかこう）@基準（面取加工）}基準にすると、外面あるいは内面には\index{わんきょく@湾曲}湾曲があるためA面側およびC面側の面取長は揃わない
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{$XY$方向の面取幅が揃う形になる。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+そのため、各面の面取長が揃う形になるように$X$方向に補正を入れる必要がある。
+
+
+
+
+
+
+
+
+
+
+
+
+

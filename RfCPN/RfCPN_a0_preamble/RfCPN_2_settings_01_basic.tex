@@ -1,0 +1,152 @@
+%!TEX root = ../RfCPN.tex
+
+
+%%%%% GRAPHICSPATH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{./RfCPN_a1_includefiles/RfCPN_2_pictures/}}
+%%%%% FONT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setmainjfont[BoldFont={HaranoAjiGothic}, BoldFeatures={FakeBold=2}]{HaranoAjiMincho}
+\setsansjfont{HaranoAjiGothic}
+%\setmonojfont{HaranoAjiMincho}
+%\setmainfont{Latin Modern Roman}
+%\setsansfont{Latin Modern Sans}
+%\setmonofont{Latin Modern Mono}
+\setmathfont[BoldFont=*, BoldFeatures={FakeBold=2}]{Euler Math}
+\setmathfont[range={\leq, \geq},  BoldFont=*, BoldFeatures={FakeBold=2}]{Latin Modern Math}
+\setmathfont[range={up/num, bfup/num}, Scale=MatchUppercase, BoldFont=*, BoldFeatures={FakeBold=2}]{Latin Modern Math}
+%%%%% NEWIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\if@backmatter%\@backmattertrue
+\newif\if@frontmatter%\@frontmattertrueko
+\newif\if@appendix%\@appendixtrue
+%%%%%% DIMENSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ltjsetparameter{kanjiskip=0.0pt plus 0.4pt minus 0.5pt}
+\ltjsetparameter{xkanjiskip=2.40555pt plus 1.0pt minus 1.0pt}
+\newcommand{\hk}{\hspace{\glueexpr\ltjgetparameter{kanjiskip}\relax}}
+\newcommand{\hx}{\hspace{\glueexpr\ltjgetparameter{xkanjiskip}\relax}}
+%%%%% TMPPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\let\tmpcleardoublepage\cleardoublepage
+\let\tmpclearpage\clearpage
+\let\tmpnewpage\newpage
+%%%%% CLEARRIGHTPAGE %%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\clearrightpage}{%
+  \if@twoside%
+    \ifodd\numexpr\thepage\relax\cleardoublepage\else\clearpage\fi
+  \else\clearpage%
+  \fi
+}
+%%%%% DECLARENEWTOC %%%%%%%%%%%%%%%%%%%%
+\DeclareNewTOC[owner=\jobname, name=Part]{lop}
+\DeclareNewTOC[owner=\jobname, name=Column]{loC}
+%%%%% TO GET CHAPTER TITLE %%%%%%
+\newcommand\Chaptername{} % initialize \Chaptername
+\let\old@chapter\@chapter
+\def\@chapter[#1]#2{\gdef\Chaptername{#2}\old@chapter[#1]{#2}}
+%%%%% TO GET SECTION TITLE %%%%%%
+\newcommand\Sectionname{} % initialize \Sectionname
+\let\Sectionmark\sectionmark
+\def\sectionmark#1{\def\Sectionname{#1}\Sectionmark{#1}}
+%%%%% GEOMETRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{
+  a4paper, % paper size
+  centering,
+  textwidth={6.55in},
+  includehead,  % include the head of the page
+%  headheight = 13.6pt,
+  includefoot,  % include the foot of the page
+  top=15.0truemm,
+  bottom=-0.5truemm,
+}
+%%%%% HEYPERSETUP %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+%  pdfcreationdate=date,
+%  pdfcreator={luaLaTeX with hyperref}, % creator for PDF subjct field
+  pdftitle={\TheDocTitle}, % title for PDF subjct field
+  pdfsubject={\TheDocSubject}, % text for PDF subjct field
+  pdfauthor={Kurahashi Nobuaki},  % text for PDF Author field
+  pdfkeywords={
+    mold,
+    mould,
+    G-code,
+    NC program,
+    Machining center,
+  },
+  pdfproducer=producer,
+  linktoc=all,
+%  linktocpage=false,   % (if it is true) make page number, not text, be link on TOC, LOF and LOT
+  pdfcenterwindow=false, % position the document window center of the screen
+  pdffitwindow=true,     % resize document window to fit document size
+  bookmarksnumbered=true,
+  bookmarksopen=true, %bookmarks open
+  pdfstartview={FitH}, % Fit, FitV, FitH, FitB
+  pdfpagemode=UseThumbs, % set default mode of PDF display
+  unicode=true,
+  pdfencoding=unicode,   % PDFDocEncoding or Unicode
+  colorlinks=true,     % color links
+  linkcolor=ai,        % color of links
+  urlcolor=ai,         % color of urls
+  citecolor=sora,      % color of citation links
+}
+%%%%% DISPLAYBREAK %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\allowdisplaybreaks
+%%%%% UNIT LENGTH %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\unitlength}{1pt}
+%%%%% LINESPREAD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\linespread{1.15}\selectfont
+%%%%% PARINDENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\indentspace}{\setlength\parindent{11pt}}
+\indentspace
+%%%%% EQUATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\@addtoreset{equation}{section}
+%%%%% FOR FOOTNOTE %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand*{\footnoteautorefname}{脚注}
+%\renewcommand{\thefootnote}{\ifnum\value{footnote}<10 0\fi\arabic{footnote}}
+\interfootnotelinepenalty=10000
+\counterwithout{footnote}{chapter}
+\def\@makefnmark{\hbox{}\hbox{\@textsuperscript{\normalfont\@thefnmark}}\hbox{}}
+\deffootnote[1em]{1em}{1em}{\textsuperscript{\thefootnotemark}}
+\renewcommand\footnoterule{%
+  \kern3pt
+  \hrule\@width.75\columnwidth
+  \kern2.6pt
+}
+\makesavenoteenv{Column}
+\makesavenoteenv{hosoku}
+\makesavenoteenv{tablePart}
+\makesavenoteenv{marker}
+\makesavenoteenv{Formula}
+%%%%% SETLIST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlist[enumerate]{listparindent=\parindent, parsep=0pt, partopsep=0pt, topsep=3pt, itemsep=3pt, leftmargin=*}
+\setlist[enumerate, 1]{leftmargin=\leftmargini}
+%%%%% CAPTION STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup[figure]{%
+  width=.9\textwidth,
+  format=hang,
+  labelfont={bf, sf},
+  labelsep={colon},
+  labelformat=simple,
+  aboveskip=3pt,
+}
+\captionsetup[lstlisting]{
+  justification=raggedright,
+  singlelinecheck=false,
+  position=above,
+  aboveskip=5pt,
+  belowskip=0.0pt,
+  labelformat={empty},
+  labelfont={bf, sf},
+  labelsep={space},
+  font={bf, large, sf},
+  hypcap=false,
+}
+\captionsetup[table]{
+  justification=raggedright,
+  singlelinecheck=false,
+  position=above,
+  aboveskip=4pt,
+  belowskip=5pt,
+  labelformat={empty},
+  labelfont={bf, sf},
+  labelsep={space},
+  font={bf, large, sf},
+  hypcap=false,
+}

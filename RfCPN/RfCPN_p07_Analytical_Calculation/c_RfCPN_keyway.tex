@@ -1,0 +1,363 @@
+%!TEX root = ../RfCPN.tex
+
+
+\modHeadchapter[loC]{\Keyway の幾何}
+ここでは主に、\textbf{\Keyway}に関する測定・加工に必要な\expandafterindex{きかてきせいしつ（\yomiKeyway）@幾何的性質（\nameKeyway）}幾何的性質を考える。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 22.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\Keyway の基本事項}
+\textbf{\Keyway}に関しては、その基準が以下のように与えられる場合が考えられる。
+\begin{enumerate}[label=\sarrow]
+\item \KeywayCenter Mが、ワークの\index{わんきょくちゅうしんせん@湾曲中心線}湾曲中心線上にある場合
+\item \KeywayCenter Mが、（トップ側）\index{がいさくちゅうしん@外削中心}外削径の中心線上にある場合
+\item \AsideKeywayDepth に指定がある場合
+\end{enumerate}
+なお、\KeywayDiameter を$W_\mathrm M$, \KeywayPos（端面から\Keyway までの長さ）・\KeywayWidth・\AsideKeywayDepth をそれぞれ$\kappa_p$, $\kappa_w$, $\kappa_d$とする。
+このときいずれの場合も、$y$方向（機内における$Z$方向
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{計算上の$xy$座標（$x$:実軸, $y$:虚軸）と、機内における$XZ$座標とが混在する形で話を進めているので注意されたし。}）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+の\index{せっさくはんい@切削範囲}切削範囲は、テーブル中心Pを\index{げんてん@原点}原点として、
+\begin{align*}
+  \big[f_\mathrm T'-(\kappa_p+\kappa_w)\ ,\ f_\mathrm T'-\kappa_p\big]
+\end{align*}
+であり、また\KeywayCenter M$'$の$y$座標（$Z$座標）はこの切削範囲の中央
+%% label{eq:mizocenterZ}
+\begin{align}
+  \label{eq:mizocenterZ}
+  f_\mathrm T'-\bar\kappa_w \qquad
+  \left(\bar\kappa_w \equiv \kappa_p+\frac{\kappa_w}2\right)
+\end{align}
+で与えられる。
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 22.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{湾曲中心が基準の場合}
+\index{トップたんのわんきょくちゅうしん@トップ端の湾曲中心}トップ端における湾曲中心T$_{R_\mathrm c}'$と\KeywayCenter M$'$との$x$方向の差は、
+\begin{align*}
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\bar\kappa_w\right)^2}
+  -\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ .
+\end{align*}
+実際の測定では、湾曲中心T$_{R_\mathrm c}'$ではなく\index{トップたんのそとがわちゅうしん@トップ端の外側中心}トップ端面の外側中心T$_\mathrm c'$が測定されるので、T$_\mathrm c'$とM$'$との$x$方向の差を考える必要がある。
+すなわち、
+%% label{eq:difTopMizoCenter}
+\begin{align}
+  \label{eq:difTopMizoCenter}
+  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\bar\kappa_w\right)^2}
+  -\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2\ .
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ubsection 23.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{スペーサを用いた場合の\KeywayCenter（湾曲中心基準）}
+\KeywayCenter M$'$がモールドの湾曲中心線上にある場合、テーブル中心Pを原点とした$x$座標は、\pageeqref{eq:spacerTRc}より、
+\begin{align*}
+  -\Delta+\sqrt{R_\mathrm c^2-(f_\mathrm T-\bar\kappa_w)^2}+\frac{\delta_\mathrm s}2
+  -\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta_\mathrm s^2+\left(2\bar l\right)^2}}
+\end{align*}
+となる。
+なお実際の作業では、簡単のため、トップ端面の外側中心T$_\mathrm c'$を測定し、それをトップ端面における湾曲中心T$_{R_\mathrm c}'$とみなして\KeywayCenter M$'$の位置を計算することが多い。
+実測した外側中心の$X$・$Y$座標$G_{\mathrm Tx}$, $G_{\mathrm Ty}$を湾曲中心のそれとみなすと、機内における\KeywayCenter M$'$の位置は、テーブル中心Pを原点として、
+\begin{align*}
+  \left(
+    G_{\mathrm Tx}
+    +\sqrt{R_\mathrm c^2-(f_\mathrm T-\bar\kappa_w)^2}
+    -\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\
+    G_{\mathrm Ty}~,~
+    f_\mathrm T'-\bar\kappa_w
+  \right).
+\end{align*}
+湾曲中心とみなさずに正確に求めるなら、これに\pageeqref{eq:TRc-Tc}を引けばよい。
+その場合の$X$座標は、
+%% label{eq:Mreal}
+\begin{align}
+  \label{eq:Mreal}
+  G_{\mathrm Tx}
+  +\sqrt{R_\mathrm c^2-(f_\mathrm T-\bar\kappa_w)^2}
+  -\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2\ .
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 04.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{テーブルを傾けた場合の\KeywayCenter（湾曲中心基準）}
+\KeywayCenter M$'$がモールドの湾曲中心線上にある場合、テーブル中心Pを原点とした$x$座標は、\pageeqref{eq:tableTRc}より、
+\begin{align*}
+  \sqrt{R_\mathrm c^2-(f_\mathrm T-\bar\kappa_w)^2}
+  -\Delta'\cos\theta\ .
+\end{align*}
+実測した\index{そとがわちゅうしん@外側中心}外側中心の$X$, $Y$座標$G_{\mathrm Tx}$, $G_{\mathrm Ty}$を\index{わんきょくちゅうしん@湾曲中心}湾曲中心のそれとみなした場合とそうでない場合は、\pageeqref{eq:Mreal}で与えられる。
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 04.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{外削径の中心が基準の場合}
+\KeywayCenter M$'$がトップ外削径の中心線上にある場合、機内におけるその位置座標は、
+\begin{align*}
+  \left(
+    -\mathcal G_{Bx}+T_x\ ,\
+    \mathcal G_{By}\ ,\
+    f_\mathrm T'-\bar\kappa_w
+  \right) \qquad
+  \text{または}\qquad
+  \left(
+    \mathcal G_{Bx}\ ,\
+    \mathcal G_{By}\ ,\
+    f_\mathrm T'-\bar\kappa_w
+  \right).
+\end{align*}
+ただし、前者はボトムの外削を基準にした（ボトム基準の\CenterlineEndFaceDif がある）場合であり、後者はトップの外削を基準にした場合である。
+
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 04.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\AsideKeywayDepth が基準の場合}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 4.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{外削のない場合}
+トップ側に外削がなく、\AsideKeywayDepth が指定されている場合を考える。
+\KeywayCenter の位置の$X$座標は、テーブル中心Pを\index{げんてん@原点}原点として、
+%% label{eq:mizocenterA}
+\begin{align}
+  \label{eq:mizocenterA}
+  \sqrt{R_\mathrm o^2-(f_\mathrm T-\bar\kappa_w)^2}-\kappa_d-\frac{W_{mx}}2
+  -\Delta'
+\end{align}
+で与えられる。
+ここで、$W_{mx}$は\KeywayACOD を表す。
+なお実際の作業では、モールドの\index{Aがわがいめん@A側外面}A側外面の\KeywayCenter に相当する箇所を直接測定し、その位置を基準として原点を割り出す。
+トップ端面における中心の$X$座標（\index{じっそくち@実測値}実測値）$G_{\mathrm Tx}$がわかっている場合、\KeywayCenter の$X$座標$G_{mx}$は\pageeqref{eq:Mreal}で与えられ、また\KeywayCenter に対する\index{Aがわがいめん@A側外面}A側外面と$G_{\mathrm Tx}$との差（の絶対値）は、
+%% label{eq:mizocenterA}
+\begin{align}
+  \label{eq:mizocenterAd}
+  \frac{W_{mx}}2+\kappa_d
+  +\sqrt{R_\mathrm c^2-(f_\mathrm T-\bar\kappa_w)^2}
+  -\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2\ .
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 4.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{外削のある場合}
+トップ側に外削があり、かつ\AsideKeywayDepth が指定されている場合を考える。
+トップ側の外削中心の実測値を$\mathcal G_{\mathrm Tx}$とすると、\KeywayCenter$G_{mx}$との差($G_{mx}-\mathcal G_{\mathrm Tx}$)は
+%% label{eq:mizocenterAG}
+\begin{align}
+  \label{eq:mizocenterAG}
+  \frac{\mathfrak W_x}2-\kappa_d-\frac{W_{mx}}2\ .
+\end{align}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 04.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{測定上の\KeywayDepth}
+ここでは特に\AsideKeywayDepth$\kappa_d$に限って話を進める。
+トップ側に外削がある場合、$\kappa_d$は\index{Aがわがいさくめん@A側外削面}A側外削面と\Keyway のA側面との差で与えられる。
+しかし外削がない場合、つまり\index{Aがわがいめん@A側外面}A側外面に湾曲がある場合は、$\kappa_d$の値は自明ではない。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 4.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{図面上の\KeywayDepth}
+単純に考えると、図面上においてAsideKeywayDepth が$\kappa_d$のとき、これは\KeywayCenter の位置におけるA側外面から端面と水平な方向に$\kappa_d$という意味で与えられる。
+このとき、\Keyway のA面側の水平方向の位置は、\pageeqref{eq:mizocenterA}より、
+\begin{align*}
+  \sqrt{R_\mathrm o^2-(f_\mathrm T-\bar\kappa_w)^2}-\kappa_d-\Delta'\ .
+\end{align*}
+\KeywayCenter の$X$座標$G_{mx}$が与えられている場合は、
+\begin{align*}
+  G_{mx}+\frac{W_{mx}}2
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 23.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{測定上の傾き}
+通常、実測には\index{マイクロメータ}マイクロメータ（\index{デプスゲージ}デプスゲージ）が用いられる。
+このとき、測定は\index{そくていき@測定器}測定器を湾曲に沿った形にして行われる。
+したがって、その測定値は\KeywayWidth の両端に対する外面の傾斜だけ傾いた形で与えられる。
+\KeywayWidth の両端に対する外面の$XZ$位置は、\KeywayCenter の$X$座標を$G_{mx}$として、
+\begin{align*}
+  \text{トップ側：}&~~
+  \left(
+  G_{mx}+\frac{W_x}2
+  -\sqrt{R_\mathrm o^2-(f_\mathrm T-\bar\kappa_w)^2}
+  +\sqrt{R_\mathrm o^2-(f_\mathrm T-\kappa_p)^2}~,~~
+  f_\mathrm T-\kappa_p
+  \right)\\
+  \text{ボトム側：}&~~
+  \left(
+  G_{mx}+\frac{W_x}2
+  +\sqrt{R_\mathrm o^2-(f_\mathrm T-\kappa_p-\kappa_w)^2}
+  -\sqrt{R_\mathrm o^2-(f_\mathrm T-\bar\kappa_w)^2}~,~~
+  f_\mathrm T-\kappa_p-\kappa_w
+  \right)
+\end{align*}
+またその差は、
+\begin{align*}
+  \left(
+  \sqrt{R_\mathrm o^2-(f_\mathrm T-\kappa_p)^2}
+  -\sqrt{R_\mathrm o^2-(f_\mathrm T-\kappa_p-\kappa_w)^2}~,~~
+  \kappa_w
+  \right)
+\end{align*}
+したがって、測定の際の傾斜の角度$\zeta$ ($> 0$)は
+%% label{eq:angleZeta}
+\begin{align}
+  \label{eq:angleZeta}
+  \tan\zeta
+  = \frac{\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\kappa_w\right)^2}
+          -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}}
+         {\kappa_w}\ .
+\end{align}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 4.4.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{測定における\KeywayDepth の補正}%\label{subsec:keywayDepthDif}
+測定の際は、測定器を\Keyway のトップ側およびボトム側に寄せる形で測定し、その平均値を測定値としている。
+つまり、トップ側に寄っているときは測定器の針の付け根が\KeywayPos にあるところ、ボトム側に寄っているときは針の先端が\KeywayWidth ボトム側にあるところで測定を行っている。
+この平均値を$\kappa_d'$とする。
+
+トップ側およびボトム側の\AsideKeywayDepth をそれぞれ$\kappa_s$, $\kappa_l$とすると、
+\begin{align*}
+  \kappa_l-\kappa_s = \kappa_w\tan\zeta \quad,\qquad
+  \kappa_d' = \frac{\kappa_l\cos\zeta+\kappa_s\sec\zeta}2
+\end{align*}
+であり、
+\begin{align*}
+  \kappa_l = \frac{2\kappa_d'\cos\zeta+\kappa_w\tan\zeta}{1+\cos^2\zeta}~~, \quad
+  \kappa_s = \frac{2\kappa_d'-\kappa_w\sin\zeta}{1+\cos^2\zeta}\cos\zeta\ .
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosoku}
+$\kappa_l = a+b$, $\kappa_s = a-b$とすると、
+\begin{align*}
+  a = \frac{\kappa_l+\kappa_s}2~~, \quad
+  b = \frac{\kappa_l-\kappa_s}2\,\left(= \frac12\kappa_w\tan\zeta\right)
+\end{align*}
+であり、
+\begin{align*}
+  2\kappa_d' = a(\cos\zeta+\sec\zeta)+b(\cos\zeta-\sec\zeta)
+  \quad\longrightarrow\quad
+  a = \frac{2\kappa_d'\cos\zeta+b\sin^2\zeta}{1+\cos^2\zeta}\ .
+\end{align*}
+また、$\kappa_l$, $\kappa_s$はその平均値$a$からその差の半分$b$の和あるいは差として得られる。
+\begin{align*}
+  \kappa_l
+  &= \frac{2\kappa_d'\cos\zeta+\frac{\kappa_w\tan\zeta}2\sin^2\zeta}{1+\cos^2\zeta}+\frac12\kappa_w\tan\zeta
+   = \frac{2\kappa_d'\cos\zeta+\kappa_w\tan\zeta}{1+\cos^2\zeta}\ ,\\
+  \kappa_s
+  &= \frac{2\kappa_d'\cos\zeta+\frac{\kappa_w\tan\zeta}2\sin^2\zeta}{1+\cos^2\zeta}-\frac12\kappa_w\tan\zeta
+   = \frac{2\kappa_d'-\kappa_w\sin\zeta}{1+\cos^2\zeta}\cos\zeta\ .
+\end{align*}
+\end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$\kappa_d$および$\kappa_s$の差は
+\begin{align*}
+  \kappa_d-\kappa_s
+  &= \sqrt{R_\mathrm o^2-(f_\mathrm T-\bar\kappa_w)^2}
+     -\sqrt{R_\mathrm o^2-(f_\mathrm T-\kappa_p)^2}
+\end{align*}
+なので、
+\begin{subequations}
+%% label{eq:keydepthDif1}
+\begin{align}
+  \label{eq:keydepthDif1}
+  \kappa_d
+  &= \frac{2\kappa_d'-\kappa_w\sin\zeta}{1+\cos^2\zeta}\cos\zeta
+     +\sqrt{R_\mathrm o^2-(f_\mathrm T-\bar\kappa_w)^2}
+     -\sqrt{R_\mathrm o^2-(f_\mathrm T-\kappa_p)^2}
+\end{align}
+あるいは、
+%% label{eq:keydepthDif2}
+\begin{align}
+  \label{eq:keydepthDif2}
+  \kappa_d'
+  &= \frac{1+\cos^2\zeta}{2\cos\zeta}
+     \left\{
+     \kappa_d
+     -\sqrt{R_\mathrm o^2-(f_\mathrm T-\bar\kappa_w)^2}
+     +\sqrt{R_\mathrm o^2-(f_\mathrm T-\kappa_p)^2}
+     \right\}
+     +\frac12\kappa_w\sin\zeta\ .
+\end{align}
+\end{subequations}
+したがって、$\kappa_d$を図面上の数値とする場合は\pageeqref{eq:keydepthDif2}を、$\kappa_d'$を図面上の数値とする場合は、\pageeqref{eq:keydepthDif1}を用いて補正すればよい。
+
+\clearpage
+~\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Column}{測定における\KeywayDepth 補正の近似計算}
+$R\to\infty$ ($R^{-1}\to0$)に対して、
+\begin{align*}
+  \tan\zeta \xlongrightarrow{R\to\infty} 0~~, \quad
+  \kappa_d' \xlongrightarrow{R\to\infty} \kappa_d\ .
+\end{align*}
+もう少し詳しく見ると、\index{テイラーてんかい@テイラー展開}テイラー展開（\index{マクローリンてんかい@マクローリン展開}マクローリン展開）\pageautoref{formula:taylorexpansion}より、
+\begin{align*}
+  \tan\zeta
+  = \frac{R_\mathrm o}{\kappa_w}
+     \left\{
+     \sqrt{1-\left(\frac{f_\mathrm T-\kappa_p-\kappa_w}{R_\mathrm o}\right)^2}
+     -\sqrt{1-\left(\frac{f_\mathrm T-\kappa_p}{R_\mathrm o}\right)^2}
+     \right\}
+  = \frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}+o\left(R_\mathrm o^{-3}\right)
+\end{align*}
+であり、これより、
+\begin{align*}
+  \sin\zeta = \frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}+o\left(R_\mathrm o^{-3}\right)~~, \quad
+  \cos\zeta = 1-\frac12\left(\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}\right)^2
+              +o\left(R_\mathrm o^{-4}\right)
+\end{align*}
+したがって、
+\begin{align*}
+  \kappa_d
+  &= \kappa_d'-\frac{\kappa_w}2\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}
+     +R_\mathrm o
+      \left\{
+      \sqrt{1-\left(\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}\right)^2}
+      -\sqrt{1-\left(\frac{f_\mathrm T-\kappa_p}{R_\mathrm o}\right)^2}
+      \right\}\\
+  &= \kappa_d'+\frac{\kappa_w^2}{8R_\mathrm o}
+     +o\left(R_\mathrm o^{-3}\right)\ .
+\end{align*}
+これから、$\kappa_d > \kappa_d'$であることがわかる。
+\end{Column}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

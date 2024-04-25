@@ -1,0 +1,65 @@
+%!TEX root = ./RfCPN.tex
+
+
+\addtocontents{toc}{\protect\cleardoublepage}
+\addtocontents{lot}{\protect\tcbline*}
+\addtocontents{loC}{\protect\tcbline*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Part Analytical Calculation %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\protect\begin{tocBox}{\tmppartnum}}%
+\tPart[lot,lof,loC]{幾何的性質の解析計算\label{part:AC}}{%
+\paragraph*{目標（なにがしたいか？）}
+\index{よこがたマシニングセンタ@横型マシニングセンタ}横型マシニングセンタにおける\index{ワーク}ワークの加工に必要な\index{きかてきじょうほう（ワーク）@幾何的情報（ワーク）}幾何的情報を抽象化（一般化）し、体系を構築する。
+\tcbline*
+\paragraph*{手段（どうやって？）}
+横型マシニングセンタ内におけるワークや工具・\index{ジグ}ジグの位置・距離等を抽象化（一般化）し、加工の際に必要となる\textbf{幾何的性質の解析的な導出}を試みる。
+\tcbline*
+\paragraph*{背景(なぜ？)}
+ソフトウェアの観点から見た場合、高精度な加工の実現にはマシニングセンタ内におけるワークや工具の\textbf{幾何的性質の正確な把握}が不可欠である。
+マシニングセンタの操作・指示はこうした性質の理解が前提であり、いわば``常識"と称しても過言ではない
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{さらに、\index{CAD}CAD, \index{CAM}CAMを利用するというのであれば、これに加えてCADによる\index{3Dモデリング}3Dモデリングの技術、およびそれに伴うCAMの操作・設定技術も習熟しなければならず、\index{きょういくコスト@教育コスト}教育コストが大きくかかることは容易に推測される。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+　モールドの場合、必要な幾何的性質のほとんどが直線または円で記述されるため、その体系化は（煩雑ではあるが）難解なものではない。
+しかし現時点（\DMC 設置時点）において、こうした性質の\textbf{体系化はほぼ全くなされていない}。
+実際、\textbf{明細ごとに対応}をしている状態にある。
+
+　したがって、（少なくとも実際の加工に関わる程度の）幾何的性質の把握・体系化は急務である。
+また、これにより品質や生産性の低下が大きく抑えられることも期待される。
+}{%
+\paragraph*{結論（どうなった？）}
+\DMC における加工の際に必要なほぼすべての幾何的情報を解析的に導出し、体系化した。
+\tcbline*
+\paragraph*{次の段階（それで？）}
+一般化および体系化された幾何的情報を用いて、個々の明細に対する加工用NCプログラムの作成に必要な数値および条件分岐情報等が自動的に得られるシステムの構築に応用する。
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapterS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{RfCPN_p07_Analytical_Calculation/c_RfCPN_furiwake}
+\input{RfCPN_p07_Analytical_Calculation/c_RfCPN_endface}
+\input{RfCPN_p07_Analytical_Calculation/c_RfCPN_outcut}
+\input{RfCPN_p07_Analytical_Calculation/c_RfCPN_keyway}
+\input{RfCPN_p07_Analytical_Calculation/c_RfCPN_chamfer}
+\input{RfCPN_p07_Analytical_Calculation/c_RfCPN_R_chamfer}
+\input{RfCPN_p07_Analytical_Calculation/c_RfCPN_endface_boring}
+\input{RfCPN_p07_Analytical_Calculation/c_RfCPN_dimple}
+\input{RfCPN_p07_Analytical_Calculation/c_RfCPN_centerline}
+\input{RfCPN_p07_Analytical_Calculation/c_RfCPN_inner_diameter}
+\input{RfCPN_p07_Analytical_Calculation/c_RfCPN_others}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Appendices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+\Appendixpart
+\input{./RfCPN_p07_Analytical_Calculation/a_RfCPN_between_table_and_mould}
+\input{./RfCPN_p07_Analytical_Calculation/a_RfCPN_NURBS}
+\input{./RfCPN_p07_Analytical_Calculation/a_RfCPN_various_formulas}
+{\small\input{./RfCPN_p07_Analytical_Calculation/a_RfCPN_Notation}}
+\end{appendices}
+
+\addtocontents{toc}{\protect\end{tocBox}}

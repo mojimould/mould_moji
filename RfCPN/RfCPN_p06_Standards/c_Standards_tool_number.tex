@@ -1,0 +1,131 @@
+%!TEX root = ../RfCPN.tex
+
+
+\modHeadchapter[lot]{工具番号および登録工具}
+ここでは\DMC で使用する\index{こうぐばんごう@工具番号}工具番号について記述する。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 12.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{工具番号の基本事項}
+\begin{enumerate}[label=\sarrow]
+\item \index{こうぐしゅうのうかのうほんすう@工具収録可能本数}工具収納可能本数：50本
+\item \index{こうぐとうろくかのうほんすう@工具登録可能本数}工具登録可能本数：200本
+\item \index{こうぐせんたくほうしき@工具選択方式}工具選択方式：番地固定近回りランダム
+\item \index{さいだいこうぐすんぽう（マガジン）@最大工具寸法（マガジン）}最大工具寸法：$\phi125\times650$mm\\
+両隣のポット1個ずつが空の場合：$\phi320\times650$mm, ただし、$\phi250$を超える場合は2つ隣の工具は$\phi180$mm以下であること
+\item \index{さいだいこうぐしつりょう（マガジン）@最大工具質量（マガジン）}最大工具質量（ツールホルダ含む）：30kg
+\item \index{きょようさいだいモーメント（マガジン）@許容最大モーメント（マガジン）}許容最大モーメント（ゲージラインより）：30Nm
+\item \index{こうぐこうかんじかん@工具交換時間}工具交換時間： Tool-to-Tool: 2.1s, Chip-to-Chip: 5.2s
+\end{enumerate}
+
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 12.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{工具番号の割当て}
+\index{こうぐばんごう@工具番号}工具番号は、以下の通りに割り当てるものとする。\\
+\begin{multicollongtblr}{\DMC の工具番号の振当て}{c X[l]}
+番号 & 内容\\
+01 & （空）\\
+02-05 & \index{たんめんさくかこう@端面削加工}端面削加工用の工具\\
+06-10 & \expandafterindex{\yomiKeyway かこう@\nameKeyway 加工}\nameKeyway 加工用の工具\\
+11-15 & \expandafterindex{\yomiEndFaceChamfer かこう@\nameEndFaceChamfer 加工}\nameEndFaceChamfer 加工用の工具\\
+16-20 & \index{がいさくかこう@外削加工}外削加工用の工具\\
+21-30 & （不使用）\\
+31-35 & \expandafterindex{\yomiDimple かこう@\nameDimple 加工}\Dimple 加工用の工具（\index{Tスロットカッター}Tスロットカッター）\\
+36-40 & \Dimple 加工用の工具（\index{アングルヘッド}アングルヘッド）\\
+41-45 & \index{\yomiReliefGroove かこう@\nameReliefGroove 加工}\nameReliefGroove 加工用の工具\\
+46-48 & （不使用）\\
+49, 50 & 測定用の工具（\index{タッチセンサープローブ}タッチセンサープローブ）\\
+\end{multicollongtblr}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 25.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{登録工具}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 25.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\dateTourokuKougu 時点の登録工具}
+\dateTourokuKougu 時点において、\index{とうろくこうぐ@登録工具}登録されている工具は以下の通りである。\\
+\begin{multicollongtblr}{\DMC の登録工具}{c X[l]}
+\ttfamily T\ttNum & 工具\\
+\ttfamily T01 & 空\\
+\ttfamily T02 & $\phi100$\index{たんめんさくかこうようフェイスミル@端面削加工用フェイスミル}端面削加工用フェイスミル\\
+\ttfamily T06 & $\phi100\times$t7\expandafterindex{\yomiKeyway かこうようサイドカッター@\nameKeyway 加工用サイドカッター}\Keyway 加工用サイドカッター\\
+%\ttfamily T07 & $\phi100\times t5$\Keyway 加工用サイドカッター\\
+\ttfamily T11 & $\phi4.0\times 15^\circ$\expandafterindex{\yomiEndFaceChamfer かこうようテーパエンドミル@\nameEndFaceChamfer 加工用テーパエンドミル}\nameEndFaceChamfer 加工用テーパエンドミル\\
+\ttfamily T12 & $\phi0.8\times 30^\circ$\expandafterindex{\yomiEndFaceChamfer かこうようテーパエンドミル@\nameEndFaceChamfer 加工用テーパエンドミル}\nameEndFaceChamfer 加工用テーパエンドミル\\
+\ttfamily T13 & $\phi2.0\times 45^\circ$\expandafterindex{\yomiEndFaceChamfer かこうようテーパエンドミル@\nameEndFaceChamfer 加工用テーパエンドミル}\nameEndFaceChamfer 加工用テーパエンドミル\\
+\ttfamily T16 & $\phi20$\index{がいさくかこうようスクエアエンドミル@外削加工用スクエアエンドミル}外削加工用スクエアエンドミル\\
+\ttfamily T31 & $\phi40\times$R20（16刃） \expandafterindex{\yomiDimple かこうようTスロットカッター@\nameDimple 加工用Tスロットカッター}\Dimple 加工用Tスロットカッター\\
+\ttfamily T32 & $\phi40\times$R6.6（16刃） \expandafterindex{\yomiDimple かこうようTスロットカッター@\nameDimple 加工用Tスロットカッター}\Dimple 加工用Tスロットカッター\\
+%\ttfamily T36 & 10.0in\expandafterindex{\yomiDimple かこうようアングルヘッド@\nameDimple 加工用アングルヘッド}\Dimple 加工用アングルヘッド\\
+%\ttfamily T41 & 15.5in\index{\yomiReliefGroove ぞかこうようアングルヘッド@\nameReliefGroove 加工用アングルヘッド}\nameReliefGroove 加工用アングルヘッド\\
+\ttfamily T50 & $\phi10\times200$（延長100）測定用\index{タッチセンサープローブ}タッチセンサープローブ\\
+\end{multicollongtblr}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 25.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{工具の詳細\TBW}
+\dateTourokuKougu 時点において、使用工具の詳細は以下の通りである。\\
+
+\begin{multicollongtblr}{\DMC{} 使用工具：製品詳細}{c c X[l] X[l] c}
+\ttfamily T\ttNum & 用途 & コード・呼び & 材質 & 製造\\
+\ttfamily T02 & 端面削
+& \SetCell[c=2]{}\href{https://www.moldino.com/products/detail/?pid=afe45}{AFE45}-4100R-5
+& & \linkMoldino\\
+\hline
+\ttfamily T06 & \Keyway
+& \SetCell[c=2]{}\href{http://www.ryoco.co.jp/pdf/sogo11.pdf\#page=68}{ZMG-770C}-100070C
+& & \href{http://www.ryoco.co.jp/}{菱高精機}\\
+{(\ttfamily T08)} & \Keyway
+& \SetCell[c=2]{}\href{http://www.ryoco.co.jp/pdf/sogo11.pdf\#page=68}{ZMG-770C}-075050C
+& & \href{http://www.ryoco.co.jp/}{菱高精機}\\
+\hline
+\ttfamily T11 & \EndFaceChamfer
+& \SetCell[c=2]{}\href{https://www.ns-tool.com/ja/products/detail/114}{08-00300-04024}
+& & \href{https://www.ns-tool.com/}{日進工具}\\
+\ttfamily T12 & \EndFaceChamfer
+& \SetCell[c=2]{}\href{https://osg.icata.net/iportal/CatalogViewInterfaceStartUpAction.do?method=startUp&mode=PAGE&volumeID=OSGDCS01&catalogId=138550000&pageGroupId=604&designID=OSGD01&catalogCategoryId=&designConfirmFlg=&pagePosition=L&c=gc_2&c_page_name=850-1&table_division=sc&target_product_id=2060539460&target_abbreviation=V-XPM-VCMS}{V-XPM-VCMS} $20\times60^\circ$
+& & \href{https://www.osg.co.jp/}{OSG}\\
+\ttfamily T13 & \EndFaceChamfer
+& \SetCell[c=2]{}\href{https://osg.icata.net/iportal/CatalogViewInterfaceStartUpAction.do?method=startUp&mode=PAGE&volumeID=OSGDCS01&catalogId=138550000&pageGroupId=305&designID=OSGD01&catalogCategoryId=&designConfirmFlg=&pagePosition=L&c=gc_2&c_page_name=441&table_division=sc&target_product_id=9200110&target_abbreviation=W-HSCT-P}{W-HSCT-P} $2\times45^\circ\times10$
+& & \href{https://www.osg.co.jp/}{OSG}\\
+\hline
+\ttfamily T16 & 外削
+& \SetCell[c=2]{}\href{https://www.moldino.com/ja/products/detail/?pid=hgos}{HGOS}4200-PN
+& & \linkMoldino\\
+\hline
+\ttfamily T31 & \Dimple & $\phi40\times$R20$\times67$ & 超硬+SCM440
+& \href{http://www.honda-tool.co.jp/}{本田精密工業}\\
+({\ttfamily T31}) & \Dimple
+& \SetCell[c=2]{}\href{https://yamato-carbide-tools.jp/archives/20555}{M-TC-YM10}-40$\times$8
+& & \linkYamato\\
+\ttfamily T32 & \Dimple & $\phi40\times$R6.6$\times67$ & 超硬+SCM440
+& \href{http://www.honda-tool.co.jp/}{本田精密工業}\\
+({\ttfamily T33}) & \Dimple
+& \SetCell[c=2]{}\href{https://yamato-carbide-tools.jp/archives/20555}{M-TC-YM10}-30$\times$6
+& & \linkYamato\\
+\hline
+\SetCell[r=2]{}\ttfamily T50 & \SetCell[r=2]{}測定
+& \href{https://www.renishaw.com/shop/Default/Home/Styli/Extensions}{A-5555}-2982（特注）& ルビー球 カーボン軸 & \SetCell[r=2]{} \linkRenishaw\\
+ &
+& \SetCell[c=2]{}\href{https://www.renishaw.com/shop/Product.aspx?Product=A-5000-7727}{A-5000-7727}
+ & & \\
+\end{multicollongtblr}
+
+

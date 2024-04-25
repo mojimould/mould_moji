@@ -1,0 +1,62 @@
+%!TEX root = ../RfCPN.tex
+
+
+\modHeadchapter[lot]{\ttNum3000：アラーム}
+ここでは\DMC におけるアラーム発生システム変数\hx\ttNum3000について記述する。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 16.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{アラーム番号の分類}
+\DMC で使用される\index{アラームへんすう@アラーム変数}アラーム変数\hx\ttNum3000の値は、以下のように分類される。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 16.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{アラーム番号：作成したNCプログラム}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Alerm Classification %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multicollongtblr}{\DMC のアラーム番号の分類（作成したNCプログラム）}{cX[l]X[l]}
+番号 & メッセージ & 異常の内容\\
+001 & pallet alarm & パレット\ttNum\\
+002 & touch sensor alarm & {\ttfamily T50}タッチセンサープローブ\\
+003 & tool measurement alarm & 工具長補正計測\\
+100 & work coordinate is not assigned & ワーク座標系指定なし\\
+200 & argument is not assigned & 引数指定なし\\
+201 & are the arguments OK? & 引数の値\\
+202 & are the arguments OK? & 引数の値の関係\\
+203 & are the common variables OK? & コモン変数の値\\
+204 & is the measurement value OK? & 測定値の値\\
+\end{multicollongtblr}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 16.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{アラーム番号：バンドルのNCプログラム}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Alerm Classification %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multicollongtblr}{\DMC のアラーム番号の分類（バンドルのNCプログラム）}{cX[l]}
+番号 & メッセージ\\
+001 & Pallet Alarm\\
+002 & Pallet Alarm\\
+003 & Pallet Alarm\\
+007 & Tool-Life-Check\\
+010 & Macro Pallet Check Alarm\\
+011 & No Program Selected\\
+012 & Wrong Pallet Alarm\\
+121 & Argument Is Not Assigned\\
+140 & A-Axis-Is-Not-Command\\
+141 & Tool-Measure-Alarm, Tool-Check, Measured-Value-Is-Over\\
+142 & Tool-Brake\\
+143 & Check-X,Y-Axis-Command-Value, Work-Coordinate-Setting-Error\\
+145 & MP10/MP12/MP60-Low-Battery\\
+146 & MP10/MP12/MP60-Alarm\\
+\end{multicollongtblr}

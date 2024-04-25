@@ -1,0 +1,147 @@
+%!TEX root = ../RfCPN.tex
+
+
+\modHeadchapter{その他の幾何}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 29.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{回転中心とのずれの考慮}
+パレットの回転中心座標($X$, $Z$)に対して、ジグの中心の位置が($\delta x$, $\delta z$)だけずれている場合を考える。
+このとき、任意の点($X$, $Z$)はパレットを$-\theta$だけ回転すると、
+\begin{align*}
+  \left[
+    \begin{array}{c}
+      X'\\
+      Z'
+    \end{array}
+  \right]
+  = \left[
+    \begin{array}{cc}
+      \cos\theta & \sin\theta\\
+      -\sin\theta & \cos\theta
+    \end{array}
+  \right]\!\!
+  \left[
+    \begin{array}{c}
+      X+\delta x\\
+      Z+\delta z
+    \end{array}
+  \right]
+  = \left[
+    \begin{array}{c}
+      (X+\delta x)\cos\theta+(Z+\delta z)\sin\theta\\
+      -(X+\delta x)\sin\theta+(Z+\delta z)\cos\theta
+    \end{array}
+  \right].
+\end{align*}
+に移動する。
+また、ずれによる差分は、
+\begin{align*}
+  \left[
+    \begin{array}{c}
+      \delta x\cos\theta+\delta z\sin\theta\\
+      -\delta x\sin\theta+\delta z\cos\theta
+    \end{array}
+  \right].
+\end{align*}
+特に、$\theta = \pi$のとき、
+\begin{align*}
+  \left[
+    \begin{array}{c}
+      -\delta x\\
+      \delta z
+    \end{array}
+  \right].
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 27.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\WorkTotalLength の変化}
+端面削加工ではパレットの中心の位置から\ReAlocationLength の長さの位置を加工する。
+そのため回転によるずれを考慮すると、加工後の\ReAlocationLength はそれぞれ、
+\begin{align*}
+  f_\mathrm T' &\quad\longrightarrow\quad f_\mathrm T'-\delta z\ ,\\
+  f_\mathrm B' &\quad\longrightarrow\quad f_\mathrm B'-\delta z\ .
+\end{align*}
+したがって、\WorkTotalLength は
+\begin{align*}
+  f_\mathrm T+f_\mathrm B \quad\longrightarrow\quad f_\mathrm T+f_\mathrm B-2\delta z\ .
+\end{align*}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 27.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\CenterlineEndFaceDif の変化}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 27.3.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{ボトム側が基準の場合}
+回転によるずれを考慮すると、ボトム側の外削中心$\mathcal G_\mathrm B$が基準の場合、（テーブル中心Pを原点とした）トップ側の外削中心の$X$座標$\mathcal G_{\mathrm Tx}$は、
+\begin{align*}
+  \mathcal G_{\mathrm Tx} = -\mathcal G_{\mathrm Bx}+T_x-\delta x\ .
+\end{align*}
+よって、ボトム側（$-X$側）およびトップ側（$+X$側）の\index{Cがわがいさくめん@C側外削面}C側外削面の中心（\Keyway を除く）は、\pageeqref{eq:centerlineB}より、
+\begin{align*}
+  \text{ボトム側：}\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle -f_\mathrm B'+\frac{h_\mathrm B}2+\delta z\\[5pt]
+      \mathcal G_{\mathrm By}\\[3pt]
+      \displaystyle \mathcal G_{\mathrm Bx}+\frac{\mathfrak W_\mathrm B}2
+    \end{array}
+    \right]~, \qquad
+  \text{トップ側：}\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle f_\mathrm T'-\frac{\kappa_p}2-\delta z\\[5pt]
+      \mathcal G_{\mathrm By}-T_y\\[3pt]
+      \displaystyle \mathcal G_{\mathrm Bx}-T_x+\frac{\mathfrak W_\mathrm T}2+\delta x
+    \end{array}
+  \right].
+\end{align*}
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 27.3.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{トップ側が基準の場合}
+回転によるずれを考慮すると、トップ側の外削中心$\mathcal G_\mathrm T$が基準の場合、（テーブル中心Pを原点とした）墓ボトム側の外削中心の$X$座標$\mathcal G_{\mathrm Bx}$は、
+\begin{align*}
+  \mathcal G_{\mathrm Bx} = -\mathcal G_{\mathrm Tx}+T_x-\delta x\ .
+\end{align*}
+よって、トップ側（$+X$側）およびボトム側（$-X$側）の\index{Cがわがいさくめん@C側外削面}C側外削面の中心（\Keyway を除く）は、\pageeqref{eq:centerlineT}より、
+\begin{align*}
+  \text{トップ側：}~~
+  \left[
+    \begin{array}{c}
+      \displaystyle f_\mathrm T'-\frac{\kappa_p}2-\delta z\\[5pt]
+      \mathcal G_{\mathrm Ty}\\[3pt]
+      \displaystyle \mathcal G_{\mathrm Tx}+\frac{\mathfrak W_\mathrm B}2
+    \end{array}
+    \right]~, \qquad
+  \text{ボトム側：}~~
+  \left[
+    \begin{array}{c}
+      \displaystyle -f_\mathrm B'+\frac{h_\mathrm B}2+\delta z\\[5pt]
+      \mathcal G_{\mathrm Ty}+T_y\\[3pt]
+      \displaystyle \mathcal G_{\mathrm Tx}+T_x+\frac{\mathfrak W_\mathrm B}2
+    \end{array}
+  \right].
+\end{align*}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 31.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{ワーク固定用ボルト\TBW}
+(to be written...)

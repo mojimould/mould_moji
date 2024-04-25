@@ -1,0 +1,122 @@
+%!TEX root = ../RfCPN.tex
+
+
+
+\modHeadchapter[lot]{工具の送り速さ（Fコード値）}
+工具の移動には、主に{\ttfamily G00}, {\ttfamily G01}, {\ttfamily G02}, {\ttfamily G03}, {\ttfamily G31}が用いられる。
+一般に、
+\begin{enumerate}[label=\sarrow]
+\item {\ttfamily G00}は主に\index{はやおくり（おくりはやさ）@早送り（送り速さ）}早送りに使用されることが多い
+\item {\ttfamily G01}は直線状に移動し、主に切削の際の送りに使用されることが多い
+\item {\ttfamily G02}, {\ttfamily G03}は円弧状に移動し、主に切削の際の送りに使用されることが多い
+\item {\ttfamily G31}は主に測定の際の\index{スキップきのう@スキップ機能}スキップ機能に伴って使用されることが多い
+\end{enumerate}
+{\ttfamily G00}は\index{さいだいおくりはやさ@最大送り速さ}最大送り速さで移動し、その速さは（\index{Fコードち@Fコード値}Fコード値では）指定することはできない。
+{\ttfamily G01}, {\ttfamily G02}, {\ttfamily G03}, {\ttfamily G31}はその送りの速さを\index{Fコードち@Fコード値}Fコード値で指定することができる。
+
+なお、{\ttfamily G28}, {\ttfamily G30}では{\ttfamily G00}によって移動する。
+また、{\ttfamily G31}はすべての工具で指定はすることができるが、スキップ機能を有するものは\index{タッチセンサープローブ}タッチセンサープローブのみである。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+この章では工具の具体的な送り速さ値を記述している。
+しかし、工具の送り速さ値の具体的な数値は、（ソフトウェアでなく）ハードウェアの標準に記載するほうが望ましい。
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 07.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{送り速さの基本事項}
+\begin{enumerate}[label=\sarrow]
+\item $X$, $Y$, $Z$方向の\index{いちぎめ@位置決め}位置決め（\index{はやおくり@早送り}早送り）{\ttfamily G00}の\index{おくりはやさ@送り速さ}送り速さ設定値：20000mm/min
+\item $B$方向の\index{はやおくり（Bじく）@早送り（B軸）}早送り{\ttfamily G00}の送り速さデフォルト値：$12000^\circ$/min ($\sim 33.33$回転/min)
+\item $X$, $Y$, $Z$方向の指定できる送り速さ値の範囲：$0\sim60000$mm/min
+\item 設定可能な最小単位：0.1mm/min
+\end{enumerate}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 07.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{タッチセンサープローブ}
+\DMC では、\WorkTotalLength の長い\index{タッチセンサープローブ}タッチセンサープローブを用いる。
+したがって、\index{おくりはやさ@送り速さ}送り速さを大きくして移動をすると、その加速度によって\index{タッチセンサー}タッチセンサーが反応してしまったり、タッチセンサープローブそのものに大きな負担がかかる。
+そのため、タッチセンサープローブの\index{おくりはやさ（タッチセンサープローブ）@送り速さ（タッチセンサープローブ）}送り速さに関しては他の工具よりも低めに設定する。
+\begin{enumerate}[label=\Roman*., ref=\Roman*]
+\item \label{item:FDTS} 原則として、{\ttfamily G00}を用いた移動はしない
+\item \ref{item:FDTS}に伴い、{\ttfamily G28}, {\ttfamily G30}を（直接的に）用いた移動はしない
+\item {\ttfamily G01}を位置決め（早送り）として用いるものとし、送り速さは{\ttfamily F6000}以下とする
+\item ワークへの\index{アプローチ}アプローチの際は、{\ttfamily G31}を用いるものとし、送り速さは{\ttfamily F1500}以下とする
+\item 測定の際の\index{スキップ}スキップ({\ttfamily G31})の送り速さは、測定の仕方に応じて以下のものとする
+  \begin{enumerate}
+  \item \index{しんごうおくれほせい@信号遅れ補正}信号遅れ補正を考慮する必要があるような場合は、送り速さは{\ttfamily F50}とする
+  \item 信号遅れ補正を考慮する必要がない場合は、送り速さは{\ttfamily F50}以上{\ttfamily F300}以下とする
+  \end{enumerate}
+\item $XY$方向におけるワークからの\index{リトラクト}リトラクトの際は{\ttfamily G01}を用いるものとする。
+\end{enumerate}
+なお、$Z$方向の移動は工具ではなくテーブルが移動するため、アプローチを除いて次節（タッチセンサー以外の工具）にしたがうものとする。
+
+なお、{\ttfamily G31}で送る場合は、タッチセンサープローブの\index{でんげん（タッチセンサープローブ）@電源（タッチセンサープローブ）}電源を入れて行うこと。
+電源が入っていなければ移動せず、その点が\index{ブロックエンド}ブロックエンドとなる。
+
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 10.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{タッチセンサープローブ以外の工具}
+\DMC では、$Z$方向については\index{テーブル}テーブル（\expandafterindex{パレット（\yomiDMC）@パレット（\nameDMC）}パレット）が移動する。
+したがって、\index{おくりはやさ（Zほうこう）@送り速さ（$Z$方向）}$Z$方向の送り速さを大きくして移動すると、その加速度によってテーブル上の\index{ジグ}ジグが動いてしまう恐れがある。
+そのため、$Z$方向の送り速さに関しては$X$, $Y$方向の送り速さより低めに設定する。
+\begin{enumerate}[label=\Roman*., ref=\Roman*]
+\item $X$, $Y$方向の移動は、{\ttfamily G00}を用いてもよい
+\item $Z$方向の移動は、原則として、{\ttfamily G00}を用いた移動はしない
+\item $Z$方向の送り速さは、{\ttfamily F\SpindleRapidTraverseXY}以下とする
+\item \index{ワーク}ワークへの\index{アプローチ}アプローチの際は、{\ttfamily G01}を用いるものとし、速さは{\ttfamily F\SpindleRapidAproachFeedRateZ}以下とする
+\item 加工の際は、それぞれの加工や状況に応じて適切なFコード値を設定する
+\item ワークからの\index{リトラクト}リトラクトの際は{\ttfamily G01}を用いるものとし、速さは{\ttfamily F\SpindleRapidTraverseXY}以下とする。
+\end{enumerate}
+
+
+\clearpage
+\noindent
+\dateKouguSpeed における\index{おくりはやさ@送り速さ}送り速さの\index{せっていち（おくりはやさ）@設定値（送り速さ）}設定値は、以下のとおりである。\\
+
+\begin{multicollongtblr}{工具の送り速さ設定値 一覧}{X[l]cc}
+内容 & 速さ値 & \ttfamily G\ttNum\\
+早送り$XY$：{\ttfamily T50}以外 & \SpindleRapidTraverseXY & \ttfamily G00\\
+早送り$XY$：{\ttfamily T50}    & \SensorRapidTraverseXY & \\
+早送り$Z$：{\ttfamily T50}アプローチ以外 & \SpindleRapidTraverseZ &\\
+早送り$Z$：{\ttfamily T50}アプローチ    & \SensorRapidTraverseZ & \\
+アプローチ：{\ttfamily T50}以外 & \SpindleRapidAproachFeedRateZ & \\
+アプローチ：{\ttfamily T50}    & \SensorRapidAproachFeedRateZ & \ttfamily G31\\
+アプローチ：工具長測定 & \ToolLengthMeasurementFeedRateZ & \ttfamily G31\\
+測定時アプローチ：{\ttfamily T50}両側測定 & \CenterMeasurementFeedRate & \ttfamily G31\\
+測定時アプローチ：{\ttfamily T50}片側測定 & \PosMeasurementFeedRate & \ttfamily G31\\
+\hline
+端面削加工：直線         & \EndFaceLinearFeedRate &\\
+端面削加工：コーナー      & \EndFaceCornerFeedRate &\\
+外削加工：直線         & \OutcutLinearFeedRate &\\
+外削加工：コーナー      & \OutcutCornerFeedRate &\\
+\Keyway 加工：直線    & \KeywayLinearFeedRate &\\
+\Keyway 加工：コーナー & \KeywayCornerFeedRate &\\
+\EndFaceOutChamfer 加工：直線      & \OutChamferLinearFeedRate &\\
+\EndFaceOutChamfer 加工：コーナー   & \OutChamferCornerFeedRate &\\
+\EndFaceInChamfer 加工：直線      & \InChamferLinearFeedRate &\\
+\EndFaceInChamfer 加工：コーナー   & \InChamferCornerFeedRate &\\
+\EndFaceBoring 加工：直線    & \EndFaceBoringLinearFeedRate &\\
+\EndFaceBoring 加工：コーナー & \EndFaceBoringCornerFeedRate &\\
+\Dimple 加工：表面アプローチ & \DimpleApproachFeedRate &\\
+\Dimple 加工：加工         & \DimpleProcessFeedRate &\\
+\end{multicollongtblr}
+
+

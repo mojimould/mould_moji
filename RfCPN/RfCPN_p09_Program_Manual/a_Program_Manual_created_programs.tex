@@ -1,0 +1,427 @@
+%!TEX root = ../RfCPN.tex
+\setcounter{lstlisting}{0}
+
+
+\modHeadchapter[lot,lol]{作成したG-codeプログラム\label{chap:createdGcodeDM}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section K.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{作成したプログラム 一覧}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection K.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{メインプログラムの例 一覧}
+\DMC において作成した\index{メインプログラム}メインプログラムは以下のとおりである。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+ここでいうメインプログラムとは、\DrawingNumber と同一の\index{プログラムばんごう@プログラム番号}プログラム番号のものを指す。
+ただし、ここでは例として挙げているので、\pageautoref{subsec:notopenwork}に伴い、プログラム番号は本来のものから変更している。
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multicollongtblr}{作成したプログラム一覧：メインプログラムの例}{ccX[l]}
+{\ttfamily O}番号 & \SetCell{c}工程 & 使用prg\\
+\SetCell[r=10]{c}
+\MainExOne & 外側芯出し・幅 & \MYOThickness\MXIface\\
+           & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
+           & \CenterlineEndFaceDif & \MXcenterline\MYcenterline\\
+           & \Dimple & \DLone\\
+           & 端面 & \KTanmenRight\\
+           & 外削 & \KGaisakuRLeft\\
+           & \nameKeyway & \KMizoConerLeft\\
+           & \EndFaceOutChamfer & \KSotoMentoriRLeft\\
+           & \EndFaceInChamfer & \KUchiMentoriRLeft\\
+           & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
+\hline
+\SetCell[r=8]{c}
+\MainExTwo & 外側芯出し・幅 & \MXOThickness\MYOThickness\MXOface\\
+           & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
+           & \Dimple & \DLone\\
+           & 端面 & \KTanmenRight\\
+           & \nameKeyway & \KMizoConerLeft\\
+           & \EndFaceOutChamfer & \KSotoMentoriRLeft\\
+           & \EndFaceInChamfer & \KUchiMentoriRLeft\\
+           & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
+\end{multicollongtblr}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection K.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{サブプログラム 一覧}
+\DMC において作成した\index{サブプログラム}サブプログラムは以下のとおりである
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+ここでいうサブプログラムとは、\DrawingNumber と同一の\index{プログラムばんごう@プログラム番号}プログラム番号以外のものを指す。
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multicollongtblr}{作成したプログラム一覧：芯出し・幅測定}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用prg\\
+\MXOThickness & 測定 両側 外側中心・幅$X$ & \OsensorOff\\
+\MYOThickness & 測定 両側 外側中心・幅$Y$ & \OsensorOff\\
+\MXOface      & 測定 片側 \KeywayCenter$X$（トップA側外面測定） & \OsensorOff\\
+\MXIWidth     & 測定 両側 内側中心・幅$X$ & \OsensorOff\\
+\MYIWidth     & 測定 両側 内側中心・幅$Y$ & \OsensorOff\\
+\MXIface      & 測定 片側 外削中心$X$（C側内面方向測定） & \OsensorOff\\
+\end{multicollongtblr}
+
+%\clearpage
+\begin{multicollongtblr}{作成したプログラム一覧：\expandafterindex{\yomiCenterlineEndFaceDif そくてい@\nameCenterlineEndFaceDif 測定}\nameCenterlineEndFaceDif 測定}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用prg\\
+\MYcenterline & 測定 片側 \CenterlineEndFaceDifBD（B側外削面 $Y$方向測定） & \OsensorOff\\
+\MXcenterline & 測定 片側 \CenterlineEndFaceDifAC（C側外削面 $Z$方向測定） & \OsensorOff\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{作成したプログラム一覧：\Dimple}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用prg\\
+\DLone      & \Dimple ：移動 各列の中心上 & \DLtwoAC\DLtwoBD\\
+\DLtwoAC    & \Dimple ：移動 AC面 列内の各\Dimple 上 & \DMLthreeAC\DKLthreeAC\\
+\DLtwoBD    & \Dimple ：移動 BC面 列内の各\Dimple 上 & \DMLthreeBD\DKLthreeBD\\
+\DMLthreeAC & \Dimple ：測定 AC内表面$X$ & \OsensorOff\\
+\DMLthreeBD & \Dimple ：測定 BD内表面$Y$ & \OsensorOff\\
+\DKLthreeAC & \Dimple ：加工 AC内表面$X$ & -\\
+\DKLthreeBD & \Dimple ：加工 BD内表面$Y$ & -\\
+\end{multicollongtblr}
+
+\clearpage
+\begin{multicollongtblr}{作成したプログラム一覧：加工（\Dimple 以外）}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用prg\\
+\KTanmenRight      & 加工 端面 コーナーR 右回り1周 & \KOLeftAR\\
+\KGaisakuRLeft     & 加工 外削 コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
+\KMizoConerLeft    & 加工 \Keyway{} 左回り1周 & \KOLeftAR\OpauseCheck\\
+\KSotoMentoriRLeft & 加工 \EndFaceOutChamfer コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
+\KUchiMentoriRLeft & 加工 \EndFaceInChamfer{} コーナーR 左回り1周 & \KILeftAC\OpauseCheck\\
+\KOLeftAR   & 外側 左回り1周 右上始まり & -\\
+\KILeftAC   & 内側 左回り1周 中央上始まり & -\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{作成したプログラム一覧：その他}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用prg\\
+\OpauseCheck  & 移動・加工後確認用：90$^\circ$回転 扉前一時停止 & -\\
+\OsensorOn    & タッチセンサー電源ON & -\\
+\OsensorOff   & タッチセンサー電源OFF & -\\
+\OwarmingupA  & 暖機運転 & \Owarmingup\\
+\Owarmingup   & 暖機運転用サブプログラム & \\
+\OtoolLengthA & 登録工具 工具長自動測定 & \OtoolLength\\
+\OtoolLength  & 工具長 自動測定用サブプログラム & -\\
+\end{multicollongtblr}
+
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section G.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{メインプログラムの例}
+\index{メインプログラム}メインプログラムについては、個々の\index{めいさい（モールド）@明細（モールド）}明細の情報（社内機密情報）を含む。
+そのため、\pageautoref{subsec:notopenwork}に則り、記載は代表的・典型的なものに留める。\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MainExOne %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MainExOne：メインプログラムの例1}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/main_program_examples/\nameMainExOne}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MainExTwo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MainExTwo：メインプログラムの例2}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/main_program_examples/\nameMainExTwo}
+
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{測定用（\Dimple 除く）サブプログラム}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection E.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{芯出し測定用サブプログラム}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MXOThickness %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MXOThickness\,:測定 両側 外側中心\texorpdfstring{$X$}{X}}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameMXOThickness.nc}
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MYOThickness %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MYOThickness\,:測定 両側 外側中心\texorpdfstring{$Y$}{Y}}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameMYOThickness.nc}
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MYOThickness %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MXOface\,:測定 片側 \KeywayCenter\texorpdfstring{$X$}{X}（A側外面側測定）}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameMXOface.nc}
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MXIWidth %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MXIWidth\,:測定 両側 内側中心\texorpdfstring{$X$}{X}}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameMXIWidth.nc}
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MYIWidth %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MYIWidth\,:測定 両側 内側中心\texorpdfstring{$Y$}{Y}}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameMYIWidth.nc}
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MXface %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MXIface\,:測定 片側 外削中心\texorpdfstring{$X$}{X}（C側内面測定）}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameMXIface.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection E.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\expandafterindex{サブプログラム（\yomiCenterlineEndFaceDif）@サブプログラム（\nameCenterlineEndFaceDif）}\nameCenterlineEndFaceDif 測定用サブプログラム}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MYcenterline %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MYcenterline\,:測定 片側 \CenterlineEndFaceDifBD（B側外削面$Y$測定）}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameMYcenterline.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MXcenterline  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\MXcenterline\,:測定 片側 \CenterlineEndFaceDifAC（C側外削面$Z$測定）}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameMXcenterline.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{加工用（\Dimple 除く）サブプログラム}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KTanmenRight %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KTanmenRight\,:加工 端面 コーナーR 右回り1周}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameKTanmenRight.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KGaisakuRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KGaisakuRLeft\,:加工 外削 コーナーR 左回り1周}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameKGaisakuRLeft.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KMizoConerLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KMizoConerLeft\,:加工 \Keyway{} 左回り1周}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameKMizoConerLeft.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KSotoMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KSotoMentoriRLeft\,:加工 \EndFaceOutChamfer{} コーナーR 左回り1周}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameKSotoMentoriRLeft.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KUchiMentoriRLeft\,:加工 \EndFaceInChamfer{} コーナーR 左回り1周}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameKUchiMentoriRLeft.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KOLeftAR\,:外側 左回り1周 右上始まり}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameKOLeftAR.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KILeftAC\,:内側 左回り1周 中央上始まり}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameKILeftAC.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section E.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\Dimple 用 移動・測定・加工用サブプログラム}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \DLone %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\DLone\,:移動 各\Dimple 列の中心上}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameDLone.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \DLtwoAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\DLtwoAC\,:移動 AC面 列内の各\Dimple 上}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameDLtwoAC.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \DLtwoBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\DLtwoBD\,:移動 BD面 列内の各\Dimple 上}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameDLtwoBD.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \DMLthreeAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\DMLthreeAC\,:測定 AC面 \Dimple 位置\texorpdfstring{$X$}{X}}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameDMLthreeAC.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \DMLthreeBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\DMLthreeBD\,:測定 BD面 \Dimple 位置\texorpdfstring{$Y$}{Y}}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameDMLthreeBD.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \DKLthreeAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\DKLthreeAC\,:加工 AC面 \Dimple\texorpdfstring{$X$}{X}}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameDKLthreeAC.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \DKLthreeBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\DKLthreeBD\,:加工 BD面 \Dimple\texorpdfstring{$Y$}{Y}}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameDKLthreeBD.nc}
+
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section I.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{その他のサブプログラム}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection I.5.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{一時停止およびワーク確認}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \OpauseCheck %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\OpauseCheck\,：90\texorpdfstring{$\boldsymbol{^\circ}$}{°}回転 扉前一時停止}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameOpauseCheck.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection I.5.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{タッチセンサープローブ電源スイッチ}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \OsensorOn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\OsensorOn\,:タッチセンサー電源ON}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameOsensorOn.nc}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \OsensorOff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\OsensorOff\,:タッチセンサー電源OFF}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameOsensorOff.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection I.5.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{暖機運転}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \OsensorOn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\OwarmingupA\,:暖機運転}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameOwarmingupA.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \OsensorOn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\Owarmingup\,:暖機運転用サブプログラム}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameOwarmingup.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection I.5.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{工具長自動測定}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \OsensorOn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\OtoolLengthA\,:指定工具 工具長自動測定}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameOtoolLengthA.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \OsensorOn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\OtoolLength\,:工具長 自動測定用サブプログラム}
+\lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameOtoolLength.nc}

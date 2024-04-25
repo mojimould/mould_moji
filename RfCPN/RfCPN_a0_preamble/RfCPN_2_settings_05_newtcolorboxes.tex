@@ -1,0 +1,309 @@
+%!TEX root = ../RfCPN.tex
+
+
+\newcounter{GlobalFootnote}% difine a counter Global Footnote
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% COMMONBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tcbset{%
+  %%%%% TCBCOMMON STYLE %%%%%
+  tcbcommon/.style={%
+    before upper={%
+      \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
+      \let\oldfootnote=\footnote% \oldfootnote=\footnote
+      \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% using counter GlobalFootnote
+      \renewcommand\thempfootnote{\arabic{mpfootnote}}% arabic footnote
+    },
+    after upper={%
+      \setcounter{footnote}{\value{GlobalFootnote}}% footnoteValue=GlobalFootnoteValue
+      \let\footnote=\oldfootnote% \footnote=\oldfootnote
+    },
+  },
+  %%%%% FIGURECOMMONBOX STYLE %%%%%
+  Figurecommonbox/.style={%
+    notitle,%
+    enhanced,
+    center upper,%
+    center lower,%
+    arc=5pt,%
+    outer arc=2pt,%
+    boxrule=1pt,%
+    boxsep=3mm,%
+    valign=center,%
+    halign=center,%
+    left=0pt,%
+    right=0pt,%
+    colback=green!3!white,%
+    colframe=black!25!white,%
+%    before={\centering},
+  },
+  %%%%% LIST COMMON STYLE %%%%%
+  listcommonstyle/.style={%
+    parskip/.style={
+        before={\par\pagebreak[0]\parindent=0pt},
+        after={\parfillskip=0pt\par},
+    },
+    breakable,%
+    enhanced jigsaw,%
+    before=\par\bigskip\noindent,%
+    enlargepage flexible=\baselineskip,%
+    width=\textwidth,
+    pad at break*=3mm,%
+    before skip=0mm,%
+    top=4mm,%
+    middle=4.5mm,
+    height fixed for=first and middle,%
+    drop fuzzy shadow,
+  },
+}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TABBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtcolorbox{Tabbox}[1][]{Tabularbox, #1}
+%\renewcommand{\tableautorefname}{表}
+\tcbset{%
+  %%%%% TABULARBOX STYLE %%%%%
+  Tabularbox/.style={%
+    fonttitle=\gtfamily\bfseries,%
+    breakable,%
+    enhanced jigsaw,%
+    left=.5ex,%
+    right=.5ex,%
+    bicolor,%
+    colbacklower=black!10!white,%
+    after=\smallskip\noindent,
+    tcbcommon,
+  },%
+}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% COLUMN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Columnname}{Column}
+\newtcolorbox[auto counter, number within=chapter, list inside=loC]{Column}[2][]{%
+  Columnbox,
+  title={#2},
+  #1,
+  list entry={\numberline{\protect\hspace*{9.5pt}\Columnname~\thetcbcounter}{\protect\hspace*{55pt}#2}}
+}
+%\newcommand{\tcb@cnt@Columnautorefname}{Column}
+\tcbset{%
+  %%%%% COLUMNBOX STYLE %%%%%
+  Columnbox/.style={%
+    Tabularbox,
+    colback=black!02!white!,%
+    after title=\hfill\termblue{\Columnname~\thetcbcounter},%
+  }%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FORMULA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Formulaname}{Eq.}
+\newtcolorbox[auto counter, number within=chapter]{Formula}[2][]{%
+  Formulabox, title={#2}, #1}
+\newcommand{\tcb@cnt@Formulaautorefname}{Eq.\!}
+\tcbset{%
+  %%%%% FORMULA STYLE %%%%%
+  Formulabox/.style={%
+    Tabularbox,
+    after title=\hfill\termblue{\Formulaname~\thetcbcounter},%
+  }%
+}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FIGLANDSCAPEBOX %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtcolorbox{Figlandscape}[1][]{Figurelnadscapebox, #1}
+\tcbset{%
+  %%%%% FIGUREBOX STYLE %%%%%
+  Figurelnadscapebox/.style={%
+    Figurecommonbox,
+    height=\textheight-6.8pt,
+  }%
+}%
+
+%%%%% FIGBOX %%%%%
+\newtcolorbox{Figbox}[1][]{Figurebox, #1}
+\tcbset{%
+  %%%%% FIGUREBOX STYLE %%%%%
+  Figurebox/.style={%
+    Figurecommonbox,
+    height=\textheight-6.8pt,
+    width=\textwidth,
+  }%
+}
+
+%%%%% TOCBOX %%%%%
+\newtcolorbox{tocBox}[1]{tocstyle, watermark text={\sffamily\bfseries{#1}}}
+\tcbset{%
+  %%%%% TOCSTYLE STYLE %%%%%
+  tocstyle/.style={%
+    listcommonstyle,
+    colback=green!0.5!white,%
+    colframe=green!40!black!75!,%
+    watermark color=green!60!yellow!13!white,%
+  }
+}%
+
+%%%%% LOFBOX %%%%%
+\newtcolorbox{lofBox}{lofstyle}
+\tcbset{%
+  %%%%% LOCSTYLE STYLE %%%%%
+  lofstyle/.style={%
+    listcommonstyle,
+    colback=cyan!1!white,%
+    colframe=cyan!100!black!100!,%
+  }%
+}%
+
+%%%%% LOTBOX %%%%%
+\newtcolorbox{lotBox}{lotstyle}
+\tcbset{%
+  %%%%% LOTSTYLE STYLE %%%%%
+  lotstyle/.style={lofstyle},
+}%
+
+%%%%% LOlBOX %%%%%
+\newtcolorbox{lolBox}{lolstyle}
+\tcbset{%
+  %%%%% LOTSTYLE STYLE %%%%%
+  lolstyle/.style={lofstyle},
+}%
+
+%%%%% LOCBOX %%%%%
+\newtcolorbox{loCBox}{loCstyle}
+\tcbset{%
+  %%%%% LOCSTYLE STYLE %%%%%
+  loCstyle/.style={lofstyle},
+}%
+
+%%%%% LOPBOX %%%%%
+\newtcolorbox{lopBox}[1]{lopstyle, title={#1}}
+\tcbset{%
+  %%%%% LOPSTYLE STYLE %%%%%
+  lopstyle/.style={%
+    listcommonstyle,
+    fonttitle=\sffamily\bfseries\large,%
+    colback=yellow!2!white,%
+    colframe=red!40!black!60!,%
+    colbacktitle=red!50!yellow!70!black!60!,%
+    top=8mm,
+    bottom=4mm,
+    after skip=5mm,
+    attach boxed title to top left={%
+      xshift=10mm,%
+      yshift=-0.25mm-\tcboxedtitleheight/2,%
+      yshifttext=2mm-\tcboxedtitleheight/2,%
+    },
+    boxed title style={%
+      enhanced,%
+      boxrule=0.5mm,%
+      frame code={%
+        \path[tcb fill frame] ([xshift=-4mm]frame.west) -- (frame.north west)
+        -- (frame.north east) -- ([xshift=4mm]frame.east)
+        -- (frame.south east) -- (frame.south west) -- cycle;
+      },
+      interior code={
+        \path[tcb fill interior] ([xshift=-2mm]interior.west)
+        -- (interior.north west) -- (interior.north east)
+        -- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)
+        -- cycle;
+      },
+    },
+  },
+}%
+
+%%%%% HOSOKU %%%%%
+\newcommand{\hosokuname}{補}
+\newtcolorbox[auto counter, number within=chapter]{hosoku}[1][]{hosokubox, #1}
+\newcommand{\tcb@cnt@hosokuautorefname}{補足}
+\tcbset{%
+  %%%%% HOSOKUBOX STYLE %%%%%
+  hosokubox/.style={%
+    title={\termblue{\hosokuname~\thetcbcounter}~},%
+    detach title,%
+    breakable,%
+    enhanced jigsaw,%
+    size=fbox,%
+    arc=0pt,%
+    middle=1mm,%
+    colback=hosoku,%
+    colframe=hosoku,%
+    drop lifted shadow={blue!100!white!50!},%
+    skin first is subskin of={enhanced jigsaw}{no shadow},%
+    skin middle is subskin of={enhanced jigsaw}{no shadow},%
+    skin last is subskin of={enhanced jigsaw}{drop lifted shadow={blue!100!white!50!}},%
+    segmentation style={draw=black!50!white},%
+    after=\smallskip\noindent{\color{white}},%
+    before upper={%
+      \tcbtitle%
+      \setcounter{GlobalFootnote}{\value{footnote}}% GlobalFootnoteValue=footnoteValue
+      \let\oldfootnote=\footnote% \oldfootnote=\footnote
+      \def\footnote{\stepcounter{GlobalFootnote}\oldfootnote[\arabic{GlobalFootnote}]}% using counter GlobalFootnote
+      \renewcommand\thempfootnote{\arabic{mpfootnote}}% arabic footnote
+    },
+    after upper={%
+      \setcounter{footnote}{\value{GlobalFootnote}}% footnoteValue=GlobalFootnoteValue
+      \let\footnote=\oldfootnote% \footnote=\oldfootnote
+    },
+  }
+}%
+
+%%%%% ISSUE %%%%%
+\newcommand{\issuename}{Issue}
+\newtcolorbox{Issues}[2][]{Issuebox, title={#2}, #1}
+\tcbset{%
+  %%%%% ISSUEBOX STYLE %%%%%
+  Issuebox/.style={%
+    Tabularbox,
+    colback=black!02!white!,%
+    after title=\hfill\termblue{\issuename},%
+  }%
+}%
+
+%%%%% PARAMETER %%%%%
+\newcommand{\parametername}{Parameter}
+\newtcolorbox{Parameter}[2][]{Parameterbox, title={#2}, #1}
+\tcbset{%
+  %%%%% PARAMETERBOX STYLE %%%%%
+  Parameterbox/.style={%
+    Tabularbox,
+    colback=black!02!white!,%
+    after title=\hfill\termblue{\parametername},%
+  }%
+}%
+
+%%%%% MARKER %%%%%
+\newtcolorbox{marker}[1][]{
+  enhanced,
+  before skip balanced=2mm,
+  after skip balanced=3mm,
+  boxrule=0.4pt,
+  left=5mm,
+  right=2mm,
+  top=1mm,
+  bottom=1mm,
+  colback=yellow!50,
+  colframe=yellow!50!black,
+  sharp corners,
+  rounded corners=southeast,
+  arc is angular,
+  arc=3mm,
+  overlay={%
+    \path[fill=tcbcolback!80!black] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[draw=tcbcolframe, shorten <=-0.05mm,shorten >=-0.05mm] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[fill=yellow!50!black,draw=none] (interior.south west) rectangle node[white]{\Huge\bfseries !} ([xshift=4mm]interior.north west);
+    },
+  drop fuzzy shadow,
+  #1,
+}
+%%%%% TABLEPART %%%%%
+\newtcolorbox[auto counter, number within=part]{tablePart}[2][]{%
+  Columnbox,
+  title={\termblue{{\sffamily\bfseries\thepart}：#2}},
+  #1,
+  after title={}
+}
+

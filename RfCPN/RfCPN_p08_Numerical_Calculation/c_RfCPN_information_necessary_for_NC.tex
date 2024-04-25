@@ -1,0 +1,223 @@
+%!TEX root = ./RfCPN.tex
+
+
+\modHeadchapter[lot]{入力する数値情報・パラメータ}
+寸法・形状等の数値情報や条件分岐情報は、\index{めいさい（モールド）@明細（モールド）}明細ごとに固有である。
+そのため、その固有情報は入力する必要がある。
+ここではそうした入力する必要のある情報をまとめておく。
+なお、\index{にゅうりょくするすうちじょうほう@入力する数値情報}入力する数値情報に関しては、原則として\index{ずめん@図面}図面上の\index{すんぽう@寸法}寸法をそのまま入力する形となるような方針とする
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{ただし、これらの値にはそれぞれの公差が考慮されている。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 30.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{湾曲・振分けに関する入力数値}
+
+\begin{multicollongtblr}{入力情報：湾曲・振分け}{X[l]c}
+内容 & 型\\
+\CenterCurvatureExists & boolean\\
+\CenterCurvatureRadius & float\\
+\TopAlocationLength & float\\
+\BottomAlocationLength & float\\
+\end{multicollongtblr}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 30.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{外形・内形に関する入力数値}
+
+\begin{multicollongtblr}{入力情報：外形}{X[l]c}
+内容 & 型\\
+\ACOD & float\\
+\BDOD & float\\
+\ODCornerR & float\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{入力情報：内形}{X[l]c}
+内容 & 型\\
+\PlatingThk & float\\
+内径テーパ表 Taper No. & list\\
+\end{multicollongtblr}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+\index{ないけいテーパひょう@内径テーパ表}内径テーパ表には、\index{ないけいコーナーR@内形コーナーR}内形コーナーRの\index{すんぽう（ないけいコーナーR）@寸法（内形コーナーR）}寸法情報も記載されているものとする。
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 30.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{外削に関する入力数値}
+
+\begin{multicollongtblr}{入力情報：ボトム外削}{X[l]c}
+内容 & 型\\
+\BottomOutcutExists & boolean\\
+\BottomOutcutType & enum\\
+ボトム外削 A側肉厚 & float\\
+\BottomOutcutAC & float\\
+\BottomOutcutBD & float\\
+\BottomOutcutLength & float\\
+\BottomOutcutConerR & float\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{入力情報：トップ外削}{X[l]c}
+内容 & 型\\
+\TopOutcutExists & boolean\\
+\TopOutcutType & enum\\
+トップ外削 A側肉厚 & float\\
+\TopOutcutAC & float\\
+\TopOutcutBD & float\\
+\TopOutcutLength & float\\
+\TopOutcutCornerR & float\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{入力情報：両外削}{X[l]c}
+内容 & 型\\
+外削中心基準 & enum\\
+\CenterlineEndFaceDif & float\\
+\end{multicollongtblr}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 30.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\Keyway に関する入力数値}
+
+\begin{multicollongtblr}{入力情報：\Keyway}{X[l]c}
+内容 & 型\\
+\KeywayType & enum\\
+\AsideKeywayDepth 指定 有無 & boolean\\
+\KeywayACOD & float\\
+\KeywayBDOD & float\\
+\KeywayPos & float\\
+\KeywayWidth & float\\
+\AsideKeywayDepth & float\\
+\KeywayCornerR & float\\
+\KeywayCornerC & float\\
+\end{multicollongtblr}
+
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 30.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\Dimple に関する入力数値}
+
+\begin{multicollongtblr}{入力情報：\Dimple}{X[l]c}
+内容 & 型\\
+トップ端と\Dimple1列目までの距離 & float\\
+\Dimple 鉛直方向ピッチ & float\\
+\Dimple 水平方向ピッチ & float\\
+\Dimple 奇数列の長さ & float\\
+\Dimple 偶数列の長さ & float\\
+\Dimple 列数 & enum\\
+\Dimple 深さ & float\\
+\Dimple 半径（工具小半径） & float\\
+\end{multicollongtblr}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 30.6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{端面面取に関する入力数値}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 30.6.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ボトム端面面取に関する入力情報}
+
+\begin{multicollongtblr}{入力情報：ボトム\nameEndFaceOutChamfer}{X[l]c}
+内容 & 型\\
+\BottomEndFaceOutChamferExists & boolean\\
+\BottomEndFaceOutChamferLength & float\\
+\BottomEndFaceOutChamferAngle & float\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{入力情報：ボトム\nameEndFaceOutRoundChamfer}{X[l]c}
+内容 & 型\\
+\BottomEndFaceOutRoundChamferExists & boolean\\
+\BottomEndFaceOutRoundChamferRadius & float\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{入力情報：ボトム\nameEndFaceInChamfer}{X[l]c}
+内容 & 型\\
+\BottomEndFaceInChamferExists & boolean\\
+\BottomEndFaceInChamferLength & float\\
+\BottomEndFaceInChamferAngle & integer\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{入力情報：ボトム\nameEndFaceInRoundChamfer}{X[l]c}
+内容 & 型\\
+\BottomFaceInRoundChamferExsits & boolean\\
+\BottomFaceInRoundChamferRadius & float\\
+\end{multicollongtblr}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 30.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{トップ端面面取に関する入力情報}
+
+\begin{multicollongtblr}{入力情報：トップ\nameEndFaceOutChamfer}{X[l]c}
+内容 & 型\\
+\TopEndFaceOutChamferExists & boolean\\
+\TopEndFaceOutChamferLength & float\\
+\TopEndFaceOutChamferAngle & integer\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{入力情報：トップ\nameEndFaceOutRoundChamfer}{X[l]c}
+内容 & 型\\
+\TopEndFaceOutRoundChamferExists & boolean\\
+\TopEndFaceOutRoundChamferRadius & float\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{入力情報：トップ\nameEndFaceInChamfer}{X[l]c}
+内容 & 型\\
+\TopEndFaceInChamferExists & boolean\\
+\TopEndFaceInChamferLength & float\\
+\TopEndFaceInChamferAngle & integer\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{入力情報：トップ\nameEndFaceInRoundChamfer}{X[l]c}
+内容 & 型\\
+\TopEndFaceInRoundChamferExists & boolean\\
+\TopEndFaceInRoundChamferRadius & float\\
+\end{multicollongtblr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 30.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\EndFaceBoring に関する入力情報}
+
+\begin{multicollongtblr}{入力情報：\EndFaceBoring}{X[l]c}
+内容 & 型\\
+\EndFaceBoringExists & boolean\\
+\EndFaceBoringWidth & float\\
+\EndFaceBoringDepth & float\\
+\EndFaceBoringCornerR & float\\
+\EndFaceBoringLength & float\\
+\end{multicollongtblr}
+
+
+\clearrightpage

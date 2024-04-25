@@ -1,0 +1,126 @@
+%!TEX root = ../RfCPN.tex
+
+
+\modHeadchapter[loC]{\CenterlineEndFaceDif の幾何}
+トップ・ボトムの両方に\index{がいさく@外削}外削がある場合を考える。
+通常、それぞれの外削の中心は個別に決められはせず、片方の中心の位置を基準として、もう片方の中心が定められる。
+これらの中心の位置の差（\textbf{\CenterlineEndFaceDif}
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{通常、\CenterlineEndFaceDif(centerline)というのはその名の通り中心線を表すことが多い。
+しかし、ここでは\index{トップがわのがいさくちゅうしん@トップ側の外削中心}トップ側外削中心と\index{ボトムがわのがいさくちゅうしん@ボトム側の外削中心}ボトム側外削中心との位置の差を表す用語として「\CenterlineEndFaceDif」と呼んでいる。}）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$T_x$, $T_y$ ($T_x \geq 0$)を機内で測定する際は、C面が工具側に向くようにテーブルを$\pm$90$^\circ$回転（$B$軸回転）し、\index{タッチセンサープローブ}タッチセンサープローブを用いてそれぞれの外削部の$Z$座標および$Y$座標を見ることで測定する。
+
+ここでは、この\expandafterindex{\yomiCenterlineEndFaceDif そくてい@\nameCenterlineEndFaceDif 測定}\nameCenterlineEndFaceDif の測定に必要な位置等について定量的に求める。
+なお、\index{テーブルちゅうしん@テーブル中心}テーブルの中心Pを原点として考えることにする。
+またC面が工具側に向くように$B$軸を（\verb|G91|にて）$\pm$90$^\circ$回転した状態であるとする
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{{\ttfamily G90}（絶対座標）の場合、\index{テーブル}テーブルを傾けて\AlocationLength を調整した場合はその\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}回転角$-\theta$を忘れないよう注意。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 27.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{ボトムの外削が基準の場合}
+通常、トップ側の外削中心は、ボトム側の外削中心よりA面側（$-Z$側）にある。
+このとき、\KeywayPos$\kappa_p$および\BottomOutcutLength$h_\mathrm B$ ($h_\mathrm B > 0$)を用いると、ボトム側（$-X$側）およびトップ側（$+X$側）の\index{Cがわがいさくめん@C側外削面}C側外削面の中心
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{トップ側には\Keyway があるので、\TopOutcutLength は\KeywayPos$\kappa_p$とみなしている。}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+は、それぞれ
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{通常、\CenterlineEndFaceDifBD は$T_y = 0$である。}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{align}
+  \label{eq:centerlineB}
+  \text{ボトム側：}\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle -f_\mathrm B'+\frac{h_\mathrm B}2\\[5pt]
+      \mathcal G_{\mathrm By}\\[3pt]
+      \displaystyle \mathcal G_{\mathrm Bx}+\frac{\mathfrak W_\mathrm B}2
+    \end{array}
+    \right]~, \qquad
+  \text{トップ側：}\quad
+  \left[
+    \begin{array}{c}
+      \displaystyle f_\mathrm T'-\frac{\kappa_p}2\\[5pt]
+      \mathcal G_{\mathrm By}-T_y\\[3pt]
+      \displaystyle \mathcal G_{\mathrm Bx}-T_x+\frac{\mathfrak W_\mathrm T}2
+    \end{array}
+  \right].
+\end{align}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 27.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{トップの外削が基準の場合}
+通常、ボトムの外削中心は、トップの外削中心よりC面側（$+Z$側）にある。
+このとき、トップ側（$+X$側）およびボトム側（$-X$側）の外削C面の中心は、それぞれ
+\begin{align}
+  \label{eq:centerlineT}
+  \text{トップ側：}~~
+  \left[
+    \begin{array}{c}
+      \displaystyle f_\mathrm T'-\frac{\kappa_p}2\\[5pt]
+      \mathcal G_{\mathrm Ty}\\[3pt]
+      \displaystyle \mathcal G_{\mathrm Tx}+\frac{\mathfrak W_\mathrm B}2
+    \end{array}
+    \right]~, \qquad
+  \text{ボトム側：}~~
+  \left[
+    \begin{array}{c}
+      \displaystyle -f_\mathrm B'+\frac{h_\mathrm B}2\\[5pt]
+      \mathcal G_{\mathrm Ty}+T_y\\[3pt]
+      \displaystyle \mathcal G_{\mathrm Tx}+T_x+\frac{\mathfrak W_\mathrm B}2
+    \end{array}
+  \right].
+\end{align}
+
+\clearpage
+~\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Column}{C側面の測定}
+通常、外削をせずに\CenterlineEndFaceDifAC の測定を行うことはない。
+ただ、\index{NCプログラム}NCプログラムの\index{しうんてん@試運転}試運転などで動きをみるといった可能性はありうるので、\index{がいさくかこう@外削加工}外削加工を行っていない状態で\index{そくてい（\yomiCenterlineEndFaceDif）@測定（\nameCenterlineEndFaceDif）}測定する場合についても述べておく。
+なお、ここでは\index{テーブル}テーブルを回転して\AlocationLength の調整を行った場合、かつボトムの外削（\index{Aがわにくあつ@A側肉厚}A側肉厚）が基準の場合を考える。
+このとき、測定するC側外面の位置は、\pageeqref{eq:tableTi}, \pageeqref{eq:tableBRi}より、
+\begin{align*}
+  \text{トップ側：}~~
+  & \left[
+    \begin{array}{c}
+      \displaystyle f_\mathrm T'-\frac{\kappa_p}2\\[5pt]
+      G_{\mathrm By}-T_y\\[3pt]
+      \displaystyle
+      -G_{\mathrm Tx}
+      -\sqrt{R_\mathrm c^2-f_\mathrm T^2}
+      +\sqrt{R_\mathrm c^2-\left(f_\mathrm T-\frac\kappa2\right)^2}
+    \end{array}
+    \right],\\
+  \text{ボトム側：}~~
+  & \left[
+    \begin{array}{c}
+      \displaystyle -f_\mathrm B'+\frac{h_\mathrm B}2\\[5pt]
+      G_{\mathrm By}\\[3pt]
+      \displaystyle
+      G_{\mathrm Bx}
+      -\sqrt{R_\mathrm c^2-f_\mathrm B^2}
+      +\sqrt{R_\mathrm c^2-\left(f_\mathrm B-\frac{h_\mathrm B}2\right)^2}
+    \end{array}
+    \right].
+\end{align*}
+なお、これらの$Z$座標の差は以下で与えられる。
+\begin{align*}
+  \sqrt{R_\mathrm i^2-\left(f_\mathrm T-\frac{\kappa_p}2\right)^2}
+  -\sqrt{R_\mathrm i^2-\left(f_\mathrm B-\frac{h_\mathrm B}2\right)^2}~.
+\end{align*}
+\end{Column}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
