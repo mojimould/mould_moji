@@ -16,8 +16,8 @@
 *.aux
 *.run.xml
 *.synctex.gz
-RPA_for_Creating_Program_Note/RPA_for_Creating_Program_Note.log
+RfCPN/RfCPN.log
 *.out
 *.upa
 *.upb
-RPA_for_Creating_Program_Note/RPA_for_Creating_Program_Note.pdf
+RfCPN/RfCPN.pdf
