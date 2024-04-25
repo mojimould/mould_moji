@@ -16,13 +16,15 @@
 \patchcmd{\l@part}{\endgroup}{\endgroup\endgroup}{}{}
 \DeclareTOCStyleEntry[
   indent=0em, % エントリのインデントを調整
-  numwidth=2.35em % エントリ番号の幅を調整
+  numwidth=2.35em, % エントリ番号の幅を調整
+  pagenumberwidth=19.305pt
 ]{tocline}{part}
 %%%%% FOR CHAPTER %%%%%
 \DeclareTOCStyleEntry[
   level=\chaptertocdepth,
   indent=0.85em, % エントリのインデントを調整
-  numwidth=1.5em % エントリ番号の幅を調整
+  numwidth=1.5em, % エントリ番号の幅を調整
+  pagenumberwidth=17.968pt
 ]{tocline}{chapter}
 %%%%% FOR SECTION %%%%%
 \DeclareTOCStyleEntry[
