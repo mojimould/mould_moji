@@ -2,14 +2,14 @@
 \setcounter{lstlisting}{0}
 
 
-\modHeadchapter[lot,lol]{作成したG-codeプログラム\label{chap:createdGcodeDM}}
+\modHeadchapter[lot,lol]{作成したNCプログラム\label{chap:createdNCprgDM}}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section K.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{作成したプログラム 一覧}
+\modHeadsection{作成したNCプログラム 一覧}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -28,14 +28,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{multicollongtblr}{作成したプログラム一覧：メインプログラムの例}{ccX[l]}
+\begin{multicollongtblr}{作成したNCプログラム一覧：メインプログラムの例}{ccX[l]}
 {\ttfamily O}番号 & \SetCell{c}工程 & 使用prg\\
 \SetCell[r=10]{c}
 \MainExOne & 外側芯出し・幅 & \MYOThickness\MXIface\\
            & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
            & \CenterlineEndFaceDif & \MXcenterline\MYcenterline\\
            & \Dimple & \DLone\\
-           & 端面 & \KTanmenRight\\
+           & 端面削 & \KTanmenRight\\
            & 外削 & \KGaisakuRLeft\\
            & \nameKeyway & \KMizoConerLeft\\
            & \EndFaceOutChamfer & \KSotoMentoriRLeft\\
@@ -46,7 +46,7 @@
 \MainExTwo & 外側芯出し・幅 & \MXOThickness\MYOThickness\MXOface\\
            & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
            & \Dimple & \DLone\\
-           & 端面 & \KTanmenRight\\
+           & 端面削 & \KTanmenRight\\
            & \nameKeyway & \KMizoConerLeft\\
            & \EndFaceOutChamfer & \KSotoMentoriRLeft\\
            & \EndFaceInChamfer & \KUchiMentoriRLeft\\
@@ -70,7 +70,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{multicollongtblr}{作成したプログラム一覧：芯出し・幅測定}{cX[l]l}
+\begin{multicollongtblr}{作成したNCプログラム一覧：芯出し・幅測定}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \MXOThickness & 測定 両側 外側中心・幅$X$ & \OsensorOff\\
 \MYOThickness & 測定 両側 外側中心・幅$Y$ & \OsensorOff\\
@@ -81,13 +81,13 @@
 \end{multicollongtblr}
 
 %\clearpage
-\begin{multicollongtblr}{作成したプログラム一覧：\expandafterindex{\yomiCenterlineEndFaceDif そくてい@\nameCenterlineEndFaceDif 測定}\nameCenterlineEndFaceDif 測定}{cX[l]l}
+\begin{multicollongtblr}{作成したNCプログラム一覧：\expandafterindex{\yomiCenterlineEndFaceDif そくてい@\nameCenterlineEndFaceDif 測定}\nameCenterlineEndFaceDif 測定}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \MYcenterline & 測定 片側 \CenterlineEndFaceDifBD（B側外削面 $Y$方向測定） & \OsensorOff\\
 \MXcenterline & 測定 片側 \CenterlineEndFaceDifAC（C側外削面 $Z$方向測定） & \OsensorOff\\
 \end{multicollongtblr}
 
-\begin{multicollongtblr}{作成したプログラム一覧：\Dimple}{cX[l]l}
+\begin{multicollongtblr}{作成したNCプログラム一覧：\Dimple}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \DLone      & \Dimple ：移動 各列の中心上 & \DLtwoAC\DLtwoBD\\
 \DLtwoAC    & \Dimple ：移動 AC面 列内の各\Dimple 上 & \DMLthreeAC\DKLthreeAC\\
@@ -99,7 +99,7 @@
 \end{multicollongtblr}
 
 \clearpage
-\begin{multicollongtblr}{作成したプログラム一覧：加工（\Dimple 以外）}{cX[l]l}
+\begin{multicollongtblr}{作成したNCプログラム一覧：加工（\Dimple 以外）}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \KTanmenRight      & 加工 端面 コーナーR 右回り1周 & \KOLeftAR\\
 \KGaisakuRLeft     & 加工 外削 コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
@@ -110,7 +110,7 @@
 \KILeftAC   & 内側 左回り1周 中央上始まり & -\\
 \end{multicollongtblr}
 
-\begin{multicollongtblr}{作成したプログラム一覧：その他}{cX[l]l}
+\begin{multicollongtblr}{作成したNCプログラム一覧：その他}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \OpauseCheck  & 移動・加工後確認用：90$^\circ$回転 扉前一時停止 & -\\
 \OsensorOn    & タッチセンサー電源ON & -\\
@@ -232,7 +232,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KTanmenRight %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KTanmenRight\,:加工 端面 コーナーR 右回り1周}
+\modcaptionof{lstlisting}{\KTanmenRight\,:加工 端面削 コーナーR 右回り1周}
 \lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameKTanmenRight.nc}
 
 
