@@ -1,5 +1,5 @@
 %
-O150003 (X centerline measurement)
+O150002 (X centerline measurement)
 
 N001
 IF[#23EQ#0]GOTO800
