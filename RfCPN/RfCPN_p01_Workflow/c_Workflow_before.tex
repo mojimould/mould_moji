@@ -41,9 +41,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{使用ソフトウェアおよびツール\TBW}
-\MMC による加工については、基本的に\MMC 本体の操作画面を用いてNCプログラム等の作成・編集やパラメータの変更等は人手で直接行う。
-測定は主に\index{みつびしマシニングセンタむじんかシステム@三菱マシニングセンタ無人化システム}三菱マシニングセンタ無人化システムを用いる。
+\modHeadsection{使用ソフトウェアおよびツール}
+ソフトウェアに着目すると、\MMC による加工では主に以下のようなツールが使用されている。
+
+\begin{multicollongtblr}{使用ソフトウェアおよびツール（\MMC）}{l X[l]}
+ツール & 主な用途\\
+\MMC 操作盤 & NCプログラムや各種変数の編集\\
+\index{みつびしマシニングセンタむじんかシステム@三菱マシニングセンタ無人化システム}三菱マシニングセンタ無人化システム & \index{タッチセンサープローブ}タッチセンサープローブ測定\\
+\expandafterindex{さくせいしたNCプログラム（\yomiMMC）@作成したNCプログラム（\nameMMC）}作成したNCプログラム & 各々の加工\\
+\index{かんすうでんたく@関数電卓}関数電卓 & 四則演算・根号の計算\\
+\end{multicollongtblr}
 
 
 
@@ -564,7 +571,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFaceInChamfer 加工中}
 \begin{enumerate}[label=\sarrow]
-\item 必要に応じて\expandafterindex{しあげかこう（\yomiEndFaceInChamfer）@仕上げ加工（\nameEndFaceInChamfer）}仕上加工前に\index{いちじていし@一時停止}一時停止を行い、\EndFaceInChamfer の状態の確認を行う
+\item 必要に応じて\expandafterindex{しあげかこう（\yomiEndFaceInChamfer）@仕上げ加工（\nameEndFaceInChamfer）}仕上加工前に\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止を行い、\EndFaceInChamfer の状態の確認を行う
 \item \EndFaceInChamfer の位置を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \item \expandafterindex{かこうかいすう（\yomiEndFaceInChamfer）@加工回数（\nameEndFaceInChamfer）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \end{enumerate}
