@@ -70,7 +70,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{multicollongtblr}{作成したNCプログラム一覧：芯出し・幅測定}{cX[l]l}
+\begin{multicollongtblr}{作成したNCプログラム一覧：芯出し・幅・\CenterlineEndFaceDif 測定}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \MXOThickness & 測定 両側 外側中心・幅$X$ & \OsensorOff\\
 \MYOThickness & 測定 両側 外側中心・幅$Y$ & \OsensorOff\\
@@ -78,11 +78,6 @@
 \MXIWidth     & 測定 両側 内側中心・幅$X$ & \OsensorOff\\
 \MYIWidth     & 測定 両側 内側中心・幅$Y$ & \OsensorOff\\
 \MXIface      & 測定 片側 \OutcutCenter$X$（C側内面方向測定） & \OsensorOff\\
-\end{multicollongtblr}
-
-%\clearpage
-\begin{multicollongtblr}{作成したNCプログラム一覧：\expandafterindex{\yomiCenterlineEndFaceDif そくてい@\nameCenterlineEndFaceDif 測定}\nameCenterlineEndFaceDif 測定}{cX[l]l}
-{\ttfamily O}番号 & 内容 & 使用prg\\
 \Mcenterline & 測定 片側 \CenterlineEndFaceDif（C側外削面 $Z$方向, B側外削面 $Y$方向測定） & \OsensorOff\\
 \end{multicollongtblr}
 
@@ -97,7 +92,7 @@
 \DKLthreeBD & \Dimple ：加工 BD内表面$Y$ & -\\
 \end{multicollongtblr}
 
-\clearpage
+%\clearpage
 \begin{multicollongtblr}{作成したNCプログラム一覧：加工（\Dimple 以外）}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \KTanmenRight      & 加工 端面 コーナーR 右回り1周 & \KOLeftAR\\
@@ -109,6 +104,7 @@
 \KILeftAC   & 内側 左回り1周 中央上始まり & -\\
 \end{multicollongtblr}
 
+\clearpage
 \begin{multicollongtblr}{作成したNCプログラム一覧：その他}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \OpauseCheck  & 移動・加工後確認用：90$^\circ$回転 扉前一時停止 & -\\
