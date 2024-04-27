@@ -213,7 +213,7 @@ BD方向の内径$w_{\mathrm B\lambda}'$についても同様である。
 %% subsection 10.5.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFacecutMilling の基準点}
-\EndFacecutMilling の\index{きじゅん（\yomiEndFacecutMilling）@基準（\nameEndFacecutMilling）}基準は、\index{ないけいちゅうしん（\yomiEndFace）@内径中心（\nameEndFace）}\nameEndFace における内径中心を基準として行うものとする。
+\EndFacecutMilling の\expandafterindex{きじゅん（\yomiEndFacecutMilling）@基準（\nameEndFacecutMilling）}基準は、\expandafterindex{ないけいちゅうしん（\yomiEndFace）@内径中心（\nameEndFace）}\nameEndFace における内径中心を基準として行うものとする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -242,7 +242,7 @@ BD方向の内径$w_{\mathrm B\lambda}'$についても同様である。
 %% subsection 11.5.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFacecutMilling のコーナーR}
-\EndFacecutMilling の際の\index{コーナーR（\yomiEndFacecutMilling）@コーナーR（\nameEndFacecutMilling）}コーナーRは、\index{ないけいコーナーR（\yomiEndFace）@内径コーナーR（\nameEndFace）}\nameEndFace における内径のコーナーRとする。
+\EndFacecutMilling の際の\expandafterindex{コーナーR（\yomiEndFacecutMilling）@コーナーR（\nameEndFacecutMilling）}コーナーRは、\expandafterindex{ないけいコーナーR（\yomiEndFace）@内径コーナーR（\nameEndFace）}\nameEndFace における内径のコーナーRとする。
 
 
 
@@ -257,7 +257,7 @@ BD方向の内径$w_{\mathrm B\lambda}'$についても同様である。
 %% subsection 10.5.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\OutcutMilling の基準点}
-\OutcutMilling の\index{きじゅん（\yomiOutcutMilling）@基準（\nameOutcutMilling）}基準は、\OutcutCenter を基準として行うものとする。
+\OutcutMilling の\expandafterindex{きじゅん（\yomiOutcutMilling）@基準（\nameOutcutMilling）}基準は、\OutcutCenter を基準として行うものとする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -389,26 +389,26 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 10.8.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\EndFaceCChamfer 加工の基準点}
+\subsection{\EndFaceCChamferMilling の基準点}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.8.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceOutCChamferMilling の基準点}
-\EndFaceOutCChamferMilling の\expandafterindex{きじゅん（\yomiEndFaceOutCChamferMilling）@基準（\nameEndFaceOutCChamferMilling）}基準は、\Outcut のある場合は\OutcutCenter を基準とし、外削のない場合は\index{がいけいちゅうしん（たんめん）@外径中心（端面）}端面における外径中心を基準として行うものとする。
+\EndFaceOutCChamferMilling の\expandafterindex{きじゅん（\yomiEndFaceOutCChamferMilling）@基準（\nameEndFaceOutCChamferMilling）}基準は、\Outcut のある場合は\OutcutCenter を基準とし、\Outcut のない場合は\expandafterindex{がいけいちゅうしん（\yomiEndFace）@外径中心（\nameEndFace）}\nameEndFace における外径中心を基準として行うものとする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.8.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceInCChamferMilling の基準点}
-\EndFaceInCChamferMilling の\expandafterindex{きじゅん（\yomiEndFaceInCChamferMilling）@基準（\nameEndFaceInCChamferMilling）}基準は、\index{ないけいちゅうしん（\yomiOutcut）@内径中心（\nameOutcut）}\nameOutcut における内径中心を基準として行うものとする。
+\EndFaceInCChamferMilling の\expandafterindex{きじゅん（\yomiEndFaceInCChamferMilling）@基準（\nameEndFaceInCChamferMilling）}基準は、\expandafterindex{ないけいちゅうしん（\yomiOutcut）@内径中心（\nameOutcut）}\nameOutcut における内径中心を基準として行うものとする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 11.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFaceCChamfer の寸法}
-\EndFaceOutCChamferLength$c_\mathrm o$ならびに\EndFaceInCChamferLength$c_\mathrm i$は、\index{たんめん@端面}端面に垂直な方向の距離とみなす。
+\EndFaceOutCChamferLength$c_\mathrm o$ならびに\EndFaceInCChamferLength$c_\mathrm i$は、\EndFace に垂直な方向の距離とみなす。
 このとき、\index{かたかく（テーパエンドミル）@片角（テーパエンドミル）}片角が$\xi_\mathrm e$の\index{テーパエンドミル}テーパエンドミルに対して、$XY$方向の\EndFaceCChamferLength は、$c_\mathrm o\tan\xi_\mathrm e$および$c_\mathrm i\tan\xi_\mathrm e$で与えられる。
 
 
@@ -502,13 +502,13 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %% subsubsection 10.8.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceOutRChamferMilling の基準点}
-\EndFaceOutRChamferMilling の\expandafterindex{きじゅん（\yomiEndFaceOutRChamferMilling）@基準（\nameEndFaceOutRChamferMilling）}基準は、外削のある場合は\OutcutCenter を基準とし、外削のない場合は\index{がいけいちゅうしん（\yomiEndFace）@外径中心（\nameEndFace）}\nameEndFace における外径中心を基準として行うものとする。
+\EndFaceOutRChamferMilling の\expandafterindex{きじゅん（\yomiEndFaceOutRChamferMilling）@基準（\nameEndFaceOutRChamferMilling）}基準は、外削のある場合は\OutcutCenter を基準とし、外削のない場合は\expandafterindex{がいけいちゅうしん（\yomiEndFace）@外径中心（\nameEndFace）}\nameEndFace における外径中心を基準として行うものとする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.8.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceInRChamferMilling}
-\EndFaceInRChamferMilling の\expandafterindex{きじゅん（\yomiEndFaceInRChamferMilling）@基準（\nameEndFaceInRChamferMilling）}基準は、\index{ないけいちゅうしん（\yomiEndFace）@内径中心（\nameEndFace）}\nameEndFace における内径中心を基準として行うものとする。
+\EndFaceInRChamferMilling の\expandafterindex{きじゅん（\yomiEndFaceInRChamferMilling）@基準（\nameEndFaceInRChamferMilling）}基準は、\expandafterindex{ないけいちゅうしん（\yomiEndFace）@内径中心（\nameEndFace）}\nameEndFace における内径中心を基準として行うものとする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

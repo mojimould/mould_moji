@@ -10,7 +10,7 @@
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-\EndFaceInCChamfer がある場合、\OutcutAsideThickness$\tau_\mathrm T$, $\tau_\mathrm B$は、\EndFace から\index{Cめんとりちょう@C面取長}C面取長$c_\mathrm{Ti}$または$c_\mathrm{Bi}$の位置における\index{すんぽう（\yomiThickness）@寸法（\nameThickness）}寸法が与えられる。
+\EndFaceInCChamfer がある場合、\OutcutAsideThickness$\tau_\mathrm T$, $\tau_\mathrm B$は、\EndFace から\index{Cめんとりちょう@C面取長}C面取長$c_\mathrm{Ti}$または$c_\mathrm{Bi}$の位置における\expandafterindex{すんぽう（\yomiThickness）@寸法（\nameThickness）}寸法が与えられる。
 \EndFaceInRChamferRadius の場合も同様。
 なお、\EndFaceChamfer がない場合（\index{いとめんとり@糸面取}）は、その\EndFaceChamferLength を0（すなわち端面部）とみなす。
 \end{hosoku}
@@ -137,7 +137,7 @@
            {スペーサを用いた場合の$\boldsymbol{\mathfrak T_\mathrm c'}$}
 \index{トップがわのAがわがいさくめん@トップ側のA側外削面}トップ側A側外削面が基準となる場合も考慮しておく。
 この場合も考えかたはボトム基準のそれと同様である。
-\index{テーブルちゅうしん@テーブル中心}テーブル中心Pを\index{げんてんP@原点P}原点とした場合の、\index{\yomiTopOutcutCenter@\nameTopOutcutCenter}トップ側の外削中心$\mathfrak T_\mathrm c'$のおおよその$X$座標は、\pageeqref{eq:spacerTc}より、
+\index{テーブルちゅうしん@テーブル中心}テーブル中心Pを\index{げんてんP@原点P}原点とした場合の、\expandafterindex{\yomiTopOutcutCenter@\nameTopOutcutCenter}トップ側の外削中心$\mathfrak T_\mathrm c'$のおおよその$X$座標は、\pageeqref{eq:spacerTc}より、
 \begin{align*}
   -\Delta+\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2+\frac{\delta_\mathrm s}2
   -\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}}
@@ -171,8 +171,8 @@
 %% subsection 3.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ボトム側の外削中心（トップ基準）}
-ボトム側にも\index{がいさく@外削}外削がある場合、トップ側外削から\CenterlineEndFaceDifAC を指定する形でボトム外削の位置を決める。
-このとき、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pを\index{げんてんP@原点P}原点とした\index{ボトムがわのがいさくちゅうしん@ボトム側の外削中心}ボトム側の外削中心$\mathfrak B_\mathrm c'$の$X$座標は、測定で定めた$\mathfrak T_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Tx}$の符号を反転し、\CenterlineEndFaceDifAC$T_x$の分を加味すればよい。
+ボトム側にも\Outcut がある場合、\TopOutcutCenter から\CenterlineEndFaceDifAC を指定する形で\BottomOutcutCenter の位置を決める。
+このとき、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pを\index{げんてんP@原点P}原点とした\BottomOutcutCenter$\mathfrak B_\mathrm c'$の$X$座標は、測定で定めた$\mathfrak T_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Tx}$の符号を反転し、\CenterlineEndFaceDifAC$T_x$の分を加味すればよい。
 したがって、
 \begin{align}
   \label{eq:TbasedTx}

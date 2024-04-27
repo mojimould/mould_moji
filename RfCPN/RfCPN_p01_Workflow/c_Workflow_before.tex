@@ -108,8 +108,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{端面削部分}
-\index{たんめんさくかこう@端面削加工}端面削加工については、全明細に共通の形で存在する。
+\subsubsection{\EndFacecut 部分}
+\EndFacecutMilling については、全明細に共通の形で存在する。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -210,12 +210,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{端面削における寸法}
+\subsubsection{\EndFacecut における寸法}
 \begin{enumerate}[label=\sarrow]
 \item \expandafterindex{こうさ（\yomiWorkTotalLength）@公差（\nameWorkTotalLength）}\nameWorkTotalLength の公差を確認し、\TopAlocationLength および\BottomAlocationLength の\expandafterindex{こうさ（\yomiAlocationLength）@公差（\nameAlocationLength）}公差の判断を行う
 \item \TopAlocationLength・\BottomAlocationLength を確認し、\index{スペーサ}スペーサによる調整が必要か判断を行う
 \item 使用するスペーサおよび\ReAlocationLength は、専用の計算\index{プログラム(Excel VBA)}プログラム(\index{Excel VBA}Excel VBA)を用いて決定する
-\item \index{がいけい@外径}外径・\index{\yomiThickness（たんめん）@\nameThickness（端面）}端面部の\nameThickness・\index{たんめんそとがわコーナーR@端面外側コーナーR}端面外側コーナーRを確認し、それに応じて\index{こうぐけいほせいち@工具径補正値}工具径補正値を決定する
+\item \index{がいけい@外径}外径・\expandafterindex{\yomiThickness（\yomiEndFace）@\nameThickness（\nameEndFace）}\nameEndFace 部の\nameThickness・\index{たんめんそとがわコーナーR@端面外側コーナーR}端面外側コーナーRを確認し、それに応じて\index{こうぐけいほせいち@工具径補正値}工具径補正値を決定する
 \item \ReAlocationLength に応じて、$Z$方向の\index{クリアランスへいめん（Zほうこう）@クリアランス平面（$Z$方向）}クリアランス平面の位置を決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -230,7 +230,7 @@
 \PMJigLength
 \GPMbox{受板の幅}
 \tcbline*
-\paragraph*{トップ端面削}
+\paragraph*{\TopEndFacecut}
 \PMTopReAlocationLength
 \PMACOD
 \PMBDOD
@@ -239,7 +239,7 @@
 \PMTopEndBDID
 \GPMbox{トップ側$Z$方向クリアランス平面距離}
 \tcbline*
-\paragraph*{ボトム端面削}
+\paragraph*{\BottomEndFacecut}
 \PMBottomReAlocationLength
 \PMACOD
 \PMBDOD
@@ -248,8 +248,8 @@
 \PMBottomEndBDID
 \GPMbox{ボトム側$Z$方向クリアランス平面距離}
 \tcbline*
-\paragraph*{トップ端面削・ボトム端面削~共通}
-\GPMbox{端面削加工用工具径補正量}
+\paragraph*{\TopEndFacecut・\BottomEndFacecut~共通}
+\GPMbox{\EndFacecutMilling 用工具径補正量}
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -263,8 +263,8 @@
 \begin{enumerate}[label=\sarrow]
 \item \OutcutLength と\Keyway の位置を確認し、実際に加工する\OutcutLength の判断を行う
 \item トップ側・ボトム側の両方に\Outcut のある場合は、どちら側が\expandafterindex{きじゅん（\yomiOutcutCenter）@基準（\nameOutcutCenter）}基準であるのかを確認する
-\item \index{ないけい（たんめん）@内径（端面）}端面の内径・\OutcutAsideThickness・内面の\PlatingThk から、\OutcutCenter$X$位置用のパラメータを手動による計算で決定する
-\item \CurvedOutcut の場合は、\index{かたむきかく（\yomiCurvedOutcut）@傾き角（\nameCurvedOutcut）}傾き角を手動による計算で決定する
+\item \expandafterindex{ないけい（\yomiEndFace）@内径（\nameEndFace）}\nameEndFace の内径・\OutcutAsideThickness・内面の\PlatingThk から、\OutcutCenter$X$位置用のパラメータを手動による計算で決定する
+\item \CurvedOutcut の場合は、\expandafterindex{かたむきかく（\yomiCurvedOutcut）@傾き角（\nameCurvedOutcut）}傾き角を手動による計算で決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -501,7 +501,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ワーク設置後の調整}
 \begin{enumerate}[label=\sarrow]
-\item トップ側およびボトム側の\index{ぜんけずりしろ（たんめんさく）@全削り代（端面削）}全削り代に応じて、\index{かこうかいすう（たんめんさくかこう）@加工回数（端面削加工）}端面削加工の回数を設定する
+\item トップ側およびボトム側の\expandafterindex{ぜんけずりしろ（\yomiEndFacecut）@全削り代（\nameEndFacecut）}全削り代に応じて、\index{かこうかいすう（\yomiEndFacecutMilling）@加工回数（\nameEndFacecutMilling）}\nameEndFacecutMilling の回数を設定する
 \item トップ端およびボトム端の\index{がいけいちゅうしん@外径中心}外径中心の位置を\index{メジャー}メジャーで測定する
 \item 測定した中心位置を用いて、\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の設定を行う
 \item \expandafterindex{テーブルのかいてんちゅうしん（\yomiMMC）@テーブルの回転中心（\nameMMC）}テーブルの回転中心とのずれを考慮して、端面の$Z$方向の長さを調整する
@@ -534,7 +534,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{端面削加工中}
 \begin{enumerate}[label=\sarrow]
-\item 必要に応じて、\index{1かいあたりのけずりしろ（たんめんさく）@1回あたりの削り代（端面削）}1回あたりの削り代を調整する
+\item 必要に応じて、\expandafterindex{1かいあたりのけずりしろ（\yomiEndFacecut）@1回あたりの削り代（\nameEndFacecut）}1回あたりの削り代を調整する
 \end{enumerate}
 
 
@@ -630,7 +630,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{手動による仕上げ加工}
 \begin{enumerate}[label=\sarrow]
-\item 所定の寸法の\index{たんめんめんとり@端面面取}端面面取を、\index{てもちけんまき@手持ち研磨機}手持ち研磨機を用いて手動で行う
+\item 所定の寸法の\EndFaceChamfer を、\index{てもちけんまき@手持ち研磨機}手持ち研磨機を用いて手動で行う
 \item \index{ばり}ばり等を除去を、\index{やすり}やすりを用いて全体的に手動で行う
 \item \index{Cがわにくあつ（ボトムたんめん）@C側肉厚（ボトム端面）}ボトム端面のC側肉厚に応じて\index{こくいん@刻印}刻印の大きさを決定する
 \item 明細のによる指定に応じて、刻印の位置を調整する
