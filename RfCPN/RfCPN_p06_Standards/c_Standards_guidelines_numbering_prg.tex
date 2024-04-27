@@ -127,15 +127,15 @@
   \begin{enumerate}[label=\arabic*., ref=\arabic*, start=1]
 %  \item\label{item:5Kaux} 加工の種類に依存しない加工のNCプログラム(\ttfamily{40\textbackslash d{4}})
   \item%\label{item:5KF}
-    主に、\index{たんめんさくかこう@端面削加工}端面削加工の位置決めを行うNCプログラム({\ttfamily 41\textbackslash d{4}})
-  \item\label{item:5KO} 主に、\index{がいさくかこう@外削加工}外削加工の位置決めを行うNCプログラム({\ttfamily 42\textbackslash d{4}})
+    主に、\EndFacecutMilling の位置決めを行うNCプログラム({\ttfamily 41\textbackslash d{4}})
+  \item\label{item:5KO} 主に、\OutcutMilling の位置決めを行うNCプログラム({\ttfamily 42\textbackslash d{4}})
   \item%\label{item:5KK}
-    主に、\expandafterindex{\yomiKeyway かこう@\nameKeyway 加工}\nameKeyway 加工の位置決めを行うNCプログラム({\ttfamily 43\textbackslash d{4}})
+    主に、\KeywayMilling の位置決めを行うNCプログラム({\ttfamily 43\textbackslash d{4}})
   \item%\label{item:5KCO}
-    主に、\expandafterindex{\yomiEndFaceOutChamfer かこう@\nameEndFaceOutChamfer 加工}\nameEndFaceOutChamfer 加工の位置決めを行うNCプログラム({\ttfamily 44\textbackslash d{4}})
+    主に、\EndFaceOutCChamferMilling の位置決めを行うNCプログラム({\ttfamily 44\textbackslash d{4}})
   \item%\label{item:5KCI}
-    主に、\expandafterindex{\yomiEndFaceInChamfer かこう@\nameEndFaceInChamfer 加工}\EndFaceInChamfer 加工の位置決めを行うNCプログラム({\ttfamily 45\textbackslash d{4}})
-%  \item\label{item:5KZ} \EndFaceBoring の加工のNCプログラム(\ttfamily{46\textbackslash d{4}})
+    主に、\EndFaceInCChamferMilling の位置決めを行うNCプログラム({\ttfamily 45\textbackslash d{4}})
+%  \item\label{item:5KZ} \EndFaceBoringMilling のNCプログラム(\ttfamily{46\textbackslash d{4}})
   \setcounter{enumii}{8}
   \item 主に、位置決め後、実際に加工を行うNCプログラム({\ttfamily 49\textbackslash d{4}})
   \end{enumerate}
@@ -151,11 +151,11 @@
 \item 6桁目が\ref{item:6Kmain}\hx 以外の場合、4桁目は0とする({\ttfamily{[126][1-5]0\textbackslash d{3}}})
 \item 6桁目が\ref{item:6Kmain}（\Dimple 以外の加工）の場合、4桁目を以下にように分類する
   \begin{enumerate}[label=\alph{enumi}\,-\arabic*), leftmargin=\leftmargini]
-  \item 5桁目が\ref{item:5KO}（外削加工）以外の場合、4桁目は0とする({\ttfamily{4[13-59]0\textbackslash d{3}}})
-  \item 5桁目が\ref{item:5KO}（外削加工）の場合、4桁目を以下のように分類する
+  \item 5桁目が\ref{item:5KO}（\OutcutMilling）以外の場合、4桁目は0とする({\ttfamily{4[13-59]0\textbackslash d{3}}})
+  \item 5桁目が\ref{item:5KO}（\OutcutMilling）の場合、4桁目を以下のように分類する
     \begin{enumerate}[label=\arabic*., ref=\arabic*, start=0, leftmargin=*]
-    \item 端面に垂直方向の外削加工のNCプログラム({\ttfamily{420\textbackslash d{3}}})
-    \item 湾曲に沿った方向の外削加工のNCプログラム({\ttfamily{421\textbackslash d{3}}})
+    \item 端面に垂直方向の\OutcutMilling のNCプログラム({\ttfamily{420\textbackslash d{3}}})
+    \item \CurvedOutcutMilling のNCプログラム({\ttfamily{421\textbackslash d{3}}})
     \end{enumerate}
   \end{enumerate}
 \end{enumerate}

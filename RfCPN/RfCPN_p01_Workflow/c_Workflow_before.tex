@@ -22,33 +22,42 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\MMC における工程の種類}
+\modHeadsection{\MMC における工程および使用ツール}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 01.01.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{工程の種類（\MMC）}
 \MMC について、直接的なワークに対する測定・加工に関するものに着目すると、主に以下のような工程が行われる。\\
 
 \begin{multicollongtblr}{ワークに直接関わる主な工程の種類（\MMC）}{X[l] X[l]}
 測定 & 加工\\
-端面外側AC方向 芯出し（外側 両側$X$測定） & \index{たんめんさくかこう@端面削加工}端面削加工\\
-端面外側BD方向 芯出し（外側 両側$Y$測定） & \index{がいさくかこう@外削加工}外削加工\\
-外削AC方向 芯出し（内側 片側$X$測定） & \expandafterindex{\yomiKeyway かこう@\nameKeyway 加工}\Keyway 加工\\
-端面内側AC方向 芯出し（内側 両側$X$測定） & \expandafterindex{\yomiEndFaceOutChamfer かこう@\nameEndFaceOutChamfer 加工}\nameEndFaceOutChamfer 加工\\
-端面内側BD方向 芯出し（内側 両側$Y$測定） & \index{\yomiEndFaceInChamfer かこう@\nameEndFaceInChamfer 加工}\nameEndFaceInChamfer 加工\\
-\CenterlineEndFaceDifAC 測定（外側 片側$Z$測定） & \expandafterindex{\yomiEndFaceBoring かこう@\nameEndFaceBoring 加工}\nameEndFaceBoring 加工\\
-\CenterlineEndFaceDifBD 測定（外側 片側$Y$測定） & \index{インローかこう@インロー加工}インロー加工\\
+端面外側AC方向 芯出し（外側 両側$X$測定） & \EndFacecutMilling\\
+端面外側BD方向 芯出し（外側 両側$Y$測定） & \OutcutMilling\\
+\OutcutWidth AC方向 芯出し（内側 片側$X$測定） & \KeywayMilling\\
+端面内側AC方向 芯出し（内側 両側$X$測定） & \EndFaceOutCChamferMilling\\
+端面内側BD方向 芯出し（内側 両側$Y$測定） & \EndFaceInCChamferMilling\\
+\CenterlineEndFaceDifAC 測定（外側 片側$Z$測定） & \EndFaceBoringMilling\\
+\CenterlineEndFaceDifBD 測定（外側 片側$Y$測定） & \InlayMilling\\
 \end{multicollongtblr}
 
 
 \clearpage
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 01.01.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{使用ソフトウェアおよびツール}
-ソフトウェアに着目すると、\MMC による加工では主に以下のようなツールが使用されている。
+\subsection{使用ツール（\MMC）}
+ソフトウェアに着目すると、\MMC による加工では主に以下のようなツールが使用されている。\\
 
 \begin{multicollongtblr}{使用ソフトウェアおよびツール（\MMC）}{l X[l]}
 ツール & 主な用途\\
 \MMC 操作盤 & NCプログラムや各種変数の編集\\
 \index{みつびしマシニングセンタむじんかシステム@三菱マシニングセンタ無人化システム}三菱マシニングセンタ無人化システム & \index{タッチセンサープローブ}タッチセンサープローブ測定\\
 \expandafterindex{さくせいしたNCプログラム（\yomiMMC）@作成したNCプログラム（\nameMMC）}作成したNCプログラム & 各々の加工\\
+振分調整用スペーサ計算プログラム & 振分調整用スペーサの選定\\
 \index{かんすうでんたく@関数電卓}関数電卓 & 四則演算・根号の計算\\
 \end{multicollongtblr}
 
@@ -105,12 +114,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{外削部分}
-\index{がいさくかこう@外削加工}外削加工については、明細により\index{がいさくのうむ@外削の有無}外削の有無または\index{がいさくのけいじょう@外削の種類}種類の違いが存在する。
+\subsubsection{\Outcut 部分}
+\OutcutMilling については、明細により\OutcutExists または\OutcutType の違いが存在する。
 \begin{enumerate}[label=\sarrow]
-\item トップ側またはボトム側の外削の有無を確認する
-\item 外削の種類を確認し、使用する\index{こうぐ（がいさく）@工具（外削）}工具を決定する
-\item \index{わんきょくにそったがいさく@湾曲に沿った外削}外削が湾曲に沿ったものかどうかも確認する
+\item \TopOutcutExists または\BottomOutcutExists を確認する
+\item \TopOutcutType および\BottomOutcutType を確認し、使用する\expandafterindex{こうぐ（\yomiOutcut）@工具（\nameOutcut）}工具を決定する
+\item \nameOutcut が\CurvedOutcut かどうかも確認する
 \end{enumerate}
 %\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -131,7 +140,7 @@
 %% subsubsection 01.1.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\Keyway 部分}
-\expandafterindex{\yomiKeyway かこう@\nameKeyway 加工}\Keyway 加工については、全明細のトップ側に存在し、明細により種類の違いが存在する。
+\KeywayMilling については、全明細のトップ側に存在し、明細により種類の違いが存在する。
 \begin{enumerate}[label=\sarrow]
 \item \nameKeywayType を確認し、使用する\expandafterindex{サブプログラム（\yomiKeyway）@サブプログラム（\nameKeyway）}サブプログラムの判断を行う
 \item \nameKeywayWidth を確認し、使用する\expandafterindex{こうぐ（\yomiKeyway）@工具（\nameKeyway）}工具の判断を行う
@@ -153,21 +162,21 @@
 %% subsubsection 01.1.2.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{端面面取部分}
-\index{たんめんめんとりかこう@端面面取加工}端面面取加工については、全明細に存在し、明細により種類の違いが存在する。
+\EndFaceChamferMilling については、全明細に存在し、明細により種類の違いが存在する。
 \begin{enumerate}[label=\sarrow]
 \item 種類が\index{Cめんとり@C面取}C面取であれば、その\index{Cめんとりちょう@C面取長}C面取長により\index{マシニングセンタ}マシニングセンタによる加工を行うか判断を行う
-\item \EndFaceChamferAngle を確認し、使用する\index{こうぐ（\yomiEndFaceChamfer）@工具（\nameEndFaceChamfer）}工具を決定する
+\item \EndFaceCChamferAngle を確認し、使用する\expandafterindex{こうぐ（\yomiEndFaceCChamfer）@工具（\nameEndFaceCChamfer）}工具を決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \PMChamferType%
-\PMTopEndFaceOutChamferLength
-\PMTopEndFaceOutChamferAngle%
+\PMTopEndFaceOutCChamferLength
+\PMTopEndFaceOutCChamferAngle%
 \PMTopOutcutExists\\
-\PMBottomEndFaceOutChamferLength%
-\PMBottomEndFaceOutChamferAngle%
+\PMBottomEndFaceOutCChamferLength%
+\PMBottomEndFaceOutCChamferAngle%
 \PMBottomOutcutExists%
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -206,7 +215,7 @@
 \item \expandafterindex{こうさ（\yomiWorkTotalLength）@公差（\nameWorkTotalLength）}\nameWorkTotalLength の公差を確認し、\TopAlocationLength および\BottomAlocationLength の\expandafterindex{こうさ（\yomiAlocationLength）@公差（\nameAlocationLength）}公差の判断を行う
 \item \TopAlocationLength・\BottomAlocationLength を確認し、\index{スペーサ}スペーサによる調整が必要か判断を行う
 \item 使用するスペーサおよび\ReAlocationLength は、専用の計算\index{プログラム(Excel VBA)}プログラム(\index{Excel VBA}Excel VBA)を用いて決定する
-\item \index{がいけい@外径}外径・\index{にくあつ（たんめん）@肉厚（端面）}端面部の肉厚・\index{たんめんそとがわコーナーR@端面外側コーナーR}端面外側コーナーRの大きさを確認し、それに応じて\index{こうぐけいほせいち@工具径補正値}工具径補正値を決定する
+\item \index{がいけい@外径}外径・\index{\yomiThickness（たんめん）@\nameThickness（端面）}端面部の\nameThickness・\index{たんめんそとがわコーナーR@端面外側コーナーR}端面外側コーナーRを確認し、それに応じて\index{こうぐけいほせいち@工具径補正値}工具径補正値を決定する
 \item \ReAlocationLength に応じて、$Z$方向の\index{クリアランスへいめん（Zほうこう）@クリアランス平面（$Z$方向）}クリアランス平面の位置を決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -250,18 +259,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{外削における寸法}
+\subsubsection{\Outcut における寸法}
 \begin{enumerate}[label=\sarrow]
-\item \OutcutLength と\Keyway の位置を確認し、実際に加工する外削の長さの判断を行う
-\item トップ側・ボトム側の両方に外削のある場合は、どちら側が\index{きじゅん（がいさくちゅうしん）@基準（外削中心）}基準であるのかを確認する
-\item \index{ないけい（たんめん）@内径（端面）}端面の内径・\index{Aがわにくあつ（がいさく）@A側肉厚（外削）}外削部のA側肉厚・内面の\PlatingThk から、\index{がいさくちゅうしん@外削中心}外削中心$X$位置用のパラメータを手動による計算で決定する
-\item \index{わんきょくにそったがいさく@湾曲に沿った外削}湾曲に沿った外削の場合は、\index{かたむきかく（がいさく）@傾き角（外削）}傾き角を手動による計算で決定する
+\item \OutcutLength と\Keyway の位置を確認し、実際に加工する\OutcutLength の判断を行う
+\item トップ側・ボトム側の両方に\Outcut のある場合は、どちら側が\expandafterindex{きじゅん（\yomiOutcutCenter）@基準（\nameOutcutCenter）}基準であるのかを確認する
+\item \index{ないけい（たんめん）@内径（端面）}端面の内径・\OutcutAsideThickness・内面の\PlatingThk から、\OutcutCenter$X$位置用のパラメータを手動による計算で決定する
+\item \CurvedOutcut の場合は、\index{かたむきかく（\yomiCurvedOutcut）@傾き角（\nameCurvedOutcut）}傾き角を手動による計算で決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\paragraph*{ボトム側の外削のみの場合}
+\paragraph*{ボトム側の\Outcut のみの場合}
 \PMBottomOutcutAC
 \PMBottomOutcutBD
 \PMBottomOutcutConerR
@@ -270,7 +279,7 @@
 \PMBottomOutcutAsideThickness
 \PMPlatingThk
 \tcbline*
-\paragraph*{トップ側の外削のみの場合}
+\paragraph*{トップ側の\Outcut のみの場合}
 \PMTopOutcutAC
 \PMTopOutcutBD
 \PMTopOutcutCornerR\\
@@ -281,7 +290,7 @@
 \PMTopOutcutAsideThickness
 \PMPlatingThk
 \tcbline*
-\paragraph*{両方に外削があり、ボトム側が基準の場合}
+\paragraph*{両方に\Outcut があり、ボトム側が基準の場合}
 \PMBottomOutcutAC
 \PMBottomOutcutBD
 \PMBottomOutcutConerR
@@ -297,7 +306,7 @@
 \PMKeywayWidth
 \PMCenterlineEndFaceDifAC
 \tcbline*
-\paragraph*{両方に外削があり、トップ側が基準の場合}
+\paragraph*{両方に\Outcut があり、トップ側が基準の場合}
 \PMTopOutcutAC
 \PMTopOutcutBD
 \PMTopOutcutCornerR\\
@@ -313,7 +322,7 @@
 \PMBottomOutcutLength\\
 \PMCenterlineEndFaceDifAC
 \tcbline*
-\paragraph*{湾曲に沿った外削の場合}
+\paragraph*{\CurvedOutcut の場合}
 （以上に加えて）\PMCenterCurvatureRadius
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -342,7 +351,7 @@
 \PMCenterCurvatureRadius\\
 \PMKeywayCornerR または\PMKeywayCornerC
 \tcbline*
-\paragraph*{外削中心が基準の場合}
+\paragraph*{\OutcutCenter が基準の場合}
 \PMKeywayACOD
 \PMKeywayBDOD
 \PMKeywayPos
@@ -362,49 +371,49 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{端面面取における寸法}
 \begin{enumerate}[label=\sarrow]
-\item \EndFaceOutChamfer の場合は、\index{がいさくのうむ@外削の有無}外削の有無を確認し、加工の径を決定する
-\item \index{Cめんとり（がいさくようこうぐせんたん）@C面取（外削用工具先端）}外削用工具先端部がC面取の場合は、\index{がいさくのけいじょう@外削の形状}外削の形状を確認し、\index{こうぐ（がいさく）@工具（外削）}工具を決定する
+\item \EndFaceOutCChamfer の場合は、\OutcutExists を確認し、加工の径を決定する
+\item \expandafterindex{Cめんとり（\yomiOutcut ようこうぐせんたん）@C面取（\nameOutcut 用工具先端）}\nameOutcut 用工具先端部がC面取の場合は、\expandafterindex{\yomiOutcut のけいじょう@\nameOutcut の形状}\nameOutcut の形状を確認し、\expandafterindex{こうぐ（\yomiOutcut）@工具（\nameOutcut）}工具を決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\paragraph*{トップ\EndFaceOutChamfer：外削のない場合}
+\paragraph*{トップ\EndFaceOutCChamfer：\Outcut のない場合}
 \PMACOD
 \PMBDOD
-\PMTopEndFaceOutChamferLength
+\PMTopEndFaceOutCChamferLength
 \PMODCornerR
 \tcbline*
-\paragraph*{トップ\EndFaceOutChamfer：外削のある場合}
+\paragraph*{トップ\EndFaceOutCChamfer：\Outcut のある場合}
 \PMTopOutcutAC
 \PMTopOutcutBD
 \PMTopOutcutCornerR
-\PMTopEndFaceOutChamferLength
+\PMTopEndFaceOutCChamferLength
 \tcbline*
-\paragraph*{ボトム\EndFaceOutChamfer：外削のない場合}
+\paragraph*{ボトム\EndFaceOutCChamfer：\Outcut のない場合}
 \PMACOD
 \PMBDOD
-\PMBottomEndFaceOutChamferLength
+\PMBottomEndFaceOutCChamferLength
 \PMODCornerR
 \tcbline*
-\paragraph*{ボトム\EndFaceOutChamfer：外削のある場合}
+\paragraph*{ボトム\EndFaceOutCChamfer：\Outcut のある場合}
 \PMBottomOutcutAC
 \PMBottomOutcutBD
 \PMBottomOutcutConerR
-\PMBottomEndFaceOutChamferLength
+\PMBottomEndFaceOutCChamferLength
 \tcbline*
-\paragraph*{トップ\EndFaceInChamfer}
+\paragraph*{トップ\EndFaceInCChamfer}
 \PMTopEndACID
 \PMTopEndBDID
 \PMTopEndIDCornerR\\
-\PMTopEndFaceInChamferLength
+\PMTopEndFaceInCChamferLength
 \PMPlatingThk
 \tcbline*
-\paragraph*{ボトム\EndFaceInChamfer}
+\paragraph*{ボトム\EndFaceInCChamfer}
 \PMBottomEndACID
 \PMBottomEndBDID
 \PMBottomEndIDCornerR\\
-\PMBottomEndFaceInChamferLength
+\PMBottomEndFaceInCChamferLength
 \PMPlatingThk
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -496,9 +505,9 @@
 \item トップ端およびボトム端の\index{がいけいちゅうしん@外径中心}外径中心の位置を\index{メジャー}メジャーで測定する
 \item 測定した中心位置を用いて、\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の設定を行う
 \item \expandafterindex{テーブルのかいてんちゅうしん（\yomiMMC）@テーブルの回転中心（\nameMMC）}テーブルの回転中心とのずれを考慮して、端面の$Z$方向の長さを調整する
-\item \CenterlineEndFaceDif がある場合\expandafterindex{テーブルのかいてんちゅうしん（\yomiMMC）@テーブルの回転中心（\nameMMC）}テーブルの回転中心とのずれを考慮して、\index{がいさくちゅうしん@外削中心}の$X$方向の長さを調整する
+\item \CenterlineEndFaceDif がある場合\expandafterindex{テーブルのかいてんちゅうしん（\yomiMMC）@テーブルの回転中心（\nameMMC）}テーブルの回転中心とのずれを考慮して、\OutcutCenter の$X$方向の位置を調整する
 \end{enumerate}
-これらの設定は、\MMC の操作画面から\index{メインプログラム}メインプログラムを直接手動で編集する形で行われる。
+これらの設定は、\MMC の操作盤から\index{メインプログラム}メインプログラムを直接手動で編集する形で行われる。
 
 
 
@@ -517,7 +526,7 @@
 \item 各々の\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の測定後、必要に応じてワーク座標系原点の設定変更を行う
 \item 各々の測定箇所の$Z$位置の変更を、必要に応じて行う
 \end{enumerate}
-これらの設定は、\index{マシニングセンタ}マシニングセンタの操作画面から\index{メインプログラム}メインプログラムを直接手動で編集する形で行われる。
+これらの設定は、\index{マシニングセンタ}マシニングセンタの操作盤から\index{メインプログラム}メインプログラムを直接手動で編集する形で行われる。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -532,12 +541,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{外削加工中}
+\subsection{\Outcut 加工中}
 \begin{enumerate}[label=\sarrow]
-\item 必要に応じて\index{しあげかこう（がいさく）@仕上げ加工（外削）}仕上加工前に\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止を行い、\index{Aがわにくあつ@A側肉厚}A側肉厚および\index{がいさくけい@外削径}外削径の測定を行う
-\item A側肉厚を調整する場合は、該当する\index{しんだしそくてい（がいさくちゅうしん@芯出し測定（外削中心）}芯出し測定部分のパラメータをメインプログラムから直接手動で編集する
-\item \index{がいさくけい@外削径}外削径を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面から\index{メインプログラム}メインプログラムを直接手動で編集する
-\item \index{かこうかいすう（がいさく）@加工回数（外削）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
+\item 必要に応じて\expandafterindex{しあげかこう（\yomiOutcut）@仕上げ加工（\nameOutcut）}仕上加工前に\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止を行い、\OutcutAsideThickness および\OutcutWidth の測定を行う
+\item \OutcutAsideThickness を調整する場合は、該当する\expandafterindex{しんだしそくてい（\yomiOutcutCenter）@芯出し測定（\nameOutcutCenter）}芯出し測定部分のパラメータをメインプログラムから直接手動で編集する
+\item \OutcutWidth を調整する場合は、該当する加工部分のパラメータを\MMC の操作盤から\index{メインプログラム}メインプログラムを直接手動で編集する
+\item \expandafterindex{かこうかいすう（\yomiOutcut）@加工回数（\nameOutcut）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作盤からメインプログラムを直接手動で編集する
 \end{enumerate}
 
 
@@ -557,11 +566,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\EndFaceOutChamfer 加工中}
+\subsection{\EndFaceOutCChamfer 加工中}
 \begin{enumerate}[label=\sarrow]
-\item 必要に応じて\expandafterindex{しあげかこう（\yomiEndFaceOutChamfer）@仕上げ加工（\nameEndFaceOutChamfer）}仕上加工前に\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止を行い、\EndFaceOutChamfer の測定・位置の確認を行う
-\item \EndFaceOutChamfer の位置を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
-\item \expandafterindex{かこうかいすう（\yomiEndFaceOutChamfer）@加工回数（\nameEndFaceOutChamfer）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
+\item 必要に応じて\expandafterindex{しあげかこう（\yomiEndFaceOutCChamfer）@仕上げ加工（\nameEndFaceOutCChamfer）}仕上加工前に\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止を行い、\EndFaceOutCChamfer の測定・位置の確認を行う
+\item \EndFaceOutCChamfer の位置を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
+\item \expandafterindex{かこうかいすう（\yomiEndFaceOutCChamfer）@加工回数（\nameEndFaceOutCChamfer）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \end{enumerate}
 
 
@@ -569,11 +578,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\EndFaceInChamfer 加工中}
+\subsection{\EndFaceInCChamfer 加工中}
 \begin{enumerate}[label=\sarrow]
-\item 必要に応じて\expandafterindex{しあげかこう（\yomiEndFaceInChamfer）@仕上げ加工（\nameEndFaceInChamfer）}仕上加工前に\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止を行い、\EndFaceInChamfer の状態の確認を行う
-\item \EndFaceInChamfer の位置を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
-\item \expandafterindex{かこうかいすう（\yomiEndFaceInChamfer）@加工回数（\nameEndFaceInChamfer）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
+\item 必要に応じて\expandafterindex{しあげかこう（\yomiEndFaceInCChamfer）@仕上げ加工（\nameEndFaceInCChamfer）}仕上加工前に\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止を行い、\EndFaceInCChamfer の状態の確認を行う
+\item \EndFaceInCChamfer の位置を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
+\item \expandafterindex{かこうかいすう（\yomiEndFaceInCChamfer）@加工回数（\nameEndFaceInCChamfer）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \end{enumerate}
 
 
@@ -598,8 +607,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ワークの取外し}
 \begin{enumerate}[label=\sarrow]
-\item 必要に応じて、\index{ワークこていようボルト@ワーク固定用ボルト}ワーク固定用ボルトを緩める前に、各種\index{そくていき@測定器}測定器で\index{すんぽう@寸法}寸法を確認する
-\item クーラント用の液およびエアーブローを用いて軽く洗浄を行い、固定用ボルトを緩めて\index{ワーク}ワークを取り出し、軽く拭取りを行う
+\item 必要に応じて、\index{ワークこていようボルト@ワーク固定用ボルト}ワーク固定用ボルトを緩める前に、各種\index{そくていき@測定器}測定器で各々の\index{すんぽう@寸法}寸法を確認する
+\item \index{クーラント}クーラントおよびエアーブローを用いて軽く洗浄を行い、ワーク固定用ボルトを緩めて\index{ワーク}ワークを取り出し、軽く乾拭きを行う
 \item \index{リフター}リフターまたは\index{クレーン}クレーンを用いて、\index{めんとりようさぎょうだい@面取用作業台}面取用作業台にワークを移動する
 \end{enumerate}
 
@@ -607,7 +616,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{外観の確認・寸法の検査}
+\subsection{外観の確認・寸法の測定}
 \begin{enumerate}[label=\sarrow]
 \item \index{がいかん（ワーク）@外観（ワーク）}外観に異常がないか確認を行う
 \item \index{そくていき@測定器}測定器を用いて\index{すんぽう@寸法}寸法の確認を行う

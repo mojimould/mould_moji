@@ -1,30 +1,30 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter{外削の幾何}
-ここでは主に、\index{がいさく@外削}\textbf{外削}に関する測定・加工に必要な\expandafterindex{きかてきせいしつ（がいさく）@幾何的性質（外削）}幾何的性質を考える。
+\modHeadchapter{\Outcut の幾何}
+ここでは主に、\textbf{\Outcut}に関する測定・加工に必要な\expandafterindex{きかてきせいしつ（\yomiOutcut）@幾何的性質（\nameOutcut）}幾何的性質を考える。
 
-\index{ワーク}ワークに\index{がいさく@外削}\textbf{外削}があるときは、たいていの場合、A面側の肉厚（\index{Aがわにくあつ@A側肉厚}\textbf{A側肉厚}）を\index{きじゅん（がいさくちゅうしん）@基準（外削中心）}基準として考えることが多い。
-\index{ないけい（たんめん）@内径（端面）}トップ・ボトム端における\textbf{内径}をそれぞれ$w_\mathrm T$, $w_\mathrm B$, \index{がいさくけい@外削径}\textbf{外削径}をそれぞれ$\mathfrak W_\mathrm T$, $\mathfrak W_\mathrm B$, \index{Aがわにくあつ@A側肉厚}A側肉厚をそれぞれ$\tau_\mathrm T$, $\tau_\mathrm B$, \EndFaceInChamfer の垂直方向の大きさをそれぞれ$c_\mathrm{Ti}$, $c_\mathrm{Bi}$とする。
+\index{ワーク}ワークに\textbf{\Outcut}があるときは、たいていの場合、\textbf{\OutcutAsideThickness}）を\expandafterindex{きじゅん（\yomiOutcutCenter）@基準（\nameOutcutCenter）}基準として考えることが多い。
+\expandafterindex{ないけい（\yomiEndFace）@内径（\nameEndFace）}トップ・ボトム端における\textbf{内径}をそれぞれ$w_\mathrm T$, $w_\mathrm B$, \textbf{\OutcutWidth}をそれぞれ$\mathfrak W_\mathrm T$, $\mathfrak W_\mathrm B$, \OutcutAsideThickness をそれぞれ$\tau_\mathrm T$, $\tau_\mathrm B$, \EndFaceInCChamfer の垂直方向の大きさをそれぞれ$c_\mathrm{Ti}$, $c_\mathrm{Bi}$とする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-\EndFaceInChamfer がある場合、\index{Aがわにくあつ@A側肉厚}A側肉厚$\tau_\mathrm T$, $\tau_\mathrm B$は、\index{たんめん@端面}端面から\index{Cめんとりちょう@C面取長}C面取長$c_\mathrm{Ti}$または$c_\mathrm{Bi}$の位置における\index{すんぽう（肉厚）@寸法（肉厚）}寸法が与えられる。
-\EndFaceInRoundChamferRadius の場合も同様。
-なお、\index{めんとり@面取}面取がない場合（\index{いとめんとり@糸面取}）は、その\index{めんとりちょう@面取長}面取長を0（すなわち端面部）とみなす。
+\EndFaceInCChamfer がある場合、\OutcutAsideThickness$\tau_\mathrm T$, $\tau_\mathrm B$は、\EndFace から\index{Cめんとりちょう@C面取長}C面取長$c_\mathrm{Ti}$または$c_\mathrm{Bi}$の位置における\index{すんぽう（\yomiThickness）@寸法（\nameThickness）}寸法が与えられる。
+\EndFaceInRChamferRadius の場合も同様。
+なお、\EndFaceChamfer がない場合（\index{いとめんとり@糸面取}）は、その\EndFaceChamferLength を0（すなわち端面部）とみなす。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-また、\index{ないめん（ワーク）@内面（ワーク）}内面（ワーク）の\textbf{\PlatingThk}を$\mu$とし、\CenterlineEndFaceDif（\index{トップがわのがいさくちゅうしん@トップ側の外削中心}トップ外削中心$\mathfrak T_\mathrm c$と\index{ボトムがわのがいさくちゅうしん@ボトム側の外削中心}ボトム外削中心$\mathfrak B_\mathrm c$の差）の$X$, $Y$成分をそれぞれ$T_x$, $T_y$とする。
-ただし、$T_x \geq 0$として、トップ外削中心$\mathfrak T_\mathrm c$はボトム外削中心$\mathfrak B_\mathrm c$よりA面方向にあるものとする。
+また、\index{ないめん（ワーク）@内面（ワーク）}内面（ワーク）の\textbf{\PlatingThk}を$\mu$とし、\CenterlineEndFaceDif（\TopOutcutCenter$\mathfrak T_\mathrm c$と\BottomOutcutCenter$\mathfrak B_\mathrm c$の差）の$X$, $Y$成分をそれぞれ$T_x$, $T_y$とする。
+ただし、$T_x \geq 0$として、\TopOutcutCenter$\mathfrak T_\mathrm c$は\BottomOutcutCenter$\mathfrak B_\mathrm c$よりA面方向にあるものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
 内径$w_\mathrm T$, $w_\mathrm B$は、\index{わんきょくちゅうしん@湾曲中心}湾曲中心O（またはO$'$）に向かった方向にあることに注意。
-\index{ないけいちゅうしん（たんめん）@内径中心（端面）}内径の中心がそれぞれの端に位置している。
+\expandafterindex{ないけいちゅうしん（\yomiEndFace）@内径中心（\nameEndFace）}内径の中心がそれぞれの端に位置している。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,8 +35,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{ボトム側の外削中心（ボトム基準）}
-\index{ボトムがわのAがわにくあつ@ボトム側のA側肉厚}ボトム側のA側肉厚を基準とする場合、\index{ボトムたんのがいけいちゅうしん@ボトム端の外径中心}ボトム端から$c_\mathrm{Bi}$の位置における外径中心から、\index{ボトムたんのないけい@ボトム端の内径}ボトム端の内径$w_\mathrm B$の半分を引き、さらに\index{Aがわにくあつ@A側肉厚}A側肉厚$\tau_\mathrm B$と\PlatingThk$\mu$との差を引いたものが（おおよその）\index{Aがわがいさくめん@A側外削面}A側外削面の位置$\mathfrak B_\mathrm o'$に相当する
+\modHeadsection{\BottomOutcutCenter（ボトム基準）}
+\BottomOutcutAsideThickness を基準とする場合、\index{ボトムたんのがいけいちゅうしん@ボトム端の外径中心}ボトム端から$c_\mathrm{Bi}$の位置における外径中心から、\index{ボトムたんのないけい@ボトム端の内径}ボトム端の内径$w_\mathrm B$の半分を引き、さらに\BottomOutcutAsideThickness$\tau_\mathrm B$と\PlatingThk$\mu$との差を引いたものが（おおよその）\index{Aがわがいさくめん@A側外削面}A側外削面の位置$\mathfrak B_\mathrm o'$に相当する
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ボトム側が工具側にある場合は、A面は$X$の負方向にあることに注意。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,7 +51,7 @@
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{\index{マシニングセンタ}マシニングセンタによって\index{きかいげんてん@機械原点}機械原点（の$X$座標）がテーブル中心Pと同じだったり異なったりする場合がある。}\relax
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\index{ボトムがわのがいさくちゅうしん@ボトム側の外削中心}ボトム側の外削中心$\mathfrak B_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:spacerBc}より、
+\BottomOutcutCenter$\mathfrak B_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:spacerBc}より、
 \begin{align*}
   \Delta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2-\frac{\delta_\mathrm s}2
   +\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}}
@@ -70,7 +70,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 これは飽くまで（\index{ずめん@図面}図面の数字をもとにした）計算値であり、\index{タッチセンサープローブ}タッチセンサープローブでの\index{そくていかいしてん@測定開始点}測定開始点として用いる。
-そして、\index{ワーク}ワークの\index{ボトムがわのAがわうちたんてん@ボトム側のA側内面端点}ボトム端におけるA側内面b$_\mathrm o'$の位置を直接測定し、その位置を\index{きじゅん（がいさくちゅうしん）@基準（外削中心）}基準として（\index{ワークざひょうけい@ワーク座標系}ワーク座標系の）\index{げんてん（ワークざひょうけい）@原点（ワーク座標系）}原点$\mathfrak B_\mathrm c'$を定める。
+そして、\index{ワーク}ワークの\index{ボトムがわのAがわうちたんてん@ボトム側のA側内面端点}ボトム端におけるA側内面b$_\mathrm o'$の位置を直接測定し、その位置を\expandafterindex{きじゅん（\yomiOutcutCenter）@基準（\nameOutcutCenter）}基準として（\index{ワークざひょうけい@ワーク座標系}ワーク座標系の）\index{げんてん（ワークざひょうけい）@原点（ワーク座標系）}原点$\mathfrak B_\mathrm c'$を定める。
 このとき、A側内面b$_\mathrm o'$の$X$座標が以下になるように、原点$\mathfrak B_\mathrm c'$を定める。
 \begin{align*}
   -\left(\frac{\mathfrak W_\mathrm B}2-\tau_\mathrm B+\mu\right).
@@ -98,8 +98,8 @@
 %% subsection 3.1.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{トップ側の外削中心（ボトム基準）}
-\index{トップがわのがいさく@トップ側の外削}トップ側にも外削がある場合、\index{ボトムがわのがいさく@ボトム側の外削}ボトム側外削から\CenterlineEndFaceDif を指定する形でトップ外削の位置を決めるのが通常である。
-このとき、テーブル中心Pを\index{げんてんP@原点P}原点とした\index{トップがわのがいさくちゅうしん@トップ側の外削中心}トップ側の外削中心$\mathfrak T_\mathrm c'$の$X$座標は、測定で定めた$\mathfrak B_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Bx}$の符号を反転し
+\expandafterindex{\yomiTopOutcut@\nameTopOutcut}トップ側にも外削がある場合、\BottomOutcut から\CenterlineEndFaceDif を指定する形で\TopOutcutCenter の位置を決めるのが通常である。
+このとき、テーブル中心Pを\index{げんてんP@原点P}原点とした\TopOutcutCenter$\mathfrak T_\mathrm c'$の$X$座標は、測定で定めた$\mathfrak B_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Bx}$の符号を反転し
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{トップ側が工具側にある場合は、A面は$X$の正方向にある。
 ボトム側と比べてテーブルを$B$軸（$Y$軸まわり）に$\nicefrac\pi2$回転する必要があるため、$X$座標の符号が反転する形になる。}、
@@ -127,7 +127,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{トップ側の外削中心}
+\modHeadsection{\TopOutcutCenter}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -137,7 +137,7 @@
            {スペーサを用いた場合の$\boldsymbol{\mathfrak T_\mathrm c'}$}
 \index{トップがわのAがわがいさくめん@トップ側のA側外削面}トップ側A側外削面が基準となる場合も考慮しておく。
 この場合も考えかたはボトム基準のそれと同様である。
-\index{テーブルちゅうしん@テーブル中心}テーブル中心Pを\index{げんてんP@原点P}原点とした場合の、\index{トップがわのがいさくちゅうしん@トップ側の外削中心}トップ側の外削中心$\mathfrak T_\mathrm c'$のおおよその$X$座標は、\pageeqref{eq:spacerTc}より、
+\index{テーブルちゅうしん@テーブル中心}テーブル中心Pを\index{げんてんP@原点P}原点とした場合の、\index{\yomiTopOutcutCenter@\nameTopOutcutCenter}トップ側の外削中心$\mathfrak T_\mathrm c'$のおおよその$X$座標は、\pageeqref{eq:spacerTc}より、
 \begin{align*}
   -\Delta+\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2+\frac{\delta_\mathrm s}2
   -\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}}
@@ -209,11 +209,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 8.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{湾曲に沿った外削\TBW}
-\index{わんきょくにそったがいさく@湾曲に沿った外削}外削が湾曲に沿った形である場合を考える。
+\modHeadsection{\CurvedOutcut\TBW}
+\Outcut が\CurvedOutcut である場合を考える。
 ここでは\index{テーブルちゅうしん@テーブル中心}テーブル中心Pを\index{げんてんP@原点P}原点とし、ボトム端面側が工具側に向いているとする。
-端面におけるA面側・C面側・中心の$X$座標をそれぞれ$x_\mathrm{Bo}$, $x_\mathrm{Bi}$, $x_\mathrm{Bm}$とする。
-このとき\index{たんめん@端面}端面のそれぞれの位置は
+\EndFace におけるA面側・C面側・中心の$X$座標をそれぞれ$x_\mathrm{Bo}$, $x_\mathrm{Bi}$, $x_\mathrm{Bm}$とする。
+このとき\EndFace のそれぞれの位置は
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここでは$Z$の正方向を実軸、$X$の正方向を虚軸として考えている。}、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -230,12 +230,12 @@
   \tan\theta_\mathrm{Bo} &= \frac{x_\mathrm{Bo}}{f_\mathrm B'}\ .
 \end{alignat*}
 \end{subequations}
-\BottomOutcutLength を$h_\mathrm B$とすると、外削部分の\index{かたむき（がいさく）@傾き（外削）}傾きはボトム端から距離$\nicefrac{h_\mathrm B}2$の断面に平行になる形にとるので、そのときの\index{かたむきかく（がいさく）@傾き角（外削）}傾き角$\theta_b$は、
+\BottomOutcutLength を$h_\mathrm B$とすると、\expandafterindex{かたむき（\yomiOutcut）@傾き（\nameOutcut）}\nameOutcut 部分の傾きはボトム端から距離$\nicefrac{h_\mathrm B}2$の断面に平行になる形にとるので、そのときの\expandafterindex{かたむきかく（\yomiOutcut）@傾き角（\nameOutcut）}傾き角$\theta_b$は、
 \begin{align*}
   \sin\theta_b = \frac{f_\mathrm B'-\nicefrac{h_\mathrm B}2}{R_\mathrm c}
 \end{align*}
 を満たす。
-傾き後の\index{ボトムたんめん@ボトム端面}ボトム端面の中心の位置は、
+傾き後の\expandafterindex{\yomiBottomEndFace（\yomiCurvedOutcut）@\nameBottomEndFace（\nameCurvedOutcut）}\nameBottomEndFace の中心の位置は、
 \begin{align*}
   \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}e^{i(\theta_\mathrm{Bm}-\theta_b)}
 \end{align*}

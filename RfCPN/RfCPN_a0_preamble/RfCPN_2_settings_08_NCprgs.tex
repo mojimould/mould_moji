@@ -1,7 +1,7 @@
 %!TEX root = ../RfCPN.tex
 
 
-%%%%% NEWPRGCOMMAND %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% NEWGPRGCOMMAND %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\newGprgcommand}[2]{%
   \expandafter\newcommand\csname name#1\endcsname{#2}%
   \expandafter\newcommand\csname #1\endcsname{\expandafterindex{#2}\Gprgbox{\csname name#1\endcsname}}%

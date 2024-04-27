@@ -35,9 +35,9 @@
            & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
            & \CenterlineEndFaceDif & \Mcenterline\\
            & \Dimple & \DLone\\
-           & 端面削 & \KTanmenRight\\
-           & 外削 & \KGaisakuRLeft\\
-           & \nameKeyway & \KMizoConerLeft\\
+           & \EndFacecut & \KTanmenRight\\
+           & \Outcut & \KGaisakuRLeft\\
+           & \Keyway & \KMizoConerLeft\\
            & \EndFaceOutChamfer & \KSotoMentoriRLeft\\
            & \EndFaceInChamfer & \KUchiMentoriRLeft\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
@@ -46,8 +46,8 @@
 \MainExTwo & 外側芯出し・幅 & \MXOThickness\MYOThickness\MXOface\\
            & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
            & \Dimple & \DLone\\
-           & 端面削 & \KTanmenRight\\
-           & \nameKeyway & \KMizoConerLeft\\
+           & \EndFacecut & \KTanmenRight\\
+           & \Keyway & \KMizoConerLeft\\
            & \EndFaceOutChamfer & \KSotoMentoriRLeft\\
            & \EndFaceInChamfer & \KUchiMentoriRLeft\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
@@ -77,7 +77,7 @@
 \MXOface      & 測定 片側 \KeywayCenter$X$（トップA側外面測定） & \OsensorOff\\
 \MXIWidth     & 測定 両側 内側中心・幅$X$ & \OsensorOff\\
 \MYIWidth     & 測定 両側 内側中心・幅$Y$ & \OsensorOff\\
-\MXIface      & 測定 片側 外削中心$X$（C側内面方向測定） & \OsensorOff\\
+\MXIface      & 測定 片側 \OutcutCenter$X$（C側内面方向測定） & \OsensorOff\\
 \end{multicollongtblr}
 
 %\clearpage
@@ -103,7 +103,7 @@
 \KTanmenRight      & 加工 端面 コーナーR 右回り1周 & \KOLeftAR\\
 \KGaisakuRLeft     & 加工 外削 コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
 \KMizoConerLeft    & 加工 \Keyway{} 左回り1周 & \KOLeftAR\OpauseCheck\\
-\KSotoMentoriRLeft & 加工 \EndFaceOutChamfer コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
+\KSotoMentoriRLeft & 加工 \EndFaceOutChamfer{} コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
 \KUchiMentoriRLeft & 加工 \EndFaceInChamfer{} コーナーR 左回り1周 & \KILeftAC\OpauseCheck\\
 \KOLeftAR   & 外側 左回り1周 右上始まり & -\\
 \KILeftAC   & 内側 左回り1周 中央上始まり & -\\
@@ -112,8 +112,8 @@
 \begin{multicollongtblr}{作成したNCプログラム一覧：その他}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \OpauseCheck  & 移動・加工後確認用：90$^\circ$回転 扉前一時停止 & -\\
-\OsensorOn    & タッチセンサー電源ON & -\\
-\OsensorOff   & タッチセンサー電源OFF & -\\
+\OsensorOn    & \index{タッチセンサーでんげん@タッチセンサー電源}タッチセンサー電源ON & -\\
+\OsensorOff   & \index{タッチセンサーでんげん@タッチセンサー電源}タッチセンサー電源OFF & -\\
 \OwarmingupA  & 暖機運転 & \Owarmingup\\
 \Owarmingup   & 暖機運転用サブプログラム & \\
 \OtoolLengthA & 登録工具 工具長自動測定 & \OtoolLength\\
@@ -133,7 +133,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MainExOne %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MainExOne：メインプログラムの例1}
+\modcaptionof{lstlisting}{\MainExOne：\index{メインプログラム}メインプログラムの例1}
 \lstinputlisting[style=Gcode-more]{../Created_NC_Programs/main_program_examples/\nameMainExOne}
 
 
@@ -141,7 +141,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MainExTwo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MainExTwo：メインプログラムの例2}
+\modcaptionof{lstlisting}{\MainExTwo：\index{メインプログラム}メインプログラムの例2}
 \lstinputlisting[style=Gcode-more]{../Created_NC_Programs/main_program_examples/\nameMainExTwo}
 
 
@@ -196,7 +196,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MXface %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MXIface\,:測定 片側 外削中心\texorpdfstring{$X$}{X}（C側内面測定）}
+\modcaptionof{lstlisting}{\MXIface\,:測定 片側 \OutcutCenter\texorpdfstring{$X$}{X}（C側内面測定）}
 \lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameMXIface.nc}
 
 
@@ -223,7 +223,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KTanmenRight %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KTanmenRight\,:加工 端面削 コーナーR 右回り1周}
+\modcaptionof{lstlisting}{\KTanmenRight\,:加工 \EndFacecut{} コーナーR 右回り1周}
 \lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameKTanmenRight.nc}
 
 
@@ -231,7 +231,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KGaisakuRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KGaisakuRLeft\,:加工 外削 コーナーR 左回り1周}
+\modcaptionof{lstlisting}{\KGaisakuRLeft\,:加工 \Outcut{} コーナーR 左回り1周}
 \lstinputlisting[style=Gcode-more]{../Created_NC_Programs/sub_programs/\nameKGaisakuRLeft.nc}
 
 
