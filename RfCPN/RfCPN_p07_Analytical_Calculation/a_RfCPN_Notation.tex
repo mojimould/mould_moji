@@ -133,15 +133,15 @@ $r_\mathrm{Bi}$ & \BottomFaceInRChamferRadius & ○\\
 \begin{multicollongtblr}{\Dimple（主に傾け前）}{cX[l]c}
 記号 & 内容 & 図面\\
 $m$ & \Dimple 列数（1面） & ○\\
-$q$ & トップ端から\Dimple 1列目までの距離 & ○\\
+$q$ & トップ端から\DimpleFirstRow までの距離 & ○\\
 $p_x$ & \Dimple 水平方向ピッチ & ○\\
 $p_z$ & \Dimple 鉛直方向ピッチ & ○\\
-$d_i$ & \Dimple$i$列目の長さ & ○\\
+$d_i$ & \DimpleIRow の長さ & ○\\
 $d_\mathrm o$ & \Dimple 奇数列目の長さ（全て同じ場合） & ○\\
 $d_\mathrm e$ & \Dimple 偶数列目の長さ（全て同じ場合） & ○\\
-$n_m$ & $m$列目の\Dimple の個数（1面） & ○\\
-$n_\mathrm o$ & 奇数列目の\Dimple の個数（全て同じ場合） & ○\\
-$n_\mathrm e$ & 偶数列目の\Dimple の個数（全て同じ場合） & ○\\
+$n_m$ & $m$列目の\DimpleNum（1面） & ○\\
+$n_\mathrm o$ & 奇数列目の\DimpleNum（全て同じ場合） & ○\\
+$n_\mathrm e$ & 偶数列目の\DimpleNum（全て同じ場合） & ○\\
 $\lambda_i$ & 内面テーパ表におけるトップ端からの$i$番目の距離 & ○\\
 $w_{\mathrm Ai}$ & $\lambda_i$に対するAC内径 & ○\\
 $w_{\mathrm Bi}$ & $\lambda_i$に対するBD内径 & ○\\
@@ -169,25 +169,25 @@ $g_{\mathrm Ty}'$ & 傾け後のトップ端内面中心$Y$ &\\
 $g_{\mathrm TZ}'$ & 傾け後のトップ端内面中心$Z$ &\\
 $\mathcal L_i$ & $i$列目の湾曲中心とトップ端の湾曲中心との差$X$ &\\
 $\mathcal L_{i,j}$ & $i$列目の湾曲中心と$j$列目の湾曲中心との差$X$ &\\
-$\mathcal D_{xi,\mathrm A}$ & A面$i$列目$j$番目の\Dimple$X$（P原点・傾け前） &\\
-$\mathcal D_{xi,\mathrm C}$ & C面$i$列目$j$番目の\Dimple$X$（P原点・傾け前） &\\
-$\mathcal D_{xij,\mathrm B}$ & B, D面$i$列目$j$番目の\Dimple$X$（P原点・傾け前） &\\
-$\mathcal D_{yij,\mathrm A}$ & A, C面$i$列目$j$番目の\Dimple$Y$（P原点・傾け前） &\\
-$\mathcal D_{yi,\mathrm B}$ & B面$i$列目$j$番目の\Dimple$Y$（P原点・傾け前） &\\
-$\mathcal D_{yi,\mathrm D}$ & D面$i$列目$j$番目の\Dimple$Y$（P原点・傾け前） &\\
-$\mathcal D_{zi,\mathrm D}$ & $i$列目$j$番目の\Dimple$Z$（P原点・傾け前） &\\
-$\mathcal D_{xij,\mathrm A}'$ & A面$i$列目$j$番目の\Dimple$X$（P原点・傾け後） &\\
-$\mathcal D_{yij,\mathrm A}'$ & A面$i$列目$j$番目の\Dimple$Y$（P原点・傾け後） &\\
-$\mathcal D_{zij,\mathrm A}'$ & A面$i$列目$j$番目の\Dimple$Z$（P原点・傾け後） &\\
-$\mathcal D_{xij,\mathrm C}'$ & C面$i$列目$j$番目の\Dimple$X$（P原点・傾け後） &\\
-$\mathcal D_{yij,\mathrm C}'$ & C面$i$列目$j$番目の\Dimple$Y$（P原点・傾け後） &\\
-$\mathcal D_{zij,\mathrm C}'$ & C面$i$列目$j$番目の\Dimple$Z$（P原点・傾け後） &\\
-$\mathcal D_{xij,\mathrm B}'$ & B面$i$列目$j$番目の\Dimple$X$（P原点・傾け後） &\\
-$\mathcal D_{yij,\mathrm B}'$ & B面$i$列目$j$番目の\Dimple$Y$（P原点・傾け後） &\\
-$\mathcal D_{zij,\mathrm B}'$ & B面$i$列目$j$番目の\Dimple$Z$（P原点・傾け後） &\\
-$\mathcal D_{xij,\mathrm D}'$ & D面$i$列目$j$番目の\Dimple$X$（P原点・傾け後） &\\
-$\mathcal D_{yij,\mathrm D}'$ & D面$i$列目$j$番目の\Dimple$Y$（P原点・傾け後） &\\
-$\mathcal D_{zij,\mathrm D}'$ & D面$i$列目$j$番目の\Dimple$Z$（P原点・傾け後） &\\
+$\mathcal D_{xi,\mathrm A}$ & \AFaceDimpleIRowJ$X$（P原点・傾け前） &\\
+$\mathcal D_{xi,\mathrm C}$ & \CFaceDimpleIRowJ$X$（P原点・傾け前） &\\
+$\mathcal D_{xij,\mathrm B}$ & \BFaceDimpleIRowJ, \DFaceDimpleIRowJ$X$（P原点・傾け前） &\\
+$\mathcal D_{yij,\mathrm A}$ & \AFaceDimpleIRowJ, \CFaceDimpleIRowJ$Y$（P原点・傾け前） &\\
+$\mathcal D_{yi,\mathrm B}$ & \BFaceDimpleIRowJ$Y$（P原点・傾け前） &\\
+$\mathcal D_{yi,\mathrm D}$ & \DFaceDimpleIRowJ$Y$（P原点・傾け前） &\\
+$\mathcal D_{zi}$ & \DimpleIRowJ$Z$（P原点・傾け前） &\\
+$\mathcal D_{xij,\mathrm A}'$ & \AFaceDimpleIRowJ$X$（P原点・傾け後） &\\
+$\mathcal D_{yij,\mathrm A}'$ & \AFaceDimpleIRowJ$Y$（P原点・傾け後） &\\
+$\mathcal D_{zij,\mathrm A}'$ & \AFaceDimpleIRowJ$Z$（P原点・傾け後） &\\
+$\mathcal D_{xij,\mathrm C}'$ & \CFaceDimpleIRowJ$X$（P原点・傾け後） &\\
+$\mathcal D_{yij,\mathrm C}'$ & \CFaceDimpleIRowJ$Y$（P原点・傾け後） &\\
+$\mathcal D_{zij,\mathrm C}'$ & \CFaceDimpleIRowJ$Z$（P原点・傾け後） &\\
+$\mathcal D_{xij,\mathrm B}'$ & \BFaceDimpleIRowJ$X$（P原点・傾け後） &\\
+$\mathcal D_{yij,\mathrm B}'$ & \BFaceDimpleIRowJ$Y$（P原点・傾け後） &\\
+$\mathcal D_{zij,\mathrm B}'$ & \BFaceDimpleIRowJ$Z$（P原点・傾け後） &\\
+$\mathcal D_{xij,\mathrm D}'$ & \DFaceDimpleIRowJ$X$（P原点・傾け後） &\\
+$\mathcal D_{yij,\mathrm D}'$ & \DFaceDimpleIRowJ$Y$（P原点・傾け後） &\\
+$\mathcal D_{zij,\mathrm D}'$ & \DFaceDimpleIRowJ$Z$（P原点・傾け後） &\\
 \end{multicollongtblr}
 
 %\clearpage
@@ -218,7 +218,7 @@ $g_{\mathrm Ty}$ & トップ端における内径中心の$Y$座標 &\\
 
 \begin{multicollongtblr}{ジグ}{cX[l]c}
 記号 & 内容 & 図面\\
-$l$ & ジグ長さの半分 & ○\\
+$l$ & \JigLength の半分 & ○\\
 $\rho$ & 受板の半径 & ○\\
 $\sigma$ & 受板の幅 & ○\\
 $R_\mathrm i'$ & $R_i-\rho$ &\\
@@ -233,8 +233,8 @@ $\Delta_y$ & ジグのワークが乗る部分の$Y$座標 & ◯\\
 %\clearpage
 \begin{multicollongtblr}{工具}{cX[l]c}
 記号 & 内容 & 図面\\
-$\phi_\mathrm D$ & 端面削加工用フェイスミル刃径（直径） & ○\\
-$\phi_\mathrm D'$ & 端面削加工用フェイスミル最大刃径（直径） & ○\\
+$\phi_\mathrm D$ & \EndFacecutMilling 用フェイスミル刃径（直径） & ○\\
+$\phi_\mathrm D'$ & \EndFacecutMilling 用フェイスミル最大刃径（直径） & ○\\
 $d_\mathrm e$ & テーパエンドミル先端からの距離（参照直径用） &\\
 $D_\mathrm r$ & テーパエンドミル参照直径 &\\
 $D_\mathrm e$ & テーパエンドミル先端径（直径） & ○\\
@@ -310,10 +310,10 @@ B$_{R_\mathrm c}'$ & 傾き後のボトム端における湾曲中心 &\\
 B$_\mathrm c'$ & 傾き後のボトム端における外径中心 &\\
 B$_{R_\mathrm i}'$ & 傾き後のボトム内側（C側）端点 &\\
 B$_{R_\mathrm o}'$ & 傾き後のボトム外側（A側）端点 &\\
-$\mathfrak T_\mathrm c$ & トップ外削中心 &\\
-$\mathfrak B_\mathrm c$ & ボトム外削中心 &\\
-$\mathfrak T_\mathrm c'$ & トップ外削中心（P原点） &\\
-$\mathfrak B_\mathrm c'$ & ボトム外削中心（P原点） &\\
+$\mathfrak T_\mathrm c$ & \TopOutcutCenter &\\
+$\mathfrak B_\mathrm c$ & \BottomOutcutCenter &\\
+$\mathfrak T_\mathrm c'$ & \TopOutcutCenter（P原点） &\\
+$\mathfrak B_\mathrm c'$ & \BottomOutcutCenter（P原点） &\\
 $\mathfrak B_\mathrm o'$ & ボトム外削A面 &\\
 b$_\mathrm c'$ & ボトム端内面中心 &\\
 b$_\mathrm o'$ & ボトム端A側内面 &\\

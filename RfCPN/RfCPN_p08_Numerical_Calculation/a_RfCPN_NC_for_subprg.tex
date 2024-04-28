@@ -10,14 +10,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section H.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{外削の数値情報}
+\modHeadsection{\Outcut の数値情報}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection H.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{外削中心：ボトムA側肉厚基準の場合}
-\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした\index{ボトムがわのがいさくちゅうしん@ボトム側の外削中心}ボトム側外削中心$\mathfrak B_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterBt}より、
+\subsection{\OutcutCenter：\BottomOutcutAsideThickness 基準の場合}
+\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした\BottomOutcutCenter$\mathfrak B_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterBt}より、
 \begin{align*}
   \HLbox{%
     \Delta_x'\cos\theta
@@ -31,7 +31,7 @@
 \begin{align*}
   \HLbox{-\left(\frac{\mathfrak W_\mathrm B}2-\tau_\mathrm B+\mu\right)}\ .
 \end{align*}
-トップ側にも外削がある場合、測定で定めた$\mathfrak B_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Bx}$および\CenterlineEndFaceDifAC$T_x$を用いて\pageeqref{eq:BbasedTx}で与えられる。
+トップ側にも\Outcut がある場合、測定で定めた$\mathfrak B_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Bx}$および\CenterlineEndFaceDifAC$T_x$を用いて\pageeqref{eq:BbasedTx}で与えられる。
 \begin{align*}
   \HLbox{-\mathcal G_{Bx}+T_x}\ .
 \end{align*}
@@ -40,8 +40,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection H.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{外削中心：トップA面肉厚基準の場合}
-\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした\index{トップがわのがいさくちゅうしん@トップ側の外削中心}トップ側外削中心$\mathfrak T_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterTt}より、
+\subsection{\OutcutCenter：\TopOutcutAsideThickness 基準の場合}
+\index{テーブルちゅうしん@テーブル中心}テーブル中心\index{P（テーブルちゅうしん)@P（テーブル中心）}Pを\index{げんてんP@原点P}原点とした\TopOutcutCenter$\mathfrak T_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterTt}より、
 \begin{align*}
   \HLbox{%
     \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2
@@ -55,7 +55,7 @@
 \begin{align*}
   \HLbox{\frac{\mathfrak W_\mathrm T}2-\tau_\mathrm T+\mu}~.
 \end{align*}
-ボトム側にも外削がある場合、測定で定めた$\mathfrak T_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Tx}$および\CenterlineEndFaceDifAC$T_x$を用いて\pageeqref{eq:TbasedTx}で与えられる。
+ボトム側にも\Outcut がある場合、測定で定めた$\mathfrak T_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Tx}$および\CenterlineEndFaceDifAC$T_x$を用いて\pageeqref{eq:TbasedTx}で与えられる。
 \begin{align*}
   \HLbox{-\mathcal G_{Tx}+T_x}\ .
 \end{align*}
@@ -69,8 +69,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 30.3.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{ボトムの外削}
-ボトム側の外削における\index{こうぐ@工具}工具の先端の$Z$座標は、\BottomOutcutLength を$h_\mathrm B$として、
+\subsubsection{\BottomOutcutLength}
+\BottomOutcut における\index{こうぐ@工具}工具の先端の$Z$座標は、\BottomOutcutLength を$h_\mathrm B$として、
 \begin{align*}
   \HLbox{f_\mathrm B'-h_\mathrm B}\ .
 \end{align*}
@@ -79,8 +79,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 30.3.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{トップの外削}
-トップ側の外削における工具の先端の$Z$座標は、\TopOutcutLength, \KeywayPos, \KeywayWidth をそれぞれ$h_\mathrm T$, $\kappa_p$, $\kappa_w$として、
+\subsubsection{\TopOutcutLength}
+\TopOutcut における工具の先端の$Z$座標は、\TopOutcutLength, \KeywayPos, \KeywayWidth をそれぞれ$h_\mathrm T$, $\kappa_p$, $\kappa_w$として、
 \begin{alignat*}{3}
   & \HLbox{f_\mathrm T'-h_\mathrm T} & \quad & \Big(\text{if}~h_\mathrm T > \kappa_p+\kappa_w\Big)\\
   & \HLbox{f_\mathrm T'-\left(\kappa_p+1[\mathrm{mm}]\right)} & \quad  & \Big(\text{if}~h_\mathrm T = \kappa_p+\kappa_w\Big)
@@ -91,7 +91,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 30.3.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{湾曲に沿った外削\TBW}
+\subsection{\CurvedOutcut\TBW}
 (to be written...)
 
 
@@ -178,7 +178,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 30.4.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{外削のある場合}
+\subsubsection{\Outcut のある場合}
 \AsideKeywayDepth$\kappa_d$に対し、\TopOutcutCenter$X$を$\mathcal G_{\mathrm Tx}$とすると、$\mathcal G_{\mathrm Tx}$と\KeywayCenter との$X$座標の差は、\pageeqref{eq:mizocenterAG}より、
 \begin{align*}
   \HLbox{\frac{\mathfrak W_x}2-\kappa_d-\frac{W_{mx}}2}\ .

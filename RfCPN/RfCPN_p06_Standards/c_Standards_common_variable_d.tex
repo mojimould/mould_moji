@@ -243,25 +243,25 @@
 \ttNum457 & （予備） &\\
 \SetRow{unusingVariables}
 \ttNum458 & （予備） &\\
-\ttNum459 & \Dimple 加工後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum459 & \DimpleMilling 後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum460 & （不使用） &\\
-\ttNum461 & 工具{\ttfamily T31}（Tスロット）A側\Dimple~深さ補正値（深さに$+$補正） & -0.055\\
-\ttNum462 & 工具{\ttfamily T31}（Tスロット）C側\Dimple~深さ補正値（深さに$+$補正） & -0.055\\
-\ttNum463 & 工具{\ttfamily T31}（Tスロット）B側\Dimple~深さ補正値（深さに$+$補正） & -0.025\\
-\ttNum464 & 工具{\ttfamily T31}（Tスロット）D側\Dimple~深さ補正値（深さに$+$補正） & -0.085\\
+\ttNum461 & 工具{\ttfamily T31}（Tスロット）\AfaceDimple~深さ補正値（深さに$+$補正） & -0.055\\
+\ttNum462 & 工具{\ttfamily T31}（Tスロット）\CfaceDimple~深さ補正値（深さに$+$補正） & -0.055\\
+\ttNum463 & 工具{\ttfamily T31}（Tスロット）\BfaceDimple~深さ補正値（深さに$+$補正） & -0.025\\
+\ttNum464 & 工具{\ttfamily T31}（Tスロット）\DfaceDimple~深さ補正値（深さに$+$補正） & -0.085\\
 \SetRow{unusingVariables}
 \ttNum465 & （不使用） &\\
-\ttNum466 & 工具{\ttfamily T32}（Tスロット）A側\Dimple~深さ補正値（深さに$+$補正） & -0.110\\
-\ttNum467 & 工具{\ttfamily T32}（Tスロット）C側\Dimple~深さ補正値（深さに$+$補正） & -0.080\\
-\ttNum468 & 工具{\ttfamily T32}（Tスロット）B側\Dimple~深さ補正値（深さに$+$補正） & -0.060\\
-\ttNum469 & 工具{\ttfamily T32}（Tスロット）D側\Dimple~深さ補正値（深さに$+$補正） & -0.120\\
+\ttNum466 & 工具{\ttfamily T32}（Tスロット）\AfaceDimple~深さ補正値（深さに$+$補正） & -0.110\\
+\ttNum467 & 工具{\ttfamily T32}（Tスロット）\CfaceDimple~深さ補正値（深さに$+$補正） & -0.080\\
+\ttNum468 & 工具{\ttfamily T32}（Tスロット）\BfaceDimple~深さ補正値（深さに$+$補正） & -0.060\\
+\ttNum469 & 工具{\ttfamily T32}（Tスロット）\DfaceDimple~深さ補正値（深さに$+$補正） & -0.120\\
 \SetRow{unusingVariables}
 \ttNum470 & （不使用） &\\
-\ttNum471 & 工具{\ttfamily T33}（Tスロット）A側\Dimple~深さ補正値（深さに$+$補正） & 0.00\\
-\ttNum472 & 工具{\ttfamily T33}（Tスロット）C側\Dimple~深さ補正値（深さに$+$補正） & 0.00\\
-\ttNum473 & 工具{\ttfamily T33}（Tスロット）B側\Dimple~深さ補正値（深さに$+$補正） & 0.00\\
-\ttNum474 & 工具{\ttfamily T33}（Tスロット）D側\Dimple~深さ補正値（深さに$+$補正） & 0.00\\
+\ttNum471 & 工具{\ttfamily T33}（Tスロット）\AfaceDimple~深さ補正値（深さに$+$補正） & 0.00\\
+\ttNum472 & 工具{\ttfamily T33}（Tスロット）\CfaceDimple~深さ補正値（深さに$+$補正） & 0.00\\
+\ttNum473 & 工具{\ttfamily T33}（Tスロット）\BfaceDimple~深さ補正値（深さに$+$補正） & 0.00\\
+\ttNum474 & 工具{\ttfamily T33}（Tスロット）\DfaceDimple~深さ補正値（深さに$+$補正） & 0.00\\
 \end{multicollongtblr}
 
 
@@ -433,8 +433,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum618 & （\EndFaceBoring 加工用予備） &\\
 \SetRow{unusingVariables}
 \ttNum619 & （予備） &\\
-\ttNum620 & \Dimple 測定時近付き量 & 4.0 \\
-\ttNum621 & \Dimple 加工時近付き量 & 2.0 \\
+\ttNum620 & \Dimple 測定時 近付き量 & 4.0 \\
+\ttNum621 & \DimpleMilling 時 近付き量 & 2.0 \\
 \SetRow{unusingVariables}
 \ttNum622 & （予備） &\\
 \SetRow{unusingVariables}
@@ -528,7 +528,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum668 & \EndFaceBoring 加工：直線 & \EndFaceBoringLinearFeedRate\\
 \ttNum669 & \EndFaceBoring 加工：コーナー & \EndFaceBoringCornerFeedRate\\
 \ttNum670 & \Dimple 測定：表面アプローチ & \DimpleApproachFeedRate\\
-\ttNum671 & \Dimple 加工：加工 & \DimpleProcessFeedRate\\
+\ttNum671 & \DimpleMilling：加工 & \DimpleProcessFeedRate\\
 \SetRow{unusingVariables}
 \ttNum672 & （予備） & \\
 \SetRow{unusingVariables}
@@ -553,7 +553,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum678 & \EndFaceOutCChamfer 加工 & \OutCChamferSpindleSpeed\\
 \ttNum679 & \EndFaceInCChamfer 加工 & \InCChamferSpindleSpeed\\
 \ttNum680 & \EndFaceBoring 加工 & \EndFaceBoringSpindleSpeed\\
-\ttNum681 & \Dimple 加工 & \DimpleSpindleSpeed\\
+\ttNum681 & \DimpleMilling & \DimpleSpindleSpeed\\
 \SetRow{unusingVariables}
 \ttNum682 & （予備） & \\
 \SetRow{unusingVariables}
@@ -616,15 +616,15 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum704 & テーブル中心からワーク座標(\ttNum700)原点までの$X$距離\\
 \ttNum705 & 傾き後のトップ端面中心（機械座標）$X$ (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
 \ttNum706 & テーブル中心から傾き後のトップ端面中心までの$Z$距離 (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
-\ttNum707 & テーブル中心から\Dimple1列目までの$Z$距離$Z-q$\\
-\ttNum708 & トップ端中心から\Dimple1列目中心までの$X$距離(\cf\pageeqref{eq:dimpleCenterDistance})\\
-\ttNum709 & 傾き後\Dimple1列目中心$X$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\
-\ttNum710 & 傾き後\Dimple1列目中心$Z$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\
+\ttNum707 & テーブル中心から\DimpleFirstRow までの$Z$距離$Z-q$\\
+\ttNum708 & トップ端中心から\DimpleFirstRow 中心までの$X$距離(\cf\pageeqref{eq:dimpleCenterDistance})\\
+\ttNum709 & 傾き後\DimpleFirstRow 中心$X$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\
+\ttNum710 & 傾き後\DimpleFirstRow 中心$Z$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\
 \ttNum711 & 傾き後トップ端中心（ブロックエンド）$X$座標(\ttNum5001)\\
 \ttNum712 & 傾き後トップ端中心（ブロックエンド）$Z$座標(\ttNum5003)\\
-\ttNum713 & 傾き後\Dimple1列目中心（ブロックエンド）$X$座標 (\ttNum5001)\\
-\ttNum714 & 傾き後\Dimple1列目中心（ブロックエンド）$Y$座標 (\ttNum5002)\\
-\ttNum715 & 傾き後\Dimple1列目中心（ブロックエンド）$Z$座標 (\ttNum5003)\\
+\ttNum713 & 傾き後\DimpleFirstRow 中心（ブロックエンド）$X$座標 (\ttNum5001)\\
+\ttNum714 & 傾き後\DimpleFirstRow 中心（ブロックエンド）$Y$座標 (\ttNum5002)\\
+\ttNum715 & 傾き後\DimpleFirstRow 中心（ブロックエンド）$Z$座標 (\ttNum5003)\\
 \ttNum716 & BD内半径$+$\PlatingThk$-\text{\ttNum702}-\text{\ttNum620}$\\
 \ttNum717 & (AC内半径$+$\PlatingThk$-\text{\ttNum702}-\text{\ttNum620}\text)\cos\phi$\\
 \ttNum718 & \expandafterindex{しかこうよう\yomiDimpleDepth@試加工用\nameDimpleDepth}試加工用\nameDimpleDepth（\DimpleDepth $-0.1$）\\
@@ -662,9 +662,9 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum725 & プログラム読込時ブロックエンド$Y$ or $X$ (\ttNum5002, \ttNum5001)\\
 \ttNum726 & プログラム読込時ブロックエンド$Z$ (\ttNum5003)\\
 \ttNum727 & \Dimple~偶数列の列数\\
-\ttNum728 & \Dimple~偶数列（一列）の\Dimple 数\\
-\ttNum729 & \Dimple~奇数列（一列）の\Dimple 数\\
-\ttNum730 & \Dimple~現在の列の\Dimple 数\\
+\ttNum728 & \Dimple~偶数列（一列）の\DimpleNum\\
+\ttNum729 & \Dimple~奇数列（一列）の\DimpleNum\\
+\ttNum730 & \Dimple~現在の列の\DimpleNum\\
 \SetRow{unusingVariables}
 \ttNum731 & （予備）\\
 \SetRow{unusingVariables}
@@ -840,8 +840,8 @@ $\cdots$ & （以下不明） & \ttNum0
 
 \begin{multicollongtblr}[white]{\ttNum900101\,-\ttNum900300：\Dimple AC表面位置 測定値 \DMLthreeAC}{cX[l]}
 変数 & 内容\\
-\ttNum900101\,-\ttNum900200 & A側\Dimple~表面位置$X$ 測定値\\
-\ttNum900201\,-\ttNum900300 & C側\Dimple~表面位置$X$ 測定値
+\ttNum900101\,-\ttNum900200 & \AfaceDimple~表面位置$X$ 測定値\\
+\ttNum900201\,-\ttNum900300 & \CfaceDimple~表面位置$X$ 測定値
 \end{multicollongtblr}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -851,8 +851,8 @@ $\cdots$ & （以下不明） & \ttNum0
 
 \begin{multicollongtblr}[white]{\ttNum900301\,-\ttNum900500：\Dimple BD表面位置 測定値 \DMLthreeBD}{cX[l]}
 変数 & 内容\\
-\ttNum900301\,-\ttNum900400 & B側\Dimple~表面位置$Y$ 測定値\\
-\ttNum900401\,-\ttNum900500 & D側\Dimple~表面位置$Y$ 測定値
+\ttNum900301\,-\ttNum900400 & \BfaceDimple~表面位置$Y$ 測定値\\
+\ttNum900401\,-\ttNum900500 & \DfaceDimple~表面位置$Y$ 測定値
 \end{multicollongtblr}
 
 
@@ -1009,25 +1009,25 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum901100 & （予備） &\\
 \ttNum901101 & 工具{\ttfamily T02}（フェイスミル）最大刃径（直径）DCX公称値$\phi'_\mathrm D$ & 113.5\\
 \SetRow{unusingVariables}
-\ttNum901102 & （端面削加工工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
+\ttNum901102 & （\EndFacecutMilling 工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901103 & （端面削加工工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
+\ttNum901103 & （\EndFacecutMilling 工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901104 & （端面削加工工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
+\ttNum901104 & （\EndFacecutMilling 工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
 \ttNum901105 & 工具{\ttfamily T06}（サイドカッター）厚さ$t$ & 6.9\\
 \SetRow{unusingVariables}
-\ttNum901106 & （\Keyway 加工工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
+\ttNum901106 & （\KeywayMilling 工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901107 & （\Keyway 加工工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
+\ttNum901107 & （\KeywayMilling 工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901108 & （\Keyway 加工工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
+\ttNum901108 & （\KeywayMilling 工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
 \ttNum901109 & 工具{\ttfamily T08}（サイドカッター）厚さ$t$ & 5.0\\
 \SetRow{unusingVariables}
-\ttNum901110 & （\Keyway 加工工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
+\ttNum901110 & （\KeywayMilling 工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901111 & （\Keyway 加工工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
+\ttNum901111 & （\KeywayMilling 工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901112 & （\Keyway 加工工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
+\ttNum901112 & （\KeywayMilling 工具{\ttfamily T08}-{\ttfamily T10}用 予備） &\\
 \ttNum901113 & 工具{\ttfamily T11}（テーパエンドミル）参照直径用 工具長補正値 & 2.0\\
 \SetRow{unusingVariables}
 \ttNum901114 & （工具{\ttfamily T11}用 予備） &\\
@@ -1036,19 +1036,19 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum901116 & （工具{\ttfamily T12}用 予備） &\\
 \ttNum901117 & 工具{\ttfamily T13}（テーパエンドミル）参照直径用 工具長補正値 & 2.0\\
 \SetRow{unusingVariables}
-\ttNum901118 & （面取加工工具{\ttfamily T13}-{\ttfamily T15}用 予備） &\\
+\ttNum901118 & （\EndFaceCChamferMilling 工具{\ttfamily T13}-{\ttfamily T15}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901119 & （面取加工工具{\ttfamily T13}-{\ttfamily T15}用 予備） &\\
+\ttNum901119 & （\EndFaceCChamferMilling 工具{\ttfamily T13}-{\ttfamily T15}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901120 & （面取加工工具{\ttfamily T13}-{\ttfamily T15}用 予備） &\\
+\ttNum901120 & （\EndFaceCChamferMilling 工具{\ttfamily T13}-{\ttfamily T15}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901121 & （外削加工工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
+\ttNum901121 & （\OutcutMilling 工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901122 & （外削加工工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
+\ttNum901122 & （\OutcutMilling 工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901123 & （外削加工工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
+\ttNum901123 & （\OutcutMilling 工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901124 & （外削加工工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
+\ttNum901124 & （\OutcutMilling 工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
 \end{multicollongtblr}
 
 \clearpage
@@ -1060,9 +1060,9 @@ $\cdots$ & （以下不明） & \ttNum0
 \begin{multicollongtblr}[white]{\ttNum901124\,-\ttNum901149：工具（{\ttfamily T50}除く）続き}{cX[l]c}
 変数 & 内容 & 設定例\\
 \SetRow{unusingVariables}
-\ttNum901125 & （外削加工工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
+\ttNum901125 & （\OutcutMilling 工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901126 & （外削加工工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
+\ttNum901126 & （\OutcutMilling 工具{\ttfamily T16}-{\ttfamily T20}用 予備） &\\
 \ttNum901127 & 工具{\ttfamily T31}（Tスロットカッター）厚さ & 8.0\\
 \ttNum901128 & 工具{\ttfamily T31}（Tスロットカッター）シャンク直径 & 25.0\\
 \ttNum901129 & 工具{\ttfamily T31}（Tスロットカッター）中心$X+$補正 & 0.00\\
@@ -1072,9 +1072,9 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum901133 & 工具{\ttfamily T32}（Tスロットカッター）中心$X+$補正 & 0.015\\
 \ttNum901134 & 工具{\ttfamily T32}（Tスロットカッター）中心$Y+$補正 & -0.030\\
 \SetRow{unusingVariables}
-\ttNum901135 & （\Dimple 加工工具用 予備） &\\
+\ttNum901135 & （\DimpleMilling 工具用 予備） &\\
 \SetRow{unusingVariables}
-\ttNum901136 & （\Dimple 加工工具用 予備） &\\
+\ttNum901136 & （\DimpleMilling 工具用 予備） &\\
 \ttNum901137 & 工具{\ttfamily T33}（Tスロットカッター）中心$X+$補正 & 0.00\\
 \ttNum901138 & 工具{\ttfamily T33}（Tスロットカッター）中心$Y+$補正 & 0.00\\
 \SetRow{unusingVariables}
