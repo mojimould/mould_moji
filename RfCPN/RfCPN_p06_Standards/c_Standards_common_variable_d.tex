@@ -72,19 +72,19 @@
 \ttNum176 & （不使用） &\\
 \ttNum177 & 芯出し測定後 一時停止 (0:{\ttfamily M00}, 1:non-stop) & 1\\
 \ttNum178 & \Dimple 測定後 一時停止 (0:{\ttfamily M00}, 1:non-stop) & 1\\
-\ttNum179 & トップ端面削加工後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum180 & ボトム端面削加工後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum179 & \TopEndFacecutMilling 後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum180 & \BottomEndFacecutMilling 後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum181 & （不使用） &\\
-\ttNum182 & トップ外削 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum183 & \Keyway 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum182 & \TopOutcut{} 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum183 & \Keyway{} 仕上げ加工 追加回数 (上限3) & 0\\
 \ttNum184 & \TopEndFaceOutCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
 \ttNum185 & \TopEndFaceInCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
 \ttNum186\TBW & （\EndFaceBoring{} 仕上げ加工 追加回数用 予備） & 0\\
 \SetRow{unusingVariables}
 \ttNum187 & （不使用） &\\
-\ttNum188 & ボトム\Outcut{} 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum188 & \BottomOutcut{} 仕上げ加工 追加回数 (上限3) & 0\\
 \ttNum189 & \BottomEndFaceOutCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
 \ttNum190 & \BottomEndFaceInCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
@@ -410,27 +410,27 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum606 & 内側加工面 法線方向クリアランス平面間距離 最小値 & 15.0\\
 \SetRow{unusingVariables}
 \ttNum607 & （予備） &\\
-\ttNum608 & 端面削加工用 内径輪郭径$-$補正量 & 5.0\\
+\ttNum608 & \EndFacecutMilling 用 内径輪郭径$-$補正量 & 5.0\\
 \SetRow{unusingVariables}
 \ttNum609 & （予備） &\\
 \SetRow{unusingVariables}
-\ttNum610 & （外削加工用予備） & \\
+\ttNum610 & （\OutcutMilling 用予備） & \\
 \SetRow{unusingVariables}
 \ttNum611 & （予備） &\\
 \SetRow{unusingVariables}
-\ttNum612 & （\Keyway 加工用予備） & \\
+\ttNum612 & （\KeywayMilling 用予備） & \\
 \SetRow{unusingVariables}
 \ttNum613 & （予備） &\\
 \SetRow{unusingVariables}
-\ttNum614 & （\EndFaceOutCChamfer 加工用予備） & \\
+\ttNum614 & （\EndFaceCChamferMilling 用予備） & \\
 \SetRow{unusingVariables}
 \ttNum615 & （予備） &\\
 \SetRow{unusingVariables}
-\ttNum616 & （\EndFaceInCChamfer 加工用予備） &\\
+\ttNum616 & （\EndFaceInCChamferMilling 用予備） &\\
 \SetRow{unusingVariables}
 \ttNum617 & （予備） &\\
 \SetRow{unusingVariables}
-\ttNum618 & （\EndFaceBoring 加工用予備） &\\
+\ttNum618 & （\EndFaceBoringMilling 用予備） &\\
 \SetRow{unusingVariables}
 \ttNum619 & （予備） &\\
 \ttNum620 & \Dimple 測定時 近付き量 & 4.0 \\
@@ -453,21 +453,21 @@ $\cdots$ & （以下不明） & \ttNum0
 
 \begin{multicollongtblr}[white]{\ttNum625\,-\ttNum649：残り代および1回あたりの削り代}{cX[l]c}
 変数 & 内容 & 設定例\\
-\ttNum625 & 端面削加工1回あたりの$Z$方向削り代 & 4.0\\
+\ttNum625 & \EndFacecutMilling1回あたりの$Z$方向削り代 & 4.0\\
 \SetRow{unusingVariables}
 \ttNum626 & （予備） & \\
-\ttNum627 & 外削加工1回あたりの削り代（直径） & 2.0\\
-\ttNum628 & 外削加工 仕上げ前 残り削り代（直径） & 1.0\\
-\ttNum629 & \Keyway 加工1回あたりの削り代（\KeywayDepth） & 5.0\\
-\ttNum630 & \Keyway 加工 仕上げ前 残り削り代（直径） & 1.0\\
-\ttNum631 & \EndFaceOutCChamfer 加工1回あたりの削り代（直径） & 2.000\\
-\ttNum632 & \EndFaceOutCChamfer 加工 仕上げ前 残り削り代（直径） & 1.000\\
-\ttNum633 & \EndFaceInCChamfer{}加工1回あたりの削り代（直径） & 2.000\\
-\ttNum634 & \EndFaceInCChamfer{}加工 仕上げ前 残り削り代（直径） & 1.000\\
+\ttNum627 & \OutcutMilling1回あたりの削り代（直径） & 2.0\\
+\ttNum628 & \OutcutMilling{} 仕上げ前 残り削り代（直径） & 1.0\\
+\ttNum629 & \KeywayMilling1回あたりの削り代（\KeywayDepth） & 5.0\\
+\ttNum630 & \KeywayMilling{} 仕上げ前 残り削り代（直径） & 1.0\\
+\ttNum631 & \EndFaceOutCChamferMilling1回あたりの削り代（直径） & 2.000\\
+\ttNum632 & \EndFaceOutCChamferMilling{} 仕上げ前 残り削り代（直径） & 1.000\\
+\ttNum633 & \EndFaceInCChamferMilling1回あたりの削り代（直径） & 2.000\\
+\ttNum634 & \EndFaceInCChamferMilling{} 仕上げ前 残り削り代（直径） & 1.000\\
 \SetRow{unusingVariables}
-\ttNum635 & （\EndFaceBoring 加工用予備） & \\
+\ttNum635 & （\EndFaceBoringMilling 用予備） & \\
 \SetRow{unusingVariables}
-\ttNum636 & （\EndFaceBoring 加工用予備） & \\
+\ttNum636 & （\EndFaceBoringMilling 用予備） & \\
 \SetRow{unusingVariables}
 \ttNum637 & （予備） & \\
 \SetRow{unusingVariables}
@@ -515,18 +515,18 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum656 & 測定時アプローチ：{\ttfamily T50}（片側測定） & \PosMeasurementFeedRate\\
 \SetRow{unusingVariables}
 \ttNum657 & （不使用） &\\
-\ttNum658 & 端面削加工：直線 & \EndFaceLinearFeedRate\\
-\ttNum659 & 端面削加工：コーナー & \EndFaceCornerFeedRate\\
-\ttNum660 & 外削加工：直線 & \OutcutLinearFeedRate\\
-\ttNum661 & 外削加工：コーナー & \OutcutCornerFeedRate\\
-\ttNum662 & \Keyway 加工：直線 & \KeywayLinearFeedRate\\
-\ttNum663 & \Keyway 加工：コーナー & \KeywayCornerFeedRate\\
-\ttNum664 & \EndFaceOutCChamfer 加工：直線 & \OutCChamferLinearFeedRate\\
-\ttNum665 & \EndFaceOutCChamfer 加工：コーナー & \OutCChamferCornerFeedRate\\
-\ttNum666 & \EndFaceInCChamfer 加工：直線 & \InCChamferLinearFeedRate\\
-\ttNum667 & \EndFaceInCChamfer 加工：コーナー & \InCChamferCornerFeedRate\\
-\ttNum668 & \EndFaceBoring 加工：直線 & \EndFaceBoringLinearFeedRate\\
-\ttNum669 & \EndFaceBoring 加工：コーナー & \EndFaceBoringCornerFeedRate\\
+\ttNum658 & \EndFacecutMilling：直線 & \EndFaceLinearFeedRate\\
+\ttNum659 & \EndFacecutMilling：コーナー & \EndFaceCornerFeedRate\\
+\ttNum660 & \OutcutMilling：直線 & \OutcutLinearFeedRate\\
+\ttNum661 & \OutcutMilling：コーナー & \OutcutCornerFeedRate\\
+\ttNum662 & \KeywayMilling：直線 & \KeywayLinearFeedRate\\
+\ttNum663 & \KeywayMilling：コーナー & \KeywayCornerFeedRate\\
+\ttNum664 & \EndFaceOutCChamferMilling：直線 & \OutCChamferLinearFeedRate\\
+\ttNum665 & \EndFaceOutCChamferMilling：コーナー & \OutCChamferCornerFeedRate\\
+\ttNum666 & \EndFaceInCChamferMilling：直線 & \InCChamferLinearFeedRate\\
+\ttNum667 & \EndFaceInCChamferMilling：コーナー & \InCChamferCornerFeedRate\\
+\ttNum668 & \EndFaceBoringMilling：直線 & \EndFaceBoringLinearFeedRate\\
+\ttNum669 & \EndFaceBoringMilling：コーナー & \EndFaceBoringCornerFeedRate\\
 \ttNum670 & \Dimple 測定：表面アプローチ & \DimpleApproachFeedRate\\
 \ttNum671 & \DimpleMilling：加工 & \DimpleProcessFeedRate\\
 \SetRow{unusingVariables}
@@ -547,12 +547,12 @@ $\cdots$ & （以下不明） & \ttNum0
 
 \begin{multicollongtblr}[white]{\ttNum675\,-\ttNum699：主軸回転数（切削時）}{cX[l]c}
 変数 & 内容 & 設定例\\
-\ttNum675 & 端面削加工 & \EndFaceSpindleSpeed\\
-\ttNum676 & 外削加工 & \OutcutSpindleSpeed\\
-\ttNum677 & \Keyway 加工 & \KeywaySpindleSpeed\\
-\ttNum678 & \EndFaceOutCChamfer 加工 & \OutCChamferSpindleSpeed\\
-\ttNum679 & \EndFaceInCChamfer 加工 & \InCChamferSpindleSpeed\\
-\ttNum680 & \EndFaceBoring 加工 & \EndFaceBoringSpindleSpeed\\
+\ttNum675 & \EndFacecutMilling & \EndFaceSpindleSpeed\\
+\ttNum676 & \OutcutMilling & \OutcutSpindleSpeed\\
+\ttNum677 & \KeywayMilling & \KeywaySpindleSpeed\\
+\ttNum678 & \EndFaceOutCChamferMilling & \OutCChamferSpindleSpeed\\
+\ttNum679 & \EndFaceInCChamferMilling & \InCChamferSpindleSpeed\\
+\ttNum680 & \EndFaceBoringMilling & \EndFaceBoringSpindleSpeed\\
 \ttNum681 & \DimpleMilling & \DimpleSpindleSpeed\\
 \SetRow{unusingVariables}
 \ttNum682 & （予備） & \\
