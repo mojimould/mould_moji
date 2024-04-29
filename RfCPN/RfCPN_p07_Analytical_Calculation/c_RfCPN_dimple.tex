@@ -39,8 +39,8 @@
 （\pageautoref{fn:generallyDimpleN}および\pageautoref{hosoku:generallyDimpleN}参照）
 
 \item
-\subparagraph*{内径テーパ表の寸法}
-\index{ないけいテーパひょう@内径テーパ表}内径テーパ表における\index{トップたんからのきょり（ないけいテーパひょう）@トップ端からの距離（内径テーパ表）}トップ端からの距離を$\lambda_i$ ($i = 0$, $1$, $2$, $\cdots$), それに対するAC・BD側\index{ないけい（ないけいテーパひょう）@内径（内径テーパ表）}内径をそれぞれ$w_{\mathrm Ai}$, $w_{\mathrm Bi}$とする。
+\subparagraph*{\IDTaperTable の寸法}
+\IDTaperTable における\expandafterindex{トップたんからのきょり（\yomiIDTaperTable）@トップ端からの距離（\nameIDTaperTable）}トップ端からの距離を$\lambda_i$ ($i = 0$, $1$, $2$, $\cdots$), それに対するAC・BD側\expandafterindex{ないけい（\yomiIDTaperTable）@内径（\nameIDTaperTable）}内径をそれぞれ$w_{\mathrm Ai}$, $w_{\mathrm Bi}$とする。
 （\pageautoref{hosoku:example4taper}参照）
 
 \item
@@ -78,7 +78,7 @@
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}[label=hosoku:example4taper]
-たとえば内径テーパ表の値が25mm\index{ピッチ（ないけいテーパひょう）@ピッチ（内径テーパ表）}ピッチの場合、$\lambda_0=0$, $\lambda_1=25$, $\lambda_2=50$, $\cdots$とし、それぞれのACおよびBD側\index{ないけい（ないけいテーパひょう）@内径（内径テーパ表）}内径を$w_{\mathrm A0}$, $w_{\mathrm A1}$, $w_{\mathrm A2}$, $\cdots$および$w_{\mathrm B0}$, $w_{\mathrm B1}$, $w_{\mathrm B2}$, $\cdots$とする、という意味である。
+たとえば\IDTaperTable の値が25mm\expandafterindex{ピッチ（\yomiIDTaperTable）@ピッチ（\nameIDTaperTable）}ピッチの場合、$\lambda_0=0$, $\lambda_1=25$, $\lambda_2=50$, $\cdots$とし、それぞれのACおよびBD側\expandafterindex{ないけい（\yomiIDTaperTable）@内径（\nameIDTaperTable）}内径を$w_{\mathrm A0}$, $w_{\mathrm A1}$, $w_{\mathrm A2}$, $\cdots$および$w_{\mathrm B0}$, $w_{\mathrm B1}$, $w_{\mathrm B2}$, $\cdots$とする、という意味である。
 ここでは離散値である$\lambda_i$を、連続値$\lambda$に（近似的に）置きかえている。
 実際、たとえば$\lambda = \lambda_j$のとき$w_{\mathrm Aj} = w_{\mathrm A\lambda}$となることがわかる。
 \end{hosoku}\relax
@@ -89,7 +89,7 @@
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-内径テーパ表の\index{ピッチ（ないけいテーパひょう）@ピッチ（内径テーパ表）}ピッチ$\lambda_{i+1}-\lambda_i$は常に一定の場合が多い。
+\IDTaperTable の\expandafterindex{ピッチ（\yomiIDTaperTable）@ピッチ（\nameIDTaperTable）}ピッチ$\lambda_{i+1}-\lambda_i$は常に一定の場合が多い。
 $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j \leq z < \lambda_{j+1}$となる$j$は、
 \begin{align*}
   j = z \bDiv (\lambda_{i+1}-\lambda_i) = \left\lfloor\frac z{\lambda_{i+1}-\lambda_i}\right\rfloor
@@ -350,7 +350,7 @@ $\phi < 0$となるのは、
 したがって、以下のような場合に生じる傾向があることがわかる。
 \begin{enumerate}
 \item \index{きょくりつ@曲率}曲率が小さい（湾曲$R_\mathrm c$が大きい）
-\item \index{ないけいテーパ@内径テーパ}内径テーパがきつい（$w_{\mathrm A0}-w_{\mathrm Aq}$が大きい）
+\item \IDTaper がきつい（$w_{\mathrm A0}-w_{\mathrm Aq}$が大きい）
 \item \index{ないけい@内径}内径・\PlatingThk が大きい（$w_\mathrm A'$が大きい）
 \end{enumerate}
 たとえば、曲率0 ($R = +\infty$)の\index{モールド}モールド、つまり（\index{がいけい（ワーク）@外形（ワーク）}外形が）まっすぐの\index{わんきょくのないモールド@湾曲のないモールド}湾曲のないモールドなどが、これに該当する。

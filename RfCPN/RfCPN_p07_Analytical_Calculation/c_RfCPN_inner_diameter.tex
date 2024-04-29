@@ -8,12 +8,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 07.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{eテーパの算定\TBW}
+\modHeadsection{\eTaper の算定\TBW}
 使用する鋼材の種類として、\index{C（たんそ）@C（炭素）}C, \index{Si（ケイそ）@Si（ケイ素）}Si, \index{Mn（マンガン）@Mn（マンガン）}Mn, \index{P（リン）@P（リン）}P, \index{S（いおう）@S（硫黄）}Sが含まれている場合を考える。
-\index{JISきかく（こうしゅ）@JIS規格（鋼種）}JIS規格に基づいた鋼種を用いるものとすれば、その規格によってそれぞれの\index{かがくそせい（eテーパ）@化学組成（eテーパ）}化学組成の\index{がんゆうりょう（かがくそせい）@含有量（化学組成）}含有量も決定される。
-それぞれの化学組成の含有量($\mathrm{wt}\%$)を$X_\mathrm C$, $X_\mathrm{Si}$, $X_\mathrm{Mn}$, $X_\mathrm P$, $X_\mathrm S$とし、またその\index{えいきょうけいすう（eテーパ）@影響係数（eテーパ）}影響係数を$k_\mathrm C$, $k_\mathrm{Si}$, $k_\mathrm{Mn}$, $k_\mathrm P$, $k_\mathrm S$とする。
+\index{JISきかく（こうしゅ）@JIS規格（鋼種）}JIS規格に基づいた鋼種を用いるものとすれば、その規格によってそれぞれの\expandafterindex{かがくそせい（\yomieTaper）@化学組成（\nameeTaper）}化学組成の\index{がんゆうりょう（かがくそせい）@含有量（化学組成）}含有量も決定される。
+それぞれの化学組成の含有量($\mathrm{wt}\%$)を$X_\mathrm C$, $X_\mathrm{Si}$, $X_\mathrm{Mn}$, $X_\mathrm P$, $X_\mathrm S$とし、またその\expandafterindex{えいきょうけいすう（\yomieTaper）@影響係数（\nameeTaper）}影響係数を$k_\mathrm C$, $k_\mathrm{Si}$, $k_\mathrm{Mn}$, $k_\mathrm P$, $k_\mathrm S$とする。
 また、その鋼材の\index{えきそうせんおんど@液相線温度}液相線温度を$T_\mathrm l$[$^\circ\mathrm C$], \index{こそうせんおんど@固相線温度}固相線温度を$T_\mathrm s$[$^\circ\mathrm C$]とする。
-一般にこれらの温度は、ある\index{きじゅんおんど（eテーパ）@基準温度（eテーパ）}基準となる温度$T_0$に対して、
+一般にこれらの温度は、ある\expandafterindex{きじゅんおんど（\yomieTaper）@基準温度（\nameeTaper）}基準となる温度$T_0$に対して、
 \begin{align*}
   T = T_0-\sum_i k_iX_i
 \end{align*}
@@ -52,4 +52,4 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{内側湾曲の近似曲線\TBW}
 内面は\index{テーパ（ないめん）@テーパ（内面）}テーパがついた形になっている。
-テーパは\index{ないけいテーパひょう@内径テーパ表}内径テーパ表等の数値に基づき、\index{CAD}CADにて\index{アイソパラメトリックきょくせん@アイソパラメトリック曲線}アイソパラメトリック曲線として記述され、それを\index{CAM}CAMに設定し、\index{しんがね@芯金}芯金が作成されている。
+テーパは\IDTaperTable 等の数値に基づき、\index{CAD}CADにて\index{アイソパラメトリックきょくせん@アイソパラメトリック曲線}アイソパラメトリック曲線として記述され、それを\index{CAM}CAMに設定し、\index{しんがね@芯金}芯金が作成されている。
