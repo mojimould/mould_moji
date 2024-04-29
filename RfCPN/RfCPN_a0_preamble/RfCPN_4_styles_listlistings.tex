@@ -2,12 +2,13 @@
 
 
 %%%%% SETMINTED %%%%%%%%%%%%%%%%%%%%%%%%%%
+\usemintedstyle{autumn}
 \renewcommand{\theFancyVerbLine}{%
   \ttfamily\color{black!75!}{%
     \small\oldstylenums{\arabic{FancyVerbLine}}
     }%
 }
-\setminted{
+\setminted[gcode]{
   fontfamily=tt,
   fontsize=\normalsize,
   breaklines=true,
