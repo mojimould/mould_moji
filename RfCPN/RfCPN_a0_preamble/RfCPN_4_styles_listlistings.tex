@@ -1,6 +1,26 @@
 %!TEX root = ../RfCPN.tex
 
 
+%%%%% SETMINTED %%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\theFancyVerbLine}{%
+  \ttfamily\color{black!75!}{%
+    \small\oldstylenums{\arabic{FancyVerbLine}}
+    }%
+}
+\setminted{
+  fontfamily=tt,
+  fontsize=\normalsize,
+  breaklines=true,
+  baselinestretch=1.0,
+  frame=single,
+%  framesep=0pt,
+%  bgcolor=white,
+  linenos,
+  numbers=left,
+  numbersep=0pt,
+  mathescape,
+}
+
 %%%%% LISTLINGS STYLE %%%%%%%%%%%%%%%%%
 \lstdefinelanguage{GcodeBasic}{
   sensitive=true,%
