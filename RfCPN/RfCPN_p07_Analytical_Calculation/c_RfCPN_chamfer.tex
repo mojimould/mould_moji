@@ -95,7 +95,7 @@
 
 %\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 25.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 37.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{面取長の補正\TBW}
 \EndFaceChamferMilling では、$Z$方向の\index{めんとりちょう@面取長}面取長が揃う形になるように加工を行う。
@@ -107,10 +107,50 @@
 
 
 
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 37.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\EndFaceCChamferMilling の負荷}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 37.05.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{削り代の体積}
+\EndFaceChamferMilling において、\EndFaceOutChamferMilling ではC面側, \EndFaceInChamferMilling ではA面側の加工の際に、切削する体積が最も多くなる。
+たとえば\BottomEndFaceInCChamfer のA面側（直線部）に着目すると、A面側内面の湾曲を$R_\mathrm i$%
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{簡単のため、ここではA面側内面の湾曲を$R_\mathrm i$は一定とする。},
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\EndFaceInCChamferLength を$c_\mathrm{Bi}$, \EndFaceInCChamferAngle を$\xi_\mathrm e$とすると、単位長さあたりの全削り代（体積）は、
+\begin{align*}
+  \frac{c_\mathrm{Bi}^2}2\tan\xi_\mathrm e
+  +\frac{k_cc_\mathrm{Bi}}2
+  -\frac{R_\mathrm i^2}2(\psi_c-\sin\psi_c)\ .
+\end{align*}
+ここで、
+\begin{align*}
+  k_c = \sqrt{R_\mathrm i^2-(f_\mathrm B-c_\mathrm{Bi})^2}
+        -\sqrt{R_\mathrm i^2-f_\mathrm B^2}\quad, \quad
+  \sin\frac{\psi_c}2 = \frac{\sqrt{c_\mathrm{Bi}^2+k_c^2}}{2R_\mathrm i}\ .
+\end{align*}
+仕上げ加工の前に、径方向に$\delta_\mathrm c$\,($\leq c_\mathrm{Bi}\tan\xi_\mathrm e$)だけ残す形に加工するものとすると、仕上げ加工前の全削り代は、
+\begin{align*}
+  \left(1-\frac{\delta_\mathrm e}{c_\mathrm{Bi}\tan\xi_\mathrm e+k_c}\right)^2
+\end{align*}
+だけ乗じたものとなる。
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 37.05.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{加工1回あたりの体積比\TBW}
+仕上げ前の加工に対して、切削する体積が一定であり、かつ最後は径方向に$d_c$だけ加工するものとする。
+このとき、最後から1回前の加工は、
+\begin{align*}
+  d_c\left(1-\frac{d_c}{c_\mathrm{Bi}\tan\xi_\mathrm e+k_c-\delta_\mathrm e}\right)^2
+\end{align*}
 
 
 
