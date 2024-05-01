@@ -68,8 +68,29 @@ IF[#1000EQ1]THEN #32=#901007
 
 (TooriShin X start)
 
-
 N002
+G91 G28 X0 Y0
+M11 (B-axis unclamp)
+G90 G53 G00 B-30.0
+M10 (B-axis clamp)
+G90 G53 G01 Z-650.0 F#650
+
+M00 (clean BC surfaces)
+
+N003
+G90 G53 G01 Z0 F#650
+T50 (touch sensor)
+M11 (B-axis unclamp)
+G90 G54 G00 B[-90+#01]
+M10 (B-axis clamp)
+(G54 Top:+X, Bot:-X)
+(B parallel angle -90.000+A)
+
+M06 (tool exchange)
+M19 (Spindle orientation)
+G43 H50 (hosei KouguChou: #50)
+
+N004
 G90 G53 G01 X-5.501 Y-258.624 Z0 F#652
 G90 G54 G01 Y0 F#652
 (G90 Y: G54 origin Y)
@@ -77,13 +98,13 @@ G90 G53 G01 X[#23-[#13/2]+#33] F#652
 (X: W-M/2 from table center)
 
 IF[#1005EQ1]GOTO801
-IF[#1004EQ1]GOTO003
+IF[#1004EQ1]GOTO005
 (if low battery, go to N801)
-(if current sensor ON, go to N003)
+(if current sensor ON, go to N005)
 M117 (sensor on/off)
 G04 X1. (wait 1.0s)
 
-N003
+N005
 G90 G54 G43 G31 Z[#5221-#33-#04+[#20/2]+#600] H50 F#652
 G90 G54 G31 Z[#5221-#33-#04+[#20/2]+#602] F#653
 IF[#5003GT[#5221-#33-#04+[#20/2]+#602]]GOTO802
@@ -121,12 +142,12 @@ G90 G53 G01 Z0 F#650
 (difference)
 
 IF[#1005EQ1]GOTO801
-IF[#1004EQ0]GOTO004
+IF[#1004EQ0]GOTO006
 (if low battery, go to N801)
-(if current sensor off, go to N004)
+(if current sensor off, go to N006)
 M117 (sensor off)
 
-N004
+N006
 G90 G54 G01 X#900036 F#652
 (X to table center)
 
@@ -139,10 +160,10 @@ N100
 G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
 M11 (B-axis unclamp)
-G90 G54 G00 B[180-#01]
+G90 G54 G00 B[180+#01]
 M10 (B-axis clamp)
 (G54 Bot:+Z, Top:-Z)
-(B parallel angle 180-A)
+(B parallel angle 180+A)
 
 N102
 G90 G54 G01 X0 Y[[#03/2]+#901050+#602] F#652

@@ -647,35 +647,15 @@ IF[#402EQ0]GOTO990
 (*** TooriShin start ***)
 
 
+N650
 G90 G53 G01 Z0 F#650
 G91 G28 X0 Y0
 G49 G40 (cancel hosei)
 G80 G17
 S35 (low gear)
 
-T50 (touch sensor)
-
-M11 (B-axis unclamp)
-G90 G53 G00 B-30.0
-M10 (B-axis clamp)
-G90 G53 G01 Z-650.0 F#650
-
-M00 (clean BC surfaces)
-
-N650
-G90 G53 G01 Z0 F#650
-M11 (B-axis unclamp)
-G90 G54 G00 B[-90-0.642]
-M10 (B-axis clamp)
-(G54 Top:+X, Bot:-X)
-(B parallel angle -90.642)
-
-M06 (tool exchange)
-M19 (Spindle orientation)
-G43 H50 (hosei KouguChou: #50)
-
-G54 G65 P150003 W500.016 Z499.984 T180.950 U180.950 B180.950 C180.950 M12.05 K25.0 I11.0 A-0.642
-(O150003: tooriShin X)
+G54 G65 P150002 W500.016 Z499.984 T180.950 U180.950 B180.950 C180.950 M12.05 K25.0 I11.0 A-0.642
+(O150002: tooriShin X)
 (W: Top sai_furiwake)
 (Z: Bot sai_furiwake)
 (T: Top AC gaisakuKei)
