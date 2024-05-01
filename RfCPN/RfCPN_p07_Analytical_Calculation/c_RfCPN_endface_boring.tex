@@ -9,5 +9,38 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 06.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\EndFaceBoring の位置\TBW}
-(to be written...)
+\modHeadsection{\EndFaceBoring の位置}
+\EndFaceBoring はトップD面側のみにある。
+\EndFaceBoring のA面側からの距離, \EndFaceBoringWidth, \EndFaceBoringDepth, \EndFaceBoringCornerR をそれぞれ$p_\beta$, $w_\beta$, $d_\beta$, $R_\beta$とする。
+このとき、\TopEndFace の外側中心T$'_\mathrm c$を原点として、A面側の\EndFaceBoringCornerR の中心の位置を($\beta_x$, $\beta_y$)とすると、
+\begin{align*}
+  \beta_x &= -\frac{\mathcal W_x}2+p_\beta+\sqrt{d_\beta(2R_\beta-d_\beta)}\ ,\\
+  \beta_y &= \frac{\mathcal W_y}2-d_\beta+R_\beta\ .
+\end{align*}
+ここで、$\mathcal W_x$, $\mathcal W_y$は実測した\TopEndFace の外径を示す。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosoku}
+\EndFaceBoring のA面側の位置から$\beta_x$の位置までの$x$方向の距離は、
+\begin{align*}
+  R_\beta(1-\cos\theta) = d_\beta\quad
+  \longrightarrow\quad
+  \cos\theta = 1-\frac{d_\beta}{R_\beta}
+\end{align*}
+に対して$R_\beta\sin\theta$である。
+すなわち、
+\begin{align*}
+  R_\beta\sin\theta
+  = R_\beta\sqrt{\frac{d_\beta}{R_\beta}\left(2-\frac{d_\beta}{R_\beta}\right)}
+  = \sqrt{d_\beta(2R_\beta-d_\beta)}\ .
+\end{align*}
+\end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+同様に、C面側の\EndFaceBoringCornerR の中心の位置($\beta_x'$, $\beta_y'$)は、
+\begin{align*}
+  \beta_x &= -\frac{\mathcal W_x}2+p_\beta+w_\beta-\sqrt{d_\beta(2R_\beta-d_\beta)}\ ,\\
+  \beta_y &= \frac{\mathcal W_y}2-d_\beta+R_\beta\ .
+\end{align*}
