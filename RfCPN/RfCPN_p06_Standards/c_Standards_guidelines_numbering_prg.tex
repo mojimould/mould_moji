@@ -95,7 +95,7 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 12.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 20.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{番号付け：5桁目}
 \index{5けため（プログラムばんごう）@5桁目（プログラム番号）}5桁目は、以下のように分類する。
@@ -135,7 +135,8 @@
     主に、\EndFaceOutCChamferMilling の位置決めを行うNCプログラム({\ttfamily 44\textbackslash d{4}})
   \item%\label{item:5KCI}
     主に、\EndFaceInCChamferMilling の位置決めを行うNCプログラム({\ttfamily 45\textbackslash d{4}})
-%  \item\label{item:5KZ} \EndFaceBoringMilling のNCプログラム(\ttfamily{46\textbackslash d{4}})
+  \item%\label{item:5KZ}
+    \EndFaceBoringMilling のNCプログラム({\ttfamily 46\textbackslash d{4}})
   \setcounter{enumii}{8}
   \item 主に、位置決め後、実際に加工を行うNCプログラム({\ttfamily 49\textbackslash d{4}})
   \end{enumerate}
@@ -179,8 +180,8 @@
 \item 主に$X$方向に測定または加工するNCプログラム({\ttfamily{[125][1-69]0{3}1}})
 \item 主に$Y$方向に測定または加工するNCプログラム({\ttfamily{[125][1-69]0{3}2}})
 \item 主に$Z$方向に測定または加工するNCプログラム({\ttfamily{[125][1-69]0{3}3}})
-\item 工具から見て右回り（$XY$面）に、主に外側から加工するNCプログラム({\ttfamily{[125][1-69]0{3}4}})
-\item 工具から見て左回り（$XY$面）に、主に外側から加工するNCプログラム({\ttfamily{[125][1-69]0{3}5}})
-\item 工具から見て右回り（$XY$面）に、主に内側から加工するNCプログラム({\ttfamily{[125][1-69]0{3}6}})
-\item 工具から見て左回り（$XY$面）に、主に内側から加工するNCプログラム({\ttfamily{[125][1-69]0{3}7}})
+\item 工具から見て左回り・工具径補正{\ttfamily G41}で、外側を加工するNCプログラム({\ttfamily{[125][1-69]0{3}4}})
+\item 工具から見て左回り・工具径補正{\ttfamily G42}で、外側を加工するNCプログラム({\ttfamily{[125][1-69]0{3}5}})
+\item 工具から見て左回り・工具径補正{\ttfamily G42}で、内側を加工するNCプログラム({\ttfamily{[125][1-69]0{3}6}})
+\item 工具から見て左回り・工具径補正{\ttfamily G41}で、内側を加工するNCプログラム({\ttfamily{[125][1-69]0{3}7}})
 \end{enumerate}
