@@ -21,3 +21,5 @@ RfCPN/RfCPN.log
 *.upa
 *.upb
 RfCPN/RfCPN.pdf
+*.pygtex
+*.pygstyle
