@@ -73,17 +73,12 @@
 %  numwidth=2.71em % エントリ番号の幅を調整
 %]{tocline}{lstlisting}
 %%%%% FOR Colmun %%%%%
-%\DeclareTOCStyleEntry[
-%  level=\sectiontocdepth,
-%  indent=0em, % エントリのインデントを調整
-%  numwidth=2.71em % エントリ番号の幅を調整
-%]{tocline}{Colmun}
-\titlecontents{Colmun}
-[2.35em] % 左インデント
-{\addvspace{0pt}} % 上部の垂直スペースとフォーマット
-{\contentslabel{1.5em}} % ラベルとテキストの間のスペース
-{\hspace*{-1.5em}} % ラベルなしの場合のスペース
-{\titlerule*[0.5pc]{.}\contentspage} % ページ番号前のリーダーとページ番号
+%\titlecontents{Colmun}
+%[2.35em] % 左インデント
+%{\addvspace{0pt}} % 上部の垂直スペースとフォーマット
+%{\contentslabel{1.5em}} % ラベルとテキストの間のスペース
+%{\hspace*{-1.5em}} % ラベルなしの場合のスペース
+%{\titlerule*[0.5pc]{.}\contentspage} % ページ番号前のリーダーとページ番号
 %%%%% STYLE OF LIST FOR APPENDIX %%%%%
 \AtBeginEnvironment{appendices}{%
   \clearrightpage%

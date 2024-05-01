@@ -81,11 +81,11 @@
 %%%%% COLUMN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Columnname}{Column}
-\newtcolorbox[auto counter, number within=chapter, list inside=loC]{Column}[2][]{%
+\newtcolorbox[auto counter, number within=chapter, list inside=loC, list type=section]{Column}[2][]{%
   Columnbox,
   title={#2},
   #1,
-  list entry={\numberline{\protect\hspace*{9.5pt}\Columnname~\thetcbcounter}{\protect\hspace*{55pt}#2}}
+  list entry={\numberline{\Columnname~\thetcbcounter}{\protect\hspace*{36pt}#2}}
 }
 %\newcommand{\tcb@cnt@Columnautorefname}{Column}
 \tcbset{%
