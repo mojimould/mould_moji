@@ -74,12 +74,10 @@ M06 (tool exchange)
 
 M07 (coolant #2 on)
 G04 X30.0
-
 M09 (coolant off)
 G04 X4.0
 M151 (spindle through air blow)
 G04 X10.0
-
 M09 (coolant off)
 G91 G28 Z0
 G91 G28 X0 Y0

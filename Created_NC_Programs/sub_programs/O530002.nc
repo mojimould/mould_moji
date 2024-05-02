@@ -86,15 +86,12 @@ N999 M99
 (#05:J: +:Y+direction, -:Y-direction)
 (#21:U: the depth of dimples)
 (#23:W: the position of the dimple)
-
 (as LHS)
 (#29, #31, #32, #33)
-
 
 (Common variables)
 (as RHS)
 (#463, #464, #468, #469, #473, #474, #621, #651, #670, #671)
-
 
 (System variables)
 (#3000: alarm)
