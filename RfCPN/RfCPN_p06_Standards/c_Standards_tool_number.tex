@@ -80,12 +80,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 25.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{工具の詳細\TBW}
+\subsection{工具の詳細}
 \dateTourokuKougu 時点において、使用工具の詳細は以下の通りである。\\
 
-\begin{multicollongtblr}{\DMC{} 使用工具：製品詳細}{c c X[l] X[l] c}
+\begin{multicollongtblr}{\DMC{} 使用工具：先端工具}{c c X[l] X[l] c}
 \ttfamily T\ttNum & 用途 & コード・呼び & 材質 & 製造\\
-\ttfamily T02 & 端面削
+\ttfamily T02 & \EndFacecut
 & \SetCell[c=2]{}\href{https://www.moldino.com/products/detail/?pid=afe45}{AFE45}-4100R-5
 & & \linkMoldino\\
 \hline
@@ -100,13 +100,16 @@
 & \SetCell[c=2]{}\href{https://www.ns-tool.com/ja/products/detail/114}{08-00300-04024}
 & & \href{https://www.ns-tool.com/}{日進工具}\\
 \ttfamily T12 & \EndFaceCChamfer
-& \SetCell[c=2]{}\href{https://osg.icata.net/iportal/CatalogViewInterfaceStartUpAction.do?method=startUp&mode=PAGE&volumeID=OSGDCS01&catalogId=138550000&pageGroupId=604&designID=OSGD01&catalogCategoryId=&designConfirmFlg=&pagePosition=L&c=gc_2&c_page_name=850-1&table_division=sc&target_product_id=2060539460&target_abbreviation=V-XPM-VCMS}{V-XPM-VCMS} $20\times60^\circ$
+& \SetCell[c=2]{}\href{https://osg.icata.net/iportal/CatalogViewInterfaceStartUpAction.do?method=startUp&volumeID=OSGDCS01&catalogId=138550000&pageGroupId=604&designID=OSGD01}{V-XPM-VCMS} $20\times60^\circ$
+& & \href{https://www.osg.co.jp/}{OSG}\\
+(\ttfamily T12) & \EndFaceCChamfer
+& \SetCell[c=2]{}\href{https://osg.icata.net/iportal/CatalogViewInterfaceStartUpAction.do?method=startUp&volumeID=OSGDCS01&catalogId=138550000&pageGroupId=312&designID=OSGD01}{FX-MG-CS$\times60$} $20.5\times12\times5.0\times80$
 & & \href{https://www.osg.co.jp/}{OSG}\\
 \ttfamily T13 & \EndFaceCChamfer
-& \SetCell[c=2]{}\href{https://osg.icata.net/iportal/CatalogViewInterfaceStartUpAction.do?method=startUp&mode=PAGE&volumeID=OSGDCS01&catalogId=138550000&pageGroupId=305&designID=OSGD01&catalogCategoryId=&designConfirmFlg=&pagePosition=L&c=gc_2&c_page_name=441&table_division=sc&target_product_id=9200110&target_abbreviation=W-HSCT-P}{W-HSCT-P} $2\times45^\circ\times10$
+& \SetCell[c=2]{}\href{https://osg.icata.net/iportal/CatalogViewInterfaceStartUpAction.do?method=startUp&volumeID=OSGDCS01&catalogId=138550000&pageGroupId=305&designID=OSGD01}{W-HSCT-P} $2\times45^\circ\times10$
 & & \href{https://www.osg.co.jp/}{OSG}\\
 \hline
-\ttfamily T16 & 外削
+\ttfamily T16 & \Outcut
 & \SetCell[c=2]{}\href{https://www.moldino.com/ja/products/detail/?pid=hgos}{HGOS}4200-PN
 & & \linkMoldino\\
 \hline
@@ -126,6 +129,52 @@
  &
 & \SetCell[c=2]{}\href{https://www.renishaw.com/shop/Product.aspx?Product=A-5000-7727}{A-5000-7727}
  & & \\
+\end{multicollongtblr}
+
+
+\clearpage
+\begin{multicollongtblr}{\DMC{} 使用工具：\index{シャンク}シャンク・\index{ホルダ}ホルダ・\index{コレットチャック}コレットチャック\TBW}{c c X[l] c}
+\ttfamily T\ttNum & 用途 & コード・呼び & 製造\\
+\ttfamily T02 & \EndFacecut
+& \href{https://www.moldino.com/products/detail/?pid=afe45}{AFE45}-4100R-5
+& \linkMoldino\\
+\hline
+\ttfamily T06 & \Keyway & - & -\\
+{(\ttfamily T08)} & \Keyway & - & -\\
+\hline
+\ttfamily T11 & \EndFaceCChamfer
+& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=524}{MEGA20N/NBS20} NBC20-12AA
+& \href{https://www.big-daishowa.co.jp/}{BIG DAISHOWA}\\
+\ttfamily T12 & \EndFaceCChamfer
+& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=524}{MEGA20N/NBS20} NBC20-20AA
+& \href{https://www.big-daishowa.co.jp/}{BIG DAISHOWA}\\
+(\ttfamily T12) & \EndFaceCChamfer
+& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=524}{MEGA20N/NBS20} NBC20-12AA
+& \href{https://www.big-daishowa.co.jp/}{BIG DAISHOWA}\\
+\ttfamily T13 & \EndFaceCChamfer
+& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=524}{MEGA20N/NBS20} NBC20-10AA
+& \href{https://www.big-daishowa.co.jp/}{BIG DAISHOWA}\\
+\hline
+\ttfamily T16 & \Outcut
+& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=545}{PSC32-20}
+& \href{https://www.big-daishowa.co.jp/}{BIG DAISHOWA}\\
+\hline
+\ttfamily T31 & \Dimple
+& \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC32-17-310-190}
+& \linkMoldino\\
+\ttfamily T32 & \Dimple
+& \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC32-17-310-190}
+& \linkMoldino\\
+({\ttfamily T33}) & \Dimple
+& \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC25-12.5-315-65}
+& \linkMoldino\\
+\hline
+\SetCell[r=2]{}\ttfamily T50 & \SetCell[r=2]{}測定
+& \href{https://www.renishaw.com/resourcecentre/en/details/RMP600--100156}{RMP600}
+& \linkRenishaw\\
+ &
+& \href{https://www.renishaw.com/resourcecentre/en/details/--7855}{MP10}
+ & \linkRenishaw\\
 \end{multicollongtblr}
 
 
