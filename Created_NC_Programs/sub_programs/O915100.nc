@@ -69,17 +69,16 @@ M29 (chip conveyor off)
 N999 M30
 
 
-
 T01
 M06 (tool exchange)
 
 M07 (coolant #2 on)
-G04 X30.
+G04 X30.0
 
 M09 (coolant off)
-G04 X4.
+G04 X4.0
 M151 (spindle through air blow)
-G04 X10.
+G04 X10.0
 
 M09 (coolant off)
 G91 G28 Z0

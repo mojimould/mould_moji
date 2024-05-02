@@ -5,10 +5,10 @@ O910002 (touch sensor OFF)
 
 N001 (loop)
 M117 (sensor on/off)
-G04 X1. (wait 1.0s)
+G04 X1.0 (wait 1.0s)
 IF[#1004EQ0]GOTO999
 (if current sensor OFF, go to N999)
-G04 X4. (wait 4.0s)
+G04 X4.0 (wait 4.0s)
 #33=#33+1
 IF[#33LT4]GOTO001
 (if #33 < 4, go to N001)
