@@ -28,7 +28,7 @@ class GCodeLexer(RegexLexer):
     builtins = (
         'if', 'end', 'endif', 'end_if',
         'then', 'else', 'elsif',
-        'while', 'endwhile', 'end_while',
+        'while', 'do', 'endwhile', 'end_while',
         'goto', 'exit',
         'sub', 'endsub', 'end_sub',
         'call',
@@ -59,12 +59,12 @@ class GCodeLexer(RegexLexer):
             (r'(\[)', Keyword, 'bracket'),
 
             # Line numbers
-            (r'\s*[]\d+', Comment),
+            (r'\s*[n]\d+', Comment),
             # G and M commands and other tooling, match only the label
-            (r'(?<![a-zA-Z\<])[gGmMhHdDtT](?=(\d+\.?\d?))', Keyword.Declaration),
+            (r'(?<![a-zA-Z\<])[DGHLMT](?=(\d+\.?\d?))', Keyword.Declaration),
             # Coordinates, Feeds, Speeds, and Machining parameter, 
             # match only the label
-            (r'(?<![a-zA-Z\<])[xXyYzZiIjJkKlLpPqQrReEaAbBcCuUvVwWfFsS\^\@](?=(\s*[+-]?\d*\.?\d+|\s*[+-]?#))', Keyword.Type),
+            (r'(?<![a-zA-Z\<])[ABCEfFHIJKMNQRSTUVWXYZ\^\@](?=(\s*[+-]?\d*\.?\d+|\s*[+-]?#))', Keyword.Type),
 
 
             # Non-persistent Arguments (#1-#30)
@@ -87,9 +87,9 @@ class GCodeLexer(RegexLexer):
             ("(?i)(%s)" % '|'.join(re.escape(entry) for entry in functions), Operator.Word),
 
             # Subroutines, match label
-            (r'(?<![a-zA-Z\<])[oO](?=[\d\<\[])', Keyword.Reserved),
+            (r'(?<![a-zA-Z\<])[OP](?=[\d\<\[])', Keyword.Reserved),
             # Subroutines, named, match function name
-            (r'(?<=([oO][\<\[]))\w+(?=\>)', Name.Function),
+            (r'(?<=([OP][\<\[]))\w+(?=\>)', Name.Function),
 
             # OTHERS
             include('data')
