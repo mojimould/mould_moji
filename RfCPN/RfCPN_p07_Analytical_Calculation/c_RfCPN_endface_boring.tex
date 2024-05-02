@@ -14,7 +14,7 @@
 \EndFaceBoring のA面側からの距離, \EndFaceBoringWidth, \EndFaceBoringDepth, \EndFaceBoringCornerR をそれぞれ$p_\beta$, $w_\beta$, $d_\beta$, $R_\beta$とする。
 このとき、\TopEndFace の外側中心T$'_\mathrm c$を原点として、A面側の\EndFaceBoringCornerR の中心の位置を($\beta_x$, $\beta_y$)とすると、
 \begin{align*}
-  \beta_x &= -\frac{\mathcal W_x}2+p_\beta+\sqrt{d_\beta(2R_\beta-d_\beta)}\ ,\\
+  \beta_x &= \frac{\mathcal W_x}2-p_\beta-\sqrt{d_\beta(2R_\beta-d_\beta)}\ ,\\
   \beta_y &= -\frac{\mathcal W_y}2+d_\beta-R_\beta\ .
 \end{align*}
 ここで、$\mathcal W_x$, $\mathcal W_y$は実測した\TopEndFace の外径を示す。
@@ -44,7 +44,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 同様に、C面側の\EndFaceBoringCornerR の中心の位置($\beta_x'$, $\beta_y'$)は、
 \begin{align*}
-  \beta_x' &= -\frac{\mathcal W_x}2+p_\beta+w_\beta-\sqrt{d_\beta(2R_\beta-d_\beta)}\ ,\\
+  \beta_x' &= \frac{\mathcal W_x}2-p_\beta-w_\beta+\sqrt{d_\beta(2R_\beta-d_\beta)}\ ,\\
   \beta_y' &= -\frac{\mathcal W_y}2+d_\beta-R_\beta\ .
 \end{align*}
 
@@ -57,6 +57,6 @@
 \modHeadsection{\EndFaceBoring の中心}
 \EndFaceBoring を長方形（コーナーR有）と捉えると、その中心の$x$座標は、
 \begin{align*}
-  -\frac{\mathcal W_x'}2+p_\beta+\frac{w_\beta}2\ .
+  \frac{\mathcal W_x'}2-p_\beta-\frac{w_\beta}2\ .
 \end{align*}
 $y$座標については、$-\nicefrac{\mathcal W_y'}2+d_\beta-\max\{R_\beta, d_\beta\}$より小さい範囲で任意である。
