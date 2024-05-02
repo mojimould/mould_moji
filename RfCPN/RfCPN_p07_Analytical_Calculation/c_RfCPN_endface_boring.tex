@@ -9,10 +9,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 39.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\EndFaceBoring の位置}
+\modHeadsection{\EndFaceBoring の位置：\texorpdfstring{$XY$}{XY}方向}
 \EndFaceBoring はトップD面側のみにある。
-\EndFaceBoring のA面側からの距離, \EndFaceBoringWidth, \EndFaceBoringDepth, \EndFaceBoringCornerR をそれぞれ$p_\beta$, $w_\beta$, $d_\beta$, $R_\beta$とする。
-このとき、\TopEndFace の外側中心T$'_\mathrm c$を原点として、A面側の\EndFaceBoringCornerR の中心の位置を($\beta_x$, $\beta_y$)とすると、
+\EndFaceBoring のA側外面からの距離, \EndFaceBoringWidth, \EndFaceBoringDepth, \EndFaceBoringCornerR, \EndFaceBoringLength をそれぞれ$p_\beta$, $w_\beta$, $d_\beta$, $R_\beta$, $l_\beta$とする。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 39.01.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\EndFaceBoringCornerR の中心の位置}
+\TopEndFace の外側中心T$'_\mathrm c$を原点として、A面側の\EndFaceBoringCornerR の中心の位置を($\beta_x$, $\beta_y$)とすると、
 \begin{align*}
   \beta_x &= \frac{\mathcal W_x}2-p_\beta-\sqrt{d_\beta(2R_\beta-d_\beta)}\ ,\\
   \beta_y &= -\frac{\mathcal W_y}2+d_\beta-R_\beta\ .
@@ -49,14 +55,33 @@
 \end{align*}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 39.01.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\EndFaceBoringWidth の直線部の長さ}
+\EndFaceBoringWidth から\EndFaceBoringCornerR の部分を除いた直線部の長さは、
+\begin{align*}
+  w_\beta-2\sqrt{d_\beta(2R_\beta-d_\beta)}
+\end{align*}
+で与えられる。
+
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 39.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 39.01.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\EndFaceBoring の中心}
-\EndFaceBoring を長方形（コーナーR有）と捉えると、その中心の$x$座標は、
+\subsection{\EndFaceBoring の中心}
+\EndFaceBoringWidth の中心の$x$座標は、
 \begin{align*}
   \frac{\mathcal W_x'}2-p_\beta-\frac{w_\beta}2\ .
 \end{align*}
 $y$座標については、$-\nicefrac{\mathcal W_y'}2+d_\beta-\max\{R_\beta, d_\beta\}$より小さい範囲で任意である。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 39.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\EndFaceBoring の位置：\texorpdfstring{$Z$}{Z}方向}
+\EndFaceBoringMilling には、\index{スクエアエンドミル}スクエアエンドミルを用いて行う。
+このとき、工具の先端の位置は、$f_t'-l_\beta$で与えられる。
