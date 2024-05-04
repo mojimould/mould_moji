@@ -7,6 +7,28 @@
   \expandafter\newcommand\csname name#1\endcsname{#2}%
   \expandafter\newcommand\csname #1\endcsname{\expandafterindex{#3@#2}#2}%
 }
+
+%%%%% GPMBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtcbox{\GPMbox}{%
+  commontcbox,
+  enlarge top by=2.5pt,
+  top=0pt,
+  bottom=0pt,
+  left=3.2mm,
+  colframe=green!50!black,
+  colback=green!10!white,
+  overlay={%
+    \begin{tcbclipinterior}%
+      \fill[green!80!blue!50!black!50!] ([xshift=-0.025mm]frame.south west)
+      rectangle node[text=white, font=\bfseries\tiny, rotate=90] {{\fontspec{Latin Modern Sans}PM}} ([xshift=3.5mm]frame.north west);
+    \end{tcbclipinterior}%
+  },
+}
+\robustify{\GPMbox}
+\pdfstringdefDisableCommands{%
+  \def\GPMbox#1{`#1'}%
+}
+
 %%%%% NEWGPMCOMMAND %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\newGPMcommand}[3]{%
   \newNamecommand{#1}{#2}{#3}%

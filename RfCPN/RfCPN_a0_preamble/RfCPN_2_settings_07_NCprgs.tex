@@ -1,6 +1,28 @@
 %!TEX root = ../RfCPN.tex
 
 
+%%%%% GPRGTBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtcbox{\Gprgbox}{%
+  commontcbox,
+  enlarge top by=-0.5pt,
+  top=0pt,
+  bottom=0pt,
+  left=3.1mm,
+  colframe=blue!50!black,
+  coltext=blue!25!black,
+  colback=blue!10!white,
+  overlay={%
+    \begin{tcbclipinterior}%
+      \fill[blue!75!green!50!white] ([xshift=-0.025mm]frame.south west)
+      rectangle node[text=white, font=\bfseries\tiny, rotate=90] {{\fontspec{Latin Modern Sans}GP}} ([xshift=3.5mm]frame.north west);
+    \end{tcbclipinterior}%
+  },
+}
+\robustify{\Gprgbox}
+\pdfstringdefDisableCommands{%
+  \def\Gprgbox#1{`#1'}%
+}
+
 %%%%% NEWGPRGCOMMAND %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\newGprgcommand}[2]{%
   \expandafter\newcommand\csname name#1\endcsname{#2}%
