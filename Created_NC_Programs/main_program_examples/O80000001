@@ -1,10 +1,10 @@
 %
-O80000001 (created at 20240501)
+O80000001 (created at 20240504)
 (Top sai_furiwake: 500.016)
 (Bot sai_furiwake: 499.984)
 (Top Haridashi: 170.016)
 (Bot Haridashi: 169.984)
-(B parallel angle -0.642, 1179.358)
+(B parallel angle -0.642, 179.358)
 
 N001
 G49 G40 (cancel hosei)

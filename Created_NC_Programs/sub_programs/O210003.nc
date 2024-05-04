@@ -1,5 +1,6 @@
 %
-O210003 (for dimple measurement & kakou)
+O210003 (created at 20240504)
+(for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 
 #700=#4012
@@ -207,19 +208,19 @@ IF[#724EQ1]GOTO107
 (#724=2, for C)
 (#724=1, for A)
 (face D)
-G65 P220002 A-1. F#09 S#19 I#04 K#06 U#718 B#02 M1.0
+G65 P220002 A-1.0 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for D: moving along row)
 GOTO108
 N105 (face B)
-G65 P220002 A1. F#09 S#19 I#04 K#06 U#718 B#02 M1.0
+G65 P220002 A1.0 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for B: moving along row)
 GOTO108
 N106 (face C)
-G65 P220001 A-1. X#24 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
+G65 P220001 A-1.0 X#24 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for C: moving along row)
 GOTO108
 N107 (face A)
-G65 P220001 A1. X#24 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
+G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for A: moving along row)
 
 N108
@@ -329,19 +330,19 @@ IF[#724EQ1]GOTO302
 (#724=2, for C)
 (#724=1, for A)
 (face D)
-G65 P220002 A-1. F#09 S#19 I#04 K#06 U#21 B#02 M#33
+G65 P220002 A-1.0 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for D: moving along row)
 GOTO303
 N300 (face B)
-G65 P220002 A1. F#09 S#19 I#04 K#06 U#21 B#02 M#33
+G65 P220002 A1.0 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for B: moving along row)
 GOTO303
 N301 (face C)
-G65 P220001 A-1. X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
+G65 P220001 A-1.0 X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for C: moving along row)
 GOTO303
 N302 (face A)
-G65 P220001 A1. X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
+G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for A: moving along row)
 N303
 IF[#33GE#13]GOTO206
@@ -437,7 +438,6 @@ N999 M99
 (as LHS)
 (#30, #31, #32, #33)
 
-
 (Common variables)
 (as RHS)
 (#401)
@@ -445,7 +445,6 @@ N999 M99
 (#901001, #901005, #901011, #901050)
 (as LHS)
 (#700-#718, #724)
-
 
 (System variables)
 (#0   : empty)
@@ -458,14 +457,11 @@ N999 M99
 (#5003: block end Z)
 (#5281: G57 X)
 
-
 (Subprograms)
 (O220001, O220002)
 
-
 (Passed arguments)
 (#04, #09, #13, #19, #21, #24, #33)
-
 
 (Used variable in other programs)
 (#724)
