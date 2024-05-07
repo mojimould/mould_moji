@@ -52,9 +52,9 @@
 \begin{enumerate}[label=\Roman*., ref=\Roman*]
 \item \label{item:FDTS} 原則として、{\ttfamily G00}を用いた移動はしない
 \item \ref{item:FDTS}に伴い、{\ttfamily G28}, {\ttfamily G30}を（直接的に）用いた移動はしない
-\item {\ttfamily G01}を位置決め（早送り）として用いるものとし、送り速さは{\ttfamily F6000}以下とする
+\item {\ttfamily G01}を位置決め（早送り）として用いるものとし、\index{おくりはやさ（はやおくり）@送り速さ（早送り）}送り速さは{\ttfamily F6000}以下とする
 \item ワークへの\index{アプローチ}アプローチの際は、{\ttfamily G31}を用いるものとし、送り速さは{\ttfamily F1500}以下とする
-\item 測定の際の\index{スキップ}スキップ({\ttfamily G31})の送り速さは、測定の仕方に応じて以下のものとする
+\item 測定の際の({\ttfamily G31})の\index{おくりはやさ（スキップ）@送り速さ（スキップ）}送り速さは、測定の仕方に応じて以下のものとする
   \begin{enumerate}
   \item \index{しんごうおくれほせい@信号遅れ補正}信号遅れ補正を考慮する必要があるような場合は、送り速さは{\ttfamily F50}とする
   \item 信号遅れ補正を考慮する必要がない場合は、送り速さは{\ttfamily F50}以上{\ttfamily F300}以下とする
@@ -81,7 +81,7 @@
 \item $Z$方向の移動は、原則として、{\ttfamily G00}を用いた移動はしない
 \item $Z$方向の送り速さは、{\ttfamily F\SpindleRapidTraverseXY}以下とする
 \item \index{ワーク}ワークへの\index{アプローチ}アプローチの際は、{\ttfamily G01}を用いるものとし、速さは{\ttfamily F\SpindleRapidAproachFeedRateZ}以下とする
-\item 加工の際は、それぞれの加工や状況に応じて適切なFコード値を設定する
+\item 加工の際は、それぞれの加工や状況に応じて適切な\index{Fコードち（かこう）@Fコード値（加工）}Fコード値を設定する
 \item ワークからの\index{リトラクト}リトラクトの際は{\ttfamily G01}を用いるものとし、速さは{\ttfamily F\SpindleRapidTraverseXY}以下とする。
 \end{enumerate}
 
