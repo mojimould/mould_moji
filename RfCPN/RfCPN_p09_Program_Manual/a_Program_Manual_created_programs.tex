@@ -42,7 +42,7 @@
            & \EndFaceInChamfer & \KUchiMentoriRLeft\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
 \hline
-\SetCell[r=8]{c}
+\SetCell[r=9]{c}
 \MainExTwo & 外側芯出し・幅 & \MXOThickness\MYOThickness\MXOface\\
            & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
            & \Dimple & \DLone\\
@@ -50,6 +50,7 @@
            & \Keyway & \KMizoConerLeft\\
            & \EndFaceOutChamfer & \KSotoMentoriRLeft\\
            & \EndFaceInChamfer & \KUchiMentoriRLeft\\
+           & \EndFaceBoring & \KEndFaceBoring\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
 \end{multicollongtblr}
 
@@ -95,13 +96,15 @@
 %\clearpage
 \begin{multicollongtblr}{作成したNCプログラム一覧：加工（\Dimple 以外）}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
-\KTanmenRight      & 加工 \EndFacecut{} コーナーR 右回り1周 & \KOLeftAR\\
-\KGaisakuRLeft     & 加工 \Outcut{} コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
-\KMizoConerLeft    & 加工 \Keyway{} 左回り1周 & \KOLeftAR\OpauseCheck\\
-\KSotoMentoriRLeft & 加工 \EndFaceOutChamfer{} コーナーR 左回り1周 & \KOLeftAR\OpauseCheck\\
-\KUchiMentoriRLeft & 加工 \EndFaceInChamfer{} コーナーR 左回り1周 & \KILeftAC\OpauseCheck\\
-\KOLeftAR   & 外側 左回り1周 右上始まり & -\\
-\KILeftAC   & 内側 左回り1周 中央上始まり & -\\
+\KTanmenRight      & 加工 \EndFacecut{} コーナーR 右回り1周 & \KOLeftFS\\
+\KGaisakuRLeft     & 加工 \Outcut{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
+\KMizoConerLeft    & 加工 \Keyway{} 左回り1周 & \KOLeftFS\OpauseCheck\\
+\KSotoMentoriRLeft & 加工 \EndFaceOutChamfer{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
+\KUchiMentoriRLeft & 加工 \EndFaceInChamfer{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
+\KEndFaceBoring & 加工 \EndFaceBoring{} コーナーR 左回り1周 & \KOLeftFF\OpauseCheck\\
+\KOLeftFF   & 外側 {\ttfamily G41} 左回り1周 右始まり & -\\
+\KOLeftFS   & 外側 {\ttfamily G42} 左回り1周 右上始まり & -\\
+\KILeftFF   & 内側 {\ttfamily G41} 左回り1周 中央上始まり & -\\
 \end{multicollongtblr}
 
 \clearpage
@@ -259,16 +262,32 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KOLeftAR\,:外側 左回り1周 右上始まり}
-\inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKOLeftAR.nc}
+\modcaptionof{lstlisting}{\KEndFaceBoring\,:加工 \EndFaceBoring{} コーナーR 左回り1周}
+\inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKUchiMentoriRLeft.nc}
 
 
 \clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KOLeftFF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KILeftAC\,:内側 左回り1周 中央上始まり}
-\inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKILeftAC.nc}
+\modcaptionof{lstlisting}{\KOLeftFF\,:外側 {\ttfamily G41} 左回り1周 右始まり}
+\inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKOLeftFF.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KOLeftFS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KOLeftFS\,:外側 {\ttfamily G42} 左回り1周 右上始まり}
+\inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKOLeftFS.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KILeftFF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{lstlisting}{\KILeftFF\,:内側 {\ttfamily G41} 左回り1周 中央上始まり}
+\inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKILeftFF.nc}
 
 
 \clearrightpage
