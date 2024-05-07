@@ -80,8 +80,7 @@
 \ttNum183 & \Keyway{} 仕上げ加工 追加回数 (上限3) & 0\\
 \ttNum184 & \TopEndFaceOutCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
 \ttNum185 & \TopEndFaceInCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
-\SetRow{unusingVariables}
-\ttNum186\TBW & （\EndFaceBoring{} 仕上げ加工 追加回数用 予備） & 0\\
+\ttNum186 & \EndFaceBoring{} 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
 \ttNum187 & （不使用） &\\
 \ttNum188 & \BottomOutcut{} 仕上げ加工 追加回数 (上限3) & 0\\
@@ -276,14 +275,11 @@
 \ttNum475 & \KeywayWidth$Z$方向中央切削（3回加工）(0:off, 3:on) & 0\\
 \SetRow{unusingVariables}
 \ttNum476 & （不使用） &\\
-\SetRow{unusingVariables}
-\ttNum477\TBW & （\EndFaceBoring$X+$補正用 予備） & 0\\
-\SetRow{unusingVariables}
-\ttNum478\TBW & （\EndFaceBoring 径 補正用 予備） & 0\\
-\ttNum479 & \EndFaceBoring{} 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum480 & \EndFaceBoring{} 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\SetRow{unusingVariables}
-\ttNum481 & （不使用） &\\
+\ttNum477 & \EndFaceBoring$X+$補正 & 0\\
+\ttNum478 & \EndFaceBoring$Y+$補正 & 0\\
+\ttNum479 & \EndFaceBoringWidth $+$補正 & 0\\
+\ttNum480 & \EndFaceBoring{} 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum481 & \EndFaceBoring{} 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum482 & （予備） &\\
 \SetRow{unusingVariables}
@@ -464,10 +460,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum632 & \EndFaceOutCChamferMilling{} 仕上げ前 残り削り代（直径） & 1.000\\
 \ttNum633 & \EndFaceInCChamferMilling1回あたりの削り代（直径） & 2.000\\
 \ttNum634 & \EndFaceInCChamferMilling{} 仕上げ前 残り削り代（直径） & 1.000\\
-\SetRow{unusingVariables}
-\ttNum635 & （\EndFaceBoringMilling 用予備） & \\
-\SetRow{unusingVariables}
-\ttNum636 & （\EndFaceBoringMilling 用予備） & \\
+\ttNum635 & \EndFaceBoringMilling1回あたりの削り代 & 1.000\\
+\ttNum636 & \EndFaceBoringMilling{} 仕上げ前 残り削り代 & 0.500\\
 \SetRow{unusingVariables}
 \ttNum637 & （予備） & \\
 \SetRow{unusingVariables}
@@ -1014,7 +1008,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum901103 & （\EndFacecutMilling 工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
 \SetRow{unusingVariables}
 \ttNum901104 & （\EndFacecutMilling 工具{\ttfamily T02}-{\ttfamily T05}用 予備） &\\
-\ttNum901105 & 工具{\ttfamily T06}（サイドカッター）厚さ$t$ & 6.9\\
+\ttNum901105 & 工具{\ttfamily T06}（サイドカッター）厚さ$t$ & 6.89\\
 \SetRow{unusingVariables}
 \ttNum901106 & （\KeywayMilling 工具{\ttfamily T06}, {\ttfamily T07}用 予備） &\\
 \SetRow{unusingVariables}
