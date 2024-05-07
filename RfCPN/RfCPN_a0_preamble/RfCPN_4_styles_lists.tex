@@ -91,3 +91,73 @@
   \patchcmd{\part}{\tocAPartSeparateline}{\relax}{}{}%
   \@appendixfalse%
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF OTHER LISTS %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FOR STYLE OF LOT %%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\listtablename{\texorpdfstring{\hbox to 3em{表目次}}{表目次}}
+\renewcommand{\tablename}{表}
+\renewcommand{\tableautorefname}{\tablename}
+%\let\l@table\l@section
+%\renewcommand*\l@table{\@dottedtocline{1}{0.0em}{2.35em}}
+\AtBeginDocument{\renewcommand{\thetable}{}}
+
+%%%%% FOR STYLE OF LOF %%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\listfigurename{\texorpdfstring{\hbox to 3em{図目次}}{図目次}}
+\renewcommand{\figurename}{図}
+\renewcommand{\figureautorefname}{\figurename}
+\let\l@figure\l@section
+%\renewcommand*\l@figure{\@dottedtocline{1}{0.0em}{2.35em}}
+%\AtBeginDocument{\renewcommand{\thefigure}{}}
+
+%%%%% FOR STYLE OF LOP %%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\listoflopname{\texorpdfstring{\hbox to 3em{大目次}}{大目次}}
+
+%%%%% FOR STYLE OF LOL %%%%%%%%%%%%%%%%%
+\renewcommand{\lstlistlistingname}{プログラム 目次}
+\renewcommand{\lstlistingname}{{Prg:~}}
+%\let\l@lstlisting\l@section
+%\renewcommand*\l@lstlisting{\@dottedtocline{1}{0.0em}{2.35em}}
+\AtBeginDocument{\renewcommand{\thelstlisting}{}}
+
+%%%%% FOR STYLE OF LOC %%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\listofloCname{Column一覧}
+
+%%%%% FOR STYLE OF INDEX %%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\indexname}{\texorpdfstring{\hbox to 2em{索引}}{索引}}
+\renewcommand\indexpagestyle{plainheadback}
+\newcommand\symbolindexname{記号・数字}
+
+%%%%% FOR STYLE OF BIBLATEX %%%%%%%%%%%%%%%%%%
+\DeclareLanguageMapping{japanese}{english}
+%\DefineBibliographyStrings{english}{in={in}}
+\renewcommand{\bibname}{\texorpdfstring{\hbox to 4em{文献一覧}}{文献一覧}}
+\newcommand{\referencesname}{参考文献}
+\newcommand{\citedworksname}{参照文献}
+\newcommand{\Articlename}{論文}
+\newcommand{\Bookname}{書籍}
+\newcommand{\OnlineSourcename}{ウェブサイト}
+\newcommand{\Manualname}{マニュアル}
+\DeclareFieldFormat{title}{``#1"}
+\DeclareFieldFormat{urldate}{(urlseen~\thefield{urlyear}/\ifnum\thefield{urlmonth}<10 0\fi\thefield{urlmonth})}
+\ExecuteBibliographyOptions{
+  language=auto,
+  autolang=other,
+  sorting=none,
+  defernumbers=false,
+  hyperref=true,
+  block=nbpar,
+  subentry=true,
+  citecounter=true,
+}
+\appto\bibfont{\footnotesize\setstretch{1.1}}
+\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}\hspace{-6pt}}
+\DeclareFieldFormat{date}{%
+  \thefield{year}%
+  \iffieldundef{month}{}{/}%
+  \iffieldundef{month}{}{\two@digits{\thefield{month}}}%
+  \iffieldundef{day}{}{/}%
+  \iffieldundef{day}{}{\two@digits{\thefield{day}}}%
+}
+\defbibheading{subsubbibintoc}{\subsection*{#1}\addsubsectiontocentry{}{#1}}
