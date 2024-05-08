@@ -59,6 +59,7 @@ IF[[#26-#06]LE[#901011/2]]GOTO800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
 IF[ABS[#33]GE#18]GOTO800
 (if |#415| >= 10, go to N800)
+(if |#437| >= 10, go to N800)
 (if T# < 16 or > 20 or not integer or #0, go to N800)
 (if Z-K <= #901011/2, go to N800)
 (if R >= min[X/4, Y/4], go to N800)
