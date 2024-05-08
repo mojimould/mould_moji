@@ -116,10 +116,10 @@
   \end{enumerate}
 \item 6桁目が\ref{item:6MD}, \ref{item:6KD}（\Dimple の測定, 加工）の場合、5桁目を以下のように分類する
   \begin{enumerate}[label=\arabic*., ref=\arabic*]
-  \item 主に、\Dimple の行と中心湾曲線上の交点への移動を繰返すNCプログラム({\ttfamily 21\textbackslash d{4}})
+  \item \Dimple の行と中心湾曲線上の交点への移動を繰返すNCプログラム({\ttfamily 21\textbackslash d{4}})
 %  \item \Dimple において、各内面方向への($X$または$Y$方向)の移動を繰返すNCプログラム({\ttfamily 22\textbackslash d{4}})
-  \item 主に、\Dimple の個々の行方向の移動を繰返すNCプログラム({\ttfamily 22\textbackslash d{4}})
-  \item 主に、\Dimple の個々の深さ方向に測定または加工するNCプログラム({\ttfamily [25]3\textbackslash d{4}})
+  \item \Dimple の個々の行方向の移動を繰返すNCプログラム({\ttfamily 22\textbackslash d{4}})
+  \item \Dimple の個々の深さ方向に測定または加工するNCプログラム({\ttfamily [25]3\textbackslash d{4}})
 %  \item 主にレベル4の階層で用いるNCプログラム(c)
   \end{enumerate}
 %  複数の用途での使用が想定されるものに対しては、番号の若いほうに合わせる。
@@ -127,18 +127,18 @@
   \begin{enumerate}[label=\arabic*., ref=\arabic*, start=1]
 %  \item\label{item:5Kaux} 加工の種類に依存しない加工のNCプログラム(\ttfamily{40\textbackslash d{4}})
   \item%\label{item:5KF}
-    主に、\EndFacecutMilling の位置決めを行うNCプログラム({\ttfamily 41\textbackslash d{4}})
+    \EndFacecutMilling の位置決めを行うNCプログラム({\ttfamily 41\textbackslash d{4}})
   \item\label{item:5KO} 主に、\OutcutMilling の位置決めを行うNCプログラム({\ttfamily 42\textbackslash d{4}})
   \item%\label{item:5KK}
-    主に、\KeywayMilling の位置決めを行うNCプログラム({\ttfamily 43\textbackslash d{4}})
+    \KeywayMilling の位置決めを行うNCプログラム({\ttfamily 43\textbackslash d{4}})
   \item%\label{item:5KCO}
-    主に、\EndFaceOutCChamferMilling の位置決めを行うNCプログラム({\ttfamily 44\textbackslash d{4}})
+    \EndFaceOutCChamferMilling の位置決めを行うNCプログラム({\ttfamily 44\textbackslash d{4}})
   \item%\label{item:5KCI}
-    主に、\EndFaceInCChamferMilling の位置決めを行うNCプログラム({\ttfamily 45\textbackslash d{4}})
+    \EndFaceInCChamferMilling の位置決めを行うNCプログラム({\ttfamily 45\textbackslash d{4}})
   \item%\label{item:5KZ}
     \EndFaceBoringMilling のNCプログラム({\ttfamily 46\textbackslash d{4}})
   \setcounter{enumii}{8}
-  \item 主に、位置決め後、実際に加工を行うNCプログラム({\ttfamily 49\textbackslash d{4}})
+  \item 位置決め後、実際に加工を行うNCプログラム({\ttfamily 49\textbackslash d{4}})
   \end{enumerate}
 \end{enumerate}
 
@@ -155,7 +155,7 @@
   \item 5桁目が\ref{item:5KO}（\OutcutMilling）以外の場合、4桁目は0とする({\ttfamily{4[13-59]0\textbackslash d{3}}})
   \item 5桁目が\ref{item:5KO}（\OutcutMilling）の場合、4桁目を以下のように分類する
     \begin{enumerate}[label=\arabic*., ref=\arabic*, start=0, leftmargin=*]
-    \item 端面に垂直方向の\OutcutMilling のNCプログラム({\ttfamily{420\textbackslash d{3}}})
+    \item \EndFace に垂直方向の\OutcutMilling のNCプログラム({\ttfamily{420\textbackslash d{3}}})
     \item \CurvedOutcutMilling のNCプログラム({\ttfamily{421\textbackslash d{3}}})
     \end{enumerate}
   \end{enumerate}
