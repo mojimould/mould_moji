@@ -357,12 +357,50 @@ G57 G65 P410000 X135.210 Y134.200 Z500.042 R4.0
 (Top tammen end)
 IF[#179EQ0]GOTO401
 IF[#179EQ2]GOTO402
-GOTO420
+GOTO410
 N401
 M00 (if #179=0)
-GOTO420
+GOTO410
 N402
 G65 P900003 (if #179=2)
+
+
+N410
+(*** Zaguri start ***)
+
+
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#650
+T16 (zaguri)
+M06 (tool exchange)
+G43 H#4120 (hosei KouguChou: T#)
+
+M11 (B-axis unclamp)
+G90 G56 G00 B-0.964
+M10 (B-axis clamp)
+(G56B parallel angle -0.964)
+
+M28 (chip conveyor on)
+G56 G65 P460000 I19.0 U42.0 V6.50 W5.0 R10.0 X160.000 Y159.000 Z500.042
+(O460000: Tanmen Zaguri Corner R, rc HidariMawari)
+(I: distance from A-face)
+(U: zaguri width)
+(V: zaguri depth)
+(W: zaguri length)
+(R: zaguri corner R)
+(X: AC gaiKei)
+(Y: BD gaiKei)
+(Z: Top sai_furiwake)
+
+(Zaguri end)
+IF[#481EQ0]GOTO411
+IF[#481EQ2]GOTO412
+GOTO420
+N411
+M00 (if #481=0)
+GOTO420
+N412
+G65 P900003 (if #481=2)
 
 
 N420
@@ -475,49 +513,11 @@ G57 G65 P450000 B0.0 Z500.042 W400.000 Q5933.200 K0.5 R4.0
 (Top Uchimentori end)
 IF[#433EQ0]GOTO441
 IF[#433EQ2]GOTO442
-GOTO450
+GOTO500
 N441
 M00 (if #433=0)
-GOTO450
+GOTO500
 N442
-G65 P900003 (if #433=2)
-
-
-N450
-(*** Tanmen Zaguri start ***)
-
-
-G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#650
-T16 (zaguri)
-M06 (tool exchange)
-G43 H#4120 (hosei KouguChou: T#)
-
-M11 (B-axis unclamp)
-G90 G56 G00 B-0.964
-M10 (B-axis clamp)
-(G56B parallel angle -0.964)
-
-M28 (chip conveyor on)
-G56 G65 P460000 I19.0 U42.0 V6.50 W5.0 R10.0 X160.000 Y159.000 Z500.042
-(O460000: Tanmen Zaguri Corner R, rc HidariMawari)
-(I: distance from A-face)
-(U: zaguri width)
-(V: zaguri depth)
-(W: zaguri length)
-(R: zaguri corner R)
-(X: AC gaiKei)
-(Y: BD gaiKei)
-(Z: Top sai_furiwake)
-
-(Top Tanmen Zaguri end)
-IF[#481EQ0]GOTO451
-IF[#481EQ2]GOTO452
-GOTO500
-N451
-M00 (if #433=0)
-GOTO500
-N452
 G65 P900003 (if #433=2)
 
 
