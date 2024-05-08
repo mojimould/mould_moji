@@ -2,12 +2,12 @@
 
 
 \modHeadchapter[lot]{入力する数値情報・パラメータ}
-\index{すんぽう@寸法}寸法・形状等の数値情報や条件分岐情報は、\index{めいさい（モールド）@明細（モールド）}明細ごとに固有である。
-そのため、その固有情報は入力する必要がある。
+\index{すんぽう@寸法}寸法・形状等の数値情報や\index{じょうけんぶんきじょうほう@条件分岐情報}条件分岐情報は、\index{めいさい（モールド）@明細（モールド）}明細ごとに固有である。
+そのため、その\index{こゆうじょうほう（ワーク）@固有情報（ワーク）}固有情報は入力する必要がある。
 ここではそうした入力する必要のある情報をまとめておく。
 なお、\index{にゅうりょくするすうちじょうほう@入力する数値情報}入力する数値情報に関しては、原則として\index{ずめん@図面}図面上の\index{すんぽう@寸法}寸法をそのまま入力する形となるような方針とする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{ただし、これらの値にはそれぞれの公差が考慮されている。}。
+\footnote{ただし、これらの値にはそれぞれの\index{こうさ@公差}公差が考慮されている。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -15,9 +15,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 30.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{湾曲・振分けに関する入力数値}
+\modHeadsection{湾曲・\Alocation に関する入力数値}
 
-\begin{multicollongtblr}{入力情報：湾曲・振分け}{X[l]c}
+\begin{multicollongtblr}{入力情報：湾曲・\Alocation }{X[l]c}
 内容 & 型\\
 \CenterCurvatureExists & boolean\\
 \CenterCurvatureRadius & float\\
@@ -60,9 +60,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 30.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{外削に関する入力数値}
+\modHeadsection{\Outcut に関する入力数値}
 
-\begin{multicollongtblr}{入力情報：ボトム外削}{X[l]c}
+\begin{multicollongtblr}{入力情報：\BottomOutcut}{X[l]c}
 内容 & 型\\
 \BottomOutcutExists & boolean\\
 \BottomOutcutType & enum\\
@@ -73,7 +73,7 @@
 \BottomOutcutConerR & float\\
 \end{multicollongtblr}
 
-\begin{multicollongtblr}{入力情報：トップ外削}{X[l]c}
+\begin{multicollongtblr}{入力情報：\TopOutcut}{X[l]c}
 内容 & 型\\
 \TopOutcutExists & boolean\\
 \TopOutcutType & enum\\
@@ -137,35 +137,35 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 30.6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{端面面取に関する入力数値}
+\modHeadsection{\EndFaceChamfer に関する入力数値}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 30.6.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{ボトム端面面取に関する入力情報}
+\subsection{\BottomEndFaceChamfer に関する入力情報}
 
-\begin{multicollongtblr}{入力情報：ボトム\nameEndFaceOutCChamfer}{X[l]c}
+\begin{multicollongtblr}{入力情報：\BottomEndFaceOutCChamfer}{X[l]c}
 内容 & 型\\
 \BottomEndFaceOutCChamferExists & boolean\\
 \BottomEndFaceOutCChamferLength & float\\
 \BottomEndFaceOutCChamferAngle & float\\
 \end{multicollongtblr}
 
-\begin{multicollongtblr}{入力情報：ボトム\nameEndFaceOutRChamfer}{X[l]c}
+\begin{multicollongtblr}{入力情報：\BottomEndFaceOutRChamfer}{X[l]c}
 内容 & 型\\
 \BottomEndFaceOutRChamferExists & boolean\\
 \BottomEndFaceOutRChamferRadius & float\\
 \end{multicollongtblr}
 
-\begin{multicollongtblr}{入力情報：ボトム\nameEndFaceInCChamfer}{X[l]c}
+\begin{multicollongtblr}{入力情報：\BottomEndFaceInCChamfer}{X[l]c}
 内容 & 型\\
 \BottomEndFaceInCChamferExists & boolean\\
 \BottomEndFaceInCChamferLength & float\\
 \BottomEndFaceInCChamferAngle & integer\\
 \end{multicollongtblr}
 
-\begin{multicollongtblr}{入力情報：ボトム\nameEndFaceInRChamfer}{X[l]c}
+\begin{multicollongtblr}{入力情報：\BottomEndFaceInRChamfer}{X[l]c}
 内容 & 型\\
 \BottomFaceInRChamferExsits & boolean\\
 \BottomFaceInRChamferRadius & float\\
@@ -177,29 +177,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 30.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{トップ端面面取に関する入力情報}
+\subsection{\TopEndFaceChamfer に関する入力情報}
 
-\begin{multicollongtblr}{入力情報：トップ\nameEndFaceOutCChamfer}{X[l]c}
+\begin{multicollongtblr}{入力情報：\TopEndFaceOutCChamfer}{X[l]c}
 内容 & 型\\
 \TopEndFaceOutCChamferExists & boolean\\
 \TopEndFaceOutCChamferLength & float\\
 \TopEndFaceOutCChamferAngle & integer\\
 \end{multicollongtblr}
 
-\begin{multicollongtblr}{入力情報：トップ\nameEndFaceOutRChamfer}{X[l]c}
+\begin{multicollongtblr}{入力情報：\TopEndFaceOutRChamfer}{X[l]c}
 内容 & 型\\
 \TopEndFaceOutRChamferExists & boolean\\
 \TopEndFaceOutRChamferRadius & float\\
 \end{multicollongtblr}
 
-\begin{multicollongtblr}{入力情報：トップ\nameEndFaceInCChamfer}{X[l]c}
+\begin{multicollongtblr}{入力情報：\TopEndFaceInCChamfer{X[l]c}
 内容 & 型\\
 \TopEndFaceInCChamferExists & boolean\\
 \TopEndFaceInCChamferLength & float\\
 \TopEndFaceInCChamferAngle & integer\\
 \end{multicollongtblr}
 
-\begin{multicollongtblr}{入力情報：トップ\nameEndFaceInRChamfer}{X[l]c}
+\begin{multicollongtblr}{入力情報：\TopEndFaceInRChamfer}{X[l]c}
 内容 & 型\\
 \TopEndFaceInRChamferExists & boolean\\
 \TopEndFaceInRChamferRadius & float\\

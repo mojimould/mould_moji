@@ -125,7 +125,7 @@
 
 \begin{multicollongtblr}[white]{\ttNum400\,-\ttNum424：補助機能（使用頻度 高）}{cX[l]c}
 変数 & 内容 & 設定例\\
-\ttNum400 & 端面削 全削り代 & 8.0\\
+\ttNum400 & \EndFacecut{} 全削り代 & 8.0\\
 \ttNum401 & \expandafterindex{\yomiDimple しかこう@\nameDimple 試加工}\Dimple 試加工 (0:off, 1:on) & 0\\
 \ttNum402 & \expandafterindex{\yomiCenterlineEndFaceDif そくてい@\nameCenterlineEndFaceDif 測定}\nameCenterlineEndFaceDif 測定 (0:off, 1:on) & 0\\
 \SetRow{unusingVariables}
@@ -159,7 +159,7 @@
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-\expandafterindex{\yomiOutcutCenter そくてい@\nameOutcutCenter 測定}\nameOutcutCenter 測定\MXIface で\EndFaceInChamfer がある場合、測定位置$Z$は端面の$Z$位置でないことに注意
+\expandafterindex{\yomiOutcutCenter そくてい@\nameOutcutCenter 測定}\nameOutcutCenter 測定\MXIface で\EndFaceInChamfer がある場合、測定位置$Z$は\EndFace の$Z$位置でないことに注意
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -395,7 +395,7 @@ $\cdots$ & （以下不明） & \ttNum0
 
 \begin{multicollongtblr}[white]{\ttNum600\,-\ttNum624：ワークと工具間の距離の調整}{cX[l]c}
 変数 & 内容 & 設定例\\
-\ttNum600 & 工具 - 端面間 $Z$方向クリアランス平面間距離 & 100.0\\
+\ttNum600 & 工具 - \EndFace 間 $Z$方向クリアランス平面間距離 & 100.0\\
 \SetRow{unusingVariables}
 \ttNum601 & （予備） &\\
 \ttNum602 & タッチセンサープローブ測定時（\Dimple 除く）の近付き量 & 8.0\\
@@ -608,8 +608,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum702 & 工具別$XY$補正({\ttfamily T50}:\ttNum901050, {\ttfamily T3x}:\ttNum[2400+\ttNum4111]+\ttNum[2600+\ttNum4111])\\
 \ttNum703 & 工具別{\ttfamily G\ttNum} ({\ttfamily T50}:31, {\ttfamily T3x}:01)\\
 \ttNum704 & テーブル中心からワーク座標(\ttNum700)原点までの$X$距離\\
-\ttNum705 & 傾き後のトップ端面中心（機械座標）$X$ (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
-\ttNum706 & テーブル中心から傾き後のトップ端面中心までの$Z$距離 (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
+\ttNum705 & 傾き後の\TopEndFace 中心（機械座標）$X$ (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
+\ttNum706 & テーブル中心から傾き後の\TopEndFace 中心までの$Z$距離 (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
 \ttNum707 & テーブル中心から\DimpleFirstRow までの$Z$距離$Z-q$\\
 \ttNum708 & トップ端中心から\DimpleFirstRow 中心までの$X$距離(\cf\pageeqref{eq:dimpleCenterDistance})\\
 \ttNum709 & 傾き後\DimpleFirstRow 中心$X$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\
@@ -800,24 +800,28 @@ $\cdots$ & （以下不明） & \ttNum0
 
 
 \clearpage
-\begin{multicollongtblr}[white]{\ttNum900027\,-\ttNum900030：\CenterlineEndFaceDifBD{} 片側 測定用 \Mcenterline}{cX[l]}
+\begin{multicollongtblr}[white]{\ttNum900030\,-\ttNum900037：\CenterlineEndFaceDif{} 片側 測定用 \Mcenterline}{cX[l]}
 変数 & 内容\\
 \ttNum900030 & \CenterlineEndFaceDifBD{} ボトム側測定値\\
 \ttNum900031 & \CenterlineEndFaceDifBD{} トップ側測定値\\
 \ttNum900032 & \CenterlineEndFaceDifBD{} 測定値\\
 \SetRow{unusingVariables}
 \ttNum900033 & （予備）\\
-\end{multicollongtblr}
-
-
-%\clearpage
-\begin{multicollongtblr}[white]{\ttNum900034\,-\ttNum900037：\CenterlineEndFaceDifAC{} 片側 測定用 \Mcenterline}{cX[l]}
-変数 & 内容\\
 \ttNum900034 & \CenterlineEndFaceDifAC{} トップ側測定値\\
 \ttNum900035 & \CenterlineEndFaceDifAC{} ボトム側測定値\\
 \ttNum900036 & \CenterlineEndFaceDifAC{} 測定値\\
 \SetRow{unusingVariables}
 \ttNum900037 & （予備）\\
+\end{multicollongtblr}
+
+
+%\clearpage
+\begin{multicollongtblr}[white]{\ttNum900038\,-\ttNum900040：\CurvedOutcutMilling 用 \KCurvedGaisakuRLeft}{cX[l]}
+変数 & 内容\\
+\ttNum900038 & \TopCurvedOutcutAngle{} 計算値\\
+\ttNum900039 & \BottomCurvedOutcutAngle{} 計算値\\
+\SetRow{unusingVariables}
+\ttNum900040 & （予備）\\
 \end{multicollongtblr}
 
 

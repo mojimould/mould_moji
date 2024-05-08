@@ -44,6 +44,7 @@
 \newGPMcommand{DrawingNumber}{図面番号}{ずめんばんごう}
 
 %%% Overall %%%
+\newNamecommand{Alocation}{振分け}{ふりわけ}
 \newNamecommand{AlocationLength}{振分長}{ふりわけちょう}
 \newNamecommand{ReAlocationLength}{再振分長}{さいふりわけちょう}
 \newNamecommand{Thickness}{肉厚}{にくあつ}
@@ -56,6 +57,7 @@
 
 %%% CenterCurvature %%%
 \newNamecommand{CenterCurvature}{中心湾曲}{ちゅうしんわんきょく}
+\newNamecommand{CenterCurvatureLine}{\nameCenterCurvature 線}{\yomiCenterCurvature せん}
 
 \newGPMcommand{CenterCurvatureExists}{\nameCenterCurvature の有無}{\yomiCenterCurvature のうむ}
 \newGPMcommand{CenterCurvatureRadius}{\nameCenterCurvature 半径}{\yomiCenterCurvature はんけい}
@@ -112,7 +114,13 @@
 \newNamecommand{OutcutLength}{\nameOutcut 長}{\yomiOutcut ちょう}
 \newNamecommand{CenterlineEndFaceDif}{通り芯}{とおりしん}
 \newNamecommand{CurvedOutcut}{湾曲\nameOutcut}{わんきょく\yomiOutcut}
+\newNamecommand{TopCurvedOutcut}{トップ\nameCurvedOutcut}{トップ\yomiCurvedOutcut}
+\newNamecommand{BottomCurvedOutcut}{ボトム\nameCurvedOutcut}{ボトム\yomiCurvedOutcut}
 \newNamecommand{CurvedOutcutMilling}{\nameCurvedOutcut 加工}{\yomiCurvedOutcut かこう}
+\newNamecommand{CurvedOutcutCenter}{\nameCurvedOutcut 中心}{\yomiCurvedOutcut ちゅうしん}
+\newNamecommand{CurvedOutcutAngle}{\nameCurvedOutcut 傾き角}{\yomiCurvedOutcut かたむきかく}
+\newNamecommand{TopCurvedOutcutAngle}{トップ\nameCurvedOutcutAngle}{トップ\yomiCurvedOutcutAngle}
+\newNamecommand{BottomCurvedOutcutAngle}{ボトム\nameCurvedOutcutAngle}{ボトム\yomiCurvedOutcutAngle}
 
 \newGPMcommand{TopOutcutExists}{トップ\nameOutcutExists}{トップ\yomiOutcutExists}
 \newGPMcommand{BottomOutcutExists}{ボトム\nameOutcutExists}{ボトム\yomiOutcutExists}
@@ -149,6 +157,8 @@
 
 %%% CHANMFER %%%
 \newNamecommand{EndFaceChamfer}{端面面取}{たんめんめんとり}
+\newNamecommand{TopEndFaceChamfer}{トップ\nameEndFaceChamfer}{トップ\yomiEndFaceChamfer}
+\newNamecommand{BottomEndFaceChamfer}{ボトム\nameEndFaceChamfer}{ボトム\yomiEndFaceChamfer}
 \newNamecommand{EndFaceChamferMilling}{\nameEndFaceChamfer 加工}{\yomiEndFaceChamfer かこう}
 \newNamecommand{EndFaceChamferLength}{\nameEndFaceChamfer 長}{\yomiEndFaceChamfer ちょう}
 \newNamecommand{EndFaceOutChamfer}{端面外面取}{たんめんそとめんとり}
@@ -211,6 +221,8 @@
 
 %%% OUT R CHANMFER %%%
 \newNamecommand{EndFaceOutRChamfer}{端面外R面取}{たんめんそとRめんとり}
+\newNamecommand{TopEndFaceOutRChamfer}{トップ\nameEndFaceOutRChamfer}{トップ\yomiEndFaceOutRChamfer}
+\newNamecommand{BottomEndFaceOutRChamfer}{ボトム\nameEndFaceOutRChamfer}{ボトム\yomiEndFaceOutRChamfer}
 \newNamecommand{EndFaceOutRChamferMilling}{\nameEndFaceOutRChamfer 加工}{\yomiEndFaceOutRChamfer かこう}
 \newNamecommand{EndFaceOutRChamferRadius}{\nameEndFaceOutRChamfer 長}{\yomiEndFaceOutRChamfer ちょう}
 
@@ -221,6 +233,8 @@
 
 %%% IN R CHANMFER %%%
 \newNamecommand{EndFaceInRChamfer}{端面内R面取}{たんめんうちRめんとり}
+\newNamecommand{TopEndFaceInRChamfer}{トップ\nameEndFaceInRChamfer}{トップ\yomiEndFaceInRChamfer}
+\newNamecommand{BottomEndFaceInRChamfer}{ボトム\nameEndFaceInRChamfer}{ボトム\yomiEndFaceInRChamfer}
 \newNamecommand{EndFaceInRChamferMilling}{\nameEndFaceInRChamfer 加工}{\yomiEndFaceInRChamfer かこう}
 \newNamecommand{TopEndFaceInRChamferMilling}{トップ\nameEndFaceInRChamferMilling}{トップ\yomiEndFaceInRChamferMilling}
 \newNamecommand{BottomEndFaceInRChamferMilling}{ボトム\nameEndFaceInRChamferMilling}{ボトム\yomiEndFaceInRChamferMilling}
@@ -286,3 +300,6 @@
 \newGPMcommand{JigCenter}{ジグ中心}{ジグちゅうしん}
 
 % 内面テーパ付湾曲付R直方筒 Inner Taper R-Rectangular Tube with Curvature
+
+%%% CurvatureCenter %%%
+\newNamecommand{CurvatureCenter}{湾曲中心}{わんきょくちゅうしん}

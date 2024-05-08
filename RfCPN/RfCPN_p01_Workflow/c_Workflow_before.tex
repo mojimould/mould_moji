@@ -33,11 +33,11 @@
 
 \begin{multicollongtblr}{ワークに直接関わる主な工程の種類（\MMC）}{X[l] X[l]}
 測定 & 加工\\
-端面外側AC方向 芯出し（外側 両側$X$測定） & \EndFacecutMilling\\
-端面外側BD方向 芯出し（外側 両側$Y$測定） & \OutcutMilling\\
+\EndFace 外側AC方向 芯出し（外側 両側$X$測定） & \EndFacecutMilling\\
+\EndFace 外側BD方向 芯出し（外側 両側$Y$測定） & \OutcutMilling\\
 \OutcutWidth AC方向 芯出し（内側 片側$X$測定） & \KeywayMilling\\
-端面内側AC方向 芯出し（内側 両側$X$測定） & \EndFaceOutCChamferMilling\\
-端面内側BD方向 芯出し（内側 両側$Y$測定） & \EndFaceInCChamferMilling\\
+\EndFace 内側AC方向 芯出し（内側 両側$X$測定） & \EndFaceOutCChamferMilling\\
+\EndFace 内側BD方向 芯出し（内側 両側$Y$測定） & \EndFaceInCChamferMilling\\
 \CenterlineEndFaceDifAC 測定（外側 片側$Z$測定） & \EndFaceBoringMilling\\
 \CenterlineEndFaceDifBD 測定（外側 片側$Y$測定） & \InlayMilling\\
 \end{multicollongtblr}
@@ -240,7 +240,7 @@
 \item \expandafterindex{こうさ（\yomiWorkTotalLength）@公差（\nameWorkTotalLength）}\nameWorkTotalLength の公差を確認し、\TopAlocationLength および\BottomAlocationLength の\expandafterindex{こうさ（\yomiAlocationLength）@公差（\nameAlocationLength）}公差の判断を行う
 \item \TopAlocationLength・\BottomAlocationLength を確認し、\index{スペーサ}スペーサによる調整が必要か判断を行う
 \item 使用するスペーサおよび\ReAlocationLength は、専用の計算\index{プログラム(Excel VBA)}プログラム(\index{Excel VBA}Excel VBA)を用いて決定する
-\item \index{がいけい@外径}外径・\expandafterindex{\yomiThickness（\yomiEndFace）@\nameThickness（\nameEndFace）}\nameEndFace 部の\nameThickness・\index{たんめんそとがわコーナーR@端面外側コーナーR}端面外側コーナーRを確認し、それに応じて\index{こうぐけいほせいち@工具径補正値}工具径補正値を決定する
+\item \index{がいけい@外径}外径・\expandafterindex{\yomiThickness（\yomiEndFace）@\nameThickness（\nameEndFace）}\nameEndFace 部の\nameThickness・\expandafterindex{\yomiEndFace そとがわコーナーR@\nameEndFace 外側コーナーR}\nameEndFace 外側コーナーRを確認し、それに応じて\index{こうぐけいほせいち@工具径補正値}工具径補正値を決定する
 \item \ReAlocationLength に応じて、$Z$方向の\index{クリアランスへいめん（Zほうこう）@クリアランス平面（$Z$方向）}クリアランス平面の位置を決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -368,7 +368,7 @@
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\paragraph*{湾曲中心が基準の場合}
+\paragraph*{\CenterCurvatureLine が基準の場合}
 \PMKeywayACOD
 \PMKeywayBDOD
 \PMKeywayPos
@@ -522,7 +522,7 @@
 \GPMbox{ジグ床面とボルト取付具（上）間の距離}
 \GPMbox{受板とボルト取付具（横）間の距離}
 \tcbline*
-\paragraph*{端面削の削り代}
+\paragraph*{\EndFacecut の削り代}
 \PMJigLength
 \PMTopReAlocationLength
 \PMBottomReAlocationLength
@@ -544,7 +544,7 @@
 \item トップ側およびボトム側の\expandafterindex{ぜんけずりしろ（\yomiEndFacecut）@全削り代（\nameEndFacecut）}全削り代に応じて、\index{かこうかいすう（\yomiEndFacecutMilling）@加工回数（\nameEndFacecutMilling）}\nameEndFacecutMilling の回数を設定する
 \item トップ端およびボトム端の\index{がいけいちゅうしん@外径中心}外径中心の位置を\index{メジャー}メジャーで測定する
 \item 測定した中心位置を用いて、\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の設定を行う
-\item \expandafterindex{テーブルのかいてんちゅうしん（\yomiMMC）@テーブルの回転中心（\nameMMC）}テーブルの回転中心とのずれを考慮して、端面の$Z$方向の長さを調整する
+\item \expandafterindex{テーブルのかいてんちゅうしん（\yomiMMC）@テーブルの回転中心（\nameMMC）}テーブルの回転中心とのずれを考慮して、\EndFace の$Z$方向の長さを調整する
 \item \CenterlineEndFaceDif がある場合\expandafterindex{テーブルのかいてんちゅうしん（\yomiMMC）@テーブルの回転中心（\nameMMC）}テーブルの回転中心とのずれを考慮して、\OutcutCenter の$X$方向の位置を調整する
 \end{enumerate}
 これらの設定は、\MMC の操作盤から\index{メインプログラム}メインプログラムを直接手動で編集する形で行われる。
@@ -680,7 +680,7 @@
 \begin{enumerate}[label=\sarrow]
 \item 所定の寸法の\EndFaceChamfer を、\index{てもちけんまき@手持ち研磨機}手持ち研磨機を用いて手動で行う
 \item \index{ばり}ばり等を除去を、\index{やすり}やすりを用いて全体的に手動で行う
-\item \index{Cがわにくあつ（ボトムたんめん）@C側肉厚（ボトム端面）}ボトム端面のC側肉厚に応じて\index{こくいん@刻印}刻印の大きさを決定する
+\item \expandafterindex{Cがわにくあつ（\yomiBottomEndFace）@C側肉厚（\nameBottomEndFace）}\nameBottomEndFace のC側肉厚に応じて\index{こくいん@刻印}刻印の大きさを決定する
 \item 明細のによる指定に応じて、刻印の位置を調整する
 \item リフターまたはクレーンを用いて、所定の置き場に移動する
 \end{enumerate}

@@ -37,8 +37,8 @@
 \pgfmathsetmacro{\Ro}{sqrt((\Bx)^2+(\Ay)^2)}    %R_oの長さ
 \pgfmathsetmacro{\Dx}{sqrt((\Ro)^2-(\Cy)^2)}    %D:B_oのx座標
 \pgfmathsetmacro{\Rc}{(\Ri+\Ro)/2}              %R_cの長さ
-\pgfmathsetmacro{\Ex}{sqrt((\Rc)^2-(\Ay)^2)}    %E:湾曲中心線トップ端のx座標
-\pgfmathsetmacro{\Fx}{sqrt((\Rc)^2-(\Cy)^2)}    %F:湾曲中心線ボトム端のx座標
+\pgfmathsetmacro{\Ex}{sqrt((\Rc)^2-(\Ay)^2)}    %E:\CenterCurvatureLine トップ端のx座標
+\pgfmathsetmacro{\Fx}{sqrt((\Rc)^2-(\Cy)^2)}    %F:\CenterCurvatureLine ボトム端のx座標
 \pgfmathsetmacro{\TUx}{sqrt((\Ri)^2-(\TUb)^2)}  %TUx:テーブル-モールド内側との交点のx座標
 \pgfmathsetmacro{\TUxo}{sqrt((\Ro)^2-(\TUb)^2)} %TUxo:テーブル-モールド外側との交点x座標
 \pgfmathsetmacro{\Ub}{\Ri*sin(asin((\TUb-\Uw/2)/(\Ri-\Ur)))} %Ub:ボトム側受板-モールド接点のy座標

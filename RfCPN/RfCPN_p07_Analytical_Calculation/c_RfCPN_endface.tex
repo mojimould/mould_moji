@@ -1,28 +1,28 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter[loC]{端面削（外径）の幾何}
+\modHeadchapter[loC]{\EndFacecut（外径）の幾何}
 ここでは主に、\textbf{\EndFacecut}に関する測定・加工に必要な\expandafterindex{きかてきせいしつ（\yomiEndFacecut）@幾何的性質（\nameEndFacecut）}幾何的性質を考える。
-ただし機内のモールドは、考えている側の端面が工具側に向いているものとする。
+ただし機内のモールドは、考えている側の\EndFace が工具側に向いているものとする。
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{トップ側の端面}
+\modHeadsection{トップ側の\EndFace}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 2.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{トップ端面における湾曲中心の位置}
+\subsection{\TopEndFace における\CurvatureCenter の位置}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 2.1.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{スペーサを用いた場合のT\texorpdfstring{$_{R_\mathrm c}'$}{Rc'}}
-\index{スペーサ}スペーサを取付けた後の\index{トップたんのわんきょくちゅうしん@トップ端の湾曲中心}トップ端の湾曲中心の位置T$_{R_\mathrm c}'$と、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pとの$X$方向の差は、
+\index{スペーサ}スペーサを取付けた後の\expandafterindex{トップたんの\yomiCurvatureCenter@トップ端の\nameCurvatureCenter}トップ端の\nameCurvatureCenter の位置T$_{R_\mathrm c}'$と、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pとの$X$方向の差は、
 \begin{align*}
   \left(
     R_\mathrm ce^{i\alpha_\mathrm c}
@@ -49,7 +49,7 @@
 \end{align}
 で与えられる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{実際の作業では、この点を（\index{たんめんのわんきょくちゅうしん@端面の湾曲中心}端面の湾曲中心T$_{R_\mathrm c}\!$でなく）\OutcutCenter T$_\mathrm c$とみなすことが多い。}。
+\footnote{実際の作業では、この点を（\expandafterindex{\yomiEndFace の\yomiCurvatureCenter@\nameEndFace の\nameCurvatureCenter}\nameEndFace の\nameCurvatureCenter T$_{R_\mathrm c}\!$でなく）\OutcutCenter T$_\mathrm c$とみなすことが多い。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -57,7 +57,7 @@
 %% subsubsection 2.1.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{テーブルを傾けた場合のT\texorpdfstring{$_{R_\mathrm c}'$}{Rc'}}
-テーブルを傾けた後の\index{トップたんのわんきょくちゅうしん@トップ端の湾曲中心}トップ端の湾曲中心の位置T$_{R_\mathrm c}'$と、テーブル中心Pとの$X$方向の差は、
+テーブルを傾けた後の\expandafterindex{トップたんの\yomiCurvatureCenter@トップ端の\nameCurvatureCenter}トップ端の\nameCurvatureCenter の位置T$_{R_\mathrm c}'$と、テーブル中心Pとの$X$方向の差は、
 \begin{align*}
   \left(R_\mathrm ce^{i\alpha_\mathrm c}-\Delta'e^{-i\theta}+\Delta'\right)-\Delta'
   = R_\mathrm ce^{i\alpha_\mathrm c}-\Delta'e^{-i\theta}
@@ -76,15 +76,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 2.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{トップ端面における外側中心の位置}
-\index{トップたんのわんきょくちゅうしん@トップ端の湾曲中心}トップ端の湾曲中心T$_{R_\mathrm c}'$と\index{トップたんのがいけいちゅうしん@トップ端の外径中心}外径中心T$_\mathrm c'$との差は、以下で与えられる。
+\subsection{\TopEndFace における外側中心の位置}
+\expandafterindex{トップたんの\yomiCurvatureCenter@トップ端の\nameCurvatureCenter}トップ端の\nameCurvatureCenter T$_{R_\mathrm c}'$と\index{トップたんのがいけいちゅうしん@トップ端の外径中心}外径中心T$_\mathrm c'$との差は、以下で与えられる。
 %% label{eq:TRc-Tc}
 \begin{align}
   \label{eq:TRc-Tc}
   \sqrt{R_\mathrm c^2-f_\mathrm T^2}
   -\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2\ .
 \end{align}
-よって、\index{がいけいちゅうしん@外径中心}外径中心T$_\mathrm c'$の位置は、\index{わんきょくちゅうしん@湾曲中心}湾曲中心T$_{R_\mathrm c}'$から\pageeqref{eq:TRc-Tc}だけ加味すればよい。
+よって、\index{がいけいちゅうしん@外径中心}外径中心T$_\mathrm c'$の位置は、\CurvatureCenter T$_{R_\mathrm c}'$から\pageeqref{eq:TRc-Tc}だけ加味すればよい。
 以下では、外径中心T$_\mathrm c'$の位置を直接計算し、このことが整合していることを確かめる。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -109,7 +109,7 @@
   -\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}
    \frac{2\bar l}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}}\ .
 \end{align}
-これより、\index{わんきょくちゅうしん@湾曲中心}湾曲中心T$_{R_\mathrm c}'$と\index{がいけいちゅうしん@外径中心}外径中心T$_\mathrm c'$との差は\pageeqref{eq:TRc-Tc}となることがわかる。
+これより、\CurvatureCenter T$_{R_\mathrm c}'$と\index{がいけいちゅうしん@外径中心}外径中心T$_\mathrm c'$との差は\pageeqref{eq:TRc-Tc}となることがわかる。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 2.1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -132,7 +132,7 @@
   \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2
   -\Delta'\cos\theta\ .
 \end{align}
-これより、\index{わんきょくちゅうしん@湾曲中心}湾曲中心T$_{R_\mathrm c}'$と\index{がいけいちゅうしん@外径中心}外径中心T$_\mathrm c'$との差は\pageeqref{eq:TRc-Tc}となることがわかる。
+これより、\CurvatureCenter T$_{R_\mathrm c}'$と\index{がいけいちゅうしん@外径中心}外径中心T$_\mathrm c'$との差は\pageeqref{eq:TRc-Tc}となることがわかる。
 
 
 
@@ -141,19 +141,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{ボトム側の端面}
+\modHeadsection{ボトム側の\EndFace}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 2.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{ボトム端面における湾曲中心の位置}
+\subsection{\BottomEndFace における\CurvatureCenter の位置}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 2.2.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{スペーサを用いた場合のB\texorpdfstring{$_{R_\mathrm c}'$}{Rc'}}
-\index{スペーサ}スペーサ取付後の\index{ボトムたんのわんきょくちゅうしん@ボトム端の湾曲中心}ボトム端面における湾曲中心B$_{R_\mathrm c}'$と、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pとの$X$方向の差は、トップ側の場合と同様に考えて
+\index{スペーサ}スペーサ取付後の\expandafterindex{ボトムたんの\yomiCurvatureCenter@ボトム端の\nameCurvatureCenter}ボトム端における\nameCurvatureCenter B$_{R_\mathrm c}'$と、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pとの$X$方向の差は、トップ側の場合と同様に考えて
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{この場合は、ボトム側が工具側に向いている。}、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -167,7 +167,7 @@
 %% subsubsection 2.2.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{テーブルを傾けた場合のB\texorpdfstring{$_{R_\mathrm c}'$}{Rc'}}
-テーブルを傾けた後のボトム端面における\index{わんきょくちゅうしん@湾曲中心}湾曲中心の位置B$_{R_\mathrm c}'$と、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pとの$X$方向の差は、トップ側の場合と同様に考えて
+テーブルを傾けた後の\BottomEndFace における\CurvatureCenter の位置B$_{R_\mathrm c}'$と、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pとの$X$方向の差は、トップ側の場合と同様に考えて
 \begin{align*}
   %\label{eq:tableBRc}
   \left(\Delta+\sqrt{R_i'^2-\bar l^2}\right)\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}~.
@@ -177,15 +177,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 2.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{ボトム端面における外側中心の位置}
-\index{ボトムたんのわんきょくちゅうしん@ボトム端の湾曲中心}ボトム端における湾曲中心B$_{R_\mathrm c}'$と\index{ボトムたんのがいけいちゅうしん@ボトム端の外径中心}外径中心B$_\mathrm c'$との差は、以下で与えられる。
+\subsection{\BottomEndFace における外側中心の位置}
+\expandafterindex{ボトムたんの\yomiCurvatureCenter@ボトム端の\nameCurvatureCenter}ボトム端における\nameCurvatureCenter B$_{R_\mathrm c}'$と\index{ボトムたんのがいけいちゅうしん@ボトム端の外径中心}外径中心B$_\mathrm c'$との差は、以下で与えられる。
 %% label{eq:BRc-Bc}
 \begin{align}
   \label{eq:BRc-Bc}
   \sqrt{R_\mathrm c^2-f_\mathrm B^2}
   -\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2\ .
 \end{align}
-よって、\index{がいけいちゅうしん@外径中心}外径中心B$_\mathrm c'$の位置は、湾曲中心B$_{R_\mathrm c}'$から\pageeqref{eq:BRc-Bc}だけ加味すればよい。
+よって、\index{がいけいちゅうしん@外径中心}外径中心B$_\mathrm c'$の位置は、\CurvatureCenter B$_{R_\mathrm c}'$から\pageeqref{eq:BRc-Bc}だけ加味すればよい。
 以下では、外径中心B$_\mathrm c'$の位置を直接計算し、このことが整合していることを確かめる。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -206,7 +206,7 @@
   \Delta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
   -\frac{\delta_\mathrm s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}}\ .
 \end{align}
-これより、\index{わんきょくちゅうしん@湾曲中心}湾曲中心B$_{R_\mathrm c}'$と\index{がいけいちゅうしん@外径中心}外径中心B$_\mathrm c'$との差は\pageeqref{eq:BRc-Bc}となることがわかる。
+これより、\CurvatureCenter B$_{R_\mathrm c}'$と\index{がいけいちゅうしん@外径中心}外径中心B$_\mathrm c'$との差は\pageeqref{eq:BRc-Bc}となることがわかる。
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -228,13 +228,13 @@
   \label{eq:tableBc}
   \Delta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
 \end{align}
-これより、\index{わんきょくちゅうしん@湾曲中心}湾曲中心B$_{R_\mathrm c}'$と\index{がいけいちゅうしん@外径中心}外径中心B$_\mathrm c'$との差は\pageeqref{eq:BRc-Bc}となることがわかる。
+これより、\CurvatureCenter B$_{R_\mathrm c}'$と\index{がいけいちゅうしん@外径中心}外径中心B$_\mathrm c'$との差は\pageeqref{eq:BRc-Bc}となることがわかる。
 \vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Column}{端面における外径の近似計算}
-\index{がいけい@外径}外径を$W_x$に対して、トップ端面部の水平方向の長さ$W_\mathrm T$は以下で与えられる。（ボトム端面部も同様）
+\begin{Column}{\EndFace における外径の近似計算}
+\index{がいけい@外径}外径を$W_x$に対して、\TopEndFace 部の水平方向の長さ$W_\mathrm T$は以下で与えられる。（\BottomEndFace 部も同様）
 \begin{align*}
   W_\mathrm T
   = \sqrt{\left(R+\frac{W_x}2\right)^2-f_\mathrm T^2}
@@ -283,7 +283,7 @@
 このとき\index{かこうのけいろ@加工の経路}加工の経路として、単純に外径の値を指定すれば加工することは可能である。
 しかしその場合、\index{こうぐ@工具}工具（\index{フェイスミル}フェイスミル）のほぼ中心に近い位置で切削する形になるので、工具に大きな負荷がかかることになる。
 これを避けるために、理想的には、\index{ないけい@内径}内径$w_{\mathrm T, \mathrm B}$の外側に工具が沿う形で切削するのが望ましい。
-つまり、端面の内径$w_y$\,(BD方向の$w_{\mathrm T}$または$w_{\mathrm B}$)を基準として、\index{こうぐはんけい@工具半径}工具半径分だけ（進行方向に対して右側に）補正をする形にすればよい。
+つまり、\EndFace の内径$w_y$\,(BD方向の$w_{\mathrm T}$または$w_{\mathrm B}$)を基準として、\index{こうぐはんけい@工具半径}工具半径分だけ（進行方向に対して右側に）補正をする形にすればよい。
 ここでは誤差等を考慮して、内径から$\delta_w$だけ縮めた輪郭（の外側）に沿う形を考える。
 
 

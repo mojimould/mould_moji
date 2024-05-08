@@ -4,7 +4,7 @@
 \modHeadchapter{マシニングセンタにおける寸法}
 ここでは\index{NCプログラム}NCプログラムを記述する際や、\index{ずめん（モールド）@図面（モールド）}図面・\index{3Dモデル（ワーク）}3Dモデルの描画をする際に必要となる、\index{すんぽう@寸法}寸法や\index{こうさ@公差}公差等の取り扱いについて触れる。
 
-なお、以降で述べる水平方向とは、端面のAC方向のことを指す。
+なお、以降で述べる水平方向とは、\EndFace のAC方向のことを指す。
 
 
 
@@ -132,7 +132,7 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurva
 %% section 13.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{外径に関する寸法}
-\nameCenterCurvatureRadius を$R_\mathrm c$, \TopAlocationLength を$f_\mathrm T$, 外径を$W_x$とすると、トップ端面部の水平方向の長さ$W_\mathrm T$は以下で与えられる。（ボトム端面部も同様）
+\nameCenterCurvatureRadius を$R_\mathrm c$, \TopAlocationLength を$f_\mathrm T$, 外径を$W_x$とすると、\TopEndFace 部の水平方向の長さ$W_\mathrm T$は以下で与えられる。（\BottomEndFace 部も同様）
 \begin{align*}
   W_\mathrm T
   = \sqrt{\left(R_\mathrm c+\frac{W_x}2\right)^2-f_\mathrm T^2}
@@ -186,7 +186,7 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurva
 %% subsection 11.4.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{水平方向の内径}
-中心湾曲線上のトップ端から$\lambda$の位置における水平方向の\index{ないけい（すいへいほうこう）@内径（水平方向）}内径は、トップ端から$\lambda$の位置におけるAC方向の内径$w_{A\lambda}$とみなしてもよいものとする。
+\CenterCurvatureLine 上のトップ端から$\lambda$の位置における水平方向の\index{ないけい（すいへいほうこう）@内径（水平方向）}内径は、トップ端から$\lambda$の位置におけるAC方向の内径$w_{A\lambda}$とみなしてもよいものとする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 11.4.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -604,7 +604,7 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %% subsection 10.9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\DimpleMilling の基準点}
-\DimpleMilling の際は、トップ端面における内側の中心座標の\index{じっそくち（トップたんうちがわちゅうしん）@実測値（トップ端内側中心）}実測値を基準にして行うものとする。
+\DimpleMilling の際は、\TopEndFace における内側の中心座標の\index{じっそくち（トップたんうちがわちゅうしん）@実測値（トップ端内側中心）}実測値を基準にして行うものとする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

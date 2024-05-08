@@ -11,7 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\EndFaceCChamfer の寸法}
 \TopEndFaceOutCChamferLength および\TopEndFaceInCChamferLength をそれぞれ$c_\mathrm{To}$, $c_\mathrm{Ti}$とする。
-ここで$c_\mathrm{To}$や$c_\mathrm{Ti}$は、端面に垂直な方向の距離とする。
+ここで$c_\mathrm{To}$や$c_\mathrm{Ti}$は、\EndFace に垂直な方向の距離とする。
 このとき、片角$\xi_\mathrm e$\,($>0$)の\index{テーパエンドミル}テーパエンドミルに対して、$XY$方向の\EndFaceCChamferLength は、
 \begin{align*}
   c_\mathrm{To}\tan\xi_\mathrm e\qquad\text{および}\qquad c_\mathrm{Ti}\tan\xi_\mathrm e
@@ -71,10 +71,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{中心座標\texorpdfstring{$X$}{X}の移動}
 \Outcut があり、かつ\EndFaceOutCChamfer　の場合であれば、Cの大きさに依らず加工径の中心座標($XY$)は変わらない。
-一方、外削のない場合は、中心の$X$座標はCの大きさに応じて湾曲中心線に沿って移動する。
+一方、\Outcut のない場合は、中心の$X$座標はCの大きさに応じて\CenterCurvatureLine に沿って移動する。
 このとき\EndFace と面取先端部との中心座標($X$)の差
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{どちらの場合も端面が工具側にある場合を考えている。}
+\footnote{どちらの場合も\EndFace が工具側にある場合を考えている。}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 は、
 \begin{align*}

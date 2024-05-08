@@ -182,7 +182,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %% section 6.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\Dimple の位置と傾き角（傾き前）}
-\pageeqref{eq:tableTRc}より、テーブルを$-\theta$傾けて\AlocationLength の調整を行った場合、テーブル中心Pを原点とした\index{ちゅうしんわんきょくせん@中心湾曲線}中心湾曲線のトップ端における$X$座標は、
+\pageeqref{eq:tableTRc}より、テーブルを$-\theta$傾けて\AlocationLength の調整を行った場合、テーブル中心Pを原点とした\CenterCurvatureLine のトップ端における$X$座標は、
 \begin{align*}
   R_\mathrm c\cos\alpha_\mathrm c-\Delta'\cos\theta = \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\Delta'\cos\theta
 \end{align*}
@@ -190,11 +190,11 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 これは\index{タッチセンサープローブ}タッチセンサープローブによる\expandafterindex{そくていかいしてん（\yomiDimple）@測定開始点（\nameDimple）}測定の開始点として用いることができる。
 一方で、それ以外の作業では、\index{トップたんのないけいちゅうしん@トップ端の内径中心}トップ端における内径の中心座標$g_\mathrm T$を直接測定するので、それを用いることにする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{これは\index{ちゅうしんわんきょくせん@中心湾曲線}中心湾曲線上にない点であるが、\index{こうさ@公差}公差の範囲内であるものとして、ここではこれで代用する。}。
+\footnote{これは\\CenterCurvatureLine 上にない点であるが、\index{こうさ@公差}公差の範囲内であるものとして、ここではこれで代用する。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 よって、テーブル中心Pを原点とした場合における、\DimpleFirstRow 中央の（だいたいの）位置
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{$w_{\mathrm Aq}$, $w_{\mathrm Bq}$は\index{わんきょくちゅうしん@湾曲中心}湾曲中心\index{O（わんきょくちゅうしん）@O（湾曲中心）}O(0, 0)方向への長さであるため正確ではないことに注意。}\relax
+\footnote{$w_{\mathrm Aq}$, $w_{\mathrm Bq}$は\CurvatureCenter\index{O（\yomiCurvatureCenter）@O（\nameCurvatureCenter）}O(0, 0)方向への長さであるため正確ではないことに注意。}\relax
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 は、次で与えられる。
 \begin{align*}
@@ -229,7 +229,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
     \right).
 \end{array}
 \end{align*}
-ここで、\DimpleIRow の湾曲中心と\index{トップたんのわんきょくちゅうしん@トップ端の湾曲中心}トップ端の湾曲中心との$X$座標の差を、
+ここで、\DimpleIRow の\CurvatureCenter と\expandafterindex{トップたんの\yomiCurvatureCenter@トップ端の\nameCurvatureCenter}トップ端の\nameCurvatureCenter との$X$座標の差を、
 %% label{eq:}
 \begin{align}
   \label{eq:dimpleCenterDistance}
@@ -237,7 +237,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
   \equiv \sqrt{R_\mathrm c^2-\left\{f_\mathrm T-q-(i-1)p_z\right\}^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}
 \end{align}
 と表した。
-なお、$i$列目の湾曲中心と$j$列目の湾曲中心との$X$座標の差を
+なお、$i$列目の\CurvatureCenter と$j$列目の\CurvatureCenter との$X$座標の差を
 \begin{align*}
   \mathcal L_{i,j}
   \equiv \mathcal L_i-\mathcal L_j
@@ -471,7 +471,7 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここではこれをテーブル中心Pを原点とした座標値として取り扱っている。
 しかし、測定では機械座標系の値として$g_\mathrm T$が与えられる。
-たとえば\Dimple の場合、$g_\mathrm T$は通常（今の場合はテーブル中心Pより負側に湾曲中心があることが多いので）負の値として得られることに注意。
+たとえば\Dimple の場合、$g_\mathrm T$は通常（今の場合はテーブル中心Pより負側に\CurvatureCenter があることが多いので）負の値として得られることに注意。
 （ここでの測定では$XY$成分のみであり、$Z$については測定しないことにも注意。）}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 このとき、テーブルを角度$-\phi$だけ傾けた後のトップ端内面中心の座標$g'_\mathrm T$は
@@ -497,11 +497,11 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
    \end{array}
    \right].
    \end{align}
-同様に、$i$列目における（傾ける前の）湾曲中心の位置は、[$g_{\mathrm Tx}+\mathcal L_i$, $g_{\mathrm Ty}$, $f_\mathrm T'-q-(i-1)p_z$]で与えられる
+同様に、$i$列目における（傾ける前の）\CurvatureCenter の位置は、[$g_{\mathrm Tx}+\mathcal L_i$, $g_{\mathrm Ty}$, $f_\mathrm T'-q-(i-1)p_z$]で与えられる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{ここではトップ端における湾曲中心を、トップ端における内径中心と同一視している。}
+\footnote{ここではトップ端における\CurvatureCenter を、トップ端における内径中心と同一視している。}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ので、テーブルを角度$-\phi$だけ傾けた後の$i$列目における湾曲中心の位置は、
+ので、テーブルを角度$-\phi$だけ傾けた後の$i$列目における\CurvatureCenter の位置は、
 \begin{align*}
   \left[
   \begin{array}{c}
@@ -511,7 +511,7 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
   \end{array}
   \right].
 \end{align*}
-したがって、傾けた後のトップ端の湾曲中心と$i$列目に対する湾曲中心との差分は、
+したがって、傾けた後のトップ端の\CurvatureCenter と$i$列目に対する\CurvatureCenter との差分は、
 %% label{eq:afterPhidimpleCenterDistance}
 \begin{align}
   \label{eq:afterPhidimpleCenterDistance}
@@ -527,7 +527,7 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-傾けた後の$i$列目に対する湾曲中心と$j$列目に対する湾曲中心との差分は、
+傾けた後の$i$列目に対する\CurvatureCenter と$j$列目に対する\CurvatureCenter との差分は、
 \begin{align*}
   \left[
   \begin{array}{c}
@@ -612,7 +612,7 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
     \end{array}
     \right].
 \end{alignat*}
-特に、各列の中央（各列の\expandafterindex{わんきょくちゅうしん（\yomiDimple）@湾曲中心（\nameDimple）}湾曲中心）$[g_{\mathrm Tx}+\mathcal L_i, g_{\mathrm Ty}, f_\mathrm T'-q-(i-1)p_z]$を原点としてみた場合の位置は、
+特に、各列の中央（各列の\expandafterindex{\yomiCurvatureCenter（\yomiDimple）@\nameCurvatureCenter（\nameDimple）}\nameCurvatureCenter）$[g_{\mathrm Tx}+\mathcal L_i, g_{\mathrm Ty}, f_\mathrm T'-q-(i-1)p_z]$を原点としてみた場合の位置は、
 \begin{align*}
   \left[
   \begin{array}{c}
@@ -741,7 +741,7 @@ $X$成分の差分の大きさが（$\mathcal L_{i+1, i}$からみて）A面（�
     \end{array}
     \right].
 \end{alignat*}
-特に、各列の中央（各列の湾曲中心）$[g_{\mathrm Tx}+\mathcal L_i, g_{\mathrm Ty}, f_\mathrm T'-q-(i-1)p_z]$を原点としてみた場合の位置は、
+特に、各列の中央（各列の\CurvatureCenter）$[g_{\mathrm Tx}+\mathcal L_i, g_{\mathrm Ty}, f_\mathrm T'-q-(i-1)p_z]$を原点としてみた場合の位置は、
 \begin{align*}
   \left[
   \begin{array}{c}

@@ -12,11 +12,11 @@
 \modHeadsection{\Keyway の基本事項}
 \textbf{\Keyway}に関しては、その基準が以下のように与えられる場合が考えられる。
 \begin{enumerate}[label=\sarrow]
-\item \KeywayCenter Mが、ワークの\index{わんきょくちゅうしんせん@湾曲中心線}湾曲中心線上にある場合
+\item \KeywayCenter Mが、ワークの\CenterCurvatureLine 上にある場合
 \item \KeywayCenter Mが、（トップ側）\index{がいさくちゅうしん@外削中心}外削径の中心線上にある場合
 \item \AsideKeywayDepth に指定がある場合
 \end{enumerate}
-なお、\KeywayDiameter を$W_\mathrm M$, \KeywayPos（端面から\Keyway までの長さ）・\KeywayWidth・\AsideKeywayDepth をそれぞれ$\kappa_p$, $\kappa_w$, $\kappa_d$とする。
+なお、\KeywayDiameter を$W_\mathrm M$, \KeywayPos（\EndFace から\Keyway までの長さ）・\KeywayWidth・\AsideKeywayDepth をそれぞれ$\kappa_p$, $\kappa_w$, $\kappa_d$とする。
 このときいずれの場合も、$y$方向（機内における$Z$方向
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{計算上の$xy$座標（$x$:実軸, $y$:虚軸）と、機内における$XZ$座標とが混在する形で話を進めているので注意されたし。}）
@@ -38,15 +38,15 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 22.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 22.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{湾曲中心が基準の場合}
-\index{トップたんのわんきょくちゅうしん@トップ端の湾曲中心}トップ端における湾曲中心T$_{R_\mathrm c}'$と\KeywayCenter M$'$との$x$方向の差は、
+\modHeadsection{\CurvatureCenter が基準の場合}
+\expandafterindex{トップたんの\yomiCurvatureCenter@トップ端の\nameCurvatureCenter}トップ端における\nameCurvatureCenter T$_{R_\mathrm c}'$と\KeywayCenter M$'$との$x$方向の差は、
 \begin{align*}
   \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\bar\kappa_w\right)^2}
   -\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ .
 \end{align*}
-実際の測定では、湾曲中心T$_{R_\mathrm c}'$ではなく\index{トップたんのそとがわちゅうしん@トップ端の外側中心}トップ端面の外側中心T$_\mathrm c'$が測定されるので、T$_\mathrm c'$とM$'$との$x$方向の差を考える必要がある。
+実際の測定では、\CurvatureCenter T$_{R_\mathrm c}'$ではなく\index{トップたんのそとがわちゅうしん@トップ端の外側中心}トップ端の外側中心T$_\mathrm c'$が測定されるので、T$_\mathrm c'$とM$'$との$x$方向の差を考える必要がある。
 すなわち、
 %% label{eq:difTopMizoCenter}
 \begin{align}
@@ -57,17 +57,17 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% ubsection 23.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 23.02.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{スペーサを用いた場合の\KeywayCenter（湾曲中心基準）}
-\KeywayCenter M$'$がモールドの湾曲中心線上にある場合、テーブル中心Pを原点とした$x$座標は、\pageeqref{eq:spacerTRc}より、
+\subsection{\index{スペーサ}スペーサを用いた場合の\KeywayCenter（\CurvatureCenter 基準）}
+\KeywayCenter M$'$が\index{ワーク}ワークの\CenterCurvatureLine 上にある場合、テーブル中心Pを原点とした$x$座標は、\pageeqref{eq:spacerTRc}より、
 \begin{align*}
   -\Delta+\sqrt{R_\mathrm c^2-(f_\mathrm T-\bar\kappa_w)^2}+\frac{\delta_\mathrm s}2
   -\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta_\mathrm s^2+\left(2\bar l\right)^2}}
 \end{align*}
 となる。
-なお実際の作業では、簡単のため、トップ端面の外側中心T$_\mathrm c'$を測定し、それをトップ端面における湾曲中心T$_{R_\mathrm c}'$とみなして\KeywayCenter M$'$の位置を計算することが多い。
-実測した外側中心の$X$・$Y$座標$G_{\mathrm Tx}$, $G_{\mathrm Ty}$を湾曲中心のそれとみなすと、機内における\KeywayCenter M$'$の位置は、テーブル中心Pを原点として、
+なお実際の作業では、簡単のため、\TopEndFace の外側中心T$_\mathrm c'$を測定し、それを\TopEndFace における\CurvatureCenter T$_{R_\mathrm c}'$とみなして\KeywayCenter M$'$の位置を計算することが多い。
+実測した外側中心の$X$・$Y$座標$G_{\mathrm Tx}$, $G_{\mathrm Ty}$を\CurvatureCenter のそれとみなすと、機内における\KeywayCenter M$'$の位置は、テーブル中心Pを原点として、
 \begin{align*}
   \left(
     G_{\mathrm Tx}
@@ -77,7 +77,7 @@
     f_\mathrm T'-\bar\kappa_w
   \right).
 \end{align*}
-湾曲中心とみなさずに正確に求めるなら、これに\pageeqref{eq:TRc-Tc}を引けばよい。
+\CurvatureCenter とみなさずに正確に求めるなら、これに\pageeqref{eq:TRc-Tc}を引けばよい。
 その場合の$X$座標は、
 %% label{eq:Mreal}
 \begin{align}
@@ -91,13 +91,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 04.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{テーブルを傾けた場合の\KeywayCenter（湾曲中心基準）}
-\KeywayCenter M$'$がモールドの湾曲中心線上にある場合、テーブル中心Pを原点とした$x$座標は、\pageeqref{eq:tableTRc}より、
+\subsection{テーブルを傾けた場合の\KeywayCenter（\CurvatureCenter 基準）}
+\KeywayCenter M$'$がワークの\CenterCurvatureLine 上にある場合、テーブル中心Pを原点とした$x$座標は、\pageeqref{eq:tableTRc}より、
 \begin{align*}
   \sqrt{R_\mathrm c^2-(f_\mathrm T-\bar\kappa_w)^2}
   -\Delta'\cos\theta\ .
 \end{align*}
-実測した\index{そとがわちゅうしん@外側中心}外側中心の$X$, $Y$座標$G_{\mathrm Tx}$, $G_{\mathrm Ty}$を\index{わんきょくちゅうしん@湾曲中心}湾曲中心のそれとみなした場合とそうでない場合は、\pageeqref{eq:Mreal}で与えられる。
+実測した\index{そとがわちゅうしん@外側中心}外側中心の$X$, $Y$座標$G_{\mathrm Tx}$, $G_{\mathrm Ty}$を\CurvatureCenter のそれとみなした場合とそうでない場合は、\pageeqref{eq:Mreal}で与えられる。
 
 
 
@@ -146,7 +146,7 @@
 で与えられる。
 ここで、$W_{mx}$は\KeywayACOD を表す。
 なお実際の作業では、\index{ワーク}の\index{Aがわがいめん@A側外面}A側外面の\KeywayCenter に相当する箇所を直接測定し、その位置を基準として原点を割り出す。
-トップ端面における中心の$X$座標（\index{じっそくち@実測値}実測値）$G_{\mathrm Tx}$がわかっている場合、\KeywayCenter の$X$座標$G_{mx}$は\pageeqref{eq:Mreal}で与えられ、また\KeywayCenter に対する\index{Aがわがいめん@A側外面}A側外面と$G_{\mathrm Tx}$との差（の絶対値）は、
+\TopEndFace における中心の$X$座標（\index{じっそくち@実測値}実測値）$G_{\mathrm Tx}$がわかっている場合、\KeywayCenter の$X$座標$G_{mx}$は\pageeqref{eq:Mreal}で与えられ、また\KeywayCenter に対する\index{Aがわがいめん@A側外面}A側外面と$G_{\mathrm Tx}$との差（の絶対値）は、
 %% label{eq:mizocenterA}
 \begin{align}
   \label{eq:mizocenterAd}
@@ -184,7 +184,7 @@
 %% subsection 4.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{図面上の\KeywayDepth}
-単純に考えると、図面上においてAsideKeywayDepth が$\kappa_d$のとき、これは\KeywayCenter の位置におけるA側外面から端面と水平な方向に$\kappa_d$という意味で与えられる。
+単純に考えると、図面上においてAsideKeywayDepth が$\kappa_d$のとき、これは\KeywayCenter の位置におけるA側外面から\EndFace と水平な方向に$\kappa_d$という意味で与えられる。
 このとき、\Keyway のA面側の水平方向の位置は、\pageeqref{eq:mizocenterA}より、
 \begin{align*}
   \sqrt{R_\mathrm o^2-(f_\mathrm T-\bar\kappa_w)^2}-\kappa_d-\Delta'\ .
