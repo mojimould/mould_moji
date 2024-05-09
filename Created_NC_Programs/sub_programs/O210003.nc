@@ -244,6 +244,8 @@ G90 G01 X#711 Z#712 F#652
 (XZ: to start point)
 G90 G01 Z[#712+#600] F#652
 S2599
+
+N013
 G90 G53 G01 Z0 F#650
 G04 X1.5 (wait 1.5s)
 M05 (spindle off)
@@ -261,17 +263,17 @@ G90 G01 Z[#26+#600] F#652
 G91 G01 X[#705-#704] Z[#706-#26-#701-#600] F#652
 (XZ: tanmen center)
 
-IF[#4111NE50]GOTO013
-(if tool is not sensor, go to N013)
-IF[#1005EQ0]GOTO012
+IF[#4111NE50]GOTO016
+(if tool is not sensor, go to N016)
+IF[#1005EQ0]GOTO014
 M00 (sensor low battery)
-N012
-IF[#1004EQ1]GOTO013
-(if current sensor ON, go to N013)
+N014
+IF[#1004EQ1]GOTO016
+(if current sensor ON, go to N016)
 M117 (sensor on/off)
 G04 X1.5 (wait 1.5s)
 
-N013
+N016
 G91 G#703 X#709 Z#710 F#653
 (XZ to the center of the 1st row after rotation)
 (if sensor G31, else G01)
@@ -361,25 +363,33 @@ END1
 
 N206
 #724=#724-1 (changing face)
-IF[#724LE0]GOTO014
+IF[#724LE0]GOTO017
 GOTO201
 
 
 (end loop for the 2nd #724)
 
 
-N014
-IF[#4111EQ50]GOTO016
+N017
+IF[#4111EQ50]GOTO018
 M09 (coolant off)
 S35
 
-N016
+N018
 G90 G01 X#713 Z[#715-#701] F#652
 (XZ: to the center of the 1st row)
 G90 G01 X#711 Z#712 F#652
 (XZ: to start point)
 G90 G01 Z[#712+#600] F#652
+
+N990
+IF[#4119GE2600]GOTO991
 S2599
+GOTO992
+N991
+S6000
+
+N992
 G90 G53 G01 Z0 F#650
 G04 X1.5 (wait 1.5s)
 M05 (spindle off)

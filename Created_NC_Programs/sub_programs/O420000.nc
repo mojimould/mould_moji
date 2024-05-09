@@ -138,6 +138,7 @@ G04 X1.0 (wait 1.0s)
 M05 (spindle off)
 S35
 M00 (for Bot)
+GOTO016
 N013 (if #438=2)
 M09 (coolant off)
 G65 P900003 (for Bot)
@@ -156,6 +157,7 @@ G04 X1.0 (wait 1.0s)
 M05 (spindle off)
 S35
 M00 (for Top)
+GOTO016
 N015 (if #416=2)
 G65 P900003 (for Top)
 
@@ -209,7 +211,13 @@ END2
 N990
 M09 (coolant off)
 G90 G43 G01 H#4120 Z[#26+#600] F#650
+IF[#4119GE2600]GOTO991
 S2599
+GOTO992
+N991
+S6000
+
+N992
 G90 G53 G01 Z0 F#650
 G04 X1.5 (wait 1.5s)
 M05 (spindle off)
