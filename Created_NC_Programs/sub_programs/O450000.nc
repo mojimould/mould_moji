@@ -5,13 +5,16 @@ O450000
 N001
 IF[#26EQ#0]GOTO800
 IF[#18EQ#0]GOTO800
-IF[#18LT0.1]GOTO800
+IF[#18LT1]GOTO800
+IF[#13LT0]GOTO800
+IF[#13GE1]GOTO800
 IF[#06EQ#0]GOTO800
 IF[#06LT0.1]GOTO800
 IF[#17EQ#0]GOTO800
 IF[#17LT1000]GOTO800
 (if Z = #0, go to N800)
-(if R <= 0.1 or #0, go to N800)
+(if R < 1 or #0, go to N800)
+(if M < 0 or >= 1, go to N800)
 (if K < 0.1 or #0, go to N800)
 (if Q < 1000 or #0, go to N800)
 
@@ -76,15 +79,15 @@ IF[#4120LT11]GOTO800
 IF[#4120GT15]GOTO800
 IF[[FIX[#4120]]NE#4120]GOTO800
 IF[[#26-#31]LE[#901011/2]]GOTO800
-IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
-IF[[ABS[#32]]GE#18]GOTO800
+IF[[#18+#13]GE[[#24+#25-ABS[#24-#25]]/8]]GOTO800
+IF[[ABS[#32]]GE[#18+#13]]GOTO800
 IF[[ABS[#30]]GE[#24/4]]GOTO800
 IF[#606GE[#25/2]]GOTO800
 IF[#634GT#633]GOTO800
 (if T# < 11 or > 15 or not integer or #0, go to N800)
 (if Z-#31 <= #901011/2, go to N800)
-(if R >= min[X/4, Y/4], go to N800)
-(if |#32| >= R, go to N800)
+(if R+M >= min[X/4, Y/4], go to N800)
+(if |#32| >= R+M, go to N800)
 (if |#30| >= X/4, go to N800)
 (if #606 >= Y/2, go to N800)
 (if #634 > #633, go to N800)
@@ -131,7 +134,7 @@ WHILE[#103GE1]DO1
 #104=#29-#634-#633*#103
 #105=#28-#634-#633*#103
 
-G65 P490007 D#4120 X#104 Y#105 R#18 A#606 F#666 E#667 S#679
+G65 P490007 D#4120 X#104 Y#105 R[#18+#13] A#606 F#666 E#667 S#679
 END1
 
 N011 (pause)
@@ -213,7 +216,7 @@ N200 (Shiage loop)
 WHILE[#106GE0]DO2
 #106=#106-1
 
-G65 P490007 D#4120 X#29 Y#28 R#18 A#606 F#666 E#667 S#679
+G65 P490007 D#4120 X#29 Y#28 R[#18+#13] A#606 F#666 E#667 S#679
 END2
 
 N990
@@ -243,6 +246,7 @@ N999 M99
 
 (as received arguments)
 (#06:K: mentori C or R length)
+(#13:M: mekki thickness mm)
 (#17:Q: central curvature)
 (#18:R: corner R)
 (#23:W: Bot ori_furiwake)
