@@ -68,7 +68,7 @@ IF[#677LT200]GOTO800
 (if #677 < 200 or #0, go to N800)
 
 N008
-IF[ABS[#422]GE10]GOTO800
+IF[ABS[#422]GE5]GOTO800
 IF[#4120EQ#0]GOTO800
 IF[#4120LT6]GOTO800
 IF[#4120GT10]GOTO800
@@ -78,7 +78,7 @@ IF[[#26-#13-#11-#419-#420]LE[#901011/2]]GOTO800
 IF[[ABS[#419]]GE[#13/2]]GOTO800
 IF[[ABS[#420]]GE[#11/2]]GOTO800
 IF[[ABS[#421]]GE[[#22-#25]/2]]GOTO800
-(if |#422| >= 10, go to N800)
+(if |#422| >= 5, go to N800)
 (if T# < 6 or > 10 or not integer or #0, go to N800)
 (if Y >= V, go to N800)
 (if Z-M-H-#419-#420 <= #901011/2, go to N800)
