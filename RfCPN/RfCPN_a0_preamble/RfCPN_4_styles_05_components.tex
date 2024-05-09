@@ -5,20 +5,27 @@
 \renewcommand{\partautorefname}{part}
 \renewcommand\partpagestyle{emptydate}
 
+%%%%% TIKZSET %%%%%%%%%%%%%%%%%%%
+\tikzset{
+  %%%%% FORMAT STYLE %%%%%
+  commonComponents/.style={signal, draw},
+  chapter/.style={commonComponents,
+                  fill=\if@appendix white\else Maroon!65\fi,
+                  text=\if@appendix Maroon!65\else white\fi,
+                  signal from=east, inner sep=5pt, text height=1.5ex, text depth=2pt},
+  sect/.style={commonComponents, text depth=0pt, text=white},
+  section/.style={sect, fill=konpeki!100!, signal to=east, inner sep=5pt, text height=1.4ex},
+  subsection/.style={sect, fill=moegi!90!, signal to=nowhere, inner sep=5pt, text height=1.3ex},
+  subsubsection/.style={sect, fill=sssec!100!, signal to=nowhere, inner sep=4pt, text height=1.25ex},
+}
+
 %%%%% FOR STYLE OF CHAPTER %%%%%
 \renewcommand{\thechapter}{\ifnum\value{chapter}<10 0\fi\arabic{chapter}}
 \renewcommand{\chapterautorefname}{章}  % chapter --> 章
 \renewcommand\chapterpagestyle{\if@frontmatter plainheadfront\else plainhead\fi}
 \renewcommand*{\chapterformat}{%
-  \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
-                      baseline=-7.75pt] % +: title up, -: title down
-    \node[fill=\if@appendix white\else Maroon!65\fi,
-          text=\if@appendix Maroon!65\else white\fi,
-          signal from=east,
-          inner sep=5pt,
-          text height=1.5ex,
-          text depth=2pt]
-      at (0, 0) {\LARGE{\sffamily\bfseries\,\thepart.\,\thechapter\,\relax}};
+  \begin{tikzpicture}[every node/.style={chapter}, baseline=-7.75pt] % +: title up, -: title down
+    \node at (0, 0) {\LARGE{\sffamily\bfseries\,\thepart.\,\thechapter\,\relax}};
   \end{tikzpicture}~~%
 }
 %%%%% STYLE OF APPENDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -30,45 +37,24 @@
 \renewcommand{\sectionautorefname}{節\!}
 \setcounter{secnumdepth}{4}
 \renewcommand*{\sectionformat}{%
-  \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
-                      baseline=-5.0pt]
-    \node[fill=Green!65!,
-          text=white,
-          signal from=east,
-          inner sep=5pt,
-          text height=1.4ex,
-          text depth=0pt]
-      at (0, 0) {\Large{\sffamily\bfseries\,\thesection~\relax}};
+  \begin{tikzpicture}[every node/.style={section}, baseline=-4.75pt]
+    \node at (0, 0) {\Large{\sffamily\bfseries\,\thesection~~\relax}};
   \end{tikzpicture}~~%
 }
 
 %%%%% FOR STYLE OF SUBSECTION %%%%%%%%%%%%%%%%
 \renewcommand{\subsectionautorefname}{\sectionautorefname}
 \renewcommand*{\subsectionformat}{%
-  \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
-                      baseline=-3.5pt]
-    \node[fill=blue!50!,
-          text=white,
-          signal from=east,
-          inner sep=5pt,
-          text height=1.3ex,
-          text depth=0pt]
-      at (0, 0) {\large{\sffamily\bfseries\,\thesubsection~\relax}};
+  \begin{tikzpicture}[every node/.style={subsection}, baseline=-4.0pt]
+    \node at (0, 0) {\large{\sffamily\bfseries\,\thesubsection~~\relax}};
   \end{tikzpicture}~~%
 }
 
 %%%%% FOR STYLE OF SUBSUBSECTION %%%%%%%%%%%%%
 \renewcommand{\subsubsectionautorefname}{\sectionautorefname}
 \renewcommand*{\subsubsectionformat}{%
-  \begin{tikzpicture}[every node/.style={signal, draw, text=white, signal to=nowhere},
-                      baseline=-3.75pt]
-    \node[fill=Green!50!Blue!40!,
-          text=white,
-          signal from=east,
-          inner sep=5pt,
-          text height=1.25ex,
-          text depth=0pt]
-      at (0, 0) {\small{\sffamily\bfseries\,\thesubsubsection~\relax}};
+  \begin{tikzpicture}[every node/.style={subsubsection}, baseline=-2.5pt]
+    \node at (0, 0) {\small{\sffamily\bfseries\,\thesubsubsection~~\relax}};
   \end{tikzpicture}~~%
 }
 
