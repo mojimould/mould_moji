@@ -46,7 +46,7 @@ IF[#901011LE100]GOTO800
 (if #600 < 50 or #0, go to N800)
 (if #602 <= 0 or #0, go to N800)
 (if #603 < 0 or #603 > 20.0 or #0, go to N800)
-(if #656 isn't 50 or #0, go to N800)
+(if #656 is not 50 or #0, go to N800)
 (if #901011 <= 100 or #0, go to N800)
 
 N006

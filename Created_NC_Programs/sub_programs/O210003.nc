@@ -350,7 +350,7 @@ N303
 IF[#33GE#13]GOTO206
 (if #33 >= #13, go to N206)
 #32=#707-[#33-1]*#06
-(#32= the #33th row's Z from table center)
+(#32= Z of the #33th row from table center)
 #31=SQRT[#18*#18-[#32-#06]*[#32-#06]]-SQRT[#18*#18-#32*#32]
 G91 G#703 X[#31*COS[ABS[#02]]-#06*SIN[ABS[#02]]] Z-[#31*SIN[ABS[#02]]+#06*COS[ABS[#02]]] F#653
 (current work XY: the center of the #33+1th row)
