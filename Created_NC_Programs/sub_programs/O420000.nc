@@ -23,9 +23,9 @@ IF[#18LT0.1]GOTO800
 (if R < 0.1 or #0, go to N800)
 
 N002
-IF[#4012EQ56]THEN #33=-#414
-IF[#4012EQ54]THEN #33=#436
-(Top: #33=-#414. Bot: #33=#436)
+IF[#4012EQ56]THEN #33=#414
+IF[#4012EQ54]THEN #33=-#436
+(Top: #33=#414. Bot: #33=-#436)
 (#33: hosei: A-men nikuatsu)
 
 N003

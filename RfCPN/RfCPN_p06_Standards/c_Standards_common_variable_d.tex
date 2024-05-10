@@ -151,7 +151,7 @@
 \ttNum419 & \KeywayPos$+$補正（\KeywayWidth 不変） & 0\\
 \ttNum420 & \KeywayWidth$+$補正 & 0\\
 \ttNum421 & \AsideKeywayDepth$+$補正（\KeywayCenter$X-$補正） & 0\\
-\ttNum422 & \KeywayDiameter（直径）$+$補正 & 0\\
+\ttNum422 & \KeywayDiameter（直径）$+$補正（\AsideKeywayDepth 不変） & 0\\
 \ttNum423 & \Keyway 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \ttNum424 & \Keyway 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \end{multicollongtblr}
@@ -262,6 +262,15 @@
 \ttNum473 & 工具{\ttfamily T33}（Tスロット）\BfaceDimple~深さ補正値（深さに$+$補正） & 0.00\\
 \ttNum474 & 工具{\ttfamily T33}（Tスロット）\DfaceDimple~深さ補正値（深さに$+$補正） & 0.00\\
 \end{multicollongtblr}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+\DimpleMilling 用工具の\expandafterindex{こうぐけいほせいち（\yomiDimpleMilling）@工具径補正値（\nameDimpleMilling）}工具径補正値または\expandafterindex{まもうりょう（\yomiDimpleMilling）@摩耗量（\nameDimpleMilling）}摩耗量を$\pm$変更すると、\DimpleDepth が全体的に$\mp$となる。
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \clearpage
