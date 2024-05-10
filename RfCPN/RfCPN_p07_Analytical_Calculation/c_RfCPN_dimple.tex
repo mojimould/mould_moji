@@ -182,7 +182,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %% section 6.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\Dimple の位置と傾き角（傾き前）}
-\pageeqref{eq:tableTRc}より、テーブルを$-\theta$傾けて\AlocationLength の調整を行った場合、テーブル中心Pを原点とした\CenterCurvatureLine のトップ端における$X$座標は、
+\pageeqref{eq:tableTRc}より、テーブルを$-\theta$傾けて\AlocationLength の調整を行った場合、\TableCenter Pを原点とした\CenterCurvatureLine のトップ端における$X$座標は、
 \begin{align*}
   R_\mathrm c\cos\alpha_\mathrm c-\Delta'\cos\theta = \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\Delta'\cos\theta
 \end{align*}
@@ -192,7 +192,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{これは\\CenterCurvatureLine 上にない点であるが、\index{こうさ@公差}公差の範囲内であるものとして、ここではこれで代用する。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-よって、テーブル中心Pを原点とした場合における、\DimpleFirstRow 中央の（だいたいの）位置
+よって、\TableCenter Pを原点とした場合における、\DimpleFirstRow 中央の（だいたいの）位置
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{$w_{\mathrm Aq}$, $w_{\mathrm Bq}$は\CurvatureCenter\index{O（\yomiCurvatureCenter）@O（\nameCurvatureCenter）}O(0, 0)方向への長さであるため正確ではないことに注意。}\relax
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -251,7 +251,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %% subsection 5.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\Dimple の\texorpdfstring{$X$}{X}座標（傾き前）}
-テーブル中心Pを原点としたとき、傾き前の\DimpleIRowJ の$X$座標は、
+\TableCenter Pを原点としたとき、傾き前の\DimpleIRowJ の$X$座標は、
 %% label{eq:dPosXBefore}
 \begin{align}
   \notag
@@ -276,7 +276,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %% subsection 5.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\Dimple の\texorpdfstring{$Y$}{Y}座標（傾き前）}
-テーブル中心Pを原点としたとき、傾き前の\DimpleIRowJ の$Y$座標は、
+\TableCenter Pを原点としたとき、傾き前の\DimpleIRowJ の$Y$座標は、
 %% label{eq:dPosYBefore}
 \begin{alignat}{3}
   \notag
@@ -296,7 +296,7 @@ B・D面については$j$に依らないことがわかる。
 %% subsection 5.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\Dimple の\texorpdfstring{$Z$}{Z}座標（傾き前）}
-テーブル中心Pを原点としたとき、傾き前の\DimpleIRowJ の$Z$座標は、
+\TableCenter Pを原点としたとき、傾き前の\DimpleIRowJ の$Z$座標は、
 %% label{eq:dPosZBefore}
 \begin{align}
   \label{eq:dPosZBefore}
@@ -465,13 +465,13 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
 %% section 7.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{傾き後の\Dimple}
-機内での回転は\index{テーブルちゅうしん@テーブル中心}テーブル中心Pを\index{げんてんP@原点P}原点として行われる。
+機内での回転は\TableCenter Pを\index{げんてんP@原点P}原点として行われる。
 また\DimpleMilling は\TopIDCenter を基準にして切削を行う。
 傾ける前の\TopIDCenter $g_\mathrm T$の座標は実測により（Pを中心とした$XYZ$直交座標でいうところの）[$g_{\mathrm Tx}$, $g_{\mathrm Ty}$, $f_\mathrm T'$]で与えられる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{ここではこれをテーブル中心Pを原点とした座標値として取り扱っている。
+\footnote{ここではこれを\TableCenter Pを原点とした座標値として取り扱っている。
 しかし、測定では機械座標系の値として$g_\mathrm T$が与えられる。
-たとえば\Dimple の場合、$g_\mathrm T$は通常（今の場合はテーブル中心Pより負側に\CurvatureCenter があることが多いので）負の値として得られることに注意。
+たとえば\Dimple の場合、$g_\mathrm T$は通常（今の場合は\TableCenter Pより負側に\CurvatureCenter があることが多いので）負の値として得られることに注意。
 （ここでの測定では$XY$成分のみであり、$Z$については測定しないことにも注意。）}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 このとき、テーブルを角度$-\phi$だけ傾けた後のトップ端内面中心の座標$g'_\mathrm T$は
