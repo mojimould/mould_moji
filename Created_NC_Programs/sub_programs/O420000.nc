@@ -165,7 +165,7 @@ G65 P900003 (for Top)
 N016 (Shiage)
 IF[#4012EQ56]THEN #33=#414
 IF[#4012EQ54]THEN #33=-#436
-(Top: #33=-#414. Bot: #33=#436)
+(Top: #33=#414. Bot: #33=-#436)
 (#33: hosei: A-men nikuatsu)
 
 IF[#4012EQ56]THEN #30=#24+#415
