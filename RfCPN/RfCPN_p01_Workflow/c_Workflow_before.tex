@@ -173,7 +173,7 @@
 \subsubsection{\EndFaceChamfer 部分}
 \EndFaceChamferMilling については、全明細に存在し、明細により種類の違いが存在する。
 \begin{enumerate}[label=\sarrow]
-\item 種類が\index{Cめんとり@C面取}C面取であれば、その\index{Cめんとりちょう@C面取長}C面取長により\index{マシニングセンタ}マシニングセンタによる加工を行うか判断を行う
+\item 種類が\EndFaceCChamfer であれば、その\EndFaceCChamferLength により\index{マシニングセンタ}マシニングセンタによる加工を行うか判断を行う
 \item \EndFaceCChamferAngle を確認し、使用する\expandafterindex{こうぐ（\yomiEndFaceCChamfer）@工具（\nameEndFaceCChamfer）}工具を決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -542,7 +542,7 @@
 \subsection{ワーク設置後の調整}
 \begin{enumerate}[label=\sarrow]
 \item トップ側およびボトム側の\expandafterindex{ぜんけずりしろ（\yomiEndFacecut）@全削り代（\nameEndFacecut）}全削り代に応じて、\index{かこうかいすう（\yomiEndFacecutMilling）@加工回数（\nameEndFacecutMilling）}\nameEndFacecutMilling の回数を設定する
-\item トップ端およびボトム端の\index{がいけいちゅうしん@外径中心}外径中心の位置を\index{メジャー}メジャーで測定する
+\item \TopODCenter および\BottomODCenter の位置を\index{メジャー}メジャーで測定する
 \item 測定した中心位置を用いて、\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の設定を行う
 \item \expandafterindex{テーブルのかいてんちゅうしん（\yomiMMC）@テーブルの回転中心（\nameMMC）}テーブルの回転中心とのずれを考慮して、\EndFace の$Z$方向の長さを調整する
 \item \CenterlineEndFaceDif がある場合\expandafterindex{テーブルのかいてんちゅうしん（\yomiMMC）@テーブルの回転中心（\nameMMC）}テーブルの回転中心とのずれを考慮して、\OutcutCenter の$X$方向の位置を調整する

@@ -188,7 +188,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 \end{align*}
 で与えられる。
 これは\index{タッチセンサープローブ}タッチセンサープローブによる\expandafterindex{そくていかいしてん（\yomiDimple）@測定開始点（\nameDimple）}測定の開始点として用いることができる。
-一方で、それ以外の作業では、\index{トップたんのないけいちゅうしん@トップ端の内径中心}トップ端における内径の中心座標$g_\mathrm T$を直接測定するので、それを用いることにする
+一方で、それ以外の作業では、\TopIDCenter の座標$g_\mathrm T$を直接測定するので、それを用いることにする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{これは\\CenterCurvatureLine 上にない点であるが、\index{こうさ@公差}公差の範囲内であるものとして、ここではこれで代用する。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -229,7 +229,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
     \right).
 \end{array}
 \end{align*}
-ここで、\DimpleIRow の\CurvatureCenter と\expandafterindex{トップたんの\yomiCurvatureCenter@トップ端の\nameCurvatureCenter}トップ端の\nameCurvatureCenter との$X$座標の差を、
+ここで、\DimpleIRow の\CurvatureCenter と\TopCurvatureCenter との$X$座標の差を、
 %% label{eq:}
 \begin{align}
   \label{eq:dimpleCenterDistance}
@@ -466,8 +466,8 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{傾き後の\Dimple}
 機内での回転は\index{テーブルちゅうしん@テーブル中心}テーブル中心Pを\index{げんてんP@原点P}原点として行われる。
-また\DimpleMilling は\index{トップたんのないけいちゅうしん@トップ端の内径中心}トップ端における内径中心を基準にして切削を行う。
-傾ける前の\index{トップたんのないけいちゅうしん@トップ端の内径中心}トップ端内径中心$g_\mathrm T$の座標は実測により（Pを中心とした$XYZ$直交座標でいうところの）[$g_{\mathrm Tx}$, $g_{\mathrm Ty}$, $f_\mathrm T'$]で与えられる
+また\DimpleMilling は\TopIDCenter を基準にして切削を行う。
+傾ける前の\TopIDCenter $g_\mathrm T$の座標は実測により（Pを中心とした$XYZ$直交座標でいうところの）[$g_{\mathrm Tx}$, $g_{\mathrm Ty}$, $f_\mathrm T'$]で与えられる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここではこれをテーブル中心Pを原点とした座標値として取り扱っている。
 しかし、測定では機械座標系の値として$g_\mathrm T$が与えられる。
@@ -499,7 +499,7 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
    \end{align}
 同様に、$i$列目における（傾ける前の）\CurvatureCenter の位置は、[$g_{\mathrm Tx}+\mathcal L_i$, $g_{\mathrm Ty}$, $f_\mathrm T'-q-(i-1)p_z$]で与えられる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{ここではトップ端における\CurvatureCenter を、トップ端における内径中心と同一視している。}
+\footnote{ここでは\TopCurvatureCenter を、\TopIDCenter と同一視している。}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ので、テーブルを角度$-\phi$だけ傾けた後の$i$列目における\CurvatureCenter の位置は、
 \begin{align*}
@@ -511,7 +511,7 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
   \end{array}
   \right].
 \end{align*}
-したがって、傾けた後のトップ端の\CurvatureCenter と$i$列目に対する\CurvatureCenter との差分は、
+したがって、傾けた後の\TopCurvatureCenter と$i$列目に対する\CurvatureCenter との差分は、
 %% label{eq:afterPhidimpleCenterDistance}
 \begin{align}
   \label{eq:afterPhidimpleCenterDistance}

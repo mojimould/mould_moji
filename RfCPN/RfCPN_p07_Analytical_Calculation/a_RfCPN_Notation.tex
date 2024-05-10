@@ -180,7 +180,7 @@ $g_\mathrm T'$ & 傾け後のトップ端内面中心 &\\
 $g_{\mathrm Tx}'$ & 傾け後のトップ端内面中心$X$ &\\
 $g_{\mathrm Ty}'$ & 傾け後のトップ端内面中心$Y$ &\\
 $g_{\mathrm TZ}'$ & 傾け後のトップ端内面中心$Z$ &\\
-$\mathcal L_i$ & $i$列目の\CurvatureCenter とトップ端の\CurvatureCenter との差$X$ &\\
+$\mathcal L_i$ & $i$列目の\CurvatureCenter と\TopCurvatureCenter との差$X$ &\\
 $\mathcal L_{i,j}$ & $i$列目の\CurvatureCenter と$j$列目の\CurvatureCenter との差$X$ &\\
 $\mathcal D_{xi,\mathrm A}$ & \AFaceDimpleIRowJ$X$（P原点・傾け前） &\\
 $\mathcal D_{xi,\mathrm C}$ & \CFaceDimpleIRowJ$X$（P原点・傾け前） &\\
@@ -224,9 +224,9 @@ $\mathcal G_{\mathrm By}$ & ボトム外削中心$\mathfrak B_\mathrm c'$の$Y$�
 $\mathcal G_{\mathrm Tx}$ & トップ外削中心$\mathfrak T_\mathrm c'$の$X$座標 &\\
 $G_{mx}$ & \KeywayCenter M$'$の$X$座標 &\\
 $\mathcal G_m$ & \KeywayCenter におけるA側外面の$X$座標 &\\
-$g_\mathrm T$ & トップ端における内径中心 &\\
-$g_{\mathrm Tx}$ & トップ端における内径中心の$X$座標 &\\
-$g_{\mathrm Ty}$ & トップ端における内径中心の$Y$座標 &\\
+$g_\mathrm T$ & \TopIDCenter &\\
+$g_{\mathrm Tx}$ & \TopIDCenter の$X$座標 &\\
+$g_{\mathrm Ty}$ & \TopIDCenter の$Y$座標 &\\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}{ジグ}{cX[l]c}
@@ -238,8 +238,8 @@ $R_\mathrm i'$ & $R_i-\rho$ &\\
 $\bar l$ & $\displaystyle l-\frac\sigma2$ &\\
 $l'$ & $l+f_\mathrm d$ &\\
 $\delta_\mathrm s$ & \AlocationLength 調整用スペーサの厚さ &\\
-$\Delta$ & $\mathrm U_\mathrm B$とテーブル中心$P$との水平距離 &\\
-$\Delta'$ & Oを原点としたテーブル中心$P$の水平距離 &\\
+$\Delta$ & $\mathrm U_\mathrm B$と\TableCenter Pとの水平距離 &\\
+$\Delta'$ & Oを原点とした\TableCenter Pの水平距離 &\\
 $\Delta_y$ & ジグのワークが乗る部分の$Y$座標 & ◯\\
 \end{multicollongtblr}
 
@@ -304,8 +304,8 @@ $\delta z$ & 回転中心とジグ中心とのずれ$Z$ &\\
 \begin{multicollongtblr}{位置}{cX[l]c}
 記号 & 内容 & 参照\\
 O & \CurvatureCenter 点 &\\
-P & テーブル中心点 &\\
-T$_{R_\mathrm c}$ & トップ端における\CurvatureCenter &\\
+P & \TableCenter 点 &\\
+T$_{R_\mathrm c}$ & \TopCurvatureCenter &\\
 $\mathrm T_\mathrm i$ & トップ内側（C側）端点 &\\
 $\mathrm T_\mathrm o$ & トップ外側（A側）端点 &\\
 $\mathrm B_\mathrm i$ & ボトム内側（C側）端点 &\\
@@ -315,12 +315,12 @@ $\mathrm U_\mathrm B$ & ボトム側受板中心 &\\
 $O'$ & $-\psi$傾き後の\CurvatureCenter 点 &\\
 $\mathrm U_\mathrm T'$ & $-\psi$傾き後のトップ側受板中心 &\\
 $\mathrm U_\mathrm B'$ & $-\psi$傾き後のボトム側受板中心 &\\
-T$_{R_\mathrm c}'$ & 傾き後のトップ端における\CurvatureCenter &\\
+T$_{R_\mathrm c}'$ & 傾き後の\TopCurvatureCenter &\\
 T$_\mathrm c'$ & 傾き後のトップ端における外側中心 &\\
 $\mathrm T_\mathrm i'$ & 傾き後のトップ内側（C側）端点 &\\
 $\mathrm T_\mathrm o'$ & 傾き後のトップ外側（A側）端点 &\\
-B$_{R_\mathrm c}'$ & 傾き後のボトム端における\CurvatureCenter &\\
-B$_\mathrm c'$ & 傾き後のボトム端における外径中心 &\\
+B$_{R_\mathrm c}'$ & 傾き後の\BottomCurvatureCenter &\\
+B$_\mathrm c'$ & 傾き後のボトム端における外側中心 &\\
 B$_{R_\mathrm i}'$ & 傾き後のボトム内側（C側）端点 &\\
 B$_{R_\mathrm o}'$ & 傾き後のボトム外側（A側）端点 &\\
 $\mathfrak T_\mathrm c$ & \TopOutcutCenter &\\

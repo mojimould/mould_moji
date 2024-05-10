@@ -103,9 +103,6 @@
 \newNamecommand{BottomOutcutMilling}{ボトム\nameOutcutMilling}{ボトム\yomiOutcutMilling}
 \newNamecommand{OutcutExists}{\nameOutcut の有無}{\yomiOutcut のうむ}
 \newNamecommand{OutcutType}{\nameOutcut の種類}{\yomiOutcut のしゅるい}
-\newNamecommand{OutcutCenter}{\nameOutcut 中心}{\yomiOutcut ちゅうしん}
-\newNamecommand{TopOutcutCenter}{トップ\nameOutcutCenter}{トップ\yomiOutcutCenter}
-\newNamecommand{BottomOutcutCenter}{ボトム\nameOutcutCenter}{ボトム\yomiOutcutCenter}
 \newNamecommand{OutcutCornerR}{\nameOutcut コーナーR}{\yomiOutcut コーナーR}
 \newNamecommand{OutcutAsideThickness}{\nameOutcut A側\nameThickness}{\yomiOutcut Aがわ\yomiThickness}
 \newNamecommand{OutcutWidth}{\nameOutcut 径}{\yomiOutcut けい}
@@ -117,7 +114,6 @@
 \newNamecommand{TopCurvedOutcut}{トップ\nameCurvedOutcut}{トップ\yomiCurvedOutcut}
 \newNamecommand{BottomCurvedOutcut}{ボトム\nameCurvedOutcut}{ボトム\yomiCurvedOutcut}
 \newNamecommand{CurvedOutcutMilling}{\nameCurvedOutcut 加工}{\yomiCurvedOutcut かこう}
-\newNamecommand{CurvedOutcutCenter}{\nameCurvedOutcut 中心}{\yomiCurvedOutcut ちゅうしん}
 \newNamecommand{CurvedOutcutAngle}{\nameCurvedOutcut 傾き角}{\yomiCurvedOutcut かたむきかく}
 \newNamecommand{TopCurvedOutcutAngle}{トップ\nameCurvedOutcutAngle}{トップ\yomiCurvedOutcutAngle}
 \newNamecommand{BottomCurvedOutcutAngle}{ボトム\nameCurvedOutcutAngle}{ボトム\yomiCurvedOutcutAngle}
@@ -142,7 +138,6 @@
 %%% KEYWAY %%%
 \newNamecommand{Keyway}{キー溝}{キーみぞ}
 \newNamecommand{KeywayMilling}{\nameKeyway 加工}{\yomiKeyway かこう}
-\newNamecommand{KeywayCenter}{\nameKeyway 中心}{\yomiKeyway ちゅうしん}
 \newNamecommand{KeywayDiameter}{\nameKeyway 径}{\yomiKeyway けい}
 \newNamecommand{KeywayDepth}{\nameKeyway 深さ}{\yomiKeyway ふかさ}
 
@@ -161,6 +156,7 @@
 \newNamecommand{BottomEndFaceChamfer}{ボトム\nameEndFaceChamfer}{ボトム\yomiEndFaceChamfer}
 \newNamecommand{EndFaceChamferMilling}{\nameEndFaceChamfer 加工}{\yomiEndFaceChamfer かこう}
 \newNamecommand{EndFaceChamferLength}{\nameEndFaceChamfer 長}{\yomiEndFaceChamfer ちょう}
+\newNamecommand{EndFaceChamferwidth}{\nameEndFaceChamfer 幅}{\yomiEndFaceChamfer はば}
 \newNamecommand{EndFaceOutChamfer}{端面外面取}{たんめんそとめんとり}
 \newNamecommand{EndFaceOutChamferMilling}{\nameEndFaceOutChamfer 加工}{\yomiEndFaceOutChamfer かこう}
 \newNamecommand{EndFaceInChamfer}{端面内面取}{たんめんうちめんとり}
@@ -297,9 +293,33 @@
 
 %%% JIG %%%
 \newGPMcommand{JigLength}{ジグの長さ}{ジグのながさ}
-\newGPMcommand{JigCenter}{ジグ中心}{ジグちゅうしん}
+
 
 % 内面テーパ付湾曲付R直方筒 Inner Taper R-Rectangular Tube with Curvature
 
-%%% CurvatureCenter %%%
+
+%%% Center %%%
 \newNamecommand{CurvatureCenter}{湾曲中心}{わんきょくちゅうしん}
+\newNamecommand{TopCurvatureCenter}{トップ端の\nameCurvatureCenter}{トップたんの\yomiCurvatureCenter}
+\newNamecommand{BottomCurvatureCenter}{ボトム端の\nameCurvatureCenter}{ボトムたんの\yomiCurvatureCenter}
+
+\newNamecommand{ODCenter}{外径中心}{がいけいちゅうしん}
+\newNamecommand{EndFaceODCenter}{\nameODCenter（端面）}{\yomiODCenter（たんめん）}
+\newNamecommand{TopODCenter}{トップ端の\nameODCenter}{トップたんの\yomiODCenter}
+\newNamecommand{BottomODCenter}{ボトム端の\nameODCenter}{ボトムたんの\yomiODCenter}
+
+\newNamecommand{IDCenter}{内径中心}{ないけいちゅうしん}
+\newNamecommand{EndFaceIDCenter}{\nameIDCenter（\nameEndFace）}{\yomiIDCenter（\yomiEndFace）}
+\newNamecommand{TopIDCenter}{トップ端の\nameIDCenter}{トップたんの\yomiIDCenter}
+\newNamecommand{BottomIDCenter}{ボトム端の\nameIDCenter}{ボトムたんの\yomiIDCenter}
+\newNamecommand{OutcutIDCenter}{\yomiIDCenter（\nameOutcut）}{\yomiIDCenter（\yomiOutcut）}
+
+\newNamecommand{OutcutCenter}{\nameOutcut 中心}{\yomiOutcut ちゅうしん}
+\newNamecommand{TopOutcutCenter}{トップ\nameOutcutCenter}{トップ\yomiOutcutCenter}
+\newNamecommand{BottomOutcutCenter}{ボトム\nameOutcutCenter}{ボトム\yomiOutcutCenter}
+\newNamecommand{CurvedOutcutCenter}{\nameCurvedOutcut 中心}{\yomiCurvedOutcut ちゅうしん}
+
+\newNamecommand{KeywayCenter}{\nameKeyway 中心}{\yomiKeyway ちゅうしん}
+
+\newGPMcommand{TableCenter}{テーブル中心}{テーブルちゅうしん}
+\newGPMcommand{JigCenter}{ジグ中心}{ジグちゅうしん}

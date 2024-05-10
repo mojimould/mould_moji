@@ -97,13 +97,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 37.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{面取長の補正\TBW}
-\EndFaceChamferMilling では、$Z$方向の\index{めんとりちょう@面取長}面取長が揃う形になるように加工を行う。
-このとき、単純に\expandafterindex{ないけいちゅうしん（\yomiEndFace）@内径中心（\nameEndFace）}内径中心を\expandafterindex{きじゅん（\yomiEndFaceChamferMilling）@基準（\nameEndFaceChamferMilling）}基準にすると、外面あるいは内面には\index{わんきょく@湾曲}湾曲があるためA面側およびC面側の面取長は揃わない
+\modHeadsection{\EndFaceChamferLength の補正\TBW}
+\EndFaceChamferMilling では、$Z$方向の\EndFaceChamferLength が揃う形になるように加工を行う。
+このとき、単純に\EndFaceIDCenter を\expandafterindex{きじゅん（\yomiEndFaceChamferMilling）@基準（\nameEndFaceChamferMilling）}基準にすると、外面あるいは内面には\index{わんきょく@湾曲}湾曲があるためA面側およびC面側の\EndFaceChamferLength は揃わない
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{$XY$方向の面取幅が揃う形になる。}。
+\footnote{$XY$方向の\EndFaceChamferwidth が揃う形になる。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-そのため、各面の面取長が揃う形になるように$X$方向に補正を入れる必要がある。
+そのため、各面の\EndFaceChamferLength が揃う形になるように$X$方向に補正を入れる必要がある。
 
 
 

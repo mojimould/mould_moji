@@ -16,13 +16,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 2.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\TopEndFace における\CurvatureCenter の位置}
+\subsection{\TopCurvatureCenter の位置}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 2.1.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{スペーサを用いた場合のT\texorpdfstring{$_{R_\mathrm c}'$}{Rc'}}
-\index{スペーサ}スペーサを取付けた後の\expandafterindex{トップたんの\yomiCurvatureCenter@トップ端の\nameCurvatureCenter}トップ端の\nameCurvatureCenter の位置T$_{R_\mathrm c}'$と、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pとの$X$方向の差は、
+\index{スペーサ}スペーサを取付けた後の\TopCurvatureCenter の位置T$_{R_\mathrm c}'$と、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pとの$X$方向の差は、
 \begin{align*}
   \left(
     R_\mathrm ce^{i\alpha_\mathrm c}
@@ -49,7 +49,7 @@
 \end{align}
 で与えられる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{実際の作業では、この点を（\expandafterindex{\yomiEndFace の\yomiCurvatureCenter@\nameEndFace の\nameCurvatureCenter}\nameEndFace の\nameCurvatureCenter T$_{R_\mathrm c}\!$でなく）\OutcutCenter T$_\mathrm c$とみなすことが多い。}。
+\footnote{実際の作業では、この点を（\TopCurvatureCenter T$_{R_\mathrm c}\!$でなく）\OutcutCenter T$_\mathrm c$とみなすことが多い。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -57,7 +57,7 @@
 %% subsubsection 2.1.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{テーブルを傾けた場合のT\texorpdfstring{$_{R_\mathrm c}'$}{Rc'}}
-テーブルを傾けた後の\expandafterindex{トップたんの\yomiCurvatureCenter@トップ端の\nameCurvatureCenter}トップ端の\nameCurvatureCenter の位置T$_{R_\mathrm c}'$と、テーブル中心Pとの$X$方向の差は、
+テーブルを傾けた後の\TopCurvatureCenter の位置T$_{R_\mathrm c}'$と、テーブル中心Pとの$X$方向の差は、
 \begin{align*}
   \left(R_\mathrm ce^{i\alpha_\mathrm c}-\Delta'e^{-i\theta}+\Delta'\right)-\Delta'
   = R_\mathrm ce^{i\alpha_\mathrm c}-\Delta'e^{-i\theta}
@@ -77,15 +77,15 @@
 %% subsection 2.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\TopEndFace における外側中心の位置}
-\expandafterindex{トップたんの\yomiCurvatureCenter@トップ端の\nameCurvatureCenter}トップ端の\nameCurvatureCenter T$_{R_\mathrm c}'$と\index{トップたんのがいけいちゅうしん@トップ端の外径中心}外径中心T$_\mathrm c'$との差は、以下で与えられる。
+\TopCurvatureCenter T$_{R_\mathrm c}'$と\TopODCenter T$_\mathrm c'$との差は、以下で与えられる。
 %% label{eq:TRc-Tc}
 \begin{align}
   \label{eq:TRc-Tc}
   \sqrt{R_\mathrm c^2-f_\mathrm T^2}
   -\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2\ .
 \end{align}
-よって、\index{がいけいちゅうしん@外径中心}外径中心T$_\mathrm c'$の位置は、\CurvatureCenter T$_{R_\mathrm c}'$から\pageeqref{eq:TRc-Tc}だけ加味すればよい。
-以下では、外径中心T$_\mathrm c'$の位置を直接計算し、このことが整合していることを確かめる。
+よって、\TopODCenter T$_\mathrm c'$の位置は、\TopCurvatureCenter T$_{R_\mathrm c}'$から\pageeqref{eq:TRc-Tc}だけ加味すればよい。
+以下では、\TopODCenter T$_\mathrm c'$の位置を直接計算し、このことが整合していることを確かめる。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 2.1.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -100,7 +100,7 @@
   -\Delta+\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\frac{\delta_\mathrm s}2
   -\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}}\ .
 \end{align*}
-したがって、トップ端における外径中心T$_\mathrm c'$の$X$座標は、
+したがって、\TopODCenter T$_\mathrm c'$の$X$座標は、
 %% label{eq:spacerTc}
 \begin{align}
   \label{eq:spacerTc}
@@ -109,7 +109,7 @@
   -\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}
    \frac{2\bar l}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}}\ .
 \end{align}
-これより、\CurvatureCenter T$_{R_\mathrm c}'$と\index{がいけいちゅうしん@外径中心}外径中心T$_\mathrm c'$との差は\pageeqref{eq:TRc-Tc}となることがわかる。
+これより、\TopCurvatureCenter T$_{R_\mathrm c}'$と\TopODCenter T$_\mathrm c'$との差は\pageeqref{eq:TRc-Tc}となることがわかる。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 2.1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -132,7 +132,7 @@
   \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2
   -\Delta'\cos\theta\ .
 \end{align}
-これより、\CurvatureCenter T$_{R_\mathrm c}'$と\index{がいけいちゅうしん@外径中心}外径中心T$_\mathrm c'$との差は\pageeqref{eq:TRc-Tc}となることがわかる。
+これより、\TopCurvatureCenter T$_{R_\mathrm c}'$と\TopODCenter T$_\mathrm c'$との差は\pageeqref{eq:TRc-Tc}となることがわかる。
 
 
 
@@ -147,13 +147,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 2.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\BottomEndFace における\CurvatureCenter の位置}
+\subsection{\BottomCurvatureCenter の位置}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 2.2.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{スペーサを用いた場合のB\texorpdfstring{$_{R_\mathrm c}'$}{Rc'}}
-\index{スペーサ}スペーサ取付後の\expandafterindex{ボトムたんの\yomiCurvatureCenter@ボトム端の\nameCurvatureCenter}ボトム端における\nameCurvatureCenter B$_{R_\mathrm c}'$と、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pとの$X$方向の差は、トップ側の場合と同様に考えて
+\index{スペーサ}スペーサ取付後の\BottomCurvatureCenter B$_{R_\mathrm c}'$と、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pとの$X$方向の差は、トップ側の場合と同様に考えて
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{この場合は、ボトム側が工具側に向いている。}、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -167,7 +167,7 @@
 %% subsubsection 2.2.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{テーブルを傾けた場合のB\texorpdfstring{$_{R_\mathrm c}'$}{Rc'}}
-テーブルを傾けた後の\BottomEndFace における\CurvatureCenter の位置B$_{R_\mathrm c}'$と、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pとの$X$方向の差は、トップ側の場合と同様に考えて
+テーブルを傾けた後の\BottomCurvatureCenter の位置B$_{R_\mathrm c}'$と、\index{テーブルちゅうしん@テーブル中心}テーブル中心Pとの$X$方向の差は、トップ側の場合と同様に考えて
 \begin{align*}
   %\label{eq:tableBRc}
   \left(\Delta+\sqrt{R_i'^2-\bar l^2}\right)\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}~.
@@ -178,15 +178,15 @@
 %% subsection 2.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\BottomEndFace における外側中心の位置}
-\expandafterindex{ボトムたんの\yomiCurvatureCenter@ボトム端の\nameCurvatureCenter}ボトム端における\nameCurvatureCenter B$_{R_\mathrm c}'$と\index{ボトムたんのがいけいちゅうしん@ボトム端の外径中心}外径中心B$_\mathrm c'$との差は、以下で与えられる。
+\BottomCurvatureCenter B$_{R_\mathrm c}'$と\BottomODCenter B$_\mathrm c'$との差は、以下で与えられる。
 %% label{eq:BRc-Bc}
 \begin{align}
   \label{eq:BRc-Bc}
   \sqrt{R_\mathrm c^2-f_\mathrm B^2}
   -\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2\ .
 \end{align}
-よって、\index{がいけいちゅうしん@外径中心}外径中心B$_\mathrm c'$の位置は、\CurvatureCenter B$_{R_\mathrm c}'$から\pageeqref{eq:BRc-Bc}だけ加味すればよい。
-以下では、外径中心B$_\mathrm c'$の位置を直接計算し、このことが整合していることを確かめる。
+よって、\BottomODCenter B$_\mathrm c'$の位置は、\BottomCurvatureCenter B$_{R_\mathrm c}'$から\pageeqref{eq:BRc-Bc}だけ加味すればよい。
+以下では、\BottomODCenter B$_\mathrm c'$の位置を直接計算し、このことが整合していることを確かめる。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 2.2.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -206,7 +206,7 @@
   \Delta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
   -\frac{\delta_\mathrm s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}}\ .
 \end{align}
-これより、\CurvatureCenter B$_{R_\mathrm c}'$と\index{がいけいちゅうしん@外径中心}外径中心B$_\mathrm c'$との差は\pageeqref{eq:BRc-Bc}となることがわかる。
+これより、\BottomCurvatureCenter B$_{R_\mathrm c}'$と\BottomODCenter B$_\mathrm c'$との差は\pageeqref{eq:BRc-Bc}となることがわかる。
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -228,7 +228,7 @@
   \label{eq:tableBc}
   \Delta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
 \end{align}
-これより、\CurvatureCenter B$_{R_\mathrm c}'$と\index{がいけいちゅうしん@外径中心}外径中心B$_\mathrm c'$との差は\pageeqref{eq:BRc-Bc}となることがわかる。
+これより、\BottomCurvatureCenter B$_{R_\mathrm c}'$と\BottomODCenter B$_\mathrm c'$との差は\pageeqref{eq:BRc-Bc}となることがわかる。
 \vfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
