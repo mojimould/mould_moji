@@ -3,14 +3,14 @@
 \setcounter{locode}{0}
 
 
-\modHeadchapter[lot,locode]{作成したNCプログラム\label{chap:createdNCprgDM}\vphantom{\ref{chap:createdNCprgDM}}}
+\modHeadchapter[lot,locode]{\createdNCPrg\label{chap:createdNCprgDM}\vphantom{\ref{chap:createdNCprgDM}}}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section K.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{作成したNCプログラム 一覧}
+\modHeadsection{\createdNCPrg{} 一覧}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -29,7 +29,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{multicollongtblr}{作成したNCプログラム一覧：メインプログラムの例}{ccX[l]}
+\begin{multicollongtblr}{\createdNCPrg 一覧：メインプログラムの例}{ccX[l]}
 {\ttfamily O}番号 & \SetCell{c}工程 & 使用prg\\
 \SetCell[r=10]{c}
 \MainExOne & 外側芯出し・幅 & \MYOThickness\MXIface\\
@@ -72,7 +72,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{multicollongtblr}{作成したNCプログラム一覧：芯出し・幅・\CenterlineEndFaceDif 測定}{cX[l]l}
+\begin{multicollongtblr}{\createdNCPrg 一覧：芯出し・幅・\CenterlineEndFaceDif 測定}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \MXOThickness & 測定 両側 外側中心・幅$X$ & \OsensorOff\\
 \MYOThickness & 測定 両側 外側中心・幅$Y$ & \OsensorOff\\
@@ -83,7 +83,7 @@
 \Mcenterline & 測定 片側 \CenterlineEndFaceDif（C側外削面 $Z$方向, B側外削面 $Y$方向測定） & \OsensorOff\\
 \end{multicollongtblr}
 
-\begin{multicollongtblr}{作成したNCプログラム一覧：\Dimple}{cX[l]l}
+\begin{multicollongtblr}{\createdNCPrg 一覧：\Dimple}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \DLone      & 移動 各列の中心上 & \DLtwoAC\DLtwoBD\\
 \DLtwoAC    & 移動 AC面 列内の各\Dimple 上 & \DMLthreeAC\DKLthreeAC\\
@@ -95,7 +95,7 @@
 \end{multicollongtblr}
 
 %\clearpage
-\begin{multicollongtblr}{作成したNCプログラム一覧：加工（\Dimple 以外）}{cX[l]l}
+\begin{multicollongtblr}{\createdNCPrg 一覧：加工（\Dimple 以外）}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \KTanmenRight      & 加工 \EndFacecut{} コーナーR 右回り1周 & \KOLeftFS\\
 \KGaisakuRLeft     & 加工 \Outcut{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
@@ -109,7 +109,7 @@
 \end{multicollongtblr}
 
 \clearpage
-\begin{multicollongtblr}{作成したNCプログラム一覧：その他}{cX[l]l}
+\begin{multicollongtblr}{\createdNCPrg 一覧：その他}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \OpauseCheck  & 移動・加工後確認用：90$^\circ$回転 扉前一時停止 & -\\
 \OsensorOn    & \index{タッチセンサーでんげん@タッチセンサー電源}タッチセンサー電源ON & -\\
