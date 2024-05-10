@@ -36,8 +36,9 @@
 
 \clearrightpage
 \phantomsection
-%% LIST OF LISTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\lstlistoflistings % insert lol
+%% LIST OF CODES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addchaptertocentry{}{\listoflocodename}
+\listoftoc{locode} % insert locode
 
 
 \edef\temppartnum{\protect{\the\numexpr\value{part}+1\relax}}
@@ -50,5 +51,5 @@
 
 \addtocontents{lof}{\begin{lofBox}}%
 \addtocontents{lot}{\begin{lotBox}}%
-\addtocontents{lol}{\begin{lolBox}}%
+\addtocontents{locode}{\begin{locodeBox}}%
 \addtocontents{loC}{\begin{loCBox}}%

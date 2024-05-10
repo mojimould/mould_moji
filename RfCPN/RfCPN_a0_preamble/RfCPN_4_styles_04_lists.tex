@@ -66,12 +66,6 @@
 {\contentslabel{1.5em}} % ラベルとテキストの間のスペース
 {\hspace*{-1.5em}} % ラベルなしの場合のスペース
 {\titlerule*[0.5pc]{.}\contentspage} % ページ番号前のリーダーとページ番号
-%%%%% FOR lstlisting %%%%%
-%\DeclareTOCStyleEntry[
-%  level=\sectiontocdepth,
-%  indent=0em, % エントリのインデントを調整
-%  numwidth=2.71em % エントリ番号の幅を調整
-%]{tocline}{lstlisting}
 %%%%% FOR Colmun %%%%%
 %\titlecontents{Colmun}
 %[2.35em] % 左インデント
@@ -114,12 +108,9 @@
 %%%%% FOR STYLE OF LOP %%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listoflopname{\texorpdfstring{\hbox to 3em{大目次}}{大目次}}
 
-%%%%% FOR STYLE OF LOL %%%%%%%%%%%%%%%%%
-\renewcommand{\lstlistlistingname}{プログラム 目次}
-\renewcommand{\lstlistingname}{{Prg:~}}
-%\let\l@lstlisting\l@section
-%\renewcommand*\l@lstlisting{\@dottedtocline{1}{0.0em}{2.35em}}
-\AtBeginDocument{\renewcommand{\thelstlisting}{}}
+%%%%% FOR STYLE OF LOCODE %%%%%%%%%%%%%%%%%
+\renewcommand{\listoflocodename}{コード 目次}
+\renewcommand{\locodename}{{Prg:~}}
 
 %%%%% FOR STYLE OF LOC %%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listofloCname{Column一覧}

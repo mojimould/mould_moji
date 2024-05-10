@@ -35,6 +35,7 @@
 }
 %%%%% DECLARENEWTOC %%%%%%%%%%%%%%%%%%%%
 \DeclareNewTOC[owner=\jobname, name=Part]{lop}
+\DeclareNewTOC[owner=\jobname, name=Code]{locode}
 \DeclareNewTOC[owner=\jobname, name=Column]{loC}
 %%%%% TO GET CHAPTER TITLE %%%%%%
 \newcommand\Chaptername{} % initialize \Chaptername
@@ -128,7 +129,7 @@
   labelformat=simple,
   aboveskip=3pt,
 }
-\captionsetup[lstlisting]{
+\captionsetup[locode]{
   justification=raggedright,
   singlelinecheck=false,
   position=above,

@@ -1,8 +1,9 @@
 %!TEX root = ../RfCPN.tex
-\setcounter{lstlisting}{0}
+\newcounter{locode}
+\setcounter{locode}{0}
 
 
-\modHeadchapter[lot,lol]{作成したNCプログラム\label{chap:createdNCprgDM}\vphantom{\ref{chap:createdNCprgDM}}}
+\modHeadchapter[lot,locode]{作成したNCプログラム\label{chap:createdNCprgDM}\vphantom{\ref{chap:createdNCprgDM}}}
 
 
 
@@ -132,7 +133,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MainExOne %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MainExOne：\index{メインプログラム}メインプログラムの例1}
+\modcaptionof{locode}{\MainExOne：\index{メインプログラム}メインプログラムの例1}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/main_program_examples/\nameMainExOne}
 
 
@@ -140,7 +141,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MainExTwo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MainExTwo：\index{メインプログラム}メインプログラムの例2}
+\modcaptionof{locode}{\MainExTwo：\index{メインプログラム}メインプログラムの例2}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/main_program_examples/\nameMainExTwo}
 
 
@@ -160,42 +161,42 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MXOThickness %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MXOThickness\,:測定 両側 外側中心\texorpdfstring{$X$}{X}}
+\modcaptionof{locode}{\MXOThickness\,:測定 両側 外側中心\texorpdfstring{$X$}{X}}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameMXOThickness.nc}
 
 \clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MYOThickness %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MYOThickness\,:測定 両側 外側中心\texorpdfstring{$Y$}{Y}}
+\modcaptionof{locode}{\MYOThickness\,:測定 両側 外側中心\texorpdfstring{$Y$}{Y}}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameMYOThickness.nc}
 
 \clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MYOThickness %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MXOface\,:測定 片側 \KeywayCenter\texorpdfstring{$X$}{X}（A側外面側測定）}
+\modcaptionof{locode}{\MXOface\,:測定 片側 \KeywayCenter\texorpdfstring{$X$}{X}（A側外面側測定）}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameMXOface.nc}
 
 \clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MXIWidth %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MXIWidth\,:測定 両側 内側中心\texorpdfstring{$X$}{X}}
+\modcaptionof{locode}{\MXIWidth\,:測定 両側 内側中心\texorpdfstring{$X$}{X}}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameMXIWidth.nc}
 
 \clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MYIWidth %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MYIWidth\,:測定 両側 内側中心\texorpdfstring{$Y$}{Y}}
+\modcaptionof{locode}{\MYIWidth\,:測定 両側 内側中心\texorpdfstring{$Y$}{Y}}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameMYIWidth.nc}
 
 \clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MXface %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\MXIface\,:測定 片側 \OutcutCenter\texorpdfstring{$X$}{X}（C側内面測定）}
+\modcaptionof{locode}{\MXIface\,:測定 片側 \OutcutCenter\texorpdfstring{$X$}{X}（C側内面測定）}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameMXIface.nc}
 
 
@@ -208,7 +209,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \Mcenterline %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\Mcenterline\,:測定 片側 \CenterlineEndFaceDif（C側外削面$Z$, B側外削面$Y$測定）}
+\modcaptionof{locode}{\Mcenterline\,:測定 片側 \CenterlineEndFaceDif（C側外削面$Z$, B側外削面$Y$測定）}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameMcenterline.nc}
 
 
@@ -222,7 +223,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KTanmenRight %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KTanmenRight\,:加工 \EndFacecut{} コーナーR 右回り1周}
+\modcaptionof{locode}{\KTanmenRight\,:加工 \EndFacecut{} コーナーR 右回り1周}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKTanmenRight.nc}
 
 
@@ -230,7 +231,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KGaisakuRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KGaisakuRLeft\,:加工 \Outcut{} コーナーR 左回り1周}
+\modcaptionof{locode}{\KGaisakuRLeft\,:加工 \Outcut{} コーナーR 左回り1周}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKGaisakuRLeft.nc}
 
 
@@ -238,7 +239,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KMizoConerLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KMizoConerLeft\,:加工 \Keyway{} 左回り1周}
+\modcaptionof{locode}{\KMizoConerLeft\,:加工 \Keyway{} 左回り1周}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKMizoConerLeft.nc}
 
 
@@ -246,7 +247,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KSotoMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KSotoMentoriRLeft\,:加工 \EndFaceOutChamfer{} コーナーR 左回り1周}
+\modcaptionof{locode}{\KSotoMentoriRLeft\,:加工 \EndFaceOutChamfer{} コーナーR 左回り1周}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKSotoMentoriRLeft.nc}
 
 
@@ -254,7 +255,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KUchiMentoriRLeft\,:加工 \EndFaceInChamfer{} コーナーR 左回り1周}
+\modcaptionof{locode}{\KUchiMentoriRLeft\,:加工 \EndFaceInChamfer{} コーナーR 左回り1周}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKUchiMentoriRLeft.nc}
 
 
@@ -262,7 +263,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KEndFaceBoring\,:加工 \EndFaceBoring{} コーナーR 左回り1周}
+\modcaptionof{locode}{\KEndFaceBoring\,:加工 \EndFaceBoring{} コーナーR 左回り1周}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKUchiMentoriRLeft.nc}
 
 
@@ -270,7 +271,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KOLeftFF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KOLeftFF\,:外側 {\ttfamily G41} 左回り1周 右始まり}
+\modcaptionof{locode}{\KOLeftFF\,:外側 {\ttfamily G41} 左回り1周 右始まり}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKOLeftFF.nc}
 
 
@@ -278,7 +279,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KOLeftFS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KOLeftFS\,:外側 {\ttfamily G42} 左回り1周 右上始まり}
+\modcaptionof{locode}{\KOLeftFS\,:外側 {\ttfamily G42} 左回り1周 右上始まり}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKOLeftFS.nc}
 
 
@@ -286,7 +287,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KILeftFF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\KILeftFF\,:内側 {\ttfamily G41} 左回り1周 中央上始まり}
+\modcaptionof{locode}{\KILeftFF\,:内側 {\ttfamily G41} 左回り1周 中央上始まり}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameKILeftFF.nc}
 
 
@@ -300,7 +301,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DLone %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DLone\,:移動 各\Dimple 列の中心上}
+\modcaptionof{locode}{\DLone\,:移動 各\Dimple 列の中心上}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameDLone.nc}
 
 
@@ -308,7 +309,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DLtwoAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DLtwoAC\,:移動 AC面 列内の各\Dimple 上}
+\modcaptionof{locode}{\DLtwoAC\,:移動 AC面 列内の各\Dimple 上}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameDLtwoAC.nc}
 
 
@@ -316,7 +317,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DLtwoBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DLtwoBD\,:移動 BD面 列内の各\Dimple 上}
+\modcaptionof{locode}{\DLtwoBD\,:移動 BD面 列内の各\Dimple 上}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameDLtwoBD.nc}
 
 
@@ -324,7 +325,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DMLthreeAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DMLthreeAC\,:測定 AC面 \Dimple 位置\texorpdfstring{$X$}{X}}
+\modcaptionof{locode}{\DMLthreeAC\,:測定 AC面 \Dimple 位置\texorpdfstring{$X$}{X}}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameDMLthreeAC.nc}
 
 
@@ -332,7 +333,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DMLthreeBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DMLthreeBD\,:測定 BD面 \Dimple 位置\texorpdfstring{$Y$}{Y}}
+\modcaptionof{locode}{\DMLthreeBD\,:測定 BD面 \Dimple 位置\texorpdfstring{$Y$}{Y}}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameDMLthreeBD.nc}
 
 
@@ -340,7 +341,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DKLthreeAC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DKLthreeAC\,:加工 AC面 \Dimple\texorpdfstring{$X$}{X}}
+\modcaptionof{locode}{\DKLthreeAC\,:加工 AC面 \Dimple\texorpdfstring{$X$}{X}}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameDKLthreeAC.nc}
 
 
@@ -348,7 +349,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \DKLthreeBD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\DKLthreeBD\,:加工 BD面 \Dimple\texorpdfstring{$Y$}{Y}}
+\modcaptionof{locode}{\DKLthreeBD\,:加工 BD面 \Dimple\texorpdfstring{$Y$}{Y}}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameDKLthreeBD.nc}
 
 
@@ -369,7 +370,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \OpauseCheck %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\OpauseCheck\,：90\texorpdfstring{$\boldsymbol{^\circ}$}{°}回転 扉前一時停止}
+\modcaptionof{locode}{\OpauseCheck\,：90\texorpdfstring{$\boldsymbol{^\circ}$}{°}回転 扉前一時停止}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameOpauseCheck.nc}
 
 
@@ -381,7 +382,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \OsensorOn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\OsensorOn\,:タッチセンサー電源ON}
+\modcaptionof{locode}{\OsensorOn\,:タッチセンサー電源ON}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameOsensorOn.nc}
 
 
@@ -389,7 +390,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \OsensorOff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\OsensorOff\,:タッチセンサー電源OFF}
+\modcaptionof{locode}{\OsensorOff\,:タッチセンサー電源OFF}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameOsensorOff.nc}
 
 
@@ -401,7 +402,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \OsensorOn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\OwarmingupA\,:暖機運転}
+\modcaptionof{locode}{\OwarmingupA\,:暖機運転}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameOwarmingupA.nc}
 
 
@@ -409,7 +410,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \OsensorOn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\Owarmingup\,:暖機運転用サブプログラム}
+\modcaptionof{locode}{\Owarmingup\,:暖機運転用サブプログラム}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameOwarmingup.nc}
 
 
@@ -421,7 +422,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \OsensorOn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\OtoolLengthA\,:指定工具 工具長自動測定}
+\modcaptionof{locode}{\OtoolLengthA\,:指定工具 工具長自動測定}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameOtoolLengthA.nc}
 
 
@@ -429,5 +430,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \OsensorOn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modcaptionof{lstlisting}{\OtoolLength\,:工具長 自動測定用サブプログラム}
+\modcaptionof{locode}{\OtoolLength\,:工具長 自動測定用サブプログラム}
 \inputminted{"g_code.py:GCodeLexer -x"}{../Created_NC_Programs/sub_programs/\nameOtoolLength.nc}
