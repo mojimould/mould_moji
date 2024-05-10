@@ -1,5 +1,6 @@
 %
-O110002 (Y center of outer measurement)
+O110002 (last update on 20240510)
+(Y center of outer measurement)
 
 N001
 #33=#4012
@@ -201,4 +202,7 @@ N999 M99
 
 (Subprograms)
 (O910002)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

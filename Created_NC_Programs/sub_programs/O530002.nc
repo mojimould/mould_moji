@@ -1,5 +1,6 @@
 %
-O530002 (for BD dimples kakou)
+O530002 (last update on 20240510)
+(for BD dimples kakou)
 (level 3: kakou dimple)
 (J > 0: B, J < 0: D)
 
@@ -96,4 +97,7 @@ N999 M99
 (System variables)
 (#3000: alarm)
 (#5042: current work Y)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

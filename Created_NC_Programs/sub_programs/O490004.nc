@@ -69,12 +69,13 @@ N999 M99
 (as LHS)
 (#32, #33)
 
-
 (Common variables)
 (as RHS)
 (#651)
 
-
 (System variables)
 (#3000: alarm)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

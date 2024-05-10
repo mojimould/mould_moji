@@ -1,5 +1,5 @@
 %
-O490005
+O491005 (last update on 20240510)
 (Sotogawa ar HidariMawari 1shuu)
 
 N001
@@ -121,7 +121,9 @@ N999 M99
 (#24:X: AC kei)
 (#25:Y: BD kei)
 
-
 (System variables)
 (#3000: alarm)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

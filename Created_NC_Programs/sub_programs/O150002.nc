@@ -1,5 +1,5 @@
 %
-O150002 (created at 20240508)
+O150002 (last update on 20240510)
 (X centerline measurement)
 
 N001
@@ -273,7 +273,6 @@ N999 M99
 (as LHS)
 (#32, #33)
 
-
 (Common variables)
 (as LHS)
 (#900030, #900031, #900032, #900034, #900035, #900036)
@@ -284,7 +283,6 @@ N999 M99
 (#901053: hosei: touch sensor signal delay)
 (#901055: hosei: probe center Y)
 
-
 (System variables)
 (#1000: 0: palette #1, 1: palette #2)
 (#1004: 0: sensor off, 1: on)
@@ -293,7 +291,9 @@ N999 M99
 (#5003: current work block end Z)
 (#5221: G54 origin X)
 
-
 (Subprograms)
 (O910002)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

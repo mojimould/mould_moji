@@ -1,5 +1,5 @@
 %
-O410000
+O410000 (last update on 20240510)
 (Tanmen naikei-#608 Coner R, ar MigiMawari 1shuu)
 
 N001
@@ -143,7 +143,6 @@ N999 M99
 (as LHS)
 (#30, #31, #32, #33)
 
-
 (Common variable)
 (as LHS)
 (#100, #106)
@@ -151,18 +150,18 @@ N999 M99
 (#400, #600, #605, #608, #625, #650, #651, #658, #659, #675)
 (#901011, #901101)
 
-
 (System variables)
 (#24xx: #xx kouguKei)
 (#26xx: #xx kouguKeiMamou)
 (#3000: alarm)
 (#4120: current T#)
 
-
 (Subprograms)
 (O490005)
 
-
 (Passed arguments)
 (#18, #30, #31, #32, #658, #659, #675)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

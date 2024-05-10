@@ -1,5 +1,6 @@
 %
-O919100 (tool length measurement)
+O919100 (last update on 20240510)
+(tool length measurement)
 
 N001
 #26=#901064 (Z)
@@ -84,7 +85,6 @@ N999 M99
 (as LHS)
 (#03, #04, #05, #06, #07, #08, #21, #22, #26)
 
-
 (Common variables)
 (as RHS)
 (#650, #652)
@@ -97,7 +97,6 @@ N999 M99
 (#901063: sensor position Y)
 (#901064: sensor position Z)
 (#901113, #901115, #901117, #901127, #901131)
-
 
 (System variables)
 (#3000: alarm)
@@ -117,4 +116,7 @@ N999 M99
 (#7003: G54.1 origin Z)
 (#10000-#10200: hosei kouguChou #100-200)
 (#11000-#11200: mamou kouguChou #100-200)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

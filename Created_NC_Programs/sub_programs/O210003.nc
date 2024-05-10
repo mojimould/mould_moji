@@ -1,5 +1,5 @@
 %
-O210003 (created at 20240504)
+O210003 (last update on 20240510)
 (for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 
@@ -475,4 +475,7 @@ N999 M99
 
 (Used variable in other programs)
 (#724)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

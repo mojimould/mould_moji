@@ -1,5 +1,6 @@
 %
-O530001 (for AC dimples kakou)
+O530001 (last update on 20240510)
+(for AC dimples kakou)
 (level 3: kakou dimple)
 (I > 0: A, I < 0: C)
 
@@ -96,4 +97,7 @@ N999 M99
 (System variables)
 (#3000: alarm)
 (#5041: current work X)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

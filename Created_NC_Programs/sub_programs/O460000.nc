@@ -180,7 +180,6 @@ N999 M99
 (as LHS)
 (#27, #28, #29, #30, #31, #32, #33)
 
-
 (Common variable)
 (as LHS)
 (#103, #104, #105, #106)
@@ -190,17 +189,17 @@ N999 M99
 (#600, #606, #633, #634, #650, #651, #666, #667, #679)
 (#901011)
 
-
 (System variables)
 (#3000: alarm)
 (#4012: current work coordinate G#)
 (#4120: current T#)
 
-
 (Subprograms)
 (O490007, O900003)
 
-
 (Passed arguments)
 (#07, #18, #28, #29, #104, #105, #606, #666, #667, #679)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

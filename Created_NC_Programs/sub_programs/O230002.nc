@@ -1,5 +1,6 @@
 %
-O230002 (for BD dimples measurement)
+O230002 (last update on 20240510)
+(for BD dimples measurement)
 (level 3: measurement dimple)
 (J > 0: B, J < 0: D)
 
@@ -56,7 +57,6 @@ N999 M99
 (as LHS)
 (#33)
 
-
 (Common variables)
 (as RHS)
 (#603, #620, #652, #656)
@@ -66,17 +66,17 @@ N999 M99
 (as LHS)
 (#748, #749)
 
-
 (System variables)
 (#1004: 1: sensor on, 0: off)
 (#3000: alarm)
 (#5002: current work block end point Y)
 
-
 (Subprograms)
 (O910002)
 
-
 (Used in other programs)
 (#749: O220002)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

@@ -1,5 +1,6 @@
 %
-O917100 (all tool length measurement)
+O917100 (last update on 20240510)
+(all tool length measurement)
 
 N002 (for T02)
 (If the cutter is changed, I & J must be checked)
@@ -57,4 +58,7 @@ M30
 
 (Subprograms)
 (O919100)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

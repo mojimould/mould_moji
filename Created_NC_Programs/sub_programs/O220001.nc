@@ -1,5 +1,6 @@
 %
-O220001 (for AC dimples measurement & kakou)
+O220001 (last update on 20240510)
+(for AC dimples measurement & kakou)
 (level 2: mainly moving along row)
 
 N001
@@ -108,7 +109,6 @@ N999 M99
 (as LHS)
 (#30, #31, #32, #33)
 
-
 (Common variables)
 (as RHS)
 (#620, #651, #653, #724, #749)
@@ -116,23 +116,22 @@ N999 M99
 (#725-#730)
 (#900101-#900200 ,#900201-#900300)
 
-
 (System variables)
 (#3000: alarm)
 (#4111: current H#)
 (#5002: current work block end point Y)
 (#5003: current work block end point Z)
 
-
 (Subprograms)
 (O230001, O530001)
-
 
 (Passed arguments)
 (#21, #33, #900101-#900200 ,#900201-#900300)
 
-
 (Used variables in other programs)
 (#724: O210003)
 (#749: O230001)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

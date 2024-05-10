@@ -1,5 +1,6 @@
 %
-O900003 (pause and check)
+O900003 (last update on 20240510)
+(pause and check)
 
 N001
 M09 (coolant off)
@@ -68,11 +69,9 @@ N999 M99
 (Local variables)
 (#31, #32, #33)
 
-
 (Common variables)
 (as RHS)
 (#650)
-
 
 (System variables)
 (#3000: alarm)
@@ -80,4 +79,7 @@ N999 M99
 (#5001: block end X)
 (#5002: block end Y)
 (#5004: block end B)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

@@ -1,5 +1,6 @@
 %
-O910001 (touch sensor ON)
+O910001 (last update on 20240510)
+(touch sensor ON)
 
 #33=0
 
@@ -32,9 +33,11 @@ N999 M99
 (Local variables)
 (#33)
 
-
 (System variables)
 (#1004: 1: sensor on, 0: off)
 (#1005: 1: sensor low battery, 0: OK)
 (#3000: alarm)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

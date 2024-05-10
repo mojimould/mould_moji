@@ -1,5 +1,5 @@
 %
-O420000
+O420000 (last update on 20240510)
 (Gaisaku, ar HidariMawari 1shuu)
 
 N001
@@ -254,14 +254,12 @@ N999 M99
 (as LHS)
 (#29, #30, #31, #32, #33)
 
-
 (Common variable)
 (as LHS)
 (#102, #103, #104, #105, #106)
 (as RHS)
 (#182, #188, #414, #415, #416, #436, #437, #438, #600, #605, #627, #628, #650, #651, #660, #661, #676)
 (#901011)
-
 
 (System variables)
 (#24xx: #xx kouguKei)
@@ -270,11 +268,12 @@ N999 M99
 (#4012: current work coordinate G#)
 (#4120: current T#)
 
-
 (Subprograms)
 (O490005, O900003)
 
-
 (Passed arguments)
 (#18, #29, #30, #31, #104, #105, #660, #661, #676)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

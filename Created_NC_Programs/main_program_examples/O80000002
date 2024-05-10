@@ -1,5 +1,5 @@
 %
-O80000002 (created at 20240507)
+O80000002 (last update on 20240510)
 (Top sai_furiwake: 500.042)
 (Bot sai_furiwake: 499.958)
 (Top Haridashi: 170.042)
@@ -692,7 +692,6 @@ N999 M30
 
 (Local variables)
 
-
 (Common variables)
 (as LHS)
 (#901001, #901002, #901003, #901004, #901005, #901006, #901007, #901008)
@@ -701,20 +700,19 @@ N999 M30
 (#424, #428, #444, #449, #459)
 (#600, #650, #652)
 
-
 (System variables)
 (#1000, #1004, #1005, #3000)
 (#4120)
-
 
 (Subprograms)
 (O110001, O110002, O130001, O130002, O210003)
 (O410000, O420000, O430000, O440000, O450000)
 (O900003, O910001, O910002)
 
-
 (Used as part of passed arguments)
 
-
 (Used in other programs)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

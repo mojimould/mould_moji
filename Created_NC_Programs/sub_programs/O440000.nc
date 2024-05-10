@@ -263,7 +263,6 @@ N999 M99
 (as LHS)
 (#27, #28, #29, #30, #31, #32, #33)
 
-
 (Common variable)
 (as LHS)
 (#103, #104, #105, #106)
@@ -273,7 +272,6 @@ N999 M99
 (#600, #605, #631, #632, #650, #651, #664, #665, #678)
 (#901011)
 
-
 (System variables)
 (#24xx: #xx kouguKei)
 (#26xx: #xx kouguKeiMamou)
@@ -281,11 +279,12 @@ N999 M99
 (#4012: current work coordinate G#)
 (#4120: current T#)
 
-
 (Subprograms)
 (O490005, O900003)
 
-
 (Passed arguments)
 (#18, #28, #29, #31, #104, #105, #664, #665, #678)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

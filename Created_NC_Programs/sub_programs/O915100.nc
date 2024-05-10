@@ -1,5 +1,6 @@
 %
-O915100 (warming up)
+O915100 (last update on 20240510)
+(warming up)
 
 N001 (initialize)
 G49 G40 (cancel hosei)
@@ -84,7 +85,6 @@ G91 G28 X0 Y0
 G91 G28 B0
 
 M30
-%
 
 (Used Variables and Programs)
 
@@ -92,7 +92,9 @@ M30
 (as RHS)
 (#650, #652)
 
-
 (Subprograms)
 (O905101)
 
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
+%

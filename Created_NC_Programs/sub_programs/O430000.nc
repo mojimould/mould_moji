@@ -1,5 +1,5 @@
 %
-O430000
+O430000 (last update on 20240510)
 (Mizo Corner R or C, ar HidariMawari 1shuu)
 
 N001
@@ -299,14 +299,12 @@ N999 M99
 (as LHS)
 (#29, #30, #31, #32, #33)
 
-
 (Common variable)
 (as LHS)
 (#102, #103, #104, #105, #106)
 (as RHS)
 (#183, #419, #420, #421, #422, #423, #475, #600, #605, #629, #630, #650, #651, #662, #663, #677)
 (#901011, #901105, #901107, #901109, #901111)
-
 
 (System variables)
 (#24xx: #xx kouguKei)
@@ -315,11 +313,12 @@ N999 M99
 (#4012: current work coordinate G#)
 (#4120: current T#)
 
-
 (Subprograms)
 (O490005, O900003)
 
-
 (Passed arguments)
 (#03, #06, #18, #31, #32, #33, #104, #105, #662, #663, #677)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

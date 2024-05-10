@@ -1,5 +1,6 @@
 %
-O220002 (for BD dimples measurement & kakou)
+O220002 (last update on 20240510)
+(for BD dimples measurement & kakou)
 (level 2: mainly moving along row)
 
 N001
@@ -107,7 +108,6 @@ N999 M99
 (as LHS)
 (#30, #31, #32, #33)
 
-
 (Common variables)
 (as RHS)
 (#620, #651, #653, #724, #749)
@@ -115,23 +115,22 @@ N999 M99
 (#725-#730)
 (#900301-#900400 ,#900401-#900500)
 
-
 (System variables)
 (#3000: alarm)
 (#4111: current H#)
 (#5001: current work block end point X)
 (#5003: current work block end point Z)
 
-
 (Subprograms)
 (O230002, O530002)
-
 
 (Passed arguments)
 (#21, #33, #900301-#900400 ,#900401-#900500)
 
-
 (Used variables in other programs)
 (#724: O210003)
 (#749: O230002)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %

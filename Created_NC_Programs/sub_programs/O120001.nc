@@ -1,5 +1,6 @@
 %
-O120001 (X center of outer measurement)
+O120001 (last update on 20240510)
+(X center of outer measurement)
 
 N001
 #33=#4012
@@ -112,7 +113,6 @@ N999 M99
 (as LHS)
 (#29, #30, #31, #32, #33)
 
-
 (Common variables)
 (as LHS)
 (#900012)
@@ -122,7 +122,6 @@ N999 M99
 (#901050: probe radius)
 (#901053: hosei: touch sensor signal delay)
 (#901054: hosei: probe center X)
-
 
 (System variables)
 (#1004: 0: sensor off, 1: on)
@@ -135,7 +134,9 @@ N999 M99
 (#5221: G54 X)
 (#5261: G56 X)
 
-
 (Subprograms)
 (O910002)
+
+
+(COPYRIGHT*2023-2024*THE*INDIVIDUAL*CREATOR*NOT*ANY*CORPORATION*ALL*RIGHTS*RESERVED)
 %
