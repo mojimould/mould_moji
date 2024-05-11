@@ -38,14 +38,14 @@
 \setcounter{secnumdepth}{4}
 \renewcommand*{\sectionformat}{%
   \begin{tikzpicture}[every node/.style={section}, baseline=-4.75pt]
-    \node at (0, 0) {\Large{\sffamily\bfseries\,\thesection~~\relax}};
+    \node at (0, 0) {\Large{\sffamily\bfseries\,\thesection~\relax}};
   \end{tikzpicture}~~%
 }
 
 %%%%% FOR STYLE OF SUBSECTION %%%%%%%%%%%%%%%%
 \renewcommand{\subsectionautorefname}{\sectionautorefname}
 \renewcommand*{\subsectionformat}{%
-  \begin{tikzpicture}[every node/.style={subsection}, baseline=-4.0pt]
+  \begin{tikzpicture}[every node/.style={subsection}, baseline=-4.25pt]
     \node at (0, 0) {\large{\sffamily\bfseries\,\thesubsection~~\relax}};
   \end{tikzpicture}~~%
 }
