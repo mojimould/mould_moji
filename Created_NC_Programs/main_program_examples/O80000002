@@ -347,10 +347,8 @@ G90 G57 G00 B-0.964
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G57 G65 P410000 X135.210 Y134.200 Z500.042 R4.0
+G57 G65 P410000 Z500.042 R4.0
 (O410000: XY naikei sotogawa-#608 1shuu Coner R, ar MigiMawari)
-(X: Top AC naikei)
-(Y: Top BD naikei)
 (Z: Top sai_furiwake)
 (R: Top uchigawa corner R)
 
@@ -538,10 +536,8 @@ M10 (B-axis clamp)
 (G55B parallel angle 179.036)
 
 M28 (chip conveyor on)
-G55 G65 P410000 X133.600 Y132.600 Z499.958 R4.0
+G55 G65 P410000 Z499.958 R4.0
 (O410000: XY naikei sotogawa-#608 1shuu Corner R, ar MigiMawari)
-(X: Bot AC naikei)
-(Y: Bot BD naikei)
 (Z: Bot sai_furiwake)
 (R: Bot uchigawa corner R)
 

@@ -3,15 +3,9 @@ O410000 (last update on 20240510)
 (Tanmen naikei-#608 Coner R, ar MigiMawari 1shuu)
 
 N001
-IF[#24EQ#0]GOTO800
-IF[#24LT10]GOTO800
-IF[#25EQ#0]GOTO800
-IF[#25LT10]GOTO800
 IF[#18EQ#0]GOTO800
 IF[#18LT1]GOTO800
 IF[#26EQ#0]GOTO800
-(if X < 10 or #0, go to N800)
-(if Y < 10 or #0, go to N800)
 (if R < 1 or #0, go to N800)
 (if Z = #0, go to N800)
 
@@ -28,6 +22,18 @@ IF[#675LE200]GOTO800
 (if #658 <= 10 or #0, go to N800)
 (if #659 <= 10 or #0, go to N800)
 (if #675 <= 200 or #0, go to N800)
+
+IF[#4012EQ57]THEN #24=#900018
+IF[#4012EQ55]THEN #24=#900019
+IF[#4012EQ57]THEN #25=#900024
+IF[#4012EQ55]THEN #25=#900025
+IF[#24EQ#0]GOTO800
+IF[#24LT50]GOTO800
+IF[#25EQ#0]GOTO800
+IF[#25LT50]GOTO800
+(XY into measurement values)
+(if X < 50 or #0, go to N800)
+(if Y < 50 or #0, go to N800)
 
 N004
 #100=#400
@@ -135,13 +141,11 @@ N999 M99
 
 (as received arguments)
 (#18:R: sotogawa coner R)
-(#24:X: AC naikei)
-(#25:Y: BD naikei)
 (#26:Z: sai-furiwake)
 (as received hidden arguments)
 
 (as LHS)
-(#30, #31, #32, #33)
+(#24, #25, #30, #31, #32, #33)
 
 (Common variable)
 (as LHS)
