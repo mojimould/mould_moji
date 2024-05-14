@@ -5,6 +5,8 @@
 \newcommand{\newLinkcommand}[3]{%
   \expandafter\newcommand\csname name#1\endcsname{\expandafterindex{#1@#3}#3}%
   \expandafter\newcommand\csname link#1\endcsname{\expandafterindex{#1@#3}\href{#2}{#3}}%
+  \expandafter\newcommand\csname hrefja#1\endcsname[1]{\href{##1}{Japan}}%
+  \expandafter\newcommand\csname hrefen#1\endcsname[1]{\href{##1}{America}}%
 }
 
 \newLinkcommand{TeX}{\relax}{\hologo{TeX}}
@@ -50,6 +52,7 @@
 \newLinkcommand{TrajanPro}{https://fontplus.jp/font-list/trajanpro-regular}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{TrajanPro-Regular.otf}Trajan\,Pro}}
 \newLinkcommand{URWArial}{https://ctan.org/pkg/urw-arial}{{\fontspec{Arial}URW Arial}}
 \newLinkcommand{URWClassico}{https://ctan.org/pkg/Arvo}{{\textbf{\fontspec{URWClassico}}URW Classico}}
+\newLinkcommand{Segoe}{https://learn.microsoft.com/en-us/typography/font-list/segoe-ui}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{segoeui.ttf}Segoe}}
 \newLinkcommand{SegoeUI}{https://learn.microsoft.com/en-us/typography/font-list/segoe-ui}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{segoeui.ttf}Segoe UI}}
 \newLinkcommand{Adelle}{https://git-scm.com/}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{Adelle_Reg.otf}Adelle}}
 \newLinkcommand{TestSohne}{https://klim.co.nz/retail-fonts/soehne/}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{TestSöhne-Buch.otf}TestSöhne}}
@@ -62,10 +65,11 @@
 \newLinkcommand{SumatraPDF}{https://www.sumatrapdfreader.org/}{{\fontspec{Arial}SumatraPDF}}
 
 \newLinkcommand{WolframAlpha}{https://www.wolframalpha.com/}{{\fontspec{Roboto}{Wolfram\textbar Alpha}}}
+\newLinkcommand{Wolfram}{https://www.wolfram.com/}{{\fontspec{Source Sans Pro}{Wolfram}}}
 \newLinkcommand{Excel}{https://www.microsoft.com/ja-jp/microsoft-365/excel}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{segoeui.ttf}Excel}}
 \newLinkcommand{Gcode}{\relax}{G-code}
 \newLinkcommand{NCProgram}{\relax}{NC program}
-\newLinkcommand{ArumatikMi}{\relax}{Arumatik-Mi}
+\newLinkcommand{Arumatik}{\relax}{Arumatik}
 \newLinkcommand{Mycenter}{\relax}{Mycenter}
 \newLinkcommand{VSCode}{https://code.visualstudio.com/}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{segoeui.ttf}VS\,Code}}
 \newLinkcommand{Ncgcode}{https://marketplace.visualstudio.com/items?itemName=ML.nc-gcode}{nc-gcode}
@@ -83,16 +87,18 @@
 
 
 %%%%% COMPANY %%%%%%
-\newLinkcommand{AMS}{https://www.ams.org/}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{TrajanPro-Regular.otf}American Mathematical Society}}
+\newLinkcommand{AMS}{https://www.ams.org/}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{TrajanPro-Regular.otf}AMS}}
+\newLinkcommand{AMSociety}{https://www.ams.org/}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{TrajanPro-Regular.otf}American Mathematical Society}}
 %\newLinkcommand{AntonKoovit}{https://antonkoovit.com/}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{Aino-Headline.otf}Anton Koovit}}
 %\newLinkcommand{Google}{https://www.google.com/}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{GoogleSansText-Regular.ttf}Google}}
 %\newLinkcommand{IPA}{https://www.ipa.go.jp/en/}{Information-technology Promotion Agency}
-\newLinkcommand{Wolfram}{https://www.wolfram.com/}{{\fontspec{Source Sans Pro}{Wolfram Research}}}
+\newLinkcommand{WolframResearch}{https://www.wolfram.com/}{{\fontspec{Source Sans Pro}{Wolfram Research}}}
 \newLinkcommand{MicrosoftCorp}{https://www.microsoft.com/}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{segoeui.ttf}Microsoft Corporation}}
 \newLinkcommand{KitamuraMachinery}{https://www.kitamura-machinery.com/}{Kitamura Machinery}
 \newLinkcommand{KITAMURA}{https://www.kitamura-machinery.com/}{KITAMURA}
 \newLinkcommand{PythonSF}{https://www.python.org/psf-landing/}{\namePython{} Software Foundation}
 \newLinkcommand{SFCInc}{https://sfconservancy.org/}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{segoeui.ttf}Software Freedom Conservancy, Inc}}
+\newLinkcommand{SFC}{https://sfconservancy.org/}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{segoeui.ttf}Software Freedom Conservancy}}
 \newLinkcommand{GitHubInc}{https://github.com/}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{segoeui.ttf}GitHub, Inc}}
 %\newLinkcommand{DockerInc}{https://www.docker.com/}{Docker, Inc}
 %\newLinkcommand{CanonicalLtd}{https://canonical.com/}{Canonical Ltd}
@@ -101,15 +107,4 @@
 \newLinkcommand{Moldino}{https://www.moldino.com/}{{\fontspec[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{StereoGothic700.ttf}MOLDINO}}
 \newLinkcommand{Yamato}{https://yamato-carbide-tools.jp/}{{\fontspec{YuGothic-Bold}YAMATO}}
 \newLinkcommand{Renishaw}{https://www.renishaw.com/}{RENISHAW}
-\newLinkcommand{Morisawa}{https://en.morisawa.co.jp/}{Morisawa}
-
-%%%%% LINK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\newLinkcommand\nextsectionlink[1]{\addtocounter{section}\@ne
-%                               \hyperlink{section.\thechapter.\the\c@section}{#1}%
-%                               \addtocounter{section}{-\@ne}
-%\newLinkcommand\previoussectionlink[1]{\addtocounter{section}{-\@ne}
-%                                   \hyperlink{section.\thechapter.\the\c@section}{#1}%
-%                                   \addtocounter{section}{\@ne}
-%\newLinkcommand\previouschapterlink[1]{\addtocounter{chapter}{-\@ne}
-%                                   \hyperlink{chapter.\the\c@chapter}{#1}%
-%                                   \addtocounter{chapter}{\@ne}
+\newLinkcommand{JIYUKOBO}{http://www.jiyu-kobo.co.jp/}{JIYUKOBO}
