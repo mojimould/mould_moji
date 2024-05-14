@@ -255,10 +255,8 @@ G90 G57 G01 Z[500.042+#600] F#652
 (hosei KouguChou: #50)
 (Z= topTanmen+#600)
 
-G57 G65 P210003 X135.210 Y134.200 T0.07 Z500.042 W400.000 F34.0 S17.0 Q80.00 I17.0 K20.0 M2.0 U0.31 R5933.200 A-0.964 B-3.351
+G57 G65 P210003 T0.07 Z500.042 W400.000 F34.0 S17.0 Q80.00 I17.0 K20.0 M2.0 U0.31 R5933.200 A-0.964 B-3.351
 (dimple measurement)
-(X: Top AC naikei)
-(Y: Top BD naikei)
 (T: mekki thickness mm)
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)
@@ -302,10 +300,8 @@ G90 G57 Z[500.042+#600] F#650
 (Z= TopTanmen +#600)
 
 N301
-G57 G65 P210003 X135.210 Y134.200 T0.07 Z500.042 W400.000 F34.0 S17.0 Q80.00 I17.0 K20.0 M2.0 U0.31 R5933.200 A-0.964 B-3.351
+G57 G65 P210003 T0.07 Z500.042 W400.000 F34.0 S17.0 Q80.00 I17.0 K20.0 M2.0 U0.31 R5933.200 A-0.964 B-3.351
 (dimple kakou)
-(X: Top AC naikei)
-(Y: Top BD naikei)
 (T: mekki thickness mm)
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)

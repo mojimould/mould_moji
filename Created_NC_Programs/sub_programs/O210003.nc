@@ -11,11 +11,7 @@ IF[#700NE57]GOTO800
 
 IF[#23EQ#0]GOTO800
 IF[#23LT10]GOTO800
-IF[#24EQ#0]GOTO800
-IF[#24LT10]GOTO800
 IF[#20LT0]GOTO800
-IF[#25EQ#0]GOTO800
-IF[#25LT10]GOTO800
 IF[#26EQ#0]GOTO800
 IF[#09EQ#0]GOTO800
 IF[#09LT0]GOTO800
@@ -47,6 +43,16 @@ IF[#02GT0]GOTO800
 (if U <= 0 or #0, go to N800)
 (if R = #0, go to N800)
 (if B > 0 or #0, go to N800)
+
+#24=#900018
+#25=#900024
+IF[#24EQ#0]GOTO800
+IF[#24LT10]GOTO800
+IF[#25EQ#0]GOTO800
+IF[#25LT10]GOTO800
+(XY into measurement values)
+(if X < 10 or #0, go to N800)
+(if Y < 10 or #0, go to N800)
 
 IF[#09EQ#19]GOTO800
 IF[#620EQ#0]GOTO800
@@ -442,11 +448,9 @@ N999 M99
 (#21:U: depth of dimple)
 (#09:F: length of odd rows)
 (#19:S: length of even rows)
-(#24:X: AC naikei of last row)
-(#25:Y: BD naikei of last row)
 
 (as LHS)
-(#30, #31, #32, #33)
+(#24, #25, #30, #31, #32, #33)
 
 (Common variables)
 (as RHS)
