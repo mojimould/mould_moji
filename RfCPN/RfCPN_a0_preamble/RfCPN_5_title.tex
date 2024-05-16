@@ -20,7 +20,8 @@ If more than 6 months have passed since the publication date, or if a new versio
 }
 
 \uppertitleback{%
-{\small%
+{\thispagestyle{plainheadfront}%
+\small%
 \begin{enumerate}[label={\sarrow}, leftmargin=8pt]
 \item
 This document was created using \nameTeX{} (\linkLaTeXe, \linkLaTeXthree), specifically utilizing tools such as \linkTeXLiveYear, \linkTLContrib, \linkLuaTeX{} (\linkLuaLaTeX, \linkLuaTeXja, \linkLua), \linkKOMAScript{} (\linkScrbook, \linkScrlayerscrpage) and \linkPGFTikZ, and many useful packages, libraries and modules.
@@ -53,7 +54,7 @@ Thanks to these tools, with the all-around support of \linkChatGPT-4 (\linkCopil
 This was achieved even while I had to navigate solo, finding my way in the quiet corners, despite being a novice with almost all of these tools, software and languages.
 }\\%
 
-\begin{spacing}{0.7}
+\begin{spacing}{0.75}
 {\tiny%
 Among these tools, this was my first time using \linkTeXLiveYear, \linkTLContrib, \linkLuaTeX, \linkLaTeXthree, \linkScrlayerscrpage, \linkTeXstudio, \linkSumatraPDF, \linkBibTeX, \linkUpmendex, \linkMendexDoc, \nameGcode{} (\nameNCProgram), \nameArumatik, \linkNcgcode, \linkGit, \linkGitHub, \linkPython, \linkMinted, \linkPygments{} and \linkCopilot.%
 }%
@@ -65,85 +66,11 @@ Among these tools, this was my first time using \linkTeXLiveYear, \linkTLContrib
 \setcounter{page}{1}%
 \begin{spacing}{1.2}%
 \setlength{\tabcolsep}{1.0pt}%
-\hfill%
-\begin{longtblr}[
-  theme=commontblr,
-  entry=none,
-  label=none,
-  presep=0pt,
-]{%
-  hlines,
-  vlines,
-%  vline{2}={1pt},
-  rowhead=1,
-  row{1}={orange!20!, font=\sffamily\bfseries},
-  colspec={l l l},
-}
-  Trademark & Owner & Links\\
-  \nameAMS & \linkAMSociety
-    & \hrefenAMS{https://tsdr.uspto.gov/\#caseNumber=87698183\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameAMSociety & \linkAMSociety
-    & \hrefenAMSociety{https://tsdr.uspto.gov/\#caseNumber=87698125\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameYuGothic & \linkJIYUKOBO
-    & \hrefjaYuGothic{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-2012-033302/40/en}\\
-  \nameWolframAlpha & \linkWolframResearch
-    & \hrefjaWolframAlpha{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-1030328-20091113/49/en},
-      \hrefenWolframAlpha{https://tsdr.uspto.gov/\#caseNumber=77738332\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameWolfram & \linkWolframResearch
-    & \hrefjaWolfram{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-0947697-20071022/49/en},
-      \hrefenWolfram{https://tsdr.uspto.gov/\#caseNumber=77163344\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameSegoe & \linkMicrosoftCorp
-    & \hrefjaSegoe{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-2003-090885/40/en},
-      \hrefenSegoe{https://tsdr.uspto.gov/\#caseNumber=78239289\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameConsolas & \linkMicrosoftCorp
-    & \hrefenConsolas{https://tsdr.uspto.gov/\#caseNumber=78342779\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameExcel & \linkMicrosoftCorp
-    & \hrefjaExcel{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-1107046-20111130/49/en},
-      \hrefenExcel{https://tsdr.uspto.gov/\#caseNumber=85467589\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameVSCode & \linkMicrosoftCorp
-    & \hrefjaVSCode{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-1605345-20210525/49/en},
-      \hrefenVSCode{https://tsdr.uspto.gov/\#caseNumber=90733367\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameArumatik & \linkMicrosoftCorp
-    & \hrefjaArumatik{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-2011-017675/40/en},
-      \hrefenArumatik{https://tsdr.uspto.gov/\#caseNumber=79112955\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameMycenter & \linkKitamuraMachinery
-    & \hrefjaMycenter{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-1980-072867/40/en}\\
-  \nameKITAMURA & \linkKitamuraMachinery
-    & \hrefjaKITAMURA{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-1995-068570/40/en},
-      \hrefenKITAMURA{https://tsdr.uspto.gov/\#caseNumber=73242376\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \namePython & \linkPythonSF
-    & \hrefjaPython{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-2021-060669/40/en},
-      \hrefenPython{https://tsdr.uspto.gov/\#caseNumber=76044902\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameGit & \linkSFCInc
-    & \hrefenGit{https://tsdr.uspto.gov/\#caseNumber=85961336\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameSFC & \linkSFCInc
-    & \hrefenSFC{https://tsdr.uspto.gov/\#caseNumber=85482633\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameGitHub & \linkGitHubInc
-    & \hrefjaGitHub{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-2013-099823/40/en},
-      \hrefenGitHub{https://tsdr.uspto.gov/\#caseNumber=87482885\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameRenishaw & \linkRenishaw
-    & \hrefjaRenishaw{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-1986-078976/40/en},
-      \hrefenRenishaw{https://tsdr.uspto.gov/\#caseNumber=73614814\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameGPT & \linkOpenAI
-    & \hrefjaGPT{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-1719941-20230210/49/en},
-      \hrefenGPT{https://tsdr.uspto.gov/\#caseNumber=97733259\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameGPTfour & \linkOpenAI
-    & \hrefjaGPTfour{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-1719941-20230210/49/en},
-      \hrefenGPTfour{https://tsdr.uspto.gov/\#caseNumber=97836275\&caseType=DEFAULT\&searchType=statusSearch}\\
-  \nameChatGPT & \linkOpenAI
-    & \hrefjaChatGPT{https://www.j-platpat.inpit.go.jp/c1801/TR/JP-1719941-20230210/49/en},
-      \hrefenChatGPT{https://tsdr.uspto.gov/\#caseNumber=97733261\&caseType=DEFAULT\&searchType=statusSearch}\\
-\end{longtblr}
-%\linkDocker & is a trademark of \linkDockerInc.\\
-%\linkUbuntu & is a trademark of \linkCanonicalLtd.\\
-%\linkSQLite & is a trademark of \linkSQLiteConsortium.\\
-%\nameMoldino & is a trademark of \linkMoldino.
-%\nameOpenAI & is a trademark of \linkOpenAI.
+\hfill\\
 \hrulefill\\
 Copyright © 2023, 2024.\\
 These documents and these systems are owned by the individual writer (the author of this documnet), not any corporation.\\
 All rights reserved.
 \end{spacing}
-\thispagestyle{emptydate}%
 }%
 }
