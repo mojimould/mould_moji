@@ -66,16 +66,23 @@
 \newGPMcommand{CenterCurvatureRadius}{\nameCenterCurvature 半径}{\yomiCenterCurvature はんけい}
 
 %%% OUTERDIAMETER %%%
+\newNamecommand{OuterDiameter}{外径}{がいけい}
+
 \newGPMcommand{ACOD}{外側AC径}{そとがわACけい}
 \newGPMcommand{BDOD}{外側BD径}{そとがわBDけい}
 \newGPMcommand{ODCornerR}{外径コーナーR}{がいけいコーナーR}
 
 %%% INNERDIAMETER %%%
+\newNamecommand{InnerDiameter}{内径}{ないけい}
+\newNamecommand{IDCornerR}{\nameInnerDiameter コーナーR}{\yomiInnerDiameter コーナーR}
+\newNamecommand{ACID}{内側AC径}{うちがわACけい}
+\newNamecommand{BDID}{内側BD径}{うちがわBDけい}
 \newNamecommand{Plating}{めっき}{めっき}
 \newNamecommand{IDTaper}{内径テーパ}{ないけいテーパ}
 \newNamecommand{IDTaperTable}{内径テーパ表}{ないけいテーパひょう}
 \newNamecommand{InnerCornerR}{内形コーナーR}{ないけいコーナーR}
 \newNamecommand{eTaper}{eテーパ}{eテーパ}
+\newNamecommand{HorizontalInnerDiameter}{水平方向の\nameInnerDiameter}{すいへいほうこうの\yomiInnerDiameter}
 
 \newGPMcommand{TopEndACID}{トップ端AC内径}{トップたんACないけい}
 \newGPMcommand{TopEndBDID}{トップ端BD内径}{トップたんBDないけい}
@@ -94,14 +101,17 @@
 \newNamecommand{TopEndFacecut}{トップ\nameEndFacecut}{トップ\yomiEndFacecut}
 \newNamecommand{BottomEndFacecut}{ボトム\nameEndFacecut}{ボトム\yomiEndFacecut}
 \newNamecommand{EndFacecutMilling}{\nameEndFacecut 加工}{\yomiEndFacecut かこう}
+\newNamecommand{EndFacecutMillingReferencePoint}{\nameEndFacecutMilling の基準点}{\yomiEndFacecutMilling のきじゅんてん}
 \newNamecommand{TopEndFacecutMilling}{トップ\nameEndFacecutMilling}{トップ\yomiEndFacecutMilling}
 \newNamecommand{BottomEndFacecutMilling}{ボトム\nameEndFacecutMilling}{ボトム\yomiEndFacecutMilling}
+\newNamecommand{EndFacecutCornerR}{\nameEndFacecut コーナーR}{\yomiEndFacecut コーナーR}
 
 %%% OUTCUT %%%
 \newNamecommand{Outcut}{外削}{がいさく}
 \newNamecommand{TopOutcut}{トップ\nameOutcut}{トップ\yomiOutcut}
 \newNamecommand{BottomOutcut}{ボトム\nameOutcut}{ボトム\yomiOutcut}
 \newNamecommand{OutcutMilling}{\nameOutcut 加工}{\yomiOutcut かこう}
+\newNamecommand{OutcutMillingReferencePoint}{\nameOutcutMilling の基準点}{\yomiOutcutMilling のきじゅんてん}
 \newNamecommand{TopOutcutMilling}{トップ\nameOutcutMilling}{トップ\yomiOutcutMilling}
 \newNamecommand{BottomOutcutMilling}{ボトム\nameOutcutMilling}{ボトム\yomiOutcutMilling}
 \newNamecommand{OutcutExists}{\nameOutcut の有無}{\yomiOutcut のうむ}
@@ -298,6 +308,7 @@
 
 %%% JIG %%%
 \newGPMcommand{JigLength}{ジグの長さ}{ジグのながさ}
+\newGPMcommand{JigWidth}{ジグの幅}{ジグのはば}
 
 
 % 内面テーパ付湾曲付R直方筒 Inner Taper R-Rectangular Tube with Curvature
