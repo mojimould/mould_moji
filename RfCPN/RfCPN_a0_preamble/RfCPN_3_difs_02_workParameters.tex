@@ -67,29 +67,31 @@
 
 %%% OUTERDIAMETER %%%
 \newNamecommand{OuterDiameter}{外径}{がいけい}
+\newNamecommand{HorizontalOD}{水平方向の\nameOuterDiameter}{すいへいほうこうの\yomiOuterDiameter}
 
 \newGPMcommand{ACOD}{外側AC径}{そとがわACけい}
 \newGPMcommand{BDOD}{外側BD径}{そとがわBDけい}
-\newGPMcommand{ODCornerR}{外径コーナーR}{がいけいコーナーR}
+\newGPMcommand{TopEndACOD}{トップ端\nameACOD}{トップたん\yomiACOD}
+\newGPMcommand{ODCornerR}{\nameOuterDiameter コーナーR}{\yomiOuterDiameter コーナーR}
 
 %%% INNERDIAMETER %%%
 \newNamecommand{InnerDiameter}{内径}{ないけい}
-\newNamecommand{IDCornerR}{\nameInnerDiameter コーナーR}{\yomiInnerDiameter コーナーR}
+\newNamecommand{IDCornerR}{内形コーナーR}{ないけいコーナーR}
 \newNamecommand{ACID}{内側AC径}{うちがわACけい}
 \newNamecommand{BDID}{内側BD径}{うちがわBDけい}
 \newNamecommand{Plating}{めっき}{めっき}
-\newNamecommand{IDTaper}{内径テーパ}{ないけいテーパ}
-\newNamecommand{IDTaperTable}{内径テーパ表}{ないけいテーパひょう}
+\newNamecommand{IDTaper}{\nameInnerDiameter テーパ}{\yomiInnerDiameter テーパ}
+\newNamecommand{IDTaperTable}{\nameIDTaper 表}{\yomiIDTaper ひょう}
 \newNamecommand{InnerCornerR}{内形コーナーR}{ないけいコーナーR}
 \newNamecommand{eTaper}{eテーパ}{eテーパ}
-\newNamecommand{HorizontalInnerDiameter}{水平方向の\nameInnerDiameter}{すいへいほうこうの\yomiInnerDiameter}
+\newNamecommand{HorizontalID}{水平方向の\nameInnerDiameter}{すいへいほうこうの\yomiInnerDiameter}
 
-\newGPMcommand{TopEndACID}{トップ端AC内径}{トップたんACないけい}
-\newGPMcommand{TopEndBDID}{トップ端BD内径}{トップたんBDないけい}
-\newGPMcommand{BottomEndACID}{ボトム端AC内径}{ボトムたんACないけい}
-\newGPMcommand{BottomEndBDID}{ボトム端BD内径}{ボトムたんBDないけい}
-\newGPMcommand{TopEndIDCornerR}{トップ端内径コーナーR}{トップたんないけいコーナーR}
-\newGPMcommand{BottomEndIDCornerR}{ボトム端内径コーナーR}{ボトムたんないけいコーナーR}
+\newGPMcommand{TopEndACID}{トップ端\nameACID}{トップたん\yomiACID}
+\newGPMcommand{TopEndBDID}{トップ端\nameBDID}{トップたん\yomiBDID}
+\newGPMcommand{BottomEndACID}{ボトム端\nameACID}{ボトムたん\yomiACID}
+\newGPMcommand{BottomEndBDID}{ボトム端\nameBDID}{ボトムたん\yomiBDID}
+\newGPMcommand{TopEndIDCornerR}{トップ端内形コーナーR}{トップたんないけいコーナーR}
+\newGPMcommand{BottomEndIDCornerR}{ボトム端内形コーナーR}{ボトムたんないけいコーナーR}
 \newGPMcommand{PlatingThk}{\namePlating 膜厚}{\yomiPlating まくあつ}
 \newGPMcommand{IDTaperTableNum}{\nameIDTaperTable 番号}{\yomiIDTaperTable 番号}
 
@@ -151,6 +153,7 @@
 %%% KEYWAY %%%
 \newNamecommand{Keyway}{キー溝}{キーみぞ}
 \newNamecommand{KeywayMilling}{\nameKeyway 加工}{\yomiKeyway かこう}
+\newNamecommand{KeywayMillingReferencePoint}{\nameKeywayMilling の基準点}{\yomiKeywayMilling のきじゅんてん}
 \newNamecommand{KeywayDiameter}{\nameKeyway 径}{\yomiKeyway けい}
 \newNamecommand{KeywayDepth}{\nameKeyway 深さ}{\yomiKeyway ふかさ}
 
@@ -180,6 +183,7 @@
 %%% C CHANMFER %%%
 \newNamecommand{EndFaceCChamfer}{端面C面取}{たんめんCめんとり}
 \newNamecommand{EndFaceCChamferMilling}{\nameEndFaceCChamfer 加工}{\yomiEndFaceCChamfer かこう}
+\newNamecommand{EndFaceCChamferMillingReferencePoint}{\nameEndFaceCChamferMilling の基準点}{\yomiEndFaceCChamferMilling のきじゅんてん}
 \newNamecommand{EndFaceCChamferLength}{\nameEndFaceCChamfer 長}{\yomiEndFaceCChamfer ちょう}
 \newNamecommand{EndFaceCChamferAngle}{\nameEndFaceCChamfer 角}{\yomiEndFaceCChamfer かく}
 
@@ -188,6 +192,7 @@
 \newNamecommand{TopEndFaceOutCChamfer}{トップ\nameEndFaceOutCChamfer}{トップ\yomiEndFaceOutCChamfer}
 \newNamecommand{BottomEndFaceOutCChamfer}{ボトム\nameEndFaceOutCChamfer}{ボトム\yomiEndFaceOutCChamfer}
 \newNamecommand{EndFaceOutCChamferMilling}{\nameEndFaceOutCChamfer 加工}{\yomiEndFaceOutCChamfer かこう}
+\newNamecommand{EndFaceOutCChamferMillingReferencePoint}{\nameEndFaceOutCChamferMilling の基準点}{\yomiEndFaceOutCChamferMilling のきじゅんてん}
 \newNamecommand{TopEndFaceOutCChamferMilling}{トップ\nameEndFaceOutCChamfer 加工}{トップ\yomiEndFaceOutCChamfer かこう}
 \newNamecommand{BottomEndFaceOutCChamferMilling}{ボトム\nameEndFaceOutCChamfer 加工}{ボトム\yomiEndFaceOutCChamfer かこう}
 \newNamecommand{EndFaceOutCChamferWidth}{端面外C面取径}{たんめんそとCめんとりけい}
@@ -208,6 +213,7 @@
 \newNamecommand{TopEndFaceInCChamfer}{トップ\nameEndFaceInCChamfer}{トップ\yomiEndFaceInCChamfer}
 \newNamecommand{BottomEndFaceInCChamfer}{ボトム\nameEndFaceInCChamfer}{ボトム\yomiEndFaceInCChamfer}
 \newNamecommand{EndFaceInCChamferMilling}{\nameEndFaceInCChamfer 加工}{\yomiEndFaceInCChamfer かこう}
+\newNamecommand{EndFaceInCChamferMillingReferencePoint}{\nameEndFaceInCChamferMilling の基準点}{\yomiEndFaceOutCChamferMilling のきじゅんてん}
 \newNamecommand{TopEndFaceInCChamferMilling}{トップ\nameEndFaceInCChamfer 加工}{トップ\yomiEndFaceInCChamfer かこう}
 \newNamecommand{BottomEndFaceInCChamferMilling}{ボトム\nameEndFaceInCChamfer 加工}{ボトム\yomiEndFaceInCChamfer かこう}
 \newNamecommand{EndFaceInCChamferWidth}{端面外C面取径}{たんめんそとCめんとりけい}
@@ -226,6 +232,7 @@
 %%% ROUND CHANMFER %%%
 \newNamecommand{EndFaceRChamfer}{端面R面取}{たんめんRめんとり}
 \newNamecommand{EndFaceRChamferMilling}{\nameEndFaceRChamfer 加工}{\yomiEndFaceRChamfer かこう}
+\newNamecommand{EndFaceRChamferMillingReferencePoint}{\nameEndFaceRChamferMilling の基準点}{\yomiEndFaceRChamferMilling のきじゅんてん}
 \newNamecommand{EndFaceRChamferRadius}{\nameEndFaceRChamfer 長}{\yomiEndFaceRChamfer ちょう}
 
 %%% OUT R CHANMFER %%%
@@ -233,6 +240,7 @@
 \newNamecommand{TopEndFaceOutRChamfer}{トップ\nameEndFaceOutRChamfer}{トップ\yomiEndFaceOutRChamfer}
 \newNamecommand{BottomEndFaceOutRChamfer}{ボトム\nameEndFaceOutRChamfer}{ボトム\yomiEndFaceOutRChamfer}
 \newNamecommand{EndFaceOutRChamferMilling}{\nameEndFaceOutRChamfer 加工}{\yomiEndFaceOutRChamfer かこう}
+\newNamecommand{EndFaceOutRChamferMillingReferencePoint}{\nameEndFaceOutRChamferMilling の基準点}{\yomiEndFaceOutRChamferMilling のきじゅんてん}
 \newNamecommand{EndFaceOutRChamferRadius}{\nameEndFaceOutRChamfer 長}{\yomiEndFaceOutRChamfer ちょう}
 
 \newGPMcommand{TopEndFaceOutRChamferExists}{トップ\nameEndFaceOutRChamfer の有無}{トップ\yomiEndFaceOutRChamfer うむ}
@@ -245,6 +253,7 @@
 \newNamecommand{TopEndFaceInRChamfer}{トップ\nameEndFaceInRChamfer}{トップ\yomiEndFaceInRChamfer}
 \newNamecommand{BottomEndFaceInRChamfer}{ボトム\nameEndFaceInRChamfer}{ボトム\yomiEndFaceInRChamfer}
 \newNamecommand{EndFaceInRChamferMilling}{\nameEndFaceInRChamfer 加工}{\yomiEndFaceInRChamfer かこう}
+\newNamecommand{EndFaceInRChamferMillingReferencePoint}{\nameEndFaceInRChamferMilling の基準点}{\yomiEndFaceInRChamferMilling のきじゅんてん}
 \newNamecommand{TopEndFaceInRChamferMilling}{トップ\nameEndFaceInRChamferMilling}{トップ\yomiEndFaceInRChamferMilling}
 \newNamecommand{BottomEndFaceInRChamferMilling}{ボトム\nameEndFaceInRChamferMilling}{ボトム\yomiEndFaceInRChamferMilling}
 \newNamecommand{EndFaceInRChamferRadius}{\nameEndFaceInRChamfer 長}{\yomiEndFaceInRChamfer ちょう}
