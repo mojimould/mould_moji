@@ -119,13 +119,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\EndFacecut 部分}
+\subsubsection{\EndFacecutMilling 部分}
 \EndFacecutMilling については、全明細に共通の形で存在する。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\Outcut 部分}
+\subsubsection{\OutcutMilling 部分}
 \OutcutMilling については、明細により\OutcutExists または\OutcutType の違いが存在する。
 \begin{enumerate}[label=\sarrow]
 \item \TopOutcutExists または\BottomOutcutExists を確認する
@@ -150,7 +150,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\Keyway 部分}
+\subsubsection{\KeywayMilling 部分}
 \KeywayMilling については、全明細のトップ側に存在し、明細により種類の違いが存在する。
 \begin{enumerate}[label=\sarrow]
 \item \nameKeywayType を確認し、使用する\expandafterindex{サブプログラム（\yomiKeyway）@サブプログラム（\nameKeyway）}サブプログラムの判断を行う
@@ -172,7 +172,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.2.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\EndFaceChamfer 部分}
+\subsubsection{\EndFaceChamferMilling 部分}
 \EndFaceChamferMilling については、全明細に存在し、明細により種類の違いが存在する。
 \begin{enumerate}[label=\sarrow]
 \item 種類が\EndFaceCChamfer であれば、その\EndFaceCChamferLength により\index{マシニングセンタ}マシニングセンタによる加工を行うか判断を行う
@@ -198,7 +198,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.2.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\EndFaceBoring 部分\TBW}
+\subsubsection{\EndFaceBoringMilling 部分\TBW}
 (to be written...)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -215,7 +215,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.02.2.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\Inlay 部分\TBW}
+\subsubsection{\InlayMilling 部分\TBW}
 (to be written...)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -237,7 +237,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\EndFacecut における寸法}
+\subsubsection{\EndFacecutMilling における寸法}
 \begin{enumerate}[label=\sarrow]
 \item \expandafterindex{こうさ（\yomiWorkTotalLength）@公差（\nameWorkTotalLength）}\nameWorkTotalLength の公差を確認し、\TopAlocationLength および\BottomAlocationLength の\expandafterindex{こうさ（\yomiAlocationLength）@公差（\nameAlocationLength）}公差の判断を行う
 \item \TopAlocationLength・\BottomAlocationLength を確認し、\index{スペーサ}スペーサによる調整が必要か判断を行う
@@ -286,7 +286,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\Outcut における寸法}
+\subsubsection{\OutcutMilling における寸法}
 \begin{enumerate}[label=\sarrow]
 \item \OutcutLength と\Keyway の位置を確認し、実際に加工する\OutcutLength の判断を行う
 \item トップ側・ボトム側の両方に\Outcut のある場合は、どちら側が\expandafterindex{きじゅん（\yomiOutcutCenter）@基準（\nameOutcutCenter）}基準であるのかを確認する
@@ -360,7 +360,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\Keyway における寸法}
+\subsubsection{\KeywayMilling における寸法}
 \begin{enumerate}[label=\sarrow]
 \item \KeywayType を確認し、必要に応じて加工における径の決定する
 \item \expandafterindex{きじゅん（\yomiKeywayCenter）@基準（\nameKeywayCenter）}\nameKeywayCenter の基準を確認し、\KeywayCenter の$X$位置を手動で計算し、決定する
@@ -396,7 +396,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.3.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\EndFaceChamfer における寸法}
+\subsubsection{\EndFaceChamferMilling における寸法}
 \begin{enumerate}[label=\sarrow]
 \item \EndFaceOutCChamfer の場合は、\OutcutExists を確認し、加工の径を決定する
 \item \expandafterindex{Cめんとり（\yomiOutcut ようこうぐせんたん）@C面取（\nameOutcut 用工具先端）}\nameOutcut 用工具先端部がC面取の場合は、\expandafterindex{\yomiOutcut のけいじょう@\nameOutcut の形状}\nameOutcut の形状を確認し、\expandafterindex{こうぐ（\yomiOutcut）@工具（\nameOutcut）}工具を決定する
@@ -451,7 +451,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.3.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\EndFaceBoring における寸法\TBW}
+\subsubsection{\EndFaceBoringMilling における寸法\TBW}
 (to be written...)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -472,7 +472,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.02.3.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\Inlay における寸法\TBW}
+\subsubsection{\InlayMilling における寸法\TBW}
 (to be written...)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
