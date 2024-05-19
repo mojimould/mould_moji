@@ -25,3 +25,4 @@ RfCPN/RfCPN.pdf
 *.pygstyle
 *.pyg
 *.locode
+*.loColumn
