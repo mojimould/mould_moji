@@ -4,7 +4,13 @@
 \addtocontents{lof}{\end{lofBox}}%
 \addtocontents{lot}{\end{lotBox}}%
 \addtocontents{locode}{\end{locodeBox}}%
-\addtocontents{loC}{\end{loCBox}}%
+\addtocontents{loColumn}{\end{loColumnBox}}%
+
+\nocite{package:2023Tantau}
+\nocite{package:2024Thomas}
+\nocite{package:2024Jianrui}
+\nocite{package:2023Geoffrey}
+\nocite{online:Pygments}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% BACKMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -25,20 +31,15 @@
 \begingroup
 \let\cleardoublepage\relax
 \phantomsection
-\addchaptertocentry{}{\listofloCname}
-\listoftoc{loC}\thispagestyle{plainheadback}
+\addchaptertocentry{}{\listofloColumnname}
+\listoftoc{loColumn}\thispagestyle{plainheadback}
 \let\cleardoublepage\tmpcleardoublepage
 \endgroup
 
-\clearpage
+\clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\nocite{package:2023Tantau}
-\nocite{package:2024Thomas}
-\nocite{package:2024Jianrui}
-\nocite{package:2023Geoffrey}
-\nocite{online:Pygments}
 \begingroup
 \let\cleardoublepage\relax
 {\footnotesize%

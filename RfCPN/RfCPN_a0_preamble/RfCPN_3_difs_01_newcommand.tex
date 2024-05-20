@@ -157,8 +157,9 @@
 \setlength{\abovecaptionskip}{0pt}
 \newcommand{\modcaptionof}[2]{%
   \captionof{#1}{%
-    \csname #1name\endcsname\thechapter.%
-    \ifnum\value{#1}<10 0\fi
-      \arabic{#1}. #2%
+%    \csname #1name\endcsname\thechapter.%
+%    \ifnum\value{#1}<10 0\fi
+%      \arabic{#1}.
+    #2%
   }%
 }

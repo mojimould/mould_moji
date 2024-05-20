@@ -1,7 +1,7 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter[loColumn,lof]{\WorkTotalLength および振分けの幾何\label{chap:ACfuriwake}\vphantom{\ref{chap:ACfuriwake}}}
+\modHeadchapter[loColumn,lof]{\WorkTotalLength および振分けの幾何\label{chap:ACallocation}\vphantom{\ref{chap:ACallocation}}}
 \Alocation の長さ（\textbf{\AlocationLength}）は、トップ側とボトム側では一般に異なる。
 しかし、加工をする際には\JigCenter に対して両者の長さの差が小さいほうが一般的には好都合である。
 そうした場合の対処法として、ここでは以下のような2つの方法を考える。
@@ -582,8 +582,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \subsection{回転後の\AlocationLength}
 回転後の\TopReAlocationLength$f_\mathrm T'$は、\pageeqref{eq:afterfttable}の虚部を見ればよいので、
 \begin{align}
-%\label{eq:saifuriwake}
-  \label{eq:saifuriwakeT}
+%\label{eq:saiallocation}
+  \label{eq:saiallocationT}
   f_\mathrm T'
   = f_\mathrm T+\Delta'\sin\theta
   = f_\mathrm T+\left(\Delta+\sqrt{R_\mathrm i'-\bar l^2}\right)\sin\theta\ .
@@ -614,7 +614,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% subsection 21.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\AlocationLength を指定したときの回転角}
-トップ側の\AlocationLength が$f_\mathrm T'$となる回転角$\theta$は、\pageeqref{eq:saifuriwakeT}より、
+トップ側の\AlocationLength が$f_\mathrm T'$となる回転角$\theta$は、\pageeqref{eq:saiallocationT}より、
 \begin{align*}
   \sin\theta = \frac{f_\mathrm T'-f_\mathrm T}{\Delta'}
 \end{align*}
@@ -625,7 +625,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \end{align*}
 であればいいので、
 \begin{align*}
-  %\label{eq:saifuriwakeangle}
+  %\label{eq:saiallocationangle}
   \sin\theta = \frac{f_d}{\Delta'}
   = \frac{f_\mathrm B-f_\mathrm T}{2\left(\Delta+\sqrt{R_\mathrm i'-\bar l^2}\right)}~.
 \end{align*}

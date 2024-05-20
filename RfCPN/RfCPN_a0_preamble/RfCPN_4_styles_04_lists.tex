@@ -43,32 +43,19 @@
   numwidth=4.4em % エントリ番号の幅を調整
 ]{tocline}{subsubsection}
 %%%%% FOR TABLE %%%%%
-%\DeclareTOCStyleEntry[
-%  level=\sectiontocdepth,
-%  indent=0em, % エントリのインデントを調整
-%  numwidth=2.71em % エントリ番号の幅を調整
-%]{tocline}{table}
-\titlecontents{table}
-[2.35em] % 左インデント
+\titlecontents{table}[2.35em] % 左インデント
 {\addvspace{0pt}} % 上部の垂直スペースとフォーマット
 {\contentslabel{1.5em}} % ラベルとテキストの間のスペース
 {\hspace*{-1.5em}} % ラベルなしの場合のスペース
 {\titlerule*[0.5pc]{.}\contentspage} % ページ番号前のリーダーとページ番号
 %%%%% FOR FIGURE %%%%%
-%\DeclareTOCStyleEntry[
-%  level=\sectiontocdepth,
-%  indent=2.35em, % エントリのインデントを調整
-%  numwidth=2.71em % エントリ番号の幅を調整
-%]{tocline}{figure}
-\titlecontents{figure}
-[2.0em] % 左インデント
+\titlecontents{figure}[2.0em] % 左インデント
 {\addvspace{0pt}} % 上部の垂直スペースとフォーマット
 {\contentslabel{1.5em}} % ラベルとテキストの間のスペース
 {\hspace*{-1.5em}} % ラベルなしの場合のスペース
 {\titlerule*[0.5pc]{.}\contentspage} % ページ番号前のリーダーとページ番号
 %%%%% FOR Colmun %%%%%
-%\titlecontents{Colmun}
-%[2.35em] % 左インデント
+%\titlecontents{loColmun}[2.35em] % 左インデント
 %{\addvspace{0pt}} % 上部の垂直スペースとフォーマット
 %{\contentslabel{1.5em}} % ラベルとテキストの間のスペース
 %{\hspace*{-1.5em}} % ラベルなしの場合のスペース
@@ -91,17 +78,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF LOT %%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listtablename{\texorpdfstring{\hbox to 3em{表目次}}{表目次}}
-\renewcommand{\tablename}{表}
 \renewcommand{\tableautorefname}{\tablename}
 %\let\l@table\l@section
 %\renewcommand*\l@table{\@dottedtocline{1}{0.0em}{2.35em}}
-\AtBeginDocument{\renewcommand{\thetable}{}}
 
 %%%%% FOR STYLE OF LOF %%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listfigurename{\texorpdfstring{\hbox to 3em{図目次}}{図目次}}
-\renewcommand{\figurename}{図}
 \renewcommand{\figureautorefname}{\figurename}
-\let\l@figure\l@section
+%\let\l@figure\l@section
 %\renewcommand*\l@figure{\@dottedtocline{1}{0.0em}{2.35em}}
 %\AtBeginDocument{\renewcommand{\thefigure}{}}
 
@@ -110,10 +94,10 @@
 
 %%%%% FOR STYLE OF LOCODE %%%%%%%%%%%%%%%%%
 \renewcommand{\listoflocodename}{コード 目次}
-\renewcommand{\locodename}{{Prg:~}}
 
 %%%%% FOR STYLE OF LOC %%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand\listofloCname{Column一覧}
+\renewcommand\listofloColumnname{\Columnname 一覧}
+\renewcommand{\loColumnname}{{\Columnname}}
 
 %%%%% FOR STYLE OF INDEX %%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\indexname}{\texorpdfstring{\hbox to 2em{索引}}{索引}}

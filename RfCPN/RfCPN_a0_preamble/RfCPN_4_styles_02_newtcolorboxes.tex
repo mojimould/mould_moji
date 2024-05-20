@@ -122,11 +122,11 @@
 %%%%% COLUMN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\Columnname}{Column}
-\newtcolorbox[auto counter, number within=chapter, list inside=loC, list type=section]{Column}[2][]{%
+\newtcolorbox[auto counter, number within=chapter]{\Columnname}[2][]{%
   Columnbox,
   title={#2},
   #1,
-  list entry={\numberline{\Columnname~\thetcbcounter.}{\protect\hspace*{35pt}#2}}
+  before upper={\addcontentsline{loColumn}{section}{\protect\numberline{{\Columnname~\thetcbcounter}}#2}}
 }
 %\newcommand{\tcb@cnt@Columnautorefname}{Column}
 \tcbset{%
@@ -134,7 +134,7 @@
   Columnbox/.style={%
     Tabularbox,
     colback=black!02!white!,%
-    after title=\hfill\termblue{\Columnname~\thetcbcounter},%
+    after title={\hfill\termblue{\Columnname~\thetcbcounter}},%
   }%
 }
 
@@ -214,10 +214,10 @@
 }%
 
 %%%%% LOCBOX %%%%%
-\newtcolorbox{loCBox}{loCstyle}
+\newtcolorbox{loColumnBox}{loColumnstyle}
 \tcbset{%
   %%%%% LOCSTYLE STYLE %%%%%
-  loCstyle/.style={lofstyle},
+  loColumnstyle/.style={lofstyle},
 }%
 
 %%%%% LOPBOX %%%%%
