@@ -34,9 +34,32 @@
   \fi
 }
 %%%%% DECLARENEWTOC %%%%%%%%%%%%%%%%%%%%
-\DeclareNewTOC[owner=\jobname, name=Part]{lop}
-\DeclareNewTOC[owner=\jobname, name=Code]{locode}
-\DeclareNewTOC[owner=\jobname, name=Column]{loColumn}
+\DeclareNewTOC[
+  owner=\jobname,
+  name=Part,
+]{lop}
+\DeclareNewTOC[
+  owner=\jobname,
+  name=Code,
+  float,
+  nonfloat,
+  counterwithin=chapter,
+  floatpos=tbp,
+  floattype=2,
+  tocentryindent=2.35em,
+  tocentrynumwidth=2.71em,
+]{locode}
+\DeclareNewTOC[
+  owner=\jobname,
+  name=Column,
+  float,
+  nonfloat,
+  counterwithin=chapter,
+  floatpos=tbp,
+  floattype=2,
+%  tocentryindent=2.35em,
+%  tocentrynumwidth=5.10em,
+]{loColumn}
 %%%%% TO GET CHAPTER TITLE %%%%%%
 \newcommand\Chaptername{} % initialize \Chaptername
 \let\old@chapter\@chapter
@@ -122,23 +145,34 @@
 \setlist[enumerate, 1]{leftmargin=\leftmargini}
 %%%%% CAPTION STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\tablename}{表}
+\addto\captionsjapanese{\renewcommand{\tablename}{表}}
+\addto\captionsjapanese{\renewcommand{\figurename}{図}}
 \renewcommand{\figurename}{図}
-\renewcommand{\locodename}{Prg:~}
+\renewcommand{\locodename}{Prg:\,}
 \renewcommand{\thefigure}{\ifnum\value{figure}<10 0\fi\arabic{figure}}
 \renewcommand{\thetable}{\ifnum\value{table}<10 0\fi\arabic{talble}}
-%\renewcommand{\thelocode}{\ifnum\value{locode}<10 0\fi\arabic{locode}}
-\counterwithin{figure}{section}
-\counterwithin{table}{section}
-%\counterwithin{locode}{section}
-\DeclareCaptionLabelFormat{customlabelformat}{#1\thesection.#2}
+\renewcommand{\thelocode}{\ifnum\value{locode}<10 0\fi\arabic{locode}}
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
+\DeclareCaptionLabelFormat{table}{\tablename#2}
+\DeclareCaptionLabelFormat{figure}{\figurename#2}
+\captionsetup[table]{
+  justification=raggedright,
+  singlelinecheck=false,
+  position=above,
+  aboveskip=4pt,
+  belowskip=5pt,
+  labelfont={bf, sf},
+  labelsep={space},
+  font={bf, large, sf},
+  hypcap=false,
+}
 \captionsetup[figure]{%
   width=.9\textwidth,
   format=hang,
   labelfont={bf, sf},
   labelsep={colon},
   aboveskip=3pt,
-  labelformat=customlabelformat,
-%  name={},
 }
 \captionsetup[locode]{
   justification=raggedright,
@@ -150,21 +184,7 @@
   labelsep={space},
   font={bf, large, sf},
   hypcap=false,
-  labelformat=customlabelformat,
   name={Prg:\,},
-}
-\captionsetup[table]{
-  justification=raggedright,
-  singlelinecheck=false,
-  position=above,
-  aboveskip=4pt,
-  belowskip=5pt,
-  labelfont={bf, sf},
-  labelsep={space},
-  font={bf, large, sf},
-  hypcap=false,
-  labelformat=customlabelformat,
-%  name={},
 }
 %%%%% SETMINTED %%%%%%%%%%%%%%%%%%%%%%%%%%
 \usemintedstyle{emacs}

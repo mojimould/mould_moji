@@ -12,8 +12,6 @@
 \setcounter{tocdepth}{3}
 \renewcommand\contentsname{\texorpdfstring{\hbox to 2em{目次}}{目次}}
 %%%%% FOR PART %%%%%
-\patchcmd{\l@part}{\begingroup}{\begingroup\begingroup\tikzset{every node/.style={rectangle,fill=blue!20,rounded corners}}}{}{}
-\patchcmd{\l@part}{\endgroup}{\endgroup\endgroup}{}{}
 \DeclareTOCStyleEntry[
   indent=0em, % エントリのインデントを調整
   numwidth=2.35em, % エントリ番号の幅を調整
@@ -43,18 +41,29 @@
   numwidth=4.4em % エントリ番号の幅を調整
 ]{tocline}{subsubsection}
 %%%%% FOR TABLE %%%%%
-\titlecontents{table}[2.35em] % 左インデント
-{\addvspace{0pt}} % 上部の垂直スペースとフォーマット
-{\contentslabel{1.5em}} % ラベルとテキストの間のスペース
-{\hspace*{-1.5em}} % ラベルなしの場合のスペース
-{\titlerule*[0.5pc]{.}\contentspage} % ページ番号前のリーダーとページ番号
+\DeclareTOCStyleEntry[
+  level=\sectiontocdepth,
+  indent=2.35em, % エントリのインデントを調整
+%  numwidth=2.71em, % エントリ番号の幅を調整
+  entrynumberformat=\tablename,
+  dynnumwidth,
+]{tocline}{table}
 %%%%% FOR FIGURE %%%%%
-\titlecontents{figure}[2.0em] % 左インデント
-{\addvspace{0pt}} % 上部の垂直スペースとフォーマット
-{\contentslabel{1.5em}} % ラベルとテキストの間のスペース
-{\hspace*{-1.5em}} % ラベルなしの場合のスペース
-{\titlerule*[0.5pc]{.}\contentspage} % ページ番号前のリーダーとページ番号
+\DeclareTOCStyleEntry[
+  level=\sectiontocdepth,
+  indent=2.35em, % エントリのインデントを調整
+%  numwidth=2.71em, % エントリ番号の幅を調整
+  entrynumberformat=\figurename,
+  dynnumwidth,
+]{tocline}{figure}
 %%%%% FOR Colmun %%%%%
+\DeclareTOCStyleEntry[
+  level=\sectiontocdepth,
+  indent=2.35em, % エントリのインデントを調整
+%  numwidth=8.00em, % エントリ番号の幅を調整
+  entrynumberformat=\Columnname,
+  dynnumwidth,
+]{tocline}{loColumn}
 %\titlecontents{loColmun}[2.35em] % 左インデント
 %{\addvspace{0pt}} % 上部の垂直スペースとフォーマット
 %{\contentslabel{1.5em}} % ラベルとテキストの間のスペース
