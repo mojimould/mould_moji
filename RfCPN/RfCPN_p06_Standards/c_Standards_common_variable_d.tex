@@ -727,7 +727,7 @@ $\cdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 19.7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum900000\,-\ttNum900031, \ttNum900101\,-\ttNum900500：実測値}
+\modHeadsection{\ttNum900000\,-\ttNum900049, \ttNum900101\,-\ttNum900500：実測値}
 \ttNum900000\,-\ttNum900500については、\index{じっそくち@実測値}実測値または計算値を格納する。
 
 
@@ -825,16 +825,26 @@ $\cdots$ & （以下不明） & \ttNum0
 
 
 %\clearpage
-\begin{multicollongtblr}[white]{\ttNum900038\,-\ttNum900040：\CurvedOutcutMilling 用 \KCurvedGaisakuRLeft}{cX[l]}
+\begin{multicollongtblr}[white]{\ttNum900038\,-\ttNum900049：\CurvedOutcutMilling 用 \KCurvedGaisakuRLeft}{cX[l]}
 変数 & 内容\\
 \ttNum900038 & \TopCurvedOutcutAngle{} 計算値\\
 \ttNum900039 & \BottomCurvedOutcutAngle{} 計算値\\
 \SetRow{unusingVariables}
 \ttNum900040 & （予備）\\
+\ttNum900041 & 傾き後 \TopCurvedOutcut{} A側端点 $X$座標{} 計算値\\
+\ttNum900042 & 傾き後 \TopCurvedOutcut{} A側端点 $Z$座標{} 計算値\\
+\ttNum900043 & 傾き後 \TopCurvedOutcut{} C側端点 $X$座標{} 計算値\\
+\ttNum900044 & 傾き後 \TopCurvedOutcut{} C側端点 $Z$座標{} 計算値\\
+\SetRow{unusingVariables}
+\ttNum900045 & （予備）\\
+\ttNum900046 & 傾き後 \BottomCurvedOutcut{} A側端点 $X$座標{} 計算値\pageeqref{eq:bottomcurvedoutcutAsideendpoint}\\
+\ttNum900047 & 傾き後 \BottomCurvedOutcut{} A側端点 $Z$座標{} 計算値\pageeqref{eq:bottomcurvedoutcutAsideendpoint}\\
+\ttNum900048 & 傾き後 \BottomCurvedOutcut{} C側端点 $X$座標{} 計算値\pageeqref{eq:bottomcurvedoutcutCsideendpoint}\\
+\ttNum900049 & 傾き後 \BottomCurvedOutcut{} C側端点 $Z$座標{} 計算値\pageeqref{eq:bottomcurvedoutcutCsideendpoint}\\
 \end{multicollongtblr}
 
 
-%\clearpage
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 18.7.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
