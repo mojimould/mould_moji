@@ -145,17 +145,18 @@
 \setlist[enumerate, 1]{leftmargin=\leftmargini}
 %%%%% CAPTION STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\tablename}{表}
-\addto\captionsjapanese{\renewcommand{\tablename}{表}}
-\addto\captionsjapanese{\renewcommand{\figurename}{図}}
 \renewcommand{\figurename}{図}
+%\addto\captionsjapanese{\renewcommand{\tablename}{表}}
+%\addto\captionsjapanese{\renewcommand{\figurename}{図}}
 \renewcommand{\locodename}{Prg:\,}
 \renewcommand{\thefigure}{\ifnum\value{figure}<10 0\fi\arabic{figure}}
 \renewcommand{\thetable}{\ifnum\value{table}<10 0\fi\arabic{talble}}
 \renewcommand{\thelocode}{\ifnum\value{locode}<10 0\fi\arabic{locode}}
 \counterwithin{figure}{chapter}
 \counterwithin{table}{chapter}
-\DeclareCaptionLabelFormat{table}{\tablename#2}
-\DeclareCaptionLabelFormat{figure}{\figurename#2}
+%\counterwithin{locode}{chapter}
+\DeclareCaptionLabelFormat{table}{表\thechapter.\thetable}
+\DeclareCaptionLabelFormat{figure}{図\thechapter.\thefigure}
 \captionsetup[table]{
   justification=raggedright,
   singlelinecheck=false,
@@ -165,6 +166,7 @@
   labelfont={bf, sf},
   labelsep={space},
   font={bf, large, sf},
+  labelformat=table,
   hypcap=false,
 }
 \captionsetup[figure]{%
@@ -172,6 +174,7 @@
   format=hang,
   labelfont={bf, sf},
   labelsep={colon},
+  labelformat=figure,
   aboveskip=3pt,
 }
 \captionsetup[locode]{
@@ -181,7 +184,7 @@
   aboveskip=5pt,
   belowskip=0.0pt,
   labelfont={bf, sf},
-  labelsep={space},
+  labelsep={colon},
   font={bf, large, sf},
   hypcap=false,
   name={Prg:\,},

@@ -45,7 +45,7 @@
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
 %  numwidth=2.71em, % エントリ番号の幅を調整
-  entrynumberformat=\tablename,
+  entrynumberformat={表},
   dynnumwidth,
 ]{tocline}{table}
 %%%%% FOR FIGURE %%%%%
@@ -53,7 +53,7 @@
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
 %  numwidth=2.71em, % エントリ番号の幅を調整
-  entrynumberformat=\figurename,
+  entrynumberformat={図},
   dynnumwidth,
 ]{tocline}{figure}
 %%%%% FOR Colmun %%%%%
@@ -61,14 +61,17 @@
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
 %  numwidth=8.00em, % エントリ番号の幅を調整
-  entrynumberformat=\Columnname,
+  entrynumberformat={Column},
   dynnumwidth,
 ]{tocline}{loColumn}
-%\titlecontents{loColmun}[2.35em] % 左インデント
-%{\addvspace{0pt}} % 上部の垂直スペースとフォーマット
-%{\contentslabel{1.5em}} % ラベルとテキストの間のスペース
-%{\hspace*{-1.5em}} % ラベルなしの場合のスペース
-%{\titlerule*[0.5pc]{.}\contentspage} % ページ番号前のリーダーとページ番号
+%%%%% FOR code %%%%%
+\DeclareTOCStyleEntry[
+  level=\sectiontocdepth,
+  indent=2.35em, % エントリのインデントを調整
+%  numwidth=8.00em, % エントリ番号の幅を調整
+  entrynumberformat={Prg:\,},
+  dynnumwidth,
+]{tocline}{locode}
 %%%%% STYLE OF LIST FOR APPENDIX %%%%%
 \AtBeginEnvironment{appendices}{%
   \clearrightpage%
