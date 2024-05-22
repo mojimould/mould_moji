@@ -1,5 +1,5 @@
 %
-O210003 (last update on 20240510)
+O210003 (last update on 20240522)
 (for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 
@@ -158,7 +158,7 @@ G91 G#703 X#709 Z#710 F#653
 
 IF[#4111EQ50]GOTO009
 (if sensor, go to N009)
-S#681
+S#682
 M03 (spindle on)
 M08 (coolant on)
 M28 (chip conveyor on)
@@ -286,7 +286,7 @@ G91 G#703 X#709 Z#710 F#653
 
 IF[#4111EQ50]GOTO200
 (if sensor, go to N200)
-S#681
+S#682
 M03 (spindle on)
 M08 (coolant on)
 M28 (chip conveyor on)
@@ -454,7 +454,7 @@ N999 M99
 (Common variables)
 (as RHS)
 (#401)
-(#600, #620, #652, #653, #681)
+(#600, #620, #652, #653, #682)
 (#901001, #901005, #901011, #901050)
 (as LHS)
 (#700-#718, #724)

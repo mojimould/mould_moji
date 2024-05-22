@@ -1,5 +1,5 @@
 %
-O530002 (last update on 20240510)
+O530002 (last update on 20240522)
 (for BD dimples kakou)
 (level 3: kakou dimple)
 (J > 0: B, J < 0: D)
@@ -17,12 +17,12 @@ GOTO800
 
 N003
 IF[#621LT0]GOTO800
-IF[#670EQ#0]GOTO800
-IF[#670LE10]GOTO800
-IF[#671EQ#0]GOTO800
-IF[#671LE10]GOTO800
-(if #670 <= 10 or #0, go to N800)
-(if #671 <= 10 or #0, go to N800)
+IF[#672EQ#0]GOTO800
+IF[#672LE10]GOTO800
+IF[#673EQ#0]GOTO800
+IF[#673LE10]GOTO800
+(if #672 <= 10 or #0, go to N800)
+(if #673 <= 10 or #0, go to N800)
 (if #621 < 0, go to N800)
 
 N004
@@ -60,12 +60,12 @@ IF[#4111EQ33]THEN #29=#474
 
 N008
 G90 G01 Y[#23-#31*[#32+#621]] F#651
-G91 G01 Y[#31*[#621+#29]] F#670
-G91 G01 Y[#31*#21] F#671
+G91 G01 Y[#31*[#621+#29]] F#672
+G91 G01 Y[#31*#21] F#673
 G04 X0.1 (wait 0.1s)
 (Y+: #23-#32-#621 or Y-: #23+#32+#621)
-(Y+ or Y-: #621+hosei, speed #670)
-(Y+ or Y-: U, speed #671)
+(Y+ or Y-: #621+hosei, speed #672)
+(Y+ or Y-: U, speed #673)
 
 G90 G01 Y#33 F#651
 (G90 G01 Y: to start point)
@@ -92,7 +92,7 @@ N999 M99
 
 (Common variables)
 (as RHS)
-(#463, #464, #468, #469, #473, #474, #621, #651, #670, #671)
+(#463, #464, #468, #469, #473, #474, #621, #651, #672, #673)
 
 (System variables)
 (#3000: alarm)
