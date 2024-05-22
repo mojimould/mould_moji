@@ -1,5 +1,5 @@
 %
-O440000
+O440000 (last update on 20240522)
 (Sotogawa Mentori Corner R, ar HidariMawari 1shuu)
 
 N001
@@ -40,7 +40,7 @@ IF[#4012EQ54]THEN #25=#900010
 N006
 IF[#4012EQ56]THEN #33=#425
 IF[#4012EQ54]THEN #33=#441
-(Top: #33=#425. Bot: #33=#441)
+(Top: #33=#425, Bot: #33=#441)
 (#33: X +hosei)
 
 
