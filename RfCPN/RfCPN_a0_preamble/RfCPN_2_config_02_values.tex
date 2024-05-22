@@ -31,8 +31,10 @@
 \newcommand{\OutCChamferCornerFeedRate}{700}
 \newcommand{\InCChamferLinearFeedRate}{600}
 \newcommand{\InCChamferCornerFeedRate}{400}
-\newcommand{\EndFaceBoringLinearFeedRate}{300}
-\newcommand{\EndFaceBoringCornerFeedRate}{300}
+\newcommand{\EndFaceBoringLinearFeedRate}{\OutcutLinearFeedRate}
+\newcommand{\EndFaceBoringCornerFeedRate}{\OutcutCornerFeedRate}
+\newcommand{\InlayLinearFeedRate}{\OutcutLinearFeedRate}
+\newcommand{\InlayCornerFeedRate}{360}
 \newcommand{\DimpleApproachFeedRate}{2000}
 \newcommand{\DimpleProcessFeedRate}{100}
 
@@ -42,5 +44,6 @@
 \newcommand{\KeywaySpindleSpeed}{930}
 \newcommand{\OutCChamferSpindleSpeed}{2599}
 \newcommand{\InCChamferSpindleSpeed}{2599}
-\newcommand{\EndFaceBoringSpindleSpeed}{650}
+\newcommand{\EndFaceBoringSpindleSpeed}{\OutcutSpindleSpeed}
+\newcommand{\InlaySpindleSpeed}{\OutcutSpindleSpeed}
 \newcommand{\DimpleSpindleSpeed}{2599}
