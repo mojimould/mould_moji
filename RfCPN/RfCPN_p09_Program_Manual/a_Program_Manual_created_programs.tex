@@ -29,7 +29,7 @@
 
 \begin{multicollongtblr}{\createdNCPrg 一覧：メインプログラムの例}{ccX[l]}
 {\ttfamily O}番号 & \SetCell{c}工程 & 使用prg\\
-\SetCell[r=10]{c}
+\SetCell[r=9]{c}
 \MainExOne & 外側芯出し・幅 & \MYOThickness\MXIface\\
            & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
            & \CenterlineEndFaceDif & \Mcenterline\\
@@ -37,18 +37,16 @@
            & \EndFacecut & \KTanmenRight\\
            & \Outcut & \KGaisakuRLeft\\
            & \Keyway & \KMizoConerLeft\\
-           & \EndFaceOutChamfer & \KSotoMentoriRLeft\\
-           & \EndFaceInChamfer & \KUchiMentoriRLeft\\
+           & \EndFaceChamfer & \KSotoMentoriRLeft\KUchiMentoriRLeft\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
 \hline
-\SetCell[r=9]{c}
+\SetCell[r=8]{c}
 \MainExTwo & 外側芯出し・幅 & \MXOThickness\MYOThickness\MXOface\\
            & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
            & \Dimple & \DLone\\
            & \EndFacecut & \KTanmenRight\\
            & \Keyway & \KMizoConerLeft\\
-           & \EndFaceOutChamfer & \KSotoMentoriRLeft\\
-           & \EndFaceInChamfer & \KUchiMentoriRLeft\\
+           & \EndFaceChamfer & \KSotoMentoriRLeft\KUchiMentoriRLeft\\
            & \EndFaceBoring & \KEndFaceBoring\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
 \end{multicollongtblr}
@@ -92,7 +90,7 @@
 \DKLthreeBD & 加工 BD内表面$Y$ & -\\
 \end{multicollongtblr}
 
-%\clearpage
+\clearpage
 \begin{multicollongtblr}{\createdNCPrg 一覧：加工（\Dimple 以外）}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \KTanmenRight      & 加工 \EndFacecut{} コーナーR 右回り1周 & \KOLeftFS\\
@@ -101,12 +99,13 @@
 \KSotoMentoriRLeft & 加工 \EndFaceOutChamfer{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
 \KUchiMentoriRLeft & 加工 \EndFaceInChamfer{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
 \KEndFaceBoring & 加工 \EndFaceBoring{} コーナーR 左回り1周 & \KOLeftFF\OpauseCheck\\
+\KInlay & 加工 \Inlay{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
 \KOLeftFF   & 外側 {\ttfamily G41} 左回り1周 右始まり & -\\
 \KOLeftFS   & 外側 {\ttfamily G42} 左回り1周 右上始まり & -\\
 \KILeftFF   & 内側 {\ttfamily G41} 左回り1周 中央上始まり & -\\
 \end{multicollongtblr}
 
-\clearpage
+%\clearpage
 \begin{multicollongtblr}{\createdNCPrg 一覧：その他}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \OpauseCheck  & 移動・加工後確認用：90$^\circ$回転 扉前一時停止 & -\\
@@ -263,6 +262,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modcaptionof{locode}{\KEndFaceBoring\,:加工 \EndFaceBoring{} コーナーR 左回り1周}
 \GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKUchiMentoriRLeft.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modcaptionof{locode}{\KInlay\,:加工 \Inlay{} コーナーR 左回り1周}
+\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKInlay.nc}
 
 
 \clearrightpage
