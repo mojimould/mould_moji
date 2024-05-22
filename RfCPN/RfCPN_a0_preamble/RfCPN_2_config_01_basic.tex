@@ -146,7 +146,6 @@
 %%%%% CAPTION STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\tablename}{表}
 \renewcommand{\figurename}{図}
-\renewcommand{\locodename}{Prg:\,}
 %\renewcommand{\thelocode}{\ifnum\value{locode}<10 0\fi\arabic{locode}}
 %\counterwithin{locode}{chapter}
 \DeclareCaptionLabelFormat{table}{\tablename\thechapter.\two@digits{\value{table}}}
@@ -178,10 +177,10 @@
   aboveskip=5pt,
   belowskip=0.0pt,
   labelfont={bf, sf},
-  labelsep={colon},
+  labelsep={space},
   font={bf, large, sf},
   hypcap=false,
-  name={Prg:\,},
+  name={Prg:},
 }
 %%%%% SETMINTED %%%%%%%%%%%%%%%%%%%%%%%%%%
 \usemintedstyle{emacs}
