@@ -58,7 +58,7 @@
   floatpos=tbp,
   floattype=2,
 %  tocentryindent=2.35em,
-%  tocentrynumwidth=5.10em,
+%  tocentrynumwidth=8.00em,
 ]{loColumn}
 %%%%% TO GET CHAPTER TITLE %%%%%%
 \newcommand\Chaptername{} % initialize \Chaptername
@@ -146,17 +146,11 @@
 %%%%% CAPTION STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\tablename}{表}
 \renewcommand{\figurename}{図}
-%\addto\captionsjapanese{\renewcommand{\tablename}{表}}
-%\addto\captionsjapanese{\renewcommand{\figurename}{図}}
 \renewcommand{\locodename}{Prg:\,}
-\renewcommand{\thefigure}{\ifnum\value{figure}<10 0\fi\arabic{figure}}
-\renewcommand{\thetable}{\ifnum\value{table}<10 0\fi\arabic{talble}}
-\renewcommand{\thelocode}{\ifnum\value{locode}<10 0\fi\arabic{locode}}
-\counterwithin{figure}{chapter}
-\counterwithin{table}{chapter}
+%\renewcommand{\thelocode}{\ifnum\value{locode}<10 0\fi\arabic{locode}}
 %\counterwithin{locode}{chapter}
-\DeclareCaptionLabelFormat{table}{表\thechapter.\thetable}
-\DeclareCaptionLabelFormat{figure}{図\thechapter.\thefigure}
+\DeclareCaptionLabelFormat{table}{\tablename\thechapter.\two@digits{\value{table}}}
+\DeclareCaptionLabelFormat{figure}{\figurename\thechapter.\two@digits{\value{figure}}}
 \captionsetup[table]{
   justification=raggedright,
   singlelinecheck=false,

@@ -126,7 +126,9 @@
   Columnbox,
   title={#2},
   #1,
-  before upper={\addcontentsline{loColumn}{section}{\protect\numberline{{\Columnname~\thetcbcounter}}#2}}
+  before upper={%
+    \addcontentsline{loColumn}{section}{\protect\numberline{\Columnname~\thetcbcounter}#2}%
+  },
 }
 %\newcommand{\tcb@cnt@Columnautorefname}{Column}
 \tcbset{%
