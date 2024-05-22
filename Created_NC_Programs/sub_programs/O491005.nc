@@ -25,15 +25,15 @@ IF[#19LE200]GOTO800
 
 N002
 S#19
-IF[#06EQ1]GOTO003
-IF[#06EQ2]GOTO004
-IF[#06EQ3]GOTO005
-IF[#06EQ4]GOTO006
+IF[#20EQ1]GOTO003
+IF[#20EQ2]GOTO004
+IF[#20EQ3]GOTO005
+IF[#20EQ4]GOTO006
 GOTO800
 (if K is not 1, 2, 3, 4, go to N800)
 
 N003 (for R)
-G91 G01 X-[#24+#07*2-#18] F#09
+G90 G01 X[[#24/2]+#12] Y[#25/2] Z[#900049-#06] F#09
 (a: X-)
 G91 G03 X-#18 Y-#18 I0 J-#18 F#08
 (al corner: R#18 [0, -R] X-Y-)
@@ -112,12 +112,13 @@ N999 M99
 
 (as received arguments)
 (#03:C: corner C)
-(#06:K: type)
 (#07:D: kouguNigashiRyou)
 (#08:E: speed at corner)
 (#09:F: speed at chokusenBu)
+(#12:H: hosei: gaisaku center)
 (#18:R: corner R)
 (#19:S: kaitenSuu)
+(#20:T: type)
 (#24:X: AC kei)
 (#25:Y: BD kei)
 
