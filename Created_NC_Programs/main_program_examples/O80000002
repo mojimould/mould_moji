@@ -210,8 +210,106 @@ G58 G65 P110002 Y159.000 Z500.042 M20.050 H8.050
 (H: mizoHaba)
 
 (mesurement end)
-IF[#177EQ1]GOTO400
+IF[#177EQ1]GOTO200
 M00
+
+
+N200
+(*** Dimple Measurement Start ***)
+
+
+G90 G53 G01 Z0 F#650
+IF[#4120EQ50]GOTO201
+T50 (touch sensor)
+M06 (tool exchange)
+
+N201
+G40 G80 (cancel hosei)
+S35 (low gear)
+M19 (Spindle orientation)
+G43 H50 (hosei kouguChou #50)
+
+M11 (B-axis unclamp)
+G90 G57 G00 B-0.964
+M10 (B-axis clamp)
+(G57B parallel angle -0.964)
+
+G90 G57 G01 X0 Y0 F#652
+G90 G57 G01 Z[500.042+#600] F#652
+(G57XY Top Inside Center)
+(hosei KouguChou: #50)
+(Z= topTanmen+#600)
+
+G57 G65 P210003 T0.07 Z500.042 W400.000 F34.000 S17.000 Q30.000 I17.000 K20.000 M2.0 U0.31 R5933.200 A-0.964 B-3.590
+(dimple measurement)
+(T: mekki thickness mm)
+(Z: Top sai_furiwake)
+(W: Top ori_furiwake)
+(F: length of odd rows)
+(S: length of even rows)
+(Q: Z length between Top and the 1st row)
+(I: X pitch)
+(K: Z pitch)
+(M: number of rows)
+(U: depth of dimple)
+(R: central curvature)
+(A: angle for furiwake)
+(B: angle for dimple)
+
+M117 (sensor on/off)
+G04 X1.5 (wait 1.5s)
+IF[#1004EQ0]GOTO202
+G65 P910002 (sensor OFF)
+N202
+G90 G53 G01 Z0 F#650
+
+(dimple mesurement end)
+IF[#178EQ1]GOTO300
+M00
+
+
+N300
+(*** Dimple Kakou Start ***)
+
+
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#650
+G90 G53 G01 X-5.501 Y-258.624 F#652
+T31 (Tslot R20)
+M06 (tool exchange)
+G43 H#4120 (hosei KouguChou: T#)
+
+G90 G57 G00 X0 Y0
+G90 G57 G43 Z[500.042+#600] H31 F#650
+(G57XY Top Inside Center)
+(Z= TopTanmen +#600)
+
+N301
+G57 G65 P210003 T0.07 Z500.042 W400.000 F34.000 S17.000 Q30.000 I17.000 K20.000 M2.0 U0.31 R5933.200 A-0.964 B-3.590
+(dimple kakou)
+(T: mekki thickness mm)
+(Z: Top sai_furiwake)
+(W: Top ori_furiwake)
+(F: length of odd rows)
+(S: length of even rows)
+(Q: Z length between Top and the 1st row)
+(I: X pitch)
+(K: Z pitch)
+(M: number of rows)
+(U: depth of dimple)
+(R: central curvature)
+(A: angle for furiwake)
+(B: angle for dimple)
+
+(dimple kakou end)
+IF[#459EQ0]GOTO302
+IF[#459EQ2]GOTO303
+GOTO400
+N302
+M00 (if #459=0)
+GOTO400
+N303
+G65 P900003 (if #459=2)
 
 
 N400
