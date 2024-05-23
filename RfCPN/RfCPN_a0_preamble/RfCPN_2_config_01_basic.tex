@@ -119,8 +119,6 @@
 %%%%% CAPTION STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\tablename}{表}
 \renewcommand{\figurename}{図}
-%\renewcommand{\thelocode}{\ifnum\value{locode}<10 0\fi\arabic{locode}}
-%\counterwithin{locode}{chapter}
 \DeclareCaptionLabelFormat{table}{\tablename\thechapter.\two@digits{\value{table}}}
 \DeclareCaptionLabelFormat{figure}{\figurename\thechapter.\two@digits{\value{figure}}}
 \captionsetup[table]{
