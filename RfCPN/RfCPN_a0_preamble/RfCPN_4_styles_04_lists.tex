@@ -31,6 +31,7 @@
   dynnumwidth=true,
 ]{tocline}{section}
 %%%%% FOR SUBSECTION %%%%%
+\renewcommand{\thesubsection}{\thesection.\ifnum\value{subsection}<10 0\fi\arabic{subsection}}
 \renewcommand{\subsectionautorefname}{\sectionautorefname}
 \DeclareTOCStyleEntry[
   indent=5.06em, % エントリのインデントを調整
@@ -43,24 +44,23 @@
   dynnumwidth=true,
 ]{tocline}{subsubsection}
 %%%%% FOR TABLE %%%%%
-\renewcommand{\tablename}{表}
+\DeclareRobustCommand{\tablename}{表}
 \renewcommand{\tableautorefname}{\tablename}
-%\renewcommand{\thetable}{\ifnum\value{table}<10 0\fi\arabic{table}}
+\renewcommand{\thetable}{\ifnum\value{table}<10 0\fi\arabic{table}}
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
-%  entrynumberformat={表},
+  entrynumberformat={表},
   dynnumwidth=true,
 ]{tocline}{table}
 %%%%% FOR FIGURE %%%%%
-\renewcommand{\figurename}{図}
+\DeclareRobustCommand{\figurename}{図}
 \renewcommand{\figureautorefname}{\figurename}
-%\DeclareRobustCommand{\figurename}{図}
-%\renewcommand{\thefigure}{\ifnum\value{figure}<10 0\fi\arabic{figure}}
+\renewcommand{\thefigure}{\ifnum\value{figure}<10 0\fi\arabic{figure}}
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
-%  entrynumberformat={図},
+  entrynumberformat={図},
   dynnumwidth=true,
 ]{tocline}{figure}
 %%%%% lop %%%%%%%%%%%%%%%%%%%%
@@ -78,19 +78,20 @@
   floatpos=tbp,
   floattype=2,
 ]{locode}
-\DeclareRobustCommand{\locodename}{Prg.\,\thechapter.}
-\renewcommand{\thelocode}{\ifnum\value{locode}<10 0\fi\arabic{locode}}
+\DeclareRobustCommand{\locodename}{Prg.\,}
+\renewcommand{\thelocode}{\thechapter.\ifnum\value{locode}<10 0\fi\arabic{locode}}
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
+  numwidth=5.0em, % エントリ番号の幅を調整
+  entrynumberformat={Prg.\,},
   dynnumwidth=true,
 ]{tocline}{loColumn}
 %%%%% FOR code %%%%%
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
-%  numwidth=8.00em, % エントリ番号の幅を調整
-  entrynumberformat={Prg.\,},
+%  entrynumberformat={Prg.\,},
   dynnumwidth,
 ]{tocline}{locode}
 %%%%% loColumn %%%%%%%%%%%%%%%%%%%%
@@ -207,5 +208,4 @@
   labelsep={space},
   font={bf, large, sf},
   hypcap=false,
-  name={Prg.},
 }
