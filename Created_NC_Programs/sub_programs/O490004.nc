@@ -30,16 +30,22 @@ IF[#19LE200]GOTO800
 
 N002
 S#19
-G91 G41 G01 D#07 X[#24/2] Y[[#24/2]-#18] F[#09*3]
+G91 G41 G01 D#07 X[#24/2-#01] Y-#01 F[#09*3]
 (hosei kouguKei, kougu #07)
-(X+: X/2)
-(Y+: Y/2-R)
+(X+: X/2-A)
+(Y+: A)
+G91 G03 X#01 Y#01 I0 J#01 F#08
+(rc: approach R #01 [0, #01] X+Y+)
+G91 G01 Y[[#25-[#18*2]]/2] F#09
+(rc2ar: X- chokusenBu/2)
 G91 G03 X-#18 Y#18 I-#18 J0 F#08
-(ar corner: R #18 [-#18, 0] X-Y+)
+(al corner: R #18 [-#18, 0] X-Y+)
 G91 G01 X-[#24-[#18*2]] F#09
 (a:X-: chokusenBu)
 G91 G03 X-#18 Y-#18 I0 J-#18 F#08
 (al corner: R #18 [0, -#18] X-Y-)
+G91 G01 Y-[[#25-[#18*2]]/2] F#09
+(al2lc:Y-: chokusenBu/2)
 G90 G01 X#33 Y#32 F#651
 (XY to the start position)
 

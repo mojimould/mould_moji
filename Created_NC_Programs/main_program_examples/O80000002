@@ -262,15 +262,13 @@ M10 (B-axis clamp)
 (G56B parallel angle -0.964)
 
 M28 (chip conveyor on)
-G56 G65 P460000 I19.0 U42.0 V6.50 W5.0 R10.0 X160.000 Y159.000 Z500.042
+G56 G65 P460000 I19.0 U42.0 V6.50 W5.0 R10.0 Z500.042
 (O460000: Tanmen Zaguri Corner R, rc HidariMawari)
 (I: distance from A-face)
 (U: zaguri width)
 (V: zaguri depth)
 (W: zaguri length)
 (R: zaguri corner R)
-(X: AC gaiKei)
-(Y: BD gaiKei)
 (Z: Top sai_furiwake)
 
 (Top Zaguri end)

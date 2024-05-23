@@ -11,10 +11,6 @@ IF[#22EQ#0]GOTO800
 IF[#22LE1]GOTO800
 IF[#23EQ#0]GOTO800
 IF[#23LE1]GOTO800
-IF[#24EQ#0]GOTO800
-IF[#24LE1]GOTO800
-IF[#25EQ#0]GOTO800
-IF[#25LE1]GOTO800
 IF[#26EQ#0]GOTO800
 IF[#26LE1]GOTO800
 IF[#18EQ#0]GOTO800
@@ -134,7 +130,7 @@ N200 (Shiage loop)
 WHILE[#106GE0]DO2
 #106=#106-1
 
-G65 P490007 D#4120 X#33 Y#33 R#18 F#668 E#669 S#680
+G65 P490007 D#4120 X#33 Y#33 R#18 A#606 F#668 E#669 S#680
 END2
 
 N990
@@ -169,13 +165,12 @@ N999 M99
 (Local variables)
 
 (as received arguments)
-(#06:K: mentori C or R length)
-(#17:Q: central curvature)
+(#04:I: distance from A-face)
 (#18:R: corner R)
-(#23:W: Bot ori_furiwake)
-(#24:X: AC naikei)
-(#25:Y: BD naikei)
-(#26:Z: sai-furiwake)
+(#21:U: zaguri width)
+(#22:V: zaguri depth)
+(#23:W: zaguri length)
+(#26:Z: Top sai-furiwake)
 
 (as LHS)
 (#27, #28, #29, #30, #31, #32, #33)
