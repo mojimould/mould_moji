@@ -1,5 +1,5 @@
 %
-O80000002 (last update on 20240510)
+O80000002 (Last update on 20240523)
 (Top sai_furiwake: 500.042)
 (Bot sai_furiwake: 499.958)
 (Top Haridashi: 170.042)
@@ -25,13 +25,11 @@ IF[#1004EQ0]GOTO004
 M117 (sensor off)
 
 N004
-IF[#175EQ200]GOTO#175 
-IF[#175EQ300]GOTO#175
 IF[#175EQ400]GOTO#175
+IF[#175EQ410]GOTO#175
 IF[#175EQ420]GOTO#175
 IF[#175EQ430]GOTO#175
 IF[#175EQ440]GOTO#175
-IF[#175EQ450]GOTO#175
 IF[#175EQ500]GOTO#175
 IF[#175EQ530]GOTO#175
 IF[#175EQ540]GOTO#175
@@ -39,7 +37,7 @@ IF[#175EQ540]GOTO#175
 N005
 G90 G53 G01 X-5.501 Y-258.624 F#652
 M262 (palette rotate speed 25)
-M71 (palette #1)
+M72 (palette #2)
 (M60) (palette change)
 
 
@@ -54,10 +52,10 @@ G90 G10 L2 P1 X-507.297 Y[[159.000/2]+#901002] Z#901003 B#901004
 G90 G10 L2 P2 X-507.303 Y[[159.000/2]+#901002] Z#901003 B#901004
 G90 G10 L2 P3 X-575.821 Y[[159.000/2]+#901002] Z#901003 B#901004
 G90 G10 L2 P4 X-575.818 Y[[159.000/2]+#901002] Z#901003 B#901004
-G90 G10 L2 P5 X-574.684 Y[[159.000/2]+#901002] Z#901003 B#901004
+G90 G10 L2 P5 X-574.238 Y[[159.000/2]+#901002] Z#901003 B#901004
 (G54 Bot Outside Center)
 (G55 Bot Inside Center)
-(G56 Top Outside Center)
+(G56 Top Gaisaku Center)
 (G57 Top Inside Center)
 (G58 Mizo Center)
 GOTO102
@@ -68,10 +66,10 @@ G90 G10 L2 P1 X-507.297 Y[[159.000/2]+#901006] Z#901007 B#901008
 G90 G10 L2 P2 X-507.303 Y[[159.000/2]+#901006] Z#901007 B#901008
 G90 G10 L2 P3 X-575.821 Y[[159.000/2]+#901006] Z#901007 B#901008
 G90 G10 L2 P4 X-575.818 Y[[159.000/2]+#901006] Z#901007 B#901008
-G90 G10 L2 P5 X-574.684 Y[[159.000/2]+#901006] Z#901007 B#901008
+G90 G10 L2 P5 X-574.238 Y[[159.000/2]+#901006] Z#901007 B#901008
 (G54 Bot Outside Center)
 (G55 Bot Inside Center)
-(G56 Top Outside Center)
+(G56 Top Gaisaku Center)
 (G57 Top Inside Center)
 (G58 Mizo Center)
 
@@ -123,8 +121,8 @@ G54 G65 P110002 Y159.000 Z499.958
 (Z: Bot sai_furiwake)
 
 G90 G55 G01 X0 Y0 F#652
-G43 H50 (hosei kouguChou #50)
 (G55 XY Bot inside center)
+G43 H50 (hosei kouguChou #50)
 
 G55 G65 P130001 X133.600 Z499.958 W600.000 R5933.200 M0.07
 (G55: Bot X inside center)
@@ -135,8 +133,8 @@ G55 G65 P130001 X133.600 Z499.958 W600.000 R5933.200 M0.07
 (M: mekki thickness mm)
 
 G90 G55 G01 X0 Y0 F#652
-G43 H50 (hosei kouguChou #50)
 (G55 XY Bot inside center)
+G43 H50 (hosei kouguChou #50)
 
 G55 G65 P130002 Y132.600 Z499.958 M0.07
 (G55: Bot Y inside center)
@@ -156,7 +154,7 @@ G43 H50
 (hosei kouguChou #50)
 
 G90 G56 G01 X0 Y0 F#652
-G90 G56 G01 Z[500.042+#600] F#652
+G90 G56 G01 Z[499.958+#600] F#652
 (G01 G56XY Top Outside center)
 (Z= TopTanmen +#600)
 
@@ -191,8 +189,8 @@ G57 G65 P130001 X135.210 Z500.042 W400.000 R5933.200 M0.07
 (M: mekki thickness mm)
 
 G90 G57 G01 X0 Y0 F#652
-G43 H50 (hosei kouguChou #50)
 (G57XY Top inside center)
+G43 H50 (hosei kouguChou #50)
 
 G57 G65 P130002 Y134.200 Z500.042 M0.07
 (G57: Top Y inside center)
@@ -201,21 +199,8 @@ G57 G65 P130002 Y134.200 Z500.042 M0.07
 (M: mekki thickness mm)
 
 G90 G58 G01 X0 Y0 F#652
-G43 H50 (hosei kouguChou #50)
 (G58XY mizo center)
-
-G58 G65 P120001 X149.000 U160.000 Z500.042 M20.050 H8.050 I3.10
-(G58: Mizo X center)
-(X: AC mizoKei)
-(U: Top AC gaiKei)
-(Z: Top sai_furiwake)
-(M: mizoIchi)
-(H: mizoHaba)
-(I: A-side mizoFukasa)
-
-G90 G58 G01 X0 Y0 F#652
 G43 H50 (hosei kouguChou #50)
-(G58XY mizo center)
 
 G58 G65 P110002 Y159.000 Z500.042 M20.050 H8.050
 (G58: Mizo Y center)
@@ -225,106 +210,8 @@ G58 G65 P110002 Y159.000 Z500.042 M20.050 H8.050
 (H: mizoHaba)
 
 (mesurement end)
-IF[#177EQ1]GOTO200
+IF[#177EQ1]GOTO400
 M00
-
-
-N200
-(*** Dimple Measurement Start ***)
-
-
-G90 G53 G01 Z0 F#650
-IF[#4120EQ50]GOTO201
-T50 (touch sensor)
-M06 (tool exchange)
-
-N201
-G40 G80 (cancel hosei)
-S35 (low gear)
-M19 (Spindle orientation)
-G43 H50 (hosei kouguChou #50)
-
-M11 (B-axis unclamp)
-G90 G57 G00 B-0.964
-M10 (B-axis clamp)
-(G57B parallel angle -0.964)
-
-G90 G57 G01 X0 Y0 F#652
-(G57XY Top Inside Center)
-G90 G57 G01 Z[500.042+#600] F#652
-(hosei KouguChou: #50)
-(Z= topTanmen+#600)
-
-G57 G65 P210003 T0.07 Z500.042 W400.000 F34.0 S17.0 Q80.00 I17.0 K20.0 M2.0 U0.31 R5933.200 A-0.964 B-3.351
-(dimple measurement)
-(T: mekki thickness mm)
-(Z: Top sai_furiwake)
-(W: Top ori_furiwake)
-(F: length of odd rows)
-(S: length of even rows)
-(Q: Z length between Top and the 1st row)
-(I: dimple X pitch)
-(K: dimple Z pitch)
-(M: number of rows)
-(U: depth of dimple)
-(R: central curvature)
-(A: angle for furiwake)
-(B: angle for dimple)
-
-M117 (sensor on/off)
-G04 X1.5 (wait 1.5s)
-IF[#1004EQ0]GOTO202
-G65 P910002 (sensor OFF)
-N202
-G90 G53 G01 Z0 F#650
-
-(dimple mesurement end)
-IF[#178EQ1]GOTO300
-M00
-
-
-N300
-(*** Dimple Kakou Start ***)
-
-
-G49 G40 (cancel hosei)
-G90 G53 G01 Z0 F#650
-G90 G53 G01 X-5.501 Y-258.624 F#652
-T31 (Tslot R20)
-M06 (tool exchange)
-G43 H#4120 (hosei KouguChou: T#)
-
-G90 G57 G00 X0 Y0
-G90 G57 Z[500.042+#600] F#650
-(G57XY Top Inside Center)
-(Z= TopTanmen +#600)
-
-N301
-G57 G65 P210003 T0.07 Z500.042 W400.000 F34.0 S17.0 Q80.00 I17.0 K20.0 M2.0 U0.31 R5933.200 A-0.964 B-3.351
-(dimple kakou)
-(T: mekki thickness mm)
-(Z: Top sai_furiwake)
-(W: Top ori_furiwake)
-(F: length of odd rows)
-(S: length of even rows)
-(Q: Z length between Top and the 1st row)
-(I: X pitch)
-(K: Z pitch)
-(M: number of rows)
-(U: depth of dimple)
-(R: central curvature)
-(A: angle for furiwake)
-(B: angle for dimple)
-
-(dimple kakou end)
-IF[#459EQ0]GOTO302
-IF[#459EQ2]GOTO303
-GOTO400
-N302
-M00 (if #459=0)
-GOTO400
-N303
-G65 P900003 (if #459=2)
 
 
 N400
@@ -386,15 +273,51 @@ G56 G65 P460000 I19.0 U42.0 V6.50 W5.0 R10.0 X160.000 Y159.000 Z500.042
 (Y: BD gaiKei)
 (Z: Top sai_furiwake)
 
-(Zaguri end)
+(Top Zaguri end)
 IF[#481EQ0]GOTO411
 IF[#481EQ2]GOTO412
-GOTO420
+GOTO415
 N411
 M00 (if #481=0)
-GOTO420
+GOTO415
 N412
 G65 P900003 (if #481=2)
+
+
+N415
+(*** Top Naisaku start ***)
+
+
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#650
+T16 (naisaku)
+M06 (tool exchange)
+G43 H#4120 (hosei KouguChou: T#)
+
+M11 (B-axis unclamp)
+G90 G56 G00 B-0.964
+(G56B parallel angle -0.964)
+M10 (B-axis clamp)
+
+M28 (chip conveyor on)
+G56 G65 P470000 X138.000 Y137.000 Z500.042 R10.0 K4.050
+(O420000: Sotogawa 1shuu Corner R, ar HidariMawari)
+(default: M=0, W=0)
+(X: AC naisakuKei)
+(Y: BD naisakuKei)
+(Z: Top sai_furiwake)
+(R: naisaku corner R)
+(K: naisaku Length)
+
+(Top naisaku end)
+IF[#417EQ0]GOTO416
+IF[#417EQ2]GOTO417
+GOTO420
+N416
+M00 (if #417=0)
+GOTO420
+N417
+G65 P900003 (if #417=2)
 
 
 N420
@@ -410,10 +333,10 @@ G43 H#4120 (hosei KouguChou: T#)
 M11 (B-axis unclamp)
 G90 G58 G00 B-0.964
 M10 (B-axis clamp)
-(G58B parallel angle -0.964)
+(G56B parallel angle -0.964)
 
 M28 (chip conveyor on)
-G58 G65 P430000 A0.0 K1.0 C#0 R14.0 X149.000 Y149.000 U160.000 V159.000 Z500.042 W400.000 Q5933.200 M20.050 H8.050
+G58 G65 P430000 A0.0 K4.0 C#0 R#0 X#0 Y149.000 U160.000 V159.000 Z500.042 W400.000 Q5933.200 M20.050 H8.050
 (O430000: Mizo, ar HidariMawari)
 (A: Top gaisaku: 0:not exists, 1:exists)
 (K: key type: 1:R, 2:C, 3:rec, 4:BDonly)
@@ -460,8 +383,8 @@ G56 G65 P440000 A0.0 B0.0 X160.000 Y159.000 Z500.042 W400.000 Q5933.200 K0.5 R19
 (O440000: Sotogawa 1shuu Corner R, ar HidariMawari)
 (A: Top gaisaku: 0:not exists, 1:exists)
 (B: mentori type: 0:C, 1:R)
-(X: AC gaiKei)
-(Y: BD gaiKei)
+(X: AC gaisakuKei)
+(Y: BD gaisakuKei)
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)
 (Q: central curvature)
@@ -495,9 +418,12 @@ M10 (B-axis clamp)
 (G57B parallel angle -0.964)
 
 M28 (chip conveyor on)
-G57 G65 P450000 B0.0 Z500.042 W400.000 Q5933.200 K0.5 R4.0 M0.07
+G57 G65 P450000 A1.0 B0.0 X138.100 Y137.000 Z500.042 W400.000 Q5933.200 K0.5 R4.0 M0.07
 (O450000: Uchigawa 1shuu Corner R, ac HidariMawari)
+(A: Top naisaku: 0:not exists, 1:exists)
 (B: mentori type: 0:C, 1:R)
+(X*: AC naisakuKei)
+(Y*: BD naisakuKei)
 (Z: Top sai_furiwake)
 (W: Top ori_furiwake)
 (Q: central curvature)
@@ -528,8 +454,8 @@ G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
 G90 G00 G55 B[180.0-0.964]
-M10 (B-axis clamp)
 (G55B parallel angle 179.036)
+M10 (B-axis clamp)
 
 M28 (chip conveyor on)
 G55 G65 P410000 Z499.958 R4.0
@@ -559,7 +485,7 @@ M06 (tool exchange)
 G43 H#4120 (hosei KouguChou: T#)
 
 M11 (B-axis unclamp)
-G90 G54 G00 B[180.0-0.964]
+G90 G00 G54 B[180.0-0.964]
 M10 (B-axis clamp)
 (G54B parallel angle 179.036)
 
@@ -689,15 +615,17 @@ N999 M30
 (#901001, #901002, #901003, #901004, #901005, #901006, #901007, #901008)
 (as RHS)
 (#175, #177, #178, #179, #180)
-(#424, #428, #444, #449, #459)
+(#417, #424, #428, #433, #444, #449, #459)
 (#600, #650, #652)
 
 (System variables)
 (#1000, #1004, #1005, #3000)
-(#4120)
+(#4120: current T#)
+(#5262: G56 Y)
+(#5282: G57 Y)
 
 (Subprograms)
-(O110001, O110002, O130001, O130002, O210003)
+(O110001, O110002, O130001, O130002, O140001, O210003)
 (O410000, O420000, O430000, O440000, O450000)
 (O900003, O910001, O910002)
 
