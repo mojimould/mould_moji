@@ -1,5 +1,5 @@
 %
-O491005 (last update on 20240510)
+O491005 (last update on 20240522)
 (Sotogawa ar HidariMawari 1shuu)
 
 N001
