@@ -7,8 +7,6 @@ IF[#24EQ#0]GOTO800
 IF[#24LT10]GOTO800
 IF[#25EQ#0]GOTO800
 IF[#25LT10]GOTO800
-IF[#21EQ#0]GOTO800
-IF[#22EQ#0]GOTO800
 IF[#26EQ#0]GOTO800
 IF[#06EQ#0]GOTO800
 IF[#06LT1]GOTO800
@@ -179,8 +177,6 @@ N999 M99
 (as received arguments)
 (#06:K: gaisaku Length)
 (#18:R: corner R)
-(#21:U: AC gaiKei)
-(#22:V: BD gaiKei)
 (#24:X: AC gaikei)
 (#25:Y: BD gaikei)
 (#26:Z: sai-furiwake)

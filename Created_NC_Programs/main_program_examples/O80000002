@@ -300,7 +300,7 @@ G90 G56 G00 B-0.964
 M10 (B-axis clamp)
 
 M28 (chip conveyor on)
-G56 G65 P470000 X138.000 Y137.000 Z500.042 R10.0 K4.050
+G57 G65 P470000 X138.000 Y137.000 Z500.042 R10.0 K4.050
 (O420000: Sotogawa 1shuu Corner R, ar HidariMawari)
 (default: M=0, W=0)
 (X: AC naisakuKei)
