@@ -2,7 +2,6 @@
 
 
 %%%%% FOR STYLE OF PART %%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\partautorefname}{part}
 \renewcommand\partpagestyle{emptydate}
 
 %%%%% TIKZSET %%%%%%%%%%%%%%%%%%%
@@ -20,21 +19,14 @@
 }
 
 %%%%% FOR STYLE OF CHAPTER %%%%%
-\renewcommand{\thechapter}{\ifnum\value{chapter}<10 0\fi\arabic{chapter}}
-\renewcommand{\chapterautorefname}{章}  % chapter --> 章
 \renewcommand\chapterpagestyle{\if@frontmatter plainheadfront\else plainhead\fi}
 \renewcommand*{\chapterformat}{%
   \begin{tikzpicture}[every node/.style={chapter}, baseline=-7.75pt] % +: title up, -: title down
     \node at (0, 0) {\LARGE{\sffamily\bfseries\,\thepart.\,\thechapter\,\relax}};
   \end{tikzpicture}~~%
 }
-%%%%% STYLE OF APPENDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\setthesection}{\Alph{section}}
-\renewcommand{\appendixautorefname}{補遺\!}
 
 %%%%% FOR STYLE OF SECTION %%%%%%%%%%%%%%%%%%%
-\renewcommand{\thesection}{\thechapter.\ifnum\value{section}<10 0\fi\arabic{section}}
-\renewcommand{\sectionautorefname}{節\!}
 \setcounter{secnumdepth}{4}
 \renewcommand*{\sectionformat}{%
   \begin{tikzpicture}[every node/.style={section}, baseline=-4.75pt]
@@ -43,7 +35,6 @@
 }
 
 %%%%% FOR STYLE OF SUBSECTION %%%%%%%%%%%%%%%%
-\renewcommand{\subsectionautorefname}{\sectionautorefname}
 \renewcommand*{\subsectionformat}{%
   \begin{tikzpicture}[every node/.style={subsection}, baseline=-4.25pt]
     \node at (0, 0) {\large{\sffamily\bfseries\,\thesubsection~~\relax}};
@@ -51,7 +42,6 @@
 }
 
 %%%%% FOR STYLE OF SUBSUBSECTION %%%%%%%%%%%%%
-\renewcommand{\subsubsectionautorefname}{\sectionautorefname}
 \renewcommand*{\subsubsectionformat}{%
   \begin{tikzpicture}[every node/.style={subsubsection}, baseline=-2.5pt]
     \node at (0, 0) {\small{\sffamily\bfseries\,\thesubsubsection~~\relax}};

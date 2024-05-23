@@ -121,13 +121,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% COLUMN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\Columnname}{Col}
+\newcommand{\Columnname}{Cl}
 \newtcolorbox[auto counter, number within=chapter]{\Columnname}[2][]{%
   Columnbox,
   title={#2},
   #1,
   before upper={%
-    \addcontentsline{loColumn}{section}{\protect\numberline{\Columnname~\thetcbcounter}#2}%
+    \addcontentsline{loColumn}{section}{\protect\numberline{{\small\Columnname}.\thetcbcounter}#2}%
   },
 }
 %\newcommand{\tcb@cnt@Columnautorefname}{Column}

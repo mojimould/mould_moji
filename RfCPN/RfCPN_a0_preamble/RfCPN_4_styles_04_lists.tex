@@ -4,20 +4,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF TOC %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\RedeclareSectionCommand[
-%  tocindent=0em,
-%  tocnumwidth=4.25em
-%]{part}
-%\addtokomafont{partentry}{\def\autodot{}}
 \setcounter{tocdepth}{3}
 \renewcommand\contentsname{\texorpdfstring{\hbox to 2em{目次}}{目次}}
 %%%%% FOR PART %%%%%
+\renewcommand{\partautorefname}{part}
 \DeclareTOCStyleEntry[
   indent=0em, % エントリのインデントを調整
   numwidth=2.35em, % エントリ番号の幅を調整
   pagenumberwidth=19.305pt
 ]{tocline}{part}
 %%%%% FOR CHAPTER %%%%%
+\renewcommand{\thechapter}{\ifnum\value{chapter}<10 0\fi\arabic{chapter}}
+\renewcommand{\chapterautorefname}{章}  % chapter --> 章
 \DeclareTOCStyleEntry[
   level=\chaptertocdepth,
   indent=0.85em, % エントリのインデントを調整
@@ -25,52 +23,87 @@
   pagenumberwidth=17.968pt
 ]{tocline}{chapter}
 %%%%% FOR SECTION %%%%%
+\renewcommand{\thesection}{\thechapter.\ifnum\value{section}<10 0\fi\arabic{section}}
+\renewcommand{\sectionautorefname}{節\!}
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
-  numwidth=2.71em % エントリ番号の幅を調整
+  dynnumwidth=true,
 ]{tocline}{section}
 %%%%% FOR SUBSECTION %%%%%
+\renewcommand{\subsectionautorefname}{\sectionautorefname}
 \DeclareTOCStyleEntry[
   indent=5.06em, % エントリのインデントを調整
-  numwidth=3.9em % エントリ番号の幅を調整
+  dynnumwidth=true,
 ]{tocline}{subsection}
 %%%%% FOR SUBSUBSECTION %%%%%
+\renewcommand{\subsubsectionautorefname}{\sectionautorefname}
 \DeclareTOCStyleEntry[
   indent=8.96em, % エントリのインデントを調整
-  numwidth=4.4em % エントリ番号の幅を調整
+  dynnumwidth=true,
 ]{tocline}{subsubsection}
 %%%%% FOR TABLE %%%%%
+\renewcommand{\tablename}{表}
+\renewcommand{\tableautorefname}{\tablename}
+%\renewcommand{\thetable}{\ifnum\value{table}<10 0\fi\arabic{table}}
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
-%  numwidth=2.71em, % エントリ番号の幅を調整
-  entrynumberformat={表},
-  dynnumwidth,
+%  entrynumberformat={表},
+  dynnumwidth=true,
 ]{tocline}{table}
 %%%%% FOR FIGURE %%%%%
+\renewcommand{\figurename}{図}
+\renewcommand{\figureautorefname}{\figurename}
+%\DeclareRobustCommand{\figurename}{図}
+%\renewcommand{\thefigure}{\ifnum\value{figure}<10 0\fi\arabic{figure}}
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
-%  numwidth=2.71em, % エントリ番号の幅を調整
-  entrynumberformat={図},
-  dynnumwidth,
+%  entrynumberformat={図},
+  dynnumwidth=true,
 ]{tocline}{figure}
-%%%%% FOR Colmun %%%%%
+%%%%% lop %%%%%%%%%%%%%%%%%%%%
+\DeclareNewTOC[
+  owner=\jobname,
+  name=Part,
+]{lop}
+%%%%% locode %%%%%%%%%%%%%%%%%%%%
+\DeclareNewTOC[
+  owner=\jobname,
+  name=code,
+  float,
+  nonfloat,
+  counterwithin=chapter,
+  floatpos=tbp,
+  floattype=2,
+]{locode}
+\DeclareRobustCommand{\locodename}{Prg.\,\thechapter.}
+\renewcommand{\thelocode}{\ifnum\value{locode}<10 0\fi\arabic{locode}}
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
-  numwidth=8.00em, % エントリ番号の幅を調整
-%  dynnumwidth,
-]{tocline}{loColumn}
-%%%%% FOR code %%%%%
-\DeclareTOCStyleEntry[
-  level=\sectiontocdepth,
-  indent=2.35em, % エントリのインデントを調整
-%  numwidth=8.00em, % エントリ番号の幅を調整
-  entrynumberformat={Prg:\,},
-  dynnumwidth,
+%  entrynumberformat={\locodename},
+  dynnumwidth=true,
 ]{tocline}{locode}
+%%%%% loColumn %%%%%%%%%%%%%%%%%%%%
+\DeclareNewTOC[
+  owner=\jobname,
+  name=Column,
+  float,
+  nonfloat,
+  counterwithin=chapter,
+  floatpos=tbp,
+  floattype=2,
+]{loColumn}
+\DeclareRobustCommand{\loColumnname}{\Columnname}
+\DeclareTOCStyleEntry[
+  level=\sectiontocdepth,
+  indent=2.35em, % エントリのインデントを調整
+%  entrynumberformat={Column},
+  dynnumwidth=true,
+]{tocline}{loColumn}
+
 %%%%% STYLE OF LIST FOR APPENDIX %%%%%
 \AtBeginEnvironment{appendices}{%
   \clearrightpage%
@@ -83,32 +116,17 @@
   \patchcmd{\part}{\tocAPartSeparateline}{\relax}{}{}%
   \@appendixfalse%
 }
+\renewcommand{\setthesection}{\Alph{section}}
+\renewcommand{\appendixautorefname}{補遺\!}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FOR STYLE OF OTHER LISTS %%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% FOR STYLE OF LOT %%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listtablename{\texorpdfstring{\hbox to 3em{表目次}}{表目次}}
-\renewcommand{\tableautorefname}{\tablename}
-%\let\l@table\l@section
-%\renewcommand*\l@table{\@dottedtocline{1}{0.0em}{2.35em}}
-
-%%%%% FOR STYLE OF LOF %%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listfigurename{\texorpdfstring{\hbox to 3em{図目次}}{図目次}}
-\renewcommand{\figureautorefname}{\figurename}
-%\let\l@figure\l@section
-%\renewcommand*\l@figure{\@dottedtocline{1}{0.0em}{2.35em}}
-%\AtBeginDocument{\renewcommand{\thefigure}{}}
-
-%%%%% FOR STYLE OF LOP %%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand\listoflopname{\texorpdfstring{\hbox to 3em{大目次}}{大目次}}
-
-%%%%% FOR STYLE OF LOCODE %%%%%%%%%%%%%%%%%
 \renewcommand{\listoflocodename}{コード 目次}
-
-%%%%% FOR STYLE OF LOC %%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand\listofloColumnname{\Columnname 一覧}
-\renewcommand{\loColumnname}{{\Columnname}}
+\renewcommand\listofloColumnname{Column\,一覧}
 
 %%%%% FOR STYLE OF INDEX %%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\indexname}{\texorpdfstring{\hbox to 2em{索引}}{索引}}
@@ -147,3 +165,40 @@
   \iffieldundef{day}{}{\two@digits{\thefield{day}}}%
 }
 \defbibheading{subsubbibintoc}{\subsection*{#1}\addsubsectiontocentry{}{#1}}
+
+%%%%% CAPTION STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%
+%\counterwithin{locode}{chapter}
+%\DeclareCaptionLabelFormat{table}{\tablename\protect\thechapter.\two@digits{\value{table}}}
+%\DeclareCaptionLabelFormat{figure}{\figurename\protect\thechapter.\two@digits{\value{figure}}}
+\captionsetup[table]{
+  justification=raggedright,
+  singlelinecheck=false,
+  position=above,
+  aboveskip=4pt,
+  belowskip=5pt,
+  labelfont={bf, sf},
+  labelsep={space},
+  font={bf, large, sf},
+  hypcap=false,
+  name={表},
+}
+\captionsetup[figure]{%
+  width=.9\textwidth,
+  format=hang,
+  labelfont={bf, sf},
+  labelsep={colon},
+  aboveskip=3pt,
+  name={図},
+}
+\captionsetup[locode]{
+  justification=raggedright,
+  singlelinecheck=false,
+  position=above,
+  aboveskip=5pt,
+  belowskip=0.0pt,
+  labelfont={bf, sf},
+  labelsep={space},
+  font={bf, large, sf},
+  hypcap=false,
+  name={Prg.},
+}
