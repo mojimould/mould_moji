@@ -83,8 +83,15 @@
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
-%  entrynumberformat={\locodename},
   dynnumwidth=true,
+]{tocline}{loColumn}
+%%%%% FOR code %%%%%
+\DeclareTOCStyleEntry[
+  level=\sectiontocdepth,
+  indent=2.35em, % エントリのインデントを調整
+%  numwidth=8.00em, % エントリ番号の幅を調整
+  entrynumberformat={Prg.\,},
+  dynnumwidth,
 ]{tocline}{locode}
 %%%%% loColumn %%%%%%%%%%%%%%%%%%%%
 \DeclareNewTOC[

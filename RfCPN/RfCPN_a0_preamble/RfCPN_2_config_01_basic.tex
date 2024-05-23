@@ -116,6 +116,45 @@
 %%%%% SETLIST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlist[enumerate]{listparindent=\parindent, parsep=0pt, partopsep=0pt, topsep=3pt, itemsep=3pt, leftmargin=*}
 \setlist[enumerate, 1]{leftmargin=\leftmargini}
+%%%%% CAPTION STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\tablename}{表}
+\renewcommand{\figurename}{図}
+%\renewcommand{\thelocode}{\ifnum\value{locode}<10 0\fi\arabic{locode}}
+%\counterwithin{locode}{chapter}
+\DeclareCaptionLabelFormat{table}{\tablename\thechapter.\two@digits{\value{table}}}
+\DeclareCaptionLabelFormat{figure}{\figurename\thechapter.\two@digits{\value{figure}}}
+\captionsetup[table]{
+  justification=raggedright,
+  singlelinecheck=false,
+  position=above,
+  aboveskip=4pt,
+  belowskip=5pt,
+  labelfont={bf, sf},
+  labelsep={space},
+  font={bf, large, sf},
+  labelformat=table,
+  hypcap=false,
+}
+\captionsetup[figure]{%
+  width=.9\textwidth,
+  format=hang,
+  labelfont={bf, sf},
+  labelsep={colon},
+  labelformat=figure,
+  aboveskip=3pt,
+}
+\captionsetup[locode]{
+  justification=raggedright,
+  singlelinecheck=false,
+  position=above,
+  aboveskip=5pt,
+  belowskip=0.0pt,
+  labelfont={bf, sf},
+  labelsep={space},
+  font={bf, large, sf},
+  hypcap=false,
+  name={Prg:},
+}
 %%%%% SETMINTED %%%%%%%%%%%%%%%%%%%%%%%%%%
 \usemintedstyle{emacs}
 \renewcommand{\theFancyVerbLine}{%
