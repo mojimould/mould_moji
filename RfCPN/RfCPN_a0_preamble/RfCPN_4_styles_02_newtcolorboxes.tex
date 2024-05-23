@@ -121,7 +121,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% COLUMN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\Columnname}{Column}
+\newcommand{\Columnname}{Col}
 \newtcolorbox[auto counter, number within=chapter]{\Columnname}[2][]{%
   Columnbox,
   title={#2},
@@ -151,7 +151,7 @@
   %%%%% FORMULA STYLE %%%%%
   Formulabox/.style={%
     Tabularbox,
-    after title=\hfill\termblue{\Formulaname~\thetcbcounter},%
+    after title=\hfill\termblue{\Formulaname\thetcbcounter},%
   }%
 }%
 
