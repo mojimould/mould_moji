@@ -1,5 +1,5 @@
 %
-O450000 (last update on 20240522)
+O450000 (last update on 20240524)
 (Uchigawa Mentori Corner R, ac HidariMawari 1shuu)
 
 N001
@@ -35,6 +35,7 @@ IF[#679LE200]GOTO800
 (if #679 <= 200, go to N800)
 
 N002
+IF[#01EQ#0]GOTO003
 IF[#01EQ0]GOTO003
 IF[#01EQ1]GOTO003
 GOTO800
