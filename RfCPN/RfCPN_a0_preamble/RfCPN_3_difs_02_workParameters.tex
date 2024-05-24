@@ -135,6 +135,8 @@
 
 \newGPMcommand{TopOutcutExists}{トップ\nameOutcutExists}{トップ\yomiOutcutExists}
 \newGPMcommand{BottomOutcutExists}{ボトム\nameOutcutExists}{ボトム\yomiOutcutExists}
+\newGPMcommand{TopCurvedOutcutExists}{\nameTopCurvedOutcut の有無}{\yomiTopCurvedOutcut の有無}
+\newGPMcommand{BottomCurvedOutcutExists}{\nameBottomCurvedOutcut の有無}{\yomiBottomCurvedOutcut の有無}
 \newGPMcommand{TopOutcutType}{トップ\nameOutcutType}{トップ\yomiOutcutType}
 \newGPMcommand{BottomOutcutType}{ボトム\nameOutcutType}{ボトム\yomiOutcutType}
 \newGPMcommand{TopOutcutAC}{トップ\nameOutcut AC径}{トップ\yomiOutcut ACけい}
@@ -273,11 +275,15 @@
 \newGPMcommand{EndFaceBoringCornerR}{\nameEndFaceBoring コーナーR}{\yomiEndFaceBoring コーナーR}
 \newGPMcommand{EndFaceBoringLength}{\nameEndFaceBoring 長}{\yomiEndFaceBoring ちょう}
 
-%%% INLAY %%%
-\newNamecommand{Inlay}{内削座ぐり}{ないさくざぐり}
-\newNamecommand{InlayMilling}{\nameInlay 加工}{\yomiInlay かこう}
+%%% Incut %%%
+\newNamecommand{Incut}{内削座ぐり}{ないさくざぐり}
+\newNamecommand{IncutMilling}{\nameIncut 加工}{\yomiIncut かこう}
 
-\newGPMcommand{InlayExists}{\nameInlay の有無}{\yomiInlay のうむ}
+\newGPMcommand{IncutExists}{\nameIncut の有無}{\yomiIncut のうむ}
+\newGPMcommand{IncutACWidth}{\nameIncut AC径}{\yomiIncut ACけい}
+\newGPMcommand{IncutBDWidth}{\nameIncut BD径}{\yomiIncut BDけい}
+\newGPMcommand{IncutCornerR}{\nameIncut コーナーR}{\yomiIncut コーナーR}
+\newGPMcommand{IncutLength}{\nameIncut 長}{\yomiIncut ちょう}
 
 %%% Dimple %%%
 \newNamecommand{Dimple}{内面ディンプル}{ないめんディンプル}
@@ -302,6 +308,7 @@
 \newNamecommand{CFaceDimpleIRowJ}{C面\nameDimpleIRowJ}{Cめん\yomiDimpleIRowJ}
 \newNamecommand{DFaceDimpleIRowJ}{D面\nameDimpleIRowJ}{Dめん\yomiDimpleIRowJ}
 
+\newGPMcommand{DimpleExists}{\nameDimple の有無}{\yomiDimple のうむ}
 \newGPMcommand{DimpleVerticalPitch}{\nameDimple 鉛直方向ピッチ}{\yomiDimple えんちょくほうこうピッチ}
 \newGPMcommand{DimpleHorizontalPitch}{\nameDimple 水平方向ピッチ}{\yomiDimple すいへいほうこうピッチ}
 \newGPMcommand{DimpleOddRowLength}{\nameDimple 奇数列の長さ}{\yomiDimple きすうれつのながさ}

@@ -81,7 +81,7 @@
 \ttNum184 & \TopEndFaceOutCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
 \ttNum185 & \TopEndFaceInCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
 \ttNum186 & \EndFaceBoring{} 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum187 & \Inlay{} 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum187 & \Incut{} 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
 \ttNum188 & （不使用） &\\
 \ttNum189 & \BottomOutcut{} 仕上げ加工 追加回数 (上限3) & 0\\
@@ -290,10 +290,10 @@
 \ttNum481 & \EndFaceBoring{} 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum482 & （予備） &\\
-\ttNum483 & \Inlay$X+$補正 & 0\\
-\ttNum484 & \Inlay 径（直径）$+$補正 & 0\\
-\ttNum485 & \Inlay{} 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
-\ttNum486 & \Inlay{} 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum483 & \Incut$X+$補正 & 0\\
+\ttNum484 & \Incut 径（直径）$+$補正 & 0\\
+\ttNum485 & \Incut{} 仕上げ前 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
+\ttNum486 & \Incut{} 仕上げ後 一時停止 (0:{\ttfamily M00}, 1:non-stop, 2:扉前{\ttfamily M00}) & 1\\
 \SetRow{unusingVariables}
 \ttNum487 & （予備） &\\
 \SetRow{unusingVariables}
@@ -466,8 +466,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum634 & \EndFaceInCChamferMilling{} 仕上げ前 残り削り代（直径） & 1.000\\
 \ttNum635 & \EndFaceBoringMilling1回あたりの削り代 & 1.500\\
 \ttNum636 & \EndFaceBoringMilling{} 仕上げ前 残り削り代 & 0.500\\
-\ttNum637 & \InlayMilling1回あたりの削り代 & 2.0\\
-\ttNum638 & \InlayMilling{} 仕上げ前 残り削り代 & 1.0\\
+\ttNum637 & \IncutMilling1回あたりの削り代 & 2.0\\
+\ttNum638 & \IncutMilling{} 仕上げ前 残り削り代 & 1.0\\
 \SetRow{unusingVariables}
 \ttNum639 & （予備） & \\
 \SetRow{unusingVariables}
@@ -523,8 +523,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum667 & \EndFaceInCChamferMilling：コーナー & \InCChamferCornerFeedRate\\
 \ttNum668 & \EndFaceBoringMilling：直線 & \EndFaceBoringLinearFeedRate\\
 \ttNum669 & \EndFaceBoringMilling：コーナー & \EndFaceBoringCornerFeedRate\\
-\ttNum670 & \InlayMilling：直線 & \InlayLinearFeedRate\\
-\ttNum671 & \InlayMilling：コーナー & \InlayCornerFeedRate\\
+\ttNum670 & \IncutMilling：直線 & \IncutLinearFeedRate\\
+\ttNum671 & \IncutMilling：コーナー & \IncutCornerFeedRate\\
 \ttNum672 & \DimpleMeasurement：表面アプローチ & \DimpleApproachFeedRate\\
 \ttNum673 & \DimpleMilling：加工 & \DimpleProcessFeedRate\\
 \SetRow{unusingVariables}
@@ -547,7 +547,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum678 & \EndFaceOutCChamferMilling & \OutCChamferSpindleSpeed\\
 \ttNum679 & \EndFaceInCChamferMilling & \InCChamferSpindleSpeed\\
 \ttNum680 & \EndFaceBoringMilling & \EndFaceBoringSpindleSpeed\\
-\ttNum681 & \InlayMilling & \InlaySpindleSpeed \\
+\ttNum681 & \IncutMilling & \IncutSpindleSpeed \\
 \ttNum682 & \DimpleMilling & \DimpleSpindleSpeed\\
 \SetRow{unusingVariables}
 \ttNum683 & （予備） & \\
