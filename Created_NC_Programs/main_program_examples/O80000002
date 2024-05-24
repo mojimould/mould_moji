@@ -1,5 +1,5 @@
 %
-O80000002 (Last update on 20240523)
+O80000002 (Last update on 20240524)
 (Top sai_furiwake: 500.042)
 (Bot sai_furiwake: 499.958)
 (Top Haridashi: 170.042)
@@ -562,12 +562,52 @@ G55 G65 P410000 Z499.958 R4.0
 (Bottom tammen end)
 IF[#180EQ0]GOTO501
 IF[#180EQ2]GOTO502
-GOTO530
+GOTO510
 N501
 M00 (if #180=0)
-GOTO530
+GOTO510
 N502
 G65 P900003 (if #180=2)
+
+
+N510
+(*** Bot Gaisaku start ***)
+
+
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#650
+T16 (gaisaku)
+M06 (tool exchange)
+G43 H#4120 (hosei KouguChou: T#)
+
+M11 (B-axis unclamp)
+G90 G00 G54 B[180.0-0.964]
+M10 (B-axis clamp)
+(G54B parallel angle 179.036)
+
+M28 (chip conveyor on)
+G54 G65 P421000 X155.000 Y155.000 U160.000 V159.000 Z499.958 R17.0 K25.150
+(O420000: Sotogawa 1shuu Corner R, ar HidariMawari)
+(default: M=0, W=0)
+(X: Bot AC gaisakuKei)
+(Y: Bot BD gaisakuKei)
+(U: AC gaiKei)
+(V: BD gaiKei)
+(Z: Bot sai_furiwake)
+(R: Bot gaisaku corner R)
+(K: Bot gaisaku Length)
+(M*: mizoIchi)
+(W*: mizoHaba)
+
+(Bot gaisaku end)
+IF[#439EQ0]GOTO511
+IF[#439EQ2]GOTO512
+GOTO530
+N511
+M00 (if #439=0)
+GOTO530
+N512
+G65 P900003 (if #439=2)
 
 
 N530
