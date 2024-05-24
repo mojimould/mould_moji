@@ -3,12 +3,19 @@ O210003 (last update on 20240522)
 (for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 
+N001
 #700=#4012
-(#700: current work coordinate G#)
-
 IF[#700NE57]GOTO800 
+(#700: current work coordinate G#)
 (if work G# is not 57, go to N800)
 
+N002
+IF[#5203EQ0]GOTO003
+IF[#5203GE100]GOTO003
+(if #5203=0 or >=100, go to N003)
+GOTO800
+
+N003
 IF[#23EQ#0]GOTO800
 IF[#23LT10]GOTO800
 IF[#20LT0]GOTO800
@@ -77,28 +84,28 @@ IF[#26LE[#901011/2]]GOTO800
 IF[#20EQ#0]THEN #20=0
 (if T=#0, then T=0)
 
-IF[#4111EQ50]GOTO001
-IF[#4111EQ31]GOTO002
-IF[#4111EQ32]GOTO002
-IF[#4111EQ33]GOTO002
-(if H#=50, go to N001)
-(if H#=31, go to N002)
-(if H#=32, go to N002)
-(if H#=33, go to N002)
+IF[#4111EQ50]GOTO012
+IF[#4111EQ31]GOTO013
+IF[#4111EQ32]GOTO013
+IF[#4111EQ33]GOTO013
+(if H#=50, go to N012)
+(if H#=31, go to N013)
+(if H#=32, go to N013)
+(if H#=33, go to N013)
 GOTO800
 
-N001 (if sensor)
+N012 (if sensor)
 #701=#901050 (Z hosei)
 #702=#901050 (XY hosei)
 #703=31 (G31)
-GOTO003
-N002 (if Tslot)
+GOTO014
+N013 (if Tslot)
 #701=0 (Z hosei)
 #702=#[2400+#4111]+#[2600+#4111]
 (XY hosei: the KouguHankei)
 #703=1 (G01)
 
-N003
+N014
 IF[#1000EQ0]THEN #30=#901001
 IF[#1000EQ1]THEN #30=#901005
 (#30: table center X)
@@ -120,7 +127,7 @@ IF[#1000EQ1]THEN #30=#901005
 (kokokara G01)
 
 
-N004
+N015
 M11 (B-axis unclamp)
 G90 G#700 G00 B[#01+#02]
 M10 (B-axis clamp)
@@ -136,17 +143,17 @@ G91 G01 X[#705-#704] Z[#706-#26-#701-#600] F#652
 #712=#5003
 (XZ block end: start point XZ)
 
-IF[#4111NE50]GOTO006
-(if tool is not sensor, go to N006)
-IF[#1005EQ0]GOTO005
+IF[#4111NE50]GOTO017
+(if tool is not sensor, go to N017)
+IF[#1005EQ0]GOTO016
 M00 (sensor low battery)
-N005
-IF[#1004EQ1]GOTO006
-(if current sensor ON, go to N006)
+N016
+IF[#1004EQ1]GOTO017
+(if current sensor ON, go to N017)
 M117 (sensor on/off)
 G04 X1.5 (wait 1.5s)
 
-N006
+N017
 G91 G#703 X#709 Z#710 F#653
 (XZ to the center of the 1st row after rotation)
 (if sensor G31, else G01)
@@ -156,14 +163,14 @@ G91 G#703 X#709 Z#710 F#653
 #715=#5003
 (XYZ block end: the center of the 1st row)
 
-IF[#4111EQ50]GOTO009
-(if sensor, go to N009)
+IF[#4111EQ50]GOTO018
+(if sensor, go to N018)
 S#682
 M03 (spindle on)
 M08 (coolant on)
 M28 (chip conveyor on)
 
-N009
+N018
 #716=#25/2+#20-#702-#620
 #717=[#24/2+#20-#702-#620]*COS[ABS[#02]]
 (#716, #717: face from -#620)
@@ -231,19 +238,19 @@ G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 
 N108
 #724=#724-1 (changing face)
-IF[#724LE0]GOTO010
+IF[#724LE0]GOTO019
 GOTO100
 
 
 (end loop for the 1st #724)
 
 
-N010
-IF[#4111EQ50]GOTO011
+N019
+IF[#4111EQ50]GOTO020
 M09 (coolant off)
 S35
 
-N011
+N020
 G90 G01 X#713 Z[#715-#701] F#652
 (XZ: to the center of the 1st row)
 G90 G01 X#711 Z#712 F#652
@@ -251,7 +258,7 @@ G90 G01 X#711 Z#712 F#652
 G90 G01 Z[#712+#600] F#652
 S2599
 
-N013
+N021
 G90 G53 G01 Z0 F#650
 G04 X1.5 (wait 1.5s)
 M05 (spindle off)
@@ -269,17 +276,17 @@ G90 G01 Z[#26+#600] F#652
 G91 G01 X[#705-#704] Z[#706-#26-#701-#600] F#652
 (XZ: tanmen center)
 
-IF[#4111NE50]GOTO016
-(if tool is not sensor, go to N016)
-IF[#1005EQ0]GOTO014
+IF[#4111NE50]GOTO023
+(if tool is not sensor, go to N023)
+IF[#1005EQ0]GOTO022
 M00 (sensor low battery)
-N014
-IF[#1004EQ1]GOTO016
-(if current sensor ON, go to N016)
+N022
+IF[#1004EQ1]GOTO023
+(if current sensor ON, go to N023)
 M117 (sensor on/off)
 G04 X1.5 (wait 1.5s)
 
-N016
+N023
 G91 G#703 X#709 Z#710 F#653
 (XZ to the center of the 1st row after rotation)
 (if sensor G31, else G01)
@@ -369,18 +376,18 @@ END1
 
 N206
 #724=#724-1 (changing face)
-IF[#724LE0]GOTO017
+IF[#724LE0]GOTO024
 GOTO201
 
 
 (end loop for the 2nd #724)
 
 
-N017
-IF[#4111EQ50]GOTO018
+N024
+IF[#4111EQ50]GOTO025
 M09 (coolant off)
 
-N018
+N025
 G90 G01 X#713 Z[#715-#701] F#652
 (XZ: to the center of the 1st row)
 G90 G01 X#711 Z#712 F#652
@@ -455,7 +462,7 @@ N999 M99
 (as RHS)
 (#401)
 (#600, #620, #652, #653, #682)
-(#901001, #901005, #901011, #901050)
+(#900018, #900024, #901001, #901005, #901011, #901050)
 (as LHS)
 (#700-#718, #724)
 
@@ -471,7 +478,7 @@ N999 M99
 (#5281: G57 X)
 
 (Subprograms)
-(O220001, O220002)
+(O220001, O220002, O900003)
 
 (Passed arguments)
 (#04, #09, #13, #19, #21, #24, #33)
