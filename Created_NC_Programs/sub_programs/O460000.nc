@@ -1,5 +1,5 @@
 %
-O460000 (last update on 20240522)
+O460000 (last update on 20240524)
 (Tanmen Zaguri Corner R, rc HidariMawari)
 
 N001
@@ -19,8 +19,6 @@ IF[#18LT1]GOTO800
 (if U <= 1 or #0, go to N800)
 (if V <= 1 or #0, go to N800)
 (if W <= 1 or #0, go to N800)
-(if X <= 1 or #0, go to N800)
-(if Y <= 1 or #0, go to N800)
 (if Z <= 1 or #0, go to N800)
 (if R <= 1 or #0, go to N800)
 
@@ -39,22 +37,24 @@ IF[#680LE200]GOTO800
 (if #680 <= 200 or #0, go to N800)
 
 N005
-#33=#21+#479+2*[#18-SQRT[#22*[2*#18-#22]]]
+#33=#21+2*[#18-SQRT[#22*[2*#18-#22]]]+#479
 #32=#33-#18*2
-(#33: U+#479+2[R-SQRT[2R-V]])
+#31=#[2400+#4120]+#[2600+#4120]
+(#33: U+2[R-SQRT[2R-V]]+#479)
 (#32: #33-2R)
+(#31: KouguKei)
 
 N008
 IF[#4012NE56]GOTO800
 IF[ABS[#477]GE5]GOTO800
 IF[ABS[#478]GE5]GOTO800
-IF[[#23-#26]LE[#901011/2]]GOTO800
+IF[#26LE[#901011/2]]GOTO800
 IF[#18LE[#[2400+#4120]+#[2600+#4120]]-0.1]GOTO800
 IF[#636GT#635]GOTO800
 (if T# is not 56, go to N800)
 (if |#477| >= 5, go to N800)
 (if |#478| >= 5, go to N800)
-(if W-Z <= #901011/2, go to N800)
+(if Z <= #901011/2, go to N800)
 (if R <= hosei kouguKei-0.1, go to N800)
 (if #636 > #635, go to N800)
 
@@ -133,7 +133,7 @@ N200 (Shiage loop)
 WHILE[#106GE0]DO2
 #106=#106-1
 
-G65 P490004 D#4120 X#33 Y#33 R#18 A#606 F#668 E#669 S#680
+G65 P490004 X#33 Y#33 R#18 A#606 F#668 E#669 S#680
 END2
 
 N990
@@ -176,7 +176,7 @@ N999 M99
 (#26:Z: Top sai-furiwake)
 
 (as LHS)
-(#27, #28, #29, #30, #31, #32, #33)
+(#31, #32, #33)
 
 (Common variable)
 (as LHS)
@@ -196,7 +196,7 @@ N999 M99
 (O490007, O900003)
 
 (Passed arguments)
-(#07, #18, #28, #29, #104, #105, #606, #666, #667, #679)
+(#07, #18, #104, #105, #606, #666, #667, #679)
 
 
 (COPYRIGHT*2023-2024 THE*INDIVIDUAL*CREATOR NOT*HELD*BY*ANY*CORPORATION ALL*RIGHTS*RESERVED)
