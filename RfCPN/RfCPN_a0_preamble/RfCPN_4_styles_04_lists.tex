@@ -10,7 +10,7 @@
 \renewcommand{\partautorefname}{part}
 \DeclareTOCStyleEntry[
   indent=0em, % エントリのインデントを調整
-  numwidth=2.35em, % エントリ番号の幅を調整
+  dynnumwidth=true,
   pagenumberwidth=19.305pt
 ]{tocline}{part}
 %%%%% FOR CHAPTER %%%%%
@@ -18,8 +18,8 @@
 \renewcommand{\chapterautorefname}{章}  % chapter --> 章
 \DeclareTOCStyleEntry[
   level=\chaptertocdepth,
-  indent=0.85em, % エントリのインデントを調整
-  numwidth=1.5em, % エントリ番号の幅を調整
+  indent=0em, % エントリのインデントを調整
+  dynnumwidth=true,
   pagenumberwidth=17.968pt
 ]{tocline}{chapter}
 %%%%% FOR SECTION %%%%%
@@ -27,20 +27,20 @@
 \renewcommand{\sectionautorefname}{節\!}
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
-  indent=2.35em, % エントリのインデントを調整
+  dynindent=true,
   dynnumwidth=true,
 ]{tocline}{section}
 %%%%% FOR SUBSECTION %%%%%
 \renewcommand{\thesubsection}{\thesection.\ifnum\value{subsection}<10 0\fi\arabic{subsection}}
 \renewcommand{\subsectionautorefname}{\sectionautorefname}
 \DeclareTOCStyleEntry[
-  indent=5.06em, % エントリのインデントを調整
+  dynindent=true,
   dynnumwidth=true,
 ]{tocline}{subsection}
 %%%%% FOR SUBSUBSECTION %%%%%
 \renewcommand{\subsubsectionautorefname}{\sectionautorefname}
 \DeclareTOCStyleEntry[
-  indent=8.96em, % エントリのインデントを調整
+  dynindent=true,
   dynnumwidth=true,
 ]{tocline}{subsubsection}
 %%%%% FOR TABLE %%%%%
@@ -49,9 +49,9 @@
 \renewcommand{\thetable}{\thechapter.\ifnum\value{table}<10 0\fi\arabic{table}}
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
-  indent=2.35em, % エントリのインデントを調整
-  entrynumberformat={表},
+  indent=1.74em, % エントリのインデントを調整
   dynnumwidth=true,
+  entrynumberformat={表},
 ]{tocline}{table}
 %%%%% FOR FIGURE %%%%%
 \DeclareRobustCommand{\figurename}{図}
@@ -59,9 +59,9 @@
 \renewcommand{\thefigure}{\thechapter.\ifnum\value{figure}<10 0\fi\arabic{figure}}
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
-  indent=2.35em, % エントリのインデントを調整
-  entrynumberformat={図},
+  indent=1.74em, % エントリのインデントを調整
   dynnumwidth=true,
+  entrynumberformat={図},
 ]{tocline}{figure}
 %%%%% lop %%%%%%%%%%%%%%%%%%%%
 \DeclareNewTOC[
@@ -82,9 +82,9 @@
 \renewcommand{\thelocode}{\thechapter.\ifnum\value{locode}<10 0\fi\arabic{locode}}
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
-  indent=2.35em, % エントリのインデントを調整
+  indent=1.74em, % エントリのインデントを調整
+  dynnumwidth=true,
   entrynumberformat={Prg.\,},
-  dynnumwidth,
 ]{tocline}{locode}
 %%%%% loColumn %%%%%%%%%%%%%%%%%%%%
 \DeclareNewTOC[
@@ -101,9 +101,8 @@
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
-  numwidth=8.5em, % エントリ番号の幅を調整
-  entrynumberformat={Column},
   dynnumwidth=true,
+  entrynumberformat={Column.},
 ]{tocline}{loColumn}
 
 %%%%% STYLE OF LIST FOR APPENDIX %%%%%
