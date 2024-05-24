@@ -65,6 +65,7 @@
 \begin{multicollongtblr}{入力情報：\BottomOutcut}{X[l]c}
 内容 & 型\\
 \BottomOutcutExists & boolean\\
+\BottomCurvedOutcutExists & boolean\\
 \BottomOutcutType & enum\\
 \BottomOutcutAsideThickness & float\\
 \BottomOutcutAC & float\\
@@ -76,6 +77,7 @@
 \begin{multicollongtblr}{入力情報：\TopOutcut}{X[l]c}
 内容 & 型\\
 \TopOutcutExists & boolean\\
+\TopCurvedOutcutExists & boolean\\
 \TopOutcutType & enum\\
 \TopOutcutAsideThickness & float\\
 \TopOutcutAC & float\\
@@ -121,6 +123,7 @@
 
 \begin{multicollongtblr}{入力情報：\Dimple}{X[l]c}
 内容 & 型\\
+\DimpleExists & boolean\\
 トップ端と\DimpleFirstRow までの距離 & float\\
 \DimpleVerticalPitch & float\\
 \DimpleHorizontalPitch & float\\
@@ -220,6 +223,23 @@
 \EndFaceBoringDepth & float\\
 \EndFaceBoringCornerR & float\\
 \EndFaceBoringLength & float\\
+\end{multicollongtblr}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 30.6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\Incut に関する入力情報}
+
+\begin{multicollongtblr}{入力情報：\Incut}{X[l]c}
+内容 & 型\\
+\IncutExists & boolean\\
+\IncutACWidth & float\\
+\IncutBDWidth & float\\
+\IncutCornerR & float\\
+\IncutLength & float\\
 \end{multicollongtblr}
 
 
