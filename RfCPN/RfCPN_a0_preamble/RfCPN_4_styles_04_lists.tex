@@ -46,7 +46,7 @@
 %%%%% FOR TABLE %%%%%
 \DeclareRobustCommand{\tablename}{表}
 \renewcommand{\tableautorefname}{\tablename}
-\renewcommand{\thetable}{\ifnum\value{table}<10 0\fi\arabic{table}}
+\renewcommand{\thetable}{\thechapter.\ifnum\value{table}<10 0\fi\arabic{table}}
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
@@ -56,7 +56,7 @@
 %%%%% FOR FIGURE %%%%%
 \DeclareRobustCommand{\figurename}{図}
 \renewcommand{\figureautorefname}{\figurename}
-\renewcommand{\thefigure}{\ifnum\value{figure}<10 0\fi\arabic{figure}}
+\renewcommand{\thefigure}{\thechapter.\ifnum\value{figure}<10 0\fi\arabic{figure}}
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
@@ -83,15 +83,7 @@
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
-  numwidth=5.0em, % エントリ番号の幅を調整
   entrynumberformat={Prg.\,},
-  dynnumwidth=true,
-]{tocline}{loColumn}
-%%%%% FOR code %%%%%
-\DeclareTOCStyleEntry[
-  level=\sectiontocdepth,
-  indent=2.35em, % エントリのインデントを調整
-%  entrynumberformat={Prg.\,},
   dynnumwidth,
 ]{tocline}{locode}
 %%%%% loColumn %%%%%%%%%%%%%%%%%%%%
@@ -105,6 +97,7 @@
   floattype=2,
 ]{loColumn}
 \DeclareRobustCommand{\loColumnname}{\Columnname}
+\renewcommand{\theloColumn}{\thechapter.\ifnum\value{loColumn}<10 0\fi\arabic{loColumn}}
 \DeclareTOCStyleEntry[
   level=\sectiontocdepth,
   indent=2.35em, % エントリのインデントを調整
