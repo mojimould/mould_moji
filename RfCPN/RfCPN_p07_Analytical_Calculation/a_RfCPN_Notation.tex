@@ -36,13 +36,13 @@ $W_y$ & \BDOD & ○\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{multicollongtblr}{\EndFacecut}{cX[l]c}
 記号 & 内容 & 図面\\
-$W_\mathrm T$ & トップ端のAC水平方向外径 & ○\\
-$w_\mathrm T$ & トップ端内径（略称） & ○\\
-$w_\mathrm B$ & ボトム端内径（略称） & ○\\
-$w_x$ & \EndFace のAC内径（略称） & ○\\
-$w_y$ & \EndFace のBD内径（略称） & ○\\
+$W_\mathrm T$ & \TopEndHorizontalOD & ○\\
+$w_\mathrm T$ & \TopEndID（略称） & ○\\
+$w_\mathrm B$ & \BottomEndID（略称） & ○\\
+$w_x$ & \EndFaceACID（略称） & ○\\
+$w_y$ & \EndFaceBDID（略称） & ○\\
 $\delta_w$ & \EndFacecutMilling{} 輪郭調整用パラメータ &\\
-$\tau_x$ & AC方向肉厚（略称） &\\
+$\tau_x$ & \ACThickness（略称） &\\
 \end{multicollongtblr}
 
 \clearpage
@@ -53,8 +53,8 @@ $\tau_x$ & AC方向肉厚（略称） &\\
 記号 & 内容 & 図面\\
 $\theta$ & \AlocationLength 調整用角度 &\\
 $\theta'$ & 均等振分角度 &\\
-$\theta_\mathrm T'$ & 均等振分角度（\TopEndFace{} 工具側） &\\
-$\theta_\mathrm B'$ & 均等振分角度（\BottomEndFace{} 工具側） &\\
+$\theta_\mathrm T'$ & 均等振分角度（\nameTopEndFace{} 工具側） &\\
+$\theta_\mathrm B'$ & 均等振分角度（\nameBottomEndFace{} 工具側） &\\
 $\psi$ & スペーサによる$\mathrm U_\mathrm B$を中心とした傾き角 &\\
 $\Omega$ & \CurvatureCenter 点Oを原点としたワークの回転角度 &\\
 $\alpha_{\mathrm c}$ & \CurvatureCenter$O$と$\mathrm T_\mathrm c$の角度（鋭角） &\\
@@ -72,12 +72,12 @@ $\alpha_{\mathrm U_\mathrm B}'$ & \CurvatureCenter$O'$と$\mathrm U_\mathrm B'$�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{multicollongtblr}{外削}{cX[l]c}
 記号 & 内容 & 図面\\
-$\mathfrak W_\mathrm T$ & トップ側AC外削径 & ○\\
-$\mathfrak W_\mathrm B$ & トップ側BD外削径 & ○\\
+$\mathfrak W_\mathrm T$ & \TopOutcutACwidth & ○\\
+$\mathfrak W_\mathrm B$ & \TopOutcutBDwidth & ○\\
 $h_\mathrm T$ & \TopOutcutLength & ○\\
 $h_\mathrm B$ & \BottomOutcutLength & ○\\
-$\tau_\mathrm T$ & トップ端A側肉厚（指定時） & ○\\
-$\tau_\mathrm B$ & ボトム端A側肉厚（指定時） & ○\\
+$\tau_\mathrm T$ & \TopAsideThickness（指定時） & ○\\
+$\tau_\mathrm B$ & \BottomAsideThickness（指定時） & ○\\
 $\mu$ & \PlatingThk & ○\\
 \end{multicollongtblr}
 
@@ -91,10 +91,10 @@ $W_{mx}$ & \KeywayACOD & ○\\
 $\kappa_p$ & \KeywayPos & ○\\
 $\kappa_w$ & \KeywayWidth & ○\\
 $\bar\kappa_w$ & $\displaystyle\kappa_p+\frac{\kappa_w}2$ &\\
-$\kappa_d$ & （図面上の）\AsideKeywayDepth & ○\\
+$\kappa_d$ & （\index{ずめん@図面}図面上の）\AsideKeywayDepth & ○\\
 $\kappa_d'$ & （測定上の）\AsideKeywayDepth &\\
-$\kappa_s$ & トップ側の\KeywayDepth &\\
-$\kappa_l$ & ボトム側の\KeywayDepth &\\
+$\kappa_s$ & \TopsideKeywayDepth &\\
+$\kappa_l$ & \BottomsideKeywayDepth &\\
 $\zeta$ & 測定時の測定器の傾き角 &\\
 \end{multicollongtblr}
 
@@ -147,27 +147,27 @@ $h_\beta$ & \EndFaceBoringLength & ○\\
 記号 & 内容 & 図面\\
 $m$ & \Dimple 列数（1面） & ○\\
 $q$ & トップ端から\DimpleFirstRow までの距離 & ○\\
-$p_x$ & \Dimple 水平方向ピッチ & ○\\
-$p_z$ & \Dimple 鉛直方向ピッチ & ○\\
-$d_i$ & \DimpleIRow の長さ & ○\\
-$d_\mathrm o$ & \Dimple 奇数列目の長さ（全て同じ場合） & ○\\
-$d_\mathrm e$ & \Dimple 偶数列目の長さ（全て同じ場合） & ○\\
+$p_x$ & \DimpleHorizontalPitch & ○\\
+$p_z$ & \DimpleVerticalPitch & ○\\
+$d_i$ & \DimpleIRowLength & ○\\
+$d_\mathrm o$ & \DimpleOddRowLength（全て同じ場合） & ○\\
+$d_\mathrm e$ & \DimpleEvenRowLength（全て同じ場合） & ○\\
 $n_m$ & $m$列目の\DimpleNum（1面） & ○\\
-$n_\mathrm o$ & 奇数列目の\DimpleNum（全て同じ場合） & ○\\
-$n_\mathrm e$ & 偶数列目の\DimpleNum（全て同じ場合） & ○\\
-$\lambda_i$ & 内面テーパ表におけるトップ端からの$i$番目の距離 & ○\\
-$w_{\mathrm Ai}$ & $\lambda_i$に対するAC内径 & ○\\
-$w_{\mathrm Bi}$ & $\lambda_i$に対するBD内径 & ○\\
-$w_{\mathrm A\lambda}$ & トップ端からの距離$\lambda$に対する近似AC内径 &\\
-$w_{\mathrm B\lambda}$ & トップ端からの距離$\lambda$に対する近似BD内径 &\\
+$n_\mathrm o$ & \OddRowDimpleNum（全て同じ場合） & ○\\
+$n_\mathrm e$ & \EvenRowDimpleNum（全て同じ場合） & ○\\
+$\lambda_i$ & \IDTaperTable におけるトップ端からの$i$番目の距離 & ○\\
+$w_{\mathrm Ai}$ & $\lambda_i$に対する\ACID & ○\\
+$w_{\mathrm Bi}$ & $\lambda_i$に対する\BDID & ○\\
+$w_{\mathrm A\lambda}$ & トップ端からの距離$\lambda$に対する\expandafterindex{きんじ\yomiACID@近似\nameACID}近似\nameACID &\\
+$w_{\mathrm B\lambda}$ & トップ端からの距離$\lambda$に対する\expandafterindex{きんじ\yomiBDID@近似\nameBDID}近似\nameBDID &\\
 $w_{\mathrm A\lambda}'$ & $w_{\mathrm A\lambda}+2\mu$ &\\
 $w_{\mathrm B\lambda}'$ & $w_{\mathrm B\lambda}+2\mu$ &\\
 $w_{\mathrm A}'$ & $w_{\mathrm A\lambda}'$の略記 &\\
 $w_{\mathrm B}'$ & $w_{\mathrm B\lambda}'$の略記 &\\
-$\phi$ & \Dimple 用傾け角（鋭角） &\\
-$\phi_\mathrm C$ & C面用\Dimple 用傾け角（鋭角） &\\
-$\mathcal R_\mathrm o$ & A側内面湾曲（略称） &\\
-$\mathcal R_\mathrm i$ & C側内面湾曲（略称） &\\
+$\phi$ & \DimpleAngle（鋭角） &\\
+$\phi_\mathrm C$ & \CsideDimpleAngle（鋭角） &\\
+$\mathcal R_\mathrm o$ & \AsideInnerCurvature（略称） &\\
+$\mathcal R_\mathrm i$ & \CsideInnerCurvature（略称） &\\
 \end{multicollongtblr}
 
 \clearpage
@@ -257,8 +257,8 @@ $\xi_\mathrm e$ & テーパエンドミル先端テーパ角度（片角） & �
 \clearpage
 \begin{multicollongtblr}{eテーパ}{cX[l]c}
 記号 & 内容 & 参照\\
-$T_\mathrm l$ & 液相線温度 &\\
-$T_\mathrm s$ & 固相線温度 &\\
+$T_\mathrm l$ & \index{えきそうせんおんど@液相線温度}液相線温度 &\\
+$T_\mathrm s$ & \index{こそうせんおんど@固相線温度}固相線温度 &\\
 $T_0$ & 基準温度 & ○\\
 $X_\mathrm C$ & 炭素Cの含有量 & ○\\
 $X_\mathrm{Si}$ & ケイ素Siの含有量 & ○\\
@@ -275,16 +275,16 @@ $k_\mathrm S$ & 硫黄Sにおける影響係数 & ○\\
 %\clearpage
 \begin{multicollongtblr}{アイソパラメトリック曲線}{cX[l]c}
 記号 & 内容 & 参照\\
-$S(u, v)$ & パラメトリックサーフェス &\\
-$u, v$ & パラメトリックサーフェスのパラメータ &\\
-$C(t)$ & アイソパラメトリック曲線 &\\
-$f_i$ & アイソパラメトリック曲線の基底関数 &\\
-$P_i$ & アイソパラメトリック曲線の制御点 &\\
-$N_{i, p}$ & B-スプライン曲線の基底関数 &\\
-$U$ & ノットベクトル &\\
-$u_i$ & ノットベクトルの成分 &\\
-$p$ & 基底関数$N_{i, p}$の次数 &\\
-$w_i$ & 基底関数$N_{i, p}$のウェイト &\\
+$S(u, v)$ & \index{パラメトリックサーフェス}パラメトリックサーフェス &\\
+$u, v$ & \index{パラメータ（パラメトリックサーフェス）}パラメトリックサーフェスのパラメータ &\\
+$C(t)$ & \index{アイソパラメトリックきょくせん@アイソパラメトリック曲線}アイソパラメトリック曲線 &\\
+$f_i$ & \index{きていかんすう（アイソパラメトリックきょくせん）@きていかんすう（アイソパラメトリック曲線）}アイソパラメトリック曲線の基底関数 &\\
+$P_i$ & \index{せいぎょてん（アイソパラメトリックきょくせん）@制御点（アイソパラメトリック曲線）}アイソパラメトリック曲線の制御点 &\\
+$N_{i, p}$ & \index{きていかんすう（B-スプラインきょくせん）@きていかんすう（B-スプライン曲線）}B-スプライン曲線の基底関数 &\\
+$U$ & \index{ノットベクトル}ノットベクトル &\\
+$u_i$ & \index{ノットベクトルのせいぶん@ノットベクトルの成分}ノットベクトルの成分 &\\
+$p$ & \index{じすう（きていかんすう）@次数（基底関数）}基底関数$N_{i, p}$の次数 &\\
+$w_i$ & \index{ウェイト（きていかんすう）@ウェイト（基底関数）}基底関数$N_{i, p}$のウェイト &\\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}{その他}{cX[l]c}

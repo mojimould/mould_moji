@@ -1,16 +1,16 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter[loColumn]{\EndFacecut（外径）の幾何}
-ここでは主に、\textbf{\EndFacecut}に関する測定・加工に必要な\expandafterindex{きかてきせいしつ（\yomiEndFacecut）@幾何的性質（\nameEndFacecut）}幾何的性質を考える。
-ただし機内のモールドは、考えている側の\EndFace が工具側に向いているものとする。
+\modHeadchapter[loColumn]{\EndFacecut および\OuterDiameter の幾何}
+ここでは主に、\textbf{\EndFacecut}および\textbf{\OuterDiameter} に関する測定・加工に必要な\expandafterindex{きかてきせいしつ（\yomiEndFacecut）@幾何的性質（\nameEndFacecut）}幾何的性質を考える。
+ただし機内の\index{モールド}モールドは、考えている側の\EndFace が工具側に向いているものとする。
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{トップ側の\EndFace}
+\modHeadsection{\TopEndFace}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -233,8 +233,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{\Columnname}{\EndFace における外径の近似計算}
-\index{がいけい@外径}外径を$W_x$に対して、\TopEndFace 部の水平方向の長さ$W_\mathrm T$は以下で与えられる。（\BottomEndFace 部も同様）
+\begin{\Columnname}{\EndFaceHorizontalOD　の近似計算}
+\ACOD $W_x$に対して、\TopEndHorizontalOD$W_\mathrm T$は以下で与えられる。（\BottomEndHorizontalOD も同様）
 \begin{align*}
   W_\mathrm T
   = \sqrt{\left(R+\frac{W_x}2\right)^2-f_\mathrm T^2}
@@ -274,17 +274,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 22.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\EndFacecutMilling の工具径補正}
+\modHeadsection{\EndFacecutMilling の\index{こうぐけいほせい@工具径補正}工具径補正}
 \EndFacecutMilling として、$X+$, $Y+$方向の角から始めて
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{\DMC の場合、\index{こうぐこうかんいち@工具交換位置}工具交換位置に近いので、このほうが移動距離が短くなる。}、
+\footnote{\DMC の場合、\ToolExchangePoint に近いので、このほうが移動距離が短くなる。}、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 （工具から見て）左回りに加工する場合を考える。
-このとき\index{かこうのけいろ@加工の経路}加工の経路として、単純に外径の値を指定すれば加工することは可能である。
+このとき\index{かこうのけいろ@加工の経路}加工の経路として、単純に\OuterDiameter の値を指定すれば加工することは可能である。
 しかしその場合、\index{こうぐ@工具}工具（\index{フェイスミル}フェイスミル）のほぼ中心に近い位置で切削する形になるので、工具に大きな負荷がかかることになる。
-これを避けるために、理想的には、\index{ないけい@内径}内径$w_{\mathrm T, \mathrm B}$の外側に工具が沿う形で切削するのが望ましい。
-つまり、\EndFace の内径$w_y$\,(BD方向の$w_{\mathrm T}$または$w_{\mathrm B}$)を基準として、\index{こうぐはんけい@工具半径}工具半径分だけ（進行方向に対して右側に）補正をする形にすればよい。
-ここでは誤差等を考慮して、内径から$\delta_w$だけ縮めた輪郭（の外側）に沿う形を考える。
+これを避けるために、理想的には、\InnerDiameter$w_{\mathrm T, \mathrm B}$の外側に工具が沿う形で切削するのが望ましい。
+つまり、\EndFaceID$w_y$\,(BD方向の$w_{\mathrm T}$または$w_{\mathrm B}$)を基準として、\ToolRadius 分だけ（進行方向に対して右側に）補正をする形にすればよい。
+ここでは誤差等を考慮して、\EndFaceID から$\delta_w$だけ縮めた輪郭（の外側）に沿う形を考える。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -306,7 +306,7 @@ $Y$位置については、工具の中心が
 \begin{align*}
   \frac{w_y}2-\delta_w
 \end{align*}
-まで移動し、その後に工具半径分の補正量として$\nicefrac{\phi_\mathrm D}2$だけ$Y+$方向にずらす形で、左方向（$X-$方向）に移動する場合を考える。
+まで移動し、その後に\ToolRadius 分の補正量として$\nicefrac{\phi_\mathrm D}2$だけ$Y+$方向にずらす形で、左方向（$X-$方向）に移動する場合を考える。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -318,7 +318,7 @@ $Y$位置については、工具の中心が
 ここで、
 \begin{enumerate}[label=\sarrow]
 \item $X$, $Y$方向には同じ速さで動く
-\item $Y$方向の移動がなくなるまで工具はモールドに触れない
+\item $Y$方向の移動がなくなるまで工具は\index{ワーク}ワークに触れない
 \end{enumerate}
 とすると、加工（移動）の開始位置の$X$座標は、
 \begin{align*}
@@ -326,7 +326,7 @@ $Y$位置については、工具の中心が
   = \frac{w_x}2+\tau_x+\frac{\phi'_\mathrm D+\phi_\mathrm D}2
 \end{align*}
 より右方向（$X+$方向）であればよい。
-なお、$W_x$, $\tau_x$はAC方向の\index{がいけい@外径}外径およびBD方向の\index{にくあつ@肉厚}肉厚である
+なお、$W_x$, $\tau_x$は\ACOD および\ACThickness である
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここでは話を単純化し、\PlatingThk や\index{へんにく@偏肉}偏肉は無視している。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -344,7 +344,7 @@ $Y$位置については、工具の中心が
 \end{align*}
 より右方向（$X+$方向）にあればよい
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{実際のNCプログラムでは、安全を考慮して$\nicefrac{w_x}2+\phi'_\mathrm D$としている。
+\footnote{実際の\index{NCプログラム}NCプログラムでは、安全を考慮して$\nicefrac{w_x}2+\phi'_\mathrm D$とする。
 この場合、
 \begin{align*}
   \phi'_\mathrm D > \frac{\phi_\mathrm D}2+\tau_x

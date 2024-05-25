@@ -2,7 +2,7 @@
 
 
 \modHeadchapter[lot]{現状の横型マシニングセンタの業務フロー}
-新たに導入する\index{よこがたマシニングセンタ@横型マシニングセンタ}横型マシニングセンタ（以下、\textbf{\DMC}）での工程は、\Dimple の測定・加工を除けば三菱製横型マシニングセンタ（以下、\textbf{\MMC}）と大まかには同様である。
+新たに導入する\index{よこがたマシニングセンタ@横型マシニングセンタ}横型マシニングセンタ（以下、\textbf{\DMC}）での\expandafterindex{こうてい（\yomiDMC）@工程（\yomiDMC）}工程は、\Dimple の測定・加工を除けば三菱製横型マシニングセンタ（以下、\textbf{\MMC}）と大まかには同様である。
 そこで、まずは\MMC ではどのようなフローで業務が行われているかを（ソフトウェアの観点から）みることにする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,16 +22,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\MMC における工程および使用ツール}
+\modHeadsection{\MMC における\expandafterindex{こうてい（\yomiMMC）@工程（\nameMMC）}工程および\expandafterindex{しようツール（\yomiMMC）@使用ツール（\nameMMC）}使用ツール}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.01.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{工程の種類（\MMC）}
-\MMC について、直接的なワークに対する測定・加工に関するものに着目すると、主に以下のような工程が行われる。\\
+\subsection{\expandafterindex{こうていのしゅるい（\yomiMMC）@工程の種類（\nameMMC）}工程の種類（\yomiMMC）}
+\MMC について、直接的なワークに対する測定・加工に関するものに着目すると、主に以下のような\expandafterindex{こうてい（\yomiMMC）@工程（\nameMMC）}工程が行われる。\\
 
-\begin{multicollongtblr}{ワークに直接関わる主な工程の種類（\MMC）}{X[l] X[l]}
+\begin{multicollongtblr}{ワークに直接関わる主な\expandafterindex{こうていのしゅるい（\yomiMMC）@工程の種類（\nameMMC）}工程の種類（\yomiMMC）}{X[l] X[l]}
 測定 & 加工\\
 \EndFace 外側AC方向 芯出し（外側 両側$X$測定） & \EndFacecutMilling\\
 \EndFace 外側BD方向 芯出し（外側 両側$Y$測定） & \OutcutMilling\\
@@ -47,21 +47,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.01.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{使用ツール（\MMC）}
+\subsection{\expandafterindex{しようツール（\yomiMMC）@使用ツール（\nameMMC）}使用ツール（\yomiMMC）}
 ソフトウェアに着目すると、\MMC による加工では主に以下のようなツールが使用されている。\\
 
-\begin{multicollongtblr}{使用ソフトウェアおよびツール（\MMC）}{l X[l]}
+\begin{multicollongtblr}{\expandafterindex{しようソフトウェア（\yomiMMC）@使用ソフトウェア（\nameMMC）}使用ソフトウェアおよび\expandafterindex{しようツール（\yomiMMC）@使用ツール（\nameMMC）}ツール（\yomiMMC）}{l X[l]}
 ツール & 主な用途\\
-\MMC 操作盤 & NCプログラムや各種変数の編集\\
+\MMC 操作盤 & \index{NCプログラム}NCプログラムや各種\index{へんすう（NCプログラム）@変数（NCプログラム）}変数の編集\\
 \index{みつびしマシニングセンタむじんかシステム@三菱マシニングセンタ無人化システム}三菱マシニングセンタ無人化システム & \index{タッチセンサープローブ}タッチセンサープローブ測定\\
 \expandafterindex{さくせいしたNCプログラム（\yomiMMC）@作成したNCプログラム（\nameMMC）}作成したNCプログラム & 各々の加工\\
-振分調整用スペーサ計算プログラム & 振分調整用スペーサの選定\\
+振分調整用スペーサ計算プログラム & 振分調整用スペーサの選定 および \ReAlocationLength の決定\\
 \index{かんすうでんたく@関数電卓}関数電卓 & 四則演算・根号の計算\\
 \end{multicollongtblr}
 
 \noindent
-\MMC では、各々の\index{しんだしそくてい@芯出し測定}芯出し測定の工程では「\index{みつびしマシニングセンタむじんかシステム@三菱マシニングセンタ無人化システム}三菱マシニングセンタ無人化システム」を、各々の加工工程では当社の従業員（一般職）により作成された\index{サブプログラム}サブプログラムを用いている。
-これらのサブプログラムを用いることにより、各々の\index{めいさい（モールド）@明細（モールド）}明細における必要な\index{すんぽう@寸法}寸法値等を\index{ひきすう（NCプログラム）@引数（NCプログラム）}引数に格納して用いればよい状態になっている。
+\MMC では、各々の\index{こうてい（しんだしそくてい）@工程（芯出し測定）}芯出し測定の工程では「\index{みつびしマシニングセンタむじんかシステム@三菱マシニングセンタ無人化システム}三菱マシニングセンタ無人化システム」を、各々の加工工程では当社の従業員（一般職）により作成された\index{サブプログラム}サブプログラムを用いている。
+これらの\index{サブプログラム}サブプログラムを用いることにより、各々の\index{めいさい（モールド）@明細（モールド）}明細における必要な\index{すんぽう@寸法}寸法値等を\index{ひきすう（NCプログラム）@引数（NCプログラム）}引数に格納して用いればよい状態になっている。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -290,7 +290,7 @@
 \begin{enumerate}[label=\sarrow]
 \item \OutcutLength と\Keyway の位置を確認し、実際に加工する\OutcutLength の判断を行う
 \item トップ側・ボトム側の両方に\Outcut のある場合は、どちら側が\expandafterindex{きじゅん（\yomiOutcutCenter）@基準（\nameOutcutCenter）}基準であるのかを確認する
-\item \expandafterindex{ないけい（\yomiEndFace）@内径（\nameEndFace）}\nameEndFace の内径・\OutcutAsideThickness・内面の\PlatingThk から、\OutcutCenter$X$位置用のパラメータを手動による計算で決定する
+\item \EndFaceID・\OutcutAsideThickness・内面の\PlatingThk から、\OutcutCenter$X$位置用のパラメータを手動による計算で決定する
 \item \CurvedOutcut の場合は、\expandafterindex{かたむきかく（\yomiCurvedOutcut）@傾き角（\nameCurvedOutcut）}傾き角を手動による計算で決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -298,8 +298,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
 \paragraph*{ボトム側の\Outcut のみの場合}
-\PMBottomOutcutAC
-\PMBottomOutcutBD
+\PMBottomOutcutACwidth
+\PMBottomOutcutBDwidth
 \PMBottomOutcutConerR
 \PMBottomOutcutLength\\
 \PMBottomEndACID
@@ -307,8 +307,8 @@
 \PMPlatingThk
 \tcbline*
 \paragraph*{トップ側の\Outcut のみの場合}
-\PMTopOutcutAC
-\PMTopOutcutBD
+\PMTopOutcutACwidth
+\PMTopOutcutBDwidth
 \PMTopOutcutCornerR\\
 \PMTopOutcutLength
 \PMKeywayPos
@@ -318,15 +318,15 @@
 \PMPlatingThk
 \tcbline*
 \paragraph*{両方に\Outcut があり、ボトム側が基準の場合}
-\PMBottomOutcutAC
-\PMBottomOutcutBD
+\PMBottomOutcutACwidth
+\PMBottomOutcutBDwidth
 \PMBottomOutcutConerR
 \PMBottomOutcutLength\\
 \PMBottomEndACID
 \PMBottomOutcutAsideThickness
 \PMPlatingThk\\
-\PMTopOutcutAC
-\PMTopOutcutBD
+\PMTopOutcutACwidth
+\PMTopOutcutBDwidth
 \PMTopOutcutCornerR
 \PMTopOutcutLength\\
 \PMKeywayPos
@@ -334,8 +334,8 @@
 \PMCenterlineEndFaceDifAC
 \tcbline*
 \paragraph*{両方に\Outcut があり、トップ側が基準の場合}
-\PMTopOutcutAC
-\PMTopOutcutBD
+\PMTopOutcutACwidth
+\PMTopOutcutBDwidth
 \PMTopOutcutCornerR\\
 \PMTopOutcutLength
 \PMKeywayPos
@@ -343,8 +343,8 @@
 \PMTopEndACID
 \PMTopOutcutAsideThickness
 \PMPlatingThk\\
-\PMBottomOutcutAC
-\PMBottomOutcutBD
+\PMBottomOutcutACwidth
+\PMBottomOutcutBDwidth
 \PMBottomOutcutConerR
 \PMBottomOutcutLength\\
 \PMCenterlineEndFaceDifAC
@@ -412,8 +412,8 @@
 \PMODCornerR
 \tcbline*
 \paragraph*{トップ\EndFaceOutCChamfer：\Outcut のある場合}
-\PMTopOutcutAC
-\PMTopOutcutBD
+\PMTopOutcutACwidth
+\PMTopOutcutBDwidth
 \PMTopOutcutCornerR
 \PMTopEndFaceOutCChamferLength
 \tcbline*
@@ -424,8 +424,8 @@
 \PMODCornerR
 \tcbline*
 \paragraph*{ボトム\EndFaceOutCChamfer：\Outcut のある場合}
-\PMBottomOutcutAC
-\PMBottomOutcutBD
+\PMBottomOutcutACwidth
+\PMBottomOutcutBDwidth
 \PMBottomOutcutConerR
 \PMBottomEndFaceOutCChamferLength
 \tcbline*
@@ -557,7 +557,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\MMC における工程（加工中）}
+\modHeadsection{\expandafterindex{こうてい（\yomiMMC）@工程（\nameMMC）}\nameMMC における工程（加工中）}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -649,7 +649,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 01.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\MMC における工程（加工後）}
+\modHeadsection{\expandafterindex{こうてい（\yomiMMC）@工程（\nameMMC）}\nameMMC における工程（加工後）}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

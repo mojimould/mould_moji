@@ -50,7 +50,6 @@
 \newNamecommand{Alocation}{振分け}{ふりわけ}
 \newNamecommand{AlocationLength}{振分長}{ふりわけちょう}
 \newNamecommand{ReAlocationLength}{再振分長}{さいふりわけちょう}
-\newNamecommand{Thickness}{肉厚}{にくあつ}
 
 \newGPMcommand{WorkTotalLength}{ワーク全長}{ワークぜんちょう}
 \newGPMcommand{TopAlocationLength}{トップ\nameAlocationLength}{トップ\yomiAlocationLength}
@@ -58,27 +57,59 @@
 \newGPMcommand{TopReAlocationLength}{トップ\nameReAlocationLength}{トップ\yomiReAlocationLength}
 \newGPMcommand{BottomReAlocationLength}{ボトム\nameReAlocationLength}{ボトム\yomiReAlocationLength}
 
+\newNamecommand{Thickness}{肉厚}{にくあつ}
+\newNamecommand{AsideThickness}{A側肉厚}{A側にくあつ}
+\newNamecommand{ACThickness}{AC方向の肉厚}{ACほうこうのにくあつ}
+
+\newGPMcommand{TopAsideThickness}{トップ\AsideThickness}{トップ\AsideThickness}
+\newGPMcommand{BottomAsideThickness}{ボトム\AsideThickness}{ボトム\AsideThickness}
+
 %%% CenterCurvature %%%
 \newNamecommand{CenterCurvature}{中心湾曲}{ちゅうしんわんきょく}
 \newNamecommand{CenterCurvatureLine}{\nameCenterCurvature 線}{\yomiCenterCurvature せん}
+\newNamecommand{InnerCurvature}{内側湾曲}{うちがわわんきょく}
+\newNamecommand{AsideInnerCurvature}{A側内側湾曲}{Aがわうちがわわんきょく}
+\newNamecommand{CsideInnerCurvature}{C側内側湾曲}{Cがわうちがわわんきょく}
 
 \newGPMcommand{CenterCurvatureExists}{\nameCenterCurvature の有無}{\yomiCenterCurvature のうむ}
 \newGPMcommand{CenterCurvatureRadius}{\nameCenterCurvature 半径}{\yomiCenterCurvature はんけい}
 
+%%% ENDFACE %%%
+\newNamecommand{EndFace}{端面}{たんめん}
+\newNamecommand{TopEndFace}{トップ\nameEndFace}{トップ\yomiEndFace}
+\newNamecommand{BottomEndFace}{ボトム\nameEndFace}{ボトム\yomiEndFace}
+\newNamecommand{EndFacecut}{\nameEndFace 削}{\yomiEndFace さく}
+\newNamecommand{TopEndFacecut}{トップ\nameEndFacecut}{トップ\yomiEndFacecut}
+\newNamecommand{BottomEndFacecut}{ボトム\nameEndFacecut}{ボトム\yomiEndFacecut}
+\newNamecommand{EndFacecutMilling}{\nameEndFacecut 加工}{\yomiEndFacecut かこう}
+\newNamecommand{EndFacecutMillingReferencePoint}{\nameEndFacecutMilling の基準点}{\yomiEndFacecutMilling のきじゅんてん}
+\newNamecommand{TopEndFacecutMilling}{トップ\nameEndFacecutMilling}{トップ\yomiEndFacecutMilling}
+\newNamecommand{BottomEndFacecutMilling}{ボトム\nameEndFacecutMilling}{ボトム\yomiEndFacecutMilling}
+\newNamecommand{EndFacecutCornerR}{\nameEndFacecut コーナーR}{\yomiEndFacecut コーナーR}
+
 %%% OUTERDIAMETER %%%
 \newNamecommand{OuterDiameter}{外径}{がいけい}
 \newNamecommand{HorizontalOD}{水平方向の\nameOuterDiameter}{すいへいほうこうの\yomiOuterDiameter}
+\newNamecommand{EndFaceHorizontalOD}{\nameEndFace における\nameHorizontalOD}{\yomiEndFace における\yomiHorizontalOD}
 
 \newGPMcommand{ACOD}{外側AC径}{そとがわACけい}
 \newGPMcommand{BDOD}{外側BD径}{そとがわBDけい}
 \newGPMcommand{TopEndACOD}{トップ端\nameACOD}{トップたん\yomiACOD}
 \newGPMcommand{ODCornerR}{\nameOuterDiameter コーナーR}{\yomiOuterDiameter コーナーR}
+\newGPMcommand{TopEndHorizontalOD}{トップ端\nameHorizontalOD}{トップたん\yomiHorizontalOD}
+\newGPMcommand{BottomEndHorizontalOD}{ボトム端\nameHorizontalOD}{ボトムたん\yomiHorizontalOD}
+\newGPMcommand{TopEndFaceBDOD}{\nameTopEndFace\nameBDOD}{\yomiTopEndFace\yomiBDOD}
 
 %%% INNERDIAMETER %%%
 \newNamecommand{InnerDiameter}{内径}{ないけい}
+\newNamecommand{EndFaceID}{\nameEndFace の\nameInnerDiameter}{\yomiEndFace の\yomiInnerDiameter}
+\newNamecommand{TopEndID}{トップ端\nameInnerDiameter}{トップたん\yomiInnerDiameter}
+\newNamecommand{BottomEndID}{ボトム端\nameInnerDiameter}{ボトムたん\yomiInnerDiameter}
 \newNamecommand{IDCornerR}{内形コーナーR}{ないけいコーナーR}
 \newNamecommand{ACID}{内側AC径}{うちがわACけい}
 \newNamecommand{BDID}{内側BD径}{うちがわBDけい}
+\newNamecommand{EndFaceACID}{\nameEndFace の\nameACID}{\yomiEndFace の\yomiACID}
+\newNamecommand{EndFaceBDID}{\nameEndFace の\nameBDID}{\yomiEndFace の\yomiBDID}
 \newNamecommand{Plating}{めっき}{めっき}
 \newNamecommand{IDTaper}{\nameInnerDiameter テーパ}{\yomiInnerDiameter テーパ}
 \newNamecommand{IDTaperTable}{\nameIDTaper 表}{\yomiIDTaper ひょう}
@@ -94,19 +125,6 @@
 \newGPMcommand{BottomEndIDCornerR}{ボトム端内形コーナーR}{ボトムたんないけいコーナーR}
 \newGPMcommand{PlatingThk}{\namePlating 膜厚}{\yomiPlating まくあつ}
 \newGPMcommand{IDTaperTableNum}{\nameIDTaperTable 番号}{\yomiIDTaperTable 番号}
-
-%%% ENDFACE %%%
-\newNamecommand{EndFace}{端面}{たんめん}
-\newNamecommand{TopEndFace}{トップ\nameEndFace}{トップ\yomiEndFace}
-\newNamecommand{BottomEndFace}{ボトム\nameEndFace}{ボトム\yomiEndFace}
-\newNamecommand{EndFacecut}{\nameEndFace 削}{\yomiEndFace さく}
-\newNamecommand{TopEndFacecut}{トップ\nameEndFacecut}{トップ\yomiEndFacecut}
-\newNamecommand{BottomEndFacecut}{ボトム\nameEndFacecut}{ボトム\yomiEndFacecut}
-\newNamecommand{EndFacecutMilling}{\nameEndFacecut 加工}{\yomiEndFacecut かこう}
-\newNamecommand{EndFacecutMillingReferencePoint}{\nameEndFacecutMilling の基準点}{\yomiEndFacecutMilling のきじゅんてん}
-\newNamecommand{TopEndFacecutMilling}{トップ\nameEndFacecutMilling}{トップ\yomiEndFacecutMilling}
-\newNamecommand{BottomEndFacecutMilling}{ボトム\nameEndFacecutMilling}{ボトム\yomiEndFacecutMilling}
-\newNamecommand{EndFacecutCornerR}{\nameEndFacecut コーナーR}{\yomiEndFacecut コーナーR}
 
 %%% OUTCUT %%%
 \newNamecommand{Outcut}{外削}{がいさく}
@@ -139,10 +157,10 @@
 \newGPMcommand{BottomCurvedOutcutExists}{\nameBottomCurvedOutcut の有無}{\yomiBottomCurvedOutcut の有無}
 \newGPMcommand{TopOutcutType}{トップ\nameOutcutType}{トップ\yomiOutcutType}
 \newGPMcommand{BottomOutcutType}{ボトム\nameOutcutType}{ボトム\yomiOutcutType}
-\newGPMcommand{TopOutcutAC}{トップ\nameOutcut AC径}{トップ\yomiOutcut ACけい}
-\newGPMcommand{TopOutcutBD}{トップ\nameOutcut BD径}{トップ\yomiOutcut BDけい}
-\newGPMcommand{BottomOutcutAC}{ボトム\nameOutcut AC径}{ボトム\yomiOutcut ACけい}
-\newGPMcommand{BottomOutcutBD}{ボトム\nameOutcut BD径}{ボトム\yomiOutcut BDけい}
+\newGPMcommand{TopOutcutACwidth}{トップ\nameOutcut AC径}{トップ\yomiOutcut ACけい}
+\newGPMcommand{TopOutcutBDwidth}{トップ\nameOutcut BD径}{トップ\yomiOutcut BDけい}
+\newGPMcommand{BottomOutcutACwidth}{ボトム\nameOutcut AC径}{ボトム\yomiOutcut ACけい}
+\newGPMcommand{BottomOutcutBDwidth}{ボトム\nameOutcut BD径}{ボトム\yomiOutcut BDけい}
 \newGPMcommand{TopOutcutCornerR}{トップ\nameOutcutCornerR}{トップ\yomiOutcutCornerR}
 \newGPMcommand{BottomOutcutConerR}{ボトム\nameOutcutCornerR}{ボトム\yomiOutcutCornerR}
 \newGPMcommand{TopOutcutAsideThickness}{トップ\nameOutcutAsideThickness}{トップ\yomiOutcutAsideThickness}
@@ -162,7 +180,9 @@
 \newGPMcommand{KeywayType}{\nameKeyway の種類}{\yomiKeyway のしゅるい}
 \newGPMcommand{KeywayPos}{\nameKeyway 位置長}{\yomiKeyway いちちょう}
 \newGPMcommand{KeywayWidth}{\nameKeyway 幅}{\yomiKeyway はば}
-\newGPMcommand{AsideKeywayDepth}{A側\nameKeyway 深さ}{Aがわ\yomiKeyway ふかさ}
+\newGPMcommand{AsideKeywayDepth}{A側\nameKeywayDepth}{Aがわ\yomiKeywayDepth}
+\newGPMcommand{TopsideKeywayDepth}{トップ側\nameKeywayDepth}{トップがわ\yomiKeywayDepth}
+\newGPMcommand{BottomsideKeywayDepth}{ボトム側\nameKeywayDepth}{ぼとむがわ\yomiKeywayDepth}
 \newGPMcommand{KeywayACOD}{\nameKeyway AC径}{\yomiKeyway ACけい}
 \newGPMcommand{KeywayBDOD}{\nameKeyway BD径}{\yomiKeyway BDけい}
 \newGPMcommand{KeywayCornerC}{\nameKeyway コーナーC}{\yomiKeyway コーナーC}
@@ -313,9 +333,14 @@
 \newGPMcommand{DimpleHorizontalPitch}{\nameDimple 水平方向ピッチ}{\yomiDimple すいへいほうこうピッチ}
 \newGPMcommand{DimpleOddRowLength}{\nameDimple 奇数列の長さ}{\yomiDimple きすうれつのながさ}
 \newGPMcommand{DimpleEvenRowLength}{\nameDimple 偶数列の長さ}{\yomiDimple ぐうすうれつのながさ}
+\newGPMcommand{DimpleIRowLength}{\nameDimpleIRow の長さ}{\yomiDimpleIRow のながさ}
 \newGPMcommand{DimpleRowNum}{\nameDimple 列数}{\yomiDimple れつすう}
+\newGPMcommand{OddRowDimpleNum}{奇数列目の\nameDimpleNum}{きすうれつめの\yomiDimpleNum}
+\newGPMcommand{EvenRowDimpleNum}{偶数列目の\nameDimpleNum}{ぐうすうれつめの\yomiDimpleNum}
 \newGPMcommand{DimpleDepth}{\nameDimple 深さ}{\yomiDimple ふかさ}
 \newGPMcommand{DimpleRadius}{\nameDimple 径}{\yomiDimple けい}
+\newGPMcommand{DimpleAngle}{\nameDimple 傾き角}{\yomiDimple かたむきかく}
+\newGPMcommand{CsideDimpleAngle}{C面用\nameDimple 傾き角}{Cめんよう\yomiDimple かたむきかく}
 
 %%% ReliefGroove %%%
 \newNamecommand{ReliefGroove}{逃がし溝}{にがしみぞ}
@@ -325,6 +350,10 @@
 %%% JIG %%%
 \newGPMcommand{JigLength}{ジグの長さ}{ジグのながさ}
 \newGPMcommand{JigWidth}{ジグの幅}{ジグのはば}
+\newGPMcommand{SpacerThickness}{スペーサ厚}{スペーサあつ}
+
+%%% TOOL %%%
+\newGPMcommand{ToolRadius}{工具半径}{こうぐはんけい}
 
 
 % 内面テーパ付湾曲付R直方筒 Inner Taper R-Rectangular Tube with Curvature
@@ -353,5 +382,6 @@
 
 \newNamecommand{KeywayCenter}{\nameKeyway 中心}{\yomiKeyway ちゅうしん}
 
+\newGPMcommand{ToolExchangePoint}{工具交換位置}{こうぐこうかんいち}
 \newGPMcommand{TableCenter}{テーブル中心}{テーブルちゅうしん}
 \newGPMcommand{JigCenter}{ジグ中心}{ジグちゅうしん}
