@@ -17,12 +17,6 @@
 \newcommand{\watermarkCopy}{\setallpageWatermark{\hspace{2.25pt}\textls[-46]{Copy}}{atan(297/210)+5.3}{13.4}{0.275}}
 \newcommand{\watermarkDraft}{\setallpageWatermark{Draft}{atan(297/210)+5.1}{25.3}}
 
-\renewcommand{\thepage}{%
-  \ifnum\value{page}<100\relax%
-    \ifnum\value{page}<10\relax 00\else 0\fi%
-  \fi%
-  \arabic{page}%
-}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% HEADER AND FOOTER %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
