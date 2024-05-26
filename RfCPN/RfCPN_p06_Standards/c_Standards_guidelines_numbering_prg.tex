@@ -1,10 +1,10 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter{NCプログラムの番号付け}
+\modHeadchapter{\index{NCプログラム}NCプログラムの番号付け}
 ここでは\DMC で使用する\index{プログラムばんごう@プログラム番号}プログラム番号（\index{Oコード}Oコード）についての規則を与える
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{機械設置時に付属の\bundledNCPrg についてはこの限りではない。}。
+\footnote{機械設置時に付属の\BundledNCPrg についてはこの限りではない。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -12,20 +12,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 12.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{プログラム番号の基本事項}
+\modHeadsection{\index{プログラムばんごう@プログラム番号}プログラム番号の基本事項}
 \begin{enumerate}[label=\Roman*., ref=\Roman*]
-\item プログラム番号は8桁の半角英数字で表される({\ttfamily(a-zA-Z|\textbackslash d){8}})
-\item 原則として、プログラム番号には半角数字のみを用いる({\ttfamily\textbackslash d{8}})
-\item プログラム番号には右から順に1桁目, 2桁目, ..., 8桁目と数えるものとする
-\item\label{item:PNbasicGE4}プログラム番号は4桁までは左側0埋めを行い、5桁目以上の左側0埋めの有無は問わない
+\item \index{プログラムばんごう@プログラム番号}プログラム番号は8桁の半角英数字で表される({\ttfamily(a-zA-Z|\textbackslash d){8}})
+\item 原則として、\index{プログラムばんごう@プログラム番号}プログラム番号には半角数字のみを用いる({\ttfamily\textbackslash d{8}})
+\item \index{プログラムばんごう@プログラム番号}プログラム番号には右から順に1桁目, 2桁目, ..., 8桁目と数えるものとする
+\item\label{item:PNbasicGE4}\index{プログラムばんごう@プログラム番号}プログラム番号は4桁までは左側0埋めを行い、5桁目以上の左側0埋めの有無は問わない
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-なおこの規則だと、\bundledNCPrg(O7xxx, O8xxx, O9xxx)と重複する恐れがある。
+なおこの規則だと、\BundledNCPrg(O7xxx, O8xxx, O9xxx)と重複する恐れがある。
 これについては、実際にそうした問題に直面したときにその都度に対応するものとする。
-基本的には、\bundledNCPrg を（可能であれば）変更する方針とする。
+基本的には、\BundledNCPrg を（可能であれば）変更する方針とする。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,18 +35,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 12.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{番号付け：8, 7桁目}
+\modHeadsection{番号付け：\index{8けため（プログラムばんごう）@8桁目（プログラム番号）}\index{7けため（プログラムばんごう）@7桁目（プログラム番号）}8, 7桁目}
 \index{7けため（プログラムばんごう）@7桁目（プログラム番号）}7桁目および\index{8けため（プログラムばんごう）@8桁目（プログラム番号）}8桁目はともに0とする。
 
-これに伴い、\ref{item:PNbasicGE4}に基づき、以下では0埋めを省略してすべてのプログラム番号を6桁の数字 ({\ttfamily\textbackslash d{6}})で表す。
+これに伴い、\ref{item:PNbasicGE4}に基づき、以下では0埋めを省略してすべての\index{プログラムばんごう@プログラム番号}プログラム番号を6桁の数字 ({\ttfamily\textbackslash d{6}})で表す。
 
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 12.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{番号付け：6桁目}
-\index{6けため（プログラムばんごう）@6桁目（プログラム番号）}6桁目は主にNCプログラムの種類を表すものとし、以下のように分類する。
+\modHeadsection{番号付け：\index{6けため（プログラムばんごう）@6桁目（プログラム番号）}6桁目}
+\index{6けため（プログラムばんごう）@6桁目（プログラム番号）}6桁目は主に\index{NCプログラム}NCプログラムの種類を表すものとし、以下のように分類する。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 9.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -80,7 +80,7 @@
 %% subsection 9.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{6桁目：9}
-6桁目が9のものは、製品の測定・加工に直接関係しないNCプログラムとする。
+6桁目が9のものは、製品の測定・加工に直接関係しない\index{NCプログラム}NCプログラムとする。
 このとき、下5桁はその都度に別途考慮し番号付けを行う。({\ttfamily9\textbackslash d{5}})
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,29 +97,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 20.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{番号付け：5桁目}
+\modHeadsection{番号付け：\index{5けため（プログラムばんごう）@5桁目（プログラム番号）}5桁目}
 \index{5けため（プログラムばんごう）@5桁目（プログラム番号）}5桁目は、以下のように分類する。
 なお、以降では6桁目が\ref{item:6Mmain}, \ref{item:6MD}, \ref{item:6Kmain}, \ref{item:6KD}の場合のみについて記述する
 \begin{enumerate}[label=\alph*)]
 \item 6桁目が\ref{item:6Mmain}（\Dimple 以外の測定）の場合、5桁目を以下にように分類する
   \begin{enumerate}[label=\arabic*., ref=\arabic*, start=1]
   \item%\label{item:5MCOBsZ}
-    芯出しにおいて、$Z$一定で($X$または$Y$の)外側両面を測定するNCプログラム({\ttfamily 11\textbackslash d{4}})
+    芯出しにおいて、$Z$一定で($X$または$Y$の)外側両面を測定する\index{NCプログラム（そとがわりょうめんそくてい）@NCプログラム（外側両面測定）}NCプログラムNCプログラム({\ttfamily 11\textbackslash d{4}})
   \item%\label{item:5MCOO}
-    \index{しんだし@芯出し}芯出しにおいて、($XY$)外側片面を測定するNCプログラム({\ttfamily 12\textbackslash d{4}})
+    \index{しんだし@芯出し}芯出しにおいて、($XY$)外側片面を測定する\index{NCプログラム（そとがわかためんそくてい）@NCプログラム（外側片面測定）}NCプログラム({\ttfamily 12\textbackslash d{4}})
   \item%\label{item:5MCIB}
-    芯出しにおいて、$Z$一定で($X$または$Y$の)内側両面を測定するNCプログラム({\ttfamily 13\textbackslash d{4}})
+    芯出しにおいて、$Z$一定で($X$または$Y$の)内側両面を測定する\index{NCプログラム（うちがわりょうめんそくてい）@NCプログラム（内側両面測定）}NCプログラム({\ttfamily 13\textbackslash d{4}})
   \item%\label{item:5MCIO}
-    芯出しにおいて、($XY$)内側片面を測定するNCプログラム({\ttfamily 14\textbackslash d{4}})
+    芯出しにおいて、($XY$)内側片面を測定する\index{NCプログラム（うちがわかためんそくてい）@NCプログラム（内側片面測定）}NCプログラム({\ttfamily 14\textbackslash d{4}})
   \item%\label{item:5MCL}
-    \CenterlineEndFaceDif を測定するNCプログラム({\ttfamily 15\textbackslash d{5}})
+    \CenterlineEndFaceDif を測定する\expandafterindex{NCプログラム（\yomiCenterlineEndFaceDif）@NCプログラム（\nameCenterlineEndFaceDif）}NCプログラム({\ttfamily 15\textbackslash d{5}})
   \end{enumerate}
 \item 6桁目が\ref{item:6MD}, \ref{item:6KD}（\Dimple の測定, 加工）の場合、5桁目を以下のように分類する
   \begin{enumerate}[label=\arabic*., ref=\arabic*]
-  \item \Dimple の行と\CenterCurvatureLine 上の交点への移動を繰返すNCプログラム({\ttfamily 21\textbackslash d{4}})
-%  \item \Dimple において、各内面方向への($X$または$Y$方向)の移動を繰返すNCプログラム({\ttfamily 22\textbackslash d{4}})
-  \item \Dimple の個々の行方向の移動を繰返すNCプログラム({\ttfamily 22\textbackslash d{4}})
-  \item \Dimple の個々の深さ方向に測定または加工するNCプログラム({\ttfamily [25]3\textbackslash d{4}})
+  \item \Dimple の行と\CenterCurvatureLine 上の交点への移動を繰返す\expandafterindex{NCプログラム（\yomiDimple）@NCプログラム（\nameDimple）}NCプログラム({\ttfamily 21\textbackslash d{4}})
+%  \item \Dimple において、各内面方向への($X$または$Y$方向)の移動を繰返す\expandafterindex{NCプログラム（\yomiDimple）@NCプログラム（\nameDimple）}NCプログラム({\ttfamily 22\textbackslash d{4}})
+  \item \Dimple の個々の行方向の移動を繰返す\expandafterindex{NCプログラム（\yomiDimple）@NCプログラム（\nameDimple）}NCプログラム({\ttfamily 22\textbackslash d{4}})
+  \item \Dimple の個々の深さ方向に測定または加工する\expandafterindex{NCプログラム（\yomiDimple）@NCプログラム（\nameDimple）}NCプログラム({\ttfamily [25]3\textbackslash d{4}})
 %  \item 主にレベル4の階層で用いるNCプログラム(c)
   \end{enumerate}
 %  複数の用途での使用が想定されるものに対しては、番号の若いほうに合わせる。
@@ -127,20 +127,20 @@
   \begin{enumerate}[label=\arabic*., ref=\arabic*, start=1]
 %  \item\label{item:5Kaux} 加工の種類に依存しない加工のNCプログラム(\ttfamily{40\textbackslash d{4}})
   \item%\label{item:5KF}
-    \EndFacecutMilling の位置決めを行うNCプログラム({\ttfamily 41\textbackslash d{4}})
-  \item\label{item:5KO} 主に、\OutcutMilling の位置決めを行うNCプログラム({\ttfamily 42\textbackslash d{4}})
+    \EndFacecutMilling の位置決めを行う\expandafterindex{NCプログラム（\yomiEndFacecut）@NCプログラム（\nameEndFacecut）}NCプログラム({\ttfamily 41\textbackslash d{4}})
+  \item\label{item:5KO} 主に、\OutcutMilling の位置決めを行う\expandafterindex{NCプログラム（\yomiOutcut）@NCプログラム（\nameOutcut）}NCプログラム({\ttfamily 42\textbackslash d{4}})
   \item%\label{item:5KK}
-    \KeywayMilling の位置決めを行うNCプログラム({\ttfamily 43\textbackslash d{4}})
+    \KeywayMilling の位置決めを行う\expandafterindex{NCプログラム（\yomiKeyway）@NCプログラム（\nameKeyway）}NCプログラム({\ttfamily 43\textbackslash d{4}})
   \item%\label{item:5KCO}
-    \EndFaceOutCChamferMilling の位置決めを行うNCプログラム({\ttfamily 44\textbackslash d{4}})
+    \EndFaceOutCChamferMilling の位置決めを行う\expandafterindex{NCプログラム（\yomiEndFaceOutCChamfer）@NCプログラム（\nameEndFaceOutCChamfer）}NCプログラム({\ttfamily 44\textbackslash d{4}})
   \item%\label{item:5KCI}
-    \EndFaceInCChamferMilling の位置決めを行うNCプログラム({\ttfamily 45\textbackslash d{4}})
+    \EndFaceInCChamferMilling の位置決めを行う\expandafterindex{NCプログラム（\yomiEndFaceInCChamfer）@NCプログラム（\nameEndFaceInCChamfer）}NCプログラム({\ttfamily 45\textbackslash d{4}})
   \item%\label{item:5KZ}
-    \EndFaceBoringMilling のNCプログラム({\ttfamily 46\textbackslash d{4}})
+    \EndFaceBoringMilling の\expandafterindex{NCプログラム（\yomiEndFaceBoring）@NCプログラム（\nameEndFaceBoring）}NCプログラム({\ttfamily 46\textbackslash d{4}})
   \item%\label{item:5KI}
-    \IncutBoringMilling のNCプログラム({\ttfamily 47\textbackslash d{4}})
+    \IncutBoringMilling の\expandafterindex{NCプログラム（\yomiIncutBoring）@NCプログラム（\nameIncutBoring）}NCプログラム({\ttfamily 47\textbackslash d{4}})
   \setcounter{enumii}{8}
-  \item 位置決め後、実際に加工を行うNCプログラム({\ttfamily 49\textbackslash d{4}})
+  \item 位置決め後、実際に加工を行う\index{NCプログラム}NCプログラム({\ttfamily 49\textbackslash d{4}})
   \end{enumerate}
 \end{enumerate}
 
@@ -148,7 +148,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 12.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{番号付け：4桁目}
+\modHeadsection{番号付け：\index{4けため（プログラムばんごう）@4桁目（プログラム番号）}4桁目}
 （6桁目が\ref{item:6Mmain}, \ref{item:6MD}, \ref{item:6Kmain}, \ref{item:6KD}の場合）\index{4けため（プログラムばんごう）@4桁目（プログラム番号）}4桁目は、以下のように分類する。
 \begin{enumerate}[label=\alph*), ref=\alph*)]
 \item 6桁目が\ref{item:6Kmain}\hx 以外の場合、4桁目は0とする({\ttfamily{[126][1-5]0\textbackslash d{3}}})
@@ -157,8 +157,8 @@
   \item 5桁目が\ref{item:5KO}（\OutcutMilling）以外の場合、4桁目は0とする({\ttfamily{4[13-59]0\textbackslash d{3}}})
   \item 5桁目が\ref{item:5KO}（\OutcutMilling）の場合、4桁目を以下のように分類する
     \begin{enumerate}[label=\arabic*., ref=\arabic*, start=0, leftmargin=*]
-    \item \EndFace に垂直方向の\OutcutMilling のNCプログラム({\ttfamily{420\textbackslash d{3}}})
-    \item \CurvedOutcutMilling のNCプログラム({\ttfamily{421\textbackslash d{3}}})
+    \item \EndFace に垂直方向の\OutcutMilling の\expandafterindex{NCプログラム（\yomiOutcut）@NCプログラム（\nameOutcut）}NCプログラム({\ttfamily{420\textbackslash d{3}}})
+    \item \CurvedOutcutMilling の\expandafterindex{NCプログラム（\yomiCurvedOutcut）@NCプログラム（\nameCurvedOutcut）}NCプログラム({\ttfamily{421\textbackslash d{3}}})
     \end{enumerate}
   \end{enumerate}
 \end{enumerate}
@@ -168,7 +168,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 12.6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{番号付け：3, 2桁目}
+\modHeadsection{番号付け：\index{3けため（プログラムばんごう）@3桁目（プログラム番号）}\index{2けため（プログラムばんごう）@2桁目（プログラム番号）}3, 2桁目}
 （6桁目が\ref{item:6Mmain}, \ref{item:6MD}, \ref{item:6Kmain}, \ref{item:6KD}\hx の場合の）\index{3けため（プログラムばんごう）@3桁目（プログラム番号）}3桁目および\index{2けため（プログラムばんごう）@2桁目（プログラム番号）}2桁目はともに0とする。({\ttfamily{[1245][1-69][01]0{2}\textbackslash d}})
 
 
@@ -179,11 +179,11 @@
 \modHeadsection{番号付け：1桁目}
 （6桁目が\ref{item:6Mmain}, \ref{item:6MD}, \ref{item:6Kmain}, \ref{item:6KD}\hx の場合の）\index{1けため（プログラムばんごう）@1桁目（プログラム番号）}1桁目は、以下のように分類する。
 \begin{enumerate}[label=\arabic*.]
-\item 主に$X$方向に測定または加工するNCプログラム({\ttfamily{[125][1-69]0{3}1}})
-\item 主に$Y$方向に測定または加工するNCプログラム({\ttfamily{[125][1-69]0{3}2}})
-\item 主に$Z$方向に測定または加工するNCプログラム({\ttfamily{[125][1-69]0{3}3}})
-\item 工具から見て左回り・工具径補正{\ttfamily G41}で、外側を加工するNCプログラム({\ttfamily{[125][1-69]0{3}4}})
-\item 工具から見て左回り・工具径補正{\ttfamily G42}で、外側を加工するNCプログラム({\ttfamily{[125][1-69]0{3}5}})
-\item 工具から見て左回り・工具径補正{\ttfamily G42}で、内側を加工するNCプログラム({\ttfamily{[125][1-69]0{3}6}})
-\item 工具から見て左回り・工具径補正{\ttfamily G41}で、内側を加工するNCプログラム({\ttfamily{[125][1-69]0{3}7}})
+\item 主に$X$方向に測定または加工する\index{NCプログラム（Xほうこう）@NCプログラム（$X$方向）}NCプログラム({\ttfamily{[125][1-69]0{3}1}})
+\item 主に$Y$方向に測定または加工する\index{NCプログラム（Yほうこう）@NCプログラム（$Y$方向）}NCプログラム({\ttfamily{[125][1-69]0{3}2}})
+\item 主に$Z$方向に測定または加工する\index{NCプログラム（Zほうこう）@NCプログラム（$Z$方向）}NCプログラム({\ttfamily{[125][1-69]0{3}3}})
+\item 工具から見て左回り・工具径補正{\ttfamily G41}で、外側を加工する\index{NCプログラム（そとがわG41）@NCプログラム（外側{\ttfamily G41}）}NCプログラム({\ttfamily{[125][1-69]0{3}4}})
+\item 工具から見て左回り・工具径補正{\ttfamily G42}で、外側を加工する\index{NCプログラム（そとがわG42）@NCプログラム（外側{\ttfamily G42}）}NCプログラム({\ttfamily{[125][1-69]0{3}5}})
+\item 工具から見て左回り・工具径補正{\ttfamily G42}で、内側を加工する\index{NCプログラム（うちがわG42）@NCプログラム（内側{\ttfamily G42}）}NCプログラム({\ttfamily{[125][1-69]0{3}6}})
+\item 工具から見て左回り・工具径補正{\ttfamily G41}で、内側を加工する\index{NCプログラム（うちがわG41）@NCプログラム（内側{\ttfamily G41}）}NCプログラム({\ttfamily{[125][1-69]0{3}7}})
 \end{enumerate}

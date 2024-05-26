@@ -1,33 +1,33 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter[lot,locode]{\createdNCPrg\label{chap:createdNCprgDM}\vphantom{\ref{chap:createdNCprgDM}}}
+\modHeadchapter[lot,locode]{\CreatedNCPrg\label{chap:createdNCprgDM}\vphantom{\ref{chap:createdNCprgDM}}}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section K.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\createdNCPrg{} 一覧}
+\modHeadsection{\CreatedNCPrg{} 一覧}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection K.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{メインプログラムの例 一覧}
-\DMC において作成した\index{メインプログラム}メインプログラムは以下のとおりである。
+\subsection{\CreatedNCMainPrg の例 一覧}
+\DMC において\CreatedNCMainPrg は以下のとおりである。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-ここでいうメインプログラムとは、\DrawingNumber と同一の\index{プログラムばんごう@プログラム番号}プログラム番号のものを指す。
-ただし、ここでは例として挙げているので、\pageautoref{subsec:notopenwork}に伴い、プログラム番号は本来のものから変更している。
+ここでいう\index{メインプログラム}メインプログラムとは、\DrawingNumber と同一の\index{プログラムばんごう@プログラム番号}プログラム番号のものを指す。
+ただし、ここでは例として挙げており、\pageautoref{subsec:notopenwork}に伴い、\index{プログラムばんごう@プログラム番号}プログラム番号は\pageautoref{chap:VI.24}の規則には倣っていない。
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{multicollongtblr}{\createdNCPrg 一覧：メインプログラムの例}{ccX[l]}
+\begin{multicollongtblr}{\CreatedNCPrg 一覧：\index{メインプログラムのれい@メインプログラムの例}メインプログラムの例}{ccX[l]}
 {\ttfamily O}番号 & \SetCell{c}工程 & 使用prg\\
 \SetCell[r=9]{c}
 \MainExOne & 外側芯出し・幅 & \MYOThickness\MXIface\\
@@ -57,19 +57,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection K.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{サブプログラム 一覧}
-\DMC において作成した\index{サブプログラム}サブプログラムは以下のとおりである
+\subsection{\CreatedNCSubPrg{} 一覧}
+\DMC において\expandafterindex{\yomiCreatedNCSubPrg（\yomiDMC）@\nameCreatedNCSubPrg（\nameDMC）}\CreatedNCSubPrg は以下のとおりである
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-ここでいうサブプログラムとは、\DrawingNumber と同一の\index{プログラムばんごう@プログラム番号}プログラム番号以外のものを指す。
+ここでいう\index{サブプログラム}サブプログラムとは、\DrawingNumber と同一の\index{プログラムばんごう@プログラム番号}プログラム番号以外のものを指す。
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{multicollongtblr}{\createdNCPrg 一覧：芯出し・幅・\CenterlineEndFaceDif 測定}{cX[l]l}
+\begin{multicollongtblr}{\CreatedNCPrg 一覧：芯出し・幅・\CenterlineEndFaceDif 測定}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \MXOThickness & 測定 両側 外側中心・幅$X$ & \OsensorOff\\
 \MYOThickness & 測定 両側 外側中心・幅$Y$ & \OsensorOff\\
@@ -80,7 +80,7 @@
 \Mcenterline & 測定 片側 \CenterlineEndFaceDif（C側外削面 $Z$方向, B側外削面 $Y$方向測定） & \OsensorOff\\
 \end{multicollongtblr}
 
-\begin{multicollongtblr}{\createdNCPrg 一覧：\Dimple}{cX[l]l}
+\begin{multicollongtblr}{\CreatedNCPrg 一覧：\Dimple}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \DLone      & 移動 各列の中心上 & \DLtwoAC\DLtwoBD\\
 \DLtwoAC    & 移動 AC面 列内の各\Dimple 上 & \DMLthreeAC\DKLthreeAC\\
@@ -92,7 +92,7 @@
 \end{multicollongtblr}
 
 \clearpage
-\begin{multicollongtblr}{\createdNCPrg 一覧：加工（\Dimple 以外）}{cX[l]l}
+\begin{multicollongtblr}{\CreatedNCPrg 一覧：加工（\Dimple 以外）}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \KTanmenRight      & 加工 \EndFacecut{} コーナーR 右回り1周 & \KOLeftFS\\
 \KGaisakuRLeft     & 加工 \Outcut{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
@@ -107,15 +107,15 @@
 \end{multicollongtblr}
 
 %\clearpage
-\begin{multicollongtblr}{\createdNCPrg 一覧：その他}{cX[l]l}
+\begin{multicollongtblr}{\CreatedNCPrg 一覧：その他}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \OpauseCheck  & 移動・加工後確認用：90$^\circ$回転 扉前一時停止 & -\\
 \OsensorOn    & \index{タッチセンサーでんげん@タッチセンサー電源}タッチセンサー電源ON & -\\
 \OsensorOff   & \index{タッチセンサーでんげん@タッチセンサー電源}タッチセンサー電源OFF & -\\
 \OwarmingupA  & \index{だんきうんてん@暖機運転}暖機運転 & \Owarmingup\\
-\Owarmingup   & 暖機運転用サブプログラム & \\
-\OtoolLengthA & \index{とうろくこうぐ@登録工具}登録工具 工具長自動測定 & \OtoolLength\\
-\OtoolLength  & \index{こうぐちょう@工具長}工具長 自動測定用サブプログラム & -\\
+\Owarmingup   & \index{だんきうんてんようサブプログラム@暖機運転用サブプログラム}暖機運転用サブプログラム & \\
+\OtoolLengthA & \index{とうろくこうぐ@登録工具}登録工具 \index{こうぐちょうそくてい@工具長測定}工具長測定 & \OtoolLength\\
+\OtoolLength  & \index{こうぐちょうそくていようサブプログラム@工具長測定用サブプログラム}工具長測定用サブプログラム & -\\
 \end{multicollongtblr}
 
 
@@ -124,14 +124,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section G.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{メインプログラムの例}
-\index{メインプログラム}メインプログラムについては、個々の\index{めいさい（モールド）@明細（モールド）}明細の情報（社内機密情報）を含む。
-そのため、\pageautoref{subsec:notopenwork}に則り、記載は代表的・典型的なものに留める。\\
+\modHeadsection{\index{メインプログラムのれい@メインプログラムの例}メインプログラムの例}
+\index{メインプログラム}メインプログラムについては、個々の\index{めいさい（モールド）@明細（モールド）}明細の情報（社内秘情報）を含む。
+そのため、\pageautoref{subsec:notopenwork}に則り、記載は代表的あるいは典型的なものに留める。\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MainExOne %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionof{locode}{\MainExOne：\index{メインプログラム}メインプログラムの例1}
+\captionof{locode}{\MainExOne：\index{メインプログラムのれい@メインプログラムの例}メインプログラムの例1}
 \GcodeInputminted{../Created_NC_Programs/main_program_examples/\nameMainExOne}
 
 
@@ -139,7 +139,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \MainExTwo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionof{locode}{\MainExTwo：\index{メインプログラム}メインプログラムの例2}
+\captionof{locode}{\MainExTwo：\index{メインプログラムのれい@メインプログラムの例}メインプログラムの例2}
 \GcodeInputminted{../Created_NC_Programs/main_program_examples/\nameMainExTwo}
 
 
