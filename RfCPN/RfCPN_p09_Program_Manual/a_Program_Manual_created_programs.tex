@@ -48,7 +48,7 @@
            & \Keyway & \KMizoConerLeft\\
            & \EndFaceChamfer & \KSotoMentoriRLeft\KUchiMentoriRLeft\\
            & \EndFaceBoring & \KEndFaceBoring\\
-           & \Incut & \KIncut\\
+           & \IncutBoring & \KIncutBoring\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
 \end{multicollongtblr}
 
@@ -100,7 +100,7 @@
 \KSotoMentoriRLeft & 加工 \EndFaceOutChamfer{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
 \KUchiMentoriRLeft & 加工 \EndFaceInChamfer{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
 \KEndFaceBoring & 加工 \EndFaceBoring{} コーナーR 左回り1周 & \KOLeftFF\OpauseCheck\\
-\KIncut & 加工 \Incut{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
+\KIncutBoring & 加工 \IncutBoring{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
 \KOLeftFF   & 外側 {\ttfamily G41} 左回り1周 右始まり & -\\
 \KOLeftFS   & 外側 {\ttfamily G42} 左回り1周 右上始まり & -\\
 \KILeftFF   & 内側 {\ttfamily G41} 左回り1周 中央上始まり & -\\
@@ -269,8 +269,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionof{locode}{\KIncut\,:加工 \Incut{} コーナーR 左回り1周}
-\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKIncut.nc}
+\captionof{locode}{\KIncutBoring\,:加工 \IncutBoring{} コーナーR 左回り1周}
+\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKIncutBoring.nc}
 
 
 \clearrightpage
