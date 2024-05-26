@@ -56,7 +56,10 @@
 \newGPMcommand{BottomAlocationLength}{ボトム\nameAlocationLength}{ボトム\yomiAlocationLength}
 \newGPMcommand{TopReAlocationLength}{トップ\nameReAlocationLength}{トップ\yomiReAlocationLength}
 \newGPMcommand{BottomReAlocationLength}{ボトム\nameReAlocationLength}{ボトム\yomiReAlocationLength}
+\newGPMcommand{AlocationAngle}{振分調整用傾き角}{ふりわけちょうせいようかたむきかく}
+\newGPMcommand{EqualAlocationAngle}{均等振分角度}{きんとうふりわけかくど}
 
+%%% Thicness %%%
 \newNamecommand{Thickness}{肉厚}{にくあつ}
 \newNamecommand{AsideThickness}{A側肉厚}{A側にくあつ}
 \newNamecommand{ACThickness}{AC方向の肉厚}{ACほうこうのにくあつ}
@@ -187,6 +190,7 @@
 \newGPMcommand{KeywayBDOD}{\nameKeyway BD径}{\yomiKeyway BDけい}
 \newGPMcommand{KeywayCornerC}{\nameKeyway コーナーC}{\yomiKeyway コーナーC}
 \newGPMcommand{KeywayCornerR}{\nameKeyway コーナーR}{\yomiKeyway コーナーR}
+\newGPMcommand{KeywayDepthMeasurementAngle}{\nameKeywayDepth 測定時傾き角}{\yomiKeywayDepth そくていじかたむきかく}
 
 %%% CHANMFER %%%
 \newNamecommand{EndFaceChamfer}{端面面取}{たんめんめんとり}
@@ -295,15 +299,15 @@
 \newGPMcommand{EndFaceBoringCornerR}{\nameEndFaceBoring コーナーR}{\yomiEndFaceBoring コーナーR}
 \newGPMcommand{EndFaceBoringLength}{\nameEndFaceBoring 長}{\yomiEndFaceBoring ちょう}
 
-%%% Incut %%%
-\newNamecommand{Incut}{内削座ぐり}{ないさくざぐり}
-\newNamecommand{IncutMilling}{\nameIncut 加工}{\yomiIncut かこう}
+%%% IncutBoring %%%
+\newNamecommand{IncutBoring}{内削座ぐり}{ないさくざぐり}
+\newNamecommand{IncutBoringMilling}{\nameIncutBoring 加工}{\yomiIncutBoring かこう}
 
-\newGPMcommand{IncutExists}{\nameIncut の有無}{\yomiIncut のうむ}
-\newGPMcommand{IncutACWidth}{\nameIncut AC径}{\yomiIncut ACけい}
-\newGPMcommand{IncutBDWidth}{\nameIncut BD径}{\yomiIncut BDけい}
-\newGPMcommand{IncutCornerR}{\nameIncut コーナーR}{\yomiIncut コーナーR}
-\newGPMcommand{IncutLength}{\nameIncut 長}{\yomiIncut ちょう}
+\newGPMcommand{IncutBoringExists}{\nameIncutBoring の有無}{\yomiIncutBoring のうむ}
+\newGPMcommand{IncutBoringACWidth}{\nameIncutBoring AC径}{\yomiIncutBoring ACけい}
+\newGPMcommand{IncutBoringBDWidth}{\nameIncutBoring BD径}{\yomiIncutBoring BDけい}
+\newGPMcommand{IncutBoringCornerR}{\nameIncutBoring コーナーR}{\yomiIncutBoring コーナーR}
+\newGPMcommand{IncutBoringLength}{\nameIncutBoring 長}{\yomiIncutBoring ちょう}
 
 %%% Dimple %%%
 \newNamecommand{Dimple}{内面ディンプル}{ないめんディンプル}
@@ -339,7 +343,7 @@
 \newGPMcommand{EvenRowDimpleNum}{偶数列目の\nameDimpleNum}{ぐうすうれつめの\yomiDimpleNum}
 \newGPMcommand{DimpleDepth}{\nameDimple 深さ}{\yomiDimple ふかさ}
 \newGPMcommand{DimpleRadius}{\nameDimple 径}{\yomiDimple けい}
-\newGPMcommand{DimpleAngle}{\nameDimple 傾き角}{\yomiDimple かたむきかく}
+\newGPMcommand{DimpleAngle}{\nameDimple 用傾き角}{\yomiDimple ようかたむきかく}
 \newGPMcommand{CsideDimpleAngle}{C面用\nameDimple 傾き角}{Cめんよう\yomiDimple かたむきかく}
 
 %%% ReliefGroove %%%
@@ -354,6 +358,11 @@
 
 %%% TOOL %%%
 \newGPMcommand{ToolRadius}{工具半径}{こうぐはんけい}
+\newGPMcommand{FaceMillDC}{フェイスミル刃径}{フェイスミルはけい}
+\newGPMcommand{FaceMillDCX}{フェイスミル最大刃径}{フェイスミルさいだいはけい}
+\newGPMcommand{TaperEndMillAngle}{テーパエンドミル片角}{テーパエンドミルかたかく}
+\newGPMcommand{TaperEndMillTipDiameter}{テーパエンドミル先端径}{テーパエンドミルせんたんけい}
+\newGPMcommand{TaperEndMillReferenceDiameter}{テーパエンドミル参照直径}{テーパエンドミルさんしょうちょっけい}
 
 
 % 内面テーパ付湾曲付R直方筒 Inner Taper R-Rectangular Tube with Curvature
@@ -365,7 +374,7 @@
 \newNamecommand{BottomCurvatureCenter}{ボトム端の\nameCurvatureCenter}{ボトムたんの\yomiCurvatureCenter}
 
 \newNamecommand{ODCenter}{外径中心}{がいけいちゅうしん}
-\newNamecommand{EndFaceODCenter}{\nameODCenter（端面）}{\yomiODCenter（たんめん）}
+\newNamecommand{EndFaceODCenter}{\nameODCenter（\nameEndFace）}{\yomiODCenter（\yomiEndFace）}
 \newNamecommand{TopODCenter}{トップ端の\nameODCenter}{トップたんの\yomiODCenter}
 \newNamecommand{BottomODCenter}{ボトム端の\nameODCenter}{ボトムたんの\yomiODCenter}
 
@@ -383,5 +392,5 @@
 \newNamecommand{KeywayCenter}{\nameKeyway 中心}{\yomiKeyway ちゅうしん}
 
 \newGPMcommand{ToolExchangePoint}{工具交換位置}{こうぐこうかんいち}
-\newGPMcommand{TableCenter}{テーブル中心}{テーブルちゅうしん}
+\newGPMcommand{TableCenter}{テーブル回転中心}{テーブルかいてんちゅうしん}
 \newGPMcommand{JigCenter}{ジグ中心}{ジグちゅうしん}

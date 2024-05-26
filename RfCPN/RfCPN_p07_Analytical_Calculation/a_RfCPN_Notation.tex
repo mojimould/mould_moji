@@ -51,10 +51,10 @@ $\tau_x$ & \ACThickness（略称） &\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{multicollongtblr}{角度}{cX[l]c}
 記号 & 内容 & 図面\\
-$\theta$ & \AlocationLength 調整用角度 &\\
-$\theta'$ & 均等振分角度 &\\
-$\theta_\mathrm T'$ & 均等振分角度（\nameTopEndFace{} 工具側） &\\
-$\theta_\mathrm B'$ & 均等振分角度（\nameBottomEndFace{} 工具側） &\\
+$\theta$ & \AlocationAngle &\\
+$\theta'$ & \EqualAlocationAngle &\\
+$\theta_\mathrm T'$ & \EqualAlocationAngle（\nameTopEndFace{} 工具側） &\\
+$\theta_\mathrm B'$ & \EqualAlocationAngle（\nameBottomEndFace{} 工具側） &\\
 $\psi$ & スペーサによる$\mathrm U_\mathrm B$を中心とした傾き角 &\\
 $\Omega$ & \CurvatureCenter 点Oを原点としたワークの回転角度 &\\
 $\alpha_{\mathrm c}$ & \CurvatureCenter$O$と$\mathrm T_\mathrm c$の角度（鋭角） &\\
@@ -95,7 +95,7 @@ $\kappa_d$ & （\index{ずめん@図面}図面上の）\AsideKeywayDepth & ○\\
 $\kappa_d'$ & （測定上の）\AsideKeywayDepth &\\
 $\kappa_s$ & \TopsideKeywayDepth &\\
 $\kappa_l$ & \BottomsideKeywayDepth &\\
-$\zeta$ & 測定時の測定器の傾き角 &\\
+$\zeta$ & \KeywayDepthMeasurementAngle &\\
 \end{multicollongtblr}
 
 \clearpage
@@ -108,10 +108,10 @@ $c_\mathrm{To}$ & \TopEndFaceOutCChamferLength & ○\\
 $c_\mathrm{Ti}$ & \TopEndFaceInCChamferLength & ○\\
 $c_\mathrm{Bo}$ & \BottomEndFaceOutCChamferLength & ○\\
 $c_\mathrm{Bi}$ & \BottomEndFaceInCChamferLength & ○\\
-$D_\mathrm e$ & テーパエンドミル先端径（直径） & ○\\
-$D_\mathrm r$ & テーパエンドミル参照直径 &\\
+$D_\mathrm e$ & \TaperEndMillTipDiameter（直径） & ○\\
+$D_\mathrm r$ & \TaperEndMillReferenceDiameter &\\
 $d_\mathrm e$ & テーパエンドミル先端平面および参照直径平面間の距離 &\\
-$\xi_\mathrm e$ & テーパエンドミル片角 & ○\\
+$\xi_\mathrm e$ & \TaperEndMillAngle & ○\\
 \end{multicollongtblr}
 
 %\clearpage
@@ -143,9 +143,9 @@ $h_\beta$ & \EndFaceBoringLength & ○\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{multicollongtblr}{\Dimple（主に傾け前）}{cX[l]c}
+\begin{multicollongtblr}{\Dimple（主に傾き前）}{cX[l]c}
 記号 & 内容 & 図面\\
-$m$ & \Dimple 列数（1面） & ○\\
+$m$ & \DimpleRowNum（1面） & ○\\
 $q$ & トップ端から\DimpleFirstRow までの距離 & ○\\
 $p_x$ & \DimpleHorizontalPitch & ○\\
 $p_z$ & \DimpleVerticalPitch & ○\\
@@ -174,33 +174,33 @@ $\mathcal R_\mathrm i$ & \CsideInnerCurvature（略称） &\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% captionof %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{multicollongtblr}{\Dimple（主に傾け後）}{cX[l]c}
+\begin{multicollongtblr}{\Dimple（主に傾き後）}{cX[l]c}
 記号 & 内容 & 図面\\
-$g_\mathrm T'$ & 傾け後のトップ端内面中心 &\\
-$g_{\mathrm Tx}'$ & 傾け後のトップ端内面中心$X$ &\\
-$g_{\mathrm Ty}'$ & 傾け後のトップ端内面中心$Y$ &\\
-$g_{\mathrm TZ}'$ & 傾け後のトップ端内面中心$Z$ &\\
+$g_\mathrm T'$ & 傾き後のトップ端内面中心 &\\
+$g_{\mathrm Tx}'$ & 傾き後のトップ端内面中心$X$ &\\
+$g_{\mathrm Ty}'$ & 傾き後のトップ端内面中心$Y$ &\\
+$g_{\mathrm TZ}'$ & 傾き後のトップ端内面中心$Z$ &\\
 $\mathcal L_i$ & $i$列目の\CurvatureCenter と\TopCurvatureCenter との差$X$ &\\
 $\mathcal L_{i,j}$ & $i$列目の\CurvatureCenter と$j$列目の\CurvatureCenter との差$X$ &\\
-$\mathcal D_{xi,\mathrm A}$ & \AFaceDimpleIRowJ$X$（P原点・傾け前） &\\
-$\mathcal D_{xi,\mathrm C}$ & \CFaceDimpleIRowJ$X$（P原点・傾け前） &\\
-$\mathcal D_{xij,\mathrm B}$ & \BFaceDimpleIRowJ, \DFaceDimpleIRowJ$X$（P原点・傾け前） &\\
-$\mathcal D_{yij,\mathrm A}$ & \AFaceDimpleIRowJ, \CFaceDimpleIRowJ$Y$（P原点・傾け前） &\\
-$\mathcal D_{yi,\mathrm B}$ & \BFaceDimpleIRowJ$Y$（P原点・傾け前） &\\
-$\mathcal D_{yi,\mathrm D}$ & \DFaceDimpleIRowJ$Y$（P原点・傾け前） &\\
-$\mathcal D_{zi}$ & \DimpleIRowJ$Z$（P原点・傾け前） &\\
-$\mathcal D_{xij,\mathrm A}'$ & \AFaceDimpleIRowJ$X$（P原点・傾け後） &\\
-$\mathcal D_{yij,\mathrm A}'$ & \AFaceDimpleIRowJ$Y$（P原点・傾け後） &\\
-$\mathcal D_{zij,\mathrm A}'$ & \AFaceDimpleIRowJ$Z$（P原点・傾け後） &\\
-$\mathcal D_{xij,\mathrm C}'$ & \CFaceDimpleIRowJ$X$（P原点・傾け後） &\\
-$\mathcal D_{yij,\mathrm C}'$ & \CFaceDimpleIRowJ$Y$（P原点・傾け後） &\\
-$\mathcal D_{zij,\mathrm C}'$ & \CFaceDimpleIRowJ$Z$（P原点・傾け後） &\\
-$\mathcal D_{xij,\mathrm B}'$ & \BFaceDimpleIRowJ$X$（P原点・傾け後） &\\
-$\mathcal D_{yij,\mathrm B}'$ & \BFaceDimpleIRowJ$Y$（P原点・傾け後） &\\
-$\mathcal D_{zij,\mathrm B}'$ & \BFaceDimpleIRowJ$Z$（P原点・傾け後） &\\
-$\mathcal D_{xij,\mathrm D}'$ & \DFaceDimpleIRowJ$X$（P原点・傾け後） &\\
-$\mathcal D_{yij,\mathrm D}'$ & \DFaceDimpleIRowJ$Y$（P原点・傾け後） &\\
-$\mathcal D_{zij,\mathrm D}'$ & \DFaceDimpleIRowJ$Z$（P原点・傾け後） &\\
+$\mathcal D_{xi,\mathrm A}$ & \AFaceDimpleIRowJ$X$（P原点・傾き前） &\\
+$\mathcal D_{xi,\mathrm C}$ & \CFaceDimpleIRowJ$X$（P原点・傾き前） &\\
+$\mathcal D_{xij,\mathrm B}$ & \BFaceDimpleIRowJ, \DFaceDimpleIRowJ$X$（P原点・傾き前） &\\
+$\mathcal D_{yij,\mathrm A}$ & \AFaceDimpleIRowJ, \CFaceDimpleIRowJ$Y$（P原点・傾き前） &\\
+$\mathcal D_{yi,\mathrm B}$ & \BFaceDimpleIRowJ$Y$（P原点・傾き前） &\\
+$\mathcal D_{yi,\mathrm D}$ & \DFaceDimpleIRowJ$Y$（P原点・傾き前） &\\
+$\mathcal D_{zi}$ & \DimpleIRowJ$Z$（P原点・傾き前） &\\
+$\mathcal D_{xij,\mathrm A}'$ & \AFaceDimpleIRowJ$X$（P原点・傾き後） &\\
+$\mathcal D_{yij,\mathrm A}'$ & \AFaceDimpleIRowJ$Y$（P原点・傾き後） &\\
+$\mathcal D_{zij,\mathrm A}'$ & \AFaceDimpleIRowJ$Z$（P原点・傾き後） &\\
+$\mathcal D_{xij,\mathrm C}'$ & \CFaceDimpleIRowJ$X$（P原点・傾き後） &\\
+$\mathcal D_{yij,\mathrm C}'$ & \CFaceDimpleIRowJ$Y$（P原点・傾き後） &\\
+$\mathcal D_{zij,\mathrm C}'$ & \CFaceDimpleIRowJ$Z$（P原点・傾き後） &\\
+$\mathcal D_{xij,\mathrm B}'$ & \BFaceDimpleIRowJ$X$（P原点・傾き後） &\\
+$\mathcal D_{yij,\mathrm B}'$ & \BFaceDimpleIRowJ$Y$（P原点・傾き後） &\\
+$\mathcal D_{zij,\mathrm B}'$ & \BFaceDimpleIRowJ$Z$（P原点・傾き後） &\\
+$\mathcal D_{xij,\mathrm D}'$ & \DFaceDimpleIRowJ$X$（P原点・傾き後） &\\
+$\mathcal D_{yij,\mathrm D}'$ & \DFaceDimpleIRowJ$Y$（P原点・傾き後） &\\
+$\mathcal D_{zij,\mathrm D}'$ & \DFaceDimpleIRowJ$Z$（P原点・傾き後） &\\
 \end{multicollongtblr}
 
 %\clearpage
@@ -237,7 +237,7 @@ $\sigma$ & 受板の幅 & ○\\
 $R_\mathrm i'$ & $R_i-\rho$ &\\
 $\bar l$ & $\displaystyle l-\frac\sigma2$ &\\
 $l'$ & $l+f_\mathrm d$ &\\
-$\delta_\mathrm s$ & \AlocationLength 調整用スペーサの厚さ &\\
+$\delta_\mathrm s$ & \AlocationLength 調整用\SpacerThickness &\\
 $\Delta$ & $\mathrm U_\mathrm B$と\TableCenter Pとの水平距離 &\\
 $\Delta'$ & Oを原点とした\TableCenter Pの水平距離 &\\
 $\Delta_y$ & ジグのワークが乗る部分の$Y$座標 & ◯\\
@@ -246,12 +246,12 @@ $\Delta_y$ & ジグのワークが乗る部分の$Y$座標 & ◯\\
 %\clearpage
 \begin{multicollongtblr}{工具}{cX[l]c}
 記号 & 内容 & 図面\\
-$\phi_\mathrm D$ & \EndFacecutMilling 用フェイスミル刃径（直径） & ○\\
-$\phi_\mathrm D'$ & \EndFacecutMilling 用フェイスミル最大刃径（直径） & ○\\
+$\phi_\mathrm D$ & \EndFacecutMilling 用\FaceMillDC（直径） & ○\\
+$\phi_\mathrm D'$ & \EndFacecutMilling 用\FaceMillDCX（直径） & ○\\
 $d_\mathrm e$ & テーパエンドミル先端からの距離（参照直径用） &\\
-$D_\mathrm r$ & テーパエンドミル参照直径 &\\
-$D_\mathrm e$ & テーパエンドミル先端径（直径） & ○\\
-$\xi_\mathrm e$ & テーパエンドミル先端テーパ角度（片角） & ○\\
+$D_\mathrm r$ & \TaperEndMillReferenceDiameter &\\
+$D_\mathrm e$ & \TaperEndMillTipDiameter（直径） & ○\\
+$\xi_\mathrm e$ & \TaperEndMillAngle & ○\\
 \end{multicollongtblr}
 
 \clearpage
@@ -259,7 +259,7 @@ $\xi_\mathrm e$ & テーパエンドミル先端テーパ角度（片角） & �
 記号 & 内容 & 参照\\
 $T_\mathrm l$ & \index{えきそうせんおんど@液相線温度}液相線温度 &\\
 $T_\mathrm s$ & \index{こそうせんおんど@固相線温度}固相線温度 &\\
-$T_0$ & 基準温度 & ○\\
+$T_0$ & \index{きじゅんおんど@基準温度}基準温度 & ○\\
 $X_\mathrm C$ & 炭素Cの含有量 & ○\\
 $X_\mathrm{Si}$ & ケイ素Siの含有量 & ○\\
 $X_\mathrm{Mn}$ & マンガンMnの含有量 & ○\\
@@ -273,7 +273,7 @@ $k_\mathrm S$ & 硫黄Sにおける影響係数 & ○\\
 \end{multicollongtblr}
 
 %\clearpage
-\begin{multicollongtblr}{アイソパラメトリック曲線}{cX[l]c}
+\begin{multicollongtblr}{\index{アイソパラメトリックきょくせん@アイソパラメトリック曲線}アイソパラメトリック曲線}{cX[l]c}
 記号 & 内容 & 参照\\
 $S(u, v)$ & \index{パラメトリックサーフェス}パラメトリックサーフェス &\\
 $u, v$ & \index{パラメータ（パラメトリックサーフェス）}パラメトリックサーフェスのパラメータ &\\
@@ -289,8 +289,8 @@ $w_i$ & \index{ウェイト（きていかんすう）@ウェイト（基底関�
 
 \begin{multicollongtblr}{その他}{cX[l]c}
 記号 & 内容 & 参照\\
-$\delta x$ & 回転中心とジグ中心とのずれ$X$ &\\
-$\delta z$ & 回転中心とジグ中心とのずれ$Z$ &\\
+$\delta x$ & 回転中心と\JigCenter とのずれ$X$ &\\
+$\delta z$ & 回転中心と\JigCenter とのずれ$Z$ &\\
 \end{multicollongtblr}
 
 

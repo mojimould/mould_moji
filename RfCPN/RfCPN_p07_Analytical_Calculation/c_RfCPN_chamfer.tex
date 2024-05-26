@@ -27,13 +27,13 @@
 \modHeadsection{テーパエンドミルの参照直径}
 \index{テーパエンドミル}テーパエンドミルは、その名の通り\index{テーパ（テーパエンドミル）}テーパの付いた工具であり、先端が平坦になっているものも多い。
 しかし、先端部分を\index{こうぐちょう@工具長}工具長として設定すると、その部分が段差となり\index{テーパかこう@テーパ加工}テーパ加工を適切に行うことができない。
-そのため、先端部分から一定の距離$d_\mathrm e$だけずらした箇所を\index{こうぐちょう@工具長}工具長として設定し、またその箇所の直径（\index{さんしょうちょっけい（テーパエンドミル）@参照直径（テーパエンドミル）}\textbf{参照直径}）$D_\mathrm r$を\index{こうぐちょっけい（テーパエンドミル）@工具直径（テーパエンドミル）}工具直径として補正を行うことが推奨される。
+そのため、先端部分から一定の距離$d_\mathrm e$だけずらした箇所を\index{こうぐちょう@工具長}工具長として設定し、またその箇所の直径（\textbf{\TaperEndMillReferenceDiameter}）$D_\mathrm r$を\index{こうぐちょっけい（テーパエンドミル）@工具直径（テーパエンドミル）}工具直径として補正を行うことが推奨される。
 
 ここで、先端径（直径）
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{先端が平坦でなく尖っている場合は$D_\mathrm e = 0$とする。}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-およびテーパ角（片角）をそれぞれ$D_\mathrm e$, $\xi_\mathrm e$とすると、参照直径$D_\mathrm r$は
+および\TaperEndMillAngle をそれぞれ$D_\mathrm e$, $\xi_\mathrm e$とすると、\TaperEndMillReferenceDiameter$D_\mathrm r$は
 \begin{align*}
   D_\mathrm r = D_\mathrm e+2d_\mathrm e\tan\xi_\mathrm e
 \end{align*}

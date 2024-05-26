@@ -127,23 +127,23 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %% section 6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\DimpleMilling の基本方針}
-\DimpleMilling における留意事項の1つに、ワークの内面（特にトップ端）と工具が接触してしまう\index{アンダーカット}アンダーカットというものがある
+\DimpleMilling における留意事項の1つに、\index{ワーク}ワークの内面（特にトップ端）と工具が接触してしまう\index{アンダーカット}アンダーカットというものがある
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{\Dimple の測定・加工ではとりわけアンダーカットが生じやすい、という意味である。
-その他の測定・加工についても当然アンダーカットは十分に生じうる。}。
+\footnote{\Dimple の測定・加工ではとりわけ\index{アンダーカット}アンダーカットが生じやすい、という意味である。
+その他の測定・加工についても当然\index{アンダーカット}アンダーカットは十分に生じうる。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-特にA面側は工具へ向かう方向に\index{わんきょく@湾曲}湾曲があるため、アンダーカットが生じやすい。
-そこで、アンダーカットを避けつつ加工ができるようにするため、\index{ワーク}をいくらか（湾曲と反対側に）傾けて加工を行う。
-その\expandafterindex{かたむきかく（\yomiDimple）@傾き角（\nameDimple）}傾き角$\phi$ ($0 \leq \phi < \nicefrac\pi2$)について、ここでは次の2点を基準に考えることにする。
+特にA面側は工具へ向かう方向に\index{わんきょく@湾曲}湾曲があるため、\index{アンダーカット}アンダーカットが生じやすい。
+そこで、アンダーカットを避けつつ加工ができるようにするため、\index{ワーク}ワークをいくらか（湾曲と反対側に）傾けて加工を行う。
+その傾き角（\textbf{\DimpleAngle}）$\phi$ ($0 \leq \phi < \nicefrac\pi2$)について、ここでは次の2点を基準に考えることにする。
 \begin{tcolorbox}[title=A面の\Dimple, fonttitle=\gtfamily\bfseries]
 \begin{enumerate}[label=\sarrow]
 \item A側内面のトップ端点
 \item \AFaceDimpleFirstRow（トップ端から$q$）の位置
 \end{enumerate}
 \end{tcolorbox}\noindent
-この2点を通る直線と鉛直方向との角度を、傾き角$-\phi$とする
+この2点を通る直線と鉛直方向との角度を、\DimpleAngle$-\phi$とする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{\AlocationLength の調整に用いたテーブルの\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}傾き角$\theta$と混同しないように注意。}。
+\footnote{\AlocationLength の調整に用いた\AlocationAngle$\theta$と混同しないように注意。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 なお、\TopEndACID は$w'_{\mathrm A0}$で代用してもよいものとする。
 このとき$\phi > 0$となる（C面側に傾く）場合は$\phi$だけ傾けて加工を行う。
@@ -153,9 +153,9 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
 ここでは\DimpleMilling 用の工具として、\index{Tスロットカッター}Tスロットカッターを考えている。
-しかし、当然ながら\index{こうぐけい@工具径}工具径は有限であるため、いくら適切に傾けたところで限界はある。
+しかし、当然ながら\index{こうぐけい（Tスロットカッター）@工具径（Tスロットカッター）}工具径は有限であるため、いくら適切に傾けたところで限界はある。
 ここではその限界として、A側内面のトップ端の$X$座標と、それと最も$X$座標が近い\Dimple との（$X$方向の）距離を算出する。
-そしてそれを工具径と比べることで、どこまでの範囲を加工するかを決定する。
+そしてそれを\index{こうぐけい（Tスロットカッター）@工具径（Tスロットカッター）}工具径と比べることで、どこまでの範囲を加工するかを決定する。
 加工できない部分に\Dimple がある場合は、別の工具（\index{アングルヘッド}アングルヘッド）等を使用して加工を行う。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -164,7 +164,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{\Columnname}{曲率と傾き}
+\begin{\Columnname}{\index{きょくりつ（ないめん）@曲率（内面）}曲率と傾き}
 内面A側・C側の\index{わんきょく（ないめん）@湾曲（内面）}湾曲をそれぞれ$\mathcal R_\mathrm o$, $\mathcal R_\mathrm i$とすると、\index{きょくりつ（ないめん）@曲率（内面）}曲率はそれぞれ$\mathcal R_\mathrm o^{-1} < R_\mathrm c^{-1} < \mathcal R_\mathrm i^{-1}$である。
 そのため、（トップ側の）A側の$\mathcal R_\mathrm o$を基準にするとより緩やかに、C側の$\mathcal R_\mathrm i$を基準にするとよりきつく傾くことになる。
 また、トップ端から（$Z$方向に）遠い点を基準にするとより緩やかに、近い点を基準にするとよりきつく傾くことになる。
@@ -173,7 +173,7 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-以下ではこの傾き角$\phi$と、回転後の\Dimple や内面の位置を定量的に与えることを試みる。
+以下ではこの\DimpleAngle$\phi$と、回転後の\Dimple や内面の位置を定量的に与えることを試みる。
 
 
 
@@ -181,8 +181,8 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%6
 %% section 6.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\Dimple の位置と傾き角（傾き前）}
-\pageeqref{eq:tableTRc}より、テーブルを$-\theta$傾けて\AlocationLength の調整を行った場合、\TableCenter Pを原点とした\CenterCurvatureLine のトップ端における$X$座標は、
+\modHeadsection{\Dimple の位置と\DimpleAngle（傾き前）}
+\pageeqref{eq:tableTRc}より、\index{テーブル}テーブルを$-\theta$傾けて\AlocationLength の調整を行った場合、\TableCenter Pを原点とした\CenterCurvatureLine のトップ端における$X$座標は、
 \begin{align*}
   R_\mathrm c\cos\alpha_\mathrm c-\Delta'\cos\theta = \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\Delta'\cos\theta
 \end{align*}
@@ -309,7 +309,7 @@ $Z$座標についてはどの面も$j$に依らないことがわかる。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 5.3.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{傾き角}
+\subsection{\DimpleAngle}
 \index{トップがわのAがわうちたんてん@トップ側のA側内端点}A側内面トップ端と、\expandafterindex{Aがわないめん（\yomiDimpleFirstRow）@A側内面（\nameDimpleFirstRow）}A側内面のトップ端から$q$の位置との$x$方向の差は、
 \begin{align*}
   \sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2}
@@ -317,7 +317,7 @@ $Z$座標についてはどの面も$j$に依らないことがわかる。
 \end{align*}
 で与えられる。
 このとき、これが負になる場合は傾ける必要はなく、正となる場合のみ傾ける。
-したがってその\index{かたむきかく（\yomiDimple）@傾き角（\nameDimple）}傾き角$\phi$は、
+したがってその\DimpleAngle$\phi$は、
 %% label{eq:dKatamuki}
 \begin{subequations}
 \label{eq:dKatamuki}
@@ -336,7 +336,7 @@ $Z$座標についてはどの面も$j$に依らないことがわかる。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{\Columnname}{傾き角が負となるモールド}
+\begin{\Columnname}{\DimpleAngle が負となる\index{モールド}モールド}
 $\phi < 0$となるのは、
 \begin{align*}
   & \left(R_\mathrm c+\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2
@@ -361,14 +361,14 @@ $\phi < 0$となるのは、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{\Columnname}{\CfaceDimple の傾き角}
+\begin{\Columnname}{\CsideDimpleAngle}
 \CfaceDimple については傾斜が外側に向いているため、傾けなくとも\index{アンダーカット}アンダーカットの心配はない。
 しかし、傾けたまま加工をすると形状が歪になってしまうため、\Dimple の形状をより円に近い形にするためには傾いていないほうが望ましい。
 また一方で、面によって傾ける傾けないを分けると、\index{NCプログラム}NCプログラムが複雑になる（\index{じょうけんぶんき@条件分岐}条件分岐が増える）要因にもなる。
 そのためここでは、どの面の\Dimple に対しても同じ角度$\phi$を用いて加工を行うことにする。
 \tcbline*
 なお、\CfaceDimple の形状をできるだけよいものにするには、\index{Cがわないめんテーパ@C側内面テーパ}C側の内面テーパに基づいた角度を用いるほうが望ましい。
-そのため、\CfaceDimple に対する\expandafterindex{かたむきかく（\yomiCfaceDimple）@傾き角（\nameCfaceDimple）}傾き角$\phi_\mathrm C$についても（1つの例として）与えておく。
+そのため、\CsideDimpleAngle$\phi_\mathrm C$についても（1つの例として）与えておく。
 具体的には、以下の2点を基準として角度$\phi_\mathrm C$を取ることとする。
 \begin{enumerate}
 \item[a)] \CFaceDimpleFirstRow（トップ端から$q$）の位置
@@ -380,7 +380,7 @@ C側内面のトップ端から$q$の位置と、C側内面のトップ端から
         -\left\{f_\mathrm T-q-(m-1)p_z\right\}^2}
   -\sqrt{\left(R_\mathrm c-\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2}
 \end{align*}
-これより、\CfaceDimple に対する傾き角$\phi_\mathrm C$ ($\phi_\mathrm C > 0$)は、
+これより、\CsideDimpleAngle$\phi_\mathrm C$ ($\phi_\mathrm C > 0$)は、
 \begin{align*}
   \tan\phi_\mathrm C
   = \frac{\displaystyle
@@ -474,9 +474,9 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
 たとえば\Dimple の場合、$g_\mathrm T$は通常（今の場合は\TableCenter Pより負側に\CurvatureCenter があることが多いので）負の値として得られることに注意。
 （ここでの測定では$XY$成分のみであり、$Z$については測定しないことにも注意。）}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-このとき、テーブルを角度$-\phi$だけ傾けた後のトップ端内面中心の座標$g'_\mathrm T$は
+このとき、\DimpleAngle$-\phi$だけ傾けた後のトップ端内面中心の座標$g'_\mathrm T$は
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{これらをワーク座標原点としてもよいし、ワーク座標原点$g_\mathrm T$はそのままで各面ごとに傾けてもよい。
+\footnote{これらを\index{ワークざひょうげんてん@ワーク座標原点}ワーク座標原点としてもよいし、\index{ワークざひょうげんてん@ワーク座標原点}ワーク座標原点$g_\mathrm T$はそのままで各面ごとに傾けてもよい。
 ここでは後者の方法で加工を行うものとする。}、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% label{eq:afterPhiTCenterFromO}
@@ -501,7 +501,7 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここでは\TopCurvatureCenter を、\TopIDCenter と同一視している。}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ので、テーブルを角度$-\phi$だけ傾けた後の$i$列目における\CurvatureCenter の位置は、
+ので、\DimpleAngle$-\phi$だけ傾けた後の$i$列目における\CurvatureCenter の位置は、
 \begin{align*}
   \left[
   \begin{array}{c}
@@ -578,7 +578,7 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
 %% subsection 5.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{傾き後の\AfaceDimple, \CfaceDimple}
-\expandafterindex{かたむきかく（\yomiDimple）@傾き角（\nameDimple）}傾ける角度$\phi$は\pageeqref{eq:dKatamuki}で与えられる。
+\DimpleAngle$\phi$は\pageeqref{eq:dKatamuki}で与えられる。
 このとき、傾けた後の\AFaceDimpleIRowJ および\CFaceDimpleIRowJ の位置は、\pageeqref{eq:dPosXBefore}, \eqref{eq:dPosYBefore}, \pageeqref{eq:dPosZBefore}より、
 \begin{alignat*}{3}
   \text{A面：}&~~&
