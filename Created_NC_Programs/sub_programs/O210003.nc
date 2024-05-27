@@ -1,5 +1,5 @@
 %
-O210003 (last update on 20240522)
+O210003 (last update on 20240528)
 (for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 
@@ -11,8 +11,8 @@ IF[#700NE57]GOTO800
 
 N002
 IF[#5203EQ0]GOTO003
-IF[#5203GE100]GOTO003
-(if #5203=0 or >=100, go to N003)
+IF[#5203GE[#17+10]]GOTO003
+(if #5203=0 or >=Q+10, go to N003)
 GOTO800
 
 N003
@@ -175,7 +175,7 @@ N018
 #717=[#24/2+#20-#702-#620]*COS[ABS[#02]]
 (#716, #717: face from -#620)
 
-#718=0.1
+#718=FIX[#21*10]/10-0.1
 (#718=FIX[U*10]/10-0.1)
 
 IF[#4111EQ50]GOTO200
