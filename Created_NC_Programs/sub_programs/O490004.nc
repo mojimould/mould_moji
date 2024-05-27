@@ -1,24 +1,25 @@
 %
-O490004 (last update on 20240524)
-(Sotogawa Corner R ac HidariMawari 1shuu)
+O490004 (last update on 20240528)
+(Sotogawa Corner R rc HidariMawari 1shuu)
 
-N001
-IF[#24EQ#0]GOTO800
-IF[#24LT10]GOTO800
-IF[#18EQ#0]GOTO800
-IF[#18LT1]GOTO800
-IF[#09EQ#0]GOTO800
-IF[#09LT10]GOTO800
-IF[#08EQ#0]GOTO800
-IF[#08LT10]GOTO800
-IF[#19EQ#0]GOTO800
-IF[#19LE200]GOTO800
-(if X < 10 or #0, go to N800)
-(if R < 1 or #0, go to N800)
-(if F < 10 or #0, go to N800)
-(if E < 10 or #0, go to N800)
-(if S <= 200 or #0, go to N800)
+N0001
+IF[#24EQ#0]GOTO0800
+IF[#24LT10]GOTO0800
+IF[#18EQ#0]GOTO0800
+IF[#18LT1]GOTO0800
+IF[#09EQ#0]GOTO0800
+IF[#09LT10]GOTO0800
+IF[#08EQ#0]GOTO0800
+IF[#08LT10]GOTO0800
+IF[#19EQ#0]GOTO0800
+IF[#19LE200]GOTO0800
+(if X < 10 or #0, go to N0800)
+(if R < 1 or #0, go to N0800)
+(if F < 10 or #0, go to N0800)
+(if E < 10 or #0, go to N0800)
+(if S <= 200 or #0, go to N0800)
 
+N0003
 #33=#5001
 #32=#5002
 #31=#[2400+#4120]+#[2600+#4120]
@@ -30,42 +31,45 @@ IF[#19LE200]GOTO800
 (kokokara G01)
 
 
-N002
+N0004
 S#19
 G91 G01 X[#24/2-#31-#01] Y-#01 F[#09*3]
 (hosei kouguKei, kougu #07)
 (X+: X/2-#31-A)
 (Y+: A)
-IF[#18EQ#31]GOTO003
+IF[ABS[#18-#31]LE0.01]GOTO0005
+(if |R-#31|<=0.01, go to N0005)
 G91 G03 X#01 Y#01 I0 J#01 F#08
 (rc: approach R #01 [0, #01] X+Y+)
-N003
+N0005
 G91 G01 Y[[#25-[#18*2]]/2] F#09
 (rc2ar: X- chokusenBu/2)
-IF[#18EQ#31]GOTO004
+IF[ABS[#18-#31]LE0.01]GOTO0006
+(if |R-#31|<=0.01, go to N0006)
 G91 G03 X-[#18-#31] Y[#18-#31] I-[#18-#31] J0 F#08
 (al corner: R [#18-#31] [-[#18-#31], 0] X-Y+)
-N004
+N0006
 G91 G01 X-[#24-[#18*2]] F#09
 (a:X-: chokusenBu)
-IF[#18EQ#31]GOTO005
+IF[ABS[#18-#31]LE0.01]GOTO0007
+(if |R-#31|<=0.01, go to N0007)
 G91 G03 X-#[18-#31] Y-[#18-#31] R[#18-#31] F#08
 (al corner: R [#18-#31] [0, -[#18-#31]] X-Y-)
-N005
+N0007
 G91 G01 Y-[[#25-[#18*2]]/2] F#09
 (al2lc:Y-: chokusenBu/2)
 G90 G01 X#33 Y#32 F#651
 (XY to the start position)
 
-GOTO999
+GOTO9999
 
 
-N800
+N0800
 M05 (shujiku kaiten off)
 M09 (coolant off)
 #3000=100 (are the arguments OK?)
 
-N999 M99
+N9999 M99
 
 (Used Variables and Programs)
 
@@ -81,7 +85,7 @@ N999 M99
 (#25:Y: BD kei)
 
 (as LHS)
-(#32, #33)
+(#31, #32, #33)
 
 (Common variables)
 (as RHS)
