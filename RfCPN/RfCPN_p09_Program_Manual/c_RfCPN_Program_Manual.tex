@@ -1,19 +1,139 @@
 %!TEX root = ./RfCPN.tex
 
 
-\modHeadchapter{サブプログラムの取扱説明\TBW}
+\modHeadchapter{\CreatedNCPrg の取扱説明\TBW}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 31.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\CreatedNCPrg{} 一覧}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.01.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\CreatedNCMainPrg の例 一覧}
+\DMC において\CreatedNCMainPrg は以下のとおりである。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+ここでいう\index{メインプログラム}メインプログラムとは、\DrawingNumber と同一の\index{プログラムばんごう@プログラム番号}プログラム番号のものを指す。
+ただし、ここでは例として挙げており、\pageautoref{subsec:notopenwork}に伴い、\index{プログラムばんごう@プログラム番号}プログラム番号は\pageautoref{chap:VI.24}の規則には則っていない。
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multicollongtblr}{\CreatedNCPrg 一覧：\index{メインプログラムのれい@メインプログラムの例}メインプログラムの例}{ccX[l]}
+{\ttfamily O}番号 & \SetCell{c}工程 & 使用subprg\\
+\SetCell[r=9]{c}
+\MainExOne & 外側芯出し・幅 & \MYOThickness\MXIface\\
+           & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
+           & \expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}\nameCenterlineEndFaceDif & \Mcenterline\\
+           & \Dimple & \DLone\\
+           & \EndFacecut & \KTanmenRight\\
+           & \Outcut & \KGaisakuRLeft\\
+           & \Keyway & \KMizoConerLeft\\
+           & \EndFaceChamfer & \KSotoMentoriRLeft\KUchiMentoriRLeft\\
+           & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
+\hline
+\SetCell[r=9]{c}
+\MainExTwo & 外側芯出し・幅 & \MXOThickness\MYOThickness\MXOface\\
+           & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
+           & \Dimple & \DLone\\
+           & \EndFacecut & \KTanmenRight\\
+           & \Keyway & \KMizoConerLeft\\
+           & \EndFaceChamfer & \KSotoMentoriRLeft\KUchiMentoriRLeft\\
+           & \EndFaceBoring & \KEndFaceBoring\\
+           & \IncutBoring & \KIncutBoring\\
+           & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
+\end{multicollongtblr}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.01.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\CreatedNCSubPrg{} 一覧}
+\DMC において\expandafterindex{\yomiCreatedNCSubPrg（\yomiDMC）@\nameCreatedNCSubPrg（\nameDMC）}\CreatedNCSubPrg は以下のとおりである
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+ここでいう\index{サブプログラム}サブプログラムとは、\DrawingNumber と同一の\index{プログラムばんごう@プログラム番号}プログラム番号以外のものを指す
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{\OwarmingupA や\OtoolLengthA はレベル1の階層で用いるため、\index{メインプログラム}メインプログラムと称すのがより適切であるが、ここでは便宜上\index{サブプログラム}サブプログラムと称している。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multicollongtblr}{\CreatedNCPrg 一覧：芯出し・幅・\CenterlineEndFaceDifMeasurement}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用subprg\\
+\MXOThickness & 測定 両側 外側中心・幅$X$ & \OsensorOff\\
+\MYOThickness & 測定 両側 外側中心・幅$Y$ & \OsensorOff\\
+\MXOface      & 測定 片側 \KeywayCenter$X$（トップA側外面測定） & \OsensorOff\\
+\MXIWidth     & 測定 両側 内側中心・幅$X$ & \OsensorOff\\
+\MYIWidth     & 測定 両側 内側中心・幅$Y$ & \OsensorOff\\
+\MXIface      & 測定 片側 \OutcutCenter$X$（C側内面方向測定） & \OsensorOff\\
+\Mcenterline  & 測定 片側 \expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}\nameCenterlineEndFaceDif（C側外削面 $Z$方向, B側外削面 $Y$方向測定） & \OsensorOff\\
+\end{multicollongtblr}
+
+\begin{multicollongtblr}{\CreatedNCPrg 一覧：\Dimple}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用subprg\\
+\DLone      & 移動 各列の中心上 & \DLtwoAC\DLtwoBD\\
+\DLtwoAC    & 移動 AC面 列内の各\Dimple 上 & \DMLthreeAC\DKLthreeAC\\
+\DLtwoBD    & 移動 BC面 列内の各\Dimple 上 & \DMLthreeBD\DKLthreeBD\\
+\DMLthreeAC & 測定 AC内表面$X$ & \OsensorOff\\
+\DMLthreeBD & 測定 BD内表面$Y$ & \OsensorOff\\
+\DKLthreeAC & 加工 AC内表面$X$ & -\\
+\DKLthreeBD & 加工 BD内表面$Y$ & -\\
+\end{multicollongtblr}
+
+\clearpage
+\begin{multicollongtblr}{\CreatedNCPrg 一覧：加工（\Dimple 以外）}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用subprg\\
+\KTanmenRight        & 加工 \EndFacecut{} コーナーR 右回り1周 & \KOLeftFS\\
+\KGaisakuRLeft       & 加工 \Outcut{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
+\KCurvedGaisakuRLeft & 加工 \CurvedOutcut{} コーナーR 左回り1周 & \KOLeftFSZ\OpauseCheck\\
+\KMizoConerLeft      & 加工 \Keyway{} 左回り1周 & \KOLeftFS\OpauseCheck\\
+\KSotoMentoriRLeft   & 加工 \EndFaceOutChamfer{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
+\KUchiMentoriRLeft   & 加工 \EndFaceInChamfer{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
+\KEndFaceBoring      & 加工 \EndFaceBoring{} コーナーR 左回り1周 & \KOLeftFF\OpauseCheck\\
+\KIncutBoring        & 加工 \IncutBoring{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
+\KOLeftFF  & 外側 {\ttfamily G41} 左回り1周 右始まり & -\\
+\KOLeftFS  & 外側 {\ttfamily G42} 左回り1周 右上始まり & -\\
+\KOLeftFSZ & 外側 {\ttfamily G42} 左回り1周 右上始まり $Z$変動 & -\\
+\KILeftFF  & 内側 {\ttfamily G41} 左回り1周 中央上始まり & -\\
+\end{multicollongtblr}
+
+%\clearpage
+\begin{multicollongtblr}{\CreatedNCPrg 一覧：その他}{cX[l]l}
+{\ttfamily O}番号 & 内容 & 使用subprg\\
+\OpauseCheck  & 移動・加工後確認用：90$^\circ$回転 扉前一時停止 & -\\
+\OsensorOn    & \index{タッチセンサーでんげん@タッチセンサー電源}タッチセンサー電源ON & -\\
+\OsensorOff   & \index{タッチセンサーでんげん@タッチセンサー電源}タッチセンサー電源OFF & -\\
+\OwarmingupA  & \index{だんきうんてん@暖機運転}暖機運転 & \Owarmingup\\
+\Owarmingup   & \index{だんきうんてんようサブプログラム@暖機運転用サブプログラム}暖機運転用サブプログラム & -\\
+\OtoolLengthA & \index{とうろくこうぐ@登録工具}登録工具 \index{こうぐちょうそくてい@工具長測定}工具長測定 & \OtoolLength\\
+\OtoolLength  & \index{こうぐちょうそくていようサブプログラム@工具長測定用サブプログラム}工具長測定用サブプログラム & -\\
+\end{multicollongtblr}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\MXOThickness ：測定 両側 外側中心・幅\texorpdfstring{$X$}{X}\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\MXOThickness の引数\TBW}
 (to be written ...)
@@ -22,14 +142,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\MYOThickness ：測定 両側 外側中心・幅\texorpdfstring{$Y$}{Y}\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\MYOThickness の引数\TBW}
 (to be written ...)
@@ -38,14 +158,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\MXOface ：測定 片側 \KeywayCenter\texorpdfstring{$X$}{X}\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.04.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\MXOface の引数\TBW}
 (to be written ...)
@@ -54,14 +174,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\MXIWidth ：測定 両側 外側中心・幅\texorpdfstring{$X$}{X}\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\MXIWidth の引数\TBW}
 (to be written ...)
@@ -70,14 +190,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\MYIWidth ：測定 両側 外側中心・幅\texorpdfstring{$Y$}{Y}\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\MYIWidth の引数\TBW}
 (to be written ...)
@@ -86,14 +206,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\MXIface ：測定 片側 \OutcutCenter\texorpdfstring{$X$}{X}\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\MXIface の引数\TBW}
 (to be written ...)
@@ -102,14 +222,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\Mcenterline ：\expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}測定 片側 \nameCenterlineEndFaceDif\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\Mcenterline の引数\TBW}
 (to be written ...)
@@ -118,14 +238,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\KTanmenRight ：加工 \EndFacecut{} コーナーR 右回り1周\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KTanmenRight の引数\TBW}
 (to be written ...)
@@ -134,14 +254,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\KGaisakuRLeft ：加工 \Outcut{} コーナーR 左回り1周\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KGaisakuRLeft の引数\TBW}
 (to be written ...)
@@ -150,14 +270,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\KMizoConerLeft ：加工 \Keyway{} 左回り1周\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KMizoConerLeft の引数\TBW}
 (to be written ...)
@@ -166,14 +286,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\KSotoMentoriRLeft ：加工 \EndFaceOutChamfer{} コーナーR 左回り1周\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KSotoMentoriRLeft の引数\TBW}
 (to be written ...)
@@ -182,14 +302,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\KUchiMentoriRLeft ：加工 \EndFaceInChamfer{} コーナーR 左回り1周\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KUchiMentoriRLeft の引数\TBW}
 (to be written ...)
@@ -198,14 +318,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\KEndFaceBoring ：加工 \EndFaceBoring{} コーナーR 左回り1周\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KEndFaceBoring の引数\TBW}
 (to be written ...)
@@ -214,14 +334,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\KIncutBoring ：加工 \IncutBoring{} コーナーR 左回り1周\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KIncutBoring の引数\TBW}
 (to be written ...)
@@ -230,14 +350,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\DLone ：測定・加工 \Dimple\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\DLone の引数\TBW}
 (to be written ...)
@@ -246,14 +366,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\OwarmingupA ：暖機運転\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\OwarmingupA の引数\TBW}
 (to be written ...)
@@ -262,14 +382,14 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 32.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\OtoolLengthA ：工具長測定\TBW}
 (to be written ...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 32.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\OtoolLengthA の引数\TBW}
 (to be written ...)
