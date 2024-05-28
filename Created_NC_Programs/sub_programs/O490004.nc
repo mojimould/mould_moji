@@ -37,23 +37,23 @@ G91 G01 X[#24/2-#31-#01] Y-#01 F[#09*3]
 (hosei kouguKei, kougu #07)
 (X+: X/2-#31-A)
 (Y+: A)
-IF[ABS[#18-#31]LE0.01]GOTO0005
+IF[ABS[#18-#31]EQ0]GOTO0005
 (if |R-#31|<=0.01, go to N0005)
 G91 G03 X#01 Y#01 I0 J#01 F#08
 (rc: approach R #01 [0, #01] X+Y+)
 N0005
 G91 G01 Y[[#25-[#18*2]]/2] F#09
 (rc2ar: X- chokusenBu/2)
-IF[ABS[#18-#31]LE0.01]GOTO0006
+IF[ABS[#18-#31]EQ0]GOTO0006
 (if |R-#31|<=0.01, go to N0006)
 G91 G03 X-[#18-#31] Y[#18-#31] I-[#18-#31] J0 F#08
 (al corner: R [#18-#31] [-[#18-#31], 0] X-Y+)
 N0006
 G91 G01 X-[#24-[#18*2]] F#09
 (a:X-: chokusenBu)
-IF[ABS[#18-#31]LE0.01]GOTO0007
+IF[ABS[#18-#31]EQ0]GOTO0007
 (if |R-#31|<=0.01, go to N0007)
-G91 G03 X-#[18-#31] Y-[#18-#31] R[#18-#31] F#08
+G91 G03 X-[#18-#31] Y-[#18-#31] R[#18-#31] F#08
 (al corner: R [#18-#31] [0, -[#18-#31]] X-Y-)
 N0007
 G91 G01 Y-[[#25-[#18*2]]/2] F#09
@@ -76,6 +76,7 @@ N9999 M99
 (Local variables)
 
 (as received arguments)
+(#01:A: #606)
 (#07:D: kouguNigashiRyou)
 (#08:E: speed at corner)
 (#09:F: speed at chokusen)
