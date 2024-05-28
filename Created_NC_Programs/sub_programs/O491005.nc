@@ -1,6 +1,6 @@
 %
-O491005 (last update on 20240522)
-(Sotogawa ar HidariMawari 1shuu)
+O491005 (last update on 20240528)
+(Sotogawa ar HidariMawari 1shuu with Z-move)
 
 N001
 IF[#24EQ#0]GOTO800
@@ -112,10 +112,10 @@ N999 M99
 
 (as received arguments)
 (#03:C: corner C)
+(#06:K: gaisaku Length)
 (#07:D: kouguNigashiRyou)
 (#08:E: speed at corner)
 (#09:F: speed at chokusenBu)
-(#12:H: hosei: gaisaku center)
 (#18:R: corner R)
 (#19:S: kaitenSuu)
 (#20:T: type)
