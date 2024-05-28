@@ -29,19 +29,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{工具番号の割当て}
 \index{こうぐばんごう@工具番号}工具番号は、以下の通りに割り当てるものとする。\\
-\begin{multicollongtblr}{\DMC の工具番号の振当て}{c X[l]}
+\begin{multicollongtblr}{\DMC の工具番号の割当て}{c X[l]}
 番号 & 内容\\
 01 & （空）\\
-02-05 & \EndFacecutMilling 用の工具\\
-06-10 & \KeywayMilling 用の工具\\
-11-15 & \EndFaceCChamferMilling 用の工具\\
-16-20 & \OutcutMilling・\EndFaceBoringMilling 用の工具\\
+02-05 & \expandafterindex{こうぐ（\yomiEndFacecutMilling）@工具（\nameEndFacecutMilling）}\nameEndFacecutMilling 用の工具\\
+06-10 & \expandafterindex{こうぐ（\yomiKeywayMilling）@工具（\nameKeywayMilling）}\nameKeywayMilling 用の工具\\
+11-15 & \expandafterindex{こうぐ（\yomiEndFaceCChamferMilling）@工具（\nameEndFaceCChamferMilling）}\nameEndFaceCChamferMilling 用の工具\\
+16-20 &
+\expandafterindex{こうぐ（\yomiOutcutMilling）@工具（\nameOutcutMilling）}\nameOutcutMilling
+・\expandafterindex{こうぐ（\yomiEndFaceBoringMilling）@工具（\nameEndFaceBoringMilling）}\nameEndFaceBoringMilling
+・\expandafterindex{こうぐ（\yomiIncutBoringMilling）@工具（\nameIncutBoringMilling）}\nameIncutBoringMilling 用の工具\\
 21-30 & （不使用）\\
-31-35 & \DimpleMilling 用の工具（\index{Tスロットカッター}Tスロットカッター）\\
-36-40 & \DimpleMilling 用の工具（\index{アングルヘッド}アングルヘッド）\\
-41-45 & \ReliefGrooveMilling 用の工具\\
+31-35 & \expandafterindex{こうぐ（\yomiDimpleMilling）@工具（\nameDimpleMilling）}\nameDimpleMilling 用の工具（\index{Tスロットカッター}Tスロットカッター）\\
+36-40 & \expandafterindex{こうぐ（\yomiDimpleMilling）@工具（\nameDimpleMilling）}\nameDimpleMilling 用の工具（\index{アングルヘッド}アングルヘッド）\\
+41-45 & \expandafterindex{こうぐ（\yomiReliefGrooveMilling）@工具（\nameReliefGrooveMilling）}\nameReliefGrooveMilling 用の工具\\
 46-48 & （不使用）\\
-49, 50 & 測定用の工具（\index{タッチセンサープローブ}タッチセンサープローブ）\\
+49, 50 & \index{こうぐ（そくてい）@工具（測定）}測定用の工具（\index{タッチセンサープローブ}タッチセンサープローブ）\\
 \end{multicollongtblr}
 
 
@@ -50,15 +53,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 25.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{登録工具}
+\modHeadsection{\index{とうろくこうぐ@登録工具}登録工具}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 25.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\dateTourokuKougu 時点の登録工具}
+\subsection{\dateTourokuKougu 時点の\index{とうろくこうぐ@登録工具}登録工具}
 \dateTourokuKougu 時点において、\index{とうろくこうぐ@登録工具}登録されている工具は以下の通りである。\\
-\begin{multicollongtblr}{\DMC の登録工具}{c X[l]}
+\begin{multicollongtblr}{\expandafterindex{とうろくこうぐ（\yomiDMC）@登録工具（\nameDMC）}\nameDMC の登録工具}{c X[l]}
 \ttfamily T\ttNum & 工具\\
 \ttfamily T01 & （空）\\
 \ttfamily T02 & $\phi100$\expandafterindex{\yomiEndFacecutMilling ようフェイスミル@\nameEndFacecutMilling 用フェイスミル}\nameEndFacecutMilling 用フェイスミル\\
@@ -159,11 +162,11 @@
 & \linkBIGDaishowa\\
 \hline
 \ttfamily T31 & \Dimple
-& \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC32-17-310-190}\newline
+& \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC32-17-310-190},
   \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC32-17-160-80}（研削用）
 & \linkMoldino\\
 \ttfamily T32 & \Dimple
-& \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC32-17-310-190}\newline
+& \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC32-17-310-190}
   (\href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC25-12.5-360-240})
 & \linkMoldino\\
 ({\ttfamily T33}) & \Dimple
