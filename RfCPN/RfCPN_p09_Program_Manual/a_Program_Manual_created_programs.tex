@@ -32,7 +32,7 @@
 \SetCell[r=9]{c}
 \MainExOne & 外側芯出し・幅 & \MYOThickness\MXIface\\
            & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
-           & \CenterlineEndFaceDif & \Mcenterline\\
+           & \expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}\nameCenterlineEndFaceDif & \Mcenterline\\
            & \Dimple & \DLone\\
            & \EndFacecut & \KTanmenRight\\
            & \Outcut & \KGaisakuRLeft\\
@@ -72,7 +72,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{multicollongtblr}{\CreatedNCPrg 一覧：芯出し・幅・\CenterlineEndFaceDif 測定}{cX[l]l}
+\begin{multicollongtblr}{\CreatedNCPrg 一覧：芯出し・幅・\CenterlineEndFaceDifMeasurement}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用prg\\
 \MXOThickness & 測定 両側 外側中心・幅$X$ & \OsensorOff\\
 \MYOThickness & 測定 両側 外側中心・幅$Y$ & \OsensorOff\\
@@ -80,7 +80,7 @@
 \MXIWidth     & 測定 両側 内側中心・幅$X$ & \OsensorOff\\
 \MYIWidth     & 測定 両側 内側中心・幅$Y$ & \OsensorOff\\
 \MXIface      & 測定 片側 \OutcutCenter$X$（C側内面方向測定） & \OsensorOff\\
-\Mcenterline & 測定 片側 \CenterlineEndFaceDif（C側外削面 $Z$方向, B側外削面 $Y$方向測定） & \OsensorOff\\
+\Mcenterline & 測定 片側 \expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}\nameCenterlineEndFaceDif（C側外削面 $Z$方向, B側外削面 $Y$方向測定） & \OsensorOff\\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}{\CreatedNCPrg 一覧：\Dimple}{cX[l]l}

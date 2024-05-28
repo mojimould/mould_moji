@@ -1,7 +1,7 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter[lot]{シーケンス番号（Nコード値）}
+\modHeadchapter[lot]{\index{シーケンスばんごう@シーケンス番号}シーケンス番号（\index{Nコード}Nコード値）}
 一般に、\index{シーケンスばんごう@シーケンス番号}シーケンス番号は（重複していなければ）自由に付けて問題ない。
 しかしこれに一定のルールを与えておくことで、\index{NCプログラム}NCプログラムの
 \begin{enumerate}[label=\sarrow]
@@ -18,11 +18,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 14.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{シーケンス番号の基本事項}
+\modHeadsection{\index{シーケンスばんごう@シーケンス番号}シーケンス番号の基本事項}
 \begin{enumerate}[label=\Roman*), ref=\Roman*)]
-\item シーケンス番号は3桁とし、0埋めする
-\item NCプログラムの始まりのシーケンス番号は{\ttfamily N001}とする
-\item 原則として、シーケンス番号は昇順とし、特に1桁目は連番とする
+\item \index{シーケンスばんごう@シーケンス番号}シーケンス番号は3桁または4桁とし、0埋めする
+\item \index{NCプログラム}NCプログラムの始まりの\index{シーケンスばんごう@シーケンス番号}シーケンス番号は{\ttfamily N001}または{\ttfamily N0001}とする
+\item 原則として、\index{シーケンスばんごう@シーケンス番号}シーケンス番号は昇順とし、特に1桁目は連番とする
 \end{enumerate}
 
 
@@ -137,8 +137,8 @@
 %% subsection 14.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{N990：NCプログラムの終了\label{subsec:sequenceNprgEnd}}
-\index{プログラムしゅうりょう@プログラム終了}NCプログラムを終了する工程のシーケンス番号は990番台とする。
-特に、NCプログラムの終了はN999とする。
+\index{こうてい（プログラムしゅうりょう）@工程（プログラム終了）}NCプログラムを終了する工程の\index{シーケンスばんごう@シーケンス番号}シーケンス番号は990番台または9990番台とする。
+特に、\index{NCプログラム}NCプログラムの終了はN999またはN9999とする。
 
 
 
@@ -151,10 +151,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{multicollongtblr}{シーケンス番号 一覧（メインプログラム）\TBW}{cX[l]}
 N番号 & 内容\\
-\ttfamily N001 & NCプログラムの始まり\\
-\ttfamily N10x & タッチセンサープローブ測定（芯出し）\\
-\ttfamily N20x & タッチセンサープローブ測定（\Dimple）\\
-\ttfamily N25x & タッチセンサープローブ測定（\ReliefGroove）\\
+\ttfamily N001 & \index{NCプログラム}NCプログラムの始まり\\
+\ttfamily N10x & タッチセンサープローブ測定（\index{しんだしそくてい@芯出し測定}芯出し測定）\\
+\ttfamily N20x & タッチセンサープローブ測定（\DimpleMeasurement）\\
+\ttfamily N25x & タッチセンサープローブ測定（\ReliefGrooveMeasurement）\\
 \ttfamily N30x & \DimpleMilling\\
 \ttfamily N35x & \ReliefGrooveMilling\\
 \ttfamily N40x & \TopEndFacecutMilling\\
@@ -167,12 +167,12 @@ N番号 & 内容\\
 \ttfamily N51x & \BottomOutcutMilling\\
 \ttfamily N53x & \BottomEndFaceOutCChamferMilling\\
 \ttfamily N54x & \BottomEndFaceInCChamferMilling\\
-\ttfamily N65x & タッチセンサープローブ測定（\CenterlineEndFaceDif）\\
-\ttfamily N80x & 引数によるエラー\\
+\ttfamily N65x & タッチセンサープローブ測定（\CenterlineEndFaceDifMeasurement）\\
+\ttfamily N80x & \index{エラー（ひきすう）@エラー（引数）}引数によるエラー\\
 \ttfamily N81x\TBW & \\
-\ttfamily N82x & パレットまたはタッチセンサープローブによるエラー\\
-\ttfamily N99x & プログラム終了の工程\\
-\ttfamily N999 & プログラム終了({\ttfamily M02}または{\ttfamily M30}または{\ttfamily M99})
+\ttfamily N82x & \index{エラー（パレット）}\index{エラー（タッチセンサープローブ）}パレットまたはタッチセンサープローブによるエラー\\
+\ttfamily N99x & \index{こうてい（プログラムしゅうりょう）@工程（プログラム終了）}プログラム終了の工程\\
+\ttfamily N999 & \index{プログラムしゅうりょう@プログラム終了}プログラム終了({\ttfamily M02}または{\ttfamily M30}または{\ttfamily M99})
 \end{multicollongtblr}
 
 

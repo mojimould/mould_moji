@@ -88,7 +88,7 @@
 \ttNum190 & \BottomEndFaceOutCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
 \ttNum191 & \BottomEndFaceInCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
 \SetRow{unusingVariables}
-\ttNum191 & （予備） &\\
+\ttNum192 & （予備） &\\
 \SetRow{unusingVariables}
 \ttNum193 & （予備） &\\
 \SetRow{unusingVariables}
@@ -433,10 +433,9 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum618 & （\EndFaceBoringMilling 用予備） &\\
 \SetRow{unusingVariables}
 \ttNum619 & （予備） &\\
-\ttNum620 & \DimpleMeasurement 時 近付き量 & 4.0 \\
-\ttNum621 & \DimpleMilling 時 近付き量 & 2.0 \\
-\SetRow{unusingVariables}
-\ttNum622 & （予備） &\\
+\ttNum620 & \DimpleMeasurement 時 \index{ちかづきりょう（\yomiDimple）@近付き量（\nameDimple）}近付き量 & 4.0 \\
+\ttNum621 & \DimpleMilling 時 \index{ちかづきりょう（\yomiDimple）@近付き量（\nameDimple）}近付き量 & 2.0 \\
+\ttNum622 & \DimpleMilling 時 \index{ドゥエル（\yomiDimple）@ドゥエル（\nameDimple）}ドゥエル時間(s) & 0.1 \\
 \SetRow{unusingVariables}
 \ttNum623 & （予備） &\\
 \SetRow{unusingVariables}
@@ -620,7 +619,7 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum715 & 傾き後\DimpleFirstRow 中心（ブロックエンド）$Z$座標 (\ttNum5003)\\
 \ttNum716 & BD内半径$+$\PlatingThk$-\text{\ttNum702}-\text{\ttNum620}$\\
 \ttNum717 & (AC内半径$+$\PlatingThk$-\text{\ttNum702}-\text{\ttNum620}\text)\cos\phi$\\
-\ttNum718 & \expandafterindex{しかこうよう\yomiDimpleDepth@試加工用\nameDimpleDepth}試加工用\nameDimpleDepth（\DimpleDepth $-0.1$）\\
+\ttNum718 & \expandafterindex{しかこうよう\yomiDimpleDepth@試加工用\nameDimpleDepth}試加工用\nameDimpleDepth（$\lfloor$\DimpleDepth$\rfloor-0.1$）\\
 \SetRow{unusingVariables}
 \ttNum719 & （予備）\\
 \SetRow{unusingVariables}
@@ -799,7 +798,7 @@ $\cdots$ & （以下不明） & \ttNum0
 
 
 \clearpage
-\begin{multicollongtblr}[white]{\ttNum900030\,-\ttNum900037：\CenterlineEndFaceDif{} 片側 測定用 \Mcenterline}{cX[l]}
+\begin{multicollongtblr}[white]{\ttNum900030\,-\ttNum900037：\expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}\nameCenterlineEndFaceDif{} 片側 測定用 \Mcenterline}{cX[l]}
 変数 & 内容\\
 \ttNum900030 & \CenterlineEndFaceDifBD{} ボトム側測定値\\
 \ttNum900031 & \CenterlineEndFaceDifBD{} トップ側測定値\\
