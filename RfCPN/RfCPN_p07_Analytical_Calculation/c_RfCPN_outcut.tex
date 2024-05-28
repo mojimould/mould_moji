@@ -210,7 +210,7 @@
 %% section 35.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\CurvedOutcut の幾何}
-\Outcut が\CurvedOutcut である場合を考える。
+ここでは\Outcut が\CurvedOutcut である場合を考える。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -221,9 +221,8 @@
 \BottomEndFace におけるA面側・C面側・中心の$X$座標をそれぞれ$x_\mathrm{Bo}$, $x_\mathrm{Bi}$, $x_\mathrm{Bm}$とする。
 このとき\BottomEndFace のそれぞれの位置は
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{ここでは$Z$の正方向を実軸、$X$の正方向を虚軸として考えている。}、
+\footnote{$Z$の正方向を実軸、$X$の正方向を虚軸として考えている。}、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{subequations}
 \begin{alignat*}{2}
   \text{中心：}&\quad
   \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}e^{i\theta_\mathrm{Bm}}~, \quad &
@@ -235,7 +234,6 @@
   \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bo}^2}e^{i\theta_\mathrm{Bo}}~, \quad &
   \tan\theta_\mathrm{Bo} &= \frac{x_\mathrm{Bo}}{f_\mathrm B'}\ .
 \end{alignat*}
-%\end{subequations}
 \BottomOutcutLength を$h_\mathrm B$とすると、\expandafterindex{かたむき（\yomiCurvedOutcut）@傾き（\nameCurvedOutcut）}\nameCurvedOutcut 部分の傾きはボトム端から距離$\nicefrac{h_\mathrm B}2$の断面に平行になる形にとる。
 そのときの\expandafterindex{かたむきかく（\yomiCurvedOutcut）@傾き角（\nameCurvedOutcut）}傾き角$\theta_b$は、
 \begin{align*}
@@ -243,9 +241,10 @@
 \end{align*}
 を満たす。
 傾き後の\expandafterindex{\yomiBottomEndFace（\yomiCurvedOutcut）@\nameBottomEndFace（\nameCurvedOutcut）}\nameBottomEndFace の中心の位置は、
-\begin{align*}
+\begin{align}
+  \label{eq:BCurvedOutcutAngle}
   \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}e^{i(\theta_\mathrm{Bm}-\theta_b)}
-\end{align*}
+\end{align}
 となるので、これの虚部が$X$座標、実部が$Z$座標となる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここでは\index{ふくそへいめん@複素平面}複素平面を考えているが、通常の\index{ちょっこうざひょうけい@直交座標系}直行座標系で単純に\index{かいてんぎょうれつ@回転行列}回転行列をかけているのと同義である。
@@ -357,9 +356,10 @@
 \end{alignat*}
 \TopOutcutLength を$h_\mathrm T$とすると、\expandafterindex{かたむき（\yomiCurvedOutcut）@傾き（\nameCurvedOutcut）}\nameCurvedOutcut 部分の傾きはトップ端から距離$\nicefrac{h_\mathrm T}2$の断面に平行になる形にとる。
 そのときの\expandafterindex{かたむきかく（\yomiCurvedOutcut）@傾き角（\nameCurvedOutcut）}傾き角$\theta_t$は、
-\begin{align*}
+\begin{align}
+  \label{eq:TCurvedOutcutAngle}
   \sin\theta_t = \frac{f_\mathrm T'-\nicefrac{h_\mathrm T}2}{R_\mathrm c}
-\end{align*}
+\end{align}
 を満たす。
 傾き後の\expandafterindex{\yomiTopEndFace（\yomiCurvedOutcut）@\nameTopEndFace（\nameCurvedOutcut）}\nameTopEndFace の中心の位置は、
 \begin{align*}
