@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from pygments.lexer import RegexLexer, bygroups, words, include
+from pygments.lexer import ExtendedRegexLexer, bygroups, words, include
 from pygments.token import *
 
 import re
@@ -7,7 +7,7 @@ import re
 
 __all__ = ['GCodeLexer']
 
-class GCodeLexer(RegexLexer):
+class GCodeLexer(ExtendedRegexLexer):
     """
     Lexer for gCode
 
@@ -54,18 +54,25 @@ class GCodeLexer(RegexLexer):
             (r'\([^\n\r]*\)', Comment.SingleLine),
 
             # Braced expressions entry point
-            # TODO 
-            # make the bracing more intelligent, such as in tcl lexer
-            (r'(\[)', Keyword, 'bracket'),
+            (r'(\[)', Keyword, 'bracket1'),
+
+            # math functions, math case-insensitive
+            (r'[-+*/:=]', Operator),
+            ("(?i)(%s)" % '|'.join(re.escape(entry) for entry in functions), Operator.Word),
+
+            # built in commands, match case-insensitive
+            ("(?i)(%s)" % '|'.join(re.escape(entry) for entry in builtins), Name.Builtin),
 
             # Line numbers
             (r'\s*[n]\d+', Comment),
             # G and M commands and other tooling, match only the label
-            (r'(?<![a-zA-Z\<])[DGHLMT](?=(\d+\.?\d?))', Keyword.Declaration),
+            (r'(?<![a-zA-Z\<])[GM]\d*', Keyword.Declaration),
+            (r'(?<![a-zA-Z\<])[L](?=(\d+\.?\d?))', Keyword.Declaration),
             # Coordinates, Feeds, Speeds, and Machining parameter, 
             # match only the label
-            (r'(?<![a-zA-Z\<])[ABCEfFHIJKMNQRSTUVWXYZ\^\@](?=(\s*[+-]?\d*\.?\d+|\s*[+-]?#))', Keyword.Type),
-
+            (r'(?<![a-zA-Z\<])[N]\d*', Keyword.Type),
+            (r'(?<![a-zA-Z\<])[ABCDEHIJKMQRTUVWXYZ](?=(\d+\.?\d?))+', Text),
+            (r'(?<![a-zA-Z\<])[FS\^\@](?=(\s*[+-]?\d*\.?\d+|\s*[+-]?#))', Keyword.Type),
 
             # Non-persistent Arguments (#1-#30)
             (r'(?<=#)0*[1-3]?[0-9](?=\D)', Name.Variable.Magic),
@@ -78,13 +85,6 @@ class GCodeLexer(RegexLexer):
 
             # Variables Indicator
             (r'(#|\<|\>)', Name.Variable),
-
-            # built in commands, match case-insensitive
-            ("(?i)(%s)" % '|'.join(re.escape(entry) for entry in builtins), Name.Builtin),
-
-            # math functions, math case-insensitive
-            (r'[-+*/:=]', Operator),
-            ("(?i)(%s)" % '|'.join(re.escape(entry) for entry in functions), Operator.Word),
 
             # Subroutines, match label
             (r'(?<![a-zA-Z\<])[OP](?=[\d\<\[])', Keyword.Reserved),
@@ -108,14 +108,23 @@ class GCodeLexer(RegexLexer):
             (r'\)', Comment.Multiline),
         ],
         'comment':[
-             (r'.*;.*$', Comment.Multiline, '#pop'),
-             (r'^.*\n', Comment.Multiline),
-             (r'.', Comment.Multiline),
+            (r'.*;.*$', Comment.Multiline, '#pop'),
+            (r'^.*\n', Comment.Multiline),
+            (r'.', Comment.Multiline),
         ],
 
-        'bracket': [
+        'bracket1': [
+            (r'\[', Keyword, 'bracket2'),
+            (r'\]', Keyword, '#pop'),
+            include('root')
+        ],
+        'bracket2': [
+            (r'\[', Keyword, 'bracket3'),
+            (r'\]', Keyword, '#pop'),
+            include('root')
+        ],
+        'bracket3': [
             (r'\]', Keyword, '#pop'),
             include('root')
         ],
     }
-
