@@ -7,44 +7,48 @@
 %%%%% TIKZSET %%%%%%%%%%%%%%%%%%%
 \tikzset{
   %%%%% FORMAT STYLE %%%%%
-  commonComponents/.style={signal, draw},
-  chapter/.style={commonComponents,
-                  fill=\if@appendix white\else Maroon!65\fi,
-                  text=\if@appendix Maroon!65\else white\fi,
-                  signal from=east, inner sep=5pt, text height=1.5ex, text depth=2pt},
-  sect/.style={commonComponents, text depth=0pt, text=white},
-  section/.style={sect, fill=konpeki!100!, signal to=east, inner sep=5pt, text height=1.4ex},
-  subsection/.style={sect, fill=moegi!90!, signal to=nowhere, inner sep=5pt, text height=1.3ex},
-  subsubsection/.style={sect, fill=sssec!100!, signal to=nowhere, inner sep=4pt, text height=1.25ex},
+  commonComponents/.style={signal, draw, signal to=nowhere},
+  chapter/.style={
+    fill=\if@appendix white\else Maroon!65\fi,
+    text=\if@appendix Maroon!65\else white\fi,
+    signal from=east,
+    inner sep=5pt,
+    text height=1.5ex,
+    text depth=2pt
+  },
+  sect/.style={text depth=0pt, text=white},
+  section/.style={sect, fill=konpeki!100!, signal to=east, inner sep=5pt},
+  subsection/.style={sect, fill=moegi!90!, signal to=nowhere, inner sep=5pt},
+  subsubsection/.style={sect, fill=sssec!100!, signal to=nowhere, inner sep=4pt},
 }
 
 %%%%% FOR STYLE OF CHAPTER %%%%%
 \renewcommand\chapterpagestyle{\if@frontmatter plainheadfront\else plainhead\fi}
 \renewcommand*{\chapterformat}{%
-  \begin{tikzpicture}[every node/.style={chapter}, baseline=-7.75pt] % +: title up, -: title down
-    \node at (0, 0) {\LARGE{\sffamily\bfseries\,\thepart.\,\thechapter\,\relax}};
+  \begin{tikzpicture}[every node/.style={commonComponents}, baseline=-7.75pt] % +: title up, -: title down
+    \node[chapter] at (0, 0) {\LARGE{\sffamily\bfseries\,\thepart.\,\thechapter}};
   \end{tikzpicture}~~%
 }
 
 %%%%% FOR STYLE OF SECTION %%%%%%%%%%%%%%%%%%%
 \setcounter{secnumdepth}{4}
 \renewcommand*{\sectionformat}{%
-  \begin{tikzpicture}[every node/.style={section}, baseline=-4.75pt]
-    \node at (0, 0) {\Large{\sffamily\bfseries\,\thesection~\relax}};
+  \begin{tikzpicture}[every node/.style={commonComponents}, baseline=-4.75pt]
+    \node[section] at (0, 0) {\Large{\sffamily\bfseries\,\thesection~\relax}};
   \end{tikzpicture}~~%
 }
 
 %%%%% FOR STYLE OF SUBSECTION %%%%%%%%%%%%%%%%
 \renewcommand*{\subsectionformat}{%
   \begin{tikzpicture}[every node/.style={subsection}, baseline=-4.25pt]
-    \node at (0, 0) {\large{\sffamily\bfseries\,\thesubsection~~\relax}};
+    \node at (0, 0) {\large{\sffamily\bfseries\thesubsection}};
   \end{tikzpicture}~~%
 }
 
 %%%%% FOR STYLE OF SUBSUBSECTION %%%%%%%%%%%%%
 \renewcommand*{\subsubsectionformat}{%
   \begin{tikzpicture}[every node/.style={subsubsection}, baseline=-2.5pt]
-    \node at (0, 0) {\small{\sffamily\bfseries\,\thesubsubsection~~\relax}};
+    \node at (0, 0) {\sffamily\bfseries\thesubsubsection};
   \end{tikzpicture}~~%
 }
 

@@ -97,33 +97,33 @@
 %% subsection 11.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\expandafterindex{\yomiAlocationLength のちょうせい@\nameAlocationLength の調整}\AlocationLength の調整}
-\expandafterindex{\yomiAlocationLength のちょうせい@\nameAlocationLength の調整}\AlocationLength の調整を行う場合は、\index{スペーサ}スペーサまたは\index{テーブルかいてん（ふりわけちょうせい）@テーブル回転（振分調整）}テーブル回転のどちらかを用いて行うものとする。
+\expandafterindex{\yomiAlocationLength のちょうせい@\nameAlocationLength の調整}\AlocationLength の調整を行う場合は、\Spacer または\expandafterindex{\yomiTable かいてん（ふりわけちょうせい）@\nameTable 回転（振分調整）}\nameTable 回転のどちらかを用いて行うものとする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\index{スペーサによるちょうせい@スペーサによる調整}スペーサによる調整}
-\index{スペーサ}スペーサは原則として\index{ジグ}ジグの\index{うけいた（トップがわ）@受板（トップ側）}トップ側の受板に設置する。
-厚さ$\delta_\mathrm s$の\index{スペーサによるちょうせい@スペーサによる調整}スペーサによる調整を行う場合、もともとの\TopAlocationLength$f_\mathrm T$に対し、トップ側の\nameAlocationLength（\TopReAlocationLength）$f'_\mathrm T$を以下のように調整する。
+\subsubsection{\index{\yomiSpacer によるちょうせい@\nameSpacer による調整}\nameSpacer による調整}
+\Spacer は原則として\Jig の\TopSideReceiverPlate に設置する。
+厚さ$\delta_\mathrm s$の\index{\yomiSpacer によるちょうせい@\nameSpacer による調整}\nameSpacer による調整を行う場合、もともとの\TopAlocationLength$f_\mathrm T$に対し、\nameTopAlocationLength（\TopReAlocationLength）$f'_\mathrm T$を以下のように調整する。
 \begin{align*}
   f'_\mathrm T
   = f_\mathrm T
     +\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{\delta_\mathrm s}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}}\qquad
     \left(R_\mathrm i' = R_\mathrm c-\frac{W_x}2-\rho~,~~\bar l = l-\frac\sigma2\right).
 \end{align*}
-$R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$はそれぞれ\CenterCurvatureRadius, \ACOD, \JigWidth の半分, 受板の半径, 受板の幅を示す。
+$R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$はそれぞれ\CenterCurvatureRadius, \ACOD, \JigWidth の半分, \ReceiverPlateRadius, \ReceiverPlateWidth を示す。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 01.1.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{テーブル回転による調整}
-\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}角度$\theta$だけテーブル回転をして調整を行う場合は、もともとの\TopAlocationLength$f_\mathrm T$に対し、トップ側の\nameAlocationLength（\TopReAlocationLength）$f'_\mathrm T$を以下のように調整する。
+\subsubsection{\Table 回転による調整}
+\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}角度$\theta$だけ\Table 回転をして調整を行う場合は、もともとの\TopAlocationLength$f_\mathrm T$に対し、\nameTopAlocationLength（\TopReAlocationLength）$f'_\mathrm T$を以下のように調整する。
 \begin{align*}
   f_\mathrm T'
   = f_\mathrm T+\left(\Delta+\sqrt{R_\mathrm i'-\bar l^2}\right)\sin\theta\qquad
     \left(R_\mathrm i' = R_\mathrm c-\frac{W_x}2-\rho~,~~\bar l = l-\frac\sigma2\right).
 \end{align*}
-$R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurvatureRadius, \ACOD, \JigWidth の半分, 受板の半径, 受板の幅, 受板中心と\TableCenter との水平距離を示す。
+$R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurvatureRadius, \ACOD, \JigWidth の半分, \ReceiverPlateRadius, \ReceiverPlateWidth, \ReceiverPlateCenter と\TableCenter との水平距離を示す。
 
 
 
@@ -162,7 +162,7 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurva
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
 たとえば、\WorkTotalLength が$800^{+0.5}_{\phantom -0}$, \TopAlocationLength が400, \expandafterindex{ピッチ（\yomiIDTaperTable）@ピッチ（\nameIDTaperTable）}ピッチが25である場合を考える。
-このとき、トップ端は\index{ふりわけちゅうしん@振分中心}振分中心から400の位置にあり、\expandafterindex{ピッチ（\yomiIDTaperTable）@ピッチ（\nameIDTaperTable）}ピッチは25であるものとし、両端についてはそれを適宜延長して調整する。
+このとき、トップ端は\AlocationCenter から400の位置にあり、\expandafterindex{ピッチ（\yomiIDTaperTable）@ピッチ（\nameIDTaperTable）}ピッチは25であるものとし、両端についてはそれを適宜延長して調整する。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -415,12 +415,12 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 11.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{工具補正}
+\subsection{\index{こうぐほせい@工具補正}工具補正}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.7.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{工具長補正}
+\subsubsection{\index{こうぐちょうほせい@工具長補正}工具長補正}
 \EndFaceCChamferMilling に使用する\index{テーパエンドミル}テーパエンドミルの\index{こうぐちょう（テーパエンドミル）@工具長（テーパエンドミル）}工具長は、その\index{せんたんぶ（テーパエンドミル）@先端部（テーパエンドミル）}先端部から軸方向に適当な距離$d_\mathrm e$を差し引いた長さを工具長として\index{オフセット（こうぐちょうほせい）@オフセット（工具長補正）}オフセット量の設定を行うものとする。
 
 したがって、工具の先端部を測定し、先端から$d_\mathrm e$を引いた値を\index{こうぐちょうほせいち@工具長補正値}工具長補正値とする。
@@ -429,7 +429,7 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.7.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{工具径補正}
+\subsubsection{\index{こうぐけいほせい@工具径補正}工具径補正}
 \index{せんたんけい（テーパエンドミル）@先端径（テーパエンドミル）}先端径（直径）および先端の\index{かたかく（テーパエンドミル）@片角（テーパエンドミル）}片角がそれぞれ$D_\mathrm e$, $\xi_\mathrm e$の\index{テーパエンドミル}テーパエンドミルに対し、その\index{こうぐけいほせいち@工具径補正値}工具径補正値を$\nicefrac{D_\mathrm e}2$として設定を行い、さらに\index{まもうりょう（こうぐけい）@摩耗量（工具径）}工具径摩耗量を$d_\mathrm e\tan\xi_\mathrm e$として設定を行うものとする。
 ここで$d_\mathrm e$は、\index{こうぐちょうほせい@工具長補正}工具長補正において用いたものとする。
 
@@ -570,34 +570,42 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 (to be written...)
 
 
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 23.11 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\IncutBoring に関する寸法\TBW}
+(to be written...)
+
+
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 10.9 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 23.12 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\Dimple に関する寸法}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 10.06.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 23.12.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{工具補正：\DimpleMilling}
+\subsection{\expandafterindex{こうぐほせい（\yomiDimpleMilling）@工具補正（\nameDimpleMilling）}工具補正：\nameDimpleMilling}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 10.06.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 23.12.01.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{工具長補正：\DimpleMilling}
-\DimpleMilling に用いる\index{Tスロットカッター}Tスロットカッターの\index{こうぐちょう（Tスロットカッター）@工具長（Tスロットカッター）}工具長については、切削部（刃の部分）の中央を工具長として\index{オフセット（こうぐちょうほせい）@オフセット（工具長補正）}オフセット量の設定を行うものとする。
+\subsubsection{\expandafterindex{こうぐちょうほせい（\yomiDimpleMilling）@工具長補正（\nameDimpleMilling）}工具長補正：\nameDimpleMilling}
+\DimpleMilling に用いる\index{Tスロットカッター}Tスロットカッターの\index{こうぐちょう（Tスロットカッター）@工具長（Tスロットカッター）}工具長については、切削部（刃の部分）の中央を\index{こうぐちょう（Tスロットカッター）@工具長（Tスロットカッター）}工具長として\index{オフセット（こうぐちょうほせい）@オフセット（工具長補正）}オフセット量の設定を行うものとする。
 
 したがって、工具の切削部の先端、および切削部の厚みを測定し、切削部の先端から厚みの半分の値を引いた値を\index{こうぐちょうほせいち@工具長補正値}工具長補正値とする。
-なお、このとき工具長の\index{まもうりょう（こうぐちょうほせい）@摩耗量（工具長補正）}摩耗量は0とする。
+なお、このとき\index{まもうりょう（こうぐちょうほせい）@摩耗量（工具長補正）}工具長の摩耗量は0とする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 10.06.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 23.12.01.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{工具径補正：\DimpleMilling}
-\DimpleMilling に用いる\index{Tスロットカッター}Tスロットカッターの\index{こうぐけい（Tスロットカッター）@工具径（Tスロットカッター）}工具長は、その刃の径方向の先端部を工具径として\index{オフセット（こうぐけいほせい）@オフセット（工具径補正）}オフセット量の設定を行うものとする。
+\subsubsection{\expandafterindex{こうぐけいほせい（\yomiDimpleMilling）@工具径補正（\nameDimpleMilling）}工具径補正：\nameDimpleMilling}
+\DimpleMilling に用いる\index{Tスロットカッター}Tスロットカッターの\index{こうぐちょう（Tスロットカッター）@工具長（Tスロットカッター）}工具長は、その刃の径方向の先端部を工具径として\index{オフセット（こうぐけいほせい）@オフセット（工具径補正）}オフセット量の設定を行うものとする。
 
-なお、このとき工具径の\index{まもうりょう（こうぐけいほせい）@摩耗量（工具径補正）}摩耗量は0とする。
+なお、このとき\index{まもうりょう（こうぐけいほせい）@摩耗量（工具径補正）}工具径の摩耗量は0とする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -611,7 +619,7 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %% subsection 10.9.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\DimpleMilling の傾き角}
-\Dimple の測定および加工は、\index{アンダーカット}アンダーカットが生じないように適切にワークを$B$軸方向に傾けるものとする。
+\Dimple の測定および加工は、\index{アンダーカット}アンダーカットが生じないように適切に\index{ワーク}ワークを$B$軸方向に傾けるものとする。
 このとき\expandafterindex{かたむきかく（\yomiDimple）@傾き角（\nameDimple）}傾ける角度$\phi$は、\expandafterindex{\yomiDimple1れつめ@\nameDimple1列目}トップ端から1列目の\nameDimple までの距離$q$に対して、
 \begin{align*}
   \tan\phi
@@ -623,5 +631,3 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 ここで$w'_{\mathrm A0}$, $w'_{\mathrm Aq}$は（\PlatingThk$\mu$を考慮した）\TopEndACID およびトップ端から距離$q$におけるAC方向の\InnerDiameter を示し、$R_\mathrm c$, $f_\mathrm T$はそれぞれ\CenterCurvatureRadius, \TopAlocationLength を示す。
 
 ただし、$\phi < 0$となる場合は、$\phi = 0$とみなすものとする。
-
-

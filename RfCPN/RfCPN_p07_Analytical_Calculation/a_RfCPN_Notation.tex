@@ -229,18 +229,18 @@ $g_{\mathrm Tx}$ & \TopIDCenter の$X$座標 &\\
 $g_{\mathrm Ty}$ & \TopIDCenter の$Y$座標 &\\
 \end{multicollongtblr}
 
-\begin{multicollongtblr}{ジグ}{cX[l]c}
+\begin{multicollongtblr}{\Jig}{cX[l]c}
 記号 & 内容 & 図面\\
 $l$ & \JigLength の半分 & ○\\
-$\rho$ & 受板の半径 & ○\\
-$\sigma$ & 受板の幅 & ○\\
+$\rho$ & \ReceiverPlateRadius & ○\\
+$\sigma$ & \ReceiverPlateWidth & ○\\
 $R_\mathrm i'$ & $R_i-\rho$ &\\
 $\bar l$ & $\displaystyle l-\frac\sigma2$ &\\
 $l'$ & $l+f_\mathrm d$ &\\
 $\delta_\mathrm s$ & \AlocationLength 調整用\SpacerThickness &\\
 $\Delta$ & $\mathrm U_\mathrm B$と\TableCenter Pとの水平距離 &\\
 $\Delta'$ & Oを原点とした\TableCenter Pの水平距離 &\\
-$\Delta_y$ & ジグのワークが乗る部分の$Y$座標 & ◯\\
+$\Delta_y$ & \Jig の\index{ワーク}ワークが乗る部分の$Y$座標 & ◯\\
 \end{multicollongtblr}
 
 %\clearpage
@@ -278,9 +278,9 @@ $k_\mathrm S$ & 硫黄Sにおける影響係数 & ○\\
 $S(u, v)$ & \index{パラメトリックサーフェス}パラメトリックサーフェス &\\
 $u, v$ & \index{パラメータ（パラメトリックサーフェス）}パラメトリックサーフェスのパラメータ &\\
 $C(t)$ & \index{アイソパラメトリックきょくせん@アイソパラメトリック曲線}アイソパラメトリック曲線 &\\
-$f_i$ & \index{きていかんすう（アイソパラメトリックきょくせん）@きていかんすう（アイソパラメトリック曲線）}アイソパラメトリック曲線の基底関数 &\\
+$f_i$ & \index{きていかんすう（アイソパラメトリックきょくせん）@基底関数（アイソパラメトリック曲線）}アイソパラメトリック曲線の基底関数 &\\
 $P_i$ & \index{せいぎょてん（アイソパラメトリックきょくせん）@制御点（アイソパラメトリック曲線）}アイソパラメトリック曲線の制御点 &\\
-$N_{i, p}$ & \index{きていかんすう（B-スプラインきょくせん）@きていかんすう（B-スプライン曲線）}B-スプライン曲線の基底関数 &\\
+$N_{i, p}$ & \index{きていかんすう（B-スプラインきょくせん）@基底関数（B-スプライン曲線）}B-スプライン曲線の基底関数 &\\
 $U$ & \index{ノットベクトル}ノットベクトル &\\
 $u_i$ & \index{ノットベクトルのせいぶん@ノットベクトルの成分}ノットベクトルの成分 &\\
 $p$ & \index{じすう（きていかんすう）@次数（基底関数）}基底関数$N_{i, p}$の次数 &\\
@@ -289,8 +289,8 @@ $w_i$ & \index{ウェイト（きていかんすう）@ウェイト（基底関�
 
 \begin{multicollongtblr}{その他}{cX[l]c}
 記号 & 内容 & 参照\\
-$\delta x$ & 回転中心と\JigCenter とのずれ$X$ &\\
-$\delta z$ & 回転中心と\JigCenter とのずれ$Z$ &\\
+$\delta x$ & \TableCenter と\JigCenter とのずれ$X$ &\\
+$\delta z$ & \TableCenter と\JigCenter とのずれ$Z$ &\\
 \end{multicollongtblr}
 
 

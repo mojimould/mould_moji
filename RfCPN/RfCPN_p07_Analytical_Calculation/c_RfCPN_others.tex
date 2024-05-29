@@ -9,8 +9,8 @@
 %% section 29.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{回転中心とのずれの考慮}
-パレットの回転中心座標($X$, $Z$)に対して、ジグの中心の位置が($\delta x$, $\delta z$)だけずれている場合を考える。
-このとき、任意の点($X$, $Z$)はパレットを$-\theta$だけ回転すると、
+\TableCenter 座標($X$, $Z$)に対して、\JigCenter の位置が($\delta x$, $\delta z$)だけずれている場合を考える。
+このとき、任意の点($X$, $Z$)は\Table を$-\theta$だけ回転すると、
 \begin{align*}
   \left[
     \begin{array}{c}
@@ -62,7 +62,7 @@
 %% subsection 27.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\WorkTotalLength の変化}
-\EndFacecutMilling ではパレットの中心の位置から\ReAlocationLength の長さの位置を加工する。
+\EndFacecutMilling では\TableCenter の位置から\ReAlocationLength の長さの位置を加工する。
 そのため回転によるずれを考慮すると、加工後の\ReAlocationLength はそれぞれ、
 \begin{align*}
   f_\mathrm T' &\quad\longrightarrow\quad f_\mathrm T'-\delta z\ ,\\
@@ -143,5 +143,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 31.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{ワーク固定用ボルト\TBW}
+\modHeadsection{ワーク\FixtureBolt\TBW}
 (to be written...)

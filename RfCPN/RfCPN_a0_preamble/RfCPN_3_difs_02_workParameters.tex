@@ -51,6 +51,7 @@
 %%% Overall %%%
 \newNamecommand{Alocation}{振分け}{ふりわけ}
 \newNamecommand{AlocationLength}{振分長}{ふりわけちょう}
+\newNamecommand{ReAlocation}{再振分け}{さいふりわけ}
 \newNamecommand{ReAlocationLength}{再振分長}{さいふりわけちょう}
 
 \newGPMcommand{WorkTotalLength}{ワーク全長}{ワークぜんちょう}
@@ -355,12 +356,30 @@
 \newNamecommand{ReliefGrooveMilling}{\nameReliefGroove 加工}{\yomiReliefGroove かこう}
 
 %%% JIG %%%
-\newGPMcommand{JigLength}{ジグの長さ}{ジグのながさ}
-\newGPMcommand{JigWidth}{ジグの幅}{ジグのはば}
-\newGPMcommand{SpacerThickness}{スペーサ厚}{スペーサあつ}
+\newNamecommand{Palette}{パレット}{パレット}
+\newNamecommand{NoOnePalette}{No.1\namePalette}{No.1\yomiPalette}
+\newNamecommand{NoTwoPalette}{No.2\namePalette}{No.2\yomiPalette}
+\newNamecommand{Table}{テーブル}{テーブル}
+\newNamecommand{Jig}{ジグ}{ジグ}
+\newNamecommand{ReceiverPlate}{受板}{うけいた}
+\newNamecommand{TopSideReceiverPlate}{トップ側の\nameReceiverPlate}{トップがわの\yomiReceiverPlate}
+\newNamecommand{BottomSideReceiverPlate}{ボトム側の\nameReceiverPlate}{ボトムがわの\yomiReceiverPlate}
+\newNamecommand{Spacer}{スペーサ}{スペーサ}
+\newNamecommand{FixtureBolt}{固定用ボルト}{こていようボルト}
+
+\newGPMcommand{JigLength}{\nameJig の長さ}{\yomiJig のながさ}
+\newGPMcommand{JigWidth}{\nameJig の幅}{\yomiJig のはば}
+\newGPMcommand{SpacerThickness}{\nameSpacer 厚}{\yomiSpacer あつ}
+\newGPMcommand{FixtureBoltLength}{\nameFixtureBolt 長}{\yomiFixtureBolt ボルトちょう}
+\newGPMcommand{ReceiverPlateRadius}{\nameReceiverPlate 半径}{\yomiReceiverPlate はんけい}
+\newGPMcommand{ReceiverPlateWidth}{\nameReceiverPlate 幅}{\yomiReceiverPlate はば}
 
 %%% TOOL %%%
+\newNamecommand{TouchSensorProbe}{タッチセンサープローブ}{タッチセンサープローブ}
+\newNamecommand{ToolMeasurementTouchSensorProbe}{工具測定用タッチセンサープローブ}{こうぐそくていタッチセンサープローブ}
+
 \newGPMcommand{ToolRadius}{工具半径}{こうぐはんけい}
+\newGPMcommand{TouchSensorProbeRadius}{タッチセンサープローブ半径}{タッチセンサープローブはんけい}
 \newGPMcommand{FaceMillDC}{フェイスミル刃径}{フェイスミルはけい}
 \newGPMcommand{FaceMillDCX}{フェイスミル最大刃径}{フェイスミルさいだいはけい}
 \newGPMcommand{TaperEndMillAngle}{テーパエンドミル片角}{テーパエンドミルかたかく}
@@ -375,6 +394,8 @@
 \newNamecommand{CurvatureCenter}{湾曲中心}{わんきょくちゅうしん}
 \newNamecommand{TopCurvatureCenter}{トップ端の\nameCurvatureCenter}{トップたんの\yomiCurvatureCenter}
 \newNamecommand{BottomCurvatureCenter}{ボトム端の\nameCurvatureCenter}{ボトムたんの\yomiCurvatureCenter}
+
+\newNamecommand{AlocationCenter}{振分中心}{ふりわけちゅうしん}
 
 \newNamecommand{ODCenter}{外径中心}{がいけいちゅうしん}
 \newNamecommand{EndFaceODCenter}{\nameODCenter（\nameEndFace）}{\yomiODCenter（\yomiEndFace）}
@@ -395,5 +416,16 @@
 \newNamecommand{KeywayCenter}{\nameKeyway 中心}{\yomiKeyway ちゅうしん}
 
 \newGPMcommand{ToolExchangePoint}{工具交換位置}{こうぐこうかんいち}
-\newGPMcommand{TableCenter}{テーブル回転中心}{テーブルかいてんちゅうしん}
-\newGPMcommand{JigCenter}{ジグ中心}{ジグちゅうしん}
+\newGPMcommand{TableCenter}{\nameTable 回転中心}{\yomiTable かいてんちゅうしん}
+\newGPMcommand{JigCenter}{\nameJig 中心}{\yomiJig ちゅうしん}
+\newGPMcommand{ReceiverPlateCenter}{\nameReceiverPlate 中心}{\yomiReceiverPlate ちゅうしん}
+\newGPMcommand{TopSideReceiverPlateCenter}{トップ側\nameReceiverPlateCenter}{トップがわ\yomiReceiverPlateCenter}
+\newGPMcommand{BottomSideReceiverPlateCenter}{ボトム側の\nameReceiverPlateCenter}{ボトムがわの\yomiReceiverPlateCenter}
+\newGPMcommand{AfterRotateReceiverPlateCenter}{傾き後の\nameReceiverPlateCenter}{かたむきごの\yomiReceiverPlateCenter}
+\newGPMcommand{AfterRotateTopSideReceiverPlateCenter}{傾き後の\nameTopSideReceiverPlateCenter}{かたむきごの\yomiTopSideReceiverPlateCenter}
+\newGPMcommand{AfterRotateBottomSideReceiverPlateCenter}{傾き後の\nameBottomSideReceiverPlateCenter}{かたむきごの\yomiBottomSideReceiverPlateCenter}
+\newGPMcommand{ReceiverPlateContactPoint}{\nameReceiverPlate との接点}{\yomiReceiverPlate とのせってん}
+\newGPMcommand{TopSideReceiverPlateContactPoint}{トップ側の\nameReceiverPlateContactPoint}{トップがわの\yomiReceiverPlateContactPoint}
+\newGPMcommand{BottomSideReceiverPlateContactPoint}{ボトム側の\nameReceiverPlateContactPoint}{ボトムがわの\yomiReceiverPlateContactPoint}
+\newGPMcommand{AfterRotatePlateContactPoint}{傾き後の\nameReceiverPlateContactPoint}{かたむきごの\yomiReceiverPlateContactPoint}
+

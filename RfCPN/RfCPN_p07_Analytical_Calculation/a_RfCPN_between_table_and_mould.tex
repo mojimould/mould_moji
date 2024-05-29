@@ -1,7 +1,7 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter{\index{ワーク}ワークと\index{テーブル}テーブルとの位置}
+\modHeadchapter{\index{ワーク}ワークと\Table との位置}
 \index{CAD}CADによる描画において、\TableCenter　が原点（\index{ワールドげんてん@ワールド原点}ワールド原点）に置かれているとする。
 ここで\index{ワーク}ワークを描画する際、\index{ワークのちゅうしん@ワークの中心}ワークの中心
 %% footnote %%%%%%%%%%%%%%%%%%%%%
@@ -18,9 +18,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section D.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\index{スペーサ}スペーサ取付前}
-（\index{スペーサ}スペーサを取付る前の）\index{ワークのちゅうしん@ワークの中心}ワークの中心が\TableCenter Pに置かれている場合を考える。
-ボトム側の受板に接する\index{ワーク}ワークの点と、\TableCenter Pとは、実軸方向に
+\modHeadsection{\Spacer 取付前}
+（\Spacer を取付る前の）\index{ワークのちゅうしん@ワークの中心}ワークの中心が\TableCenter Pに置かれている場合を考える。
+\BottomSideReceiverPlate に接する\index{ワーク}ワークの点と、\TableCenter Pとは、実軸方向に
 \begin{align*}
   R_\mathrm c-R_\mathrm i\cos\alpha_{\mathrm U_\mathrm B}
 \end{align*}
@@ -42,8 +42,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section D.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\index{スペーサ}スペーサ取付後}
-\index{\yomiSpacerThickness@\nameSpacerThickness}厚さ$\delta_s\,(>0)$のスペーサを取付けた場合、\index{ワーク}ワークと受板との接点および\TableCenter Pとは、実軸方向に
+\modHeadsection{\Spacer 取付後}
+\index{\yomiSpacerThickness@\nameSpacerThickness}厚さ$\delta_s\,(>0)$の\Spacer を取付けた場合、\index{ワーク}ワークと受板との接点および\TableCenter Pとは、実軸方向に
 \begin{align*}
   R_\mathrm c-R_\mathrm i\cos\alpha'_{\mathrm U_\mathrm B}
 \end{align*}
@@ -60,4 +60,4 @@
      -\frac{\delta_s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_s^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta_s^2+(2\bar l)^2}}
 \end{align*}
 だけ実軸方向に離れていることがわかる。
-\pageeqref{eq:tableCenter}および\pageeqref{eq:spacerMoveHdistance}より、これは\index{スペーサ}スペーサ取付け後の\index{モールドちゅうしん@モールド中心}モールド中心と\CenterCurvature$R_\mathrm c$との差であることがわかる。
+\pageeqref{eq:tableCenter}および\pageeqref{eq:spacerMoveHdistance}より、これは\Spacer 取付け後の\index{モールドちゅうしん@モールド中心}モールド中心と\CenterCurvature$R_\mathrm c$との差であることがわかる。

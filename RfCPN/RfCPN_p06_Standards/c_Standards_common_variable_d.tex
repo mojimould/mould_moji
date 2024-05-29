@@ -1,15 +1,15 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter[lot]{コモン変数（\DMC）\label{chap:commonvariablesDM}\vphantom{\ref{chap:commonvariablesDM}}}
+\modHeadchapter[lot]{\expandafterindex{コモンへんすう（\yomiDMC）@コモン変数（\nameDMC）}コモン変数（\nameDMC）\label{chap:commonvariablesDM}\vphantom{\ref{chap:commonvariablesDM}}}
 ここでは\DMC の加工システムで使用している\expandafterindex{コモンへんすう（\yomiDMC）@コモン変数（\nameDMC）}コモン変数について述べる。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 11.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{コモン変数の範囲}
-\DMC で使用可能なコモン変数は以下のとおりである。
+\modHeadsection{\index{コモンへんすう@コモン変数}コモン変数の範囲}
+\DMC で\index{コモンへんすう（しようかのう）@コモン変数（使用可能）}使用可能なコモン変数は以下のとおりである。
 \begin{enumerate}[label=\sarrow]
 \item \ttNum100\,-\ttNum199
 \item \ttNum400\,-\ttNum999
@@ -353,8 +353,8 @@
 変数 & 内容 & 設定値\\
 \ttNum500 & 芯ずれ許容差 \Gprgbox{O93xx} & 5\\
 \ttNum501 & タッチセンサー信号遅れ補正 \Gprgbox{O93xx} & 0.040\\
-\ttNum502 & タッチセンサープローブ中心$X$補正 \Gprgbox{O93xx} & -0.016507\\
-\ttNum503 & タッチセンサープローブ中心$Y$補正 \Gprgbox{O93xx} & -0.068371\\
+\ttNum502 & \TouchSensorProbe 中心$X$補正 \Gprgbox{O93xx} & -0.016507\\
+\ttNum503 & \TouchSensorProbe 中心$Y$補正 \Gprgbox{O93xx} & -0.068371\\
 \ttNum504 & 測定距離 \Gprgbox{O910x} & 5\\
 \ttNum505 & プローブ表面からプログラムの加工原点($Z$0)までの距離 \Gprgbox{O910x} & 785.529\\
 \ttNum506 & 工具長の変化の許容差 \Gprgbox{O910x} & 1.0\\
@@ -363,7 +363,7 @@
 \ttNum509 & $Z$座標系設定 \Gprgbox{O93xx} & 441.432\\
 \ttNum510 & （不明） & 270\\
 \ttNum511 & インチ／ミリ切替 \Gprgbox{O910x} & \ttNum0\\
-\ttNum512 & タッチセンサープローブ半径$\mathrm{mm}$値 \Gprgbox{O93xx} & 5.0\\
+\ttNum512 & \TouchSensorProbeRadius$\mathrm{mm}$値 \Gprgbox{O93xx} & 5.0\\
 \ttNum513 & 移動時用の送り速さ値 \Gprgbox{O910x} & 1000\\
 \ttNum514 & スキップ({\ttfamily G31})測定時用 送り速さ値 \Gprgbox{O910x}\Gprgbox{O93xx} & 50\\
 \ttNum515 & （不明） & \ttNum0\\
@@ -402,8 +402,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum600 & 工具 - \EndFace 間 $Z$方向クリアランス平面間距離 & 100.0\\
 \SetRow{unusingVariables}
 \ttNum601 & （予備） &\\
-\ttNum602 & タッチセンサープローブ測定時（\Dimple 除く）の近付き量 & 7.0\\
-\ttNum603 & タッチセンサープローブ測定時の行過ぎ量 & 3.0\\
+\ttNum602 & \TouchSensorProbe 測定時の近付き量（\Dimple 除く） & 7.0\\
+\ttNum603 & \TouchSensorProbe 測定時の行過ぎ量 & 3.0\\
 \SetRow{unusingVariables}
 \ttNum604 & （予備） &\\
 \ttNum605 & 外側加工面 法線方向クリアランス平面間距離 最小値 & 20.0\\
@@ -867,38 +867,38 @@ $\cdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 11.8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum901000\,-\ttNum901024：パレット・ジグ}
-\ttNum901000\,-\ttNum901024については、主に\index{パレット}パレットや\index{ジグ}ジグに関するものとする。\\
+\modHeadsection{\ttNum901000\,-\ttNum901024：\Palette・\Jig}
+\ttNum901000\,-\ttNum901024については、主に\Palette や\Jig に関するものとする。\\
 
-\begin{multicollongtblr}[white]{\ttNum901000\,-\ttNum901024：主にパレット・ジグ}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum901000\,-\ttNum901024：主に\Palette・\Jig}{cX[l]c}
 変数 & 内容 & 設定例\\
 \SetRow{unusingVariables}
 \ttNum901000 & （予備） &\\
-\ttNum901001 & パレット\ttNum1 \JigCenter 機械座標$X$ & -550.069\\
-\ttNum901002 & パレット\ttNum1 \JigCenter 機械座標$Y$ & -739.006\\
-\ttNum901003 & パレット\ttNum1 \JigCenter 機械座標$Z$ & -1149.974\\
-\ttNum901004 & パレット\ttNum1 \JigCenter 機械座標$B$ & 0.073\\
-\ttNum901005 & パレット\ttNum2 \JigCenter 機械座標$X$ & -550.019\\
-\ttNum901006 & パレット\ttNum2 \JigCenter 機械座標$Y$ & -739.555\\
-\ttNum901007 & パレット\ttNum2 \JigCenter 機械座標$Z$ & -1149.974\\
-\ttNum901008 & パレット\ttNum2 \JigCenter 機械座標$B$ & -0.013\\
+\ttNum901001 & \NoOnePalette{} \JigCenter 機械座標$X$ & -550.069\\
+\ttNum901002 & \NoOnePalette{} \JigCenter 機械座標$Y$ & -739.006\\
+\ttNum901003 & \NoOnePalette{} \JigCenter 機械座標$Z$ & -1149.974\\
+\ttNum901004 & \NoOnePalette{} \JigCenter 機械座標$B$ & 0.073\\
+\ttNum901005 & \NoTwoPalette{} \JigCenter 機械座標$X$ & -550.019\\
+\ttNum901006 & \NoTwoPalette{} \JigCenter 機械座標$Y$ & -739.555\\
+\ttNum901007 & \NoTwoPalette{} \JigCenter 機械座標$Z$ & -1149.974\\
+\ttNum901008 & \NoTwoPalette{} \JigCenter 機械座標$B$ & -0.013\\
 \ttNum901009 & 工具中心機械座標$C$ & 0\\
 \SetRow{unusingVariables}
 \ttNum901010 & （予備） &\\
-\ttNum901011 & パレット\ttNum1 \JigLength$2l$（機械座標系$B$0 $Z$方向） & 660.0\\
-\ttNum901012 & パレット\ttNum1 ジグ内側幅（機械座標系$B$0 $Z$方向） & 410.0\\
-\ttNum901013 & パレット\ttNum1 ジグ幅（機械座標系$B$0 $X$方向） & 455.0\\
+\ttNum901011 & \NoOnePalette{} \JigLength$2l$（機械座標$B$0 $Z$方向） & 660.0\\
+\ttNum901012 & \NoOnePalette{} ジグ内側幅（機械座標$B$0 $Z$方向） & 410.0\\
+\ttNum901013 & \NoOnePalette{} ジグ幅（機械座標$B$0 $X$方向） & 455.0\\
 \SetRow{unusingVariables}
-\ttNum901014 & パレット\ttNum1 ジグ底面-固定用ボルト取付具間距離（高さ, $Y$方向） &\\
+\ttNum901014 & \NoOnePalette{} ジグ底面-固定用ボルト取付具間距離（高さ, $Y$方向） &\\
 \SetRow{unusingVariables}
-\ttNum901015 & パレット\ttNum1 ジグ底面-固定用ボルト取付具間距離（幅, 機械座標系$B$0 $X$方向） &\\
+\ttNum901015 & \NoOnePalette{} ジグ底面-固定用ボルト取付具間距離（幅, 機械座標$B$0 $X$方向） &\\
 \SetRow{unusingVariables}
 \ttNum901016 & （予備） &\\
-\ttNum901017 & パレット\ttNum2 \JigLength$2l$（機械座標系$B$0における$Z$方向） & 660.0\\
-\ttNum901018 & パレット\ttNum2 ジグ内側幅（機械座標系$B$0における$Z$方向） & 410.0\\
-\ttNum901019 & パレット\ttNum2 ジグ幅（機械座標系$B$0における$X$方向） & 455.0\\
-\ttNum901020 & パレット\ttNum2 ジグ底面-固定用ボルト取付具間距離（高さ, $Y$方向） & 257.0\\
-\ttNum901021 & パレット\ttNum2 ジグ底面-固定用ボルト取付具間距離（幅, 機械座標系$B$0 $X$方向） & 247.0\\
+\ttNum901017 & \NoTwoPalette{} \JigLength$2l$（機械座標$B$0における$Z$方向） & 660.0\\
+\ttNum901018 & \NoTwoPalette{} ジグ内側幅（機械座標$B$0における$Z$方向） & 410.0\\
+\ttNum901019 & \NoTwoPalette{} ジグ幅（機械座標$B$0における$X$方向） & 455.0\\
+\ttNum901020 & \NoTwoPalette{} ジグ底面-固定用ボルト取付具間距離（高さ） & 257.0\\
+\ttNum901021 & \NoTwoPalette{} ジグ底面-固定用ボルト取付具間距離（幅） & 247.0\\
 \SetRow{unusingVariables}
 \ttNum901022 & （予備） &\\
 \SetRow{unusingVariables}
@@ -912,13 +912,13 @@ $\cdots$ & （以下不明） & \ttNum0
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-その他の（\index{ずめん（ジグ）@図面（ジグ）}図面上の）\index{すんぽう（ジグ）@寸法（ジグ）}寸法として、
+その他の（\expandafterindex{ずめん（\yomiJig）@図面（\nameJig）}図面上の）\index{すんぽう（\yomiJig）@寸法（\nameJig）}寸法として、
 \begin{enumerate}[label=\sarrow]
-\item \TableCenter と C面側ジグ端 との水平距離：196.5
-\item 受板の円の半径$\rho$：100
-\item 受板の鉛直方向の幅$\sigma$：40
-\item \TableCenter と 受板の円の中心 との水平距離$\Delta$：201.5
-\item 受板の円の中心 と 受板の水平方向の底 との距離：70
+\item \TableCenter{} と C面側\nameJig 端 との水平距離：196.5
+\item \ReceiverPlateRadius$\rho$：100
+\item \ReceiverPlateWidth$\sigma$：40
+\item \TableCenter{} と \ReceiverPlateCenter{} との水平距離$\Delta$：201.5
+\item \ReceiverPlateCenter{} と \ReceiverPlate の水平方向の底 との距離：70
 \end{enumerate}
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -931,19 +931,19 @@ $\cdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 17.9 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum901050\,-\ttNum901074：タッチセンサーブローブ}
-\ttNum901050\,-\ttNum901074については、主に工具{\ttfamily T50}\index{タッチセンサープローブ}タッチセンサープローブおよび\index{こうぐそくてい@工具測定}工具測定用\index{タッチセンサーブローブ（こうぐそくてい）@タッチセンサーブローブ（工具測定）}タッチセンサーブローブに関するものとする。
+\modHeadsection{\ttNum901050\,-\ttNum901074：\TouchSensorProbe}
+\ttNum901050\,-\ttNum901074については、主に工具{\ttfamily T50}\TouchSensorProbe および\ToolMeasurementTouchSensorProbe に関するものとする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-これらの値は2023/09/26機械設置時のもの
+これらの値は2023/09/26\index{きかいせっちじ@機械設置時}機械設置時のもの
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{multicollongtblr}[white]{\ttNum901050\,-\ttNum901074：工具{\ttfamily T50}および工具測定用タッチセンサーブローブ}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum901050\,-\ttNum901074：工具{\ttfamily T50}および\ToolMeasurementTouchSensorProbe}{cX[l]c}
 変数 & 内容 & 設定例\\
 \ttNum901050 & {\ttfamily T50}先端球 半径 & 5.0\\
 \ttNum901051 & {\ttfamily T50}軸部分 半径 & 3.75\\
@@ -955,15 +955,15 @@ $\cdots$ & （以下不明） & \ttNum0
 \SetRow{unusingVariables}
 \ttNum901056 & （予備） &\\
 \ttNum901057 & 測定距離 & 5\\
-\ttNum901058 & 工具測定用タッチセンサープローブ表面とプログラム原点($Z$0)との距離 & 785.529\\
+\ttNum901058 & \ToolMeasurementTouchSensorProbe 表面とプログラム原点($Z$0)との距離 & 785.529\\
 \SetRow{unusingVariables}
 \ttNum901059 & （予備） &\\
 \ttNum901060 & 工具破損検出の許容差 & 1.0\\
 \SetRow{unusingVariables}
 \ttNum901061 & （予備） &\\
-\ttNum901062 & 工具測定用タッチセンサープローブの位置$X$ & -30.374\\
-\ttNum901063 & 工具測定用タッチセンサープローブの位置$Y$ & -913.761\\
-\ttNum901064 & 工具測定用タッチセンサープローブの位置$Z$ & -820.000\\
+\ttNum901062 & \ToolMeasurementTouchSensorProbe の位置$X$ & -30.374\\
+\ttNum901063 & \ToolMeasurementTouchSensorProbe の位置$Y$ & -913.761\\
+\ttNum901064 & \ToolMeasurementTouchSensorProbe の位置$Z$ & -820.000\\
 \SetRow{unusingVariables}
 \ttNum901065 & （予備） &\\
 \SetRow{unusingVariables}
@@ -1113,9 +1113,9 @@ $\cdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 18.10 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{未使用（使用可）のコモン変数}
-この章の各々の表に載せていない\index{コモンへんすう（みしよう）@コモン変数（未使用）}コモン変数は（\dateUnusedVariables 時点において）未使用であり、新たに用いても問題ない（他のNCプログラムと競合しない）。
-これらのコモン変数を、以下にまとめておく。
+\modHeadsection{\index{コモンへんすう（みしよう）@コモン変数（未使用）}未使用（使用可）のコモン変数}
+この章の各々の表に載せていない\index{コモンへんすう（みしよう）@コモン変数（未使用）}コモン変数は（\dateUnusedVariables 時点において）未使用であり、新たに用いても問題ない（他の\CreatedNCPrg と競合しない）。
+これらの\index{コモンへんすう（みしよう）@コモン変数（未使用）}コモン変数を、以下にまとめておく。
 \begin{enumerate}[label=\sarrow]
 \item \ttNum575-\ttNum599
 \item \ttNum750-\ttNum999
