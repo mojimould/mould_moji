@@ -1,16 +1,16 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter[lot]{現状の横型マシニングセンタの業務フロー}
+\modHeadchapter[lot]{現状の\index{よこがたマシニングセンタ@横型マシニングセンタ}横型マシニングセンタの\index{ぎょうむフロー@業務フロー}業務フロー}
 新たに導入する\index{よこがたマシニングセンタ@横型マシニングセンタ}横型マシニングセンタ（以下、\textbf{\DMC}）での\expandafterindex{こうてい（\yomiDMC）@工程（\yomiDMC）}工程は、\Dimple の測定・加工を除けば三菱製横型マシニングセンタ（以下、\textbf{\MMC}）と大まかには同様である。
 そこで、まずは\MMC ではどのようなフローで業務が行われているかを（ソフトウェアの観点から）みることにする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{marker}
-ここでは主に\MMC の\expandafterindex{No.1パレット（\yomiMMC）@No.1パレット（\nameMMC）}No.1パレットで加工を行うものを対象とする
+ここでは主に\MMC の\expandafterindex{\yomiNoOnePalette（\yomiMMC）@\nameNoOnePalette（\nameMMC）}\nameNoOnePalette で加工を行うものを対象とする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{\expandafterindex{No.2パレット（\yomiMMC）@No.2パレット（\nameMMC）}No.2パレットでは、\index{おおがたのモールド@大型のモールド}径の大きなものや\index{まるがたのモールド@丸型のモールド}丸形のもの等の加工が主に行われる。}。
+\footnote{\expandafterindex{\yomiNoTwoPalette（\yomiMMC）@\nameNoTwoPalette（\nameMMC）}\nameNoTwoPalette では、\index{おおがたのモールド@大型のモールド}径の大きなものや\index{まるがたのモールド@丸型のモールド}丸形のもの等の加工が主に行われる。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -29,9 +29,9 @@
 %% subsection 01.01.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\expandafterindex{こうていのしゅるい（\yomiMMC）@工程の種類（\nameMMC）}工程の種類（\yomiMMC）}
-\MMC について、直接的なワークに対する測定・加工に関するものに着目すると、主に以下のような\expandafterindex{こうてい（\yomiMMC）@工程（\nameMMC）}工程が行われる。\\
+\MMC について、直接的な\index{ワーク}ワークに対する測定・加工に関するものに着目すると、主に以下のような\expandafterindex{こうてい（\yomiMMC）@工程（\nameMMC）}工程が行われる。\\
 
-\begin{multicollongtblr}{ワークに直接関わる主な\expandafterindex{こうていのしゅるい（\yomiMMC）@工程の種類（\nameMMC）}工程の種類（\yomiMMC）}{X[l] X[l]}
+\begin{multicollongtblr}{\index{ワーク}ワークワークに直接関わる主な\expandafterindex{こうていのしゅるい（\yomiMMC）@工程の種類（\nameMMC）}工程の種類（\yomiMMC）}{X[l] X[l]}
 測定 & 加工\\
 \EndFace 外側AC方向 芯出し（外側 両側$X$測定） & \EndFacecutMilling\\
 \EndFace 外側BD方向 芯出し（外側 両側$Y$測定） & \OutcutMilling\\
@@ -79,7 +79,7 @@
 %% section 1.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{加工の流れ（加工前）}
-\MMC において、ある\index{めいさい（モールド）@明細（モールド）}明細のワークを加工をする際に、以下のような流れで作業が行われる。
+\MMC において、ある\index{めいさい@明細}明細のワークを加工をする際に、以下のような流れで作業が行われる。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -94,10 +94,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{図面の確認}
+\subsection{\index{ずめん（モールド）@図面（モールド）}図面の確認}
 \begin{enumerate}[label=\sarrow]
-\item 対象となる明細の\index{ずめん（モールド）@図面（モールド）}図面を用意する
-\item 他に内容が類似する明細の図面があれば、それも併せて用意する
+\item 対象となる\index{めいさい@明細}明細の\index{ずめん（モールド）@図面（モールド）}図面を用意する
+\item 他に内容が類似する\index{めいさい@明細}明細の\index{ずめん（モールド）@図面（モールド）}図面があれば、それも併せて用意する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -126,7 +126,7 @@
 %% subsubsection 01.1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\OutcutMilling 部分}
-\OutcutMilling については、明細により\OutcutExists または\OutcutType の違いが存在する。
+\OutcutMilling については、\index{めいさい@明細}明細により\OutcutExists または\OutcutType の違いが存在する。
 \begin{enumerate}[label=\sarrow]
 \item \TopOutcutExists または\BottomOutcutExists を確認する
 \item \TopOutcutType および\BottomOutcutType を確認し、使用する\expandafterindex{こうぐ（\yomiOutcut）@工具（\nameOutcut）}工具を決定する
@@ -506,23 +506,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.1.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{ワークの設置}
+\subsection{\index{ワーク}ワークの設置}
 \begin{enumerate}[label=\sarrow]
-\item \index{スペーサ}スペーサが必要な場合は、適切なスペーサを\index{ジグ}ジグの\index{うけいた@受板}受板に設置する
-\item \index{ワーク}ワークの大きさを考慮して、\index{ワークこていようボルト@ワーク固定用ボルト}ワーク固定用ボルトの長さを目分量で適宜決定し、ジグに設置する
+\item \Spacer が必要な場合は、適切なスペーサを\Jig の\ReceiverPlate に設置する
+\item \index{ワーク}ワークの大きさを考慮して、\FixtureBoltLength を目分量で適宜決定し、\Jig に設置する
 \item \ReAlocationLength に応じた位置に\index{ワーク}ワークを設置し、固定する
-\item トップ側およびボトム側の、ジグからの\index{はりだしちょう@張出長}張出長を\index{メジャー}メジャーを用いて測定する
-\item 測定した張出長から、\EndFacecutMilling における\index{ぜんけずりしろ（\yomiEndFacecut）@全削り代（\nameEndFacecut）}全削り代を手動でおおまかに計算する
+\item トップ側およびボトム側の、\Jig からの\index{はりだしちょう@張出長}張出長を\index{メジャー}メジャーを用いて測定する
+\item 測定した\index{はりだしちょう@張出長}張出長から、\EndFacecutMilling における\index{ぜんけずりしろ（\yomiEndFacecut）@全削り代（\nameEndFacecut）}全削り代を手動でおおまかに計算する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメータ}
-\paragraph*{ワーク固定用ボルト}
+\paragraph*{\FixtureBolt}
 \PMACOD
 \PMBDOD\\
-\GPMbox{ジグ床面とボルト取付具（上）間の距離}
-\GPMbox{受板とボルト取付具（横）間の距離}
+\GPMbox{\nameJig 床面とボルト取付具（上）間の距離}
+\GPMbox{\ReceiverPlate とボルト取付具（横）間の距離}
 \tcbline*
 \paragraph*{\EndFacecut の削り代}
 \PMJigLength
@@ -541,7 +541,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.1.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{ワーク設置後の調整}
+\subsection{\index{ワーク}ワーク設置後の調整}
 \begin{enumerate}[label=\sarrow]
 \item トップ側およびボトム側の\expandafterindex{ぜんけずりしろ（\yomiEndFacecut）@全削り代（\nameEndFacecut）}全削り代に応じて、\index{かこうかいすう（\yomiEndFacecutMilling）@加工回数（\nameEndFacecutMilling）}\nameEndFacecutMilling の回数を設定する
 \item \TopODCenter および\BottomODCenter の位置を\index{メジャー}メジャーで測定する
@@ -565,7 +565,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{芯出し測定後}
 \begin{enumerate}[label=\sarrow]
-\item 各々の\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の測定後、必要に応じてワーク座標系原点の設定変更を行う
+\item 各々の\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の測定後、必要に応じて\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の設定変更を行う
 \item 各々の測定箇所の$Z$位置の変更を、必要に応じて行う
 \end{enumerate}
 これらの設定は、\index{マシニングセンタ}マシニングセンタの操作盤から\index{メインプログラム}メインプログラムを直接手動で編集する形で行われる。
@@ -586,9 +586,9 @@
 \subsection{\OutcutMilling 中}
 \begin{enumerate}[label=\sarrow]
 \item 必要に応じて\expandafterindex{しあげかこう（\yomiOutcut）@仕上げ加工（\nameOutcut）}仕上加工前に\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止を行い、\OutcutAsideThickness および\OutcutWidth の測定を行う
-\item \OutcutAsideThickness を調整する場合は、該当する\expandafterindex{しんだしそくてい（\yomiOutcutCenter）@芯出し測定（\nameOutcutCenter）}芯出し測定部分のパラメータをメインプログラムから直接手動で編集する
+\item \OutcutAsideThickness を調整する場合は、該当する\expandafterindex{しんだしそくてい（\yomiOutcutCenter）@芯出し測定（\nameOutcutCenter）}芯出し測定部分のパラメータを\index{メインプログラム}メインプログラムから直接手動で編集する
 \item \OutcutWidth を調整する場合は、該当する加工部分のパラメータを\MMC の操作盤から\index{メインプログラム}メインプログラムを直接手動で編集する
-\item \expandafterindex{かこうかいすう（\yomiOutcut）@加工回数（\nameOutcut）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作盤からメインプログラムを直接手動で編集する
+\item \expandafterindex{かこうかいすう（\yomiOutcut）@加工回数（\nameOutcut）}加工の回数を変更する場合は、該当する加工部分を\index{マシニングセンタ}マシニングセンタの操作盤から\index{メインプログラム}メインプログラムを直接手動で編集する
 \end{enumerate}
 
 
@@ -598,9 +598,9 @@
 \subsection{\KeywayMilling 中}
 \begin{enumerate}[label=\sarrow]
 \item 必要に応じて\expandafterindex{しあげかこう（\yomiKeyway）@仕上げ加工（\nameKeyway）}仕上加工前に\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止を行い、\AsideKeywayDepth および\KeywayDiameter の測定を行う
-\item \AsideKeywayDepth を調整する場合は、該当する\expandafterindex{しんだしそくてい（\yomiKeywayCenter）@芯出し測定（\nameKeywayCenter）}芯出し測定部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
-\item \KeywayDiameter を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
-\item \expandafterindex{かこうかいすう（\yomiKeyway）@加工回数（\nameKeyway）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
+\item \AsideKeywayDepth を調整する場合は、該当する\expandafterindex{しんだしそくてい（\yomiKeywayCenter）@芯出し測定（\nameKeywayCenter）}芯出し測定部分のパラメータを\index{マシニングセンタ}マシニングセンタの操作画面から\index{メインプログラム}メインプログラムを直接手動で編集する
+\item \KeywayDiameter を調整する場合は、該当する加工部分のパラメータを\index{マシニングセンタ}マシニングセンタの操作画面から\index{メインプログラム}メインプログラムを直接手動で編集する
+\item \expandafterindex{かこうかいすう（\yomiKeyway）@加工回数（\nameKeyway）}加工の回数を変更する場合は、該当する加工部分を\index{マシニングセンタ}マシニングセンタの操作画面から\index{メインプログラム}メインプログラムを直接手動で編集する
 \item 必要に応じて、\index{ブロックゲージ}ブロックゲージによる\KeywayWidth の測定を行う
 \end{enumerate}
 
@@ -611,8 +611,8 @@
 \subsection{\EndFaceCChamferMilling 中}
 \begin{enumerate}[label=\sarrow]
 \item 必要に応じて\expandafterindex{しあげかこう（\yomiEndFaceOutCChamfer）@仕上げ加工（\nameEndFaceOutCChamfer）}仕上加工前に\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止を行い、\EndFaceOutCChamfer の測定・位置の確認を行う
-\item \EndFaceOutCChamfer の位置を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
-\item \expandafterindex{かこうかいすう（\yomiEndFaceOutCChamfer）@加工回数（\nameEndFaceOutCChamfer）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
+\item \EndFaceOutCChamfer の位置を調整する場合は、該当する加工部分のパラメータを\index{マシニングセンタ}マシニングセンタの操作画面から\index{メインプログラム}メインプログラムを直接手動で編集する
+\item \expandafterindex{かこうかいすう（\yomiEndFaceOutCChamfer）@加工回数（\nameEndFaceOutCChamfer）}加工の回数を変更する場合は、該当する加工部分を\index{マシニングセンタ}マシニングセンタの操作画面からメインプログラムを直接手動で編集する
 \end{enumerate}
 
 
@@ -623,8 +623,8 @@
 \subsection{\EndFaceInCChamferMilling 中}
 \begin{enumerate}[label=\sarrow]
 \item 必要に応じて\expandafterindex{しあげかこう（\yomiEndFaceInCChamfer）@仕上げ加工（\nameEndFaceInCChamfer）}仕上加工前に\index{いちじていし（NCプログラム）@一時停止（NCプログラム）}一時停止を行い、\EndFaceInCChamfer の状態の確認を行う
-\item \EndFaceInCChamfer の位置を調整する場合は、該当する加工部分のパラメータをマシニングセンタの操作画面からメインプログラムを直接手動で編集する
-\item \expandafterindex{かこうかいすう（\yomiEndFaceInCChamfer）@加工回数（\nameEndFaceInCChamfer）}加工の回数を変更する場合は、該当する加工部分をマシニングセンタの操作画面からメインプログラムを直接手動で編集する
+\item \EndFaceInCChamfer の位置を調整する場合は、該当する加工部分のパラメータを\index{マシニングセンタ}マシニングセンタの操作画面から\index{メインプログラム}メインプログラムを直接手動で編集する
+\item \expandafterindex{かこうかいすう（\yomiEndFaceInCChamfer）@加工回数（\nameEndFaceInCChamfer）}加工の回数を変更する場合は、該当する加工部分を\index{マシニングセンタ}マシニングセンタの操作画面から\index{メインプログラム}メインプログラムを直接手動で編集する
 \end{enumerate}
 
 
@@ -655,10 +655,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{ワークの取外し}
+\subsection{\index{ワーク}ワークの取外し}
 \begin{enumerate}[label=\sarrow]
-\item 必要に応じて、\index{ワークこていようボルト@ワーク固定用ボルト}ワーク固定用ボルトを緩める前に、各種\index{そくていき@測定器}測定器で各々の\index{すんぽう@寸法}寸法を確認する
-\item \index{クーラント}クーラントおよびエアーブローを用いて軽く洗浄を行い、ワーク固定用ボルトを緩めて\index{ワーク}ワークを取り出し、軽く乾拭きを行う
+\item 必要に応じて、\FixtureBolt を緩める前に、各種\index{そくていき@測定器}測定器で各々の\index{すんぽう@寸法}寸法を確認する
+\item \index{クーラント}クーラントおよびエアーブローを用いて軽く洗浄を行い、\FixtureBolt を緩めて\index{ワーク}ワークを取り出し、軽く乾拭きを行う
 \item \index{リフター}リフターまたは\index{クレーン}クレーンを用いて、\index{めんとりようさぎょうだい@面取用作業台}面取用作業台にワークを移動する
 \end{enumerate}
 

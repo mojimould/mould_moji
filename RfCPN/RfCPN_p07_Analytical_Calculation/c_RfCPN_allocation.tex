@@ -7,22 +7,22 @@
 そうした場合の対処法として、ここでは以下のような2つの方法を考える。
 \begin{enumerate}
 \item
-適当な厚さの\index{スペーサ}\textbf{スペーサ}を\index{ワークとジグのせってん@ワークとジグの接点}ワークとジグの接点に取り付けることで、双方の\AlocationLength を調節
+適当な厚さの\textbf{\Spacer}を\index{ワークと\yomiJig のせってん@ワークと\nameJig の接点}ワークと\nameJig の接点に取り付けることで、双方の\AlocationLength を調節
 \item
-適当な角度に\index{テーブル}テーブルを回転することで、双方の\AlocationLength を調節
+適当な角度に\Table を傾けることで、双方の\AlocationLength を調節
 \end{enumerate}
 このとき、\index{ワーク}ワークがどのように移動するかを考える。
 
-基本的な考え方として、\textbf{\CenterCurvatureRadius}$R_\mathrm c$の円の中心を原点として$\Omega$だけ回転し、次にワークとの（スペーサを装着していない側の）接点を中心に$-\theta$だけ回転したと考えることができる。
-なお、ここでは話の簡単化のため、もとの\Alocation ではトップ側よりボトム側の\AlocationLength のほうが長いものとする。
+基本的な考え方として、\textbf{\CenterCurvatureRadius}$R_\mathrm c$の円の中心を原点として$\Omega$だけ回転し、次に\index{ワーク}ワークとの（\Spacer を装着していない側の）接点を中心に$-\theta$だけ回転したと考えることができる。
+なお、ここでは話の簡単化のため、もとの\Alocation ではトップ側より\BottomAlocationLength のほうが長いものとする。
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 01.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{ジグの接点部が点の場合}
-まずは簡単のため、\index{ジグ}ジグの\index{ワーク}ワークとの接点部（\pageautoref{fig:mouldOnComplexPlane1}のU$_\mathrm T$, U$_\mathrm B$）は点であるとして考える。
+\modHeadsection{\Jig の接点部が点の場合}
+まずは簡単のため、\Jig の\index{ワーク}ワークとの接点部（\pageautoref{fig:mouldOnComplexPlane1}のU$_\mathrm T$, U$_\mathrm B$）は点であるとして考える。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -32,7 +32,7 @@
 \captionsetup{width=.75\textheight}
 \begin{adjustbox}{%
   addcode={\begin{minipage}{\textheight}\centering}{%
-    \captionof{figure}[\CurvatureCenter Oを原点とした複素平面上のワーク]{%
+    \captionof{figure}[\CurvatureCenter Oを\index{げんてんO@原点O}原点とした\index{ふくそへいめん@複素平面}複素平面上の\index{ワーク}ワーク]{%
       \CurvatureCenter Oを\index{げんてんO@原点O}原点とした\index{ふくそへいめん@複素平面}複素平面上の\index{ワーク}\newline
       T$_\mathrm o$, T$_\mathrm i$, B$_\mathrm o$, B$_\mathrm i$, U$_\mathrm T$, U$_\mathrm B$は点、%
       $R_\mathrm c$, $R_\mathrm o$, $R_\mathrm i$, $f_\mathrm T$, $f_\mathrm B$, $l$は長さ、%
@@ -57,7 +57,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 1.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{スペーサを用いた再振分け}
+\subsection{\Spacer を用いた\ReAlocation}
 \CurvatureCenter\expandafterindex{O（\yomiCurvatureCenter）@O（\nameCurvatureCenter）}Oを\index{げんてんO@原点O}原点とした\index{ふくそへいめん@複素平面}複素平面を考える
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここでは$0 < R_\mathrm c < \infty$ ($0 < \nicefrac1{R_\mathrm c} < \infty$)としている。
@@ -78,8 +78,8 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
   \tan\theta = \frac{\delta_\mathrm s}{2l}~.
 \end{gather}
 \end{subequations}
-ここで$W_x$はワークの\ACOD、$\delta_\mathrm s$は\textbf{\SpacerThickness}である。
-このときワークを原点Oを中心に$\Omega$だけ回転し、さらに点U$_\mathrm B$($R_\mathrm i$, $-\alpha_{\mathrm U_\mathrm B}$)を中心に$-\theta$だけ回転すると、点T$_\mathrm i$($R_\mathrm i$, $\alpha_{\mathrm T_\mathrm i}$)は、
+ここで$W_x$は\index{ワーク}ワークの\ACOD、$\delta_\mathrm s$は\textbf{\SpacerThickness}である。
+このとき\index{ワーク}ワークを原点Oを中心に$\Omega$だけ回転し、さらに点U$_\mathrm B$($R_\mathrm i$, $-\alpha_{\mathrm U_\mathrm B}$)を中心に$-\theta$だけ回転すると、点T$_\mathrm i$($R_\mathrm i$, $\alpha_{\mathrm T_\mathrm i}$)は、
 %% label{eq:afterftUpoint}
 \begin{align}
   \notag
@@ -110,7 +110,7 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
 \footnote{ここでは$0 \leq \Omega, \theta < \nicefrac \pi2$としている。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-スペーサを入れた後の（トップ側の）\AlocationLength は、\pageeqref{eq:afterftUpoint}の虚部を見ればよい。
+\Spacer 入れた後の\TopAlocationLength は、\pageeqref{eq:afterftUpoint}の虚部を見ればよい。
 \begin{align*}
   R_\mathrm i\left\{\sin\alpha_{\mathrm T_\mathrm i} + \sin(\alpha_{\mathrm U_\mathrm B} + \theta) - \sin\alpha_{\mathrm U_\mathrm B}\right\}
   &= f_\mathrm T -l
@@ -119,12 +119,13 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
      +\sqrt{R_\mathrm i^2-l^2}\cdot\frac{\delta_\mathrm s}{\sqrt{4l^2+\delta_\mathrm s^2}}\\
   &= f_\mathrm T -l+\frac{2l^2+\delta_\mathrm s\sqrt{R_\mathrm i^2-l^2}}{\sqrt{4l^2+\delta_\mathrm s^2}}~.
 \end{align*}
-まとめると、厚さ$\delta_\mathrm s$の\index{スペーサ}スペーサを入れた後のトップ側の\AlocationLength$f'_\mathrm T$は、
-\begin{align*}
+まとめると、厚さ$\delta_\mathrm s$の\Spacer を入れた後の\TopAlocationLength$f'_\mathrm T$は、
+\begin{align}
+  \label{eq:fTprime}
   f'_\mathrm T
   = f_\mathrm T -l
     +\frac{2l^2+\delta_\mathrm s\sqrt{\left(R_\mathrm c-\nicefrac{W_x}2\right)^2-l^2}}{\sqrt{4l^2+\delta_\mathrm s^2}}~.
-\end{align*}
+\end{align}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,14 +134,24 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
 \subsection{\AlocationLength が均等になる\SpacerThickness}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 トップ側とボトム側の\index{きんとうふりわけ@均等振分}\AlocationLength が同じになるとき、$\delta_\mathrm s$は
-\begin{align*}
+\begin{align}
+  \label{eq:condtionequalalocation}
   f'_\mathrm T - f_\mathrm T = \frac{f_\mathrm B - f_\mathrm T}2
-\end{align*}
+\end{align}
 を満たす。
-これより、
+したがって、
 \begin{align*}
-  \frac{2l^2+\delta_\mathrm s\sqrt{R_\mathrm i^2-l^2}}{\sqrt{4l^2+\delta_\mathrm s^2}} = l'\qquad
-  \left(l' \equiv l + \frac{f_\mathrm B-f_\mathrm T}2\right)
+  \delta_\mathrm s
+  &= 2l\cdot\frac{l'\sqrt{R_\mathrm i^2-l'^2}-l\sqrt{R_\mathrm i^2-l^2}}{R_\mathrm i^2-l^2-l'^2}
+     \qquad\left(l' \equiv l + \frac{f_\mathrm B-f_\mathrm T}2\right)\ .
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosoku}
+\pageeqref{eq:fTprime}および\pageeqref{eq:condtionequalalocation}より、
+\begin{align*}
+  \frac{2l^2+\delta_\mathrm s\sqrt{R_\mathrm i^2-l^2}}{\sqrt{4l^2+\delta_\mathrm s^2}} = l'\ .
 \end{align*}
 両辺を2乗すると、
 \begin{gather*}
@@ -159,19 +170,10 @@ $\delta_\mathrm s > 0$より、
            -2l^2\sqrt{R_\mathrm i^2-l^2}}{R_\mathrm i^2-l^2-l'^2}\\
   &= 2l\cdot\frac{l'\sqrt{R_\mathrm i^2-l'^2}-l\sqrt{R_\mathrm i^2-l^2}}{R_\mathrm i^2-l^2-l'^2}
 \end{align*}
-まとめると、求める\SpacerThickness$\delta_\mathrm s$は、
-\begin{align*}
-  \delta_\mathrm s
-  = 2l\cdot
-    \frac{\displaystyle
-          \left(l+\frac{f_\mathrm B-f_\mathrm T}2\right)
-          \sqrt{\left(R_\mathrm c-\frac{W_x}2\right)^2
-                -\left(l+\frac{f_\mathrm B-f_\mathrm T}2\right)^2}
-          -l\sqrt{\left(R_\mathrm c-\frac{W_x}2\right)^2-l^2}}
-         {\displaystyle
-          \left(R_\mathrm c-\frac{W_x}2\right)^2-l^2
-          -\left(l+\frac{f_\mathrm B-f_\mathrm T}2\right)^2}~.
-\end{align*}
+\end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -179,10 +181,10 @@ $\delta_\mathrm s > 0$より、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 20.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{受板がある場合}
-\index{ジグ}ジグの\index{ワーク}ワークと接する部品（\index{うけいた@受板}\textbf{受板}）の大きさを考慮した場合を考える。
-ワークに接する側の面は半径$\rho$の円弧（\index{うけいたのけい@受板の径}受板の径）, 虚軸方向の厚み（\index{うけいたのはば@受板の幅}受板の幅）は$\sigma$とする。
-また受板の虚軸負方向側の面は、ジグのそれと同じ平面上にあるものとする。
+\modHeadsection{\ReceiverPlate がある場合}
+\Jig の\index{ワーク}ワークと接する部品（\textbf{\ReceiverPlate}）の大きさを考慮した場合を考える。
+\index{ワーク}ワークに接する側の面は半径$\rho$の円弧（\ReceiverPlateRadius）, 虚軸方向の厚み（\ReceiverPlateWidth）は$\sigma$とする。
+また\ReceiverPlate の虚軸負方向側の面は、\Jig のそれと同じ平面上にあるものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -190,18 +192,18 @@ $\delta_\mathrm s > 0$より、
 \begin{Figbox}[valign=top]%
 \resizebox{\linewidth-35pt}{!}{\includegraphics{RfCPN_p07_pictures/mouldUkeita.pdf}}%
 \vfill~
-\captionof{figure}[受板がある場合]{%
- \index{うけいた@受板}受板がある場合\newline
- $\rho$, $\sigma$は\index{うけいたのけい@受板の径}受板の径および\index{うけいたのはば@受板の幅}受板の幅を示し、U$_\mathrm T$, U$_\mathrm B$はそれぞれの受板の円弧の中心点を示す。
- 受板があると\index{ワーク}ワークとの\index{せってん（ワークとうけいた）@接点（ワークと受板）}接点U$_\mathrm B$の位置も変化する。
- なお受板は、トップ側とボトム側で同じものであり、その片面はジグの片面と揃える形で装着されるものとする。
+\captionof{figure}[\ReceiverPlate がある場合]{%
+ \ReceiverPlate がある場合\newline
+ $\rho$, $\sigma$は\ReceiverPlateRadius および\ReceiverPlateWidth を示し、U$_\mathrm T$, U$_\mathrm B$はそれぞれの\ReceiverPlateCenter を示す。
+ \ReceiverPlate があると\index{ワーク}ワークとの\index{せってん（ワークとうけいた）@接点（ワークと受板）}接点U$_\mathrm B$の位置も変化する。
+ なお\ReceiverPlate は、トップ側とボトム側で同じものであり、その片面は\Jig の片面と揃える形で装着されるものとする。
  }%\label{fig:mouldwithukeita}
 \end{Figbox}%
 \end{figure}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\index{うけいたのちゅうしん@受板の中心}受板の径の中心を改めてU$_\mathrm B$とし、また\index{げんてんO@原点O}原点Oに対する\index{へんかく（うけいた）@偏角（受板）}偏角を改めて$-\alpha_{\mathrm U_\mathrm B}$とすると、これはU$_\mathrm B$($R_\mathrm i-\rho$, $-\alpha_{\mathrm U_\mathrm B}$)と表すことができる。
+\ReceiverPlateCenter を改めてU$_\mathrm B$とし、また\index{げんてんO@原点O}原点Oに対する\index{へんかく（\yomiReceiverPlate）@偏角（\nameReceiverPlate）}偏角を改めて$-\alpha_{\mathrm U_\mathrm B}$とすると、これはU$_\mathrm B$($R_\mathrm i-\rho$, $-\alpha_{\mathrm U_\mathrm B}$)と表すことができる。
 ただし、\pageeqref{eq:constraintUpoint2}は以下のようになる。
 \begin{align*}
   \sin\alpha_{\mathrm U_\mathrm B} = \frac{\bar l}{R_\mathrm i-\rho}\quad, \quad
@@ -236,33 +238,33 @@ $\delta_\mathrm s > 0$より、
   \left(R_\mathrm oe^{i\alpha_{\mathrm T_\mathrm o}} - R_\mathrm ie^{i\alpha_{\mathrm T_\mathrm i}}\right)
 \end{align*}
 の虚部が0であればよい。
-つまり、\pageeqref{eq:constraintUpoint1}より、受板がある場合も$\Omega = \theta$である。
+つまり、\pageeqref{eq:constraintUpoint1}より、\ReceiverPlate がある場合も$\Omega = \theta$である。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 20.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{受板の接点}
-\index{うけいた@受板}受板とワークとの（トップ側の）接点は、$R_\mathrm ie^{i\alpha_{\mathrm U_\mathrm B}}$で与えられる。
-このとき厚さ$\delta_\mathrm s$のスペーサを取付けると、U$_\mathrm B$を中心に回転するが、それに伴い\index{ワークとジグのせってん@ワークとジグの接点}受板との接点の位置も変化する。
+\subsection{\ReceiverPlateContactPoint}
+\ReceiverPlate と\index{ワーク}ワークとの（トップ側の）接点は、$R_\mathrm ie^{i\alpha_{\mathrm U_\mathrm B}}$で与えられる。
+このとき厚さ$\delta_\mathrm s$の\Spacer を取付けると、U$_\mathrm B$を中心に回転するが、それに伴い\ReceiverPlateContactPoint の位置も変化する。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 19.2.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{回転後のワークの\CurvatureCenter}
+\subsubsection{\expandafterindex{かいてんごの\yomiCurvatureCenter@回転後の\nameCurvatureCenter}回転後のワークの\nameCurvatureCenter}
 %%%%%%%%%%%%%%%%%%%%%%%%%
-厚さ$\delta_\mathrm s$の\index{スペーサ}スペーサを挟むと、トップ側における\index{うけいたのちゅうしん@受板の中心}受板の円の中心U$_\mathrm B$は実軸方向に$\delta_\mathrm s$だけ移動するので、
+厚さ$\delta_\mathrm s$の\Spacer を挟むと、\TopSideReceiverPlateCenter U$_\mathrm B$は実軸方向に$\delta_\mathrm s$だけ移動するので、
 \begin{align*}
   R_\mathrm i'e^{i\alpha_{\mathrm U_\mathrm B}}
   \quad\longrightarrow\quad
   \delta_\mathrm s+R_\mathrm i'e^{i\alpha_{\mathrm U_\mathrm B}}\ .
 \end{align*}
-よって、それぞれの受板の中心U$_\mathrm B$, U$_\mathrm T$を結んだ線分U$_\mathrm B$U$_\mathrm T$は、U$_\mathrm B$を中心に$-\psi$だけ傾いた線分U$_\mathrm B'$U$_\mathrm T'$となる
+よって、それぞれの\ReceiverPlateCenter U$_\mathrm B$, U$_\mathrm T$を結んだ線分U$_\mathrm B$U$_\mathrm T$は、U$_\mathrm B$を中心に$-\psi$だけ傾いた線分U$_\mathrm B'$U$_\mathrm T'$となる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{%
 U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B$U$_\mathrm T$の長さ$\bar l$より長くなることに注意。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\expandafterindex{かいてんごの\yomiCurvatureCenter@回転後の\nameCurvatureCenter}回転後のワークの\nameCurvatureCenter は、この線分の垂直二等分線上にあり、またそれぞれの受板の中心から$R_\mathrm i'$の距離の位置にある。
+\expandafterindex{かいてんごの\yomiCurvatureCenter@回転後の\nameCurvatureCenter}回転後の\nameCurvatureCenter は、この線分の垂直二等分線上にあり、またそれぞれの\ReceiverPlateCenter から$R_\mathrm i'$の距離の位置にある。
 つまり、この傾いた線分U$_\mathrm B'$U$_\mathrm T'$の中点から、角度$\pi-\psi$, 大きさ$\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}$の位置に移動する。
 したがって、回転後における\CurvatureCenter O$'$は、
 %% label{eq:afterOrgin}
@@ -275,12 +277,12 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
     \label{eq:afterOrgin}
 \end{align}
 
-\clearpage
+%\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 19.2.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{回転後の接点（トップ側）}
-\index{かいてんごのうけいたのちゅうしん@回転後の受板の中心}回転後のトップ側における受板の中心U$_\mathrm T'$と\expandafterindex{かいてんごの\yomiCurvatureCenter@回転後の\nameCurvatureCenter}\nameCurvatureCenter O$'$との差をとると、
+\subsubsection{\AfterRotatePlateContactPoint（トップ側）}
+\AfterRotateReceiverPlateCenter U$_\mathrm T'$と\expandafterindex{かいてんごの\yomiCurvatureCenter@回転後の\nameCurvatureCenter}\nameCurvatureCenter O$'$との差をとると、
 \begin{align*}
   \frac{\delta_\mathrm s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\cos\psi
   +i\left\{\bar l-\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\sin\psi\right\}
@@ -306,7 +308,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-よって、回転後の接点は以下で与えられる。
+よって、\AfterRotatePlateContactPoint は以下で与えられる。
 \begin{align*}
   &  R_\mathrm ie^{i\alpha'_{\mathrm U_\mathrm T}}
      +\frac{\delta_\mathrm s}2+\sqrt{R_\mathrm i'^2-\bar l^2}-\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\cos\psi
@@ -314,11 +316,12 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
   &= \delta_\mathrm s+R_\mathrm i'e^{i\alpha_{\mathrm U_\mathrm B}}+\rho e^{i\alpha'_{\mathrm U_\mathrm T}}\ .
 \end{align*}
 
+%\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 1.2.1.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{回転後の接点（ボトム側）}
-回転後のボトム側における受板の中心U$_\mathrm B$と\CurvatureCenter O$'$との差をとると、
+\subsubsection{\AfterRotatePlateContactPoint（ボトム側）}
+\AfterRotateBottomSideReceiverPlateCenter U$_\mathrm B$と\CurvatureCenter O$'$との差をとると、
 \begin{align*}
   -\frac{\delta_\mathrm s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\cos\psi
   -i\left\{\bar l+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\sin\psi\right\}
@@ -330,7 +333,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
   = \frac{\displaystyle\bar l+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\sin\psi}
          {\displaystyle-\frac{\delta_\mathrm s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\cos\psi}
 \end{align*}
-よって、回転後の接点は以下で与えられる。
+よって、\AfterRotatePlateContactPoint は以下で与えられる。
 %% label{eq:afterUBcontact}
 \begin{align}
   \notag
@@ -344,7 +347,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-辺の長さが$R_i'$, $R_i'$, $2\bar l$の二等辺三角形$\triangle$OU$_\mathrm B$U$_\mathrm T$の部分が、回転後には辺の長さ$R_i'$, $R_i'$, $\sqrt{\delta_\mathrm s^2+(2\bar l)^2}$の二等辺三角形$\triangle$O$'$U$_\mathrm B'$U$_\mathrm T'$となる。
+辺の長さが$R_i'$, $R_i'$, $2\bar l$の二等辺三角形$\triangle$OU$_\mathrm B$U$_\mathrm T$の部分が、傾き後には辺の長さ$R_i'$, $R_i'$, $\sqrt{\delta_\mathrm s^2+(2\bar l)^2}$の二等辺三角形$\triangle$O$'$U$_\mathrm B'$U$_\mathrm T'$となる。
 実際、$\cos2a = 1-2\sin^2\!a$より、
 \begin{align*}
   \sin^2\frac{\alpha'_{\mathrm U_\mathrm T}+\alpha'_{\mathrm U_\mathrm B}}2
@@ -359,8 +362,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{スペーサによるモールドの回転角}
-厚さ$\delta_\mathrm s$の\index{スペーサ}スペーサを挿入すると、\CurvatureCenter Oは、U$_\mathrm B$を中心に$-\big(\alpha'_{\mathrm U_\mathrm B}\!-\alpha_{\mathrm U_\mathrm B}\big)$だけ回転する。
+\subsection{\Spacer による\index{かたむきかく（スペーサ）@傾き角（スペーサ）}ワークの傾き角}
+厚さ$\delta_\mathrm s$の\Spacer を挿入すると、\CurvatureCenter Oは、U$_\mathrm B$を中心に$-\big(\alpha'_{\mathrm U_\mathrm B}\!-\alpha_{\mathrm U_\mathrm B}\big)$だけ回転する。
 実際、
 \begin{align*}
   -R_\mathrm i'e^{-i\alpha'_{\mathrm U_\mathrm B}}+R_\mathrm i'e^{-i\alpha_{\mathrm U_\mathrm B}}
@@ -373,14 +376,14 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-トップ側の接点U$_\mathrm T'$とボトム側の接点U$_\mathrm B'$の差をとると、
+\TopSideReceiverPlateContactPoint U$_\mathrm T'$と\BottomSideReceiverPlateContactPoint U$_\mathrm B'$の差をとると、
 \begin{align*}
   R_\mathrm i\left(e^{i\alpha_{\mathrm U_\mathrm T}'}-e^{-i\alpha'_{\mathrm U_\mathrm B}}\right)
   &= \frac{R_\mathrm i'+\rho}{R_\mathrm i'}\left\{\delta_\mathrm s+i(2\bar l)\right\}
    = \frac{R_\mathrm i}{R_\mathrm i'}\sqrt{\delta_\mathrm s^2+(2\bar l)^2}e^{i(\nicefrac\pi2-\psi)}\ .
 \end{align*}
-したがって、厚さ$\delta_\mathrm s$のスペーサを挿入すると、両接点を通る直線は$-\psi$だけ傾くことがわかる。
-また、その長さは受板中心間U$_\mathrm T'$U$_\mathrm B'$の距離$\sqrt{\delta_\mathrm s^2+(2\bar l)^2}$の$\nicefrac{R_i}{R_i'}$倍になっていることも確かめられる。
+したがって、厚さ$\delta_\mathrm s$の\Spacer を挿入すると、両接点を通る直線は$-\psi$だけ傾くことがわかる。
+また、その長さは\ReceiverPlateCenter 間U$_\mathrm T'$U$_\mathrm B'$の距離$\sqrt{\delta_\mathrm s^2+(2\bar l)^2}$の$\nicefrac{R_i}{R_i'}$倍になっていることも確かめられる。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -390,13 +393,13 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 1.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{スペーサによる再振分け}
+\subsection{\Spacer による\ReAlocation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 1.2.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\ReAlocationLength}
-\index{スペーサ}スペーサを入れた後のトップ側の\AlocationLength（\textbf{\ReAlocationLength}）$f'_\mathrm T$は、\pageeqref{eq:afterftUfinite}の虚部を見ればよい。
+\Spacer を入れた後の\TopAlocationLength（\textbf{\TopReAlocationLength}）$f'_\mathrm T$は、\pageeqref{eq:afterftUfinite}の虚部を見ればよい。
 回転角は$-(\alpha'_{\mathrm U_\mathrm B}-\alpha_{\mathrm U_\mathrm B})$なので、
 \begin{align*}
   f'_\mathrm T
@@ -409,7 +412,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 1.2.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{ワークの移動距離}
+\subsubsection{\index{ワーク}ワークの移動距離}
 \pageeqref{eq:afterftUfinite}の実部は、
 \begin{align*}
   & R_\mathrm i\cos\alpha_{\mathrm T_\mathrm i}
@@ -418,7 +421,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
       -\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\cos\psi
 \end{align*}
 となる。
-よって、\index{スペーサ}スペーサを挿入することにより、ワークは水平・鉛直方向にそれぞれ、
+よって、\Spacer を挿入することにより、\index{ワーク}ワークは水平・鉛直方向にそれぞれ、
 \begin{alignat}{2}
 %% label{eq:spacerMoveHdistance}
   \label{eq:spacerMoveHdistance}
@@ -437,23 +440,15 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\ReAlocationLength が均等になる\SpacerThickness}
 トップ側とボトム側の\index{きんとうふりわけ@均等振分}\AlocationLength が同じになるとき、$\delta_\mathrm s$は
-\begin{align*}
+\begin{align}
+  \label{eq:condtionequalalocationSpacer}
   \sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{\delta_\mathrm s}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}} = f_d \qquad
   \left(f_d \equiv \frac{f_\mathrm B-f_\mathrm T}2\right)\ .
-\end{align*}
+\end{align}
 を満たす。
-両辺を2乗して$-4$倍すると、
-\begin{align*}
-  \delta_\mathrm s^2\left\{\delta_\mathrm s^2+(2\bar l)^2-4R_\mathrm i'^2\right\}+4f_d^2\left\{\delta_\mathrm s^2+(2\bar l)^2\right\}
-  & = \delta_\mathrm s^4-2\left\{2R_\mathrm i'^2-2\bar l^2-2f_d^2\right\}\delta_\mathrm s^2+4f_d^2(2\bar l)^2\\
-  & = 0\ .
-\end{align*}
-したがって、$f_\mathrm T = f_\mathrm B$ ($f_d = 0$)のとき$\delta_\mathrm s = 0$であることを考慮して、
+これより、
 \begin{align*}
   \delta_\mathrm s^2
-  &= 2\left\{
-       R_\mathrm i'^2-\bar l^2-f_d^2-\sqrt{\left(R_\mathrm i'^2-\bar l^2-f_d^2\right)^2-4f_d^2\bar l^2}\,
-     \right\}\\
   &= \left(\sqrt{R_\mathrm i'^2-(\bar l-f_d)^2}-\sqrt{R_\mathrm i'^2-(\bar l+f_d)^2}\,\right)^2.
 \end{align*}
 なお、これはワークが水平・鉛直方向にそれぞれ、
@@ -466,7 +461,29 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-改めてまとめると、厚さ$\delta_\mathrm s$のスペーサを（トップ側に）挿入した後の\TopAlocationLength$f_\mathrm T'$は、
+\pageeqref{eq:condtionequalalocationSpacer}の両辺を2乗して$-4$倍すると、
+\begin{align*}
+  \delta_\mathrm s^2\left\{\delta_\mathrm s^2+(2\bar l)^2-4R_\mathrm i'^2\right\}+4f_d^2\left\{\delta_\mathrm s^2+(2\bar l)^2\right\}
+  & = \delta_\mathrm s^4-2\left\{2R_\mathrm i'^2-2\bar l^2-2f_d^2\right\}\delta_\mathrm s^2+4f_d^2(2\bar l)^2
+    = 0\ .
+\end{align*}
+したがって、$f_\mathrm T = f_\mathrm B$ ($f_d = 0$)のとき$\delta_\mathrm s = 0$であることを考慮して、
+\begin{align*}
+  \delta_\mathrm s^2
+  &= 2\left\{
+       R_\mathrm i'^2-\bar l^2-f_d^2-\sqrt{\left(R_\mathrm i'^2-\bar l^2-f_d^2\right)^2-4f_d^2\bar l^2}\,
+     \right\}\\
+  &= \left(\sqrt{R_\mathrm i'^2-(\bar l-f_d)^2}-\sqrt{R_\mathrm i'^2-(\bar l+f_d)^2}\,\right)^2.
+\end{align*}
+\end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosoku}
+改めてまとめると、厚さ$\delta_\mathrm s$の\Spacer を（トップ側に）挿入した後の\TopAlocationLength$f_\mathrm T'$は、
 \begin{align*}
   f_\mathrm T'
   = f_\mathrm T+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{\delta_\mathrm s}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}}\ .
@@ -492,14 +509,14 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 21.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\index{テーブル}テーブルの回転による\AlocationLength の調節}
-これまで\TopAlocationLength・\BottomAlocationLength の差を小さくするために\index{スペーサ}スペーサを用いる手法を考えてきた。
-\index{スペーサ}スペーサを取付けることは、本質的にはボトム側の\index{うけいた@受板}受板の点U$_\mathrm B$を中心に回転しているということである。
+\modHeadsection{\Table の回転による\AlocationLength の調節}
+これまで\TopAlocationLength・\BottomAlocationLength の差を小さくするために\Spacer を用いる手法を考えてきた。
+\Spacer を取付けることは、本質的にはボトム側の\ReceiverPlate の点U$_\mathrm B$を中心に回転しているということである。
 このとき回転の中心はU$_\mathrm B$である必要はなく、他の点でも問題ない。
-したがって、\index{スペーサ}スペーサを用いて回転をしなくても、\index{テーブル}テーブルそのものを回転するという手法が考えられる。
-これは回転の中心が、\index{うけいたのちゅうしん@受板の中心}受板の中心U$_\mathrm B$から\textbf{\TableCenter}Pに変わることに相当する。
+したがって、\Spacer を用いて回転をしなくても、\Table そのものを回転するという手法が考えられる。
+これは回転の中心が、\ReceiverPlateCenter U$_\mathrm B$から\textbf{\TableCenter}Pに変わることに相当する。
 
-\index{うけいたのちゅうしん@受板の中心}受板の中心U$_\mathrm B$と、\TableCenter Pとの実軸方向の距離を$\Delta$とすると、\TableCenter Pの$X$座標$\Delta'$は次で与えられる。
+\ReceiverPlateCenter U$_\mathrm B$と、\TableCenter Pとの実軸方向の距離を$\Delta$とすると、\TableCenter Pの$X$座標$\Delta'$は次で与えられる。
 %% label{eq:tableCenter}
 \begin{align}
   \label{eq:tableCenter}
@@ -531,12 +548,12 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 21.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{回転後のワークの\CurvatureCenter および受板との接点}
+\subsection{回転後の\CurvatureCenter および\ReceiverPlateContactPoint}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 21.3.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{回転後のワークの\CurvatureCenter}
+\subsubsection{回転後の\index{ワーク}ワークの\CurvatureCenter}
 \expandafterindex{かいてんごの\yomiCurvatureCenter@回転後の\nameCurvatureCenter}回転後の\nameCurvatureCenter O$'$は、点Pを中心に$-\theta$だけ回転するので、
 \begin{align*}
   \Delta'\!\left(1-e^{-i\theta}\right) = \Delta'(1-\cos\theta)+i\Delta'\sin\theta\ .
@@ -545,15 +562,15 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 21.3.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{回転後の接点}
-回転後におけるトップ側の\index{ワークとうけいたのせってん@ワークと受板の接点}受板との接点は、点Pを中心に$-\theta$だけ回転するので、
+\subsubsection{\AfterRotatePlateContactPoint}
+傾き後における\TopSideReceiverPlateContactPoint は、点Pを中心に$-\theta$だけ回転するので、
 \begin{align*}
   &  e^{-i\theta}\left(R_\mathrm ie^{i\alpha_{\mathrm U_\mathrm B}}-\Delta'\right)+\Delta'\\
   &= R_\mathrm ie^{i(\alpha_{\mathrm U_\mathrm B}-\theta)}+\Delta'\!\left(1-e^{-i\theta}\right)\\
   &= R_\mathrm i\cos(\alpha_{\mathrm U_\mathrm B}-\theta)+\Delta'(1-\cos\theta)
      +i\left\{R_\mathrm i\sin(\alpha_{\mathrm U_\mathrm B}-\theta)+i\Delta'\sin\theta\right\}\ .
 \end{align*}
-同様に、ボトム側の受板との接点は、
+同様に、傾き後における\BottomSideReceiverPlateContactPoint は、
 \begin{align*}
   &  e^{-i\theta}\left(R_\mathrm ie^{-i\alpha_{\mathrm U_\mathrm B}}-\Delta'\right)+\Delta'\\
   &= R_\mathrm ie^{-i(\alpha_{\mathrm U_\mathrm B}+\theta)}+\Delta'\!\left(1-e^{-i\theta}\right)\\
@@ -569,7 +586,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
   2R_\mathrm i\sin\alpha_{\mathrm U_\mathrm B}\sin\theta+2iR_\mathrm i\sin\alpha_{\mathrm U_\mathrm B}\cos\theta
   = \frac{R_\mathrm i}{R_\mathrm i'}(2\bar l)e^{i(\pi-\theta)}
 \end{align*}
-となり、\index{うけいたのちゅうしん@受板の中心}受板の両中心間（長さ$2\bar l$）を結んだ線分を$\nicefrac{R_\mathrm i}{R_\mathrm i'}$倍し、虚軸から$-\theta$だけ傾けたものになっていることがわかる。
+となり、\ReceiverPlate の両中心間（長さ$2\bar l$）を結んだ線分を$\nicefrac{R_\mathrm i}{R_\mathrm i'}$倍し、虚軸から$-\theta$だけ傾けたものになっていることがわかる。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -579,8 +596,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 21.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{回転後の\AlocationLength}
-回転後の\TopReAlocationLength$f_\mathrm T'$は、\pageeqref{eq:afterfttable}の虚部を見ればよいので、
+\subsection{傾き後の\AlocationLength}
+傾き後の\TopReAlocationLength$f_\mathrm T'$は、\pageeqref{eq:afterfttable}の虚部を見ればよいので、
 \begin{align}
 %\label{eq:saiallocation}
   \label{eq:saiallocationT}
@@ -613,8 +630,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 21.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\AlocationLength を指定したときの回転角}
-トップ側の\AlocationLength が$f_\mathrm T'$となる回転角$\theta$は、\pageeqref{eq:saiallocationT}より、
+\subsection{\AlocationLength を指定したときの傾き角}
+トップ側の\AlocationLength が$f_\mathrm T'$となる傾き角$\theta$は、\pageeqref{eq:saiallocationT}より、
 \begin{align*}
   \sin\theta = \frac{f_\mathrm T'-f_\mathrm T}{\Delta'}
 \end{align*}
@@ -633,7 +650,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
-改めてまとめると、\index{テーブル}テーブルを$-\theta$だけ傾けた後の\TopReAlocationLength$f_\mathrm T'$は、
+改めてまとめると、\Table を$-\theta$だけ傾けた後の\TopReAlocationLength$f_\mathrm T'$は、
 \begin{align*}
   f_\mathrm T' = f_\mathrm T+\left(\Delta+\sqrt{R_\mathrm i'-\bar l^2}\right)\sin\theta\ .
 \end{align*}
@@ -658,8 +675,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 21.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{湾曲のないモールド}
-\index{わんきょくのないモールド@湾曲のないモールド}湾曲のないモールド($R_\mathrm c^{-1}= 0$)については、回転して調整する必要性がないため、スペーサによる調整も回転による調整も必要がない。
+\modHeadsection{\index{わんきょくのないモールド@湾曲のないモールド}湾曲のないモールド}
+\index{わんきょくのないモールド@湾曲のないモールド}湾曲のないモールド($R_\mathrm c^{-1}= 0$)については、回転して調整する必要性がないため、\Spacer による調整も回転による調整も必要がない。
 つまり$\delta_\mathrm s = 0$あるいは$\theta = 0$である。
 
 このとき、\index{きんとうふりわけ@均等振分}トップ側およびボトム側の\AlocationLength を同じにするには、単純に$f_d$だけ移動すればよい。
