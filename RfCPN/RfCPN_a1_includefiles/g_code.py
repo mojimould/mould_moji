@@ -26,10 +26,10 @@ class GCodeLexer(ExtendedRegexLexer):
 
     # Builtin words
     builtins = (
-        'if', 'end', 'endif', 'end_if',
-        'then', 'else', 'elsif',
-        'while', 'do', 'endwhile', 'end_while',
-        'goto', 'exit',
+        'IF', 'END', 'endif', 'end_if',
+        'THEN', 'else', 'elsif',
+        'WHILE', 'DO', 'endwhile', 'end_while',
+        'exit',
         'sub', 'endsub', 'end_sub',
         'call',
         'repeat', 'endrepeat', 'end_repeat', 'until'
@@ -37,12 +37,12 @@ class GCodeLexer(ExtendedRegexLexer):
 
     # Build in math functions
     functions = (
-        'and', 'or','xor',
-        'eq', 'ne', 'gt', 'ge', 'lt', 'le',
-        'mod',
-        'cos', 'sin', 'tan', 'acos', 'asin', 'atan',
-        'abs', 'round', 'fix', 'fup', 'exists',
-        'exp', 'ln', 'sqrt'
+        'AND', 'OR','XOR',
+        'EQ', 'NE', 'GT', 'GE', 'LT', 'LE',
+        'MOD',
+        'COS', 'SIN', 'TAN', 'ACOS', 'ASIN', 'ATAN',
+        'ABS', 'ROUND', 'FIX', 'FUP', 'exists',
+        'EXP', 'LN', 'SQRT'
     )
 
     tokens = {
@@ -63,16 +63,21 @@ class GCodeLexer(ExtendedRegexLexer):
             # built in commands, match case-insensitive
             ("(?i)(%s)" % '|'.join(re.escape(entry) for entry in builtins), Name.Builtin),
 
-            # Line numbers
-            (r'\s*[n]\d+', Comment),
-            # G and M commands and other tooling, match only the label
-            (r'(?<![a-zA-Z\<])[GM]\d*', Keyword.Declaration),
-            (r'(?<![a-zA-Z\<])[L](?=(\d+\.?\d?))', Keyword.Declaration),
             # Coordinates, Feeds, Speeds, and Machining parameter, 
             # match only the label
-            (r'(?<![a-zA-Z\<])[N]\d*', Keyword.Type),
-            (r'(?<![a-zA-Z\<])[ABCDEHIJKMQRTUVWXYZ](?=(\d+\.?\d?))+', Text),
-            (r'(?<![a-zA-Z\<])[FS\^\@](?=(\s*[+-]?\d*\.?\d+|\s*[+-]?#))', Keyword.Type),
+            (r'(?<![a-zA-Z\<])(GOTO08)\d*', Keyword.Pseudo.Error),
+            (r'(?<![a-zA-Z\<])(N08)\d*', Keyword.Pseudo.Error),
+            (r'(?<![a-zA-Z\<])(N|GOTO)\d*', Keyword.Pseudo),
+            # G and M commands and other tooling, match only the label
+            (r'(?<![a-zA-Z\<])[ABCDEFHIJKQRSTUVWXYZ](?=(\d+\.?\d?))+', Operator),
+            (r'(?<![a-zA-Z\<])[T]\d*\.\d+', Number),
+            (r'(?<![a-zA-Z\<])[T]\d*', Keyword.Pseudo.Tool),
+            (r'(?<![a-zA-Z\<])[M]\d*\.\d+', Number),
+            (r'(?<![a-zA-Z\<])[GM]\d*', Keyword.Pseudo.Declaration),
+            # (r'(?<![a-zA-Z\<])[FS\^\@](?=(\s*[+-]?\d*\.?\d+|\s*[+-]?#))', Keyword.Type),
+            # Line numbers
+            (r'\s*[n]\d+', Comment),
+            (r'(?<![a-zA-Z\<])[L]\d*', Keyword.Pseudo.Reserved),
 
             # Non-persistent Arguments (#1-#30)
             (r'(?<=#)0*[1-3]?[0-9](?=\D)', Name.Variable.Magic),
@@ -87,7 +92,7 @@ class GCodeLexer(ExtendedRegexLexer):
             (r'(#|\<|\>)', Name.Variable),
 
             # Subroutines, match label
-            (r'(?<![a-zA-Z\<])[OP](?=[\d\<\[])', Keyword.Reserved),
+            (r'(?<![a-zA-Z\<])[OP]\d*', Keyword.Pseudo.Reserved),
             # Subroutines, named, match function name
             (r'(?<=([OP][\<\[]))\w+(?=\>)', Name.Function),
 
