@@ -214,14 +214,19 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 35.04.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 35.04.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\BottomCurvedOutcut の幾何}
 ここでは\TableCenter Pを\index{げんてんP@原点P}原点とし、\BottomEndFace が工具側に向いているとする。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 35.04.01.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\BottomCurvedOutcut の傾き角}
 \BottomEndFace におけるA面側・C面側・中心の$X$座標をそれぞれ$x_\mathrm{Bo}$, $x_\mathrm{Bi}$, $x_\mathrm{Bm}$とする。
-このとき\BottomEndFace のそれぞれの位置は
+このとき\BottomEndFace のそれぞれの位置
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{$Z$の正方向を実軸、$X$の正方向を虚軸として考えている。}、
+\footnote{$Z$の正方向を実軸、$X$の正方向を虚軸として考えている。}は、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{alignat*}{2}
   \text{中心：}&\quad
@@ -236,15 +241,19 @@
 \end{alignat*}
 \BottomOutcutLength を$h_\mathrm B$とすると、\expandafterindex{かたむき（\yomiCurvedOutcut）@傾き（\nameCurvedOutcut）}\nameCurvedOutcut 部分の傾きはボトム端から距離$\nicefrac{h_\mathrm B}2$の断面に平行になる形にとる。
 そのときの\expandafterindex{かたむきかく（\yomiCurvedOutcut）@傾き角（\nameCurvedOutcut）}傾き角$\theta_b$は、
-\begin{align*}
-  \sin\theta_b = \frac{f_\mathrm B'-\nicefrac{h_\mathrm B}2}{R_\mathrm c}
-\end{align*}
-を満たす。
-傾き後の\expandafterindex{\yomiBottomEndFace（\yomiCurvedOutcut）@\nameBottomEndFace（\nameCurvedOutcut）}\nameBottomEndFace の中心の位置は、
 \begin{align}
   \label{eq:BCurvedOutcutAngle}
-  \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}e^{i(\theta_\mathrm{Bm}-\theta_b)}
+  \sin\theta_b = \frac{f_\mathrm B'-\nicefrac{h_\mathrm B}2}{R_\mathrm c}\ .
 \end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 35.04.01.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\BottomCurvedOutcut の端点の位置}
+傾き後の\expandafterindex{\yomiBottomEndFace（\yomiCurvedOutcut）@\nameBottomEndFace（\nameCurvedOutcut）}\nameBottomEndFace の中心の位置は、
+\begin{align*}
+  \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}e^{i(\theta_\mathrm{Bm}-\theta_b)}
+\end{align*}
 となるので、これの虚部が$X$座標、実部が$Z$座標となる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{ここでは\index{ふくそへいめん@複素平面}複素平面を考えているが、通常の\index{ちょっこうざひょうけい@直交座標系}直行座標系で単純に\index{かいてんぎょうれつ@回転行列}回転行列をかけているのと同義である。
@@ -293,8 +302,8 @@
   \text{中点：}&\quad
     \left[
       \begin{array}{c}
-        x'_m\\
-        z'_b
+        x'_{Bm}\\
+        z'_{Bm}
       \end{array}
     \right]
     = \left[
@@ -307,8 +316,8 @@
   \text{C面側端点：}&\quad
     \left[
       \begin{array}{c}
-        x'_C\\
-        z'_b
+        x'_{BC}\\
+        z'_{BC}
       \end{array}
     \right]
     = \left[
@@ -321,8 +330,8 @@
   \text{A面側端点：}&\quad
     \left[
       \begin{array}{c}
-        x'_A\\
-        z'_b
+        x'_{BA}\\
+        z'_{BA}
       \end{array}
     \right]
     = \left[
@@ -334,13 +343,62 @@
 \end{align}
 \end{subequations}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 35.04.01.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\BottomCurvedOutcut のコーナー端点の位置}
+\BottomCurvedOutcut のコーナーがCまたはRの形状をしているものとする。
+このとき、\EndFaceChamferLength を$R_\mathrm E$とすると、特にB側およびD側のコーナーの端点の位置は、
+\begin{alignat*}{2}
+  \text{BD\,$+X$側：}&\quad
+  \sqrt{f_\mathrm B^{'2}+(x_\mathrm{Bi}-R_\mathrm E)^2}e^{i\theta_\mathrm{BB+}}~, \quad &
+  \tan\theta_\mathrm{BB+} &= \frac{x_\mathrm{Bi}-R_\mathrm E}{f_\mathrm B'}\ ,\\
+  \text{BD\,$-X$側：}&\quad
+  \sqrt{f_\mathrm B^{'2}+(x_\mathrm{Bo}+R_\mathrm E)^2}e^{i\theta_\mathrm{BB-}}~, \quad &
+  \tan\theta_\mathrm{BB-} &= \frac{x_\mathrm{Bo}+R_\mathrm E}{f_\mathrm B'}\ .
+\end{alignat*}
+したがって、傾き後の$XZ$座標は、
+\begin{align*}
+  \text{BD\,$+X$側：}&\quad
+    \left[
+      \begin{array}{c}
+        x'_{BB+}\\
+        z'_{BB+}
+      \end{array}
+    \right]
+    = \left[
+      \begin{array}{c}
+        (x_\mathrm{Bi}-R_\mathrm E)\cos\theta_b-f_\mathrm B'\sin\theta_b\\[6pt]
+        f_\mathrm B'\cos\theta_b+(x_\mathrm{Bi}-R_\mathrm E)\sin\theta_b
+      \end{array}
+    \right],\\
+  \text{BD\,$-X$側：}&\quad
+    \left[
+      \begin{array}{c}
+        x'_{BB-}\\
+        z'_{BB-}
+      \end{array}
+    \right]
+    = \left[
+      \begin{array}{c}
+        (x_\mathrm{Bo}+R_\mathrm E)\cos\theta_b-f_\mathrm B'\sin\theta_b\\[6pt]
+        f_\mathrm B'\cos\theta_b+(x_\mathrm{Bo}+R_\mathrm E)\sin\theta_b
+      \end{array}
+    \right].
+\end{align*}
+
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 35.04.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\TopCurvedOutcut の幾何}
-同様に、\TopEndFace が工具側に向いているとする。
+同様に、\TableCenter Pを\index{げんてんP@原点P}原点とし、\TopEndFace が工具側に向いているとする。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 35.04.02.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\TopCurvedOutcut の傾き角}
 \TopEndFace におけるA面側・C面側・中心の$X$座標をそれぞれ$x_\mathrm{To}$, $x_\mathrm{Ti}$, $x_\mathrm{Tm}$とする。
 このとき\TopEndFace のそれぞれの位置は
 \begin{alignat*}{2}
@@ -358,9 +416,13 @@
 そのときの\expandafterindex{かたむきかく（\yomiCurvedOutcut）@傾き角（\nameCurvedOutcut）}傾き角$\theta_t$は、
 \begin{align}
   \label{eq:TCurvedOutcutAngle}
-  \sin\theta_t = \frac{f_\mathrm T'-\nicefrac{h_\mathrm T}2}{R_\mathrm c}
+  \sin\theta_t = \frac{f_\mathrm T'-\nicefrac{h_\mathrm T}2}{R_\mathrm c}\ .
 \end{align}
-を満たす。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 35.04.01.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\TopCurvedOutcut の端点の位置}
 傾き後の\expandafterindex{\yomiTopEndFace（\yomiCurvedOutcut）@\nameTopEndFace（\nameCurvedOutcut）}\nameTopEndFace の中心の位置は、
 \begin{align*}
   \sqrt{f_\mathrm T^{'2}+x_\mathrm{Tm}^2}e^{i(\theta_\mathrm{Tm}+\theta_t)}
@@ -420,3 +482,10 @@
     \right].
 \end{align}
 \end{subequations}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 35.04.01.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\TopCurvedOutcut のコーナー端点の位置\TBW}
+(to be written...)
