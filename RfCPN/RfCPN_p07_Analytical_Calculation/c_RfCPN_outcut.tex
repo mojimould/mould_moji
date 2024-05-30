@@ -223,22 +223,6 @@
 %% subsubsection 35.04.01.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\BottomCurvedOutcut の傾き角}
-\BottomEndFace におけるA面側・C面側・中心の$X$座標をそれぞれ$x_\mathrm{Bo}$, $x_\mathrm{Bi}$, $x_\mathrm{Bm}$とする。
-このとき\BottomEndFace のそれぞれの位置
-%% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{$Z$の正方向を実軸、$X$の正方向を虚軸として考えている。}は、
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{alignat*}{2}
-  \text{中心：}&\quad
-  \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}e^{i\theta_\mathrm{Bm}}~, \quad &
-  \tan\theta_\mathrm{Bm} &= \frac{x_\mathrm{Bm}}{f_\mathrm B'}\ ,\\
-  \text{C面側端点：}&\quad
-  \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bi}^2}e^{i\theta_\mathrm{Bi}}~, \quad &
-  \tan\theta_\mathrm{Bi} &= \frac{x_\mathrm{Bi}}{f_\mathrm B'}\ ,\\
-  \text{A面側端点：}&\quad
-  \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bo}^2}e^{i\theta_\mathrm{Bo}}~, \quad &
-  \tan\theta_\mathrm{Bo} &= \frac{x_\mathrm{Bo}}{f_\mathrm B'}\ .
-\end{alignat*}
 \BottomOutcutLength を$h_\mathrm B$とすると、\expandafterindex{かたむき（\yomiCurvedOutcut）@傾き（\nameCurvedOutcut）}\nameCurvedOutcut 部分の傾きはボトム端から距離$\nicefrac{h_\mathrm B}2$の断面に平行になる形にとる。
 そのときの\expandafterindex{かたむきかく（\yomiCurvedOutcut）@傾き角（\nameCurvedOutcut）}傾き角$\theta_b$は、
 \begin{align}
@@ -250,7 +234,16 @@
 %% subsubsection 35.04.01.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\BottomCurvedOutcut の端点の位置}
-傾き後の\expandafterindex{\yomiBottomEndFace（\yomiCurvedOutcut）@\nameBottomEndFace（\nameCurvedOutcut）}\nameBottomEndFace の中心の位置は、
+\BottomEndFace の外側中心の$X$座標を$x_\mathrm{Bm}$とすると、その位置は
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{$Z$の正方向を実軸、$X$の正方向を虚軸として考えている。}、
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{align*}
+  \text{中心：}\quad
+  \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}e^{i\theta_\mathrm{Bm}}~~, \quad
+  \tan\theta_\mathrm{Bm}= \frac{x_\mathrm{Bm}}{f_\mathrm B'}\ .
+\end{align*}
+\pageeqref{eq:BCurvedOutcutAngle}より、傾き後の\expandafterindex{\yomiBottomEndFace（\yomiCurvedOutcut）@\nameBottomEndFace（\nameCurvedOutcut）}\nameBottomEndFace の中心の位置は、
 \begin{align*}
   \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}e^{i(\theta_\mathrm{Bm}-\theta_b)}
 \end{align*}
@@ -294,101 +287,90 @@
   &= \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}(\cos\theta_\mathrm{Bm}\cos\theta_b+\sin\theta_\mathrm{Bm}\sin\theta_b)
    = f_\mathrm B'\cos\theta_b+x_\mathrm{Bm}\sin\theta_b~.
 \end{align*}
-\BottomEndFace のA面側・C面側の位置についても同様である。
-まとめると、
-\begin{subequations}
-\begin{align}
-  \notag
-  \text{中点：}&\quad
+このとき、\BottomOutcutACwidth を$\mathcal W_{\mathrm Bx}$とすると、傾き後のC側端点・A側端点・BD側コーナー端点はそれぞれ、
+\begin{alignat}{2}
+  \label{eq:bottomcurvedoutcutcenterpoint}
+  \text{中点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_{Bm}\\
-        z'_{Bm}
+        x'_\mathrm{Bm}\\
+        z'_\mathrm{Bm}
       \end{array}
     \right]
-    = \left[
+   &= \left[
       \begin{array}{c}
         x_\mathrm{Bm}\cos\theta_b-f_\mathrm B'\sin\theta_b\\[6pt]
         f_\mathrm B'\cos\theta_b+x_\mathrm{Bm}\sin\theta_b
       \end{array}
     \right],\\
-  \label{eq:bottomcurvedoutcutCsideendpoint}
-  \text{C面側端点：}&\quad
+  \notag
+  \text{C側端点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_{BC}\\
-        z'_{BC}
+        x'_{\mathrm{BC}}\\
+        z'_{\mathrm{BC}}
       \end{array}
     \right]
-    = \left[
+   &= \left[
       \begin{array}{c}
-        x_\mathrm{Bi}\cos\theta_b-f_\mathrm B'\sin\theta_b\\[3pt]
-        f_\mathrm B'\cos\theta_b+x_\mathrm{Bi}\sin\theta_b
+        \displaystyle
+        x'_\mathrm{Bm}+\frac{\mathcal W_{\mathrm Bx}}2\\[6pt]
+        \displaystyle
+        z'_\mathrm{Bm}+\frac{\mathcal W_{\mathrm Bx}}2\tan\theta_b
       \end{array}
     \right],\\
-  \label{eq:bottomcurvedoutcutAsideendpoint}
-  \text{A面側端点：}&\quad
+  \notag
+  \text{A側端点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_{BA}\\
-        z'_{BA}
+        x'_{\mathrm{BA}}\\
+        z'_{\mathrm{BA}}
       \end{array}
     \right]
-    = \left[
+   &= \left[
       \begin{array}{c}
-        x_\mathrm{Bo}\cos\theta_b-f_\mathrm B'\sin\theta_b\\[3pt]
-        f_\mathrm B'\cos\theta_b+x_\mathrm{Bo}\sin\theta_b
-      \end{array}
-    \right].
-\end{align}
-\end{subequations}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 35.04.01.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\BottomCurvedOutcut のコーナー端点の位置}
-\BottomCurvedOutcut のコーナーがCまたはRの形状をしているものとする。
-このとき、\EndFaceChamferLength を$R_\mathrm E$とすると、特にB側およびD側のコーナーの端点の位置は、
-\begin{alignat*}{2}
-  \text{BD\,$+X$側：}&\quad
-  \sqrt{f_\mathrm B^{'2}+(x_\mathrm{Bi}-R_\mathrm E)^2}e^{i\theta_\mathrm{BB+}}~, \quad &
-  \tan\theta_\mathrm{BB+} &= \frac{x_\mathrm{Bi}-R_\mathrm E}{f_\mathrm B'}\ ,\\
-  \text{BD\,$-X$側：}&\quad
-  \sqrt{f_\mathrm B^{'2}+(x_\mathrm{Bo}+R_\mathrm E)^2}e^{i\theta_\mathrm{BB-}}~, \quad &
-  \tan\theta_\mathrm{BB-} &= \frac{x_\mathrm{Bo}+R_\mathrm E}{f_\mathrm B'}\ .
-\end{alignat*}
-したがって、傾き後の$XZ$座標は、
-\begin{align*}
-  \text{BD\,$+X$側：}&\quad
-    \left[
-      \begin{array}{c}
-        x'_{BB+}\\
-        z'_{BB+}
-      \end{array}
-    \right]
-    = \left[
-      \begin{array}{c}
-        (x_\mathrm{Bi}-R_\mathrm E)\cos\theta_b-f_\mathrm B'\sin\theta_b\\[6pt]
-        f_\mathrm B'\cos\theta_b+(x_\mathrm{Bi}-R_\mathrm E)\sin\theta_b
+        \displaystyle
+        x'_\mathrm{Bm}-\frac{\mathcal W_{\mathrm Bx}}2\\[6pt]
+        \displaystyle
+        z'_\mathrm{Bm}-\frac{\mathcal W_{\mathrm Bx}}2\tan\theta_b
       \end{array}
     \right],\\
-  \text{BD\,$-X$側：}&\quad
+  \notag
+  \text{BD\,$+X$側コーナー端点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_{BB-}\\
-        z'_{BB-}
+        x'_{\mathrm{BB+}}\\
+        z'_{\mathrm{BB+}}
       \end{array}
     \right]
-    = \left[
+   &= \left[
       \begin{array}{c}
-        (x_\mathrm{Bo}+R_\mathrm E)\cos\theta_b-f_\mathrm B'\sin\theta_b\\[6pt]
-        f_\mathrm B'\cos\theta_b+(x_\mathrm{Bo}+R_\mathrm E)\sin\theta_b
+        \displaystyle
+        x'_\mathrm{Bm}+\frac{\mathcal W_{\mathrm Bx}}2-R_E\\[6pt]
+        \displaystyle
+        z'_\mathrm{Bm}+\left(\frac{\mathcal W_{\mathrm Bx}}2-R_E\right)\tan\theta_b
+      \end{array}
+    \right],\\
+  \notag
+  \text{BD\,$-X$側コーナー端点：}&&\quad
+    \left[
+      \begin{array}{c}
+        x'_{\mathrm{BB-}}\\
+        z'_{\mathrm{BB-}}
+      \end{array}
+    \right]
+   &= \left[
+      \begin{array}{c}
+        \displaystyle
+        x'_\mathrm{Bm}-\frac{\mathcal W_{\mathrm Bx}}2+R_E\\[6pt]
+        \displaystyle
+        z'_\mathrm{Bm}-\left(\frac{\mathcal W_{\mathrm Bx}}2-R_E\right)\tan\theta_b
       \end{array}
     \right].
-\end{align*}
+\end{alignat}
 
 
-\clearpage
+%\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 35.04.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -399,19 +381,6 @@
 %% subsubsection 35.04.02.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\TopCurvedOutcut の傾き角}
-\TopEndFace におけるA面側・C面側・中心の$X$座標をそれぞれ$x_\mathrm{To}$, $x_\mathrm{Ti}$, $x_\mathrm{Tm}$とする。
-このとき\TopEndFace のそれぞれの位置は
-\begin{alignat*}{2}
-  \text{中心：}&\quad
-  \sqrt{f_\mathrm T^{'2}+x_\mathrm{Tm}^2}e^{i\theta_\mathrm{Tm}}~, \quad &
-  \tan\theta_\mathrm{Tm} &= \frac{x_\mathrm{Tm}}{f_\mathrm T'}\ ,\\
-  \text{C面側端点：}&\quad
-  \sqrt{f_\mathrm T^{'2}+x_\mathrm{Ti}^2}e^{i\theta_\mathrm{Ti}}~, \quad &
-  \tan\theta_\mathrm{Ti} &= \frac{x_\mathrm{Ti}}{f_\mathrm T'}\ ,\\
-  \text{A面側端点：}&\quad
-  \sqrt{f_\mathrm T^{'2}+x_\mathrm{To}^2}e^{i\theta_\mathrm{To}}~, \quad &
-  \tan\theta_\mathrm{To} &= \frac{x_\mathrm{To}}{f_\mathrm T'}\ .
-\end{alignat*}
 \TopOutcutLength を$h_\mathrm T$とすると、\expandafterindex{かたむき（\yomiCurvedOutcut）@傾き（\nameCurvedOutcut）}\nameCurvedOutcut 部分の傾きはトップ端から距離$\nicefrac{h_\mathrm T}2$の断面に平行になる形にとる。
 そのときの\expandafterindex{かたむきかく（\yomiCurvedOutcut）@傾き角（\nameCurvedOutcut）}傾き角$\theta_t$は、
 \begin{align}
@@ -423,7 +392,14 @@
 %% subsubsection 35.04.01.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\TopCurvedOutcut の端点の位置}
-傾き後の\expandafterindex{\yomiTopEndFace（\yomiCurvedOutcut）@\nameTopEndFace（\nameCurvedOutcut）}\nameTopEndFace の中心の位置は、
+\TopEndFace におけるA面側・C面側・中心の$X$座標をそれぞれ$x_\mathrm{To}$, $x_\mathrm{Ti}$, $x_\mathrm{Tm}$とする。
+このとき\TopEndFace のそれぞれの位置は
+\begin{align}
+  \text{中心：}\quad
+  \sqrt{f_\mathrm T^{'2}+x_\mathrm{Tm}^2}e^{i\theta_\mathrm{Tm}}~~, \quad
+  \tan\theta_\mathrm{Tm} = \frac{x_\mathrm{Tm}}{f_\mathrm T'}\ .
+\end{align}
+\pageeqref{eq:TCurvedOutcutAngle}より、傾き後の\expandafterindex{\yomiTopEndFace（\yomiCurvedOutcut）@\nameTopEndFace（\nameCurvedOutcut）}\nameTopEndFace の中心の位置は、
 \begin{align*}
   \sqrt{f_\mathrm T^{'2}+x_\mathrm{Tm}^2}e^{i(\theta_\mathrm{Tm}+\theta_t)}
 \end{align*}
@@ -434,58 +410,84 @@
   \sqrt{f_\mathrm T^{'2}+x_\mathrm{Tm}^2}\cos(\theta_\mathrm{Tm}-\theta_t)
   &= f_\mathrm T'\cos\theta_T-x_\mathrm{Tm}\sin\theta_t~.
 \end{align*}
-\TopEndFace のA面側・C面側の位置についても同様である。
-まとめると、
-\begin{subequations}
-\begin{align}
+このとき、\TopOutcutACwidth を$\mathcal W_{\mathrm Tx}$とすると、傾き後のA側端点・C側端点・BD側コーナー端点はそれぞれ、
+\begin{alignat}{2}
+  \label{eq:bottomcurvedoutcutcenterpoint}
+  \text{中点：}&&\quad
+    \left[
+      \begin{array}{c}
+        x'_\mathrm{Tm}\\
+        z'_\mathrm{Tm}
+      \end{array}
+    \right]
+   &= \left[
+      \begin{array}{c}
+        x_\mathrm{Tm}\cos\theta_t-f_\mathrm T'\sin\theta_t\\[6pt]
+        f_\mathrm T'\cos\theta_t+x_\mathrm{Tm}\sin\theta_t
+      \end{array}
+    \right],\\
   \notag
-  \text{中点：}&\quad
+  \text{A側端点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_m\\
-        z'_t
+        x'_{\mathrm{TA}}\\
+        z'_{\mathrm{TA}}
       \end{array}
     \right]
-    = \left[
+   &= \left[
       \begin{array}{c}
-        x_\mathrm{Tm}\cos\theta_t+f_\mathrm T'\sin\theta_t\\[3pt]
-        f_\mathrm T'\cos\theta_t-x_\mathrm{Tm}\sin\theta_t
+        \displaystyle
+        x'_\mathrm{Tm}+\frac{\mathcal W_{\mathrm Tx}}2\\[6pt]
+        \displaystyle
+        z'_\mathrm{Tm}+\frac{\mathcal W_{\mathrm Tx}}2\tan\theta_t
       \end{array}
     \right],\\
-  \label{eq:topcurvedoutcutCsideendpoint}
-  \text{C面側端点：}&\quad
+  \notag
+  \text{C側端点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_C\\
-        z'_t
+        x'_{\mathrm{TC}}\\
+        z'_{\mathrm{TC}}
       \end{array}
     \right]
-    = \left[
+   &= \left[
       \begin{array}{c}
-        x_\mathrm{Ti}\cos\theta_t+f_\mathrm T'\sin\theta_t\\[3pt]
-        f_\mathrm T'\cos\theta_t-x_\mathrm{Ti}\sin\theta_t
+        \displaystyle
+        x'_\mathrm{Tm}-\frac{\mathcal W_{\mathrm Tx}}2\\[6pt]
+        \displaystyle
+        z'_\mathrm{Tm}-\frac{\mathcal W_{\mathrm Tx}}2\tan\theta_b
       \end{array}
     \right],\\
-  \label{eq:topcurvedoutcutAsideendpoint}
-  \text{A面側端点：}&\quad
+  \notag
+  \text{BD\,$+X$側コーナー端点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_A\\
-        z'_t
+        x'_{\mathrm{TB+}}\\
+        z'_{\mathrm{TB+}}
       \end{array}
     \right]
-    = \left[
+   &= \left[
       \begin{array}{c}
-        x_\mathrm{To}\cos\theta_t+f_\mathrm T'\sin\theta_t\\[3pt]
-        f_\mathrm T'\cos\theta_t-x_\mathrm{To}\sin\theta_t
+        \displaystyle
+        x'_\mathrm{Tm}+\frac{\mathcal W_{\mathrm Tx}}2-R_E\\[6pt]
+        \displaystyle
+        z'_\mathrm{Bm}-\left(\frac{\mathcal W_{\mathrm Tx}}2-R_E\right)\tan\theta_t
+      \end{array}
+    \right],\\
+  \notag
+  \text{BD\,$-X$側コーナー端点：}&&\quad
+    \left[
+      \begin{array}{c}
+        x'_{\mathrm{TB-}}\\
+        z'_{\mathrm{TB-}}
+      \end{array}
+    \right]
+   &= \left[
+      \begin{array}{c}
+        \displaystyle
+        x'_\mathrm{Tm}-\frac{\mathcal W_{\mathrm Tx}}2+R_E\\[6pt]
+        \displaystyle
+        z'_\mathrm{Tm}+\left(\frac{\mathcal W_{\mathrm Tx}}2-R_E\right)\tan\theta_t
       \end{array}
     \right].
-\end{align}
-\end{subequations}
-
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 35.04.01.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\TopCurvedOutcut のコーナー端点の位置\TBW}
-(to be written...)
+\end{alignat}
