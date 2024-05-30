@@ -1,12 +1,12 @@
 %
-O80000001 (last update on 20240510)
+O80000001 (last update on 20240530)
 (Top sai_furiwake: 500.016)
 (Bot sai_furiwake: 499.984)
 (Top Haridashi: 170.016)
 (Bot Haridashi: 169.984)
 (B parallel angle -0.642, 179.358)
 
-N001
+N0001
 G49 G40 (cancel hosei)
 G80 G17
 S35
@@ -15,16 +15,15 @@ M09 (coolant off)
 M29 (chip conveyor off)
 G90 G53 G01 Z0 F#650
 
-N002
-IF[#1005EQ0]GOTO003
+N0002
+IF[#1005EQ0]GOTO0003
 M00 (sensor low battery)
-N003
-IF[#1004EQ0]GOTO004
-(if low battery, go to N820)
-(if current sensor off, go to N004)
+N0003
+IF[#1004EQ0]GOTO0004
+(if current sensor off, go to N0004)
 M117 (sensor off)
 
-N004
+N0004
 IF[#175EQ200]GOTO#175
 IF[#175EQ300]GOTO#175
 IF[#175EQ400]GOTO#175
@@ -37,7 +36,7 @@ IF[#175EQ510]GOTO#175
 IF[#175EQ530]GOTO#175
 IF[#175EQ540]GOTO#175
 
-N005
+N0005
 G90 G53 G01 X-5.501 Y-258.624 F#652
 M262 (palette rotate speed 25)
 M71 (palette #1)
@@ -48,9 +47,9 @@ M71 (palette #1)
 
 
 (Genten Settei)
-N100 (for palette #1)
-IF[#1000NE0]GOTO101
-(if NOT p#1, to N101)
+N0100 (for palette #1)
+IF[#1000NE0]GOTO0101
+(if NOT p#1, to N0101)
 G90 G10 L2 P1 X-527.810 Y[[183.000/2]+#901002] Z#901003 B#901004
 G90 G10 L2 P2 X-526.889 Y[[183.000/2]+#901002] Z#901003 B#901004
 G90 G10 L2 P3 X-561.228 Y[[183.000/2]+#901002] Z#901003 B#901004
@@ -61,10 +60,10 @@ G90 G10 L2 P5 X-561.228 Y[[183.000/2]+#901002] Z#901003 B#901004
 (G56 Top Gaisaku Center)
 (G57 Top Inside Center)
 (G58 Mizo Center)
-GOTO102
-N101 (for palette #2)
-IF[#1000NE1]GOTO821
-(if the current palette is NOT #2, go to N821)
+GOTO0102
+N0101 (for palette #2)
+IF[#1000NE1]GOTO0821
+(if the current palette is NOT #2, go to N0821)
 G90 G10 L2 P1 X-527.810 Y[[183.000/2]+#901002] Z#901007 B#901008
 G90 G10 L2 P2 X-526.889 Y[[183.000/2]+#901002] Z#901007 B#901008
 G90 G10 L2 P3 X-561.228 Y[[183.000/2]+#901002] Z#901007 B#901008
@@ -76,7 +75,7 @@ G90 G10 L2 P5 X-561.228 Y[[183.000/2]+#901002] Z#901007 B#901008
 (G57 Top Inside Center)
 (G58 Mizo Center)
 
-N102
+N0102
 M11 (B-axis unclamp)
 G90 G54 G00 B[180.0-0.642]
 M10 (B-axis clamp)
@@ -98,13 +97,13 @@ G90 G54 G01 X0 Y0 F#652
 (G01 G54XY Bot Gaisaku center)
 
 G65 P910001 (sensor ON)
-IF[#1005EQ0]GOTO103
+IF[#1005EQ0]GOTO0103
 M00 (sensor low battery)
-N103
-IF[#1004EQ1]GOTO104
+N0103
+IF[#1004EQ1]GOTO0104
 M117 (sensor switch)
 
-N104
+N0104
 G90 G54 G01 Z[499.984+#600] F#652
 (Z= BotTanmen +#600)
 
@@ -192,20 +191,20 @@ G57 G65 P130002 Y154.839 Z500.016 M0.07
 (G58Y = G56Y)
 
 (mesurement end)
-IF[#177EQ1]GOTO200
+IF[#177EQ1]GOTO0200
 M00
 
 
-N200
+N0200
 (*** Dimple Measurement Start ***)
 
 
 G90 G53 G01 Z0 F#650
-IF[#4120EQ50]GOTO201
+IF[#4120EQ50]GOTO0201
 T50 (touch sensor)
 M06 (tool exchange)
 
-N201
+N0201
 G40 G80 (cancel hosei)
 S35 (low gear)
 M19 (Spindle orientation)
@@ -240,17 +239,17 @@ G57 G65 P210003 T0.07 Z500.016 W400.000 F102.000 S85.000 Q90.000 I17.000 K20.000
 
 M117 (sensor on/off)
 G04 X1.5 (wait 1.5s)
-IF[#1004EQ0]GOTO202
+IF[#1004EQ0]GOTO0202
 G65 P910002 (sensor OFF)
-N202
+N0202
 G90 G53 G01 Z0 F#650
 
 (dimple mesurement end)
-IF[#178EQ1]GOTO300
+IF[#178EQ1]GOTO0300
 M00
 
 
-N300
+N0300
 (*** Dimple Kakou Start ***)
 
 
@@ -266,7 +265,7 @@ G90 G57 G43 Z[500.016+#600] H31 F#650
 (G57XY Top Inside Center)
 (Z= TopTanmen +#600)
 
-N301
+N0301
 G57 G65 P210003 T0.07 Z500.016 W400.000 F102.000 S85.000 Q90.000 I17.000 K20.000 M6.0 U0.31 R8922.7 A-0.642 B-2.130
 (dimple kakou)
 (T: mekki thickness mm)
@@ -284,17 +283,17 @@ G57 G65 P210003 T0.07 Z500.016 W400.000 F102.000 S85.000 Q90.000 I17.000 K20.000
 (B: angle for dimple)
 
 (dimple kakou end)
-IF[#459EQ0]GOTO302
-IF[#459EQ2]GOTO303
-GOTO400
-N302
+IF[#459EQ0]GOTO0302
+IF[#459EQ2]GOTO0303
+GOTO0400
+N0302
 M00 (if #459=0)
-GOTO400
-N303
+GOTO0400
+N0303
 G65 P900003 (if #459=2)
 
 
-N400
+N0400
 (*** Top Tanmen start ***)
 
 
@@ -316,17 +315,17 @@ G57 G65 P410000 Z500.016 R4.5
 (R: Top uchigawa corner R)
 
 (Top tammen end)
-IF[#179EQ0]GOTO401
-IF[#179EQ2]GOTO402
-GOTO410
-N401
+IF[#179EQ0]GOTO0401
+IF[#179EQ2]GOTO0402
+GOTO0410
+N0401
 M00 (if #179=0)
-GOTO410
-N402
+GOTO0410
+N0402
 G65 P900003 (if #179=2)
 
 
-N410
+N0410
 (*** Top Gaisaku start ***)
 
 
@@ -356,17 +355,17 @@ G56 G65 P420000 X180.950 Y180.950 U185.000 V183.000 Z500.016 R18.0 K32.0 M12.05 
 (W*: mizoHaba)
 
 (Top gaisaku end)
-IF[#417EQ0]GOTO411
-IF[#417EQ2]GOTO412
-GOTO420
-N411
+IF[#417EQ0]GOTO0411
+IF[#417EQ2]GOTO0412
+GOTO0420
+N0411
 M00 (if #417=0)
-GOTO420
-N412
+GOTO0420
+N0412
 G65 P900003 (if #417=2)
 
 
-N420
+N0420
 (*** Mizo start ***)
 
 
@@ -399,17 +398,17 @@ G58 G65 P430000 A1.0 K1.0 C#0 R14.0 X172.900 Y172.900 U180.950 V180.950 Z500.016
 (H: mizoHaba)
 
 (mizo kakou end)
-IF[#424EQ0]GOTO421
-IF[#424EQ2]GOTO422
-GOTO430
-N421
+IF[#424EQ0]GOTO0421
+IF[#424EQ2]GOTO0422
+GOTO0430
+N0421
 M00 (if #424=0)
-GOTO430
-N422
+GOTO0430
+N0422
 G65 P900003 (if #424=2)
 
 
-N430
+N0430
 (*** Top SotoMentori start ***)
 
 
@@ -438,17 +437,17 @@ G56 G65 P440000 A1.0 B0.0 X180.950 Y180.950 Z500.016 W400.000 Q8922.700 K1.0 R18
 (R: Top sotogawa corner R)
 
 (Top SotoMentori end)
-IF[#428EQ0]GOTO431
-IF[#428EQ2]GOTO432
-GOTO440
-N431
+IF[#428EQ0]GOTO0431
+IF[#428EQ2]GOTO0432
+GOTO0440
+N0431
 M00 (if #428=1)
-GOTO440
-N432
+GOTO0440
+N0432
 G65 P900003 (if #428=2)
 
 
-N440
+N0440
 (*** Top UchiMentori start ***)
 
 
@@ -475,17 +474,17 @@ G57 G65 P450000 B0.0 Z500.016 W400.000 Q8922.700 K0.5 R4.5 M0.07
 (M: mekki thickness mm)
 
 (Top Uchimentori end)
-IF[#433EQ0]GOTO441
-IF[#433EQ2]GOTO442
-GOTO500
-N441
+IF[#433EQ0]GOTO0441
+IF[#433EQ2]GOTO0442
+GOTO0500
+N0441
 M00 (if #433=0)
-GOTO500
-N442
+GOTO0500
+N0442
 G65 P900003 (if #433=2)
 
 
-N500
+N0500
 (*** Bottom Tanmen start ***)
 
 
@@ -507,17 +506,17 @@ G55 G65 P410000 Z499.984 R3.5
 (R: Bot uchigawa corner R)
 
 (Bottom tammen end)
-IF[#180EQ0]GOTO501
-IF[#180EQ2]GOTO502
-GOTO510
-N501
+IF[#180EQ0]GOTO0501
+IF[#180EQ2]GOTO0502
+GOTO0510
+N0501
 M00 (if #180=0)
-GOTO510
-N502
+GOTO0510
+N0502
 G65 P900003 (if #180=2)
 
 
-N510
+N0510
 (*** Bot Gaisaku start ***)
 
 
@@ -547,17 +546,17 @@ G54 G65 P420000 X180.950 Y180.950 U185.000 V183.000 Z499.984 R18.0 K25.0
 (W*: mizoHaba)
 
 (Bot gaisaku end)
-IF[#439EQ0]GOTO511
-IF[#439EQ2]GOTO512
-GOTO530
-N511
+IF[#439EQ0]GOTO0511
+IF[#439EQ2]GOTO0512
+GOTO0530
+N0511
 M00 (if #439=0)
-GOTO530
-N512
+GOTO0530
+N0512
 G65 P900003 (if #439=2)
 
 
-N530
+N0530
 (*** Bottom SotoMentori start ***)
 
 
@@ -586,17 +585,17 @@ G54 G65 P440000 A1.0 B0.0 X180.950 Y180.950 Z499.984 W600.000 Q8922.700 K4.0 R18
 (R: Bot sotogawa corner R)
 
 (Bottom SotoMentori end)
-IF[#444EQ0]GOTO531
-IF[#444EQ2]GOTO532
-GOTO540
-N531
+IF[#444EQ0]GOTO0531
+IF[#444EQ2]GOTO0532
+GOTO0540
+N0531
 M00 (if #444=0)
-GOTO540
-N532
+GOTO0540
+N0532
 G65 P900003 (if #444=2)
 
 
-N540
+N0540
 (*** Bottom UchiMentori start ***)
 
 
@@ -623,28 +622,28 @@ G55 G65 P450000 B0.0 Z499.984 W600.0 Q8922.70 K10.0 R3.5 M0.07
 (M: mekki thickness mm)
 
 (Bottom Uchimentori end)
-IF[#449EQ0]GOTO541
-IF[#449EQ2]GOTO542
-GOTO006
-N541
+IF[#449EQ0]GOTO0541
+IF[#449EQ2]GOTO0542
+GOTO0006
+N0541
 M00 (if #449=0)
-GOTO006
-N542
+GOTO0006
+N0542
 G65 P900003 (if #449=2)
 
 
 (Kakou Owari)
 
 
-N006
-IF[#402EQ0]GOTO990
-(if #402=0, go to N990)
+N0006
+IF[#402EQ0]GOTO9990
+(if #402=0, go to N9990)
 
 
 (*** TooriShin start ***)
 
 
-N650
+N0650
 G90 G53 G01 Z0 F#650
 G91 G28 X0 Y0
 G49 G40 (cancel hosei)
@@ -674,34 +673,34 @@ M00 (tooriShin XY OK?)
 G90 G53 G01 X-5.501 Y-258.624 F#652
 
 
-N990
+N9990
 G49 G40 (cancel hosei)
 G80 G17
 G90 G53 G01 Z0 F#650
 G90 G53 G00 X-5.501 Y-258.624
 
-N991
-IF[#1004EQ0]GOTO992
-(if current sensor off, go to N992)
+N9991
+IF[#1004EQ0]GOTO9992
+(if current sensor off, go to N9992)
 M117 (sensor on/off)
 
-N992
+N9992
 M09 (coolant off)
 M29 (chip conveyor off)
 M05 (spindle off)
 S35
 
-N993
+N9993
 M60 (palette change)
 T38 (tool #38)
 M06 (tool exchange)
 T01 (empty)
 M06 (tool exchange)
-GOTO999
+GOTO9999
 
 
 (Alerm)
-N820
+N0820
 M09 (coolant off)
 S2599
 G04 X1.0 (wait 1.0s)
@@ -709,7 +708,7 @@ M05 (spindle off)
 S35
 #3000=145 (MP60-Low battery)
 
-N821
+N0821
 M09 (coolant off)
 S2599
 G04 X1.0 (wait 1.0s)
@@ -717,7 +716,7 @@ M05 (spindle off)
 S35
 #3000=146 (is the palette# is ok?)
 
-N800
+N0800
 M09 (coolant off)
 S2599
 G04 X1.0 (wait 1.0s)
@@ -725,7 +724,7 @@ M05 (spindle off)
 S35
 #3000=100 (are the arguments OK?)
 
-N999 M30
+N9999 M30
 
 (Used Variables and Programs)
 
