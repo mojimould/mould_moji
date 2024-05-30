@@ -33,7 +33,7 @@ GOTO800
 (if K is not 1, 2, 3, 4, go to N800)
 
 N003 (for R)
-G90 G01 X[[#24/2]+#12] Y[#25/2] Z[#900049-#06] F#09
+G91 G01 X-[#24-#18] Z[#900047-#06] F#09
 (a: X-)
 G91 G03 X-#18 Y-#18 I0 J-#18 F#08
 (al corner: R#18 [0, -R] X-Y-)
@@ -118,7 +118,7 @@ N999 M99
 (#09:F: speed at chokusenBu)
 (#18:R: corner R)
 (#19:S: kaitenSuu)
-(#20:T: type)
+(#20:T: Corner Type)
 (#24:X: AC kei)
 (#25:Y: BD kei)
 
