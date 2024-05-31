@@ -227,7 +227,8 @@
 そのときの\expandafterindex{かたむきかく（\yomiCurvedOutcut）@傾き角（\nameCurvedOutcut）}傾き角$\theta_b$は、
 \begin{align}
   \label{eq:BCurvedOutcutAngle}
-  \sin\theta_b = \frac{f_\mathrm B'-\nicefrac{h_\mathrm B}2}{R_\mathrm c}\ .
+  \sin\theta_b = \frac{f_\mathrm B'-\nicefrac{h_\mathrm B}2}{R_\mathrm c}
+  \qquad\left(0 \leq \theta_b \leq \frac\pi2\right)\ .
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -287,19 +288,21 @@
   &= \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}(\cos\theta_\mathrm{Bm}\cos\theta_b+\sin\theta_\mathrm{Bm}\sin\theta_b)
    = f_\mathrm B'\cos\theta_b+x_\mathrm{Bm}\sin\theta_b~.
 \end{align*}
-このとき、\BottomOutcutACwidth を$\mathcal W_{\mathrm Bx}$とすると、傾き後のC側端点・A側端点・BD側コーナー端点はそれぞれ、
+このとき、\BottomOutcutACwidth を$\mathfrak W_{\mathrm Bx}$とすると、傾き後のC側端点・A側端点・BD側コーナー端点はそれぞれ、
 \begin{alignat}{2}
   \label{eq:bottomcurvedoutcutcenterpoint}
-  \text{中点：}&&\quad
+  \text{中心：}&&\quad
     \left[
       \begin{array}{c}
-        x'_\mathrm{Bm}\\
+        x'_\mathrm{Bm}\\[3pt]
+        y'_\mathrm{Bm}\\[3pt]
         z'_\mathrm{Bm}
       \end{array}
     \right]
    &= \left[
       \begin{array}{c}
-        x_\mathrm{Bm}\cos\theta_b-f_\mathrm B'\sin\theta_b\\[6pt]
+        x_\mathrm{Bm}\cos\theta_b-f_\mathrm B'\sin\theta_b\\[3pt]
+        y_\mathrm{Bm}\\[3pt]
         f_\mathrm B'\cos\theta_b+x_\mathrm{Bm}\sin\theta_b
       \end{array}
     \right],\\
@@ -307,64 +310,70 @@
   \text{C側端点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_{\mathrm{BC}}\\
+        x'_{\mathrm{BC}}\\[3pt]
         z'_{\mathrm{BC}}
       \end{array}
     \right]
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Bm}+\frac{\mathcal W_{\mathrm Bx}}2\\[6pt]
+        x'_\mathrm{Bm}+\frac{\mathfrak W_{\mathrm Bx}}2\\[8pt]
         \displaystyle
-        z'_\mathrm{Bm}+\frac{\mathcal W_{\mathrm Bx}}2\tan\theta_b
+        z'_\mathrm{Bm}+\frac{\mathfrak W_{\mathrm Bx}}2\sin\theta_b
       \end{array}
     \right],\\
   \notag
   \text{A側端点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_{\mathrm{BA}}\\
+        x'_{\mathrm{BA}}\\[3pt]
         z'_{\mathrm{BA}}
       \end{array}
     \right]
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Bm}-\frac{\mathcal W_{\mathrm Bx}}2\\[6pt]
+        x'_\mathrm{Bm}-\frac{\mathfrak W_{\mathrm Bx}}2\\[8pt]
         \displaystyle
-        z'_\mathrm{Bm}-\frac{\mathcal W_{\mathrm Bx}}2\tan\theta_b
+        z'_\mathrm{Bm}-\frac{\mathfrak W_{\mathrm Bx}}2\sin\theta_b
       \end{array}
     \right],\\
   \notag
   \text{BD\,$+X$側コーナー端点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_{\mathrm{BB+}}\\
+        x'_{\mathrm{BB+}}\\[3pt]
+        y'_{\mathrm{BB+}}\\[3pt]
         z'_{\mathrm{BB+}}
       \end{array}
     \right]
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Bm}+\frac{\mathcal W_{\mathrm Bx}}2-R_E\\[6pt]
+        x'_\mathrm{Bm}+\frac{\mathfrak W_{\mathrm Bx}}2-R_E\\[8pt]
         \displaystyle
-        z'_\mathrm{Bm}+\left(\frac{\mathcal W_{\mathrm Bx}}2-R_E\right)\tan\theta_b
+        y_\mathrm{Bm}+\frac{\mathfrak W_{\mathrm By}}2\\[8pt]
+        \displaystyle
+        z'_\mathrm{Bm}+\left(\frac{\mathfrak W_{\mathrm Bx}}2-R_E\right)\sin\theta_b
       \end{array}
     \right],\\
   \notag
   \text{BD\,$-X$側コーナー端点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_{\mathrm{BB-}}\\
+        x'_{\mathrm{BB-}}\\[3pt]
+        y'_{\mathrm{BB-}}\\[3pt]
         z'_{\mathrm{BB-}}
       \end{array}
     \right]
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Bm}-\frac{\mathcal W_{\mathrm Bx}}2+R_E\\[6pt]
+        x'_\mathrm{Bm}-\frac{\mathfrak W_{\mathrm Bx}}2+R_E\\[8pt]
         \displaystyle
-        z'_\mathrm{Bm}-\left(\frac{\mathcal W_{\mathrm Bx}}2-R_E\right)\tan\theta_b
+        y_\mathrm{Bm}+\frac{\mathfrak W_{\mathrm By}}2\\[8pt]
+        \displaystyle
+        z'_\mathrm{Bm}-\left(\frac{\mathfrak W_{\mathrm Bx}}2-R_E\right)\sin\theta_b
       \end{array}
     \right].
 \end{alignat}
@@ -385,7 +394,8 @@
 そのときの\expandafterindex{かたむきかく（\yomiCurvedOutcut）@傾き角（\nameCurvedOutcut）}傾き角$\theta_t$は、
 \begin{align}
   \label{eq:TCurvedOutcutAngle}
-  \sin\theta_t = \frac{f_\mathrm T'-\nicefrac{h_\mathrm T}2}{R_\mathrm c}\ .
+  \sin\theta_t = \frac{f_\mathrm T'-\nicefrac{h_\mathrm T}2}{R_\mathrm c}
+  \qquad\left(0 \leq \theta_t \leq \frac\pi2\right)\ .
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -407,39 +417,41 @@
 \begin{align*}
   \sqrt{f_\mathrm T^{'2}+x_\mathrm{Tm}^2}\sin(\theta_\mathrm{Tm}+\theta_t)
   &= x_\mathrm{Tm}\cos\theta_t+f_\mathrm T'\sin\theta_t~,\\
-  \sqrt{f_\mathrm T^{'2}+x_\mathrm{Tm}^2}\cos(\theta_\mathrm{Tm}-\theta_t)
-  &= f_\mathrm T'\cos\theta_T-x_\mathrm{Tm}\sin\theta_t~.
+  \sqrt{f_\mathrm T^{'2}+x_\mathrm{Tm}^2}\cos(\theta_\mathrm{Tm}+\theta_t)
+  &= f_\mathrm T'\cos\theta_T+x_\mathrm{Tm}\sin\theta_t~.
 \end{align*}
-このとき、\TopOutcutACwidth を$\mathcal W_{\mathrm Tx}$とすると、傾き後のA側端点・C側端点・BD側コーナー端点はそれぞれ、
+このとき、\TopOutcutACwidth を$\mathfrak W_{\mathrm Tx}$とすると、傾き後のA側端点・C側端点・BD側コーナー端点はそれぞれ、
 \begin{alignat}{2}
-  \label{eq:bottomcurvedoutcutcenterpoint}
+  \label{eq:topcurvedoutcutcenterpoint}
   \text{中点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_\mathrm{Tm}\\
+        x'_\mathrm{Tm}\\[3pt]
+        y'_\mathrm{Tm}\\[3pt]
         z'_\mathrm{Tm}
       \end{array}
     \right]
    &= \left[
       \begin{array}{c}
-        x_\mathrm{Tm}\cos\theta_t-f_\mathrm T'\sin\theta_t\\[6pt]
-        f_\mathrm T'\cos\theta_t+x_\mathrm{Tm}\sin\theta_t
+        x_\mathrm{Tm}\cos\theta_t+f_\mathrm T'\sin\theta_t\\[3pt]
+        y_\mathrm{Tm}\\[3pt]
+        f_\mathrm T'\cos\theta_t-x_\mathrm{Tm}\sin\theta_t
       \end{array}
     \right],\\
   \notag
   \text{A側端点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_{\mathrm{TA}}\\
+        x'_{\mathrm{TA}}\\[3pt]
         z'_{\mathrm{TA}}
       \end{array}
     \right]
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Tm}+\frac{\mathcal W_{\mathrm Tx}}2\\[6pt]
+        x'_\mathrm{Tm}+\frac{\mathfrak W_{\mathrm Tx}}2\\[8pt]
         \displaystyle
-        z'_\mathrm{Tm}+\frac{\mathcal W_{\mathrm Tx}}2\tan\theta_t
+        z'_\mathrm{Tm}-\frac{\mathfrak W_{\mathrm Tx}}2\sin\theta_t
       \end{array}
     \right],\\
   \notag
@@ -453,41 +465,47 @@
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Tm}-\frac{\mathcal W_{\mathrm Tx}}2\\[6pt]
+        x'_\mathrm{Tm}-\frac{\mathfrak W_{\mathrm Tx}}2\\[8pt]
         \displaystyle
-        z'_\mathrm{Tm}-\frac{\mathcal W_{\mathrm Tx}}2\tan\theta_b
+        z'_\mathrm{Tm}+\frac{\mathfrak W_{\mathrm Tx}}2\sin\theta_b
       \end{array}
     \right],\\
   \notag
   \text{BD\,$+X$側コーナー端点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_{\mathrm{TB+}}\\
+        x'_{\mathrm{TB+}}\\[3pt]
+        y'_{\mathrm{TB+}}\\[3pt]
         z'_{\mathrm{TB+}}
       \end{array}
     \right]
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Tm}+\frac{\mathcal W_{\mathrm Tx}}2-R_E\\[6pt]
+        x'_\mathrm{Tm}+\frac{\mathfrak W_{\mathrm Tx}}2-R_E\\[8pt]
         \displaystyle
-        z'_\mathrm{Bm}-\left(\frac{\mathcal W_{\mathrm Tx}}2-R_E\right)\tan\theta_t
+        y_{\mathrm{Tm}}+\frac{\mathfrak W_{\mathrm Ty}}2\\[8pt]
+        \displaystyle
+        z'_\mathrm{Bm}+\left(\frac{\mathfrak W_{\mathrm Tx}}2-R_E\right)\sin\theta_t
       \end{array}
     \right],\\
   \notag
   \text{BD\,$-X$側コーナー端点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_{\mathrm{TB-}}\\
+        x'_{\mathrm{TB-}}\\[3pt]
+        y'_{\mathrm{TB-}}\\[3pt]
         z'_{\mathrm{TB-}}
       \end{array}
     \right]
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Tm}-\frac{\mathcal W_{\mathrm Tx}}2+R_E\\[6pt]
+        x'_\mathrm{Tm}+\frac{\mathfrak W_{\mathrm Tx}}2+R_E\\[8pt]
         \displaystyle
-        z'_\mathrm{Tm}+\left(\frac{\mathcal W_{\mathrm Tx}}2-R_E\right)\tan\theta_t
+        y_{\mathrm{Tm}}+\frac{\mathfrak W_{\mathrm Ty}}2\\[8pt]
+        \displaystyle
+        z'_\mathrm{Tm}+\left(\frac{\mathfrak W_{\mathrm Tx}}2-R_E\right)\sin\theta_t
       \end{array}
     \right].
 \end{alignat}
