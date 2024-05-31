@@ -52,8 +52,8 @@
 %%% Overall %%%
 \newNamecommand{Alocation}{振分け}{ふりわけ}
 \newNamecommand{AlocationLength}{振分長}{ふりわけちょう}
-\newNamecommand{ReAlocation}{再振分け}{さいふりわけ}
-\newNamecommand{ReAlocationLength}{再振分長}{さいふりわけちょう}
+\newNamecommand{ReAlocation}{再\nameAlocation}{さい\yomiAlocation}
+\newNamecommand{ReAlocationLength}{再\nameAlocationLength}{さい\yomiAlocationLength}
 
 \newGPMcommand{WorkTotalLength}{ワーク全長}{ワークぜんちょう}
 \newGPMcommand{TopAlocationLength}{トップ\nameAlocationLength}{トップ\yomiAlocationLength}
@@ -61,12 +61,12 @@
 \newGPMcommand{TopReAlocationLength}{トップ\nameReAlocationLength}{トップ\yomiReAlocationLength}
 \newGPMcommand{BottomReAlocationLength}{ボトム\nameReAlocationLength}{ボトム\yomiReAlocationLength}
 \newGPMcommand{AlocationAngle}{振分調整用傾き角}{ふりわけちょうせいようかたむきかく}
-\newGPMcommand{EqualAlocationAngle}{均等振分角度}{きんとうふりわけかくど}
+\newGPMcommand{EqualAlocationAngle}{均等振分傾き角}{きんとうふりわけかたむきかく}
 
 %%% Thicness %%%
 \newNamecommand{Thickness}{肉厚}{にくあつ}
-\newNamecommand{AsideThickness}{A側肉厚}{A側にくあつ}
-\newNamecommand{ACThickness}{AC方向の肉厚}{ACほうこうのにくあつ}
+\newNamecommand{AsideThickness}{A側\nameThickness}{Aがわ\yomiThickness}
+\newNamecommand{ACThickness}{AC方向の\nameThickness}{ACほうこうの\yomiThickness}
 
 \newGPMcommand{TopAsideThickness}{トップ\AsideThickness}{トップ\AsideThickness}
 \newGPMcommand{BottomAsideThickness}{ボトム\AsideThickness}{ボトム\AsideThickness}
@@ -75,8 +75,8 @@
 \newNamecommand{CenterCurvature}{中心湾曲}{ちゅうしんわんきょく}
 \newNamecommand{CenterCurvatureLine}{\nameCenterCurvature 線}{\yomiCenterCurvature せん}
 \newNamecommand{InnerCurvature}{内側湾曲}{うちがわわんきょく}
-\newNamecommand{AsideInnerCurvature}{A側内側湾曲}{Aがわうちがわわんきょく}
-\newNamecommand{CsideInnerCurvature}{C側内側湾曲}{Cがわうちがわわんきょく}
+\newNamecommand{AsideInnerCurvature}{A側\nameInnerCurvature}{Aがわ\yomiInnerCurvature}
+\newNamecommand{CsideInnerCurvature}{C側\nameInnerCurvature}{Cがわ\yomiInnerCurvature}
 
 \newGPMcommand{CenterCurvatureExists}{\nameCenterCurvature の有無}{\yomiCenterCurvature のうむ}
 \newGPMcommand{CenterCurvatureRadius}{\nameCenterCurvature 半径}{\yomiCenterCurvature はんけい}
@@ -145,6 +145,8 @@
 \newNamecommand{OutcutCornerR}{\nameOutcut コーナーR}{\yomiOutcut コーナーR}
 \newNamecommand{OutcutAsideThickness}{\nameOutcut A側\nameThickness}{\yomiOutcut Aがわ\yomiThickness}
 \newNamecommand{OutcutWidth}{\nameOutcut 径}{\yomiOutcut けい}
+\newNamecommand{OutcutACWidth}{\nameOutcut AC径}{\yomiOutcut ACけい}
+\newNamecommand{OutcutBDWidth}{\nameOutcut BD径}{\yomiOutcut BDけい}
 \newNamecommand{TopOutcutWidth}{トップ\nameOutcutWidth}{トップ\yomiOutcutWidth}
 \newNamecommand{BottomOutcutWidth}{ボトム\nameOutcutWidth}{ボトム\yomiOutcutWidth}
 \newNamecommand{OutcutLength}{\nameOutcut 長}{\yomiOutcut ちょう}
@@ -166,10 +168,10 @@
 \newGPMcommand{BottomOutcutExists}{ボトム\nameOutcutExists}{ボトム\yomiOutcutExists}
 \newGPMcommand{TopOutcutType}{トップ\nameOutcutType}{トップ\yomiOutcutType}
 \newGPMcommand{BottomOutcutType}{ボトム\nameOutcutType}{ボトム\yomiOutcutType}
-\newGPMcommand{TopOutcutACwidth}{トップ\nameOutcut AC径}{トップ\yomiOutcut ACけい}
-\newGPMcommand{TopOutcutBDwidth}{トップ\nameOutcut BD径}{トップ\yomiOutcut BDけい}
-\newGPMcommand{BottomOutcutACwidth}{ボトム\nameOutcut AC径}{ボトム\yomiOutcut ACけい}
-\newGPMcommand{BottomOutcutBDwidth}{ボトム\nameOutcut BD径}{ボトム\yomiOutcut BDけい}
+\newGPMcommand{TopOutcutACwidth}{トップ\nameOutcutACWidth}{トップ\yomiOutcutACWidth}
+\newGPMcommand{TopOutcutBDwidth}{トップ\nameOutcutBDWidth}{トップ\yomiOutcutBDWidth}
+\newGPMcommand{BottomOutcutACwidth}{ボトム\nameOutcutACWidth}{ボトム\yomiOutcutACWidth}
+\newGPMcommand{BottomOutcutBDwidth}{ボトム\nameOutcutBDWidth}{ボトム\yomiOutcutBDWidth}
 \newGPMcommand{TopOutcutCornerR}{トップ\nameOutcutCornerR}{トップ\yomiOutcutCornerR}
 \newGPMcommand{BottomOutcutConerR}{ボトム\nameOutcutCornerR}{ボトム\yomiOutcutCornerR}
 \newGPMcommand{TopOutcutAsideThickness}{トップ\nameOutcutAsideThickness}{トップ\yomiOutcutAsideThickness}
@@ -202,28 +204,29 @@
 \newGPMcommand{KeywayDepthMeasurementAngle}{\nameKeywayDepth 測定時傾き角}{\yomiKeywayDepth そくていじかたむきかく}
 
 %%% CHANMFER %%%
-\newNamecommand{EndFaceChamfer}{端面面取}{たんめんめんとり}
+\newNamecommand{EndFaceChamfer}{\nameEndFace 面取}{\yomiEndFace めんとり}
 \newNamecommand{TopEndFaceChamfer}{トップ\nameEndFaceChamfer}{トップ\yomiEndFaceChamfer}
 \newNamecommand{BottomEndFaceChamfer}{ボトム\nameEndFaceChamfer}{ボトム\yomiEndFaceChamfer}
 \newNamecommand{EndFaceChamferMilling}{\nameEndFaceChamfer 加工}{\yomiEndFaceChamfer かこう}
 \newNamecommand{EndFaceChamferLength}{\nameEndFaceChamfer 長}{\yomiEndFaceChamfer ちょう}
 \newNamecommand{EndFaceChamferwidth}{\nameEndFaceChamfer 幅}{\yomiEndFaceChamfer はば}
-\newNamecommand{EndFaceOutChamfer}{端面外面取}{たんめんそとめんとり}
+\newNamecommand{EndFaceOutChamfer}{\nameEndFace 外面取}{\yomiEndFace そとめんとり}
 \newNamecommand{EndFaceOutChamferMilling}{\nameEndFaceOutChamfer 加工}{\yomiEndFaceOutChamfer かこう}
-\newNamecommand{EndFaceInChamfer}{端面内面取}{たんめんうちめんとり}
+\newNamecommand{EndFaceInChamfer}{\nameEndFace 内面取}{\yomiEndFace うちめんとり}
 \newNamecommand{EndFaceInChamferMilling}{\nameEndFaceInChamfer 加工}{\yomiEndFaceInChamfer かこう}
+\newNamecommand{EndFaceInChamferLength}{\nameEndFaceOutChamfer 長}{\yomiEndFaceOutChamfer ちょう}
 
 \newGPMcommand{ChamferType}{面取の種類}{めんとりのしゅるい}
 
 %%% C CHANMFER %%%
-\newNamecommand{EndFaceCChamfer}{端面C面取}{たんめんCめんとり}
+\newNamecommand{EndFaceCChamfer}{\nameEndFace C面取}{\yomiEndFace Cめんとり}
 \newNamecommand{EndFaceCChamferMilling}{\nameEndFaceCChamfer 加工}{\yomiEndFaceCChamfer かこう}
 \newNamecommand{EndFaceCChamferMillingReferencePoint}{\nameEndFaceCChamferMilling の基準点}{\yomiEndFaceCChamferMilling のきじゅんてん}
 \newNamecommand{EndFaceCChamferLength}{\nameEndFaceCChamfer 長}{\yomiEndFaceCChamfer ちょう}
 \newNamecommand{EndFaceCChamferAngle}{\nameEndFaceCChamfer 角}{\yomiEndFaceCChamfer かく}
 
 %%% OUT C CHANMFER %%%
-\newNamecommand{EndFaceOutCChamfer}{端面外C面取}{たんめんそとCめんとり}
+\newNamecommand{EndFaceOutCChamfer}{\nameEndFace 外C面取}{\yomiEndFace そとCめんとり}
 \newNamecommand{TopEndFaceOutCChamfer}{トップ\nameEndFaceOutCChamfer}{トップ\yomiEndFaceOutCChamfer}
 \newNamecommand{BottomEndFaceOutCChamfer}{ボトム\nameEndFaceOutCChamfer}{ボトム\yomiEndFaceOutCChamfer}
 \newNamecommand{EndFaceOutCChamferMilling}{\nameEndFaceOutCChamfer 加工}{\yomiEndFaceOutCChamfer かこう}
@@ -244,14 +247,14 @@
 \newGPMcommand{BottomEndFaceOutCChamferAngle}{ボトム\nameEndFaceOutCChamferAngle}{ボトム\yomiEndFaceOutCChamferAngle}
 
 %%% IN C CHANMFER %%%
-\newNamecommand{EndFaceInCChamfer}{端面内C面取}{たんめんうちCめんとり}
+\newNamecommand{EndFaceInCChamfer}{\nameEndFace 内C面取}{\yomiEndFace うちCめんとり}
 \newNamecommand{TopEndFaceInCChamfer}{トップ\nameEndFaceInCChamfer}{トップ\yomiEndFaceInCChamfer}
 \newNamecommand{BottomEndFaceInCChamfer}{ボトム\nameEndFaceInCChamfer}{ボトム\yomiEndFaceInCChamfer}
 \newNamecommand{EndFaceInCChamferMilling}{\nameEndFaceInCChamfer 加工}{\yomiEndFaceInCChamfer かこう}
 \newNamecommand{EndFaceInCChamferMillingReferencePoint}{\nameEndFaceInCChamferMilling の基準点}{\yomiEndFaceOutCChamferMilling のきじゅんてん}
 \newNamecommand{TopEndFaceInCChamferMilling}{トップ\nameEndFaceInCChamfer 加工}{トップ\yomiEndFaceInCChamfer かこう}
 \newNamecommand{BottomEndFaceInCChamferMilling}{ボトム\nameEndFaceInCChamfer 加工}{ボトム\yomiEndFaceInCChamfer かこう}
-\newNamecommand{EndFaceInCChamferWidth}{端面外C面取径}{たんめんそとCめんとりけい}
+\newNamecommand{EndFaceInCChamferWidth}{\nameEndFaceInCChamfer 径}{\yomiEndFaceInCChamfer けい}
 \newNamecommand{TopEndFaceInCChamferWidth}{トップ\nameEndFaceInCChamferWidth}{トップ\yomiEndFaceInCChamferWidth}
 \newNamecommand{BottomEndFaceInCChamferWidth}{ボトム\nameEndFaceInCChamferWidth}{ボトム\yomiEndFaceInCChamferWidth}
 \newNamecommand{EndFaceInCChamferLength}{\nameEndFaceInCChamfer 長}{\yomiEndFaceInCChamfer ちょう}
@@ -265,13 +268,13 @@
 \newGPMcommand{BottomEndFaceInCChamferAngle}{ボトム\nameEndFaceInCChamferAngle}{ボトム\yomiEndFaceInCChamferAngle}
 
 %%% ROUND CHANMFER %%%
-\newNamecommand{EndFaceRChamfer}{端面R面取}{たんめんRめんとり}
+\newNamecommand{EndFaceRChamfer}{\nameEndFace R面取}{\yomiEndFace Rめんとり}
 \newNamecommand{EndFaceRChamferMilling}{\nameEndFaceRChamfer 加工}{\yomiEndFaceRChamfer かこう}
 \newNamecommand{EndFaceRChamferMillingReferencePoint}{\nameEndFaceRChamferMilling の基準点}{\yomiEndFaceRChamferMilling のきじゅんてん}
 \newNamecommand{EndFaceRChamferRadius}{\nameEndFaceRChamfer 長}{\yomiEndFaceRChamfer ちょう}
 
 %%% OUT R CHANMFER %%%
-\newNamecommand{EndFaceOutRChamfer}{端面外R面取}{たんめんそとRめんとり}
+\newNamecommand{EndFaceOutRChamfer}{\nameEndFace 外R面取}{\yomiEndFace そとRめんとり}
 \newNamecommand{TopEndFaceOutRChamfer}{トップ\nameEndFaceOutRChamfer}{トップ\yomiEndFaceOutRChamfer}
 \newNamecommand{BottomEndFaceOutRChamfer}{ボトム\nameEndFaceOutRChamfer}{ボトム\yomiEndFaceOutRChamfer}
 \newNamecommand{EndFaceOutRChamferMilling}{\nameEndFaceOutRChamfer 加工}{\yomiEndFaceOutRChamfer かこう}
@@ -284,7 +287,7 @@
 \newGPMcommand{BottomEndFaceOutRChamferRadius}{ボトム\nameEndFaceOutRChamferRadius}{ボトム\yomiEndFaceOutRChamferRadius}
 
 %%% IN R CHANMFER %%%
-\newNamecommand{EndFaceInRChamfer}{端面内R面取}{たんめんうちRめんとり}
+\newNamecommand{EndFaceInRChamfer}{\nameEndFace 内R面取}{\yomiEndFace うちRめんとり}
 \newNamecommand{TopEndFaceInRChamfer}{トップ\nameEndFaceInRChamfer}{トップ\yomiEndFaceInRChamfer}
 \newNamecommand{BottomEndFaceInRChamfer}{ボトム\nameEndFaceInRChamfer}{ボトム\yomiEndFaceInRChamfer}
 \newNamecommand{EndFaceInRChamferMilling}{\nameEndFaceInRChamfer 加工}{\yomiEndFaceInRChamfer かこう}
@@ -299,7 +302,7 @@
 \newGPMcommand{BottomFaceInRChamferRadius}{ボトム\nameEndFaceInRChamferRadius}{ボトム\yomiEndFaceInRChamferRadius}
 
 %%% ENDFACEBORING %%%
-\newNamecommand{EndFaceBoring}{端面座ぐり}{たんめんざぐり}
+\newNamecommand{EndFaceBoring}{\nameEndFace 座ぐり}{\yomiEndFace ざぐり}
 \newNamecommand{EndFaceBoringMilling}{\nameEndFaceBoring 加工}{\yomiEndFaceBoring かこう}
 
 \newGPMcommand{EndFaceBoringExists}{\nameEndFaceBoring の有無}{\yomiEndFaceBoring のうむ}
