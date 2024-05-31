@@ -11,9 +11,10 @@
 %%%%% GPMBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtcbox{\GPMbox}{%
   commontcbox,
-  enlarge top by=0pt,
-  top=-1pt,
-  bottom=-1pt,
+  enlarge top by=1pt,
+  enlarge bottom by=1pt,
+  top=-1.25pt,
+  bottom=-1.25pt,
   left=3.2mm,
   colframe=green!50!black,
   colback=green!10!white,
@@ -140,7 +141,6 @@
 \newNamecommand{OutcutMillingReferencePoint}{\nameOutcutMilling の基準点}{\yomiOutcutMilling のきじゅんてん}
 \newNamecommand{TopOutcutMilling}{トップ\nameOutcutMilling}{トップ\yomiOutcutMilling}
 \newNamecommand{BottomOutcutMilling}{ボトム\nameOutcutMilling}{ボトム\yomiOutcutMilling}
-\newNamecommand{OutcutExists}{\nameOutcut の有無}{\yomiOutcut のうむ}
 \newNamecommand{OutcutType}{\nameOutcut の種類}{\yomiOutcut のしゅるい}
 \newNamecommand{OutcutCornerR}{\nameOutcut コーナーR}{\yomiOutcut コーナーR}
 \newNamecommand{OutcutAsideThickness}{\nameOutcut A側\nameThickness}{\yomiOutcut Aがわ\yomiThickness}
@@ -161,6 +161,7 @@
 \newNamecommand{TopCurvedOutcutAngle}{トップ\nameCurvedOutcutAngle}{トップ\yomiCurvedOutcutAngle}
 \newNamecommand{BottomCurvedOutcutAngle}{ボトム\nameCurvedOutcutAngle}{ボトム\yomiCurvedOutcutAngle}
 
+\newGPMcommand{OutcutExists}{\nameOutcut の有無}{\yomiOutcut のうむ}
 \newGPMcommand{TopOutcutExists}{トップ\nameOutcutExists}{トップ\yomiOutcutExists}
 \newGPMcommand{BottomOutcutExists}{ボトム\nameOutcutExists}{ボトム\yomiOutcutExists}
 \newGPMcommand{TopOutcutType}{トップ\nameOutcutType}{トップ\yomiOutcutType}
@@ -374,7 +375,7 @@
 \newGPMcommand{JigLength}{\nameJig の長さ}{\yomiJig のながさ}
 \newGPMcommand{JigWidth}{\nameJig の幅}{\yomiJig のはば}
 \newGPMcommand{SpacerThickness}{\nameSpacer 厚}{\yomiSpacer あつ}
-\newGPMcommand{FixtureBoltLength}{\nameFixtureBolt 長}{\yomiFixtureBolt ボルトちょう}
+\newGPMcommand{FixtureBoltLength}{\nameFixtureBolt 長}{\yomiFixtureBolt ちょう}
 \newGPMcommand{ReceiverPlateRadius}{\nameReceiverPlate 半径}{\yomiReceiverPlate はんけい}
 \newGPMcommand{ReceiverPlateWidth}{\nameReceiverPlate 幅}{\yomiReceiverPlate はば}
 
@@ -389,7 +390,7 @@
 \newGPMcommand{TaperEndMillAngle}{テーパエンドミル片角}{テーパエンドミルかたかく}
 \newGPMcommand{TaperEndMillTipDiameter}{テーパエンドミル先端径}{テーパエンドミルせんたんけい}
 \newGPMcommand{TaperEndMillReferenceDiameter}{テーパエンドミル参照直径}{テーパエンドミルさんしょうちょっけい}
-
+\newGPMcommand{OutcutMillToolTaperExists}{\nameOutcut 用工具先端テーパの有無}{\yomiOutcut ようこうぐせんたんテーパのうむ}
 
 % 内面テーパ付湾曲付R直方筒 Inner Taper R-Rectangular Tube with Curvature
 
