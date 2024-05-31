@@ -65,7 +65,6 @@ N007
 IF[[#29-#901050-#602]LE0]GOTO800
 (if Y/2+M-#901050-#602 <= 0, go to N800)
 
-
 N008
 IF[#1005EQ0]GOTO009
 M00 (sensor low battery)
