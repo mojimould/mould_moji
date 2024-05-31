@@ -89,10 +89,10 @@
 \subsection{\expandafterindex{サブプログラム（\yomiCenterlineEndFaceDif）@サブプログラム（\nameCenterlineEndFaceDif）}\nameCenterlineEndFaceDif 測定用サブプログラム}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \Mcenterline %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MCenterline %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionof{locode}{\Mcenterline\,:測定 片側 \CenterlineEndFaceDif（C側外削面$Z$, B側外削面$Y$測定）}
-\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameMcenterline.nc}
+\captionof{locode}{\MCenterline\,:測定 片側 \CenterlineEndFaceDif（C側外削面\texorpdfstring{$Z$}{Z}, B側外削面\texorpdfstring{$Y$}{Y}測定）}
+\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameMCenterline.nc}
 
 
 \clearrightpage
@@ -103,55 +103,63 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \KTanmenRight %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KEndFaceRight %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionof{locode}{\KTanmenRight\,:加工 \EndFacecut{} コーナーR 右回り1周}
-\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKTanmenRight.nc}
+\captionof{locode}{\KEndFaceRight\,:加工 \EndFacecut{} コーナーR 右回り1周}
+\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKEndFaceRight.nc}
 
 
 \clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \KGaisakuRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KOutcutRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionof{locode}{\KGaisakuRLeft\,:加工 \Outcut{} コーナーR 左回り1周}
-\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKGaisakuRLeft.nc}
+\captionof{locode}{\KOutcutRLeft\,:加工 \Outcut{} コーナーR 左回り1周}
+\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKOutcutRLeft.nc}
 
 
 \clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \KMizoConerLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KOutcutRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionof{locode}{\KMizoConerLeft\,:加工 \Keyway{} 左回り1周}
-\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKMizoConerLeft.nc}
+\captionof{locode}{\KCurvedOutcutRLeft\,:加工 \CurvedOutcut{} コーナーR 左回り1周}
+\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKCurvedOutcutRLeft.nc}
 
 
 \clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \KSotoMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KKeywayConerLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionof{locode}{\KSotoMentoriRLeft\,:加工 \EndFaceOutChamfer{} コーナーR 左回り1周}
-\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKSotoMentoriRLeft.nc}
+\captionof{locode}{\KKeywayConerLeft\,:加工 \Keyway{} 左回り1周}
+\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKKeywayConerLeft.nc}
 
 
 \clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KEndFaceOutCChamferRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionof{locode}{\KUchiMentoriRLeft\,:加工 \EndFaceInChamfer{} コーナーR 左回り1周}
-\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKUchiMentoriRLeft.nc}
+\captionof{locode}{\KEndFaceOutCChamferRLeft\,:加工 \EndFaceOutChamfer{} コーナーR 左回り1周}
+\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKEndFaceOutCChamferRLeft.nc}
 
 
 \clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KEndFaceInCChamferRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionof{locode}{\KEndFaceInCChamferRLeft\,:加工 \EndFaceInChamfer{} コーナーR 左回り1周}
+\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKEndFaceInCChamferRLeft.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KEndFaceInCChamferRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \captionof{locode}{\KEndFaceBoring\,:加工 \EndFaceBoring{} コーナーR 左回り1周}
-\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKUchiMentoriRLeft.nc}
+\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKEndFaceInCChamferRLeft.nc}
 
 
 \clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \KUchiMentoriRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KEndFaceInCChamferRLeft %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \captionof{locode}{\KIncutBoring\,:加工 \IncutBoring{} コーナーR 左回り1周}
 \GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKIncutBoring.nc}
@@ -171,6 +179,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \captionof{locode}{\KOLeftFS\,:外側 {\ttfamily G42} 左回り1周 右上始まり}
 \GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKOLeftFS.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \KILeftFF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionof{locode}{\KOLeftFSZ\,:内側 {\ttfamily G42} 左回り1周 右上始まり \texorpdfstring{$Z$}{Z}変動}
+\GcodeInputminted{../Created_NC_Programs/sub_programs/\nameKOLeftFSZ.nc}
 
 
 \clearrightpage

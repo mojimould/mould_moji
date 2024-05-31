@@ -32,21 +32,21 @@
 \SetCell[r=9]{c}
 \MainExOne & 外側芯出し・幅 & \MYOThickness\MXIface\\
            & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
-           & \expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}\nameCenterlineEndFaceDif & \Mcenterline\\
+           & \expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}\nameCenterlineEndFaceDif & \MCenterline\\
            & \Dimple & \DLone\\
-           & \EndFacecut & \KTanmenRight\\
-           & \Outcut & \KGaisakuRLeft\\
-           & \Keyway & \KMizoConerLeft\\
-           & \EndFaceChamfer & \KSotoMentoriRLeft\KUchiMentoriRLeft\\
+           & \EndFacecut & \KEndFaceRight\\
+           & \Outcut & \KOutcutRLeft\\
+           & \Keyway & \KKeywayConerLeft\\
+           & \EndFaceChamfer & \KEndFaceOutCChamferRLeft\KEndFaceInCChamferRLeft\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
 \hline
 \SetCell[r=9]{c}
 \MainExTwo & 外側芯出し・幅 & \MXOThickness\MYOThickness\MXOface\\
            & 内側芯出し・幅 & \MXIWidth\MYIWidth\\
            & \Dimple & \DLone\\
-           & \EndFacecut & \KTanmenRight\\
-           & \Keyway & \KMizoConerLeft\\
-           & \EndFaceChamfer & \KSotoMentoriRLeft\KUchiMentoriRLeft\\
+           & \EndFacecut & \KEndFaceRight\\
+           & \Keyway & \KKeywayConerLeft\\
+           & \EndFaceChamfer & \KEndFaceOutCChamferRLeft\KEndFaceInCChamferRLeft\\
            & \EndFaceBoring & \KEndFaceBoring\\
            & \IncutBoring & \KIncutBoring\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
@@ -80,7 +80,7 @@
 \MXIWidth     & 測定 両側 内側中心・幅$X$ & \OsensorOff\\
 \MYIWidth     & 測定 両側 内側中心・幅$Y$ & \OsensorOff\\
 \MXIface      & 測定 片側 \OutcutCenter$X$（C側内面方向測定） & \OsensorOff\\
-\Mcenterline  & 測定 片側 \expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}\nameCenterlineEndFaceDif（C側外削面 $Z$方向, B側外削面 $Y$方向測定） & \OsensorOff\\
+\MCenterline  & 測定 片側 \expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}\nameCenterlineEndFaceDif（C側外削面 $Z$方向, B側外削面 $Y$方向測定） & \OsensorOff\\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}{\CreatedNCPrg 一覧：\Dimple}{cX[l]l}
@@ -97,12 +97,12 @@
 \clearpage
 \begin{multicollongtblr}{\CreatedNCPrg 一覧：加工（\Dimple 以外）}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用subprg\\
-\KTanmenRight        & 加工 \EndFacecut{} コーナーR 右回り1周 & \KOLeftFS\\
-\KGaisakuRLeft       & 加工 \Outcut{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
-\KCurvedGaisakuRLeft & 加工 \CurvedOutcut{} コーナーR 左回り1周 & \KOLeftFSZ\OpauseCheck\\
-\KMizoConerLeft      & 加工 \Keyway{} 左回り1周 & \KOLeftFS\OpauseCheck\\
-\KSotoMentoriRLeft   & 加工 \EndFaceOutChamfer{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
-\KUchiMentoriRLeft   & 加工 \EndFaceInChamfer{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
+\KEndFaceRight        & 加工 \EndFacecut{} コーナーR 右回り1周 & \KOLeftFS\\
+\KOutcutRLeft       & 加工 \Outcut{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
+\KCurvedOutcutRLeft & 加工 \CurvedOutcut{} コーナーR 左回り1周 & \KOLeftFSZ\OpauseCheck\\
+\KKeywayConerLeft      & 加工 \Keyway{} 左回り1周 & \KOLeftFS\OpauseCheck\\
+\KEndFaceOutCChamferRLeft   & 加工 \EndFaceOutChamfer{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
+\KEndFaceInCChamferRLeft   & 加工 \EndFaceInChamfer{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
 \KEndFaceBoring      & 加工 \EndFaceBoring{} コーナーR 左回り1周 & \KOLeftFF\OpauseCheck\\
 \KIncutBoring        & 加工 \IncutBoring{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
 \KOLeftFF  & 外側 {\ttfamily G41} 左回り1周 右始まり & -\\
@@ -174,7 +174,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\MYOThickness の引数}
 
-\begin{multicollongtblr}{\MXOThickness の引数}{ccX[l]}
+\begin{multicollongtblr}{\MYOThickness の引数}{ccX[l]}
 引数 & 変数 & 内容\\
 {\ttfamily H} & {\ttfamily\ttNum11} & \KeywayWidth\\
 {\ttfamily M} & {\ttfamily\ttNum13} & \KeywayPos\\
@@ -318,27 +318,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\Mcenterline ：\expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}測定 片側 \nameCenterlineEndFaceDif}
+\modHeadsection{\MCenterline ：\expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}測定 片側 \nameCenterlineEndFaceDif}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\Mcenterline の引数\TBW}
+\subsection{\MCenterline の引数\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\Mcenterline の取扱説明\TBW}
+\subsection{\MCenterline の取扱説明\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\Mcenterline の注意事項\TBW}
+\subsection{\MCenterline の注意事項\TBW}
 (to be written...)
 
 
@@ -347,27 +347,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KTanmenRight ：加工 \EndFacecut{} コーナーR 右回り1周}
+\modHeadsection{\KEndFaceRight ：加工 \EndFacecut{} コーナーR 右回り1周}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KTanmenRight の引数\TBW}
+\subsection{\KEndFaceRight の引数\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KTanmenRight の取扱説明\TBW}
+\subsection{\KEndFaceRight の取扱説明\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KTanmenRight の注意事項\TBW}
+\subsection{\KEndFaceRight の注意事項\TBW}
 (to be written...)
 
 
@@ -376,27 +376,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KGaisakuRLeft ：加工 \Outcut{} コーナーR 左回り1周}
+\modHeadsection{\KOutcutRLeft ：加工 \Outcut{} コーナーR 左回り1周}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KGaisakuRLeft の引数\TBW}
+\subsection{\KOutcutRLeft の引数\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KGaisakuRLeft の取扱説明\TBW}
+\subsection{\KOutcutRLeft の取扱説明\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KGaisakuRLeft の注意事項\TBW}
+\subsection{\KOutcutRLeft の注意事項\TBW}
 (to be written...)
 
 
@@ -405,27 +405,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KCurvedGaisakuRLeft ：加工 \CurvedOutcut{} コーナーR 左回り1周}
+\modHeadsection{\KCurvedOutcutRLeft ：加工 \CurvedOutcut{} コーナーR 左回り1周}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KCurvedGaisakuRLeft の引数\TBW}
+\subsection{\KCurvedOutcutRLeft の引数\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KCurvedGaisakuRLeft の取扱説明\TBW}
+\subsection{\KCurvedOutcutRLeft の取扱説明\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KCurvedGaisakuRLeft の注意事項\TBW}
+\subsection{\KCurvedOutcutRLeft の注意事項\TBW}
 (to be written...)
 
 
@@ -434,27 +434,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KMizoConerLeft ：加工 \Keyway{} 左回り1周}
+\modHeadsection{\KKeywayConerLeft ：加工 \Keyway{} 左回り1周}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KMizoConerLeft の引数\TBW}
+\subsection{\KKeywayConerLeft の引数\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KMizoConerLeft の取扱説明\TBW}
+\subsection{\KKeywayConerLeft の取扱説明\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KMizoConerLeft の注意事項\TBW}
+\subsection{\KKeywayConerLeft の注意事項\TBW}
 (to be written...)
 
 
@@ -463,27 +463,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KSotoMentoriRLeft ：加工 \EndFaceOutChamfer{} コーナーR 左回り1周}
+\modHeadsection{\KEndFaceOutCChamferRLeft ：加工 \EndFaceOutChamfer{} コーナーR 左回り1周}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KSotoMentoriRLeft の引数\TBW}
+\subsection{\KEndFaceOutCChamferRLeft の引数\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KSotoMentoriRLeft の取扱説明\TBW}
+\subsection{\KEndFaceOutCChamferRLeft の取扱説明\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KSotoMentoriRLeft の注意事項\TBW}
+\subsection{\KEndFaceOutCChamferRLeft の注意事項\TBW}
 (to be written...)
 
 
@@ -492,27 +492,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KUchiMentoriRLeft ：加工 \EndFaceInChamfer{} コーナーR 左回り1周}
+\modHeadsection{\KEndFaceInCChamferRLeft ：加工 \EndFaceInChamfer{} コーナーR 左回り1周}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KUchiMentoriRLeft の引数\TBW}
+\subsection{\KEndFaceInCChamferRLeft の引数\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KUchiMentoriRLeft の取扱説明\TBW}
+\subsection{\KEndFaceInCChamferRLeft の取扱説明\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KUchiMentoriRLeft の注意事項\TBW}
+\subsection{\KEndFaceInCChamferRLeft の注意事項\TBW}
 (to be written...)
 
 
