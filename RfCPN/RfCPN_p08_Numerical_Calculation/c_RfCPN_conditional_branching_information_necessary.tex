@@ -1,20 +1,35 @@
 %!TEX root = ./RfCPN.tex
 
 
-\modHeadchapter[lot]{必要な条件分岐情報\TBW}
-(to be written...)
+\modHeadchapter[lot]{必要な条件分岐情報}
+入力するパラメタの中には\index{じょうけんぶんき@条件分岐}条件分岐に用いるものが含まれる。
+それらを組み合わせることで、加工にパターン分けをすることができる。
+ここではそうした\index{じょうけんぶんきじょうほう@条件分岐情報}条件分岐情報と、それに影響する\index{こうてい@工程}工程をまとめておく。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 30.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\TBW}
-(to be written...)
+\modHeadsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMCenterCurvatureExists}
+\begin{enumerate}[label=\sarrow]
+\item 外側中心$X$および幅$X$ 両側測定
+\item \KeywayCenter$X$ 片側測定
+\item 内側中心$X$および幅$X$ 両側測定
+\item \OutcutCenter$X$ 片側測定
+\item \Dimple 測定および加工 各列の中心上への移動
+\item \CurvedOutcutMilling
+\item \KeywayMilling
+\item \EndFaceOutChamferMilling
+\item \EndFaceInChamferMilling
+\item \ReliefGrooveMilling
+\end{enumerate}
 
-\begin{multicollongtblr}{\TBW}{cX[l]}
-条件分岐 & 内容\\
-(to be written...) & (to be written..)\\
-\end{multicollongtblr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMOutcutExists\TBW}
+(to be written...)
 
 
 \clearrightpage
