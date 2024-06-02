@@ -2,20 +2,20 @@
 
 
 \modHeadchapter{\index{マシニングセンタ}マシニングセンタにおける\index{すんぽう@寸法}寸法}
-ここでは\index{NCプログラム}NCプログラムを記述する際や、\index{ずめん（モールド）@図面（モールド）}図面・\index{3Dモデル（ワーク）}3Dモデルの描画をする際に必要となる、\index{すんぽう@寸法}寸法や\index{こうさ@公差}公差等の取り扱いについて触れる。
+ここでは\index{NCプログラム}NCプログラムを記述する際や、\expandafterindex{\yomiDrawing（モールド）@\nameDrawing（モールド）}\nameDrawing・\index{3Dモデル（ワーク）}3Dモデルの描画をする際に必要となる、\index{すんぽう@寸法}寸法や\index{こうさ@公差}公差等の取り扱いについて触れる。
 
 なお、以降で述べる水平方向とは、\EndFace のAC方向のことを指す。
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 13.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 23.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\index{すんぽう@寸法}寸法における基本事項}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 13.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 23.01.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\index{すんぽうこうさ@寸法公差}寸法公差の取扱い}
 全般的に、\index{すんぽうこうさ@寸法公差}寸法公差がある場合、\index{+こうさ@$+$公差}$+$公差と\index{-こうさ@$-$公差}$-$公差の中央（算術平均）を見るものとする。
@@ -32,7 +32,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 13.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 23.01.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\index{ゆうせんど（すんぽう）@優先度（寸法）}寸法の優先度}
 \index{こうさのあるすんぽう@公差のある寸法}公差のある寸法と\index{こうさのないすんぽう@公差のない寸法}公差のない寸法（\index{かっこすんぽう@括弧寸法}括弧寸法含む）とが共存して記載されている場合、\index{こうさのあるすんぽう@公差のある寸法}公差のある寸法を優先する。
@@ -52,13 +52,13 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 20.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 23.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\WorkTotalLength および\AlocationLength に関する寸法}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 10.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 23.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\WorkTotalLength と\AlocationLength の公差の関係}
 \AlocationLength の\expandafterindex{すんぽうこうさ（\yomiAlocationLength）@寸法公差（\nameAlocationLength）}寸法公差については、\WorkTotalLength の\expandafterindex{すんぽうこうさ（\yomiWorkTotalLength）@寸法公差（\nameWorkTotalLength）}寸法公差を\TopAlocationLength と\BottomAlocationLength とで等分配する。
@@ -69,7 +69,7 @@
 たとえば、\WorkTotalLength が$1000^{\phantom +0}_{-1.0}$で\TopAlocationLength が200であれば、\WorkTotalLength の寸法公差分$-0.5$を等分配し、それぞれ$-0.25$, $-0.25$とする。
 つまり、\TopAlocationLength は199.75, \BottomAlocationLength は799.75とする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{\index{ふりわけちゅうしんからのずれ@振分中心からのずれ}振分中心からのずれとして考えると、\AlocationLength に依らず等分配するのが自然、と捉えることができる。}。
+\footnote{\expandafterindex{\yomiAlocationCenter からのずれ@\nameAlocationCenter からのずれ}振分中心からのずれとして考えると、\AlocationLength に依らず等分配するのが自然、と捉えることができる。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -78,7 +78,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 10.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 23.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\AlocationLength が\index{かっこすんぽう@括弧寸法}括弧寸法の場合}
 片方の\AlocationLength が\index{かっこすんぽう@括弧寸法}括弧寸法の場合は、\WorkTotalLength の\index{すんぽうこうさ@寸法公差}寸法公差をそのまま\index{かっこすんぽう@括弧寸法}括弧寸法に割り当てる。
@@ -94,15 +94,15 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 11.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 23.02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\expandafterindex{\yomiAlocationLength のちょうせい@\nameAlocationLength の調整}\AlocationLength の調整}
 \expandafterindex{\yomiAlocationLength のちょうせい@\nameAlocationLength の調整}\AlocationLength の調整を行う場合は、\Spacer または\expandafterindex{\yomiTable かいてん（ふりわけちょうせい）@\nameTable 回転（振分調整）}\nameTable 回転のどちらかを用いて行うものとする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 01.1.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 23.02.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\index{\yomiSpacer によるちょうせい@\nameSpacer による調整}\nameSpacer による調整}
+\subsubsection{\expandafterindex{\yomiSpacer によるちょうせい@\nameSpacer による調整}\nameSpacer による調整}
 \Spacer は原則として\Jig の\TopSideReceiverPlate に設置する。
 厚さ$\delta_\mathrm s$の\index{\yomiSpacer によるちょうせい@\nameSpacer による調整}\nameSpacer による調整を行う場合、もともとの\TopAlocationLength$f_\mathrm T$に対し、\nameTopAlocationLength（\TopReAlocationLength）$f'_\mathrm T$を以下のように調整する。
 \begin{align*}
@@ -114,7 +114,7 @@
 $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$はそれぞれ\CenterCurvatureRadius, \ACOD, \JigWidth の半分, \ReceiverPlateRadius, \ReceiverPlateWidth を示す。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 01.1.2.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 23.01.02.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\Table 回転による調整}
 \index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}角度$\theta$だけ\Table 回転をして調整を行う場合は、もともとの\TopAlocationLength$f_\mathrm T$に対し、\nameTopAlocationLength（\TopReAlocationLength）$f'_\mathrm T$を以下のように調整する。
