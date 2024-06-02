@@ -46,8 +46,9 @@
 \newNamecommand{CreatedNCSubPrg}{作成したNCサブプログラム}{さくせいしたNCサブプログラム}
 
 %%% DRAWING %%%
-\newGPMcommand{DrawingExists}{図面の有無}{ずめんのうむ}
-\newGPMcommand{DrawingNumber}{図面番号}{ずめんばんごう}
+\newGPMcommand{Drawing}{図面}{ずめん}
+\newGPMcommand{DrawingExists}{\nameDrawing の有無}{\yomiDrawing のうむ}
+\newGPMcommand{DrawingNumber}{\nameDrawing 番号}{\yomiDrawing ばんごう}
 
 %%% Overall %%%
 \newNamecommand{Alocation}{振分け}{ふりわけ}
@@ -141,7 +142,6 @@
 \newNamecommand{OutcutMillingReferencePoint}{\nameOutcutMilling の基準点}{\yomiOutcutMilling のきじゅんてん}
 \newNamecommand{TopOutcutMilling}{トップ\nameOutcutMilling}{トップ\yomiOutcutMilling}
 \newNamecommand{BottomOutcutMilling}{ボトム\nameOutcutMilling}{ボトム\yomiOutcutMilling}
-\newNamecommand{OutcutType}{\nameOutcut の種類}{\yomiOutcut のしゅるい}
 \newNamecommand{OutcutCornerR}{\nameOutcut コーナーR}{\yomiOutcut コーナーR}
 \newNamecommand{OutcutAsideThickness}{\nameOutcut A側\nameThickness}{\yomiOutcut Aがわ\yomiThickness}
 \newNamecommand{OutcutWidth}{\nameOutcut 径}{\yomiOutcut けい}
@@ -152,6 +152,8 @@
 \newNamecommand{OutcutLength}{\nameOutcut 長}{\yomiOutcut ちょう}
 \newNamecommand{CenterlineEndFaceDif}{通り芯}{とおりしん}
 \newNamecommand{CenterlineEndFaceDifMeasurement}{\nameCenterlineEndFaceDif 測定}{\yomiCenterlineEndFaceDif そくてい}
+%%% Tapered %%%
+\newNamecommand{OutcutTaperExists}{\nameOutcut テーパの有無}{\yomiOutcut テーパのうむ}
 %%% Curved %%%
 \newNamecommand{CurvedOutcut}{湾曲\nameOutcut}{わんきょく\yomiOutcut}
 \newNamecommand{TopCurvedOutcut}{トップ\nameCurvedOutcut}{トップ\yomiCurvedOutcut}
@@ -166,8 +168,6 @@
 \newGPMcommand{OutcutExists}{\nameOutcut の有無}{\yomiOutcut のうむ}
 \newGPMcommand{TopOutcutExists}{トップ\nameOutcutExists}{トップ\yomiOutcutExists}
 \newGPMcommand{BottomOutcutExists}{ボトム\nameOutcutExists}{ボトム\yomiOutcutExists}
-\newGPMcommand{TopOutcutType}{トップ\nameOutcutType}{トップ\yomiOutcutType}
-\newGPMcommand{BottomOutcutType}{ボトム\nameOutcutType}{ボトム\yomiOutcutType}
 \newGPMcommand{TopOutcutACwidth}{トップ\nameOutcutACWidth}{トップ\yomiOutcutACWidth}
 \newGPMcommand{TopOutcutBDwidth}{トップ\nameOutcutBDWidth}{トップ\yomiOutcutBDWidth}
 \newGPMcommand{BottomOutcutACwidth}{ボトム\nameOutcutACWidth}{ボトム\yomiOutcutACWidth}
@@ -181,6 +181,8 @@
 \newGPMcommand{CenterlineEndFaceDifAC}{\nameCenterlineEndFaceDif AC方向}{\yomiCenterlineEndFaceDif ACほうこう}
 \newGPMcommand{CenterlineEndFaceDifBD}{\nameCenterlineEndFaceDif BD方向}{\yomiCenterlineEndFaceDif BDほうこう}
 %%% Curved %%%
+\newGPMcommand{TopOutcutTaperExists}{トップ\nameOutcutTaperExists}{トップ\yomiOutcutTaperExists}
+\newGPMcommand{BottomOutcutTaperExists}{ボトム\nameOutcutTaperExists}{ボトム\yomiOutcutTaperExists}
 \newGPMcommand{TopCurvedOutcutExists}{\nameTopCurvedOutcut の有無}{\yomiTopCurvedOutcut の有無}
 \newGPMcommand{BottomCurvedOutcutExists}{\nameBottomCurvedOutcut の有無}{\yomiBottomCurvedOutcut の有無}
 
@@ -393,7 +395,6 @@
 \newGPMcommand{TaperEndMillAngle}{テーパエンドミル片角}{テーパエンドミルかたかく}
 \newGPMcommand{TaperEndMillTipDiameter}{テーパエンドミル先端径}{テーパエンドミルせんたんけい}
 \newGPMcommand{TaperEndMillReferenceDiameter}{テーパエンドミル参照直径}{テーパエンドミルさんしょうちょっけい}
-\newGPMcommand{OutcutMillToolTaperExists}{\nameOutcut 用工具先端テーパの有無}{\yomiOutcut ようこうぐせんたんテーパのうむ}
 
 % 内面テーパ付湾曲付R直方筒 Inner Taper R-Rectangular Tube with Curvature
 

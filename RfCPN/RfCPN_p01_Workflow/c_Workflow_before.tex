@@ -94,10 +94,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 01.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{ずめん（モールド）@図面（モールド）}図面の確認}
+\subsection{\expandafterindex{\yomiDrawing（モールド）@\nameDrawing（モールド）}\nameDrawing の確認}
 \begin{enumerate}[label=\sarrow]
-\item 対象となる\index{めいさい@明細}明細の\index{ずめん（モールド）@図面（モールド）}図面を用意する
-\item 他に内容が類似する\index{めいさい@明細}明細の\index{ずめん（モールド）@図面（モールド）}図面があれば、それも併せて用意する
+\item 対象となる\index{めいさい@明細}明細の\expandafterindex{\yomiDrawing（モールド）@\nameDrawing（モールド）}\nameDrawing を用意する
+\item 他に内容が類似する\index{めいさい@明細}明細の\expandafterindex{\yomiDrawing（モールド）@\nameDrawing（モールド）}\nameDrawing があれば、それも併せて用意する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -126,10 +126,10 @@
 %% subsubsection 01.1.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\OutcutMilling 部分}
-\OutcutMilling については、\index{めいさい@明細}明細により\OutcutExists または\OutcutType の違いが存在する。
+\OutcutMilling については、\index{めいさい@明細}明細により\OutcutExists または\OutcutTaperExists の違いが存在する。
 \begin{enumerate}[label=\sarrow]
 \item \TopOutcutExists または\BottomOutcutExists を確認する
-\item \TopOutcutType および\BottomOutcutType を確認し、使用する\expandafterindex{こうぐ（\yomiOutcut）@工具（\nameOutcut）}工具を決定する
+\item \TopOutcutTaperExists および\BottomOutcutTaperExists を確認し、使用する\expandafterindex{こうぐ（\yomiOutcut）@工具（\nameOutcut）}工具を決定する
 \item \nameOutcut が\CurvedOutcut かどうかも確認する
 \end{enumerate}
 %\clearpage
@@ -139,8 +139,8 @@
 \begin{Parameter}{必要なパラメタ}
 \PMTopOutcutExists%
 \PMBottomOutcutExists%
-\PMTopOutcutType%
-\PMBottomOutcutType%
+\PMTopOutcutTaperExists%
+\PMBottomOutcutTaperExists%
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -478,6 +478,10 @@
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメタ}
+\PMIncutBoringACWidth
+\PMIncutBoringBDWidth
+\PMIncutBoringCornerR
+\PMIncutBoringLength
 \end{Parameter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
