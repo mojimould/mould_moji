@@ -1,7 +1,7 @@
 # The documents
 - **RfCPN**
     - This document primarily discusses the analytical calculations of the mould and the conventions used when creating programs.
-    - Please place gcodestyle.py in the style directory of Pygments.
+    - Place gcodestyle.py in the style directory of Pygments.
 
 - **Created_hyper-CAD_template**
     - These are template files for drawing mould in hyper-CAD.
