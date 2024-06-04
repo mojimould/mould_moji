@@ -25,9 +25,10 @@ class GcodestyleStyle(Style):
         Keyword.Type:               "#00BB00",
         Keyword.Pseudo:             "#008800",
         Keyword.Pseudo.Error:       "#FF0000",
-        Keyword.Pseudo.Tool:        "#FFFF00",
+        Keyword.Pseudo.Tool:        "#FF00FF",
         Keyword.Pseudo.Declaration: "#0000FF",
         Keyword.Pseudo.Reserved:    "#00A1E9",
+        Keyword.Pseudo.Speed:       "#D2413A",
 
         Operator:                   "#333333",
         Operator.Word:              "#AA22FF",

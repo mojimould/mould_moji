@@ -69,11 +69,13 @@ class GCodeLexer(ExtendedRegexLexer):
             (r'(?<![a-zA-Z\<])(N08)\d*', Keyword.Pseudo.Error),
             (r'(?<![a-zA-Z\<])(N|GOTO)\d*', Keyword.Pseudo),
             # G and M commands and other tooling, match only the label
-            (r'(?<![a-zA-Z\<])[ABCDEFHIJKQRSTUVWXYZ](?=(\d+\.?\d?))+', Operator),
-            (r'(?<![a-zA-Z\<])[T]\d*\.\d+', Number),
-            (r'(?<![a-zA-Z\<])[T]\d*', Keyword.Pseudo.Tool),
+            (r'(?<![a-zA-Z\<])[ABCDEHIJKQRUVWXYZ](?=(\d+\.?\d?))+', Operator),
             (r'(?<![a-zA-Z\<])[M]\d*\.\d+', Number),
             (r'(?<![a-zA-Z\<])[GM]\d*', Keyword.Pseudo.Declaration),
+            (r'(?<![a-zA-Z\<])[T]\d*\.\d+', Number),
+            (r'(?<![a-zA-Z\<])[T]\d*', Keyword.Pseudo.Tool),
+            (r'(?<![a-zA-Z\<])[FS]\d*\.\d+', Number),
+            (r'(?<![a-zA-Z\<])[FS]\d*', Keyword.Pseudo.Speed),
             # (r'(?<![a-zA-Z\<])[FS\^\@](?=(\s*[+-]?\d*\.?\d+|\s*[+-]?#))', Keyword.Type),
             # Line numbers
             (r'\s*[n]\d+', Comment),
