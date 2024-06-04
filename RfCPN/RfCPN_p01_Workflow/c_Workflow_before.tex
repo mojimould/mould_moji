@@ -153,14 +153,14 @@
 \subsubsection{\KeywayMilling 部分}
 \KeywayMilling については、全明細のトップ側に存在し、明細により種類の違いが存在する。
 \begin{enumerate}[label=\sarrow]
-\item \nameKeywayType を確認し、使用する\expandafterindex{サブプログラム（\yomiKeyway）@サブプログラム（\nameKeyway）}サブプログラムの判断を行う
+\item \nameKeywayCornerType を確認し、使用する\expandafterindex{サブプログラム（\yomiKeyway）@サブプログラム（\nameKeyway）}サブプログラムの判断を行う
 \item \nameKeywayWidth を確認し、使用する\expandafterindex{こうぐ（\yomiKeyway）@工具（\nameKeyway）}工具の判断を行う
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PARAMETER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Parameter}{必要なパラメタ}
-\PMKeywayType%
+\PMKeywayCornerType%
 \PMTopOutcutExists%
 \PMKeywayWidth%
 \end{Parameter}
@@ -362,7 +362,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\KeywayMilling における寸法}
 \begin{enumerate}[label=\sarrow]
-\item \KeywayType を確認し、必要に応じて加工における径の決定する
+\item \KeywayCornerType を確認し、必要に応じて加工における径の決定する
 \item \expandafterindex{きじゅん（\yomiKeywayCenter）@基準（\nameKeywayCenter）}\nameKeywayCenter の基準を確認し、\KeywayCenter の$X$位置を手動で計算し、決定する
 \item \KeywayWidth を確認し、\expandafterindex{かこうかいすう（\yomiKeywayWidth）@加工回数（\nameKeywayWidth）}加工の回数を決定する
 \end{enumerate}
