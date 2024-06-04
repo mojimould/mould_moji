@@ -1,5 +1,5 @@
 %
-O430000 (last update on 20240528)
+O430000 (last update on 20240604)
 (Mizo Corner R or C, ar HidariMawari 1shuu)
 
 N0001
@@ -290,8 +290,8 @@ N9999 M99
 
 (as received arguments)
 (#01:A: Top gaisaku check: 0:not exist, 1:exist)
-(#06:K: key type: 1:R, 2:C, 3:rec, 4:BDonly)
 (#03:C: corner C)
+(#06:K: key type: 1:R, 2:C, 3:rec, 4:BDonly)
 (#11:H: mizoHaba)
 (#13:M: mizoIchi)
 (#17:Q: central curvature)
