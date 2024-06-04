@@ -1,5 +1,5 @@
 %
-O460000 (last update on 20240528)
+O460000 (last update on 20240604)
 (Tanmen Zaguri Corner R, rc HidariMawari)
 
 N0001
@@ -175,7 +175,7 @@ N9999 M99
 
 (as received arguments)
 (#04:I: distance from A-face)
-(#18:R: corner R)
+(#18:R: zaguri corner R)
 (#21:U: zaguri width)
 (#22:V: zaguri depth)
 (#23:W: zaguri length)
