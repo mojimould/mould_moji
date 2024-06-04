@@ -27,6 +27,7 @@
 \newcommand{\newGprgcommand}[2]{%
   \expandafter\newcommand\csname name#1\endcsname{#2}%
   \expandafter\newcommand\csname #1\endcsname{\expandafterindex{#2}\Gprgbox{\csname name#1\endcsname}}%
+  \expandafter\newcommand\csname #1Arguments\endcsname{\expandafterindex{#2のひきすう@#2の引数}\Gprgbox{\csname name#1\endcsname}の引数}%
 }
 
 %%%%% TO MAIN PRG NAME %%%%%%
