@@ -1,5 +1,5 @@
 %
-O421000 (last update on 20240528)
+O421000 (last update on 20240604)
 (Curved Gaisaku, ar HidariMawari 1shuu)
 
 N0001
@@ -312,8 +312,8 @@ N9999 M99
 (#18:R: corner R)
 (#21:U: AC gaiKei)
 (#22:V: BD gaiKei)
-(#24:X: AC gaikei)
-(#25:Y: BD gaikei)
+(#24:X: AC gaisakukei)
+(#25:Y: BD gaisakukei)
 (#26:Z: sai-furiwake)
 (as received hidden arguments)
 (#13:M: mizoIchi)
