@@ -54,14 +54,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 23.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\WorkTotalLength および\AlocationLength に関する寸法}
+\modHeadsection{\indexWorkTotalLengthDimension\indexAlocationLengthDimension\nameWorkTotalLength および\nameAlocationLength に関する寸法}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 23.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\WorkTotalLength と\AlocationLength の公差の関係}
-\AlocationLength の\expandafterindex{すんぽうこうさ（\yomiAlocationLength）@寸法公差（\nameAlocationLength）}寸法公差については、\WorkTotalLength の\expandafterindex{すんぽうこうさ（\yomiWorkTotalLength）@寸法公差（\nameWorkTotalLength）}寸法公差を\TopAlocationLength と\BottomAlocationLength とで等分配する。
+\subsection{\indexWorkTotalLengthTolerance\indexAlocationLengthTolerance\nameWorkTotalLength と\nameAlocationLength の公差の関係}
+\AlocationLengthTolerance については、\WorkTotalLength の\WorkTotalLengthTolerance を\TopAlocationLength と\BottomAlocationLength とで等分配する。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -69,7 +69,7 @@
 たとえば、\WorkTotalLength が$1000^{\phantom +0}_{-1.0}$で\TopAlocationLength が200であれば、\WorkTotalLength の寸法公差分$-0.5$を等分配し、それぞれ$-0.25$, $-0.25$とする。
 つまり、\TopAlocationLength は199.75, \BottomAlocationLength は799.75とする
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{\expandafterindex{\yomiAlocationCenter からのずれ@\nameAlocationCenter からのずれ}振分中心からのずれとして考えると、\AlocationLength に依らず等分配するのが自然、と捉えることができる。}。
+\footnote{\expandafterindex{\yomiAlocationCenter からのずれ@\nameAlocationCenter からのずれ}\nameAlocationCenter からのずれとして考えると、\AlocationLength に依らず等分配するのが自然、と捉えることができる。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -96,15 +96,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 23.02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\expandafterindex{\yomiAlocationLength のちょうせい@\nameAlocationLength の調整}\AlocationLength の調整}
-\expandafterindex{\yomiAlocationLength のちょうせい@\nameAlocationLength の調整}\AlocationLength の調整を行う場合は、\Spacer または\expandafterindex{\yomiTable かいてん（ふりわけちょうせい）@\nameTable 回転（振分調整）}\nameTable 回転のどちらかを用いて行うものとする。
+\subsection{\AlocationAdjustment}
+\AlocationAdjustment を行う場合は、\Spacer または\expandafterindex{\yomiTable かいてん（\yomiAlocationAdjustment）@\nameTable 回転（\nameAlocationAdjustment）}\nameTable 回転のどちらかを用いて行うものとする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 23.02.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\expandafterindex{\yomiSpacer によるちょうせい@\nameSpacer による調整}\nameSpacer による調整}
+\subsubsection{\indexSpacerAlocationAdjustment\nameSpacer による\nameAlocationAdjustment}
 \Spacer は原則として\Jig の\TopSideReceiverPlate に設置する。
-厚さ$\delta_\mathrm s$の\expandafterindex{\yomiSpacer によるちょうせい@\nameSpacer による調整}\nameSpacer による調整を行う場合、もともとの\TopAlocationLength$f_\mathrm T$に対し、\nameTopAlocationLength（\TopReAlocationLength）$f'_\mathrm T$を以下のように調整する。
+厚さ$\delta_\mathrm s$の\indexSpacerAlocationAdjustment\nameSpacer による調整を行う場合、もともとの\TopAlocationLength$f_\mathrm T$に対し、\nameTopAlocationLength（\TopReAlocationLength）$f'_\mathrm T$を以下のように調整する。
 \begin{align*}
   f'_\mathrm T
   = f_\mathrm T
@@ -116,8 +116,8 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$はそれぞれ\CenterCurvatureRadius
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 23.01.02.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\Table 回転による調整}
-\index{かたむきかく（ふりわけちょうせい）@傾き角（振分調整）}角度$\theta$だけ\Table 回転をして調整を行う場合は、もともとの\TopAlocationLength$f_\mathrm T$に対し、\nameTopAlocationLength（\TopReAlocationLength）$f'_\mathrm T$を以下のように調整する。
+\subsubsection{\indexTableAlocationAdjustment\nameTable 回転による\nameAlocationAdjustment}
+\index{かたむきかく（\yomiAlocationAdjustment）@傾き角（\nameAlocationAdjustment）}角度$\theta$だけ\TableAlocationAdjustment\nameTable 回転をして\nameAlocationAdjustment を行う場合は、もともとの\TopAlocationLength$f_\mathrm T$に対し、\nameTopAlocationLength（\TopReAlocationLength）$f'_\mathrm T$を以下のように調整する。
 \begin{align*}
   f_\mathrm T'
   = f_\mathrm T+\left(\Delta+\sqrt{R_\mathrm i'-\bar l^2}\right)\sin\theta\qquad
@@ -131,7 +131,7 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurva
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 13.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\OuterDiameter に関する寸法}
+\modHeadsection{\indexODDimension\nameOuterDiameter に関する寸法}
 \nameCenterCurvatureRadius を$R_\mathrm c$, \TopAlocationLength を$f_\mathrm T$, \ACOD を$W_x$とすると、\TopEndFace 部の水平方向の長さ$W_\mathrm T$は以下で与えられる。（\BottomEndFace 部も同様）
 \begin{align*}
   W_\mathrm T
@@ -149,13 +149,13 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurva
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 10.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\expandafterindex{すんぽう（\yomiInnerDiameter）@寸法（\nameInnerDiameter）}\nameInnerDiameter に関する寸法}
+\modHeadsection{\indexIDDimension\nameInnerDiameter に関する寸法}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 04.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\expandafterindex{すんぽうこうさ（\yomiIDTaperTable）@寸法公差（\nameIDTaperTable）}\nameIDTaperTable の寸法公差}
-\IDTaperTable を参照する際は、\expandafterindex{すんぽうこうさ（\yomiWorkTotalLength）@寸法公差（\nameWorkTotalLength）}\nameWorkTotalLength の寸法公差は考慮しないものとする。
+\subsection{\IDTaperTableTolerance}
+\IDTaperTable を参照する際は、\WorkTotalLengthTolerance は考慮しないものとする。
 また、トップ端からの距離の\expandafterindex{ピッチ（\yomiIDTaperTable）@ピッチ（\nameIDTaperTable）}ピッチも、同様に\index{すんぽうこうさ@寸法公差}寸法公差は考慮しないものとする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -206,7 +206,7 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurva
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 13.5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\expandafterindex{すんぽう（\yomiEndFacecutMilling）@寸法（\nameEndFacecutMilling）}\nameEndFacecutMilling に関する寸法}
+\modHeadsection{\indexEndFacecutMillingDimension\nameEndFacecutMilling に関する寸法}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -219,23 +219,23 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurva
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 11.5.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\expandafterindex{こうぐほせい（\yomiEndFacecutMilling）@工具補正（\nameEndFacecutMilling）}工具補正：\nameEndFacecutMilling}
+\subsection{\indexTCEndFacecutMilling\nameToolCorrection：\nameEndFacecutMilling}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.7.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\expandafterindex{こうぐちょうほせい（\yomiEndFacecutMilling）@工具長補正（\nameEndFacecutMilling）}工具長補正：\nameEndFacecutMilling}
-\EndFacecutMilling に使用する\index{こうぐちょう（フェイスミル）@工具長（フェイスミル）}フェイスミルの工具長は、その刃の\index{せんたんぶ（フェイスミル）@先端部（フェイスミル）}先端部を工具長として\index{オフセット（こうぐちょうほせい）@オフセット（工具長補正）}オフセット量の設定を行うものとする。
+\subsubsection{\indexTLCEndFacecutMilling\nameTLCorrection：\nameEndFacecutMilling}
+\EndFacecutMilling に使用する\indexTLFaceMill\nameFaceMill の\nameToolLength は、その刃の\expandafterindex{せんたんぶ（\nameFaceMill）@先端部（\yomiFaceMill）}先端部を\ToolLength として\expandafterindex{オフセット（\yomiTLCorrection）@オフセット（\nameTLCorrection）}オフセット量の設定を行うものとする。
 
-なお、このとき\index{まもうりょう（こうぐちょう）@摩耗量（工具長）}工具長の摩耗量は0とする。
+なお、このとき\TLCWearValue は0とする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.7.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\expandafterindex{こうぐけいほせい（\yomiEndFacecutMilling）@工具径補正（\nameEndFacecutMilling）}工具径補正：\nameEndFacecutMilling}
-\EndFacecutMilling に使用する\index{こうぐけい（フェイスミル）@工具径（フェイスミル）}フェイスミルの工具径は、その刃の径方向の先端部を工具径として\index{オフセット（こうぐけいほせい）@オフセット（工具径補正）}オフセット量の設定を行うものとする。
+\subsubsection{\indexTDCEndFacecutMilling\nameTDCorrection：\nameEndFacecutMilling}
+\EndFacecutMilling に使用する\indexTDFaceMill\nameFaceMill の\nameToolDiameter は、その刃の径方向の先端部を\ToolDiameter として\expandafterindex{オフセット（\yomiTDCorrection）@オフセット（\nameTDCorrection）}オフセット量の設定を行うものとする。
 
-なお、このとき\index{まもうりょう（こうぐけい）@摩耗量（工具径）}工具径の摩耗量は0とする。
+なお、このとき\TDCWearValue は0とする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -250,7 +250,7 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurva
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 10.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\expandafterindex{すんぽう（\yomiOutcutMilling）@寸法（\nameOutcutMilling）}\nameOutcutMilling に関する寸法}
+\modHeadsection{\indexOutcutMillingDimension\nameOutcutMilling に関する寸法}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -263,33 +263,33 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurva
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 10.06.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\expandafterindex{こうぐほせい（\yomiOutcutMilling）@工具補正（\nameOutcutMilling）}工具補正：\nameOutcutMilling}
+\subsection{\indexTCOutcutMilling\nameToolCorrection：\nameOutcutMilling}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.06.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\expandafterindex{こうぐちょうほせい（\yomiOutcutMilling）@工具長補正（\nameOutcutMilling）}工具長補正：\nameOutcutMilling}
-\OutcutMilling に使用する\index{こうぐちょう（スクエアエンドミル）@工具長（スクエアエンドミル）}スクエアエンドミルの工具長は、その刃の\index{せんたんぶ（スクエアエンドミル）@先端部（スクエアエンドミル）}先端部を工具長として\index{オフセット（こうぐちょうほせい）@オフセット（工具長補正）}オフセット量の設定を行うものとする。
+\subsubsection{\indexTLCOutcutMilling\nameTLCorrection：\nameOutcutMilling}
+\OutcutMilling に使用する\indexTLSquareEndMill\nameSquareEndMill の\nameToolLength は、その刃の\expandafterindex{せんたんぶ（\yomiSquareEndMill）@先端部（\nameSquareEndMill）}先端部を\nameToolLength として\expandafterindex{オフセット（\yomiTLCorrection）@オフセット（\nameTLCorrection）}オフセット量の設定を行うものとする。
 
-なお、このとき\index{まもうりょう（こうぐちょう）@摩耗量（工具長）}工具長の摩耗量は0とする。
+なお、このとき\TLCWearValue は0とする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.06.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\expandafterindex{こうぐけいほせい（\yomiOutcutMilling）@工具径補正（\nameOutcutMilling）}工具径補正：\nameOutcutMilling}
-\OutcutMilling に使用する\index{こうぐけい（スクエアエンドミル）@工具径（スクエアエンドミル）}スクエアエンドミルの工具径は、その刃の径方向の先端部を工具径として\index{オフセット（こうぐけいほせい）@オフセット（工具径補正）}オフセット量の設定を行うものとする。
+\subsubsection{\indexTDCOutcutMilling\nameTDCorrection：\nameOutcutMilling}
+\OutcutMilling に使用する\indexTDSquareEndMill\nameSquareEndMill の\nameToolDiameter は、その刃の径方向の先端部を\ToolDiameter として\expandafterindex{オフセット（\yomiTDCorrection）@オフセット（\nameTDCorrection）}オフセット量の設定を行うものとする。
 
-なお、このとき\index{まもうりょう（こうぐけい）@摩耗量（工具径）}工具径の摩耗量は0とする。
+なお、このとき\TDCWearValue は0とする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 10.06.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\expandafterindex{すんぽう（\yomiOutcutLength）@寸法（\nameOutcutLength）}\nameOutcutLength の寸法}
-\expandafterindex{すんぽう（\yomiOutcutLength）@寸法（\nameOutcutLength）}\nameOutcutLength の寸法は、\EndFace に垂直な方向の値とする。
-また\TopOutcutLength については、\expandafterindex{すんぽう（\yomiKeywayWidth）@寸法（\nameKeywayWidth）}\KeywayWidth の寸法も含むものとする。
+\subsection{\OutcutLengthDimension}
+\OutcutLengthDimension は、\EndFace に垂直な方向の値とする。
+また\TopOutcutLength については、\KeywayWidthDimension も含むものとする。
 このとき、\TopOutcutLength$h_\mathrm T$が、\KeywayPos$\kappa_p$と\KeywayWidth$\kappa_w$の和に等しい場合は、
 \begin{align*}
   h_\mathrm T = \kappa_p+1[\text{mm}]
@@ -300,7 +300,7 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurva
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 10.06.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\expandafterindex{すんぽう（\yomiCurvedOutcut）@寸法（\nameCurvedOutcut）}\nameCurvedOutcut の寸法}
+\subsection{\CurvedOutcutDimension}
 \Outcut が\CurvedOutcut の場合は、\CenterCurvatureLine に対して\EndFace から\OutcutLength の半分の位置における接線に対して平行になるように傾けるものとする。
 このときのトップ側およびボトム側の\expandafterindex{かたむきかく（\yomiCurvedOutcut）@傾き角（\nameCurvedOutcut）}傾き角の大きさ$\theta_t$, $\theta_b$は、それぞれ以下を満たす。
 \begin{align*}
@@ -317,44 +317,49 @@ $R_\mathrm c$, $f'_\mathrm T$, $h_T$, $h_B$はそれぞれ\CenterCurvatureRadius
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 11.6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\expandafterindex{すんぽう（\yomiKeywayMilling）@寸法（\nameKeywayMilling）}\nameKeywayMilling に関する寸法}
+\modHeadsection{\indexKeywayMillingDimension\nameKeywayMilling に関する寸法}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 10.7.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KeywayMillingReferencePoint\TBW}
-(to be written ...)
+\subsection{\KeywayMillingReferencePoint}
+\KeywayMillingReferencePoint は、以下を基準として行うものとする。
+\begin{enumerate}[label=\sarrow]
+\item \TopOutcut がなく、かつ\AsideKeywayDepth に公差がない場合は、\KeywayWidth 中心部における\CurvatureCenter
+\item \TopOutcut があり、かつ\AsideKeywayDepth に公差がない場合は、\TopOutcutCenter
+\item \AsideKeywayDepth に公差がある場合は、\KeywayWidth 中心部における\AsideKeywayDepth および\KeywayDiameter 等から算出した\KeywayCenter
+\end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 10.06.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\expandafterindex{こうぐほせい（\yomiKeywayMilling）@工具補正（\nameKeywayMilling）}工具補正：\nameKeywayMilling}
+\subsection{\indexTCKeywayMilling\nameToolCorrection：\nameKeywayMilling}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.06.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\expandafterindex{こうぐちょうほせい（\yomiKeywayMilling）@工具長補正（\nameKeywayMilling）}工具長補正：\nameKeywayMilling}
-\KeywayMilling に使用する\index{こうぐちょう（サイドカッター）@工具長（サイドカッター）}サイドカッターの工具長は、その切削部（刃の部分）の\index{せんたんぶ（サイドカッター）@先端部（サイドカッター）}先端部を工具長として\index{オフセット（こうぐちょうほせい）@オフセット（工具長補正）}オフセット量の設定を行うものとする。
+\subsubsection{\indexTLCKeywayMilling\nameTLCorrection：\nameKeywayMilling}
+\KeywayMilling に使用する\indexTLSideCutter\nameSideCutter の\nameToolLength は、その切削部（刃の部分）の\expandafterindex{せんたんぶ（\yomiSideCutter）@先端部（\nameSideCutter）}先端部を\ToolLength として\expandafterindex{オフセット（\yomiTLCorrection）@オフセット（\nameTLCorrection）}オフセット量の設定を行うものとする。
 
-なお、このとき\index{まもうりょう（こうぐちょう）@摩耗量（工具長）}工具長の摩耗量は0とする。
+なお、このとき\TLCWearValue は0とする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.06.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\expandafterindex{こうぐけいほせい（\yomiKeywayMilling）@工具径補正（\nameKeywayMilling）}工具径補正：\nameKeywayMilling}
-\KeywayMilling に使用する\index{こうぐけい（サイドカッター）@工具径（サイドカッター）}サイドカッターの工具径は、その刃の径方向の\index{せんたんぶ（サイドカッター）@先端部（サイドカッター）}先端部を工具径として\index{オフセット（こうぐけいほせい）@オフセット（工具径補正）}オフセット量の設定を行うものとする。
+\subsubsection{\indexTDCKeywayMilling\nameTDCorrection：\nameKeywayMilling}
+\KeywayMilling に使用する\indexTDSideCutter\nameSideCutter の\nameToolDiameter は、その刃の径方向の\expandafterindex{せんたんぶ（\yomiSideCutter）@先端部（\nameSideCutter）}先端部を\ToolDiameter として\expandafterindex{オフセット（\yomiTDCorrection）@オフセット（\nameTDCorrection）}オフセット量の設定を行うものとする。
 
-なお、このとき\index{まもうりょう（こうぐけい）@摩耗量（工具径）}工具径の摩耗量は0とする。
+なお、このとき\TDCWearValue は0とする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 11.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KeywayPos および\KeywayWidth}
+\subsection{\indexKeywayPosDimension\indexKeywayWidthDimension\KeywayPos および\KeywayWidth の寸法}
 トップ端から垂直方向に、\Keyway のトップ側の端までの距離を\KeywayPos とする。
 また、同様の方向に、\Keyway のトップ側の端から\Keyway のボトム側の端までの距離を\KeywayWidth とする。
 
@@ -362,7 +367,7 @@ $R_\mathrm c$, $f'_\mathrm T$, $h_T$, $h_B$はそれぞれ\CenterCurvatureRadius
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 11.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KeywayDepth}
+\subsection{\KeywayDepthDimension}
 トップ側に\Outcut がなく、かつ\AsideKeywayDepth が\index{こうさ@公差}公差のある寸法$\kappa_d'$を持つ場合、\KeywayCenter における\Keyway A側面とA側外面との距離$\kappa_d$は以下のものとみなす。
 \begin{gather*}
   \kappa_d
@@ -392,7 +397,7 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 12.7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\expandafterindex{すんぽう（\yomiEndFaceCChamferMilling）@寸法（\nameEndFaceCChamferMilling）}\nameEndFaceCChamferMilling に関する寸法}
+\modHeadsection{\indexEndFaceCChamferMillingDimension\nameEndFaceCChamferMilling に関する寸法}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -410,37 +415,37 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %% subsubsection 10.8.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceInCChamferMillingReferencePoint}
-\EndFaceInCChamferMillingReferencePoint は、\OutcutIDCenter を基準として行うものとする。
+\EndFaceInCChamferMillingReferencePoint は、\IDCenter を基準として行うものとする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 11.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\expandafterindex{すんぽう（\yomiEndFaceCChamferMilling）@寸法（\nameEndFaceCChamferMilling）}\EndFaceCChamferMilling の寸法}
+\subsection{\EndFaceCChamferMillingDimension}
 \EndFaceOutCChamferLength$c_\mathrm o$ならびに\EndFaceInCChamferLength$c_\mathrm i$は、\EndFace に垂直な方向の距離とみなす。
-このとき、\index{かたかく（テーパエンドミル）@片角（テーパエンドミル）}片角が$\xi_\mathrm e$の\index{テーパエンドミル}テーパエンドミルに対して、$XY$方向の\EndFaceCChamferLength は、$c_\mathrm o\tan\xi_\mathrm e$および$c_\mathrm i\tan\xi_\mathrm e$で与えられる。
+このとき、\expandafterindex{かたかく（\yomiTaperEndMill）@片角（\nameTaperEndMill）}片角が$\xi_\mathrm e$の\TaperEndMill に対して、$XY$方向の\EndFaceCChamferLength は、$c_\mathrm o\tan\xi_\mathrm e$および$c_\mathrm i\tan\xi_\mathrm e$で与えられる。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 11.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{こうぐほせい@工具補正}工具補正}
+\subsection{\indexTCEndFaceCChamferMilling\nameToolCorrection：\EndFaceCChamferMilling}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.7.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\index{こうぐちょうほせい@工具長補正}工具長補正}
-\EndFaceCChamferMilling に使用する\index{テーパエンドミル}テーパエンドミルの\index{こうぐちょう（テーパエンドミル）@工具長（テーパエンドミル）}工具長は、その\index{せんたんぶ（テーパエンドミル）@先端部（テーパエンドミル）}先端部から軸方向に適当な距離$d_\mathrm e$を差し引いた長さを工具長として\index{オフセット（こうぐちょうほせい）@オフセット（工具長補正）}オフセット量の設定を行うものとする。
+\subsubsection{\indexTLCEndFaceCChamferMilling\nameTLCorrection：\EndFaceCChamferMilling}
+\EndFaceCChamferMilling に使用する\indexTLTaperEndMill\nameTaperEndMill の\nameToolLength は、その\expandafterindex{せんたんぶ（\yomiTaperEndMill）@先端部（\nameTaperEndMill）}先端部から軸方向に適当な距離$d_\mathrm e$を差し引いた長さを\ToolLength として\expandafterindex{オフセット（\yomiTLCorrection）@オフセット（\nameTLCorrection）}オフセット量の設定を行うものとする。
 
-したがって、工具の先端部を測定し、先端から$d_\mathrm e$を引いた値を\index{こうぐちょうほせいち@工具長補正値}工具長補正値とする。
-なお、このとき\index{まもうりょう（こうぐちょう）@摩耗量（工具長）}工具長の摩耗量は0とする。
+したがって、工具の先端部を測定し、先端から$d_\mathrm e$を引いた値を\TLCValue とする。
+なお、このとき\TLCWearValue は0とする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.7.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\index{こうぐけいほせい@工具径補正}工具径補正}
-\index{せんたんけい（テーパエンドミル）@先端径（テーパエンドミル）}先端径（直径）および先端の\index{かたかく（テーパエンドミル）@片角（テーパエンドミル）}片角がそれぞれ$D_\mathrm e$, $\xi_\mathrm e$の\index{テーパエンドミル}テーパエンドミルに対し、その\index{こうぐけいほせいち@工具径補正値}工具径補正値を$\nicefrac{D_\mathrm e}2$として設定を行い、さらに\index{まもうりょう（こうぐけい）@摩耗量（工具径）}工具径摩耗量を$d_\mathrm e\tan\xi_\mathrm e$として設定を行うものとする。
-ここで$d_\mathrm e$は、\index{こうぐちょうほせい@工具長補正}工具長補正において用いたものとする。
+\subsubsection{\indexTDCEndFaceCChamferMilling\nameTDCorrection：\EndFaceCChamferMilling}
+\expandafterindex{せんたんけい（\yomiTaperEndMill）@先端径（\nameTaperEndMill）}先端径（直径）および先端の\index{かたかく（\yomiTaperEndMill）@片角（\nameTaperEndMill）}片角がそれぞれ$D_\mathrm e$, $\xi_\mathrm e$の\TaperEndMill に対し、その\TDCValue を$\nicefrac{D_\mathrm e}2$として設定を行い、さらに\TDCWearValue を$d_\mathrm e\tan\xi_\mathrm e$として設定を行うものとする。
+ここで$d_\mathrm e$は、\nameTLCorrection において用いたものとする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -499,7 +504,7 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 10.8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\expandafterindex{すんぽう（\yomiEndFaceRChamferMilling）@寸法（\nameEndFaceRChamferMilling）}\nameEndFaceRChamferMilling に関する寸法}
+\modHeadsection{\indexEndFaceRChamferMillingDimension\nameEndFaceRChamferMilling に関する寸法}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -535,9 +540,9 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %% subsubsection 10.8.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceOutRChamferRadius が大きい場合}
-\EndFaceOutRChamferRadius が大きい場合、\index{さぎょうしゃのふたん@作業者の負担}作業者の負担や\index{さぎょうじかん@作業時間}作業時間を考慮して、その一部を\index{テーパエンドミル}テーパエンドミルを用いて加工してもよいものとする。
+\EndFaceOutRChamferRadius が大きい場合、\index{さぎょうしゃのふたん@作業者の負担}作業者の負担や\index{さぎょうじかん@作業時間}作業時間を考慮して、その一部を\TaperEndMill を用いて加工してもよいものとする。
 
-このとき、\TopEndFaceOutRChamferRadius および\BottomEndFaceOutRChamferRadius$r_\mathrm{To}$, $r_\mathrm{Bo}$, および片角$\xi_\mathrm e$のテーパエンドミルに対して、
+このとき、\TopEndFaceOutRChamferRadius および\BottomEndFaceOutRChamferRadius$r_\mathrm{To}$, $r_\mathrm{Bo}$, および片角$\xi_\mathrm e$の\TaperEndMill に対して、
 \begin{align*}
   c_\mathrm{To} &= r_\mathrm{To}\left(1+\cot\xi_\mathrm e-\csc\xi_\mathrm e\right)\ ,\\
   c_\mathrm{Bo} &= r_\mathrm{Bo}\left(1+\cot\xi_\mathrm e-\csc\xi_\mathrm e\right)
@@ -560,9 +565,9 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %% subsubsection 10.8.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceInRChamferRadius が大きい場合}
-\EndFaceInRChamferRadius が大きい場合、\index{さぎょうしゃのふたん@作業者の負担}作業者の負担や\index{さぎょうじかん@作業時間}作業時間を考慮して、その一部を\index{テーパエンドミル}テーパエンドミルを用いて加工してもよいものとする。
+\EndFaceInRChamferRadius が大きい場合、\index{さぎょうしゃのふたん@作業者の負担}作業者の負担や\index{さぎょうじかん@作業時間}作業時間を考慮して、その一部を\TaperEndMill を用いて加工してもよいものとする。
 
-このとき、\TopEndFaceInRChamferRadius および\BottomFaceInRChamferRadius$r_\mathrm{Ti}$, $r_\mathrm{Bi}$, および片角$\xi_\mathrm e$のテーパエンドミルに対して、
+このとき、\TopEndFaceInRChamferRadius および\BottomFaceInRChamferRadius$r_\mathrm{Ti}$, $r_\mathrm{Bi}$, および片角$\xi_\mathrm e$の\TaperEndMill に対して、
 \begin{align*}
   c_\mathrm{Ti} &= r_\mathrm{Ti}\left(1+\cot\xi_\mathrm e-\csc\xi_\mathrm e\right)\ ,\\
   c_\mathrm{Bi} &= r_\mathrm{Bi}\left(1+\cot\xi_\mathrm e-\csc\xi_\mathrm e\right)
@@ -575,46 +580,99 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 10.9 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\EndFaceBoring に関する寸法\TBW}
-(to be written...)
+\modHeadsection{\indexEndFaceBoringMillingDimension\nameEndFaceBoringMilling に関する寸法}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 10.8.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\EndFaceBoringMillingReferencePoint}
+\EndFaceBoringMilling の基準点は\TopEndFace における外側中心を基準として行うものとする。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 10.8.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\EndFaceBoringCornerR の中心}
+\EndFaceBoring のA側外面からの距離, \EndFaceBoringWidth, \EndFaceBoringDepth, \EndFaceBoringCornerR, \EndFaceBoringLength をそれぞれ$p_\beta$, $w_\beta$, $d_\beta$, $R_\beta$, $l_\beta$とすると、A面側およびC面側の\EndFaceBoringCornerR の中心の位置は、\TopEndFace の外側中心を原点として、それぞれ以下で与えられる。
+\begin{align*}
+  \text{A面側：}
+  \left[
+  \begin{array}{c}
+  \displaystyle
+  \frac{\mathcal W_x}2-p_\beta-\sqrt{d_\beta(2R_\beta-d_\beta)}\\[8pt]
+  \displaystyle
+  -\frac{\mathcal W_y}2+d_\beta-R_\beta
+  \end{array}
+  \right]~,\quad
+  \text{C面側：}
+  \left[
+  \begin{array}{c}
+  \displaystyle
+  \frac{\mathcal W_x}2-p_\beta-w_\beta+\sqrt{d_\beta(2R_\beta-d_\beta)}\\[8pt]
+  \displaystyle
+  -\frac{\mathcal W_y}2+d_\beta-R_\beta
+  \end{array}
+  \right]
+\end{align*}
+ここで$\mathcal W_x$, $\mathcal W_y$はそれぞれ\TopEndACOD, \TopEndBDOD を示す。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 10.06.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\indexTCOutcutMilling\nameToolCorrection：\EndFaceBoringMilling}
+\EndFaceBoringMilling に使用する\indexTCSquareEndMill\nameSquareEndMill の\ToolCorrection については、\OutcutMilling のそれと同様とする。
 
 %\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 23.11 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\IncutBoring に関する寸法\TBW}
-(to be written...)
+\modHeadsection{\indexIncutBoringMillingDimension\nameIncutBoringMilling に関する寸法}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 10.8.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\IncutBoringMillingReferencePoint}
+\IncutBoringMillingReferencePoint は\TopEndFace における内側中心を基準として行うものとする。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 10.06.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\indexTCOutcutMilling\nameToolCorrection：\IncutBoringMilling}
+\IncutBoringMilling に使用する\indexTCSquareEndMill\nameSquareEndMill の\ToolCorrection については、\OutcutMilling のそれと同様とする。
 
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 23.12 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\Dimple に関する寸法}
+\modHeadsection{\indexDimpleMillingDimension\nameDimpleMilling に関する寸法}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 23.12.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\expandafterindex{こうぐほせい（\yomiDimpleMilling）@工具補正（\nameDimpleMilling）}工具補正：\nameDimpleMilling}
+\subsection{\indexTCDimpleMilling\nameToolCorrection：\nameDimpleMilling}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 23.12.01.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\expandafterindex{こうぐちょうほせい（\yomiDimpleMilling）@工具長補正（\nameDimpleMilling）}工具長補正：\nameDimpleMilling}
-\DimpleMilling に用いる\index{Tスロットカッター}Tスロットカッターの\index{こうぐちょう（Tスロットカッター）@工具長（Tスロットカッター）}工具長については、切削部（刃の部分）の中央を\index{こうぐちょう（Tスロットカッター）@工具長（Tスロットカッター）}工具長として\index{オフセット（こうぐちょうほせい）@オフセット（工具長補正）}オフセット量の設定を行うものとする。
+\subsubsection{\indexTLCDimpleMilling\nameTLCorrection：\nameDimpleMilling}
+\DimpleMilling に用いる\indexTLTSlotCutter\nameTSlotCutter の\nameToolLength については、切削部（刃の部分）の中央を\ToolLength として\expandafterindex{オフセット（\yomiTLCorrection）@オフセット（\nameTLCorrection）}オフセット量の設定を行うものとする。
 
-したがって、工具の切削部の先端、および切削部の厚みを測定し、切削部の先端から厚みの半分の値を引いた値を\index{こうぐちょうほせいち@工具長補正値}工具長補正値とする。
-なお、このとき\index{まもうりょう（こうぐちょうほせい）@摩耗量（工具長補正）}工具長の摩耗量は0とする。
+したがって、工具の切削部の先端、および切削部の厚みを測定し、切削部の先端から厚みの半分の値を引いた値を\nameTLCorrection とする。
+なお、このとき\TLCWearValue は0とする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 23.12.01.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\expandafterindex{こうぐけいほせい（\yomiDimpleMilling）@工具径補正（\nameDimpleMilling）}工具径補正：\nameDimpleMilling}
-\DimpleMilling に用いる\index{Tスロットカッター}Tスロットカッターの\index{こうぐちょう（Tスロットカッター）@工具長（Tスロットカッター）}工具長は、その刃の径方向の先端部を工具径として\index{オフセット（こうぐけいほせい）@オフセット（工具径補正）}オフセット量の設定を行うものとする。
+\subsubsection{\indexTDCDimpleMilling\nameTDCorrection：\nameDimpleMilling}
+\DimpleMilling に用いる\indexTDTSlotCutter\nameTSlotCutter の\nameToolDiameter は、その刃の径方向の先端部を\ToolDiameter として\expandafterindex{オフセット（\yomiTDCorrection）@オフセット（\nameTDCorrection）}オフセット量の設定を行うものとする。
 
-なお、このとき\index{まもうりょう（こうぐけいほせい）@摩耗量（工具径補正）}工具径の摩耗量は0とする。
+なお、このとき\TDCWearValue は0とする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -627,9 +685,9 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 10.9.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\DimpleMilling の傾き角}
+\subsection{\indexDimpleAngle\nameDimpleMilling の傾き角}
 \Dimple の測定および加工は、\index{アンダーカット}アンダーカットが生じないように適切に\index{ワーク}ワークを$B$軸方向に傾けるものとする。
-このとき\expandafterindex{かたむきかく（\yomiDimple）@傾き角（\nameDimple）}傾ける角度$\phi$は、\expandafterindex{\yomiDimple1れつめ@\nameDimple1列目}トップ端から1列目の\nameDimple までの距離$q$に対して、
+このとき\indexDimpleAngle 傾ける角度$\phi$は、\expandafterindex{\yomiDimple1れつめ@\nameDimple1列目}トップ端から1列目の\nameDimple までの距離$q$に対して、
 \begin{align*}
   \tan\phi
   &= \frac{\displaystyle

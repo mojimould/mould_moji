@@ -17,7 +17,7 @@
 \modHeadsection{\EndFaceCChamfer の寸法}
 \TopEndFaceOutCChamferLength および\TopEndFaceInCChamferLength をそれぞれ$c_\mathrm{To}$, $c_\mathrm{Ti}$とする。
 ここで$c_\mathrm{To}$や$c_\mathrm{Ti}$は、\EndFace に垂直な方向の距離とする。
-このとき、片角$\xi_\mathrm e$\,($>0$)の\index{テーパエンドミル}テーパエンドミルに対して、$XY$方向の\EndFaceCChamferLength は、
+このとき、片角$\xi_\mathrm e$\,($>0$)の\TaperEndMill に対して、$XY$方向の\EndFaceCChamferLength は、
 \begin{align*}
   c_\mathrm{To}\tan\xi_\mathrm e\qquad\text{および}\qquad c_\mathrm{Ti}\tan\xi_\mathrm e
 \end{align*}
@@ -29,12 +29,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 23.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{テーパエンドミルの参照直径}
-\index{テーパエンドミル}テーパエンドミルは、その名の通り\index{テーパ（テーパエンドミル）}テーパの付いた工具であり、先端が平坦になっているものも多い。
-しかし、先端部分を\index{こうぐちょう@工具長}工具長として設定すると、その部分が段差となり\index{テーパかこう@テーパ加工}テーパ加工を適切に行うことができない。
-そのため、先端部分から一定の距離$d_\mathrm e$だけずらした箇所を\index{こうぐちょう（テーパエンドミル）@工具長（テーパエンドミル）}工具長として設定し、またその箇所の直径（\textbf{\TaperEndMillReferenceDiameter}）$D_\mathrm r$を\index{こうぐちょっけい（テーパエンドミル）@工具直径（テーパエンドミル）}工具直径として補正を行うことが推奨される。
+\modHeadsection{\nameTaperEndMill の参照直径}
+\TaperEndMill は、その名の通り\expandafterindex{テーパ（\yomiTaperEndMill）@テーパ（\nameTaperEndMill）}テーパの付いた工具であり、先端が平坦になっているものも多い。
+しかし、先端部分を\ToolLength として設定すると、その部分が段差となり\index{テーパかこう@テーパ加工}テーパ加工を適切に行うことができない。
+そのため、先端部分から一定の距離$d_\mathrm e$だけずらした箇所を\indexTLTaperEndMill\nameToolLength として設定し、またその箇所の直径（\textbf{\TaperEndMillReferenceDiameter}）$D_\mathrm r$を\expandafterindex{こうぐちょっけい（\yomiTaperEndMill）@工具直径（\nameTaperEndMill）}工具直径として補正を行うことが推奨される。
 
-ここで、\index{テーパエンドミルせんたんけい@テーパエンドミル先端径}テーパエンドミル先端径（直径）
+ここで、\expandafterindex{\yomiTaperEndMill せんたんけい@\nameTaperEndMill 先端径}\nameTaperEndMill 先端径（直径）
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{先端が平坦でなく尖っている場合は$D_\mathrm e = 0$とみなす。}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -43,12 +43,12 @@
   D_\mathrm r = D_\mathrm e+2d_\mathrm e\tan\xi_\mathrm e
 \end{align*}
 で与えられる。
-通常、\index{こうぐけいほせい@工具径補正}工具径補正は工具の半径を用いて行うので、\index{こうぐけい（テーパエンドミル）@工具径（テーパエンドミル）}工具径を
+通常、\TDCorrection は工具の半径を用いて行うので、\indexTDTaperEndMill\nameToolDiameter を
 \begin{align*}
   \frac{D_\mathrm r}2 = \frac{D_\mathrm e}2+d_\mathrm e\tan\xi_\mathrm e
 \end{align*}
 として設定すればよい。
-あるいは、\index{テーパエンドミルせんたんけい@テーパエンドミル先端径}テーパエンドミル先端径を基準としてそこから補正を行う形にする場合は、その差
+あるいは、\expandafterindex{\yomiTaperEndMill せんたんけい@\nameTaperEndMill 先端径}\nameTaperEndMill 先端径を基準としてそこから補正を行う形にする場合は、その差
 \begin{align*}
   \frac{D_\mathrm r}2-\frac{D_\mathrm e}2 = d_\mathrm e\tan\xi_\mathrm e
 \end{align*}
