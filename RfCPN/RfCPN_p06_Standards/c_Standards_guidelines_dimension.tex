@@ -104,7 +104,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\indexSpacerAlocationAdjustment\nameSpacer による\nameAlocationAdjustment}
 \Spacer は原則として\Jig の\TopSideReceiverPlate に設置する。
-厚さ$\delta_\mathrm s$の\indexSpacerAlocationAdjustment\nameSpacer による調整を行う場合、もともとの\TopAlocationLength$f_\mathrm T$に対し、\nameTopAlocationLength（\TopReAlocationLength）$f'_\mathrm T$を以下のように調整する。
+厚さ$\delta_\mathrm s$の\indexSpacerAlocationAdjustment\nameSpacer による調整を行う場合、もともとの\TopAlocationLength$f_\mathrm T$に対し、\TopReAlocationLength$f'_\mathrm T$を以下のように調整する。
 \begin{align*}
   f'_\mathrm T
   = f_\mathrm T
@@ -117,7 +117,7 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$はそれぞれ\CenterCurvatureRadius
 %% subsubsection 23.01.02.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\indexTableAlocationAdjustment\nameTable 回転による\nameAlocationAdjustment}
-\index{かたむきかく（\yomiAlocationAdjustment）@傾き角（\nameAlocationAdjustment）}角度$\theta$だけ\TableAlocationAdjustment\nameTable 回転をして\nameAlocationAdjustment を行う場合は、もともとの\TopAlocationLength$f_\mathrm T$に対し、\nameTopAlocationLength（\TopReAlocationLength）$f'_\mathrm T$を以下のように調整する。
+\index{かたむきかく（\yomiAlocationAdjustment）@傾き角（\nameAlocationAdjustment）}角度$\theta$だけ\indexTableAlocationAdjustment\nameTable 回転をして\nameAlocationAdjustment を行う場合は、もともとの\TopAlocationLength$f_\mathrm T$に対し、\TopReAlocationLength$f'_\mathrm T$を以下のように調整する。
 \begin{align*}
   f_\mathrm T'
   = f_\mathrm T+\left(\Delta+\sqrt{R_\mathrm i'-\bar l^2}\right)\sin\theta\qquad
@@ -243,7 +243,7 @@ $R_\textrm c$, $W_x$, $l$, $\rho$, $\sigma$, $\Delta$はそれぞれ\CenterCurva
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFacecutCornerR}
 \nameEndFacecutMilling の際の\expandafterindex{コーナーR（\yomiEndFacecutMilling）@コーナーR（\nameEndFacecutMilling）}コーナーRは、\expandafterindex{\yomiIDCornerR（\yomiEndFace）@\nameIDCornerR（\nameEndFace）}\nameEndFace における\nameIDCornerR とする。
-
+このとき、\PlatingThk の考慮は問わない。
 
 
 \clearpage
@@ -409,13 +409,13 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %% subsubsection 10.8.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceOutCChamferMillingReferencePoint}
-\EndFaceOutCChamferMillingReferencePoint は、\Outcut のある場合は\OutcutCenter を基準とし、\Outcut のない場合は\EndFaceIDCenter を基準として行うものとする。
+\EndFaceOutCChamferMillingReferencePoint は、\Outcut のある場合は\OutcutCenter を基準とし、\Outcut のない場合は\index{うちがわちゅうしん@内側中心}内側中心（\nameEndFace）を基準として行うものとする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.8.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceInCChamferMillingReferencePoint}
-\EndFaceInCChamferMillingReferencePoint は、\IDCenter を基準として行うものとする。
+\EndFaceInCChamferMillingReferencePoint は、\IncutBoring のある場合は\IncutBoringCenter を基準とし、\IncutBoring のない場合は\index{うちがわちゅうしん@内側中心}内側中心を基準として行うものとする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -534,7 +534,7 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %% subsubsection 10.8.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceOutRChamferRadius が小さい場合}
-\EndFaceOutRChamfer については、基本的には\MMC では行わず、\index{てもちけんまき@手持ち研磨機}手持ち研磨機を用いて手動で行うものとする。
+\EndFaceOutRChamfer については、基本的には\index{マシニングセンタ}マシニングセンタでは行わず、\index{てもちけんまき@手持ち研磨機}手持ち研磨機・やすり等を用いて手動で行うものとする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.8.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -559,7 +559,7 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %% subsubsection 10.8.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceInRChamferRadius が小さい場合}
-\TopEndFaceInRChamferMilling および\BottomEndFaceInRChamferMilling については、基本的には\MMC では行わず、\index{てもちけんまき@手持ち研磨機}手持ち研磨機を用いて手動で行うものとする。
+\TopEndFaceInRChamferMilling および\BottomEndFaceInRChamferMilling については、基本的には\index{マシニングセンタ}マシニングセンタでは行わず、\index{てもちけんまき@手持ち研磨機}手持ち研磨機を用いて手動で行うものとする。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 10.8.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -587,7 +587,7 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %% subsection 10.8.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFaceBoringMillingReferencePoint}
-\EndFaceBoringMilling の基準点は\TopEndFace における外側中心を基準として行うものとする。
+\EndFaceBoringMilling の基準点は\index{そとがわちゅうしん@外側中心}外側中心（\nameTopEndFace）を基準として行うものとする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -635,7 +635,7 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %% subsection 10.8.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\IncutBoringMillingReferencePoint}
-\IncutBoringMillingReferencePoint は\TopEndFace における内側中心を基準として行うものとする。
+\IncutBoringMillingReferencePoint は\TopEndFace における\index{うちがわちゅうしん@内側中心}内側中心（\nameTopEndFace）を基準として行うものとする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
