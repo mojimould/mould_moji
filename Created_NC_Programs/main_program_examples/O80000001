@@ -381,9 +381,10 @@ M10 (B-axis clamp)
 (G58B parallel angle -0.642)
 
 M28 (chip conveyor on)
-G58 G65 P430000 A1.0 K1.0 C#0 R14.0 X172.900 Y172.900 U180.950 V180.950 Z500.016 W400.000 Q8922.700 M12.05 H8.05
+G58 G65 P430000 A1.0 B0.0 K1.0 C#0 R14.0 X172.900 Y172.900 U180.950 V180.950 Z500.016 W400.000 Q8922.700 M12.05 H8.05
 (O430000: Mizo, ar HidariMawari)
 (A: Top gaisaku: 0:not exists, 1:exists)
+(B: depth tolerance: 0:none, 1:exist)
 (K: key type: 1:R, 2:C, 3:rec, 4:BDonly)
 (C: mizo corner C)
 (R: mizo corner R)
