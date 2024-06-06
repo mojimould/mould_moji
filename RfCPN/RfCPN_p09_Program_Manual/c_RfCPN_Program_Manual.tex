@@ -73,7 +73,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{multicollongtblr}{\CreatedNCPrg 一覧：芯出し・幅・\CenterlineEndFaceDifMeasurement}{cX[l]l}
+\begin{multicollongtblr}{\CreatedNCSubPrg 一覧：芯出し・幅・\CenterlineEndFaceDifMeasurement}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用subprg\\
 \MXOThickness & 測定 両側 外側中心・幅$X$ & \OsensorOff\\
 \MYOThickness & 測定 両側 外側中心・幅$Y$ & \OsensorOff\\
@@ -84,7 +84,7 @@
 \MCenterline  & 測定 片側 \expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}\nameCenterlineEndFaceDif（C側外削面 $Z$方向, B側外削面 $Y$方向測定） & \OsensorOff\\
 \end{multicollongtblr}
 
-\begin{multicollongtblr}{\CreatedNCPrg 一覧：\Dimple}{cX[l]l}
+\begin{multicollongtblr}{\CreatedNCSubPrg 一覧：\Dimple}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用subprg\\
 \DLone      & 移動 各列の中心上 & \DLtwoAC\DLtwoBD\\
 \DLtwoAC    & 移動 AC面 列内の各\Dimple 上 & \DMLthreeAC\DKLthreeAC\\
@@ -96,7 +96,7 @@
 \end{multicollongtblr}
 
 \clearpage
-\begin{multicollongtblr}{\CreatedNCPrg 一覧：加工（\Dimple 以外）}{cX[l]l}
+\begin{multicollongtblr}{\CreatedNCSubPrg 一覧：加工（\Dimple 以外）}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用subprg\\
 \KEndFaceRight        & 加工 \EndFacecut{} コーナーR 右回り1周 & \KOLeftFS\\
 \KOutcutRLeft       & 加工 \Outcut{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
@@ -113,7 +113,7 @@
 \end{multicollongtblr}
 
 %\clearpage
-\begin{multicollongtblr}{\CreatedNCPrg 一覧：その他}{cX[l]l}
+\begin{multicollongtblr}{\CreatedNCSubPrg 一覧：その他}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用subprg\\
 \OpauseCheck  & 移動・加工後確認用：90$^\circ$回転 扉前一時停止 & -\\
 \OsensorOn    & \index{タッチセンサーでんげん@タッチセンサー電源}タッチセンサー電源ON & -\\
@@ -523,6 +523,7 @@
 \begin{multicollongtblr}{\KKeywayConerLeftArguments}{ccX[l]}
 引数 & 変数 & 内容\\
 {\ttfamily A} & {\ttfamily\ttNum01} & \TopOutcutExists\\
+{\ttfamily B} & {\ttfamily\ttNum02} & \AKDToleranceExists\\
 {\ttfamily C} & {\ttfamily\ttNum03} & \KeywayCornerC\\
 {\ttfamily K} & {\ttfamily\ttNum06} & \KeywayCornerType\\
 {\ttfamily H} & {\ttfamily\ttNum11} & \KeywayWidth\\
