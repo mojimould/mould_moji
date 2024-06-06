@@ -1,26 +1,26 @@
 %
-O490007
+O490007 (last update on 20240606)
 (Uchigawa Corner R ac HidariMawari 1shuu)
 
-N001
-IF[#24EQ#0]GOTO800
-IF[#24LT10]GOTO800
-IF[#25EQ#0]GOTO800
-IF[#25LT10]GOTO800
-IF[#18EQ#0]GOTO800
-IF[#18LT0.1]GOTO800
-IF[#09EQ#0]GOTO800
-IF[#09LT10]GOTO800
-IF[#08EQ#0]GOTO800
-IF[#08LT10]GOTO800
-IF[#19EQ#0]GOTO800
-IF[#19LE200]GOTO800
-(if X < 10 or #0, go to N800)
-(if Y < 10 or #0, go to N800)
-(if R < 0.1 or #0, go to N800)
-(if F < 10 or #0, go to N800)
-(if E < 10 or #0, go to N800)
-(if S <= 200 or #0, go to N800)
+N0001
+IF[#24EQ#0]GOTO0800
+IF[#24LT10]GOTO0800
+IF[#25EQ#0]GOTO0800
+IF[#25LT10]GOTO0800
+IF[#18EQ#0]GOTO0800
+IF[#18LT0.1]GOTO0800
+IF[#09EQ#0]GOTO0800
+IF[#09LT10]GOTO0800
+IF[#08EQ#0]GOTO0800
+IF[#08LT10]GOTO0800
+IF[#19EQ#0]GOTO0800
+IF[#19LE200]GOTO0800
+(if X < 10 or #0, go to N0800)
+(if Y < 10 or #0, go to N0800)
+(if R < 0.1 or #0, go to N0800)
+(if F < 10 or #0, go to N0800)
+(if E < 10 or #0, go to N0800)
+(if S <= 200 or #0, go to N0800)
 
 #33=#5001
 #32=#5002
@@ -31,7 +31,7 @@ IF[#19LE200]GOTO800
 (kokokara G01)
 
 
-N002
+N0002
 S#19
 G91 G41 G01 D#07 X#01 Y[[#25/2]-#01] F[#09*3]
 (hosei kouguKei, kougu #07)
@@ -62,15 +62,15 @@ G91 G03 X-#01 Y-#01 I0 J-#01 F[#09*3]
 G90 G01 X#33 Y#32 F#651
 (XY to the start position)
 
-GOTO999
+GOTO9999
 
 
-N800
+N0800
 M05 (shujiku kaiten off)
 M09 (coolant off)
 #3000=100 (are the arguments OK?)
 
-N999 M99
+N9999 M99
 
 (Used Variables and Programs)
 
