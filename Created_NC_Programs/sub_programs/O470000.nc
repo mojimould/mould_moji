@@ -32,24 +32,23 @@ IF[#681LE200]GOTO0800
 (if #681 <= 200 or #0, go to N0800)
 
 N0003
-IF[ABS[#484]GE10]GOTO0800
+IF[ABS[#485]GE10]GOTO0800
 IF[#4120EQ#0]GOTO0800
 IF[#4120LT16]GOTO0800
 IF[#4120GT20]GOTO0800
 IF[[FIX[#4120]]NE#4120]GOTO0800
 IF[[#26-#06]LE[#901011/2]]GOTO0800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO0800
-IF[ABS[#483]GE#18]GOTO0800
-(if |#415| >= 10, go to N0800)
-(if |#437| >= 10, go to N0800)
+IF[ABS[#484]GE#18]GOTO0800
+(if |#485| >= 10, go to N0800)
 (if T# < 16 or > 20 or not integer or #0, go to N0800)
 (if Z-K <= #901011/2, go to N0800)
 (if R >= min[X/4, Y/4], go to N0800)
-(if |#483| >= R, go to N0800)
+(if |#484| >= R, go to N0800)
 
 N0004
-#30=#24+#484
-#29=#25+#484
+#30=#24+#485
+#29=#25+#485
 (hosei: naisakuKei +hosei)
 
 N0005
@@ -68,10 +67,10 @@ IF[#103LT0]GOTO0800
 
 
 N0006
-G90 G00 X#483 Y0
+G90 G00 X#484 Y0
 G90 G43 G01 H#4120 Z[#26+#600] F#650
 G90 G01 Z[#26-#06] S#681 F#651
-(X to hosei #483)
+(X to hosei #484)
 (hosei kouguChou: #4120)
 (Z: Z-K)
 
@@ -91,11 +90,11 @@ END1
 
 
 N0010 (pause)
-IF[#485EQ0]GOTO0012
-IF[#485EQ2]GOTO0013
+IF[#486EQ0]GOTO0012
+IF[#486EQ2]GOTO0013
 GOTO0016
 
-N0012 (if #485=0)
+N0012 (if #486=0)
 M09 (coolant off)
 S2599
 G90 G01 Z[#26+#600] F#650
@@ -105,13 +104,13 @@ S35
 M00 (OK?)
 GOTO0016
 
-N0013 (if #485=2)
+N0013 (if #486=2)
 G65 P900003
 
 
 N0016 (Shiage)
-#30=#24+#484
-#29=#25+#484
+#30=#24+#485
+#29=#25+#485
 (sai-hosei: gaisakuKei +hosei)
 
 #106=FUP[#187]
@@ -123,10 +122,10 @@ IF[#638LE0]THEN #106=#106-1
 (#106: Shiage kakou kaisuu)
 
 N0015
-G90 G00 X#483 Y0
+G90 G00 X#484 Y0
 G90 G43 G01 H#4120 Z[#26+#600] F#650
 G90 G01 Z[#26-#06] S#681 F#651
-(X to hosei #483)
+(X to hosei #484)
 (hosei kouguChou: #4120)
 (Z: Z-K)
 
@@ -189,8 +188,8 @@ N9999 M99
 (#102, #103, #104, #105, #106)
 (as RHS)
 (#187)
-(#414, #415, #416, #436, #437, #438, #483, #484)
-(#600, #605, #637, #638, #650, #651, #670, #671, #681)
+(#484, #485, #486)
+(#600, #606, #637, #638, #650, #651, #670, #671, #681)
 (#900018, #900024, #901011)
 
 (System variables)
@@ -203,7 +202,7 @@ N9999 M99
 (O490007, O900003)
 
 (Passed arguments)
-(#18, #29, #30, #31, #104, #105, #670, #671, #681)
+(#18, #29, #30, #31, #104, #105, #606, #670, #671, #681)
 
 
 (COPYRIGHT*2023-2024 THE*INDIVIDUAL*CREATOR NOT*HELD*BY*ANY*CORPORATION ALL*RIGHTS*RESERVED)
