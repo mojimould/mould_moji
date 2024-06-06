@@ -626,7 +626,7 @@ M10 (B-axis clamp)
 (G54B parallel angle 179.036)
 
 M28 (chip conveyor on)
-G54 G65 P440000 A0.0 B0.0 X160.000 Y159.000 Z499.958 W600.000 Q5933.200 K0.5 R19.0
+G54 G65 P440000 A0.0 B0.0 X155.000 Y155.000 Z499.958 W600.000 Q5933.200 K0.5 R19.0
 (O440000: Sotogawa 1shuu Corner R, ar HidariMawari)
 (A: Bot gaisaku: 0:not exists, 1:exists)
 (B: mentori type: 0:C, 1:R)
