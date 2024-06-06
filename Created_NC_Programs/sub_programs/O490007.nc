@@ -55,7 +55,7 @@ G91 G01 Y[#25-[#18*2]] F#09
 (r:Y+: BD chokusenBu)
 G91 G03 X-#18 Y#18 I-#18 J0 F#08
 (ar corner: R #18 [-#18, 0] X-Y+)
-G91 G01 X-[[#24-[#18*2]]/2] F#09
+G91 G01 X-[[#24-[#18*2]]/2+1] F#09
 (ar2ac:X-: AC chokusenBu/2)
 G91 G03 X-#01 Y-#01 I0 J-#01 F[#09*3]
 (ac: approach R #01 [0, -#01] X-Y-)
