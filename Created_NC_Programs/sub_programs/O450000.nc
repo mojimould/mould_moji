@@ -1,5 +1,5 @@
 %
-O450000 (last update on 20240604)
+O450000 (last update on 20240606)
 (Uchigawa Mentori Corner R, ac HidariMawari 1shuu)
 
 N0001
@@ -261,13 +261,15 @@ N9999 M99
 (Local variables)
 
 (as received arguments)
+(#01:A: naisaku: 0:none, 1:exist)
+(#02:B: mentori type: 0:C, 1:R)
 (#06:K: mentori C or R length)
 (#13:M: mekki thickness mm)
 (#17:Q: central curvature)
 (#18:R: corner R)
 (#23:W: ori_furiwake)
-(#24*:X: AC naisakukei)
-(#25*:Y: BD naisakukei)
+(#24*:X: AC naisakuKei)
+(#25*:Y: BD naisakuKei)
 (#26:Z: sai-furiwake)
 
 (as LHS)
