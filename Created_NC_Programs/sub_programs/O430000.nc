@@ -1,5 +1,5 @@
 %
-O430000 (last update on 20240606)
+O430000 (last update on 20240607)
 (Mizo Corner R or C, ar HidariMawari 1shuu)
 
 N0001
@@ -32,7 +32,7 @@ GOTO0800
 (if B is not #0, 0, 1, go to N0800)
 
 N0004
-IF[#476EQ0]GOTON0007
+IF[#476EQ0]GOTO0007
 IF[#02EQ1]THEN #423=2
 (if B=1, #423=2)
 
