@@ -10,7 +10,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 12.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 24.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\index{プログラムばんごう@プログラム番号}プログラム番号の基本事項}
 \begin{enumerate}[label=\Roman*., ref=\Roman*]
@@ -24,7 +24,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{hosoku}
 なおこの規則だと、\BundledNCPrg(\Gprgbox{O7xxx}, \Gprgbox{O8xxx}, \Gprgbox{O9xxx})と重複する恐れがある。
-これについては、実際にそうした問題に直面したときにその都度に対応するものとする。
+これについては、実際にそうした問題に直面したときにその都度に対応を行うものとする。
 基本的には、\BundledNCPrg を（可能であれば）変更する方針とする。
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -33,7 +33,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 12.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 24.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{番号付け：\index{8けため（プログラムばんごう）@8桁目（プログラム番号）}\index{7けため（プログラムばんごう）@7桁目（プログラム番号）}8, 7桁目}
 \index{7けため（プログラムばんごう）@7桁目（プログラム番号）}7桁目および\index{8けため（プログラムばんごう）@8桁目（プログラム番号）}8桁目はともに0とする。
@@ -43,13 +43,13 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 12.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 24.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{番号付け：\index{6けため（プログラムばんごう）@6桁目（プログラム番号）}6桁目}
 \index{6けため（プログラムばんごう）@6桁目（プログラム番号）}6桁目は主に\index{NCプログラム}NCプログラムの種類を表すものとし、以下のように分類する。
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 9.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 24.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{6桁目：0}
 6桁目が0のものは、原則として\index{メインプログラム}メインプログラムとする。
@@ -60,7 +60,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 9.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 24.03.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{6桁目：0, 9以外}
 6桁目が0, 9以外の場合は、以下のように分類する。
@@ -77,7 +77,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 9.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 24.03.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{6桁目：9}
 6桁目が9のものは、製品の測定・加工に直接関係しない\index{NCプログラム}NCプログラムとする。
@@ -95,7 +95,7 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 20.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 24.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{番号付け：\index{5けため（プログラムばんごう）@5桁目（プログラム番号）}5桁目}
 \index{5けため（プログラムばんごう）@5桁目（プログラム番号）}5桁目は、以下のように分類する。
@@ -126,27 +126,28 @@
 \item 6桁目が\ref{item:6Kmain}（\Dimple 以外の加工）の場合、5桁目を以下にように分類する
   \begin{enumerate}[label=\arabic*., ref=\arabic*, start=1]
 %  \item\label{item:5Kaux} 加工の種類に依存しない加工のNCプログラム(\ttfamily{40\textbackslash d{4}})
-  \item%\label{item:5KF}
+  \item\label{item:5KF}
     \EndFacecutMilling の位置決めを行う\expandafterindex{NCプログラム（\yomiEndFacecut）@NCプログラム（\nameEndFacecut）}NCプログラム({\ttfamily 41\textbackslash d{4}})
-  \item\label{item:5KO} 主に、\OutcutMilling の位置決めを行う\expandafterindex{NCプログラム（\yomiOutcut）@NCプログラム（\nameOutcut）}NCプログラム({\ttfamily 42\textbackslash d{4}})
-  \item%\label{item:5KK}
+  \item\label{item:5KO} \OutcutMilling の位置決めを行う\expandafterindex{NCプログラム（\yomiOutcut）@NCプログラム（\nameOutcut）}NCプログラム({\ttfamily 42\textbackslash d{4}})
+  \item\label{item:5KK}
     \KeywayMilling の位置決めを行う\expandafterindex{NCプログラム（\yomiKeyway）@NCプログラム（\nameKeyway）}NCプログラム({\ttfamily 43\textbackslash d{4}})
-  \item%\label{item:5KCO}
+  \item\label{item:5KCO}
     \EndFaceOutCChamferMilling の位置決めを行う\expandafterindex{NCプログラム（\yomiEndFaceOutCChamfer）@NCプログラム（\nameEndFaceOutCChamfer）}NCプログラム({\ttfamily 44\textbackslash d{4}})
-  \item%\label{item:5KCI}
+  \item\label{item:5KCI}
     \EndFaceInCChamferMilling の位置決めを行う\expandafterindex{NCプログラム（\yomiEndFaceInCChamfer）@NCプログラム（\nameEndFaceInCChamfer）}NCプログラム({\ttfamily 45\textbackslash d{4}})
-  \item%\label{item:5KZ}
-    \EndFaceBoringMilling の\expandafterindex{NCプログラム（\yomiEndFaceBoring）@NCプログラム（\nameEndFaceBoring）}NCプログラム({\ttfamily 46\textbackslash d{4}})
-  \item%\label{item:5KI}
-    \IncutBoringMilling の\expandafterindex{NCプログラム（\yomiIncutBoring）@NCプログラム（\nameIncutBoring）}NCプログラム({\ttfamily 47\textbackslash d{4}})
+  \item\label{item:5KZ}
+    \EndFaceBoringMilling の位置決めを行う\expandafterindex{NCプログラム（\yomiEndFaceBoring）@NCプログラム（\nameEndFaceBoring）}NCプログラム({\ttfamily 46\textbackslash d{4}})
+  \item\label{item:5KI}
+    \IncutBoringMilling の位置決めを行う\expandafterindex{NCプログラム（\yomiIncutBoring）@NCプログラム（\nameIncutBoring）}NCプログラム({\ttfamily 47\textbackslash d{4}})
   \setcounter{enumii}{8}
-  \item 位置決め後、実際に加工を行う\index{NCプログラム}NCプログラム({\ttfamily 49\textbackslash d{4}})
+  \item\label{item:5Ksub}
+  位置決め後、実際に加工を行う\index{NCプログラム}NCプログラム({\ttfamily 49\textbackslash d{4}})
   \end{enumerate}
 \end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 12.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 24.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{番号付け：\index{4けため（プログラムばんごう）@4桁目（プログラム番号）}4桁目}
 （6桁目が\ref{item:6Mmain}, \ref{item:6MD}, \ref{item:6Kmain}, \ref{item:6KD}の場合）\index{4けため（プログラムばんごう）@4桁目（プログラム番号）}4桁目は、以下のように分類する。
@@ -154,11 +155,11 @@
 \item 6桁目が\ref{item:6Kmain}\hx 以外の場合、4桁目は0とする({\ttfamily{[126][1-5]0\textbackslash d{3}}})
 \item 6桁目が\ref{item:6Kmain}（\Dimple 以外の加工）の場合、4桁目を以下にように分類する
   \begin{enumerate}[label=\alph{enumi}\,-\arabic*), leftmargin=\leftmargini]
-  \item 5桁目が\ref{item:5KO}（\OutcutMilling）以外の場合、4桁目は0とする({\ttfamily{4[13-59]0\textbackslash d{3}}})
-  \item 5桁目が\ref{item:5KO}（\OutcutMilling）の場合、4桁目を以下のように分類する
+  \item 5桁目が\ref{item:5KF}, \ref{item:5KK}, \ref{item:5KCI}, \ref{item:5KZ}, \ref{item:5KI}\hx の場合、4桁目は0とする({\ttfamily{4[135-7]0\textbackslash d{3}}})
+  \item 5桁目が\ref{item:5KO}, \ref{item:5KCO}, \ref{item:5Ksub}\hx の場合、4桁目を以下のように分類する
     \begin{enumerate}[label=\arabic*., ref=\arabic*, start=0, leftmargin=*]
-    \item \EndFace に垂直方向の\OutcutMilling の\expandafterindex{NCプログラム（\yomiOutcut）@NCプログラム（\nameOutcut）}NCプログラム({\ttfamily{420\textbackslash d{3}}})
-    \item \CurvedOutcutMilling の\expandafterindex{NCプログラム（\yomiCurvedOutcut）@NCプログラム（\nameCurvedOutcut）}NCプログラム({\ttfamily{421\textbackslash d{3}}})
+    \item \EndFace に垂直方向な加工の\index{NCプログラム}NCプログラム({\ttfamily{4[249]0\textbackslash d{3}}})
+    \item \CurvedOutcut 用の\expandafterindex{NCプログラム（\yomiCurvedOutcut）@NCプログラム（\nameCurvedOutcut）}NCプログラム({\ttfamily{4[249]1\textbackslash d{3}}})
     \end{enumerate}
   \end{enumerate}
 \end{enumerate}
