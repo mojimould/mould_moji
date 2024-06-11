@@ -47,7 +47,7 @@
            & \EndFacecut & \KEndFaceRight\\
            & \CurvedOutcut & \KCurvedOutcutRLeft\\
            & \Keyway & \KKeywayConerLeft\\
-           & \EndFaceChamfer & \KEndFaceOutCChamferRLeft\KEndFaceInCChamferRLeft\\
+           & \EndFaceChamfer & \KEndFaceOutCChamferRLeft\KEndFaceInCChamferRLeft\KEndFaceCurvedOutCChamferRLeft\\
            & \EndFaceBoring & \KEndFaceBoring\\
            & \IncutBoring & \KIncutBoring\\
            & その他 & \OpauseCheck\OsensorOn\OsensorOff\\
@@ -98,14 +98,15 @@
 \clearpage
 \begin{multicollongtblr}{\CreatedNCSubPrg 一覧：加工（\Dimple 以外）}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用subprg\\
-\KEndFaceRight        & 加工 \EndFacecut{} コーナーR 右回り1周 & \KOLeftFS\\
-\KOutcutRLeft       & 加工 \Outcut{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
-\KCurvedOutcutRLeft & 加工 \CurvedOutcut{} コーナーR 左回り1周 & \KOLeftFSZ\OpauseCheck\\
-\KKeywayConerLeft      & 加工 \Keyway{} 左回り1周 & \KOLeftFS\OpauseCheck\\
-\KEndFaceOutCChamferRLeft   & 加工 \EndFaceOutChamfer{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
-\KEndFaceInCChamferRLeft   & 加工 \EndFaceInChamfer{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
-\KEndFaceBoring      & 加工 \EndFaceBoring{} コーナーR 左回り1周 & \KOLeftFF\OpauseCheck\\
-\KIncutBoring        & 加工 \IncutBoring{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
+\KEndFaceRight                  & 加工 \EndFacecut{} コーナーR 右回り1周 & \KOLeftFS\\
+\KOutcutRLeft                   & 加工 \Outcut{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
+\KCurvedOutcutRLeft             & 加工 \CurvedOutcut{} コーナーR 左回り1周 & \KOLeftFSZ\OpauseCheck\\
+\KKeywayConerLeft               & 加工 \Keyway{} 左回り1周 & \KOLeftFS\OpauseCheck\\
+\KEndFaceOutCChamferRLeft       & 加工 \EndFaceOutChamfer{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
+\KEndFaceCurvedOutCChamferRLeft & 加工 \CurvedOutcut 用\EndFaceOutChamfer{} コーナーR 左回り1周 & \KOLeftFS\OpauseCheck\\
+\KEndFaceInCChamferRLeft        & 加工 \EndFaceInChamfer{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
+\KEndFaceBoring                 & 加工 \EndFaceBoring{} コーナーR 左回り1周 & \KOLeftFF\OpauseCheck\\
+\KIncutBoring                   & 加工 \IncutBoring{} コーナーR 左回り1周 & \KILeftFF\OpauseCheck\\
 \KOLeftFF  & 外側 {\ttfamily G41} 左回り1周 右始まり & -\\
 \KOLeftFS  & 外側 {\ttfamily G42} 左回り1周 右上始まり & -\\
 \KOLeftFSZ & 外側 {\ttfamily G42} 左回り1周 右上始まり $Z$変動 & -\\
@@ -439,15 +440,15 @@
 
 \begin{multicollongtblr}{\KOutcutRLeftArguments}{ccX[l]}
 引数 & 変数 & 内容\\
-{\ttfamily K} & {\ttfamily\ttNum06} & \OutcutLength\\
+{\ttfamily K}     & {\ttfamily\ttNum06} & \OutcutLength\\
 {\ttfamily M$^*$} & {\ttfamily\ttNum13} & \KeywayPos\\
-{\ttfamily R} & {\ttfamily\ttNum18} & \OutcutCornerR\\
-{\ttfamily U} & {\ttfamily\ttNum21} & \ACOD\\
-{\ttfamily V} & {\ttfamily\ttNum22} & \BDOD\\
+{\ttfamily R}     & {\ttfamily\ttNum18} & \OutcutCornerR\\
+{\ttfamily U}     & {\ttfamily\ttNum21} & \ACOD\\
+{\ttfamily V}     & {\ttfamily\ttNum22} & \BDOD\\
 {\ttfamily W$^*$} & {\ttfamily\ttNum23} & \KeywayWidth\\
-{\ttfamily X} & {\ttfamily\ttNum24} & \OutcutACWidth\\
-{\ttfamily Y} & {\ttfamily\ttNum25} & \OutcutBDWidth\\
-{\ttfamily Z} & {\ttfamily\ttNum26} & \ReAlocationLength\\
+{\ttfamily X}     & {\ttfamily\ttNum24} & \OutcutACWidth\\
+{\ttfamily Y}     & {\ttfamily\ttNum25} & \OutcutBDWidth\\
+{\ttfamily Z}     & {\ttfamily\ttNum26} & \ReAlocationLength\\
 \end{multicollongtblr}
 
 
@@ -480,16 +481,16 @@
 
 \begin{multicollongtblr}{\KCurvedOutcutRLeftArguments}{ccX[l]}
 引数 & 変数 & 内容\\
-{\ttfamily K} & {\ttfamily\ttNum06} & \OutcutLength\\
+{\ttfamily K}     & {\ttfamily\ttNum06} & \OutcutLength\\
 {\ttfamily M$^*$} & {\ttfamily\ttNum13} & \KeywayPos\\
-{\ttfamily Q} & {\ttfamily\ttNum17} & \CenterCurvatureRadius\\
-{\ttfamily R} & {\ttfamily\ttNum18} & \OutcutCornerR\\
-{\ttfamily U} & {\ttfamily\ttNum21} & \ACOD\\
-{\ttfamily V} & {\ttfamily\ttNum22} & \BDOD\\
+{\ttfamily Q}     & {\ttfamily\ttNum17} & \CenterCurvatureRadius\\
+{\ttfamily R}     & {\ttfamily\ttNum18} & \OutcutCornerR\\
+{\ttfamily U}     & {\ttfamily\ttNum21} & \ACOD\\
+{\ttfamily V}     & {\ttfamily\ttNum22} & \BDOD\\
 {\ttfamily W$^*$} & {\ttfamily\ttNum23} & \KeywayWidth\\
-{\ttfamily X} & {\ttfamily\ttNum24} & \OutcutACWidth\\
-{\ttfamily Y} & {\ttfamily\ttNum25} & \OutcutBDWidth\\
-{\ttfamily Z} & {\ttfamily\ttNum26} & \ReAlocationLength\\
+{\ttfamily X}     & {\ttfamily\ttNum24} & \OutcutACWidth\\
+{\ttfamily Y}     & {\ttfamily\ttNum25} & \OutcutBDWidth\\
+{\ttfamily Z}     & {\ttfamily\ttNum26} & \ReAlocationLength\\
 \end{multicollongtblr}
 
 
@@ -568,15 +569,15 @@
 
 \begin{multicollongtblr}{\KEndFaceOutCChamferRLeftArguments}{ccX[l]}
 引数 & 変数 & 内容\\
-{\ttfamily A} & {\ttfamily\ttNum01} & \OutcutExists\\
-{\ttfamily B} & {\ttfamily\ttNum02} & \ChamferType\\
-{\ttfamily K} & {\ttfamily\ttNum06} & \EndFaceChamferLength\\
-{\ttfamily Q} & {\ttfamily\ttNum17} & \CenterCurvatureRadius\\
-{\ttfamily R} & {\ttfamily\ttNum18} & \ODCornerR または\OutcutCornerR\\
-{\ttfamily W} & {\ttfamily\ttNum23} & \AlocationLength\\
+{\ttfamily A}     & {\ttfamily\ttNum01} & \OutcutExists\\
+{\ttfamily B}     & {\ttfamily\ttNum02} & \ChamferType\\
+{\ttfamily K}     & {\ttfamily\ttNum06} & \EndFaceChamferLength\\
+{\ttfamily Q}     & {\ttfamily\ttNum17} & \CenterCurvatureRadius\\
+{\ttfamily R}     & {\ttfamily\ttNum18} & \ODCornerR または\OutcutCornerR\\
+{\ttfamily W}     & {\ttfamily\ttNum23} & \AlocationLength\\
 {\ttfamily X$^*$} & {\ttfamily\ttNum24} & \OutcutACWidth\\
 {\ttfamily Y$^*$} & {\ttfamily\ttNum25} & \OutcutBDWidth\\
-{\ttfamily Z} & {\ttfamily\ttNum26} & \TopReAlocationLength\\
+{\ttfamily Z}     & {\ttfamily\ttNum26} & \TopReAlocationLength\\
 \end{multicollongtblr}
 
 
@@ -609,14 +610,14 @@
 
 \begin{multicollongtblr}{\KEndFaceInCChamferRLeftArguments}{ccX[l]}
 引数 & 変数 & 内容\\
-{\ttfamily K} & {\ttfamily\ttNum06} & \EndFaceChamferLength\\
-{\ttfamily M} & {\ttfamily\ttNum13} & \PlatingThk\\
-{\ttfamily Q} & {\ttfamily\ttNum17} & \CenterCurvatureRadius\\
-{\ttfamily R} & {\ttfamily\ttNum18} & \IDCornerR または\IncutBoringCornerR\\
-{\ttfamily W} & {\ttfamily\ttNum23} & \AlocationLength\\
+{\ttfamily K}     & {\ttfamily\ttNum06} & \EndFaceChamferLength\\
+{\ttfamily M}     & {\ttfamily\ttNum13} & \PlatingThk\\
+{\ttfamily Q}     & {\ttfamily\ttNum17} & \CenterCurvatureRadius\\
+{\ttfamily R}     & {\ttfamily\ttNum18} & \IDCornerR または\IncutBoringCornerR\\
+{\ttfamily W}     & {\ttfamily\ttNum23} & \AlocationLength\\
 {\ttfamily X$^*$} & {\ttfamily\ttNum24} & \IncutBoringACWidth\\
 {\ttfamily Y$^*$} & {\ttfamily\ttNum25} & \IncutBoringBDWidth\\
-{\ttfamily Z} & {\ttfamily\ttNum26} & \ReAlocationLength\\
+{\ttfamily Z}     & {\ttfamily\ttNum26} & \ReAlocationLength\\
 \end{multicollongtblr}
 
 
@@ -720,8 +721,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\DLoneArguments\TBW}
-(to be written...)
+\subsection{\DLoneArguments}
+
+\begin{multicollongtblr}{\KKeywayConerLeftArguments}{ccX[l]}
+引数 & 変数 & 内容\\
+{\ttfamily A} & {\ttfamily\ttNum01} & \AlocationAngle\\
+{\ttfamily B} & {\ttfamily\ttNum02} & \DimpleAngle\\
+{\ttfamily I} & {\ttfamily\ttNum04} & \DimpleHorizontalPitch\\
+{\ttfamily K} & {\ttfamily\ttNum06} & \DimpleVerticalPitch\\
+{\ttfamily F} & {\ttfamily\ttNum09} & \DimpleOddRowLength\\
+{\ttfamily M} & {\ttfamily\ttNum13} & \DimpleRowNum\\
+{\ttfamily Q} & {\ttfamily\ttNum17} & \DistanceTopEndFaceDimpleFirstRow\\
+{\ttfamily R} & {\ttfamily\ttNum18} & \CenterCurvatureRadius\\
+{\ttfamily S} & {\ttfamily\ttNum19} & \DimpleEvenRowLength\\
+{\ttfamily T} & {\ttfamily\ttNum20} & \PlatingThk\\
+{\ttfamily U} & {\ttfamily\ttNum21} & \DimpleDepth\\
+{\ttfamily W} & {\ttfamily\ttNum23} & \TopAlocationLength\\
+{\ttfamily Z} & {\ttfamily\ttNum26} & \TopReAlocationLength\\
+\end{multicollongtblr}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -743,27 +760,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\OwarmingupA ：\index{だんきうんてん@暖機運転}暖機運転}
+\modHeadsection{\Owarmingup ：\index{だんきうんてん@暖機運転}暖機運転}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\OwarmingupAArguments\TBW}
+\subsection{\OwarmingupArguments}
+引数なし
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\Owarmingup の取扱説明\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\OwarmingupA の取扱説明\TBW}
-(to be written...)
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\OwarmingupA の注意事項\TBW}
+\subsection{\Owarmingup の注意事項\TBW}
 (to be written...)
 
 
@@ -772,20 +789,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\OtoolLengthA ：\TLCorrection}
+\modHeadsection{\OtoolLength ：\TLCorrection}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\OtoolLengthAArguments\TBW}
-(to be written...)
+\subsection{\OtoolLengthArguments\TBW}
+
+\begin{multicollongtblr}{\KIncutBoringArguments}{ccX[l]}
+引数 & 変数 & 内容\\
+{\ttfamily I$^*$} & {\ttfamily\ttNum04} & 刃先$X$方向のシフト量\\
+{\ttfamily J$^*$} & {\ttfamily\ttNum05} & 刃先$Y$方向のシフト量\\
+{\ttfamily H}     & {\ttfamily\ttNum11} & 工具番号\\
+\end{multicollongtblr}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\OtoolLengthA の取扱説明\TBW}
+\subsection{\OtoolLength の取扱説明\TBW}
 (to be written...)
 
 
