@@ -103,7 +103,7 @@ GOTO9999
 N0800
 M05 (spindle kaiten off)
 M09 (coolant off)
-#3000=100 (are the arguments OK?)
+#3000=100 (are*the*arguments*OK?)
 
 N9999 M99
 
