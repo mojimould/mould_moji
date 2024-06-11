@@ -451,9 +451,9 @@ N999 M99
 (#13:M: number of rows)
 (used only as passed arguments)
 (#04:I: X pitch)
-(#21:U: depth of dimple)
 (#09:F: length of odd rows)
 (#19:S: length of even rows)
+(#21:U: depth of dimple)
 
 (as LHS)
 (#24, #25, #30, #31, #32, #33)
