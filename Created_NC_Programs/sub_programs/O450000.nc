@@ -1,5 +1,5 @@
 %
-O450000 (last update on 20240606)
+O450000 (last update on 20240611)
 (Uchigawa Mentori Corner R, ac HidariMawari 1shuu)
 
 N0001
@@ -252,7 +252,7 @@ S2599
 G04 X2.0 (wait 2.0s)
 M05 (spindle off)
 S35
-#3000=100 (are the arguments OK?)
+#3000=100 (are*the*arguments*OK?)
 
 N9999 M99
 
