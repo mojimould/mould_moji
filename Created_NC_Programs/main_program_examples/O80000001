@@ -1,5 +1,5 @@
 %
-O80000001 (last update on 20240606)
+O80000001 (last update on 20240611)
 (Top sai_furiwake: 500.016)
 (Bot sai_furiwake: 499.984)
 (Top Haridashi: 170.016)
@@ -701,21 +701,13 @@ GOTO9999
 
 
 (Alerm)
-N0820
-M09 (coolant off)
-S2599
-G04 X1.0 (wait 1.0s)
-M05 (spindle off)
-S35
-#3000=145 (MP60-Low battery)
-
 N0821
 M09 (coolant off)
 S2599
 G04 X1.0 (wait 1.0s)
 M05 (spindle off)
 S35
-#3000=146 (is the palette# is ok?)
+#3000=146 (is*the*palette#*is*ok?)
 
 N0800
 M09 (coolant off)
@@ -723,7 +715,7 @@ S2599
 G04 X1.0 (wait 1.0s)
 M05 (spindle off)
 S35
-#3000=100 (are the arguments OK?)
+#3000=100 (are*the*arguments*OK?)
 
 N9999 M30
 
