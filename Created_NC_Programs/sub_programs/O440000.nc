@@ -1,12 +1,11 @@
 %
-O440000 (last update on 20240604)
+O440000 (last update on 20240611)
 (Sotogawa Mentori Corner R, ar HidariMawari 1shuu)
 
 N0001
 IF[#26EQ#0]GOTO0800
 IF[#06EQ#0]GOTO0800
 IF[#06LT0.1]GOTO0800
-IF[#13LT0]GOTO0800
 IF[#18EQ#0]GOTO0800
 IF[#18LT0.1]GOTO0800
 (if X < 10 or #0, go to N0800)
