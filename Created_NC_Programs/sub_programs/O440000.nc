@@ -109,7 +109,7 @@ IF[#103LT0]GOTO0800
 (#103: kakou kaisuu)
 
 
-(kokokara G00)
+(kokokara G01)
 
 
 N0012
