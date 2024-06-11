@@ -1,5 +1,5 @@
 %
-O80000002 (Last update on 20240611)
+O80000002 (Last update on 20240612)
 (Top sai_furiwake: 500.042)
 (Bot sai_furiwake: 499.958)
 (Top Haridashi: 170.042)
@@ -733,14 +733,6 @@ G04 X1.0 (wait 1.0s)
 M05 (spindle off)
 S35
 #3000=146 (is*the*palette#*is*ok?)
-
-N0800
-M09 (coolant off)
-S2599
-G04 X1.0 (wait 1.0s)
-M05 (spindle off)
-S35
-#3000=100 (are*the*arguments*OK?)
 
 N9999 M30
 
