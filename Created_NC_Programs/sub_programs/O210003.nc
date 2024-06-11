@@ -1,85 +1,85 @@
 %
-O210003 (last update on 20240528)
+O210003 (last update on 20240611)
 (for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 
 N0001
 #700=#4012
-IF[#700NE57]GOTO800 
+IF[#700NE57]GOTO0800 
 (#700: current work coordinate G#)
-(if work G# is not 57, go to N800)
+(if work G# is not 57, go to N0800)
 
 N0002
 IF[#5203EQ0]GOTO0003
 IF[#5203GE[#17+5]]GOTO0003
 (if #5203=0 or >=Q+5, go to N0003)
-GOTO800
+GOTO0800
 
 N0003
-IF[#23EQ#0]GOTO800
-IF[#23LT10]GOTO800
-IF[#20LT0]GOTO800
-IF[#26EQ#0]GOTO800
-IF[#09EQ#0]GOTO800
-IF[#09LT0]GOTO800
-IF[#19LT0]GOTO800
-IF[#17EQ#0]GOTO800
-IF[#17LE0]GOTO800
-IF[#04EQ#0]GOTO800
-IF[#04LE0]GOTO800
-IF[#06EQ#0]GOTO800
-IF[#06LT0]GOTO800
-IF[#13EQ#0]GOTO800
-IF[#13LE0]GOTO800
-IF[#21EQ#0]GOTO800
-IF[#21LE0]GOTO800
-IF[#18EQ#0]GOTO800
-IF[#02EQ#0]GOTO800
-IF[#02GT0]GOTO800
-(if W < 10 or #0, go to N800)
-(if X < 10 or #0, go to N800)
-(if Y < 10 or #0, go to N800)
-(if T < 0, go to N800)
-(if Z = #0, go to N800)
-(if F < 0 or #0, go to N800)
-(if S < 0, go to N800)
-(if Q <= 0 or #0, go to N800)
-(if I <= 0 or #0, go to N800)
-(if K < 0 or #0, go to N800)
-(if M <= 0 or #0, go to N800)
-(if U <= 0 or #0, go to N800)
-(if R = #0, go to N800)
-(if B > 0 or #0, go to N800)
+IF[#23EQ#0]GOTO0800
+IF[#23LT10]GOTO0800
+IF[#20LT0]GOTO0800
+IF[#26EQ#0]GOTO0800
+IF[#09EQ#0]GOTO0800
+IF[#09LT0]GOTO0800
+IF[#19LT0]GOTO0800
+IF[#17EQ#0]GOTO0800
+IF[#17LE0]GOTO0800
+IF[#04EQ#0]GOTO0800
+IF[#04LE0]GOTO0800
+IF[#06EQ#0]GOTO0800
+IF[#06LT0]GOTO0800
+IF[#13EQ#0]GOTO0800
+IF[#13LE0]GOTO0800
+IF[#21EQ#0]GOTO0800
+IF[#21LE0]GOTO0800
+IF[#18EQ#0]GOTO0800
+IF[#02EQ#0]GOTO0800
+IF[#02GT0]GOTO0800
+(if W < 10 or #0, go to N0800)
+(if X < 10 or #0, go to N0800)
+(if Y < 10 or #0, go to N0800)
+(if T < 0, go to N0800)
+(if Z = #0, go to N0800)
+(if F < 0 or #0, go to N0800)
+(if S < 0, go to N0800)
+(if Q <= 0 or #0, go to N0800)
+(if I <= 0 or #0, go to N0800)
+(if K < 0 or #0, go to N0800)
+(if M <= 0 or #0, go to N0800)
+(if U <= 0 or #0, go to N0800)
+(if R = #0, go to N0800)
+(if B > 0 or #0, go to N0800)
 
 #24=#900018
 #25=#900024
-IF[#24EQ#0]GOTO800
-IF[#24LT10]GOTO800
-IF[#25EQ#0]GOTO800
-IF[#25LT10]GOTO800
+IF[#24EQ#0]GOTO0800
+IF[#24LT10]GOTO0800
+IF[#25EQ#0]GOTO0800
+IF[#25LT10]GOTO0800
 (XY into measurement values)
-(if X < 10 or #0, go to N800)
-(if Y < 10 or #0, go to N800)
+(if X < 10 or #0, go to N0800)
+(if Y < 10 or #0, go to N0800)
 
-IF[#09EQ#19]GOTO800
-IF[#620EQ#0]GOTO800
-IF[#620LT2]GOTO800
-IF[#18LE#26]GOTO800
-IF[[#13-FIX[#13]]NE0]GOTO800
-IF[[#17+[#13-1]*#06]GE#26]GOTO800
-IF[[[#09+#19+ABS[#09-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]GOTO800
-IF[#02LT[-15]]GOTO800
-IF[#21GT#04]GOTO800
-IF[#26LE[#901011/2]]GOTO800
-(if F = S, go to N800)
-(if #620 < 2 or #0, go to N800)
-(if R <= Z, go to N800)
-(if M is not intger, go to N800)
-(if Q+[M-1]*K >= Z, go to N800)
-(if max[F, S] >= min[X, Y], go to N800)
-(if B < -15, go to N800)
-(if U > I, go to N800)
-(if Z <= #901011/2, go to N800)
+IF[#09EQ#19]GOTO0800
+IF[#620EQ#0]GOTO0800
+IF[#620LT2]GOTO0800
+IF[#18LE#26]GOTO0800
+IF[[#13-FIX[#13]]NE0]GOTO0800
+IF[[#17+[#13-1]*#06]GE#26]GOTO0800
+IF[[[#09+#19+ABS[#09-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]GOTO0800
+IF[#02LT[-15]]GOTO0800
+IF[#21GT#04]GOTO0800
+IF[#26LE[#901011/2]]GOTO0800
+(if F = S, go to N0800)
+(if #620 < 2 or #0, go to N0800)
+(if R <= Z, go to N0800)
+(if M is not intger, go to N0800)
+(if Q+[M-1]*K >= Z, go to N0800)
+(if max[F, S] >= min[X, Y], go to N0800)
+(if B < -15, go to N0800)
+(if U > I, go to N0800)
+(if Z <= #901011/2, go to N0800)
 
 IF[#20EQ#0]THEN #20=0
 (if T=#0, then T=0)
@@ -92,7 +92,7 @@ IF[#4111EQ33]GOTO0013
 (if H#=31, go to N0013)
 (if H#=32, go to N0013)
 (if H#=33, go to N0013)
-GOTO800
+GOTO0800
 
 N0012 (if sensor)
 #701=#901050 (Z hosei)
@@ -199,19 +199,19 @@ IF[#724EQ1]GOTO0103
 (if A, to N0103)
 (for face D)
 G91 G#703 Y-#716 F#653
-IF[#5002GT[-#716+0.001]]GOTO802
+IF[#5002GT[-#716+0.001]]GOTO0802
 GOTO0104
 N0101 (for face B)
 G91 G#703 Y#716 F#653
-IF[#5002LT[#716-0.001]]GOTO802
+IF[#5002LT[#716-0.001]]GOTO0802
 GOTO0104
 N0102 (for face C)
 G91 G#703 X-#717 F#653
-IF[#5001GT[#713-#717+0.001]]GOTO802
+IF[#5001GT[#713-#717+0.001]]GOTO0802
 GOTO0104
 N0103 (for face A)
 G91 G#703 X#717 F#653
-IF[#5001LT[#713+#717-0.001]]GOTO802
+IF[#5001LT[#713+#717-0.001]]GOTO0802
 
 N0104
 IF[#724EQ3]GOTO0105
@@ -317,19 +317,19 @@ IF[#724EQ1]GOTO0204
 (if A, to N0204)
 (for face D)
 G91 G#703 Y-#716 F#653
-IF[#5002GT[-#716+0.001]]GOTO802
+IF[#5002GT[-#716+0.001]]GOTO0802
 GOTO0205
 N0202 (for face B)
 G91 G#703 Y#716 F#653
-IF[#5002LT[#716-0.001]]GOTO802
+IF[#5002LT[#716-0.001]]GOTO0802
 GOTO0205
 N0203 (for face C)
 G91 G#703 X-#717 F#653
-IF[#5001GT[#713-#717+0.001]]GOTO802
+IF[#5001GT[#713-#717+0.001]]GOTO0802
 GOTO0205
 N0204 (for face A)
 G91 G#703 X#717 F#653
-IF[#5001LT[#713+#717-0.001]]GOTO802
+IF[#5001LT[#713+#717-0.001]]GOTO0802
 
 
 (start loop for #33)
@@ -338,28 +338,28 @@ IF[#5001LT[#713+#717-0.001]]GOTO802
 N0205
 #33=1 (#33: current row)
 WHILE[#33LE#13]DO1
-IF[#724EQ3]GOTO300
-IF[#724EQ2]GOTO301
-IF[#724EQ1]GOTO302
+IF[#724EQ3]GOTO0300
+IF[#724EQ2]GOTO0301
+IF[#724EQ1]GOTO0302
 (#724=3, for B)
 (#724=2, for C)
 (#724=1, for A)
 (face D)
 G65 P220002 A-1.0 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for D: moving along row)
-GOTO303
-N300 (face B)
+GOTO0303
+N0300 (face B)
 G65 P220002 A1.0 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for B: moving along row)
-GOTO303
-N301 (face C)
+GOTO0303
+N0301 (face C)
 G65 P220001 A-1.0 X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for C: moving along row)
-GOTO303
-N302 (face A)
+GOTO0303
+N0302 (face A)
 G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for A: moving along row)
-N303
+N0303
 IF[#33GE#13]GOTO0206
 (if #33 >= #13, go to N0206)
 #32=#707-[#33-1]*#06
@@ -394,44 +394,44 @@ G90 G01 X#711 Z#712 F#652
 (XZ: to start point)
 G90 G01 Z[#712+#600] F#652
 
-N990
-IF[#4119GE2600]GOTO991
+N9990
+IF[#4119GE2600]GOTO9991
 S2599
-GOTO992
-N991
+GOTO9992
+N9991
 S6000
 
-N992
+N9992
 G90 G53 G01 Z0 F#650
 G04 X1.5 (wait 1.5s)
 M05 (spindle off)
 S35
-GOTO999
+GOTO9999
 
 
-N801
+N0801
 M09 (coolant off)
 M05 (spindle off)
 #3000=145 (Sensor Low battery)
 
-N802
+N0802
 G90 G01 X#713 Y#714 F#653
-IF[#1004EQ0]GOTO803
-(if current sensor OFF, go to N803)
+IF[#1004EQ0]GOTO0803
+(if current sensor OFF, go to N0803)
 M117 (sensor on/off)
 
-N803
+N0803
 G90 G01 Z#715 F#653
 (XYZ: to the center of the 1st row)
 G90 G01 X#711 Z#712 F#653
 (XZ: to start point)
 
-N800
+N0800
 M09 (coolant off)
 M05 (spindle off)
 #3000=121 (are the arguments or the mould OK?)
 
-N999 M99
+N9999 M99
 
 (Used Variables and Programs)
 
