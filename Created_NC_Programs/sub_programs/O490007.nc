@@ -27,20 +27,26 @@ IF[#19LE200]GOTO0800
 (#33: start position X)
 (#32: start position Y)
 
+#31=#[2400+#07]+#[2600+#07]
+#30=[#01+#31+ABS[#01-#31]]/2
+IF[#30GT25]GOTO0800
+
 
 (kokokara G01)
 
 
 N0002
 S#19
-G91 G41 G01 D#07 X#01 Y[[#25/2]-#01] F[#09*3]
+G91 G41 G01 D#07 X[[#24/2]-#30] Y[[#25/2]-#18-#30] F[#09*3]
 (hosei kouguKei, kougu #07)
-(X+: A)
-(Y+: Y/2+mekki-A)
-G91 G03 X-#01 Y#01 I-#01 J0 F#08
-(ac: approach R #01 [-#01, 0] X-Y+)
-G91 G01 X-[[#24-[#18*2]]/2] F#09
-(ac2al: X- AC chokusenBu/2)
+(X+: X/2-#30)
+(Y+: Y/2-R-#30)
+G91 G03 X#30 Y#30 I0 J#18 F#08
+G91 G03 X-#18 Y#18 I-#18 J0 F#08
+(ar corner: R #30 [0, #18] X+Y+)
+(ar corner: R #18 [-#18, 0] X-Y+)
+G91 G01 X-[#24-[#18*2]] F#09
+(a: X- AC chokusenBu)
 G91 G03 X-#18 Y-#18 I0 J-#18 F#08
 (al corner: R #18 [0, -#18] X-Y-)
 G91 G01 Y-[#25-[#18*2]] F#09
@@ -54,14 +60,11 @@ G91 G03 X#18 Y#18 I0 J#18 F#08
 G91 G01 Y[#25-[#18*2]] F#09
 (r:Y+: BD chokusenBu)
 G91 G03 X-#18 Y#18 I-#18 J0 F#08
+G91 G03 X-#30 Y-#30 I0 J-#18 F[#09*3]
 (ar corner: R #18 [-#18, 0] X-Y+)
-G91 G01 X-[[#24-[#18*2]]/2+1] F#09
-(ar2ac:X-: AC chokusenBu/2)
-G91 G03 X-#01 Y-#01 I0 J-#01 F[#09*3]
-(ac: approach R #01 [0, -#01] X-Y-)
+(ar corner: R #30 [0, -#18] X-Y-)
 G90 G01 X#33 Y#32 F#651
 (XY to the start position)
-
 GOTO9999
 
 
@@ -88,7 +91,7 @@ N9999 M99
 (#25:Y: BD kei)
 
 (as LHS)
-(#32, #33)
+(#30, #31, #32, #33)
 
 (Common variables)
 (as RHS)
