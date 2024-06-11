@@ -1,6 +1,5 @@
 %
-O915100 (last update on 20240510)
-(warming up)
+O915100 (warming up: 20240611)
 
 N001 (initialize)
 G49 G40 (cancel hosei)
@@ -12,7 +11,6 @@ M09 (coolant off)
 M29 (chip conveyor off)
 G90 G53 G01 Z0 F#650
 G90 G53 G01 X-5.501 Y-258.624 F#652
-
 
 N002
 M72 (palette #2)
@@ -68,23 +66,6 @@ M10 (B-axis clamp)
 M29 (chip conveyor off)
 
 N999 M30
-
-
-T01
-M06 (tool exchange)
-
-M07 (coolant #2 on)
-G04 X30.0
-M09 (coolant off)
-G04 X4.0
-M151 (spindle through air blow)
-G04 X10.0
-M09 (coolant off)
-G91 G28 Z0
-G91 G28 X0 Y0
-G91 G28 B0
-
-M30
 
 (Used Variables and Programs)
 
