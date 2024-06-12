@@ -54,14 +54,14 @@ class GCodeLexer(ExtendedRegexLexer):
             (r'\([^\n\r]*\)', Comment.SingleLine),
 
             # Braced expressions entry point
-            (r'(\[)', Keyword, 'bracket1'),
+            (r'(\[)', Keyword.Pseudo.Bracket1, 'bracket1'),
 
             # math functions, math case-insensitive
             (r'[-+*/:=]', Operator),
             ("(?i)(%s)" % '|'.join(re.escape(entry) for entry in functions), Operator.Word),
 
             # built in commands, match case-insensitive
-            ("(?i)(%s)" % '|'.join(re.escape(entry) for entry in builtins), Name.Builtin),
+            ("(?i)(%s)" % '|'.join(re.escape(entry) for entry in builtins), Operator.Word),
 
             # Coordinates, Feeds, Speeds, and Machining parameter, 
             # match only the label
@@ -82,16 +82,16 @@ class GCodeLexer(ExtendedRegexLexer):
             (r'(?<![a-zA-Z\<])[L]\d*', Keyword.Pseudo.Reserved),
 
             # Non-persistent Arguments (#1-#30)
-            (r'(?<=#)0*[1-3]?[0-9](?=\D)', Name.Variable.Magic),
+            (r'(?<=#)0*[1-3]?[0-9](?=\D)', Name.Builtin.Magic),
             # Numbered Variables
-            (r'(?<=#)0*[4-9]?[0-9]{1,5}', Name.Variable),
+            (r'(?<=#)0*[4-9]?[0-9]{1,5}', Name.Builtin),
             # Local Variables
-            (r'(?<=#\<)\w[\w_]*(?=\>)', Name.Variable),
+            (r'(?<=#\<)\w[\w_]*(?=\>)', Name.Builtin),
             # GlobalVariables
-            (r'(?<=#\<)_[\w_]*(?=\>)',Name.Variable.Global),
+            (r'(?<=#\<)_[\w_]*(?=\>)',Name.Builtin.Global),
 
             # Variables Indicator
-            (r'(#|\<|\>)', Name.Variable),
+            (r'(#|\<|\>)', Name.Builtin),
 
             # Subroutines, match label
             (r'(?<![a-zA-Z\<])[OP]\d*', Keyword.Pseudo.Reserved),
@@ -121,17 +121,22 @@ class GCodeLexer(ExtendedRegexLexer):
         ],
 
         'bracket1': [
-            (r'\[', Keyword, 'bracket2'),
-            (r'\]', Keyword, '#pop'),
+            (r'\[', Keyword.Pseudo.Bracket2, 'bracket2'),
+            (r'\]', Keyword.Pseudo.Bracket1, '#pop'),
             include('root')
         ],
         'bracket2': [
-            (r'\[', Keyword, 'bracket3'),
-            (r'\]', Keyword, '#pop'),
+            (r'\[', Keyword.Pseudo.Bracket3, 'bracket3'),
+            (r'\]', Keyword.Pseudo.Bracket2, '#pop'),
             include('root')
         ],
         'bracket3': [
-            (r'\]', Keyword, '#pop'),
+            (r'\[', Keyword.Pseudo.Bracket4, 'bracket4'),
+            (r'\]', Keyword.Pseudo.Bracket3, '#pop'),
+            include('root')
+        ],
+        'bracket4': [
+            (r'\]', Keyword.Pseudo.Bracket4, '#pop'),
             include('root')
         ],
     }
