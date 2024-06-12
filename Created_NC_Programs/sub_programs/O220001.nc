@@ -1,12 +1,12 @@
 %
-O220001 (last update on 20240510)
+O220001 (last update on 20240612)
 (for AC dimples measurement & kakou)
 (level 2: mainly moving along row)
 
 N001
-IF[#01EQ#0]GOTO800
-IF[#01EQ0]GOTO800
-(if A = 0 or empty, to N800)
+IF[#01EQ#0]GOTO0800
+IF[#01EQ0]GOTO0800
+(if A = 0 or empty, to N0800)
 
 IF[#01GT0]THEN #33=1
 IF[#01LT0]THEN #33=-1
@@ -82,13 +82,13 @@ END1
 N008
 G90 G01 Y#725 Z#726 F#651
 (YZ: to start point)
-GOTO999
+GOTO9999
 
-N800
+N0800
 #3000=121
-(are the arguments or the mould OK?)
+(are*the*arguments*OK?)
 
-N999 M99
+N9999 M99
 
 (Used Variables and Programs)
 
