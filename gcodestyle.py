@@ -29,9 +29,13 @@ class GcodestyleStyle(Style):
         Keyword.Pseudo.Declaration: "#0000FF",
         Keyword.Pseudo.Reserved:    "#00A1E9",
         Keyword.Pseudo.Speed:       "#D2413A",
+        Keyword.Pseudo.Bracket1:    "#000000",
+        Keyword.Pseudo.Bracket2:    "#CC099A",
+        Keyword.Pseudo.Bracket3:    "#096CFC",
+        Keyword.Pseudo.Bracket4:    "#B4BA02",
 
         Operator:                   "#333333",
-        Operator.Word:              "#AA22FF",
+        Operator.Word:              "#8A4A01",
 
         Name.Builtin:               "#AA22FF",
         Name.Function:              "#00A000",
