@@ -57,12 +57,12 @@
   %%%%% LIST COMMON STYLE %%%%%
   listcommonstyle/.style={%
     parskip/.style={
-      before={\par\pagebreak[0]\parindent=0pt},
+      before={\par\nopagebreak\parindent=0pt},
       after={\parfillskip=0pt\par},
     },
     breakable,%
     enhanced jigsaw,%
-    before=\par\bigskip\noindent,%
+%    before=\par\bigskip\noindent,%
     enlargepage flexible=\baselineskip,%
     width=\textwidth,
     pad at break*=3mm,%
@@ -102,7 +102,6 @@
 %%%%% TABBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtcolorbox{Tabbox}[1][]{Tabularbox, #1}
-%\renewcommand{\tableautorefname}{表}
 \tcbset{%
   %%%%% TABULARBOX STYLE %%%%%
   Tabularbox/.style={%
@@ -187,7 +186,7 @@
     colback=green!0.5!white,%
     colframe=green!40!black!75!,%
     watermark color=green!60!yellow!13!white,%
-  }
+  },
 }%
 
 %%%%% LOFBOX %%%%%
@@ -198,28 +197,28 @@
     listcommonstyle,
     colback=cyan!1!white,%
     colframe=cyan!100!black!100!,%
-  }%
+  },%
 }%
 
 %%%%% LOTBOX %%%%%
 \newtcolorbox{lotBox}{lotstyle}
 \tcbset{%
   %%%%% LOTSTYLE STYLE %%%%%
-  lotstyle/.style={lofstyle},
+  lotstyle/.style={lofstyle,},
 }%
 
 %%%%% LOCODEBOX %%%%%
 \newtcolorbox{locodeBox}{locodestyle}
 \tcbset{%
   %%%%% LOTSTYLE STYLE %%%%%
-  locodestyle/.style={lofstyle},
+  locodestyle/.style={lofstyle,},
 }%
 
 %%%%% LOCBOX %%%%%
 \newtcolorbox{loColumnBox}{loColumnstyle}
 \tcbset{%
   %%%%% LOCSTYLE STYLE %%%%%
-  loColumnstyle/.style={lofstyle},
+  loColumnstyle/.style={lofstyle,},
 }%
 
 %%%%% LOPBOX %%%%%
@@ -255,6 +254,7 @@
         -- cycle;
       },
     },
+    before={\nobreak},
   },
 }%
 
@@ -296,13 +296,13 @@
 
 %%%%% ISSUE %%%%%
 \newcommand{\issuename}{Issue}
-\newtcolorbox{Issues}[2][]{Issuebox, title={#2}, #1}
+\newtcolorbox[auto counter]{Issues}[2][]{Issuebox, title={#2}, #1}
 \tcbset{%
   %%%%% ISSUEBOX STYLE %%%%%
   Issuebox/.style={%
     Tabularbox,
     colback=black!02!white!,%
-    after title=\hfill\termblue{\issuename},%
+    after title=\hfill\termblue{\issuename.\thetcbcounter},%
   }%
 }%
 
