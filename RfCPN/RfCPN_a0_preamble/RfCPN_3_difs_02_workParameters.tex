@@ -91,11 +91,11 @@
 
 %%% Overall %%%
 \newNamecommand{Alocation}{振分け}{ふりわけ}
-\newNamecommand{AlocationLength}{振分長}{ふりわけちょう}
+\newNamecommand{AlocationLength}{振分長}{\yomiAlocation ちょう}
 \newNamecommand{ReAlocation}{再\nameAlocation}{さい\yomiAlocation}
 \newNamecommand{ReAlocationLength}{再\nameAlocationLength}{さい\yomiAlocationLength}
 %%% Point %%%
-\newNamecommand{AlocationCenter}{振分中心}{ふりわけちゅうしん}
+\newNamecommand{AlocationCenter}{振分中心}{\yomiAlocation ちゅうしん}
 %%%
 \newNamecommand{AlocationLengthDimension}{\nameAlocationLength の寸法}{\yomiAlocationLength のすんぽう}
 \newNamecommand{AlocationLengthTolerance}{\nameAlocationLengthDimension 公差}{\yomiAlocationLengthDimension こうさ}
@@ -110,6 +110,7 @@
 \newGPMcommand{BottomReAlocationLength}{ボトム\nameReAlocationLength}{ボトム\yomiReAlocationLength}
 \newGPMcommand{AlocationAngle}{振分調整用傾き角}{ふりわけちょうせいようかたむきかく}
 \newGPMcommand{EqualAlocationAngle}{均等振分傾き角}{きんとうふりわけかたむきかく}
+\newGPMcommand{BottomALBracketDimensionExists}{\nameBottomAlocationLength の括弧寸法の有無}{\yomiBottomAlocationLength のかっこすんぽうのうむ}
 %%%
 \newNamecommand{WorkTotalLengthDimension}{\nameWorkTotalLength の寸法}{\yomiWorkTotalLength のすんぽう}
 \newNamecommand{WorkTotalLengthTolerance}{\nameWorkTotalLengthDimension 公差}{\yomiWorkTotalLengthDimension こうさ}
@@ -225,6 +226,7 @@
 \newNamecommand{TopOutcutWidth}{トップ\nameOutcutWidth}{トップ\yomiOutcutWidth}
 \newNamecommand{BottomOutcutWidth}{ボトム\nameOutcutWidth}{ボトム\yomiOutcutWidth}
 \newNamecommand{OutcutLength}{\nameOutcut 長}{\yomiOutcut ちょう}
+\newNamecommand{BothOutcut}{両\nameOutcut}{りょう\yomiOutcut}
 \newNamecommand{CenterlineEndFaceDif}{通り芯}{とおりしん}
 \newNamecommand{CenterlineEndFaceDifMeasurement}{\nameCenterlineEndFaceDif 測定}{\yomiCenterlineEndFaceDif そくてい}
 %%% Tapered %%%
@@ -234,6 +236,8 @@
 \newNamecommand{TopCurvedOutcut}{トップ\nameCurvedOutcut}{トップ\yomiCurvedOutcut}
 \newNamecommand{BottomCurvedOutcut}{ボトム\nameCurvedOutcut}{ボトム\yomiCurvedOutcut}
 \newNamecommand{CurvedOutcutMilling}{\nameCurvedOutcut 加工}{\yomiCurvedOutcut かこう}
+\newNamecommand{TopCurvedOutcutMilling}{トップ\nameCurvedOutcutMilling}{トップ\yomiCurvedOutcutMilling}
+\newNamecommand{BottomCurvedOutcutMilling}{ボトム\nameCurvedOutcutMilling}{ボトム\yomiCurvedOutcutMilling}
 \newNamecommand{CurvedOutcutAngle}{\nameCurvedOutcut 傾き角}{\yomiCurvedOutcut かたむきかく}
 \newNamecommand{TopCurvedOutcutWidth}{トップ\nameOutcut 径}{トップ\yomiOutcut けい}
 \newNamecommand{BottomCurvedOutcutWidth}{ボトム\nameOutcut 径}{ボトム\yomiOutcut けい}
@@ -246,6 +250,7 @@
 \newNamecommand{CurvedOutcutCenter}{\nameCurvedOutcut 中心}{\yomiCurvedOutcut ちゅうしん}
 \newNamecommand{TopSideCurvedOutcutCenter}{トップ側の\nameCurvedOutcut 中心}{トップがわの\yomiCurvedOutcut ちゅうしん}
 \newNamecommand{BottomSideCurvedOutcutCenter}{ボトム側の\nameCurvedOutcut 中心}{ボトムがわの\yomiCurvedOutcut ちゅうしん}
+\newGPMcommand{OutcutCenterReference}{\nameOutcutCenter 基準}{\yomiOutcutCenter きじゅん}
 %%%
 \newNamecommand{OutcutMillingDimension}{\nameOutcutMilling の寸法}{\yomiOutcutMilling のすんぽう}
 \newNamecommand{OutcutLengthDimension}{\nameOutcutLength の寸法}{\yomiOutcutLength のすんぽう}
@@ -269,11 +274,13 @@
 \newGPMcommand{BottomOutcutLength}{ボトム\nameOutcutLength}{ボトム\yomiOutcutLength}
 \newGPMcommand{CenterlineEndFaceDifAC}{\nameCenterlineEndFaceDif AC方向}{\yomiCenterlineEndFaceDif ACほうこう}
 \newGPMcommand{CenterlineEndFaceDifBD}{\nameCenterlineEndFaceDif BD方向}{\yomiCenterlineEndFaceDif BDほうこう}
+\newGPMcommand{TopOutcutEndKeywayExists}{\nameTopOutcut 端の\nameKeyway の有無}{\yomiTopOutcut たんの\yomiKeyway のうむ}
 %%% Curved %%%
 \newGPMcommand{TopOutcutTaperExists}{トップ\nameOutcutTaperExists}{トップ\yomiOutcutTaperExists}
 \newGPMcommand{BottomOutcutTaperExists}{ボトム\nameOutcutTaperExists}{ボトム\yomiOutcutTaperExists}
-\newGPMcommand{TopCurvedOutcutExists}{\nameTopCurvedOutcut の有無}{\yomiTopCurvedOutcut の有無}
-\newGPMcommand{BottomCurvedOutcutExists}{\nameBottomCurvedOutcut の有無}{\yomiBottomCurvedOutcut の有無}
+\newGPMcommand{CurvedOutcutExists}{\nameCurvedOutcut の有無}{\yomiCurvedOutcut のうむ}
+\newGPMcommand{TopCurvedOutcutExists}{トップ\nameCurvedOutcutExists}{トップ\yomiCurvedOutcutExists}
+\newGPMcommand{BottomCurvedOutcutExists}{ボトム\nameCurvedOutcutExists}{ボトム\yomiCurvedOutcutExists}
 
 %%% KEYWAY %%%
 \newNamecommand{Keyway}{キー溝}{キーみぞ}
@@ -313,12 +320,19 @@
 \newNamecommand{EndFaceChamferLength}{\nameEndFaceChamfer 長}{\yomiEndFaceChamfer ちょう}
 \newNamecommand{EndFaceChamferWidth}{\nameEndFaceChamfer 幅}{\yomiEndFaceChamfer はば}
 \newNamecommand{EndFaceOutChamfer}{\nameEndFace 外面取}{\yomiEndFace そとめんとり}
+\newNamecommand{TopEndFaceOutChamfer}{トップ\nameEndFaceOutChamfer}{トップ\yomiEndFaceOutChamfer}
+\newNamecommand{BottomEndFaceOutChamfer}{ボトム\nameEndFaceOutChamfer}{ボトム\yomiEndFaceOutChamfer}
 \newNamecommand{EndFaceOutChamferMilling}{\nameEndFaceOutChamfer 加工}{\yomiEndFaceOutChamfer かこう}
+\newNamecommand{TopEndFaceOutChamferMilling}{トップ\nameEndFaceOutChamferMilling}{トップ\yomiEndFaceOutChamferMilling}
+\newNamecommand{BottomEndFaceOutChamferMilling}{ボトム\nameEndFaceOutChamferMilling}{ボトム\yomiEndFaceOutChamferMilling}
 \newNamecommand{EndFaceInChamfer}{\nameEndFace 内面取}{\yomiEndFace うちめんとり}
 \newNamecommand{EndFaceInChamferMilling}{\nameEndFaceInChamfer 加工}{\yomiEndFaceInChamfer かこう}
+\newNamecommand{TopEndFaceInChamferMilling}{トップ\nameEndFaceInChamfer 加工}{トップ\yomiEndFaceInChamfer かこう}
 \newNamecommand{EndFaceInChamferLength}{\nameEndFaceOutChamfer 長}{\yomiEndFaceOutChamfer ちょう}
 
 \newGPMcommand{ChamferType}{面取の種類}{めんとりのしゅるい}
+\newGPMcommand{EndFaceOutChamferType}{\nameEndFaceOutChamfer の種類}{\yomiEndFaceOutChamfer のしゅるい}
+\newGPMcommand{EndFaceInChamferType}{\nameEndFaceInChamfer の種類}{\yomiEndFaceInChamfer のしゅるい}
 
 %%% C CHANMFER %%%
 \newNamecommand{EndFaceCChamfer}{\nameEndFace C面取}{\yomiEndFace Cめんとり}
@@ -516,12 +530,13 @@
 
 %%% TOOL %%%
 \newGPMcommand{ToolRadius}{工具半径}{こうぐはんけい}
-\newGPMcommand{TouchSensorProbeRadius}{タッチセンサープローブ半径}{タッチセンサープローブはんけい}
-\newGPMcommand{FaceMillDC}{フェイスミル刃径}{フェイスミルはけい}
-\newGPMcommand{FaceMillDCX}{フェイスミル最大刃径}{フェイスミルさいだいはけい}
-\newGPMcommand{TaperEndMillAngle}{テーパエンドミル片角}{テーパエンドミルかたかく}
-\newGPMcommand{TaperEndMillTipDiameter}{テーパエンドミル先端径}{テーパエンドミルせんたんけい}
-\newGPMcommand{TaperEndMillReferenceDiameter}{テーパエンドミル参照直径}{テーパエンドミルさんしょうちょっけい}
+\newGPMcommand{TouchSensorProbeRadius}{\nameTouchSensorProbe 半径}{\yomiTouchSensorProbe はんけい}
+\newGPMcommand{FaceMillDC}{\nameFaceMill 刃径}{\yomiFaceMill はけい}
+\newGPMcommand{FaceMillDCX}{\nameFaceMill 最大刃径}{\yomiFaceMill さいだいはけい}
+\newGPMcommand{SquareEndMillTaperExists}{\nameSquareEndMill 先端テーパの有無}{\yomiSquareEndMill せんたんテーパのうむ}
+\newGPMcommand{TaperEndMillAngle}{\nameTaperEndMill 片角}{\yomiTaperEndMill かたかく}
+\newGPMcommand{TaperEndMillTipDiameter}{\nameTaperEndMill 先端径}{\yomiTaperEndMill せんたんけい}
+\newGPMcommand{TaperEndMillReferenceDiameter}{\nameTaperEndMill 参照直径}{\yomiTaperEndMill さんしょうちょっけい}
 
 % 内面テーパ付湾曲付R直方筒 Inner Taper R-Rectangular Tube with Curvature
 
