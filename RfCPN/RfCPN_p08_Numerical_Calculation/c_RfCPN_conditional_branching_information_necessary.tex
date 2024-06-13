@@ -4,7 +4,7 @@
 \modHeadchapter[lot]{必要な条件分岐情報（\index{NCプログラム}NCプログラム）}
 入力するパラメタの中には\index{じょうけんぶんき@条件分岐}条件分岐に用いるものが含まれる。
 それらを組み合わせることで、加工にパターン分けをすることができる。
-ここではそうした\index{じょうけんぶんきじょうほう@条件分岐情報}条件分岐情報と、それに直接影響する\index{こうてい@工程}工程をまとめておく。
+ここではそうした\index{じょうけんぶんきじょうほう@条件分岐情報}条件分岐情報と、それに直接的に影響する\index{こうてい@工程}工程またはパラメタをまとめておく。
 
 
 
@@ -13,34 +13,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{湾曲・\Alocation に関する\index{じょうけんぶんき@条件分岐}条件分岐}
 
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMCenterCurvatureExists}{X[l]}
+工程\\
+ワーク座標系 原点設定\\
+外側中心$X$および幅$X$ 両側測定\\
+\KeywayCenter$X$ 片側測定\\
+内側中心$X$および幅$X$ 両側測定\\
+\OutcutCenter$X$ 片側測定\\
+\indexDimpleMeasurement\indexDimpleMilling{} 各列の中心上への移動\\
+\KeywayMilling\\
+\EndFaceOutChamferMilling\\
+\EndFaceInChamferMilling\\
+\indexReliefGrooveMeasurement\indexReliefGrooveMilling\nameReliefGroove 測定および加工\\
+\end{multicollongtblr}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.01.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMCenterCurvatureExists}
-
-\begin{enumerate}[label=\sarrow]
-\item ワーク座標系 原点設定
-\item 外側中心$X$および幅$X$ 両側測定
-\item \KeywayCenter$X$ 片側測定
-\item 内側中心$X$および幅$X$ 両側測定
-\item \OutcutCenter$X$ 片側測定
-\item \indexDimpleMeasurement\indexDimpleMilling\nameDimple 測定および加工 各列の中心上への移動
-\item \KeywayMilling
-\item \EndFaceOutChamferMilling
-\item \EndFaceInChamferMilling
-\item \ReliefGrooveMilling
-\end{enumerate}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.01.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMBottomALBracketDimensionExists}
-
-\begin{enumerate}[label=\sarrow]
-\item \AlocationLength
-\end{enumerate}
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMBottomALBracketDimensionExists}{X[l]}
+パラメタ\\
+\AlocationLength\\
+\end{multicollongtblr}
 
 
 
@@ -50,67 +40,42 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\Outcut に関する\index{じょうけんぶんき@条件分岐}条件分岐}
 
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMTopOutcutExists}{X[l]}
+工程\\
+ワーク座標系 原点設定\\
+トップ外側中心$X$ 片側測定\\
+\KeywayCenter$X$ 芯出し\\
+\TopOutcutMilling\\
+\KeywayMilling\\
+\TopEndFaceOutChamferMilling\\
+\CenterlineEndFaceDifMeasurement\\
+\end{multicollongtblr}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMTopOutcutExists}
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMTopOutcutEndKeywayExists}{X[l]}
+工程\\
+\TopOutcutMilling\\
+\TopCurvedOutcutMilling\\
+\end{multicollongtblr}
 
-\begin{enumerate}[label=\sarrow]
-\item ワーク座標系 原点設定
-\item トップ外側中心$X$ 片側測定
-\item \KeywayCenter$X$ 芯出し
-\item \TopOutcutMilling
-\item \KeywayMilling
-\item \TopEndFaceOutChamferMilling
-\item \CenterlineEndFaceDifMeasurement
-\end{enumerate}
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMBottomOutcutExists}{X[l]}
+工程\\
+ワーク座標系 原点設定\\
+ボトム外側中心$X$ 片側測定\\
+\BottomOutcutMilling\\
+\BottomEndFaceOutChamferMilling\\
+\CenterlineEndFaceDifMeasurement\\
+\end{multicollongtblr}
 
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMSquareEndMillTaperExists}{X[l]}
+工程\\
+\OutcutMilling\\
+\CurvedOutcutMilling\\
+\end{multicollongtblr}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMTopOutcutEndKeywayExists}
-
-\begin{enumerate}[label=\sarrow]
-\item \TopOutcutMilling
-\item \TopCurvedOutcutMilling
-\end{enumerate}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMBottomOutcutExists}
-
-\begin{enumerate}[label=\sarrow]
-\item ワーク座標系 原点設定
-\item ボトム外側中心$X$ 片側測定
-\item \BottomOutcutMilling
-\item \BottomEndFaceOutChamferMilling
-\item \CenterlineEndFaceDifMeasurement
-\end{enumerate}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.02.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMSquareEndMillTaperExists}
-
-\begin{enumerate}[label=\sarrow]
-\item \OutcutMilling
-\item \CurvedOutcutMilling
-\end{enumerate}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.02.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMOutcutCenterReference}
-
-\begin{enumerate}[label=\sarrow]
-\item \CenterlineEndFaceDifMeasurement
-\end{enumerate}
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMOutcutCenterReference}{X[l]}
+工程\\
+\CenterlineEndFaceDifMeasurement\\
+\end{multicollongtblr}
 
 
 
@@ -120,27 +85,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\Keyway に関する\index{じょうけんぶんき@条件分岐}条件分岐}
 
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMKeywayCornerType}{X[l]}
+工程\\
+\KeywayMilling\\
+\end{multicollongtblr}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMKeywayCornerType}
-
-\begin{enumerate}[label=\sarrow]
-\item \KeywayMilling
-\end{enumerate}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.03.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMAKDToleranceExists}
-
-\begin{enumerate}[label=\sarrow]
-\item ワーク座標系 原点設定
-\item \KeywayCenter$X$ 片側測定
-\item \KeywayMilling
-\end{enumerate}
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMAKDToleranceExists}{X[l]}
+工程\\
+ワーク座標系 原点設定\\
+\KeywayCenter$X$ 片側測定\\
+\KeywayMilling\\
+\end{multicollongtblr}
 
 
 
@@ -150,15 +105,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\Dimple に関する\index{じょうけんぶんき@条件分岐}条件分岐}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.04.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMDimpleExists}
-
-\begin{enumerate}[label=\sarrow]
-\item \DimpleMilling
-\end{enumerate}
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMDimpleExists}{X[l]}
+工程\\
+\DimpleMilling\\
+\end{multicollongtblr}
 
 
 
@@ -168,62 +118,37 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\EndFaceChamfer に関する\index{じょうけんぶんき@条件分岐}条件分岐}
 
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMEndFaceOutChamferType}{X[l]}
+工程\\
+\EndFaceOutChamferMilling\\
+\end{multicollongtblr}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.05.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMEndFaceOutChamferType}
-
-\begin{enumerate}[label=\sarrow]
-\item \EndFaceOutChamferMilling
-\end{enumerate}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.05.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMEndFaceInChamferType}
-
-\begin{enumerate}[label=\sarrow]
-\item \EndFaceInChamferMilling
-\end{enumerate}
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMEndFaceInChamferType}{X[l]}
+工程\\
+\EndFaceInChamferMilling\\
+\end{multicollongtblr}
 
 
 
-%\clearpage
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\index{とくしゅなかこう@特殊な加工}特殊な加工に関する\index{じょうけんぶんき@条件分岐}条件分岐}
 
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMEndFaceBoringExists}{X[l]}
+工程\\
+\EndFaceBoringMilling\\
+\end{multicollongtblr}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.06.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMEndFaceBoringExists}
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMIncutBoringExists}{X[l]}
+工程\\
+\IncutBoringMilling\\
+\TopEndFaceInChamferMilling\\
+\end{multicollongtblr}
 
-\begin{enumerate}[label=\sarrow]
-\item \EndFaceBoringMilling
-\end{enumerate}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.06.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMIncutBoringExists}
-
-\begin{enumerate}[label=\sarrow]
-\item \IncutBoringMilling
-\item \TopEndFaceInChamferMilling
-\end{enumerate}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.06.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{じょうけんぶんき@条件分岐}条件分岐：\PMCurvedOutcutExists}
-
-\begin{enumerate}[label=\sarrow]
-\item \CurvedOutcutMilling
-\item \EndFaceOutChamferMilling
-\end{enumerate}
+\begin{multicollongtblr}{\index{じょうけんぶんき@条件分岐}条件分岐：\PMCurvedOutcutExists}{X[l]}
+工程\\
+\CurvedOutcutMilling\\
+\EndFaceOutChamferMilling\\
+\end{multicollongtblr}
