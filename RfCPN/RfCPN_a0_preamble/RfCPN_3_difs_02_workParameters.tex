@@ -10,6 +10,25 @@
 }
 
 %%%%% GPMBOX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tcbset{%
+  %%%%% COMMONTCBOX STYLE %%%%%
+  commontcbox/.style={%
+    enhanced,
+    nobeforeafter,
+    tcbox raise base,
+    boxrule=0.4pt,
+    top=0mm,
+    bottom=0mm,
+    right=0mm,
+    left=4mm,
+    arc=1pt,
+    boxsep=3pt,
+    left skip=2pt,
+    right skip=2pt,
+    before upper={\vphantom{dl}},
+    fontupper=\ttfamily\bfseries,
+  },
+}
 \newtcbox{\GPMbox}{%
   commontcbox,
   enlarge top by=1pt,
