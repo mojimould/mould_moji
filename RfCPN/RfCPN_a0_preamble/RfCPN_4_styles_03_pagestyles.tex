@@ -8,7 +8,8 @@
     page,
     contents={%
       \begin{tikzpicture}[remember picture, overlay]
-        \node[rotate=#2, scale=#3, anchor=center, opacity=#4, text=lightgray, align=center] at (current page.center) {\Huge\scshape#1\\[-8.75pt]\tiny\customtoday};%
+        \node[rotate=#2, scale=#3, anchor=center, opacity=#4, text=lightgray, align=center] at (current page.center)
+          {\Huge\scshape#1\\[-8.75pt]\tiny\customtoday};%
       \end{tikzpicture}%
     }%
   ]{WatermarkLayer}
