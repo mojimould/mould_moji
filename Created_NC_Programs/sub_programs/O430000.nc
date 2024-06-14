@@ -305,7 +305,7 @@ S2599
 G04 X1.5 (wait 1.5s)
 M05 (spindle off)
 S35
-#3000=100 (are the arguments OK?)
+#3000=100 (are*the*arguments*OK?)
 
 N9999 M99
 
