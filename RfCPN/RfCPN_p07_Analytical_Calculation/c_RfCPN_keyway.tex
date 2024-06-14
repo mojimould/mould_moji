@@ -172,7 +172,7 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 04.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 36.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{測定上の\KeywayDepth}
 ここでは特に\AsideKeywayDepth$\kappa_d$に限って話を進める。
@@ -181,7 +181,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 4.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.05.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{図面上の\KeywayDepth}
 単純に考えると、\index{ずめん@図面}図面上において\AsideKeywayDepth が$\kappa_d$のとき、これは\KeywayCenter の位置におけるA側外面から\EndFace と水平な方向に$\kappa_d$という意味で与えられる。
@@ -196,7 +196,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 23.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.05.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{測定上の傾き}
 通常、実測には\index{マイクロメータ}マイクロメータ（\index{デプスゲージ}デプスゲージ）が用いられる。
@@ -240,7 +240,7 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 4.4.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.05.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{測定における\KeywayDepth 補正}%\label{subsec:keywayDepthDif}
 測定の際は、測定器を\Keyway のトップ側およびボトム側に寄せる形で測定し、その平均値を測定値としている。
@@ -323,7 +323,7 @@ $\kappa_d$および$\kappa_s$の差は
 %% Column %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{\Columnname}{測定における\KeywayDepth 補正の\expandafterindex{きんじけいさん（\yomiKeywayDepth ほせい）@近似計算（\nameKeywayDepth 補正）}近似計算}
-$R\to\infty$ ($R^{-1}\to0$)に対して、
+\pageeqref{eq:angleZeta}および\pageeqref{eq:keydepthDif2}より、$R\to\infty$ ($R^{-1}\to0$)に対して、
 \begin{align*}
   \tan\zeta \xlongrightarrow{R\to\infty} 0~~, \quad
   \kappa_d' \xlongrightarrow{R\to\infty} \kappa_d\ .
@@ -342,9 +342,9 @@ $R\to\infty$ ($R^{-1}\to0$)に対して、
 \begin{align*}
   \sin\zeta = \frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}+o\left(R_\mathrm o^{-3}\right)~~, \quad
   \cos\zeta = 1-\frac12\left(\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}\right)^2
-              +o\left(R_\mathrm o^{-4}\right)
+              +o\left(R_\mathrm o^{-4}\right)\ .
 \end{align*}
-したがって、
+したがって、\pageeqref{eq:keydepthDif1}より、
 \begin{align*}
   \kappa_d
   &= \kappa_d'-\frac{\kappa_w}2\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}
@@ -356,8 +356,80 @@ $R\to\infty$ ($R^{-1}\to0$)に対して、
   &= \kappa_d'+\frac{\kappa_w^2}{8R_\mathrm o}
      +o\left(R_\mathrm o^{-3}\right)\ .
 \end{align*}
-これから、$\kappa_d > \kappa_d'$であることがわかる。
+これから、$\kappa_d > \kappa_d'$であることもわかる。
 \end{\Columnname}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 36.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\Keyway のコーナー}
+ここでは\Keyway のコーナーの種類に着目して話を進める。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.06.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\Keyway：コーナーRの場合}
+\Keyway のコーナーRの大きさを$R_\mathrm K$とする。
+このとき、AC方向およびBD方向の\KeywayWidth に対して、コーナーを除いた部分（直線部分）の長さは、それぞれ
+\begin{align*}
+  \text{AC方向：}\quad W_{\mathrm mx}-2R_\mathrm K~~, \qquad
+  \text{BD方向：}\quad W_{\mathrm my}-2R_\mathrm K\ .
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.06.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\Keyway：コーナーC（8角形）の場合}
+\Keyway のコーナーCの大きさを$C_\mathrm K$とする。
+このとき、AC方向およびBD方向の\KeywayWidth に対して、コーナーを除いた部分の長さは、それぞれ
+\begin{align*}
+  \text{AC方向：}\quad W_{\mathrm mx}-2C_\mathrm K~~, \qquad
+  \text{BD方向：}\quad W_{\mathrm my}-2C_\mathrm K\ .
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.06.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\Keyway：8角形コーナーRの場合}
+\Keyway がコーナーC（大きさ$C_\mathrm K$）の8角形であり、かつその頂点がコーナーR（大きさ$R_\mathrm{K'}$）で丸めてある場合を考える。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.06.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{8角形コーナーR：各辺の長さ}
+このとき、AC方向およびBD方向の\KeywayWidth に対して、コーナーを除いた部分の長さは、それぞれ
+\begin{align*}
+  \text{AC方向：}\quad W_{\mathrm mx}-2\left(C_\mathrm K+R_\mathrm{K'}\tan\frac\pi8\right)~~, \qquad
+  \text{BD方向：}\quad W_{\mathrm my}-2\left(C_\mathrm K+R_\mathrm{K'}\tan\frac\pi8\right)\ .
+\end{align*}
+コーナーC部の直線部分の長さは、
+\begin{align*}
+  C_\mathrm K-2R_\mathrm{K'}\tan\frac\pi8\ .
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.06.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{8角形コーナーR：コーナーR中心および接点の相対位置}
+例として、工具から見て右上のコーナーCにおける、右下($X+Y-$)側の頂点に着目する。
+このときコーナーRにおける、右下($X+Y-$)側のコーナーR接点を(0, 0)とすると、コーナーRの中心および左上($X-Y+$)側のコーナーR接点の位置は、それぞれ
+\begin{align*}
+  \text{中心：}\quad \left(-R_\mathrm{K'}~,~~0\right)~~,\qquad
+  \text{左上側接点}\quad \left(-\left(1-\frac1{\sqrt2}\right)R_\mathrm{K'}~,~~\frac{R_\mathrm{K'}}{\sqrt2}\right)\ .
+\end{align*}
+同様に、工具から見て右上のコーナーCにおける、右上($X-Y+$)側の頂点に着目する。
+このときコーナーRにおける、右下($X+Y-$)側のコーナーR接点を(0, 0)とすると、コーナーRの中心および左上($X-Y+$)側のコーナーR接点の位置は、それぞれ
+\begin{align*}
+  \text{中心：}\quad \left(-\frac{R_\mathrm{K'}}{\sqrt2}~,~~-\frac{R_\mathrm{K'}}{\sqrt2}\right)~~,\qquad
+  \text{左上側接点}\quad \left(-\frac{R_\mathrm{K'}}{\sqrt2}~,~~\left(1-\frac1{\sqrt2}\right)R_\mathrm{K'}\right)\ .
+\end{align*}
+その他のコーナーRについても同様であり、これを適当に回転させたものとなる。
