@@ -29,8 +29,9 @@ IF[#06EQ1]GOTO0003
 IF[#06EQ2]GOTO0004
 IF[#06EQ3]GOTO0005
 IF[#06EQ4]GOTO0006
+IF[#06EQ5]GOTO0007
 GOTO0800
-(if K is not 1, 2, 3, 4, go to N0800)
+(if K is not 1-5, go to N0800)
 
 N0003 (for R)
 G91 G01 X-[#24+#07*2-#18] F#09
@@ -100,6 +101,45 @@ G91 G01 Y[#25+#07*2] F[#651*2]
 (r: Y+)
 GOTO9999
 
+N0007 (for oct corner R)
+#33=#18/[SQRT[2]]
+#32=#18-#33
+G91 G01 X-[#24+#07*2-#03-#32*SQRT[2]] F#09
+(a: X-)
+G91 G01 X-#33 Y-#32 I0 J-#18 F#08
+(alr cornerR: R#18 [0, -#18] X-Y-)
+G91 G01 X-[#03-[2*#32]] Y-[#03-[2*#32]] F#08
+(al cornerC: C[#03-[2*#32]] X-Y-)
+G91 G01 X-#32 Y-#33 I#33 J-#33 F#08
+(all cornerR: R#18 [#33, -#33] X-Y-)
+G91 G01 Y-[#25-#03*2-#32*2*SQRT[2]] F#09
+(l: Y-)
+G91 G01 X#32 Y-#33 I#18 J0 F#08
+(bll cornerR: R#18 [#18, 0] X+Y-)
+G91 G01 X[#03-[2*#32]] Y-[#03-[2*#32]] F#08
+(bl cornerC: C[#03-[2*#32]] X+Y-)
+G91 G01 X#33 Y-#32 I#33 J#33 F#08
+(blr cornerR: R#18 [#33, #33] X+Y-)
+G91 G01 X[#24-#03*2-#32*2*SQRT[2]] F#09
+(b: X+)
+G91 G01 X#33 Y#32 I0 J#18 F#08
+(brl cornerR: R#18 [0, #18] X+Y+)
+G91 G01 X[#03-[2*#32]] Y[#03-[2*#32]] F#08
+(br corner: C[#03-[2*#32]] X+Y+)
+G91 G01 X#32 Y#33 I-#33 J#33 F#08
+(brr cornerR: R#18 [-#33, #33] X+Y+)
+G91 G01 Y[#25-#03*2-#32*2*SQRT[2]] F#09
+(r: Y+)
+G91 G01 X-#32 Y#33 I-#18 J0 F#08
+(arr cornerR: R#18 [-#18, 0] X-Y+)
+G91 G01 X-[#03-[2*#32]] Y[#03-[2*#32]] F#08
+(ar corner: C[#03-[2*#32]] X-Y+)
+G91 G01 X-#33 Y#32 I-#33 J-#33 F#08
+(arl cornerR: R#18 [-#33, -#33] X-Y+)
+G91 G02 X-[#07*2] Y[#07*2] I0.0 J[#07*2] F[#09*5]
+(G02 R[#07*2] [0, #07*2] X-Y+)
+GOTO9999
+
 
 N0800
 M05 (spindle kaiten off)
@@ -111,6 +151,7 @@ N9999 M99
 (Used Variables and Programs)
 
 (Local variables)
+(#32, #33)
 
 (as received arguments)
 (#03:C: corner C)
