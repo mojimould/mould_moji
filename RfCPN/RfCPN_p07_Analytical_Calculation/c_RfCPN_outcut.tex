@@ -5,7 +5,7 @@
 ここでは主に、\textbf{\Outcut}に関する測定・加工に必要な\expandafterindex{きかてきせいしつ（\yomiOutcut）@幾何的性質（\nameOutcut）}幾何的性質を考える。
 
 \index{ワーク}ワークに\textbf{\Outcut}があるときは、たいていの場合、\textbf{\OutcutAsideThickness}）を\expandafterindex{きじゅん（\yomiOutcutCenter）@基準（\nameOutcutCenter）}基準として考えることが多い。
-\expandafterindex{\yomiEndFaceID@\nameEndFaceID}トップ・ボトム端における\textbf{\nameInnerDiameter}をそれぞれ$w_\mathrm T$, $w_\mathrm B$, \textbf{\OutcutWidth}をそれぞれ$\mathfrak W_\mathrm T$, $\mathfrak W_\mathrm B$, \OutcutAsideThickness をそれぞれ$\tau_\mathrm T$, $\tau_\mathrm B$, \EndFaceInCChamfer の垂直方向の大きさをそれぞれ$c_\mathrm{Ti}$, $c_\mathrm{Bi}$とする。
+\expandafterindex{\yomiEndFaceID@\nameEndFaceID}トップ・ボトム端における\textbf{\nameInnerDiameter}をそれぞれ$w_\mathrm T$, $w_\mathrm B$, \textbf{\OutcutWidth}をそれぞれ$\mathfrak W_\mathrm T$, $\mathfrak W_\mathrm B$, \textbf{\OutcutAsideThickness}をそれぞれ$\tau_\mathrm T$, $\tau_\mathrm B$, \textbf{\EndFaceInCChamferLength}をそれぞれ$c_\mathrm{Ti}$, $c_\mathrm{Bi}$とする。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -84,9 +84,10 @@
 \Table を$-\theta$傾けた場合、\TableCenter Pを\index{げんてんP@原点P}原点とした\BottomOutcutCenter$\mathfrak B_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:tableBc}より、
 \begin{align}
   \label{eq:gaisakucenterBt}
-  \Delta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
+  G_{\mathrm Bx}-\frac{\sqrt{R_\mathrm c^2-(f_\mathrm B-c_\mathrm{Bi})^2}+\sqrt{R_\mathrm c^2-f_\mathrm B^2}}2
   -\frac{w_\mathrm B}2-\tau_\mathrm B+\frac{\mathfrak W_\mathrm B}2\ .
 \end{align}
+$G_{\mathrm Bx}$はボトム端の外側中心を示す。
 このとき、測定した\index{Aがわないめん@A側内面}A側内面b$_\mathrm o'$の$X$座標が以下になるように、\index{げんてん（ワークざひょうけい）@原点（ワーク座標系）}原点$\mathfrak B_\mathrm c'$を定める。
 \begin{align}
   \label{eq:gaisakucenterBr}
