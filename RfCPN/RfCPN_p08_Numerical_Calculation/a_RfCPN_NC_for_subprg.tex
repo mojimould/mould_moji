@@ -1,23 +1,50 @@
 %!TEX root = ./RfCPN.tex
 
 
-\modHeadchapter{計算の必要な数値情報（\CreatedNCSubPrg 用）\TBW}
-ここでは主に\CreatedNCSubPrg の記述に際して、\index{すうちけいさん@数値計算}数値計算に必要または有用な部分をピックアップする。
+\modHeadchapter{\CreatedNCMainPrg に必要な数値情報}
+ここでは主に\CreatedNCMainPrg の記述に際して、\index{すうちけいさん@数値計算}数値計算の必要な部分をピックアップする。
 なお、ここでは主に\DMC について述べるため、\Spacer に関するものは省略する。
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section H.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section F.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\Outcut の数値情報}
+\modHeadsection{\AlocationAngle の数値情報}
+\TopAlocationLength が$f_\mathrm T'$となる\AlocationAngle は、\pageeqref{eq:alocationangle}より、
+\begin{align*}
+  \HLbox{\sin^{-1}\frac{f_\mathrm T'-f_\mathrm T}{\Delta'}}\ .
+\end{align*}
+特に、\TopAlocationLength および\BottomAlocationLength が同じとなる\EqualAlocationAngle は、\pageeqref{eq:equalalocationangle}より、
+\begin{align*}
+  \HLbox{\sin^{-1}\frac{f_d}{\Delta'}}\ .
+\end{align*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section F.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\index{ワークざひょうけいげんてんせってい@ワーク座標系原点設定}ワーク座標系原点設定用の数値情報}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection H.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection F.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\OutcutCenter：\BottomOutcutAsideThickness 基準の場合}
-\TableCenter\expandafterindex{P（\yomiTableCenter)@P（\nameTableCenter）}Pを\index{げんてんP@原点P}原点とした\BottomOutcutCenter$\mathfrak B_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterBt}より、
+\subsection{ボトム端外側中心の位置}
+ボトム端における外側中心の$X$座標は、\pageeqref{eq:tableBc}より、
+\begin{align*}
+  \HLbox{\Delta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2}\ .
+\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection F.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\BottomOutcutCenter の位置\TBW}
+
+
+\TableCenter を\index{げんてんP@原点P}原点とした\BottomOutcutCenter の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterBt}より、
 \begin{align*}
   \HLbox{%
     \Delta_x'\cos\theta
@@ -38,7 +65,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection H.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection F.01.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\OutcutCenter：\TopOutcutAsideThickness 基準の場合}
 \TableCenter\expandafterindex{P（\yomiTableCenter)@P（\nameTableCenter）}Pを\index{げんてんP@原点P}原点とした\TopOutcutCenter$\mathfrak T_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterTt}より、
