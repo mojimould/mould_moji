@@ -71,6 +71,7 @@ class GCodeLexer(ExtendedRegexLexer):
             # G and M commands and other tooling, match only the label
             (r'(?<![a-zA-Z\<])[ABCDEHIJKQRUVWXYZ](?=(\d+\.?\d?))+', Operator),
             (r'(?<![a-zA-Z\<])[M]\d*\.\d+', Number),
+            (r'(?<![a-zA-Z\<])(M98|M02|M30|M99|G65)', Keyword.Pseudo.Reserved),
             (r'(?<![a-zA-Z\<])[GM]\d*', Keyword.Pseudo.Declaration),
             (r'(?<![a-zA-Z\<])[T]\d*\.\d+', Number),
             (r'(?<![a-zA-Z\<])[T]\d*', Keyword.Pseudo.Tool),
