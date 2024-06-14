@@ -1,5 +1,5 @@
 %
-O490005 (last update on 20240606)
+O490005 (last update on 20240614)
 (Sotogawa ar HidariMawari 1shuu)
 
 N0001
@@ -155,7 +155,7 @@ N9999 M99
 
 (as received arguments)
 (#03:C: corner C)
-(#06:K: type)
+(#06:K: key type: 1:R, 2:C, 3:rec, 4:BDonly, 5:oct R)
 (#07:D: kouguNigashiRyou)
 (#08:E: speed at corner)
 (#09:F: speed at chokusenBu)

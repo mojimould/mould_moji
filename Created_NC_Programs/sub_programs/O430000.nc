@@ -1,5 +1,5 @@
 %
-O430000 (last update on 20240607)
+O430000 (last update on 20240614)
 (Mizo Corner R or C, ar HidariMawari 1shuu)
 
 N0001
@@ -47,8 +47,9 @@ IF[#06EQ1]GOTO0009
 IF[#06EQ2]GOTO0010
 IF[#06EQ3]GOTO0011
 IF[#06EQ4]GOTO0012
+IF[#06EQ5]GOTO0013
 GOTO0800
-(if K is not 1, 2, 3, 4, go to N0800)
+(if K is not 1-5, go to N0800)
 
 N0009 (for R)
 IF[#18EQ#0]GOTO0800
@@ -56,7 +57,7 @@ IF[#03NE#0]GOTO0800
 IF[#18LT0.1]GOTO0800
 IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO0800
 (if R < 0.1 or R >= min[X/4, Y/4], go to N0800)
-GOTO0013
+GOTO0016
 
 N0010 (for C)
 IF[#03EQ#0]GOTO0800
@@ -64,19 +65,30 @@ IF[#18NE#0]GOTO0800
 IF[#03LT0.1]GOTO0800
 IF[#03GE[[#24+#25-ABS[#24-#25]]/8]]GOTO0800
 (if C < 0.1 or C >= min[X/4, Y/4], go to N0800)
-GOTO0013
+GOTO0016
 
 N0011 (for rec)
 IF[#03NE#0]GOTO0800
 IF[#18NE#0]GOTO0800
-GOTO0013
+GOTO0016
 
 N0012 (for BD only)
 IF[#03NE#0]GOTO0800
 IF[#18NE#0]GOTO0800
 IF[#24NE#0]GOTO0800
+GOTO0016
 
-N0013
+N0013 (for oct R)
+IF[#03EQ#0]GOTO0800
+IF[#18EQ#0]GOTO0800
+IF[#03LT1]GOTO0800
+IF[#18LT0.1]GOTO0800
+IF[#03GE[[#24+#25-ABS[#24-#25]]/8]]GOTO0800
+IF[#18GE#03]GOTO0800
+(if C < 1 or C >= min[X/4, Y/4], go to N0800)
+(if R < 0.1 or R >= C, go to N0800)
+
+N0016
 IF[#662EQ#0]GOTO0800
 IF[#662LE10]GOTO0800
 IF[#663EQ#0]GOTO0800
@@ -87,7 +99,7 @@ IF[#677LT200]GOTO0800
 (if #663 <= 10 or #0, go to N0800)
 (if #677 < 200 or #0, go to N0800)
 
-N0014
+N0017
 IF[#4120EQ#0]GOTO0800
 IF[#4120LT6]GOTO0800
 IF[#4120GT10]GOTO0800
@@ -104,7 +116,7 @@ IF[[ABS[#421]]GE[[#22-#25]/2]]GOTO0800
 (if |#420| >= H/2, go to N0800)
 (if |#421| >= [V-Y]/2, go to N0800)
 
-N0015
+N0018
 IF[#422GT3]THEN #422=3
 IF[#422LT-3]THEN #422=-3
 #33=#24+#422
@@ -116,7 +128,7 @@ IF[#06EQ4]THEN #33=#21
 IF[#31LE1]GOTO0800
 (#31: max[#605, hosei kouguKei])
 
-N0016
+N0019
 IF[#4120EQ6]THEN #30=#901105
 IF[#4120EQ7]THEN #30=#901107
 IF[#4120EQ8]THEN #30=#901109
@@ -129,13 +141,13 @@ IF[#01EQ0]THEN #29=SQRT[#17*#17-[#23-[#13+#419]-[[#11+#420]/2]]*[#23-[#13+#419]-
 IF[#4012EQ58]THEN #29=[#11*#11]/[8*#17]
 (#29: X hosei from keyway center)
 
-N0017
+N0020
 #100=#21-#33
 #101=#22-#32
 #102=[#100+#101+ABS[#100-#101]]/2
 (#102=max[#100, #101])
-IF[#102LE#630]GOTO0021
-(if #102 <= #630, go to N0021)
+IF[#102LE#630]GOTO0024
+(if #102 <= #630, go to N0024)
 #103=FUP[[#102-#630]/[#629*2]]
 IF[#103LT0]GOTO0800
 (#103: kakou kaisuu)
@@ -193,11 +205,11 @@ G90 G40 G00 X[[#104/2]+#31*3+#29-#421]
 END1
 
 
-N0018 (pause)
-IF[#423EQ0]GOTO0019
-IF[#423EQ2]GOTO0020
-GOTO0022
-N0019 (if #423=0)
+N0021 (pause)
+IF[#423EQ0]GOTO0022
+IF[#423EQ2]GOTO0023
+GOTO0025
+N0022 (if #423=0)
 M09 (coolant off)
 S2599
 G90 G01 Z[#26+#600] F#650
@@ -205,12 +217,12 @@ G04 X1.0 (wait 1.0s)
 M05 (spindle off)
 S35
 M00
-GOTO0021
-N0020 (if #423=2)
+GOTO0024
+N0023 (if #423=2)
 G65 P900003
 
 
-N0021 (Shiage)
+N0024 (Shiage)
 #33=#24+#422
 IF[#06EQ4]THEN #33=#21
 #32=#25+#422
@@ -224,7 +236,7 @@ IF[#106GT3]THEN #106=3
 IF[#630LE0]THEN #106=#106-1
 (#106: Siage +kaisuu)
 
-N0022
+N0025
 G90 G43 G01 H#4120 Z[#26+#600] F#650
 
 N0200 (Shiage loop)
@@ -305,7 +317,7 @@ N9999 M99
 (#01:A: Top gaisaku check: 0:none, 1:exist)
 (#02:B: depth tolerance: 0:none, 1:exist)
 (#03:C: corner C)
-(#06:K: key type: 1:R, 2:C, 3:rec, 4:BDonly)
+(#06:K: key type: 1:R, 2:C, 3:rec, 4:BDonly, 5:oct R)
 (#11:H: mizoHaba)
 (#13:M: mizoIchi)
 (#17:Q: central curvature)
@@ -324,7 +336,8 @@ N9999 M99
 (as LHS)
 (#102, #103, #104, #105, #106)
 (as RHS)
-(#183, #419, #420, #421, #422, #423, #475, #600, #605, #629, #630, #650, #651, #662, #663, #677)
+(#183, #419, #420, #421, #422, #423, #475)
+(#600, #605, #629, #630, #650, #651, #662, #663, #677)
 (#901011, #901105, #901107, #901109, #901111)
 
 (System variables)
