@@ -9,7 +9,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{安全に関するイシュー・問題}
+\modHeadsection{安全(safety)に関するイシュー・問題}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Issues %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,6 +71,37 @@
 %% section 02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\index{ひんしつ@品質}品質に関するイシュー・問題\TBW}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{測定における品質\TBW}
+
+\begin{Issues}{\Keyway 中心測定\TBW}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]
+\end{enumerate}
+\end{Issues}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KeywayMilling における品質\TBW}
+
+\begin{Issues}{\KeywayMilling のばりの除去\TBW}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]
+\end{enumerate}
+\end{Issues}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\EndFaceChamferMilling における品質}
+
 \begin{Issues}{\index{てもちけんまき@手持ち研磨機}手持ち研磨機の使用}
 多くの場合、人手（\index{てもちけんまき@手持ち研磨機}手持ち研磨機）による\EndFaceChamferMilling は、マシニングセンタによる\EndFaceChamferMilling に比べて品質が低下する
 \begin{enumerate}[label=\sarrow]
@@ -80,13 +111,23 @@
 \end{enumerate}
 \end{Issues}
 
-\begin{Issues}{仕上げ前加工・仕上げ加工の分離\TBW}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.02.02.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\EndFaceOutCChamferMilling における品質}
+
+\begin{Issues}{\EndFaceOutCChamferMilling の中心位置調整\TBW}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]
 \end{enumerate}
 \end{Issues}
 
-\begin{Issues}{\KeywayMilling のばりの除去\TBW}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.02.02.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\EndFaceInCChamferMilling における品質}
+
+\begin{Issues}{\EndFaceInCChamferMilling の中心位置調整\TBW}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]
 \end{enumerate}
@@ -105,23 +146,35 @@
 \end{Issues}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\EndFaceBoringMilling における品質}
+
+\begin{Issues}{\EndFaceBoringMilling の寸法の誤り\TBW}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]
+\end{enumerate}
+\end{Issues}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{加工全般における品質}
+
+\begin{Issues}{仕上げ前加工・仕上げ加工の分離\TBW}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]
+\end{enumerate}
+\end{Issues}
+
+
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\index{さぎょうこうりつ@作業効率}作業効率に関するイシュー・問題\TBW}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 02.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\Drawing の作成における作業効率}
-
-\begin{Issues}{\TBW}
-\begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
-\end{enumerate}
-\end{Issues}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -154,6 +207,12 @@
 \subsection{測定における作業効率}
 
 \begin{Issues}{測定基準値の手動による実測\TBW}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]
+\end{enumerate}
+\end{Issues}
+
+\begin{Issues}{測定時の送り速さ\TBW}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]
 \end{enumerate}
@@ -238,7 +297,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 02.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{根源的な問題点\TBW}
+\modHeadsection{全般的な問題点\TBW}
 そもそも、「\expandafterindex{\yomiDrawing（モールド）@\nameDrawing（モールド）}\nameDrawing を見て\index{NCプログラム}NCプログラムを作成」するという時点で、明らかに尋常な状態でないことは言うまでもない
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{さらに言及すると、これが問題点（改善可能な点）だということがこれまで一切（スタッフ・管理職を含めて）認識されなかったことが（非常に大きな・根本的な）問題点として挙げられる。
@@ -260,4 +319,16 @@ NCプログラム作成が、現場作業員（一般職）により行われて
 これらは単に、モールドに関するデータが管理状態にないことを示している。
 \begin{Issues}{データベースの非存在}
 \index{モールド}モールドに関する\index{かんけいデータベース@関係データベース}関係データベース(\index{RDB}RDB)に相当するものが存在しない
+\end{Issues}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\Drawing の作成における作業効率}
+
+\begin{Issues}{\TBW}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]
+\end{enumerate}
 \end{Issues}
