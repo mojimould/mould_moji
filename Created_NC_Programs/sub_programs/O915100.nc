@@ -58,6 +58,7 @@ S35
 
 N9991
 M06 (tool exchange)
+T38 (tool #38)
 
 N9992
 M11 (B-axis unclamp)
@@ -65,13 +66,23 @@ G90 G53 G00 B0
 M10 (B-axis clamp)
 M29 (chip conveyor off)
 
-N9999 M30
+N9993
+M06 (tool exchange)
+T01 (tool #01)
+M06 (tool exchange)
+
+N9999
+#3901=#3901-1
+M30
 
 (Used Variables and Programs)
 
 (Common variables)
 (as RHS)
 (#650, #652)
+
+(System variables)
+(#3901)
 
 (Subprograms)
 (O905101)
