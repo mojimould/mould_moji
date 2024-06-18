@@ -589,7 +589,7 @@ N0511
 G54
 IF[#5004EQ[180.0-0.642]]GOTO0512
 M11 (B-axis unclamp)
-G90 G00 G54 B[180.0-0.642]
+G90 G54 G00 B[180.0-0.642]
 M10 (B-axis clamp)
 (G54B parallel angle 179.358)
 
