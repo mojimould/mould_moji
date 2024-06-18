@@ -1,5 +1,5 @@
 %
-O490007 (last update on 20240611)
+O490007 (last update on 20240618)
 (Uchigawa Corner R ac HidariMawari 1shuu)
 
 N0001
