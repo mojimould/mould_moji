@@ -1,5 +1,5 @@
 %
-O430000 (last update on 20240614)
+O430000 (last update on 20240618)
 (Mizo Corner R or C, ar HidariMawari 1shuu)
 
 N0001
