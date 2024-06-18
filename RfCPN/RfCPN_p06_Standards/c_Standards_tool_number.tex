@@ -84,7 +84,16 @@
 %% subsection 25.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{工具の詳細}
-\dateTourokuKougu 時点において、使用工具の詳細は以下の通りである。\\
+\dateTourokuKougu 時点において、使用工具の詳細は以下の通りである。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+括弧付き{\ttfamily T\ttNum}\hx は、使用予定または使用候補のものを示す。
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{multicollongtblr}{\DMC{} 工具詳細：先端工具}{c c X[l] X[l] c}
 \ttfamily T\ttNum & 用途 & コード・呼び & 材質 & 製造\\
@@ -127,6 +136,9 @@
 & \SetCell[c=2]{}\href{https://yamato-carbide-tools.jp/archives/20555}{M-TC-YM10}-30$\times$6
 & & \linkYamato\\
 \hline
+({\ttfamily T49}) & 測定
+& \SetCell[c=2]{}\href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=572}{ST38-6P}
+& & \linkBIGDaishowa\\
 \SetCell[r=2]{}\ttfamily T50 & \SetCell[r=2]{}測定
 & \href{https://www.renishaw.com/shop/Default/Home/Styli/Extensions}{A-5555}-2982（特注）& ルビー球 カーボン軸 & \linkRenishaw\\
  &
@@ -158,28 +170,41 @@
 & \linkBIGDaishowa\\
 \hline
 \ttfamily T16 & \Outcut・\EndFaceBoring
-& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=545}{PSC32-20}
+& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=547}{C32-20}
 & \linkBIGDaishowa\\
 \hline
-\ttfamily T31 & \Dimple
-& \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC32-17-310-190},
-  \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC32-17-160-80}（研削用）
+\SetCell[r=2]{}\ttfamily T31 & \SetCell[r=2]{}\Dimple
+& \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC32-17-310-190}
+& \linkMoldino\\
+ &
+& \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC32-17-160-80}（研削用）
 & \linkMoldino\\
 \ttfamily T32 & \Dimple
 & \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC32-17-310-190}
-  (\href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC25-12.5-360-240})
+& \linkMoldino\\
+({\ttfamily T33}) & \Dimple
+& \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC32-17-310-190}
 & \linkMoldino\\
 ({\ttfamily T33}) & \Dimple
 & \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC25-12.5-315-65}
 & \linkMoldino\\
+({\ttfamily T33}) & \Dimple
+& \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC25-12.5-360-240}
+& \linkMoldino\\
 \hline
+\SetCell[r=2]{}({\ttfamily T49}) & \SetCell[r=2]{}測定
+& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=572}{PMC-20}
+& \linkBIGDaishowa\\
+ &
+& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=525}{NBC20-20AA}（アクセサリ）
+& \linkBIGDaishowa\\
 \ttfamily T50 & 測定
 & \href{https://www.renishaw.com/resourcecentre/en/details/RMP600--100156}{RMP600}
 & \linkRenishaw\\
 \end{multicollongtblr}
 
 
-%\clearpage
+\clearpage
 \begin{multicollongtblr}{\DMC{} 工具詳細：\index{チャック}チャック}{c c X[l] c}
 \ttfamily T\ttNum & 用途 & コード・呼び & 製造\\
 \ttfamily T02 & \EndFacecut
@@ -194,16 +219,16 @@
 & \linkBIGDaishowa\\
 \hline
 \ttfamily T11 & \EndFaceCChamfer
-& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=83}{BBT50-MEGA20N-165}
+& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=85}{BBT50-MEGA20N-165}
 & \linkBIGDaishowa\\
 \ttfamily T12 & \EndFaceCChamfer
-& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=83}{BBT50-MEGA20N-165}
+& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=85}{BBT50-MEGA20N-165}
 & \linkBIGDaishowa\\
 ({\ttfamily T12}) & \EndFaceCChamfer
-& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=83}{BBT50-MEGA20N-165}
+& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=85}{BBT50-MEGA20N-165}
 & \linkBIGDaishowa\\
 \ttfamily T13 & \EndFaceCChamfer
-& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=83}{BBT50-MEGA20N-165}
+& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=85}{BBT50-MEGA20N-165}
 & \linkBIGDaishowa\\
 \hline
 \ttfamily T16 & \Outcut・\EndFaceBoring
@@ -220,7 +245,10 @@
 & \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=98}{BBT50-MEGA32DS-135}
 & \linkBIGDaishowa\\
 \hline
+({\ttfamily T49}) & 測定
+& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=85}{BBT50-MEGA20N-165}
+& \linkBIGDaishowa\\
 \ttfamily T50 & 測定
-& \href{https://www.renishaw.com/resourcecentre/en/details/--7855}{MP10}
- & \linkRenishaw\\
+& BT50-REN-MP10
+& \linkRenishaw\\
 \end{multicollongtblr}
