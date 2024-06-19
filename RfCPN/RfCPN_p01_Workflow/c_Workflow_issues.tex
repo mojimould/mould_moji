@@ -100,7 +100,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 02.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KeywayMilling における品質}
 
@@ -112,8 +112,9 @@
 \end{Issues}
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 02.02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.02.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFaceChamferMilling における品質}
 
@@ -121,41 +122,45 @@
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]
 寸法の小さな\EndFaceChamferMilling が\index{てもちけんまき@手持ち研磨機}手持ち研磨機により\index{てさぎょう@手作業}手作業で行われている
-\item[{\sarrow[red]}]\EndFaceChamferMilling に関する解析的な幾何情報を導出しないまま放置し続けている
+\item[{\sarrow[red]}]\EndFaceChamferMilling に関する解析計算がなされないまま放置され続けている
 \end{enumerate}
 \end{Issues}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 02.02.03.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.02.04.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceOutCChamferMilling における品質}
 
-\begin{Issues}{\EndFaceOutCChamferMilling の位置調整\TBW}
+\begin{Issues}{\EndFaceOutCChamferMilling の位置調整}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
+\item[{\sarrow[red]}]\EndFaceOutCChamferMilling のAC方向の位置調整が手作業により行われている
+\item[{\sarrow[red]}]目分量により位置調整がなされているため、位置が安定しない
 \end{enumerate}
 \end{Issues}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 02.02.02.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.02.04.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceInCChamferMilling における品質}
 
-\begin{Issues}{\EndFaceInCChamferMilling の位置調整\TBW}
+\begin{Issues}{\EndFaceInCChamferMilling の位置調整}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
+\item[{\sarrow[red]}]\EndFaceInCChamferMilling のAC方向の位置調整が手作業により行われている
+\item[{\sarrow[red]}]目分量により位置調整がなされているため、位置が安定しない
 \end{enumerate}
 \end{Issues}
 
-\begin{Issues}{\EndFaceInCChamferMilling の始点・終点の変更\TBW}
+\begin{Issues}{\EndFaceInCChamferMilling の始点・終点の位置}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
+\item[{\sarrow[red]}]\EndFaceInCChamferMilling の始点および終点が直線部分にあり、加工の跡が残りやすい
+\item[{\sarrow[red]}]始点および終点が同じ点になっているため、工具が少し摩耗しただけでも跡が残る
 \end{enumerate}
 \end{Issues}
 
-\begin{Issues}{\EndFaceInCChamferMilling のコーナーRの補正\TBW}
+\begin{Issues}{\EndFaceInCChamferMilling のコーナーRの補正}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
+\item\index{しんがね@芯金}芯金の摩耗等により、\EndFaceInCChamfer のコーナーが変化しうる
+\item[{\sarrow[red]}]\EndFaceInCChamferMilling のコーナーの値が一定なため、変化に対応ができない
 \end{enumerate}
 \end{Issues}
 
@@ -165,21 +170,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFaceBoringMilling における品質}
 
-\begin{Issues}{\EndFaceBoringMilling の寸法の誤り\TBW}
+\begin{Issues}{\EndFaceBoringMilling の寸法の誤り}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
+\item[{\sarrow[red]}]\EndFaceBoringMilling のAC方向の寸法が、図面のものと異なっている
+\item 後工程で用いる端面座ぐり部の穴あけ用ジグを、誤った寸法のものに手作業で修正する必要がある
 \end{enumerate}
 \end{Issues}
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 02.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{加工全般における品質}
 
-\begin{Issues}{仕上げ前加工・仕上げ加工の分離\TBW}
+\begin{Issues}{仕上げ前加工・仕上げ加工の分離の非統一}
+一般にどの加工においても、削り代がより少ないほど仕上がりがきれいなものになる
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
+\item[{\sarrow[red]}]仕上げ前の加工と仕上げの加工とで、削り代が統一されていない
 \end{enumerate}
 \end{Issues}
 
@@ -192,38 +200,43 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\index{NCプログラム}NCプログラムの作成における作業効率}
+
+\begin{Issues}{\KeywayCenter 位置の手動計算による導出}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]\KeywayCenter の$X$座標を、電卓により手作業で計算して導出している
+\end{enumerate}
+\end{Issues}
+
+\begin{Issues}{\AsideKeywayDepth 指定時の\KeywayCenter 位置の関節的導出}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]\AsideKeywayDepth 指定時の\KeywayCenter 位置を、直接的な測定ではなく、端面部の外側中心を基準に関節的に導出している
+\item[{\sarrow[red]}]\CenterCurvature に伴う誤差を含み、\AsideKeywayDepth が安定しない
+\item[{\sarrow[red]}]位置調整（手入力）の頻度が必然的に多くなっている
+\end{enumerate}
+\end{Issues}
+
+\begin{Issues}{\index{NCメインプログラム}NCメインプログラムの手動作成}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]\index{NCメインプログラム}NCメインプログラムが人手により手動で作成されている
+\item[{\sarrow[red]}]\index{NCメインプログラム}NCメインプログラムのパターン化がなされていない
+\item[{\sarrow[red]}]\index{プログラマ}プログラマとしての能力が必要な\index{NCメインプログラム}NCメインプログラムの作成業務が、（スタッフや管理職でなく）作業者に課されている
+\item[{\sarrow[red]}]作業者に\index{プログラマ}プログラマとしての能力が問われ、\index{きょういくコスト@教育コスト}教育コストが多くかかっている
+\end{enumerate}
+\end{Issues}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 02.03.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{NCプログラム}NCプログラムの作成における作業効率\TBW}
-
-\begin{Issues}{\KeywayCenter 位置の手動計算による導出\TBW}
-\begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]\KeywayCenter の
-\end{enumerate}
-\end{Issues}
-
-\begin{Issues}{\AsideKeywayDepth 指定時の中心位置の自動測定\TBW}
-\begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
-\end{enumerate}
-\end{Issues}
-
-\begin{Issues}{NCプログラムの自動生成\TBW}
-\begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
-\end{enumerate}
-\end{Issues}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 02.03.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{測定における作業効率}
 
 \begin{Issues}{測定基準値の手動による実測}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の概算値を見出すために、オペレータに直接機内で測定するよう強要している
-\item[{\sarrow[red]}]ジグ・ワークの寸法から計算で容易に見出だせるにかかわらず、放置され続けている
+\item[{\sarrow[red]}]\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の概算値を見出すために、オペレータが直接機内で測定している
+\item[{\sarrow[red]}]ジグ・ワークの寸法から机上で見出だせるにかかわらず、放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -242,15 +255,16 @@
 \end{Issues}
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 02.03.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.03.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFacecutMilling における作業効率}
 
 \begin{Issues}{\EndFacecutMilling の手動による\TDCorrection}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\EndFacecutMilling の基準点が外側中心として与えられており、\index{めいさい@明細}明細に依存する\indexTDFaceMill\nameTDCorrection を行わなければならない
-\item[{\sarrow[red]}]オペレータが手動で\indexTDFaceMill\nameTDCorrection を行わなければならない状態にある
+\item[{\sarrow[red]}]オペレータが手動で\indexTDFaceMill\nameTDCorrection 値を編集しなければならない状態にある
 \end{enumerate}
 \end{Issues}
 
@@ -262,13 +276,27 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.03.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\OutcutMilling における作業効率}
+
+\begin{Issues}{\CurvedOutcutMilling の\index{ハンドルそうさ@ハンドル操作}ハンドル操作による測定}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]手作業による\index{ハンドルそうさ@ハンドル操作}ハンドル操作により測定が行われている
+\item[{\sarrow[red]}]\CurvedOutcutMilling に関する解析計算がなされないまま放置され続けている
+\end{enumerate}
+\end{Issues}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 02.03.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KeywayMilling における作業効率}
 
-\begin{Issues}{加工回数（$Z$方向）の自動特定\TBW}
+\begin{Issues}{\KeywayMilling 回数（$Z$方向）の手動による設定}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
+\item[{\sarrow[red]}]\KeywayWidth・工具幅に応じた\KeywayMilling の回数を、作業者が決定しなければならない状態にある
+\item[{\sarrow[red]}]\KeywayMilling の回数の変更は、作業者が\index{NCメインプログラム}NCメインプログラムを直接編集しなければならない状態にある
 \end{enumerate}
 \end{Issues}
 
@@ -278,27 +306,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFaceChamferMilling における作業効率}
 
-\begin{Issues}{マシニングセンタによる\EndFaceChamferMilling の追加\TBW}
+\begin{Issues}{手作業による\EndFaceChamferMilling の加工}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
-\end{enumerate}
-\end{Issues}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 02.03.07 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{加工全般における作業効率}
-
-\begin{Issues}{加工回数の自動決定\TBW}
-\begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
-\end{enumerate}
-\end{Issues}
-
-\begin{Issues}{\TBW}
-\begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
+\item[{\sarrow[red]}]寸法の小さな\EndFaceChamferMilling が、手持ち研磨機を用いて手作業で加工されている
+\item[{\sarrow[red]}]\EndFaceChamferMilling に関する解析計算がなされないまま放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -307,17 +318,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{信頼性に関するイシュー・問題\TBW}
+\modHeadsection{信頼性に関するイシュー・問題}
 
-\begin{Issues}{パラメータ誤入力の防止\TBW}
+\begin{Issues}{パラメタ誤入力の予防策}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
+\item[{\sarrow[red]}]\index{NCメインプログラム}NCメインプログラム・\index{NCサブプログラム}NCサブプログラムともに、\index{ひきすう@引数}引数に対する誤入力の予防措置がなされていない
+\item[{\sarrow[red]}]\index{NCメインプログラム}NCメインプログラム・\index{NCサブプログラム}NCサブプログラムともに、\index{コモンへんすう@コモン変数}コモン変数に対する誤入力の予防措置がなされていない
 \end{enumerate}
 \end{Issues}
 
-\begin{Issues}{\KeywayMilling{} 外部ワーク座標系による衝突の防止\TBW}
+\begin{Issues}{\KeywayMilling 時 \index{がいぶワークざひょうけい@外部ワーク座標系}外部ワーク座標系による衝突の予防策}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
+\item[{\sarrow[red]}]\index{がいぶワークざひょうけい@外部ワーク座標系}外部ワーク座標系による衝突の予防措置がなされていない
+\item[{\sarrow[red]}]特に影響の大きい\KeywayMilling にすらなされていない
 \end{enumerate}
 \end{Issues}
 
