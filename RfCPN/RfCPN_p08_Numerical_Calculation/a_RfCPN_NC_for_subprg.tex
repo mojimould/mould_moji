@@ -122,80 +122,7 @@
 %% subsection F.02.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KeywayCenter の位置}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection F.02.05.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\KeywayCenter：\Outcut なし・\AsideKeywayDepth 基準の場合}
-(to be written...)
-
-
-
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 30.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\Keyway の数値情報}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 30.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KeywayCenter\texorpdfstring{$Z$}{Z}}
-\KeywayPos$\kappa_p$および\KeywayWidth$\kappa_w$に対し、\TableCenter\expandafterindex{P（\yomiTableCenter)@P（\nameTableCenter）}Pを\index{げんてんP@原点P}原点とした\KeywayCenter M$'$の$Z$座標は、\pageeqref{eq:mizocenterZ}より
-\begin{align*}
-  \HLbox{f_\mathrm T'-\kappa_p-\frac{\kappa_w}2}\ .
-\end{align*}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 30.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\CurvatureCenter が基準の場合}
-\index{トップたんのそとがわちゅうしん@トップ端の外側中心}トップ端の外側中心T$_\mathrm c'$と\KeywayCenter M$'$との$X$方向の差は、\pageeqref{eq:difTopKeywayCenter}より、
-\begin{align*}
-  \HLbox{%
-    \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^2}
-    -\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2%
-  }\ .
-\end{align*}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 30.4.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\OutcutCenter が基準の場合}
-\KeywayCenter は\TopOutcutCenter とする。
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 30.4.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\AsideKeywayDepth 指定の場合}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 30.4.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\Outcut のない場合}
-\AsideKeywayDepth$\kappa_d$は、その測定値$\kappa_d'$が\index{ずめん（モールド）@図面（モールド）}図面上の値となるように与えられるものとする。このとき\pageeqref{eq:keydepthDif1}より、
-\begin{align*}
-  \HLbox{%
-    \kappa_d
-    = \frac{2\kappa_d'-\kappa_w\sin\zeta}{1+\cos^2\zeta}\cos\zeta
-      +\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^2}
-      -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}%
-  }\ .
-\end{align*}
-ここで$\zeta$は\pageeqref{eq:angleZeta}より、
-\begin{align*}
-  \HLbox{%
-    \tan\zeta
-    = \frac{\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\kappa_w\right)^2}
-            -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}}
-           {\kappa_w}%
-  }\ .
-\end{align*}
-\AsideKeywayDepth$\kappa_d$に対し、\KeywayCenter の位置の$X$座標は\pageeqref{eq:mizocenterA}より、
+\Outcut がなく、かつ\AsideKeywayDepth が基準の場合、\KeywayCenter の位置の$X$座標は\pageeqref{eq:mizocenterA}より、
 \begin{align*}
   \HLbox{%
     \sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\frac{\kappa_w}2\right)^2}
@@ -204,77 +131,20 @@
     -\Delta_x%
   }\ .
 \end{align*}
-また\expandafterindex{Aがわがいめん（\yomiKeywayCenter）@A側外面（\nameKeywayCenter）}A側外面の\index{じっそくち@実測値}実測値を$\mathcal G_m$とすると、\KeywayCenter と$G_m$との$X$座標の差は、\pageeqref{eq:mizocenterAd}より、
-\begin{align*}
-  \HLbox{-\frac{W_{mx}}2-\kappa_d}\ .
-\end{align*}
-
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 30.4.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\Outcut のある場合}
-\AsideKeywayDepth$\kappa_d$に対し、\TopOutcutCenter$X$を$\mathcal G_{\mathrm Tx}$とすると、$\mathcal G_{\mathrm Tx}$と\KeywayCenter との$X$座標の差は、\pageeqref{eq:mizocenterAG}より、
-\begin{align*}
-  \HLbox{\frac{\mathfrak W_x}2-\kappa_d-\frac{W_{mx}}2}\ .
-\end{align*}
 
 
 
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\EndFaceOutCChamfer の数値情報\TBW}
-(to be written...)
-
-
-
-%\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\EndFaceInCChamfer の数値情報\TBW}
-(to be written...)
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\EndFaceOutRChamfer の数値情報\TBW}
-(to be written...)
-
-
-
-%\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\EndFaceInRChamfer の数値情報\TBW}
-(to be written...)
-
-
-%\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\EndFaceBoring の数値情報\TBW}
-(to be written...)
-
-
-%\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 9.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\IncutBoring の数値情報\TBW}
-(to be written...)
-
-
-
-\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section H.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\Dimple の数値情報\TBW}
-(to be written...)
+\modHeadsection{\Dimple の数値情報}
+\DimpleAngle は、\pageeqref{eq:dKatamuki}より、
+\begin{align*}
+  \HLbox{%
+  \max\left[
+  \tan^{-1}\frac{\displaystyle
+           \sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2}
+           -\sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm A0}}2\right)^2-f_\mathrm T^2}}q~,~0
+  \right]%
+  }\ .
+\end{align*}
