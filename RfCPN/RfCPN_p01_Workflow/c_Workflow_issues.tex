@@ -11,59 +11,44 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{安全(safety)に関するイシュー・問題}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Issues %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Issues}{作業員の機内の侵入に伴うリスク}
+\begin{Issues}{オペレータの精神的高ストレス下での作業の強要}
+通常、\index{NCプログラム}NCプログラムの編集はシステム管理者・設計者・\index{プログラマ}プログラマ等が行う高度な業務である
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]\index{オペレータ}オペレータに対してメインプログラムの直接的な編集を強要させている
+\item[{\sarrow[red]}]仕様の変更により容易に改善が可能にも関わらず、事態が放置され続けている
+\end{enumerate}
+\end{Issues}
+
+\begin{Issues}{\index{オペレータ}オペレータの機内の侵入に伴うリスク}
 一般に、\index{きないへのしんにゅう@機内への侵入}機内への侵入は、転倒・巻き込まれ等のリスクを伴う
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
-機内に侵入し直接測定をしないと、ワークの\index{かこうげんてん（がいさんち）@加工原点（概算値）}加工原点の概算値が見出だせない状態にある
-\item[{\sarrow[red]}] 機内に侵入しないと、\index{はのこうかん（フェイスミル）@刃の交換（フェイスミル）}フェイスミルの刃の交換ができない状態にある
+\item[{\sarrow[red]}]機内に侵入し直接測定をしないと、ワークの\index{かこうげんてん（がいさんち）@加工原点（概算値）}加工原点の概算値が見出だせない状態にある
+\item[{\sarrow[red]}]機内に侵入しないと、\index{はのこうかん（フェイスミル）@刃の交換（フェイスミル）}フェイスミルの刃の交換ができない状態にある
 \item 機内に侵入しないと、内部の掃除ができない状態にある
 \end{enumerate}
 \end{Issues}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Issues %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{Issues}{\index{てもちけんまき@手持ち研磨機}手持ち研磨機の使用に伴うリスク}
 一般に、\index{てもちけんまき@手持ち研磨機}手持ち研磨機による加工は、巻き込まれや粉塵の付着・吸引等のリスクを伴う
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
-寸法の小さな\EndFaceChamferMilling が\MMC で行われず、\index{てもちけんまき@手持ち研磨機}手持ち研磨機により人手で行われている状態にある
-\item[{\sarrow[red]}] \EndFaceChamferMilling に関する解析的な幾何情報を導出しないまま放置され続けている
+\item[{\sarrow[red]}]寸法の小さな\EndFaceChamferMilling が\MMC で行われず、\index{てもちけんまき@手持ち研磨機}手持ち研磨機により手作業で行われている状態にある
+\item[{\sarrow[red]}]\EndFaceChamferMilling に関する解析的な幾何情報を導出しないまま放置され続けている
 \end{enumerate}
 \end{Issues}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Issues %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{Issues}{柵への衝突に伴うリスク}
 \begin{enumerate}[label=\sarrow]
 \item 後付けされた\expandafterindex{あんぜんさく（\yomiMMC）@安全柵（\nameMMC）}安全柵（と称されている柵）が、衝突の\index{リスク（しょうとつ）@リスク（衝突）}リスクを生み出している
 \item 一部のみ（出入口のみ）を着目し、周囲（柵の周辺）が軽視され、\index{あんぜんたいさく@安全対策}安全対策が機能せず反対に危険リスクを生み出している
 \end{enumerate}
 \end{Issues}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Issues %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{Issues}{\index{リフター}リフターへの衝突に伴うリスク}
 \begin{enumerate}[label=\sarrow]
 \item ワークの\index{うけいれけんさ（ワーク）@受入検査（ワーク）}受入検査の際に\index{リフター}リフターや\index{クレーン}クレーンが必ず\index{あんぜんつうろ@安全通路}安全通路を通る構造にある
 \item \index{じぎょうぶりねん@事業部理念}事業部理念が機能しておらず、安全性より生産性を優先する\index{けいえいほうしん（とうしゃ）@経営方針（当社）}経営方針となっている
 \end{enumerate}
 \end{Issues}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \clearpage
@@ -78,17 +63,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{測定における品質}
 
-\begin{Issues}{\KeywayCenterMeasurement の不安定性}
+\begin{Issues}{\KeywayCenterMeasurement（AC方向）の不安定性}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]\KeywayCenter の測定が、直接的になされず計算による関節的な方法で導出されている
+\item[{\sarrow[red]}]\KeywayCenter（AC方向）の測定が、計算による関節的な方法で導出されている
 \item[{\sarrow[red]}]\CenterCurvature に伴う誤差を含み、位置（特に\AsideKeywayDepth）が安定しない
+\end{enumerate}
+\end{Issues}
+
+\begin{Issues}{\KeywayCenterMeasurement（BD方向）の不安定性}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]\KeywayCenter（BD方向）が、端面におけるそれとして与えられている
+\item[{\sarrow[red]}]BD方向の真直度に伴う誤差を含み、位置が安定しない
 \end{enumerate}
 \end{Issues}
 
 \begin{Issues}{\CenterlineEndFaceDifMeasurement の不安定性}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\CenterlineEndFaceDifMeasurement が、手動による\index{ハンドルそうさ@ハンドル操作}ハンドル操作で行われている
-\item[{\sarrow[red]}]\CenterlineEndFaceDifMeasurement に関する解析的な幾何情報を導出しないまま放置され続けている
+\item[{\sarrow[red]}]手作業によるため、測定位置や送り速さが安定しない
+\item[{\sarrow[red]}]\Outcut・\Keyway・\CenterCurvature の寸法から自動化が可能にもかかわらず、事態が放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -101,7 +94,7 @@
 \begin{Issues}{\CurvedOutcutMilling の不安定性}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]手作業による\index{ハンドルそうさ@ハンドル操作}ハンドル操作により測定が行われている
-\item[{\sarrow[red]}]NCプログラム内の\OutcutLength の寸法に誤りが存在している
+\item[{\sarrow[red]}]\index{NCプログラム}NCプログラム内の\OutcutLength の寸法に誤りが存在している
 \end{enumerate}
 \end{Issues}
 
@@ -127,8 +120,8 @@
 \begin{Issues}{\index{てさぎょう@手作業}手作業による\EndFaceChamferMilling}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]
-寸法の小さな\EndFaceCChamferMilling が\MMC で行われず、\index{てもちけんまき@手持ち研磨機}手持ち研磨機により\index{てさぎょう@手作業}手作業で行われている
-\item[{\sarrow[red]}]\EndFaceChamferMilling に関する解析的な幾何情報を導出しないまま放置され続けている
+寸法の小さな\EndFaceChamferMilling が\index{てもちけんまき@手持ち研磨機}手持ち研磨機により\index{てさぎょう@手作業}手作業で行われている
+\item[{\sarrow[red]}]\EndFaceChamferMilling に関する解析的な幾何情報を導出しないまま放置し続けている
 \end{enumerate}
 \end{Issues}
 
@@ -137,7 +130,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceOutCChamferMilling における品質}
 
-\begin{Issues}{\EndFaceOutCChamferMilling の中心位置調整\TBW}
+\begin{Issues}{\EndFaceOutCChamferMilling の位置調整\TBW}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]
 \end{enumerate}
@@ -148,7 +141,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\EndFaceInCChamferMilling における品質}
 
-\begin{Issues}{\EndFaceInCChamferMilling の中心位置調整\TBW}
+\begin{Issues}{\EndFaceInCChamferMilling の位置調整\TBW}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]
 \end{enumerate}
@@ -195,17 +188,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\index{さぎょうこうりつ@作業効率}作業効率に関するイシュー・問題\TBW}
+\modHeadsection{\index{さぎょうこうりつ@作業効率}作業効率に関するイシュー・問題}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 02.03.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\index{NCプログラム}NCプログラムの作成における作業効率}
+\subsection{\index{NCプログラム}NCプログラムの作成における作業効率\TBW}
 
-\begin{Issues}{\KeywayCenter 位置の自動計算\TBW}
+\begin{Issues}{\KeywayCenter 位置の手動計算による導出\TBW}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
+\item[{\sarrow[red]}]\KeywayCenter の
 \end{enumerate}
 \end{Issues}
 
@@ -227,15 +220,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{測定における作業効率}
 
-\begin{Issues}{測定基準値の手動による実測\TBW}
+\begin{Issues}{測定基準値の手動による実測}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
+\item[{\sarrow[red]}]\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の概算値を見出すために、オペレータに直接機内で測定するよう強要している
+\item[{\sarrow[red]}]ジグ・ワークの寸法から計算で容易に見出だせるにかかわらず、放置され続けている
 \end{enumerate}
 \end{Issues}
 
-\begin{Issues}{測定時の送り速さ\TBW}
+\begin{Issues}{測定時の送り速さ}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
+\item[{\sarrow[red]}]すべての測定時の送り速さが1つの値で制御されている状態にある
+\item[{\sarrow[red]}]すべての測定に対し、最も小さい送り速さに合わせる必要があり、必然的に測定に時間がかかってしまう
+\end{enumerate}
+\end{Issues}
+
+\begin{Issues}{\CenterlineEndFaceDifMeasurement の作業効率}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]\CenterlineEndFaceDifMeasurement が、手動による\index{ハンドルそうさ@ハンドル操作}ハンドル操作で行われている
+\item[{\sarrow[red]}]\Outcut・\Keyway・\CenterCurvature の寸法から自動化が可能にもかかわらず、事態が放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -245,9 +247,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFacecutMilling における作業効率}
 
-\begin{Issues}{\EndFacecutMilling の手動による\TDCorrection\TBW}
+\begin{Issues}{\EndFacecutMilling の手動による\TDCorrection}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
+\item[{\sarrow[red]}]\EndFacecutMilling の基準点が外側中心として与えられており、\index{めいさい@明細}明細に依存する\indexTDFaceMill\nameTDCorrection を行わなければならない
+\item[{\sarrow[red]}]オペレータが手動で\indexTDFaceMill\nameTDCorrection を行わなければならない状態にある
+\end{enumerate}
+\end{Issues}
+
+\begin{Issues}{\EndFacecutMilling の手動による加工回数の変更}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]\EndFacecutMilling の回数を変更する際、オペレータが手動により直接メインプログラムを編集しなければならない状態にある
 \end{enumerate}
 \end{Issues}
 
