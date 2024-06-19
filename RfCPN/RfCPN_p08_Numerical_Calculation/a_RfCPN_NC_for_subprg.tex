@@ -13,15 +13,18 @@
 \modHeadsection{\AlocationAngle の数値情報}
 \TopAlocationLength が$f_\mathrm T'$となる\AlocationAngle は、\pageeqref{eq:alocationangle}より、
 \begin{align*}
-  \HLbox{\sin^{-1}\frac{f_\mathrm T'-f_\mathrm T}{\Delta'}}\ .
+  \text{トップ側：}~\HLbox{\sin^{-1}\frac{f_\mathrm T'-f_\mathrm T}{\Delta_x'}}~,\quad
+  \text{ボトム側：}~\HLbox{\pi-\sin^{-1}\frac{f_\mathrm T'-f_\mathrm T}{\Delta_x'}}\ .
 \end{align*}
 特に、\TopAlocationLength および\BottomAlocationLength が同じとなる\EqualAlocationAngle は、\pageeqref{eq:equalalocationangle}より、
 \begin{align*}
-  \HLbox{\sin^{-1}\frac{f_d}{\Delta'}}\ .
+  \text{トップ側：}~\HLbox{\sin^{-1}\frac{f_d}{\Delta_x'}}~,\quad
+  \text{ボトム側：}~\HLbox{\pi-\sin^{-1}\frac{f_d}{\Delta_x'}}\ .
 \end{align*}
 
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section F.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -41,23 +44,36 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection F.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\BottomOutcutCenter の位置\TBW}
+\subsection{\BottomOutcutCenter の位置}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection F.02.02.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\BottomOutcutCenter：\BottomOutcutAsideThickness 基準の場合}
 \TableCenter を\index{げんてんP@原点P}原点とした\BottomOutcutCenter の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterBt}より、
 \begin{align*}
   \HLbox{%
-    \Delta_x'\cos\theta
-    -\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2
-    -\frac{w_\mathrm B}2
-    -\tau_\mathrm B
-    +\frac{\mathfrak W_\mathrm B}2
+    G_{\mathrm Bx}-\frac{\sqrt{R_\mathrm c^2-(f_\mathrm B-c_\mathrm{Bi})^2}+\sqrt{R_\mathrm c^2-f_\mathrm B^2}}2
+    -\frac{w_\mathrm B}2-\tau_\mathrm B+\frac{\mathfrak W_\mathrm B}2
   }\ .
 \end{align*}
-このとき、測定したA側内面b$_\mathrm o'$の$X$座標が\pageeqref{eq:gaisakucenterBr}となるように、原点$\mathfrak B_\mathrm c'$を定める。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection F.03.02.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\BottomOutcutCenter：\TopOutcutAsideThickness 基準の場合}
+\TopOutcutCenter$\mathcal G_{Tx}$が基準の場合、\BottomOutcutCenter の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterBt}より、
 \begin{align*}
-  \HLbox{-\left(\frac{\mathfrak W_\mathrm B}2-\tau_\mathrm B+\mu\right)}\ .
+  \HLbox{-\mathcal G_{Tx}+T_x}\ .
 \end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection F.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ボトム端内側中心の位置}
+ボトム端における内側中心の（おおよその）$X$座標は、\BottomCurvatureCenter\pageeqref{eq:tableBc}として与えられる。
+
 トップ側にも\Outcut がある場合、測定で定めた$\mathfrak B_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Bx}$および\CenterlineEndFaceDifAC$T_x$を用いて\pageeqref{eq:BbasedTx}で与えられる。
 \begin{align*}
   \HLbox{-\mathcal G_{Bx}+T_x}\ .
@@ -81,10 +97,6 @@
 このとき、測定したA側内面t$_\mathrm o'$の$X$座標が\pageeqref{eq:gaisakucenterTr}となるように、原点$\mathfrak T_\mathrm c'$を定める。
 \begin{align*}
   \HLbox{\frac{\mathfrak W_\mathrm T}2-\tau_\mathrm T+\mu}~.
-\end{align*}
-ボトム側にも\Outcut がある場合、測定で定めた$\mathfrak T_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Tx}$および\CenterlineEndFaceDifAC$T_x$を用いて\pageeqref{eq:TbasedTx}で与えられる。
-\begin{align*}
-  \HLbox{-\mathcal G_{Tx}+T_x}\ .
 \end{align*}
 
 
