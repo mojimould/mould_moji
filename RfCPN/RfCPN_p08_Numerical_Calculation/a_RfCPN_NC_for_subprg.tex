@@ -37,7 +37,7 @@
 \subsection{ボトム端外側中心の位置}
 ボトム端における外側中心の$X$座標は、\pageeqref{eq:tableBc}より、
 \begin{align*}
-  \HLbox{\Delta'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2}\ .
+  \HLbox{\Delta_x'\cos\theta-\frac{\sqrt{R_\mathrm o^2-f_\mathrm B^2}+\sqrt{R_\mathrm i^2-f_\mathrm B^2}}2}\ .
 \end{align*}
 
 
@@ -53,13 +53,14 @@
 \TableCenter を\index{げんてんP@原点P}原点とした\BottomOutcutCenter の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterBt}より、
 \begin{align*}
   \HLbox{%
-    G_{\mathrm Bx}-\frac{\sqrt{R_\mathrm c^2-(f_\mathrm B-c_\mathrm{Bi})^2}+\sqrt{R_\mathrm c^2-f_\mathrm B^2}}2
+    G_{\mathrm Bx}
+    -\frac{\sqrt{R_\mathrm c^2-(f_\mathrm B-c_\mathrm{Bi})^2}+\sqrt{R_\mathrm c^2-f_\mathrm B^2}}2
     -\frac{w_\mathrm B}2-\tau_\mathrm B+\frac{\mathfrak W_\mathrm B}2
   }\ .
 \end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection F.03.02.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection F.02.02.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\BottomOutcutCenter：\TopOutcutAsideThickness 基準の場合}
 \TopOutcutCenter$\mathcal G_{Tx}$が基準の場合、\BottomOutcutCenter の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterBt}より、
@@ -69,68 +70,63 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection F.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection F.02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ボトム端内側中心の位置}
-ボトム端における内側中心の（おおよその）$X$座標は、\BottomCurvatureCenter\pageeqref{eq:tableBc}として与えられる。
+ボトム端における内側中心の（おおよその）$X$座標は、\BottomCurvatureCenter\pageeqref{eq:tableBRc}として与えられる。
+\begin{align*}
+  \HLbox{\Delta_x'\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}}\ .
+\end{align*}
 
-トップ側にも\Outcut がある場合、測定で定めた$\mathfrak B_\mathrm c'$の$X$座標$\mathcal G_{\mathrm Bx}$および\CenterlineEndFaceDifAC$T_x$を用いて\pageeqref{eq:BbasedTx}で与えられる。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection F.02.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{トップ端外側中心の位置}
+トップ端における外側中心の$X$座標は、\pageeqref{eq:tableTc}より、
+\begin{align*}
+  \HLbox{\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2-\Delta_x'\cos\theta}\ .
+\end{align*}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection F.02.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\TopOutcutCenter の位置}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection F.02.05.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\TopOutcutCenter：\TopOutcutAsideThickness 基準の場合}
+\TableCenter を\index{げんてんP@原点P}原点とした\TopOutcutCenter の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterTt}より、
+\begin{align*}
+  \HLbox{%
+    G_{\mathrm Tx}
+    +\frac{\sqrt{R_\mathrm c^2-(f_\mathrm T-c_\mathrm{Ti})^2}+\sqrt{R_\mathrm c^2-f_\mathrm T^2}}2
+    +\frac{w_\mathrm T}2+\tau_\mathrm T-\frac{\mathfrak W_\mathrm T}2
+  }\ .
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection F.02.05.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\TopOutcutCenter：\BottomOutcutAsideThickness 基準の場合}
+\BottomOutcutCenter$\mathcal G_{Bx}$が基準の場合、\TopOutcutCenter の（おおよその）$X$座標は、\pageeqref{eq:BbasedTx}より、
 \begin{align*}
   \HLbox{-\mathcal G_{Bx}+T_x}\ .
 \end{align*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection F.01.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection F.02.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\OutcutCenter：\TopOutcutAsideThickness 基準の場合}
-\TableCenter\expandafterindex{P（\yomiTableCenter)@P（\nameTableCenter）}Pを\index{げんてんP@原点P}原点とした\TopOutcutCenter$\mathfrak T_\mathrm c'$の（おおよその）$X$座標は、\pageeqref{eq:gaisakucenterTt}より、
-\begin{align*}
-  \HLbox{%
-    \frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2
-    -\Delta_x'\cos\theta
-    +\frac{w_\mathrm T}2
-    +\tau_\mathrm T
-    -\frac{\mathfrak W_\mathrm T}2
-  }\ .
-\end{align*}
-このとき、測定したA側内面t$_\mathrm o'$の$X$座標が\pageeqref{eq:gaisakucenterTr}となるように、原点$\mathfrak T_\mathrm c'$を定める。
-\begin{align*}
-  \HLbox{\frac{\mathfrak W_\mathrm T}2-\tau_\mathrm T+\mu}~.
-\end{align*}
-
+\subsection{\KeywayCenter の位置}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 30.3.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection F.02.05.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\OutcutLength}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 30.3.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\BottomOutcutLength}
-\BottomOutcut における\index{こうぐ@工具}工具の先端の$Z$座標は、\BottomOutcutLength を$h_\mathrm B$として、
-\begin{align*}
-  \HLbox{f_\mathrm B'-h_\mathrm B}\ .
-\end{align*}
-
-%\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 30.3.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\TopOutcutLength}
-\TopOutcut における工具の先端の$Z$座標は、\TopOutcutLength, \KeywayPos, \KeywayWidth をそれぞれ$h_\mathrm T$, $\kappa_p$, $\kappa_w$として、
-\begin{alignat*}{3}
-  & \HLbox{f_\mathrm T'-h_\mathrm T} & \quad & \Big(\text{if}~h_\mathrm T > \kappa_p+\kappa_w\Big)\\
-  & \HLbox{f_\mathrm T'-\left(\kappa_p+1[\mathrm{mm}]\right)} & \quad  & \Big(\text{if}~h_\mathrm T = \kappa_p+\kappa_w\Big)
-\end{alignat*}
-
-
-%\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 30.3.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\CurvedOutcut\TBW}
+\subsubsection{\KeywayCenter：\Outcut なし・\AsideKeywayDepth 基準の場合}
 (to be written...)
 
 
