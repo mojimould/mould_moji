@@ -1,5 +1,5 @@
 %
-O915100 (warming up: 20240612)
+O915100 (warming up: 20240619)
 
 N0001 (initialize)
 G49 G40 (cancel hosei)
