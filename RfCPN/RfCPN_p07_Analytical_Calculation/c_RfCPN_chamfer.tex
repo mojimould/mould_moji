@@ -102,7 +102,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 37.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\EndFaceChamferLength の補正\TBW}
+\modHeadsection{\EndFaceChamferLength による補正\TBW}
 \EndFaceChamferMilling では、$Z$方向の\EndFaceChamferLength が揃う形になるように加工を行う。
 このとき、単純に\EndFaceIDCenter を\expandafterindex{きじゅん（\yomiEndFaceChamferMilling）@基準（\nameEndFaceChamferMilling）}基準にすると、外面あるいは内面には\index{わんきょく@湾曲}湾曲があるためA面側およびC面側の\EndFaceChamferLength は揃わない
 %% footnote %%%%%%%%%%%%%%%%%%%%%
@@ -166,16 +166,57 @@
 \modHeadsection{\index{ワークのゆがみ@ワークの歪み}ワークの歪みを考慮した\EndFaceCChamferMilling}
 ここまで長方形の形状の\EndFaceCChamferMilling を考えてきた。
 しかし、実際には\index{ワーク}ワークに歪みがあり変形しているため、それも考慮する必要がある。
-ここでは簡単のため、四角形の形状の\EndFaceCChamferMilling を考える。
+ここでは簡単のため、\index{とつしかくけい@凸四角形}凸四角形の形状をした\EndFaceCChamferMilling を考える。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 37.06.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 37.06.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{測定点とその座標\TBW}
+\subsection{測定点とその座標：\EndFaceOutChamfer}
+測定点として、A面側およびC面側の辺については、\BDOD の第1四分点および第3四分点の$Y$座標に対する$X$座標の測定を行う。
+同様に、B面側およびD面側の辺については、\ACOD の第1四分点および第3四分点の$X$座標に対する$Y$座標の測定を行う。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 37.06.01.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{各辺の方程式}
+A面側の辺における2測定点をそれぞれ$\mathcal A_\mathrm a$, $\mathcal A_\mathrm b$とし、その座標をそれぞれ($x_{\mathcal A_\mathrm a}$, $\nicefrac{W_y}4$), ($x_{\mathcal A_\mathrm b}$, $-\nicefrac{W_y}4$)とすると、この2点を結んだ直線は以下で与えられる。
+\begin{align*}
+  \left(x_{\mathcal A_\mathrm a}-x_{\mathcal A_\mathrm b}\right)\left(y+\frac{W_y}4\right)
+  -\frac{W_y}2\left(x-x_{\mathcal A_\mathrm a}\right)
+  = 0\ .
+\end{align*}
+同様に、C面側の辺における2測定点をそれぞれ$\mathcal C_\mathrm a$, $\mathcal C_\mathrm b$とし、その座標をそれぞれ($x_{\mathcal C_\mathrm a}$, $\nicefrac{W_y}4$), ($x_{\mathcal C_\mathrm b}$, $-\nicefrac{W_y}4$)とすると、この2点を結んだ直線は以下で与えられる。
+\begin{align*}
+  \left(x_{\mathcal C_\mathrm a}-x_{\mathcal C_\mathrm b}\right)\left(y+\frac{W_y}4\right)
+  -\frac{W_y}2\left(x-x_{\mathcal C_\mathrm a}\right)
+  = 0\ .
+\end{align*}
+B面側の辺における2測定点をそれぞれ$\mathcal B_\mathrm a$, $\mathcal B_\mathrm b$とし、その座標をそれぞれ($\nicefrac{W_x}4$, $y_{\mathcal B_\mathrm a}$), ($-\nicefrac{W_x}4$, $y_{\mathcal B_\mathrm b}$)とすると、この2点を結んだ直線は以下で与えられる。
+\begin{align*}
+  \frac{W_x}2\left(y-y_{\mathcal B_\mathrm b}\right)
+  -\left(y_{\mathcal B_\mathrm a}-y_{\mathcal B_\mathrm b}\right)\left(x-\frac{W_x}4\right)
+  = 0\ .
+\end{align*}
+同様に、D面側の辺における2測定点をそれぞれ$\mathcal D_\mathrm a$, $\mathcal D_\mathrm b$とし、その座標をそれぞれ($\nicefrac{W_x}4$, $y_{\mathcal D_\mathrm a}$), ($-\nicefrac{W_x}4$, $y_{\mathcal D_\mathrm b}$)とすると、この2点を結んだ直線は以下で与えられる。
+\begin{align*}
+  \frac{W_x}2\left(y-y_{\mathcal D_\mathrm b}\right)
+  -\left(y_{\mathcal D_\mathrm a}-y_{\mathcal D_\mathrm b}\right)\left(x-\frac{W_x}4\right)
+  = 0\ .
+\end{align*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 37.06.01.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{各コーナー部\TBW}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 37.06.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{測定点とその座標：\EndFaceInChamfer\TBW}
 (to be written...)
-
-
-
-
-
