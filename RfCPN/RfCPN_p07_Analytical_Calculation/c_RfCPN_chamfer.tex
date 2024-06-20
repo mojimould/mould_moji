@@ -179,7 +179,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 37.06.01.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{各辺の方程式}
+\subsubsection{各々の辺の方程式}
 A面側の辺における2測定点をそれぞれ$\mathcal A_\mathrm a$, $\mathcal A_\mathrm b$とし、その座標をそれぞれ($x_{\mathcal A_\mathrm a}$, $\nicefrac{W_y}4$), ($x_{\mathcal A_\mathrm b}$, $-\nicefrac{W_y}4$)とすると、この2点を結んだ直線は以下で与えられる。
 \begin{align*}
   \left(x_{\mathcal A_\mathrm a}-x_{\mathcal A_\mathrm b}\right)\left(y+\frac{W_y}4\right)
@@ -192,26 +192,75 @@ A面側の辺における2測定点をそれぞれ$\mathcal A_\mathrm a$, $\math
   -\frac{W_y}2\left(x-x_{\mathcal C_\mathrm a}\right)
   = 0\ .
 \end{align*}
-B面側の辺における2測定点をそれぞれ$\mathcal B_\mathrm a$, $\mathcal B_\mathrm b$とし、その座標をそれぞれ($\nicefrac{W_x}4$, $y_{\mathcal B_\mathrm a}$), ($-\nicefrac{W_x}4$, $y_{\mathcal B_\mathrm b}$)とすると、この2点を結んだ直線は以下で与えられる。
+B面側の辺における2測定点をそれぞれ$\mathcal B_\mathrm l$, $\mathcal B_\mathrm r$とし、その座標をそれぞれ($\nicefrac{W_x}4$, $y_{\mathcal B_\mathrm l}$), ($-\nicefrac{W_x}4$, $y_{\mathcal B_\mathrm r}$)とすると、この2点を結んだ直線は以下で与えられる。
 \begin{align*}
-  \frac{W_x}2\left(y-y_{\mathcal B_\mathrm b}\right)
-  -\left(y_{\mathcal B_\mathrm a}-y_{\mathcal B_\mathrm b}\right)\left(x-\frac{W_x}4\right)
+  \frac{W_x}2\left(y-y_{\mathcal B_\mathrm r}\right)
+  -\left(y_{\mathcal B_\mathrm l}-y_{\mathcal B_\mathrm r}\right)\left(x-\frac{W_x}4\right)
   = 0\ .
 \end{align*}
-同様に、D面側の辺における2測定点をそれぞれ$\mathcal D_\mathrm a$, $\mathcal D_\mathrm b$とし、その座標をそれぞれ($\nicefrac{W_x}4$, $y_{\mathcal D_\mathrm a}$), ($-\nicefrac{W_x}4$, $y_{\mathcal D_\mathrm b}$)とすると、この2点を結んだ直線は以下で与えられる。
+同様に、D面側の辺における2測定点をそれぞれ$\mathcal D_\mathrm l$, $\mathcal D_\mathrm r$とし、その座標をそれぞれ($\nicefrac{W_x}4$, $y_{\mathcal D_\mathrm l}$), ($-\nicefrac{W_x}4$, $y_{\mathcal D_\mathrm r}$)とすると、この2点を結んだ直線は以下で与えられる。
 \begin{align*}
-  \frac{W_x}2\left(y-y_{\mathcal D_\mathrm b}\right)
-  -\left(y_{\mathcal D_\mathrm a}-y_{\mathcal D_\mathrm b}\right)\left(x-\frac{W_x}4\right)
+  \frac{W_x}2\left(y-y_{\mathcal D_\mathrm r}\right)
+  -\left(y_{\mathcal D_\mathrm l}-y_{\mathcal D_\mathrm r}\right)\left(x-\frac{W_x}4\right)
   = 0\ .
 \end{align*}
 
-
-
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 37.06.01.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{各コーナー部\TBW}
+\subsubsection{各々の辺のなす角度}
+直線$\mathcal B_\mathrm l\mathcal B_\mathrm r$と直線$\mathcal A_\mathrm a\mathcal A_\mathrm b$のなす内側の角度$\theta_{\mathcal{BA}}$ ($0 < \theta_{\mathcal{BA}} < \pi$)は、以下で与えられる。
+\begin{align*}
+  \theta_{\mathcal{BA}}
+  &= \tan^{-1}
+     \frac12
+     \frac{4\left(x_{\mathcal A_\mathrm a}-x_{\mathcal A_\mathrm b}\right)
+            \left(y_{\mathcal B_\mathrm l}-y_{\mathcal B_\mathrm r}\right)
+           -W_xW_y}
+          {W_x\left(x_{\mathcal A_\mathrm a}-x_{\mathcal A_\mathrm b}\right)
+           -W_y\left(y_{\mathcal B_\mathrm l}-y_{\mathcal B_\mathrm r}\right)}\ .
+\end{align*}
+ただし、$W_x\left(x_{\mathcal A_\mathrm a}-x_{\mathcal A_\mathrm b}\right) = W_y\left(y_{\mathcal B_\mathrm l}-y_{\mathcal B_\mathrm r}\right)$の場合は$\theta_{\mathcal{BA}} = \nicefrac\pi2$である。
 
+同様に、直線$\mathcal A_\mathrm a\mathcal A_\mathrm b$と直線$\mathcal D_\mathrm l\mathcal D_\mathrm r$のなす内側の角度$\theta_{\mathcal{AD}}$ ($0 < \theta_{\mathcal{AD}} < \pi$)は、
+\begin{align*}
+  \theta_{\mathcal{AD}}
+  &= \tan^{-1}
+     \frac12
+     \frac{W_xW_y
+           -4\left(x_{\mathcal A_\mathrm a}-x_{\mathcal A_\mathrm b}\right)
+             \left(y_{\mathcal D_\mathrm l}-y_{\mathcal D_\mathrm r}\right)}
+          {W_x\left(x_{\mathcal A_\mathrm a}-x_{\mathcal A_\mathrm b}\right)
+           -W_y\left(y_{\mathcal D_\mathrm l}-y_{\mathcal D_\mathrm r}\right)}\ .
+\end{align*}
+ただし、$W_x\left(x_{\mathcal A_\mathrm a}-x_{\mathcal A_\mathrm b}\right) = W_y\left(y_{\mathcal D_\mathrm l}-y_{\mathcal D_\mathrm r}\right)$の場合は$\theta_{\mathcal{AD}} = \nicefrac\pi2$.
+
+直線$\mathcal D_\mathrm l\mathcal D_\mathrm r$と直線$\mathcal C_\mathrm a\mathcal C_\mathrm b$のなす内側の角度$\theta_{\mathcal{DC}}$ ($0 < \theta_{\mathcal{DC}} < \pi$)は、
+\begin{align*}
+  \theta_{\mathcal{DC}}
+  &= \tan^{-1}
+     \frac12
+     \frac{4\left(x_{\mathcal C_\mathrm a}-x_{\mathcal C_\mathrm b}\right)
+            \left(y_{\mathcal D_\mathrm l}-y_{\mathcal D_\mathrm r}\right)
+           -W_xW_y}
+          {W_x\left(x_{\mathcal C_\mathrm a}-x_{\mathcal C_\mathrm b}\right)
+           -W_y\left(y_{\mathcal D_\mathrm l}-y_{\mathcal D_\mathrm r}\right)}\ .
+\end{align*}
+ただし、$W_x\left(x_{\mathcal C_\mathrm a}-x_{\mathcal C_\mathrm b}\right) = W_y\left(y_{\mathcal D_\mathrm l}-y_{\mathcal D_\mathrm r}\right)$の場合は$\theta_{\mathcal{DC}} = \nicefrac\pi2$である。
+
+直線$\mathcal C_\mathrm a\mathcal C_\mathrm b$と直線$\mathcal B_\mathrm l\mathcal B_\mathrm r$のなす内側の角度$\theta_{\mathcal{CB}}$ ($0 < \theta_{\mathcal{CB}} < \pi$)は、
+\begin{align*}
+  \theta_{\mathcal{CB}}
+  &= \tan^{-1}
+     \frac12
+     \frac{W_xW_y
+           -4\left(x_{\mathcal C_\mathrm a}-x_{\mathcal C_\mathrm b}\right)
+             \left(y_{\mathcal B_\mathrm l}-y_{\mathcal B_\mathrm r}\right)}
+          {W_x\left(x_{\mathcal C_\mathrm a}-x_{\mathcal C_\mathrm b}\right)
+           -W_y\left(y_{\mathcal B_\mathrm l}-y_{\mathcal B_\mathrm r}\right)}\ .
+\end{align*}
+ただし、$W_x\left(x_{\mathcal C_\mathrm a}-x_{\mathcal C_\mathrm b}\right) = W_y\left(y_{\mathcal B_\mathrm l}-y_{\mathcal B_\mathrm r}\right)$の場合は$\theta_{\mathcal{CB}} = \nicefrac\pi2$.
 
 
 
