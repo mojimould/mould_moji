@@ -1,5 +1,5 @@
 %
-O421000 (last update on 20240611)
+O421000 (last update on 20240621)
 (Curved Gaisaku, ar HidariMawari 1shuu)
 
 N0001
