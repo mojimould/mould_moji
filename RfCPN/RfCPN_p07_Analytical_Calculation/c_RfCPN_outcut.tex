@@ -237,18 +237,20 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
 %% subsubsection 35.04.01.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\BottomCurvedOutcut の端点の位置}
-\BottomEndFace の外側中心の$X$座標を$x_\mathrm{Bm}$とすると、その位置は
+傾き前の\BottomEndFace における外側中心の$X$座標は、実測により$G_{\mathrm Bx}$で与えられる。
+このときその位置は
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{$Z$の正方向を実軸、$X$の正方向を虚軸として考えている。}、
+\footnote{$Z$の正方向を実軸、$X$の正方向を虚軸として考えている。
+また、$G_{\mathrm Bx}$は\TableCenter を原点として与えられるものとする。}、
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align*}
   \text{中心：}\quad
-  \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}e^{i\theta_\mathrm{Bm}}~~, \quad
-  \tan\theta_\mathrm{Bm}= \frac{x_\mathrm{Bm}}{f_\mathrm B'}\ .
+  \sqrt{f_\mathrm B^{'2}+G_{\mathrm Bx}^2}e^{i\theta_\mathrm{Bm}}~~, \quad
+  \tan\theta_\mathrm{Bm}= \frac{G_{\mathrm Bx}}{f_\mathrm B'}\ .
 \end{align*}
 \pageeqref{eq:BCurvedOutcutAngle}より、傾き後の\expandafterindex{\yomiBottomEndFace（\yomiCurvedOutcut）@\nameBottomEndFace（\nameCurvedOutcut）}\nameBottomEndFace の中心の位置は、
 \begin{align*}
-  \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}e^{i(\theta_\mathrm{Bm}-\theta_b)}
+  \sqrt{f_\mathrm B^{'2}+G_{\mathrm Bx}^2}e^{i(\theta_\mathrm{Bm}-\theta_b)}
 \end{align*}
 となるので、これの虚部が$X$座標、実部が$Z$座標となる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
@@ -256,7 +258,7 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
 \begin{align*}
   \left[
     \begin{array}{c}
-      x_\mathrm{Bm}\\
+      G_{\mathrm Bx}\\
       f_\mathrm B'
     \end{array}
   \right]
@@ -269,26 +271,26 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
   \right]\!\!
   \left[
     \begin{array}{c}
-      x_\mathrm{Bm}\\
+      G_{\mathrm Bx}\\
       f_\mathrm B'
     \end{array}
   \right]
   = \left[
     \begin{array}{c}
-      x_\mathrm{Bm}\cos\theta_b-f_\mathrm B'\sin\theta_b\\
-      x_\mathrm{Bm}\sin\theta_b+f_\mathrm B'\cos\theta_b
+      G_{\mathrm Bx}\cos\theta_b-f_\mathrm B'\sin\theta_b\\
+      G_{\mathrm Bx}\sin\theta_b+f_\mathrm B'\cos\theta_b
     \end{array}
   \right].
 \end{align*}%
 }。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align*}
-  \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}\sin(\theta_\mathrm{Bm}-\theta_b)
-  &= \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}(\sin\theta_\mathrm{Bm}\cos\theta_b-\cos\theta_\mathrm{Bm}\sin\theta_b)
-   = x_\mathrm{Bm}\cos\theta_b-f_\mathrm B'\sin\theta_b~,\\
-  \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}\cos(\theta_\mathrm{Bm}-\theta_b)
-  &= \sqrt{f_\mathrm B^{'2}+x_\mathrm{Bm}^2}(\cos\theta_\mathrm{Bm}\cos\theta_b+\sin\theta_\mathrm{Bm}\sin\theta_b)
-   = f_\mathrm B'\cos\theta_b+x_\mathrm{Bm}\sin\theta_b~.
+  \sqrt{f_\mathrm B^{'2}+G_{\mathrm Bx}^2}\sin(\theta_\mathrm{Bm}-\theta_b)
+  &= \sqrt{f_\mathrm B^{'2}+G_{\mathrm Bx}^2}(\sin\theta_\mathrm{Bm}\cos\theta_b-\cos\theta_\mathrm{Bm}\sin\theta_b)
+   = G_{\mathrm Bx}\cos\theta_b-f_\mathrm B'\sin\theta_b~,\\
+  \sqrt{f_\mathrm B^{'2}+G_{\mathrm Bx}^2}\cos(\theta_\mathrm{Bm}-\theta_b)
+  &= \sqrt{f_\mathrm B^{'2}+G_{\mathrm Bx}^2}(\cos\theta_\mathrm{Bm}\cos\theta_b+\sin\theta_\mathrm{Bm}\sin\theta_b)
+   = f_\mathrm B'\cos\theta_b+G_{\mathrm Bx}\sin\theta_b~.
 \end{align*}
 このとき、\BottomOutcutACWidth を$\mathfrak W_{\mathrm Bx}$とすると、傾き後のC側端点・A側端点・BD側コーナー端点はそれぞれ、
 \begin{alignat}{2}
@@ -296,16 +298,16 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
   \text{中心：}&&\quad
     \left[
       \begin{array}{c}
-        x'_\mathrm{Bm}\\[3pt]
-        y'_\mathrm{Bm}\\[3pt]
-        z'_\mathrm{Bm}
+        G'_{\mathrm Bx}\\[3pt]
+        G'_{\mathrm By}\\[3pt]
+        G'_{\mathrm Bz}
       \end{array}
     \right]
    &= \left[
       \begin{array}{c}
-        x_\mathrm{Bm}\cos\theta_b-f_\mathrm B'\sin\theta_b\\[3pt]
-        y_\mathrm{Bm}\\[3pt]
-        f_\mathrm B'\cos\theta_b+x_\mathrm{Bm}\sin\theta_b
+        G_{\mathrm Bx}\cos\theta_b-f_\mathrm B'\sin\theta_b\\[3pt]
+        G_{\mathrm By}\\[3pt]
+        f_\mathrm B'\cos\theta_b+G_{\mathrm Bx}\sin\theta_b
       \end{array}
     \right],\\
   \notag
@@ -319,9 +321,9 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Bm}+\frac{\mathfrak W_{\mathrm Bx}}2\\[8pt]
+        G'_{\mathrm Bx}+\frac{\mathfrak W_{\mathrm Bx}}2\\[8pt]
         \displaystyle
-        z'_\mathrm{Bm}+\frac{\mathfrak W_{\mathrm Bx}}2\sin\theta_b
+        G'_{\mathrm Bz}+\frac{\mathfrak W_{\mathrm Bx}}2\sin\theta_b
       \end{array}
     \right],\\
   \notag
@@ -335,9 +337,9 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Bm}-\frac{\mathfrak W_{\mathrm Bx}}2\\[8pt]
+        G'_{\mathrm Bx}-\frac{\mathfrak W_{\mathrm Bx}}2\\[8pt]
         \displaystyle
-        z'_\mathrm{Bm}-\frac{\mathfrak W_{\mathrm Bx}}2\sin\theta_b
+        G'_{\mathrm Bz}-\frac{\mathfrak W_{\mathrm Bx}}2\sin\theta_b
       \end{array}
     \right],\\
   \notag
@@ -352,11 +354,11 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Bm}+\frac{\mathfrak W_{\mathrm Bx}}2-R_E\\[8pt]
+        G'_{\mathrm Bx}+\frac{\mathfrak W_{\mathrm Bx}}2-R_E\\[8pt]
         \displaystyle
         y_\mathrm{Bm}+\frac{\mathfrak W_{\mathrm By}}2\\[8pt]
         \displaystyle
-        z'_\mathrm{Bm}+\left(\frac{\mathfrak W_{\mathrm Bx}}2-R_E\right)\sin\theta_b
+        G'_{\mathrm Bz}+\left(\frac{\mathfrak W_{\mathrm Bx}}2-R_E\right)\sin\theta_b
       \end{array}
     \right],\\
   \notag
@@ -371,11 +373,11 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Bm}-\frac{\mathfrak W_{\mathrm Bx}}2+R_E\\[8pt]
+        G'_{\mathrm Bx}-\frac{\mathfrak W_{\mathrm Bx}}2+R_E\\[8pt]
         \displaystyle
         y_\mathrm{Bm}+\frac{\mathfrak W_{\mathrm By}}2\\[8pt]
         \displaystyle
-        z'_\mathrm{Bm}-\left(\frac{\mathfrak W_{\mathrm Bx}}2-R_E\right)\sin\theta_b
+        G'_{\mathrm Bz}-\left(\frac{\mathfrak W_{\mathrm Bx}}2-R_E\right)\sin\theta_b
       \end{array}
     \right].
 \end{alignat}
@@ -404,23 +406,23 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
 %% subsubsection 35.04.01.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\TopCurvedOutcut の端点の位置}
-\TopEndFace におけるA面側・C面側・中心の$X$座標をそれぞれ$x_\mathrm{To}$, $x_\mathrm{Ti}$, $x_\mathrm{Tm}$とする。
+\TopEndFace におけるA面側・C面側・中心の$X$座標をそれぞれ$x_\mathrm{To}$, $x_\mathrm{Ti}$, $G_{\mathrm Tx}$とする。
 このとき\TopEndFace のそれぞれの位置は
 \begin{align}
   \text{中心：}\quad
-  \sqrt{f_\mathrm T^{'2}+x_\mathrm{Tm}^2}e^{i\theta_\mathrm{Tm}}~~, \quad
-  \tan\theta_\mathrm{Tm} = \frac{x_\mathrm{Tm}}{f_\mathrm T'}\ .
+  \sqrt{f_\mathrm T^{'2}+G_{\mathrm Tx}^2}e^{i\theta_\mathrm{Tm}}~~, \quad
+  \tan\theta_\mathrm{Tm} = \frac{G_{\mathrm Tx}}{f_\mathrm T'}\ .
 \end{align}
 \pageeqref{eq:TCurvedOutcutAngle}より、傾き後の\expandafterindex{\yomiTopEndFace（\yomiCurvedOutcut）@\nameTopEndFace（\nameCurvedOutcut）}\nameTopEndFace の中心の位置は、
 \begin{align*}
-  \sqrt{f_\mathrm T^{'2}+x_\mathrm{Tm}^2}e^{i(\theta_\mathrm{Tm}+\theta_t)}
+  \sqrt{f_\mathrm T^{'2}+G_{\mathrm Tx}^2}e^{i(\theta_\mathrm{Tm}+\theta_t)}
 \end{align*}
 となるので、これの虚部が$X$座標、実部が$Z$座標となる。
 \begin{align*}
-  \sqrt{f_\mathrm T^{'2}+x_\mathrm{Tm}^2}\sin(\theta_\mathrm{Tm}+\theta_t)
-  &= x_\mathrm{Tm}\cos\theta_t+f_\mathrm T'\sin\theta_t~,\\
-  \sqrt{f_\mathrm T^{'2}+x_\mathrm{Tm}^2}\cos(\theta_\mathrm{Tm}+\theta_t)
-  &= f_\mathrm T'\cos\theta_T+x_\mathrm{Tm}\sin\theta_t~.
+  \sqrt{f_\mathrm T^{'2}+G_{\mathrm Tx}^2}\sin(\theta_\mathrm{Tm}+\theta_t)
+  &= G_{\mathrm Tx}\cos\theta_t+f_\mathrm T'\sin\theta_t~,\\
+  \sqrt{f_\mathrm T^{'2}+G_{\mathrm Tx}^2}\cos(\theta_\mathrm{Tm}+\theta_t)
+  &= f_\mathrm T'\cos\theta_T+G_{\mathrm Tx}\sin\theta_t~.
 \end{align*}
 このとき、\TopOutcutACWidth を$\mathfrak W_{\mathrm Tx}$とすると、傾き後のA側端点・C側端点・BD側コーナー端点はそれぞれ、
 \begin{alignat}{2}
@@ -428,16 +430,16 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
   \text{中点：}&&\quad
     \left[
       \begin{array}{c}
-        x'_\mathrm{Tm}\\[3pt]
-        y'_\mathrm{Tm}\\[3pt]
-        z'_\mathrm{Tm}
+        G'_{\mathrm Tx}\\[3pt]
+        G'_{\mathrm Ty}\\[3pt]
+        G'_{\mathrm Tz}
       \end{array}
     \right]
    &= \left[
       \begin{array}{c}
-        x_\mathrm{Tm}\cos\theta_t+f_\mathrm T'\sin\theta_t\\[3pt]
+        G_{\mathrm Tx}\cos\theta_t+f_\mathrm T'\sin\theta_t\\[3pt]
         y_\mathrm{Tm}\\[3pt]
-        f_\mathrm T'\cos\theta_t-x_\mathrm{Tm}\sin\theta_t
+        f_\mathrm T'\cos\theta_t-G_{\mathrm Tx}\sin\theta_t
       \end{array}
     \right],\\
   \notag
@@ -451,9 +453,9 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Tm}+\frac{\mathfrak W_{\mathrm Tx}}2\\[8pt]
+        G'_{\mathrm Tx}+\frac{\mathfrak W_{\mathrm Tx}}2\\[8pt]
         \displaystyle
-        z'_\mathrm{Tm}-\frac{\mathfrak W_{\mathrm Tx}}2\sin\theta_t
+        G'_{\mathrm Tz}-\frac{\mathfrak W_{\mathrm Tx}}2\sin\theta_t
       \end{array}
     \right],\\
   \notag
@@ -467,9 +469,9 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Tm}-\frac{\mathfrak W_{\mathrm Tx}}2\\[8pt]
+        G'_{\mathrm Tx}-\frac{\mathfrak W_{\mathrm Tx}}2\\[8pt]
         \displaystyle
-        z'_\mathrm{Tm}+\frac{\mathfrak W_{\mathrm Tx}}2\sin\theta_b
+        G'_{\mathrm Tz}+\frac{\mathfrak W_{\mathrm Tx}}2\sin\theta_b
       \end{array}
     \right],\\
   \notag
@@ -484,11 +486,11 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Tm}+\frac{\mathfrak W_{\mathrm Tx}}2-R_E\\[8pt]
+        G'_{\mathrm Tx}+\frac{\mathfrak W_{\mathrm Tx}}2-R_E\\[8pt]
         \displaystyle
         y_{\mathrm{Tm}}+\frac{\mathfrak W_{\mathrm Ty}}2\\[8pt]
         \displaystyle
-        z'_\mathrm{Bm}+\left(\frac{\mathfrak W_{\mathrm Tx}}2-R_E\right)\sin\theta_t
+        G'_{\mathrm Bz}+\left(\frac{\mathfrak W_{\mathrm Tx}}2-R_E\right)\sin\theta_t
       \end{array}
     \right],\\
   \notag
@@ -503,11 +505,11 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
    &= \left[
       \begin{array}{c}
         \displaystyle
-        x'_\mathrm{Tm}+\frac{\mathfrak W_{\mathrm Tx}}2+R_E\\[8pt]
+        G'_{\mathrm Tx}+\frac{\mathfrak W_{\mathrm Tx}}2+R_E\\[8pt]
         \displaystyle
         y_{\mathrm{Tm}}+\frac{\mathfrak W_{\mathrm Ty}}2\\[8pt]
         \displaystyle
-        z'_\mathrm{Tm}+\left(\frac{\mathfrak W_{\mathrm Tx}}2-R_E\right)\sin\theta_t
+        G'_{\mathrm Tz}+\left(\frac{\mathfrak W_{\mathrm Tx}}2-R_E\right)\sin\theta_t
       \end{array}
     \right].
 \end{alignat}
