@@ -1,5 +1,5 @@
 %
-O491005 (last update on 20240528)
+O491005 (last update on 20240621)
 (Sotogawa ar HidariMawari 1shuu with Z-move)
 
 N0001
@@ -31,7 +31,7 @@ IF[#06EQ2]GOTO0004
 IF[#06EQ3]GOTO0005
 IF[#06EQ4]GOTO0006
 GOTO0800
-(if K is not 1, 2, 3, 4, go to N0800)
+(if K is not 1-4, go to N0800)
 
 N0003 (for R)
 G91 G01 X-[#24-#18] Z-[[#24-#18]*SIN[#02]] F#09
@@ -50,7 +50,7 @@ G91 G01 Y[#25-#18*2] F#09
 (r: Y+)
 G91 G03 X-#18 Y#18 Z-[#18*SIN[#02]] I-#18 J0 F#08
 (ar corner: R#18 [-R, #0] X-Y+)
-G91 G02 X-[#07*2] Y[#07*2] Z-[[#07*2]*SIN[#02]] I0. J[#07*2] F[#09*4]
+G91 G02 X-[#07*2] Y[#07*2] Z-[[#07*2]*SIN[#02]] I0 J[#07*2] F[#09*4]
 (G02 R[#07*2] [0, #07*2] X-Y+)
 GOTO9999
 
