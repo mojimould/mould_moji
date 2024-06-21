@@ -668,8 +668,6 @@ G54 G65 P421000 X155.000 Y155.000 U160.000 V159.000 Z499.958 Q5933.200 C#0 R17.0
 (C: Bot gaisaku corner C)
 (R: Bot gaisaku corner R)
 (K: Bot gaisaku Length)
-(M*: mizoIchi)
-(W*: mizoHaba)
 
 (Bot gaisaku end)
 IF[#439EQ0]GOTO0513
