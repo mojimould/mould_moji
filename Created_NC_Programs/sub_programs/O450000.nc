@@ -1,5 +1,5 @@
 %
-O450000 (last update on 20240618)
+O450000 (last update on 20240625)
 (Uchigawa Mentori Corner R, ac HidariMawari 1shuu)
 
 N0001
@@ -153,20 +153,19 @@ N0017
 M03 (spindle on)
 M08 (coolant #1 on)
 
-N0018
 N0100 (ShiageMae loop)
 WHILE[#103GE1]DO1
 #103=#103-1
 #104=#29-#634-#633*#103
 #105=#28-#634-#633*#103
 
-N0019 (for Top)
-IF[#4012EQ55]GOTO0020
+N0101 (for Top)
+IF[#4012EQ55]GOTO0102
 G65 P490007 D#4120 X#104 Y#105 R[#18+#13+#195] A#606 F#666 E#667 S#679
-GOTO0021
-N0020 (for Bot)
+GOTO0103
+N0102 (for Bot)
 G65 P490007 D#4120 X#104 Y#105 R[#18+#13+#196] A#606 F#666 E#667 S#679
-N0021
+N0103
 END1
 
 N0024 (pause)
