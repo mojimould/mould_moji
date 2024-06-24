@@ -15,7 +15,7 @@
 通常、\index{NCプログラム}NCプログラムの編集はシステム管理者・設計者・\index{プログラマ}プログラマ等が行う高度な業務である
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\index{オペレータ}オペレータに対してメインプログラムの直接的な編集を強要させている
-\item[{\sarrow[red]}]仕様の変更により容易に改善が可能にも関わらず、事態が放置され続けている
+\item[{\sarrow[red]}]専門の担当者が存在せず、オペレータが兼任している状態になっている
 \end{enumerate}
 \end{Issues}
 
@@ -82,6 +82,13 @@
 \item[{\sarrow[red]}]\CenterlineEndFaceDifMeasurement が、手動による\index{ハンドルそうさ@ハンドル操作}ハンドル操作で行われている
 \item[{\sarrow[red]}]手作業によるため、測定位置や送り速さが安定しない
 \item[{\sarrow[red]}]\Outcut・\Keyway・\CenterCurvature の寸法から自動化が可能にもかかわらず、事態が放置され続けている
+\end{enumerate}
+\end{Issues}
+
+\begin{Issues}{\TLMeasurement の故障}
+\begin{enumerate}[label=\sarrow]
+\item\TLMeasurement 用装置が、物理的に壊れている
+\item 現物合わせで\TLMeasurement を行っている
 \end{enumerate}
 \end{Issues}
 
@@ -314,6 +321,18 @@
 \end{Issues}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.03.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\index{とくしゅなかこう@特殊な加工}特殊な加工における作業効率}
+
+\begin{Issues}{\Keyway 8角形コーナーRの加工}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]8角形コーナーRの形状をした\KeywayMilling に対応できていない
+\end{enumerate}
+\end{Issues}
+
+
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -330,7 +349,7 @@
 \begin{Issues}{\KeywayMilling 時 \index{がいぶワークざひょうけい@外部ワーク座標系}外部ワーク座標系による衝突の予防策}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\index{がいぶワークざひょうけい@外部ワーク座標系}外部ワーク座標系による衝突の予防措置がなされていない
-\item[{\sarrow[red]}]特に影響の大きい\KeywayMilling にすらなされていない
+\item[{\sarrow[red]}]特に影響の大きい\KeywayMilling にさえなされていない
 \end{enumerate}
 \end{Issues}
 
