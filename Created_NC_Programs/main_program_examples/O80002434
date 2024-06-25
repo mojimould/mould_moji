@@ -1,0 +1,263 @@
+%
+O80002434 (Last update on 20240626)
+(B parallel angle -0.642, 179.358)
+
+N0001
+G49 G40 (cancel hosei)
+G80 G17
+S35
+M05 (spindle off)
+M09 (coolant off)
+M29 (chip conveyor off)
+G90 G53 G01 Z0 F#650
+
+N0002
+IF[#1005EQ0]GOTO0003
+M00 (sensor low battery)
+N0003
+IF[#1004EQ0]GOTO0004
+(if current sensor off, go to N0004)
+M117 (sensor off)
+
+N0005
+IF[#4120NE50]GOTO0006
+G90 G53 G01 X-5.501 Y-258.624 F#652
+GOTO0007
+N0006
+G90 G53 G01 X-5.501 Y-258.624 F#650
+
+N0007
+M262 (palette rotate speed 25)
+M72 (palette #1)
+(M60) (palette change)
+
+
+(*** touch sensor measurement ***)
+
+
+(Genten Settei)
+N0100 (for palette #1)
+IF[#1000NE0]GOTO0101
+(if NOT p#1, to N0101)
+G90 G10 L2 P1 X-527.482 Y[[183.000/2]+#901002] Z#901003 B#901004
+G90 G10 L2 P2 X-526.889 Y[[183.000/2]+#901002] Z#901003 B#901004
+G90 G10 L2 P3 X-561.556 Y[[183.000/2]+#901002] Z#901003 B#901004
+G90 G10 L2 P4 X-561.924 Y[[183.000/2]+#901002] Z#901003 B#901004
+G90 G10 L2 P5 X-561.556 Y[[183.000/2]+#901002] Z#901003 B#901004
+(G54 Bot Gaisaku Center)
+(G55 Bot Inside Center)
+(G56 Top Gaisaku Center)
+(G57 Top Inside Center)
+(G58 Mizo Center)
+GOTO0102
+N0101 (for palette #2)
+IF[#1000NE1]GOTO0821
+(if the current palette is NOT #2, go to N0821)
+G90 G10 L2 P1 X-527.482 Y[[183.000/2]+#901006] Z#901007 B#901008
+G90 G10 L2 P2 X-526.889 Y[[183.000/2]+#901006] Z#901007 B#901008
+G90 G10 L2 P3 X-561.556 Y[[183.000/2]+#901006] Z#901007 B#901008
+G90 G10 L2 P4 X-561.924 Y[[183.000/2]+#901006] Z#901007 B#901008
+G90 G10 L2 P5 X-561.556 Y[[183.000/2]+#901006] Z#901007 B#901008
+(G54 Bot Gaisaku Center)
+(G55 Bot Inside Center)
+(G56 Top Gaisaku Center)
+(G57 Top Inside Center)
+(G58 Mizo Center)
+
+
+N0102
+(Top sokutei start)
+
+
+G90 G53 G01 Z0 F#650
+T50 (touch sensor)
+
+G56
+M11 (B-axis unclamp)
+G90 G56 G00 B-0.642
+M10 (B-axis clamp)
+(G56 B parallel angle -0.642)
+
+M06 (tool exchange)
+M19 (Spindle orientation)
+G43 H50 (hosei KouguChou: #50)
+
+G90 G57 G01 X0 Y0 F#652
+G90 G57 G01 Z[500.014+#600] F#652
+(Z= BotTanmen +#600)
+(G57 XY Top inside center)
+
+G65 P910001 (sensor ON)
+IF[#1005EQ0]GOTO0103
+M00 (sensor low battery)
+N0103
+IF[#1004EQ1]GOTO0104
+M117 (sensor switch)
+
+N0104
+G57 G65 P160003 X180.000 U157.558 Z500.014 M0.07
+(G57: Top X endface parallel angle)
+(X: Top AC gaikei or gaisakuKei)
+(U: Top AC naikei or naisakuKei)
+(Z: Top sai_furiwake)
+(M: mekki thickness mm)
+
+N0105
+G90 G56 G01 X0 Y0 F#652
+G90 G56 G01 Z[#900047+#600] F#652
+(G56XY Top Outside center)
+(Z= TopTanmen +#600)
+
+G56 G65 P110001 X180.000 Z[#900047-5] W400.000 R8922.50 M20.000 H8.050
+(G54: Top X Outside center)
+(X: Top AC gaisakuKei)
+(Z: Top sai_furiwake)
+(W: Top ori_furiwake)
+(R: central curvature)
+
+G90 G56 G01 X0 Y0 F#652
+G43 H50 (hosei kouguChou #50)
+(G56 XY Top outside center)
+
+G56 G65 P110002 Y180.000 Z[#900047-5]
+(G56: Top Y Outside center)
+(Y: Top BD gaikei)
+(Z: Top sai_furiwake)
+
+#5301=#5261
+(G58X = G56X)
+
+#5302=#5262
+(G58Y = G56Y)
+
+(mesurement end)
+IF[#177EQ1]GOTO0420
+M00
+
+
+N0420
+(*** Mizo start ***)
+
+
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#650
+T06 (mizo)
+M06 (tool exchange)
+G43 H#4120 (hosei KouguChou: T#)
+
+N0421
+G58
+IF[#5004EQ[-0.642]]GOTO0422
+M11 (B-axis unclamp)
+G90 G58 G00 B-0.642
+M10 (B-axis clamp)
+(G58B parallel angle -0.642)
+
+N0422
+M28 (chip conveyor on)
+G58 G65 P430000 A1.0 B0.0 K1.0 C#0 R16.50 X174.000 Y174.000 U185.000 V183.000 Z500.014 W400.000 Q8922.500 M20.000 H8.050
+(O430000: Mizo, ar HidariMawari)
+(A: Top gaisaku: 0:none, 1:exists)
+(B: depth tolerance: 0:none, 1:exists)
+(K: key type: 1:R, 2:C, 3:rec, 4:BDonly, 5:oct R)
+(C: mizo corner C)
+(R: mizo corner R)
+(X: AC mizoKei)
+(Y: BD mizoKei)
+(U: AC gaiKei)
+(V: BD gaiKei)
+(Z: Top sai_furiwake)
+(W: Top ori_furiwake)
+(Q: central curvature)
+(M: mizoIchi)
+(H: mizoHaba)
+
+(mizo kakou end)
+IF[#424EQ0]GOTO0423
+IF[#424EQ2]GOTO0424
+GOTO9990
+N0423
+M00 (if #424=0)
+GOTO9990
+N0424
+G65 P900003 (if #424=2)
+
+
+(Kakou Owari)
+
+
+N9990
+G49 G40 (cancel hosei)
+G80 G17
+G90 G53 G01 Z0 F#650
+G90 G53 G00 X-5.501 Y-258.624
+
+N9991
+IF[#1004EQ0]GOTO9992
+(if current sensor off, go to N9992)
+M117 (sensor on/off)
+
+N9992
+M09 (coolant off)
+M29 (chip conveyor off)
+M05 (spindle off)
+S35
+
+N9993
+M60 (palette change)
+T38 (tool #38)
+M06 (tool exchange)
+T01 (empty)
+M06 (tool exchange)
+GOTO9999
+
+
+(Alerm)
+N0821
+M09 (coolant off)
+S2599
+G04 X1.0 (wait 1.0s)
+M05 (spindle off)
+S35
+#3000=146 (is*the*palette#*is*ok?)
+
+N9999 M30
+
+(Used Variables and Programs)
+
+(Local variables)
+
+(Common variables)
+(as LHS)
+(#901001, #901002, #901003, #901004, #901005, #901006, #901007, #901008)
+(as RHS)
+(#175, #177, #178, #179, #180)
+(#417, #424, #428, #433, #439, #444, #449, #459)
+(#600, #650, #652)
+(#900032, #900036)
+
+(System variables)
+(#1000, #1004, #1005, #3000)
+(#4120: current T#)
+(#5004: block end B)
+(#5221: G54 X)
+(#5222: G54 Y)
+(#5242: G55 Y)
+(#5261: G56 X)
+(#5262: G56 Y)
+(#5282: G57 Y)
+(#5301: G58 X)
+(#5302: G58 Y)
+
+(Subprograms)
+(O110001, O110002)
+(O430000)
+(O900003, O910001, O910002)
+
+(Used as part of passed arguments)
+
+(Used in other programs)
+
+
+(COPYRIGHT*2023-2024 THE*INDIVIDUAL*CREATOR NOT*HELD*BY*ANY*CORPORATION ALL*RIGHTS*RESERVED)
+%
