@@ -75,13 +75,14 @@
 
 \begin{multicollongtblr}{\CreatedNCSubPrg 一覧：芯出し・幅・\CenterlineEndFaceDifMeasurement}{cX[l]l}
 {\ttfamily O}番号 & 内容 & 使用subprg\\
-\MXOThickness & 測定 両側 外側中心・幅$X$ & \OsensorOff\\
-\MYOThickness & 測定 両側 外側中心・幅$Y$ & \OsensorOff\\
-\MXOface      & 測定 片側 \KeywayCenter$X$（トップA側外面測定） & \OsensorOff\\
-\MXIWidth     & 測定 両側 内側中心・幅$X$ & \OsensorOff\\
-\MYIWidth     & 測定 両側 内側中心・幅$Y$ & \OsensorOff\\
-\MXIface      & 測定 片側 \OutcutCenter$X$（C側内面方向測定） & \OsensorOff\\
-\MCenterline  & 測定 片側 \expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}\nameCenterlineEndFaceDif（C側外削面 $Z$方向, B側外削面 $Y$方向測定） & \OsensorOff\\
+\MXOThickness      & 測定 両側 外側中心・幅$X$ & \OsensorOff\\
+\MYOThickness      & 測定 両側 外側中心・幅$Y$ & \OsensorOff\\
+\MXOface           & 測定 片側 \KeywayCenter$X$（トップA側外面測定） & \OsensorOff\\
+\MXIWidth          & 測定 両側 内側中心・幅$X$ & \OsensorOff\\
+\MYIWidth          & 測定 両側 内側中心・幅$Y$ & \OsensorOff\\
+\MXIface           & 測定 片側 \OutcutCenter$X$（C側内面方向測定） & \OsensorOff\\
+\MCenterline       & 測定 片側 \expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}\nameCenterlineEndFaceDif（C側外削面 $Z$方向, B側外削面 $Y$方向測定） & \OsensorOff\\
+\MEndFaceBothSideZ & 測定 片側 \TopEndFace{} 傾き（$Z$方向2点測定） & \OsensorOff\\
 \end{multicollongtblr}
 
 \begin{multicollongtblr}{\CreatedNCSubPrg 一覧：\Dimple}{cX[l]l}
@@ -374,6 +375,42 @@
 {\ttfamily U} & {\ttfamily\ttNum21} & \TopOutcutBDWidth\\
 {\ttfamily W} & {\ttfamily\ttNum23} & \TopReAlocationLength\\
 {\ttfamily Z} & {\ttfamily\ttNum26} & \BottomReAlocationLength\\
+\end{multicollongtblr}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MCenterline の取扱説明\TBW}
+(to be written...)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MCenterline の注意事項\TBW}
+(to be written...)
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\MEndFaceBothSideZ ：測定 片側 \TopEndFace 傾き測定}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MEndFaceBothSideZArguments}
+
+\begin{multicollongtblr}{\MEndFaceBothSideZArguments}{ccX[l]}
+引数 & 変数 & 内容\\
+{\ttfamily M} & {\ttfamily\ttNum13} & \PlatingThk\\
+{\ttfamily U} & {\ttfamily\ttNum21} & \ACID{} または\IncutBoringACWidth\\
+{\ttfamily X} & {\ttfamily\ttNum24} & \ACOD{} または\TopOutcutACWidth\\
+{\ttfamily Z} & {\ttfamily\ttNum26} & \TopReAlocationLength\\
 \end{multicollongtblr}
 
 
