@@ -283,19 +283,6 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 02.03.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\OutcutMilling における作業効率}
-
-\begin{Issues}{\CurvedOutcutMilling の\index{ハンドルそうさ@ハンドル操作}ハンドル操作による測定}
-\begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]手作業による\index{ハンドルそうさ@ハンドル操作}ハンドル操作により測定が行われている
-\item[{\sarrow[red]}]\CurvedOutcutMilling に関する解析計算がなされないまま放置され続けている
-\end{enumerate}
-\end{Issues}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 02.03.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KeywayMilling における作業効率}
@@ -322,11 +309,18 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 02.03.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.03.07 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\index{とくしゅなかこう@特殊な加工}特殊な加工における作業効率}
 
-\begin{Issues}{\Keyway 8角形コーナーRの加工}
+\begin{Issues}{\CurvedOutcutMilling の\index{ハンドルそうさ@ハンドル操作}ハンドル操作による測定}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]手作業による\index{ハンドルそうさ@ハンドル操作}ハンドル操作により測定が行われている
+\item[{\sarrow[red]}]\CurvedOutcutMilling に関する解析計算がなされないまま放置され続けている
+\end{enumerate}
+\end{Issues}
+
+\begin{Issues}{\Keyway 8角形コーナーRの加工の未対応}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]8角形コーナーRの形状をした\KeywayMilling に対応できていない
 \end{enumerate}
@@ -335,9 +329,41 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 02.03.08 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{加工全般における作業効率}
+
+\begin{Issues}{\Table 回転による振分調整の未対応}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]振分調整が\Spacer を用いた方法でのみしかできない状態にある
+\item[{\sarrow[red]}]再振分けを行う際に、必ず\Spacer の取付けまたは取外し作業を行わなければならない
+\end{enumerate}
+\end{Issues}
+
+\begin{Issues}{メインプログラム編集による\index{おくりそくど@送り速度}送り速度の変更}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]\index{おくりそくど@送り速度}送り速度を変更するために、\index{NCメインプログラム}NCメインプログラムを直接編集しなければならない
+\end{enumerate}
+\end{Issues}
+
+\begin{Issues}{メインプログラム編集による\index{しゅじくかいてんすう@主軸回転数}主軸回転数の変更}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]\index{しゅじくかいてんすう@主軸回転数}主軸回転数を変更するために、\index{NCメインプログラム}NCメインプログラムを直接編集しなければならない
+\end{enumerate}
+\end{Issues}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{信頼性に関するイシュー・問題}
+\modHeadsection{\index{しんらいせい@信頼性}信頼性に関するイシュー・問題}
+
+\begin{Issues}{\index{だんきうんてん@暖機運転}暖機運転}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]十分な\index{だんきうんてん@暖機運転}暖機運転がなされていない
+\end{enumerate}
+\end{Issues}
 
 \begin{Issues}{パラメタ誤入力の予防策}
 \begin{enumerate}[label=\sarrow]
@@ -362,25 +388,21 @@
 \modHeadsection{全般的な問題点\TBW}
 そもそも、「\expandafterindex{\yomiDrawing（モールド）@\nameDrawing（モールド）}\nameDrawing を見て\index{NCプログラム}NCプログラムを作成」するという時点で、明らかに尋常な状態でないことは言うまでもない
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{さらに言及すると、これが問題点（改善可能な点）だということがこれまで一切（スタッフ・管理職を含めて）認識されなかったことが（非常に大きな・根本的な）問題点として挙げられる。
-つまり、（\index{せいぞうぎょう@製造業}製造業にも関わらず）当社が\index{ソフトウェアエンジニアリング}ソフトウェアエンジニアリングをあからさまに蔑ろにし続けていることが根本に存在する。
-ソフトウェアエンジニアリングに対する意識の低さ、ならびにモラル・マナーの欠如が顕著に露呈している。
-このような事態は、この業務に限らず社内のほぼ全ての業務において同様である。
-
-なお、これは客観的な事実を述べたものであるということを、念のために付記しておく。}。
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Issues}{NCプログラムの作成}
-NCプログラム作成より圧倒的に情報量の多い\expandafterindex{\yomiDrawing のさくせい）@\nameDrawing の作成}\nameDrawing の作成がスタッフまたは管理職によりなされているにも関わらず、NCプログラム作成はその後工程としてなされている
-\tcbline*
-NCプログラム作成が、現場作業員（一般職）により行われている
-\end{Issues}
+\footnote{さらに言及すると、これが問題点（改善可能な点）だということがこれまで一切（スタッフ・管理職を含めて）認識されていないことが大きな問題点として挙げられる。
+つまり、（\index{せいぞうぎょう@製造業}製造業にも関わらず）\index{ソフトウェアエンジニアリング}ソフトウェアエンジニアリングをあからさまに蔑ろにし続けていることが根本に存在する。
+\textbf{客観的事実として}、ソフトウェアエンジニアリングに対する意識の低さ、ならびにモラル・マナーの欠如が顕著に露呈している。
+このような事態は、この業務に限らず社内のほぼ全ての業務において同様である。}。
 その\expandafterindex{\yomiDrawing のさくせい）@\nameDrawing の作成}\nameDrawing の作成についても以下のような状態にある。
 \begin{Issues}{\expandafterindex{\yomiDrawing のさくせい）@\nameDrawing の作成}\nameDrawing の作成}
-\expandafterindex{\yomiDrawing のさくせい）@\nameDrawing の作成}\nameDrawing の作成が、\index{CADソフトウェア}CADソフトウェアを用いて明細ごとに手動で描かれている
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}] \expandafterindex{\yomiDrawing のさくせい）@\nameDrawing の作成}\nameDrawing の作成が、\index{CADソフトウェア}CADソフトウェアを用いて明細ごとに手動で描かれている
+\end{enumerate}
 \end{Issues}
 これらは単に、モールドに関するデータが管理状態にないことを示している。
 \begin{Issues}{データベースの非存在}
-\index{モールド}モールドに関する\index{かんけいデータベース@関係データベース}関係データベース(\index{RDB}RDB)に相当するものが存在しない
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}] \index{モールド}モールドに関する\index{データベース@データベース}データベースに相当するものが存在しない
+\end{enumerate}
 \end{Issues}
 
 
