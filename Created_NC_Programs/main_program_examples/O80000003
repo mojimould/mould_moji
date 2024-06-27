@@ -1,0 +1,324 @@
+%
+O80000003 (Last update on 20240627)
+(B parallel angle -0.000, 180.000)
+
+N0001
+G49 G40 (cancel hosei)
+G80 G17
+S35
+M05 (spindle off)
+M09 (coolant off)
+M29 (chip conveyor off)
+G90 G53 G01 Z0 F#650
+
+N0002
+IF[#1005EQ0]GOTO0003
+M00 (sensor low battery)
+N0003
+IF[#1004EQ0]GOTO0004
+(if current sensor off, go to N0004)
+M117 (sensor off)
+
+N0005
+IF[#4120NE50]GOTO0006
+G90 G53 G01 X-5.501 Y-258.624 F#652
+GOTO0007
+N0006
+G90 G53 G01 X-5.501 Y-258.624 F#650
+
+N0007
+M262 (palette rotate speed 25)
+M72 (palette #1)
+(M60) (palette change)
+
+
+(*** touch sensor measurement ***)
+
+
+(Genten Settei)
+N0100 (for palette #1)
+IF[#1000NE0]GOTO0101
+(if NOT p#1, to N0101)
+G90 G10 L2 P1 X-525.650 Y[[159.300/2]+#901002] Z#901003 B#901004
+G90 G10 L2 P2 X-525.651 Y[[159.300/2]+#901002] Z#901003 B#901004
+G90 G10 L2 P3 X-574.388 Y[[159.300/2]+#901002] Z#901003 B#901004
+G90 G10 L2 P4 X-574.387 Y[[159.300/2]+#901002] Z#901003 B#901004
+G90 G10 L2 P5 X-573.578 Y[[159.300/2]+#901002] Z#901003 B#901004
+(G54 Bot Gaisaku Center)
+(G55 Bot Inside Center)
+(G56 Top Gaisaku Center)
+(G57 Top Inside Center)
+(G58 Mizo Center)
+GOTO0102
+N0101 (for palette #2)
+IF[#1000NE1]GOTO0821
+(if the current palette is NOT #2, go to N0821)
+G90 G10 L2 P1 X-525.650 Y[[159.300/2]+#901006] Z#901007 B#901008
+G90 G10 L2 P2 X-525.651 Y[[159.300/2]+#901006] Z#901007 B#901008
+G90 G10 L2 P3 X-574.388 Y[[159.300/2]+#901006] Z#901007 B#901008
+G90 G10 L2 P4 X-574.387 Y[[159.300/2]+#901006] Z#901007 B#901008
+G90 G10 L2 P5 X-573.578 Y[[159.300/2]+#901006] Z#901007 B#901008
+(G54 Bot Gaisaku Center)
+(G55 Bot Inside Center)
+(G56 Top Gaisaku Center)
+(G57 Top Inside Center)
+(G58 Mizo Center)
+
+
+N0102
+(Top sokutei start)
+
+
+G90 G53 G01 Z0 F#650
+T50 (touch sensor)
+
+G56
+M11 (B-axis unclamp)
+G90 G56 G00 B-0.000
+M10 (B-axis clamp)
+(G56 B parallel angle -0.000)
+
+M06 (tool exchange)
+M19 (Spindle orientation)
+G43 H50 (hosei KouguChou: #50)
+
+G90 G57 G01 X0 Y0 F#652
+G90 G57 G01 Z[400.125+#600] F#652
+(Z= TopTanmen +#600)
+(G57 XY Top inside center)
+
+G65 P910001 (sensor ON)
+IF[#1005EQ0]GOTO0103
+M00 (sensor low battery)
+N0103
+IF[#1004EQ1]GOTO0104
+M117 (sensor switch)
+
+N0104
+G57 G65 P160003 X159.000 U136.923 Z400.125 M0.07
+(G57: Top X endface parallel angle)
+(X: Top AC gaikei or gaisakuKei)
+(U: Top AC naikei or naisakuKei)
+(Z: Top sai_furiwake)
+(M: mekki thickness mm)
+
+N0105
+G90 G57 G01 X0 Y0 F#652
+G43 H50 (hosei kouguChou #50)
+G90 G57 G01 Z[#900047+#600] F#652
+(G56XY Top Outside center)
+(Z= TopTanmen +#600)
+
+#411=5.0
+G57 G65 P130001 X136.923 Z#900047 W400.125 R12432.500 M0.07
+(G57: Top X inside center)
+(X: Top AC naikei)
+(Z: Top sai_furiwake)
+(W: Top ori_furiwake)
+(R: central curvature)
+(M: mekki thickness mm)
+#411=0
+
+G90 G57 G01 X0 Y0 F#652
+G43 H50 (hosei kouguChou #50)
+(G57XY Top inside center)
+
+#412=5.0
+G57 G65 P130002 Y136.923 Z#900047 M0.07
+(G57: Top Y inside center)
+(Y: Top BD naikei)
+(Z: Top sai_furiwake)
+(M: mekki thickness mm)
+#412=0
+
+(mesurement end)
+IF[#177EQ1]GOTO0200
+M00
+
+
+N0200
+(*** Dimple Measurement Start ***)
+
+
+G90 G53 G01 Z0 F#650
+IF[#4120EQ50]GOTO0201
+T50 (touch sensor)
+M06 (tool exchange)
+
+N0201
+G40 G80 (cancel hosei)
+S35 (low gear)
+M19 (Spindle orientation)
+G43 H50 (hosei kouguChou #50)
+
+N0202
+G57
+IF[#5004EQ[-0.000]]GOTO0203
+M11 (B-axis unclamp)
+G90 G57 G00 B-0.000
+M10 (B-axis clamp)
+(G57B parallel angle -0.000)
+
+N0203
+G90 G57 G01 X0 Y0 F#652
+G90 G57 G01 Z[#900047+#600] F#652
+(G57XY Top Inside Center)
+(Z= topTanmen+#600)
+
+G57 G65 P210003 T0.07 Z#900047 W400.125 F85.000 S68.000 Q120.000 I17.000 K20.000 M4.0 U0.31 R12432.500 A-0.000 B-1.394
+(dimple measurement)
+(T: mekki thickness mm)
+(Z: Top sai_furiwake)
+(W: Top ori_furiwake)
+(F: length of odd rows)
+(S: length of even rows)
+(Q: Z length between Top and the 1st row)
+(I: dimple X pitch)
+(K: dimple Z pitch)
+(M: number of rows)
+(U: depth of dimple)
+(R: central curvature)
+(A: angle for furiwake)
+(B: angle for dimple)
+
+M117 (sensor on/off)
+G04 X1.5 (wait 1.5s)
+IF[#1004EQ0]GOTO0204
+G65 P910002 (sensor OFF)
+N0204
+G90 G53 G01 Z0 F#650
+
+(dimple mesurement end)
+IF[#178EQ1]GOTO0300
+M00
+
+
+N0300
+(*** Dimple Kakou Start ***)
+
+
+G49 G40 (cancel hosei)
+G90 G53 G01 Z0 F#650
+
+IF[#4120EQ31]GOTO0302
+IF[#4120NE50]GOTO0301
+G90 G53 G01 X-5.501 Y-258.624 F#652
+
+N0301
+T31 (Tslot R20)
+M06 (tool exchange)
+
+N0302
+G43 H#4120 (hosei KouguChou: T#)
+
+N0303
+IF[#5004EQ[-0.000-1.394]]GOTO0304
+M11 (B-axis unclamp)
+G90 G57 G00 B-0.000
+M10 (B-axis clamp)
+(G57B parallel angle -0.000)
+
+N0304
+G90 G57 G00 X0 Y0
+G90 G57 Z[#900047+#600] F#650
+(G57XY Top Inside Center)
+(Z= TopTanmen +#600)
+
+N0305
+G57 G65 P210003 T0.07 Z#900047 W400.125 F85.000 S68.000 Q120.000 I17.000 K20.000 M4.0 U0.31 R12432.500 A-0.000 B-1.394
+(dimple kakou)
+(T: mekki thickness mm)
+(Z: Top sai_furiwake)
+(W: Top ori_furiwake)
+(F: length of odd rows)
+(S: length of even rows)
+(Q: Z length between Top and the 1st row)
+(I: X pitch)
+(K: Z pitch)
+(M: number of rows)
+(U: depth of dimple)
+(R: central curvature)
+(A: angle for furiwake)
+(B: angle for dimple)
+
+(dimple kakou end)
+IF[#459EQ0]GOTO0306
+IF[#459EQ2]GOTO0307
+GOTO9990
+N0306
+M00 (if #459=0)
+GOTO9990
+N0307
+G65 P900003 (if #459=2)
+
+
+(Kakou Owari)
+
+
+N9990
+G49 G40 (cancel hosei)
+G80 G17
+G90 G53 G01 Z0 F#650
+G90 G53 G00 X-5.501 Y-258.624
+
+N9991
+IF[#1004EQ0]GOTO9992
+(if current sensor off, go to N9992)
+M117 (sensor on/off)
+
+N9992
+M09 (coolant off)
+M29 (chip conveyor off)
+M05 (spindle off)
+S35
+
+N9993
+M60 (palette change)
+T38 (tool #38)
+M06 (tool exchange)
+T01 (empty)
+M06 (tool exchange)
+GOTO9999
+
+
+(Alerm)
+N0821
+M09 (coolant off)
+S2599
+G04 X1.0 (wait 1.0s)
+M05 (spindle off)
+S35
+#3000=146 (is*the*palette#*is*ok?)
+
+N9999 M30
+
+(Used Variables and Programs)
+
+(Local variables)
+
+(Common variables)
+(as LHS)
+(#901002, #901003, #901004, #901006, #901007, #901008, #900047)
+(as RHS)
+(#177, #178)
+(#459)
+(#600, #650, #652)
+
+(System variables)
+(#1000, #1004, #1005, #3000)
+(#4120: current T#)
+(#5004: block end B)
+
+(Subprograms)
+(O130001, O130002)
+(O210003)
+(O900003)
+
+(Used as part of passed arguments)
+(#900047)
+
+(Used in other programs)
+
+
+(COPYRIGHT*2023-2024 THE*INDIVIDUAL*CREATOR NOT*HELD*BY*ANY*CORPORATION ALL*RIGHTS*RESERVED)
+%
