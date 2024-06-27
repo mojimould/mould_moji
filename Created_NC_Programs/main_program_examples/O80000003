@@ -312,7 +312,7 @@ N9999 M30
 (Subprograms)
 (O130001, O130002)
 (O210003)
-(O900003)
+(O900003, O910001, O910002)
 
 (Used as part of passed arguments)
 (#900047)
