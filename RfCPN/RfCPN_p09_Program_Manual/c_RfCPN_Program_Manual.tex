@@ -72,8 +72,8 @@
 \begin{marker}
 ここでいう\index{サブプログラム}サブプログラムとは、\DrawingNumber と同一の\index{プログラムばんごう@プログラム番号}プログラム番号以外のものを指す
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{\OwarmingupA や\OtoolLengthA はレベル1の階層で用いるため、\index{メインプログラム}メインプログラムと称すのがより適切であるが、ここでは便宜上\index{サブプログラム}サブプログラムと称している。}。
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\footnote{\OwarmingupA や\OtoolLengthA はレベル0の階層で用いるため、\index{メインプログラム}メインプログラムと称すのがより適切であるが、ここでは便宜上\index{サブプログラム}サブプログラムと称している。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%00
 \end{marker}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,12 +133,14 @@
 \end{multicollongtblr}
 
 
-\clearpage
+\clearrightpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\MXOThickness ：測定 両側 外側中心・幅\texorpdfstring{$X$}{X}}
 
+\paragraph*{目的}
+\EndFace 部における外側中心$X$ および \HorizontalOD$X$の測定、ならびに\KeywayCenter$X$の間接測定
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -147,8 +149,8 @@
 
 \begin{multicollongtblr}{\MXOThicknessArguments}{ccX[l]}
 引数 & 変数 & 内容\\
-{\ttfamily H} & {\ttfamily\ttNum11} & \KeywayWidth\\
-{\ttfamily M} & {\ttfamily\ttNum13} & \KeywayPos\\
+{\ttfamily H$^*$} & {\ttfamily\ttNum11} & \KeywayWidth\\
+{\ttfamily M$^*$} & {\ttfamily\ttNum13} & \KeywayPos\\
 {\ttfamily R} & {\ttfamily\ttNum18} & \CenterCurvatureRadius\\
 {\ttfamily W} & {\ttfamily\ttNum23} & \AlocationLength\\
 {\ttfamily X} & {\ttfamily\ttNum24} & \ACOD\\
@@ -177,6 +179,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\MYOThickness ：測定 両側 外側中心・幅\texorpdfstring{$Y$}{Y}}
 
+\paragraph*{目的}
+\EndFace 部または\KeywayCenter 部における外側中心$Y$ および \HorizontalOD$Y$の測定
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -185,8 +190,8 @@
 
 \begin{multicollongtblr}{\MYOThicknessArguments}{ccX[l]}
 引数 & 変数 & 内容\\
-{\ttfamily H} & {\ttfamily\ttNum11} & \KeywayWidth\\
-{\ttfamily M} & {\ttfamily\ttNum13} & \KeywayPos\\
+{\ttfamily H$^*$} & {\ttfamily\ttNum11} & \KeywayWidth\\
+{\ttfamily M$^*$} & {\ttfamily\ttNum13} & \KeywayPos\\
 {\ttfamily Y} & {\ttfamily\ttNum25} & \BDOD\\
 {\ttfamily Z} & {\ttfamily\ttNum26} & \ReAlocationLength\\
 \end{multicollongtblr}
@@ -212,6 +217,9 @@
 %% section 46.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\MXOface ：測定 片側 \KeywayCenter\texorpdfstring{$X$}{X}}
+
+\paragraph*{目的}
+\AsideKeywayDepth 指定時における\KeywayCenter$X$の測定
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -249,7 +257,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\MXIWidth ：測定 両側 外側中心・幅\texorpdfstring{$X$}{X}}
+\modHeadsection{\MXIWidth ：測定 両側 内側中心・幅\texorpdfstring{$X$}{X}}
+
+\paragraph*{目的}
+\EndFace 部における内側中心$X$ および \HorizontalID$X$の測定
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -286,7 +297,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\MYIWidth ：測定 両側 外側中心・幅\texorpdfstring{$Y$}{Y}}
+\modHeadsection{\MYIWidth ：測定 両側 内側中心・幅\texorpdfstring{$Y$}{Y}}
+
+\paragraph*{目的}
+\EndFace 部における内側中心$Y$ および \HorizontalID$Y$の測定
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -322,6 +336,9 @@
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\MXIface ：測定 片側 \OutcutCenter\texorpdfstring{$X$}{X}}
+
+\paragraph*{目的}
+\OutcutAsideThickness を基準とした\OutcutCenter$X$の測定
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -362,6 +379,9 @@
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\MCenterline ：\expandafterindex{\yomiCenterlineEndFaceDifMeasurement@\nameCenterlineEndFaceDifMeasurement}測定 片側 \nameCenterlineEndFaceDif}
+
+\paragraph*{目的}
+\CenterlineEndFaceDif$X$および$Y$の測定
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -405,6 +425,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\MEndFaceBothSideZ ：測定 片側 \TopEndFace 傾き測定}
 
+\paragraph*{目的}
+\EndFace における$X$方向の傾きの測定
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -439,7 +462,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KEndFaceRight ：加工 \EndFacecut{} コーナーR 右回り1周}
+\modHeadsection{\KEndFaceRight ：加工 \EndFacecut{} コーナーR 左回り1周}
+
+\paragraph*{目的}
+左回り\EndFacecutMilling における位置設定
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -474,6 +500,9 @@
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\KOutcutRLeft ：加工 \Outcut{} コーナーR 左回り1周}
+
+\paragraph*{目的}
+左回り\OutcutMilling における位置設定
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -516,6 +545,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\KCurvedOutcutRLeft ：加工 \CurvedOutcut{} コーナーR 左回り1周}
 
+\paragraph*{目的}
+左回り\CurvedOutcutMilling における位置設定
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -557,6 +589,9 @@
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\KKeywayConerLeft ：加工 \Keyway{} 左回り1周}
+
+\paragraph*{目的}
+左回り\KeywayMilling における位置設定
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -604,6 +639,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\KEndFaceOutCChamferRLeft ：加工 \EndFaceOutChamfer{} コーナーR 左回り1周}
 
+\paragraph*{目的}
+左回り\EndFaceOutChamferMilling における位置設定
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -645,6 +683,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\KEndFaceInCChamferRLeft ：加工 \EndFaceInChamfer{} コーナーR 左回り1周}
 
+\paragraph*{目的}
+左回り\EndFaceInChamferMilling における位置設定
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -685,6 +726,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\KEndFaceBoring ：加工 \EndFaceBoring{} コーナーR 左回り1周}
 
+\paragraph*{目的}
+左回り\EndFaceBoringMilling における位置設定
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -723,6 +767,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\KIncutBoring ：加工 \IncutBoring{} コーナーR 左回り1周}
 
+\paragraph*{目的}
+左回り\IncutBoringMilling における位置設定
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -759,6 +806,9 @@
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\DLone ：測定・加工 \Dimple}
+
+\paragraph*{目的}
+\DimpleMeasurement および \indexDimpleMilling 加工のための移動（レベル1）
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -805,6 +855,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\OwarmingupA ：\index{だんきうんてん@暖機運転}暖機運転}
 
+\paragraph*{目的}
+\index{だんきうんてん@暖機運転}暖機運転のための移動および設定
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -833,6 +886,9 @@
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\OtoolLength ：\TLCorrection}
+
+\paragraph*{目的}
+\TLCorrection 値の測定のための移動
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
