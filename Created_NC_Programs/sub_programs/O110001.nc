@@ -1,5 +1,5 @@
 %
-O110001 (last update on 20240510)
+O110001 (last update on 20240629)
 (X center of outer measurement)
 
 N001
@@ -11,57 +11,57 @@ N001
 N002
 IF[#33EQ54]GOTO003
 IF[#33EQ56]GOTO003
-GOTO800
-(if work G# is neither 54 nor 56, go to N800)
+GOTO0800
+(if work G# is neither 54 nor 56, go to N0800)
 
 N003
-IF[#24EQ#0]GOTO800
-IF[#24LT10]GOTO800
-IF[#26EQ#0]GOTO800
-IF[#23EQ#0]GOTO800
-IF[#23LT10]GOTO800
-IF[#18EQ#0]GOTO800
-(if X < 10 or #0, go to N800)
-(if Z = #0, go to N800)
-(if W < 10 or #0, go to N800)
-(if R = #0, go to N800)
+IF[#24EQ#0]GOTO0800
+IF[#24LT10]GOTO0800
+IF[#26EQ#0]GOTO0800
+IF[#23EQ#0]GOTO0800
+IF[#23LT10]GOTO0800
+IF[#18EQ#0]GOTO0800
+(if X < 10 or #0, go to N0800)
+(if Z = #0, go to N0800)
+(if W < 10 or #0, go to N0800)
+(if R = #0, go to N0800)
 
 N004
 IF[#33EQ54]GOTO005
-IF[#13LE1]GOTO800
-IF[#11LE1]GOTO800
-IF[ABS[#419]GE1]GOTO800
-IF[ABS[#420]GE1]GOTO800
-(if M <= 1, go to N800)
-(if H <= 1, go to N800)
-(if |#419| >= 1, go to N800)
-(if |#420| >= 1, go to N800)
+IF[#13LE1]GOTO0800
+IF[#11LE1]GOTO0800
+IF[ABS[#419]GE1]GOTO0800
+IF[ABS[#420]GE1]GOTO0800
+(if M <= 1, go to N0800)
+(if H <= 1, go to N0800)
+(if |#419| >= 1, go to N0800)
+(if |#420| >= 1, go to N0800)
 
 N005
-IF[#18LE#26]GOTO800
-IF[#26LE[#901011/2]]GOTO800
-(if R <= Z, go to N800)
-(if Z <= #901011/2, go to N800)
+IF[#18LE#26]GOTO0800
+IF[#26LE[#901011/2]]GOTO0800
+(if R <= Z, go to N0800)
+(if Z <= #901011/2, go to N0800)
 
 N008
-IF[#901050EQ#0]GOTO800
-IF[#901050LE1]GOTO800
-IF[#600EQ#0]GOTO800
-IF[#600LT50]GOTO800
-IF[#602EQ#0]GOTO800
-IF[#602LE0]GOTO800
-IF[#603EQ#0]GOTO800
-IF[#603LT0]GOTO800
-IF[#603GT20]GOTO800
-IF[#656NE50]GOTO800
-IF[#901011EQ#0]GOTO800
-IF[#901011LE100]GOTO800
-(if #901050 <= 1 or #0, go to N800)
-(if #600 < 50 or #0, go to N800)
-(if #602 <= 0 or #0, go to N800)
-(if #603 < 0 or #603 > 20.0 or #0, go to N800)
-(if #656 is not 50 or #0, go to N800)
-(if #901011 <= 100 or #0, go to N800)
+IF[#901050EQ#0]GOTO0800
+IF[#901050LE1]GOTO0800
+IF[#600EQ#0]GOTO0800
+IF[#600LT50]GOTO0800
+IF[#602EQ#0]GOTO0800
+IF[#602LE0]GOTO0800
+IF[#603EQ#0]GOTO0800
+IF[#603LT0]GOTO0800
+IF[#603GT20]GOTO0800
+IF[#656NE50]GOTO0800
+IF[#901011EQ#0]GOTO0800
+IF[#901011LE100]GOTO0800
+(if #901050 <= 1 or #0, go to N0800)
+(if #600 < 50 or #0, go to N0800)
+(if #602 <= 0 or #0, go to N0800)
+(if #603 < 0 or #603 > 20.0 or #0, go to N0800)
+(if #656 is not 50 or #0, go to N0800)
+(if #901011 <= 100 or #0, go to N0800)
 
 N009
 IF[#33EQ56]THEN #31=1
@@ -70,16 +70,16 @@ IF[#33EQ54]THEN #31=-1
 IF[#33EQ56]THEN #30=#409
 IF[#33EQ54]THEN #30=#404
 (Top: #30=#409, Bot: #30=#404)
-IF[[ABS[#30]]GE[#26/4]]GOTO800
-IF[[ABS[#30]]GE[#23/4]]GOTO800
-(if |#30| >= Z/4, go to N800)
-(if |#30| >= W/4, go to N800)
+IF[[ABS[#30]]GE[#26/4]]GOTO0800
+IF[[ABS[#30]]GE[#23/4]]GOTO0800
+(if |#30| >= Z/4, go to N0800)
+(if |#30| >= W/4, go to N0800)
 
 N010
 #29=SQRT[#18*#18-[#23-#30]*[#23-#30]]-SQRT[#18*#18-#23*#23]
 (#29: X hosei from #30)
-IF[[ABS[#29]]GE[#24/4]]GOTO800
-(if |#29| >= X/4, go to N800)
+IF[[ABS[#29]]GE[#24/4]]GOTO0800
+(if |#29| >= X/4, go to N0800)
 
 N011
 IF[#1005EQ0]GOTO012
@@ -100,9 +100,9 @@ G91 G01 X-[[#24/2]+#901050+#602] F#652
 (X-: X/2 +#901050+#602)
 
 G90 G31 Z[#26-#901050-#30] F#653
-IF[#5003GT[#26-#901050-#30]]GOTO802
+IF[#5003GT[#26-#901050-#30]]GOTO0802
 (Z skip: Z-#901050-#30)
-(if skip Z > Z-#901050-#30, to N802)
+(if skip Z > Z-#901050-#30, to N0802)
 
 N014
 G91 G31 X[#602+#603] F#656
@@ -113,10 +113,10 @@ G91 G31 X[#602+#603] F#656
 N015
 G91 G01 X-[#602+#603] F#652
 G91 G01 Z[#30+#901050+#600] F#650
-IF[[ABS[#900000+#901053-#901054]]LE[ABS[[#24/2]-#603]]]GOTO800
+IF[[ABS[#900000+#901053-#901054]]LE[ABS[[#24/2]-#603]]]GOTO0800
 (X-: #602+#603)
 (Z+: #30+#901050+#600)
-(if |#900000 -probe hosei|<=|X/2-#603|, go to N800)
+(if |#900000 -probe hosei|<=|X/2-#603|, go to N0800)
 
 G90 G01 X[#32+#31*#29] F#652
 (X to start point +hosei)
@@ -126,9 +126,9 @@ G91 G01 X[[#24/2]+#901050+#602] F#652
 (X+: X/2 +#901050+#602)
 
 G90 G31 Z[#26-#901050-#30] F#653
-IF[#5003GT[#26-#901050-#30]]GOTO802
+IF[#5003GT[#26-#901050-#30]]GOTO0802
 (Z skip: Z-#901050-#30)
-(if skip Z > Z-#901050-#30, to N802)
+(if skip Z > Z-#901050-#30, to N0802)
 
 N017
 G91 G31 X-[#602+#603] F#656
@@ -139,10 +139,10 @@ G91 G31 X-[#602+#603] F#656
 N018
 G91 G01 X[#602+#603] F#652
 G91 G01 Z[#30+#901050+#600] F#650
-IF[[ABS[#900001-#901053-#901054]]LE[ABS[[#24/2]-#603]]]GOTO800
+IF[[ABS[#900001-#901053-#901054]]LE[ABS[[#24/2]-#603]]]GOTO0800
 (X+: #602+#603)
 (Z+: #30+#901050+#600)
-(if |#900001 -probe hosei|<=|X/2-#603|, go to N800)
+(if |#900001 -probe hosei|<=|X/2-#603|, go to N0800)
 
 N019
 #900002=[#900001+#900000]/2
@@ -168,14 +168,14 @@ G90 G01 Z[#26+#600] F#652
 GOTO999
 
 
-N802
+N0802
 G90 G53 G01 Z0 F#652
 G90 G01 X#32 F#652
 (X to start point)
 G65 P910002 (sensor OFF)
 #3000=121 (are the arguments or the mould OK?)
 
-N800
+N0800
 G65 P910002 (sensor OFF)
 #3000=121 (are the arguments or the mould OK?)
 
