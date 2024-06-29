@@ -1,5 +1,5 @@
 %
-O919100 (last update on 20240510)
+O919100 (last update on 20240629)
 (tool length measurement)
 
 N001
@@ -31,7 +31,7 @@ G04 X1.5 (wait 1.5s)
 N007
 G91 G53 G31 P2 Z-#06 F#654
 (skip Z to sensor)
-IF[#5063LE[#07-#06]]GOTO800
+IF[#5063LE[#07-#06]]GOTO0800
 
 N008
 G91 G53 G01 Z#901057
@@ -39,7 +39,7 @@ G91 G53 G01 Z#901057
 
 N009
 #08=#5043-#901057-#901060
-IF[#5063LE#08]GOTO800
+IF[#5063LE#08]GOTO0800
 
 N010
 G91 G31 P2 Z[-#901057-#901060-#901060] F#656
@@ -65,7 +65,7 @@ G90 G53 G01 X-5.501 Y-258.624 F#652
 GOTO999
 
 
-N800
+N0800
 G90 G53 G01 Z0 F#650
 M33 (close sensor and off)
 #3000=141 (tool measurement alarm)
