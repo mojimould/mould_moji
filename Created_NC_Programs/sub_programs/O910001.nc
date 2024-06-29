@@ -1,14 +1,14 @@
 %
-O910001 (last update on 20240510)
+O910001 (last update on 20240629)
 (touch sensor ON)
 
 #33=0
 
 N001 (loop)
 M19 (shujiku orientation)
-IF[#1005EQ1]GOTO800
+IF[#1005EQ1]GOTO0800
 IF[#1004EQ1]GOTO999
-(if low battery, go to N800)
+(if low battery, go to N0800)
 (if current sensor ON, go to N999)
 M117 (sensor on/off)
 G04 X1.0 (wait 1.0s)
@@ -23,7 +23,7 @@ IF[#33LT4]GOTO001
 (ALM: is the sensor ok?)
 GOTO999 (go to N999)
 
-N800
+N0800
 #3000=145 (sensor-Low battery)
 
 N999 M99
