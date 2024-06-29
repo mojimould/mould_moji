@@ -1,5 +1,5 @@
 %
-O900003 (last update on 20240510)
+O900003 (last update on 20240629)
 (pause and check)
 
 N001
@@ -17,9 +17,9 @@ G90 G53 G01 Z0 F#650
 (#33: block end B: start point B)
 
 N006
-IF[#4012LT54]GOTO800 
-IF[#4012GT59]GOTO800
-(if work G# < 54 or G# > 59, go to N800)
+IF[#4012LT54]GOTO0800 
+IF[#4012GT59]GOTO0800
+(if work G# < 54 or G# > 59, go to N0800)
 
 N007
 #32=#33MOD360
@@ -59,7 +59,7 @@ M10 (B-axis clamp)
 GOTO999
 
 
-N800
+N0800
 #3000=121 (are the arguments OK?)
 
 N999 M99
