@@ -1,12 +1,12 @@
 %
-O220001 (last update on 20240612)
+O220001 (last update on 20240629)
 (for AC dimples measurement & kakou)
 (level 2: mainly moving along row)
 
 N001
 IF[#01EQ#0]GOTO0800
 IF[#01EQ0]GOTO0800
-(if A = 0 or empty, to N0800)
+(if A = 0 or #0, to N0800)
 
 IF[#01GT0]THEN #33=1
 IF[#01LT0]THEN #33=-1
