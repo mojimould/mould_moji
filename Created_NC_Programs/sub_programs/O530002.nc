@@ -1,5 +1,5 @@
 %
-O530002 (last update on 20240522)
+O530002 (last update on 20240701)
 (for BD dimples kakou)
 (level 3: kakou dimple)
 (J > 0: B, J < 0: D)

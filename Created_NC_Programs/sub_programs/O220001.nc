@@ -1,5 +1,5 @@
 %
-O220001 (last update on 20240629)
+O220001 (last update on 20240701)
 (for AC dimples measurement & kakou)
 (level 2: mainly moving along row)
 

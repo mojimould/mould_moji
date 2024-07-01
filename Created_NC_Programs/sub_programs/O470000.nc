@@ -1,5 +1,5 @@
 %
-O470000 (last update on 20240604)
+O470000 (last update on 20240701)
 (Incut, ar HidariMawari 1shuu)
 
 N0001

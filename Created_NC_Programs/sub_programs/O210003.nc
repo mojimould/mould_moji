@@ -1,5 +1,5 @@
 %
-O210003 (last update on 20240620)
+O210003 (last update on 20240701)
 (for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 

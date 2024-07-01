@@ -1,5 +1,5 @@
 %
-O130002 (last update on 20240629)
+O130002 (last update on 20240701)
 (Y center of inner measurement)
 
 N001

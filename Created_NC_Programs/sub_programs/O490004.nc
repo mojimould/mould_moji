@@ -1,5 +1,5 @@
 %
-O490004 (last update on 20240528)
+O490004 (last update on 20240701)
 (Sotogawa Corner R rc HidariMawari 1shuu)
 
 N0001

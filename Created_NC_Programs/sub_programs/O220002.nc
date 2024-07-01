@@ -1,5 +1,5 @@
 %
-O220002 (last update on 20240612)
+O220002 (last update on 20240701)
 (for BD dimples measurement & kakou)
 (level 2: mainly moving along row)
 

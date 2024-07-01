@@ -1,5 +1,5 @@
 %
-O410000 (last update on 20240629)
+O410000 (last update on 20240701)
 (Tanmen naikei-#608 Coner R, ar MigiMawari 1shuu)
 
 N001

@@ -1,5 +1,5 @@
 %
-O900003 (last update on 20240629)
+O900003 (last update on 20240701)
 (pause and check)
 
 N001
@@ -56,13 +56,13 @@ G90 G00 B#33
 M10 (B-axis clamp)
 (B to start point)
 
-GOTO999
+GOTO9999
 
 
 N0800
 #3000=121 (are*the*arguments*OK?)
 
-N999 M99
+N9999 M99
 
 (Used Variables)
 

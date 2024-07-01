@@ -1,5 +1,5 @@
 %
-O460000 (last update on 20240604)
+O460000 (last update on 20240701)
 (Tanmen Zaguri Corner R, rc HidariMawari)
 
 N0001

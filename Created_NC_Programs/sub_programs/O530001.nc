@@ -1,5 +1,5 @@
 %
-O530001 (last update on 20240522)
+O530001 (last update on 20240701)
 (for AC dimples kakou)
 (level 3: kakou dimple)
 (I > 0: A, I < 0: C)
