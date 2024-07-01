@@ -76,7 +76,7 @@ GOTO9999
 N0800
 M09 (coolant off)
 M05 (spindle off)
-#3000=121 (Argument Is Not Assigned)
+#3000=121 (Argument*Is*Not*Assigned)
 
 N9999 M99
 

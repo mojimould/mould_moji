@@ -247,11 +247,11 @@ N0801
 N0802
 G90 G53 G01 Z0 F#652
 G65 P910002 (sensor OFF)
-#3000=121 (are the arguments OK?)
+#3000=121 (are*the*arguments*OK?)
 
 N0800
 G65 P910002 (sensor OFF)
-#3000=121 (are the arguments OK?)
+#3000=121 (are*the*arguments*OK?)
 
 N9999 M99
 

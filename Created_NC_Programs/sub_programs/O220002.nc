@@ -85,8 +85,7 @@ G90 G01 X#725 Z#726 F#651
 GOTO9999
 
 N0800
-#3000=121
-(are*the*arguments*OK?)
+#3000=121 (are*the*arguments*OK?)
 
 N9999 M99
 

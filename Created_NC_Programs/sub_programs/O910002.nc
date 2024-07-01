@@ -14,8 +14,7 @@ G04 X4.0 (wait 4.0s)
 IF[#33LT4]GOTO001
 (if #33 < 4, go to N001)
 
-#3000=146 (sensor-ALARM)
-(ALM: is sensor ok?)
+#3000=146 (is*the*sensor*OK?)
 
 N999 M99
 

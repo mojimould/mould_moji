@@ -52,6 +52,7 @@ T50 M06
 G65 P919100 H50
 T01 M06
 T50
+#3901=#3901-1
 M30
 
 (Used Variables and Programs)

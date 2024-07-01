@@ -156,11 +156,11 @@ G90 G53 G01 Z0 F#652
 G90 G01 Y#32 F#652
 (Y to start point)
 G65 P910002 (sensor OFF)
-#3000=121 (are the arguments or the mould OK?)
+#3000=121 (are*the*arguments*or*the*mould*OK?)
 
 N0800
 G65 P910002 (sensor OFF)
-#3000=121 (are the arguments or the mould OK?)
+#3000=121 (are*the*arguments*or*the*mould*OK?)
 
 N999 M99
 

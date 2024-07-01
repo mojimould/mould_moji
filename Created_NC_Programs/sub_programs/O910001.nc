@@ -24,7 +24,7 @@ IF[#33LT4]GOTO001
 GOTO999 (go to N999)
 
 N0800
-#3000=145 (sensor-Low battery)
+#3000=145 (sensor*Low*battery)
 
 N999 M99
 

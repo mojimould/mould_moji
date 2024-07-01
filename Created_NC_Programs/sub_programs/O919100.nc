@@ -68,7 +68,7 @@ GOTO999
 N0800
 G90 G53 G01 Z0 F#650
 M33 (close sensor and off)
-#3000=141 (tool measurement alarm)
+#3000=141 (tool*measurement*alarm)
 
 N999 M99
 

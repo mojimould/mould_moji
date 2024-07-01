@@ -60,7 +60,7 @@ GOTO999
 
 
 N0800
-#3000=121 (are the arguments OK?)
+#3000=121 (are*the*arguments*OK?)
 
 N999 M99
 

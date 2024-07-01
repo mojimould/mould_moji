@@ -431,7 +431,7 @@ G90 G01 X#711 Z#712 F#653
 N0800
 M09 (coolant off)
 M05 (spindle off)
-#3000=121 (are the arguments or the mould OK?)
+#3000=121 (are*the*arguments*or*the*mould*OK?)
 
 N9999 M99
 
