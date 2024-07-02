@@ -3,6 +3,10 @@
 
 \modHeadchapter{イシュー・問題の特定}
 先に述べた\expandafterindex{ぎょうむフロー（\yomiMMC）@業務フロー（\nameMMC）}業務フローを通して、\MMC に関する\index{イシュー}イシュー(issue)および\index{もんだい(problem)@問題(problem)}問題(problem)の特定を試みる。
+なお{\color{red}赤色}(\,\sarrow[red]\!)の項目は、ソフトウェア側で対処・改善できると考えられるものを示す
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{つまり、管理者の責任によるところが大きなものである。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -198,6 +202,17 @@
 \end{enumerate}
 \end{Issues}
 
+\begin{Issues}{手書きによる\index{きかいかこうすんぽううけいれチェックひょう@機械加工寸法受入チェック表}機械加工寸法受入チェック表}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]\DrawingNumber・向先・公称寸法・寸法公差許容範囲を、作業員が手書きで記述しなければならない状態にある
+\item[{\sarrow[red]}]必要な項目が記載されていないことが頻繁にある
+\item[{\sarrow[red]}]不必要な項目が記載されていることが頻繁にある
+\item[{\sarrow[red]}]全明細の分を1つの形式で無理にまとめようとしており、かつできていない
+\item[{\sarrow[red]}]しわ寄せがすべて作業員に押し付けられており、記載ミスを誘発・頻発させている
+\end{enumerate}
+\end{Issues}
+
+
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -372,6 +387,12 @@
 \end{enumerate}
 \end{Issues}
 
+\begin{Issues}{ワーク設置ミスによる衝突の防止策}
+\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}]ワークの設置にミスがあった場合に起因する衝突の防止策がなにも取られていない
+\end{enumerate}
+\end{Issues}
+
 \begin{Issues}{\KeywayMilling 時 \index{がいぶワークざひょうけい@外部ワーク座標系}外部ワーク座標系による衝突の予防策}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\index{がいぶワークざひょうけい@外部ワーク座標系}外部ワーク座標系による衝突の予防措置がなされていない
@@ -385,34 +406,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 02.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{全般的な問題点\TBW}
-そもそも、「\expandafterindex{\yomiDrawing（モールド）@\nameDrawing（モールド）}\nameDrawing を見て\index{NCプログラム}NCプログラムを作成」するという時点で、明らかに尋常な状態でないことは言うまでもない
-%% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{さらに言及すると、これが問題点（改善可能な点）だということがこれまで一切（スタッフ・管理職を含めて）認識されていないことが大きな問題点として挙げられる。
-つまり、（\index{せいぞうぎょう@製造業}製造業にも関わらず）\index{ソフトウェアエンジニアリング}ソフトウェアエンジニアリングをあからさまに蔑ろにし続けていることが根本に存在する。
-\textbf{客観的事実として}、ソフトウェアエンジニアリングに対する意識の低さ、ならびにモラル・マナーの欠如が顕著に露呈している。
-このような事態は、この業務に限らず社内のほぼ全ての業務において同様である。}。
-その\expandafterindex{\yomiDrawing のさくせい）@\nameDrawing の作成}\nameDrawing の作成についても以下のような状態にある。
-\begin{Issues}{\expandafterindex{\yomiDrawing のさくせい）@\nameDrawing の作成}\nameDrawing の作成}
+\modHeadsection{全般的な問題点}
+そもそも、以下のような非常に大きな問題が存在し続けている。
+
+\begin{Issues}{根本的な問題}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}] \expandafterindex{\yomiDrawing のさくせい）@\nameDrawing の作成}\nameDrawing の作成が、\index{CADソフトウェア}CADソフトウェアを用いて明細ごとに手動で描かれている
-\end{enumerate}
-\end{Issues}
-これらは単に、モールドに関するデータが管理状態にないことを示している。
-\begin{Issues}{データベースの非存在}
-\begin{enumerate}[label=\sarrow]
+\item[{\sarrow[red]}] \expandafterindex{\yomiDrawing（モールド）@\nameDrawing（モールド）}\nameDrawing を見て\index{NCプログラム}NCプログラムを作成している
+\item[{\sarrow[red]}] \expandafterindex{\yomiDrawing のさくせい）@\nameDrawing の作成}\nameDrawing の作成が、\index{CADソフトウェア}CADソフトウェアを用いて手動でなされている
 \item[{\sarrow[red]}] \index{モールド}モールドに関する\index{データベース@データベース}データベースに相当するものが存在しない
 \end{enumerate}
 \end{Issues}
+これらについては、\autopageref{part:XI}以降で取り扱う。
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 02.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\Drawing の作成における作業効率}
-
-\begin{Issues}{\TBW}
-\begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]
-\end{enumerate}
-\end{Issues}
