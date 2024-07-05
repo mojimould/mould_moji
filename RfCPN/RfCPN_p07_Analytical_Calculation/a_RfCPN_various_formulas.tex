@@ -14,11 +14,12 @@ $f(x)$の$x = 0$に対する\index{テイラーてんかい@テイラー展開}�
 \begin{align*}
   f(x) = \sum_{n=1}^{\infty}\frac{f^{(n)}(0)}{n!}x^n\ .
 \end{align*}
+\tcbline*
 特に、
 \begin{align*}
-  (1+x)^\frac12 &= 1+\frac x2-\frac{x^2}8+\frac{x^3}{16}-\frac{5x^4}{128}+o\!\left(x^5\right)\\
-  \frac{\cos x}{1+\cos^2x} &= \frac12-\frac{x^4}{16}+o\left(x^6\right)\\
-  \frac{\sin x\cos x}{1+\cos^2x} &= \frac x2-\frac{x^3}{12}-\frac{7x^5}{120}+o\left(x^7\right)
+  (1+x)^\frac12 &= 1+\frac x2-\frac{x^2}8+\frac{x^3}{16}-\frac{5x^4}{128}+o\!\left(x^5\right)\ ,\\
+  \frac{\cos x}{1+\cos^2x} &= \frac12-\frac{x^4}{16}+o\left(x^6\right)\ ,\\
+  \frac{\sin x\cos x}{1+\cos^2x} &= \frac x2-\frac{x^3}{12}-\frac{7x^5}{120}+o\left(x^7\right)\ .
 \end{align*}
 \end{Formula}
 
@@ -29,11 +30,11 @@ $f(x)$の$x = 0$に対する\index{テイラーてんかい@テイラー展開}�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{2直線の関係}
 \begin{Formula}[label=formula:intersectionof2lines]{2直線の交点}
-2つの直線$y = a_1x+b_1$, $y = a_2x+b_2$ ($a_1 \ne a_2$)の交点は、以下で与えられる。
+2つの直線$a_1x+b_1y+c_1 = 0$, $a_2x+b_2y+c_2 = 0$の交点は、以下で与えられる。
 \begin{align*}
   \left(
-  \frac{b_1-b_2}{a_2-a_1}~,~
-  \frac{a_1b_2-a_2b_1}{a_2-a_1}
+  \frac{b_1c_2-b_2c_1}{a_1b_2-a_2b_1}~,~
+  \frac{a_2c_1-a_1c_2}{a_1b_2-a_2b_1}
   \right)\ .
 \end{align*}
 \end{Formula}
