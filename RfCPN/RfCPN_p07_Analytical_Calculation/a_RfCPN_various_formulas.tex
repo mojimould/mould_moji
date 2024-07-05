@@ -29,24 +29,20 @@ $f(x)$の$x = 0$に対する\index{テイラーてんかい@テイラー展開}�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{2直線の関係}
 \begin{Formula}[label=formula:intersectionof2lines]{2直線の交点}
-2つの直線$a_1x+b_1y+c_1 = 0$, $a_2x+b_2y+c_2 = 0$の交点は、以下で与えられる。
+2つの直線$y = a_1x+b_1$, $y = a_2x+b_2$ ($a_1 \ne a_2$)の交点は、以下で与えられる。
 \begin{align*}
   \left(
-  \frac{b_1c_2-b_2c_1}{a_1b_2-a_2b_1}~,~
-  \frac{a_2c_1-a_1c_2}{a_1b_2-a_2b_1}
-  \right)
-  \quad\text{ただし}~
-  a_1b_2 \ne a_2b_1\ .
+  \frac{b_1-b_2}{a_2-a_1}~,~
+  \frac{a_1b_2-a_2b_1}{a_2-a_1}
+  \right)\ .
 \end{align*}
 \end{Formula}
 
 \begin{Formula}[label=formula:anblebetween2lines]{2直線のなす角度}
-2つの直線$y = m_1x$, $y = m_2x$に対して、$m_1 = \tan\alpha$, $m_2 = \tan\beta$とみなすことができる。
+2つの直線$y = m_1x$, $y = m_2x$ ($m_1m_2 \ne -1$)に対して、$m_1 = \tan\alpha$, $m_2 = \tan\beta$とみなすことができる。
 したがって、2直線のなす角度$\phi$ ($0 < \phi < \nicefrac\pi2$)は、以下で与えられる。
 \begin{align*}
-  \tan\phi = \tan(\alpha-\beta) = \frac{m_1-m_2}{1+m_1m_2}
-  \quad\text{ただし}~
-  m_1m_2 \ne -1\ .
+  \tan\phi = \tan(\beta-\alpha) = \frac{m_2-m_1}{1+m_1m_2}\ .
 \end{align*}
 \end{Formula}
 
