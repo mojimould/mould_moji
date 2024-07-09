@@ -1,5 +1,5 @@
 %
-O915100 (warming up: 20240626)
+O915100 (warming up: 20240709)
 
 N0001 (initialize)
 G49 G40 (cancel hosei)
@@ -72,7 +72,7 @@ T01 (tool #01)
 M06 (tool exchange)
 
 N9999
-#3901=#3901-1
+#3901=-1
 M30
 
 (Used Variables and Programs)
