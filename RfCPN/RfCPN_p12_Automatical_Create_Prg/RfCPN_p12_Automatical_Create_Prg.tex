@@ -1,0 +1,49 @@
+%!TEX root = ./RfCPN.tex
+
+
+\addtocontents{toc}{\protect\cleardoublepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Part RDB %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\protect\begin{tocBox}{\tmppartnum}}%
+\tPart[locode]{\index{NCメインプログラム}NCメインプログラムの自動作成\TBW}{%
+\paragraph*{\tpartgoal}
+(to be written...)
+\tcbline*
+\paragraph*{\tpartmethod}
+(to be written...)
+\tcbline*
+\paragraph*{\tpartbackground}
+(to be written...)
+}{%
+\paragraph*{\tpartconclusion}
+(to be written...)
+\tcbline*
+\paragraph*{\tpartnextstep}
+(to be written...)
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chaptera %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadchapter[locode]{作成したコード\TBW}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MainExOne %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionof{locode}{\index{NCメインプログラム}NCメインプログラム自動生成用コード\TBW}
+\inputminted{python}{../Created_Python_Programs/create_main_prg.py}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section D.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{列}
+(to be written...)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Appendices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+%\Appendixpart
+\end{appendices}
+
+\addtocontents{toc}{\protect\end{tocBox}}
