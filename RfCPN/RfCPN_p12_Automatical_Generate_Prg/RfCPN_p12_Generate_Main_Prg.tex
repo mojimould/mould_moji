@@ -1,0 +1,39 @@
+%!TEX root = ./RfCPN.tex
+
+
+\addtocontents{toc}{\protect\cleardoublepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Part RDB %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\protect\begin{tocBox}{\tmppartnum}}%
+\tPart[locode]{関連ドキュメントの自動生成\TBW}{%
+\paragraph*{\tpartgoal}
+\index{NCメインプログラム}NCメインプログラムを生成するスクリプトの作成を行う
+\tcbline*
+\paragraph*{\tpartmethod}
+前編で構築した体系を応用し、条件分岐情報等を用いて関連ドキュメントの生成を行う
+\tcbline*
+\paragraph*{\tpartbackground}
+(to be written...)
+}{%
+\paragraph*{\tpartconclusion}
+(to be written...)
+\tcbline*
+\paragraph*{\tpartnextstep}
+(to be written...)
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./RfCPN_p12_Automatical_Generate_Prg/c_RfCPN_Generate_Main_Prg}
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Appendices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+%\Appendixpart
+\end{appendices}
+
+\addtocontents{toc}{\protect\end{tocBox}}
