@@ -1,5 +1,5 @@
 %
-O915100 (warming up: 20240709)
+O915100 (warming up: 20240716)
 
 N0001 (initialize)
 G49 G40 (cancel hosei)
@@ -44,7 +44,6 @@ S2600
 M98 P915101 L1
 
 N0009
-M29 (chip conveyor off)
 S6000
 M98 P915101 L7
 
