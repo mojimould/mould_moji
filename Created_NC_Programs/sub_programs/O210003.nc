@@ -1,5 +1,5 @@
 %
-O210003 (last update on 20240717)
+O210003 (last update on 20240724)
 (for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 
@@ -71,7 +71,7 @@ IF[[[#09+#19+ABS[#09-#19]]/2]GE[[#24+#25-ABS[#24-#25]]/2]]GOTO0800
 IF[#02LT[-15]]GOTO0800
 IF[#21GT#04]GOTO0800
 IF[#26LE[#901011/2]]GOTO0800
-IF[[#17+[#06*#13]]GT240]GOTO0800
+IF[[#17+[#06*[#13-1]]]GT240]GOTO0800
 (if F = S, go to N0800)
 (if #620 < 2 or #0, go to N0800)
 (if R <= Z, go to N0800)
@@ -81,7 +81,7 @@ IF[[#17+[#06*#13]]GT240]GOTO0800
 (if B < -15, go to N0800)
 (if U > I, go to N0800)
 (if Z <= #901011/2, go to N0800)
-(if Q+K*M >= 240, go to N0800)
+(if Q+K*[M-1] >= 240, go to N0800)
 
 IF[#20EQ#0]THEN #20=0
 (if T=#0, then T=0)
