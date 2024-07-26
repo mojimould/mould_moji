@@ -228,7 +228,7 @@ keywayWidthAve = keywayWidthDim + (keywayWidthPlusTolerance + keywayWidthMinusTo
 keywayWidth    = f"{keywayWidthAve:.3f}"
 keywayAsideDepthToleranceExists = f"{KeywayAsideDepthToleranceExitsFlag:.1f}"
 if KeywayAsideDepthToleranceExitsFlag == 0:
-    keywayAsideDepthDim            = WS['C53'].value
+    keywayAsideDepthDim = WS['C53'].value
     keywayAsideDepth    = f"{keywayAsideDepthDim:.3f}"
 elif KeywayAsideDepthToleranceExitsFlag == 1:
     keywayAsideDepthDim            = WS['C52'].value
