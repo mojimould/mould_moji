@@ -4,7 +4,9 @@ from datetime import datetime
 
 
 # ワークブックの最初のシートの読み込み
-WB = load_workbook("../../mould_private/work_Numerical_Calculation/work_Postison_Cal.xlsx", data_only=True)
+WB = load_workbook(
+    "../../mould_private/work_Numerical_Calculation/work_Postison_Cal.xlsx", data_only=True
+)
 WB_sheet_names = WB.sheetnames
 
 # 最初のワークシートを取得
@@ -78,9 +80,17 @@ prgSensorOff        = f"{WS['C167'].value:06d}"
 toolIDEmpty         = WS['C125'].value
 toolIDFacemill      = WS['C126'].value
 toolIDSidecutter    = WS['C127'].value
-toolIDTaperendmill  = {"15": WS['C129'].value, "30": WS['C130'].value, "45": WS['C131'].value}
+toolIDTaperendmill  = {
+    "15": WS['C129'].value,
+    "30": WS['C130'].value,
+    "45": WS['C131'].value
+}
 toolIDSquareendmill = WS['C132'].value
-toolIDTslot         = {"20.0": WS['C134'].value, "6.6": WS['C135'].value, "15.0": WS['C136'].value}
+toolIDTslot         = {
+    "20.0": WS['C134'].value,
+    "6.6" : WS['C135'].value,
+    "15.0": WS['C136'].value
+}
 toolIDTouchSensor   = WS['C139'].value
 
 # フラグ
