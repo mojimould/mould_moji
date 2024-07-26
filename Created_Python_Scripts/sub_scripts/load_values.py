@@ -1,4 +1,6 @@
 # last update: 20240726
+# Copyright 2023-2024 The individual creator not held by any corporation.
+# All rights reserved.
 
 from datetime import datetime
 

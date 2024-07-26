@@ -1,4 +1,6 @@
 # last update: 20240726
+# Copyright 2023-2024 The individual creator not held by any corporation.
+# All rights reserved.
 
 # ファイルの読込み
 with open('./sub_scripts/load_values.py', 'r', encoding='utf-8') as file:
