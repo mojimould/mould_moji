@@ -1,7 +1,7 @@
 # last update: 20240726
 
 # ファイルの読込み
-with open('load_values.py', 'r', encoding='utf-8') as file:
+with open('./sub_scripts/load_values.py', 'r', encoding='utf-8') as file:
     load_values = file.read()
 exec(load_values)
 
@@ -67,6 +67,6 @@ SN_alarmPallete       = count(821)
 SN_base_end           = count(9990)
 SN_prg_end            = count(9999)
 
-with open('calculated_values.py', 'r', encoding='utf-8') as file:
+with open('./sub_scripts/calculated_values.py', 'r', encoding='utf-8') as file:
     calculate_variables = file.read()
 exec(calculate_variables)

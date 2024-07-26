@@ -8,7 +8,7 @@ import xlwings as xw
 
 
 # ファイルの読込み
-with open('load_values.py', 'r', encoding='utf-8') as file:
+with open('sub_scripts/load_values.py', 'r', encoding='utf-8') as file:
     load_values = file.read()
 exec(load_values)
 
