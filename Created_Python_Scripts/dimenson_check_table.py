@@ -39,7 +39,7 @@ checkWS = WB.create_sheet(title=str(DrawingIDNum))
 checkWS.page_setup.horizontalCentered = True
 
 # 設定
-file_name = MainPrgID + '_寸法確認表.xlsx'
+file_name = MainPrgID + '_寸法外観確認表.xlsx'
 font_name = 'Meiryo UI'
 font_size_title      = 18.0
 font_size_yymmdd     = 16.0
@@ -64,7 +64,7 @@ row_item = [
     "判定",
 ]
 
-TitleName     = "横型マシニングセンタ 加工後 寸法 確認表"
+TitleName     = "横型マシニングセンタ 加工後 寸法・外観 確認表"
 yymmddName    = "20       年       月       日"
 DrawingIDName = "図面番号"
 MeasurerName  = "測定者"
