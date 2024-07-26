@@ -11,7 +11,6 @@ import math
 # ファイルの読込み
 with open('sub_scripts/preample_for_d_main_prg.py', 'r', encoding='utf-8') as file:
     variables = file.read()
-
 exec(variables)
 
 
