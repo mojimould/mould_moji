@@ -23,13 +23,7 @@ def format_number(num):
         str_num = "{:.2f}".format(num)
     return str_num
 
-# テーパ#の整形
-def format_taperID(value):
-    if str(value).startswith('e'):
-        return 'e' + str(value)[1:].zfill(5)
-    else:
-        return str(value).zfill(5)
-taperID = format_taperID(WS['C20'].value)
+# テーパ#
 WS2_name = taperID
 
 # 余分なシートの削除
@@ -39,7 +33,10 @@ for sheet in WB.sheetnames:
 
 
 # シートの作成
-checkWS = WB.create_sheet(title=str(WS["C2"].value))
+checkWS = WB.create_sheet(title=str(DrawingIDNum))
+
+# 印刷時に水平方向を中央に設定
+checkWS.page_setup.horizontalCentered = True
 
 # 設定
 file_name = MainPrgID + '_寸法確認表.xlsx'
@@ -50,9 +47,12 @@ font_size_drawingID  = 17.0
 font_size_measurer   = 14.0
 font_size_table_head = 14.0
 font_size_item       = 14.0
-preamble_col_height   = 34.0
-table_col_height      = 27.0
+preamble_col_height   = 32.0
+table_col_height      = 26.0
 table_head_col_height = 22.0
+
+# footer text
+footer_text = "表印刷：" + date_string
 
 # table head
 row_item = [
@@ -668,24 +668,33 @@ last_column = checkWS.max_column
 # 最後の列のアルファベットラベルを取得
 last_column_letter = get_column_letter(last_column)
 
-# 印刷範囲を設定
+# 用紙サイズ
+checkWS.page_setup.paperSize = checkWS.PAPERSIZE_A4
+
+# 向き
+checkWS.page_setup.orientation = "portrait"
+
+# 印刷範囲
 checkWS.page_setup.print_area = f'A1:{last_column_letter}{last_row}'
 
-# 印刷範囲を1ページに収まるように設定
+# 印刷範囲を1ページに収める
 checkWS.page_setup.fitToPage = True
 checkWS.page_setup.fitToHeight = 1
 checkWS.page_setup.fitToWidth = 1
 
-# 余白を設定（単位はインチ）
+# 余白（インチ）
 checkWS.page_margins.left = 0.75
-checkWS.page_margins.right = 0.15
+checkWS.page_margins.right = 0.1
 checkWS.page_margins.top = 0.15
 checkWS.page_margins.bottom = 0.1
 checkWS.page_margins.header = 0.0
 checkWS.page_margins.footer = 0.0
 
+# フッターのテキスト
+checkWS.oddFooter.right.text = footer_text
+
 # 印刷時に水平方向を中央に設定
-checkWS.page_setup.horizontalCentered = True
+checkWS.print_options.horizontalCentered = True
 
 # ファイルを保存
 WB.save(file_name)
