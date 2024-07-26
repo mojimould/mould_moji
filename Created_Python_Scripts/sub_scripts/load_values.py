@@ -51,6 +51,38 @@ ReceiverPlateWidth     = WS['C113'].value
 ReceiverPlateRadius    = WS['C114'].value
 BetweenTableJigCenters = WS['C115'].value
 
+# サブプログラム番号
+prgOutsideCenterX   = f"{WS['C147'].value:06d}"
+prgOutsideCenterY   = f"{WS['C148'].value:06d}"
+prgKeywayCenterX    = f"{WS['C149'].value:06d}"
+prgInsideCenterX    = f"{WS['C150'].value:06d}"
+prgInsideCenterY    = f"{WS['C151'].value:06d}"
+prgOutcutCenterX    = f"{WS['C152'].value:06d}"
+prgCenterlineDif    = f"{WS['C153'].value:06d}"
+prgEndfaceSlope     = f"{WS['C154'].value:06d}"
+prgDimpleOne        = f"{WS['C155'].value:06d}"
+prgEndface          = f"{WS['C156'].value:06d}"
+prgOutcut           = f"{WS['C157'].value:06d}"
+prgCurvedOutcut     = f"{WS['C158'].value:06d}"
+prgKeyway           = f"{WS['C159'].value:06d}"
+prgOutChamfer       = f"{WS['C160'].value:06d}"
+prgCurvedOutChamfer = f"{WS['C161'].value:06d}"
+prgInChamfer        = f"{WS['C162'].value:06d}"
+prgEndFaceBoring    = f"{WS['C163'].value:06d}"
+prgIncutBoring      = f"{WS['C164'].value:06d}"
+prgPauseCheck       = f"{WS['C165'].value:06d}"
+prgSensorOn         = f"{WS['C166'].value:06d}"
+prgSensorOff        = f"{WS['C167'].value:06d}"
+
+# 工具番号
+toolIDEmpty         = WS['C125'].value
+toolIDFacemill      = WS['C126'].value
+toolIDSidecutter    = WS['C127'].value
+toolIDTaperendmill  = {"15": WS['C129'].value, "30": WS['C130'].value, "45": WS['C131'].value}
+toolIDSquareendmill = WS['C132'].value
+toolIDTslot         = {"20.0": WS['C134'].value, "6.6": WS['C135'].value, "15.0": WS['C136'].value}
+toolIDTouchSensor   = WS['C139'].value
+
 # フラグ
 CenterCurvatureExistsFlag          = WS['C5'].value
 BotAlocationBracketDimExistsFlag   = WS['C10'].value
