@@ -159,13 +159,13 @@ OutsideCornerR    = f"{OutsideCornerRDim:.2f}"
 # 内形
 mekkiThicknessDim = WS['C19'].value
 mekkiThickness    = f"{mekkiThicknessDim:.3f}"
-topACIDDim = excel_lookup(WB, WS1_name, 'C21', 'B', next_row=False) # P112
-topBDIDDim = excel_lookup(WB, WS1_name, 'C21', 'C', next_row=False) # P113
-topInsideCornerRDim = excel_lookup(WB, WS1_name, 'C21', 'D', next_row=False) # P117
+topACIDDim = excel_lookup(WB, WS1_name, 'C21', 'B', next_row=False)
+topBDIDDim = excel_lookup(WB, WS1_name, 'C21', 'C', next_row=False)
+topInsideCornerRDim = excel_lookup(WB, WS1_name, 'C21', 'D', next_row=False)
 topInsideCornerR    = f"{topInsideCornerRDim:.3f}"
-botACIDDim = excel_lookup(WB, WS1_name, 'C8', 'B', next_row=False) # P115
-botBDIDDim = excel_lookup(WB, WS1_name, 'C8', 'C', next_row=False) # P116
-botInsideCornerRDim = excel_lookup(WB, WS1_name, 'C8', 'D', next_row=False) # P117
+botACIDDim = excel_lookup(WB, WS1_name, 'C8', 'B', next_row=False)
+botBDIDDim = excel_lookup(WB, WS1_name, 'C8', 'C', next_row=False)
+botInsideCornerRDim = excel_lookup(WB, WS1_name, 'C8', 'D', next_row=False)
 botInsideCornerR    = f"{botInsideCornerRDim:.3f}"
 ACIDPlusTolerance  = WS['D20'].value
 ACIDMinusTolerance = WS['E20'].value
@@ -197,10 +197,10 @@ dimpleDepthDim = WS['C67'].value
 dimpleDepth    = f"{dimpleDepthDim:.3f}"
 dimpleSmallRadiusDim = WS['C68'].value
 dimpleSmallRadius    = f"{dimpleSmallRadiusDim:.1f}"
-dimpleFirstRowTopSidePitch    = excel_lookup(WB, WS1_name, 'C61', 'A', next_row=False) # P72
-dimpleFirstRowBottomSidePitch = excel_lookup(WB, WS1_name, 'C61', 'A', next_row=True)  # P80
-dimpleFirstRowTopSideID       = excel_lookup(WB, WS1_name, 'C61', 'B', next_row=False) # P118
-dimpleFirstRowBottomSideID    = excel_lookup(WB, WS1_name, 'C61', 'B', next_row=True)  # P126
+dimpleFirstRowTopSidePitch    = excel_lookup(WB, WS1_name, 'C61', 'A', next_row=False)
+dimpleFirstRowBottomSidePitch = excel_lookup(WB, WS1_name, 'C61', 'A', next_row=True)
+dimpleFirstRowTopSideID       = excel_lookup(WB, WS1_name, 'C61', 'B', next_row=False)
+dimpleFirstRowBottomSideID    = excel_lookup(WB, WS1_name, 'C61', 'B', next_row=True)
 dimpleLastRowDistanceFromEndfaceDim = dimpleFirstRowDistanceFromEndfaceDim + dimpleVerticalPitchDim * (dimpleRowNumVal - 1)
 
 # キー溝
