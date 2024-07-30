@@ -44,13 +44,15 @@ checkWS.page_setup.horizontalCentered = True
 file_name = MainPrgID + '_寸法外観確認表.xlsx'
 font_name = 'Meiryo UI'
 font_size_title      = 18.0
-font_size_yymmdd     = 16.0
+font_size_yymmdd     = 12.0
 font_size_drawingID  = 17.0
 font_size_measurer   = 14.0
 font_size_table_head = 14.0
 font_size_item       = 14.0
-preamble_col_height   = 32.0
-table_col_height      = 26.0
+
+preamble_col_height   = 28.0
+last_row_col_height   = 32.0
+table_col_height      = 25.0
 table_head_col_height = 22.0
 
 # footer text
@@ -138,7 +140,7 @@ dimpleRowsPitchName            = "ディンプル列間の間隔"
 dimpleDepthName                = "ディンプル深さ"
 appearanceDimpleName           = "外観 ディンプル全体"
 BDcurvatureToleranceName       = "倒れBD / 外径"
-ACcurvatureToleranceName       = "倒れAC / 外径 *"
+ACcurvatureToleranceName       = "倒れAC / 外径"
 appearanceEndfaceChamferName   = "外観 端面面取"
 appearanceKeywayChamferName    = "外観 溝C面取"
 appearanceEngravingName        = "外観 刻印"
@@ -559,17 +561,19 @@ table_item_font = Font(size=font_size_item, name=font_name)
 
 # 罫線のスタイルを定義
 thin_border = Border(
-    left  = Side(style='thin'), 
-    right = Side(style='thin'), 
-    top   = Side(style='thin'), 
-    bottom= Side(style='thin')
-)
-top_double_border = Border(
-    left  = Side(style='thin'), 
-    right = Side(style='thin'), 
-    top   = Side(style='double'), 
+    left   = Side(style='thin'), 
+    right  = Side(style='thin'), 
+    top    = Side(style='thin'), 
     bottom = Side(style='thin')
 )
+top_double_border = Border(
+    left   = Side(style='thin'), 
+    right  = Side(style='thin'), 
+    top    = Side(style='double'), 
+    bottom = Side(style='thin')
+)
+thin_border_side = Side(style='thin')
+no_border_side = Side(style=None)
 # 二重線の項目
 doubleBorderItem = [
     totalLengthName,
@@ -637,7 +641,16 @@ for sheet in WB.sheetnames:
 
 checkWS = WB.worksheets[0]
 
-checkWS['A' + str(checkWS.max_row + 1)] = '* 振分 トップ：ボトム = ' + str(topAlocationLengthAve) + ' : ' + str(botAlocationLengthAve)
+last_row = checkWS.max_row + 1
+checkWS['F' + str(last_row)] = '振分：トップ ' + str(topAlocationLengthAve) + ', ボトム ' + str(botAlocationLengthAve)
+checkWS['F' + str(last_row)].alignment = Alignment(horizontal='right', vertical='top')
+checkWS.row_dimensions[last_row].height = last_row_col_height
+
+# 最終行のAからFまでのセルに罫線を適用
+for i, cell in enumerate(checkWS['A' + str(checkWS.max_row):'F' + str(checkWS.max_row)][0]):
+    border_left = thin_border_side if i == 0 else no_border_side
+    border_right = thin_border_side if i == 5 else no_border_side
+    cell.border = Border(left=border_left, right=border_right, top=thin_border_side, bottom=thin_border_side)
 
 checkWS['A1'].value = TitleName
 checkWS['A1'].font = title_font
@@ -694,7 +707,7 @@ checkWS.page_margins.header = 0.0
 checkWS.page_margins.footer = 0.0
 
 # フッターのテキスト
-checkWS.oddFooter.right.text = footer_text
+# checkWS.oddFooter.right.text = footer_text
 
 # 印刷時に水平方向を中央に設定
 checkWS.print_options.horizontalCentered = True
