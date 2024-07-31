@@ -1,4 +1,4 @@
-# last update: 20240726
+# last update: 20240730
 # Copyright 2023-2024 The individual creator, not held by any corporation.
 # All rights reserved.
 
@@ -50,8 +50,8 @@ font_size_measurer   = 14.0
 font_size_table_head = 14.0
 font_size_item       = 14.0
 
-preamble_col_height   = 28.0
-last_row_col_height   = 32.0
+preamble_col_height   = 27.0
+last_row_col_height   = 34.0
 table_col_height      = 25.0
 table_head_col_height = 22.0
 
@@ -92,10 +92,10 @@ keywayBDODName                 = "溝径BD"
 if TopOutcutExistsFlag == 0 and CenterCurvatureExistsFlag == 1 or TopOutcutExistsFlag == 1 and TopCurvedOutcutExistsFlag == 1:
     if KeywayAsideDepthToleranceExitsFlag == 0:
         keywayAsideTopSide = "（トップ側）"
-        keywayACDepthToleranceRange = '|A-C| ≦ ' + str(keywayACDepthTolerance)
     else:
         keywayAsideTopSide = ""
     keywayCsideBottomSide = "（ボトム側）"
+    keywayACDepthToleranceRange = '|A-C| ≦ ' + str(keywayACDepthTolerance)
 elif TopOutcutExistsFlag == 1 and TopCurvedOutcutExistsFlag == 0:
     keywayAsideTopSide    = ""
     keywayCsideBottomSide = ""
@@ -135,7 +135,7 @@ dimpleNumOddRowName            = "1列目 ディンプル数"
 dimpleNumEvenRowName           = "2列目 ディンプル数"
 dimpleFirstRowDistanceName     = "ディンプル1列目 位置"
 if dimpleRowNumVal > 0:
-    dimpleLastRowDistanceName      = "ディンプル" + f'{dimpleRowNumVal:.0f}' + "列目 位置"
+    dimpleLastRowDistanceName  = "ディンプル" + f'{dimpleRowNumVal:.0f}' + "列目 位置"
 dimpleRowsPitchName            = "ディンプル列間の間隔"
 dimpleDepthName                = "ディンプル深さ"
 appearanceDimpleName           = "外観 ディンプル全体"
