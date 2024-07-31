@@ -7,7 +7,7 @@ from datetime import datetime
 
 # ワークブックの最初のシートの読み込み
 WB = load_workbook(
-    "../../mould_private/work_Numerical_Calculation/work_Postison_Cal.xlsx", data_only=True
+    "./work_Postison_Cal.xlsx", data_only=True
 )
 WB_sheet_names = WB.sheetnames
 

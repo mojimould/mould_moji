@@ -11,7 +11,7 @@ import math
 
 
 # ファイルの読込み
-with open('sub_scripts/preample_for_d_main_prg.py', 'r', encoding='utf-8') as file:
+with open('./scripts/preample_for_d_main_prg.py', 'r', encoding='utf-8') as file:
     variables = file.read()
 exec(variables)
 
@@ -35,7 +35,7 @@ SN_alarm_pallete      = next(SN_alarmPallete)
 SN_base_finish        = next(SN_base_end)
 SN_finish_end         = next(SN_prg_end)
 
-with open('O' + MainPrgID, 'w') as f:
+with open('./O' + MainPrgID, 'w') as f:
     f.write(
         '%\n'
         'O'+ MainPrgID + ' (Last update on ' + date_string+')\n'
