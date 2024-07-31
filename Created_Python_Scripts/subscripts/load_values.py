@@ -1,4 +1,4 @@
-# last update: 20240726
+# last update: 20240801
 # Copyright 2023-2024 The individual creator, not held by any corporation.
 # All rights reserved.
 
@@ -7,7 +7,7 @@ from datetime import datetime
 
 # ワークブックの最初のシートの読み込み
 WB = load_workbook(
-    "./work_Postison_Cal.xlsx", data_only=True
+    "./work_Postison_Cal.xlsm", data_only=True
 )
 WB_sheet_names = WB.sheetnames
 
