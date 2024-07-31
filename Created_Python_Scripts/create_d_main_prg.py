@@ -300,9 +300,10 @@ with open('O' + MainPrgID, 'w') as f:
         '(' + workCoordinateBotIn + ' XY Bot inside center)\n'
         '\n'
 
-        '' + workCoordinateBotIn + ' G65 P' + prgInsideCenterY + ' Y' + botBDID + ' Z' + botReAlocationLength + ' M' + mekkiThickness + '\n'
+        '' + workCoordinateBotIn + ' G65 P' + prgInsideCenterY + ' Y' + botBDID + ' J' + BDOD + ' Z' + botReAlocationLength + ' M' + mekkiThickness + '\n'
         '(' + workCoordinateBotIn + ': Bot Y Inside center)\n'
         '(Y: Bot BD ID)\n'
+        '(J: BD OD)\n'
         '(Z: Bot re_alocation)\n'
         '(M: mekki thickness mm)\n'
         '\n'
@@ -423,9 +424,10 @@ with open('O' + MainPrgID, 'w') as f:
         '(' + workCoordinateTopIn + ' XY Top inside center)\n'
         '\n'
 
-        '' + workCoordinateTopIn + ' G65 P' + prgInsideCenterY + ' Y' + topBDID + ' Z' + topReAlocationLength + ' M' + mekkiThickness + '\n'
+        '' + workCoordinateTopIn + ' G65 P' + prgInsideCenterY + ' Y' + topBDID+ ' J' + BDOD + ' Z' + topReAlocationLength + ' M' + mekkiThickness + '\n'
         '(' + workCoordinateTopIn + ': Top Y inside center)\n'
         '(Y: Top BD ID)\n'
+        '(J: BD OD)\n'
         '(Z: Top re_alocation)\n'
         '(M: mekki thickness mm)\n'
         '\n'
