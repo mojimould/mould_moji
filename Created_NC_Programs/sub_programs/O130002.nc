@@ -1,20 +1,20 @@
 %
-O130002 (last update on 20240701)
+O130002 (last update on 20240731)
 (Y center of inner measurement)
 
-N001
+N0001
 #33=#4012
 #32=#5002
 (#33= current work coordinate G#)
 (#32= block end X: start position Y)
 
-N002
-IF[#33EQ55]GOTO003
-IF[#33EQ57]GOTO003
+N0002
+IF[#33EQ55]GOTO0003
+IF[#33EQ57]GOTO0003
 GOTO0800
 (if work G# is neither 55 nor 57, go to N0800)
 
-N003
+N0003
 IF[#25EQ#0]GOTO0800
 IF[#25LT10]GOTO0800
 IF[#26EQ#0]GOTO0800
@@ -25,11 +25,11 @@ IF[#13GT10]GOTO0800
 (if Z = #0, go to N0800)
 (if M < 0 or M > 10 or #0, go to N0800)
 
-N004
+N0004
 IF[#26LE[#901011/2]]GOTO0800
 (if Z <= #901011/2, go to N0800)
 
-N005
+N0005
 IF[#901050EQ#0]GOTO0800
 IF[#901050LE1]GOTO0800
 IF[#600EQ#0]GOTO0800
@@ -49,7 +49,7 @@ IF[#901011LE100]GOTO0800
 (if #656 is not 50 or #0, go to N0800)
 (if #901011 <= 100 or #0, go to N0800)
 
-N006
+N0006
 IF[#33EQ57]THEN #31=1
 IF[#33EQ55]THEN #31=-1
 (Top: #31=1, Bot: #31=-1)
@@ -59,18 +59,18 @@ IF[#33EQ55]THEN #30=#407
 IF[[ABS[#30]]GE[#26/4]]GOTO0800
 (if |#30| >= Z/4, go to N0800)
 
-N007
+N0007
 #29=#25/2+#13
 (#29= Y/2+M)
 IF[[#29-#901050-#602]LE0]GOTO0800
 (if Y/2+M-#901050-#602 <= 0, go to N0800)
 
-N008
-IF[#1005EQ0]GOTO009
+N0008
+IF[#1005EQ0]GOTO0009
 M00 (sensor low battery)
-N009
-IF[#1004EQ1]GOTO010
-(if current sensor ON, go to N010)
+N0009
+IF[#1004EQ1]GOTO0010
+(if current sensor ON, go to N0010)
 M117 (sensor on/off)
 G04 X1.5 (wait 1.5s)
 
@@ -78,13 +78,13 @@ G04 X1.5 (wait 1.5s)
 (kokokara G31)
 
 
-N010
+N0010
 G90 G31 Z[#26-#901050-#30] F#653
 (Z tanmen: Z-#901050-#30)
 IF[#5003GT[#26-#901050-#30]]GOTO0802
 (if skip Z > Z-#901050-#30, to N0802)
 
-N011
+N0011
 G91 G31 Y-[#29-#901050-#602] F#653
 IF[[ABS[#5002-#32]+0.001]LT[ABS[#29-#901050-#602]]]GOTO0803
 (Y- skip: [#29-#901050-#602])
@@ -95,13 +95,13 @@ G91 G31 Y-[#602+#603] F#656
 (Y- skip: #602+#603)
 (#900021= Y bellow side -#901050 +probe hosei)
 
-N012
+N0012
 G90 G01 Y#32 F#652
 IF[[ABS[#900021-#901053-#901055]]GE[ABS[#29+#603]]]GOTO0800
 (Y to start point)
 (if |#900021 -probe hosei| >= |#29+#603|, go to N0800)
 
-N013
+N0013
 G91 G31 Y[#29-#901050-#602] F#653
 IF[[ABS[#5002-#32]+0.001]LT[ABS[#29-#901050-#602]]]GOTO0803
 (Y+ skip: [#29-#901050-#602])
@@ -112,7 +112,7 @@ G91 G31 Y[#602+#603] F#656
 (Y+ skip: #602+#603)
 (#900022= Y above side +#901050 +probe hosei)
 
-N014
+N0014
 #900023=[#900022+#900021]/2
 IF[#33EQ57]THEN #900024=#900022-#900021
 IF[#33EQ55]THEN #900025=#900022-#900021
@@ -120,18 +120,31 @@ IF[#33EQ55]THEN #900025=#900022-#900021
 (#900024: length for top)
 (#900025: length for bot)
 
-N015
+N0015
 G90 G01 Y#900023 F#652
 IF[[ABS[#900022+#901053-#901055]]GE[ABS[#29+#603]]]GOTO0800
 (Y to measured center)
 (if |#900022| >= |#29+#602|, go to N0800)
 
+#28=#[5202+[#33-53]*20]
 #[5202+[#33-53]*20]=#5022
 (current work origin Y = current machine Y)
 
-N990
+N9990
 G90 G01 Z[#26+#600] F#650
-GOTO999
+
+N9991 (check)
+IF[#05EQ#0]GOTO9992
+IF[ABS[#[5202+[#33-53]*20]-#28]LE[[[#05-#25]/2]*0.07]]GOTO9992
+M00 (check G55 Y or G57 Y)
+
+N9992
+IF[#33EQ55]GOTO9993
+IF[ABS[#5242-#5282]LT0.5]GOTO9993
+M00 (check G55 Y and G57 Y)
+
+N9993
+GOTO9999
 
 
 N0803
@@ -148,12 +161,13 @@ G65 P910002 (sensor OFF)
 N0800
 #3000=121 (are*the*arguments*or*the*mould*OK?)
 
-N999 M99
+N9999 M99
 
 (Used Variables and Programs)
 
 (Local variables)
 (as received arguments)
+(#05:J: Y outside width)
 (#13:M: mekki thickness mm)
 (#25:Y: Y inside width)
 (#26:Z: sai-furiwake)
