@@ -41,7 +41,7 @@ checkWS = WB.create_sheet(title=str(DrawingIDNum))
 checkWS.page_setup.horizontalCentered = True
 
 # 設定
-file_name = MainPrgID + '_寸法外観確認表.xlsx'
+file_name = MainPrgID + '.xlsx'
 font_name = 'Meiryo UI'
 font_size_title      = 18.0
 font_size_yymmdd     = 12.0
@@ -81,6 +81,7 @@ cornerRTolerance       = 0.5
 dimpleDepthTolerance   = 0.05
 dimpleOtherTolerance   = 0.5
 keywayACDepthTolerance = 0.7
+outcutLengthTolerance  = 0.5
 otherTolerance         = 0.3
 
 # 項目
@@ -391,7 +392,7 @@ if BotOutcutExistsFlag == 1:
         col_item.append([
             bottomOutcutLengthName,
             f'{botOutcutLengthAve:.2f}',
-            '-',
+            f'{botOutcutLengthDim + outcutLengthTolerance:.2f} - ' + f'{botOutcutLengthDim + outcutLengthTolerance:.2f}',
             '',
             '',
             JudgementItem
