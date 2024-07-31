@@ -3,7 +3,7 @@
 # All rights reserved.
 
 # ファイルの読込み
-with open('./scripts/load_values.py', 'r', encoding='utf-8') as file:
+with open('./subscripts/load_values.py', 'r', encoding='utf-8') as file:
     load_values = file.read()
 exec(load_values)
 
