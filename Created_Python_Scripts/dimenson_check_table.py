@@ -464,8 +464,8 @@ if DimpleExistsFlag == 1:
     # dimple num odd row
     col_item.append([
         dimpleNumOddRowName,
-        f'{dimpleFirstRowLengthDim / dimpleHorizontalPitchDim:.0f}',
-        f'{dimpleFirstRowLengthDim / dimpleHorizontalPitchDim:.0f}',
+        f'{dimpleFirstRowLengthDim / dimpleHorizontalPitchDim + 1:.0f}',
+        f'{dimpleFirstRowLengthDim / dimpleHorizontalPitchDim + 1:.0f}',
         '',
         '',
         JudgementItem
@@ -474,8 +474,8 @@ if DimpleExistsFlag == 1:
     # dimple num even row
     col_item.append([
         dimpleNumEvenRowName,
-        f'{dimpleSecondRowLengthDim / dimpleHorizontalPitchDim:.0f}',
-        f'{dimpleSecondRowLengthDim / dimpleHorizontalPitchDim:.0f}',
+        f'{dimpleSecondRowLengthDim / dimpleHorizontalPitchDim + 1:.0f}',
+        f'{dimpleSecondRowLengthDim / dimpleHorizontalPitchDim + 1:.0f}',
         '',
         '',
         JudgementItem
