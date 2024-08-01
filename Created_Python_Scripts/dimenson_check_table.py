@@ -1,4 +1,4 @@
-# last update: 20240730
+# last update: 20240801
 # Copyright 2023-2024 The individual creator, not held by any corporation.
 # All rights reserved.
 
@@ -61,7 +61,7 @@ footer_text = "表印刷：" + date_string
 # table head
 row_item = [
     "測定箇所",
-    "寸法",
+    "狙い値",
     "公差範囲",
     "測定値1",
     "測定値2",
@@ -315,15 +315,24 @@ if TopOutcutExistsFlag == 1:
 
     # top outcut length
     if TopOutcutLengthNEKeywayFlag == 1:
-        col_item.append([
-            topOutcutLengthName,
-            f'{topOutcutLengthAve:.2f}',
-            f'{topOutcutLengthDim + topOutcutLengthMinusTolerance:.2f} - ' + f'{topOutcutLengthDim + topOutcutLengthPlusTolerance:.2f}',
-            '-',
-            '',
-            '',
-            JudgementItem
-        ])
+        if topOutcutLengthMinusTolerance == 0 and topOutcutLengthPlusTolerance == 0:
+            col_item.append([
+                topOutcutLengthName,
+                f'{topOutcutLengthAve:.2f}',
+                f'{topOutcutLengthDim - outcutLengthTolerance:.2f} - ' + f'{topOutcutLengthDim + outcutLengthTolerance:.2f}',
+                '',
+                '',
+                JudgementItem
+            ])
+        else:
+            col_item.append([
+                topOutcutLengthName,
+                f'{topOutcutLengthAve:.2f}',
+                f'{topOutcutLengthDim + topOutcutLengthMinusTolerance:.2f} - ' + f'{topOutcutLengthDim + topOutcutLengthPlusTolerance:.2f}',
+                '',
+                '',
+                JudgementItem
+            ])
 
     # top outcut corner R
     col_item.append([
@@ -351,7 +360,7 @@ if BotOutcutExistsFlag == 1:
     col_item.append([
         bottomOutcutBDODName,
         f'{botOutcutBDODAve:.2f}',
-        f'{botOutcutBDODDim + botOutcutBDODMinusTolerance:.2f} - ' + f'{botOutcutBDODDim + botOutcutBDODPlusTolerance:.2f}',
+        f'{botOutcutBDODDim - botOutcutBDODMinusTolerance:.2f} - ' + f'{botOutcutBDODDim + botOutcutBDODPlusTolerance:.2f}',
         '',
         '',
         JudgementItem
