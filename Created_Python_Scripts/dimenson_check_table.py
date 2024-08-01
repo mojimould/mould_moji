@@ -61,7 +61,7 @@ footer_text = "表印刷：" + date_string
 # table head
 row_item = [
     "測定箇所",
-    "狙い値",
+    "狙い寸法",
     "公差範囲",
     "測定値1",
     "測定値2",
