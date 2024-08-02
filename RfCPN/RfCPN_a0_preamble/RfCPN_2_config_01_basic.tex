@@ -5,7 +5,7 @@
 \graphicspath{{./RfCPN_a1_includefiles/RfCPN_2_pictures/}}
 %%%%% FONT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setmonofont{Consolas}
-%\setmonojfont[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{NotoSansMonoCondensed.ttf}
+%\setmonojfont[Path=./RfCPN_a1_includefiles/RfCPN_1_fonts/]{NotoSansMono_Condensed-Regular.ttf}
 \setmathfont[BoldFont=*, BoldFeatures={FakeBold=2}]{Euler Math}
 \setmathfont[range={\leq, \geq},  BoldFont=*, BoldFeatures={FakeBold=2}]{Latin Modern Math}
 \setmathfont[range={up/num, bfup/num}, Scale=MatchUppercase, BoldFont=*, BoldFeatures={FakeBold=2}]{Latin Modern Math}
@@ -166,7 +166,7 @@
   numbersep=-3pt,
   mathescape,
   ignorelexererrors,
-%  fontfamily=ttfamily,
+  fontfamily=\ttfamily,
 }
 \tcbset{default minted options={fontsize=\large, baselinestretch=1.05}}
 \newtcbinputlisting{\GcodeInputminted}[2][{"./RfCPN_a1_includefiles/g_code.py:GCodeLexer -x"}]{
