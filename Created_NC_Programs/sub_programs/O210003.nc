@@ -383,8 +383,8 @@ G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for A: moving along row)
 
 N0303
-IF[#33GE#13]GOTO0206
-(if #33 >= #13, go to N0206)
+IF[#33GE#13]GOTO0225
+(if #33 >= #13, go to N0225)
 #32=#707-[#33-1]*#06
 (#32= Z of the #33th row from table center)
 #31=SQRT[#18*#18-[#32-#06]*[#32-#06]]-SQRT[#18*#18-#32*#32]
@@ -397,7 +397,45 @@ END1
 (end loop for #33)
 
 
-N0206
+(start loop for #29)
+
+
+IF[#4111NE50]GOTO0225
+IF[#724NE3]GOTO0225
+#719=0
+#29=1
+WHILE[#29LE100]DO1
+#[900500+#29]=#0
+#29=#29+1
+END1
+
+#29=1
+WHILE[#29LE100]DO1
+#28=[#[900300+#29]+#[900400+#29]]
+IF[#28GE0.5]GOTO0400
+GOTO401
+
+N0400
+#[900500+#29]=#28
+
+N0401
+#29=#29+1
+END1
+
+#29=1
+WHILE[#29LE100]DO1
+#719=[#719+ABS[#[900500+#29]]]
+#29=#29+1
+END1
+
+
+(end loop for #29)
+
+
+IF[#719EQ0]GOTO0225
+GOTO0802
+
+N0225
 #724=#724-1 (changing face)
 IF[#724LE0]GOTO0024
 GOTO0201
@@ -435,7 +473,7 @@ GOTO9999
 N0801
 M09 (coolant off)
 M05 (spindle off)
-#3000=145 (Sensor Low battery)
+#3000=145 (sensor*low*battery)
 
 N0802
 G90 G01 X#713 Y#714 F#653
@@ -452,7 +490,7 @@ G90 G01 X#711 Z#712 F#653
 N0800
 M09 (coolant off)
 M05 (spindle off)
-#3000=121 (are*the*arguments*or*the*mould*OK?)
+#3000=121 (are*the*arguments*or*dimple*values*OK?)
 
 N9999 M99
 
