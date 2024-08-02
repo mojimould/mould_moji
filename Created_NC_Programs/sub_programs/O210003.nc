@@ -1,5 +1,5 @@
 %
-O210003 (last update on 20240724)
+O210003 (last update on 20240802)
 (for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 
@@ -101,6 +101,7 @@ N0012 (if sensor)
 #702=#901050 (XY hosei)
 #703=31 (G31)
 GOTO0014
+
 N0013 (if Tslot)
 #701=0 (Z hosei)
 #702=#[2400+#4111]+#[2600+#4111]
@@ -149,6 +150,7 @@ IF[#4111NE50]GOTO0017
 (if tool is not sensor, go to N0017)
 IF[#1005EQ0]GOTO0016
 M00 (sensor low battery)
+
 N0016
 IF[#1004EQ1]GOTO0017
 (if current sensor ON, go to N0017)
@@ -180,15 +182,16 @@ N0018
 #718=FIX[#21*10]/10-0.1
 (#718=FIX[U*10]/10-0.1)
 
-IF[#4111EQ50]GOTO0200
-IF[#401EQ0]GOTO0200
-
 
 (start loop for the 1st #724)
 
 
+IF[#4111EQ50]GOTO0200
+IF[#401EQ0]GOTO0200
+
 #724=4
 (#724: faces 1: A, 2: C, 3: B, 4: D)
+
 N0100 (loop on #724)
 G90 G01 X#713 Y#714 Z#715 F#652
 (XYZ: to the center of the 1st row)
@@ -199,18 +202,22 @@ IF[#724EQ1]GOTO0103
 (if B, to N0101)
 (if C, to N0102)
 (if A, to N0103)
+
 (for face D)
 G91 G#703 Y-#716 F#653
 IF[#5002GT[-#716+0.001]]GOTO0802
 GOTO0104
+
 N0101 (for face B)
 G91 G#703 Y#716 F#653
 IF[#5002LT[#716-0.001]]GOTO0802
 GOTO0104
+
 N0102 (for face C)
 G91 G#703 X-#717 F#653
 IF[#5001GT[#713-#717+0.001]]GOTO0802
 GOTO0104
+
 N0103 (for face A)
 G91 G#703 X#717 F#653
 IF[#5001LT[#713+#717-0.001]]GOTO0802
@@ -226,14 +233,17 @@ IF[#724EQ1]GOTO0107
 G65 P220002 A-1.0 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for D: moving along row)
 GOTO0108
+
 N0105 (face B)
 G65 P220002 A1.0 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for B: moving along row)
 GOTO0108
+
 N0106 (face C)
 G65 P220001 A-1.0 X#24 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for C: moving along row)
 GOTO0108
+
 N0107 (face A)
 G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for A: moving along row)
@@ -282,6 +292,7 @@ IF[#4111NE50]GOTO0023
 (if tool is not sensor, go to N0023)
 IF[#1005EQ0]GOTO0022
 M00 (sensor low battery)
+
 N0022
 IF[#1004EQ1]GOTO0023
 (if current sensor ON, go to N0023)
@@ -307,6 +318,7 @@ N0200
 
 #724=4
 (#724: faces 1: A, 2: C, 3: B, 4: D)
+
 N0201 (loop on #724)
 G90 G01 X#713 Y#714 Z#715 F#652
 (XYZ: to the center of the 1st row)
@@ -317,18 +329,22 @@ IF[#724EQ1]GOTO0204
 (if B, to N0202)
 (if C, to N0203)
 (if A, to N0204)
+
 (for face D)
 G91 G#703 Y-#716 F#653
 IF[#5002GT[-#716+0.001]]GOTO0802
 GOTO0205
+
 N0202 (for face B)
 G91 G#703 Y#716 F#653
 IF[#5002LT[#716-0.001]]GOTO0802
 GOTO0205
+
 N0203 (for face C)
 G91 G#703 X-#717 F#653
 IF[#5001GT[#713-#717+0.001]]GOTO0802
 GOTO0205
+
 N0204 (for face A)
 G91 G#703 X#717 F#653
 IF[#5001LT[#713+#717-0.001]]GOTO0802
@@ -346,21 +362,26 @@ IF[#724EQ1]GOTO0302
 (#724=3, for B)
 (#724=2, for C)
 (#724=1, for A)
+
 (face D)
 G65 P220002 A-1.0 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for D: moving along row)
 GOTO0303
+
 N0300 (face B)
 G65 P220002 A1.0 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for B: moving along row)
 GOTO0303
+
 N0301 (face C)
 G65 P220001 A-1.0 X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for C: moving along row)
 GOTO0303
+
 N0302 (face A)
 G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for A: moving along row)
+
 N0303
 IF[#33GE#13]GOTO0206
 (if #33 >= #13, go to N0206)
