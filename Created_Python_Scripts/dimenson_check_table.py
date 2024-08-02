@@ -43,8 +43,8 @@ checkWS.page_setup.horizontalCentered = True
 # 設定
 file_name = MainPrgID + '.xlsx'
 font_name = 'Meiryo UI'
-font_size_title      = 18.0
-font_size_yymmdd     = 12.0
+font_size_title      = 17.0
+font_size_yymmdd     = 13.0
 font_size_drawingID  = 17.0
 font_size_measurer   = 14.0
 font_size_table_head = 14.0
