@@ -1,4 +1,4 @@
-# last update: 20240726
+# last update: 20240806
 # Copyright 2023-2024 The individual creator, not held by any corporation.
 # All rights reserved.
 
@@ -850,7 +850,7 @@ with open('./O' + MainPrgID, 'w') as f:
             '(R: Top outcut corner R)\n'
             '(K: Top outcut length)\n'
             '(M*: keyway position)\n'
-            '(W*: keyway wiidth)\n'
+            '(W*: keyway width)\n'
             '\n'
         )
 
