@@ -227,7 +227,7 @@
   \kappa_w
   \right)
 \end{align*}
-したがって、測定の際の傾斜の角度（\KeywayDepthMeasurementAngle）$\zeta$ ($> 0$)は
+したがって、測定の際の傾斜の角度（\KeywayDepthMeasurementAngle）$\zeta$ ($> 0$)は、
 %% label{eq:angleZeta}
 \begin{align}
   \label{eq:angleZeta}
@@ -361,6 +361,38 @@ $\kappa_d$および$\kappa_s$の差は
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 36.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\CsideKeywayDepth}
+\CsideKeywayDepth を測定する際は、ボトム側に測定器（\index{デプスゲージ}デプスゲージ）を当てて測定を行うのが主である。
+
+測定の際の傾斜の角度（\KeywayDepthMeasurementAngle）$\zeta_\textrm C$ ($> 0$)は、
+%% label{eq:angleZetaC}
+\begin{align}
+%  \label{eq:angleZetaC}
+  -\tan\zeta_\textrm C
+  = \frac{\sqrt{R_\mathrm i^2-\left(f_\mathrm T-\kappa_p-\kappa_w\right)^2}
+          -\sqrt{R_\mathrm i^2-\left(f_\mathrm T-\kappa_p\right)^2}}
+         {\kappa_w}\ .
+\end{align}
+トップ側およびボトム側の\CsideKeywayDepth をそれぞれ$\kappa_{l\textrm C}$, $\kappa_{s\textrm C}$とすると、
+\begin{align*}
+  \kappa_{l\textrm C}-\kappa_{s\textrm C} = -\kappa_w\tan\zeta_\textrm C \quad, \qquad
+  \kappa_{d\textrm C}' = \frac{\kappa_{s\textrm C}\cos\zeta_\textrm C+\kappa_{l\textrm C}\sec\zeta_C}2\ .
+\end{align*}
+ここで$\kappa_{d\textrm C}'$は$\kappa_d'$と同様に平均値を示す。
+これより、
+\begin{align*}
+  \kappa_{s\textrm C}
+  = \frac{2\kappa_{d\textrm C}'\cos\zeta_\textrm C-\kappa_w\tan\zeta_\textrm C}{1+\cos^2\zeta_\textrm C}
+  = \kappa_{d\textrm C}'-\frac{\kappa_w}2\frac{f_\textrm T-\bar\kappa_w}{R_i}
+    +o\left(R_i^{-2}\right)\ .
+\end{align*}
 
 
 
