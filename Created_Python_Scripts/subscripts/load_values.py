@@ -261,7 +261,7 @@ if KeywayTypeFlag == 4:
 if KeywayTypeFlag == 5:
     keywayCornerRDim = WS['C57'].value
     keywayCornerR    = f"{keywayCornerRDim:.2f}"
-    keywayCornerCDim = WS['C54'].value
+    keywayCornerCDim = WS['C58'].value
     keywayCornerC    = f"{keywayCornerCDim:.2f}"
 
 # トップ外削
@@ -326,7 +326,7 @@ if BotOutcutExistsFlag == 1:
     botOutcutLength    = f"{botOutcutLengthAve:.3f}"
     botOutcutCornerRDim = WS['C30'].value
     botOutcutCornerR    = f"{botOutcutCornerRDim:.2f}"
-    if TopOutcutExistsFlag == 0 or (TopOutcutExistsFlag == 1 and OutcutCenterlineBasementFlag == 1):
+    if (TopOutcutExistsFlag == 0 or TopOutcutExistsFlag == 1 and OutcutCenterlineBasementFlag == 1) and BotCurvedOutcutExistsFlag == 0:
         botOutcutAsideThicknessDim            = WS['C26'].value
         botOutcutAsideThicknessPlusTolerance  = WS['D26'].value
         botOutcutAsideThicknessMinusTolerance = WS['E26'].value
@@ -340,6 +340,21 @@ if BotOutcutExistsFlag == 1 and TopOutcutExistsFlag == 1:
     centerlineACDifMinusTolerance = WS['E44'].value
     centerlineACDifAve = centerlineACDifDim + (centerlineACDifPlusTolerance + centerlineACDifMinusTolerance) / 2
     centerlineACDif    = f"{centerlineACDifAve:.3f}"
+
+# 端面座ぐり
+EndfaceBoringExists = f"{EndfaceBoringExistsFlag:.1f}"
+if EndfaceBoringExistsFlag == 1:
+    EnfaceBoringDistanceFromADim = WS['C99'].value
+    EnfaceBoringDistanceFromA = f"{EnfaceBoringDistanceFromADim:.3f}"
+    EnfaceBoringWidthDim = WS['C100'].value
+    EnfaceBoringWidth = f"{EnfaceBoringWidthDim:.3f}"
+    EnfaceBoringDepthDim = WS['C101'].value
+    EnfaceBoringDepth = f"{EnfaceBoringDepthDim:.3f}"
+    EnfaceBoringLengthDim = WS['C103'].value
+    EnfaceBoringLength = f"{EnfaceBoringLengthDim:.3f}"
+    EnfaceBoringCornerRDim = WS['C102'].value
+    EnfaceBoringCornerR = f"{EnfaceBoringCornerRDim:.3f}"
+
 
 # 内削座ぐり
 IncutExists = f"{IncutBoringExistsFlag:.1f}"

@@ -21,20 +21,23 @@ workCoordinateKeyway = f"G{workCoordinateKeywayNum:.0f}"
 
 # シーケンス番号用のカウンタ
 SN_base               = count(1)
-SN_origin_setting     = count(100)
-SN_dimple_measurement = count(200)
-SN_dimple_milling     = count(300)
-SN_top_endface        = count(400)
-SN_top_outcut         = count(410)
-SN_keyway             = count(420)
-SN_top_out_chamfer    = count(430)
-SN_top_in_chamfer     = count(440)
-SN_bot_endface        = count(500)
-SN_bot_outcut         = count(510)
-SN_bot_out_chamfer    = count(530)
-SN_bot_in_chamfer     = count(540)
-SN_centerline         = count(650)
-SN_alarmPallete       = count(821)
+SN_origin_setting     = count(1000)
+SN_dimple_measurement = count(2000)
+SN_dimple_milling     = count(3000)
+SN_top_endface        = count(4000)
+if TopOutcutExistsFlag == 1 and EndfaceBoringExistsFlag == 0:
+    SN_top_outcut     = count(4100)
+elif TopOutcutExistsFlag == 0 and EndfaceBoringExistsFlag == 1:
+    SN_Endface_Boring = count(4100)
+SN_keyway             = count(4200)
+SN_top_out_chamfer    = count(4300)
+SN_top_in_chamfer     = count(4400)
+SN_bot_endface        = count(5000)
+SN_bot_outcut         = count(5100)
+SN_bot_out_chamfer    = count(5300)
+SN_bot_in_chamfer     = count(5400)
+SN_centerline         = count(6500)
+SN_alarmPallete       = count(8021)
 SN_base_end           = count(9990)
 SN_prg_end            = count(9999)
 
@@ -118,7 +121,7 @@ keywayAsideDepthCorrection = keywayWidthAve ** 2 / (8 * AsideOutCurvature)
 # ボトム端 外径中心X
 BotOutCenterXVal = TableCenterXFromCurvatureCenterX * CosParallelAngle - botODCenterXFromCurvatureCenterX
 # ボトム 外削中心X
-if BotOutcutExistsFlag == 1 and (TopOutcutExistsFlag == 0 or TopOutcutExistsFlag == 1 and OutcutCenterlineBasementFlag == 1):
+if (BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 0) and (TopOutcutExistsFlag == 0 or TopOutcutExistsFlag == 1 and OutcutCenterlineBasementFlag == 1):
     BotOutcutCenterXVal = BotOutCenterXVal - (botInChamferXFromCurvatureCenterX - botCurvatureCenterX) - botACIDAve / 2 - mekkiThicknessDim - botOutcutAsideThicknessAve + botOutcutACODAve / 2
 # ボトム端 湾曲中心X
 BotInCenterXVal = TableCenterXFromCurvatureCenterX * CosParallelAngle - botCurvatureCenterX
@@ -130,10 +133,10 @@ if TopOutcutExistsFlag == 1 and (BotOutcutExistsFlag == 0 or BotOutcutExistsFlag
 # トップ端 湾曲中心X
 TopInCenterXVal = topCurvatureCenterX - TableCenterXFromCurvatureCenterX * CosParallelAngle
 
-if BotOutcutExistsFlag == 0 and TopOutcutExistsFlag == 0:
+if (BotOutcutExistsFlag == 0 or BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 1) and TopOutcutExistsFlag == 0:
     originBotOut = f"{BotOutCenterXVal:.3f}"
     originTopOut = f"{TopOutCenterXVal:.3f}"
-elif BotOutcutExistsFlag == 1 and TopOutcutExistsFlag == 0:
+elif (BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 0) and TopOutcutExistsFlag == 0:
     originBotOut = f"{BotOutcutCenterXVal:.3f}"
     originTopOut = f"{TopOutCenterXVal:.3f}"
 elif BotOutcutExistsFlag == 0 and TopOutcutExistsFlag == 1:

@@ -22,7 +22,10 @@ SN_origin_measurement = next(SN_origin_setting)
 SN_dimple_Me          = next(SN_dimple_measurement)
 SN_dimple_Mi          = next(SN_dimple_milling)
 SN_top_EF             = next(SN_top_endface)
-SN_top_OC             = next(SN_top_outcut)
+if TopOutcutExistsFlag == 1 and EndfaceBoringExistsFlag == 0:
+    SN_top_OC             = next(SN_top_outcut)
+elif TopOutcutExistsFlag == 0 and EndfaceBoringExistsFlag == 1:
+    SN_EBoring            = next(SN_Endface_Boring)
 SN_KW                 = next(SN_keyway)
 SN_top_OCh            = next(SN_top_out_chamfer)
 SN_top_ICh            = next(SN_top_in_chamfer)
@@ -155,9 +158,9 @@ with open('./O' + MainPrgID, 'w') as f:
         'G90 G10 L2 P4 X[' + originTopIn + '+#901005] Y[['+ BDOD + '/2]+#901006] Z#901007 B#901008\n'
         'G90 G10 L2 P5 X[' + originKeyway + '+#901005] Y[['+ BDOD + '/2]+#901006] Z#901007 B#901008\n'
     )
-    if BotOutcutExistsFlag == 0:
+    if BotOutcutExistsFlag == 0 or (BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 1):
         f.write('(' + workCoordinateBotOut + ' Bot Outside Center)\n')
-    elif BotOutcutExistsFlag == 1:
+    elif BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 0:
         f.write('(' + workCoordinateBotOut + ' Bot Outcut Center)\n')
     f.write('(' + workCoordinateBotIn + ' Bot Inside Center)\n')
     if TopOutcutExistsFlag == 0:
@@ -235,7 +238,7 @@ with open('./O' + MainPrgID, 'w') as f:
     )
 
     # 原点設定 ボトム外側 X 測定
-    if BotOutcutExistsFlag == 0:
+    if BotOutcutExistsFlag == 0 or (BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 1):
         f.write(
             '' + workCoordinateBotOut + ' G65 P' + prgOutsideCenterX + ' X' + ACOD + ' Z' + botReAlocationLength + ' W' + botAlocationLength + ' R' + centralCurvature + '\n'
             '(' + workCoordinateBotOut + ': Bot X Outside center)\n'
@@ -245,7 +248,7 @@ with open('./O' + MainPrgID, 'w') as f:
             '(R: central curvature)\n'
             '\n'
         )
-    elif BotOutcutExistsFlag == 1 and (TopOutcutExistsFlag == 0 or TopOutcutExistsFlag == 1 and OutcutCenterlineBasementFlag == 1):
+    elif (BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 0) and (TopOutcutExistsFlag == 0 or TopOutcutExistsFlag == 1 and OutcutCenterlineBasementFlag == 1):
         f.write(
             '' + workCoordinateBotOut + ' G65 P' + prgOutcutCenterX + ' X' + botOutcutACOD + ' I' + botACID + ' Z' + botReAlocationLength + ' W' + botAlocationLength + ' T' + botOutcutAsideThickness + ' C' + botInChamferLength + ' R' + centralCurvature + ' M' + mekkiThickness + '\n'
             '(' + workCoordinateBotOut + ': Bot X Outcut center)\n'
@@ -881,6 +884,80 @@ with open('./O' + MainPrgID, 'w') as f:
             '\n'
         )
 
+    if EndfaceBoringExistsFlag == 1:
+        # 端面座ぐり 加工
+        f.write(
+            '\n'
+            f"N{SN_EBoring:04d}\n"
+            '(*** Zaguri start ***)\n'
+            '\n'
+            '\n'
+        )
+
+        f.write(
+            'G49 G40 (cancel correction)\n'
+            'G90 G53 G01 Z0 F#650\n'
+            f"T{toolIDSquareendmill:02d}" + ' (endface boring)\n'
+            'M06 (tool exchange)\n'
+            'G43 H#4120 (tool length correction: T#)\n'
+            '\n'
+        )
+
+        SN_EBoring = next(SN_Endface_Boring)
+        SN_endface_boring_setting = SN_EBoring + 1
+        f.write(
+            f"N{SN_EBoring:04d}\n"
+            '' + workCoordinateTopOut + '\n'
+            'IF[#5004EQ[' + topSideParallelAngle + ']]' + f"GOTO{SN_endface_boring_setting:04d}\n"
+            'M11 (B-axis unclamp)\n'
+            'G90 ' + workCoordinateTopOut + ' G00 B' + topSideParallelAngle + '\n'
+            'M10 (B-axis clamp)\n'
+            '(' + workCoordinateTopOut + ' B parallel angle ' + topSideParallelAngle + ')\n'
+            '\n'
+        )
+
+        SN_EBoring = next(SN_Endface_Boring)
+        f.write(
+            f"N{SN_EBoring:04d}\n"
+            'M28 (chip conveyor on)\n'
+            '' + workCoordinateTopOut + ' G65 P' + prgEndFaceBoring + ' I' + EnfaceBoringDistanceFromA + ' U' + EnfaceBoringWidth + ' V' + EnfaceBoringDepth + ' W' + EnfaceBoringLength + ' R' + EnfaceBoringCornerR + ' Z' + topReAlocationLength + '\n'
+            '(O' + prgEndFaceBoring + ': Endface Boring, r left)\n'
+            '(I: distance from A-face)\n'
+            '(U: endface boring width)\n'
+            '(V: endface boring depth)\n'
+            '(W: endface boring length)\n'
+            '(R: endface boring corner R)\n'
+            '(Z: Top re_alocation)\n'
+            '\n'
+        )
+
+        SN_endface_boring_pause = SN_EBoring + 1
+        SN_endface_boring_pause_check = SN_endface_boring_pause + 1
+        SN_endface_boring_end = SN_endface_boring_pause_check + 1
+        f.write(
+            '(pause and check)\n'
+            'IF[#482EQ0]' + f"GOTO{SN_endface_boring_pause:04d}\n"
+            'IF[#482EQ2]' + f"GOTO{SN_endface_boring_pause_check:04d}\n"
+            f"GOTO{SN_endface_boring_end:04d}\n"
+            '\n'
+        )
+
+        SN_EBoring = next(SN_Endface_Boring)
+        f.write(
+            f"N{SN_EBoring:04d}\n"
+            'M00 (if #482=0)\n'
+            f"GOTO{SN_endface_boring_end:04d}\n"
+            '\n'
+        )
+
+        SN_EBoring = next(SN_Endface_Boring)
+        f.write(
+            f"N{SN_EBoring:04d}\n"
+            'G65 P' + prgPauseCheck + ' (if #482=2)\n'
+            f"N{SN_endface_boring_end:04d} (Endface Boring end)\n"
+            '\n'
+        )
+
     # キー溝 加工
     f.write(
         '\n'
@@ -1258,23 +1335,45 @@ with open('./O' + MainPrgID, 'w') as f:
         )
 
         SN_bot_OC = next(SN_bot_outcut)
-        f.write(
-            f"N{SN_bot_OC:04d}\n"
-            'M28 (chip conveyor on)\n'
-            '' + workCoordinateBotOut + ' G65 P' + prgOutcut + ' X' + botOutcutACOD + ' Y' + botOutcutBDOD + ' U' + ACOD + ' V' + BDOD + ' Z' + botReAlocationLength + ' R' + botOutcutCornerR + ' K' + botOutcutLength + ' M#0 W#0\n'
-            '(O' + prgOutcut + ': Outside Corner R, ar left)\n'
-            '(default: M=#0, W=#0)\n'
-            '(X: Bot outcut AC OD)\n'
-            '(Y: Bot outcut BD OD)\n'
-            '(U: AC OD)\n'
-            '(V: BD OD)\n'
-            '(Z: Bot re_alocation)\n'
-            '(R: Bot outcut corner R)\n'
-            '(K: Bot outcut length)\n'
-            '(M*: keyway position)\n'
-            '(W*: keyway wiidth)\n'
-            '\n'
-        )
+        if BotCurvedOutcutExistsFlag == 0:
+            f.write(
+                f"N{SN_bot_OC:04d}\n"
+                'M28 (chip conveyor on)\n'
+                '' + workCoordinateBotOut + ' G65 P' + prgOutcut + ' X' + botOutcutACOD + ' Y' + botOutcutBDOD + ' U' + ACOD + ' V' + BDOD + ' Z' + botReAlocationLength + ' R' + botOutcutCornerR + ' K' + botOutcutLength + ' M#0 W#0\n'
+                '(O' + prgOutcut + ': Outside Corner R, ar left)\n'
+                '(default: M=#0, W=#0)\n'
+                '(X: Bot outcut AC OD)\n'
+                '(Y: Bot outcut BD OD)\n'
+                '(U: AC OD)\n'
+                '(V: BD OD)\n'
+                '(Z: Bot re_alocation)\n'
+                '(R: Bot outcut corner R)\n'
+                '(K: Bot outcut length)\n'
+                '(M*: keyway position)\n'
+                '(W*: keyway wiidth)\n'
+                '\n'
+            )
+
+        if BotCurvedOutcutExistsFlag == 1:
+            f.write(
+                f"N{SN_bot_OC:04d}\n"
+                'M28 (chip conveyor on)\n'
+                '' + workCoordinateBotOut + ' G65 P' + prgCurvedOutcut + ' X' + botOutcutACOD + ' Y' + botOutcutBDOD + ' U' + ACOD + ' V' + BDOD + ' Z' + botReAlocationLength + ' Q' + centralCurvature + ' C#0 R' + botOutcutCornerR + ' K' + botOutcutLength + ' M#0 W#0\n'
+                '(O' + prgOutcut + ': Outside Corner R, ar left)\n'
+                '(default: M=#0, W=#0)\n'
+                '(X: Bot outcut AC OD)\n'
+                '(Y: Bot outcut BD OD)\n'
+                '(U: AC OD)\n'
+                '(V: BD OD)\n'
+                '(Z: Bot re_alocation)\n'
+                '(Q: central curvature)\n'
+                '(C: Bot outcut corner C)\n'
+                '(R: Bot outcut corner R)\n'
+                '(K: Bot outcut length)\n'
+                '(M*: keyway position)\n'
+                '(W*: keyway wiidth)\n'
+                '\n'
+            )
 
         SN_bot_OC_pause = SN_bot_OC + 1
         SN_bot_OC_pause_check = SN_bot_OC_pause + 1
@@ -1335,22 +1434,38 @@ with open('./O' + MainPrgID, 'w') as f:
     )
 
     SN_bot_OCh = next(SN_bot_out_chamfer)
-    f.write(
-        f"N{SN_bot_OCh:04d}\n"
-        'M28 (chip conveyor on)\n'
-        '' + workCoordinateBotOut + ' G65 P' + prgOutChamfer + ' A' + botOutcutExists + ' B' + botOutChamferType + ' X' + botOutcutACOD + ' Y' + botOutcutBDOD + ' Z' + botReAlocationLength + ' W' + botAlocationLength + ' Q' + centralCurvature + ' K' + botOutChamferLength + ' R' + botOutChamferCornerR + '\n'
-        '(O' + prgOutChamfer + ': Outside Chamfer Corner R, ar left)\n'
-        '(A: Bot outcut: 0:none, 1:exists)\n'
-        '(B: chamfer type: 0:C, 1:R)\n'
-        '(X*: Bot outcut AC OD)\n'
-        '(Y*: Bot outcut BD OD)\n'
-        '(Z: Bot re_alocation)\n'
-        '(W: Bot alocation)\n'
-        '(Q: central curvature)\n'
-        '(K: Bot outside chamfer C or R length)\n'
-        '(R: Bot outside corner R)\n'
-        '\n'
-    )
+    if BotCurvedOutcutExistsFlag == 0:
+        f.write(
+            f"N{SN_bot_OCh:04d}\n"
+            'M28 (chip conveyor on)\n'
+            '' + workCoordinateBotOut + ' G65 P' + prgOutChamfer + ' A' + botOutcutExists + ' B' + botOutChamferType + ' X' + botOutcutACOD + ' Y' + botOutcutBDOD + ' Z' + botReAlocationLength + ' W' + botAlocationLength + ' Q' + centralCurvature + ' K' + botOutChamferLength + ' R' + botOutChamferCornerR + '\n'
+            '(O' + prgOutChamfer + ': Outside Chamfer Corner R, ar left)\n'
+            '(A: Bot outcut: 0:none, 1:exists)\n'
+            '(B: chamfer type: 0:C, 1:R)\n'
+            '(X*: Bot outcut AC OD)\n'
+            '(Y*: Bot outcut BD OD)\n'
+            '(Z: Bot re_alocation)\n'
+            '(W: Bot alocation)\n'
+            '(Q: central curvature)\n'
+            '(K: Bot outside chamfer C or R length)\n'
+            '(R: Bot outside corner R)\n'
+            '\n'
+        )
+
+    if BotCurvedOutcutExistsFlag == 1:
+        f.write(
+            f"N{SN_bot_OCh:04d}\n"
+            'M28 (chip conveyor on)\n'
+            '' + workCoordinateBotOut + ' G65 P' + prgCurvedOutChamfer + ' B' + botOutChamferType + ' X' + botOutcutACOD + ' Y' + botOutcutBDOD + ' Z' + botReAlocationLength+ ' K' + botOutChamferLength + ' R' + botOutChamferCornerR + '\n'
+            '(O' + prgCurvedOutChamfer + ': Outside Chamfer Corner R, ar left)\n'
+            '(B: chamfer type: 0:C, 1:R)\n'
+            '(X: Bot outcut AC OD)\n'
+            '(Y: Bot outcut BD OD)\n'
+            '(Z: Bot re_alocation)\n'
+            '(K: Bot outside chamfer C or R length)\n'
+            '(R: Bot outside corner R)\n'
+            '\n'
+        )
 
     SN_bot_OCh_pause = SN_bot_OCh + 1
     SN_bot_OCh_pause_check = SN_bot_OCh_pause + 1
