@@ -297,7 +297,7 @@ if TopOutcutExistsFlag == 1:
         if topOutcutAsideThicknessMinusTolerance == 0 and topOutcutAsideThicknessPlusTolerance == 0:
             col_item.append([
                 topOutcutAsideThicknessName,
-                f'{topOutcutAsideThicknessAve:.2f}',
+                f'{topOutcutAsideThicknessAve - mekkiThicknessDim:.2f}',
                 '-',
                 '',
                 '',
@@ -306,8 +306,8 @@ if TopOutcutExistsFlag == 1:
         else:
             col_item.append([
                 topOutcutAsideThicknessName,
-                f'{topOutcutAsideThicknessAve:.2f}',
-                f'{topOutcutAsideThicknessDim + topOutcutAsideThicknessMinusTolerance:.2f} - ' + f'{topOutcutAsideThicknessDim + topOutcutAsideThicknessPlusTolerance:.2f}',
+                f'{topOutcutAsideThicknessAve - mekkiThicknessDim:.2f}',
+                f'{topOutcutAsideThicknessDim - mekkiThicknessDim + topOutcutAsideThicknessMinusTolerance:.2f} - ' + f'{topOutcutAsideThicknessDim - mekkiThicknessDim + topOutcutAsideThicknessPlusTolerance:.2f}',
                 '',
                 '',
                 JudgementItem
@@ -371,7 +371,7 @@ if BotOutcutExistsFlag == 1:
         if botOutcutAsideThicknessMinusTolerance == 0 and botOutcutAsideThicknessPlusTolerance == 0:
             col_item.append([
                 bottomOutcutAsideThicknessName,
-                f'{botOutcutAsideThicknessAve:.2f}',
+                f'{botOutcutAsideThicknessAve - mekkiThicknessDim:.2f}',
                 '-',
                 '',
                 '',
@@ -381,7 +381,7 @@ if BotOutcutExistsFlag == 1:
             col_item.append([
                 bottomOutcutAsideThicknessName,
                 f'{botOutcutAsideThicknessAve:.2f}',
-                f'{botOutcutAsideThicknessDim + botOutcutAsideThicknessMinusTolerance:.2f} - ' + f'{botOutcutAsideThicknessDim + botOutcutAsideThicknessPlusTolerance:.2f}',
+                f'{botOutcutAsideThicknessDim - mekkiThicknessDim + botOutcutAsideThicknessMinusTolerance:.2f} - ' + f'{botOutcutAsideThicknessDim - mekkiThicknessDim + botOutcutAsideThicknessPlusTolerance:.2f}',
                 '',
                 '',
                 JudgementItem
