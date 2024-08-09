@@ -1434,7 +1434,7 @@ with open('./O' + MainPrgID, 'w') as f:
     )
 
     SN_bot_OCh = next(SN_bot_out_chamfer)
-    if BotCurvedOutcutExistsFlag == 0:
+    if BotCurvedOutcutExistsFlag != 1:
         f.write(
             f"N{SN_bot_OCh:04d}\n"
             'M28 (chip conveyor on)\n'
@@ -1451,8 +1451,7 @@ with open('./O' + MainPrgID, 'w') as f:
             '(R: Bot outside corner R)\n'
             '\n'
         )
-
-    if BotCurvedOutcutExistsFlag == 1:
+    else:
         f.write(
             f"N{SN_bot_OCh:04d}\n"
             'M28 (chip conveyor on)\n'
