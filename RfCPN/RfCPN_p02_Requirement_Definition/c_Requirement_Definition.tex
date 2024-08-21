@@ -2,7 +2,7 @@
 
 
 \modHeadchapter{目的・目標の明確化}
-新たに導入するマシニングセンタで何を達成したいのか、その目的すらも明確にされていないのが現状である
+新たに導入するマシニングセンタで何を達成したいのか、その目的さえも明確にされていないのが現状である
 %% footnote %%%%%%%%%%%%%%%%%%%%%
 \footnote{\MMC を蔑ろに扱っている現状にもかかわらず、そもそもどのような論理で導入にまで至ったのか、常識的に考えて不思議でならない。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -48,76 +48,98 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 04.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{諸作業の目標\TBW}
+\modHeadsection{諸作業の目標}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 04.01.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 04.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{測定（原点設定・\CenterlineEndFaceDif）における目標\TBW}
+\subsection{\index{ワークのせっち@ワークの設置}ワークの設置における目標}
 \begin{enumerate}
-\item ワーク座標原点概算値の解析的導出
-\item 測定箇所変更時の数値変更の自動化
-\item \AsideKeywayDepth 公差指定時のAC方向\KeywayCenterMeasurement
-\item BD方向\KeywayCenterMeasurement
-\item \CenterlineEndFaceDifMeasurement の自動化
+\item \Spacer による振分調整作業の廃止
+\item ワーク\FixtureBolt の規格化
 \end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 04.01.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 04.03.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\DimpleMeasurement における目標\TBW}
+\subsection{測定（原点設定・\CenterlineEndFaceDif）における目標}
 \begin{enumerate}
-\item \DimpleMeasurement の高速化（1時間以内）
+\item \index{ワークざひょうげんてん@ワーク座標原点}ワーク座標原点概算値導出作業の廃止（解析的導出）
+\item 測定箇所変更時の数値変更作業の自動化
+\item AC方向\KeywayCenter 座標計算作業の廃止・自動化
+\item \CenterlineEndFaceDifMeasurement 作業の廃止・自動化
 \end{enumerate}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 04.03.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DimpleMeasurement における目標}
+\begin{enumerate}
+\item 短時間による\DimpleMeasurement（概ね6s/個 程度）
+\end{enumerate}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 04.01.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 04.03.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\DimpleMilling における目標\TBW}
 (to be written...)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 04.01.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 04.03.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\EndFacecutMilling における目標\TBW}
-(to be written...)
+\subsection{\EndFacecutMilling における目標}
+\begin{enumerate}
+\item 加工回数変更作業の簡易化（半自動化）
+\item \TDCValue 変更作業の廃止
+\end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 04.01.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 04.03.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\OutcutMilling における目標\TBW}
-(to be written...)
+\subsection{\OutcutMilling における目標}
+\begin{enumerate}
+\item \CurvedOutcut 用測定作業の廃止
+\item \CurvedOutcutMilling の自動化
+\end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 04.01.07 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 04.03.07 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KeywayMilling における目標\TBW}
-(to be written...)
+\subsection{\KeywayMilling における目標}
+\begin{enumerate}
+\item \KeywayPos・\KeywayWidth 調整作業の簡易化
+\item $Z$方向加工回数変更作業の廃止・自動化
+\end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 04.01.08 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 04.03.08 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\EndFaceChamferMilling における目標\TBW}
-(to be written...)
+\subsection{\EndFaceChamferMilling における目標}
+\begin{enumerate}
+\item 手作業による\EndFaceCChamferMilling の廃止・自動化
+\item 手作業による\EndFaceRChamferMilling の簡易化・半自動化
+\end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 04.01.09 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 04.03.09 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\EndFaceBoringMilling における目標\TBW}
-(to be written...)
+\subsection{\EndFaceBoringMilling における目標}
+\begin{enumerate}
+\item \EndFaceBoringWidth の計算間違いの訂正
+\end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 04.01.10 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 04.03.10 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\IncutBoringMilling における目標\TBW}
 (to be written...)
