@@ -121,6 +121,7 @@ IncutBoringExistsFlag              = WS['C105'].value
 # 図面番号
 DrawingIDNum = WS['C2'].value
 MainPrgID    = f"{DrawingIDNum:04d}"
+CustomerName = WS['C3'].value
 
 # 日付
 now = datetime.now()
