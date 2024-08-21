@@ -56,7 +56,7 @@ table_col_height      = 25.0
 table_head_col_height = 22.0
 
 # footer text
-footer_text = "表印刷：" + date_string
+footer_text = MainPrgID + '：' + CustomerName
 
 # table head
 row_item = [
@@ -717,7 +717,7 @@ checkWS.page_margins.header = 0.0
 checkWS.page_margins.footer = 0.0
 
 # フッターのテキスト
-# checkWS.oddFooter.right.text = footer_text
+checkWS.oddFooter.right.text = footer_text
 
 # 印刷時に水平方向を中央に設定
 checkWS.print_options.horizontalCentered = True
