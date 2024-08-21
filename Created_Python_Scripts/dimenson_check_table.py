@@ -50,7 +50,7 @@ font_size_measurer   = 14.0
 font_size_table_head = 14.0
 font_size_item       = 14.0
 
-preamble_col_height   = 27.0
+preamble_col_height   = 26.5
 last_row_col_height   = 34.0
 table_col_height      = 25.0
 table_head_col_height = 22.0
@@ -68,7 +68,7 @@ row_item = [
     "判定",
 ]
 
-TitleName     = "横型マシニングセンタ 加工後 寸法・外観 確認表"
+TitleName     = "横型MC 加工後 寸法・外観 確認表"
 yymmddName    = "20       年       月       日"
 DrawingIDName = "図面番号"
 MeasurerName  = "測定者"
@@ -711,8 +711,8 @@ checkWS.page_setup.fitToWidth = 1
 # 余白（インチ）
 checkWS.page_margins.left = 0.75
 checkWS.page_margins.right = 0.1
-checkWS.page_margins.top = 0.15
-checkWS.page_margins.bottom = 0.1
+checkWS.page_margins.top = 0.0
+checkWS.page_margins.bottom = 0.3
 checkWS.page_margins.header = 0.0
 checkWS.page_margins.footer = 0.0
 
