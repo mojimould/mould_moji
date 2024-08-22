@@ -44,13 +44,13 @@ checkWS.page_setup.horizontalCentered = True
 file_name = MainPrgID + '.xlsx'
 font_name = 'Meiryo UI'
 font_size_title      = 17.0
-font_size_yymmdd     = 13.0
-font_size_drawingID  = 17.0
+font_size_yymmdd     = 12.0
+font_size_drawingID  = 16.5
 font_size_measurer   = 14.0
 font_size_table_head = 14.0
 font_size_item       = 14.0
 
-preamble_col_height   = 26.5
+preamble_col_height   = 26.0
 last_row_col_height   = 34.0
 table_col_height      = 25.0
 table_head_col_height = 22.0
@@ -639,6 +639,46 @@ sheet = wb_xlw.sheets[-1]
 for col in ['A', 'B', 'C', 'D', 'E', 'F']:
     sheet.range(f'{col}1:{col}1048576').api.EntireColumn.AutoFit()
 
+# セルの結合
+sheet.range('B3:C3').merge()
+
+# セル幅を取得
+mergeCellWidth = sum([sheet.range(col + '3').column_width for col in ['B', 'C']])
+
+# 結合したセルにテキストを入力
+mergeCell = sheet['B3']
+mergeCell.value = CustomerName
+mergeCell.api.Font.Size = font_size_drawingID
+
+# 縮小して全体を表示する設定
+mergeCell.api.ShrinkToFit = True
+
+# フォントサイズの取得
+mergeCellFontSize = mergeCell.api.Font.Size
+while True:
+    tempCell = sheet['H3']
+    tempCell.value = CustomerName
+    tempCell.api.Font.Size = mergeCellFontSize
+    sheet.range('H:H').api.EntireColumn.AutoFit()
+    tempWidth = sheet.range('H3').column_width
+    if tempWidth <= mergeCellWidth:
+        break
+    mergeCellFontSize -= 0.5
+    mergeCell.api.Font.Size = mergeCellFontSize
+sheet.range('H:H').delete()
+mergeCell.value = ""
+
+# 縮小して全体を表示する設定の解除
+mergeCell.api.ShrinkToFit = False
+
+# セルの結合を解除
+sheet.range('B3:C3').unmerge()
+
+# テキストを再度入力（結合解除後のセルに）
+mergeCell.value = CustomerName
+mergeCell.api.Font.Size = mergeCellFontSize
+mergeCell.api.HorizontalAlignment = xw.constants.HAlign.xlHAlignLeft
+
 wb_xlw.save()
 wb_xlw.close()
 
@@ -717,7 +757,7 @@ checkWS.page_margins.header = 0.0
 checkWS.page_margins.footer = 0.0
 
 # フッターのテキスト
-checkWS.oddFooter.right.text = footer_text
+# checkWS.oddFooter.right.text = footer_text
 
 # 印刷時に水平方向を中央に設定
 checkWS.print_options.horizontalCentered = True
