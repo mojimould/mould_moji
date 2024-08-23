@@ -643,7 +643,7 @@ for col in ['A', 'B', 'C', 'D', 'E', 'F']:
 sheet.range('B3:C3').merge()
 
 # セル幅を取得
-mergeCellWidth = sum([sheet.range(col + '3').column_width for col in ['B', 'C']])
+mergeCellWidth = sum([sheet.range(col + '3').column_width for col in ['B', 'C']]) + 1
 
 # 結合したセルにテキストを入力
 mergeCell = sheet['B3']
