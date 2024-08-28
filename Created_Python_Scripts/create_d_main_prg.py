@@ -504,211 +504,212 @@ with open('./O' + MainPrgID, 'w') as f:
         '\n'
     )
 
-    # ディンプル 測定
-    f.write(
-        '\n'
-        f"N{SN_dimple_Me:04d}\n"
-        '(*** Dimple Measurement Start ***)\n'
-        '\n'
-        '\n'
-    )
+    if DimpleExistsFlag == 1:
+        # ディンプル 測定
+        f.write(
+            '\n'
+            f"N{SN_dimple_Me:04d}\n"
+            '(*** Dimple Measurement Start ***)\n'
+            '\n'
+            '\n'
+        )
 
-    SN_dimple_Me_setup = SN_dimple_Me + 1
-    f.write(
-        'G90 G53 G01 Z0 F#650\n'
-        'IF[#4120EQ' + f"{toolIDTouchSensor:02d}" + ']' + f"GOTO{SN_dimple_Me_setup:04d}" + '\n'
-        f"T{toolIDTouchSensor:02d}" + ' (touch sensor)\n'
-        'M06 (tool exchange)\n'
-        '\n'
-    )
+        SN_dimple_Me_setup = SN_dimple_Me + 1
+        f.write(
+            'G90 G53 G01 Z0 F#650\n'
+            'IF[#4120EQ' + f"{toolIDTouchSensor:02d}" + ']' + f"GOTO{SN_dimple_Me_setup:04d}" + '\n'
+            f"T{toolIDTouchSensor:02d}" + ' (touch sensor)\n'
+            'M06 (tool exchange)\n'
+            '\n'
+        )
 
-    SN_dimple_Me = next(SN_dimple_measurement)
-    f.write(
-        f"N{SN_dimple_Me:04d}\n"
-        'G40 G80 (cancel correction)\n'
-        'S35 (low gear)\n'
-        'M19 (Spindle orientation)\n'
-        'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
-        '\n'
-    )
+        SN_dimple_Me = next(SN_dimple_measurement)
+        f.write(
+            f"N{SN_dimple_Me:04d}\n"
+            'G40 G80 (cancel correction)\n'
+            'S35 (low gear)\n'
+            'M19 (Spindle orientation)\n'
+            'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
+            '\n'
+        )
 
-    SN_dimple_Me = next(SN_dimple_measurement)
-    SN_dimple_Me_before_rotate = SN_dimple_Me + 1
-    f.write(
-        f"N{SN_dimple_Me:04d}\n"
-        '' + workCoordinateTopIn + '\n'
-        'IF[#5004EQ[' + topSideParallelAngle + ']]' + f"GOTO{SN_dimple_Me_before_rotate:04d}" + '\n'
-        'M11 (B-axis unclamp)\n'
-        'G90 ' + workCoordinateTopIn + ' G00 B' + topSideParallelAngle + '\n'
-        'M10 (B-axis clamp)\n'
-        '(' + workCoordinateTopIn + ' B parallel angle ' + topSideParallelAngle + ')\n'
-        '\n'
-    )
+        SN_dimple_Me = next(SN_dimple_measurement)
+        SN_dimple_Me_before_rotate = SN_dimple_Me + 1
+        f.write(
+            f"N{SN_dimple_Me:04d}\n"
+            '' + workCoordinateTopIn + '\n'
+            'IF[#5004EQ[' + topSideParallelAngle + ']]' + f"GOTO{SN_dimple_Me_before_rotate:04d}" + '\n'
+            'M11 (B-axis unclamp)\n'
+            'G90 ' + workCoordinateTopIn + ' G00 B' + topSideParallelAngle + '\n'
+            'M10 (B-axis clamp)\n'
+            '(' + workCoordinateTopIn + ' B parallel angle ' + topSideParallelAngle + ')\n'
+            '\n'
+        )
 
-    SN_dimple_Me = next(SN_dimple_measurement)
-    f.write(
-        f"N{SN_dimple_Me:04d}\n"
-        'G90 ' + workCoordinateTopIn + ' G01 X0 Y0 F#652\n'
-        'G90 ' + workCoordinateTopIn + ' G01 Z[' + topReAlocationLength + '+#600] F#652\n'
-        '(' + workCoordinateTopIn + 'XY Top Inside Center)\n'
-        '(Z= TopReAlocation +#600)\n'
-        '\n'
-    )
+        SN_dimple_Me = next(SN_dimple_measurement)
+        f.write(
+            f"N{SN_dimple_Me:04d}\n"
+            'G90 ' + workCoordinateTopIn + ' G01 X0 Y0 F#652\n'
+            'G90 ' + workCoordinateTopIn + ' G01 Z[' + topReAlocationLength + '+#600] F#652\n'
+            '(' + workCoordinateTopIn + 'XY Top Inside Center)\n'
+            '(Z= TopReAlocation +#600)\n'
+            '\n'
+        )
 
-    f.write(
-        '' + workCoordinateTopIn + ' G65 P' + prgDimpleOne + ' T' + mekkiThickness + ' Z' + topReAlocationLength + ' W' + topAlocationLength + ' F' + dimpleFirstRowLength + ' S' + dimpleSecondRowLength + ' Q' + dimpleFirstRowDistanceFromEndface + ' I' + dimpleHorizontalPitch + ' K' + dimpleVerticalPitch + ' M' + dimpleRowNum + ' U' + dimpleDepth + ' R' + centralCurvature + ' A' + topSideParallelAngle + ' B' + dimpleAngle + '\n'
-        '(dimple measurement)\n'
-        '(T: mekki thickness mm)\n'
-        '(Z: Top re_alocation)\n'
-        '(W: Top alocation)\n'
-        '(F: length of odd rows)\n'
-        '(S: length of even rows)\n'
-        '(Q: Z length between Top and the 1st row)\n'
-        '(I: dimple X pitch)\n'
-        '(K: dimple Z pitch)\n'
-        '(M: number of rows)\n'
-        '(U: dimple depth)\n'
-        '(R: central curvature)\n'
-        '(A: angle for re_alocation)\n'
-        '(B: angle for dimple)\n'
-        '\n'
-    )
+        f.write(
+            '' + workCoordinateTopIn + ' G65 P' + prgDimpleOne + ' T' + mekkiThickness + ' Z' + topReAlocationLength + ' W' + topAlocationLength + ' F' + dimpleFirstRowLength + ' S' + dimpleSecondRowLength + ' Q' + dimpleFirstRowDistanceFromEndface + ' I' + dimpleHorizontalPitch + ' K' + dimpleVerticalPitch + ' M' + dimpleRowNum + ' U' + dimpleDepth + ' R' + centralCurvature + ' A' + topSideParallelAngle + ' B' + dimpleAngle + '\n'
+            '(dimple measurement)\n'
+            '(T: mekki thickness mm)\n'
+            '(Z: Top re_alocation)\n'
+            '(W: Top alocation)\n'
+            '(F: length of odd rows)\n'
+            '(S: length of even rows)\n'
+            '(Q: Z length between Top and the 1st row)\n'
+            '(I: dimple X pitch)\n'
+            '(K: dimple Z pitch)\n'
+            '(M: number of rows)\n'
+            '(U: dimple depth)\n'
+            '(R: central curvature)\n'
+            '(A: angle for re_alocation)\n'
+            '(B: angle for dimple)\n'
+            '\n'
+        )
 
-    SN_D_sensor_off = SN_dimple_Me + 1
-    f.write(
-        'M117 (sensor on/off)\n'
-        'G04 X1.5 (wait 1.5s)\n'
-        'IF[#1004EQ0]' + f"GOTO{SN_D_sensor_off:04d}" + '\n'
-        'G65 P' + prgSensorOff + ' (sensor OFF)\n'
-        '\n'
-    )
+        SN_D_sensor_off = SN_dimple_Me + 1
+        f.write(
+            'M117 (sensor on/off)\n'
+            'G04 X1.5 (wait 1.5s)\n'
+            'IF[#1004EQ0]' + f"GOTO{SN_D_sensor_off:04d}" + '\n'
+            'G65 P' + prgSensorOff + ' (sensor OFF)\n'
+            '\n'
+        )
 
-    SN_dimple_Me = next(SN_dimple_measurement)
-    f.write(
-        f"N{SN_dimple_Me:04d}\n"
-        'G90 G53 G01 Z0 F#650\n'
-        '\n'
-    )
+        SN_dimple_Me = next(SN_dimple_measurement)
+        f.write(
+            f"N{SN_dimple_Me:04d}\n"
+            'G90 G53 G01 Z0 F#650\n'
+            '\n'
+        )
 
 
-    SN_dimple_Me = next(SN_dimple_measurement)
-    SN_dimple_end = SN_dimple_Me
-    f.write(
-        '(dimple mesurement end)\n'
-        'IF[#178EQ1]' + f"GOTO{SN_dimple_end:04d}\n"
-        'M00\n'
-        f"N{SN_dimple_end:04d}\n"
-        '\n'
-    )
+        SN_dimple_Me = next(SN_dimple_measurement)
+        SN_dimple_end = SN_dimple_Me
+        f.write(
+            '(dimple mesurement end)\n'
+            'IF[#178EQ1]' + f"GOTO{SN_dimple_end:04d}\n"
+            'M00\n'
+            f"N{SN_dimple_end:04d}\n"
+            '\n'
+        )
 
-    # ディンプル 加工
-    f.write(
-        '\n'
-        f"N{SN_dimple_Mi:04d}\n"
-        '(*** Dimple Kakou Start ***)\n'
-        '\n'
-        '\n'
-    )
+        # ディンプル 加工
+        f.write(
+            '\n'
+            f"N{SN_dimple_Mi:04d}\n"
+            '(*** Dimple Kakou Start ***)\n'
+            '\n'
+            '\n'
+        )
 
-    f.write(
-        'G49 G40 (cancel correction)\n'
-        'G90 G53 G01 Z0 F#650\n'
-        '\n'
-    )
+        f.write(
+            'G49 G40 (cancel correction)\n'
+            'G90 G53 G01 Z0 F#650\n'
+            '\n'
+        )
 
-    SN_D_tool_exchange = SN_dimple_Mi + 1
-    SN_D_tool_correction = SN_dimple_Mi + 2
-    f.write(
-        'IF[#4120EQ31]' + f"GOTO{SN_D_tool_correction:04d}\n"
-        'IF[#4120NE50]' + f"GOTO{SN_D_tool_exchange:04d}\n"
-        'G90 G53 G01 X-5.501 Y-258.624 F#652\n'
-        '\n'
-    )
+        SN_D_tool_exchange = SN_dimple_Mi + 1
+        SN_D_tool_correction = SN_dimple_Mi + 2
+        f.write(
+            'IF[#4120EQ31]' + f"GOTO{SN_D_tool_correction:04d}\n"
+            'IF[#4120NE50]' + f"GOTO{SN_D_tool_exchange:04d}\n"
+            'G90 G53 G01 X-5.501 Y-258.624 F#652\n'
+            '\n'
+        )
 
-    SN_dimple_Mi = next(SN_dimple_milling)
-    f.write(
-        f"N{SN_dimple_Mi:04d}\n"
-        f"T{toolIDTslot[dimpleSmallRadius]:02d}" + ' (Tslot R' + dimpleSmallRadius + ')\n'
-        'M06 (tool exchange)\n'
-        '\n'
-    )
+        SN_dimple_Mi = next(SN_dimple_milling)
+        f.write(
+            f"N{SN_dimple_Mi:04d}\n"
+            f"T{toolIDTslot[dimpleSmallRadius]:02d}" + ' (Tslot R' + dimpleSmallRadius + ')\n'
+            'M06 (tool exchange)\n'
+            '\n'
+        )
 
-    SN_dimple_Mi = next(SN_dimple_milling)
-    f.write(
-        f"N{SN_dimple_Mi:04d}\n"
-        'G43 H#4120 (tool length correction: T#)\n'
-        '\n'
-    )
+        SN_dimple_Mi = next(SN_dimple_milling)
+        f.write(
+            f"N{SN_dimple_Mi:04d}\n"
+            'G43 H#4120 (tool length correction: T#)\n'
+            '\n'
+        )
 
-    SN_dimple_Mi = next(SN_dimple_milling)
-    SN_D_approach = SN_dimple_Mi + 1
-    f.write(
-        f"N{SN_dimple_Mi:04d}\n"
-        'IF[#5004EQ[' + topSideParallelAngle + dimpleAngle + ']]' + f"GOTO{SN_D_approach:04d}\n"
-        'M11 (B-axis unclamp)\n'
-        'G90 ' + workCoordinateTopIn + ' G00 B' + topSideParallelAngle + '\n'
-        'M10 (B-axis clamp)\n'
-        '(' + workCoordinateTopIn + ' B parallel angle ' + topSideParallelAngle + ')\n'
-        '\n'
-    )
+        SN_dimple_Mi = next(SN_dimple_milling)
+        SN_D_approach = SN_dimple_Mi + 1
+        f.write(
+            f"N{SN_dimple_Mi:04d}\n"
+            'IF[#5004EQ[' + topSideParallelAngle + dimpleAngle + ']]' + f"GOTO{SN_D_approach:04d}\n"
+            'M11 (B-axis unclamp)\n'
+            'G90 ' + workCoordinateTopIn + ' G00 B' + topSideParallelAngle + '\n'
+            'M10 (B-axis clamp)\n'
+            '(' + workCoordinateTopIn + ' B parallel angle ' + topSideParallelAngle + ')\n'
+            '\n'
+        )
 
-    SN_dimple_Mi = next(SN_dimple_milling)
-    f.write(
-        f"N{SN_dimple_Mi:04d}\n"
-        'G90 ' + workCoordinateTopIn + ' G00 X0 Y0\n'
-        'G90 ' + workCoordinateTopIn + ' Z[' + topReAlocationLength + '+#600] F#650\n'
-        '(' + workCoordinateTopIn + 'XY Top Inside Center)\n'
-        '(Z= TopReAlocation +#600)\n'
-        '\n'
-    )
+        SN_dimple_Mi = next(SN_dimple_milling)
+        f.write(
+            f"N{SN_dimple_Mi:04d}\n"
+            'G90 ' + workCoordinateTopIn + ' G00 X0 Y0\n'
+            'G90 ' + workCoordinateTopIn + ' Z[' + topReAlocationLength + '+#600] F#650\n'
+            '(' + workCoordinateTopIn + 'XY Top Inside Center)\n'
+            '(Z= TopReAlocation +#600)\n'
+            '\n'
+        )
 
-    SN_dimple_Mi = next(SN_dimple_milling)
-    f.write(
-        f"N{SN_dimple_Mi:04d}\n"
-        '' + workCoordinateTopIn + ' G65 P' + prgDimpleOne + ' T' + mekkiThickness + ' Z' + topReAlocationLength + ' W' + topAlocationLength + ' F' + dimpleFirstRowLength + ' S' + dimpleSecondRowLength + ' Q' + dimpleFirstRowDistanceFromEndface + ' I' + dimpleHorizontalPitch + ' K' + dimpleVerticalPitch + ' M' + dimpleRowNum + ' U' + dimpleDepth + ' R' + centralCurvature + ' A' + topSideParallelAngle + ' B' + dimpleAngle + '\n'
-        '(dimple milling)\n'
-        '(T: mekki thickness mm)\n'
-        '(Z: Top re_alocation)\n'
-        '(W: Top alocation)\n'
-        '(F: length of odd rows)\n'
-        '(S: length of even rows)\n'
-        '(Q: Z length between Top and the 1st row)\n'
-        '(I: dimple X pitch)\n'
-        '(K: dimple Z pitch)\n'
-        '(M: number of rows)\n'
-        '(U: dimple depth)\n'
-        '(R: central curvature)\n'
-        '(A: angle for re_alocation)\n'
-        '(B: angle for dimple)\n'
-        '\n'
-    )
+        SN_dimple_Mi = next(SN_dimple_milling)
+        f.write(
+            f"N{SN_dimple_Mi:04d}\n"
+            '' + workCoordinateTopIn + ' G65 P' + prgDimpleOne + ' T' + mekkiThickness + ' Z' + topReAlocationLength + ' W' + topAlocationLength + ' F' + dimpleFirstRowLength + ' S' + dimpleSecondRowLength + ' Q' + dimpleFirstRowDistanceFromEndface + ' I' + dimpleHorizontalPitch + ' K' + dimpleVerticalPitch + ' M' + dimpleRowNum + ' U' + dimpleDepth + ' R' + centralCurvature + ' A' + topSideParallelAngle + ' B' + dimpleAngle + '\n'
+            '(dimple milling)\n'
+            '(T: mekki thickness mm)\n'
+            '(Z: Top re_alocation)\n'
+            '(W: Top alocation)\n'
+            '(F: length of odd rows)\n'
+            '(S: length of even rows)\n'
+            '(Q: Z length between Top and the 1st row)\n'
+            '(I: dimple X pitch)\n'
+            '(K: dimple Z pitch)\n'
+            '(M: number of rows)\n'
+            '(U: dimple depth)\n'
+            '(R: central curvature)\n'
+            '(A: angle for re_alocation)\n'
+            '(B: angle for dimple)\n'
+            '\n'
+        )
 
-    SN_D_M_pause = SN_dimple_Mi + 1
-    SN_D_M_pause_check = SN_D_M_pause + 1
-    SN_D_M_end = SN_D_M_pause_check + 1
-    f.write(
-        '(dimple milling end)\n'
-        'IF[#459EQ0]' + f"GOTO{SN_D_M_pause:04d}\n"
-        'IF[#459EQ2]' + f"GOTO{SN_D_M_pause_check:04d}\n"
-        f"GOTO{SN_D_M_end:04d}\n"
-        '\n'
-    )
+        SN_D_M_pause = SN_dimple_Mi + 1
+        SN_D_M_pause_check = SN_D_M_pause + 1
+        SN_D_M_end = SN_D_M_pause_check + 1
+        f.write(
+            '(dimple milling end)\n'
+            'IF[#459EQ0]' + f"GOTO{SN_D_M_pause:04d}\n"
+            'IF[#459EQ2]' + f"GOTO{SN_D_M_pause_check:04d}\n"
+            f"GOTO{SN_D_M_end:04d}\n"
+            '\n'
+        )
 
-    SN_dimple_Mi = next(SN_dimple_milling)
-    f.write(
-        f"N{SN_dimple_Mi:04d}\n"
-        'M00 (if #459=0)\n'
-        f"GOTO{SN_D_M_end:04d}\n"
-        '\n'
-    )
+        SN_dimple_Mi = next(SN_dimple_milling)
+        f.write(
+            f"N{SN_dimple_Mi:04d}\n"
+            'M00 (if #459=0)\n'
+            f"GOTO{SN_D_M_end:04d}\n"
+            '\n'
+        )
 
-    SN_dimple_Mi = next(SN_dimple_milling)
-    f.write(
-        f"N{SN_dimple_Mi:04d}\n"
-        'G65 P' + prgPauseCheck + ' (if #459=2)\n'
-        f"N{SN_D_M_end:04d}\n"
-        '\n'
-    )
+        SN_dimple_Mi = next(SN_dimple_milling)
+        f.write(
+            f"N{SN_dimple_Mi:04d}\n"
+            'G65 P' + prgPauseCheck + ' (if #459=2)\n'
+            f"N{SN_D_M_end:04d}\n"
+            '\n'
+        )
 
     # トップ端面 加工
     f.write(

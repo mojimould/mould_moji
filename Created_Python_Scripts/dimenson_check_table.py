@@ -135,8 +135,9 @@ dimpleRowsName                 = "ディンプル列数"
 dimpleNumOddRowName            = "1列目 ディンプル数"
 dimpleNumEvenRowName           = "2列目 ディンプル数"
 dimpleFirstRowDistanceName     = "ディンプル1列目 位置"
-if dimpleRowNumVal > 0:
-    dimpleLastRowDistanceName  = "ディンプル" + f'{dimpleRowNumVal:.0f}' + "列目 位置"
+if DimpleExistsFlag == 1:
+    if dimpleRowNumVal > 0:
+        dimpleLastRowDistanceName  = "ディンプル" + f'{dimpleRowNumVal:.0f}' + "列目 位置"
 dimpleRowsPitchName            = "ディンプル列間の間隔"
 dimpleDepthName                = "ディンプル深さ"
 appearanceDimpleName           = "外観 ディンプル全体"

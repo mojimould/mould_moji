@@ -163,19 +163,20 @@ elif TopOutcutExistsFlag == 1:
 originKeyway = f"{originKeywayVal:.3f}"
 
 # ディンプル用傾き角
-dimpleFirstRowIDNumerator = (dimpleFirstRowDistanceFromEndfaceDim - dimpleFirstRowTopSidePitch) * dimpleFirstRowBottomSideID + (dimpleFirstRowBottomSidePitch - dimpleFirstRowDistanceFromEndfaceDim) * dimpleFirstRowTopSideID
-dimpleFirstRowIDDenominator = dimpleFirstRowBottomSidePitch - dimpleFirstRowTopSidePitch
-dimpleFirstRowID = dimpleFirstRowIDNumerator / dimpleFirstRowIDDenominator
-# R_c + w'_{A0} / 2
-TopAsideInsideCurvature = centralCurvatureDim + (topACIDDim + 2 * mekkiThicknessDim) / 2
-# R_c + w'_{Aq} / 2
-dimpleFirstRowAsideInsideCurvature = centralCurvatureDim + (dimpleFirstRowID + 2 * mekkiThicknessDim) / 2
-# \sqrt{(R_c + w'_{A0}/2)^2-f_T^2}
-dimpleAngleFirstTerm = math.sqrt(dimpleFirstRowAsideInsideCurvature ** 2 - (topAlocationLengthAve - dimpleFirstRowDistanceFromEndfaceDim) ** 2)
-dimpleAngleSecondTerm = math.sqrt(TopAsideInsideCurvature ** 2 - topAlocationLengthAve ** 2)
-if dimpleAngleFirstTerm > dimpleAngleSecondTerm:
-    TandimpleAngle = (dimpleAngleFirstTerm - dimpleAngleSecondTerm) / dimpleFirstRowDistanceFromEndfaceDim
-else:
-    TandimpleAngle = 0
-dimpleAngleVal = -1 * round(math.degrees(math.atan(TandimpleAngle)), 3)
-dimpleAngle = f"{dimpleAngleVal:.3f}"
+if DimpleExistsFlag == 1:
+    dimpleFirstRowIDNumerator = (dimpleFirstRowDistanceFromEndfaceDim - dimpleFirstRowTopSidePitch) * dimpleFirstRowBottomSideID + (dimpleFirstRowBottomSidePitch - dimpleFirstRowDistanceFromEndfaceDim) * dimpleFirstRowTopSideID
+    dimpleFirstRowIDDenominator = dimpleFirstRowBottomSidePitch - dimpleFirstRowTopSidePitch
+    dimpleFirstRowID = dimpleFirstRowIDNumerator / dimpleFirstRowIDDenominator
+    # R_c + w'_{A0} / 2
+    TopAsideInsideCurvature = centralCurvatureDim + (topACIDDim + 2 * mekkiThicknessDim) / 2
+    # R_c + w'_{Aq} / 2
+    dimpleFirstRowAsideInsideCurvature = centralCurvatureDim + (dimpleFirstRowID + 2 * mekkiThicknessDim) / 2
+    # \sqrt{(R_c + w'_{A0}/2)^2-f_T^2}
+    dimpleAngleFirstTerm = math.sqrt(dimpleFirstRowAsideInsideCurvature ** 2 - (topAlocationLengthAve - dimpleFirstRowDistanceFromEndfaceDim) ** 2)
+    dimpleAngleSecondTerm = math.sqrt(TopAsideInsideCurvature ** 2 - topAlocationLengthAve ** 2)
+    if dimpleAngleFirstTerm > dimpleAngleSecondTerm:
+        TandimpleAngle = (dimpleAngleFirstTerm - dimpleAngleSecondTerm) / dimpleFirstRowDistanceFromEndfaceDim
+    else:
+        TandimpleAngle = 0
+    dimpleAngleVal = -1 * round(math.degrees(math.atan(TandimpleAngle)), 3)
+    dimpleAngle = f"{dimpleAngleVal:.3f}"

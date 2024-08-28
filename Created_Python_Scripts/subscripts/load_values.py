@@ -182,27 +182,28 @@ botACID = f"{botACIDAve:.3f}"
 botBDID = f"{botBDIDAve:.3f}"
 
 # ディンプル
-dimpleFirstRowDistanceFromEndfaceDim = WS['C61'].value
-dimpleFirstRowDistanceFromEndface    = f"{dimpleFirstRowDistanceFromEndfaceDim:.3f}"
-dimpleVerticalPitchDim   = WS['C62'].value
-dimpleVerticalPitch      = f"{dimpleVerticalPitchDim:.3f}"
-dimpleHorizontalPitchDim = WS['C63'].value
-dimpleHorizontalPitch    = f"{dimpleHorizontalPitchDim:.3f}"
-dimpleRowNumVal = WS['C66'].value
-dimpleRowNum    = f"{dimpleRowNumVal:.1f}"
-dimpleFirstRowLengthDim  = WS['C64'].value
-dimpleFirstRowLength     = f"{dimpleFirstRowLengthDim:.3f}"
-dimpleSecondRowLengthDim = WS['C65'].value
-dimpleSecondRowLength    = f"{dimpleSecondRowLengthDim:.3f}"
-dimpleDepthDim = WS['C67'].value
-dimpleDepth    = f"{dimpleDepthDim:.3f}"
-dimpleSmallRadiusDim = WS['C68'].value
-dimpleSmallRadius    = f"{dimpleSmallRadiusDim:.1f}"
-dimpleFirstRowTopSidePitch    = excel_lookup(WB, WS1_name, 'C61', 'A', next_row=False)
-dimpleFirstRowBottomSidePitch = excel_lookup(WB, WS1_name, 'C61', 'A', next_row=True)
-dimpleFirstRowTopSideID       = excel_lookup(WB, WS1_name, 'C61', 'B', next_row=False)
-dimpleFirstRowBottomSideID    = excel_lookup(WB, WS1_name, 'C61', 'B', next_row=True)
-dimpleLastRowDistanceFromEndfaceDim = dimpleFirstRowDistanceFromEndfaceDim + dimpleVerticalPitchDim * (dimpleRowNumVal - 1)
+if DimpleExistsFlag == 1:
+    dimpleFirstRowDistanceFromEndfaceDim = WS['C61'].value
+    dimpleFirstRowDistanceFromEndface    = f"{dimpleFirstRowDistanceFromEndfaceDim:.3f}"
+    dimpleVerticalPitchDim   = WS['C62'].value
+    dimpleVerticalPitch      = f"{dimpleVerticalPitchDim:.3f}"
+    dimpleHorizontalPitchDim = WS['C63'].value
+    dimpleHorizontalPitch    = f"{dimpleHorizontalPitchDim:.3f}"
+    dimpleRowNumVal = WS['C66'].value
+    dimpleRowNum    = f"{dimpleRowNumVal:.1f}"
+    dimpleFirstRowLengthDim  = WS['C64'].value
+    dimpleFirstRowLength     = f"{dimpleFirstRowLengthDim:.3f}"
+    dimpleSecondRowLengthDim = WS['C65'].value
+    dimpleSecondRowLength    = f"{dimpleSecondRowLengthDim:.3f}"
+    dimpleDepthDim = WS['C67'].value
+    dimpleDepth    = f"{dimpleDepthDim:.3f}"
+    dimpleSmallRadiusDim = WS['C68'].value
+    dimpleSmallRadius    = f"{dimpleSmallRadiusDim:.1f}"
+    dimpleFirstRowTopSidePitch    = excel_lookup(WB, WS1_name, 'C61', 'A', next_row=False)
+    dimpleFirstRowBottomSidePitch = excel_lookup(WB, WS1_name, 'C61', 'A', next_row=True)
+    dimpleFirstRowTopSideID       = excel_lookup(WB, WS1_name, 'C61', 'B', next_row=False)
+    dimpleFirstRowBottomSideID    = excel_lookup(WB, WS1_name, 'C61', 'B', next_row=True)
+    dimpleLastRowDistanceFromEndfaceDim = dimpleFirstRowDistanceFromEndfaceDim + dimpleVerticalPitchDim * (dimpleRowNumVal - 1)
 
 # キー溝
 keywayACOD = "#0"
