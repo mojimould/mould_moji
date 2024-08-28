@@ -1,5 +1,5 @@
 %
-O210003 (last update on 20240802)
+O210003 (last update on 20240828)
 (for dimple measurement & kakou)
 (level 1: mainly moving along central curvature)
 
@@ -412,7 +412,7 @@ END1
 #29=1
 WHILE[#29LE100]DO1
 #28=[#[900300+#29]+#[900400+#29]]
-IF[#28GE0.5]GOTO0400
+IF[ABS[#28]GE0.5]GOTO0400
 GOTO401
 
 N0400
