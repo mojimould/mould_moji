@@ -381,7 +381,7 @@ if BotOutcutExistsFlag == 1:
         else:
             col_item.append([
                 bottomOutcutAsideThicknessName,
-                f'{botOutcutAsideThicknessAve:.2f}',
+                f'{botOutcutAsideThicknessAve - mekkiThicknessDim:.2f}',
                 f'{botOutcutAsideThicknessDim - mekkiThicknessDim + botOutcutAsideThicknessMinusTolerance:.2f} - ' + f'{botOutcutAsideThicknessDim - mekkiThicknessDim + botOutcutAsideThicknessPlusTolerance:.2f}',
                 '',
                 '',
