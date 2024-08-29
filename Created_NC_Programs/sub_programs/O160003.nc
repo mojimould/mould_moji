@@ -1,5 +1,5 @@
 %
-O160003 (last update on 20240701)
+O160003 (last update on 20240829)
 (X centerline measurement)
 
 N0001
@@ -130,7 +130,7 @@ N9999 M99
 
 (Common variables)
 (as LHS)
-(#900045, #900046)
+(#900045, #900046, #900047)
 (as RHS)
 (#600, #602, #603, #650, #652, #653, #656)
 (#901011)
