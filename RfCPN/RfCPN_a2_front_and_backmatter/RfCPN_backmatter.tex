@@ -16,6 +16,20 @@
 %% BACKMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \backmatter
+\thispagestyle{empty}~%
+\clearpage
+\thispagestyle{empty}%
+\noindent~\vfil\hfil\relax
+\tikzfading[name=fade ball,
+            inner color=transparent!60,
+            outer color=transparent!30]\relax
+\begin{tikzpicture}%
+  \foreach \x/\xs in {-2.7/.4, -0.9/.6, 0.9/.6}
+  \shade [ball color=black!25!, path fading=fade ball] (\x,0) circle (\xs);
+  \shade [ball color=green!100!, path fading=fade ball] (2.7,0) circle (.4);
+\end{tikzpicture}%
+\clearrightpage
+
 \pagestyle{plainheadback}
 
 \addtocontents{toc}{\protect\vspace*{10pt}}
