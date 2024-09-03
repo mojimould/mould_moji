@@ -35,7 +35,7 @@ for sheet in WB.sheetnames:
 
 
 # シートの作成
-checkWS = WB.create_sheet(title=str(DrawingIDNum))
+checkWS = WB.create_sheet(title=MainPrgID)
 
 # 印刷時に水平方向を中央に設定
 checkWS.page_setup.horizontalCentered = True
@@ -56,7 +56,7 @@ table_col_height      = 25.0
 table_head_col_height = 22.0
 
 # footer text
-footer_text = MainPrgID + '：' + CustomerName
+# footer_text = MainPrgID + '：' + CustomerName
 
 # table head
 row_item = [
@@ -361,7 +361,7 @@ if BotOutcutExistsFlag == 1:
     col_item.append([
         bottomOutcutBDODName,
         f'{botOutcutBDODAve:.2f}',
-        f'{botOutcutBDODDim - botOutcutBDODMinusTolerance:.2f} - ' + f'{botOutcutBDODDim + botOutcutBDODPlusTolerance:.2f}',
+        f'{botOutcutBDODDim + botOutcutBDODMinusTolerance:.2f} - ' + f'{botOutcutBDODDim + botOutcutBDODPlusTolerance:.2f}',
         '',
         '',
         JudgementItem
@@ -402,7 +402,7 @@ if BotOutcutExistsFlag == 1:
         col_item.append([
             bottomOutcutLengthName,
             f'{botOutcutLengthAve:.2f}',
-            f'{botOutcutLengthDim + outcutLengthTolerance:.2f} - ' + f'{botOutcutLengthDim + outcutLengthTolerance:.2f}',
+            f'{botOutcutLengthDim - outcutLengthTolerance:.2f} - ' + f'{botOutcutLengthDim + outcutLengthTolerance:.2f}',
             '',
             '',
             JudgementItem
