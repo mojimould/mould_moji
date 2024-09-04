@@ -153,16 +153,52 @@
 \item 諸工具の\index{しゅじくかいてんすう@主軸回転数}主軸回転数に関する標準の策定
 \item \index{NCプログラム}NCプログラムの\index{シーケンスばんごう@シーケンス番号}シーケンス番号に関する標準の策定
 \item[\sarrow] \index{NCプログラム}NCプログラムの\index{アラームばんごう@アラーム番号}アラーム番号に関する標準の策定
-\item \index{コモンへんすう@コモン変数}コモン変数に関する標準の策定
+\item マシニングセンタごとの\index{コモンへんすう@コモン変数}コモン変数に関する標準の策定
 \item マシニングセンタについての\index{ちょさくぶつ@著作物}著作物および\index{ちょさくぶつのていじ@著作物の提示}その提示に関する標準の策定
 \end{enumerate}
 
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 05.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\index{げんてんせってい@原点設定}原点設定用NCサブプログラムの作成\TBW}
+\modHeadsection{具体的なNCプログラムの作成}
+具体的な\index{NCプログラム}NCプログラムの作成に際して、基本的には以下のような方針を取ることにする。
+\begin{enumerate}
+\item[-] \index{NCメインプログラム}NCメインプログラムで用いる\index{NCサブプログラム}NCサブプログラムの\index{ひきすう@引数}引数は、原則として\index{ワーク}ワークの\index{ずめん}図面に用いられている寸法値で与えるものとする
+\item[-] 工程の順は原則として以下のとおりとする（\pageautoref{fig:flowchart}参照）
+\begin{enumerate}[label={\arabic*.}]
+\item \BottomEndFace 部AC方向外側中心測定・\BottomOutcut AC方向中心測定
+\item \BottomEndFace 部BD方向外側中心測定・\BottomOutcut BD方向中心測定
+\item \BottomEndFace 部AC方向内側中心測定
+\item \BottomEndFace 部BD方向内側中心測定
+\item \TopEndFace 部AC方向外側中心測定・\TopOutcut AC方向中心測定
+\item \TopEndFace 部BD方向外側中心測定・\TopOutcut BD方向中心測定
+\item \TopEndFace 部AC方向内側中心測定
+\item \TopEndFace 部BD方向内側中心測定
+\item \Keyway AC方向中心測定
+\item \Keyway BD方向中心測定
+\item 全\Dimple の表面位置測定
+\item \DimpleMilling
+\item \TopEndFacecutMilling
+\item \TopOutcutMilling・\EndFaceBoringMilling・\IncutBoringMilling
+\item \KeywayMilling
+\item \TopEndFaceOutCChamferMilling
+\item \TopEndFaceInCChamferMilling
+\item \BottomEndFacecutMilling
+\item \BottomOutcutMilling
+\item \BottomEndFaceOutCChamferMilling
+\item \BottomEndFaceInCChamferMilling
+\item \CenterlineEndFaceDifMeasurement
+\end{enumerate}
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 05.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\index{げんてんせってい@原点設定}原点設定用NCサブプログラムの作成\TBW}
 
 
 
