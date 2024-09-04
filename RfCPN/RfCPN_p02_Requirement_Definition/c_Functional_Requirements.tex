@@ -2,7 +2,8 @@
 
 
 \modHeadchapter{加工システム作成における\index{きのうようけん@機能要件}機能要件}
-青色(\,\sarrow\!\!)の項目は、優先度が低いものを示す。
+ここでは加工システム（\index{NCプログラム}NCプログラム群）を作成する際の\index{きのうようけん@機能要件}機能要件を挙げる。
+なお、青色(\,\sarrow\!)の項目は、優先度が低いものを示す。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,16 +38,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 05.01.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\EndFacecutMilling における幾何的情報の体系化\TBW}
-\begin{enumerate}[label={\sarrow[red]}]
-\item
-\end{enumerate}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 05.01.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\OutcutMilling における幾何的情報の体系化}
+\subsection{\CenterlineEndFaceDifMeasurement における幾何的情報の体系化}
 \begin{enumerate}[label={\sarrow[red]}]
 \item \CenterlineEndFaceDifMeasurement 位置座標の解析的導出
 \end{enumerate}
@@ -64,39 +56,70 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 05.01.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\EndFaceOutChamferMilling における幾何的情報の体系化\TBW}
+\subsection{\EndFaceOutChamferMilling における幾何的情報の体系化}
 \begin{enumerate}[label={\sarrow[red]}]
-\item
+\item \EndFaceOutChamferLength に対する加工中心座標の補正の解析的導出
+\item[\sarrow] 傾いた\EndFaceOutChamfer におけるコーナー部の位置座標の解析的導出
+\item \EndFaceOutRChamfer の接面の解析的導出
 \end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 05.01.07 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\EndFaceInChamferMilling における幾何的情報の体系化\TBW}
+\subsection{\EndFaceInChamferMilling における幾何的情報の体系化}
 \begin{enumerate}[label={\sarrow[red]}]
-\item
+\item \EndFaceInChamferLength に対する加工中心座標の補正の解析的導出
+\item[\sarrow] 傾いた\EndFaceInChamfer におけるコーナー部の位置座標の解析的導出
+\item \EndFaceInRChamfer の接面の解析的導出
 \end{enumerate}
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 05.01.08 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\DimpleMilling における幾何的情報の体系化\TBW}
+\subsection{\DimpleMilling における幾何的情報の体系化}
 \begin{enumerate}[label={\sarrow[red]}]
-\item \DimpleMeasurement における幾何的情報の体系化
-\item \DimpleMilling における幾何的情報の体系化
+\item \Dimple 部分の\InnerDiameter の寸法の解析的導出
+\item \index{アンダーカット}アンダーカット回避用\Table 回転角の解析的導出
+\item \Table 回転前における任意の\Dimple の位置座標の解析的導出
+\item \Table 回転後における任意の\Dimple の位置座標の解析的導出
+\item \Table 回転後における、B, D面の\Dimple 列間距離の解析的導出
+\item \Table 回転後における、A, C面の\Dimple 列間距離の解析的導出
+\item \Table 回転後における、B, D面の同列内の\Dimple 間距離の解析的導出
+\item \Table 回転後における、A, C面の同列内の\Dimple 間距離の解析的導出
 \end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 05.01.09 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{その他の特殊な加工における幾何的情報の体系化\TBW}
+\subsection{その他の幾何的情報の体系化}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 05.01.09.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\EndFaceBoringMilling における幾何的情報の体系化}
 \begin{enumerate}[label={\sarrow[red]}]
-\item[\sarrow] \EndFaceBoringMilling
-\item[\sarrow] \IncutBoringMilling
-\item[\sarrow] \CurvedOutcutMilling
+\item[\sarrow] \EndFaceBoring におけるコーナー円の中心座標の解析的導出
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 05.01.09.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\CurvedOutcutMilling における幾何的情報の体系化}
+\begin{enumerate}[label={\sarrow[red]}]
+\item[\sarrow] \CurvedOutcut における加工中心位置座標および加工径の解析的導出
+\item[\sarrow] \CurvedOutcut における\EndFace の位置座標の解析的導出
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 05.01.09.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\InnerDiameter における幾何的情報の体系化}
+\begin{enumerate}[label={\sarrow[red]}]
+\item[\sarrow] \index{テーパ}テーパを考慮した\InnerDiameter の解析的導出
 \end{enumerate}
 
 
@@ -105,7 +128,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 05.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\index{NCプログラム}NCプログラム作成に関する諸基準の規格化\TBW}
+\modHeadsection{\index{NCプログラム}NCプログラム作成に関する諸基準の規格化}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
