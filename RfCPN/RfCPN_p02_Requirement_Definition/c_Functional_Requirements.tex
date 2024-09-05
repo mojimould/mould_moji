@@ -165,36 +165,41 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{具体的なNCプログラムの作成}
 具体的な\index{NCプログラム}NCプログラムの作成に際して、基本的には以下のような方針を取ることにする。
-\begin{enumerate}
-\item[-] \index{NCメインプログラム}NCメインプログラムで用いる\index{NCサブプログラム}NCサブプログラムの\index{ひきすう@引数}引数は、原則として\index{ワーク}ワークの\index{ずめん}図面に用いられている寸法値で与えるものとする
-\item[-] 工程の順は原則として以下のとおりとする（\pageautoref{fig:flowchart}参照）
-\begin{enumerate}[label={\arabic*.}]
-\item \BottomEndFace 部AC方向外側中心測定・\BottomOutcut AC方向中心測定
-\item \BottomEndFace 部BD方向外側中心測定・\BottomOutcut BD方向中心測定
-\item \BottomEndFace 部AC方向内側中心測定
-\item \BottomEndFace 部BD方向内側中心測定
-\item \TopEndFace 部AC方向外側中心測定・\TopOutcut AC方向中心測定
-\item \TopEndFace 部BD方向外側中心測定・\TopOutcut BD方向中心測定
-\item \TopEndFace 部AC方向内側中心測定
-\item \TopEndFace 部BD方向内側中心測定
-\item \Keyway AC方向中心測定
-\item \Keyway BD方向中心測定
-\item 全\Dimple の表面位置測定
-\item \DimpleMilling
-\item \TopEndFacecutMilling
-\item \TopOutcutMilling・\EndFaceBoringMilling・\IncutBoringMilling
-\item \KeywayMilling
-\item \TopEndFaceOutCChamferMilling
-\item \TopEndFaceInCChamferMilling
-\item \BottomEndFacecutMilling
-\item \BottomOutcutMilling
-\item \BottomEndFaceOutCChamferMilling
-\item \BottomEndFaceInCChamferMilling
-\item \CenterlineEndFaceDifMeasurement
-\end{enumerate}
+\begin{enumerate}[label*=\alph*)]
+\item 工程の順は原則として以下のとおりとする（\pageautoref{fig:flowchart}参照）
+  \begin{enumerate}[label={\arabic*.}]
+  \item ワークの搬入
+  \item \BottomEndFace 部AC方向外側中心測定 or \BottomOutcut AC方向中心測定
+  \item \BottomEndFace 部BD方向外側中心測定 or \BottomOutcut BD方向中心測定
+  \item \BottomEndFace 部AC方向内側中心測定
+  \item \BottomEndFace 部BD方向内側中心測定
+  \item \TopEndFace 部AC方向外側中心測定 or \TopOutcut AC方向中心測定
+  \item \TopEndFace 部BD方向外側中心測定 or \TopOutcut BD方向中心測定
+  \item \TopEndFace 部AC方向内側中心測定
+  \item \TopEndFace 部BD方向内側中心測定
+  \item \Keyway AC方向中心測定
+  \item \Keyway BD方向中心測定
+  \item 全\Dimple の表面位置測定
+  \item \DimpleMilling
+  \item \TopEndFacecutMilling
+  \item \TopOutcutMilling or \EndFaceBoringMilling or \IncutBoringMilling
+  \item \KeywayMilling
+  \item \TopEndFaceOutCChamferMilling
+  \item \TopEndFaceInCChamferMilling
+  \item \BottomEndFacecutMilling
+  \item \BottomOutcutMilling
+  \item \BottomEndFaceOutCChamferMilling
+  \item \BottomEndFaceInCChamferMilling
+  \item \CenterlineEndFaceDifMeasurement
+  \item ワークの搬出
+  \end{enumerate}
+\item
+\item \index{NCメインプログラム}NCメインプログラムで用いる\index{NCサブプログラム}NCサブプログラムの\index{ひきすう@引数}引数は、原則として\index{ワーク}ワークの\index{ずめん（モールド）@図面（モールド）}図面に用いられている寸法値で与えるものとする
+\item NCプログラムの\index{いれここうぞう@入れ子構造}入れ子構造（\index{ネスティング}ネスティング）は原則として3重までとする
 \end{enumerate}
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 05.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
