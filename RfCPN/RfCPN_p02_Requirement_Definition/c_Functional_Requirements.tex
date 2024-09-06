@@ -129,6 +129,23 @@
 %% section 05.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\index{NCプログラム}NCプログラム作成に関する諸基準の規格化}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+大前提として、\index{NCプログラム}NCプログラムの作成に関しては、原則として\textbf{経営陣・管理職らの意見は部門を問わず一切考慮しない}。
+ここではすべての指揮はNCプログラム作成者が執り、現場の担当者ら（特に作業者）の意見を優先する。
+\tcbline*
+これは、経営陣・管理職らの（四半世紀以上にわたる）これまでの姿勢・モラル・能力を鑑みて、極めて自然かつ当然かつ必然の措置である。
+わずかにでも考慮してしまうと、安全性・品質・費用・作業効率・維持管理・信頼性など、どの観点においても著しく損なわれ、そもそも作成自体ができなくなることが容易に想定される
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{事実、機械設置時点までの当社の開発計画は論理が破綻していて支離滅裂なものであり、明白に頓挫し放置されている。
+これは事前に（経営陣・管理職ら以外から）容易に予測されていたことである。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -136,7 +153,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ソフトウェアエンジニアリングに関する諸規程の策定}
 \begin{enumerate}[label={\sarrow[red]}]
-\item 技術者およびその\index{ぎじゅつすいじゅん@技術水準}技術水準に関する規程の策定
+\item \index{じょうほうぎじゅつしゃ@情報技術者}情報技術者およびその\index{ぎじゅつすいじゅん@技術水準}技術水準に関する規程の策定
 \item システムおよびソフトウェアの作成に関する規程の策定
 \item \index{ちょさくぶつ@著作物}著作物および\index{ちょさくぶつのていじ@著作物の提示}その提示に関する規程の策定
 \end{enumerate}
@@ -164,38 +181,46 @@
 %% section 05.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{具体的なNCプログラムの作成}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 05.03.0２ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{NCサブプログラム作成の基本方針}
 具体的な\index{NCプログラム}NCプログラムの作成に際して、基本的には以下のような方針を取ることにする。
 \begin{enumerate}[label*=\alph*)]
-\item 工程の順は原則として以下のとおりとする（\pageautoref{fig:flowchart}参照）
-  \begin{enumerate}[label={\arabic*.}]
-  \item ワークの搬入
-  \item \BottomEndFace 部AC方向外側中心測定 or \BottomOutcut AC方向中心測定
-  \item \BottomEndFace 部BD方向外側中心測定 or \BottomOutcut BD方向中心測定
-  \item \BottomEndFace 部AC方向内側中心測定
-  \item \BottomEndFace 部BD方向内側中心測定
-  \item \TopEndFace 部AC方向外側中心測定 or \TopOutcut AC方向中心測定
-  \item \TopEndFace 部BD方向外側中心測定 or \TopOutcut BD方向中心測定
-  \item \TopEndFace 部AC方向内側中心測定
-  \item \TopEndFace 部BD方向内側中心測定
-  \item \Keyway AC方向中心測定
-  \item \Keyway BD方向中心測定
-  \item 全\Dimple の表面位置測定
-  \item \DimpleMilling
-  \item \TopEndFacecutMilling
-  \item \TopOutcutMilling or \EndFaceBoringMilling or \IncutBoringMilling
-  \item \KeywayMilling
-  \item \TopEndFaceOutCChamferMilling
-  \item \TopEndFaceInCChamferMilling
-  \item \BottomEndFacecutMilling
-  \item \BottomOutcutMilling
-  \item \BottomEndFaceOutCChamferMilling
-  \item \BottomEndFaceInCChamferMilling
-  \item \CenterlineEndFaceDifMeasurement
-  \item ワークの搬出
-  \end{enumerate}
-\item 作業者にとっての利便性を、NCプログラム作成者にとっての利便性より優先する
-\item \index{NCメインプログラム}NCメインプログラムで用いる\index{NCサブプログラム}NCサブプログラムの\index{ひきすう@引数}引数は、原則として\index{ワーク}ワークの\index{ずめん（モールド）@図面（モールド）}図面に用いられている寸法値で与えるものとする
-\item NCプログラムの\index{いれここうぞう@入れ子構造}入れ子構造（\index{ネスティング}ネスティング）は原則として3重までとする
+\item \textgt{\index{3D CAD}\textbf{3D CAD}・\index{CAM}\textbf{CAM}}\\
+\index{3D CAD}3D CAD・\index{CAM}CAMの使用は、\index{そせいかこうひん@塑性加工品}塑性加工品の加工との相性が悪く非現実的である。
+また、当社の能力から見ても使用は非現実的である。
+さらには、加工の対象となるワークはそのほとんどが直線と円弧のみで表される単純な構造であり、幾何的情報は初歩的な幾何学で解析的に導出が可能である。
+こうした事情から、\index{3D CAD}3D CAD・\index{CAM}CAMを用いた\index{NCプログラム}作成は行わない。
+\item \textgt{\Spacer の使用}\\
+\Spacer を用いた\AlocationAdjustment は、明細ごとに\Spacer を手配する必要があり、その維持管理や費用の観点から非現実的である。
+したがって、\Spacer を用いた\AlocationAdjustment は原則として行わない。
+代替として、\Table の回転を用いた\AlocationAdjustment を行う
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{\Spacer の使用は、本質的に（B軸方向の）回転と同義である。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item \textgt{\EndFace 部の荒削り加工}\\
+\DimpleMilling に伴う\index{アンダーカット}アンダーカットを回避する手段として、\EndFace 部の荒削り加工が考えられる。
+しかし、\DMC には荒削り加工したあとの清掃機能が備わっておらず、必然的に人手による清掃が必要となる。
+したがって作業効率が大きく低下するため、\EndFace 部の荒削り加工は行わない。
+\item \textgt{利便性の優先度}\\
+\index{NCプログラム}NCプログラムは保守・管理がしやすいように作成するように務める。
+ただし、\index{NCプログラム}NCプログラム作成者の都合を、マシニングセンタ管理者や作業者における操作の利便性より優先することのないよう作成を行うものとする。
+なお、作業者における操作の利便性を最優先にし、次いでマシニングセンタ管理者における操作の利便性を優先するものとする
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{多少コードが複雑な構造になるとしても、作業者らに不便を押し付けないようにする、というような心得である。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item \textgt{\textbf{NC}プログラムに用いる引数}\\
+\index{NCメインプログラム}NCメインプログラムで用いる各工程用\index{NCサブプログラム}NCサブプログラムの\index{ひきすう@引数}引数の値は、原則として\index{ワーク}ワークの\index{ずめん（モールド）@図面（モールド）}図面に用いられている寸法値（数値）で与えるものとする。
+\index{NCサブプログラム}NCサブプログラムの引数の値については問わない。
+\item \textgt{\index{NCプログラム}\textbf{NC}プログラムの\index{ネスティング}ネスティング}\\
+NCプログラムの\index{いれここうぞう@入れ子構造}入れ子構造（\index{ネスティング}ネスティング）は、NCメインプログラムを最上位の階層として、原則として3重までとする
+\item \textgt{衝突予防策}\\
+どのNCプログラムにも、原則として衝突予防の機能を施す
+\item \textgt{異常値の検知}\\
+どのNCプログラムにも、原則として引数や変数, 測定値, 計算値等に対する異常値を検知する機能を施す
 \end{enumerate}
 
 
@@ -206,11 +231,10 @@
 \subsection{\index{げんてんせってい@原点設定}原点設定用NCサブプログラムの作成\TBW}
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 05.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 05.03.0２ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\EndFacecutMilling 用NCサブプログラムの作成\TBW}
+\subsection{\EndFacecutMilling 用NCサブプログラムの作成\TBW}
 \begin{enumerate}[label=\sarrow]
 \item \IDCenter を基準とした\EndFacecutMilling に変更
 \item \ODCornerR への対応
@@ -218,43 +242,39 @@
 \end{enumerate}
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 06.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 05.03.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\OutcutMilling 用NCサブプログラムの作成\TBW}
+\subsection{\OutcutMilling 用NCサブプログラムの作成\TBW}
 \begin{enumerate}[label=\sarrow]
 \item \CurvedOutcutMilling の機械化
 \end{enumerate}
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 06.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 05.03.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KeywayMilling 用NCサブプログラムの作成\TBW}
+\subsection{\KeywayMilling 用NCサブプログラムの作成\TBW}
 \begin{enumerate}[label=\sarrow]
 \item \KeywayPos・\KeywayWidth 補正変更作業の簡易化
 \item \KeywayWidth に応じた加工回数の変更作業の機械化
 \end{enumerate}
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 06.07 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 05.03.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\EndFaceChamferMilling 用NCサブプログラムの作成\TBW}
+\subsection{\EndFaceChamferMilling 用NCサブプログラムの作成\TBW}
 \begin{enumerate}[label=\sarrow]
 \item \EndFaceChamferMilling の機械化
 \item AC方向の位置調整作業の機械化
 \end{enumerate}
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 06.08 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 05.03.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\Dimple 用NCサブプログラムの作成\TBW}
+\subsection{\Dimple 用NCサブプログラムの作成\TBW}
 \begin{enumerate}[label=\sarrow]
 \item
 \end{enumerate}
