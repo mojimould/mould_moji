@@ -1,0 +1,105 @@
+%!TEX root = ../RfCPN.tex
+
+
+\modHeadchapter[lot]{マシニングセンタにおける工程の順番}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 24.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{工程の順番に関わる事項}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 24.01.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{測定と加工の順番の制約}
+\begin{enumerate}[label={\sarrow}]
+\item すべての加工工程に対して、それに先立ってワーク座標系原点の測定・計算を行う
+\item \DimpleMeasurement に先立って、ワーク座標系原点の測定・計算を行う
+\item \DimpleMilling に先立って、\DimpleMeasurement を行う
+\item \CenterlineEndFaceDifMeasurement は、\TopOutcutMilling および\BottomOutcutMilling の後に行う
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 24.01.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{各工程の順番}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 24.01.02.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\DimpleMilling 以外についての工程}
+工程の順番は、作業者の利便性を考慮して、基本的には\MMC に合わせるものとする。
+\begin{enumerate}[label={\sarrow}]
+\item ボトム側の測定後に、トップ側の測定を行う
+\item ボトム側の加工後に、トップ側の加工を行う
+\item \EndFacecutMilling, \OutcutMilling, \KeywayMilling, \EndFaceOutCChamferMilling・\EndFaceInCChamferMilling の順番で行うものとする
+\item \EndFaceBoringMilling, \IncutBoringMilling については、使用工具が\OutcutMilling と同じため、その順番は\OutcutMilling と同等とする
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 24.01.02.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\DimpleMilling についての工程}
+ワークの加工を行うと、それに伴い\index{おうりょく@応力}応力に変化が生じ、\index{ワークのゆがみ@ワークの歪み}ワークに歪みが生じる。
+そのため、各々の部分の\index{すんぽう@寸法}寸法や\index{こうさ@公差}公差等を考慮して順番を決定する必要がある
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{これを優先して考慮するならば、\EndFacecutMilling, \OutcutMilling, \EndFaceOutCChamferMilling・\EndFaceInCChamferMilling, \KeywayMilling のほうが望ましい。}。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+特に、\DimpleMeasurement 後に\Dimple 以外の加工を行うと、その表面位置が\DimpleDepth に対して大きくずれ得ることが想定される。
+\begin{enumerate}[label={\sarrow}]
+\item \DimpleMeasurement 後、\DimpleMilling は最初に行う
+\end{enumerate}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 24.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\DMC・\MMC における工程の順番}
+以上を考慮して、\DMC および\MMC における工程の順は、原則として以下のとおりとする（\pageautoref{fig:flowchart}参照）
+\begin{enumerate}[label={\arabic*.}]
+\item ワークの取付け
+\item ワークの搬入
+\item \BottomEndFace 部AC方向外側中心測定 or \BottomOutcut AC方向中心測定
+\item \BottomEndFace 部BD方向外側中心測定
+\item \BottomEndFace 部AC方向内側中心測定
+\item \BottomEndFace 部BD方向内側中心測定
+\item \TopEndFace 部AC方向外側中心測定 or \TopOutcut AC方向中心測定
+\item \TopEndFace 部BD方向外側中心測定
+\item \TopEndFace 部AC方向内側中心測定
+\item \TopEndFace 部BD方向内側中心測定
+\item \Keyway AC方向中心測定
+\item \Keyway BD方向中心測定
+\item \Dimple の表面位置測定
+\item \DimpleMilling
+\item \TopEndFacecutMilling
+\item \TopOutcutMilling or \EndFaceBoringMilling or \IncutBoringMilling
+%% footnote %%%%%%%%%%%%%%%%%%%%%
+\footnote{\TopOutcut・\EndFaceBoring・\IncutBoring が一緒に存在する\index{めいさい@明細}明細はないものと仮定している}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item \KeywayMilling
+\item \TopEndFaceOutCChamferMilling
+\item \TopEndFaceInCChamferMilling
+\item \BottomEndFacecutMilling
+\item \BottomOutcutMilling
+\item \BottomEndFaceOutCChamferMilling
+\item \BottomEndFaceInCChamferMilling
+\item \CenterlineEndFaceDifMeasurement
+\item ワークの搬出
+\item ワークの取外し
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{hosoku}
+例外の1つとして、トップ・ボトムの両方に\Outcut があり、\OutcutCenterReference がトップ側の\OutcutAsideThickness の場合は、\TopOutcut AC方向中心測定の後に\BottomOutcut AC方向中心を決定する。
+\end{hosoku}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
