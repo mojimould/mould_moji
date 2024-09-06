@@ -452,17 +452,9 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %% subsection 10.7.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFaceOutCChamferMilling}
+\EndFaceOutCChamfer については、\index{さぎょうしゃのふたん@作業者の負担}作業者の安全・環境・品質・\index{さぎょう効率@作業効率}作業効率を考慮して、原則としてマシニングセンタ（\TaperEndMill）を用いて加工を行うものとする。
+ただし、やむを得ない場合は、\index{てもちけんまき@手持ち研磨機}手持ち研磨機や\index{やすり}やすりを用いた手動による加工で行ってもよい。
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 10.7.3.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\EndFaceCChamferLength が小さい場合}
-\EndFaceOutCChamferLength が小さい場合は、\index{てもちけんまき@手持ち研磨機}手持ち研磨機を用いた手動による加工で行ってもよいものとする。
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 10.7.3.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\EndFaceCChamferLength が大きい場合}
 \index{マシニングセンタ}マシニングセンタを用いて加工する場合、\Outcut のない場合は、\expandafterindex{かこうけい（\yomiEndFaceOutCChamfer）@加工径（\nameEndFaceOutCChamfer）}加工径の中心座標$X$をトップ側・ボトム側のそれぞれに対して以下だけ補正する。
 \begin{align*}
   \text{トップ側：}&~~
@@ -478,17 +470,9 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %% subsection 10.7.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFaceInCChamferMilling}
+\EndFaceInCChamfer については、\index{さぎょうしゃのふたん@作業者の負担}作業者の安全・環境・品質・\index{さぎょう効率@作業効率}作業効率を考慮して、原則としてマシニングセンタ（\TaperEndMill）を用いて加工を行うものとする。
+ただし、やむを得ない場合は、\index{てもちけんまき@手持ち研磨機}手持ち研磨機や\index{やすり}やすりを用いた手動による加工で行ってもよい。
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 10.7.4.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\EndFaceInCChamferLength が小さい場合}
-\EndFaceInCChamferLength が小さい場合は、\index{てもちけんまき@手持ち研磨機}手持ち研磨機を用いた手動による加工で行ってもよいものとする。
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 10.7.4.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\EndFaceInCChamferLength が大きい場合}
 \index{マシニングセンタ}マシニングセンタを用いて加工する場合、\expandafterindex{かこうけい（\yomiEndFaceInCChamfer）@加工径（\nameEndFaceInCChamfer）}加工径の中心座標$X$をトップ側・ボトム側のそれぞれに対して以下だけ補正する。
 \begin{align*}
   \text{トップ側：}&~~
@@ -529,43 +513,23 @@ $R_\mathrm c$, $W_x$, $f_\mathrm T$, $\kappa_p$, $\kappa_w$はそれぞれ\Cente
 %% subsection 10.8.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFaceOutRChamferMilling}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 10.8.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\EndFaceOutRChamferRadius が小さい場合}
-\EndFaceOutRChamfer については、基本的には\index{マシニングセンタ}マシニングセンタでは行わず、\index{てもちけんまき@手持ち研磨機}手持ち研磨機・やすり等を用いて手動で行うものとする。
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 10.8.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\EndFaceOutRChamferRadius が大きい場合}
-\EndFaceOutRChamferRadius が大きい場合、\index{さぎょうしゃのふたん@作業者の負担}作業者の負担や\index{さぎょうじかん@作業時間}作業時間を考慮して、その一部を\TaperEndMill を用いて加工してもよいものとする。
+\EndFaceOutRChamfer については、\index{さぎょうしゃのふたん@作業者の負担}作業者の安全・環境・品質・\index{さぎょうこうりつ@作業効率}作業効率を考慮して、原則としてその一部を\EndFaceOutCChamferMilling として行うものとする。
+仕上げ加工については\index{やすり}やすり等を用いて手動で行うものとする。
 
 このとき、\TopEndFaceOutRChamferRadius および\BottomEndFaceOutRChamferRadius$r_\mathrm{To}$, $r_\mathrm{Bo}$, および片角$\xi_\mathrm e$の\TaperEndMill に対して、
 \begin{align*}
   c_\mathrm{To} &= r_\mathrm{To}\left(1+\cot\xi_\mathrm e-\csc\xi_\mathrm e\right)\ ,\\
   c_\mathrm{Bo} &= r_\mathrm{Bo}\left(1+\cot\xi_\mathrm e-\csc\xi_\mathrm e\right)
 \end{align*}
-の\EndFaceOutCChamferLength とみなして、\EndFaceInCChamferMilling を行うものとする。
+の\EndFaceOutCChamferLength とみなして、\EndFaceOutCChamferMilling を行うものとする。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 10.8.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\EndFaceInRChamferMilling}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 10.8.2.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\EndFaceInRChamferRadius が小さい場合}
-\TopEndFaceInRChamferMilling および\BottomEndFaceInRChamferMilling については、基本的には\index{マシニングセンタ}マシニングセンタでは行わず、\index{てもちけんまき@手持ち研磨機}手持ち研磨機を用いて手動で行うものとする。
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 10.8.2.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{\EndFaceInRChamferRadius が大きい場合}
-\EndFaceInRChamferRadius が大きい場合、\index{さぎょうしゃのふたん@作業者の負担}作業者の負担や\index{さぎょうじかん@作業時間}作業時間を考慮して、その一部を\TaperEndMill を用いて加工してもよいものとする。
+\EndFaceInRChamfer については、\index{さぎょうしゃのふたん@作業者の負担}作業者の安全・環境・品質・\index{さぎょう効率@作業効率}作業効率を考慮して、原則としてその一部を\EndFaceInCChamferMilling として行うものとする。
+仕上げ加工については\index{やすり}やすり等を用いて手動で行うものとする。
 
 このとき、\TopEndFaceInRChamferRadius および\BottomFaceInRChamferRadius$r_\mathrm{Ti}$, $r_\mathrm{Bi}$, および片角$\xi_\mathrm e$の\TaperEndMill に対して、
 \begin{align*}
