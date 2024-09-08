@@ -206,6 +206,11 @@ G58 G65 P110002 Y159.000 Z500.042 M20.050 H8.050
 (M: keyway position)
 (H: keyway depth)
 
+M117 (sensor on/off)
+G04 X1.5 (wait 1.5s)
+IF[#1004EQ0]GOTO2004
+G65 P910002 (sensor OFF)
+
 (mesurement end)
 IF[#177EQ1]GOTO1005
 M00
