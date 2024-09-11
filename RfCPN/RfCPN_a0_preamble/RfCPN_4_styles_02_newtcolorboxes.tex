@@ -140,10 +140,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% FIGLANDSCAPEBOX %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newtcolorbox{Figlandscape}[1][]{Figurelnadscapebox, #1}
+\newtcolorbox{Figlandscape}[1][]{Figurelandscapebox, #1}
 \tcbset{%
   %%%%% FIGUREBOX STYLE %%%%%
-  Figurelnadscapebox/.style={%
+  Figurelandscapebox/.style={%
     Figurecommonbox,
     height=\textheight-6.8pt,
   }%
@@ -286,6 +286,18 @@
     Tabularbox,
     colback=black!02!white!,%
     after title=\hfill\termblue{\issuename.\thetcbcounter},%
+  }%
+}%
+
+%%%%% Non-Functional Requirement %%%%%
+\newcommand{\NFRname}{NFR}
+\newtcolorbox[auto counter]{NFR}[2][]{NFRbox, title={#2}, #1}
+\tcbset{%
+  %%%%% NFRBOX STYLE %%%%%
+  NFRbox/.style={%
+    Tabularbox,
+    colback=black!02!white!,%
+    after title=\hfill\termblue{\NFRname.\thetcbcounter},%
   }%
 }%
 
