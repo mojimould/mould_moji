@@ -141,9 +141,9 @@
   \cleardoublepage
   \let\newpage\relax
   \ifx\@chapapp\appendixname%
-    \chapter{#2\label{app:\thepart.\thechapter}\vphantom{\ref{app:\thepart.\thechapter}}}%
+    \chapter{\label{app:\thepart.\thechapter}\vphantom{\ref{app:\thepart.\thechapter}}#2}%
   \else%
-    \chapter{#2\label{chap:\thepart.\thechapter}\vphantom{\ref{chap:\thepart.\thechapter}}}%
+    \chapter{\label{chap:\thepart.\thechapter}\vphantom{\ref{chap:\thepart.\thechapter}}#2}%
   \fi%
   \ifx#1\relax\else%
     \foreach \x in {#1}{\addcontentsline{\x}{chapter}{\protect\numberline{\thechapter}#2}}%
@@ -155,9 +155,9 @@
 %%%%% FOR SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\modHeadsection}[2][]{%
   \ifx\relax#1\relax
-    \section{#2\label{sec:\thepart.\thesection}\vphantom{\protect\ref{sec:\thepart.\thesection}}}%
+    \section{\label{sec:\thepart.\thesection}\vphantom{\protect\ref{sec:\thepart.\thesection}}#2}%
   \else%
-    \section[#1]{#2\label{sec:\thepart.\thesection}\vphantom{\protect\ref{sec:\thepart.\thesection}}}%
+    \section[#1]{\label{sec:\thepart.\thesection}\vphantom{\protect\ref{sec:\thepart.\thesection}}#2}%
   \fi%
 }
 %%%%% MODCAPTOINOF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
