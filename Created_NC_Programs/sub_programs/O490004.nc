@@ -1,23 +1,23 @@
 %
-O490004 (last update on 20240701)
+O490004 (last update on 20240912)
 (Sotogawa Corner R rc HidariMawari 1shuu)
 
 N0001
-IF[#24EQ#0]GOTO0800
-IF[#24LT10]GOTO0800
-IF[#18EQ#0]GOTO0800
-IF[#18LT1]GOTO0800
-IF[#09EQ#0]GOTO0800
-IF[#09LT10]GOTO0800
-IF[#08EQ#0]GOTO0800
-IF[#08LT10]GOTO0800
-IF[#19EQ#0]GOTO0800
-IF[#19LE200]GOTO0800
-(if X < 10 or #0, go to N0800)
-(if R < 1 or #0, go to N0800)
-(if F < 10 or #0, go to N0800)
-(if E < 10 or #0, go to N0800)
-(if S <= 200 or #0, go to N0800)
+IF[#24EQ#0]GOTO8000
+IF[#24LT10]GOTO8000
+IF[#18EQ#0]GOTO8000
+IF[#18LT1]GOTO8000
+IF[#09EQ#0]GOTO8000
+IF[#09LT10]GOTO8000
+IF[#08EQ#0]GOTO8000
+IF[#08LT10]GOTO8000
+IF[#19EQ#0]GOTO8000
+IF[#19LE200]GOTO8000
+(if X < 10 or #0, go to N8000)
+(if R < 1 or #0, go to N8000)
+(if F < 10 or #0, go to N8000)
+(if E < 10 or #0, go to N8000)
+(if S <= 200 or #0, go to N8000)
 
 N0003
 #33=#5001
@@ -64,7 +64,7 @@ G90 G01 X#33 Y#32 F#651
 GOTO9999
 
 
-N0800
+N8000
 M05 (shujiku kaiten off)
 M09 (coolant off)
 #3000=100 (are*the*arguments*OK?)
