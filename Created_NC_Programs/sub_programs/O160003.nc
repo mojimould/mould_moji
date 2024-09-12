@@ -1,5 +1,5 @@
 %
-O160003 (last update on 20240829)
+O160003 (last update on 20240912)
 (X centerline measurement)
 
 N0001
@@ -114,7 +114,8 @@ N0800
 G65 P910002 (sensor OFF)
 #3000=121 (are*the*arguments*OK?)
 
-N9999 M99
+N9999
+M99
 
 (Used Variables and Programs)
 
