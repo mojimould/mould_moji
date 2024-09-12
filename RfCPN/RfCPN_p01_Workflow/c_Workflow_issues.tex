@@ -18,8 +18,8 @@
 \begin{Issues}{オペレータの精神的高ストレス下での作業}
 通常、\index{NCプログラム}NCプログラムの編集はシステム管理者・設計者・\index{プログラマ}プログラマ等が行う高度な業務である
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]\index{オペレータ}オペレータに対してNCメインプログラムの直接編集を強いている状態になっている
-\item[{\sarrow[red]}]NCプログラム専門の担当者が存在せず、オペレータが兼任している状態になっている
+\item[{\sarrow[red]}]作業者に対してNCメインプログラムの直接編集を強いている状態になっている
+\item[{\sarrow[red]}]NCプログラム専門の担当者が存在しない
 \end{enumerate}
 \end{Issues}
 
@@ -71,6 +71,7 @@
 \begin{Issues}{\KeywayCenterMeasurement（AC方向）の不安定性}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\KeywayCenter（AC方向）の測定が、手計算による関節的な方法で導出されている
+\item[{\sarrow[red]}]自動化が十分可能にもかかわらず、事態が放置され続けている
 \item[{\sarrow[red]}]\CenterCurvature に伴う誤差を含み、位置（特に\AsideKeywayDepth）が安定しない
 \end{enumerate}
 \end{Issues}
@@ -86,7 +87,7 @@
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\CenterlineEndFaceDifMeasurement が、手動による\index{ハンドルそうさ@ハンドル操作}ハンドル操作で行われている
 \item[{\sarrow[red]}]手作業によるため、測定位置や送り速さが安定しない
-\item[{\sarrow[red]}]\Outcut・\Keyway・\CenterCurvature の寸法から自動化が可能にもかかわらず、事態が放置され続けている
+\item[{\sarrow[red]}]自動化が十分可能にもかかわらず、事態が放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -114,6 +115,7 @@
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]手作業による\index{ハンドルそうさ@ハンドル操作}ハンドル操作により測定が行われている
 \item[{\sarrow[red]}]\index{NCプログラム}NCプログラム内の\OutcutLength の寸法に誤りが存在している
+\item[{\sarrow[red]}]自動化が十分可能にもかかわらず、事態が放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -142,7 +144,7 @@
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]
 寸法の小さな\EndFaceChamferMilling が\index{てもちけんまき@手持ち研磨機}手持ち研磨機により\index{てさぎょう@手作業}手作業で行われている
-\item[{\sarrow[red]}]\EndFaceChamferMilling に関する解析計算がなされないまま放置され続けている
+\item[{\sarrow[red]}]大半の場合は自動化が十分可能にもかかわらず、事態が放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -155,6 +157,7 @@
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\EndFaceOutCChamferMilling のAC方向の位置調整が手作業により行われている
 \item[{\sarrow[red]}]目分量により位置調整がなされているため、位置が安定しない
+\item[{\sarrow[red]}]自動化が十分可能にもかかわらず、事態が放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -167,6 +170,7 @@
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\EndFaceInCChamferMilling のAC方向の位置調整が手作業により行われている
 \item[{\sarrow[red]}]目分量により位置調整がなされているため、位置が安定しない
+\item[{\sarrow[red]}]自動化が十分可能にもかかわらず、事態が放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -218,6 +222,7 @@
 \item[{\sarrow[red]}]必要な項目が記載されていないことが頻繁にある
 \item[{\sarrow[red]}]不必要な項目が記載されていることが頻繁にある
 \item[{\sarrow[red]}]全明細の分を1つの形式で無理にまとめようとしており、かつできていない
+\item[{\sarrow[red]}]自動化が十分可能にもかかわらず、事態が放置され続けている
 \item[{\sarrow[red]}]しわ寄せがすべて作業員に押し付けられており、記載ミスを誘発・頻発させている
 \end{enumerate}
 \end{Issues}
@@ -231,7 +236,7 @@
 
 \begin{Issues}{工具の不整理・不整頓}
 \begin{enumerate}[label=\sarrow]
-\item 工具が整頓されておらず、使用可能かも不明な工具が設置されている
+\item 工具が整理されておらず、使用可能かも不明な工具が設置されている
 \item 工具が整頓されておらず、無分別に工具が設置されている
 \end{enumerate}
 \end{Issues}
@@ -253,6 +258,7 @@
 \begin{Issues}{\KeywayCenter 位置の手動計算による導出}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\KeywayCenter の$X$座標を、電卓により手作業で計算して導出している
+\item[{\sarrow[red]}]自動化が十分可能にもかかわらず、事態が放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -260,7 +266,7 @@
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\AsideKeywayDepth 指定時の\KeywayCenter 位置を、直接的な測定ではなく、端面部の外側中心を基準に関節的に導出している
 \item[{\sarrow[red]}]\CenterCurvature に伴う誤差を含み、\AsideKeywayDepth が安定しない
-\item[{\sarrow[red]}]位置調整（手入力）の頻度が必然的に多くなっている
+\item[{\sarrow[red]}]手動による位置調整の頻度が必然的に多くなっている
 \end{enumerate}
 \end{Issues}
 
@@ -270,6 +276,7 @@
 \item[{\sarrow[red]}]\index{NCメインプログラム}NCメインプログラムのパターン化がなされていない
 \item[{\sarrow[red]}]\index{プログラマ}プログラマとしての能力が必要な\index{NCメインプログラム}NCメインプログラムの作成業務が、（スタッフや管理職でなく）作業者に課されている
 \item[{\sarrow[red]}]作業者に\index{プログラマ}プログラマとしての能力が問われ、\index{きょういくコスト@教育コスト}教育コストを多くかかる状態になっている
+\item[{\sarrow[red]}]自動化が十分可能にもかかわらず、事態が放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -282,7 +289,7 @@
 \begin{Issues}{測定基準値の手動による実測}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の概算値を見出すために、オペレータが直接機内で測定している
-\item[{\sarrow[red]}]ジグ・ワークの寸法から機械的に見出だせるにかかわらず、放置され続けている
+\item[{\sarrow[red]}]機械的に見出だせるにもかかわらず、放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -296,7 +303,7 @@
 \begin{Issues}{\CenterlineEndFaceDifMeasurement の作業効率}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\CenterlineEndFaceDifMeasurement が、手動による\index{ハンドルそうさ@ハンドル操作}ハンドル操作で行われている
-\item[{\sarrow[red]}]\Outcut・\Keyway・\CenterCurvature の寸法から自動化が可能にもかかわらず、事態が放置され続けている
+\item[{\sarrow[red]}]自動化が可能にもかかわらず、事態が放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -311,6 +318,7 @@
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\EndFacecutMilling の基準点が外側中心として与えられており、\index{めいさい@明細}明細に依存する\indexTDFaceMill\nameTDCorrection を行わなければならない
 \item[{\sarrow[red]}]作業者が手動で\indexTDFaceMill\nameTDCorrection 値を編集しなければならない状態にある
+\item[{\sarrow[red]}]自動補正が可能にもかかわらず、事態が放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -330,6 +338,7 @@
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]\KeywayWidth・工具幅に応じた\KeywayMilling の回数を、作業者が決定しなければならない状態にある
 \item[{\sarrow[red]}]\KeywayMilling の回数の変更は、作業者が\index{NCメインプログラム}NCメインプログラムを直接編集しなければならない状態にある
+\item[{\sarrow[red]}]自動化が十分可能にもかかわらず、事態が放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -342,7 +351,7 @@
 \begin{Issues}{手作業による\EndFaceChamferMilling の加工}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]寸法の小さな\EndFaceChamferMilling が、手持ち研磨機を用いて手作業で加工されている
-\item[{\sarrow[red]}]\EndFaceChamferMilling に関する解析計算がなされないまま放置され続けている
+\item[{\sarrow[red]}]大半の場合は自動化が十分可能にもかかわらず、事態が放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -355,7 +364,7 @@
 \begin{Issues}{\CurvedOutcutMilling の\index{ハンドルそうさ@ハンドル操作}ハンドル操作による測定}
 \begin{enumerate}[label=\sarrow]
 \item[{\sarrow[red]}]手作業による\index{ハンドルそうさ@ハンドル操作}ハンドル操作により測定が行われている
-\item[{\sarrow[red]}]\CurvedOutcutMilling に関する解析計算がなされないまま放置され続けている
+\item[{\sarrow[red]}]自動化が十分可能にもかかわらず、事態が放置され続けている
 \end{enumerate}
 \end{Issues}
 
@@ -374,7 +383,7 @@
 
 \begin{Issues}{\Table 回転による振分調整の未対応}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}]振分調整が\Spacer を用いた方法でのみしかできない状態にある
+\item[{\sarrow[red]}]振分調整が\Spacer を用いた方法のみでしかできない状態にある
 \item[{\sarrow[red]}]再振分けを行う際に、必ず\Spacer の取付けまたは取外し作業を行わなければならない
 \end{enumerate}
 \end{Issues}
@@ -435,7 +444,7 @@
 
 \begin{Issues}{根本的な問題}
 \begin{enumerate}[label=\sarrow]
-\item[{\sarrow[red]}] \expandafterindex{\yomiDrawing（モールド）@\nameDrawing（モールド）}\nameDrawing と\index{NCプログラム}NCプログラムの作成作業の工程が直列になっている
+\item[{\sarrow[red]}] \expandafterindex{\yomiDrawing（モールド）@\nameDrawing（モールド）}\nameDrawing 作成と\index{NCプログラム}NCプログラム作成作業が直列の工程となっている
 \item[{\sarrow[red]}] \expandafterindex{\yomiDrawing のさくせい）@\nameDrawing の作成}\nameDrawing の作成が、\index{CADソフトウェア}CADソフトウェアを用いて手動でなされている
 \item[{\sarrow[red]}] \index{モールド}モールドに関する\index{データベース@データベース}データベースに相当するものが存在しない
 \end{enumerate}
