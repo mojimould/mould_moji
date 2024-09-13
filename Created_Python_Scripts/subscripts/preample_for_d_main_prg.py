@@ -158,7 +158,9 @@ if KeywayAsideDepthToleranceExitsFlag == 1 and TopOutcutExistsFlag == 0:
     originKeywayVal = AsideKeywayCenterX - keywayAsideDepthCorrection - keywayACODAve / 2 - TableCenterXFromCurvatureCenterX * CosParallelAngle
 elif KeywayAsideDepthToleranceExitsFlag == 0 and TopOutcutExistsFlag == 0:
     originKeywayVal = TopInCenterXVal + (keywayCenterXFromAlocationCenter - topCurvatureCenterX) 
-elif TopOutcutExistsFlag == 1:
+elif BotOutcutExistsFlag == 0 and TopOutcutExistsFlag == 1:
+    originKeywayVal = TopOutcutCenterXVal
+elif BotOutcutExistsFlag == 1 and TopOutcutExistsFlag == 1:
     originKeywayVal = originTopOutVal
 originKeyway = f"{originKeywayVal:.3f}"
 
