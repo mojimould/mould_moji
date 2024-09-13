@@ -1,8 +1,8 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter{加工システム作成における\index{きのうようけん@機能要件}機能要件}
-ここでは加工システム（\index{NCプログラム}NCプログラム群）を作成する際の\index{きのうようけん@機能要件}機能要件を挙げる。
+\modHeadchapter{加工システム作成における\index{ようけん@要件}要件}
+ここでは加工システム（\index{NCプログラム}NCプログラム群）を作成する際の\index{ようけん@要件}要件を挙げる。
 なお、青色(\,\sarrow\!)の項目は優先度が低いものを示す。
 
 
@@ -179,12 +179,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\index{3D CAD}3D CAD・\index{CAM}CAMの使用について}
 \begin{enumerate}[label*=\alph*)]
-\item \index{3D CAD}3D CAD・\index{CAM}CAMの使用は、\index{そせいかこうひん@塑性加工品}塑性加工品の加工との相性が悪く非現実的である
-\item \index{3D CAD}3D CAD・\index{CAM}CAMの使用は、当社の能力から鑑みて使用は明らかに非現実的である
+\item \index{そせいかこうひん@塑性加工品}塑性加工品の加工との相性が悪く非現実的である
+\item 当社の能力から鑑みて使用は明らかに非現実的である
+\item 各明細ごとに、各工程部分ごとの専用NCプログラム群が必要となり、大量にあるファイルの維持・管理および記憶容量の観点から望ましくない
 \item 加工の対象となるワークはそのほとんどが直線と円弧のみで表される単純な構造であり、幾何的情報は\index{しょとうきかがく@初等幾何学}初等幾何学で解析的導出が可能である
 \end{enumerate}
 こうした事情から、\index{3D CAD}3D CAD・\index{CAM}CAMを用いた\index{NCプログラム}NCプログラムの作成は行わない。
-
+代替として、明細の違いに依存しない形の各工程用NCプログラム群の作成を行う。
 
 
 \clearpage
@@ -193,8 +194,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\AlocationAdjustment 用\Spacer の使用について}
 \begin{enumerate}[label*=\alph*)]
-\item \Spacer を用いた\AlocationAdjustment は、\index{めいさい@明細}明細ごとに\Spacer を手配する必要があり、その維持管理や費用の観点から非現実的である
-\item \Spacer の使用は、本質的に（B軸方向の）回転と同義である
+\item \index{めいさい@明細}明細ごとに\Spacer を手配する必要があり、その維持・管理や費用の観点から非現実的である
+\item \Spacer の使用は、本質的にB軸方向の回転と等価である
 \end{enumerate}
 こうした事情から、\Spacer を用いた\AlocationAdjustment は原則として行わない。
 代替として、\Table の回転を用いた\AlocationAdjustment を行う。
@@ -224,7 +225,7 @@
 \item NCサブプログラムの\index{ひきすう@引数}引数の値に対して、異常値を検知する機能を施す
 \item \TouchSensorProbe による測定値に対して、異常値を検知する機能を施す
 \item NCサブプログラム内の計算値の値に対して、異常値を検知する機能を施す
-\item 異常値を検知した際に、アラームを発生し停止する機能を施す
+\item 異常値を検知した際に、\index{アラーム}アラームを発生し停止する機能を施す
 \end{enumerate}
 
 
@@ -241,11 +242,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{測定用NCサブプログラムの作成}
 \begin{enumerate}[label={\sarrow[red]}]
-\item ワークの外側中心座標測定の機能を有するNCサブプログラムの作成
-\item ワークの内側中心座標測定の機能を有するNCサブプログラムの作成
-\item ワークの\OutcutCenter 座標測定の機能を有するNCサブプログラムの作成
-\item \Dimple の表面位置座標測定の機能を有するNCサブプログラムの作成
-\item \CenterlineEndFaceDifMeasurement の機能を有するNCサブプログラムの作成
+\item ワークの外側中心座標測定の機能を有するNCサブプログラム
+\item ワークの内側中心座標測定の機能を有するNCサブプログラム
+\item ワークの\OutcutCenter 座標測定の機能を有するNCサブプログラム
+\item \Dimple の表面位置座標測定の機能を有するNCサブプログラム
+\item \CenterlineEndFaceDifMeasurement の機能を有するNCサブプログラム
 \end{enumerate}
 
 
@@ -254,16 +255,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{加工用NCサブプログラムの作成}
 \begin{enumerate}[label={\sarrow[red]}]
-\item \EndFacecutMilling の基準点へ移動する機能を有するNCサブプログラムの作成
-\item \OutcutMilling の基準点へ移動する機能を有するNCサブプログラムの作成
-\item[\sarrow] \CurvedOutcutMilling の基準点へ移動する機能を有するNCサブプログラムの作成
-\item \KeywayMilling の基準点へ移動する機能を有するNCサブプログラムの作成
-\item \EndFaceOutCChamferMilling の基準点へ移動する機能を有するNCサブプログラムの作成
-\item[\sarrow] \CurvedOutcut に沿った\EndFaceOutCChamferMilling の基準点へ移動する機能を有するNCサブプログラムの作成
-\item \EndFaceInCChamferMilling の基準点へ移動する機能を有するNCサブプログラムの作成
-\item \DimpleMilling の機能を有するNCサブプログラムの作成
-\item[\sarrow] \EndFaceBoringMilling の基準点へ移動する機能を有するNCサブプログラムの作成
-\item[\sarrow] \IncutBoringMilling の基準点へ移動する機能を有するNCサブプログラムの作成
+\item \EndFacecutMilling の基準点へ移動する機能を有するNCサブプログラム
+\item \OutcutMilling の基準点へ移動する機能を有するNCサブプログラム
+\item[\sarrow] \CurvedOutcutMilling の基準点へ移動する機能を有するNCサブプログラム
+\item \KeywayMilling の基準点へ移動する機能を有するNCサブプログラム
+\item \EndFaceOutCChamferMilling の基準点へ移動する機能を有するNCサブプログラム
+\item[\sarrow] \CurvedOutcut に沿った\EndFaceOutCChamferMilling の基準点へ移動する機能を有するNCサブプログラム
+\item \EndFaceInCChamferMilling の基準点へ移動する機能を有するNCサブプログラム
+\item \DimpleMilling の機能を有するNCサブプログラム
+\item[\sarrow] \EndFaceBoringMilling の基準点へ移動する機能を有するNCサブプログラム
+\item[\sarrow] \IncutBoringMilling の基準点へ移動する機能を有するNCサブプログラム
 \end{enumerate}
 
 
