@@ -240,9 +240,9 @@
 \subsubsection{\EndFacecutMilling における寸法}
 \begin{enumerate}[label=\sarrow]
 \item \expandafterindex{こうさ（\yomiWorkTotalLength）@公差（\nameWorkTotalLength）}\nameWorkTotalLength の公差を確認し、\TopAlocationLength および\BottomAlocationLength の\expandafterindex{こうさ（\yomiAlocationLength）@公差（\nameAlocationLength）}公差の判断を行う
-\item \TopAlocationLength・\BottomAlocationLength を確認し、\index{スペーサ}スペーサによる調整が必要か判断を行う
-\item 使用するスペーサおよび\ReAlocationLength は、専用の計算\index{プログラム(Excel VBA)}プログラム(\index{Excel VBA}Excel VBA)を用いて決定する
-\item \OuterDiameter・\expandafterindex{\yomiThickness（\yomiEndFace）@\nameThickness（\nameEndFace）}\nameEndFace 部の\nameThickness・\expandafterindex{\yomiEndFace そとがわコーナーR@\nameEndFace 外側コーナーR}\nameEndFace 外側コーナーRを確認し、それに応じて\TDCValue を決定する
+\item \TopAlocationLength・\BottomAlocationLength を確認し、\Spacer による調整が必要か判断を行う
+\item 使用する\Spacer および\ReAlocationLength は、専用の計算プログラム(\linkExcelVBA)を用いて決定する
+\item \OuterDiameter・\expandafterindex{\yomiThickness（\yomiEndFace）@\nameThickness（\nameEndFace）}\nameEndFace 部\nameThickness・\EndFaceOuterCornerR を確認し、それに応じて\TDCValue を決定する
 \item \ReAlocationLength に応じて、$Z$方向の\index{クリアランスへいめん（Zほうこう）@クリアランス平面（$Z$方向）}クリアランス平面の位置を決定する
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
