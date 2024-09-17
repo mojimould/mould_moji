@@ -1,4 +1,4 @@
-# last update: 20240806
+# last update: 20240917
 # Copyright 2023-2024 The individual creator, not held by any corporation.
 # All rights reserved.
 
@@ -42,7 +42,6 @@ with open('./O' + MainPrgID, 'w') as f:
     f.write(
         '%\n'
         'O'+ MainPrgID + ' (Last update on ' + date_string+')\n'
-        '(Customer: ' + CustomerName + ')\n'
         '(Top re_alocation: ' + str(topReAlocationLength) + ')\n'
         '(Bot re_alocation: ' + str(botReAlocationLength) + ')\n'
         '(Top Overhang: ' + str(topOverHangLength) + ')\n'
