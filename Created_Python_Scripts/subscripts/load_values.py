@@ -1,4 +1,4 @@
-# last update: 20240801
+# last update: 20240917
 # Copyright 2023-2024 The individual creator, not held by any corporation.
 # All rights reserved.
 
@@ -435,7 +435,7 @@ elif BotEndfaceInCChamferExistsFlag == 0 and BotEndfaceInRChamferExistsFlag == 1
     botInChamferTypeVal   = 1
     botInChamferLengthDim = WS['C82'].value
     botInChamferAngleVal  = 45
-botInChamferType   = f"{0:.1f}"
+botInChamferType   = f"{botInChamferTypeVal:.1f}"
 botInChamferLength = f"{botInChamferLengthDim:.2f}"
 botInChamferAngle  = f"{botInChamferAngleVal:.0f}"
 botInChamferCornerRDim = botInsideCornerRDim
