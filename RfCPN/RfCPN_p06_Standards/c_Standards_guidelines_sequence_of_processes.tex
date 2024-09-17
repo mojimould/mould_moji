@@ -60,7 +60,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 24.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\DMC・\MMC における工程の順番}
+\modHeadsection{\DMC・\MMC における工程の順番\label{sec:MillingSystemFlow}}
 以上を考慮して、\DMC および\MMC における工程の順は、原則として以下のとおりとする（\pageautoref{fig:flowchart}参照）
 \begin{enumerate}[label={\arabic*.}]
 \item ワークの取付け
@@ -78,15 +78,15 @@
 \item \Dimple の表面位置測定
 \item \DimpleMilling
 \item \TopEndFacecutMilling
-\item \TopOutcutMilling or \EndFaceBoringMilling or \IncutBoringMilling
+\item \TopOutcutMilling or \TopCurvedOutcutMilling or \EndFaceBoringMilling or \IncutBoringMilling
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{\TopOutcut・\EndFaceBoring・\IncutBoring が一緒に存在する\index{めいさい@明細}明細はないものと仮定している}
+\footnote{\TopOutcut・\EndFaceBoring・\IncutBoring が同時に存在する\index{めいさい@明細}明細はないものと仮定している}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item \KeywayMilling
 \item \TopEndFaceOutCChamferMilling
 \item \TopEndFaceInCChamferMilling
 \item \BottomEndFacecutMilling
-\item \BottomOutcutMilling
+\item \BottomOutcutMilling or \BottomCurvedOutcutMilling
 \item \BottomEndFaceOutCChamferMilling
 \item \BottomEndFaceInCChamferMilling
 \item \CenterlineEndFaceDifMeasurement
