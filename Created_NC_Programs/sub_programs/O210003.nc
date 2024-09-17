@@ -1,6 +1,6 @@
 %
-O210003 (last update on 20240917)
-(for dimple measurement & kakou)
+O210003 (last update on 20240918)
+(for dimple measurement & milling)
 (level 1: mainly moving along central curvature)
 
 N0001
@@ -97,15 +97,15 @@ IF[#4111EQ33]GOTO0013
 GOTO8000
 
 N0012 (if sensor)
-#701=#901050 (Z hosei)
-#702=#901050 (XY hosei)
+#701=#901050 (Z correction)
+#702=#901050 (XY correction)
 #703=31 (G31)
 GOTO0014
 
 N0013 (if Tslot)
-#701=0 (Z hosei)
+#701=0 (Z correction)
 #702=#[2400+#4111]+#[2600+#4111]
-(XY hosei: the KouguHankei)
+(XY correction: tool radius)
 #703=1 (G01)
 
 N0014
@@ -140,7 +140,7 @@ G90 G01 Z[#26+#600] F#652
 (Z: Z+#600)
 
 G91 G01 X[#705-#704] Z[#706-#26-#701-#600] F#652
-(XZ: tanmen center)
+(XZ: endface center)
 
 #711=#5001
 #712=#5003
@@ -278,15 +278,16 @@ S35
 G65 P900003
 (pause in front of the door)
 
-G43 H#4120 (hosei KouguChou: T#)
+G43 H#4120
+(tool length correction: T#)
 
 G90 G00 X0 Y0
 G90 G01 Z[#26+#600] F#652
 (XY Top Inside Center)
-(Z= TopTanmen +#600)
+(Z= top realocation +#600)
 
 G91 G01 X[#705-#704] Z[#706-#26-#701-#600] F#652
-(XZ: tanmen center)
+(XZ: endface center)
 
 IF[#4111NE50]GOTO0023
 (if tool is not sensor, go to N0023)
@@ -520,8 +521,9 @@ N9999 M99
 (#401)
 (#600, #620, #652, #653, #682)
 (#900018, #900024, #901001, #901005, #901011, #901050)
+(#900301-#900600)
 (as LHS)
-(#700-#718, #724)
+(#700-#719, #724)
 
 (System variables)
 (#0   : empty)
