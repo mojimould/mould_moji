@@ -36,8 +36,8 @@
 \begin{enumerate}[label={\sarrow}]
 \item ボトム側の測定後に、トップ側の測定を行う
 \item ボトム側の加工後に、トップ側の加工を行う
-\item \EndFacecutMilling, \OutcutMilling, \KeywayMilling, \EndFaceOutCChamferMilling・\EndFaceInCChamferMilling の順番で行うものとする
-\item \EndFaceBoringMilling, \IncutBoringMilling については、使用工具が\OutcutMilling と同じため、その順番は\OutcutMilling と同等とする
+\item \EndFacecutMilling, \OutcutMilling, \KeywayMilling, \EndFaceOutCChamferMilling, \EndFaceInCChamferMilling の順番で行う
+\item \EndFaceBoringMilling, \IncutBoringMilling については、使用工具が\OutcutMilling のそれと同じため、その順番は\TopOutcutMilling と同等とする
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -47,7 +47,7 @@
 ワークの加工を行うと、それに伴い\index{おうりょく@応力}応力に変化が生じ、\index{ワークのゆがみ@ワークの歪み}ワークに歪みが生じる。
 そのため、各々の部分の\index{すんぽう@寸法}寸法や\index{こうさ@公差}公差等を考慮して順番を決定する必要がある
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{これを優先して考慮するならば、\EndFacecutMilling, \OutcutMilling, \EndFaceOutCChamferMilling・\EndFaceInCChamferMilling, \KeywayMilling のほうが望ましい。}。
+\footnote{これを優先して考慮するならば、\EndFacecutMilling, \OutcutMilling, \EndFaceOutCChamferMilling・\EndFaceInCChamferMilling, \KeywayMilling の順のほうが望ましい。}。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 特に、\DimpleMeasurement 後に\Dimple 以外の加工を行うと、その表面位置が\DimpleDepth に対して大きくずれ得ることが想定される。
 \begin{enumerate}[label={\sarrow}]
@@ -80,7 +80,7 @@
 \item \TopEndFacecutMilling
 \item \TopOutcutMilling or \TopCurvedOutcutMilling or \EndFaceBoringMilling or \IncutBoringMilling
 %% footnote %%%%%%%%%%%%%%%%%%%%%
-\footnote{\TopOutcut・\EndFaceBoring・\IncutBoring が同時に存在する\index{めいさい@明細}明細はないものと仮定している}
+\footnote{\TopOutcut・\TopCurvedOutcutMilling・\EndFaceBoring・\IncutBoring が同時に存在する\index{めいさい@明細}明細はないものと仮定している。}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item \KeywayMilling
 \item \TopEndFaceOutCChamferMilling
