@@ -1,7 +1,7 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter[lof]{作成する\index{NCサブプログラム}NCサブプログラム\TBW}
+\modHeadchapter[lof]{作成する\index{NCサブプログラム}NCサブプログラム}
 作成する\index{NCサブプログラム}NCサブプログラムの\index{プログラムばんごう@プログラム番号}プログラム番号は、\pageautoref{chap:NCprgNumber}に基づく。
 また、\index{NCメインプログラム}NCメインプログラムを最上位（レベル0）の階層とする。
 
@@ -10,7 +10,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 39.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム一覧：レベル1}
+\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム一覧}
 \begin{enumerate}[label*=\sarrow]
 \item \MXOThickness：$X$方向 外側中心および外側幅 両側測定
 \item \MYOThickness：$Y$方向 外側中心および外側幅 両側測定
@@ -18,8 +18,12 @@
 \item \MXIWidth：$X$方向 内側中心および内側幅 両側測定
 \item \MYIWidth：$Y$方向 内側中心および内側幅 両側測定
 \item \MXIface：$X$方向 外削中心 片側測定
-\item \MCenterline：$X$方向および$Y$方向 \CenterlineEndFaceDif 片側測定
+\item \MCenterline：$X$方向および$Y$方向 \CenterlineEndFaceDif{} 片側測定
 \item \DLone：\DimpleMeasurement および\DimpleMilling
+\item \DLtwoAC：\DLone 用 AまたはC面 \Dimple 列内移動
+\item \DLtwoBD：\DLone 用 BまたはD面 \Dimple 列内移動
+\item \DMLthreeAC：\DLtwoAC 用 AまたはC面 \DimpleMeasurement
+\item \DMLthreeBD：\DLtwoBD 用 BまたはD面 \DimpleMeasurement
 \item \KEndFaceRight：\EndFacecutMilling
 \item \KOutcutRLeft：\OutcutMilling
 \item \KCurvedOutcutRLeft：\CurvedOutcutMilling
@@ -29,6 +33,13 @@
 \item \KEndFaceInCChamferRLeft：\EndFaceInCChamferMilling
 \item \KEndFaceBoring：\EndFaceBoringMilling
 \item \KIncutBoring：\IncutBoringMilling
+\item \KOLeftFF：\KEndFaceBoring 用 加工 $XY$面左回り1周
+\item \KOLeftFS：\KEndFaceRight\KOutcutRLeft\KKeywayConerLeft\KEndFaceOutCChamferRLeft 用 加工 $XY$面左回り1周
+\item \KOLeftFSZ：\KCurvedOutcutRLeft\KEndFaceCurvedOutCChamferRLeft 用 加工 $XY$面左回り1周
+\item \KILeftFF：\KEndFaceInCChamferRLeft\KIncutBoring 用 加工 $XY$面左回り1周
+\item \DKLthreeAC：\DLtwoAC 用 AまたはC面 \DimpleMilling
+\item \DKLthreeBD：\DLtwoBD 用 BまたはD面 \DimpleMilling
+\item \OpauseCheck：各工程後 扉前移動および一時停止
 \end{enumerate}
 
 
@@ -37,9 +48,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 39.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム一覧：レベル2}
-
-
+\modHeadsection{\TBW}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
