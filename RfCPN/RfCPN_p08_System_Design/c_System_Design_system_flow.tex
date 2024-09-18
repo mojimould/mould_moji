@@ -1,29 +1,7 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter[lof]{加工システムの全体の流れと必要なNCサブプログラム}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[p]%
-\begin{Figlandscape}
-\begin{adjustbox}{%
-  addcode={\begin{minipage}{\textheight}\centering}{%
-    \captionof{figure}{加工全体のフロー（概要）\label{fig:flowchart}}%
-    \end{minipage}%
-  },
-  rotate=90,
-  center,
-%  max width=\textheight,
-%  max height=\linewidth,
-  keepaspectratio}
-\includegraphics[height=\linewidth-10pt, trim=20 30 20 20, clip]{RfCPN_p03_pictures/Milling_flow_chart.pdf}%
-\end{adjustbox}
-\end{Figlandscape}%
-\end{figure}%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadchapter[lof]{加工システムの全体の流れ}
 
 
 
@@ -118,16 +96,55 @@
 \subsection{工程：加工後の段取}
 \begin{enumerate}[label*=\sarrow]
 \item \Palette を交換し、ワークを機外に搬出する
-\item ワークを\Table 上の\Jig から取り外す41
+\item ワークを\Table 上の\Jig から取り外す
 \end{enumerate}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[p]%
+\begin{Figlandscape}
+\begin{adjustbox}{%
+  addcode={\begin{minipage}{\textheight}\centering}{%
+    \captionof{figure}{加工全体のフロー（概要）：加工前段取～測定\label{fig:flowchartFirst}}%
+    \end{minipage}%
+  },
+  rotate=90,
+  center,
+%  max width=\textheight,
+%  max height=\linewidth,
+  keepaspectratio}
+\includegraphics[height=\linewidth-10pt, trim=0 235 0 20, clip]{RfCPN_p03_pictures/Measurement_flow_chart.pdf}%
+\end{adjustbox}
+\end{Figlandscape}%
+\end{figure}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\clearpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 41.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{必要なNCサブプログラム\TBW}
-(to be written...)
+\begin{figure}[p]%
+\begin{Figlandscape}
+\begin{adjustbox}{%
+  addcode={\begin{minipage}{\textheight}\centering}{%
+    \captionof{figure}{加工全体のフロー（概要）：加工～加工後段取\label{fig:flowchartSecond}}%
+    \end{minipage}%
+  },
+  rotate=90,
+  center,
+%  max width=\textheight,
+%  max height=\linewidth,
+  keepaspectratio}
+\includegraphics[height=\linewidth-10pt, trim=0 205 0 20, clip]{RfCPN_p03_pictures/Milling_flow_chart.pdf}%
+\end{adjustbox}
+\end{Figlandscape}%
+\end{figure}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
