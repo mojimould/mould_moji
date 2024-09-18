@@ -463,7 +463,55 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KEndFaceRight ：加工 \EndFacecut{} コーナーR 左回り1周}
+\modHeadsection{\DLone ：測定・加工 \Dimple}
+
+\paragraph*{目的}
+\DimpleMeasurement および \indexDimpleMilling 加工のための移動（レベル1）
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLoneArguments}
+
+\begin{multicollongtblr}{\DLoneArguments}{ccX[l]}
+引数 & 変数 & 内容\\
+{\ttfamily A} & {\ttfamily\ttNum01} & \AlocationAngle\\
+{\ttfamily B} & {\ttfamily\ttNum02} & \DimpleAngle\\
+{\ttfamily I} & {\ttfamily\ttNum04} & \DimpleHorizontalPitch\\
+{\ttfamily K} & {\ttfamily\ttNum06} & \DimpleVerticalPitch\\
+{\ttfamily F} & {\ttfamily\ttNum09} & \DimpleOddRowLength\\
+{\ttfamily M} & {\ttfamily\ttNum13} & \DimpleRowNum\\
+{\ttfamily Q} & {\ttfamily\ttNum17} & \DistanceTopEndFaceDimpleFirstRow\\
+{\ttfamily R} & {\ttfamily\ttNum18} & \CenterCurvatureRadius\\
+{\ttfamily S} & {\ttfamily\ttNum19} & \DimpleEvenRowLength\\
+{\ttfamily T} & {\ttfamily\ttNum20} & \PlatingThk\\
+{\ttfamily U} & {\ttfamily\ttNum21} & \DimpleDepth\\
+{\ttfamily W} & {\ttfamily\ttNum23} & \TopAlocationLength\\
+{\ttfamily Z} & {\ttfamily\ttNum26} & \TopReAlocationLength\\
+\end{multicollongtblr}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLone の取扱説明\TBW}
+(to be written...)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLone の注意事項\TBW}
+(to be written...)
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\KEndFaceRight ：加工 \EndFacecut{} コーナーR 左回り}
 
 \paragraph*{目的}
 左回り\EndFacecutMilling における位置設定
@@ -500,7 +548,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KOutcutRLeft ：加工 \Outcut{} コーナーR 左回り1周}
+\modHeadsection{\KOutcutRLeft ：加工 \Outcut{} コーナーR 左回り}
 
 \paragraph*{目的}
 左回り\OutcutMilling における位置設定
@@ -544,7 +592,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KCurvedOutcutRLeft ：加工 \CurvedOutcut{} コーナーR 左回り1周}
+\modHeadsection{\KCurvedOutcutRLeft ：加工 \CurvedOutcut{} コーナーR 左回り}
 
 \paragraph*{目的}
 左回り\CurvedOutcutMilling における位置設定
@@ -589,7 +637,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KKeywayConerLeft ：加工 \Keyway{} 左回り1周}
+\modHeadsection{\KKeywayConerLeft ：加工 \Keyway{} 左回り}
 
 \paragraph*{目的}
 左回り\KeywayMilling における位置設定
@@ -638,7 +686,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KEndFaceOutCChamferRLeft ：加工 \EndFaceOutChamfer{} コーナーR 左回り1周}
+\modHeadsection{\KEndFaceOutCChamferRLeft ：加工 \EndFaceOutCChamfer{} コーナーR 左回り}
 
 \paragraph*{目的}
 左回り\EndFaceOutChamferMilling における位置設定
@@ -682,7 +730,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.15 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KEndFaceCurvedOutCChamferRLeft ：加工 \CurvedOutcut 用\EndFaceOutChamfer{} コーナーR 左回り1周}
+\modHeadsection{\KEndFaceCurvedOutCChamferRLeft ：加工 \CurvedOutcut 用\EndFaceOutCChamfer{} コーナーR 左回り}
 
 \paragraph*{目的}
 左回り\CurvedOutcut\EndFaceOutChamferMilling における位置設定
@@ -723,7 +771,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KEndFaceInCChamferRLeft ：加工 \EndFaceInChamfer{} コーナーR 左回り1周}
+\modHeadsection{\KEndFaceInCChamferRLeft ：加工 \EndFaceInCChamfer{} コーナーR 左回り}
 
 \paragraph*{目的}
 左回り\EndFaceInChamferMilling における位置設定
@@ -766,7 +814,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KEndFaceBoring ：加工 \EndFaceBoring{} コーナーR 左回り1周}
+\modHeadsection{\KEndFaceBoring ：加工 \EndFaceBoring{} コーナーR 左回り}
 
 \paragraph*{目的}
 左回り\EndFaceBoringMilling における位置設定
@@ -807,7 +855,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\KIncutBoring ：加工 \IncutBoring{} コーナーR 左回り1周}
+\modHeadsection{\KIncutBoring ：加工 \IncutBoring{} コーナーR 左回り}
 
 \paragraph*{目的}
 左回り\IncutBoringMilling における位置設定
@@ -839,54 +887,6 @@
 %% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KIncutBoring の注意事項\TBW}
-(to be written...)
-
-
-
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 46.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\DLone ：測定・加工 \Dimple}
-
-\paragraph*{目的}
-\DimpleMeasurement および \indexDimpleMilling 加工のための移動（レベル1）
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\DLoneArguments}
-
-\begin{multicollongtblr}{\DLoneArguments}{ccX[l]}
-引数 & 変数 & 内容\\
-{\ttfamily A} & {\ttfamily\ttNum01} & \AlocationAngle\\
-{\ttfamily B} & {\ttfamily\ttNum02} & \DimpleAngle\\
-{\ttfamily I} & {\ttfamily\ttNum04} & \DimpleHorizontalPitch\\
-{\ttfamily K} & {\ttfamily\ttNum06} & \DimpleVerticalPitch\\
-{\ttfamily F} & {\ttfamily\ttNum09} & \DimpleOddRowLength\\
-{\ttfamily M} & {\ttfamily\ttNum13} & \DimpleRowNum\\
-{\ttfamily Q} & {\ttfamily\ttNum17} & \DistanceTopEndFaceDimpleFirstRow\\
-{\ttfamily R} & {\ttfamily\ttNum18} & \CenterCurvatureRadius\\
-{\ttfamily S} & {\ttfamily\ttNum19} & \DimpleEvenRowLength\\
-{\ttfamily T} & {\ttfamily\ttNum20} & \PlatingThk\\
-{\ttfamily U} & {\ttfamily\ttNum21} & \DimpleDepth\\
-{\ttfamily W} & {\ttfamily\ttNum23} & \TopAlocationLength\\
-{\ttfamily Z} & {\ttfamily\ttNum26} & \TopReAlocationLength\\
-\end{multicollongtblr}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\DLone の取扱説明\TBW}
-(to be written...)
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 46.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\DLone の注意事項\TBW}
 (to be written...)
 
 
