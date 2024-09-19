@@ -3,7 +3,6 @@
 
 \modHeadchapter[lof]{作成する\index{NCサブプログラム}NCサブプログラム}
 作成する\index{NCサブプログラム}NCサブプログラムの\index{プログラムばんごう@プログラム番号}プログラム番号は、\pageautoref{chap:NCprgNumber}に基づく。
-また、\index{NCメインプログラム}NCメインプログラムを最上位（レベル0）の階層とする。
 
 
 
@@ -48,19 +47,91 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 40.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\index{NCサブプログラム}NCサブプログラム：\MXOThickness\TBW}
+\modHeadsection{\index{NCサブプログラム}NCサブプログラム：\MXOThickness}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 40.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\MXOThickness の目的}
-\EndFace 部における外側中心$X$ および \HorizontalOD$X$の測定、ならびに\KeywayCenter$X$の計算
+\begin{enumerate}[label*=\sarrow]
+\item \EndFace 部における外側中心$X$の測定
+\item \EndFace 部における$X$方向の外側径の測定
+\item \KeywayCenter$X$の計算
+\end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 40.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 40.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\MXOThickness に用いる引数\TBW}
+\subsection{\MXOThickness に用いる引数}
+\begin{enumerate}[label*=\sarrow]
+\item \PMACOD
+\item \PMTopReAlocationLength または\PMBottomReAlocationLength
+\item \PMTopAlocationLength または\PMBottomAlocationLength
+\item \PMCenterCurvatureRadius
+\item \PMKeywayPos
+\item \PMKeywayWidth
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 40.02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MXOThickness の主なステップ}
+\begin{enumerate}[label*=\sarrow]
+\item $X$方向の外側面$X$座標の両側測定
+\item 中心$X$座標と$X$方向外側径の算出
+\item \KeywayCenter$X$座標の算出
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 40.02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MXOThickness のステップの概要}
+\begin{enumerate}[label*=\sarrow]
+\item 現在のワーク座標系{\ttfamily G\ttNum}によりトップ側・ボトム側を判断
+\item \ReAlocationLength+$Z$補正値（コモン変数） の$Z$位置に対し、AC方向の外面$X$座標を両側測定
+\item 両測定値の平均値（中心座標$X$）と差（$X$方向外側径）を算出
+\item $Z$補正値に応じて\EndFace 部の中心座標$X$を算出し、現在のワーク座標系{\ttfamily G\ttNum\;X}原点に格納
+\item $X$方向外側径の測定値を適当なコモン変数に格納
+\item 現在のワーク座標系が{\ttfamily G54}の場合、{\ttfamily G54\;X}から\KeywayCenter $X$座標を算出し、{\ttfamily G58\;X}原点に格納
+\end{enumerate}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 40.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\index{NCサブプログラム}NCサブプログラム：\MYOThickness\TBW}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 40.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MYOThickness の目的}
+\begin{enumerate}[label*=\sarrow]
+\item \EndFace 部における外側中心$Y$の測定
+\item \EndFace 部における\BDOD の測定
+\item \KeywayCenter$Y$の計算
+\end{enumerate}
+\EndFace 部における外側中心$X$ および \HorizontalOD$Y$の測定
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 40.03.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MYOThickness に用いる引数\TBW}
+\begin{enumerate}[label*=\sarrow]
+\item \PMACOD
+\item \PMTopReAlocationLength または\PMBottomReAlocationLength
+\item \PMTopAlocationLength または\PMBottomAlocationLength
+\item \PMCenterCurvatureRadius
+\item \PMKeywayPos
+\item \PMKeywayWidth
+\end{enumerate}
+
 
 
