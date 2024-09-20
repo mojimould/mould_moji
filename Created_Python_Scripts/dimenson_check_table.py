@@ -633,6 +633,7 @@ for col in ['B', 'C', 'D', 'E', 'F']:
 # ファイルを保存
 WB.save(file_name)
 
+
 # xlwingsでセル幅を自動調整
 app = xw.App(visible=False)
 wb_xlw = xw.Book(file_name)
@@ -683,11 +684,13 @@ mergeCell.api.HorizontalAlignment = xw.constants.HAlign.xlHAlignLeft
 wb_xlw.save()
 wb_xlw.close()
 
+
+
 # openpyxl で再度読み込み
 WB = load_workbook(file_name, data_only=True)
 # 余分なシートの削除
 for sheet in WB.sheetnames:
-    if sheet != str(DrawingIDNum):
+    if sheet != str(DrawingIDNum).zfill(4):
         del WB[sheet]
 
 checkWS = WB.worksheets[0]
