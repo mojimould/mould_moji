@@ -1,23 +1,23 @@
 %
-O490005 (last update on 20240614)
+O490005 (last update on 20240924)
 (Sotogawa ar HidariMawari 1shuu)
 
 N0001
-IF[#24EQ#0]GOTO0800
-IF[#24LT10]GOTO0800
-IF[#25EQ#0]GOTO0800
-IF[#25LT10]GOTO0800
-IF[#09EQ#0]GOTO0800
-IF[#09LT10]GOTO0800
-IF[#08EQ#0]GOTO0800
-IF[#08LT10]GOTO0800
-IF[#19EQ#0]GOTO0800
-IF[#19LE200]GOTO0800
-(if X < 10 or #0, go to N0800)
-(if Y < 10 or #0, go to N0800)
-(if F < 10 or #0, go to N0800)
-(if E < 10 or #0, go to N0800)
-(if S <= 200 or #0, go to N0800)
+IF[#24EQ#0]GOTO8000
+IF[#24LT10]GOTO8000
+IF[#25EQ#0]GOTO8000
+IF[#25LT10]GOTO8000
+IF[#09EQ#0]GOTO8000
+IF[#09LT10]GOTO8000
+IF[#08EQ#0]GOTO8000
+IF[#08LT10]GOTO8000
+IF[#19EQ#0]GOTO8000
+IF[#19LE200]GOTO8000
+(if X < 10 or #0, go to N8000)
+(if Y < 10 or #0, go to N8000)
+(if F < 10 or #0, go to N8000)
+(if E < 10 or #0, go to N8000)
+(if S <= 200 or #0, go to N8000)
 
 
 (kokokara G01)
@@ -30,8 +30,9 @@ IF[#06EQ2]GOTO0004
 IF[#06EQ3]GOTO0005
 IF[#06EQ4]GOTO0006
 IF[#06EQ5]GOTO0007
-GOTO0800
-(if K is not 1-5, go to N0800)
+IF[#06EQ6]GOTO0008
+GOTO8000
+(if K is not 1-5, go to N8000)
 
 N0003 (for R)
 G91 G01 X-[#24+#07*2-#18] F#09
@@ -140,13 +141,27 @@ G91 G02 X-[#07*2] Y[#07*2] I0.0 J[#07*2] F[#09*5]
 (G02 R[#07*2] [0, #07*2] X-Y+)
 GOTO9999
 
+N0008 (for AC only)
+G91 G01 Y#07 F[#651*2]
+(ar:Y+)
+G91 G01 X-[#24+#07*2] F[#651*2]
+(a: X-)
+G91 G01 Y-[#25+#07*2] F#09
+(l: Y-)
+G91 G01 X#24 F[#651*2]
+(b: X+)
+G91 G01 Y[#25+#07*2] F#09
+(r: Y+)
+GOTO9999
 
-N0800
-M05 (spindle kaiten off)
+
+N8000
+M05 (spindle off)
 M09 (coolant off)
 #3000=100 (are*the*arguments*OK?)
 
-N9999 M99
+N9999
+M99
 
 (Used Variables and Programs)
 
@@ -155,16 +170,17 @@ N9999 M99
 
 (as received arguments)
 (#03:C: corner C)
-(#06:K: key type: 1:R, 2:C, 3:rec, 4:BDonly, 5:oct R)
-(#07:D: kouguNigashiRyou)
+(#06:K: key type: 1:R, 2:C, 3:rec, 4:BDonly, 5:oct R, 6:AConly)
+(#07:D: distance to clearance plane)
 (#08:E: speed at corner)
-(#09:F: speed at chokusenBu)
+(#09:F: speed at straight line)
 (#18:R: corner R)
-(#19:S: kaitenSuu)
-(#24:X: AC kei)
-(#25:Y: BD kei)
+(#19:S: spindle speed)
+(#24:X: AC diameter)
+(#25:Y: BD diameter)
 
 (System variables)
+(#651)
 (#3000: alarm)
 
 
