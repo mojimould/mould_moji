@@ -150,13 +150,20 @@
 }%
 
 %%%%% FIGBOX %%%%%
+\newtcolorbox{FigShortbox}[1][]{FigureShortbox, #1}
+\tcbset{%
+  %%%%% FIGUREBOX STYLE %%%%%
+  FigureShortbox/.style={%
+    Figurecommonbox,
+    width=\textwidth,
+  }%
+}
 \newtcolorbox{Figbox}[1][]{Figurebox, #1}
 \tcbset{%
   %%%%% FIGUREBOX STYLE %%%%%
   Figurebox/.style={%
-    Figurecommonbox,
+    FigureShortbox,
     height=\textheight-6.8pt,
-    width=\textwidth,
   }%
 }
 
