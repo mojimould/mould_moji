@@ -1,4 +1,4 @@
-# last update: 20240920
+# last update: 20240925
 # Copyright 2023-2024 The individual creator, not held by any corporation.
 # All rights reserved.
 
@@ -9,13 +9,13 @@ from itertools import count
 import xlwings as xw
 
 
-# ファイルの読込み
+# File Loading
 with open('./subscripts/load_values.py', 'r', encoding='utf-8') as file:
     load_values = file.read()
 exec(load_values)
 
-# 関数
-# 小数点以下第2位または第3位までを表示
+# functions
+# Display to the Second or Third Decimal Place
 def format_number(num):
     if num is None or type(num) not in [float, int]:
         return None
@@ -25,22 +25,22 @@ def format_number(num):
         str_num = "{:.2f}".format(num)
     return str_num
 
-# テーパ#
+# taper #
 WS2_name = taperID
 
-# 余分なシートの削除
+# Delete Extra Sheets
 for sheet in WB.sheetnames:
     if sheet != WS.title and sheet != WS2_name:
         del WB[sheet]
 
 
-# シートの作成
+# Create Sheet
 checkWS = WB.create_sheet(title=MainPrgID)
 
-# 印刷時に水平方向を中央に設定
+# Center Horizontally When Printing
 checkWS.page_setup.horizontalCentered = True
 
-# 設定
+# setting
 file_name = MainPrgID + '.xlsx'
 font_name = 'Meiryo UI'
 font_size_title      = 17.0
@@ -84,7 +84,7 @@ keywayACDepthTolerance = 0.7
 outcutLengthTolerance  = 0.5
 otherTolerance         = 0.3
 
-# 項目
+# items
 totalLengthName                = "全長"
 keywayPosName                  = "溝位置"
 keywayWidthName                = "溝幅"
@@ -570,7 +570,7 @@ measurer_font   = Font(size=font_size_measurer, name=font_name)
 table_haed_font = Font(bold=True, size=font_size_table_head, name=font_name)
 table_item_font = Font(size=font_size_item, name=font_name)
 
-# 罫線のスタイルを定義
+# Define Border Style
 thin_border = Border(
     left   = Side(style='thin'), 
     right  = Side(style='thin'), 
@@ -585,7 +585,7 @@ top_double_border = Border(
 )
 thin_border_side = Side(style='thin')
 no_border_side = Side(style=None)
-# 二重線の項目
+# Double Line Item
 doubleBorderItem = [
     totalLengthName,
     keywayPosName,
@@ -599,13 +599,13 @@ doubleBorderItem = [
     appearanceEndfaceChamferName
 ]
 
-# 項目を追加
+# Add Item
 row_num = 4
 for i, item in enumerate(row_item, start=1):
     itemCell = checkWS.cell(row=row_num, column=i, value=item)
     itemCell.font = table_haed_font
-    itemCell.border = thin_border  # 罫線を追加
-    # 行の高さを設定
+    itemCell.border = thin_border  # add border line
+    # Set Row Height
     checkWS.row_dimensions[row_num].height = table_head_col_height
 
 row_num = row_num + 1
@@ -613,49 +613,49 @@ for row_item in col_item:
     for i, item in enumerate(row_item, start=1):
         itemCell = checkWS.cell(row=row_num, column=i, value=item)
         itemCell.font = table_item_font
-        if checkWS.cell(row=row_num, column=1).value in doubleBorderItem: # 罫線を追加
+        if checkWS.cell(row=row_num, column=1).value in doubleBorderItem: # add border line
             itemCell.border = top_double_border
         else:
             itemCell.border = thin_border
-    # 行の高さを設定
+    # Set Row Height
     checkWS.row_dimensions[row_num].height = table_col_height
     row_num += 1 
 
-# A列を左寄せに設定
+# Align Column A to the Left
 for row in checkWS['A']:
     row.alignment = Alignment(horizontal='left', vertical='center')
 
-# B-F列を中央揃えに設定
+# Center Align Columns B to F”
 for col in ['B', 'C', 'D', 'E', 'F']:
     for cell in checkWS[col]:
         cell.alignment = Alignment(horizontal='center', vertical='center')
 
-# ファイルを保存
+# Save File
 WB.save(file_name)
 
 
-# xlwingsでセル幅を自動調整
+# Auto Adjust Cell Width with xlwings
 app = xw.App(visible=False)
 wb_xlw = xw.Book(file_name)
 sheet = wb_xlw.sheets[-1]
 for col in ['A', 'B', 'C', 'D', 'E', 'F']:
     sheet.range(f'{col}1:{col}1048576').api.EntireColumn.AutoFit()
 
-# セルの結合
+# Merge Cells
 sheet.range('B3:C3').merge()
 
-# セル幅を取得
+# Get Cell Width
 mergeCellWidth = sum([sheet.range(col + '3').column_width for col in ['B', 'C']]) + 1
 
-# 結合したセルにテキストを入力
+# Enter Text in Merged Cells
 mergeCell = sheet['B3']
 mergeCell.value = CustomerName
 mergeCell.api.Font.Size = font_size_drawingID
 
-# 縮小して全体を表示する設定
+# Set to Shrink to Fit
 mergeCell.api.ShrinkToFit = True
 
-# フォントサイズの取得
+# Get Font Size
 mergeCellFontSize = mergeCell.api.Font.Size
 while True:
     tempCell = sheet['H3']
@@ -670,13 +670,13 @@ while True:
 sheet.range('H:H').delete()
 mergeCell.value = ""
 
-# 縮小して全体を表示する設定の解除
+# Disable Shrink to Fit
 mergeCell.api.ShrinkToFit = False
 
-# セルの結合を解除
+# Unmerge Cells
 sheet.range('B3:C3').unmerge()
 
-# テキストを再度入力（結合解除後のセルに）
+# Re-enter Text (in Unmerged Cells)
 mergeCell.value = CustomerName
 mergeCell.api.Font.Size = mergeCellFontSize
 mergeCell.api.HorizontalAlignment = xw.constants.HAlign.xlHAlignLeft
@@ -686,9 +686,9 @@ wb_xlw.close()
 
 
 
-# openpyxl で再度読み込み
+# Reload with openpyxl
 WB = load_workbook(file_name, data_only=True)
-# 余分なシートの削除
+# Delete Extra Sheets
 for sheet in WB.sheetnames:
     if sheet != str(DrawingIDNum).zfill(4):
         del WB[sheet]
@@ -700,7 +700,7 @@ checkWS['F' + str(last_row)] = '振分：トップ ' + str(topAlocationLengthAve
 checkWS['F' + str(last_row)].alignment = Alignment(horizontal='right', vertical='top')
 checkWS.row_dimensions[last_row].height = last_row_col_height
 
-# 最終行のAからFまでのセルに罫線を適用
+# Apply Borders to Cells from A to F in the Last Row
 for i, cell in enumerate(checkWS['A' + str(checkWS.max_row):'F' + str(checkWS.max_row)][0]):
     border_left = thin_border_side if i == 0 else no_border_side
     border_right = thin_border_side if i == 5 else no_border_side
@@ -731,28 +731,28 @@ checkWS['E2'].font = measurer_font
 checkWS['E2'].alignment = Alignment(horizontal='center', vertical='bottom')
 checkWS['E3'].border = thin_border
 
-# 最後の行と最後の列を取得
+# Get the Last Row and Last Column
 last_row = checkWS.max_row
 last_column = checkWS.max_column
 
-# 最後の列のアルファベットラベルを取得
+# Get the Alphabet Label of the Last Column
 last_column_letter = get_column_letter(last_column)
 
-# 用紙サイズ
+# Paper Size
 checkWS.page_setup.paperSize = checkWS.PAPERSIZE_A4
 
-# 向き
+# Orientation
 checkWS.page_setup.orientation = "portrait"
 
-# 印刷範囲
+# Print Range
 checkWS.page_setup.print_area = f'A1:{last_column_letter}{last_row}'
 
-# 印刷範囲を1ページに収める
+# Fit Print Range to One Page
 checkWS.page_setup.fitToPage = True
 checkWS.page_setup.fitToHeight = 1
 checkWS.page_setup.fitToWidth = 1
 
-# 余白（インチ）
+# Margins (inches)
 checkWS.page_margins.left = 0.75
 checkWS.page_margins.right = 0.1
 checkWS.page_margins.top = 0.0
@@ -760,11 +760,11 @@ checkWS.page_margins.bottom = 0.3
 checkWS.page_margins.header = 0.0
 checkWS.page_margins.footer = 0.0
 
-# フッターのテキスト
+# Footer Text
 # checkWS.oddFooter.right.text = footer_text
 
-# 印刷時に水平方向を中央に設定
+# Center Horizontally on Page When Printing
 checkWS.print_options.horizontalCentered = True
 
-# ファイルを保存
+# Save file
 WB.save(file_name)
