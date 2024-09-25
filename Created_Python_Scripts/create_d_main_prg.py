@@ -1,4 +1,4 @@
-# last update: 20240917
+# last update: 20240925
 # Copyright 2023-2024 The individual creator, not held by any corporation.
 # All rights reserved.
 
@@ -10,13 +10,13 @@ import subprocess
 import math
 
 
-# ファイルの読込み
+# File Loading
 with open('./subscripts/preample_for_d_main_prg.py', 'r', encoding='utf-8') as file:
     variables = file.read()
 exec(variables)
 
 
-# 具体的なコードの記述
+# Specific Code Description
 SN_overall            = next(SN_base)
 SN_origin_measurement = next(SN_origin_setting)
 SN_dimple_Me          = next(SN_dimple_measurement)
@@ -41,7 +41,7 @@ SN_finish_end         = next(SN_prg_end)
 with open('./O' + MainPrgID, 'w') as f:
     f.write(
         '%\n'
-        'O'+ MainPrgID + ' (Last update on ' + date_string+')\n'
+        'O'+ MainPrgID + ' (Created on ' + date_string+')\n'
         '(Top re_alocation: ' + str(topReAlocationLength) + ')\n'
         '(Bot re_alocation: ' + str(botReAlocationLength) + ')\n'
         '(Top Overhang: ' + str(topOverHangLength) + ')\n'
@@ -237,7 +237,7 @@ with open('./O' + MainPrgID, 'w') as f:
         '\n'
     )
 
-    # 原点設定 ボトム外側 X 測定
+    # Origin Setting Bottom Outer X Measurement
     if BotOutcutExistsFlag == 0 or (BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 1):
         f.write(
             '' + workCoordinateBotOut + ' G65 P' + prgOutsideCenterX + ' X' + ACOD + ' Z' + botReAlocationLength + ' W' + botAlocationLength + ' R' + centralCurvature + '\n'
@@ -263,7 +263,7 @@ with open('./O' + MainPrgID, 'w') as f:
             '\n'
         )
 
-    # 原点設定 ボトム外側 Y 測定
+    # Origin Setting Bottom Outer Y Measurement
     if BotOutcutExistsFlag == 0:
         f.write(
             'G90 ' + workCoordinateBotOut + ' G01 X0 Y0 F#652\n'
@@ -279,7 +279,7 @@ with open('./O' + MainPrgID, 'w') as f:
         )
 
 
-    # 原点設定 ボトム内側 X 測定
+    # Origin Setting Bottom inner X Measurement
     f.write(
         'G90 ' + workCoordinateBotIn + ' G01 X0 Y0 F#652\n'
         'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
@@ -296,7 +296,7 @@ with open('./O' + MainPrgID, 'w') as f:
         '\n'
     )
 
-    # 原点設定 ボトム内側 Y 測定
+    # Origin Setting Bottom inner Y Measurement
     f.write(
         'G90 ' + workCoordinateBotIn + ' G01 X0 Y0 F#652\n'
         'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
@@ -353,7 +353,7 @@ with open('./O' + MainPrgID, 'w') as f:
         '\n'
     )
 
-    # 原点設定 トップ外側 X 測定
+    # Origin Setting Top outer X Measurement
     if TopOutcutExistsFlag == 0:
         f.write(
             '' + workCoordinateTopOut + ' G65 P' + prgOutsideCenterX + ' X' + ACOD + ' Z' + topReAlocationLength + ' W' + topAlocationLength + ' R' + centralCurvature + ' M' + keywayPos + ' H' + keywayWidth + '\n'
@@ -388,7 +388,7 @@ with open('./O' + MainPrgID, 'w') as f:
             '\n'
         )
 
-    # 原点設定 トップ外側 Y 測定
+    # Origin Setting Top outer Y Measurement
     if TopOutcutExistsFlag == 0:
         f.write(
             'G90 ' + workCoordinateTopOut + ' G01 X0 Y0 F#652\n'
@@ -403,7 +403,7 @@ with open('./O' + MainPrgID, 'w') as f:
             '\n'
         )
 
-    # 原点設定 トップ内側 X 測定
+    # Origin Setting Top inner X Measurement
     f.write(
         'G90 ' + workCoordinateTopIn + ' G01 X0 Y0 F#652\n'
         'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
@@ -420,7 +420,7 @@ with open('./O' + MainPrgID, 'w') as f:
         '\n'
     )
 
-    # 原点設定 トップ内側 Y 測定
+    # Origin Setting Top inner Y Measurement
     f.write(
         'G90 ' + workCoordinateTopIn + ' G01 X0 Y0 F#652\n'
         'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
@@ -443,7 +443,7 @@ with open('./O' + MainPrgID, 'w') as f:
             '\n'
         )
 
-    # 原点設定 キー溝 X 測定
+    # Origin Setting Keyway X Measurement
     if TopOutcutExistsFlag == 0:
         if KeywayAsideDepthToleranceExitsFlag == 1:
             f.write(
@@ -463,7 +463,7 @@ with open('./O' + MainPrgID, 'w') as f:
                 '\n'
             )
 
-    # 原点設定 キー溝 Y 測定
+    # Origin Setting Keyway Y Measurement
     if TopOutcutExistsFlag == 0:
         f.write(
             'G90 ' + workCoordinateKeyway + ' G01 X0 Y0 F#652\n'
@@ -505,7 +505,7 @@ with open('./O' + MainPrgID, 'w') as f:
     )
 
     if DimpleExistsFlag == 1:
-        # ディンプル 測定
+        # Dimple measurement
         f.write(
             '\n'
             f"N{SN_dimple_Me:04d}\n"
@@ -602,7 +602,7 @@ with open('./O' + MainPrgID, 'w') as f:
             '\n'
         )
 
-        # ディンプル 加工
+        # Dimple milling
         f.write(
             '\n'
             f"N{SN_dimple_Mi:04d}\n"
@@ -711,7 +711,7 @@ with open('./O' + MainPrgID, 'w') as f:
             '\n'
         )
 
-    # トップ端面 加工
+    # Top endface milling
     f.write(
         '\n'
         f"N{SN_top_EF:04d}\n"
@@ -808,7 +808,7 @@ with open('./O' + MainPrgID, 'w') as f:
     )
 
     if TopOutcutExistsFlag == 1:
-        # トップ外削 加工
+        # Top outcut milling
         f.write(
             '\n'
             f"N{SN_top_OC:04d}\n"
@@ -886,7 +886,7 @@ with open('./O' + MainPrgID, 'w') as f:
         )
 
     if EndfaceBoringExistsFlag == 1:
-        # 端面座ぐり 加工
+        # Endface boring milling
         f.write(
             '\n'
             f"N{SN_EBoring:04d}\n"
@@ -959,7 +959,7 @@ with open('./O' + MainPrgID, 'w') as f:
             '\n'
         )
 
-    # キー溝 加工
+    # Keyway milling
     f.write(
         '\n'
         f"N{SN_KW:04d}\n"
@@ -1040,7 +1040,7 @@ with open('./O' + MainPrgID, 'w') as f:
         '\n'
     )
 
-    # トップ端面外面取 加工
+    # Top endface outer chamfer milling
     f.write(
         '\n'
         f"N{SN_top_OCh:04d}\n"
@@ -1116,7 +1116,7 @@ with open('./O' + MainPrgID, 'w') as f:
         '\n'
     )
 
-    # トップ端面内面取 加工
+    # Top endface inner chamfer milling
     f.write(
         '\n'
         f"N{SN_top_ICh:04d}\n"
@@ -1207,7 +1207,7 @@ with open('./O' + MainPrgID, 'w') as f:
         '\n'
     )
 
-    # ボトム端面削 加工
+    # Bottom endface milling
     f.write(
         '\n'
         f"N{SN_bot_EF:04d}\n"
@@ -1304,7 +1304,7 @@ with open('./O' + MainPrgID, 'w') as f:
     )
 
     if BotOutcutExistsFlag == 1:
-        # ボトム外削 加工
+        # Botoom outcut milling
         f.write(
             '\n'
             f"N{SN_bot_OC:04d}\n"
@@ -1403,7 +1403,7 @@ with open('./O' + MainPrgID, 'w') as f:
             '\n'
         )
 
-    # ボトム端面外面取 加工
+    # Bottom endface outer chamfer milling
     f.write(
         '\n'
         f"N{SN_bot_OCh:04d}\n"
@@ -1494,7 +1494,7 @@ with open('./O' + MainPrgID, 'w') as f:
         '\n'
     )
 
-    # ボトム端面内面取 加工
+    # Bottom endface inner chamfer milling
     f.write(
         '\n'
         f"N{SN_bot_ICh:04d}\n"
@@ -1589,10 +1589,10 @@ with open('./O' + MainPrgID, 'w') as f:
         '\n'
     )
 
-    # 加工 終わり
+    # end milling
     SN_base_finish_start = SN_base_finish
 
-    # 通り芯 測定
+    # centerline measurement
     if BotOutcutExistsFlag == 1 and TopOutcutExistsFlag == 1:
         SN_overall = next(SN_base)
         f.write(
