@@ -1,5 +1,5 @@
 %
-O80000002 (Last update on 20240809)
+O80000002 (Created on 20240925)
 (Top re_alocation: 500.042)
 (Bot re_alocation: 499.958)
 (Top Overhang: 170.042)
@@ -198,19 +198,6 @@ G57 G65 P130002 Y134.200 J159.000 Z500.042 M0.070
 (J: BD OD)
 (Z: Top re_alocation)
 (M: mekki thickness mm)
-
-G90 G58 G01 X0 Y0 F#652
-G43 H50 (tool length correction #50)
-(G58 XY keyway center)
-
-G58 G65 P120001 X149.000 U160.000 Z500.042 M10.050 H14.050 I5.500
-(G58: Keyway X center)
-(X: keyway AC OD)
-(U: AC OD)
-(Z: Top re_alocation)
-(M: keyway position)
-(H: keyway depth)
-(I: A-side keyway depth)
 
 G90 G58 G01 X0 Y0 F#652
 G43 H50 (tool length correction #50)
@@ -452,7 +439,7 @@ M10 (B-axis clamp)
 
 N4202
 M28 (chip conveyor on)
-G58 G65 P430000 A0.0 B1.0 K5.0 C5.00 R3.00 X149.000 Y149.000 U160.000 V159.000 Z500.042 W400.000 Q5933.200 M10.050 H14.050
+G58 G65 P430000 A0.0 B0.0 K5.0 C5.00 R3.00 X149.000 Y149.000 U160.000 V159.000 Z500.042 W400.000 Q5933.200 M10.050 H14.050
 (O430000: Keyway, ar left)
 (A: Top outcut: 0:none, 1:exists)
 (B: depth tolerance: 0:none, 1:exists)
