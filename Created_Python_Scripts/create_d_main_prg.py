@@ -494,6 +494,19 @@ with open('./O' + MainPrgID, 'w') as f:
             '\n'
         )
 
+    if DimpleExistsFlag == 0:
+        SN_origin_measurement = next(SN_origin_setting)
+        SN_OM_sensorOff = SN_origin_measurement
+        f.write(
+            'M117 (sensor on/off)\n'
+            'G04 X1.5 (wait 1.5s)\n'
+            'IF[#1004EQ0]' + f"GOTO{SN_OM_sensorOff:04d}\n"
+            'G65 P' + prgSensorOff + ' (sensor OFF)\n'
+            '\n'
+            f"N{SN_OM_sensorOff:04d}\n"
+        )
+
+
     SN_origin_measurement = next(SN_origin_setting)
     SN_OM_end = SN_origin_measurement
     f.write(
