@@ -23,6 +23,22 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]%
+\begin{FigShortbox}[valign=top]%
+\includegraphics{RfCPN_p03_pictures/Pre_processing_Preparation_flow_chart.pdf}%
+\setlength{\abovecaptionskip}{10pt}%
+\captionof{figure}{加工前段取のフロー（概要）}
+\end{FigShortbox}%
+\end{figure}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 06.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{工程：加工前の測定}
@@ -30,11 +46,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsubsection 06.02.02.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{ワーク座標系原点設定}
+\subsubsection{ワーク座標系原点設定（ボトム側）}
 \begin{enumerate}[label*=\sarrow]
 \item ボトム側が工具側になるよう回転する
 \item \BottomEndFace 部の外側中心を測定する
 \item \BottomEndFace 部の内側中心を測定する
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]%
+\begin{Figbox}[valign=top]%
+\resizebox{\linewidth-35pt}{!}{\includegraphics{RfCPN_p03_pictures/Pre_processing_Measurement_bot_flow_chart.pdf}}%
+\setlength{\abovecaptionskip}{10pt}%
+\captionof{figure}{加工前の測定のフロー（概要）}%\label{fig:mouldwithukeita}
+\end{Figbox}%
+\end{figure}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 06.02.02.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{ワーク座標系原点設定（トップ側）}
+\begin{enumerate}[label*=\sarrow]
 \item トップ側が工具側になるよう回転する
 \item \TopEndFace 部の外側中心を測定する
 \item \TopEndFace 部の内側中心を測定する
@@ -42,7 +81,7 @@
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 06.02.02.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 06.02.02.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\DimpleMeasurement}
 \begin{enumerate}[label*=\sarrow]
@@ -98,30 +137,6 @@
 \item \Palette を交換し、ワークを機外に搬出する
 \item ワークを\Table 上の専用\Jig から取り外す
 \end{enumerate}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[p]%
-\begin{Figlandscape}
-\begin{adjustbox}{%
-  addcode={\begin{minipage}{\textheight}\centering}{%
-    \captionof{figure}{加工全体のフロー（概要）：加工前段取～測定\label{fig:flowchartFirst}}%
-    \end{minipage}%
-  },
-  rotate=90,
-  center,
-%  max width=\textheight,
-%  max height=\linewidth,
-  keepaspectratio}
-\includegraphics[height=\linewidth-10pt, trim=0 235 0 20, clip]{RfCPN_p03_pictures/Measurement_flow_chart.pdf}%
-\end{adjustbox}
-\end{Figlandscape}%
-\end{figure}%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
