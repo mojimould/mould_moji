@@ -1,7 +1,7 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter[lof]{作成する\index{NCサブプログラム}NCサブプログラム}
+\modHeadchapter[lot]{作成する\index{NCサブプログラム}NCサブプログラム}
 作成する\index{NCサブプログラム}NCサブプログラムの\index{プログラムばんごう@プログラム番号}プログラム番号は、\pageautoref{chap:NCprgNumber}に基づく。
 
 
@@ -10,36 +10,37 @@
 %% section 40.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム一覧}
-\begin{enumerate}[label*=\sarrow]
-\item \MXOThickness：$X$方向 外側中心および外側幅 両側測定
-\item \MYOThickness：$Y$方向 外側中心および外側幅 両側測定
-\item \MXOface：$X$方向 \KeywayCenter{} 片側測定
-\item \MXIWidth：$X$方向 内側中心および内側幅 両側測定
-\item \MYIWidth：$Y$方向 内側中心および内側幅 両側測定
-\item \MXIface：$X$方向 外削中心 片側測定
-\item \MCenterline：$X$方向および$Y$方向 \CenterlineEndFaceDif{} 片側測定
-\item \DLone：\DimpleMeasurement および\DimpleMilling
-\item \DLtwoAC：\DLone 用 AまたはC面 \Dimple 列内移動
-\item \DLtwoBD：\DLone 用 BまたはD面 \Dimple 列内移動
-\item \DMLthreeAC：\DLtwoAC 用 AまたはC面 \DimpleMeasurement
-\item \DMLthreeBD：\DLtwoBD 用 BまたはD面 \DimpleMeasurement
-\item \KEndFaceRight：\EndFacecutMilling
-\item \KOutcutRLeft：\OutcutMilling
-\item \KCurvedOutcutRLeft：\CurvedOutcutMilling
-\item \KKeywayConerLeft：\KeywayMilling
-\item \KEndFaceOutCChamferRLeft：\EndFaceOutCChamferMilling
-\item \KEndFaceCurvedOutCChamferRLeft：\EndFaceOutCChamferMilling（\CurvedOutcut 用）
-\item \KEndFaceInCChamferRLeft：\EndFaceInCChamferMilling
-\item \KEndFaceBoring：\EndFaceBoringMilling
-\item \KIncutBoring：\IncutBoringMilling
-\item \KOLeftFF：\KEndFaceBoring 用 加工 $XY$面左回り1周
-\item \KOLeftFS：\KEndFaceRight\KOutcutRLeft\KKeywayConerLeft\KEndFaceOutCChamferRLeft 用 加工 $XY$面左回り1周
-\item \KOLeftFSZ：\KCurvedOutcutRLeft\KEndFaceCurvedOutCChamferRLeft 用 加工 $XY$面左回り1周
-\item \KILeftFF：\KEndFaceInCChamferRLeft\KIncutBoring 用 加工 $XY$面左回り1周
-\item \DKLthreeAC：\DLtwoAC 用 AまたはC面 \DimpleMilling
-\item \DKLthreeBD：\DLtwoBD 用 BまたはD面 \DimpleMilling
-\item \OpauseCheck：各工程後 扉前移動および一時停止
-\end{enumerate}
+\begin{multicollongtblr}{作成する\index{NCサブプログラム}NCサブプログラム一覧}{cX[l]}
+prg. & 内容\\
+\MXOThickness & $X$方向 外側中心および外側幅 両側測定\\
+\MYOThickness & $Y$方向 外側中心および外側幅 両側測定\\
+\MXOface & $X$方向 \KeywayCenter{} 片側測定\\
+\MXIWidth & $X$方向 内側中心および内側幅 両側測定\\
+\MYIWidth & $Y$方向 内側中心および内側幅 両側測定\\
+\MXIface & $X$方向 外削中心 片側測定\\
+\MCenterline & $X$方向および$Y$方向 \CenterlineEndFaceDif{} 片側測定\\
+\DLone & \DimpleMeasurement および\DimpleMilling\\
+\DLtwoAC & \DLone 用 AまたはC面 \Dimple 列内移動\\
+\DLtwoBD & \DLone 用 BまたはD面 \Dimple 列内移動\\
+\DMLthreeAC & \DLtwoAC 用 AまたはC面 \DimpleMeasurement\\
+\DMLthreeBD & \DLtwoBD 用 BまたはD面 \DimpleMeasurement\\
+\KEndFaceRight & \EndFacecutMilling\\
+\KOutcutRLeft & \OutcutMilling\\
+\KCurvedOutcutRLeft & \CurvedOutcutMilling\\
+\KKeywayConerLeft & \KeywayMilling\\
+\KEndFaceOutCChamferRLeft & \EndFaceOutCChamferMilling\\
+\KEndFaceCurvedOutCChamferRLeft & \EndFaceOutCChamferMilling（\CurvedOutcut 用）\\
+\KEndFaceInCChamferRLeft & \EndFaceInCChamferMilling\\
+\KEndFaceBoring & \EndFaceBoringMilling\\
+\KIncutBoring & \IncutBoringMilling\\
+\KOLeftFF & \KEndFaceBoring 用 加工 $XY$面左回り1周\\
+\KOLeftFS & \KEndFaceRight\KOutcutRLeft\KKeywayConerLeft\KEndFaceOutCChamferRLeft 用 加工 $XY$面左回り1周\\
+\KOLeftFSZ & \KCurvedOutcutRLeft\KEndFaceCurvedOutCChamferRLeft 用 加工 $XY$面左回り1周\\
+\KILeftFF & \KEndFaceInCChamferRLeft\KIncutBoring 用 加工 $XY$面左回り1周\\
+\DKLthreeAC & \DLtwoAC 用 AまたはC面 \DimpleMilling\\
+\DKLthreeBD & \DLtwoBD 用 BまたはD面 \DimpleMilling\\
+\OpauseCheck & 各工程後 扉前移動および一時停止\\
+\end{multicollongtblr}
 
 
 
@@ -53,10 +54,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 40.02.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\MXOThickness の目的}
+\subsection{\MXOThickness：作成の目的}
 \begin{enumerate}[label*=\sarrow]
 \item \EndFace 部における外側中心$X$座標の測定
-\item \EndFace 部における$X$方向の外側径の測定
+\item $Z$方向指定位置における$X$方向の外側径の測定
 \item \KeywayCenter$X$座標の計算
 \end{enumerate}
 
@@ -64,7 +65,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 40.02.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\MXOThickness に用いる引数}
+\subsection{\MXOThickness：使用の前提条件}
+\begin{enumerate}[label*=\sarrow]
+\item 工具は\TouchSensorProbe を使用
+\item 予め\EndFace 部における$XY$中心座標付近に移動
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 40.02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MXOThickness：データの入出力}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 40.02.03.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\MXOThickness：格納する\index{ひきすう@引数}引数}
 \begin{enumerate}[label*=\sarrow]
 \item \PMACOD
 \item \PMTopReAlocationLength または\PMBottomReAlocationLength
@@ -74,12 +90,44 @@
 \item \PMKeywayWidth
 \end{enumerate}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 40.02.03.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\MXOThickness：出力されるデータ}
+\begin{enumerate}[label*=\sarrow]
+\item \EndFace 部（\ReAlocationLength の位置）における外径中心$X$座標測定値
+\item $Z$方向指定値における$X$方向外径測定値
+\item \KeywayCenter$X$座標計算値
+\end{enumerate}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 40.02.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\MXOThickness の主なステップ\TBW}
-(to be written...)
+\subsection{\MXOThickness：主な機能}
+\begin{enumerate}[label*=\sarrow]
+\item $Z$方向指定位置における外側外径中心の測定
+\item \EndFace 部外側外径の測定
+\item 測定箇所$Z$方向変更時の外径中心位置の補正
+\item \KeywayCenter$X$座標の自動計算
+\end{enumerate}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 40.02.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MXOThickness：\index{ひんしつほしょう@品質保証}品質保証\TBW}
+\begin{enumerate}[label*=\sarrow]
+\item 使用可能な\index{ワークざひょうけい@ワーク座標系}ワーク座標系の範囲を限定
+\item \index{ひきすう@引数}引数の設定可能範囲を限定
+\item 関連コモン変数の設定可能範囲を限定
+\item $Z$方向\index{アプローチ}アプローチ時の\index{スキップきのう@スキップ機能}スキップ機能による接触検知
+\item $X$方向測定アプローチ時のスキップ機能による異常値の検知
+\item 異常検知時、安全位置に退避しタッチセンサーの電源を切る
+\end{enumerate}
+
 
 
 \clearpage
