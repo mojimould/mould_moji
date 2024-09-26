@@ -2,11 +2,13 @@
 
 
 \addtocontents{toc}{\protect\cleardoublepage}
+\addtocontents{lot}{\protect\tcbline*}
+\addtocontents{lof}{\protect\tcbline*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Part Requirement Definition %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \addtocontents{toc}{\protect\begin{tocBox}{\tmppartnum}}%
-\tPart[lof]{加工システムの設計\TBW}{%
+\tPart[lof, lot]{加工システムの設計\TBW}{%
 \paragraph*{\tpartgoal}
 加工システムの作成に向けて、その設計を行う。
 
