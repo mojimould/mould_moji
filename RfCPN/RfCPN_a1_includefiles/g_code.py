@@ -65,8 +65,8 @@ class GCodeLexer(ExtendedRegexLexer):
 
             # Coordinates, Feeds, Speeds, and Machining parameter, 
             # match only the label
-            (r'(?<![a-zA-Z\<])(GOTO08)\d*', Keyword.Pseudo.Error),
-            (r'(?<![a-zA-Z\<])(N08)\d*', Keyword.Pseudo.Error),
+            (r'(?<![a-zA-Z\<])(GOTO80)\d*', Keyword.Pseudo.Error),
+            (r'(?<![a-zA-Z\<])(N80)\d*', Keyword.Pseudo.Error),
             (r'(?<![a-zA-Z\<])(N|GOTO)\d*', Keyword.Pseudo),
             # G and M commands and other tooling, match only the label
             (r'(?<![a-zA-Z\<])[ABCDEHIJKQRUVWXYZ](?=(\d+\.?\d?))+', Operator),
