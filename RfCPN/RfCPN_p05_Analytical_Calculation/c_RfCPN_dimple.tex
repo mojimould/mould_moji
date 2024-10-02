@@ -92,7 +92,7 @@
 \IDTaperTable の\expandafterindex{ピッチ（\yomiIDTaperTable）@ピッチ（\nameIDTaperTable）}ピッチ$\lambda_{i+1}-\lambda_i$は常に一定の場合が多い。
 $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j \leq z < \lambda_{j+1}$となる$j$は、
 \begin{align*}
-  j = z \bDiv (\lambda_{i+1}-\lambda_i) = \left\lfloor\frac z{\lambda_{i+1}-\lambda_i}\right\rfloor
+  j = z \bDiv (\lambda_{i+1}-\lambda_i) = \ab\lfloor\frac z{\lambda_{i+1}-\lambda_i}\rfloor
 \end{align*}
 のように表すことができる。
 \end{hosoku}
@@ -201,32 +201,32 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 \begin{array}{rl}
   \text{A面（$+X$方向）：}
   & \displaystyle
-    \left(
+    \ab(
       g_{\mathrm Tx}+\mathcal L_0+\frac{w'_{\mathrm Aq}}2~,~
       g_{\mathrm Ty}~,~
       f_\mathrm T'-q
-    \right),\\[12pt]
+    ),\\[12pt]
   \text{C面（$-X$方向）：}
   & \displaystyle
-    \left(
+    \ab(
       g_{\mathrm Tx}+\mathcal L_0-\frac{w'_{\mathrm Aq}}2~,~
       g_{\mathrm Ty}~,~
       f_\mathrm T'-q
-    \right),\\[12pt]
+    ),\\[12pt]
   \text{B面（$+Y$方向）：}
   & \displaystyle
-    \left(
+    \ab(
       g_{\mathrm Tx}+\mathcal L_0~,~
       g_{\mathrm Ty}+\frac{w'_{\mathrm Bq}}2~,~
       f_\mathrm T'-q
-    \right),\\[12pt]
+    ),\\[12pt]
   \text{D面（$-Y$方向）：}
   & \displaystyle
-    \left(
+    \ab(
       g_{\mathrm Tx}+\mathcal L_0~,~
       g_{\mathrm Ty}-\frac{w'_{\mathrm Bq}}2~,~
       f_\mathrm T'-q
-    \right).
+    ).
 \end{array}
 \end{align*}
 ここで、\DimpleIRow の\CurvatureCenter と\TopCurvatureCenter との$X$座標の差を、
@@ -234,15 +234,15 @@ $\lambda_{i+1}-\lambda_i$が$i$について常に一定であれば、$\lambda_j
 \begin{align}
   \label{eq:dimpleCenterDistance}
   \mathcal L_i
-  \equiv \sqrt{R_\mathrm c^2-\left\{f_\mathrm T-q-(i-1)p_z\right\}^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}
+  \equiv \sqrt{R_\mathrm c^2-\ab\{f_\mathrm T-q-(i-1)p_z\}^2}-\sqrt{R_\mathrm c^2-f_\mathrm T^2}
 \end{align}
 と表した。
 なお、$i$列目の\CurvatureCenter と$j$列目の\CurvatureCenter との$X$座標の差を
 \begin{align*}
   \mathcal L_{i,j}
   \equiv \mathcal L_i-\mathcal L_j
-  = \sqrt{R_\mathrm c^2-\left(f_\mathrm T-q-(i-1)p_z\right)^2}
-    -\sqrt{R_\mathrm c^2-\left\{f_\mathrm T-q-(j-1)p_z\right\}^2}
+  = \sqrt{R_\mathrm c^2-\ab(f_\mathrm T-q-(i-1)p_z)^2}
+    -\sqrt{R_\mathrm c^2-\ab\{f_\mathrm T-q-(j-1)p_z\}^2}
 \end{align*}
 と表すことにする。
 
@@ -312,8 +312,8 @@ $Z$座標についてはどの面も$j$に依らないことがわかる。
 \subsection{\DimpleAngle}
 \index{トップがわのAがわうちたんてん@トップ側のA側内端点}A側内面トップ端と、\expandafterindex{Aがわないめん（\yomiDimpleFirstRow）@A側内面（\nameDimpleFirstRow）}A側内面のトップ端から$q$の位置との$x$方向の差は、
 \begin{align*}
-  \sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2}
-  -\sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm A0}}2\right)^2-f_\mathrm T^2}
+  \sqrt{\ab(R_\mathrm c+\frac{w'_{\mathrm Aq}}2)^2-(f_\mathrm T-q)^2}
+  -\sqrt{\ab(R_\mathrm c+\frac{w'_{\mathrm A0}}2)^2-f_\mathrm T^2}
 \end{align*}
 で与えられる。
 このとき、これが負になる場合は傾ける必要はなく、正となる場合のみ傾ける。
@@ -325,8 +325,8 @@ $Z$座標についてはどの面も$j$に依らないことがわかる。
   \text{正の場合：}&&\quad
   \tan\phi
   &= \frac{\displaystyle
-           \sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2}
-           -\sqrt{\left(R_\mathrm c+\frac{w'_{\mathrm A0}}2\right)^2-f_\mathrm T^2}}q\\[8pt]
+           \sqrt{\ab(R_\mathrm c+\frac{w'_{\mathrm Aq}}2)^2-(f_\mathrm T-q)^2}
+           -\sqrt{\ab(R_\mathrm c+\frac{w'_{\mathrm A0}}2)^2-f_\mathrm T^2}}q\\[8pt]
   \text{負の場合：}&&
   \phi
   &= 0
@@ -339,11 +339,11 @@ $Z$座標についてはどの面も$j$に依らないことがわかる。
 \begin{\Columnname}{\DimpleAngle が負となる\index{モールド}モールド}
 $\phi < 0$となるのは、
 \begin{align*}
-  & \left(R_\mathrm c+\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2
-    < \left(R_\mathrm c+\frac{w'_{\mathrm A0}}2\right)^2-f_\mathrm T^2\\
+  & \ab(R_\mathrm c+\frac{w'_{\mathrm Aq}}2)^2-(f_\mathrm T-q)^2
+    < \ab(R_\mathrm c+\frac{w'_{\mathrm A0}}2)^2-f_\mathrm T^2\\
   \longrightarrow~~
   & \frac{w_{\mathrm A0}-w_{\mathrm Aq}}2
-    \left(2R_\mathrm c+\frac{w_{\mathrm A0}'+w_{\mathrm Aq}'}2\right)
+    \ab(2R_\mathrm c+\frac{w_{\mathrm A0}'+w_{\mathrm Aq}'}2)
     > q(2f_\mathrm T-q)
 \end{align*}
 の場合である。
@@ -376,17 +376,17 @@ $\phi < 0$となるのは、
 \end{enumerate}
 C側内面のトップ端から$q$の位置と、C側内面のトップ端から$q+(m-1)p_z$の位置との$x$方向の差は、
 \begin{align*}
-  \sqrt{\left(R_\mathrm c-\frac{w'_{\mathrm Aq+(m-1)p_z}}2\right)^2
-        -\left\{f_\mathrm T-q-(m-1)p_z\right\}^2}
-  -\sqrt{\left(R_\mathrm c-\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2}
+  \sqrt{\ab(R_\mathrm c-\frac{w'_{\mathrm Aq+(m-1)p_z}}2)^2
+        -\ab\{f_\mathrm T-q-(m-1)p_z\}^2}
+  -\sqrt{\ab(R_\mathrm c-\frac{w'_{\mathrm Aq}}2)^2-(f_\mathrm T-q)^2}
 \end{align*}
 これより、\CsideDimpleAngle$\phi_\mathrm C$ ($\phi_\mathrm C > 0$)は、
 \begin{align*}
   \tan\phi_\mathrm C
   = \frac{\displaystyle
-          \sqrt{\left(R_\mathrm c-\frac{w'_{\mathrm Aq+(m-1)p_z}}2\right)^2
-                -\left\{f_\mathrm T-q-(m-1)p_z\right\}^2}
-          -\sqrt{\left(R_\mathrm c-\frac{w'_{\mathrm Aq}}2\right)^2-(f_\mathrm T-q)^2}}
+          \sqrt{\ab(R_\mathrm c-\frac{w'_{\mathrm Aq+(m-1)p_z}}2)^2
+                -\ab\{f_\mathrm T-q-(m-1)p_z\}^2}
+          -\sqrt{\ab(R_\mathrm c-\frac{w'_{\mathrm Aq}}2)^2-(f_\mathrm T-q)^2}}
          {(m-1)p_z}
 \end{align*}
 で与えられる。
@@ -482,20 +482,20 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
 %% label{eq:afterPhiTCenterFromO}
 \begin{align}
   \label{eq:afterPhiTCenterFromO}
-  \left[
+  \ab[
   \begin{array}{c}
     g_{\mathrm Tx}'\\
     g_{\mathrm Ty}'\\
     g_{\mathrm Tz}'
   \end{array}
-  \right]
-  =\left[
+  ]
+  =\ab[
    \begin{array}{c}
      g_{\mathrm Tx}\cos\phi+f_\mathrm T'\sin\phi\\
      g_{\mathrm Ty}\\
      -g_{\mathrm Tx}\sin\phi+f_\mathrm T'\cos\phi
    \end{array}
-   \right].
+   ].
    \end{align}
 同様に、$i$列目における（傾ける前の）\CurvatureCenter の位置は、[$g_{\mathrm Tx}+\mathcal L_i$, $g_{\mathrm Ty}$, $f_\mathrm T'-q-(i-1)p_z$]で与えられる
 %% footnote %%%%%%%%%%%%%%%%%%%%%
@@ -503,25 +503,25 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ので、\DimpleAngle$-\phi$だけ傾けた後の$i$列目における\CurvatureCenter の位置は、
 \begin{align*}
-  \left[
+  \ab[
   \begin{array}{c}
     (g_{\mathrm Tx}+\mathcal L_i)\cos\phi+\{f_\mathrm T'-q-(i-1)p_z\}\sin\phi\\
     g_{\mathrm Ty}\\
     -(g_{\mathrm Tx}+\mathcal L_i)\sin\phi+\{f_\mathrm T'-q-(i-1)p_z\}\cos\phi
   \end{array}
-  \right].
+  ].
 \end{align*}
 したがって、傾けた後の\TopCurvatureCenter と$i$列目に対する\CurvatureCenter との差分は、
 %% label{eq:afterPhidimpleCenterDistance}
 \begin{align}
   \label{eq:afterPhidimpleCenterDistance}
-  \left[
+  \ab[
   \begin{array}{c}
     \mathcal L_i\cos\phi-\{q+(i-1)p_z\}\sin\phi\\
     0\\
     -\mathcal L_i\sin\phi-\{q+(i-1)p_z\}\cos\phi
   \end{array}
-  \right].
+  ].
 \end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -529,23 +529,23 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
 \begin{hosoku}
 傾けた後の$i$列目に対する\CurvatureCenter と$j$列目に対する\CurvatureCenter との差分は、
 \begin{align*}
-  \left[
+  \ab[
   \begin{array}{c}
     \mathcal L_{j,i}\cos\phi-(j-i)p_z\sin\phi\\
     0\\
     -\mathcal L_{j,i}\sin\phi-(j-i)p_z\cos\phi
   \end{array}
-  \right].
+  ].
 \end{align*}
 特に、$j = i+1$の場合は、
 \begin{align*}
-  \left[
+  \ab[
   \begin{array}{c}
     \mathcal L_{i+1,i}\cos\phi-p_z\sin\phi\\
     0\\
     -\mathcal L_{i+1,i}\sin\phi-p_z\cos\phi
   \end{array}
-  \right].
+  ].
 \end{align*}
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -582,47 +582,47 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
 このとき、傾けた後の\AFaceDimpleIRowJ および\CFaceDimpleIRowJ の位置は、\pageeqref{eq:dPosXBefore}, \eqref{eq:dPosYBefore}, \pageeqref{eq:dPosZBefore}より、
 \begin{alignat*}{3}
   \text{A面：}&~~&
-  \left[
+  \ab[
   \begin{array}{c}
     \mathcal D_{xij,\mathrm A}'\\
     \mathcal D_{yij,\mathrm A}'\\
     \mathcal D_{zij,\mathrm A}'
   \end{array}
-  \right]
- &= \left[
+  ]
+ &= \ab[
     \begin{array}{c}
       \mathcal D_{xi,\mathrm A}\cos\phi+\mathcal D_{zi}\sin\phi\\
       \mathcal D_{yij,\mathrm A}\\
       -\mathcal D_{xi,\mathrm A}\sin\phi+\mathcal D_{zi}\cos\phi
     \end{array}
-    \right],\\[2pt]
+    ],\\[2pt]
   \text{C面：}&~~&
-  \left[
+  \ab[
   \begin{array}{c}
     \mathcal D_{xij,\mathrm C}'\\
     \mathcal D_{yij,\mathrm C}'\\
     \mathcal D_{zij,\mathrm C}'
   \end{array}
-  \right]
- &= \left[
+  ]
+ &= \ab[
     \begin{array}{c}
       \mathcal D_{xi,\mathrm C}\cos\phi+\mathcal D_{zi}\sin\phi\\
       \mathcal D_{yij,\mathrm A}\\
       -\mathcal D_{xi,\mathrm C}\sin\phi+\mathcal D_{zi}\cos\phi
     \end{array}
-    \right].
+    ].
 \end{alignat*}
 特に、各列の中央（各列の\expandafterindex{\yomiCurvatureCenter（\yomiDimple）@\nameCurvatureCenter（\nameDimple）}\nameCurvatureCenter）$[g_{\mathrm Tx}+\mathcal L_i, g_{\mathrm Ty}, f_\mathrm T'-q-(i-1)p_z]$を原点としてみた場合の位置は、
 \begin{align*}
-  \left[
+  \ab[
   \begin{array}{c}
     \displaystyle \pm\frac{w_{Aq+(i-1)p_z}'}2\cos\phi\\[6pt]
     \displaystyle -\frac{d_i}2+(j-1)p_x\\[6pt]
     \displaystyle \mp\frac{w_{Aq+(i-1)p_z}'}2\sin\phi
   \end{array}
-  \right]\qquad
+  ]\qquad
   %%%%%%%%
-  \left(
+  \ab(
   \text{複号}
   \left\{
   \begin{array}{rl}
@@ -630,7 +630,7 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
     \!\text{下}\!\!\!\!& \text{： C面}\\
   \end{array}
   \right.
-  \right).
+  ).
 \end{align*}
 
 
@@ -640,20 +640,20 @@ A側内面のトップ端からの（$X$方向の）距離は、\TopEndACID と�
 \paragraph*{$j$方向の差分}
 $Y$方向の隣同士の差分、すなわち$i$を固定したときの$j$番目と$j+1$番目の位置の差分は、
 \begin{align*}
-  \left[
+  \ab[
   \begin{array}{c}
     0\\
     \mathcal D_{yi(j+1),\mathrm A}-\mathcal D_{yij,\mathrm A}\\
     0
   \end{array}
-  \right]
-  = \left[
+  ]
+  = \ab[
     \begin{array}{c}
       0\\
       p_x\\
       0
     \end{array}
-    \right]\ .
+    ]\ .
 \end{align*}
 
 
@@ -661,7 +661,7 @@ $Y$方向の隣同士の差分、すなわち$i$を固定したときの$j$番�
 \paragraph*{$i$方向の差分}
 $Z$方向の隣同士の差分、すなわち$j$を固定したときの$i$番目と$i+1$番目の位置の差分については、
 \begin{align*}
- &\left[
+ &\ab[
   \begin{array}{c}
     (\mathcal D_{x(i+1),\mathrm A}-\mathcal D_{xi,\mathrm A})\cos\phi
     +(\mathcal D_{z(i+1)}-\mathcal D_{zi})\sin\phi\\
@@ -669,18 +669,18 @@ $Z$方向の隣同士の差分、すなわち$j$を固定したときの$i$番�
     (\mathcal D_{xi,\mathrm A}-\mathcal D_{x(i+1),\mathrm A})\sin\phi
     +(\mathcal D_{z(i+1)}-\mathcal D_{zi})\cos\phi
   \end{array}
-  \right]\\
- &= \left[
+  ]\\
+ &= \ab[
     \begin{array}{c}
       \displaystyle
-      \left(\mathcal L_{i+1, i}+\frac{w'_{\mathrm Aq+ip_z}-w'_{\mathrm Aq+(i-1)p_z}}2\right)\cos\phi
+      \ab(\mathcal L_{i+1, i}+\frac{w'_{\mathrm Aq+ip_z}-w'_{\mathrm Aq+(i-1)p_z}}2)\cos\phi
       -p_z\sin\phi\\[6pt]
       \displaystyle-\frac{d_{i+1}-d_i}2\\[6pt]
       \displaystyle
-      -\left(\mathcal L_{i+1, i}+\frac{w'_{\mathrm Aq+ip_z}-w'_{\mathrm Aq+(i-1)p_z}}2\right)\sin\phi
+      -\ab(\mathcal L_{i+1, i}+\frac{w'_{\mathrm Aq+ip_z}-w'_{\mathrm Aq+(i-1)p_z}}2)\sin\phi
       -p_z\cos\phi
     \end{array}
-    \right]\ .
+    ]\ .
 \end{align*}
 C面に対しては、これの各々の\InnerDiameter$w_\mathrm A'$の符号を入れ換えたものとなる。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -711,47 +711,47 @@ $X$成分の差分の大きさが（$\mathcal L_{i+1, i}$からみて）A面（�
 傾けた後の\BFaceDimpleIRowJ および\DFaceDimpleIRowJ の位置は、A面側のときと同様に、
 \begin{alignat*}{3}
   \text{B面：}&~~&
-  \left[
+  \ab[
     \begin{array}{c}
       \mathcal D_{xij,\mathrm B}'\\
       \mathcal D_{yij,\mathrm B}'\\
       \mathcal D_{zij,\mathrm B}'
     \end{array}
-  \right]
- &= \left[
+  ]
+ &= \ab[
     \begin{array}{c}
       \mathcal D_{xij,\mathrm B}\cos\phi+\mathcal D_{zi}\sin\phi\\
       \mathcal D_{yi,\mathrm B}\\
       -\mathcal D_{xij,\mathrm B}\sin\phi+\mathcal D_{zi}\cos\phi
     \end{array}
-    \right],\\[2pt]
+    ],\\[2pt]
   \text{D面：}&~~&
-  \left[
+  \ab[
     \begin{array}{c}
       \mathcal D_{xij,\mathrm D}'\\
       \mathcal D_{yij,\mathrm D}'\\
       \mathcal D_{zij,\mathrm D}'
     \end{array}
-  \right]
- &= \left[
+  ]
+ &= \ab[
     \begin{array}{c}
       \mathcal D_{xij,\mathrm B}\cos\phi+\mathcal D_{zi}\sin\phi\\
       \mathcal D_{yi,\mathrm D}\\
       -\mathcal D_{xij,\mathrm B}\sin\phi+\mathcal D_{zi}\cos\phi
     \end{array}
-    \right].
+    ].
 \end{alignat*}
 特に、各列の中央（各列の\CurvatureCenter）$[g_{\mathrm Tx}+\mathcal L_i, g_{\mathrm Ty}, f_\mathrm T'-q-(i-1)p_z]$を原点としてみた場合の位置は、
 \begin{align*}
-  \left[
+  \ab[
   \begin{array}{c}
-    \displaystyle \left\{\frac{d_i}2-(j-1)p_z\right\}\cos\phi\\
+    \displaystyle \ab\{\frac{d_i}2-(j-1)p_z\}\cos\phi\\
     \displaystyle \pm\frac{w_{\mathrm Bq+(i-1)p_z}'}2\\
-    \displaystyle -\left\{\frac{d_i}2-(j-1)p_z\right\}\sin\phi
+    \displaystyle -\ab\{\frac{d_i}2-(j-1)p_z\}\sin\phi
   \end{array}
-  \right]\qquad
+  ]\qquad
   %%%%%%%%
-  \left(
+  \ab(
   \text{複号}
   \left\{
   \begin{array}{rl}
@@ -759,47 +759,47 @@ $X$成分の差分の大きさが（$\mathcal L_{i+1, i}$からみて）A面（�
     \!-\!\!\!\!& \text{： D面}\\
   \end{array}
   \right.
-  \right).
+  ).
 \end{align*}
 
 \clearpage
 \paragraph*{$j$方向の差分}\noindent
 $Y$方向の隣同士の差分、すなわち$i$を固定したときの$j$番目と$j+1$番目の位置の差分は、
 \begin{align*}
-  \left[
+  \ab[
   \begin{array}{c}
-    \left(\mathcal D_{xi(j+1),\mathrm B}-\mathcal D_{xij,\mathrm B}\right)\cos\phi\\
+    \ab(\mathcal D_{xi(j+1),\mathrm B}-\mathcal D_{xij,\mathrm B})\cos\phi\\
     0\\
-    -\left(\mathcal D_{xi(j+1),\mathrm B}-\mathcal D_{xij,\mathrm B}\right)\sin\phi
+    -\ab(\mathcal D_{xi(j+1),\mathrm B}-\mathcal D_{xij,\mathrm B})\sin\phi
   \end{array}
-  \right]
-  = \left[
+  ]
+  = \ab[
     \begin{array}{c}
       -p_x\cos\phi\\[6pt]
       0\\
       p_x\sin\phi
     \end{array}
-    \right]\ .
+    ]\ .
 \end{align*}
 
 \paragraph*{$i$方向の差分}\noindent
 B面に対する$Z$方向の隣同士の差分、すなわち$j$を固定したときの$i$番目と$i+1$番目の位置の差分については、
 \begin{align*}
- &\left[
+ &\ab[
   \begin{array}{c}
-    \left(\mathcal D_{x(i+1)j,\mathrm B}-\mathcal D_{xij,\mathrm B}\right)\cos\phi
-    +\left(\mathcal D_{z(i+1)}-\mathcal D_{zi}\right)\sin\phi\\[3pt]
+    \ab(\mathcal D_{x(i+1)j,\mathrm B}-\mathcal D_{xij,\mathrm B})\cos\phi
+    +\ab(\mathcal D_{z(i+1)}-\mathcal D_{zi})\sin\phi\\[3pt]
     \mathcal D_{yi+1,\mathrm B}-\mathcal D_{yi,\mathrm B}\\[3pt]
-    -\left(\mathcal D_{x(i+1)j,\mathrm B}-\mathcal D_{xij,\mathrm B}\right)\sin\phi
-    +\left(\mathcal D_{z(i+1)}-\mathcal D_{zi}\right)\cos\phi
+    -\ab(\mathcal D_{x(i+1)j,\mathrm B}-\mathcal D_{xij,\mathrm B})\sin\phi
+    +\ab(\mathcal D_{z(i+1)}-\mathcal D_{zi})\cos\phi
   \end{array}
-  \right]\\
- &= \left[
+  ]\\
+ &= \ab[
     \begin{array}{c}
-      \displaystyle\left(\mathcal L_{i+1, i}+\frac{d_{i+1}-d_i}2\right)\cos\phi-p_z\sin\phi\\[10pt]
+      \displaystyle\ab(\mathcal L_{i+1, i}+\frac{d_{i+1}-d_i}2)\cos\phi-p_z\sin\phi\\[10pt]
       \displaystyle\frac{w'_{\mathrm Bq+ip_z}-w'_{\mathrm Bq+(i-1)p_z}}2\\[8pt]
-      \displaystyle-\left(\mathcal L_{i+1, i}+\frac{d_{i+1}-d_i}2\right)\cos\phi-p_z\cos\phi
+      \displaystyle-\ab(\mathcal L_{i+1, i}+\frac{d_{i+1}-d_i}2)\cos\phi-p_z\cos\phi
     \end{array}
-    \right]\ .
+    ]\ .
 \end{align*}
 D面に対しては、これの各々の\InnerDiameter$w_\mathrm B'$の符号（この場合$Y$成分の符号）を入れ換えたものとなる。
