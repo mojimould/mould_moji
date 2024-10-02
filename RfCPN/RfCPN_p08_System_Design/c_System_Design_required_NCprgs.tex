@@ -450,8 +450,175 @@ prg. & 内容\\
 \item \index{ひきすう@引数}引数の設定可能範囲を限定
 \item 関連コモン変数の設定可能範囲を限定
 \item $Z$方向\index{アプローチ}アプローチ時の\index{スキップきのう@スキップ機能}スキップ機能による接触検知
-\item $X$方向測定アプローチ時のスキップ機能による異常値の検知
+\item $Y$方向測定アプローチ時のスキップ機能による異常値の検知
 \item 外側中心$Y$座標と内側中心$Y$座標の差の検知
+\item 異常検知時、安全位置に退避し\TouchSensorProbe の電源を切る
+\end{enumerate}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 36.07 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム：\MXIface}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.07.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MXIface：作成の目的}
+\begin{enumerate}[label*=\sarrow]
+\item \OutcutCenter $X$座標の測定
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.07.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MXIface：使用の前提条件}
+\begin{enumerate}[label*=\sarrow]
+\item 工具は\TouchSensorProbe を使用
+\item 予め\OutcutCenter$XY$座標付近に移動
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.07.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MXIface：データの入出力}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.07.03.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\MXIface：格納する\index{ひきすう@引数}引数}
+\begin{enumerate}[label*=\sarrow]
+\item \PMTopOutcutACWidth または\PMBottomOutcutACWidth
+\item \PMTopEndACID または\PMBottomEndACID
+\item \PMTopEndFaceInChamferLength または\PMBottomEndFaceInChamferLength
+\item \PMTopOutcutAsideThickness または\PMBottomOutcutAsideThickness
+\item \PMTopAlocationLength または\PMBottomAlocationLength
+\item \PMTopReAlocationLength または\PMBottomReAlocationLength
+\item \PMCenterCurvatureRadius
+\item \PMPlatingThk
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.07.03.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\MXIface：出力されるデータ}
+\begin{enumerate}[label*=\sarrow]
+\item \OutcutCenter$X$座標測定値
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.07.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MXIface：主な機能}
+\begin{enumerate}[label*=\sarrow]
+\item $Z$方向指定位置における\OutcutCenter$X$座標の測定
+\item 測定箇所$Z$位置の変更
+\end{enumerate}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.07.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MXIface：\index{ひんしつほしょう@品質保証}品質保証}
+\begin{enumerate}[label*=\sarrow]
+\item 使用可能な\index{ワークざひょうけい@ワーク座標系}ワーク座標系の範囲を限定
+\item \index{ひきすう@引数}引数の設定可能範囲を限定
+\item 関連コモン変数の設定可能範囲を限定
+\item $Z$方向\index{アプローチ}アプローチ時の\index{スキップきのう@スキップ機能}スキップ機能による接触検知
+\item $X$方向測定アプローチ時のスキップ機能による異常値の検知
+\item 異常検知時、安全位置に退避し\TouchSensorProbe の電源を切る
+\end{enumerate}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 36.08 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム：\MCenterline}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.08.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MCenterline：作成の目的}
+\begin{enumerate}[label*=\sarrow]
+\item \CenterlineEndFaceDif $X$座標および$Y$座標の測定
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.08.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MCenterline：使用の前提条件}
+\begin{enumerate}[label*=\sarrow]
+\item 工具は\TouchSensorProbe を使用
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.08.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MCenterline：データの入出力}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.08.03.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\MCenterline：格納する\index{ひきすう@引数}引数}
+\begin{enumerate}[label*=\sarrow]
+\item \PMCenterlineEndFaceDifAC
+\item \PMAlocationAngle
+\item \PMTopOutcutACWidth
+\item \PMTopOutcutBDWidth
+\item \PMBottomOutcutACWidth
+\item \PMBottomOutcutBDWidth
+\item \PMTopReAlocationLength
+\item \PMBottomReAlocationLength
+\item \PMKeywayPos
+\item \PMBottomOutcutLength
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.08.03.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\MCenterline：出力されるデータ}
+\begin{enumerate}[label*=\sarrow]
+\item \CenterlineEndFaceDifAC の測定値
+\item \CenterlineEndFaceDifBD の測定値
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.08.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MCenterline：主な機能}
+\begin{enumerate}[label*=\sarrow]
+\item $X$方向\CenterlineEndFaceDif の測定
+\item $Y$方向\CenterlineEndFaceDif の測定
+\end{enumerate}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.08.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\MCenterline：\index{ひんしつほしょう@品質保証}品質保証}
+\begin{enumerate}[label*=\sarrow]
+\item 使用可能な\index{ワークざひょうけい@ワーク座標系}ワーク座標系の範囲を限定
+\item \index{ひきすう@引数}引数の設定可能範囲を限定
+\item 関連コモン変数の設定可能範囲を限定
+\item $Z$方向\index{アプローチ}アプローチ時の\index{スキップきのう@スキップ機能}スキップ機能による接触検知
+\item $Y$方向測定アプローチ時のスキップ機能による異常値の検知
+\item $Z$方向測定アプローチ時のスキップ機能による異常値の検知
 \item 異常検知時、安全位置に退避し\TouchSensorProbe の電源を切る
 \end{enumerate}
 
@@ -469,8 +636,8 @@ prg. & 内容\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\DLone：作成の目的}
 \begin{enumerate}[label*=\sarrow]
-\item すべての\Dimple の表面位置の測定を行う
-\item すべての\Dimple の加工を行う
+\item すべての\Dimple の表面位置の測定
+\item すべての\Dimple の加工
 \end{enumerate}
 
 
