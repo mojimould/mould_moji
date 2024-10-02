@@ -23,8 +23,8 @@
 \NewDocumentCommand{\expandafterindex}{m}{\index{#1}}
 \pdfstringdefDisableCommands{\def\expandafterindex#1{}}
 %%%%% DECLAREMATHOPERATOR %%%%%%%%%%%%%%%%%%%%
-\DeclareMathOperator{\IP}{Im}
-\DeclareMathOperator{\RP}{Re}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
 %%%%% OTHER DEFINITION %%%%%%%%%%%%%%%%%%%%%%%
 \newcommand\ttNum{\ifmmode{\text{\texttt\#}}\else\texttt\#\fi}
 \pdfstringdefDisableCommands{\def\leavevmode@ifvmode{}}
