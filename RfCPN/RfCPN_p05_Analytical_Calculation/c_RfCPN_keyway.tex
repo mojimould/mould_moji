@@ -30,7 +30,7 @@
 \begin{align}
   \label{eq:mizocenterZ}
   f_\mathrm T'-\bar\kappa_w \qquad
-  \left(\bar\kappa_w \equiv \kappa_p+\frac{\kappa_w}2\right)
+  \ab(\bar\kappa_w \equiv \kappa_p+\frac{\kappa_w}2)
 \end{align}
 で与えられる。
 
@@ -43,7 +43,7 @@
 \modHeadsection{\CurvatureCenter が基準の場合}
 \TopCurvatureCenter T$_{R_\mathrm c}'$と\KeywayCenter M$'$との$x$方向の差は、
 \begin{align*}
-  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\bar\kappa_w\right)^2}
+  \sqrt{R_\mathrm c^2-\ab(f_\mathrm T-\bar\kappa_w)^2}
   -\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ .
 \end{align*}
 実際の測定では、\TopCurvatureCenter T$_{R_\mathrm c}'$ではなく\index{トップたんのそとがわちゅうしん@トップ端の外側中心}トップ端の外側中心T$_\mathrm c'$が測定されるので、T$_\mathrm c'$とM$'$との$x$方向の差を考える必要がある。
@@ -51,7 +51,7 @@
 %% label{eq:difTopKeywayCenter}
 \begin{align}
   \label{eq:difTopKeywayCenter}
-  \sqrt{R_\mathrm c^2-\left(f_\mathrm T-\bar\kappa_w\right)^2}
+  \sqrt{R_\mathrm c^2-\ab(f_\mathrm T-\bar\kappa_w)^2}
   -\frac{\sqrt{R_\mathrm o^2-f_\mathrm T^2}+\sqrt{R_\mathrm i^2-f_\mathrm T^2}}2\ .
 \end{align}
 
@@ -63,19 +63,19 @@
 \KeywayCenter M$'$が\index{ワーク}ワークの\CenterCurvatureLine 上にある場合、\TableCenter Pを原点とした$x$座標は、\pageeqref{eq:spacerTRc}より、
 \begin{align*}
   -\Delta_x+\sqrt{R_\mathrm c^2-(f_\mathrm T-\bar\kappa_w)^2}+\frac{\delta_\mathrm s}2
-  -\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta_\mathrm s^2+\left(2\bar l\right)^2}}
+  -\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{2\bar l}{\sqrt{\delta_\mathrm s^2+\ab(2\bar l)^2}}
 \end{align*}
 となる。
 なお実際の作業では、簡単のため、\TopEndFace の外側中心T$_\mathrm c'$を測定し、それを\TopCurvatureCenter T$_{R_\mathrm c}'$とみなして\KeywayCenter M$'$の位置を計算することが多い。
 実測した外側中心の$X$・$Y$座標$G_{\mathrm Tx}$, $G_{\mathrm Ty}$を\TopCurvatureCenter のそれとみなすと、機内における\KeywayCenter M$'$の位置は、\TableCenter Pを原点として、
 \begin{align*}
-  \left(
+  \ab(
     G_{\mathrm Tx}
     +\sqrt{R_\mathrm c^2-(f_\mathrm T-\bar\kappa_w)^2}
     -\sqrt{R_\mathrm c^2-f_\mathrm T^2}\ ,\
     G_{\mathrm Ty}~,~
     f_\mathrm T'-\bar\kappa_w
-  \right).
+  ).
 \end{align*}
 \TopCurvatureCenter とみなさずに正確に求めるなら、これに\pageeqref{eq:TRc-Tc}を引けばよい。
 その場合の$X$座標は、
@@ -108,17 +108,17 @@
 \modHeadsection{\OutcutCenter が基準の場合}
 \KeywayCenter M$'$が\TopOutcutCenter 線上にある場合、機内におけるその位置座標は、
 \begin{align*}
-  \left(
+  \ab(
     -\mathcal G_{Bx}+T_x\ ,\
     \mathcal G_{By}\ ,\
     f_\mathrm T'-\bar\kappa_w
-  \right) \qquad
+  ) \qquad
   \text{または}\qquad
-  \left(
+  \ab(
     \mathcal G_{Bx}\ ,\
     \mathcal G_{By}\ ,\
     f_\mathrm T'-\bar\kappa_w
-  \right).
+  ).
 \end{align*}
 ただし、前者は\BottomOutcut を基準にした（ボトム基準の\CenterlineEndFaceDif がある）場合であり、後者は\TopOutcut を基準にした場合である。
 
@@ -205,35 +205,35 @@
 \KeywayWidth の両端に対する外面の$XZ$位置は、\KeywayCenter の$X$座標を$G_{mx}$として、
 \begin{align*}
   \text{トップ側：}&~~
-  \left(
+  \ab(
   G_{mx}+\frac{W_x}2
   -\sqrt{R_\mathrm o^2-(f_\mathrm T-\bar\kappa_w)^2}
   +\sqrt{R_\mathrm o^2-(f_\mathrm T-\kappa_p)^2}~,~~
   f_\mathrm T-\kappa_p
-  \right)\\
+  )\\
   \text{ボトム側：}&~~
-  \left(
+  \ab(
   G_{mx}+\frac{W_x}2
   +\sqrt{R_\mathrm o^2-(f_\mathrm T-\kappa_p-\kappa_w)^2}
   -\sqrt{R_\mathrm o^2-(f_\mathrm T-\bar\kappa_w)^2}~,~~
   f_\mathrm T-\kappa_p-\kappa_w
-  \right)
+  )
 \end{align*}
 またその差は、
 \begin{align*}
-  \left(
+  \ab(
   \sqrt{R_\mathrm o^2-(f_\mathrm T-\kappa_p)^2}
   -\sqrt{R_\mathrm o^2-(f_\mathrm T-\kappa_p-\kappa_w)^2}~,~~
   \kappa_w
-  \right)
+  )
 \end{align*}
 したがって、測定の際の傾斜の角度（\KeywayDepthMeasurementAngle）$\zeta$ ($> 0$)は、
 %% label{eq:angleZeta}
 \begin{align}
   \label{eq:angleZeta}
   \tan\zeta
-  = \frac{\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p-\kappa_w\right)^2}
-          -\sqrt{R_\mathrm o^2-\left(f_\mathrm T-\kappa_p\right)^2}}
+  = \frac{\sqrt{R_\mathrm o^2-\ab(f_\mathrm T-\kappa_p-\kappa_w)^2}
+          -\sqrt{R_\mathrm o^2-\ab(f_\mathrm T-\kappa_p)^2}}
          {\kappa_w}\ .
 \end{align}
 
@@ -264,7 +264,7 @@
 $\kappa_l = a+b$, $\kappa_s = a-b$とすると、
 \begin{align*}
   a = \frac{\kappa_l+\kappa_s}2~~, \quad
-  b = \frac{\kappa_l-\kappa_s}2\,\left(= \frac12\kappa_w\tan\zeta\right)
+  b = \frac{\kappa_l-\kappa_s}2\,\ab(= \frac12\kappa_w\tan\zeta)
 \end{align*}
 であり、
 \begin{align*}
@@ -307,11 +307,11 @@ $\kappa_d$および$\kappa_s$の差は
   \label{eq:keydepthDif2}
   \kappa_d'
   &= \frac{1+\cos^2\zeta}{2\cos\zeta}
-     \left\{
+     \ab\{
      \kappa_d
      -\sqrt{R_\mathrm o^2-(f_\mathrm T-\bar\kappa_w)^2}
      +\sqrt{R_\mathrm o^2-(f_\mathrm T-\kappa_p)^2}
-     \right\}
+     \}
      +\frac12\kappa_w\sin\zeta\ .
 \end{align}
 \end{subequations}
@@ -332,29 +332,29 @@ $\kappa_d$および$\kappa_s$の差は
 \begin{align*}
   \tan\zeta
   = \frac{R_\mathrm o}{\kappa_w}
-     \left\{
-     \sqrt{1-\left(\frac{f_\mathrm T-\kappa_p-\kappa_w}{R_\mathrm o}\right)^2}
-     -\sqrt{1-\left(\frac{f_\mathrm T-\kappa_p}{R_\mathrm o}\right)^2}
-     \right\}
-  = \frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}+o\left(R_\mathrm o^{-3}\right)
+     \ab\{
+     \sqrt{1-\ab(\frac{f_\mathrm T-\kappa_p-\kappa_w}{R_\mathrm o})^2}
+     -\sqrt{1-\ab(\frac{f_\mathrm T-\kappa_p}{R_\mathrm o})^2}
+     \}
+  = \frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}+o\ab(R_\mathrm o^{-3})
 \end{align*}
 であり、これより、
 \begin{align*}
-  \sin\zeta = \frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}+o\left(R_\mathrm o^{-3}\right)~~, \quad
-  \cos\zeta = 1-\frac12\left(\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}\right)^2
-              +o\left(R_\mathrm o^{-4}\right)\ .
+  \sin\zeta = \frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}+o\ab(R_\mathrm o^{-3})~~, \quad
+  \cos\zeta = 1-\frac12\ab(\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o})^2
+              +o\ab(R_\mathrm o^{-4})\ .
 \end{align*}
 したがって、\pageeqref{eq:keydepthDif1}より、
 \begin{align*}
   \kappa_d
   &= \kappa_d'-\frac{\kappa_w}2\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}
      +R_\mathrm o
-      \left\{
-      \sqrt{1-\left(\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o}\right)^2}
-      -\sqrt{1-\left(\frac{f_\mathrm T-\kappa_p}{R_\mathrm o}\right)^2}
-      \right\}\\
+      \ab\{
+      \sqrt{1-\ab(\frac{f_\mathrm T-\bar\kappa_w}{R_\mathrm o})^2}
+      -\sqrt{1-\ab(\frac{f_\mathrm T-\kappa_p}{R_\mathrm o})^2}
+      \}\\
   &= \kappa_d'+\frac{\kappa_w^2}{8R_\mathrm o}
-     +o\left(R_\mathrm o^{-3}\right)\ .
+     +o\ab(R_\mathrm o^{-3})\ .
 \end{align*}
 これから、$\kappa_d > \kappa_d'$であることもわかる。
 \end{\Columnname}
@@ -376,8 +376,8 @@ $\kappa_d$および$\kappa_s$の差は
 \begin{align}
 %  \label{eq:angleZetaC}
   -\tan\zeta_\textrm C
-  = \frac{\sqrt{R_\mathrm i^2-\left(f_\mathrm T-\kappa_p-\kappa_w\right)^2}
-          -\sqrt{R_\mathrm i^2-\left(f_\mathrm T-\kappa_p\right)^2}}
+  = \frac{\sqrt{R_\mathrm i^2-\ab(f_\mathrm T-\kappa_p-\kappa_w)^2}
+          -\sqrt{R_\mathrm i^2-\ab(f_\mathrm T-\kappa_p)^2}}
          {\kappa_w}\ .
 \end{align}
 トップ側およびボトム側の\CsideKeywayDepth をそれぞれ$\kappa_{l\textrm C}$, $\kappa_{s\textrm C}$とすると、
@@ -391,7 +391,7 @@ $\kappa_d$および$\kappa_s$の差は
   \kappa_{s\textrm C}
   = \frac{2\kappa_{d\textrm C}'\cos\zeta_\textrm C-\kappa_w\tan\zeta_\textrm C}{1+\cos^2\zeta_\textrm C}
   = \kappa_{d\textrm C}'-\frac{\kappa_w}2\frac{f_\textrm T-\bar\kappa_w}{R_i}
-    +o\left(R_i^{-2}\right)\ .
+    +o\ab(R_i^{-2})\ .
 \end{align*}
 
 
@@ -440,12 +440,12 @@ $\kappa_d$および$\kappa_s$の差は
 \subsubsection{各辺の長さ}
 このとき、AC方向およびBD方向の\KeywayWidth に対して、コーナーを除いた部分の長さは、それぞれ
 \begin{align*}
-  \text{AC方向：}\quad W_{\mathrm mx}-2C_\mathrm K-2\sqrt2\left(1-\frac1{\sqrt2}\right)R_\mathrm{K'}~~, \quad
-  \text{BD方向：}\quad W_{\mathrm my}-2C_\mathrm K-2\sqrt2\left(1-\frac1{\sqrt2}\right)R_\mathrm{K'}\ .
+  \text{AC方向：}\quad W_{\mathrm mx}-2C_\mathrm K-2\sqrt2\ab(1-\frac1{\sqrt2})R_\mathrm{K'}~~, \quad
+  \text{BD方向：}\quad W_{\mathrm my}-2C_\mathrm K-2\sqrt2\ab(1-\frac1{\sqrt2})R_\mathrm{K'}\ .
 \end{align*}
 コーナーC部の直線部分に対する$X$, $Y$方向の長さは、それぞれ
 \begin{align*}
-  C_\mathrm K-2\left(1-\frac1{\sqrt2}\right)R_\mathrm{K'}\ .
+  C_\mathrm K-2\ab(1-\frac1{\sqrt2})R_\mathrm{K'}\ .
 \end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -455,13 +455,13 @@ $\kappa_d$および$\kappa_s$の差は
 例として、工具から見て右上のコーナーCにおける、右下($X+Y-$)側の頂点に着目する。
 このときコーナーRにおける、右下($X+Y-$)側のコーナーR接点を(0, 0)とすると、コーナーRの中心および左上($X-Y+$)側のコーナーR接点の位置は、それぞれ
 \begin{align*}
-  \text{中心：}\quad \left(-R_\mathrm{K'},~0\right)~~,\qquad
-  \text{左上側接点}\quad \left(-\left(1-\frac1{\sqrt2}\right)R_\mathrm{K'}~,~\frac{R_\mathrm{K'}}{\sqrt2}\right)\ .
+  \text{中心：}\quad \ab(-R_\mathrm{K'},~0)~~,\qquad
+  \text{左上側接点}\quad \ab(-\ab(1-\frac1{\sqrt2})R_\mathrm{K'}~,~\frac{R_\mathrm{K'}}{\sqrt2})\ .
 \end{align*}
 同様に、工具から見て右上のコーナーCにおける、右上($X-Y+$)側の頂点に着目する。
 このときコーナーRにおける、右下($X+Y-$)側のコーナーR接点を(0, 0)とすると、コーナーRの中心および左上($X-Y+$)側のコーナーR接点の位置は、それぞれ
 \begin{align*}
-  \text{中心：}\quad \left(-\frac{R_\mathrm{K'}}{\sqrt2}~,~-\frac{R_\mathrm{K'}}{\sqrt2}\right)~~,\qquad
-  \text{左上側接点}\quad \left(-\frac{R_\mathrm{K'}}{\sqrt2}~,~\left(1-\frac1{\sqrt2}\right)R_\mathrm{K'}\right)\ .
+  \text{中心：}\quad \ab(-\frac{R_\mathrm{K'}}{\sqrt2}~,~-\frac{R_\mathrm{K'}}{\sqrt2})~~,\qquad
+  \text{左上側接点}\quad \ab(-\frac{R_\mathrm{K'}}{\sqrt2}~,~\ab(1-\frac1{\sqrt2})R_\mathrm{K'})\ .
 \end{align*}
 その他のコーナーRについても同様であり、これを適当に回転させたものとなる。
