@@ -19,7 +19,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 01.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 17.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\Jig の接点部が点の場合}
 まずは簡単のため、\Jig の\index{ワーク}ワークとの接点部（\pageautoref{fig:mouldOnComplexPlane1}のU$_\mathrm T$, U$_\mathrm B$）は点であるとして考える。
@@ -55,7 +55,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 1.1.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 17.01.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\Spacer を用いた\ReAlocation}
 \CurvatureCenter\expandafterindex{O（\yomiCurvatureCenter）@O（\nameCurvatureCenter）}Oを\index{げんてんO@原点O}原点とした\index{ふくそへいめん@複素平面}複素平面を考える
@@ -70,7 +70,7 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
 \begin{gather}
   \label{eq:constraintUpoint1}
   R_\mathrm o - R_\mathrm c = R_\mathrm c - R_\mathrm i = \frac{W_x}2~, \qquad
-  \IP\left(R_\mathrm oe^{i\alpha_{\mathrm T_\mathrm o}} - R_\mathrm ie^{i\alpha_{\mathrm T_\mathrm i}}\right)
+  \Im\ab(R_\mathrm oe^{i\alpha_{\mathrm T_\mathrm o}} - R_\mathrm ie^{i\alpha_{\mathrm T_\mathrm i}})
   = 0~,\\
   \label{eq:constraintUpoint2}
   \sin\alpha_{\mathrm T_\mathrm i} = \frac{f_\mathrm T}{R_\mathrm i}, \qquad
@@ -83,12 +83,12 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
 %% label{eq:afterftUpoint}
 \begin{align}
   \notag
-  & e^{-i\theta}\left\{R_\mathrm ie^{i(\alpha_{\mathrm T_\mathrm i} + \Omega)} - R_\mathrm ie^{-i\alpha_{\mathrm U_\mathrm B}}\right\}
+  & e^{-i\theta}\ab\{R_\mathrm ie^{i(\alpha_{\mathrm T_\mathrm i} + \Omega)} - R_\mathrm ie^{-i\alpha_{\mathrm U_\mathrm B}}\}
     +R_\mathrm ie^{-i\alpha_{\mathrm U_\mathrm B}}\\
   &= R_\mathrm i
-     \left\{
+     \ab\{
        e^{i(\alpha_{\mathrm T_\mathrm i} + \Omega - \theta)} - e^{-i(\alpha_{\mathrm U_\mathrm B} + \theta)} + e^{-i\alpha_{\mathrm U_\mathrm B}}
-     \right\}
+     \}
   \label{eq:afterftUpoint}
 \end{align}
 に移動する。
@@ -96,13 +96,13 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
 \begin{align*}
   \notag
   R_\mathrm oe^{i(\alpha_{\mathrm T_\mathrm o} + \Omega - \theta)}
-  -R_\mathrm i\left\{e^{-i(\alpha_{\mathrm U_\mathrm B} + \theta)}-e^{-i\alpha_{\mathrm U_\mathrm B}}\right\}
+  -R_\mathrm i\ab\{e^{-i(\alpha_{\mathrm U_\mathrm B} + \theta)}-e^{-i\alpha_{\mathrm U_\mathrm B}}\}
 \end{align*}
 に移動する。
 したがって、これらの差
 \begin{align*}
   \notag
-  e^{i(\Omega - \theta)}\left(R_\mathrm oe^{i\alpha_{\mathrm T_\mathrm o}} - R_\mathrm ie^{i\alpha_{\mathrm T_\mathrm i}}\right)
+  e^{i(\Omega - \theta)}\ab(R_\mathrm oe^{i\alpha_{\mathrm T_\mathrm o}} - R_\mathrm ie^{i\alpha_{\mathrm T_\mathrm i}})
 \end{align*}
 の虚部が0であればよい。
 つまり、\pageeqref{eq:constraintUpoint1}より、$\Omega = \theta$である
@@ -112,9 +112,9 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
 
 \Spacer 入れた後の\TopAlocationLength は、\pageeqref{eq:afterftUpoint}の虚部を見ればよい。
 \begin{align*}
-  R_\mathrm i\left\{\sin\alpha_{\mathrm T_\mathrm i} + \sin(\alpha_{\mathrm U_\mathrm B} + \theta) - \sin\alpha_{\mathrm U_\mathrm B}\right\}
+  R_\mathrm i\ab\{\sin\alpha_{\mathrm T_\mathrm i} + \sin(\alpha_{\mathrm U_\mathrm B} + \theta) - \sin\alpha_{\mathrm U_\mathrm B}\}
   &= f_\mathrm T -l
-     +R_\mathrm i\left(\sin\alpha_{\mathrm U_\mathrm B}\cos\theta + \cos\alpha_{\mathrm U_\mathrm B}\sin\theta\right)\\
+     +R_\mathrm i\ab(\sin\alpha_{\mathrm U_\mathrm B}\cos\theta + \cos\alpha_{\mathrm U_\mathrm B}\sin\theta)\\
   &= f_\mathrm T -l+l\cdot\frac{2l}{\sqrt{4l^2+\delta_\mathrm s^2}}
      +\sqrt{R_\mathrm i^2-l^2}\cdot\frac{\delta_\mathrm s}{\sqrt{4l^2+\delta_\mathrm s^2}}\\
   &= f_\mathrm T -l+\frac{2l^2+\delta_\mathrm s\sqrt{R_\mathrm i^2-l^2}}{\sqrt{4l^2+\delta_\mathrm s^2}}~.
@@ -124,16 +124,16 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
   \label{eq:fTprime}
   f'_\mathrm T
   = f_\mathrm T -l
-    +\frac{2l^2+\delta_\mathrm s\sqrt{\left(R_\mathrm c-\nicefrac{W_x}2\right)^2-l^2}}{\sqrt{4l^2+\delta_\mathrm s^2}}~.
+    +\frac{2l^2+\delta_\mathrm s\sqrt{\ab(R_\mathrm c-\nicefrac{W_x}2)^2-l^2}}{\sqrt{4l^2+\delta_\mathrm s^2}}~.
 \end{align}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 1.1.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 17.01.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\AlocationLength が均等になる\SpacerThickness}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-トップ側とボトム側の\index{きんとうふりわけ@均等振分}\AlocationLength が同じになるとき、$\delta_\mathrm s$は
+トップ側とボトム側の\AlocationLength が同じになるとき、$\delta_\mathrm s$は
 \begin{align}
   \label{eq:condtionequalalocation}
   f'_\mathrm T - f_\mathrm T = \frac{f_\mathrm B - f_\mathrm T}2
@@ -143,7 +143,7 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
 \begin{align*}
   \delta_\mathrm s
   &= 2l\cdot\frac{l'\sqrt{R_\mathrm i^2-l'^2}-l\sqrt{R_\mathrm i^2-l^2}}{R_\mathrm i^2-l^2-l'^2}
-     \qquad\left(l' \equiv l + \frac{f_\mathrm B-f_\mathrm T}2\right)\ .
+     \qquad\ab(l' \equiv l + \frac{f_\mathrm B-f_\mathrm T}2)\ .
 \end{align*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -155,18 +155,18 @@ $R_\mathrm c \to \infty$ ($\nicefrac1{R_\mathrm c} \to 0$)の場合、すなわ�
 \end{align*}
 両辺を2乗すると、
 \begin{gather*}
-  4l^4+\delta_\mathrm s^2\left(R_\mathrm i^2-l^2\right)+4l^2\delta_\mathrm s\sqrt{R_\mathrm i^2-l^2}
-  = l'^2\left(4l^2+\delta_\mathrm s^2\right)\\
+  4l^4+\delta_\mathrm s^2\ab(R_\mathrm i^2-l^2)+4l^2\delta_\mathrm s\sqrt{R_\mathrm i^2-l^2}
+  = l'^2\ab(4l^2+\delta_\mathrm s^2)\\
   \longrightarrow\quad
-  \delta_\mathrm s^2\left(R_\mathrm i^2-l^2-l'^2\right)
-  +4l^2\delta_\mathrm s\sqrt{R_\mathrm i^2-l^2} -4l^2\left(l'^2 - l^2\right)
+  \delta_\mathrm s^2\ab(R_\mathrm i^2-l^2-l'^2)
+  +4l^2\delta_\mathrm s\sqrt{R_\mathrm i^2-l^2} -4l^2\ab(l'^2 - l^2)
   = 0.
 \end{gather*}
 $\delta_\mathrm s > 0$より、
 \begin{align*}
   \delta_\mathrm s
-  &= \frac{\sqrt{4l^4\left(R_\mathrm i^2-l^2\right)
-                 +4l^2\left(R_\mathrm i^2-l^2-l'^2\right)\left(l'^2 - l^2\right)}
+  &= \frac{\sqrt{4l^4\ab(R_\mathrm i^2-l^2)
+                 +4l^2\ab(R_\mathrm i^2-l^2-l'^2)\ab(l'^2 - l^2)}
            -2l^2\sqrt{R_\mathrm i^2-l^2}}{R_\mathrm i^2-l^2-l'^2}\\
   &= 2l\cdot\frac{l'\sqrt{R_\mathrm i^2-l'^2}-l\sqrt{R_\mathrm i^2-l^2}}{R_\mathrm i^2-l^2-l'^2}
 \end{align*}
@@ -208,19 +208,19 @@ $\delta_\mathrm s > 0$より、
 \begin{align*}
   \sin\alpha_{\mathrm U_\mathrm B} = \frac{\bar l}{R_\mathrm i-\rho}\quad, \quad
   \tan\psi = \frac{\delta_\mathrm s}{2\bar l} \quad
-  \left(~\bar l \equiv l-\frac\sigma2~\right).
+  \ab(~\bar l \equiv l-\frac\sigma2~).
 \end{align*}
 これを原点Oを中心に$\Omega$だけ回転し、さらに点U$_\mathrm B$($R_\mathrm i-\rho$, $-\alpha_{\mathrm U_\mathrm B}$)を中心に点T$_\mathrm i$($R_\mathrm i$, $\alpha_{\mathrm T_\mathrm i}$)を$-\theta$だけ回転すると、
 %% label{eq:afterftUfinite}
 \begin{align}
   \notag
   & e^{-i\theta}\!
-    \left\{R_\mathrm ie^{i(\alpha_{\mathrm T_\mathrm i}+\Omega)}
-           -R_\mathrm i'e^{-i\alpha_{\mathrm U_\mathrm B}}\right\}
+    \ab\{R_\mathrm ie^{i(\alpha_{\mathrm T_\mathrm i}+\Omega)}
+           -R_\mathrm i'e^{-i\alpha_{\mathrm U_\mathrm B}}\}
     +R_\mathrm i'e^{-i\alpha_{\mathrm U_\mathrm B}}\\
   & = R_\mathrm ie^{i(\alpha_{\mathrm T_\mathrm i}+\Omega-\theta)}
       -R_\mathrm i'\!
-       \left\{e^{-i(\alpha_{\mathrm U_\mathrm B}+\theta)}-e^{-i\alpha_{\mathrm U_\mathrm B}}\right\}\qquad
+       \ab\{e^{-i(\alpha_{\mathrm U_\mathrm B}+\theta)}-e^{-i\alpha_{\mathrm U_\mathrm B}}\}\qquad
     \big(R_\mathrm i' \equiv R_\mathrm i-\rho\big)
     \label{eq:afterftUfinite}
 \end{align}
@@ -229,13 +229,13 @@ $\delta_\mathrm s > 0$より、
 \begin{align*}
   R_\mathrm oe^{i(\alpha_{\mathrm T_\mathrm o}+\Omega-\theta)}
   -R_\mathrm i'\!
-   \left\{e^{-i(\alpha_{\mathrm U_\mathrm B} + \theta)} - e^{-i\alpha_{\mathrm U_\mathrm B}}\right\}
+   \ab\{e^{-i(\alpha_{\mathrm U_\mathrm B} + \theta)} - e^{-i\alpha_{\mathrm U_\mathrm B}}\}
 \end{align*}
 に移動する。
 したがって、これらの差
 \begin{align*}
   e^{i(\Omega-\theta)}
-  \left(R_\mathrm oe^{i\alpha_{\mathrm T_\mathrm o}} - R_\mathrm ie^{i\alpha_{\mathrm T_\mathrm i}}\right)
+  \ab(R_\mathrm oe^{i\alpha_{\mathrm T_\mathrm o}} - R_\mathrm ie^{i\alpha_{\mathrm T_\mathrm i}})
 \end{align*}
 の虚部が0であればよい。
 つまり、\pageeqref{eq:constraintUpoint1}より、\ReceiverPlate がある場合も$\Omega = \theta$である。
@@ -285,7 +285,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \AfterRotateReceiverPlateCenter U$_\mathrm T'$と\expandafterindex{かいてんごの\yomiCurvatureCenter@回転後の\nameCurvatureCenter}\nameCurvatureCenter O$'$との差をとると、
 \begin{align*}
   \frac{\delta_\mathrm s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\cos\psi
-  +i\left\{\bar l-\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\sin\psi\right\}
+  +i\ab\{\bar l-\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\sin\psi\}
   = R_\mathrm i'e^{i\alpha'_{\mathrm U_\mathrm T}}\ .
 \end{align*}
 ここで、
@@ -300,8 +300,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \begin{hosoku}
 これの大きさは、$\delta_\mathrm s\cos\psi-2\bar l\sin\psi = 0$より、
 \begin{align*}
-  \left\{\frac{\delta_\mathrm s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\cos\psi\right\}^2
-  +\left\{\bar l-\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\sin\psi\right\}^2
+  \ab\{\frac{\delta_\mathrm s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\cos\psi\}^2
+  +\ab\{\bar l-\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\sin\psi\}^2
   = R_\mathrm i'^2\ .
 \end{align*}
 \end{hosoku}
@@ -324,7 +324,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \AfterRotateBottomSideReceiverPlateCenter U$_\mathrm B$と\CurvatureCenter O$'$との差をとると、
 \begin{align*}
   -\frac{\delta_\mathrm s}2+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\cos\psi
-  -i\left\{\bar l+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\sin\psi\right\}
+  -i\ab\{\bar l+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\sin\psi\}
   = R_\mathrm i'e^{-i\alpha'_{\mathrm U_\mathrm B}}
 \end{align*}
 ここで、
@@ -378,8 +378,8 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \begin{hosoku}
 \TopSideReceiverPlateContactPoint U$_\mathrm T'$と\BottomSideReceiverPlateContactPoint U$_\mathrm B'$の差をとると、
 \begin{align*}
-  R_\mathrm i\left(e^{i\alpha_{\mathrm U_\mathrm T}'}-e^{-i\alpha'_{\mathrm U_\mathrm B}}\right)
-  &= \frac{R_\mathrm i'+\rho}{R_\mathrm i'}\left\{\delta_\mathrm s+i(2\bar l)\right\}
+  R_\mathrm i\ab(e^{i\alpha_{\mathrm U_\mathrm T}'}-e^{-i\alpha'_{\mathrm U_\mathrm B}})
+  &= \frac{R_\mathrm i'+\rho}{R_\mathrm i'}\ab\{\delta_\mathrm s+i(2\bar l)\}
    = \frac{R_\mathrm i}{R_\mathrm i'}\sqrt{\delta_\mathrm s^2+(2\bar l)^2}e^{i(\nicefrac\pi2-\psi)}\ .
 \end{align*}
 したがって、厚さ$\delta_\mathrm s$の\Spacer を挿入すると、両接点を通る直線は$-\psi$だけ傾くことがわかる。
@@ -404,7 +404,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \begin{align*}
   f'_\mathrm T
   = R_\mathrm i\sin\alpha_{\mathrm T_\mathrm i}
-    +R_\mathrm i'\left(\sin\alpha'_{\mathrm U_\mathrm B}-\sin\alpha_{\mathrm U_\mathrm B}\right)
+    +R_\mathrm i'\ab(\sin\alpha'_{\mathrm U_\mathrm B}-\sin\alpha_{\mathrm U_\mathrm B})
   &= f_\mathrm T+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\sin\psi\\
   &= f_\mathrm T+\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{\delta_\mathrm s}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}}\ .
 \end{align*}
@@ -443,13 +443,13 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \begin{align}
   \label{eq:condtionequalalocationSpacer}
   \sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}\frac{\delta_\mathrm s}{\sqrt{\delta_\mathrm s^2+(2\bar l)^2}} = f_d \qquad
-  \left(f_d \equiv \frac{f_\mathrm B-f_\mathrm T}2\right)\ .
+  \ab(f_d \equiv \frac{f_\mathrm B-f_\mathrm T}2)\ .
 \end{align}
 を満たす。
 これより、
 \begin{align*}
   \delta_\mathrm s^2
-  &= \left(\sqrt{R_\mathrm i'^2-(\bar l-f_d)^2}-\sqrt{R_\mathrm i'^2-(\bar l+f_d)^2}\,\right)^2.
+  &= \ab(\sqrt{R_\mathrm i'^2-(\bar l-f_d)^2}-\sqrt{R_\mathrm i'^2-(\bar l+f_d)^2}\,)^2.
 \end{align*}
 なお、これはワークが水平・鉛直方向にそれぞれ、
 \begin{align*}
@@ -463,17 +463,17 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \begin{hosoku}
 \pageeqref{eq:condtionequalalocationSpacer}の両辺を2乗して$-4$倍すると、
 \begin{align*}
-  \delta_\mathrm s^2\left\{\delta_\mathrm s^2+(2\bar l)^2-4R_\mathrm i'^2\right\}+4f_d^2\left\{\delta_\mathrm s^2+(2\bar l)^2\right\}
-  & = \delta_\mathrm s^4-2\left\{2R_\mathrm i'^2-2\bar l^2-2f_d^2\right\}\delta_\mathrm s^2+4f_d^2(2\bar l)^2
+  \delta_\mathrm s^2\ab\{\delta_\mathrm s^2+(2\bar l)^2-4R_\mathrm i'^2\}+4f_d^2\ab\{\delta_\mathrm s^2+(2\bar l)^2\}
+  & = \delta_\mathrm s^4-2\ab\{2R_\mathrm i'^2-2\bar l^2-2f_d^2\}\delta_\mathrm s^2+4f_d^2(2\bar l)^2
     = 0\ .
 \end{align*}
 したがって、$f_\mathrm T = f_\mathrm B$ ($f_d = 0$)のとき$\delta_\mathrm s = 0$であることを考慮して、
 \begin{align*}
   \delta_\mathrm s^2
-  &= 2\left\{
-       R_\mathrm i'^2-\bar l^2-f_d^2-\sqrt{\left(R_\mathrm i'^2-\bar l^2-f_d^2\right)^2-4f_d^2\bar l^2}\,
-     \right\}\\
-  &= \left(\sqrt{R_\mathrm i'^2-(\bar l-f_d)^2}-\sqrt{R_\mathrm i'^2-(\bar l+f_d)^2}\,\right)^2.
+  &= 2\ab\{
+       R_\mathrm i'^2-\bar l^2-f_d^2-\sqrt{\ab(R_\mathrm i'^2-\bar l^2-f_d^2)^2-4f_d^2\bar l^2}\,
+     \}\\
+  &= \ab(\sqrt{R_\mathrm i'^2-(\bar l-f_d)^2}-\sqrt{R_\mathrm i'^2-(\bar l+f_d)^2}\,)^2.
 \end{align*}
 \end{hosoku}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -526,20 +526,20 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \index{トップがわのCがわそとたんてん@トップ側のC側外端点}トップ側のC側外端点T$_\mathrm i$($R_\mathrm i$, $\alpha_{\mathrm T_\mathrm i}$)を、原点Oを中心に$\Omega$だけ回転し、さらに点P\,($\Delta_x'$, $0$)を中心に$-\theta$だけ回転すると、
 \begin{align}
   \label{eq:afterfttable}
-  e^{-i\theta}\left\{R_\mathrm i^{i(\alpha_{\mathrm T_\mathrm i}+\Omega)}-\Delta_x'\right\}+\Delta_x'
-  = R_\mathrm ie^{i(\alpha_{\mathrm T_\mathrm i}+\Omega-\theta)}+\Delta_x'\left(1-e^{-i\theta}\right)
+  e^{-i\theta}\ab\{R_\mathrm i^{i(\alpha_{\mathrm T_\mathrm i}+\Omega)}-\Delta_x'\}+\Delta_x'
+  = R_\mathrm ie^{i(\alpha_{\mathrm T_\mathrm i}+\Omega-\theta)}+\Delta_x'\ab(1-e^{-i\theta})
 \end{align}
 に移動する。
 同様に、\index{トップがわのAがわそとたんてん@トップ側のA側外端点}トップ側のA側外端点T$_\mathrm o$($R_\mathrm o$, $\alpha_{\mathrm T_\mathrm o}$)は、
 \begin{align*}
-  e^{-i\theta}\!\left\{R_\mathrm o^{i(\alpha_{\mathrm T_\mathrm o}+\Omega)}-\Delta_x'\right\}+\Delta_x'
-  = R_\mathrm ie^{i(\alpha_{\mathrm T_\mathrm o}+\Omega-\theta)}+\Delta_x'\!\left(1-e^{-i\theta}\right)
+  e^{-i\theta}\!\ab\{R_\mathrm o^{i(\alpha_{\mathrm T_\mathrm o}+\Omega)}-\Delta_x'\}+\Delta_x'
+  = R_\mathrm ie^{i(\alpha_{\mathrm T_\mathrm o}+\Omega-\theta)}+\Delta_x'\!\ab(1-e^{-i\theta})
 \end{align*}
 に移動する。
 したがって、これらの差
 \begin{align*}
   e^{i(\Omega-\theta)}
-  \left(R_\mathrm oe^{i\alpha_{\mathrm T_\mathrm o}}-R_\mathrm ie^{i\alpha_{\mathrm T_\mathrm i}}\right)
+  \ab(R_\mathrm oe^{i\alpha_{\mathrm T_\mathrm o}}-R_\mathrm ie^{i\alpha_{\mathrm T_\mathrm i}})
 \end{align*}
 の虚部が$0$であればよい。
 よって\pageeqref{eq:constraintUpoint1}より、この場合も$\Omega = \theta$となる。
@@ -556,7 +556,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \subsubsection{回転後の\index{ワーク}ワークの\CurvatureCenter}
 \expandafterindex{かいてんごの\yomiCurvatureCenter@回転後の\nameCurvatureCenter}回転後の\nameCurvatureCenter O$'$は、点Pを中心に$-\theta$だけ回転するので、
 \begin{align*}
-  \Delta_x'\!\left(1-e^{-i\theta}\right) = \Delta_x'(1-\cos\theta)+i\Delta_x'\sin\theta\ .
+  \Delta_x'\!\ab(1-e^{-i\theta}) = \Delta_x'(1-\cos\theta)+i\Delta_x'\sin\theta\ .
 \end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -565,17 +565,17 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \subsubsection{\AfterRotatePlateContactPoint}
 傾き後における\TopSideReceiverPlateContactPoint は、点Pを中心に$-\theta$だけ回転するので、
 \begin{align*}
-  &  e^{-i\theta}\left(R_\mathrm ie^{i\alpha_{\mathrm U_\mathrm B}}-\Delta_x'\right)+\Delta_x'\\
-  &= R_\mathrm ie^{i(\alpha_{\mathrm U_\mathrm B}-\theta)}+\Delta_x'\!\left(1-e^{-i\theta}\right)\\
+  &  e^{-i\theta}\ab(R_\mathrm ie^{i\alpha_{\mathrm U_\mathrm B}}-\Delta_x')+\Delta_x'\\
+  &= R_\mathrm ie^{i(\alpha_{\mathrm U_\mathrm B}-\theta)}+\Delta_x'\!\ab(1-e^{-i\theta})\\
   &= R_\mathrm i\cos(\alpha_{\mathrm U_\mathrm B}-\theta)+\Delta_x'(1-\cos\theta)
-     +i\left\{R_\mathrm i\sin(\alpha_{\mathrm U_\mathrm B}-\theta)+i\Delta_x'\sin\theta\right\}\ .
+     +i\ab\{R_\mathrm i\sin(\alpha_{\mathrm U_\mathrm B}-\theta)+i\Delta_x'\sin\theta\}\ .
 \end{align*}
 同様に、傾き後における\BottomSideReceiverPlateContactPoint は、
 \begin{align*}
-  &  e^{-i\theta}\left(R_\mathrm ie^{-i\alpha_{\mathrm U_\mathrm B}}-\Delta_x'\right)+\Delta_x'\\
-  &= R_\mathrm ie^{-i(\alpha_{\mathrm U_\mathrm B}+\theta)}+\Delta_x'\!\left(1-e^{-i\theta}\right)\\
+  &  e^{-i\theta}\ab(R_\mathrm ie^{-i\alpha_{\mathrm U_\mathrm B}}-\Delta_x')+\Delta_x'\\
+  &= R_\mathrm ie^{-i(\alpha_{\mathrm U_\mathrm B}+\theta)}+\Delta_x'\!\ab(1-e^{-i\theta})\\
   &= R_\mathrm i\cos(\alpha_{\mathrm U_\mathrm B}+\theta)+\Delta_x'(1-\cos\theta)
-     -i\left\{R_\mathrm i\sin(\alpha_{\mathrm U_\mathrm B}+\theta)-i\Delta_x'\sin\theta\right\}\ .
+     -i\ab\{R_\mathrm i\sin(\alpha_{\mathrm U_\mathrm B}+\theta)-i\Delta_x'\sin\theta\}\ .
 \end{align*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -602,7 +602,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
   \label{eq:realocationT}
   f_\mathrm T'
   = f_\mathrm T+\Delta_x'\sin\theta
-  = f_\mathrm T+\left(\Delta_x+\sqrt{R_\mathrm i'-\bar l^2}\right)\sin\theta\ .
+  = f_\mathrm T+\ab(\Delta_x+\sqrt{R_\mathrm i'-\bar l^2})\sin\theta\ .
 \end{align}
 同様に、\BottomReAlocationLength$f_\mathrm B'$は、符号に注意して、
 \begin{align*}
@@ -621,7 +621,7 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 なお、\pageeqref{eq:afterfttable}の実部は、
 \begin{align*}
   R_\mathrm i\cos\alpha_{\mathrm T_\mathrm i}+\Delta_x'(1-\cos\theta)
-  = \sqrt{R_\mathrm i^2-\bar l^2}+\left(\Delta_x+\sqrt{R_\mathrm i'-\bar l^2}\right)(1-\cos\theta)\ .
+  = \sqrt{R_\mathrm i^2-\bar l^2}+\ab(\Delta_x+\sqrt{R_\mathrm i'-\bar l^2})(1-\cos\theta)\ .
 \end{align*}
 となるので、実軸の正方向に動くことがわかる。
 
@@ -638,13 +638,13 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 で与えられる。
 特に、\TopAlocationLength および\BottomAlocationLength が同じになるとき、$\theta$は
 \begin{align*}
-  \Delta_x'\sin\theta = f_d \qquad \left(f_d \equiv \frac{f_\mathrm B-f_\mathrm T}2\right)
+  \Delta_x'\sin\theta = f_d \qquad \ab(f_d \equiv \frac{f_\mathrm B-f_\mathrm T}2)
 \end{align*}
 であればいいので、
 \begin{align}
   \label{eq:equalalocationangle}
   \sin\theta = \frac{f_d}{\Delta_x'}
-  = \frac{f_\mathrm B-f_\mathrm T}{2\left(\Delta_x+\sqrt{R_\mathrm i'-\bar l^2}\right)}~.
+  = \frac{f_\mathrm B-f_\mathrm T}{2\ab(\Delta_x+\sqrt{R_\mathrm i'-\bar l^2})}~.
 \end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -652,11 +652,11 @@ U$_\mathrm B'$U$_\mathrm T'$の長さは$\bar l\sec\psi$であり、U$_\mathrm B
 \begin{hosoku}
 改めてまとめると、\Table を$-\theta$だけ傾けた後の\TopReAlocationLength$f_\mathrm T'$は、
 \begin{align*}
-  f_\mathrm T' = f_\mathrm T+\left(\Delta_x+\sqrt{R_\mathrm i'-\bar l^2}\right)\sin\theta\ .
+  f_\mathrm T' = f_\mathrm T+\ab(\Delta_x+\sqrt{R_\mathrm i'-\bar l^2})\sin\theta\ .
 \end{align*}
 トップ側とボトム側の\AlocationLength が均等になるときの\AlocationAngle（\textbf{\EqualAlocationAngle}）$\theta'$は、
 \begin{align*}
-  \sin\theta' = \frac{f_\mathrm B-f_\mathrm T}{2\left(\Delta_x+\sqrt{R_\mathrm i'-\bar l^2}\right)}\ .
+  \sin\theta' = \frac{f_\mathrm B-f_\mathrm T}{2\ab(\Delta_x+\sqrt{R_\mathrm i'-\bar l^2})}\ .
 \end{align*}
 ここで、
 \begin{align*}
