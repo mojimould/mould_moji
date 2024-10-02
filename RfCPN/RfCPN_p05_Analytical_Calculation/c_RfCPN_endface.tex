@@ -24,14 +24,14 @@
 \subsubsection{\Spacer を用いた場合のT\texorpdfstring{$_{R_\mathrm c}'$}{Rc'}}
 \Spacer を取付けた後の\TopCurvatureCenter の位置T$_{R_\mathrm c}'$と、\TableCenter Pとの$X$方向の差は、
 \begin{align*}
-  \left(
+  \ab(
     R_\mathrm ce^{i\alpha_\mathrm c}
     -R_\mathrm i'e^{-i\alpha'_{\mathrm U_\mathrm B}}
     +R_\mathrm i'e^{-i\alpha_{\mathrm U_\mathrm B}}
-  \right)
+  )
   -\Delta_x'
   = R_\mathrm ce^{i\alpha_\mathrm c}-R_\mathrm i'e^{-i\alpha'_{\mathrm U_\mathrm B}}-\Delta_x \qquad
-    \left(\sin\alpha_\mathrm c = \frac{f_\mathrm T}{R_\mathrm c}\right)
+    \ab(\sin\alpha_\mathrm c = \frac{f_\mathrm T}{R_\mathrm c})
 \end{align*}
 の実部を見ればよい。
 したがって
@@ -44,7 +44,7 @@
   &  R_\mathrm c\cos\alpha_\mathrm c-R_\mathrm i'\cos\alpha'_{\mathrm U_\mathrm B}-\Delta_x\\
   &= -\Delta_x+\sqrt{R_\mathrm c^2-f_\mathrm T^2}+\frac{\delta_\mathrm s}2
      -\sqrt{R_\mathrm i'^2-\frac{\delta_\mathrm s^2+(2\bar l)^2}4}
-      \frac{2\bar l}{\sqrt{\delta_\mathrm s^2+\left(2\bar l\right)^2}}
+      \frac{2\bar l}{\sqrt{\delta_\mathrm s^2+\ab(2\bar l)^2}}
      \label{eq:spacerTRc}
 \end{align}
 で与えられる
@@ -59,7 +59,7 @@
 \subsubsection{\Table を傾けた場合のT\texorpdfstring{$_{R_\mathrm c}'$}{Rc'}}
 \Table を傾けた後の\TopCurvatureCenter の位置T$_{R_\mathrm c}'$と、\TableCenter Pとの$X$方向の差は、
 \begin{align*}
-  \left(R_\mathrm ce^{i\alpha_\mathrm c}-\Delta_x'e^{-i\theta}+\Delta_x'\right)-\Delta_x'
+  \ab(R_\mathrm ce^{i\alpha_\mathrm c}-\Delta_x'e^{-i\theta}+\Delta_x')-\Delta_x'
   = R_\mathrm ce^{i\alpha_\mathrm c}-\Delta_x'e^{-i\theta}
 \end{align*}
 の実部を見ればよい。
@@ -68,7 +68,7 @@
 \begin{align}
   \label{eq:tableTRc}
   R_\mathrm c\cos\alpha_\mathrm c-\Delta_x'\cos\theta
-  = \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\left(\Delta_x+\sqrt{R_i'^2-\bar l^2}\right)\cos\theta~.
+  = \sqrt{R_\mathrm c^2-f_\mathrm T^2}-\ab(\Delta_x+\sqrt{R_i'^2-\bar l^2})\cos\theta~.
 \end{align}
 
 
@@ -170,7 +170,7 @@
 \Table を傾けた後の\BottomCurvatureCenter の位置B$_{R_\mathrm c}'$と、\TableCenter Pとの$X$方向の差は、トップ側の場合と同様に考えて
 \begin{align}
   \label{eq:tableBRc}
-  \left(\Delta_x+\sqrt{R_i'^2-\bar l^2}\right)\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}~.
+  \ab(\Delta_x+\sqrt{R_i'^2-\bar l^2})\cos\theta-\sqrt{R_\mathrm c^2-f_\mathrm B^2}~.
 \end{align}
 
 
@@ -237,12 +237,12 @@
 \ACOD $W_x$に対して、\TopEndHorizontalOD$W_\mathrm T$は以下で与えられる。（\BottomEndHorizontalOD も同様）
 \begin{align*}
   W_\mathrm T
-  = \sqrt{\left(R+\frac{W_x}2\right)^2-f_\mathrm T^2}
-    -\sqrt{\left(R-\frac{W_x}2\right)^2-f_\mathrm T^2}\ .
+  = \sqrt{\ab(R+\frac{W_x}2)^2-f_\mathrm T^2}
+    -\sqrt{\ab(R-\frac{W_x}2)^2-f_\mathrm T^2}\ .
 \end{align*}
 \index{テイラーてんかい@テイラー展開}テイラー展開（\index{マクローリンてんかい@マクローリン展開}マクローリン展開）\pageautoref{formula:taylorexpansion}より、
 \begin{align*}
-  (1+x)^\frac12 = 1+\frac x2-\frac{x^2}8+\frac{x^3}{16}-\frac{5x^4}{128}+o\left(x^5\right)
+  (1+x)^\frac12 = 1+\frac x2-\frac{x^2}8+\frac{x^3}{16}-\frac{5x^4}{128}+o\ab(x^5)
 \end{align*}
 なので、
 \begin{align*}
@@ -258,8 +258,8 @@
 とすると、
 \begin{align*}
   W_\mathrm T
-  = R\left\{(1+x)^\frac12(1+y)^\frac12-(1-x)^\frac12(1-y)^\frac12\right\}
-  = W_x\left(1+\frac{f_\mathrm T^2}{2R^2}+\cdots\right)
+  = R\ab\{(1+x)^\frac12(1+y)^\frac12-(1-x)^\frac12(1-y)^\frac12\}
+  = W_x\ab(1+\frac{f_\mathrm T^2}{2R^2}+\cdots)
 \end{align*}
 と近似できる。
 また$W_\mathrm T > W_x$であり、$R\to\infty$ ($R^{-1}\to0$)のとき$W_\mathrm T = W_x$であることもわかる。
