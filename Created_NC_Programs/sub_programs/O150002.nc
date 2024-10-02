@@ -1,61 +1,61 @@
 %
-O150002 (last update on 20240701)
+O150002 (last update on 20241002)
 (X centerline measurement)
 
 N0001
-IF[#23EQ#0]GOTO0800
-IF[#26EQ#0]GOTO0800
-IF[#20EQ#0]GOTO0800
-IF[#20LE10]GOTO0800
-IF[#21EQ#0]GOTO0800
-IF[#21LE10]GOTO0800
-IF[#02EQ#0]GOTO0800
-IF[#02LE10]GOTO0800
-IF[#03EQ#0]GOTO0800
-IF[#03LE10]GOTO0800
-IF[#13EQ#0]GOTO0800
-IF[#13LE1]GOTO0800
-IF[#06EQ#0]GOTO0800
-IF[#06LE1]GOTO0800
-IF[#04EQ#0]GOTO0800
-IF[#04LT0]GOTO0800
-(if W = #0, go to N0800)
-(if Z = #0, go to N0800)
-(if T <= 10 or #0, go to N0800)
-(if U <= 10 or #0, go to N0800)
-(if B <= 10 or #0, go to N0800)
-(if C <= 10 or #0, go to N0800)
-(if M <= 1 or #0, go to N0800)
-(if K <= 1 or #0, go to N0800)
-(if I < 0 or #0, go to N0800)
+IF[#23EQ#0]GOTO8000
+IF[#26EQ#0]GOTO8000
+IF[#20EQ#0]GOTO8000
+IF[#20LE10]GOTO8000
+IF[#21EQ#0]GOTO8000
+IF[#21LE10]GOTO8000
+IF[#02EQ#0]GOTO8000
+IF[#02LE10]GOTO8000
+IF[#03EQ#0]GOTO8000
+IF[#03LE10]GOTO8000
+IF[#13EQ#0]GOTO8000
+IF[#13LE1]GOTO8000
+IF[#06EQ#0]GOTO8000
+IF[#06LE1]GOTO8000
+IF[#04EQ#0]GOTO8000
+IF[#04LT0]GOTO8000
+(if W = #0, go to N8000)
+(if Z = #0, go to N8000)
+(if T <= 10 or #0, go to N8000)
+(if U <= 10 or #0, go to N8000)
+(if B <= 10 or #0, go to N8000)
+(if C <= 10 or #0, go to N8000)
+(if M <= 1 or #0, go to N8000)
+(if K <= 1 or #0, go to N8000)
+(if I < 0 or #0, go to N8000)
 
 N0002
-IF[#901011EQ#0]GOTO0800
-IF[#901011LE200]GOTO0800
-IF[#901050EQ#0]GOTO0800
-IF[#901050LE1]GOTO0800
-IF[#600EQ#0]GOTO0800
-IF[#600LT50]GOTO0800
-IF[#602EQ#0]GOTO0800
-IF[#602LT1]GOTO0800
-IF[#603EQ#0]GOTO0800
-IF[#603LE0]GOTO0800
-IF[#603GT15]GOTO0800
-IF[#656EQ#0]GOTO0800
-IF[#656LE0]GOTO0800
-IF[#656GT50]GOTO0800
-(if #901011 <= 200 or #0, go to N0800)
-(if #901050 <= 1 or #0, go to N0800)
-(if #600 < 50 or #0, go to N0800)
-(if #602 < 1 or #0, go to N0800)
-(if #603 <= 0 or > 15 or #0, go to N0800)
-(if #656 <= 0 or > 50 or #0, go to N0800)
+IF[#901011EQ#0]GOTO8000
+IF[#901011LE200]GOTO8000
+IF[#901050EQ#0]GOTO8000
+IF[#901050LE1]GOTO8000
+IF[#600EQ#0]GOTO8000
+IF[#600LT50]GOTO8000
+IF[#602EQ#0]GOTO8000
+IF[#602LT1]GOTO8000
+IF[#603EQ#0]GOTO8000
+IF[#603LE0]GOTO8000
+IF[#603GT15]GOTO8000
+IF[#656EQ#0]GOTO8000
+IF[#656LE0]GOTO8000
+IF[#656GT50]GOTO8000
+(if #901011 <= 200 or #0, go to N8000)
+(if #901050 <= 1 or #0, go to N8000)
+(if #600 < 50 or #0, go to N8000)
+(if #602 < 1 or #0, go to N8000)
+(if #603 <= 0 or > 15 or #0, go to N8000)
+(if #656 <= 0 or > 50 or #0, go to N8000)
 
 N0003
-IF[#23LE[#901011/2]]GOTO0800
-IF[#26LE[#901011/2]]GOTO0800
-(if W <= #901011/2, go to N0800)
-(if Z <= #901011/2, go to N0800)
+IF[#23LE[#901011/2]]GOTO8000
+IF[#26LE[#901011/2]]GOTO8000
+(if W <= #901011/2, go to N8000)
+(if Z <= #901011/2, go to N8000)
 
 N0004
 IF[#1000EQ0]THEN #33=#901001
@@ -100,9 +100,9 @@ G90 G54 G01 Y0 F#652
 G90 G53 G01 X[#23-[#13/2]+#33] F#652
 (X: W-M/2 from table center)
 
-IF[#1005EQ1]GOTO0801
+IF[#1005EQ1]GOTO8001
 IF[#1004EQ1]GOTO0008
-(if low battery, go to N0801)
+(if low battery, go to N8001)
 (if current sensor ON, go to N0008)
 M117 (sensor on/off)
 G04 X1. (wait 1.0s)
@@ -110,16 +110,16 @@ G04 X1. (wait 1.0s)
 N0008
 G90 G54 G43 G31 Z[#5221-#33-#04+[#20/2]+#600] H50 F#652
 G90 G54 G31 Z[#5221-#33-#04+[#20/2]+#602] F#653
-IF[#5003GT[#5221-#33-#04+[#20/2]+#602]]GOTO0802
+IF[#5003GT[#5221-#33-#04+[#20/2]+#602]]GOTO8002
 (Z skip: topGaisakuCmen +#600)
 (Z skip: topGaisakuCmen +#602)
-(if skip block end Z > Cmen Z+#602, to N0802)
+(if skip block end Z > Cmen Z+#602, to N8002)
 
 G91 G31 Z-[#602+#603] F#656
-IF[#5003LE[#5221-#33-#04+[#20/2]-#603]]GOTO0802
+IF[#5003LE[#5221-#33-#04+[#20/2]-#603]]GOTO8002
 #900034=#5003+#901053
 (Z- skip: #602+#603)
-(if skip block end Z <= Cmen Z-#603, to N0802)
+(if skip block end Z <= Cmen Z-#603, to N8002)
 (#900034= Z top side +probe hosei)
 
 G90 G53 G01 Z0 F#650
@@ -128,25 +128,25 @@ G90 G53 G01 X[-#26+[#06/2]+#33] F#652
 
 G90 G54 G43 G31 Z[#5221-#33+[#20/2]+#600] H50 F#652
 G90 G54 G31 Z[#5221-#33+[#02/2]+#602] F#653
-IF[#5003GT[#5221-#33+[#02/2]+#602]]GOTO0802
+IF[#5003GT[#5221-#33+[#02/2]+#602]]GOTO8002
 (Z skip: botGaisakuCmen +#600)
 (G54 Z skip: botGaisakuCmen Z+#602)
-(if skip block end Z > Cmen Z+#602, to N0802)
+(if skip block end Z > Cmen Z+#602, to N8002)
 
 G91 G31 Z-[#602+#603] F#656
-IF[#5003LE[#5221-#33+[#20/2]-#603]]GOTO0802
+IF[#5003LE[#5221-#33+[#20/2]-#603]]GOTO8002
 #900035=#5003+#901053
 (Z- skip: #602+#603)
-(if skip block end Z <= Cmen Z-#602, to N0802)
+(if skip block end Z <= Cmen Z-#602, to N8002)
 (#900035= Z bot side + probe hosei)
 
 G90 G53 G01 Z0 F#650
 #900036=#900035-#900034
 (difference)
 
-IF[#1005EQ1]GOTO0801
+IF[#1005EQ1]GOTO8001
 IF[#1004EQ0]GOTO0009
-(if low battery, go to N0801)
+(if low battery, go to N8001)
 (if current sensor off, go to N0009)
 M117 (sensor off)
 
@@ -159,7 +159,7 @@ G90 G54 G01 X#900036 F#652
 (TooriShin Y start)
 
 
-N0100
+N1000
 G49 G40 (cancel hosei)
 G90 G53 G01 Z0 F#650
 M11 (B-axis unclamp)
@@ -168,23 +168,23 @@ M10 (B-axis clamp)
 (G54 Bot:+Z, Top:-Z)
 (B parallel angle 180+A)
 
-N0102
+N1002
 G90 G54 G01 X0 Y[[#03/2]+#901050+#602] F#652
 G90 G54 G43 G01 Z[#26+#600] H50 F#652
 (G43 Z: Z+#600)
 
-IF[#1005EQ1]GOTO0801
-IF[#1004EQ1]GOTO0103
-(if low battery, go to N0801)
-(if current sensor ON, go to N0103)
+IF[#1005EQ1]GOTO8001
+IF[#1004EQ1]GOTO1003
+(if low battery, go to N8001)
+(if current sensor ON, go to N1003)
 M117 (sensor on/off)
 G04 X1.5 (wait 1.5s)
 
-N0103
+N1003
 G90 G54 G31 Z[#26-[#06/2]-#901050] F#653
-IF[#5003GT[#26-[#06/2]-#901050]]GOTO0802
+IF[#5003GT[#26-[#06/2]-#901050]]GOTO8002
 (G54 Z skip: BotTanmen Z-K/2-#901050)
-(if skip block end Z > BotTanmen Z-K/2-#901050, to N0802)
+(if skip block end Z > BotTanmen Z-K/2-#901050, to N8002)
 
 G91 G31 Y-[#602+#603] F#656
 #900030=#5002-#901050+#901053+#901055
@@ -195,8 +195,8 @@ G91 G01 Y[#602+#603] F#652
 (Y+: #602+#603)
 
 G90 G53 G01 Z0 F#650
-IF[[ABS[#900030-#901053-#901055]]LE[ABS[[#03/2]-#603]]]GOTO0800
-(if |#900030|<=|C/2-#602|, go to N0800)
+IF[[ABS[#900030-#901053-#901055]]LE[ABS[[#03/2]-#603]]]GOTO8000
+(if |#900030|<=|C/2-#602|, go to N8000)
 
 M11 (B-axis unclamp)
 G91 G00 B180.
@@ -210,9 +210,9 @@ G90 G54 G01 Y[[#21/2]+#901050+#602] F#652
 
 G90 G54 G43 G01 Z[#23+#600] H50 F#652
 G90 G54 G31 Z[#23-[#13/2]-#901050] F#653
-IF[#5003GT[#23-[#13/2]-#901050]]GOTO0802
+IF[#5003GT[#23-[#13/2]-#901050]]GOTO8002
 (G54 Z skip: W-M/2-#901050)
-(if skip block end Z > W-#901050-M/2+#32, to N0802)
+(if skip block end Z > W-#901050-M/2+#32, to N8002)
 
 G91 G31 Y-[#602+#603] F#656
 (Y-: #602+#603)
@@ -223,37 +223,38 @@ G91 G01 Y[#602+#603] F#652
 (Y+: #602+#603)
 
 G90 G53 G01 Z0 F#650
-IF[[ABS[#900031-#901053-#901055]]LE[ABS[[#21/2]-#603]]]GOTO0800
-(if |#900031|<=|U/2-#602|, go to N0800)
+IF[[ABS[#900031-#901053-#901055]]LE[ABS[[#21/2]-#603]]]GOTO8000
+(if |#900031|<=|U/2-#602|, go to N8000)
 
 #900032=#900030-#900031-[#03-#21]/2
 (difference)
 
-IF[#1005EQ1]GOTO0801
-IF[#1004EQ0]GOTO0104
-(if low battery, go to N0801)
-(if current sensor off, go to N0104)
+IF[#1005EQ1]GOTO8001
+IF[#1004EQ0]GOTO1004
+(if low battery, go to N8001)
+(if current sensor off, go to N1004)
 M117 (sensor off)
 
-N0104
+N1004
 G90 G54 G01 Y#900032 F#652
 (Y to table center)
 GOTO9999
 
 
-N0801
+N8001
 #3000=145 (Low battery)
 
-N0802
+N8002
 G90 G53 G01 Z0 F#652
 G65 P910002 (sensor OFF)
 #3000=121 (are*the*arguments*OK?)
 
-N0800
+N8000
 G65 P910002 (sensor OFF)
 #3000=121 (are*the*arguments*OK?)
 
-N9999 M99
+N9999
+M99
 
 (Used Variables and Programs)
 
