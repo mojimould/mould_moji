@@ -12,49 +12,49 @@
 \TableCenter 座標($X$, $Z$)に対して、\JigCenter の位置が($\delta x$, $\delta z$)だけずれている場合を考える。
 このとき、任意の点($X$, $Z$)は\Table を$-\theta$だけ回転すると、
 \begin{align*}
-  \left[
+  \ab[
     \begin{array}{c}
       X'\\
       Z'
     \end{array}
-  \right]
-  = \left[
+  ]
+  = \ab[
     \begin{array}{cc}
       \cos\theta & \sin\theta\\
       -\sin\theta & \cos\theta
     \end{array}
-  \right]\!\!
-  \left[
+  ]\!\!
+  \ab[
     \begin{array}{c}
       X+\delta x\\
       Z+\delta z
     \end{array}
-  \right]
-  = \left[
+  ]
+  = \ab[
     \begin{array}{c}
       (X+\delta x)\cos\theta+(Z+\delta z)\sin\theta\\
       -(X+\delta x)\sin\theta+(Z+\delta z)\cos\theta
     \end{array}
-  \right].
+  ].
 \end{align*}
 に移動する。
 また、ずれによる差分は、
 \begin{align*}
-  \left[
+  \ab[
     \begin{array}{c}
       \delta x\cos\theta+\delta z\sin\theta\\
       -\delta x\sin\theta+\delta z\cos\theta
     \end{array}
-  \right].
+  ].
 \end{align*}
 特に、$\theta = \pi$のとき、
 \begin{align*}
-  \left[
+  \ab[
     \begin{array}{c}
       -\delta x\\
       \delta z
     \end{array}
-  \right].
+  ].
 \end{align*}
 
 
@@ -91,21 +91,21 @@
 よって、ボトム側（$-X$側）およびトップ側（$+X$側）の\index{Cがわがいさくめん@C側外削面}C側外削面の中心（\Keyway を除く）は、\pageeqref{eq:centerlineB}より、
 \begin{align*}
   \text{ボトム側：}\quad
-  \left[
+  \ab[
     \begin{array}{c}
       \displaystyle -f_\mathrm B'+\frac{h_\mathrm B}2+\delta z\\[5pt]
       \mathcal G_{\mathrm By}\\[3pt]
       \displaystyle \mathcal G_{\mathrm Bx}+\frac{\mathfrak W_\mathrm B}2
     \end{array}
-    \right]~, \qquad
+    ]~, \qquad
   \text{トップ側：}\quad
-  \left[
+  \ab[
     \begin{array}{c}
       \displaystyle f_\mathrm T'-\frac{\kappa_p}2-\delta z\\[5pt]
       \mathcal G_{\mathrm By}-T_y\\[3pt]
       \displaystyle \mathcal G_{\mathrm Bx}-T_x+\frac{\mathfrak W_\mathrm T}2+\delta x
     \end{array}
-  \right].
+  ].
 \end{align*}
 
 %\clearpage
@@ -120,21 +120,21 @@
 よって、トップ側（$+X$側）およびボトム側（$-X$側）の\index{Cがわがいさくめん@C側外削面}C側外削面の中心（\Keyway を除く）は、\pageeqref{eq:centerlineT}より、
 \begin{align*}
   \text{トップ側：}~~
-  \left[
+  \ab[
     \begin{array}{c}
       \displaystyle f_\mathrm T'-\frac{\kappa_p}2-\delta z\\[5pt]
       \mathcal G_{\mathrm Ty}\\[3pt]
       \displaystyle \mathcal G_{\mathrm Tx}+\frac{\mathfrak W_\mathrm B}2
     \end{array}
-    \right]~, \qquad
+    ]~, \qquad
   \text{ボトム側：}~~
-  \left[
+  \ab[
     \begin{array}{c}
       \displaystyle -f_\mathrm B'+\frac{h_\mathrm B}2+\delta z\\[5pt]
       \mathcal G_{\mathrm Ty}+T_y\\[3pt]
       \displaystyle \mathcal G_{\mathrm Tx}+T_x+\frac{\mathfrak W_\mathrm B}2
     \end{array}
-  \right].
+  ].
 \end{align*}
 
 
@@ -225,7 +225,7 @@ $m$は梁の先端に作用する質量を示す。
 \end{align*}
 これより、この場合の\index{こゆうしんどうすう@固有振動数}固有振動数は、
 \begin{align*}
-  \frac1\pi\sqrt{\frac{mL^3}{E\left(H^3W-h^3b\right)}}\ .
+  \frac1\pi\sqrt{\frac{mL^3}{E\ab(H^3W-h^3b)}}\ .
 \end{align*}
 
 
