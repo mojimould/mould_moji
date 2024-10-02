@@ -10,13 +10,13 @@
 一般に、パラメトリックサーフェスは、パラメタ$u$, $v$を用いて次のように表すことができる。
 \begin{align*}
   S(u, v) &=
-  \left[
+  \ab[
   \begin{array}{c}
     x(u, v)\\
     y(u, v)\\
     z(u, v)
   \end{array}
-  \right]
+  ]
 \end{align*}
 ここで、$x(u,v)$, $y(u,v)$, $z(u,v)$は表面の各座標を定義する関数である。
 アイソパラメトリック曲線は、この表面上の一定の$u$または$v$の値に対応する曲線を指す。
@@ -73,7 +73,7 @@ $N_{i, p}(u)$の定義からわかるように、$N_{i, 0}(u)$は0次であり�
 これは基底関数$N_{i, p}(u)$を用いて与えられるB-スプライン曲線が、その\index{せいぎょてん（B-スプラインきょくせん）@制御点（B-スプライン曲線）}制御点$P_i$の\index{とつけつごう@凸結合}凸結合であることを示している。
 実際、このときB-スプライン曲線は
 \begin{align*}
-  C(u) = \sum_{i=1}^nN_{i, p}(u)P_i\qquad\left(\sum_{i=1}^nN_{i, p}(u) =1\right)
+  C(u) = \sum_{i=1}^nN_{i, p}(u)P_i\qquad\ab(\sum_{i=1}^nN_{i, p}(u) =1)
 \end{align*}
 と表され、これは制御点$P_i$の\index{かじゅうさんじゅつへいきん（B-スプラインきょくせん）@加重算術平均（B-スプライン曲線）}加重算術平均（\index{ウェイトさんじゅつへいきん（B-スプラインきょくせん）@ウェイト算術平均（B-スプライン曲線）}ウェイト算術平均, \index{おもみつきさんじゅつへいきん（B-スプラインきょくせん）@重み付き算術平均（B-スプライン曲線）}重み付き算術平均）とみなすことができる。
 つまり、一種の重心のようなものであり、B-スプライン曲線は常に制御点$P_i$に囲まれた領域に存在することを意味する。
@@ -121,7 +121,7 @@ $N_{i, p}(u)$の定義からわかるように、$N_{i, 0}(u)$は0次であり�
 このときB-スプライン曲線は次のように表すことができる。
 \begin{align*}
   C(u) = \sum_{i=1}^nN_{i, p}(u)P_i~~, \quad
-  U = \left\{u_0, u_1, u_2, \cdots, u_{n+p+1}\right\}\ .
+  U = \ab\{u_0, u_1, u_2, \cdots, u_{n+p+1}\}\ .
 \end{align*}
 一般には、B-スプライン曲線は\index{ゆうり（きていかんすう）@有理（基底関数）}有理(\index{rational（きていかんすう）@rational（基底関数）}rational)である。
 ここでは非有理である場合を含めて、\index{ゆうりB-スプラインきょくせん@有理B-スプライン曲線}有理B-スプライン曲線と呼ぶこととする。
@@ -134,7 +134,7 @@ $N_{i, p}(u)$の定義からわかるように、$N_{i, 0}(u)$は0次であり�
 以上より、\index{ひいちようゆうりB-スプラインきょくせん@非一様有理B-スプライン曲線}非一様有理B-スプライン(\index{Non-Uniform Rational B-Splineきょくせん@Non-Uniform Rational B-Spline曲線}Non-Uniform Rational B-Spline)曲線は、次のように定義される。
 \begin{align*}
   C(u) = \frac{\displaystyle\sum_{i=1}^nN_{i, p}(u)w_iP_i}{\displaystyle\sum_{j=1}^nN_{j, p}(u)w_j}~~,\quad
-  U = \left\{u_0, u_1, u_2, \cdots, u_{n+p+1}\right\}\ .
+  U = \ab\{u_0, u_1, u_2, \cdots, u_{n+p+1}\}\ .
 \end{align*}
 $U$は\index{ひいちようノットベクトル@非一様ノットベクトル}非一様ノットベクトルである。
 これは\index{NURBSきょくせん@NURBS曲線}NURBS曲線と呼ばれる。
@@ -168,7 +168,7 @@ $U$は\index{ひいちようノットベクトル@非一様ノットベクトル
 改めてNURBS曲線を記述すると、
 \begin{align*}
   C(u) = \frac{\displaystyle\sum_{i=1}^nN_{i, p}(u)w_iP_i}{\displaystyle\sum_{j=1}^nN_{j, p}(u)w_j}~~,\quad
-  U = \left\{u_0, u_1, u_2, \cdots, u_{n+p+1}\right\}\ .
+  U = \ab\{u_0, u_1, u_2, \cdots, u_{n+p+1}\}\ .
 \end{align*}
 このとき、\index{せいぎょてん（NURBSきょくせん）@制御点（NURBS曲線）}制御点$P_i$, \index{ウェイト（NURBSきょくせん）@ウェイト（NURBS曲線）}ウェイト$w_i$, \index{じすう（NURBSきょくせん）@次数（NURBS曲線）}次数$p$, \index{ノットベクトル}ノットベクトル$U$を決定することで、NURBS曲線が描画される。
 
