@@ -1,4 +1,4 @@
-# last update: 20240917
+# last update: 20241003
 # Copyright 2023-2024 The individual creator, not held by any corporation.
 # All rights reserved.
 
@@ -49,13 +49,13 @@ def excel_lookup(wb, sheet_name, lookup_cell, result_col, next_row=False):
         result_value = ref_sheet[result_col + str(row)].value
     return result_value
 
-# ジグ・テーブル
+# jig, table
 jigOuterHalfWidth      = WS['C112'].value
 ReceiverPlateWidth     = WS['C113'].value
 ReceiverPlateRadius    = WS['C114'].value
 BetweenTableJigCenters = WS['C115'].value
 
-# サブプログラム番号
+# sub-program number
 prgOutsideCenterX   = f"{WS['C147'].value:06d}"
 prgOutsideCenterY   = f"{WS['C148'].value:06d}"
 prgKeywayCenterX    = f"{WS['C149'].value:06d}"
@@ -78,7 +78,7 @@ prgPauseCheck       = f"{WS['C165'].value:06d}"
 prgSensorOn         = f"{WS['C166'].value:06d}"
 prgSensorOff        = f"{WS['C167'].value:06d}"
 
-# 工具番号
+# tool number
 toolIDEmpty         = WS['C125'].value
 toolIDFacemill      = WS['C126'].value
 toolIDSidecutter    = WS['C127'].value
@@ -95,7 +95,7 @@ toolIDTslot         = {
 }
 toolIDTouchSensor   = WS['C139'].value
 
-# フラグ
+# flag
 CenterCurvatureExistsFlag          = WS['C5'].value
 BotAlocationBracketDimExistsFlag   = WS['C10'].value
 DimpleExistsFlag                   = WS['C60'].value
@@ -118,16 +118,16 @@ KeywayAsideDepthToleranceExitsFlag = WS['C47'].value
 EndfaceBoringExistsFlag            = WS['C98'].value
 IncutBoringExistsFlag              = WS['C105'].value
 
-# 図面番号
+# drawing number
 DrawingIDNum = WS['C2'].value
 MainPrgID    = f"{DrawingIDNum:04d}"
 CustomerName = WS['C3'].value
 
-# 日付
+# date
 now = datetime.now()
 date_string = now.strftime('%Y%m%d')
 
-# 湾曲・振分け
+# curvature, alocation
 centralCurvatureDim = WS['C7'].value
 centralCurvature    = f"{centralCurvatureDim:.3f}"
 totalLengthDim            = WS['C8'].value
@@ -143,7 +143,7 @@ botAlocationLengthAve = totalLengthAve - topAlocationLengthAve
 topAlocationLength = f"{topAlocationLengthAve :.3f}"
 botAlocationLength = f"{botAlocationLengthAve :.3f}"
 
-# 外形
+# OD
 ACODDim            = WS['C14'].value
 ACODPlusTolerance  = WS['D14'].value
 ACODMinusTolerance = WS['E14'].value
