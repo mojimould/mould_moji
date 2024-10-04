@@ -596,7 +596,6 @@ prg. & 内容\\
 \end{enumerate}
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 36.08.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -626,40 +625,253 @@ prg. & 内容\\
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 36.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 36.09 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム：\DLone\TBW}
+\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム：\DLone}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 36.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.09.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\DLone：作成の目的}
 \begin{enumerate}[label*=\sarrow]
-\item すべての\Dimple の表面位置の測定
+\item すべての\Dimple に対する深さ方向表面位置の測定
 \item すべての\Dimple の加工
 \end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 40.03.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.09.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\DLone に用いる引数}
+\subsection{\DLone：使用の前提条件}
+\begin{enumerate}[label*=\sarrow]
+\item \index{ワークざひょうけい@ワーク座標系}ワーク座標系は、トップ端内側中心に該当するものを使用
+\item 予め\index{こうぐばんごう@工具番号}工具番号を指定
+\item 測定の際は、工具は\TouchSensorProbe を使用
+\item 加工の際は、工具は\TSlotCutter を使用
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.09.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLone：データの入出力}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.09.03.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\DLone：格納する\index{ひきすう@引数}引数}
 \begin{enumerate}[label*=\sarrow]
 \item \PMAlocationAngle
 \item \PMDimpleAngle
 \item \PMDimpleHorizontalPitch
 \item \PMDimpleVerticalPitch
 \item \PMDimpleOddRowLength
+\item \PMDimpleEvenRowLength
 \item \PMDimpleRowNum
 \item \PMDistanceTopEndFaceDimpleFirstRow
-\item \PMCenterCurvatureRadius
-\item \PMDimpleEvenRowLength
-\item \PMPlatingThk
 \item \PMDimpleDepth
+\item \PMPlatingThk
+\item \PMCenterCurvatureRadius
 \item \PMTopAlocationLength
 \item \PMTopReAlocationLength
 \end{enumerate}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.09.03.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\DLone：出力されるデータ（測定時のみ）}
+\begin{enumerate}[label*=\sarrow]
+\item すべての\Dimple の深さ方向表面位置座標（\DMLthreeAC および\DMLthreeBD より出力）
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.09.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLone：主な機能}
+\begin{enumerate}[label*=\sarrow]
+\item アンダーカット回避用のワークの傾け
+\item トップ端内側中心を通る湾曲中心線上における、\Dimple 各列の中央に順次移動
+\item \Dimple 列の中央に移動後、ABCD各内表面付近まで順次移動
+\item 内表面付近に移動ごとに、\DLtwoAC または\DLtwoBD を実行
+\end{enumerate}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.09.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLone：\index{ひんしつほしょう@品質保証}品質保証}
+\begin{enumerate}[label*=\sarrow]
+\item 使用可能な\index{ワークざひょうけい@ワーク座標系}ワーク座標系の範囲を限定
+\item \index{ひきすう@引数}引数の設定可能範囲を限定
+\item 関連コモン変数の設定可能範囲を限定
+\item $Z$方向\index{アプローチ}アプローチ時の\index{スキップきのう@スキップ機能}スキップ機能による接触検知
+\item $X$方向アプローチ時のスキップ機能による接触検知
+\item $Y$方向アプローチ時のスキップ機能による接触検知
+\item 異常検知時、安全位置に退避し\TouchSensorProbe の電源を切る
+\end{enumerate}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 36.10 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム：\DLtwoAC}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.10.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLtwoAC：作成の目的}
+\begin{enumerate}[label*=\sarrow]
+\item A面またはC面における、任意の一列内の\Dimple に対する深さ方向表面位置の測定
+\item A面またはC面における、任意の一列内の\Dimple の加工
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.10.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLtwoAC：使用の前提条件}
+\begin{enumerate}[label*=\sarrow]
+\item \DLone のサブプログラムとして使用
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.10.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLtwoAC：データの入出力}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.10.03.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\DLtwoAC：格納する\index{ひきすう@引数}引数}
+\begin{enumerate}[label*=\sarrow]
+\item \PMACFaceSelectionFlag
+\item \PMDimpleAngle
+\item \PMDimpleHorizontalPitch
+\item \PMDimpleOddRowLength
+\item \PMDimpleEvenRowLength
+\item \PMDimpleRowNum
+\item \PMDimpleDepth
+\item \PMTopEndACIDMeasuredValue
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.10.03.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\DLtwoAC：出力されるデータ（測定時のみ）}
+\begin{enumerate}[label*=\sarrow]
+\item A面またはC面における、任意の一列内の\Dimple に対する深さ方向表面位置座標\\
+（\DMLthreeAC より出力）
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.10.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLtwoAC：主な機能}
+\begin{enumerate}[label*=\sarrow]
+\item A側またはC側の内表面付近における、列内の各\Dimple 位置へ順次移動
+\item \Dimple 位置に移動ごとに、\DMLthreeAC または\DKLthreeAC を実行
+\end{enumerate}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.10.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLtwoAC：\index{ひんしつほしょう@品質保証}品質保証}
+\begin{enumerate}[label*=\sarrow]
+\item \index{ひきすう@引数}引数の設定可能範囲を限定
+\item 関連コモン変数の設定可能範囲を限定
+\item $Y$方向アプローチ時のスキップ機能による接触検知
+\item $Z$方向\index{アプローチ}アプローチ時の\index{スキップきのう@スキップ機能}スキップ機能による接触検知
+\item 異常検知時、\index{アラーム}アラームを発生
+\end{enumerate}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 36.11 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム：\DLtwoBD}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.11.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLtwoBD：作成の目的}
+\begin{enumerate}[label*=\sarrow]
+\item B面またはD面における、任意の一列内の\Dimple に対する深さ方向表面位置の測定
+\item B面またはD面における、任意の一列内の\Dimple の加工
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.11.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLtwoBD：使用の前提条件}
+\begin{enumerate}[label*=\sarrow]
+\item \DLone のサブプログラムとして使用
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.10.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLtwoBD：データの入出力}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.10.03.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\DLtwoBD：格納する\index{ひきすう@引数}引数}
+\begin{enumerate}[label*=\sarrow]
+\item \PMBDFaceSelectionFlag
+\item \PMDimpleAngle
+\item \PMDimpleHorizontalPitch
+\item \PMDimpleOddRowLength
+\item \PMDimpleEvenRowLength
+\item \PMDimpleRowNum
+\item \PMDimpleDepth
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.10.03.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\DLtwoBD：出力されるデータ（測定時のみ）}
+\begin{enumerate}[label*=\sarrow]
+\item B面またはD面における、任意の一列内の\Dimple に対する深さ方向表面位置座標\\
+（\DMLthreeBD より出力）
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.10.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLtwoBD：主な機能}
+\begin{enumerate}[label*=\sarrow]
+\item B側またはD側の内表面付近における、列内の各\Dimple 位置へ順次移動
+\item \Dimple 位置に移動ごとに、\DMLthreeBD または\DKLthreeBD を実行
+\end{enumerate}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.10.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\DLtwoBD：\index{ひんしつほしょう@品質保証}品質保証}
+\begin{enumerate}[label*=\sarrow]
+\item \index{ひきすう@引数}引数の設定可能範囲を限定
+\item 関連コモン変数の設定可能範囲を限定
+\item $X$方向アプローチ時のスキップ機能による接触検知
+\item $Z$方向\index{アプローチ}アプローチ時の\index{スキップきのう@スキップ機能}スキップ機能による接触検知
+\item 異常検知時、\index{アラーム}アラームを発生
+\end{enumerate}
 
 
