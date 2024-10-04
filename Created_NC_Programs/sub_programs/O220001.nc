@@ -1,19 +1,19 @@
 %
-O220001 (last update on 20240701)
-(for AC dimples measurement & kakou)
+O220001 (last update on 20241004)
+(for AC dimples measurement & milling)
 (level 2: mainly moving along row)
 
-N001
-IF[#01EQ#0]GOTO0800
-IF[#01EQ0]GOTO0800
-(if A = 0 or #0, to N0800)
+N0001
+IF[#01EQ#0]GOTO8000
+IF[#01EQ0]GOTO8000
+(if A = 0 or #0, to N8000)
 
 IF[#01GT0]THEN #33=1
 IF[#01LT0]THEN #33=-1
 (for A, #33=1)
 (for C, #33=-1)
 
-N002
+N0002
 #725=#5002
 #726=#5003
 (#725= current work block end Y)
@@ -31,7 +31,7 @@ IF[[#13/2]EQ#727]THEN #32=#19/2
 (if #13 is odd, #32=#09/2)
 (if #13 is even, #32=#19/2)
 
-N004
+N0004
 #730=[#32*2]/#04+1
 (#730= the # of dimple for current row)
 
@@ -39,55 +39,56 @@ N004
 (kokokara G31 or G01)
 
 
-IF[#4111EQ50]GOTO005
-(if H#=50, go to N005)
-GOTO006
-N005 (for sensor)
+IF[#4111EQ50]GOTO0005
+(if H#=50, go to N0005)
+GOTO0006
+N0005 (for sensor)
 G91 G31 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F#653
 (YZ skip to the 1st dimple: X: faceA-#620 or faceC+#620)
-GOTO007
-N006 (for kakou)
+GOTO0007
+N0006 (for T-slot)
 G91 G01 Y-#32 Z-[#33*[#24/2]*SIN[ABS[#02]]] F#651
 (YZ to the 1st dimple: X: faceA-#620 or faceC+#620)
 
-N007
+N0007
 #31=1 (loop #)
 #30=900001+#724*100+#727*#729+FIX[[#13-1]/2]*#728
 (#30: numbering for dimples)
 (A:#900101-, C:#900201-)
 WHILE[#31LE#730]DO1
-IF[#4111NE50]GOTO100
-(if H# is not 50, go to N100)
+IF[#4111NE50]GOTO1000
+(if H# is not 50, go to N1000)
 (for sensor)
 G65 P230001 I#33
 (measurement for AC dimples)
 #[#30]=#749
-GOTO101
-N100 (for kakou)
+GOTO1001
+N1000 (for T-slot)
 G65 P530001 I#33 U#21 W#[#30]
-(kakou for AC dimples)
-N101
+(milling for AC dimples)
+N1001
 #30=#30+1
-IF[#31GE#730]GOTO008 (end loop)
-IF[#4111NE50]GOTO102
-(if H# is not 50, go to N102)
+IF[#31GE#730]GOTO0008 (end loop)
+IF[#4111NE50]GOTO1002
+(if H# is not 50, go to N1002)
 G91 G31 Y#04 F#653
-GOTO103
-N102 (for kakou)
+GOTO1003
+N1002 (for T-slot)
 G91 G01 Y#04 F#651
-N103
+N1003
 #31=#31+1
 END1
 
-N008
+N0008
 G90 G01 Y#725 Z#726 F#651
 (YZ: to start point)
 GOTO9999
 
-N0800
+N8000
 #3000=121 (are*the*arguments*OK?)
 
-N9999 M99
+N9999
+M99
 
 (Used Variables and Programs)
 
@@ -101,9 +102,9 @@ N9999 M99
 (#09:F: length of odd rows)
 (#13:M: number of rows)
 (#19:S: length of even rows)
-(#24:X: AC naikei of last row)
+(#24:X: top endface ACID measured value)
 (used only as passed argument)
-(#21:U: depth of dimple)
+(#21:U: dimple depth)
 
 (as LHS)
 (#30, #31, #32, #33)
