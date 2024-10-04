@@ -1,5 +1,5 @@
 %
-O430000 (last update on 20240924)
+O430000 (last update on 20241004)
 (Mizo Corner R or C, ar HidariMawari 1shuu)
 
 N0001
@@ -88,12 +88,12 @@ IF[#03GE[[#24+#25-ABS[#24-#25]]/8]]GOTO8000
 IF[#18GE#03]GOTO8000
 (if C < 1 or C >= min[X/4, Y/4], go to N8000)
 (if R < 0.1 or R >= C, go to N8000)
+GOTO0016
 
 N0014 (for AC only)
 IF[#03NE#0]GOTO8000
 IF[#18NE#0]GOTO8000
 IF[#25NE#0]GOTO8000
-GOTO0016
 
 N0016
 IF[#662EQ#0]GOTO8000
