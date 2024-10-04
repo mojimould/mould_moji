@@ -1,5 +1,5 @@
 %
-O210003 (last update on 20240918)
+O210003 (last update on 20241004)
 (for dimple measurement & milling)
 (level 1: mainly moving along central curvature)
 
@@ -171,7 +171,7 @@ IF[#4111EQ50]GOTO0018
 (if sensor, go to N0018)
 S#682
 M03 (spindle on)
-M08 (coolant on)
+M09 (coolant off)
 M28 (chip conveyor on)
 
 N0018
@@ -259,7 +259,6 @@ GOTO0100
 
 N0019
 IF[#4111EQ50]GOTO0020
-M09 (coolant off)
 S35
 
 N0020
