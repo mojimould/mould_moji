@@ -27,3 +27,4 @@ RfCPN/RfCPN.pdf
 *.locode
 *.loColumn
 *.lnk
+*.minted
