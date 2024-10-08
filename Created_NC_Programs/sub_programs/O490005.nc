@@ -1,5 +1,5 @@
 %
-O490005 (last update on 20240924)
+O490005 (last update on 20241008)
 (Sotogawa ar HidariMawari 1shuu)
 
 N0001
@@ -142,11 +142,11 @@ G91 G02 X-[#07*2] Y[#07*2] I0.0 J[#07*2] F[#09*5]
 GOTO9999
 
 N0008 (for AC only)
-G91 G01 Y#07 F[#651*2]
+G91 G01 Y[#07/2] F[#651*2]
 (ar:Y+)
 G91 G01 X-[#24+#07*2] F[#651*2]
 (a: X-)
-G91 G01 Y-[#25+#07*2] F#09
+G91 G01 Y-[#25+#07] F#09
 (l: Y-)
 G91 G01 X#24 F[#651*2]
 (b: X+)
