@@ -561,6 +561,7 @@ prg. & 内容\\
 \subsection{\MCenterline：使用の前提条件}
 \begin{enumerate}[label*=\sarrow]
 \item 工具は\TouchSensorProbe を使用
+\item \TopOutcutMilling および\BottomOutcutMilling 後に使用
 \end{enumerate}
 
 
@@ -645,7 +646,7 @@ prg. & 内容\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\DLone：使用の前提条件}
 \begin{enumerate}[label*=\sarrow]
-\item \index{ワークざひょうけい@ワーク座標系}ワーク座標系は、トップ端内側中心に該当するものを使用
+\item \index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の基準は、\TopEndFace における内側中心
 \item 予め\index{こうぐばんごう@工具番号}工具番号を指定
 \item 測定の際は、工具は\TouchSensorProbe を使用
 \item 加工の際は、工具は\TSlotCutter を使用
@@ -727,8 +728,8 @@ prg. & 内容\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\DLtwoAC：作成の目的}
 \begin{enumerate}[label*=\sarrow]
-\item A面またはC面における、任意の一列内の\Dimple に対する深さ方向表面位置の測定
-\item A面またはC面における、任意の一列内の\Dimple の加工
+\item A面またはC面における、任意の1列内の\Dimple に対する深さ方向表面位置の測定
+\item A面またはC面における、任意の1列内の\Dimple の加工
 \end{enumerate}
 
 
@@ -766,7 +767,7 @@ prg. & 内容\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\DLtwoAC：出力されるデータ（測定時のみ）}
 \begin{enumerate}[label*=\sarrow]
-\item A面またはC面における、任意の一列内の\Dimple に対する深さ方向表面位置座標\\
+\item A面またはC面における、任意の1列内の\Dimple に対する深さ方向表面位置座標\\
 （\DMLthreeAC より出力）
 \end{enumerate}
 
@@ -808,8 +809,8 @@ prg. & 内容\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\DLtwoBD：作成の目的}
 \begin{enumerate}[label*=\sarrow]
-\item B面またはD面における、任意の一列内の\Dimple に対する深さ方向表面位置の測定
-\item B面またはD面における、任意の一列内の\Dimple の加工
+\item B面またはD面における、任意の1列内の\Dimple に対する深さ方向表面位置の測定
+\item B面またはD面における、任意の1列内の\Dimple の加工
 \end{enumerate}
 
 
@@ -846,7 +847,7 @@ prg. & 内容\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\DLtwoBD：出力されるデータ（測定時のみ）}
 \begin{enumerate}[label*=\sarrow]
-\item B面またはD面における、任意の一列内の\Dimple に対する深さ方向表面位置座標\\
+\item B面またはD面における、任意の1列内の\Dimple に対する深さ方向表面位置座標\\
 （\DMLthreeBD より出力）
 \end{enumerate}
 
@@ -888,8 +889,8 @@ prg. & 内容\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\DMLthreeAC：作成の目的}
 \begin{enumerate}[label*=\sarrow]
-\item A面またはC面における、任意の\Dimple に対する深さ方向表面位置の測定
-\item A面またはC面における、任意の\Dimple の加工
+\item A面またはC面における、任意の1個の\Dimple に対する深さ方向表面位置の測定
+\item A面またはC面における、任意の1個の\Dimple の加工
 \end{enumerate}
 
 
@@ -920,7 +921,7 @@ prg. & 内容\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\DMLthreeAC：出力されるデータ}
 \begin{enumerate}[label*=\sarrow]
-\item A面またはC面における、任意の\Dimple に対する深さ方向表面位置座標
+\item A面またはC面における、任意の1個の\Dimple に対する深さ方向表面位置座標
 \end{enumerate}
 
 
@@ -959,8 +960,8 @@ prg. & 内容\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\DMLthreeBD：作成の目的}
 \begin{enumerate}[label*=\sarrow]
-\item B面またはD面における、任意の\Dimple に対する深さ方向表面位置の測定
-\item B面またはD面における、任意の\Dimple の加工
+\item B面またはD面における、任意の1個の\Dimple に対する深さ方向表面位置の測定
+\item B面またはD面における、任意の1個の\Dimple の加工
 \end{enumerate}
 
 
@@ -991,7 +992,7 @@ prg. & 内容\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\DMLthreeBD：出力されるデータ}
 \begin{enumerate}[label*=\sarrow]
-\item B面またはD面における、任意の\Dimple に対する深さ方向表面位置座標
+\item B面またはD面における、任意の1個の\Dimple に対する深さ方向表面位置座標
 \end{enumerate}
 
 
@@ -1014,4 +1015,63 @@ prg. & 内容\\
 \item 関連コモン変数の設定可能範囲を限定
 \item $Y$方向アプローチ時のスキップ機能による異常値検知
 \item 異常検知時、\index{アラーム}アラームを発生
+\end{enumerate}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 36.14 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム：\KEndFaceRight}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.14.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KEndFaceRight：作成の目的}
+\begin{enumerate}[label*=\sarrow]
+\item トップ側およびボトム側の\EndFacecutMilling
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.14.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KEndFaceRight：使用の前提条件}
+\begin{enumerate}[label*=\sarrow]
+\item \EndFacecutMilling 用\FaceMill を使用
+\item \index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の基準は、\EndFace 部における内側中心
+\item \MXIWidth および\MYIWidth を用いて\EndFace 部における内側径を測定した後に使用
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.14.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KEndFaceRight：格納する\index{ひきすう@引数}引数}
+\begin{enumerate}[label*=\sarrow]
+\item \PMTopReAlocationLength または\PMBottomReAlocationLength
+\item \PMODCornerR
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.14.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KEndFaceRight：主な機能}
+\begin{enumerate}[label*=\sarrow]
+\item トップ側またはボトム側の\EndFacecutMilling
+\item 切削回数の取得および加工
+\end{enumerate}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.14.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KEndFaceRight：\index{ひんしつほしょう@品質保証}品質保証}
+\begin{enumerate}[label*=\sarrow]
+\item \index{ひきすう@引数}引数の設定可能範囲を限定
+\item 関連コモン変数の設定可能範囲を限定
 \end{enumerate}
