@@ -1042,17 +1042,41 @@ prg. & 内容\\
 \begin{enumerate}[label*=\sarrow]
 \item \EndFacecutMilling 用\FaceMill を使用
 \item \index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の基準は、\EndFace 部における内側中心
-\item \MXIWidth および\MYIWidth を用いて\EndFace 部における内側径を測定した後に使用
+\item \MXIWidth および\MYIWidth による\EndFace 部における内側径の測定後に使用
 \end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 36.14.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KEndFaceRight：格納する\index{ひきすう@引数}引数}
+\subsection{\KEndFaceRight：関連するパラメタ}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.14.03.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\KEndFaceRight：格納する\index{ひきすう@引数}引数}
 \begin{enumerate}[label*=\sarrow]
 \item \PMTopReAlocationLength または\PMBottomReAlocationLength
 \item \PMODCornerR
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.14.03.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\KEndFaceRight：必要な主な\index{へんすう@変数}変数}
+\begin{enumerate}[label*=\sarrow]
+\item \EndFacecutMilling$Z$方向全削り代
+\item \EndFacecutMilling1回あたりの$Z$方向削り代
+\item \TopEndFace 部$X$方向内側径測定値
+\item \TopEndFace 部$Y$方向内側径測定値
+\item \BottomEndFace 部$X$方向内側径測定値
+\item \BottomEndFace 部$Y$方向内側径測定値
+\item 工具 - \EndFace 間 $Z$方向クリアランス平面間距離
+\item 外側加工面 法線方向クリアランス平面間距離
+\item \EndFacecutMilling 用 内側径輪郭径$-$補正量
+\item \EndFacecutMilling 用 直線部送り速さ
+\item \EndFacecutMilling 用 コーナー部送り速さ
+\item \EndFacecutMilling 用 主軸回転数
 \end{enumerate}
 
 
