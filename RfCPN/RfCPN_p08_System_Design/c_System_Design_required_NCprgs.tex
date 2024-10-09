@@ -1085,8 +1085,105 @@ prg. & 内容\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KEndFaceRight：主な機能}
 \begin{enumerate}[label*=\sarrow]
-\item トップ側またはボトム側の\EndFacecutMilling
+\item トップ側またはボトム側の\EndFacecutMillingReferencePoint へ移動
+\item 基準点へ移動後、\KOLeftFS を実行
 \item 切削回数の取得および加工
+\end{enumerate}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.14.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KEndFaceRight：\index{ひんしつほしょう@品質保証}品質保証}
+\begin{enumerate}[label*=\sarrow]
+\item \index{ひきすう@引数}引数の設定可能範囲を限定
+\item 関連コモン変数の設定可能範囲を限定
+\end{enumerate}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 36.15 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム：\KOutcutRLeft}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.15.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KOutcutRLeft：作成の目的}
+\begin{enumerate}[label*=\sarrow]
+\item トップ側およびボトム側の\OutcutMilling
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.15.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KOutcutRLeft：使用の前提条件}
+\begin{enumerate}[label*=\sarrow]
+\item \OutcutMilling 用\SquareEndMill を使用
+\item \index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の基準は、\OutcutCenter
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.15.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KOutcutRLeft：関連するパラメタ}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.15.03.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\KOutcutRLeft：格納する\index{ひきすう@引数}引数}
+\begin{enumerate}[label*=\sarrow]
+\item \PMTopOutcutACWidth または\PMBottomOutcutACWidth
+\item \PMTopOutcutBDWidth または\PMBottomOutcutBDWidth
+\item \PMTopOutcutCornerR または\PMBottomOutcutCornerR
+\item \PMTopOutcutLength または\PMBottomOutcutLength
+\item \PMTopReAlocationLength または\PMBottomReAlocationLength
+\item \PMACOD
+\item \PMBDOD
+\item \PMKeywayPos
+\item \PMKeywayWidth
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.15.03.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\KOutcutRLeft：必要な主な\index{へんすう@変数}変数}
+\begin{enumerate}[label*=\sarrow]
+\item \TopOutcut{} 仕上げ加工 追加回数
+\item \BottomOutcut{} 仕上げ加工 追加回数
+\item \TopOutcutAsideThickness$+$補正
+\item \TopOutcutWidth$+$補正
+\item \TopOutcut{} 仕上げ前一時停止用フラグ
+\item \BottomOutcutAsideThickness$+$補正
+\item \BottomOutcutWidth$+$補正
+\item \BottomOutcut{} 仕上げ前一時停止用フラグ
+\item 工具 - \EndFace 間 $Z$方向クリアランス平面間距離
+\item 外側加工面 法線方向クリアランス平面間距離
+\item \OutcutMilling1回あたりの削り代
+\item \OutcutMilling{} 仕上げ前 残り削り代
+\item \OutcutMilling 用 直線部送り速さ
+\item \OutcutMilling 用 コーナー部送り速さ
+\item \OutcutMilling 用 主軸回転数
+\end{enumerate}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.15.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KOutcutRLeft：主な機能}
+\begin{enumerate}[label*=\sarrow]
+\item トップ側またはボトム側の\OutcutMillingReferencePoint に移動
+\item 基準点へ移動後、\KOLeftFS を実行
+\item 仕上げ前加工用切削回数の取得および加工
+\item 仕上げ前加工後の一時停止\OpauseCheck に対応
+\item 仕上げ後加工用切削回数の取得および加工
 \end{enumerate}
 
 
