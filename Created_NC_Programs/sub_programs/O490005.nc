@@ -1,6 +1,6 @@
 %
-O490005 (last update on 20241008)
-(Sotogawa ar HidariMawari 1shuu)
+O490005 (last update on 20241009)
+(outer, ar, counterclockwise)
 
 N0001
 IF[#24EQ#0]GOTO8000
@@ -170,7 +170,7 @@ M99
 
 (as received arguments)
 (#03:C: corner C)
-(#06:K: key type: 1:R, 2:C, 3:rec, 4:BDonly, 5:oct R, 6:AConly)
+(#06:K: milling type: 1:R, 2:C, 3:rec, 4:BDonly, 5:oct R, 6:AConly)
 (#07:D: distance to clearance plane)
 (#08:E: speed at corner)
 (#09:F: speed at straight line)
