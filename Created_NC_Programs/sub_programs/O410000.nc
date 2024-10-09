@@ -1,131 +1,131 @@
 %
-O410000 (last update on 20240701)
-(Tanmen naikei-#608 Coner R, ar MigiMawari 1shuu)
+O410000 (last update on 20241009)
+(endface, ID-#608, coner R, ar, clockwise)
 
-N001
-IF[#18EQ#0]GOTO0800
-IF[#18LT1]GOTO0800
-IF[#26EQ#0]GOTO0800
-(if R < 1 or #0, go to N0800)
-(if Z = #0, go to N0800)
+N0001
+IF[#18EQ#0]GOTO8000
+IF[#18LT1]GOTO8000
+IF[#26EQ#0]GOTO8000
+(if R < 1 or #0, go to N8000)
+(if Z = #0, go to N8000)
 
-N003
-IF[#400EQ#0]GOTO0800
-IF[#400LE0]GOTO0800
-IF[#658EQ#0]GOTO0800
-IF[#658LE10]GOTO0800
-IF[#659EQ#0]GOTO0800
-IF[#659LE10]GOTO0800
-IF[#675EQ#0]GOTO0800
-IF[#675LE200]GOTO0800
-(if #400 <= 0 or #0, go to N0800)
-(if #658 <= 10 or #0, go to N0800)
-(if #659 <= 10 or #0, go to N0800)
-(if #675 <= 200 or #0, go to N0800)
+N0003
+IF[#400EQ#0]GOTO8000
+IF[#400LE0]GOTO8000
+IF[#658EQ#0]GOTO8000
+IF[#658LE10]GOTO8000
+IF[#659EQ#0]GOTO8000
+IF[#659LE10]GOTO8000
+IF[#675EQ#0]GOTO8000
+IF[#675LE200]GOTO8000
+(if #400 <= 0 or #0, go to N8000)
+(if #658 <= 10 or #0, go to N8000)
+(if #659 <= 10 or #0, go to N8000)
+(if #675 <= 200 or #0, go to N8000)
 
 IF[#4012EQ57]THEN #24=#900018
 IF[#4012EQ55]THEN #24=#900019
 IF[#4012EQ57]THEN #25=#900024
 IF[#4012EQ55]THEN #25=#900025
-IF[#24EQ#0]GOTO0800
-IF[#24LT50]GOTO0800
-IF[#25EQ#0]GOTO0800
-IF[#25LT50]GOTO0800
+IF[#24EQ#0]GOTO8000
+IF[#24LT50]GOTO8000
+IF[#25EQ#0]GOTO8000
+IF[#25LT50]GOTO8000
 (XY into measurement values)
-(if X < 50 or #0, go to N0800)
-(if Y < 50 or #0, go to N0800)
+(if X < 50 or #0, go to N8000)
+(if Y < 50 or #0, go to N8000)
 
-N004
+N0004
 #100=#400
 #106=FUP[#100/#625]
 (#106: kakou kaisuu)
 
-N005
-IF[#4120EQ#0]GOTO0800
-IF[#4120LT2]GOTO0800
-IF[#4120GT5]GOTO0800
-IF[[FIX[#4120]]NE#4120]GOTO0800
-IF[#26LE[#901011/2]]GOTO0800
-IF[#901101EQ#0]GOTO0800
-IF[#901101LE1]GOTO0800
-IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO0800
-IF[#100EQ#0]GOTO0800
-IF[#100LT1]GOTO0800
-IF[#106LE0]GOTO0800
-IF[#608LT1]GOTO0800
-IF[#625EQ#0]GOTO0800
-IF[#625LE0]GOTO0800
-IF[#625GT5]GOTO0800
-IF[[#625*#106]LT0]GOTO0800
-(if T# < 2 or > 5 or not integer or #0, go to N0800)
-(if Z <= #901011/2, go to N0800)
-(if BCX <= 1 or BCX = #0, go to N0800)
-(if R >= min[X/4, Y/4], go to N0800)
-(if #100 < 1 or #0, go to N0800)
-(if #106 <= 0, go to N0800)
-(if #608 < 1, go to N0800)
-(if #625 <= 0 or #625 > 5 or #625 = #0, go to N0800)
-(if #625*#106 < 0, go to N0800)
+N0004
+IF[#4120EQ#0]GOTO8000
+IF[#4120LT2]GOTO8000
+IF[#4120GT5]GOTO8000
+IF[[FIX[#4120]]NE#4120]GOTO8000
+IF[#26LE[#901011/2]]GOTO8000
+IF[#901101EQ#0]GOTO8000
+IF[#901101LE1]GOTO8000
+IF[#18GE[[#24+#25-ABS[#24-#25]]/8]]GOTO8000
+IF[#100EQ#0]GOTO8000
+IF[#100LT1]GOTO8000
+IF[#106LE0]GOTO8000
+IF[#608LT1]GOTO8000
+IF[#625EQ#0]GOTO8000
+IF[#625LE0]GOTO8000
+IF[#625GT5]GOTO8000
+IF[[#625*#106]LT0]GOTO8000
+(if T# < 2 or > 5 or not integer or #0, go to N8000)
+(if Z <= #901011/2, go to N8000)
+(if BCX <= 1 or BCX = #0, go to N8000)
+(if R >= min[X/4, Y/4], go to N8000)
+(if #100 < 1 or #0, go to N8000)
+(if #106 <= 0, go to N8000)
+(if #608 < 1, go to N8000)
+(if #625 <= 0 or #625 > 5 or #625 = #0, go to N8000)
+(if #625*#106 < 0, go to N8000)
 
-N006
+N0006
 #33=#[2400+#4120]+#[2600+#4120]
 #32=[#605+#33+ABS[#605-#33]]/2
 #31=#24-[#608*2]
 #30=#25-[#608*2]
-IF[#32LE0]GOTO0800
-(#32: max[#605, hosei kouguKei])
+IF[#32LE0]GOTO8000
+(#32: max[#605, tool diameter compensation])
 (#31: X-#608*2)
 (#30: Y-#608*2)
 
-N007
-IF[#608GE#33]GOTO0800
-(if #608 >= kouguKei, go to N0800)
+N0007
+IF[#608GE#33]GOTO8000
+(if #608 >= tool diameter, go to N8000)
 
 
 (kokokara G00)
 
 
-N008
+N0008
 G90 G43 G01 H#4120 Z[#26+#625*#106+#600] F#650
 
-N100 (loop)
+N1000 (loop)
 WHILE[#106GE1]DO1
 #106=#106-1
 
-N101
+N1001
 G90 G00 X[[#31/2]+#32*3] Y[#30/2]
 G42 D#4120
 G91 G00 X-[#32/2]
 G90 G01 Z[#26+#625*#106] S#675 F#650
 
-N102
+N1002
 M03 (spindle on)
 M08 (coolant #1 on)
 
-N103
+N1003
 G90 G01 X[[#31/2]+#32*2] Y[#30/2] F#651
 G65 P490005 K1.0 R#18 X#31 Y#30 D#32 F#658 E#659 S#675
 G90 G40 G00 X[[#31/2]+#32*3]
 END1
 
-N990
+N9990
 M09 (coolant off)
 G90 G43 G01 H#4120 Z[#26+#600] F#650
-IF[#4119GE2600]GOTO991
+IF[#4119GE2600]GOTO9991
 S2599
-GOTO992
-N991
+GOTO9992
+N9991
 S6000
 
-N992
+N9992
 G90 G53 G01 Z0 F#650
 G04 X1.5 (wait 1.5s)
 M05 (spindle off)
 S35
-GOTO999
+GOTO9999
 
 
-N0800
+N8000
 M09 (coolant off)
 S2599
 G04 X2.0 (wait 2.0s)
@@ -133,16 +133,16 @@ M05 (spindle off)
 S35
 #3000=100 (are*the*arguments*OK?)
 
-N999 M99
+N9999
+M99
 
 (Used Variables and Programs)
 
 (Local variables)
 
 (as received arguments)
-(#18:R: sotogawa coner R)
-(#26:Z: sai-furiwake)
-(as received hidden arguments)
+(#18:R: outside corner R)
+(#26:Z: re_alocation)
 
 (as LHS)
 (#24, #25, #30, #31, #32, #33)
@@ -155,8 +155,8 @@ N999 M99
 (#901011, #901101)
 
 (System variables)
-(#24xx: #xx kouguKei)
-(#26xx: #xx kouguKeiMamou)
+(#24xx: #xx tool diameter)
+(#26xx: #xx tool diameter wear)
 (#3000: alarm)
 (#4120: current T#)
 
