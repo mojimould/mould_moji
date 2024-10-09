@@ -1,23 +1,23 @@
 %
-O491005 (last update on 20240621)
-(Sotogawa ar HidariMawari 1shuu with Z-move)
+O491005 (last update on 20241009)
+(outer, ar, counterclockwise with Z-move)
 
 N0001
-IF[#24EQ#0]GOTO0800
-IF[#24LT10]GOTO0800
-IF[#25EQ#0]GOTO0800
-IF[#25LT10]GOTO0800
-IF[#09EQ#0]GOTO0800
-IF[#09LT10]GOTO0800
-IF[#08EQ#0]GOTO0800
-IF[#08LT10]GOTO0800
-IF[#19EQ#0]GOTO0800
-IF[#19LE200]GOTO0800
-(if X < 10 or #0, go to N0800)
-(if Y < 10 or #0, go to N0800)
-(if F < 10 or #0, go to N0800)
-(if E < 10 or #0, go to N0800)
-(if S <= 200 or #0, go to N0800)
+IF[#24EQ#0]GOTO8000
+IF[#24LT10]GOTO8000
+IF[#25EQ#0]GOTO8000
+IF[#25LT10]GOTO8000
+IF[#09EQ#0]GOTO8000
+IF[#09LT10]GOTO8000
+IF[#08EQ#0]GOTO8000
+IF[#08LT10]GOTO8000
+IF[#19EQ#0]GOTO8000
+IF[#19LE200]GOTO8000
+(if X < 10 or #0, go to N8000)
+(if Y < 10 or #0, go to N8000)
+(if F < 10 or #0, go to N8000)
+(if E < 10 or #0, go to N8000)
+(if S <= 200 or #0, go to N8000)
 
 
 (kokokara G01)
@@ -30,8 +30,8 @@ IF[#06EQ1]GOTO0003
 IF[#06EQ2]GOTO0004
 IF[#06EQ3]GOTO0005
 IF[#06EQ4]GOTO0006
-GOTO0800
-(if K is not 1-4, go to N0800)
+GOTO8000
+(if K is not 1-4, go to N8000)
 
 N0003 (for R)
 G91 G01 X-[#24-#18] Z-[[#24-#18]*SIN[#02]] F#09
@@ -100,12 +100,13 @@ G91 G00 Y[#25+[#07*2]]
 GOTO9999
 
 
-N0800
-M05 (spindle kaiten off)
+N8000
+M05 (spindle off)
 M09 (coolant off)
 #3000=100 (are*the*arguments*OK?)
 
-N9999 M99
+N9999
+M99
 
 (Used Variables and Programs)
 
@@ -114,14 +115,14 @@ N9999 M99
 (as received arguments)
 (#02:B: curved outcut angle)
 (#03:C: corner C)
-(#06:K: Corner Type)
-(#07:D: kouguNigashiRyou)
+(#06:K: milling type)
+(#07:D: distance to clearance plane)
 (#08:E: speed at corner)
 (#09:F: speed at chokusenBu)
 (#18:R: corner R)
-(#19:S: kaitenSuu)
-(#24:X: gaisaku AC kei)
-(#25:Y: gaisaku BD kei)
+(#19:S: spindle speed)
+(#24:X: outcut AC OD)
+(#25:Y: outcut BD OD)
 
 (System variables)
 (#3000: alarm)
