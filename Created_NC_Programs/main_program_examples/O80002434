@@ -1,5 +1,5 @@
 %
-O80002434 (Last update on 20240829)
+O80002434 (Created on 20241010)
 (Top re_alocation: 500.014)
 (Bot re_alocation: 499.986)
 (Top Overhang: 170.014)
@@ -8,7 +8,7 @@ O80002434 (Last update on 20240829)
 (Bot parallel angle: 179.358)
 
 N0001
-G49 G40 (cancel correction)
+G49 G40 (cancel compensation)
 G80 G17
 S35
 M05 (spindle off)
@@ -19,6 +19,7 @@ G90 G53 G01 Z0 F#650
 N0002
 IF[#1005EQ0]GOTO0003
 M00 (sensor low battery)
+
 N0003
 IF[#1004EQ0]GOTO0004
 (if current sensor off, go to N0004)
@@ -68,28 +69,28 @@ G90 G10 L2 P5 X[-11.537+#901005] Y[[183.000/2]+#901006] Z#901007 B#901008
 (G55 Bot Inside Center)
 (G56 Top Outcut Center)
 (G57 Top Inside Center)
-(G58 Mizo Center)
+(G58 Keyway Center)
 
-N1002
+
 (Top sokutei start)
 
 
+N1002
 G90 G53 G01 Z0 F#650
 T50 (touch sensor)
-
 G56
 M11 (B-axis unclamp)
 G90 G56 G00 B-0.642
 M10 (B-axis clamp)
-(G56 B parallel angle -0.642)
-
 M06 (tool exchange)
 M19 (Spindle orientation)
-G43 H50 (tool length correction #50)
+G43 H50
+(G56 B parallel angle -0.642)
+(tool length compensation #50)
 
-G90 G57 G01 X0 Y0 F#652
-G90 G57 G01 Z[500.014+#600] F#652
-(G57 XY Top inside center)
+G90 G56 G01 X0 Y0 F#652
+G90 G56 G01 Z[500.014+#600] F#652
+(G56 XY Top Outcut center)
 (Z= TopReAlocation +#600)
 
 G65 P910001 (sensor ON)
@@ -100,32 +101,35 @@ IF[#1004EQ1]GOTO0104
 M117 (sensor switch)
 
 N0104
-G57 G65 P160003 X180.000 U157.558 Z500.014 M0.070
-(G57: Top X endface parallel angle)
-(X: Top AC outcut OD)
-(U: Top AC ID)
+G56 G65 P160003 X180.000 U157.558 Z500.014 M0.070
+(G56: Top X endface parallel angle)
+(X: Top AC OD or outcut OD)
+(U: Top AC ID or incut ID)
 (Z: Top re_alocation)
 (M: mekki thickness mm)
 
 N0105
 G90 G56 G01 X0 Y0 F#652
-G90 G56 G01 Z[#900047+#600] F#652
+G43 H50 (tool length compensation #50)
+G90 G56 G01 Z[#900048+#600] F#652
 (G56 XY Top Outside center)
 (Z= TopReAlocation +#600)
 
-G56 G65 P110001 X180.000 Z[#900047-5] W400.000 R8922.50 M20.000 H8.050
-(G54: Top X Outside center)
+G56 G65 P110001 X180.000 Z[#900048-5] W400.000 R8922.50 M20.000 H8.050
+(G56: Top X Outside center)
 (X: Top AC outcut OD)
 (Z: Top re_alocation -5)
 (W: Top alocation)
 (R: central curvature)
+(M: keyway pos)
+(H: keyway width)
 
 G90 G56 G01 X0 Y0 F#652
-G43 H50 (tool length correction #50)
+G43 H50 (tool length compensation #50)
 (G56 XY Top outside center)
 
-G56 G65 P110002 Y180.000 Z[#900047-5]
-(G56: Top Y Outside center)
+G56 G65 P110002 Y180.000 Z[#900048-5]
+(G56: Top Y outside center)
 (Y: Top BD outcut OD)
 (Z: Top re_alocation -5)
 
@@ -139,14 +143,17 @@ G56 G65 P110002 Y180.000 Z[#900047-5]
 IF[#177EQ1]GOTO1005
 M00
 N1005
+
+
+N4200
 (*** Mizo start ***)
 
 
-G49 G40 (cancel correction)
+G49 G40 (cancel compensation)
 G90 G53 G01 Z0 F#650
 T06 (keyway)
 M06 (tool exchange)
-G43 H#4120 (tool length correction: T#)
+G43 H#4120 (tool length compensation: T#)
 
 N4201
 G58
@@ -192,7 +199,7 @@ N4205 (keyway end)
 
 
 N9990
-G49 G40 (cancel corrections)
+G49 G40 (cancel compensations)
 G80 G17
 G90 G53 G01 Z0 F#650
 G90 G53 G00 X-5.501 Y-258.624
