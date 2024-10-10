@@ -77,7 +77,7 @@ IF[[ABS[#30]]GE[#23/4]]GOTO8000
 
 N0010
 #29=SQRT[#18*#18-[#23-#30]*[#23-#30]]-SQRT[#18*#18-#23*#23]
-(#29: X hosei from #30)
+(#29: X compensation from #30)
 IF[[ABS[#29]]GE[#24/4]]GOTO8000
 (if |#29| >= X/4, go to N8000)
 
@@ -108,7 +108,7 @@ N0014
 G91 G31 X[#602+#603] F#656
 #900000=#5001+#901050-#901053+#901054
 (X+ skip: #602+#603)
-(#900000= skip X +#901050 +probe hosei)
+(#900000= skip X +#901050 +probe compensation)
 
 N0015
 G91 G01 X-[#602+#603] F#652
@@ -116,10 +116,10 @@ G91 G01 Z[#30+#901050+#600] F#650
 IF[[ABS[#900000+#901053-#901054]]LE[ABS[[#24/2]-#603]]]GOTO8000
 (X-: #602+#603)
 (Z+: #30+#901050+#600)
-(if |#900000 -probe hosei|<=|X/2-#603|, go to N8000)
+(if |#900000 -probe compensation|<=|X/2-#603|, go to N8000)
 
 G90 G01 X[#32+#31*#29] F#652
-(X to start point +hosei)
+(X to start point +compensation)
 
 N0016
 G91 G01 X[[#24/2]+#901050+#602] F#652
@@ -134,7 +134,7 @@ N0017
 G91 G31 X-[#602+#603] F#656
 #900001=#5001-#901050+#901053+#901054
 (X- skip: #602+#603)
-(#900001= skip X -#901050 +probe hosei)
+(#900001= skip X -#901050 +probe compensation)
 
 N0018
 G91 G01 X[#602+#603] F#652
@@ -142,7 +142,7 @@ G91 G01 Z[#30+#901050+#600] F#650
 IF[[ABS[#900001-#901053-#901054]]LE[ABS[[#24/2]-#603]]]GOTO8000
 (X+: #602+#603)
 (Z+: #30+#901050+#600)
-(if |#900001 -probe hosei|<=|X/2-#603|, go to N8000)
+(if |#900001 -probe compensation|<=|X/2-#603|, go to N8000)
 
 N0019
 #900002=[#900001+#900000]/2
@@ -156,12 +156,12 @@ N0020
 G90 G01 X#900002 F#652
 (X to measured center)
 G91 G01 X-[#31*#29] F#652
-(X to measured tanmen center)
+(X to measured endface center)
 
 #[5201+[#33-53]*20]=#5021
 IF[#33EQ56]THEN #5301=#5261+SQRT[#18*#18-[#23-[#13+#419]-[[#11+#420]/2]]*[#23-[#13+#419]-[[#11+#420]/2]]]-SQRT[#18*#18-#23*#23]+[#11*#11]/[8*#18]
 (current work origin X = current machine X)
-(if top, G58X = G56X +hosei)
+(if top, G58X = G56X +compensation)
 
 N9990
 G90 G01 Z[#26+#600] F#652
@@ -186,12 +186,12 @@ M99
 
 (Local variables)
 (as received arguments)
-(#11:H: mizoHaba)
-(#13:M: mizoIchi)
+(#11:H: keyway width)
+(#13:M: keyway pos)
 (#18:R: central curvature)
-(#23:W: ori_furiwake)
+(#23:W: alocation length)
 (#24:X: X outside width)
-(#26:Z: sai-furiwake)
+(#26:Z: re-alocation length)
 
 (as LHS)
 (#29, #30, #31, #32, #33)
@@ -204,8 +204,8 @@ M99
 (#600, #602, #603, #650, #652, #653, #656)
 (#901011)
 (#901050: probe radius)
-(#901053: hosei: touch sensor signal delay)
-(#901054: hosei: probe center X)
+(#901053: compensation: touch sensor signal delay)
+(#901054: compensation: probe center X)
 
 (System variables)
 (#1004: 0: sensor off, 1: on)
