@@ -108,6 +108,12 @@ G56 G65 P160003 X180.000 U157.558 Z500.014 M0.070
 (Z: Top re_alocation)
 (M: mekki thickness mm)
 
+IF[#5004EQ[-0.642+#900047]]GOTO0105
+M11 (B-axis unclamp)
+G90 G56 G00 B[-0.642+#900047]
+M10 (B-axis clamp)
+(G56 B parallel angle -0.642+#900047)
+
 N0105
 G90 G56 G01 X0 Y0 F#652
 G43 H50 (tool length compensation #50)
@@ -157,11 +163,11 @@ G43 H#4120 (tool length compensation: T#)
 
 N4201
 G58
-IF[#5004EQ[-0.642]]GOTO4202
+IF[#5004EQ[-0.642+#900047]]GOTO4202
 M11 (B-axis unclamp)
-G90 G58 G00 B-0.642
+G90 G58 G00 B[-0.642+#900047]
 M10 (B-axis clamp)
-(G58 B parallel angle -0.642)
+(G58 B parallel angle -0.642+#900047)
 
 N4202
 M28 (chip conveyor on)

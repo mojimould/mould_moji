@@ -109,6 +109,12 @@ G57 G65 P160003 X160.000 U135.210 Z500.042 M0.070
 (Z: Top re_alocation)
 (M: mekki thickness mm)
 
+IF[#5004EQ[-0.964+#900047]]GOTO1005
+M11 (B-axis unclamp)
+G90 G57 G00 B[-0.964+#900047]
+M10 (B-axis clamp)
+(G57 B parallel angle -0.964+#900047)
+
 N1005
 G90 G57 G01 X0 Y0 F#652
 G43 H50 (tool length compensation #50)
