@@ -53,7 +53,7 @@ with open('./O' + MainPrgID, 'w') as f:
 
     f.write(
         f"N{SN_overall:04d}\n"
-        'G49 G40 (cancel correction)\n'
+        'G49 G40 (cancel compensation)\n'
         'G80 G17\n'
         'S35\n'
         'M05 (spindle off)\n'
@@ -198,10 +198,10 @@ with open('./O' + MainPrgID, 'w') as f:
     )
 
     f.write(
-        'G40 G49 G80 (cancel correction)\n'
+        'G40 G49 G80 (cancel compensation)\n'
         'S35 (low gear)\n'
         'M19 (Spindle orientation)\n'
-        'G43 H50 (tool length correction #50)\n'
+        'G43 H50 (tool length compensation #50)\n'
         '\n'
     )
 
@@ -267,7 +267,7 @@ with open('./O' + MainPrgID, 'w') as f:
     if BotOutcutExistsFlag == 0:
         f.write(
             'G90 ' + workCoordinateBotOut + ' G01 X0 Y0 F#652\n'
-            'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
+            'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length compensation ' + f"#{toolIDTouchSensor:02d}" + ')\n'
             '(' + workCoordinateBotOut + ' XY Bot outside center)\n'
             '\n'
 
@@ -282,7 +282,7 @@ with open('./O' + MainPrgID, 'w') as f:
     # Origin Setting Bottom inner X Measurement
     f.write(
         'G90 ' + workCoordinateBotIn + ' G01 X0 Y0 F#652\n'
-        'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
+        'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length compensation ' + f"#{toolIDTouchSensor:02d}" + ')\n'
         '(' + workCoordinateBotIn + ' XY Bot inside center)\n'
         '\n'
 
@@ -299,7 +299,7 @@ with open('./O' + MainPrgID, 'w') as f:
     # Origin Setting Bottom inner Y Measurement
     f.write(
         'G90 ' + workCoordinateBotIn + ' G01 X0 Y0 F#652\n'
-        'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
+        'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length compensation ' + f"#{toolIDTouchSensor:02d}" + ')\n'
         '(' + workCoordinateBotIn + ' XY Bot inside center)\n'
         '\n'
 
@@ -336,7 +336,7 @@ with open('./O' + MainPrgID, 'w') as f:
         'M10 (B-axis clamp)\n'
         'G43 ' + f"H{toolIDTouchSensor:02d}" + '\n'
         '(' + workCoordinateTopOut + ' B parallel angle ' + topSideParallelAngle + ')\n'
-        '(tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
+        '(tool length compensation ' + f"#{toolIDTouchSensor:02d}" + ')\n'
         '\n'
     )
 
@@ -392,7 +392,7 @@ with open('./O' + MainPrgID, 'w') as f:
     if TopOutcutExistsFlag == 0:
         f.write(
             'G90 ' + workCoordinateTopOut + ' G01 X0 Y0 F#652\n'
-            'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
+            'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length compensation ' + f"#{toolIDTouchSensor:02d}" + ')\n'
             '(' + workCoordinateTopOut + ' XY Top outside center)\n'
             '\n'
 
@@ -406,7 +406,7 @@ with open('./O' + MainPrgID, 'w') as f:
     # Origin Setting Top inner X Measurement
     f.write(
         'G90 ' + workCoordinateTopIn + ' G01 X0 Y0 F#652\n'
-        'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
+        'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length compensation ' + f"#{toolIDTouchSensor:02d}" + ')\n'
         '(' + workCoordinateTopIn + ' XY Top inside center)\n'
         '\n'
 
@@ -423,7 +423,7 @@ with open('./O' + MainPrgID, 'w') as f:
     # Origin Setting Top inner Y Measurement
     f.write(
         'G90 ' + workCoordinateTopIn + ' G01 X0 Y0 F#652\n'
-        'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
+        'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length compensation ' + f"#{toolIDTouchSensor:02d}" + ')\n'
         '(' + workCoordinateTopIn + ' XY Top inside center)\n'
         '\n'
 
@@ -448,7 +448,7 @@ with open('./O' + MainPrgID, 'w') as f:
         if KeywayAsideDepthToleranceExitsFlag == 1:
             f.write(
                 'G90 ' + workCoordinateKeyway + ' G01 X0 Y0 F#652\n'
-                'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
+                'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length compensation ' + f"#{toolIDTouchSensor:02d}" + ')\n'
                 '(' + workCoordinateKeyway + ' XY keyway center)\n'
                 '\n'
 
@@ -467,7 +467,7 @@ with open('./O' + MainPrgID, 'w') as f:
     if TopOutcutExistsFlag == 0:
         f.write(
             'G90 ' + workCoordinateKeyway + ' G01 X0 Y0 F#652\n'
-            'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
+            'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length compensation ' + f"#{toolIDTouchSensor:02d}" + ')\n'
             '(' + workCoordinateKeyway + ' XY keyway center)\n'
             '\n'
 
@@ -539,10 +539,10 @@ with open('./O' + MainPrgID, 'w') as f:
         SN_dimple_Me = next(SN_dimple_measurement)
         f.write(
             f"N{SN_dimple_Me:04d}\n"
-            'G40 G80 (cancel correction)\n'
+            'G40 G80 (cancel compensation)\n'
             'S35 (low gear)\n'
             'M19 (Spindle orientation)\n'
-            'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length correction ' + f"#{toolIDTouchSensor:02d}" + ')\n'
+            'G43 ' + f"H{toolIDTouchSensor:02d}" + ' (tool length compensation ' + f"#{toolIDTouchSensor:02d}" + ')\n'
             '\n'
         )
 
@@ -625,15 +625,15 @@ with open('./O' + MainPrgID, 'w') as f:
         )
 
         f.write(
-            'G49 G40 (cancel correction)\n'
+            'G49 G40 (cancel compensation)\n'
             'G90 G53 G01 Z0 F#650\n'
             '\n'
         )
 
         SN_D_tool_exchange = SN_dimple_Mi + 1
-        SN_D_tool_correction = SN_dimple_Mi + 2
+        SN_D_tool_compensation = SN_dimple_Mi + 2
         f.write(
-            'IF[#4120EQ31]' + f"GOTO{SN_D_tool_correction:04d}\n"
+            'IF[#4120EQ31]' + f"GOTO{SN_D_tool_compensation:04d}\n"
             'IF[#4120NE50]' + f"GOTO{SN_D_tool_exchange:04d}\n"
             'G90 G53 G01 X-5.501 Y-258.624 F#652\n'
             '\n'
@@ -650,7 +650,7 @@ with open('./O' + MainPrgID, 'w') as f:
         SN_dimple_Mi = next(SN_dimple_milling)
         f.write(
             f"N{SN_dimple_Mi:04d}\n"
-            'G43 H#4120 (tool length correction: T#)\n'
+            'G43 H#4120 (tool length compensation: T#)\n'
             '\n'
         )
 
@@ -734,11 +734,11 @@ with open('./O' + MainPrgID, 'w') as f:
     )
 
     f.write(
-        'G49 G40 (cancel correction)\n'
+        'G49 G40 (cancel compensation)\n'
         'G90 G53 G01 Z0 F#650\n'
         f"T{toolIDFacemill:02d}" + ' (Endface)\n'
         'M06 (tool exchange)\n'
-        'G43 H#4120 (tool length correction: T#)\n'
+        'G43 H#4120 (tool length compensation: T#)\n'
         '\n'
     )
 
@@ -831,11 +831,11 @@ with open('./O' + MainPrgID, 'w') as f:
         )
 
         f.write(
-            'G49 G40 (cancel correction)\n'
+            'G49 G40 (cancel compensation)\n'
             'G90 G53 G01 Z0 F#650\n'
             f"T{toolIDSquareendmill:02d}" + ' (outcut)\n'
             'M06 (tool exchange)\n'
-            'G43 H#4120 (tool length correction: T#)\n'
+            'G43 H#4120 (tool length compensation: T#)\n'
             '\n'
         )
 
@@ -909,11 +909,11 @@ with open('./O' + MainPrgID, 'w') as f:
         )
 
         f.write(
-            'G49 G40 (cancel correction)\n'
+            'G49 G40 (cancel compensation)\n'
             'G90 G53 G01 Z0 F#650\n'
             f"T{toolIDSquareendmill:02d}" + ' (endface boring)\n'
             'M06 (tool exchange)\n'
-            'G43 H#4120 (tool length correction: T#)\n'
+            'G43 H#4120 (tool length compensation: T#)\n'
             '\n'
         )
 
@@ -982,11 +982,11 @@ with open('./O' + MainPrgID, 'w') as f:
     )
 
     f.write(
-        'G49 G40 (cancel correction)\n'
+        'G49 G40 (cancel compensation)\n'
         'G90 G53 G01 Z0 F#650\n'
         f"T{toolIDSidecutter:02d}" + ' (keyway)\n'
         'M06 (tool exchange)\n'
-        'G43 H#4120 (tool length correction: T#)\n'
+        'G43 H#4120 (tool length compensation: T#)\n'
         '\n'
     )
 
@@ -1063,11 +1063,11 @@ with open('./O' + MainPrgID, 'w') as f:
     )
 
     f.write(
-        'G49 G40 (cancel correction)\n'
+        'G49 G40 (cancel compensation)\n'
         'G90 G53 G01 Z0 F#650\n'
         f"T{toolIDTaperendmill[topOutChamferAngle]:02d}" + ' (chamfer ' + topOutChamferAngle + ')\n'
         'M06 (tool exchange)\n'
-        'G43 H#4120 (tool length correction: T#)\n'
+        'G43 H#4120 (tool length compensation: T#)\n'
         '\n'
     )
 
@@ -1139,16 +1139,16 @@ with open('./O' + MainPrgID, 'w') as f:
     )
 
     f.write(
-        'G49 G40 (cancel correction)\n'
+        'G49 G40 (cancel compensation)\n'
         'G90 G53 G01 Z0 F#650\n'
         '\n'
     )
 
     SN_top_ICh = next(SN_top_in_chamfer)
-    SN_top_ICh_correction = SN_top_ICh + 1
+    SN_top_ICh_compensation = SN_top_ICh + 1
     f.write(
         f"N{SN_top_ICh:04d}\n"
-        'IF[#4120EQ' + f"{toolIDTaperendmill[topInChamferAngle]}" ']' + f"GOTO{SN_top_ICh_correction:04d}\n"
+        'IF[#4120EQ' + f"{toolIDTaperendmill[topInChamferAngle]}" ']' + f"GOTO{SN_top_ICh_compensation:04d}\n"
         f"T{toolIDTaperendmill[topOutChamferAngle]:02d}" + ' (chamfer ' + topOutChamferAngle + ')\n'
         'M06 (tool exchange)\n'
         '\n'
@@ -1157,7 +1157,7 @@ with open('./O' + MainPrgID, 'w') as f:
     SN_top_ICh = next(SN_top_in_chamfer)
     f.write(
         f"N{SN_top_ICh:04d}\n"
-        'G43 H#4120 (tool length correction: T#)\n'
+        'G43 H#4120 (tool length compensation: T#)\n'
         '\n'
     )
 
@@ -1230,11 +1230,11 @@ with open('./O' + MainPrgID, 'w') as f:
     )
 
     f.write(
-        'G49 G40 (cancel correction)\n'
+        'G49 G40 (cancel compensation)\n'
         'G90 G53 G01 Z0 F#650\n'
         f"T{toolIDFacemill:02d}" + ' (Endface)\n'
         'M06 (tool exchange)\n'
-        'G43 H#4120 (tool length correction: T#)\n'
+        'G43 H#4120 (tool length compensation: T#)\n'
         '\n'
     )
 
@@ -1327,11 +1327,11 @@ with open('./O' + MainPrgID, 'w') as f:
         )
 
         f.write(
-            'G49 G40 (cancel correction)\n'
+            'G49 G40 (cancel compensation)\n'
             'G90 G53 G01 Z0 F#650\n'
             f"T{toolIDSquareendmill:02d}" + ' (outcut)\n'
             'M06 (tool exchange)\n'
-            'G43 H#4120 (tool length correction: T#)\n'
+            'G43 H#4120 (tool length compensation: T#)\n'
             '\n'
         )
 
@@ -1426,11 +1426,11 @@ with open('./O' + MainPrgID, 'w') as f:
     )
 
     f.write(
-        'G49 G40 (cancel correction)\n'
+        'G49 G40 (cancel compensation)\n'
         'G90 G53 G01 Z0 F#650\n'
         f"T{toolIDTaperendmill[botOutChamferAngle]:02d}" + ' (chamfer ' + botOutChamferAngle + ')\n'
         'M06 (tool exchange)\n'
-        'G43 H#4120 (tool length correction: T#)\n'
+        'G43 H#4120 (tool length compensation: T#)\n'
         '\n'
     )
 
@@ -1517,16 +1517,16 @@ with open('./O' + MainPrgID, 'w') as f:
     )
 
     f.write(
-        'G49 G40 (cancel correction)\n'
+        'G49 G40 (cancel compensation)\n'
         'G90 G53 G01 Z0 F#650\n'
         '\n'
     )
 
     SN_bot_ICh = next(SN_bot_in_chamfer)
-    SN_bot_ICh_correction = SN_bot_ICh + 1
+    SN_bot_ICh_compensation = SN_bot_ICh + 1
     f.write(
         f"N{SN_bot_ICh:04d}\n"
-        'IF[#4120EQ' + f"{toolIDTaperendmill[botInChamferAngle]}" ']' + f"GOTO{SN_bot_ICh_correction:04d}\n"
+        'IF[#4120EQ' + f"{toolIDTaperendmill[botInChamferAngle]}" ']' + f"GOTO{SN_bot_ICh_compensation:04d}\n"
         f"T{toolIDTaperendmill[botInChamferAngle]:02d}" + ' (chamfer ' + botInChamferAngle + ')\n'
         'M06 (tool exchange)\n'
         '\n'
@@ -1535,7 +1535,7 @@ with open('./O' + MainPrgID, 'w') as f:
     SN_bot_ICh = next(SN_bot_in_chamfer)
     f.write(
         f"N{SN_bot_ICh:04d}\n"
-        'G43 H#4120 (tool length correction: T#)\n'
+        'G43 H#4120 (tool length compensation: T#)\n'
         '\n'
     )
 
@@ -1626,7 +1626,7 @@ with open('./O' + MainPrgID, 'w') as f:
             f"N{SN_M_centerline:04d}\n"
             'G90 G53 G01 Z0 F#650\n'
             'G91 G28 X0 Y0\n'
-            'G49 G40 (cancel corrections)\n'
+            'G49 G40 (cancel compensations)\n'
             'G80 G17\n'
             'S35 (low gear)\n'
             '\n'
@@ -1665,7 +1665,7 @@ with open('./O' + MainPrgID, 'w') as f:
 
     f.write(
         f"N{SN_base_finish:04d}\n"
-        'G49 G40 (cancel corrections)\n'
+        'G49 G40 (cancel compensations)\n'
         'G80 G17\n'
         'G90 G53 G01 Z0 F#650\n'
         'G90 G53 G00 X-5.501 Y-258.624\n'
