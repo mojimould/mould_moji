@@ -88,7 +88,6 @@ G43 H50
 (G57 B parallel angle -0.964)
 (tool length compensation #50)
 
-
 G90 G57 G01 X0 Y0 F#652
 G90 G57 G01 Z[500.042+#600] F#652
 (G57 XY Top inside center)
@@ -105,8 +104,8 @@ M117 (sensor switch)
 N1004
 G57 G65 P160003 X160.000 U135.210 Z500.042 M0.070
 (G57: Top X endface parallel angle)
-(X: Top AC OD or Outcut OD)
-(U: Top AC ID or Incut ID)
+(X: Top AC OD or outcut OD)
+(U: Top AC ID or incut ID)
 (Z: Top re_alocation)
 (M: mekki thickness mm)
 
