@@ -1,4 +1,4 @@
-# last update: 20240925
+# last update: 20241010
 # Copyright 2023-2024 The individual creator, not held by any corporation.
 # All rights reserved.
 
@@ -142,7 +142,7 @@ with open('./O' + MainPrgID, 'w') as f:
         f.write('(' + workCoordinateTopOut + ' Top Outcut Center)\n')
     f.write(
         '(' + workCoordinateTopIn + ' Top Inside Center)\n'
-        '(' + workCoordinateKeyway + ' Mizo Center)\n'
+        '(' + workCoordinateKeyway + ' Keyway Center)\n'
         f"GOTO{SN_OM_bot_measurement:04d}\n"
         '\n'
     )
@@ -169,7 +169,7 @@ with open('./O' + MainPrgID, 'w') as f:
         f.write('(' + workCoordinateTopOut + ' Top Outcut Center)\n')
     f.write(
         '(' + workCoordinateTopIn + ' Top Inside Center)\n'
-        '(' + workCoordinateKeyway + ' Mizo Center)\n'
+        '(' + workCoordinateKeyway + ' Keyway Center)\n'
         '\n'
     )
 
@@ -362,8 +362,8 @@ with open('./O' + MainPrgID, 'w') as f:
             '(Z: Top re_alocation)\n'
             '(W: Top alocation)\n'
             '(R: central curvature)\n'
-            '(M: mizoIchi)\n'
-            '(H: mizoHaba)\n'
+            '(M: Keyway position)\n'
+            '(H: Keyway width)\n'
             '\n'
         )
     elif TopOutcutExistsFlag == 1 and (BotOutcutExistsFlag == 0 or BotOutcutExistsFlag == 1 and OutcutCenterlineBasementFlag == 2):
@@ -903,7 +903,7 @@ with open('./O' + MainPrgID, 'w') as f:
         f.write(
             '\n'
             f"N{SN_EBoring:04d}\n"
-            '(*** Zaguri start ***)\n'
+            '(*** Tanmen Zaguri start ***)\n'
             '\n'
             '\n'
         )
