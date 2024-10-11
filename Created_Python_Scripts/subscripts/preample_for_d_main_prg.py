@@ -155,7 +155,7 @@ originBotIn = f"{BotInCenterXVal:.3f}"
 originTopIn = f"{TopInCenterXVal:.3f}"
 
 if KeywayAsideDepthToleranceExitsFlag == 1 and TopOutcutExistsFlag == 0:
-    originKeywayVal = AsideKeywayCenterX - keywayAsideDepthCorrection - keywayACODAve / 2 - TableCenterXFromCurvatureCenterX * CosParallelAngle
+    originKeywayVal = AsideKeywayCenterX - (keywayAsideDepthAve + keywayAsideDepthCorrection) - keywayACODAve / 2 - TableCenterXFromCurvatureCenterX * CosParallelAngle
 elif KeywayAsideDepthToleranceExitsFlag == 0 and TopOutcutExistsFlag == 0:
     originKeywayVal = TopInCenterXVal + (keywayCenterXFromAlocationCenter - topCurvatureCenterX) 
 elif BotOutcutExistsFlag == 0 and TopOutcutExistsFlag == 1:
