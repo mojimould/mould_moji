@@ -1,5 +1,5 @@
 %
-O140001 (last update on 20241002)
+O140001 (last update on 20241011)
 (X center: left side measurement)
 
 N0001
@@ -93,8 +93,8 @@ N0007
 IF[[ABS[#28]]GE[#24/4]]GOTO8000
 IF[[ABS[#27+#28]]GE[#24/4]]GOTO8000
 (#29=X/2-T+M)
-(#28: X hosei from tanmen to C)
-(#27: X hosei from C to #30)
+(#28: X compensation from tanmen to C)
+(#27: X compensation from C to #30)
 (if |#28| >= X/4, go to N8000)
 (if |#27+#28| >= X/4, go to N8000)
 
@@ -183,13 +183,13 @@ M99
 (Local variables)
 (as received arguments)
 (#03:C: measurement depth from tanmen)
-(#04:I: AC naiKei)
+(#04:I: AC ID)
 (#13:M: mekki mm)
 (#18:R: central curvature)
-(#20:T: A-nikuatsu)
-(#23:W: ori_furiwake)
-(#24:X: AC gaisakuKei)
-(#26:Z: sai_furiwake)
+(#20:T: A-side thickness)
+(#23:W: alocation length)
+(#24:X: AC outcut OD)
+(#26:Z: re-alocation length)
 
 (as LHS)
 (#27, #28, #29, #30, #31, #32, #33)
@@ -201,8 +201,8 @@ M99
 (#404, #409, #600, #602, #603, #650, #652, #653, #656)
 (#901011)
 (#901050: probe radius)
-(#901053: hosei: touch sensor signal delay)
-(#901054: hosei: probe center X)
+(#901053: compensation: touch sensor signal delay)
+(#901054: compensation: probe center X)
 
 (System variables)
 (#1004: 0: sensor off, 1: on)
