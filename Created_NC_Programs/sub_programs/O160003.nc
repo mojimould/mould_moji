@@ -19,19 +19,19 @@ IF[#901050EQ#0]GOTO8000
 IF[#901050LE1]GOTO8000
 IF[#600EQ#0]GOTO8000
 IF[#600LT50]GOTO8000
-IF[#602EQ#0]GOTO8000
-IF[#602LT1]GOTO8000
-IF[#603EQ#0]GOTO8000
-IF[#603LE0]GOTO8000
-IF[#603GT15]GOTO8000
+IF[#610EQ#0]GOTO8000
+IF[#610LT1]GOTO8000
+IF[#611EQ#0]GOTO8000
+IF[#611LE0]GOTO8000
+IF[#611GT15]GOTO8000
 IF[#656EQ#0]GOTO8000
 IF[#656LE0]GOTO8000
 IF[#656GT50]GOTO8000
 (if #901011 < 540 or #0, go to N8000)
 (if #901050 <= 1 or #0, go to N8000)
 (if #600 < 50 or #0, go to N8000)
-(if #602 < 1 or #0, go to N8000)
-(if #603 <= 0 or > 15 or #0, go to N8000)
+(if #610 < 1 or #0, go to N8000)
+(if #611 <= 0 or > 15 or #0, go to N8000)
 (if #656 <= 0 or > 50 or #0, go to N8000)
 
 N0003
@@ -51,21 +51,21 @@ G04 X1.0 (wait 1.0s)
 
 
 N0005
-G90 G57 G31 Z[#26+#602*1.5] F#653
-IF[#5003GT[#26+#602*1.5]]GOTO8002
+G90 G57 G31 Z[#26+#610] F#653
+IF[#5003GT[#26+#610]]GOTO8002
 G91 G57 G31 X-[[#24+#21+#13*2]/4] F#653
 IF[#5001GT[-[#24+#21+#13*2]/4]]GOTO8002
 
 N0006 (for X-)
-G91 G57 G31 Z-[#602*1.5+#603*1.5] F#656
-IF[#5003LE[#26-#603*1.5]]GOTO8002
+G91 G57 G31 Z-[#610+#611] F#656
+IF[#5003LE[#26-#611]]GOTO8002
 #900045=#5003+#901053
-(Z- skip: #602*1.5+#603*1.5)
-(if skip block end Z <= endface-#603, to N8002)
+(Z- skip: #610+#611)
+(if skip block end Z <= endface-#611, to N8002)
 (#900045= block end Z +probe compensation)
 
 N0007
-G91 G57 G01 Z[#602+#603*1.5] F#652
+G91 G57 G01 Z[[#610+#611]/2] F#652
 G91 G57 G01 X[[#24+#21+#13*2]/4] F#652
 
 N0008
@@ -73,15 +73,15 @@ G91 G57 G31 X[[#24+#21+#13*2]/4] F#653
 IF[#5001LT[[#24+#21+#13*2]/4]]GOTO8002
 
 N0009 (for X+)
-G91 G57 G31 Z-[#602*1.5+#603*1.5] F#656
-IF[#5003LE[#26-#603*1.5]]GOTO8002
+G91 G57 G31 Z-[#610+#611] F#656
+IF[#5003LE[#26-#611]]GOTO8002
 #900046=#5003+#901053
-(Z- skip: #602*1.5+#603*1.5)
-(if skip block end Z <= endface-#603, to N8002)
+(Z- skip: #610+#611)
+(if skip block end Z <= endface-#611, to N8002)
 (#900046= block end Z +probe compensation)
 
 N0010
-G91 G57 G01 Z[#602*1.5+#603*1.5] F#652
+G91 G57 G01 Z[[#610+#611]/2] F#652
 G90 G53 G01 Z0 F#650
 
 N0011
@@ -133,7 +133,7 @@ M99
 (as LHS)
 (#900045, #900046, #900047, #900048)
 (as RHS)
-(#600, #602, #603, #650, #652, #653, #656)
+(#600, #610, #611, #650, #652, #653, #656)
 (#901011)
 (#901050: probe radius)
 (#901053: hosei: touch sensor signal delay)
