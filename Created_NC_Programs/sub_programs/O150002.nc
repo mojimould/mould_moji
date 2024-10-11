@@ -1,5 +1,5 @@
 %
-O150002 (last update on 20241002)
+O150002 (last update on 20241011)
 (X centerline measurement)
 
 N0001
@@ -91,7 +91,7 @@ M10 (B-axis clamp)
 
 M06 (tool exchange)
 M19 (Spindle orientation)
-G43 H50 (hosei KouguChou: #50)
+G43 H50 (tool length compensation: #50)
 
 N0007
 G90 G53 G01 X-5.501 Y-258.624 Z0 F#652
@@ -111,16 +111,16 @@ N0008
 G90 G54 G43 G31 Z[#5221-#33-#04+[#20/2]+#600] H50 F#652
 G90 G54 G31 Z[#5221-#33-#04+[#20/2]+#602] F#653
 IF[#5003GT[#5221-#33-#04+[#20/2]+#602]]GOTO8002
-(Z skip: topGaisakuCmen +#600)
-(Z skip: topGaisakuCmen +#602)
-(if skip block end Z > Cmen Z+#602, to N8002)
+(Z skip: top outcut Cface +#600)
+(Z skip: top outcut Cface +#602)
+(if skip block end Z > Cface Z+#602, to N8002)
 
 G91 G31 Z-[#602+#603] F#656
 IF[#5003LE[#5221-#33-#04+[#20/2]-#603]]GOTO8002
 #900034=#5003+#901053
 (Z- skip: #602+#603)
 (if skip block end Z <= Cmen Z-#603, to N8002)
-(#900034= Z top side +probe hosei)
+(#900034= Z top side +probe compensation)
 
 G90 G53 G01 Z0 F#650
 G90 G53 G01 X[-#26+[#06/2]+#33] F#652
@@ -129,16 +129,16 @@ G90 G53 G01 X[-#26+[#06/2]+#33] F#652
 G90 G54 G43 G31 Z[#5221-#33+[#20/2]+#600] H50 F#652
 G90 G54 G31 Z[#5221-#33+[#02/2]+#602] F#653
 IF[#5003GT[#5221-#33+[#02/2]+#602]]GOTO8002
-(Z skip: botGaisakuCmen +#600)
-(G54 Z skip: botGaisakuCmen Z+#602)
-(if skip block end Z > Cmen Z+#602, to N8002)
+(Z skip: bot outcut Cface +#600)
+(Z skip: bot outcut Cface Z+#602)
+(if skip block end Z > Cface Z+#602, to N8002)
 
 G91 G31 Z-[#602+#603] F#656
 IF[#5003LE[#5221-#33+[#20/2]-#603]]GOTO8002
 #900035=#5003+#901053
 (Z- skip: #602+#603)
-(if skip block end Z <= Cmen Z-#602, to N8002)
-(#900035= Z bot side + probe hosei)
+(if skip block end Z <= Cface Z-#602, to N8002)
+(#900035= Z bot side + probe compensation)
 
 G90 G53 G01 Z0 F#650
 #900036=#900035-#900034
@@ -160,7 +160,7 @@ G90 G54 G01 X#900036 F#652
 
 
 N1000
-G49 G40 (cancel hosei)
+G49 G40 (cancel compensation)
 G90 G53 G01 Z0 F#650
 M11 (B-axis unclamp)
 G90 G54 G00 B[180+#01]
@@ -183,13 +183,13 @@ G04 X1.5 (wait 1.5s)
 N1003
 G90 G54 G31 Z[#26-[#06/2]-#901050] F#653
 IF[#5003GT[#26-[#06/2]-#901050]]GOTO8002
-(G54 Z skip: BotTanmen Z-K/2-#901050)
-(if skip block end Z > BotTanmen Z-K/2-#901050, to N8002)
+(G54 Z skip: Bot endface Z-K/2-#901050)
+(if skip block end Z > Bot endface Z-K/2-#901050, to N8002)
 
 G91 G31 Y-[#602+#603] F#656
 #900030=#5002-#901050+#901053+#901055
 (Y- skip: #602+#603)
-(#900030= Y bot above side -#901050 +probe hosei)
+(#900030= Y bot above side -#901050 +probe compensation)
 
 G91 G01 Y[#602+#603] F#652
 (Y+: #602+#603)
@@ -205,8 +205,8 @@ M10 (B-axis clamp)
 
 G91 G01 X[-2*[#5221-#33]+#04] F#652
 G90 G54 G01 Y[[#21/2]+#901050+#602] F#652
-(X: top gaisaku center)
-(Y: top gaisaku Bmen +#602)
+(X: top outcut center)
+(Y: top outcut Bface +#602)
 
 G90 G54 G43 G01 Z[#23+#600] H50 F#652
 G90 G54 G31 Z[#23-[#13/2]-#901050] F#653
@@ -217,7 +217,7 @@ IF[#5003GT[#23-[#13/2]-#901050]]GOTO8002
 G91 G31 Y-[#602+#603] F#656
 (Y-: #602+#603)
 #900031=#5002-#901050+#901053+#901055
-(#900031= Y top above side -#901050 +probe hosei)
+(#900031= Y top above side -#901050 +probe compensation)
 
 G91 G01 Y[#602+#603] F#652
 (Y+: #602+#603)
@@ -260,16 +260,16 @@ M99
 
 (Local variables)
 (as received arguments)
-(#01:A: angle for furiwake)
-(#02:B: Bot AC gaisakuKei)
-(#03:C: Bot BD gaisakuKei)
+(#01:A: angle for alocation)
+(#02:B: Bot AC outcut OD)
+(#03:C: Bot BD outcut OD)
 (#04:I: tooriShin X)
-(#06:K: Bot gaisaku height)
-(#13:M: mizoIchi)
-(#20:T: Top AC gaisakuKei)
-(#21:U: Top BD gaisakuKei)
-(#23:W: sai-furiwake Top)
-(#26:Z: sai-furiwake Bot)
+(#06:K: Bot outcut length)
+(#13:M: keyway position)
+(#20:T: Top AC outcut OD)
+(#21:U: Top BD outcut OD)
+(#23:W: Top re-alocation length)
+(#26:Z: Bot re-alocation length)
 
 (as LHS)
 (#32, #33)
@@ -281,8 +281,8 @@ M99
 (#600, #602, #603, #650, #652, #653, #656)
 (#901001, #901003, #901005, #901007, #901011)
 (#901050: probe radius)
-(#901053: hosei: touch sensor signal delay)
-(#901055: hosei: probe center Y)
+(#901053: compensation: touch sensor signal delay)
+(#901055: compensation: probe center Y)
 
 (System variables)
 (#1000: 0: palette #1, 1: palette #2)
