@@ -209,6 +209,21 @@ if KeywayTypeFlag != 4:
     keywayACODMinusTolerance = WS['K28'].value
     keywayACODAve = keywayACODDim + (keywayACODPlusTolerance + keywayACODMinusTolerance) / 2
     keywayACOD    = f"{keywayACODAve:.3f}"
+    if KeywayAsideDepthToleranceExitsFlag == 0:
+        keywayAsideDepthDim = WS['I33'].value
+        keywayAsideDepth    = f"{keywayAsideDepthDim:.3f}"
+    elif KeywayAsideDepthToleranceExitsFlag == 1:
+        keywayAsideDepthDim            = WS['I32'].value
+        keywayAsideDepthPlusTolerance  = WS['J32'].value
+        keywayAsideDepthMinusTolerance = WS['K32'].value
+        keywayAsideDepthAve = keywayAsideDepthDim + (keywayAsideDepthPlusTolerance + keywayAsideDepthMinusTolerance) / 2
+        keywayAsideDepth    = f"{keywayAsideDepthAve:.3f}"
+    keywayCsideDepthDim = WS['I35'].value
+    keywayCsideDepth    = f"{keywayCsideDepthDim:.3f}"
+keywayBsideDepthDim = WS['I34'].value
+keywayBsideDepth    = f"{keywayBsideDepthDim:.3f}"
+keywayDsideDepthDim = WS['I36'].value
+keywayDsideDepth    = f"{keywayDsideDepthDim:.3f}"
 keywayBDODDim            = WS['I29'].value
 keywayBDODPlusTolerance  = WS['J29'].value
 keywayBDODMinusTolerance = WS['K29'].value
@@ -225,21 +240,6 @@ keywayWidthMinusTolerance = WS['K31'].value
 keywayWidthAve = keywayWidthDim + (keywayWidthPlusTolerance + keywayWidthMinusTolerance) / 2
 keywayWidth    = f"{keywayWidthAve:.3f}"
 keywayAsideDepthToleranceExists = f"{KeywayAsideDepthToleranceExitsFlag:.1f}"
-if KeywayAsideDepthToleranceExitsFlag == 0:
-    keywayAsideDepthDim = WS['I33'].value
-    keywayAsideDepth    = f"{keywayAsideDepthDim:.3f}"
-elif KeywayAsideDepthToleranceExitsFlag == 1:
-    keywayAsideDepthDim            = WS['I32'].value
-    keywayAsideDepthPlusTolerance  = WS['J32'].value
-    keywayAsideDepthMinusTolerance = WS['K32'].value
-    keywayAsideDepthAve = keywayAsideDepthDim + (keywayAsideDepthPlusTolerance + keywayAsideDepthMinusTolerance) / 2
-    keywayAsideDepth    = f"{keywayAsideDepthAve:.3f}"
-keywayBsideDepthDim = WS['I34'].value
-keywayBsideDepth    = f"{keywayBsideDepthDim:.3f}"
-keywayCsideDepthDim = WS['I35'].value
-keywayCsideDepth    = f"{keywayCsideDepthDim:.3f}"
-keywayDsideDepthDim = WS['I36'].value
-keywayDsideDepth    = f"{keywayDsideDepthDim:.3f}"
 keywayCornerR = "#0"
 keywayCornerC = "#0"
 keywayType = f"{KeywayTypeFlag:.1f}"
