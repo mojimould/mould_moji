@@ -200,33 +200,34 @@ col_item.append([
 ])
 
 # keyway A-side depth
-if KeywayAsideDepthToleranceExitsFlag == 0:
-    col_item.append([
-        AkeywayDepthName,
-        f'({keywayAsideDepthDim:.2f})',
-        keywayACDepthToleranceRange,
-    '',
-    '',
-    JudgementItem
-    ])
-elif KeywayAsideDepthToleranceExitsFlag == 1:
-    col_item.append([
-        AkeywayDepthName,
-        f'{keywayAsideDepthAve:.2f}',
-        f'{keywayAsideDepthDim + keywayAsideDepthMinusTolerance:.2f} - ' + f'{keywayAsideDepthDim + keywayAsideDepthPlusTolerance:.2f}',
-    '',
-    '',
-    JudgementItem
-    ])
+if KeywayTypeFlag != 4: # not BD only
+    if KeywayAsideDepthToleranceExitsFlag == 0:
+        col_item.append([
+            AkeywayDepthName,
+            f'({keywayAsideDepthDim:.2f})',
+            keywayACDepthToleranceRange,
+        '',
+        '',
+        JudgementItem
+        ])
+    elif KeywayAsideDepthToleranceExitsFlag == 1:
+        col_item.append([
+            AkeywayDepthName,
+            f'{keywayAsideDepthAve:.2f}',
+            f'{keywayAsideDepthDim + keywayAsideDepthMinusTolerance:.2f} - ' + f'{keywayAsideDepthDim + keywayAsideDepthPlusTolerance:.2f}',
+        '',
+        '',
+        JudgementItem
+        ])
 
-# keyway C-side depth
-col_item.append([
-    CkeywayDepthName,
-    f'({keywayCsideDepthDim:.2f})',
-    keywayACDepthToleranceRange,
-    '',
-    '',
-    JudgementItem
+    # keyway C-side depth
+    col_item.append([
+        CkeywayDepthName,
+        f'({keywayCsideDepthDim:.2f})',
+        keywayACDepthToleranceRange,
+        '',
+        '',
+        JudgementItem
 ])
 
 # keyway B-side depth
