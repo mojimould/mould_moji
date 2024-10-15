@@ -225,10 +225,25 @@ with open('./O' + MainPrgID + '0001', 'w') as f:
     SN_Zslope_measurement = next(SN_origin_setting)
     f.write(
         f"N{SN_Zslope_measurement:04d}\n"
-        '' + workCoordinateTopIn + ' G65 P' + prgEndfaceSlope + ' X' + ACOD + ' U' + topACID + ' Z' + topReAlocationLength + ' M' + mekkiThickness + '\n'
+        '' + workCoordinateTopIn + ' G65 P' + prgEndfaceSlope + ' X'
+    )
+    if TopOutcutExistsFlag == 0:
+        f.write(ACOD)
+    elif TopOutcutExistsFlag == 1:
+        f.write(topOutcutACOD)
+    f.write(
+        ' U' + topACID + ' Z' + topReAlocationLength + ' M' + mekkiThickness + '\n'
         '(' + workCoordinateTopIn + ': Top X endface parallel angle)\n'
-        '(X: AC OD or Top outcut OD)\n'
-        '(U: Top AC ID or incut ID)\n'
+    )
+    if TopOutcutExistsFlag == 0:
+        f.write('(X: AC OD)\n')
+    elif TopOutcutExistsFlag == 1:
+        f.write('(X: Top outcut AC OD)\n')
+    if IncutBoringExistsFlag == 0:
+        f.write('(U: Top AC ID)\n')
+    elif IncutBoringExistsFlag == 1:
+        f.write('(U: Top incut AC ID)\n')
+    f.write(
         '(Z: Top re_alocation)\n'
         '(M: mekki thickness mm)\n'
         '\n'
@@ -255,7 +270,7 @@ with open('./O' + MainPrgID + '0001', 'w') as f:
         '\n'
 
         '#411=5.0\n'
-        '' + workCoordinateTopIn + ' G65 P' + prgInsideCenterX + ' X' + topACID + ' Z' + topReAlocationLength + ' W' + topAlocationLength + ' R' + centralCurvature + ' M' + mekkiThickness + '\n'
+        '' + workCoordinateTopIn + ' G65 P' + prgInsideCenterX + ' X' + topACID + ' Z#900048 W' + topAlocationLength + ' R' + centralCurvature + ' M' + mekkiThickness + '\n'
         '(' + workCoordinateTopIn + ': Top X Inside center)\n'
         '(X: Top AC ID)\n'
         '(Z: Top re_alocation)\n'
@@ -274,7 +289,7 @@ with open('./O' + MainPrgID + '0001', 'w') as f:
         '\n'
 
         '#412=5.0\n'
-        '' + workCoordinateTopIn + ' G65 P' + prgInsideCenterY + ' Y' + topBDID+ ' J' + BDOD + ' Z' + topReAlocationLength + ' M' + mekkiThickness + '\n'
+        '' + workCoordinateTopIn + ' G65 P' + prgInsideCenterY + ' Y' + topBDID+ ' J' + BDOD + ' Z#900048 M' + mekkiThickness + '\n'
         '(' + workCoordinateTopIn + ': Top Y inside center)\n'
         '(Y: Top BD ID)\n'
         '(J: BD OD)\n'
@@ -517,64 +532,6 @@ with open('./O' + MainPrgID + '0001', 'w') as f:
 
     # end milling
     SN_base_finish_start = SN_base_finish
-
-    # centerline measurement
-    if BotOutcutExistsFlag == 1 and TopOutcutExistsFlag == 1:
-        SN_overall = next(SN_base)
-        f.write(
-            f"N{SN_overall:04d}\n"
-            'IF[#402EQ0]' + f"GOTO{SN_base_finish_start:04d}\n"
-            '(if #402=0, go to ' + f"N{SN_base_finish_start:04d})\n"
-            '\n'
-        )
-
-        f.write(
-            '\n'
-            '(*** TooriShin start ***)\n'
-            '\n'
-            '\n'
-        )
-
-        f.write(
-            f"N{SN_M_centerline:04d}\n"
-            'G90 G53 G01 Z0 F#650\n'
-            'G91 G28 X0 Y0\n'
-            'G49 G40 (cancel compensations)\n'
-            'G80 G17\n'
-            'S35 (low gear)\n'
-            '\n'
-        )
-
-        f.write(
-            'M28 (chip conveyor on)\n'
-            '' + workCoordinateBotOut + ' G65 P' + prgCenterlineDif + ' W' + topReAlocationLength + ' Z' + botReAlocationLength + ' T' + topOutcutACOD + ' U' + topOutcutBDOD + ' B' + botOutcutACOD + ' C' + botOutcutBDOD + ' I' + centerlineACDif + ' M' + keywayPos + ' K' + botOutcutLength + ' A' + topSideParallelAngle + '\n'
-            '(O' + prgCenterlineDif + ': Outside Corner R, ar left)\n'
-            '(W: Top re_alocation)\n'
-            '(Z: Bot re_alocation)\n'
-            '(T: Top outcut AC OD)\n'
-            '(U: Top outcut BD OD)\n'
-            '(B: Bot outcut AC OD)\n'
-            '(C: Bot outcut BD OD)\n'
-            '(I: centerline AC dif)\n'
-            '(M: keyway position)\n'
-            '(K: Bot outcut Length)\n'
-            '(A: Top side parallel angle)\n'
-            '\n'
-        )
-
-        f.write(
-            'G90 ' + workCoordinateBotOut + ' G01 X#900036 Y#900032 F#652\n'
-            'M00 (tooriShin XY OK?)\n'
-            '\n'
-            '#402=0 (centerline difference measurement off)\n'
-            'G90 G53 G01 X-5.501 Y-258.624 F#652\n'
-            '\n'
-        )
-        f.write(
-            '(tooriShin end)\n'
-            '\n'
-            '\n'
-        )
 
     f.write(
         f"N{SN_base_finish:04d}\n"

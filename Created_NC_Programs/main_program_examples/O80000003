@@ -104,8 +104,8 @@ M117 (sensor switch)
 N1004
 G57 G65 P160003 X160.000 U135.210 Z500.042 M0.070
 (G57: Top X endface parallel angle)
-(X: AC OD or Top outcut OD)
-(U: Top AC ID or incut ID)
+(X: AC OD)
+(U: Top AC ID)
 (Z: Top re_alocation)
 (M: mekki thickness mm)
 
@@ -123,7 +123,7 @@ G90 G57 G01 Z[#900048+#600] F#652
 (Z= TopReReAlocation +#600)
 
 #411=5.0
-G57 G65 P130001 X135.210 Z500.042 W400.000 R5933.200 M0.070
+G57 G65 P130001 X135.210 Z#900048 W400.000 R5933.200 M0.070
 (G57: Top X Inside center)
 (X: Top AC ID)
 (Z: Top re_alocation)
@@ -137,7 +137,7 @@ G43 H50 (tool length compensation #50)
 (G57 XY Top inside center)
 
 #412=5.0
-G57 G65 P130002 Y134.200 J159.000 Z500.042 M0.070
+G57 G65 P130002 Y134.200 J159.000 Z#900048 M0.070
 (G57: Top Y inside center)
 (Y: Top BD ID)
 (J: BD OD)
