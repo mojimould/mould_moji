@@ -1,5 +1,5 @@
 %
-O80000003 (Created on 20241010)
+O80000003 (Created on 20241015)
 (Top re_alocation: 500.042)
 (Bot re_alocation: 499.958)
 (Top Overhang: 170.042)
@@ -104,7 +104,7 @@ M117 (sensor switch)
 N1004
 G57 G65 P160003 X160.000 U135.210 Z500.042 M0.070
 (G57: Top X endface parallel angle)
-(X: Top AC OD or outcut OD)
+(X: AC OD or Top outcut OD)
 (U: Top AC ID or incut ID)
 (Z: Top re_alocation)
 (M: mekki thickness mm)
@@ -120,7 +120,7 @@ G90 G57 G01 X0 Y0 F#652
 G43 H50 (tool length compensation #50)
 G90 G57 G01 Z[#900048+#600] F#652
 (G57 XY Top inside center)
-(Z= TopReAlocation +#600)
+(Z= TopReReAlocation +#600)
 
 #411=5.0
 G57 G65 P130001 X135.210 Z500.042 W400.000 R5933.200 M0.070
@@ -146,9 +146,9 @@ G57 G65 P130002 Y134.200 J159.000 Z500.042 M0.070
 #412=0
 
 (mesurement end)
-IF[#177EQ1]GOTO1005
+IF[#177EQ1]GOTO1006
 M00
-N1005
+N1006
 
 
 N2000
@@ -226,20 +226,20 @@ T31 (Tslot R20.0)
 M06 (tool exchange)
 G43 H#4120 (tool length compensation: T#)
 
-N3003
-IF[#5004EQ[-0.964+#900047-3.590]]GOTO3004
+N3002
+IF[#5004EQ[-0.964+#900047-3.590]]GOTO3003
 M11 (B-axis unclamp)
 G90 G57 G00 B[-0.964+#900047]
 M10 (B-axis clamp)
 (G57 B parallel angle -0.964+#900047)
 
-N3004
+N3003
 G90 G57 G00 X0 Y0
 G90 G57 Z[#900048+#600] F#650
 (G57XY Top Inside Center)
 (Z= TopReAlocation +#600)
 
-N3005
+N3004
 G57 G65 P210003 T0.070 Z#900048 W400.000 F68.000 S51.000 Q30.000 I17.000 K20.000 M3.0 U0.310 R5933.200 A[-0.964+#900047] B-3.590
 (dimple milling)
 (T: mekki thickness mm)
@@ -257,17 +257,17 @@ G57 G65 P210003 T0.070 Z#900048 W400.000 F68.000 S51.000 Q30.000 I17.000 K20.000
 (B: angle for dimple)
 
 (dimple milling end)
-IF[#459EQ0]GOTO3006
-IF[#459EQ2]GOTO3007
-GOTO3008
+IF[#459EQ0]GOTO3005
+IF[#459EQ2]GOTO3006
+GOTO3007
+
+N3005
+M00 (if #459=0)
+GOTO3007
 
 N3006
-M00 (if #459=0)
-GOTO3008
-
-N3007
 G65 P900003 (if #459=2)
-N3008
+N3007
 
 
 (Kakou Owari)
