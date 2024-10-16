@@ -1,6 +1,6 @@
 %
 O430000 (last update on 20241016)
-(Keyway, ar counterclockwise)
+(Keyway, ar, counterclockwise)
 
 N0001
 IF[#21EQ#0]GOTO8000
