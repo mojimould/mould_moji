@@ -1305,7 +1305,7 @@ prg. & 内容\\
 
 %\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 36.14.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.15.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KEndFaceRight：\index{ひんしつほしょう@品質保証}品質保証}
 \begin{enumerate}[label*=\sarrow]
@@ -1319,11 +1319,114 @@ prg. & 内容\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 36.16 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム：\KKeywayConerLeft}
+\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム：\KCurvedOutcutRLeft}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 36.16.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KCurvedOutcutRLeft：作成の目的}
+\begin{enumerate}[label*=\sarrow]
+\item トップ側およびボトム側の\CurvedOutcutMilling
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.16.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KCurvedOutcutRLeft：使用の前提条件}
+\begin{enumerate}[label*=\sarrow]
+\item \OutcutMilling 用\SquareEndMill を使用
+\item \index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の基準は、外側中心または内側中心
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.16.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KCurvedOutcutRLeft：関連するパラメタ}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.16.03.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\KCurvedOutcutRLeft：格納する\index{ひきすう@引数}引数}
+\begin{enumerate}[label*=\sarrow]
+\item \PMTopOutcutACWidth または\PMBottomOutcutACWidth
+\item \PMTopOutcutBDWidth または\PMBottomOutcutBDWidth
+\item \PMTopOutcutCornerR または\PMBottomOutcutCornerR
+\item \PMTopOutcutLength または\PMBottomOutcutLength
+\item \PMTopReAlocationLength または\PMBottomReAlocationLength
+\item \PMACOD
+\item \PMBDOD
+\item \PMCenterCurvatureRadius
+\item \PMKeywayPos
+\item \PMKeywayWidth
+\end{enumerate}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.16.03.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\KCurvedOutcutRLeft：必要な主な\index{へんすう@変数}変数}
+\begin{enumerate}[label*=\sarrow]
+\item 傾き後 \TopSideCurvedOutcutCenter{} $X$座標{} 計算値
+\item 傾き後 \TopSideCurvedOutcutCenter{} $Z$座標{} 計算値
+\item 傾き後 \BottomSideCurvedOutcutCenter{} $X$座標{} 計算値
+\item 傾き後 \BottomSideCurvedOutcutCenter{} $Z$座標{} 計算値
+\item \TopOutcut{} 仕上げ加工 追加回数
+\item \BottomOutcut{} 仕上げ加工 追加回数
+\item \TopOutcutAsideThickness$+$補正
+\item \TopOutcutWidth$+$補正
+\item \TopOutcut{} 仕上げ前一時停止用フラグ
+\item \BottomOutcutAsideThickness$+$補正
+\item \BottomOutcutWidth$+$補正
+\item \BottomOutcut{} 仕上げ前一時停止用フラグ
+\item 工具 - \EndFace 間 $Z$方向クリアランス平面間距離
+\item 外側加工面 法線方向クリアランス平面間距離
+\item \OutcutMilling1回あたりの削り代
+\item \OutcutMilling{} 仕上げ前 残り削り代
+\item \OutcutMilling 用 直線部送り速さ
+\item \OutcutMilling 用 コーナー部送り速さ
+\item \OutcutMilling 用 主軸回転数
+\item \TopCurvedOutcutAngle{} 計算値
+\item \BottomCurvedOutcutAngle{} 計算値
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.16.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KCurvedOutcutRLeft：主な機能}
+\begin{enumerate}[label*=\sarrow]
+\item トップ側またはボトム側の外側中心または内側中心に移動
+\item 基準点へ移動後、\KOLeftFSZ を実行
+\item 仕上げ前加工用切削回数の取得および加工
+\item 仕上げ前加工後の一時停止\OpauseCheck に対応
+\item 仕上げ後加工用切削回数の取得および加工
+\end{enumerate}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.16.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KCurvedOutcutRLeft：\index{ひんしつほしょう@品質保証}品質保証}
+\begin{enumerate}[label*=\sarrow]
+\item \index{ひきすう@引数}引数の設定可能範囲を限定
+\item 関連コモン変数の設定可能範囲を限定
+\end{enumerate}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 36.17 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム：\KKeywayConerLeft}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.17.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KKeywayConerLeft：作成の目的}
 \begin{enumerate}[label*=\sarrow]
@@ -1332,7 +1435,7 @@ prg. & 内容\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 36.16.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.17.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KKeywayConerLeft：使用の前提条件}
 \begin{enumerate}[label*=\sarrow]
@@ -1342,12 +1445,12 @@ prg. & 内容\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 36.16.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.17.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KKeywayConerLeft：関連するパラメタ}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 36.16.03.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 37.16.03.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\KKeywayConerLeft：格納する\index{ひきすう@引数}引数}
 \begin{enumerate}[label*=\sarrow]
@@ -1369,7 +1472,7 @@ prg. & 内容\\
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsubsection 36.16.03.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 37.16.03.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{\KKeywayConerLeft：必要な主な\index{へんすう@変数}変数}
 \begin{enumerate}[label*=\sarrow]
@@ -1394,7 +1497,7 @@ prg. & 内容\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 36.16.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.17.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KKeywayConerLeft：主な機能}
 \begin{enumerate}[label*=\sarrow]
@@ -1409,7 +1512,7 @@ prg. & 内容\\
 
 %\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 36.16.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.17.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\KKeywayConerLeft：\index{ひんしつほしょう@品質保証}品質保証}
 \begin{enumerate}[label*=\sarrow]
