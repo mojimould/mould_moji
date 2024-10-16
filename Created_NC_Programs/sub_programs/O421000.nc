@@ -1,6 +1,6 @@
 %
-O421000 (last update on 20241008)
-(Curved Gaisaku, ar HidariMawari 1shuu)
+O421000 (last update on 20241016)
+(Curved Outcut, ar, counterclockwise)
 
 N0001
 IF[#4012EQ54]GOTO0002
@@ -104,14 +104,14 @@ IF[ABS[#436]GE5]GOTO8000
 N0013
 #33=[#605+#[2400+#4120]+#[2600+#4120]+ABS[#605-[#[2400+#4120]+#[2600+#4120]]]]/2
 IF[#33LE0]GOTO8000
-(#33: max[#605, hosei kouguKei])
+(#33: max[#605, tool diameter compensation])
 
 N0014
 #32=#24+#415
 #31=#25+#415
 IF[#4012LE55]THEN #32=#24+#437
 IF[#4012LE55]THEN #31=#25+#437
-(hosei: gaisakuKei +hosei)
+(compensation: outcut OD +compensation)
 
 
 (kokokara G01)
@@ -140,11 +140,11 @@ IF[#4012LE55]THEN #100=[#21-#32]*COS[#900039]
 IF[#102LE#628]GOTO0026
 IF[#103LT0]GOTO8000
 (#102=max[#100, #101])
-(#103: kakou kaisuu)
+(#103: number of operation)
 (if #102 <= #628, go to N0026)
 (if #103 < 0, go to N0026)
 
-N1000 (ShiageMae loop)
+N1000 (pre-finishing operation loop)
 WHILE[#103GE1]DO1
 #103=#103-1
 #104=#32+#628+#627*#103
@@ -216,12 +216,12 @@ N0025 (if #416=2)
 G65 P900003 (for Top)
 
 
-N0026 (Shiage)
+N0026 (finishing operation)
 IF[#4012GE56]THEN #32=#24+#415
 IF[#4012LE55]THEN #32=#24+#437
 IF[#4012GE56]THEN #31=#25+#415
 IF[#4012LE55]THEN #31=#25+#437
-(sai-hosei: gaisakuKei +hosei)
+(re-compensation: outcut OD +compensation)
 
 IF[#4012GE56]THEN #106=FUP[#182]
 IF[#4012LE55]THEN #106=FUP[#189]
@@ -231,12 +231,12 @@ IF[#106EQ#0]THEN #106=0
 IF[#106LT0]THEN #106=0
 IF[#106GT3]THEN #106=3
 IF[#628LE0]THEN #106=#106-1
-(#106: Shiage kakou kaisuu)
+(#106: number of finishing operation)
 
 
 G90 G43 G01 H#4120 Z[#26+#600] F#650
 
-N2000 (Shiage loop)
+N2000 (finishing operation loop)
 WHILE[#106GE0]DO2
 #106=#106-1
 
@@ -297,15 +297,15 @@ M99
 (Local variables)
 
 (as received arguments)
-(#03:C: gaisaku corner C)
-(#06:K: gaisaku Length)
+(#03:C: outcut corner C)
+(#06:K: outcut Length)
 (#17:Q: center curvature)
-(#18:R: gaisaku corner R)
-(#21:U: AC gaiKei)
-(#22:V: BD gaiKei)
-(#24:X: AC gaisakukei)
-(#25:Y: BD gaisakukei)
-(#26:Z: sai-furiwake)
+(#18:R: outcut corner R)
+(#21:U: AC OD)
+(#22:V: BD OD)
+(#24:X: AC outcut OD)
+(#25:Y: BD outcut OD)
+(#26:Z: re-alocation length)
 
 (as LHS)
 (#31, #32, #33)
@@ -321,8 +321,8 @@ M99
 (#901001, #901005, #901011)
 
 (System variables)
-(#24xx: #xx kouguKei)
-(#26xx: #xx kouguKeiMamou)
+(#24xx: #xx tool diameter)
+(#26xx: #xx tool diameter wear)
 (#3000: alarm)
 (#4012: current work coordinate G#)
 (#4120: current T#)
