@@ -1,6 +1,6 @@
 %
-O430000 (last update on 20241004)
-(Mizo Corner R or C, ar HidariMawari 1shuu)
+O430000 (last update on 20241016)
+(Keyway, ar counterclockwise)
 
 N0001
 IF[#21EQ#0]GOTO8000
@@ -130,11 +130,11 @@ IF[#422LT-3]THEN #422=-3
 IF[#06EQ4]THEN #33=#21
 #32=#25+#422
 IF[#06EQ6]THEN #32=#22
-(hosei: mizoKei +hosei)
+(compensation: keyway diameter +compensation)
 
 #31=[#605+#[2400+#4120]+#[2600+#4120]+ABS[#605-[#[2400+#4120]+#[2600+#4120]]]]/2
 IF[#31LE1]GOTO8000
-(#31: max[#605, hosei kouguKei])
+(#31: max[#605, tool diameter compensation])
 
 N0019
 IF[#4120EQ6]THEN #30=#901105
@@ -142,12 +142,12 @@ IF[#4120EQ7]THEN #30=#901107
 IF[#4120EQ8]THEN #30=#901109
 IF[#4120EQ9]THEN #30=#901111
 IF[#30LE1]GOTO8000
-(#30: kougu Thickness)
+(#30: tool Thickness)
 
 #29=0
 IF[#01EQ0]THEN #29=SQRT[#17*#17-[#23-[#13+#419]-[[#11+#420]/2]]*[#23-[#13+#419]-[[#11+#420]/2]]]-SQRT[#17*#17-#23*#23]+[#11*#11]/[8*#17]
 IF[#4012EQ58]THEN #29=[#11*#11]/[8*#17]
-(#29: X hosei from keyway center)
+(#29: X compensation from keyway center)
 
 N0020
 #100=#21-#33
@@ -158,7 +158,7 @@ IF[#102LE#630]GOTO0024
 (if #102 <= #630, go to N0024)
 #103=FUP[[#102-#630]/[#629*2]]
 IF[#103LT0]GOTO8000
-(#103: kakou kaisuu)
+(#103: number of operations)
 
 
 (kokokara G01)
@@ -166,7 +166,7 @@ IF[#103LT0]GOTO8000
 
 G90 G43 G01 H#4120 Z[#26+#600] F#650
 
-N1000 (ShiageMae loop)
+N1000 (pre-finishing operation loop)
 WHILE[#103GE1]DO1
 #103=#103-1
 #104=#33+#630+[#629*2]*#103
@@ -234,12 +234,12 @@ N0023 (if #423=2)
 G65 P900003
 
 
-N0024 (Shiage)
+N0024 (finishing operation)
 #33=#24+#422
 IF[#06EQ4]THEN #33=#21
 #32=#25+#422
 IF[#06EQ6]THEN #32=#22
-(sai-hosei: mizoKei +hosei)
+(re-compensation: keyway diameter +compensation)
 
 #106=FUP[#183]
 
@@ -247,12 +247,12 @@ IF[#106EQ#0]THEN #106=0
 IF[#106LT0]THEN #106=0
 IF[#106GT3]THEN #106=3
 IF[#630LE0]THEN #106=#106-1
-(#106: Siage +kaisuu)
+(#106: number of finishing operation)
 
 N0025
 G90 G43 G01 H#4120 Z[#26+#600] F#650
 
-N2000 (Shiage loop)
+N2000 (finishing operation loop)
 WHILE[#106GE0]DO2
 #106=#106-1
 
@@ -335,16 +335,16 @@ M99
 (#02:B: depth tolerance: 0:none, 1:exist)
 (#03:C: corner C)
 (#06:K: key type: 1:R, 2:C, 3:rec, 4:BDonly, 5:oct R)
-(#11:H: mizoHaba)
-(#13:M: mizoIchi)
+(#11:H: keyway width)
+(#13:M: keyway position)
 (#17:Q: central curvature)
 (#18:R: corner R)
-(#21:U: AC gaiKei or gaisakuKei)
-(#22:V: BD gaiKei or gaisakuKei)
-(#23:W: Top ori_furiwake)
+(#21:U: AC OD or Top oucut AC OD)
+(#22:V: BD OD or Top oucut BD OD)
+(#23:W: Top ori-alocation length)
 (#24:X: AC mizoKei)
 (#25:Y: BD mizoKei)
-(#26:Z: sai-furiwake)
+(#26:Z: re-alocation length)
 
 (as LHS)
 (#29, #30, #31, #32, #33)
@@ -353,13 +353,13 @@ M99
 (as LHS)
 (#102, #103, #104, #105, #106)
 (as RHS)
-(#183, #419, #420, #421, #422, #423, #475)
+(#183, #419, #420, #421, #422, #423, #475, #476)
 (#600, #605, #629, #630, #650, #651, #662, #663, #677)
 (#901011, #901105, #901107, #901109, #901111)
 
 (System variables)
-(#24xx: #xx kouguKei)
-(#26xx: #xx kouguKeiMamou)
+(#24xx: #xx tool diameter)
+(#26xx: #xx tool diameter wear)
 (#3000: alarm)
 (#4012: current work coordinate G#)
 (#4120: current T#)
