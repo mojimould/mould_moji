@@ -1,5 +1,5 @@
 %
-O230001 (last update on 20240612)
+O230001 (last update on 20241017)
 (for AC dimples measurement)
 (level 3: measurement dimple)
 (I > 0: A, I < 0: C)
@@ -35,7 +35,7 @@ IF[ABS[#5001-#748]GE[#620+#603]]GOTO0800
 #749=#5001+#901054+#33*[-#901053+#901050]
 G90 G01 X#748 F#652
 (skip X+ or X-: #620+#603)
-(#749= block end X + hosei probe etc)
+(#749= block end X + probe compensation etc)
 (G90 G01 X: to start point)
 GOTO9999
 
@@ -61,8 +61,8 @@ N9999 M99
 (as RHS)
 (#603, #620, #652, #656)
 (#901050: probe radius)
-(#901053: hosei: touch sensor signal delay)
-(#901054: hosei: probe center X)
+(#901053: compensation: touch sensor signal delay)
+(#901054: compensation: probe center X)
 (as LHS)
 (#748, #749)
 
