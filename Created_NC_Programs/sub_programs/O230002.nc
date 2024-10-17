@@ -1,5 +1,5 @@
 %
-O230002 (last update on 20240612)
+O230002 (last update on 20241017)
 (for BD dimples measurement)
 (level 3: measurement dimple)
 (J > 0: B, J < 0: D)
@@ -35,7 +35,7 @@ IF[ABS[#5002-#748]GE[#620+#603]]GOTO0800
 #749=#5002+#901055+#33*[-#901053+#901050]
 G90 G01 Y#748 F#652
 (skip Y+ or Y-: #620+#603)
-(#749= block end Y + hosei probe etc)
+(#749= block end Y + probe compensation etc)
 (G90 G01 Y: to start point)
 GOTO9999
 
@@ -61,8 +61,8 @@ N9999 M99
 (as RHS)
 (#603, #620, #652, #656)
 (#901050: probe radius)
-(#901053: hosei: touch sensor signal delay)
-(#901055: hosei: probe center Y)
+(#901053: compensation: touch sensor signal delay)
+(#901055: compensation: probe center Y)
 (as LHS)
 (#748, #749)
 
