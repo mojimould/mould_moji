@@ -1584,7 +1584,106 @@ prg. & 内容\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 36.17.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\KKeywayConerLeft：\index{ひんしつほしょう（NCプログラム）@品質保証（NCプログラム）}品質保証}
+\subsection{\KEndFaceOutCChamferRLeft：\index{ひんしつほしょう（NCプログラム）@品質保証（NCプログラム）}品質保証}
+\begin{enumerate}[label*=\sarrow]
+\item \index{ひきすう@引数}引数の設定可能範囲を限定
+\item 関連コモン変数の設定可能範囲を限定
+\end{enumerate}
+
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 36.18 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{作成する\index{NCサブプログラム}NCサブプログラム：\KEndFaceOutCChamferRLeft}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.18.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KEndFaceOutCChamferRLeft：作成の目的}
+\begin{enumerate}[label*=\sarrow]
+\item トップ側およびボトム側の\EndFaceOutCChamferMilling
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.18.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KEndFaceOutCChamferRLeft：使用の前提条件}
+\begin{enumerate}[label*=\sarrow]
+\item \EndFaceOutCChamferMilling 用\TaperEndMill（テーパ片角$15^\circ$, $30^\circ$, $45^\circ$）を使用
+\item \index{ワークざひょうけいげんてん@ワーク座標系原点}ワーク座標系原点の基準は、\EndFace 外側中心または\OutcutCenter
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.18.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KEndFaceOutCChamferRLeft：関連するパラメタ}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.18.03.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\KEndFaceOutCChamferRLeft：格納する\index{ひきすう@引数}引数}
+\begin{enumerate}[label*=\sarrow]
+\item \PMTopOutcutExists
+\item \PMChamferType
+\item \PMTopOutcutACWidth または\PMBottomOutcutACWidth
+\item \PMTopOutcutBDWidth または\PMBottomOutcutBDWidth
+\item \PMODCornerR
+\item \PMTopOutcutCornerR または\PMBottomOutcutCornerR
+\item \PMTopEndFaceOutCChamferLength または\PMBottomEndFaceOutCChamferLength
+\item \PMTopEndFaceOutRChamferRadius または\PMBottomEndFaceOutRChamferRadius
+\item \PMTopReAlocationLength または\PMBottomReAlocationLength
+\item \PMTopAlocationLength または\PMBottomAlocationLength
+\item \PMCenterCurvatureRadius
+\end{enumerate}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 36.18.03.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\KEndFaceOutCChamferRLeft：必要な主な\index{へんすう（NCプログラム）@変数（NCプログラム）}変数}
+\begin{enumerate}[label*=\sarrow]
+\item \TopEndFaceOutCChamfer{} 仕上げ加工 追加回数
+\item \BottomEndFaceOutCChamfer{} 仕上げ加工 追加回数
+\item \TopEndFaceOutCChamfer$X$方向補正値
+\item \TopEndFaceOutCChamferWidth 補正値
+\item \TopEndFaceOutCChamfer{} 仕上げ前一時停止用フラグ
+\item \BottomEndFaceOutCChamfer$X$方向補正値
+\item \BottomEndFaceOutCChamferWidth 補正値
+\item \BottomEndFaceOutCChamfer{} 仕上げ前一時停止用フラグ
+\item 工具 - \EndFace 間 $Z$方向クリアランス平面間距離
+\item 外側加工面 法線方向クリアランス平面間距離
+\item \EndFaceOutCChamferMilling1回あたりの削り代
+\item \EndFaceOutCChamferMilling1回あたりの削り代{} 仕上げ前 残り削り代
+\item \EndFaceOutCChamferMilling1回あたりの削り代 用 直線部送り速さ
+\item \EndFaceOutCChamferMilling1回あたりの削り代 用 コーナー部送り速さ
+\item \EndFaceOutCChamferMilling1回あたりの削り代 用 主軸回転数
+\end{enumerate}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.18.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KEndFaceOutCChamferRLeft：主な機能}
+\begin{enumerate}[label*=\sarrow]
+\item \EndFaceOutRChamfer に対するの換算用\EndFaceOutCChamferWidth の自動計算
+\item トップ側またはボトム側の\EndFace 外側中心または\OutcutMillingReferencePoint に移動
+\item 基準点へ移動後、\KOLeftFS を実行
+\item 仕上げ前加工用切削回数の取得および加工
+\item 仕上げ前加工後の一時停止\OpauseCheck に対応
+\item 仕上げ後加工用切削回数の取得および加工
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 36.18.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\KEndFaceOutCChamferRLeft：\index{ひんしつほしょう（NCプログラム）@品質保証（NCプログラム）}品質保証}
 \begin{enumerate}[label*=\sarrow]
 \item \index{ひきすう@引数}引数の設定可能範囲を限定
 \item 関連コモン変数の設定可能範囲を限定
