@@ -1,5 +1,5 @@
 %
-O220001 (last update on 20241004)
+O220001 (last update on 20241017)
 (for AC dimples measurement & milling)
 (level 2: mainly moving along row)
 
@@ -114,7 +114,7 @@ M99
 (#620, #651, #653, #724, #749)
 (as LHS)
 (#725-#730)
-(#900101-#900200 ,#900201-#900300)
+(#900101-#900300)
 
 (System variables)
 (#3000: alarm)
@@ -126,7 +126,7 @@ M99
 (O230001, O530001)
 
 (Passed arguments)
-(#21, #33, #900101-#900200 ,#900201-#900300)
+(#21, #33, #900101-#900300)
 
 (Used variables in other programs)
 (#724: O210003)
