@@ -1,6 +1,6 @@
 %
-O441000 (last update on 20241008)
-(Sotogawa Mentori Corner R, ar HidariMawari 1shuu)
+O441000 (last update on 20241018)
+(Out Chamfer, ar, counterclockwise)
 
 N0001
 IF[#4012EQ54]GOTO0002
@@ -73,13 +73,13 @@ IF[#4120EQ13]THEN #33=#06*[2-SQRT[2]]
 N0010
 #32=[#605+#[2400+#4120]+#[2600+#4120]+ABS[#605-[#[2400+#4120]+#[2600+#4120]]]]/2
 IF[#32LE0]GOTO8000
-(#32: max[#605, hosei kouguKei])
+(#32: max[#605, tool diameter compensation])
 
 #31=#24+#426
 #30=#25+#426
 IF[#4012LE55]THEN #31=#24+#442
 IF[#4012LE55]THEN #30=#25+#442
-(mentoriKei: +hosei)
+(out chamfer width: +compensation)
 
 IF[#4120EQ11]THEN #29=#33*TAN[15]
 IF[#4120EQ12]THEN #29=#33*TAN[30]
@@ -108,9 +108,9 @@ IF[#29LE#632]GOTO0025
 (if #29 <= #632, go to N0025)
 #103=FUP[[[#29*2]-#632]/#631]
 IF[#103LT0]GOTO8000
-(#103: kakou kaisuu)
+(#103: number of operations)
 
-N1000 (ShiageMae loop)
+N1000 (pre-finishing operation loop)
 WHILE[#103GE1]DO1
 #103=#103-1
 #104=#31+#632+#631*#103
@@ -181,12 +181,12 @@ N0024 (if #427=2)
 G65 P900003 (for Top)
 
 
-N0025 (Shiage)
+N0025 (finishing operation)
 IF[#4012EQ56]THEN #31=#24+#426
 IF[#4012EQ54]THEN #31=#24+#442
 IF[#4012EQ56]THEN #30=#25+#426
 IF[#4012EQ54]THEN #30=#25+#442
-(mentoriKei: +hosei)
+(out chamfer diameter: +compensation)
 
 IF[#4012EQ56]THEN #106=FUP[#184]
 IF[#4012EQ54]THEN #106=FUP[#190]
@@ -196,12 +196,12 @@ IF[#106EQ#0]THEN #106=0
 IF[#106LT0]THEN #106=0
 IF[#106GT3]THEN #106=3
 IF[#632LE0]THEN #106=#106-1
-(#106: Shiage kakou kaisuu)
+(#106: number of finishing operation)
 
 N0026
 G90 G43 G01 H#4120 Z[#26+#600] F#650
 
-N2000 (Shiage loop)
+N2000 (finishing operation loop)
 WHILE[#106GE0]DO2
 #106=#106-1
 
@@ -268,12 +268,12 @@ M99
 (Local variables)
 
 (as received arguments)
-(#02:B: mentori type: 0:C, 1:R)
-(#06:K: mentori C or R length)
-(#18:R: gaisaku corner R)
-(#24:X: AC gaisakuKei)
-(#25:Y: BD gaisakuKei)
-(#26:Z: sai-furiwake)
+(#02:B: chamfer type: 0:C, 1:R)
+(#06:K: chamfer C or R length)
+(#18:R: outcut corner R)
+(#24:X: outcut AC OD)
+(#25:Y: outcut BD OD)
+(#26:Z: re-alocation length)
 
 (as LHS)
 (#29, #30, #31, #32, #33)
@@ -285,11 +285,11 @@ M99
 (#184, #190)
 (#425, #426, #427, #441, #442, #443)
 (#600, #605, #631, #632, #650, #651, #664, #665, #678)
-(#901011)
+(#900038-#900043, #901011)
 
 (System variables)
-(#24xx: #xx kouguKei)
-(#26xx: #xx kouguKeiMamou)
+(#24xx: #xx tool diameter)
+(#26xx: #xx tool diameter wear)
 (#3000: alarm)
 (#4012: current work coordinate G#)
 (#4120: current T#)
