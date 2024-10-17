@@ -1,5 +1,5 @@
 %
-O430000 (last update on 20241016)
+O430000 (last update on 20241017)
 (Keyway, ar, counterclockwise)
 
 N0001
@@ -342,8 +342,8 @@ M99
 (#21:U: AC OD or Top oucut AC OD)
 (#22:V: BD OD or Top oucut BD OD)
 (#23:W: Top ori-alocation length)
-(#24:X: AC mizoKei)
-(#25:Y: BD mizoKei)
+(#24:X: AC keyway diameter)
+(#25:Y: BD keyway diameter)
 (#26:Z: re-alocation length)
 
 (as LHS)
