@@ -1,5 +1,5 @@
 %
-O220002 (last update on 20241004)
+O220002 (last update on 20241017)
 (for BD dimples measurement & milling)
 (level 2: mainly moving along row)
 
@@ -113,7 +113,7 @@ M99
 (#620, #651, #653, #724, #749)
 (as LHS)
 (#725-#730)
-(#900301-#900400 ,#900401-#900500)
+(#900301-#900500)
 
 (System variables)
 (#3000: alarm)
@@ -125,7 +125,7 @@ M99
 (O230002, O530002)
 
 (Passed arguments)
-(#21, #33, #900301-#900400 ,#900401-#900500)
+(#21, #33, #900301-#900500)
 
 (Used variables in other programs)
 (#724: O210003)
