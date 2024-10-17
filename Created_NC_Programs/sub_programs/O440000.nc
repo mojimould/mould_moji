@@ -1,5 +1,5 @@
 %
-O440000 (last update on 20241017)
+O440000 (last update on 20241018)
 (Outer Chamfer, ar, counterclockwise)
 
 N0001
@@ -184,7 +184,7 @@ IF[#4012EQ56]THEN #29=#24+#426
 IF[#4012EQ54]THEN #29=#24+#442
 IF[#4012EQ56]THEN #28=#25+#426
 IF[#4012EQ54]THEN #28=#25+#442
-(mentoriKei: +compensation)
+(out chamfer diameter: +compensation)
 
 IF[#4012EQ56]THEN #106=FUP[#184]
 IF[#4012EQ54]THEN #106=FUP[#190]
@@ -272,7 +272,7 @@ M99
 (#184, #190)
 (#425, #426, #427, #441, #442, #443)
 (#600, #605, #631, #632, #650, #651, #664, #665, #678)
-(#901011)
+(#900003, #900004, #900009, #900010, #901011)
 
 (System variables)
 (#24xx: #xx tool diameter)
