@@ -1,5 +1,5 @@
 %
-O210003 (last update on 20241004)
+O210003 (last update on 20241017)
 (for dimple measurement & milling)
 (level 1: mainly moving along central curvature)
 
@@ -97,15 +97,15 @@ IF[#4111EQ33]GOTO0013
 GOTO8000
 
 N0012 (if sensor)
-#701=#901050 (Z correction)
-#702=#901050 (XY correction)
+#701=#901050 (Z compensation)
+#702=#901050 (XY compensation)
 #703=31 (G31)
 GOTO0014
 
 N0013 (if Tslot)
-#701=0 (Z correction)
+#701=0 (Z compensation)
 #702=#[2400+#4111]+#[2600+#4111]
-(XY correction: tool radius)
+(XY compensation: tool radius)
 #703=1 (G01)
 
 N0014
@@ -278,7 +278,7 @@ G65 P900003
 (pause in front of the door)
 
 G43 H#4120
-(tool length correction: T#)
+(tool length compensation: T#)
 
 G90 G00 X0 Y0
 G90 G01 Z[#26+#600] F#652
@@ -488,7 +488,8 @@ M09 (coolant off)
 M05 (spindle off)
 #3000=121 (are*the*arguments*or*dimple*values*OK?)
 
-N9999 M99
+N9999
+M99
 
 (Used Variables and Programs)
 
