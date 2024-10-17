@@ -1,6 +1,6 @@
 %
-O450000 (last update on 20240625)
-(Uchigawa Mentori Corner R, ac HidariMawari 1shuu)
+O450000 (last update on 20241018)
+(In Chamfer, ac, Counterclockwise)
 
 N0001
 IF[#4012EQ55]GOTO0002
@@ -77,7 +77,7 @@ IF[#4012EQ55]THEN #33=-1
 IF[#4012EQ55]THEN #32=#446
 (Top: #33=1, Bot: #33=-1)
 (Top: #32=#430, Bot: #32=#446)
-(#32: X +hosei)
+(#32: X +compensation)
 
 IF[#02NE0]GOTO0009
 #31=#06
@@ -90,7 +90,7 @@ IF[#4120EQ13]THEN #31=#06*[2-SQRT[2]]
 N0010
 #30=SQRT[#17*#17-[#23-#31]*[#23-#31]]-SQRT[#17*#17-#23*#23]
 IF[#01EQ1]THEN #30=0
-(#30: X hosei from K)
+(#30: X compensation from K)
 
 N0011
 IF[ABS[#431]GE10]GOTO0800
@@ -118,7 +118,7 @@ N0012
 #28=#25+#431
 IF[#4012EQ55]THEN #29=#24+#447
 IF[#4012EQ55]THEN #28=#25+#447
-(mentoriKei: +hosei)
+(in chamfer diameter: +compensation)
 
 N0013
 IF[#4120EQ11]THEN #27=#31*TAN[15]
@@ -130,7 +130,7 @@ IF[#27LE#634]GOTO0030
 (if #27 <= #634, go to Shiage)
 #103=FUP[[[#27*2]-#634]/#633]
 IF[#103LT0]GOTO0800
-(#103: kakou kaisuu)
+(#103: number of operations)
 
 
 (kokokara G00)
@@ -140,20 +140,20 @@ N0015
 G90 G00 X#32 Y0
 G90 G43 G01 H#4120 Z[#26+#600] F#650
 G90 G01 Z#26 F#651
-(X to hosei #32)
-(hosei kouguChou: #4120)
+(X to compensation #32)
+(tool length compensation: #4120)
 (Z: Z)
 
 N0016
 G91 G01 X[#33*#30] Z-#31 S#679 F#651
-(X to hosei #30)
+(X to compensation #30)
 (Z: Z-#31)
 
 N0017
 M03 (spindle on)
 M08 (coolant #1 on)
 
-N0100 (ShiageMae loop)
+N0100 (pre-finishing operation loop)
 WHILE[#103GE1]DO1
 #103=#103-1
 #104=#29-#634-#633*#103
@@ -206,18 +206,18 @@ G90 G01 Z[#26+#600] F#650
 G65 P900003 (for Top)
 
 
-N0030 (Shiage)
+N0030 (finishing operation)
 #32=#430
 IF[#4012EQ55]THEN #32=#446
 (Top: #32=#430, Bot: #32=#446)
-(#32: X +hosei)
+(#32: X +compensation)
 
 N0031
 #29=#24+#431
 #28=#25+#431
 IF[#4012EQ55]THEN #29=#24+#447
 IF[#4012EQ55]THEN #28=#25+#447
-(mentoriKei: +hosei)
+(in chamfer diameter: +compensation)
 
 N0032
 #106=FUP[#185]
@@ -229,19 +229,19 @@ IF[#106EQ#0]THEN #106=0
 IF[#106LT0]THEN #106=0
 IF[#106GT3]THEN #106=3
 IF[#634LE0]THEN #106=#106-1
-(#106: Shiage kakou kaisuu)
+(#106: number of finishing operation)
 
 N0034
 G90 G00 X#32 Y0
 G90 G43 G01 H#4120 Z[#26+#600] F#650
 G90 G01 Z#26 F#651
-(X to hosei #32)
-(hosei kouguChou: #4120)
+(X to compensation #32)
+(tool length compensation: #4120)
 (Z: Z)
 
 N0035
 G91 G01 X[#33*#30] Z-#31 S#679 F#651
-(X to hosei #30)
+(X to compensation #30)
 (Z: Z-#31)
 
 N0036
@@ -249,7 +249,7 @@ M03 (spindle on)
 M08 (coolant #1 on)
 
 
-N0200 (Shiage loop)
+N0200 (finishing operation loop)
 WHILE[#106GE0]DO2
 #106=#106-1
 
@@ -294,16 +294,16 @@ N9999 M99
 (Local variables)
 
 (as received arguments)
-(#01:A: naisaku: 0:none, 1:exist)
-(#02:B: mentori type: 0:C, 1:R)
-(#06:K: mentori C or R length)
+(#01:A: incut boring: 0:none, 1:exist)
+(#02:B: chamfer type: 0:C, 1:R)
+(#06:K: chamfer C or R length)
 (#13:M: mekki thickness mm)
 (#17:Q: central curvature)
 (#18:R: corner R)
-(#23:W: ori_furiwake)
-(#24*:X: AC naisakuKei)
-(#25*:Y: BD naisakuKei)
-(#26:Z: sai-furiwake)
+(#23:W: ori-alocation length)
+(#24*:X: incut boring AC ID)
+(#25*:Y: incut boring BD ID)
+(#26:Z: re-alocation length)
 
 (as LHS)
 (#27, #28, #29, #30, #31, #32, #33)
@@ -315,7 +315,7 @@ N9999 M99
 (#185, #191)
 (#430, #431, #432, #446, #447, #448)
 (#600, #606, #633, #634, #650, #651, #666, #667, #679)
-(#901011, #900018, #900019, #900024, #900025)
+(#900018, #900019, #900024, #900025, #901011)
 
 (System variables)
 (#3000: alarm)
