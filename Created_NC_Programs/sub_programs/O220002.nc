@@ -1,5 +1,5 @@
 %
-O220002 (last update on 20241017)
+O220002 (last update on 20241018)
 (for BD dimples measurement & milling)
 (level 2: mainly moving along row)
 
@@ -42,11 +42,11 @@ N0004
 IF[#4111EQ50]GOTO0005
 (if H#=50, go to N0005)
 GOTO0006
-N0005 (for sensor)
+N0005 (for measurement)
 G91 G31 X[#32*COS[ABS[#02]]] Z-[#32*SIN[ABS[#02]]] F#653
 (XZ skip to the 1st dimple: Y: faceB-#620 or faceD+#620)
 GOTO0007
-N0006 (for T-slot)
+N0006 (for milling)
 G91 G01 X[#32*COS[ABS[#02]]] Z-[#32*SIN[ABS[#02]]] F#651
 (XZ to the 1st dimple: Y: faceB-#620 or faceD+#620)
 
@@ -63,7 +63,7 @@ G65 P230002 J#33
 (measurement for BD dimples)
 #[#30]=#749
 GOTO1001
-N1000 (for T-slot)
+N1000 (for milling)
 G65 P530002 J#33 U#21 W#[#30]
 (milling for BD dimples)
 N1001
@@ -73,7 +73,7 @@ IF[#4111NE50]GOTO1002
 (if H# is not 50, go to N1002)
 G91 G31 X[-#04*COS[ABS[#02]]] Z[#04*SIN[ABS[#02]]] F#653
 GOTO1003
-N1002 (for T-slot)
+N1002 (for milling)
 G91 G01 X[-#04*COS[ABS[#02]]] Z[#04*SIN[ABS[#02]]] F#651
 N1003
 #31=#31+1
