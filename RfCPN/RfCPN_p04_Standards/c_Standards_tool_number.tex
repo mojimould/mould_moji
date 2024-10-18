@@ -40,11 +40,11 @@
 ・\expandafterindex{こうぐ（\yomiEndFaceBoringMilling）@工具（\nameEndFaceBoringMilling）}\nameEndFaceBoringMilling
 ・\expandafterindex{こうぐ（\yomiIncutBoringMilling）@工具（\nameIncutBoringMilling）}\nameIncutBoringMilling 用の工具\\
 21-30 & （不使用）\\
-31-35 & \expandafterindex{こうぐ（\yomiDimpleMilling）@工具（\nameDimpleMilling）}\nameDimpleMilling 用の工具（\index{Tスロットカッター}Tスロットカッター）\\
-36-40 & \expandafterindex{こうぐ（\yomiDimpleMilling）@工具（\nameDimpleMilling）}\nameDimpleMilling 用の工具（\index{アングルヘッド}アングルヘッド）\\
+31-35 & \expandafterindex{こうぐ（\yomiDimpleMilling）@工具（\nameDimpleMilling）}\nameDimpleMilling 用の工具（\TSlotCutter, \BallEndMill）\\
+36-40 & \expandafterindex{こうぐ（\yomiDimpleMilling）@工具（\nameDimpleMilling）}\nameDimpleMilling 用の工具（\AngleHead）\\
 41-45 & \expandafterindex{こうぐ（\yomiReliefGrooveMilling）@工具（\nameReliefGrooveMilling）}\nameReliefGrooveMilling 用の工具\\
 46-48 & （不使用）\\
-49, 50 & \index{こうぐ（そくてい）@工具（測定）}測定用の工具（\index{タッチセンサープローブ}タッチセンサープローブ）\\
+49, 50 & \index{こうぐ（そくてい）@工具（測定）}測定用の工具（\TouchSensorProbe）\\
 \end{multicollongtblr}
 
 
@@ -64,18 +64,19 @@
 \begin{multicollongtblr}{\expandafterindex{とうろくこうぐ（\yomiDMC）@登録工具（\nameDMC）}\nameDMC の登録工具}{c X[l]}
 \ttfamily T\ttNum & 工具\\
 \ttfamily T01 & （空）\\
-\ttfamily T02 & $\phi100$\expandafterindex{\yomiEndFacecutMilling ようフェイスミル@\nameEndFacecutMilling 用フェイスミル}\nameEndFacecutMilling 用フェイスミル\\
-\ttfamily T06 & $\phi100\times$t7\expandafterindex{\yomiKeywayMilling ようサイドカッター@\nameKeywayMilling 用サイドカッター}\nameKeywayMilling 用サイドカッター\\
+\ttfamily T02 & $\phi100$\EndFacecutMilling 用\FaceMill\\
+\ttfamily T06 & $\phi100\times$t7\KeywayMilling 用\SideCutter\\
 %\ttfamily T07 & $\phi100\times t5$\KeywayMilling 用サイドカッター\\
-\ttfamily T11 & $\phi4.0\times 15^\circ$\expandafterindex{\yomiEndFaceCChamferMilling ようテーパエンドミル@\nameEndFaceCChamferMilling 用テーパエンドミル}\nameEndFaceCChamferMilling 用テーパエンドミル\\
-\ttfamily T12 & $\phi3.5\times 30^\circ$\expandafterindex{\yomiEndFaceCChamferMilling ようテーパエンドミル@\nameEndFaceCChamferMilling 用テーパエンドミル}\nameEndFaceCChamferMilling 用テーパエンドミル\\
-\ttfamily T13 & $\phi2.0\times 45^\circ$\expandafterindex{\yomiEndFaceCChamferMilling ようテーパエンドミル@\nameEndFaceCChamferMilling 用テーパエンドミル}\nameEndFaceCChamferMilling 用テーパエンドミル\\
-\ttfamily T16 & $\phi20$\expandafterindex{\yomiOutcutMilling ようスクエアエンドミル@\nameOutcutMilling 用スクエアエンドミル}\expandafterindex{\yomiEndFaceBoringMilling ようスクエアエンドミル@\nameEndFaceBoringMilling 用スクエアエンドミル}\nameOutcutMilling および\EndFaceBoringMilling 用スクエアエンドミル\\
-\ttfamily T31 & $\phi40\times$R20（16刃） \expandafterindex{\yomiDimpleMilling ようTスロットカッター@\nameDimpleMilling 用Tスロットカッター}\nameDimpleMilling 用Tスロットカッター\\
-\ttfamily T32 & $\phi40\times$R6.6（16刃） \expandafterindex{\yomiDimpleMilling ようTスロットカッター@\nameDimpleMilling 用Tスロットカッター}\nameDimpleMilling 用Tスロットカッター\\
-%\ttfamily T36 & 10.0in\expandafterindex{\yomiDimpleMilling ようアングルヘッド@\nameDimpleMilling 用アングルヘッド}\nameDimpleMilling 用アングルヘッド\\
-%\ttfamily T41 & 15.5in\expandafterindex{\yomiReliefGrooveMilling ようアングルヘッド@\nameReliefGrooveMilling 用アングルヘッド}\nameReliefGrooveMilling 用アングルヘッド\\
-\ttfamily T50 & $\phi10\times200$（延長100）測定用\index{タッチセンサープローブ}タッチセンサープローブ\\
+\ttfamily T11 & $\phi4.0\times 15^\circ$\EndFaceCChamferMilling 用\TaperEndMill\\
+\ttfamily T12 & $\phi3.5\times 30^\circ$\EndFaceCChamferMilling 用\TaperEndMill\\
+\ttfamily T13 & $\phi2.0\times 45^\circ$\EndFaceCChamferMilling 用\TaperEndMill\\
+\ttfamily T16 & $\phi20$\OutcutMilling および\EndFaceBoringMilling 用\SquareEndMill\\
+\ttfamily T31 & $\phi40\times$R20（16刃）\DimpleMilling 用\TSlotCutter\\
+\ttfamily T32 & $\phi40\times$R6.6（16刃） \DimpleMilling 用\TSlotCutter\\
+\ttfamily (T34) & $\phi16\times$R8.0 \DimpleMilling 用\BallEndMill\\
+%\ttfamily T36 & 10.0in\DimpleMilling 用\AngleHead\\
+%\ttfamily T41 & 15.5in\ReliefGrooveMilling 用\AngleHead\\
+\ttfamily T50 & $\phi10\times200$（延長100）測定用\TouchSensorProbe\\
 \end{multicollongtblr}
 
 
@@ -135,6 +136,9 @@
 ({\ttfamily T33}) & \Dimple
 & \SetCell[c=2]{}\href{https://yamato-carbide-tools.jp/archives/20555}{M-TC-YM10}-30$\times$6
 & & \linkYamato\\
+({\ttfamily T34}) & \Dimple
+& \SetCell[c=2]{}\href{https://osg.icata.net/iportal/CatalogViewInterfaceStartUpAction.do?method=startUp&volumeID=OSGDCS01&catalogId=138550000&pageGroupId=651&designID=OSGD01}{PFB-160-Q}
+& & \href{https://www.osg.co.jp/}{OSG}\\
 \hline
 ({\ttfamily T49}) & 測定
 & \SetCell[c=2]{}\href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=572}{ST38-6P}
@@ -191,6 +195,12 @@
 ({\ttfamily T33}) & \Dimple
 & \href{https://data.moldino.com/catalog_pdf/asc.pdf}{ASC25-12.5-360-240}
 & \linkMoldino\\
+\SetCell[r=2]{}\ttfamily (T34) & \SetCell[r=2]{}\Dimple
+& PFB-R160SS16-LL280CS（特注）
+& \href{https://www.osg.co.jp/}{OSG}\\
+ &
+& \href{https://osg.icata.net/iportal/CatalogViewInterfaceStartUpAction.do?method=startUp&mode=PAGE&volumeID=OSGDCS01&catalogId=138550000&pageGroupId=650&designID=OSGD01}{PFB-R160SS16-LL200CS}（特注元）
+& \href{https://www.osg.co.jp/}{OSG}\\
 \hline
 \SetCell[r=2]{}({\ttfamily T49}) & \SetCell[r=2]{}測定
 & \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=572}{PMC-20}（\index{シャンク}シャンク）
@@ -243,6 +253,9 @@
 & \linkBIGDaishowa\\
 ({\ttfamily T33}) & \Dimple
 & \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=98}{BBT50-MEGA32DS-135}
+& \linkBIGDaishowa\\
+({\ttfamily T34}) & \Dimple
+& \href{https://www.big-daishowa.co.jp/webcatalog/big_general_catalog/book/\#target/page_no=96}{BBT50-MEGA16D-105}
 & \linkBIGDaishowa\\
 \hline
 ({\ttfamily T49}) & 測定
