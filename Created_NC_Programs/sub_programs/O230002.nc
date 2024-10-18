@@ -1,5 +1,5 @@
 %
-O230002 (last update on 20241017)
+O230002 (last update on 20241018)
 (for BD dimples measurement)
 (level 3: measurement dimple)
 (J > 0: B, J < 0: D)
@@ -8,12 +8,12 @@ N0001
 #748=#5002
 (#748= current work block end Y)
 
-IF[#05EQ#0]GOTO0800
-IF[#05EQ0]GOTO0800
-(if J = 0 or empty, to N0800)
+IF[#05EQ#0]GOTO8000
+IF[#05EQ0]GOTO8000
+(if J = 0 or empty, to N8000)
 
-IF[#656NE50]GOTO0800
-(if #656 is not 50.0, go to N0800)
+IF[#656NE50]GOTO8000
+(if #656 is not 50.0, go to N8000)
 
 IF[#1004EQ1]GOTO0002
 M117 (if the sensor is off, turn on)
@@ -31,7 +31,7 @@ IF[#05LT0]THEN #33=-1
 
 N0003
 G91 G31 Y[#33*[#620+#603]] F#656
-IF[ABS[#5002-#748]GE[#620+#603]]GOTO0800
+IF[ABS[#5002-#748]GE[#620+#603]]GOTO8000
 #749=#5002+#901055+#33*[-#901053+#901050]
 G90 G01 Y#748 F#652
 (skip Y+ or Y-: #620+#603)
@@ -40,12 +40,13 @@ G90 G01 Y#748 F#652
 GOTO9999
 
 
-N0800
+N8000
 G90 G01 Y#748 F#656
 G65 P910002 (sensor OFF)
 #3000=121 (something*wrong)
 
-N9999 M99
+N9999
+M99
 
 (Used Variables and Programs)
 
