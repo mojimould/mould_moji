@@ -1,5 +1,5 @@
 %
-O910002 (last update on 20240701)
+O910002 (last update on 20241018)
 (touch sensor OFF)
 
 #33=0
@@ -16,7 +16,8 @@ IF[#33LT4]GOTO0001
 
 #3000=146 (is*the*sensor*OK?)
 
-N9999 M99
+N9999
+M99
 
 (Used Variables and Programs)
 
