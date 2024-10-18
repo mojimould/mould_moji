@@ -1,35 +1,35 @@
 %
-O530002 (last update on 20240701)
-(for BD dimples kakou)
-(level 3: kakou dimple)
+O530002 (last update on 20241018)
+(for BD dimples milling)
+(level 3: milling dimple)
 (J > 0: B, J < 0: D)
 
 N0001
-IF[#05EQ#0]GOTO0800
-IF[#05EQ0]GOTO0800
-(if J = 0 or empty, go to N0800)
+IF[#05EQ#0]GOTO8000
+IF[#05EQ0]GOTO8000
+(if J = 0 or empty, go to N8000)
 
 N0002
 IF[#4111EQ31]GOTO0003
 IF[#4111EQ32]GOTO0003
 IF[#4111EQ33]GOTO0003
-GOTO0800
+GOTO8000
 
 N0003
-IF[#621LT0]GOTO0800
-IF[#672EQ#0]GOTO0800
-IF[#672LE10]GOTO0800
-IF[#673EQ#0]GOTO0800
-IF[#673LE10]GOTO0800
-(if #672 <= 10 or #0, go to N0800)
-(if #673 <= 10 or #0, go to N0800)
-(if #621 < 0, go to N0800)
+IF[#621LT0]GOTO8000
+IF[#672EQ#0]GOTO8000
+IF[#672LE10]GOTO8000
+IF[#673EQ#0]GOTO8000
+IF[#673LE10]GOTO8000
+(if #672 <= 10 or #0, go to N8000)
+(if #673 <= 10 or #0, go to N8000)
+(if #621 < 0, go to N8000)
 
 N0004
 #33=#5042
 #32=#[2400+#4111]+#[2600+#4111]
 (#33= current work Y: start point Y)
-(#32= KouguKei + Mamou)
+(#32= tool diameter + wear)
 
 N0006
 IF[#05LT0]GOTO0007
@@ -64,7 +64,7 @@ G91 G01 Y[#31*[#621+#29]] F#672
 G91 G01 Y[#31*#21] F#673
 G04 X#622 (wait #622s)
 (Y+: #23-#32-#621 or Y-: #23+#32+#621)
-(Y+ or Y-: #621+hosei, speed #672)
+(Y+ or Y-: #621+compensation, speed #672)
 (Y+ or Y-: U, speed #673)
 
 N0009
@@ -73,12 +73,13 @@ G90 G01 Y#33 F#651
 GOTO9999
 
 
-N0800
+N8000
 M09 (coolant off)
 M05 (spindle off)
 #3000=121 (Argument*Is*Not*Assigned)
 
-N9999 M99
+N9999
+M99
 
 (Used Variables and Programs)
 
