@@ -1,5 +1,5 @@
 %
-O210003 (last update on 20241017)
+O210003 (last update on 20241018)
 (for dimple measurement & milling)
 (level 1: mainly moving along central curvature)
 
@@ -90,10 +90,12 @@ IF[#4111EQ50]GOTO0012
 IF[#4111EQ31]GOTO0013
 IF[#4111EQ32]GOTO0013
 IF[#4111EQ33]GOTO0013
+IF[#4111EQ34]GOTO0013
 (if H#=50, go to N0012)
 (if H#=31, go to N0013)
 (if H#=32, go to N0013)
 (if H#=33, go to N0013)
+(if H#=34, go to N0013)
 GOTO8000
 
 N0012 (if sensor)
