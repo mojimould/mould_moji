@@ -531,9 +531,26 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 19.04.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\Outcut コーナーRの加工\TBW}
-\Outcut のコーナーRの部分の加工について、たとえば単純に\index{ヘリカルかこう@ヘリカル加工}ヘリカル加工をすると、それは\EndFace が属する平面とは平行にならない。
+\subsection{\CurvedOutcutCornerR の加工\TBW}
+\CurvedOutcutCornerR の加工について、たとえば単純に$Z$方向に\index{ヘリカルかこう@ヘリカル加工}ヘリカル加工を行うと、それは\EndFace が属する平面と平行にはならない。
 ヘリカル加工では円弧方向に一定の送り速さとなるので、$Z$方向の変位は一定にはならず、$\sin$曲線を描く。
+
+$Z$方向の変位を一定に近づけるため、ここでは次のような近似を考える。
+すなわち、ヘリカル加工での$Z$方向の変位を等分割し、区間ごとの変位が一定になるように調整する。
+たとえば\BottomCurvedOutcut のBCコーナーRに注目したとき、これを始点から終点まで円弧方向に$n-1$個の区間に等分割する。
+このとき各々の点の$X$座標は、$j = 1, 2, \cdots, n$として
+\begin{align*}
+  1,~\cos\frac1n\cdot\frac\pi2,~\cos\frac2n\cdot\frac\pi2,~\cdots,~\cos\frac{j-1}n\cdot\frac\pi2,~\cdots,~\cos\frac{n-1}n\cdot\frac\pi2,~0
+\end{align*}
+となるため、各区間の$X$方向に進む距離は
+\begin{align*}
+  \cos\frac{j-1}n\cdot\frac\pi2-\cos\frac jn\cdot\frac\pi2\ .
+\end{align*}
+したがって、それぞれの区間に対して
+\begin{align*}
+  \frac1n\frac1{\displaystyle\cos\frac{j-1}n\cdot\frac\pi2-\cos\frac jn\cdot\frac\pi2}
+\end{align*}
+をかければよい。
 
 
 \clearpage
