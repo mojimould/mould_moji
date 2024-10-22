@@ -527,30 +527,78 @@ $G_{\mathrm Tx}$はボトム端の外側中心を示す。
 \end{alignat}
 
 
-%\clearpage
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 19.04.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\CurvedOutcutCornerR の加工\TBW}
+\subsection{\CurvedOutcutCornerR の加工}
 \CurvedOutcutCornerR の加工について、たとえば単純に$Z$方向に\index{ヘリカルかこう@ヘリカル加工}ヘリカル加工を行うと、それは\EndFace が属する平面と平行にはならない。
 ヘリカル加工では円弧方向に一定の送り速さとなるので、$Z$方向の変位は一定にはならず、$\sin$曲線を描く。
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 19.04.03.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\index{ヘリカルかこう@ヘリカル加工}ヘリカル加工の近似曲線}
 $Z$方向の変位を一定に近づけるため、ここでは次のような近似を考える。
 すなわち、ヘリカル加工での$Z$方向の変位を等分割し、区間ごとの変位が一定になるように調整する。
-たとえば\BottomCurvedOutcut のBCコーナーRに注目したとき、これを始点から終点まで円弧方向に$n-1$個の区間に等分割する。
-このとき各々の点の$X$座標は、$j = 1, 2, \cdots, n$として
+たとえば\BottomCurvedOutcut のBCコーナーRに注目したとき、これを始点から終点まで円弧方向に$n$個($n > 1$)の区間に等分割する。
+このとき各々の点の$X$座標は、
 \begin{align*}
-  1,~\cos\frac1n\cdot\frac\pi2,~\cos\frac2n\cdot\frac\pi2,~\cdots,~\cos\frac{j-1}n\cdot\frac\pi2,~\cdots,~\cos\frac{n-1}n\cdot\frac\pi2,~0
+  1,\quad
+  \cos\frac1n\cdot\frac\pi2,\quad
+  \cos\frac2n\cdot\frac\pi2,\quad
+  \cdots,\quad
+  \cos\frac{n-1}n\cdot\frac\pi2,\quad
+  0
 \end{align*}
 となるため、各区間の$X$方向に進む距離は
 \begin{align*}
-  \cos\frac{j-1}n\cdot\frac\pi2-\cos\frac jn\cdot\frac\pi2\ .
+  \cos\frac jn\cdot\frac\pi2-\cos\frac{j+1}n\cdot\frac\pi2
+  \qquad\ab(j = 0, 1, 2, \cdots, n-1)\ .
 \end{align*}
-したがって、それぞれの区間に対して
+したがって、それぞれの区間に対して$Z$方向に
 \begin{align*}
-  \frac1n\frac1{\displaystyle\cos\frac{j-1}n\cdot\frac\pi2-\cos\frac jn\cdot\frac\pi2}
+  \frac1n\frac1{\displaystyle\cos\frac jn\cdot\frac\pi2-\cos\frac{j+1}n\cdot\frac\pi2}
 \end{align*}
 をかければよい。
+これはDCコーナーRについても同様である。
+BAコーナーRおよびDAコーナーRについては、同様にして、
+\begin{align*}
+  \frac1n\frac1{\displaystyle\cos\frac{n-(j+1)}n\cdot\frac\pi2-\cos\frac{n-j}n\cdot\frac\pi2}
+  = \frac1n\frac1{\displaystyle\sin\frac{j+1}n\cdot\frac\pi2-\sin\frac jn\cdot\frac\pi2}
+  \qquad\ab(j = 0, 1, 2, \cdots, n-1)
+\end{align*}
+をかければよい。
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 19.04.03.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{\index{ヘリカルかこう@ヘリカル加工}ヘリカル加工の中心の相対位置}
+$n$個に等分割した各点からみた円弧の中心の位置座標は、
+\begin{alignat*}{2}
+  \text{BCコーナーR：}&~~ \ab(-\cos\frac jn\cdot\frac\pi2,~-\sin\frac jn\cdot\frac\pi2)\ , &\qquad
+  \text{DCコーナーR：}&~~ \ab(-\cos\frac jn\cdot\frac\pi2,~\sin\frac jn\cdot\frac\pi2)\ ,\\
+  \text{BAコーナーR：}&~~ \ab(\cos\frac jn\cdot\frac\pi2,~-\sin\frac jn\cdot\frac\pi2)\ , &\qquad
+  \text{DAコーナーR：}&~~ \ab(\cos\frac jn\cdot\frac\pi2,~\sin\frac jn\cdot\frac\pi2)\ .
+\end{alignat*}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsubsection 19.04.03.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{各分割点の相対位置（ボトム側の場合）}
+ボトム側の場合、$j$番目の点からみた$j+1$番目の点の位置座標は、
+\begin{align*}
+  \text{BCコーナーR：}&~~
+  \ab(\cos\frac{j+1}n\cdot\frac\pi2-\cos\frac jn\cdot\frac\pi2,~~\sin\frac{j+1}n\cdot\frac\pi2-\sin\frac jn\cdot\frac\pi2)\ ,\\
+  \text{DCコーナーR：}&~~
+  \ab(\sin\frac{j+1}n\cdot\frac\pi2-\sin\frac jn\cdot\frac\pi2,~~\cos\frac jn\cdot\frac\pi2-\cos\frac{j+1}n\cdot\frac\pi2)\ ,\\
+  \text{BAコーナーR：}&~~
+  \ab(\sin\frac jn\cdot\frac\pi2-\sin\frac{j+1}n\cdot\frac\pi2,~~\cos\frac{j+1}n\cdot\frac\pi2-\cos\frac jn\cdot\frac\pi2)\ ,\\
+  \text{DAコーナーR：}&~~
+  \ab(\cos\frac jn\cdot\frac\pi2-\cos\frac{j+1}n\cdot\frac\pi2,~~\sin\frac jn\cdot\frac\pi2-\sin\frac{j+1}n\cdot\frac\pi2)\ .
+\end{align*}
+
 
 
 \clearpage
