@@ -45,7 +45,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 40.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum609\,-\ttNum619：\EndFaceOutChamfer 用パラメタ}
+\modHeadsection{\ttNum609\,-\ttNum619：\EndFaceChamfer 用パラメタ}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -62,5 +62,22 @@
 \ttNum612 & \EndFaceOutCChamferMilling{} 仕上げ前 残り削り代（直径） & 1.500\\
 \SetRow{unusingVariables}
 \ttNum613 & （予備）
+\end{multicollongtblr}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 40.3.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\ttNum614\,-\ttNum618：\EndFaceInChamfer 用パラメタ}
+\noindent\ttNum614\,-\ttNum618については、主に\EndFaceInChamfer 用パラメタに用いるものとする。\\
+
+\begin{multicollongtblr}[white]{\ttNum614\,-\ttNum618：一時保存値}{cX[l]c}
+変数 & 内容 & 設定例\\
+\ttNum614 & \TopEndFaceInCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum615 & \BottomEndFaceInCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum616 & \EndFaceInCChamferMilling1回あたりの削り代（直径） & 2.060\\
+\ttNum617 & \EndFaceInCChamferMilling{} 仕上げ前 残り削り代（直径） & 1.000\\
+\SetRow{unusingVariables}
+\ttNum618 & （予備）
 \end{multicollongtblr}
 
