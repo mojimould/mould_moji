@@ -1,5 +1,5 @@
 %
-O917100 (last update on 20240912)
+O917100 (last update on 20241023)
 (all tool length measurement)
 
 N0002 (for T02)
@@ -45,6 +45,11 @@ N0032
 T32 M06
 (If the cutter is changed, I & J must be checked)
 G65 P919100 H32 I-17.5 J6.0
+M02
+
+N0034 (for T34)
+T34 M06
+G65 P919100 H34
 M02
 
 N0050 (for T50)
