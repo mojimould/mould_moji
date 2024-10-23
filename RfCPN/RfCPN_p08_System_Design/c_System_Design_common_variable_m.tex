@@ -1,13 +1,66 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter[]{\expandafterindex{コモンへんすう（\yomiMMC）@コモン変数（\nameMMC）}コモン変数（\nameMMC）}
+\modHeadchapter[lot]{\expandafterindex{コモンへんすう（\yomiMMC）@コモン変数（\nameMMC）}コモン変数（\nameMMC）}
 ここでは\MMC の加工システムで使用している\expandafterindex{コモンへんすう（\yomiMMC）@コモン変数（\nameMMC）}コモン変数について述べる。
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 17.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 40.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{コモン変数 (コモン変数の範囲)\TBW}
-(to be written...)
+\modHeadsection{\index{コモンへんすう@コモン変数}コモン変数の範囲)}
+\DMC で\index{コモンへんすう（しようかのう）@コモン変数（使用可能）}使用可能なコモン変数は以下のとおりである。
+\begin{enumerate}[label=\sarrow]
+\item \ttNum100\,-\ttNum199
+\item \ttNum500\,-\ttNum999
+\end{enumerate}
+なお、\ttNum100\,-\ttNum194および\ttNum500\,-\ttNum598は、「\index{\yomiMMC むじんかシステム@\nameMMC 無人化システム}\nameMMC 無人化システム」にて使用されている。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 40.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\ttNum600\,-\ttNum607：一時保存値}
+\noindent\ttNum600\,-\ttNum607については、主に測定値の一時的な保存に用いるものとする。\\
+
+\begin{multicollongtblr}[white]{\ttNum600\,-\ttNum607：一時保存値}{cX[l]}
+変数 & 内容\\
+\ttNum600 & \TopEndFace 部$X$方向外側径 測定値 一時保存値\\
+\ttNum601 & \TopEndFace 部$Y$方向外側径 測定値 一時保存値\\
+\ttNum602 & \TopEndFace 部$X$方向内側径 測定値 一時保存値\\
+\ttNum603 & \TopEndFace 部$Y$方向内側径 測定値 一時保存値\\
+\ttNum604 & \BottomEndFace 部$X$方向外側径 測定値 一時保存値\\
+\ttNum605 & \BottomEndFace 部$Y$方向外側径 測定値 一時保存値\\
+\ttNum606 & \BottomEndFace 部$X$方向内側径 測定値 一時保存値\\
+\ttNum607 & \BottomEndFace 部$Y$方向内側径 測定値 一時保存値\\
+\SetRow{unusingVariables}
+\ttNum608 & （予備）
+\end{multicollongtblr}
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 40.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\ttNum609\,-\ttNum619：\EndFaceOutChamfer 用パラメタ}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 40.3.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\ttNum609\,-\ttNum613：\EndFaceOutChamfer 用パラメタ}
+\noindent\ttNum609\,-\ttNum613については、主に\EndFaceOutChamfer 用パラメタに用いるものとする。\\
+
+\begin{multicollongtblr}[white]{\ttNum609\,-\ttNum613：一時保存値}{cX[l]c}
+変数 & 内容 & 設定例\\
+\ttNum609 & \TopEndFaceOutCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum610 & \BottomEndFaceOutCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
+\ttNum611 & \EndFaceOutCChamferMilling1回あたりの削り代（直径） & 2.000\\
+\ttNum612 & \EndFaceOutCChamferMilling{} 仕上げ前 残り削り代（直径） & 1.500\\
+\SetRow{unusingVariables}
+\ttNum613 & （予備）
+\end{multicollongtblr}
+
