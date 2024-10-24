@@ -640,12 +640,22 @@ with open('./O' + MainPrgID, 'w') as f:
         )
 
         SN_dimple_Mi = next(SN_dimple_milling)
-        f.write(
-            f"N{SN_dimple_Mi:04d}\n"
-            f"T{toolIDTslot[dimpleSmallRadius]:02d}" + ' (Tslot R' + dimpleSmallRadius + ')\n'
-            'M06 (tool exchange)\n'
-            '\n'
-        )
+        if DimpleToolFlag == 1:
+            # T-slot cutter
+            f.write(
+                f"N{SN_dimple_Mi:04d}\n"
+                f"T{toolIDTslot[dimpleSmallRadius]:02d}" + ' (Tslot R' + dimpleSmallRadius + ')\n'
+                'M06 (tool exchange)\n'
+                '\n'
+            )
+        elif DimpleToolFlag == 2:
+            # Ball endmill
+            f.write(
+                f"N{SN_dimple_Mi:04d}\n"
+                f"T{toolIDBallendmill:02d}" + ' (ball end mill)\n'
+                'M06 (tool exchange)\n'
+                '\n'
+            )
 
         SN_dimple_Mi = next(SN_dimple_milling)
         f.write(
