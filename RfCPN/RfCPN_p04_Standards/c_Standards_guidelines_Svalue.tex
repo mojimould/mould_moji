@@ -1,7 +1,7 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter[lot]{工具の主軸回転数（\index{Sコードち@Sコード値}Sコード値）\TBW}
+\modHeadchapter[lot]{工具の\index{しゅじくかいてんすう@主軸回転数}主軸回転数（\index{Sコードち@Sコード値}Sコード値）\TBW}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% marker %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -18,7 +18,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 13.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{主軸回転数の基本事項\TBW}
+\modHeadsection{\index{しゅじくかいてんすう@主軸回転数}主軸回転数の基本事項\TBW}
 \begin{enumerate}[label=\sarrow]
 \item \index{でんげんとうにゅうじ（きかいほんたい）@電源投入時（機械本体）}電源投入時の\index{しゅじくかいてんすう@主軸回転数}主軸回転数（設定値）：0
 \item 設定可能な最小単位：1回転/min
@@ -33,7 +33,7 @@
 ~\newline\noindent
 \dateKouguRotation 時点における主軸回転数の\index{せっていち（しゅじくかいてんすう）@設定値（主軸回転数）}設定値は、以下のとおりである。\\
 
-\begin{multicollongtblr}{工具の主軸回転数設定値 一覧}{X[l]c}
+\begin{multicollongtblr}{工具の\index{しゅじくかいてんすう@主軸回転数}主軸回転数設定値 一覧}{X[l]c}
 加工の種類 & 回転数\\
 \EndFacecutMilling & \EndFaceSpindleSpeed\\
 \OutcutMilling & \OutcutSpindleSpeed\\
@@ -41,6 +41,7 @@
 \EndFaceOutCChamferMilling & \OutCChamferSpindleSpeed\\
 \EndFaceInCChamferMilling & \InCChamferSpindleSpeed\\
 \EndFaceBoringMilling & \EndFaceBoringSpindleSpeed\\
-\DimpleMilling & \DimpleSpindleSpeed\\
+\DimpleMilling（\TSlotCutter） & \DimpleTSlotSpindleSpeed\\
+\DimpleMilling（\BallEndMill） & \DimpleBallendSpindleSpeed\\
 \end{multicollongtblr}
 
