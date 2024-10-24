@@ -93,12 +93,14 @@ toolIDTslot         = {
     "6.6" : WS['U26'].value,
     "15.0": WS['U27'].value
 }
+toolIDBallendmill   = WS['U28'].value
 toolIDTouchSensor   = WS['U30'].value
 
 # flag
 CenterCurvatureExistsFlag          = WS['C6'].value
 BotAlocationBracketDimExistsFlag   = WS['C11'].value
 DimpleExistsFlag                   = WS['O2'].value
+DimpleToolFlag                     = WS['O10'].value
 BotOutcutExistsFlag                = WS['I2'].value
 BotCurvedOutcutExistsFlag          = WS['I4'].value
 TopOutcutExistsFlag                = WS['I11'].value
@@ -193,8 +195,9 @@ if DimpleExistsFlag == 1:
     dimpleSecondRowLength    = f"{dimpleSecondRowLengthDim:.3f}"
     dimpleDepthDim = WS['O9'].value
     dimpleDepth    = f"{dimpleDepthDim:.3f}"
-    dimpleSmallRadiusDim = WS['O10'].value
-    dimpleSmallRadius    = f"{dimpleSmallRadiusDim:.1f}"
+    if DimpleToolFlag == 1:
+        dimpleSmallRadiusDim = WS['O11'].value
+        dimpleSmallRadius    = f"{dimpleSmallRadiusDim:.1f}"
     dimpleFirstRowTopSidePitch    = excel_lookup(WB, WS1_name, 'O3', 'A', next_row=False)
     dimpleFirstRowBottomSidePitch = excel_lookup(WB, WS1_name, 'O3', 'A', next_row=True)
     dimpleFirstRowTopSideID       = excel_lookup(WB, WS1_name, 'O3', 'B', next_row=False)
