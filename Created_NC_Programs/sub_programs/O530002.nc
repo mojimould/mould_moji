@@ -1,6 +1,6 @@
 %
 O530002 (last update on 20241024)
-(for BD dimples milling)
+(for BD dimple milling)
 (level 3: milling dimple)
 (J > 0: B, J < 0: D)
 
@@ -61,13 +61,20 @@ IF[#4111EQ34]THEN #29=#474
 N0008
 G90 G01 Y[#23-#31*[#32+#621]] F#651
 G91 G01 Y[#31*[#621+#29]] F#672
-G91 G01 Y[#31*#21] F#673
-G04 X#622 (wait #622s)
 (Y+: #23-#32-#621 or Y-: #23+#32+#621)
 (Y+ or Y-: #621+compensation, speed #672)
-(Y+ or Y-: U, speed #673)
+
+IF[#4111EQ34]GOTO0009
+G91 G01 Y[#31*#21] F#673
+G04 X#622 (wait #622s)
+GOTO0010
 
 N0009
+G91 G01 Y[#31*#21] F#674
+G04 X#623 (wait #623s)
+(Y+ or Y-: U, speed #673 or #674)
+
+N0010
 G90 G01 Y#33 F#651
 (G90 G01 Y: to start point)
 GOTO9999
@@ -76,7 +83,7 @@ GOTO9999
 N8000
 M09 (coolant off)
 M05 (spindle off)
-#3000=121 (Argument*Is*Not*Assigned)
+#3000=121 (argument*is*not*assigned)
 
 N9999
 M99
@@ -94,7 +101,8 @@ M99
 
 (Common variables)
 (as RHS)
-(#463, #464, #468, #469, #473, #474, #621, #651, #672, #673)
+(#463, #464, #468, #469, #473, #474)
+(#621, #622, #623, #651, #672, #673, #674)
 
 (System variables)
 (#3000: alarm)
