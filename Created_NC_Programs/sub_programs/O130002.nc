@@ -1,5 +1,5 @@
 %
-O130002 (last update on 20241011)
+O130002 (last update on 20241024)
 (Y center of inner measurement)
 
 N0001
@@ -81,7 +81,7 @@ G04 X1.5 (wait 1.5s)
 N0010
 G90 G31 Z[#26-#901050-#30] F#653
 (Z tanmen: Z-#901050-#30)
-IF[#5003GT[#26-#901050-#30]]GOTO0802
+IF[#5003GT[#26-#901050-#30+0.001]]GOTO0802
 (if skip Z > Z-#901050-#30, to N0802)
 
 N0011

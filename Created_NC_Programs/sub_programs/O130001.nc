@@ -1,5 +1,5 @@
 %
-O130001 (last update on 20241011)
+O130001 (last update on 20241024)
 (X center of inner measurement)
 
 N0001
@@ -94,14 +94,14 @@ G04 X1.5 (wait 1.5s)
 N0010
 G90 G31 Z[#26-#901050] F#653
 (Z skip: Z-#901050)
-IF[#5003GT[#26-#901050]]GOTO8002
+IF[#5003GT[#26-#901050+0.001]]GOTO8002
 (if skip Z > Z-#901050, to N8002)
 
 G91 G31 X[#31*#28] Z-#30 F#653
 (X skip to #31*#28)
 (Z skip to Z-#901050-#30)
 IF[#5001GT[#32+#31*#28+0.001]]GOTO8003
-IF[#5003GT[#26-#901050-#30]]GOTO8002
+IF[#5003GT[#26-#901050-#30+0.001]]GOTO8002
 (if skip X > #32+#31*#28, to N8002)
 (if skip Z > Z-#901050-#30, to N8002)
 
