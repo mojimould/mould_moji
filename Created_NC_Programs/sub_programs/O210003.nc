@@ -167,14 +167,22 @@ G91 G#703 X#709 Z#710 F#653
 #715=#5003
 (XYZ block end: the center of the 1st row)
 
-IF[#4111EQ50]GOTO0018
-(if sensor, go to N0018)
+IF[#4111EQ50]GOTO0020
+(if sensor, go to N0020)
+IF[#4111EQ34]GOTO0018
 S#682
-M03 (spindle on)
 M09 (coolant off)
-M28 (chip conveyor on)
+GOTO0019
 
 N0018
+S#683
+M08 (coolant on)
+
+N0019
+M03 (spindle on)
+M28 (chip conveyor on)
+
+N0020
 #716=#25/2+#20-#702-#620
 #717=[#24/2+#20-#702-#620]*COS[ABS[#02]]
 (#716, #717: face from -#620)
@@ -250,18 +258,18 @@ G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 
 N1008
 #724=#724-1 (changing face)
-IF[#724LE0]GOTO0019
+IF[#724LE0]GOTO0021
 GOTO1000
 
 
 (end loop for the 1st #724)
 
 
-N0019
-IF[#4111EQ50]GOTO0020
+N0021
+IF[#4111EQ50]GOTO0022
 S35
 
-N0020
+N0022
 G90 G01 X#713 Z[#715-#701] F#652
 (XZ: to the center of the 1st row)
 G90 G01 X#711 Z#712 F#652
@@ -269,7 +277,7 @@ G90 G01 X#711 Z#712 F#652
 G90 G01 Z[#712+#600] F#652
 S2599
 
-N0021
+N0023
 G90 G53 G01 Z0 F#650
 G04 X1.5 (wait 1.5s)
 M05 (spindle off)
@@ -288,25 +296,32 @@ G90 G01 Z[#26+#600] F#652
 G91 G01 X[#705-#704] Z[#706-#26-#701-#600] F#652
 (XZ: endface center)
 
-IF[#4111NE50]GOTO0023
-(if tool is not sensor, go to N0023)
-IF[#1005EQ0]GOTO0022
+IF[#4111NE50]GOTO0025
+(if tool is not sensor, go to N0025)
+IF[#1005EQ0]GOTO0024
 M00 (sensor low battery)
 
-N0022
-IF[#1004EQ1]GOTO0023
-(if current sensor ON, go to N0023)
+N0024
+IF[#1004EQ1]GOTO0025
+(if current sensor ON, go to N0025)
 M117 (sensor on/off)
 G04 X1.5 (wait 1.5s)
 
-N0023
+N0025
 G91 G#703 X#709 Z#710 F#653
 (XZ to the center of the 1st row after rotation)
 (if sensor G31, else G01)
 
 IF[#4111EQ50]GOTO2000
 (if sensor, go to N2000)
+IF[#4111EQ34]GOTO0026
 S#682
+GOTO0027
+
+N0026
+S#683
+
+N0027
 M03 (spindle on)
 M08 (coolant on)
 M28 (chip conveyor on)
@@ -438,18 +453,18 @@ GOTO8002
 
 N2026
 #724=#724-1 (changing face)
-IF[#724LE0]GOTO0024
+IF[#724LE0]GOTO0028
 GOTO2001
 
 
 (end loop for the 2nd #724)
 
 
-N0024
-IF[#4111EQ50]GOTO0025
+N0028
+IF[#4111EQ50]GOTO0029
 M09 (coolant off)
 
-N0025
+N0029
 G90 G01 X#713 Z[#715-#701] F#652
 (XZ: to the center of the 1st row)
 G90 G01 X#711 Z#712 F#652
