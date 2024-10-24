@@ -186,72 +186,72 @@ N0018
 (start loop for the 1st #724)
 
 
-IF[#4111EQ50]GOTO0200
-IF[#401EQ0]GOTO0200
+IF[#4111EQ50]GOTO2000
+IF[#401EQ0]GOTO2000
 
 #724=4
 (#724: faces 1: A, 2: C, 3: B, 4: D)
 
-N0100 (loop on #724)
+N1000 (loop on #724)
 G90 G01 X#713 Y#714 Z#715 F#652
 (XYZ: to the center of the 1st row)
 
-IF[#724EQ3]GOTO0101
-IF[#724EQ2]GOTO0102
-IF[#724EQ1]GOTO0103
-(if B, to N0101)
-(if C, to N0102)
-(if A, to N0103)
+IF[#724EQ3]GOTO1001
+IF[#724EQ2]GOTO1002
+IF[#724EQ1]GOTO1003
+(if B, to N1001)
+(if C, to N1002)
+(if A, to N1003)
 
 (for face D)
 G91 G#703 Y-#716 F#653
 IF[#5002GT[-#716+0.001]]GOTO8002
-GOTO0104
+GOTO1004
 
-N0101 (for face B)
+N1001 (for face B)
 G91 G#703 Y#716 F#653
 IF[#5002LT[#716-0.001]]GOTO8002
-GOTO0104
+GOTO1004
 
-N0102 (for face C)
+N1002 (for face C)
 G91 G#703 X-#717 F#653
 IF[#5001GT[#713-#717+0.001]]GOTO8002
-GOTO0104
+GOTO1004
 
-N0103 (for face A)
+N1003 (for face A)
 G91 G#703 X#717 F#653
 IF[#5001LT[#713+#717-0.001]]GOTO8002
 
-N0104
-IF[#724EQ3]GOTO0105
-IF[#724EQ2]GOTO0106
-IF[#724EQ1]GOTO0107
+N1004
+IF[#724EQ3]GOTO1005
+IF[#724EQ2]GOTO1006
+IF[#724EQ1]GOTO1007
 (#724=3, for B)
 (#724=2, for C)
 (#724=1, for A)
 (face D)
 G65 P220002 A-1.0 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for D: moving along row)
-GOTO0108
+GOTO1008
 
-N0105 (face B)
+N1005 (face B)
 G65 P220002 A1.0 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for B: moving along row)
-GOTO0108
+GOTO1008
 
-N0106 (face C)
+N1006 (face C)
 G65 P220001 A-1.0 X#24 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for C: moving along row)
-GOTO0108
+GOTO1008
 
-N0107 (face A)
+N1007 (face A)
 G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
 (for A: moving along row)
 
-N0108
+N1008
 #724=#724-1 (changing face)
 IF[#724LE0]GOTO0019
-GOTO0100
+GOTO1000
 
 
 (end loop for the 1st #724)
@@ -304,48 +304,48 @@ G91 G#703 X#709 Z#710 F#653
 (XZ to the center of the 1st row after rotation)
 (if sensor G31, else G01)
 
-IF[#4111EQ50]GOTO0200
-(if sensor, go to N0200)
+IF[#4111EQ50]GOTO2000
+(if sensor, go to N2000)
 S#682
 M03 (spindle on)
 M08 (coolant on)
 M28 (chip conveyor on)
 
 
-N0200
+N2000
 (start loop for the 2nd #724)
 
 
 #724=4
 (#724: faces 1: A, 2: C, 3: B, 4: D)
 
-N0201 (loop on #724)
+N2001 (loop on #724)
 G90 G01 X#713 Y#714 Z#715 F#652
 (XYZ: to the center of the 1st row)
 
-IF[#724EQ3]GOTO0202
-IF[#724EQ2]GOTO0203
-IF[#724EQ1]GOTO0204
-(if B, to N0202)
-(if C, to N0203)
-(if A, to N0204)
+IF[#724EQ3]GOTO2002
+IF[#724EQ2]GOTO2003
+IF[#724EQ1]GOTO2004
+(if B, to N2002)
+(if C, to N2003)
+(if A, to N2004)
 
 (for face D)
 G91 G#703 Y-#716 F#653
 IF[#5002GT[-#716+0.001]]GOTO8002
-GOTO0205
+GOTO2005
 
-N0202 (for face B)
+N2002 (for face B)
 G91 G#703 Y#716 F#653
 IF[#5002LT[#716-0.001]]GOTO8002
-GOTO0205
+GOTO2005
 
-N0203 (for face C)
+N2003 (for face C)
 G91 G#703 X-#717 F#653
 IF[#5001GT[#713-#717+0.001]]GOTO8002
-GOTO0205
+GOTO2005
 
-N0204 (for face A)
+N2004 (for face A)
 G91 G#703 X#717 F#653
 IF[#5001LT[#713+#717-0.001]]GOTO8002
 
@@ -353,12 +353,12 @@ IF[#5001LT[#713+#717-0.001]]GOTO8002
 (start loop for #33)
 
 
-N0205
+N2005
 #33=1 (#33: current row)
 WHILE[#33LE#13]DO1
-IF[#724EQ3]GOTO0300
-IF[#724EQ2]GOTO0301
-IF[#724EQ1]GOTO0302
+IF[#724EQ3]GOTO3000
+IF[#724EQ2]GOTO3001
+IF[#724EQ1]GOTO3002
 (#724=3, for B)
 (#724=2, for C)
 (#724=1, for A)
@@ -366,25 +366,25 @@ IF[#724EQ1]GOTO0302
 (face D)
 G65 P220002 A-1.0 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for D: moving along row)
-GOTO0303
+GOTO3003
 
-N0300 (face B)
+N3000 (face B)
 G65 P220002 A1.0 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for B: moving along row)
-GOTO0303
+GOTO3003
 
-N0301 (face C)
+N3001 (face C)
 G65 P220001 A-1.0 X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for C: moving along row)
-GOTO0303
+GOTO3003
 
-N0302 (face A)
+N3002 (face A)
 G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
 (for A: moving along row)
 
-N0303
-IF[#33GE#13]GOTO0225
-(if #33 >= #13, go to N0225)
+N3003
+IF[#33GE#13]GOTO2025
+(if #33 >= #13, go to N2025)
 #32=#707-[#33-1]*#06
 (#32= Z of the #33th row from table center)
 #31=SQRT[#18*#18-[#32-#06]*[#32-#06]]-SQRT[#18*#18-#32*#32]
@@ -400,9 +400,9 @@ END1
 (start loop for #29)
 
 
-N0225
-IF[#4111NE50]GOTO0226
-IF[#724NE3]GOTO0226
+N2025
+IF[#4111NE50]GOTO2026
+IF[#724NE3]GOTO2026
 #719=0
 #29=1
 WHILE[#29LE100]DO1
@@ -413,13 +413,13 @@ END1
 #29=1
 WHILE[#29LE100]DO1
 #28=#[900300+#29]+#[900400+#29]
-IF[ABS[#28]GE0.5]GOTO0400
+IF[ABS[#28]GE0.5]GOTO4000
 GOTO401
 
-N0400
+N4000
 #[900500+#29]=#28
 
-N0401
+N4001
 #29=#29+1
 END1
 
@@ -433,13 +433,13 @@ END1
 (end loop for #29)
 
 
-IF[#719EQ0]GOTO0226
+IF[#719EQ0]GOTO2026
 GOTO8002
 
-N0226
+N2026
 #724=#724-1 (changing face)
 IF[#724LE0]GOTO0024
-GOTO0201
+GOTO2001
 
 
 (end loop for the 2nd #724)
