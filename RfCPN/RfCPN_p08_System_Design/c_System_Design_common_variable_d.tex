@@ -429,9 +429,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum619 & （予備） &\\
 \ttNum620 & \DimpleMeasurement 時 \index{ちかづきりょう（\yomiDimple）@近付き量（\nameDimple）}近付き量 & 4.0 \\
 \ttNum621 & \DimpleMilling 時 \index{ちかづきりょう（\yomiDimple）@近付き量（\nameDimple）}近付き量 & 2.0 \\
-\ttNum622 & \DimpleMilling 時 \index{ドゥエル（\yomiDimple）@ドゥエル（\nameDimple）}ドゥエル時間(s) & 0.1 \\
-\SetRow{unusingVariables}
-\ttNum623 & （予備） &\\
+\ttNum622 & \TSlotCutter{} \DimpleMilling 時 \index{ドゥエル（\yomiDimple）@ドゥエル（\nameDimple）}ドゥエル時間(s) & 0.1 \\
+\ttNum623 & \BallEndMill{} \DimpleMilling 時 \index{ドゥエル（\yomiDimple）@ドゥエル（\nameDimple）}ドゥエル時間(s) & 2.0 \\
 \SetRow{unusingVariables}
 \ttNum624 & （予備） &\\
 \end{multicollongtblr}
@@ -493,14 +492,14 @@ $\cdots$ & （以下不明） & \ttNum0
 \subsection{\ttNum650\,-\ttNum674：工具の送り速さ}
 \ttNum650\,-\ttNum674については、工具の\index{おくりはやさ@送り速さ}送り速さに関するものとする。\\
 
-\begin{multicollongtblr}[white]{\ttNum650\,-\ttNum674：工具の送り速さ}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum650\,-\ttNum674：工具の\index{おくりはやさ@送り速さ}送り速さ}{cX[l]c}
 変数 & 内容 & 設定例\\
-\ttNum650 & 早送り$Z$：{\ttfamily T50}アプローチ以外 & \SpindleRapidTraverseZ\\
-\ttNum651 & アプローチ・$XY$リトラクト：{\ttfamily T50}以外 & \SpindleRapidAproachFeedRateZ\\
+\ttNum650 & \index{はやおくり@早送り}早送り$Z$：{\ttfamily T50}\index{アプローチ}アプローチ以外 & \SpindleRapidTraverseZ\\
+\ttNum651 & アプローチ・$XY$\index{リトラクト}リトラクト：{\ttfamily T50}以外 & \SpindleRapidAproachFeedRateZ\\
 \ttNum652 & 早送り$XY$：{\ttfamily T50}, 早送り$Z$：{\ttfamily T50}アプローチ & \SensorRapidTraverseXY\\
 \ttNum653 & アプローチ：{\ttfamily T50} & \SensorRapidAproachFeedRateZ\\
 \ttNum654 & アプローチ：\TLMeasurement & \ToolLengthMeasurementFeedRateZ\\
-\ttNum655 & 測定時アプローチ：{\ttfamily T50}（両側芯出し測定） & \CenterMeasurementFeedRate\\
+\ttNum655 & \index{そくていじアプローチ@測定時アプローチ}測定時アプローチ：{\ttfamily T50}（両側芯出し測定） & \CenterMeasurementFeedRate\\
 \ttNum656 & 測定時アプローチ：{\ttfamily T50}（片側測定） & \PosMeasurementFeedRate\\
 \SetRow{unusingVariables}
 \ttNum657 & （不使用） &\\
@@ -518,10 +517,9 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum669 & \EndFaceBoringMilling：コーナー & \EndFaceBoringCornerFeedRate\\
 \ttNum670 & \IncutBoringMilling：直線 & \IncutBoringLinearFeedRate\\
 \ttNum671 & \IncutBoringMilling：コーナー & \IncutBoringCornerFeedRate\\
-\ttNum672 & \DimpleMeasurement：表面アプローチ & \DimpleApproachFeedRate\\
-\ttNum673 & \DimpleMilling：加工 & \DimpleProcessFeedRate\\
-\SetRow{unusingVariables}
-\ttNum674 & （予備） & \\
+\ttNum672 & \DimpleMeasurement：\index{ひょうめんアプローチ@表面アプローチ}表面アプローチ & \DimpleApproachFeedRate\\
+\ttNum673 & \DimpleMilling：\TSlotCutter{} 加工 & \DimpleTSlotProcessFeedRate\\
+\ttNum674 & \DimpleMilling：\BallEndMill{} 加工 & \DimpleBallendProcessFeedRate\\
 \end{multicollongtblr}
 
 
@@ -529,10 +527,10 @@ $\cdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 17.5.4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum675\,-\ttNum699：スピンドルの回転数（切削時）}
+\subsection{\ttNum675\,-\ttNum699：\index{スピンドル}スピンドルの\index{かいてんすう@回転数}回転数（切削時）}
 \ttNum675\,-\ttNum699については、切削時の工具の\index{しゅじくかいてんすう@主軸回転数}主軸回転数に関するものとする。\\
 
-\begin{multicollongtblr}[white]{\ttNum675\,-\ttNum699：主軸回転数（切削時）}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum675\,-\ttNum699：\index{しゅじくかいてんすう@主軸回転数}主軸回転数（切削時）}{cX[l]c}
 変数 & 内容 & 設定例\\
 \ttNum675 & \EndFacecutMilling & \EndFaceSpindleSpeed\\
 \ttNum676 & \OutcutMilling & \OutcutSpindleSpeed\\
@@ -541,9 +539,8 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum679 & \EndFaceInCChamferMilling & \InCChamferSpindleSpeed\\
 \ttNum680 & \EndFaceBoringMilling & \EndFaceBoringSpindleSpeed\\
 \ttNum681 & \IncutBoringMilling & \IncutBoringSpindleSpeed \\
-\ttNum682 & \DimpleMilling & \DimpleSpindleSpeed\\
-\SetRow{unusingVariables}
-\ttNum683 & （予備） & \\
+\ttNum682 & \DimpleMilling（\TSlotCutter） & \DimpleTSlotSpindleSpeed\\
+\ttNum683 & \DimpleMilling（\BallEndMill） & \DimpleBallendSpindleSpeed\\
 \SetRow{unusingVariables}
 \ttNum684 & （予備） & \\
 \SetRow{unusingVariables}
