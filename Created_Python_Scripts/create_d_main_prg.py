@@ -1,4 +1,4 @@
-# last update: 20241024
+# last update: 20241025
 # Copyright 2023-2024 The individual creator, not held by any corporation.
 # All rights reserved.
 
@@ -570,7 +570,7 @@ with open('./O' + MainPrgID, 'w') as f:
         )
 
         f.write(
-            '' + workCoordinateTopIn + ' G65 P' + prgDimpleOne + ' T' + mekkiThickness + ' Z' + topReAlocationLength + ' W' + topAlocationLength + ' F' + dimpleFirstRowLength + ' S' + dimpleSecondRowLength + ' Q' + dimpleFirstRowDistanceFromEndface + ' I' + dimpleHorizontalPitch + ' K' + dimpleVerticalPitch + ' M' + dimpleRowNum + ' U' + dimpleDepth + ' R' + centralCurvature + ' A' + topSideParallelAngle + ' B' + dimpleAngle + '\n'
+            '' + workCoordinateTopIn + ' G65 P' + prgDimpleOne + ' T' + mekkiThickness + ' Z' + topReAlocationLength + ' W' + topAlocationLength + ' F' + dimpleFirstRowLength + ' S' + dimpleSecondRowLength + ' Q' + dimpleFirstRowDistanceFromEndface + ' I' + dimpleHorizontalPitch + ' K' + dimpleVerticalPitch + ' M' + dimpleRowNum + ' U' + dimpleDepth + ' V' + dimpleMillingRadius + ' R' + centralCurvature + ' A' + topSideParallelAngle + ' B' + dimpleAngle + '\n'
             '(dimple measurement)\n'
             '(T: mekki thickness mm)\n'
             '(Z: Top re_alocation)\n'
@@ -582,6 +582,7 @@ with open('./O' + MainPrgID, 'w') as f:
             '(K: dimple Z pitch)\n'
             '(M: number of rows)\n'
             '(U: dimple depth)\n'
+            '(V: dimple milling radius)\n'
             '(R: central curvature)\n'
             '(A: angle for re_alocation)\n'
             '(B: angle for dimple)\n'
@@ -689,7 +690,7 @@ with open('./O' + MainPrgID, 'w') as f:
         SN_dimple_Mi = next(SN_dimple_milling)
         f.write(
             f"N{SN_dimple_Mi:04d}\n"
-            '' + workCoordinateTopIn + ' G65 P' + prgDimpleOne + ' T' + mekkiThickness + ' Z' + topReAlocationLength + ' W' + topAlocationLength + ' F' + dimpleFirstRowLength + ' S' + dimpleSecondRowLength + ' Q' + dimpleFirstRowDistanceFromEndface + ' I' + dimpleHorizontalPitch + ' K' + dimpleVerticalPitch + ' M' + dimpleRowNum + ' U' + dimpleDepth + ' R' + centralCurvature + ' A' + topSideParallelAngle + ' B' + dimpleAngle + '\n'
+            '' + workCoordinateTopIn + ' G65 P' + prgDimpleOne + ' T' + mekkiThickness + ' Z' + topReAlocationLength + ' W' + topAlocationLength + ' F' + dimpleFirstRowLength + ' S' + dimpleSecondRowLength + ' Q' + dimpleFirstRowDistanceFromEndface + ' I' + dimpleHorizontalPitch + ' K' + dimpleVerticalPitch + ' M' + dimpleRowNum + ' U' + dimpleDepth + ' V' + dimpleMillingRadius + ' R' + centralCurvature + ' A' + topSideParallelAngle + ' B' + dimpleAngle + '\n'
             '(dimple milling)\n'
             '(T: mekki thickness mm)\n'
             '(Z: Top re_alocation)\n'
@@ -701,6 +702,7 @@ with open('./O' + MainPrgID, 'w') as f:
             '(K: dimple Z pitch)\n'
             '(M: number of rows)\n'
             '(U: dimple depth)\n'
+            '(V: dimple milling radius)\n'
             '(R: central curvature)\n'
             '(A: angle for re_alocation)\n'
             '(B: angle for dimple)\n'
