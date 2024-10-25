@@ -131,6 +131,7 @@ IF[#1000EQ1]THEN #30=#901005
 
 
 N0015
+G17
 M11 (B-axis unclamp)
 G90 G#700 G00 B[#01+#02]
 M10 (B-axis clamp)
@@ -238,22 +239,22 @@ IF[#724EQ1]GOTO1007
 (#724=2, for C)
 (#724=1, for A)
 (face D)
-G65 P220002 A-1.0 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
+G65 P220002 A-1.0 F#09 S#19 I#04 K#06 U#718 V#22 B#02 M1.0
 (for D: moving along row)
 GOTO1008
 
 N1005 (face B)
-G65 P220002 A1.0 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
+G65 P220002 A1.0 F#09 S#19 I#04 K#06 U#718 V#22 B#02 M1.0
 (for B: moving along row)
 GOTO1008
 
 N1006 (face C)
-G65 P220001 A-1.0 X#24 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
+G65 P220001 A-1.0 X#24 F#09 S#19 I#04 K#06 U#718 V#22 B#02 M1.0
 (for C: moving along row)
 GOTO1008
 
 N1007 (face A)
-G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#718 B#02 M1.0
+G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#718 V#22 B#02 M1.0
 (for A: moving along row)
 
 N1008
@@ -270,6 +271,7 @@ IF[#4111EQ50]GOTO0022
 S35
 
 N0022
+G17
 G90 G01 X#713 Z[#715-#701] F#652
 (XZ: to the center of the 1st row)
 G90 G01 X#711 Z#712 F#652
@@ -279,7 +281,6 @@ S2599
 
 N0023
 G90 G53 G01 Z0 F#650
-G04 X1.5 (wait 1.5s)
 M05 (spindle off)
 S35
 G65 P900003
@@ -379,22 +380,22 @@ IF[#724EQ1]GOTO3002
 (#724=1, for A)
 
 (face D)
-G65 P220002 A-1.0 F#09 S#19 I#04 K#06 U#21 B#02 M#33
+G65 P220002 A-1.0 F#09 S#19 I#04 K#06 U#21 V#22 B#02 M#33
 (for D: moving along row)
 GOTO3003
 
 N3000 (face B)
-G65 P220002 A1.0 F#09 S#19 I#04 K#06 U#21 B#02 M#33
+G65 P220002 A1.0 F#09 S#19 I#04 K#06 U#21 V#22 B#02 M#33
 (for B: moving along row)
 GOTO3003
 
 N3001 (face C)
-G65 P220001 A-1.0 X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
+G65 P220001 A-1.0 X#24 F#09 S#19 I#04 K#06 U#21 V#22 B#02 M#33
 (for C: moving along row)
 GOTO3003
 
 N3002 (face A)
-G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#21 B#02 M#33
+G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#21 V#22 B#02 M#33
 (for A: moving along row)
 
 N3003
@@ -465,6 +466,7 @@ IF[#4111EQ50]GOTO0029
 M09 (coolant off)
 
 N0029
+G17
 G90 G01 X#713 Z[#715-#701] F#652
 (XZ: to the center of the 1st row)
 G90 G01 X#711 Z#712 F#652
@@ -487,18 +489,21 @@ GOTO9999
 
 
 N8002
+G17
 G90 G01 X#713 Y#714 F#653
 IF[#1004EQ0]GOTO8003
 (if current sensor OFF, go to N8003)
 M117 (sensor on/off)
 
 N8003
+G17
 G90 G01 Z#715 F#653
 (Z: to the center of the 1st row)
 G90 G01 X#711 Z#712 F#653
 (XZ: to start point)
 
 N8000
+G17
 M09 (coolant off)
 M05 (spindle off)
 #3000=121 (are*the*arguments*or*dimple*values*OK?)
@@ -527,6 +532,7 @@ M99
 (#09:F: length of odd rows)
 (#19:S: length of even rows)
 (#21:U: depth of dimple)
+(#22:V: dimple milling radius)
 
 (as LHS)
 (#24, #25, #29, #30, #31, #32, #33)
