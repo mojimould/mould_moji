@@ -1,5 +1,5 @@
 %
-O220001 (last update on 20241018)
+O220001 (last update on 20241025)
 (for AC dimples measurement & milling)
 (level 2: mainly moving along row)
 
@@ -64,7 +64,7 @@ G65 P230001 I#33
 #[#30]=#749
 GOTO1001
 N1000 (for milling)
-G65 P530001 I#33 U#21 W#[#30]
+G65 P530001 I#33 U#21 V#22 W#[#30]
 (milling for AC dimples)
 N1001
 #30=#30+1
@@ -105,6 +105,7 @@ M99
 (#24:X: top endface ACID measured value)
 (used only as passed argument)
 (#21:U: dimple depth)
+(#22:V: dimple milling radius)
 
 (as LHS)
 (#30, #31, #32, #33)
