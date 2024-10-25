@@ -1,5 +1,5 @@
 %
-O210003 (last update on 20241024)
+O210003 (last update on 20241025)
 (for dimple measurement & milling)
 (level 1: mainly moving along central curvature)
 
@@ -429,7 +429,7 @@ END1
 WHILE[#29LE100]DO1
 #28=#[900300+#29]+#[900400+#29]
 IF[ABS[#28]GE0.5]GOTO4000
-GOTO401
+GOTO4001
 
 N4000
 #[900500+#29]=#28
