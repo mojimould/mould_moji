@@ -1,5 +1,5 @@
 %
-O530002 (last update on 20241024)
+O530002 (last update on 20241025)
 (for BD dimple milling)
 (level 3: milling dimple)
 (J > 0: B, J < 0: D)
@@ -59,6 +59,7 @@ IF[#4111EQ34]THEN #29=#474
 
 
 N0008
+G17
 G90 G01 Y[#23-#31*[#32+#621]] F#651
 G91 G01 Y[#31*[#621+#29]] F#672
 (Y+: #23-#32-#621 or Y-: #23+#32+#621)
@@ -71,6 +72,11 @@ GOTO0010
 
 N0009
 G91 G01 Y[#31*#21] F#674
+G91 G01 Z[#22/2] F200
+G18 G03 I0 K[#22/2] F400
+G18 G03 I0 K[#22/2] F200
+G17
+G91 G01 Z-[#22/2] F200
 G04 X#623 (wait #623s)
 (Y+ or Y-: U, speed #673 or #674)
 
@@ -95,6 +101,7 @@ M99
 (as received arguments)
 (#05:J: +:Y+direction, -:Y-direction)
 (#21:U: the depth of dimples)
+(#22:V: dimple milling radius)
 (#23:W: the position of the dimple)
 (as LHS)
 (#29, #31, #32, #33)
