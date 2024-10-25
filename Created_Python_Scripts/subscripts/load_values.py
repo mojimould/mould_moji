@@ -1,4 +1,4 @@
-# last update: 20241024
+# last update: 20241025
 # Copyright 2023-2024 The individual creator, not held by any corporation.
 # All rights reserved.
 
@@ -198,6 +198,10 @@ if DimpleExistsFlag == 1:
     if DimpleToolFlag == 1:
         dimpleSmallRadiusDim = WS['O11'].value
         dimpleSmallRadius    = f"{dimpleSmallRadiusDim:.1f}"
+        dimpleMillingRadius = "#0"
+    elif DimpleToolFlag == 2:
+        dimpleMillingRadiusDim = WS['O12'].value
+        dimpleMillingRadius = f"{dimpleMillingRadiusDim:.3f}"
     dimpleFirstRowTopSidePitch    = excel_lookup(WB, WS1_name, 'O3', 'A', next_row=False)
     dimpleFirstRowBottomSidePitch = excel_lookup(WB, WS1_name, 'O3', 'A', next_row=True)
     dimpleFirstRowTopSideID       = excel_lookup(WB, WS1_name, 'O3', 'B', next_row=False)
