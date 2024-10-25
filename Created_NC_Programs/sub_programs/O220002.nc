@@ -1,5 +1,5 @@
 %
-O220002 (last update on 20241018)
+O220002 (last update on 20241025)
 (for BD dimples measurement & milling)
 (level 2: mainly moving along row)
 
@@ -64,7 +64,7 @@ G65 P230002 J#33
 #[#30]=#749
 GOTO1001
 N1000 (for milling)
-G65 P530002 J#33 U#21 W#[#30]
+G65 P530002 J#33 U#21 V#22 W#[#30]
 (milling for BD dimples)
 N1001
 #30=#30+1
@@ -104,6 +104,7 @@ M99
 (#19:S: length of even rows)
 (used only as passed argument)
 (#21:U: depth of dimple)
+(#22:V: dimple milling radius)
 
 (as LHS)
 (#30, #31, #32, #33)
