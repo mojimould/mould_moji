@@ -1,5 +1,5 @@
 %
-O530001 (last update on 20241024)
+O530001 (last update on 20241025)
 (for AC dimple milling)
 (level 3: milling dimple)
 (I > 0: A, I < 0: C)
@@ -59,6 +59,7 @@ IF[#4111EQ34]THEN #29=#472
 
 
 N0008
+G17
 G90 G01 X[#23-#31*[#32+#621]] F#651
 G91 G01 X[#31*[#621+#29]] F#672
 (X+: #23-#32-#621 or X-: #23+#32+#621)
@@ -71,7 +72,13 @@ GOTO0010
 
 N0009
 G91 G01 X[#31*#21] F#674
+G91 G01 Z[#22/2] F200
+G19 G03 J0 K[#22/2] F400
+G19 G03 J0 K[#22/2] F200
+G17
+G91 G01 Z-[#22/2] F200
 G04 X#623 (wait #623s)
+
 (X+ or X-: U, speed #673 or #674)
 
 N0010
@@ -95,6 +102,7 @@ M99
 (as received arguments)
 (#04:I: +:X+direction, -:X-direction)
 (#21:U: the depth of dimples)
+(#22:V: dimple milling radius)
 (#23:W: the position of the dimple)
 (as LHS)
 (#29, #31, #32, #33)
