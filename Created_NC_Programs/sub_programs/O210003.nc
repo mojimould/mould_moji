@@ -1,12 +1,12 @@
 %
-O210003 (last update on 20241025)
+O210003 (last update on 20241029)
 (for dimple measurement & milling)
 (level 1: mainly moving along central curvature)
 
 N0001
-#700=#4012
-IF[#700NE57]GOTO8000 
-(#700: current work coordinate G#)
+#901200=#4012
+IF[#901200NE57]GOTO8000 
+(#901200: current work coordinate G#)
 (if work G# is not 57, go to N8000)
 
 N0002
@@ -97,33 +97,33 @@ IF[#4111EQ34]GOTO0013
 GOTO8000
 
 N0012 (if sensor)
-#701=#901050 (Z compensation)
-#702=#901050 (XY compensation)
-#703=31 (G31)
+#901201=#901050 (Z compensation)
+#901202=#901050 (XY compensation)
+#901203=31 (G31)
 GOTO0014
 
 N0013 (if Tslot)
-#701=0 (Z compensation)
-#702=#[2400+#4111]+#[2600+#4111]
+#901201=0 (Z compensation)
+#901202=#[2400+#4111]+#[2600+#4111]
 (XY compensation: tool radius)
-#703=1 (G01)
+#901203=1 (G01)
 
 N0014
 IF[#1000EQ0]THEN #30=#901001
 IF[#1000EQ1]THEN #30=#901005
 (#30: table center X)
 
-#704=#[5201+[#700-53]*20]-#30
-#705=#704*COS[ABS[#02]]+#26*SIN[ABS[#02]]
-#706=-#704*SIN[ABS[#02]]+#26*COS[ABS[#02]]
-(#704= current work origin X from table center)
+#901204=#[5201+[#901200-53]*20]-#30
+#901205=#901204*COS[ABS[#02]]+#26*SIN[ABS[#02]]
+#901206=-#901204*SIN[ABS[#02]]+#26*COS[ABS[#02]]
+(#901204= current work origin X from table center)
 
-#707=#23-#17
+#901207=#23-#17
 (Z: the 1st row before rotation)
-#708=SQRT[#18*#18-#707*#707]-SQRT[#18*#18-#23*#23]
+#901208=SQRT[#18*#18-#901207*#901207]-SQRT[#18*#18-#23*#23]
 (the center of the 1st row before rotation)
-#709=#708*COS[ABS[#02]]-#17*SIN[ABS[#02]]
-#710=-#708*SIN[ABS[#02]]-#17*COS[ABS[#02]]
+#901209=#901208*COS[ABS[#02]]-#17*SIN[ABS[#02]]
+#901210=-#901208*SIN[ABS[#02]]-#17*COS[ABS[#02]]
 (XZ: the center of the 1st row after rotation)
 
 
@@ -133,18 +133,18 @@ IF[#1000EQ1]THEN #30=#901005
 N0015
 G17
 M11 (B-axis unclamp)
-G90 G#700 G00 B[#01+#02]
+G90 G#901200 G00 B[#01+#02]
 M10 (B-axis clamp)
 (current work B: G90 #01+#02 deg)
 
 G90 G01 Z[#26+#600] F#652
 (Z: Z+#600)
 
-G91 G01 X[#705-#704] Z[#706-#26-#701-#600] F#652
+G91 G01 X[#901205-#901204] Z[#901206-#26-#901201-#600] F#652
 (XZ: endface center)
 
-#711=#5001
-#712=#5003
+#901211=#5001
+#901212=#5003
 (XZ block end: start point XZ)
 
 IF[#4111NE50]GOTO0017
@@ -159,13 +159,13 @@ M117 (sensor on/off)
 G04 X1.5 (wait 1.5s)
 
 N0017
-G91 G#703 X#709 Z#710 F#653
+G91 G#901203 X#901209 Z#901210 F#653
 (XZ to the center of the 1st row after rotation)
 (if sensor G31, else G01)
 
-#713=#5001
-#714=#5002
-#715=#5003
+#901213=#5001
+#901214=#5002
+#901215=#5003
 (XYZ block end: the center of the 1st row)
 
 IF[#4111EQ50]GOTO0020
@@ -184,86 +184,86 @@ M03 (spindle on)
 M28 (chip conveyor on)
 
 N0020
-#716=#25/2+#20-#702-#620
-#717=[#24/2+#20-#702-#620]*COS[ABS[#02]]
-(#716, #717: face from -#620)
+#901216=#25/2+#20-#901202-#620
+#901217=[#24/2+#20-#901202-#620]*COS[ABS[#02]]
+(#901216, #901217: face from -#620)
 
-#718=FIX[#21*10]/10-0.1
-(#718=FIX[U*10]/10-0.1)
+#901218=FIX[#21*10]/10-0.1
+(#901218=FIX[U*10]/10-0.1)
 
 
-(start loop for the 1st #724)
+(start loop for the 1st #901224)
 
 
 IF[#4111EQ50]GOTO2000
 IF[#401EQ0]GOTO2000
 
-#724=4
-(#724: faces 1: A, 2: C, 3: B, 4: D)
+#901224=4
+(#901224: faces 1: A, 2: C, 3: B, 4: D)
 
-N1000 (loop on #724)
-G90 G01 X#713 Y#714 Z#715 F#652
+N1000 (loop on #901224)
+G90 G01 X#901213 Y#901214 Z#901215 F#652
 (XYZ: to the center of the 1st row)
 
-IF[#724EQ3]GOTO1001
-IF[#724EQ2]GOTO1002
-IF[#724EQ1]GOTO1003
+IF[#901224EQ3]GOTO1001
+IF[#901224EQ2]GOTO1002
+IF[#901224EQ1]GOTO1003
 (if B, to N1001)
 (if C, to N1002)
 (if A, to N1003)
 
 (for face D)
-G91 G#703 Y-#716 F#653
-IF[#5002GT[-#716+0.001]]GOTO8002
+G91 G#901203 Y-#901216 F#653
+IF[#5002GT[-#901216+0.001]]GOTO8002
 GOTO1004
 
 N1001 (for face B)
-G91 G#703 Y#716 F#653
-IF[#5002LT[#716-0.001]]GOTO8002
+G91 G#901203 Y#901216 F#653
+IF[#5002LT[#901216-0.001]]GOTO8002
 GOTO1004
 
 N1002 (for face C)
-G91 G#703 X-#717 F#653
-IF[#5001GT[#713-#717+0.001]]GOTO8002
+G91 G#901203 X-#901217 F#653
+IF[#5001GT[#901213-#901217+0.001]]GOTO8002
 GOTO1004
 
 N1003 (for face A)
-G91 G#703 X#717 F#653
-IF[#5001LT[#713+#717-0.001]]GOTO8002
+G91 G#901203 X#901217 F#653
+IF[#5001LT[#901213+#901217-0.001]]GOTO8002
 
 N1004
-IF[#724EQ3]GOTO1005
-IF[#724EQ2]GOTO1006
-IF[#724EQ1]GOTO1007
-(#724=3, for B)
-(#724=2, for C)
-(#724=1, for A)
+IF[#901224EQ3]GOTO1005
+IF[#901224EQ2]GOTO1006
+IF[#901224EQ1]GOTO1007
+(#901224=3, for B)
+(#901224=2, for C)
+(#901224=1, for A)
 (face D)
-G65 P220002 A-1.0 F#09 S#19 I#04 K#06 U#718 V#22 B#02 M1.0
+G65 P220002 A-1.0 F#09 S#19 I#04 K#06 U#901218 V#22 B#02 M1.0
 (for D: moving along row)
 GOTO1008
 
 N1005 (face B)
-G65 P220002 A1.0 F#09 S#19 I#04 K#06 U#718 V#22 B#02 M1.0
+G65 P220002 A1.0 F#09 S#19 I#04 K#06 U#901218 V#22 B#02 M1.0
 (for B: moving along row)
 GOTO1008
 
 N1006 (face C)
-G65 P220001 A-1.0 X#24 F#09 S#19 I#04 K#06 U#718 V#22 B#02 M1.0
+G65 P220001 A-1.0 X#24 F#09 S#19 I#04 K#06 U#901218 V#22 B#02 M1.0
 (for C: moving along row)
 GOTO1008
 
 N1007 (face A)
-G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#718 V#22 B#02 M1.0
+G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#901218 V#22 B#02 M1.0
 (for A: moving along row)
 
 N1008
-#724=#724-1 (changing face)
-IF[#724LE0]GOTO0021
+#901224=#901224-1 (changing face)
+IF[#901224LE0]GOTO0021
 GOTO1000
 
 
-(end loop for the 1st #724)
+(end loop for the 1st #901224)
 
 
 N0021
@@ -272,11 +272,11 @@ S35
 
 N0022
 G17
-G90 G01 X#713 Z[#715-#701] F#652
+G90 G01 X#901213 Z[#901215-#901201] F#652
 (XZ: to the center of the 1st row)
-G90 G01 X#711 Z#712 F#652
+G90 G01 X#901211 Z#901212 F#652
 (XZ: to start point)
-G90 G01 Z[#712+#600] F#652
+G90 G01 Z[#901212+#600] F#652
 S2599
 
 N0023
@@ -294,7 +294,7 @@ G90 G01 Z[#26+#600] F#652
 (XY Top Inside Center)
 (Z= top realocation +#600)
 
-G91 G01 X[#705-#704] Z[#706-#26-#701-#600] F#652
+G91 G01 X[#901205-#901204] Z[#901206-#26-#901201-#600] F#652
 (XZ: endface center)
 
 IF[#4111NE50]GOTO0025
@@ -309,7 +309,7 @@ M117 (sensor on/off)
 G04 X1.5 (wait 1.5s)
 
 N0025
-G91 G#703 X#709 Z#710 F#653
+G91 G#901203 X#901209 Z#901210 F#653
 (XZ to the center of the 1st row after rotation)
 (if sensor G31, else G01)
 
@@ -329,41 +329,41 @@ M28 (chip conveyor on)
 
 
 N2000
-(start loop for the 2nd #724)
+(start loop for the 2nd #901224)
 
 
-#724=4
-(#724: faces 1: A, 2: C, 3: B, 4: D)
+#901224=4
+(#901224: faces 1: A, 2: C, 3: B, 4: D)
 
-N2001 (loop on #724)
-G90 G01 X#713 Y#714 Z#715 F#652
+N2001 (loop on #901224)
+G90 G01 X#901213 Y#901214 Z#901215 F#652
 (XYZ: to the center of the 1st row)
 
-IF[#724EQ3]GOTO2002
-IF[#724EQ2]GOTO2003
-IF[#724EQ1]GOTO2004
+IF[#901224EQ3]GOTO2002
+IF[#901224EQ2]GOTO2003
+IF[#901224EQ1]GOTO2004
 (if B, to N2002)
 (if C, to N2003)
 (if A, to N2004)
 
 (for face D)
-G91 G#703 Y-#716 F#653
-IF[#5002GT[-#716+0.001]]GOTO8002
+G91 G#901203 Y-#901216 F#653
+IF[#5002GT[-#901216+0.001]]GOTO8002
 GOTO2005
 
 N2002 (for face B)
-G91 G#703 Y#716 F#653
-IF[#5002LT[#716-0.001]]GOTO8002
+G91 G#901203 Y#901216 F#653
+IF[#5002LT[#901216-0.001]]GOTO8002
 GOTO2005
 
 N2003 (for face C)
-G91 G#703 X-#717 F#653
-IF[#5001GT[#713-#717+0.001]]GOTO8002
+G91 G#901203 X-#901217 F#653
+IF[#5001GT[#901213-#901217+0.001]]GOTO8002
 GOTO2005
 
 N2004 (for face A)
-G91 G#703 X#717 F#653
-IF[#5001LT[#713+#717-0.001]]GOTO8002
+G91 G#901203 X#901217 F#653
+IF[#5001LT[#901213+#901217-0.001]]GOTO8002
 
 
 (start loop for #33)
@@ -372,12 +372,12 @@ IF[#5001LT[#713+#717-0.001]]GOTO8002
 N2005
 #33=1 (#33: current row)
 WHILE[#33LE#13]DO1
-IF[#724EQ3]GOTO3000
-IF[#724EQ2]GOTO3001
-IF[#724EQ1]GOTO3002
-(#724=3, for B)
-(#724=2, for C)
-(#724=1, for A)
+IF[#901224EQ3]GOTO3000
+IF[#901224EQ2]GOTO3001
+IF[#901224EQ1]GOTO3002
+(#901224=3, for B)
+(#901224=2, for C)
+(#901224=1, for A)
 
 (face D)
 G65 P220002 A-1.0 F#09 S#19 I#04 K#06 U#21 V#22 B#02 M#33
@@ -401,10 +401,10 @@ G65 P220001 A1.0 X#24 F#09 S#19 I#04 K#06 U#21 V#22 B#02 M#33
 N3003
 IF[#33GE#13]GOTO2025
 (if #33 >= #13, go to N2025)
-#32=#707-[#33-1]*#06
+#32=#901207-[#33-1]*#06
 (#32= Z of the #33th row from table center)
 #31=SQRT[#18*#18-[#32-#06]*[#32-#06]]-SQRT[#18*#18-#32*#32]
-G91 G#703 X[#31*COS[ABS[#02]]-#06*SIN[ABS[#02]]] Z-[#31*SIN[ABS[#02]]+#06*COS[ABS[#02]]] F#653
+G91 G#901203 X[#31*COS[ABS[#02]]-#06*SIN[ABS[#02]]] Z-[#31*SIN[ABS[#02]]+#06*COS[ABS[#02]]] F#653
 (current work XY: the center of the #33+1th row)
 #33=#33+1 (#33 to current row +1)
 END1
@@ -418,8 +418,8 @@ END1
 
 N2025
 IF[#4111NE50]GOTO2026
-IF[#724NE3]GOTO2026
-#719=0
+IF[#901224NE3]GOTO2026
+#901219=0
 #29=1
 WHILE[#29LE100]DO1
 #[900500+#29]=#0
@@ -441,7 +441,7 @@ END1
 
 #29=1
 WHILE[#29LE100]DO1
-#719=#719+ABS[#[900500+#29]]
+#901219=#901219+ABS[#[900500+#29]]
 #29=#29+1
 END1
 
@@ -449,16 +449,16 @@ END1
 (end loop for #29)
 
 
-IF[#719EQ0]GOTO2026
+IF[#901219EQ0]GOTO2026
 GOTO8002
 
 N2026
-#724=#724-1 (changing face)
-IF[#724LE0]GOTO0028
+#901224=#901224-1 (changing face)
+IF[#901224LE0]GOTO0028
 GOTO2001
 
 
-(end loop for the 2nd #724)
+(end loop for the 2nd #901224)
 
 
 N0028
@@ -467,11 +467,11 @@ M09 (coolant off)
 
 N0029
 G17
-G90 G01 X#713 Z[#715-#701] F#652
+G90 G01 X#901213 Z[#901215-#901201] F#652
 (XZ: to the center of the 1st row)
-G90 G01 X#711 Z#712 F#652
+G90 G01 X#901211 Z#901212 F#652
 (XZ: to start point)
-G90 G01 Z[#712+#600] F#652
+G90 G01 Z[#901212+#600] F#652
 
 N9990
 IF[#4119GE2600]GOTO9991
@@ -490,16 +490,16 @@ GOTO9999
 
 N8002
 G17
-G90 G01 X#713 Y#714 F#653
+G90 G01 X#901213 Y#901214 F#653
 IF[#1004EQ0]GOTO8003
 (if current sensor OFF, go to N8003)
 M117 (sensor on/off)
 
 N8003
 G17
-G90 G01 Z#715 F#653
+G90 G01 Z#901215 F#653
 (Z: to the center of the 1st row)
-G90 G01 X#711 Z#712 F#653
+G90 G01 X#901211 Z#901212 F#653
 (XZ: to start point)
 
 N8000
@@ -544,7 +544,7 @@ M99
 (#900018, #900024, #901001, #901005, #901011, #901050)
 (#900301-#900600)
 (as LHS)
-(#700-#719, #724)
+(#901200-#901219, #901224)
 
 (System variables)
 (#0   : empty)
@@ -566,7 +566,7 @@ M99
 (#04, #09, #13, #19, #21, #24, #33)
 
 (Used variable in other programs)
-(#724)
+(#901224)
 
 
 (COPYRIGHT*2023-2024 THE*INDIVIDUAL*CREATOR NOT*HELD*BY*ANY*CORPORATION ALL*RIGHTS*RESERVED)

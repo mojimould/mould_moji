@@ -579,140 +579,16 @@ $\cdots$ & （以下不明） & \ttNum0
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 30.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum700\,-\ttNum750：\Dimple 用}
-\ttNum700\,-\ttNum750については、主に\expandafterindex{\yomiDimpleMeasurement ようサブプログラム@\nameDimpleMeasurement 用サブプログラム}\DimpleMeasurement 用サブプログラム\Gprgbox{O2x000x}で使用されるものとする。
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 30.06.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum700\,-\ttNum724：\Dimple~\DLone 用}
-
-\begin{multicollongtblr}[white]{\ttNum700\,-\ttNum724：\Dimple~移動 \DLone 用}{cX[l]}
-変数 & 内容\\
-\ttNum700 & NCプログラム読込時のワーク座標系(\ttNum4012)\\
-\ttNum701 & 工具別$Z$補正({\ttfamily T50}:\ttNum901050, {\ttfamily T3x}:0)\\
-\ttNum702 & 工具別$XY$補正({\ttfamily T50}:\ttNum901050, {\ttfamily T3x}:\ttNum[2400+\ttNum4111]+\ttNum[2600+\ttNum4111])\\
-\ttNum703 & 工具別{\ttfamily G\ttNum} ({\ttfamily T50}:31, {\ttfamily T3x}:01)\\
-\ttNum704 & \TableCenter からワーク座標(\ttNum700)原点までの$X$距離\\
-\ttNum705 & 傾き後の\TopEndFace 中心（機械座標）$X$ (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
-\ttNum706 & \TableCenter から傾き後の\TopEndFace 中心までの$Z$距離 (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
-\ttNum707 & \TableCenter から\DimpleFirstRow までの$Z$距離$Z-q$\\
-\ttNum708 & トップ端中心から\DimpleFirstRow 中心までの$X$距離(\cf\pageeqref{eq:dimpleCenterDistance})\\
-\ttNum709 & 傾き後\DimpleFirstRow 中心$X$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\
-\ttNum710 & 傾き後\DimpleFirstRow 中心$Z$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\
-\ttNum711 & 傾き後トップ端中心（ブロックエンド）$X$座標(\ttNum5001)\\
-\ttNum712 & 傾き後トップ端中心（ブロックエンド）$Z$座標(\ttNum5003)\\
-\ttNum713 & 傾き後\DimpleFirstRow 中心（ブロックエンド）$X$座標 (\ttNum5001)\\
-\ttNum714 & 傾き後\DimpleFirstRow 中心（ブロックエンド）$Y$座標 (\ttNum5002)\\
-\ttNum715 & 傾き後\DimpleFirstRow 中心（ブロックエンド）$Z$座標 (\ttNum5003)\\
-\ttNum716 & BD内半径$+$\PlatingThk$-\text{\ttNum702}-\text{\ttNum620}$\\
-\ttNum717 & (AC内半径$+$\PlatingThk$-\text{\ttNum702}-\text{\ttNum620}\text)\cos\phi$\\
-\ttNum718 & \expandafterindex{しかこうよう\yomiDimpleDepth@試加工用\nameDimpleDepth}試加工用\nameDimpleDepth（$\lfloor$\DimpleDepth$\rfloor-0.1$）\\
-\ttNum719 & BD面\Dimple 測定値差の大きさの総和\\
-\SetRow{unusingVariables}
-\ttNum720 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum721 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum722 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum723 & （予備）\\
-\ttNum724\color{red}$^*$ & 各面 ループ用数値(1:A, 2:C, 3:B, 4:D)\\
-\end{multicollongtblr}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{marker}
-\ttNum724は\DLtwoAC および\DLtwoBD で\index{RHS（コモンへんすう）@RHS（コモン変数）}RHSとして使用していることに注意
-\end{marker}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 18.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum725\,-\ttNum749：\Dimple~\DLtwoAC\DLtwoBD 用}
-
-\begin{multicollongtblr}[white]{\ttNum725\,-\ttNum739：\Dimple~移動 \DLtwoAC\DLtwoBD 用}{cX[l]}
-変数 & 内容\\
-\ttNum725 & プログラム読込時ブロックエンド$Y$ or $X$ (\ttNum5002, \ttNum5001)\\
-\ttNum726 & プログラム読込時ブロックエンド$Z$ (\ttNum5003)\\
-\ttNum727 & \Dimple~偶数列の列数\\
-\ttNum728 & \Dimple~偶数列（一列）の\DimpleNum$d_\mathrm e$\\
-\ttNum729 & \Dimple~奇数列（一列）の\DimpleNum$d_\mathrm o$\\
-\ttNum730 & \Dimple~現在の列の\DimpleNum\\
-\SetRow{unusingVariables}
-\ttNum731 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum732 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum733 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum734 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum735 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum736 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum737 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum738 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum739 & （予備）\\
-\end{multicollongtblr}
-
-%\clearpage
-\begin{multicollongtblr}[white]{\ttNum740\,-\ttNum749：\Dimple~測定~\DMLthreeAC\DMLthreeBD 用}{cX[l]}
-変数 & 内容\\
-\SetRow{unusingVariables}
-\ttNum740 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum741 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum742 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum743 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum744 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum745 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum746 & （予備）\\
-\SetRow{unusingVariables}
-\ttNum747 & （予備）\\
-\ttNum748 & プログラム読込時ブロックエンド$X$ or $Y$ (\ttNum5001, \ttNum5002)\\
-\ttNum749\color{red}$^*$ & \Dimple~表面位置$X$ or $Y$測定値
-\end{multicollongtblr}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{marker}
-\ttNum749は\DLtwoAC および\DLtwoBD で\index{RHS（コモンへんすう）@RHS（コモン変数）}RHSとして使用していることに注意
-\end{marker}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 19.7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum900000\,-\ttNum900050, \ttNum900101\,-\ttNum900500：実測値}
+\modHeadsection{\ttNum900000\,-\ttNum900049, \ttNum900100\,-\ttNum900599：実測値}
 \ttNum900000\,-\ttNum900500については、\index{じっそくち@実測値}実測値または計算値を格納する。
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 19.7.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum900001\,-\ttNum900050：\Dimple 以外}
+\subsection{\ttNum900000\,-\ttNum900050：\Dimple 以外}
 
 \begin{multicollongtblr}[white]{\ttNum900000\,-\ttNum900005：外中心$X$ 両側 測定用 \MXOThickness}{cX[l]}
 変数 & 内容\\
@@ -832,22 +708,32 @@ $\cdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 30.07.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum900101\,-\ttNum900500：\Dimple}
+\subsection{\ttNum900100\,-\ttNum900599：\Dimple}
 
-\begin{multicollongtblr}[white]{\ttNum900101\,-\ttNum900300：\Dimple AC表面位置 測定値 \DMLthreeAC}{cX[l]}
+\begin{multicollongtblr}[white]{\ttNum900100\,-\ttNum900299：\Dimple AC表面位置 測定値 \DMLthreeAC}{cX[l]}
 変数 & 内容\\
-\ttNum900101\,-\ttNum900200 & \AfaceDimple~表面位置$X$ 測定値\\
-\ttNum900201\,-\ttNum900300 & \CfaceDimple~表面位置$X$ 測定値
+\SetRow{unusingVariables}
+\ttNum900100 & （予備）\\
+\ttNum900101\,-\ttNum900199 & \AfaceDimple~表面位置$X$ 測定値\\
+\SetRow{unusingVariables}
+\ttNum900200 & （予備）\\
+\ttNum900201\,-\ttNum900299 & \CfaceDimple~表面位置$X$ 測定値
 \end{multicollongtblr}
 
-\begin{multicollongtblr}[white]{\ttNum900301\,-\ttNum900500：\Dimple BD表面位置 測定値 \DMLthreeBD}{cX[l]}
+\begin{multicollongtblr}[white]{\ttNum900300\,-\ttNum900499：\Dimple BD表面位置 測定値 \DMLthreeBD}{cX[l]}
 変数 & 内容\\
+\SetRow{unusingVariables}
+\ttNum900300 & （予備）\\
 \ttNum900301\,-\ttNum900400 & \BfaceDimple~表面位置$Y$ 測定値\\
+\SetRow{unusingVariables}
+\ttNum900400 & （予備）\\
 \ttNum900401\,-\ttNum900500 & \DfaceDimple~表面位置$Y$ 測定値
 \end{multicollongtblr}
 
-\begin{multicollongtblr}[white]{\ttNum900501\,-\ttNum900600：\Dimple BD表面位置 測定値差用 \DLone}{cX[l]}
+\begin{multicollongtblr}[white]{\ttNum900500\,-\ttNum900599：\Dimple BD表面位置 測定値差用 \DLone}{cX[l]}
 変数 & 内容\\
+\SetRow{unusingVariables}
+\ttNum900500 & （予備）\\
 \ttNum900501\,-\ttNum900600 & BD面\Dimple~表面位置$Y$ 測定値差（既定値以上）
 \end{multicollongtblr}
 
@@ -1144,6 +1030,130 @@ $\cdots$ & （以下不明） & \ttNum0
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 30.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\ttNum901200\,-\ttNum901249：\Dimple 用}
+\ttNum901200\,-\ttNum901250については、主に\expandafterindex{\yomiDimpleMeasurement ようサブプログラム@\nameDimpleMeasurement 用サブプログラム}\DimpleMeasurement 用サブプログラム\Gprgbox{O2x000x}で使用されるものとする。
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 30.06.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\ttNum901200\,-\ttNum901224：\Dimple~\DLone 用}
+
+\begin{multicollongtblr}[white]{\ttNum901200\,-\ttNum901224：\Dimple~移動 \DLone 用}{cX[l]}
+変数 & 内容\\
+\ttNum901200 & NCプログラム読込時のワーク座標系(\ttNum4012)\\
+\ttNum901201 & 工具別$Z$補正({\ttfamily T50}:\ttNum901050, {\ttfamily T3x}:0)\\
+\ttNum901202 & 工具別$XY$補正({\ttfamily T50}:\ttNum901050, {\ttfamily T3x}:\ttNum[2400+\ttNum4111]+\ttNum[2600+\ttNum4111])\\
+\ttNum901203 & 工具別{\ttfamily G\ttNum} ({\ttfamily T50}:31, {\ttfamily T3x}:01)\\
+\ttNum901204 & \TableCenter からワーク座標(\ttNum901200)原点までの$X$距離\\
+\ttNum901205 & 傾き後の\TopEndFace 中心（機械座標）$X$ (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
+\ttNum901206 & \TableCenter から傾き後の\TopEndFace 中心までの$Z$距離 (\cf\pageeqref{eq:afterPhiTCenterFromO})\\
+\ttNum901207 & \TableCenter から\DimpleFirstRow までの$Z$距離$Z-q$\\
+\ttNum901208 & トップ端中心から\DimpleFirstRow 中心までの$X$距離(\cf\pageeqref{eq:dimpleCenterDistance})\\
+\ttNum901209 & 傾き後\DimpleFirstRow 中心$X$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\
+\ttNum901210 & 傾き後\DimpleFirstRow 中心$Z$移動距離(\cf\pageeqref{eq:afterPhidimpleCenterDistance})\\
+\ttNum901211 & 傾き後トップ端中心（ブロックエンド）$X$座標(\ttNum5001)\\
+\ttNum901212 & 傾き後トップ端中心（ブロックエンド）$Z$座標(\ttNum5003)\\
+\ttNum901213 & 傾き後\DimpleFirstRow 中心（ブロックエンド）$X$座標 (\ttNum5001)\\
+\ttNum901214 & 傾き後\DimpleFirstRow 中心（ブロックエンド）$Y$座標 (\ttNum5002)\\
+\ttNum901215 & 傾き後\DimpleFirstRow 中心（ブロックエンド）$Z$座標 (\ttNum5003)\\
+\ttNum901216 & BD内半径$+$\PlatingThk$-\text{\ttNum901202}-\text{\ttNum620}$\\
+\ttNum901217 & (AC内半径$+$\PlatingThk$-\text{\ttNum901202}-\text{\ttNum620}\text)\cos\phi$\\
+\ttNum901218 & \expandafterindex{しかこうよう\yomiDimpleDepth@試加工用\nameDimpleDepth}試加工用\nameDimpleDepth（$\lfloor$\DimpleDepth$\rfloor-0.1$）\\
+\ttNum901219 & BD面\Dimple 測定値差の大きさの総和\\
+\SetRow{unusingVariables}
+\ttNum901220 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901221 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901222 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901223 & （予備）\\
+\ttNum901224\color{red}$^*$ & 各面 ループ用数値(1:A, 2:C, 3:B, 4:D)\\
+\end{multicollongtblr}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+\ttNum901224は\DLtwoAC および\DLtwoBD で\index{RHS（コモンへんすう）@RHS（コモン変数）}RHSとして使用していることに注意
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 18.6.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\ttNum901225\,-\ttNum901249：\Dimple~\DLtwoAC\DLtwoBD 用}
+
+\begin{multicollongtblr}[white]{\ttNum901225\,-\ttNum739：\Dimple~移動 \DLtwoAC\DLtwoBD 用}{cX[l]}
+変数 & 内容\\
+\ttNum901225 & プログラム読込時ブロックエンド$Y$ or $X$ (\ttNum5002, \ttNum5001)\\
+\ttNum901226 & プログラム読込時ブロックエンド$Z$ (\ttNum5003)\\
+\ttNum901227 & \Dimple~偶数列の列数\\
+\ttNum901228 & \Dimple~偶数列（一列）の\DimpleNum$d_\mathrm e$\\
+\ttNum901229 & \Dimple~奇数列（一列）の\DimpleNum$d_\mathrm o$\\
+\ttNum901230 & \Dimple~現在の列の\DimpleNum\\
+\SetRow{unusingVariables}
+\ttNum901231 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901232 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901233 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901234 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901235 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901236 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901237 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901238 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901239 & （予備）\\
+\end{multicollongtblr}
+
+%\clearpage
+\begin{multicollongtblr}[white]{\ttNum901240\,-\ttNum901249：\Dimple~測定~\DMLthreeAC\DMLthreeBD 用}{cX[l]}
+変数 & 内容\\
+\SetRow{unusingVariables}
+\ttNum901240 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901241 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901242 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901243 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901244 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901245 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901246 & （予備）\\
+\SetRow{unusingVariables}
+\ttNum901247 & （予備）\\
+\ttNum901248 & プログラム読込時ブロックエンド$X$ or $Y$ (\ttNum5001, \ttNum5002)\\
+\ttNum901249\color{red}$^*$ & \Dimple~表面位置$X$ or $Y$測定値
+\end{multicollongtblr}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% hosoku %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{marker}
+\ttNum901249は\DLtwoAC および\DLtwoBD で\index{RHS（コモンへんすう）@RHS（コモン変数）}RHSとして使用していることに注意
+\end{marker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 18.10 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\index{コモンへんすう（みしよう）@コモン変数（未使用）}未使用（使用可）のコモン変数}
@@ -1151,9 +1161,10 @@ $\cdots$ & （以下不明） & \ttNum0
 これらの\index{コモンへんすう（みしよう）@コモン変数（未使用）}コモン変数を、以下にまとめておく。
 \begin{enumerate}[label=\sarrow]
 \item \ttNum575-\ttNum599
-\item \ttNum750-\ttNum999
+\item \ttNum700-\ttNum999
 \item \ttNum900050-\ttNum900100
-\item \ttNum900601-\ttNum900999
-\item \ttNum901075-\ttNum901999
-\item \ttNum901150-\ttNum907399
+\item \ttNum900600-\ttNum900999
+\item \ttNum901075-\ttNum901099
+\item \ttNum901150-\ttNum901199
+\item \ttNum901250-\ttNum907399
 \end{enumerate}

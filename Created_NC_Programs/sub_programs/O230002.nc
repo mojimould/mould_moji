@@ -1,12 +1,12 @@
 %
-O230002 (last update on 20241018)
+O230002 (last update on 20241029)
 (for BD dimples measurement)
 (level 3: measurement dimple)
 (J > 0: B, J < 0: D)
 
 N0001
-#748=#5002
-(#748= current work block end Y)
+#901248=#5002
+(#901248= current work block end Y)
 
 IF[#05EQ#0]GOTO8000
 IF[#05EQ0]GOTO8000
@@ -31,17 +31,17 @@ IF[#05LT0]THEN #33=-1
 
 N0003
 G91 G31 Y[#33*[#620+#603]] F#656
-IF[ABS[#5002-#748]GE[#620+#603]]GOTO8000
-#749=#5002+#901055+#33*[-#901053+#901050]
-G90 G01 Y#748 F#652
+IF[ABS[#5002-#901248]GE[#620+#603]]GOTO8000
+#901249=#5002+#901055+#33*[-#901053+#901050]
+G90 G01 Y#901248 F#652
 (skip Y+ or Y-: #620+#603)
-(#749= block end Y + probe compensation etc)
+(#901249= block end Y + probe compensation etc)
 (G90 G01 Y: to start point)
 GOTO9999
 
 
 N8000
-G90 G01 Y#748 F#656
+G90 G01 Y#901248 F#656
 G65 P910002 (sensor OFF)
 #3000=121 (something*wrong)
 
@@ -65,7 +65,7 @@ M99
 (#901053: compensation: touch sensor signal delay)
 (#901055: compensation: probe center Y)
 (as LHS)
-(#748, #749)
+(#901248, #901249)
 
 (System variables)
 (#1004: 1: sensor on, 0: off)
@@ -76,7 +76,7 @@ M99
 (O910002)
 
 (Used in other programs)
-(#749: O220002)
+(#901249: O220002)
 
 
 (COPYRIGHT*2023-2024 THE*INDIVIDUAL*CREATOR NOT*HELD*BY*ANY*CORPORATION ALL*RIGHTS*RESERVED)
