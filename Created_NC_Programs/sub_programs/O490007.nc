@@ -1,6 +1,6 @@
 %
-O490007 (last update on 20240912)
-(Uchigawa Corner R ac HidariMawari 1shuu)
+O490007 (last update on 20241029)
+(inner, ac, counterclockwise)
 
 N0001
 IF[#24EQ#0]GOTO8000
@@ -38,7 +38,7 @@ S#19
 
 N0002
 G91 G01 G41 D#07 X[[#24/2]-#30] Y[[#25/2]-#18-#30] F[#09*3]
-(hosei kouguKei, kougu #07)
+(tool diameter compensation)
 (X+: X/2-#30)
 (Y+: Y/2-R-#30)
 G91 G03 X#30 Y#30 I0 J#30 F#08
@@ -46,19 +46,19 @@ G91 G03 X-#18 Y#18 I-#18 J0 F#08
 (ar corner: R #30 [0, #30] X+Y+)
 (ar corner: R #18 [-#18, 0] X-Y+)
 G91 G01 X-[#24-[#18*2]] F#09
-(a: X- AC chokusenBu)
+(a: X-)
 G91 G03 X-#18 Y-#18 I0 J-#18 F#08
 (al corner: R #18 [0, -#18] X-Y-)
 G91 G01 Y-[#25-[#18*2]] F#09
-(l:Y-: BD chokusenBu)
+(l:Y-)
 G91 G03 X#18 Y-#18 I#18 J0 F#08
 (bl corner: R #18 [#18, 0] X+Y-)
 G91 G01 X[#24-[#18*2]] F#09
-(b:X+: AC chokusenBu)
+(b:X+)
 G91 G03 X#18 Y#18 I0 J#18 F#08
 (br corner: R #18 [0, #18] X+Y+)
 G91 G01 Y[#25-[#18*2]] F#09
-(r:Y+: BD chokusenBu)
+(r:Y+)
 G91 G03 X-#18 Y#18 I-#18 J0 F#08
 G91 G03 X-#30 Y-#30 I0 J-#30 F[#09*3]
 (ar corner: R #18 [-#18, 0] X-Y+)
@@ -69,7 +69,7 @@ GOTO9999
 
 
 N8000
-M05 (shujiku kaiten off)
+M05 (spindle off)
 M09 (coolant off)
 #3000=100 (are*the*arguments*OK?)
 
@@ -83,13 +83,13 @@ M99
 (as received arguments)
 (#01:A: aproach radious)
 (#03:C: corner C)
-(#07:D: kouguNigashiRyou)
+(#07:D: tool clearance)
 (#08:E: speed at corner)
-(#09:F: speed at chokusen)
+(#09:F: speed at straight line)
 (#18:R: corner R)
-(#19:S: kaitenSuu)
-(#24:X: AC kei)
-(#25:Y: BD kei)
+(#19:S: spindle speed)
+(#24:X: AC diameter)
+(#25:Y: BD diameter)
 
 (as LHS)
 (#30, #31, #32, #33)
