@@ -1,6 +1,6 @@
 %
-O160003 (last update on 20241011)
-(X centerline measurement)
+O160003 (last update on 20241030)
+(endface leveling)
 
 N0001
 IF[#26EQ#0]GOTO8000
@@ -122,9 +122,9 @@ M99
 (Local variables)
 (as received arguments)
 (#13:M: mekki thickness mm)
-(#21:U: Top AC naikei or naisakuKei)
-(#24:X: Top AC gaikei or gaisakuKei)
-(#26:Z: Top sai-furiwake)
+(#21:U: Top AC ID or incut ID)
+(#24:X: Top AC OD or outcut OD)
+(#26:Z: Top re-alocation length)
 
 (as LHS)
 (#32, #33)
@@ -136,7 +136,7 @@ M99
 (#600, #610, #611, #650, #652, #653, #656)
 (#901011)
 (#901050: probe radius)
-(#901053: hosei: touch sensor signal delay)
+(#901053: compensation: touch sensor signal delay)
 
 (System variables)
 (#1000: 0: palette #1, 1: palette #2)
