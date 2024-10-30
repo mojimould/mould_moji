@@ -1,5 +1,5 @@
 %
-O530002 (last update on 20241029)
+O530002 (last update on 20241030)
 (for BD dimple milling)
 (level 3: milling dimple)
 (J > 0: B, J < 0: D)
@@ -72,10 +72,11 @@ GOTO0010
 
 N0009
 G91 G01 Y[#31*#21] F#674
-G91 G01 Z[#22/2] F50
-G18 G03 I0 K-[#22/2] F50
-G17
-G91 G01 Z-[#22/2] F50
+G91 G01 Z[#22/2] F60
+G18 G03 I0 K-[#22/2] F60
+G17 G91 G01 Z-[#22/4] F60
+G18 G03 I0 K-[#22/4] F120
+G17 G91 G01 Z-[#22/4] F60
 G04 X#623 (wait #623s)
 (Y+ or Y-: U, speed #673 or #674)
 
