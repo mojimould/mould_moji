@@ -1,6 +1,6 @@
 %
-O460000 (last update on 20241004)
-(Tanmen Zaguri Corner R, rc HidariMawari)
+O460000 (last update on 20241030)
+(endface boring, Corner R, rc, Counterclockwise)
 
 N0001
 IF[#04EQ#0]GOTO8000
@@ -35,12 +35,12 @@ IF[#668EQ#0]GOTO8000
 IF[#668LE10]GOTO8000
 IF[#669EQ#0]GOTO8000
 IF[#669LE10]GOTO8000
-IF[#680EQ#0]GOTO8000
-IF[#680LE200]GOTO8000
+IF[#705EQ#0]GOTO8000
+IF[#705LE200]GOTO8000
 (if #606 < 10 or #0, go to N8000)
 (if #668 <= 10 or #0, go to N8000)
 (if #669 <= 10 or #0, go to N8000)
-(if #680 <= 200 or #0, go to N8000)
+(if #705 <= 200 or #0, go to N8000)
 
 N0010
 #33=#21+2*[#18-SQRT[#22*[2*#18-#22]]]+#480
@@ -48,7 +48,7 @@ N0010
 #31=#[2400+#4120]+#[2600+#4120]
 (#33: U+2[R-SQRT[2R-V]]+#480)
 (#32: #33-2R)
-(#31: KouguKei)
+(#31: tool diameter)
 
 N0011
 IF[#4012NE56]GOTO8000
@@ -61,14 +61,14 @@ IF[#636GT#635]GOTO8000
 (if |#478| >= 5, go to N8000)
 (if |#479| >= 5, go to N8000)
 (if Z <= #901011/2, go to N8000)
-(if R <= hosei kouguKei-0.1, go to N8000)
+(if R <= tool diameter compensation-0.1, go to N8000)
 (if #636 > #635, go to N8000)
 
 IF[#22LE#636]GOTO0018
 (if V <= #636, go to Shiage)
 #103=FUP[[#22-#636]/#635]
 IF[#103LT0]GOTO8000
-(#103: kakou kaisuu)
+(#103: number of operations)
 
 
 (kokokara G00)
@@ -79,19 +79,19 @@ G90 G00 X[#900003/2-#04-[#21/2]+#478] Y[-#900009/2+#22-[#33/2]+#479]
 
 G90 G43 G01 H#4120 Z[#26+#600] F#650
 G90 G01 Z[#26-#23] F#651
-(hosei kouguChou: #4120)
+(tool length compensation: #4120)
 (Z: Z-W)
 
 N0013
 M03 (spindle on)
 M08 (coolant #1 on)
 
-N1000 (ShiageMae loop)
+N1000 (pre-finishing operation loop)
 WHILE[#103GE1]DO1
 #103=#103-1
 #104=#33-#636-#635*#103
 
-G65 P490004 X#104 Y#104 R#18 A#606 F#668 E#669 S#680
+G65 P490004 X#104 Y#104 R#18 A#606 F#668 E#669 S#705
 END1
 
 N0014 (pause)
@@ -111,7 +111,7 @@ M09 (coolant off)
 G90 G01 Z[#26+#600] F#650
 G65 P900003 (for Top)
 
-N0018 (Shiage)
+N0018 (finishing operation)
 #33=#21+#480+2*[#18-SQRT[#22*[2*#18-#22]]]
 #32=#33-#18*2
 (#33: U+#480+2[R-SQRT[2R-V]])
@@ -123,23 +123,23 @@ IF[#106EQ#0]THEN #106=0
 IF[#106LT0]THEN #106=0
 IF[#106GT3]THEN #106=3
 IF[#636LE0]THEN #106=#106-1
-(#106: Shiage kakou kaisuu)
+(#106: number of finishing operation)
 
 G90 G00 X[#900003/2-#04-[#21/2]+#478] Y[-#900009/2+#22-[#33/2]+#479]
 
 G90 G43 G01 H#4120 Z[#26+#600] F#650
 G90 G01 Z[#26-#23] F#651
-(hosei kouguChou: #4120)
+(tool length compensation: #4120)
 (Z: Z-W)
 
 M03 (spindle on)
 M08 (coolant #1 on)
 
-N2000 (Shiage loop)
+N2000 (finishing operation loop)
 WHILE[#106GE0]DO2
 #106=#106-1
 
-G65 P490004 X#33 Y#33 R#18 A#606 F#668 E#669 S#680
+G65 P490004 X#33 Y#33 R#18 A#606 F#668 E#669 S#705
 END2
 
 N9990
@@ -176,11 +176,11 @@ M99
 
 (as received arguments)
 (#04:I: distance from A-face)
-(#18:R: zaguri corner R)
-(#21:U: zaguri width)
-(#22:V: zaguri depth)
-(#23:W: zaguri length)
-(#26:Z: Top sai-furiwake)
+(#18:R: endface boring corner R)
+(#21:U: endface boring width)
+(#22:V: endface boring depth)
+(#23:W: endface boring length)
+(#26:Z: Top re-alocation length)
 
 (as LHS)
 (#31, #32, #33)
@@ -191,7 +191,7 @@ M99
 (as RHS)
 (#186)
 (#478, #479, #480, #481)
-(#600, #606, #633, #634, #650, #651, #666, #667, #679)
+(#600, #606, #633, #634, #650, #651, #668, #669, #705)
 (#901011)
 
 (System variables)
@@ -203,7 +203,7 @@ M99
 (O490004, O900003)
 
 (Passed arguments)
-(#07, #18, #104, #105, #606, #666, #667, #679)
+(#07, #18, #104, #105, #606, #668, #669, #705)
 
 
 (COPYRIGHT*2023-2024 THE*INDIVIDUAL*CREATOR NOT*HELD*BY*ANY*CORPORATION ALL*RIGHTS*RESERVED)

@@ -1,6 +1,6 @@
 %
-O470000 (last update on 20240701)
-(Incut, ar HidariMawari 1shuu)
+O470000 (last update on 20241030)
+(Incut boring, ar, Counterclockwise)
 
 N0001
 IF[#24EQ#0]GOTO0800
@@ -25,11 +25,11 @@ IF[#670EQ#0]GOTO0800
 IF[#670LE10]GOTO0800
 IF[#671EQ#0]GOTO0800
 IF[#671LE10]GOTO0800
-IF[#681EQ#0]GOTO0800
-IF[#681LE200]GOTO0800
+IF[#706EQ#0]GOTO0800
+IF[#706LE200]GOTO0800
 (if #670 <= 10 or #0, go to N0800)
 (if #671 <= 10 or #0, go to N0800)
-(if #681 <= 200 or #0, go to N0800)
+(if #706 <= 200 or #0, go to N0800)
 
 N0003
 IF[ABS[#485]GE10]GOTO0800
@@ -49,7 +49,7 @@ IF[ABS[#484]GE#18]GOTO0800
 N0004
 #30=#24+#485
 #29=#25+#485
-(hosei: naisakuKei +hosei)
+(compensation: incut ID +compensation)
 
 N0005
 #100=#30-#900018
@@ -60,7 +60,7 @@ IF[#102LE#638]GOTO0016
 (if #102 <= #638, go to N0016)
 #103=FUP[[#102-#638]/#637]
 IF[#103LT0]GOTO0800
-(#103: kakou kaisuu)
+(#103: number of operationss)
 
 
 (kokokara G01)
@@ -69,23 +69,23 @@ IF[#103LT0]GOTO0800
 N0006
 G90 G00 X#484 Y0
 G90 G43 G01 H#4120 Z[#26+#600] F#650
-G90 G01 Z[#26-#06] S#681 F#651
-(X to hosei #484)
-(hosei kouguChou: #4120)
+G90 G01 Z[#26-#06] S#706 F#651
+(X to compensation #484)
+(tool lengthcompensation: #4120)
 (Z: Z-K)
 
 N0007
 M03 (spindle on)
 M08 (coolant on)
 
-N0100 (ShiageMae loop)
+N0100 (pre-finishing operation loop)
 WHILE[#103GE1]DO1
 #103=#103-1
 #104=#30-#638-#637*#103
 #105=#29-#638-#637*#103
 
 N0103
-G65 P490007 D#4120 X#104 Y#105 R#18 A#606 F#670 E#671 S#681
+G65 P490007 D#4120 X#104 Y#105 R#18 A#606 F#670 E#671 S#706
 END1
 
 
@@ -108,10 +108,10 @@ N0013 (if #486=2)
 G65 P900003
 
 
-N0016 (Shiage)
+N0016 (finishing operation)
 #30=#24+#485
 #29=#25+#485
-(sai-hosei: gaisakuKei +hosei)
+(re-compensation: incut ID +compensation)
 
 #106=FUP[#187]
 
@@ -119,26 +119,26 @@ IF[#106EQ#0]THEN #106=0
 IF[#106LT0]THEN #106=0
 IF[#106GT3]THEN #106=3
 IF[#638LE0]THEN #106=#106-1
-(#106: Shiage kakou kaisuu)
+(#106: number of finishing operation)
 
 N0015
 G90 G00 X#484 Y0
 G90 G43 G01 H#4120 Z[#26+#600] F#650
-G90 G01 Z[#26-#06] S#681 F#651
-(X to hosei #484)
-(hosei kouguChou: #4120)
+G90 G01 Z[#26-#06] S#706 F#651
+(X to compensation #484)
+(tool length compensation: #4120)
 (Z: Z-K)
 
 M03 (spindle on)
 M08 (coolant on)
 
 
-N0200 (Shiage loop)
+N0200 (finishing operation loop)
 WHILE[#106GE0]DO2
 #106=#106-1
 
 N0201
-G65 P490007 D#4120 X#30 Y#29 R#18 A#606 F#670 E#671 S#681
+G65 P490007 D#4120 X#30 Y#29 R#18 A#606 F#670 E#671 S#706
 END2
 
 
@@ -174,11 +174,11 @@ N9999 M99
 (Local variables)
 
 (as received arguments)
-(#06:K: naisaku Length)
-(#18:R: naisaku corner R)
-(#24:X: AC naisakuKei)
-(#25:Y: BD naisakuKei)
-(#26:Z: Top sai-furiwake)
+(#06:K: incut Length)
+(#18:R: incut corner R)
+(#24:X: AC ID)
+(#25:Y: BD ID)
+(#26:Z: Top re-alocation length)
 
 (as LHS)
 (#29, #30, #31)
@@ -189,7 +189,7 @@ N9999 M99
 (as RHS)
 (#187)
 (#484, #485, #486)
-(#600, #606, #637, #638, #650, #651, #670, #671, #681)
+(#600, #606, #637, #638, #650, #651, #670, #671, #706)
 (#900018, #900024, #901011)
 
 (System variables)
@@ -202,7 +202,7 @@ N9999 M99
 (O490007, O900003)
 
 (Passed arguments)
-(#18, #29, #30, #31, #104, #105, #606, #670, #671, #681)
+(#18, #29, #30, #31, #104, #105, #606, #670, #671, #706)
 
 
 (COPYRIGHT*2023-2024 THE*INDIVIDUAL*CREATOR NOT*HELD*BY*ANY*CORPORATION ALL*RIGHTS*RESERVED)

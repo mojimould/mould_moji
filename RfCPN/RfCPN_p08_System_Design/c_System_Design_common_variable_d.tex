@@ -480,10 +480,10 @@ $\cdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 39.05.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum650\,-\ttNum674：工具の送り速さ}
-\ttNum650\,-\ttNum674については、工具の\index{おくりはやさ@送り速さ}送り速さに関するものとする。\\
+\subsection{\ttNum650\,-\ttNum699：工具の送り速さ\TBW}
+\ttNum650\,-\ttNum699については、工具の\index{おくりはやさ@送り速さ}送り速さに関するものとする。\\
 
-\begin{multicollongtblr}[white]{\ttNum650\,-\ttNum674：工具の\index{おくりはやさ@送り速さ}送り速さ}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum650\,-\ttNum674：測定用工具の\index{おくりはやさ@送り速さ}送り速さ\TBW}{cX[l]c}
 変数 & 内容 & 設定例\\
 \ttNum650 & \index{はやおくり@早送り}早送り$Z$：{\ttfamily T50}\index{アプローチ}アプローチ以外 & \SpindleRapidTraverseZ\\
 \ttNum651 & アプローチ・$XY$\index{リトラクト}リトラクト：{\ttfamily T50}以外 & \SpindleRapidAproachFeedRateZ\\
@@ -508,30 +508,24 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum669 & \EndFaceBoringMilling：コーナー & \EndFaceBoringCornerFeedRate\\
 \ttNum670 & \IncutBoringMilling：直線 & \IncutBoringLinearFeedRate\\
 \ttNum671 & \IncutBoringMilling：コーナー & \IncutBoringCornerFeedRate\\
-\ttNum672 & \DimpleMeasurement：\index{ひょうめんアプローチ@表面アプローチ}表面アプローチ & \DimpleApproachFeedRate\\
+\ttNum672 & \DimpleMilling：\index{ひょうめんアプローチ@表面アプローチ}表面アプローチ & \DimpleApproachFeedRate\\
 \ttNum673 & \DimpleMilling：\TSlotCutter{} 加工 & \DimpleTSlotProcessFeedRate\\
 \ttNum674 & \DimpleMilling：\BallEndMill{} 加工 & \DimpleBallendProcessFeedRate\\
 \end{multicollongtblr}
 
 
 \clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 39.05.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum675\,-\ttNum699：\index{スピンドル}スピンドルの\index{かいてんすう@回転数}回転数（切削時）}
-\ttNum675\,-\ttNum699については、切削時の工具の\index{しゅじくかいてんすう@主軸回転数}主軸回転数に関するものとする。\\
-
-\begin{multicollongtblr}[white]{\ttNum675\,-\ttNum699：\index{しゅじくかいてんすう@主軸回転数}主軸回転数（切削時）}{cX[l]c}
+\begin{multicollongtblr}[white]{\ttNum675\,-\ttNum699：加工用工具の\index{おくりはやさ@送り速さ}送り速さ\TBW}{cX[l]c}
 変数 & 内容 & 設定例\\
-\ttNum675 & \EndFacecutMilling & \EndFaceSpindleSpeed\\
-\ttNum676 & \OutcutMilling & \OutcutSpindleSpeed\\
-\ttNum677 & \KeywayMilling & \KeywaySpindleSpeed\\
-\ttNum678 & \EndFaceOutCChamferMilling & \OutCChamferSpindleSpeed\\
-\ttNum679 & \EndFaceInCChamferMilling & \InCChamferSpindleSpeed\\
-\ttNum680 & \EndFaceBoringMilling & \EndFaceBoringSpindleSpeed\\
-\ttNum681 & \IncutBoringMilling & \IncutBoringSpindleSpeed \\
-\ttNum682 & \DimpleMilling（\TSlotCutter） & \DimpleTSlotSpindleSpeed\\
-\ttNum683 & \DimpleMilling（\BallEndMill） & \DimpleBallendSpindleSpeed\\
+\ttNum675 & \\
+\ttNum676 & \\
+\ttNum677 & \\
+\ttNum678 & \\
+\ttNum679 & \\
+\ttNum680 & \\
+\ttNum681 & \\
+\ttNum682 & \\
+\ttNum683 & \\
 \SetRow{unusingVariables}
 \ttNum684 & （予備） & \\
 \SetRow{unusingVariables}
@@ -564,6 +558,59 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum698 & （予備） & \\
 \SetRow{unusingVariables}
 \ttNum699 & （予備） & \\
+\end{multicollongtblr}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection 39.05.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\ttNum700\,-\ttNum724：\index{スピンドル}スピンドルの\index{かいてんすう@回転数}回転数（切削時）}
+\ttNum700\,-\ttNum724については、切削時の工具の\index{しゅじくかいてんすう@主軸回転数}主軸回転数に関するものとする。\\
+
+\begin{multicollongtblr}[white]{\ttNum700\,-\ttNum724：\index{しゅじくかいてんすう@主軸回転数}主軸回転数（切削時）}{cX[l]c}
+変数 & 内容 & 設定例\\
+\ttNum700 & \EndFacecutMilling & \EndFaceSpindleSpeed\\
+\ttNum701 & \OutcutMilling & \OutcutSpindleSpeed\\
+\ttNum702 & \KeywayMilling & \KeywaySpindleSpeed\\
+\ttNum703 & \EndFaceOutCChamferMilling & \OutCChamferSpindleSpeed\\
+\ttNum704 & \EndFaceInCChamferMilling & \InCChamferSpindleSpeed\\
+\ttNum705 & \EndFaceBoringMilling & \EndFaceBoringSpindleSpeed\\
+\ttNum706 & \IncutBoringMilling & \IncutBoringSpindleSpeed\\
+\ttNum707 & \DimpleMilling（\TSlotCutter） & \DimpleTSlotSpindleSpeed\\
+\ttNum708 & \DimpleMilling（\BallEndMill） & \DimpleBallendSpindleSpeed\\
+\SetRow{unusingVariables}
+\ttNum709 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum710 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum711 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum712 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum713 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum714 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum715 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum716 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum717 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum718 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum719 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum720 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum721 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum722 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum723 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum724 & （予備） & \\
 \end{multicollongtblr}
 
 

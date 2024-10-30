@@ -1,5 +1,5 @@
 %
-O210003 (last update on 20241029)
+O210003 (last update on 20241030)
 (for dimple measurement & milling)
 (level 1: mainly moving along central curvature)
 
@@ -171,12 +171,12 @@ G91 G#901203 X#901209 Z#901210 F#653
 IF[#4111EQ50]GOTO0020
 (if sensor, go to N0020)
 IF[#4111EQ34]GOTO0018
-S#682
+S#707
 M09 (coolant off)
 GOTO0019
 
 N0018
-S#683
+S#708
 M08 (coolant on)
 
 N0019
@@ -316,11 +316,11 @@ G91 G#901203 X#901209 Z#901210 F#653
 IF[#4111EQ50]GOTO2000
 (if sensor, go to N2000)
 IF[#4111EQ34]GOTO0026
-S#682
+S#707
 GOTO0027
 
 N0026
-S#683
+S#708
 
 N0027
 M03 (spindle on)
@@ -540,7 +540,7 @@ M99
 (Common variables)
 (as RHS)
 (#401)
-(#600, #620, #652, #653, #682)
+(#600, #620, #652, #653, #707)
 (#900018, #900024, #901001, #901005, #901011, #901050)
 (#900301-#900600)
 (as LHS)
