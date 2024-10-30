@@ -1,0 +1,48 @@
+%!TEX root = ../RfCPN.tex
+
+
+\modHeadchapter[locode]{\CreatedNCPrg（\MMC）\label{chap:createdNCprgMM}\vphantom{\ref{chap:createdNCprgMM}}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section G.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{加工用\index{サブプログラム}サブプログラム（\MMC）}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection G.01.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\EndFaceOutCChamferMilling 用\index{サブプログラム}サブプログラム}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \nameMMCKEndFaceOutCChamferRLeft %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionof{locode}{\MMCKEndFaceOutCChamferRLeft\,:加工 \EndFaceOutChamfer{} 左回り}
+\GcodeInputminted{../Created_NC_Programs/sub_programs_for_MMC/\nameMMCKEndFaceOutCChamferRLeft.nc}
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MMCKOLeftFS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionof{locode}{\MMCKOLeftFS\,:外側 {\ttfamily G42} 左回り1周 右上始まり}
+\GcodeInputminted{../Created_NC_Programs/sub_programs_for_MMC/\nameMMCKOLeftFS.nc}
+
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% subsection G.01.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\EndFaceInCChamferMilling 用\index{サブプログラム}サブプログラム}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \nameMMCKEndFaceInCChamferRLeft %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionof{locode}{\MMCKEndFaceInCChamferRLeft\,:加工 \EndFaceInChamfer{} 左回り}
+\GcodeInputminted{../Created_NC_Programs/sub_programs_for_MMC/\nameMMCKEndFaceInCChamferRLeft.nc}
+
+\clearrightpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prg. \MMCKILeftFF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionof{locode}{\MMCKILeftFF\,:外側 {\ttfamily G42} 左回り1周 右上始まり}
+\GcodeInputminted{../Created_NC_Programs/sub_programs_for_MMC/\nameMMCKILeftFF.nc}

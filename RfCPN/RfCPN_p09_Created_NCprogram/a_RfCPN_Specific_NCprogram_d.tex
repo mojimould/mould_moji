@@ -1,7 +1,7 @@
 %!TEX root = ../RfCPN.tex
 
 
-\modHeadchapter[locode]{\CreatedNCPrg\label{chap:createdNCprgDM}\vphantom{\ref{chap:createdNCprgDM}}}
+\modHeadchapter[locode]{\CreatedNCPrg（\DMC）\label{chap:createdNCprgDM}\vphantom{\ref{chap:createdNCprgDM}}}
 
 
 
@@ -341,48 +341,3 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \captionof{locode}{\OtoolLength\,:\nameToolLength 自動測定用サブプログラム}
 \GcodeInputminted{../Created_NC_Programs/sub_programs/\nameOtoolLength.nc}
-
-
-
-\clearrightpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section F.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\MMC 向けの\index{サブプログラム}サブプログラム}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection F.06.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\EndFaceOutCChamferMilling 用\index{サブプログラム}サブプログラム}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \nameMMCKEndFaceOutCChamferRLeft %%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionof{locode}{\MMCKEndFaceOutCChamferRLeft\,:加工 \EndFaceOutChamfer{} 左回り}
-\GcodeInputminted{../Created_NC_Programs/sub_programs_for_MMC/\nameMMCKEndFaceOutCChamferRLeft.nc}
-
-\clearrightpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \MMCKOLeftFS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionof{locode}{\MMCKOLeftFS\,:外側 {\ttfamily G42} 左回り1周 右上始まり}
-\GcodeInputminted{../Created_NC_Programs/sub_programs_for_MMC/\nameMMCKOLeftFS.nc}
-
-
-\clearrightpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection F.06.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\EndFaceInCChamferMilling 用\index{サブプログラム}サブプログラム}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \nameMMCKEndFaceInCChamferRLeft %%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionof{locode}{\MMCKEndFaceInCChamferRLeft\,:加工 \EndFaceInChamfer{} 左回り}
-\GcodeInputminted{../Created_NC_Programs/sub_programs_for_MMC/\nameMMCKEndFaceInCChamferRLeft.nc}
-
-\clearrightpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Prg. \MMCKILeftFF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\captionof{locode}{\MMCKILeftFF\,:外側 {\ttfamily G42} 左回り1周 右上始まり}
-\GcodeInputminted{../Created_NC_Programs/sub_programs_for_MMC/\nameMMCKILeftFF.nc}
