@@ -40,16 +40,5 @@ M09
 #3000=100(are*the*arguments*OK?)
 N9999
 M99
-
-(#01:A: aproach radious)
-(#03:C: corner C)
-(#07:D: tool clearance)
-(#08:E: speed at corner)
-(#09:F: speed at straight line)
-(#18:R: corner R)
-(#19:S: spindle speed)
-(#24:X: AC diameter)
-(#25:Y: BD diameter)
-
 (COPYRIGHT*2023-2024 THE*INDIVIDUAL*CREATOR NOT*HELD*BY*ANY*CORPORATION ALL*RIGHTS*RESERVED)
 %
