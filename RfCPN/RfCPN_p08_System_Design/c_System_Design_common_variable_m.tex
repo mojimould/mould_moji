@@ -13,71 +13,27 @@
 \DMC で\index{コモンへんすう（しようかのう）@コモン変数（使用可能）}使用可能なコモン変数は以下のとおりである。
 \begin{enumerate}[label=\sarrow]
 \item \ttNum100\,-\ttNum199
-\item \ttNum500\,-\ttNum999
+\item \ttNum500\,-\ttNum599
 \end{enumerate}
-なお、\ttNum100\,-\ttNum194および\ttNum500\,-\ttNum598は、「\index{\yomiMMC むじんかシステム@\nameMMC 無人化システム}\nameMMC 無人化システム」にて使用されている。
+なお、\ttNum100\,-\ttNum194および\ttNum500, \ttNum501, \ttNum520\,-\ttNum598は、「\index{\yomiMMC むじんかシステム@\nameMMC 無人化システム}\nameMMC 無人化システム」にて使用されている。
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 40.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum600\,-\ttNum607：一時保存値}
-\noindent\ttNum600\,-\ttNum607については、主に測定値の一時的な保存に用いるものとする。\\
+\modHeadsection{\ttNum502\,-\ttNum510}
 
-\begin{multicollongtblr}[white]{\ttNum600\,-\ttNum607：測定値一時保存値}{cX[l]}
-変数 & 内容\\
-\ttNum600 & \BottomEndFace 部$X$方向外側径 測定値 一時保存値\\
-\ttNum601 & \BottomEndFace 部$Y$方向外側径 測定値 一時保存値\\
-\ttNum602 & \BottomEndFace 部$X$方向内側径 測定値 一時保存値\\
-\ttNum603 & \BottomEndFace 部$Y$方向内側径 測定値 一時保存値\\
-\ttNum604 & \TopEndFace 部$X$方向外側径 測定値 一時保存値\\
-\ttNum605 & \TopEndFace 部$Y$方向外側径 測定値 一時保存値\\
-\ttNum606 & \TopEndFace 部$X$方向内側径 測定値 一時保存値\\
-\ttNum607 & \TopEndFace 部$Y$方向内側径 測定値 一時保存値\\
-\SetRow{unusingVariables}
-\ttNum608 & （予備）
-\end{multicollongtblr}
-
-
-
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 40.3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{\ttNum609\,-\ttNum619：\EndFaceChamfer 用パラメタ}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 40.3.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum609\,-\ttNum613：\EndFaceOutChamfer 用パラメタ}
-\noindent\ttNum609\,-\ttNum613については、主に\EndFaceOutChamfer 用パラメタに用いるものとする。\\
-
-\begin{multicollongtblr}[white]{\ttNum609\,-\ttNum613：\EndFaceOutChamfer 用設定値}{cX[l]c}
-変数 & 内容 & 設定例\\
-\ttNum609 & \TopEndFaceOutCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum610 & \BottomEndFaceOutCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum611 & \EndFaceOutCChamferMilling1回あたりの削り代（直径） & 2.500\\
-\ttNum612 & \EndFaceOutCChamferMilling{} 仕上げ前 残り削り代（直径） & 1.500\\
-\SetRow{unusingVariables}
-\ttNum613 & （予備）
-\end{multicollongtblr}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% subsection 40.3.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum614\,-\ttNum618：\EndFaceInChamfer 用パラメタ}
-\noindent\ttNum614\,-\ttNum618については、主に\EndFaceInChamfer 用パラメタに用いるものとする。\\
-
-\begin{multicollongtblr}[white]{\ttNum614\,-\ttNum618：\EndFaceInChamfer 用設定値}{cX[l]c}
-変数 & 内容 & 設定例\\
-\ttNum614 & \TopEndFaceInCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum615 & \BottomEndFaceInCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
-\ttNum616 & \EndFaceInCChamferMilling1回あたりの削り代（直径） & 2.070\\
-\ttNum617 & \EndFaceInCChamferMilling{} 仕上げ前 残り削り代（直径） & 1.000\\
-\SetRow{unusingVariables}
-\ttNum618 & （予備）
+\begin{multicollongtblr}[white]{\ttNum502\,-\ttNum510：測定値一時保存値}{cX[l]c}
+変数 & 内容 & 設定値\\
+\ttNum502 & \BottomEndFace 部$X$方向外側径 測定値 一時保存値 & -\\
+\ttNum503 & \BottomEndFace 部$Y$方向外側径 測定値 一時保存値 & -\\
+\ttNum504 & \BottomEndFace 部$X$方向内側径 測定値 一時保存値 & -\\
+\ttNum505 & \BottomEndFace 部$Y$方向内側径 測定値 一時保存値 & -\\
+\ttNum506 & \TopEndFace 部$X$方向外側径 測定値 一時保存値 & -\\
+\ttNum507 & \TopEndFace 部$Y$方向外側径 測定値 一時保存値 & -\\
+\ttNum508 & \TopEndFace 部$X$方向内側径 測定値 一時保存値 & -\\
+\ttNum509 & \TopEndFace 部$Y$方向内側径 測定値 一時保存値 & -\\
+\ttNum510 & \BottomEndFaceInCChamfer{} 仕上げ加工 追加回数 (上限3) & 0\\
 \end{multicollongtblr}
 
