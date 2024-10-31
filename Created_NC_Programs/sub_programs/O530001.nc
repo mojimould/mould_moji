@@ -1,5 +1,5 @@
 %
-O530001 (last update on 20241030)
+O530001 (last update on 20241031)
 (for AC dimple milling)
 (level 3: milling dimple)
 (I > 0: A, I < 0: C)
@@ -71,14 +71,11 @@ G04 X#622 (wait #622s)
 GOTO0010
 
 N0009
-G17 G91 G01 Z[#22/4] F#692
 G17 G91 G01 X[#31*#21] F#691
-G19 G03 J0 K-[#22/4] F#692
-G17 G91 G01 Z[#22/4] F#692
+G17 G91 G01 Z[#22/2] F#692
 G19 G03 J0 K-[#22/2] F#692
-G17 G91 G01 X#33 F#651
-G17 G91 G01 Z-[#22/2] F#651
-(X+ or X-: U, speed #690 or #691)
+G17 G91 G01 Z-[#22/2] F#692
+(X+ or X-: U)
 
 N0010
 G90 G01 X#33 F#651
