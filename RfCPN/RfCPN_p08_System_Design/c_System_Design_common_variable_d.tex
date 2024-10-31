@@ -480,7 +480,7 @@ $\cdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 39.05.03 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum650\,-\ttNum699：工具の送り速さ\TBW}
+\subsection{\ttNum650\,-\ttNum699：工具の\index{おくりはやさ@送り速さ}送り速さ}
 \ttNum650\,-\ttNum699については、工具の\index{おくりはやさ@送り速さ}送り速さに関するものとする。\\
 
 \begin{multicollongtblr}[white]{\ttNum650\,-\ttNum674：測定用工具の\index{おくりはやさ@送り速さ}送り速さ\TBW}{cX[l]c}
@@ -504,10 +504,14 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum665 & \EndFaceOutCChamferMilling：コーナー & \OutCChamferCornerFeedRate\\
 \ttNum666 & \EndFaceInCChamferMilling：直線 & \InCChamferLinearFeedRate\\
 \ttNum667 & \EndFaceInCChamferMilling：コーナー & \InCChamferCornerFeedRate\\
-\ttNum668 & \EndFaceBoringMilling：直線 & \EndFaceBoringLinearFeedRate\\
-\ttNum669 & \EndFaceBoringMilling：コーナー & \EndFaceBoringCornerFeedRate\\
-\ttNum670 & \IncutBoringMilling：直線 & \IncutBoringLinearFeedRate\\
-\ttNum671 & \IncutBoringMilling：コーナー & \IncutBoringCornerFeedRate\\
+\SetRow{unusingVariables}
+\ttNum668 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum669 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum670 & （予備） & \\
+\SetRow{unusingVariables}
+\ttNum671 & （予備） & \\
 \SetRow{unusingVariables}
 \ttNum672 & （予備） & \\
 \SetRow{unusingVariables}
@@ -515,7 +519,6 @@ $\cdots$ & （以下不明） & \ttNum0
 \SetRow{unusingVariables}
 \ttNum674 & （予備） & \\
 \end{multicollongtblr}
-
 
 \clearpage
 \begin{multicollongtblr}[white]{\ttNum675\,-\ttNum699：加工用工具の\index{おくりはやさ@送り速さ}送り速さ\TBW}{cX[l]c}
@@ -530,10 +533,10 @@ $\cdots$ & （以下不明） & \ttNum0
 \ttNum682 & \\
 \ttNum683 & \\
 \ttNum684 & \\
-\ttNum685 & \\
-\ttNum686 & \\
-\ttNum687 & \\
-\ttNum688 & \\
+\ttNum685 & \EndFaceBoringMilling：直線 & \EndFaceBoringLinearFeedRate\\
+\ttNum686 & \EndFaceBoringMilling：コーナー & \EndFaceBoringCornerFeedRate\\
+\ttNum687 & \IncutBoringMilling：直線 & \IncutBoringLinearFeedRate\\
+\ttNum688 & \IncutBoringMilling：コーナー & \IncutBoringCornerFeedRate\\
 \ttNum689 & \DimpleMilling：\index{ひょうめんアプローチ@表面アプローチ}表面アプローチ & \DimpleApproachFeedRate\\
 \ttNum690 & \DimpleMilling：\TSlotCutter{} 加工 & \DimpleTSlotProcessFeedRate\\
 \ttNum691 & \DimpleMilling：\BallEndMill{} 加工（深さ方向） & \DimpleBallendProcessFeedRate\\
@@ -559,7 +562,7 @@ $\cdots$ & （以下不明） & \ttNum0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 39.05.04 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\ttNum700\,-\ttNum724：\index{スピンドル}スピンドルの\index{かいてんすう@回転数}回転数（切削時）}
+\subsection{\ttNum700\,-\ttNum724：\index{スピンドル}スピンドルの\index{しゅじくかいてんすう@主軸回転数}回転数（切削時）}
 \ttNum700\,-\ttNum724については、切削時の工具の\index{しゅじくかいてんすう@主軸回転数}主軸回転数に関するものとする。\\
 
 \begin{multicollongtblr}[white]{\ttNum700\,-\ttNum724：\index{しゅじくかいてんすう@主軸回転数}主軸回転数（切削時）}{cX[l]c}
@@ -725,7 +728,7 @@ $\cdots$ & （以下不明） & \ttNum0
 
 
 %\clearpage
-\begin{multicollongtblr}[white]{\ttNum900045\,-\ttNum900048：\Dimple 用 位置合わせ 測定用 \MEndFaceBothSideZ}{cX[l]}
+\begin{multicollongtblr}[white]{\ttNum900045\,-\ttNum900048：\TopEndFace レベル出し 測定用 \MEndFaceBothSideZ}{cX[l]}
 変数 & 内容\\
 \ttNum900045 & \TopEndFace AC方向$-$側$Z$座標\\
 \ttNum900046 & \TopEndFace AC方向$+$側$Z$座標\\
