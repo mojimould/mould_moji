@@ -294,7 +294,7 @@ if TopOutcutExistsFlag == 1:
     topOutcutLength    = f"{topOutcutLengthAve:.3f}"
     topOutcutCornerRDim = WS['I19'].value
     topOutcutCornerR    = f"{topOutcutCornerRDim:.2f}"
-    if BotOutcutExistsFlag == 0 or (BotOutcutExistsFlag == 1 and OutcutCenterlineBasementFlag == 2):
+    if BotOutcutExistsFlag == 0 or (BotOutcutExistsFlag == 1 and (BotCurvedOutcutExistsFlag == 1 or OutcutCenterlineBasementFlag == 2)):
         topOutcutAsideThicknessDim            = WS['I15'].value
         topOutcutAsideThicknessPlusTolerance  = WS['J15'].value
         topOutcutAsideThicknessMinusTolerance = WS['K15'].value
@@ -339,7 +339,7 @@ if BotOutcutExistsFlag == 1:
         botOutcutAsideThickness    = f"{botOutcutAsideThicknessAve:.3f}"
 
 # 通り芯
-if BotOutcutExistsFlag == 1 and TopOutcutExistsFlag == 1:
+if (BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 0) and (TopOutcutExistsFlag == 1 and TopCurvedOutcutExistsFlag == 0):
     centerlineACDifDim            = WS['I23'].value
     centerlineACDifPlusTolerance  = WS['J23'].value
     centerlineACDifMinusTolerance = WS['K23'].value

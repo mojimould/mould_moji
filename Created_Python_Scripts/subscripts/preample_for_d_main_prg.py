@@ -128,21 +128,21 @@ BotInCenterXVal = TableCenterXFromCurvatureCenterX * CosParallelAngle - botCurva
 # トップ端 外径中心X
 TopOutCenterXVal = topODCenterXFromCurvatureCenterX - TableCenterXFromCurvatureCenterX * CosParallelAngle
 # トップ端 外削中心X
-if TopOutcutExistsFlag == 1 and (BotOutcutExistsFlag == 0 or BotOutcutExistsFlag == 1 and OutcutCenterlineBasementFlag == 2):
+if (TopOutcutExistsFlag == 1 and TopCurvedOutcutExistsFlag == 0) and (BotOutcutExistsFlag == 0 or (BotOutcutExistsFlag == 1 and (BotCurvedOutcutExistsFlag == 1 or OutcutCenterlineBasementFlag == 2))):
     TopOutcutCenterXVal = TopOutCenterXVal + (botInChamferXFromCurvatureCenterX - topCurvatureCenterX) + topACIDAve / 2 + mekkiThicknessDim + topOutcutAsideThicknessAve - topOutcutACODAve / 2
 # トップ端 湾曲中心X
 TopInCenterXVal = topCurvatureCenterX - TableCenterXFromCurvatureCenterX * CosParallelAngle
 
-if (BotOutcutExistsFlag == 0 or BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 1) and TopOutcutExistsFlag == 0:
+if (BotOutcutExistsFlag == 0 or BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 1) and (TopOutcutExistsFlag == 0 or TopOutcutExistsFlag == 1 and TopCurvedOutcutExistsFlag == 1):
     originBotOut = f"{BotOutCenterXVal:.3f}"
     originTopOut = f"{TopOutCenterXVal:.3f}"
-elif (BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 0) and TopOutcutExistsFlag == 0:
+elif (BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 0) and (TopOutcutExistsFlag == 0 or TopOutcutExistsFlag == 1 and TopCurvedOutcutExistsFlag == 1):
     originBotOut = f"{BotOutcutCenterXVal:.3f}"
     originTopOut = f"{TopOutCenterXVal:.3f}"
-elif BotOutcutExistsFlag == 0 and TopOutcutExistsFlag == 1:
+elif (BotOutcutExistsFlag == 0 or BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 1) and (TopOutcutExistsFlag == 1 and TopCurvedOutcutExistsFlag == 0):
     originBotOut = f"{BotOutCenterXVal:.3f}"
     originTopOut = f"{TopOutcutCenterXVal:.3f}"
-elif BotOutcutExistsFlag == 1 and TopOutcutExistsFlag == 1:
+elif (BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 0) and (TopOutcutExistsFlag == 1 and TopCurvedOutcutExistsFlag == 0):
     if OutcutCenterlineBasementFlag == 1:
         originBotOutVal = BotOutcutCenterXVal
         originTopOutVal = centerlineACDifAve - BotOutcutCenterXVal
@@ -158,7 +158,7 @@ if KeywayAsideDepthToleranceExitsFlag == 1 and TopOutcutExistsFlag == 0:
     originKeywayVal = AsideKeywayCenterX - (keywayAsideDepthAve + keywayAsideDepthCorrection) - keywayACODAve / 2 - TableCenterXFromCurvatureCenterX * CosParallelAngle
 elif KeywayAsideDepthToleranceExitsFlag == 0 and TopOutcutExistsFlag == 0:
     originKeywayVal = TopInCenterXVal + (keywayCenterXFromAlocationCenter - topCurvatureCenterX) 
-elif BotOutcutExistsFlag == 0 and TopOutcutExistsFlag == 1:
+elif (BotOutcutExistsFlag == 0 or BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 1) and TopOutcutExistsFlag == 1:
     originKeywayVal = TopOutcutCenterXVal
 elif BotOutcutExistsFlag == 1 and TopOutcutExistsFlag == 1:
     originKeywayVal = originTopOutVal

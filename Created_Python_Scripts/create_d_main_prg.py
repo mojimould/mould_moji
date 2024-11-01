@@ -1618,7 +1618,7 @@ with open('./O' + MainPrgID, 'w') as f:
     SN_base_finish_start = SN_base_finish
 
     # centerline measurement
-    if BotOutcutExistsFlag == 1 and TopOutcutExistsFlag == 1:
+    if (BotOutcutExistsFlag == 1 and BotCurvedOutcutExistsFlag == 0) and (TopOutcutExistsFlag == 1 and TopCurvedOutcutExistsFlag == 0):
         SN_overall = next(SN_base)
         f.write(
             f"N{SN_overall:04d}\n"
