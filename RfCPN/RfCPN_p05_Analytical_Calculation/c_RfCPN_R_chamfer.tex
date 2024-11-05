@@ -4,17 +4,17 @@
 \modHeadchapter{\EndFaceRChamfer の幾何}
 ここでは主に、\textbf{\EndFaceOutRChamfer}および\textbf{\EndFaceInRChamfer}に関する測定・加工に必要な\expandafterindex{きかてきせいしつ（\yomiEndFaceRChamfer）@幾何的性質（\nameEndFaceRChamfer）}幾何的性質を考える。
 
-\EndFaceRChamferMilling では、\index{ボールエンドミル}ボールエンドミルの工具を用いて行われるのが一般的である。
-ボールエンドミルは\DMC には搭載しない予定であり、基本的には\EndFaceRChamfer は\index{てもちけんまき@手持ち研磨機}手持ち研磨機を用いて\index{さぎょうしゃ@作業者}作業者の手作業で行う。
+\EndFaceRChamferMilling では、\BallendMill の工具を用いて行われるのが一般的である。
+\EndFaceChamferMilling 用の\BallendMill は\DMC には搭載しない予定であり、基本的には\EndFaceRChamfer は\index{てもちけんまき@手持ち研磨機}手持ち研磨機を用いて\index{さぎょうしゃ@作業者}作業者の手作業で行う。
 しかし\EndFaceChamferLength が大きくなると、削る体積は3次関数的に増加する。
 そのため作業者の安全性が低下することはもちろん、作業者にかかる負担も大きくなり、さらには\index{マシニングセンタ}マシニングセンタ外での作業時間も大きく増えることになる。
 
-そこで、\EndFaceCChamferMilling で用いられる\index{テーパエンドミル}テーパエンドミルを用いて、\EndFaceRChamfer 部分の一部を切削することを考える。
+そこで、\EndFaceCChamferMilling で用いられる\index{テーパエンドミル}テーパエンドミルを用いて、\EndFaceRChamfer 部分をその接面に沿って切削することを考える。
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 25.1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 22.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection{\index{テーパエンドミル}テーパエンドミルによる\EndFaceChamfer}
 \TopEndFaceOutRChamferRadius および\BottomEndFaceOutRChamferRadius を、それぞれ$r_\mathrm{To}$, $r_\mathrm{Bo}$とする。
@@ -54,7 +54,7 @@
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% section 25.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 22.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \modHeadsection[中心座標\texorpdfstring{$X$}{X}の移動]{中心座標$X$の移動}
 \EndFaceCChamfer とみなして加工を行うため、\Outcut のある場合を除いて$X$方向への移動を考える必要がある。
