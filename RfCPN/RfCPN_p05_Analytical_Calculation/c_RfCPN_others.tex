@@ -264,7 +264,7 @@ $m$は梁の先端に作用する質量を示す。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% section 28.05 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\modHeadsection{外径の統一化に伴う幾何}
+\modHeadsection{\OuterDiameter の統一化に伴う幾何}
 機械加工前の修正等により、トップ端・ボトム端部の\OuterDiameter が\index{こうさ@公差}公差から（+側に）外れることがある。
 ここではこれをマシニングセンタを用いて修正することを考える。
 基本的な方針としては、端部から一定の距離の位置における\OuterDiameter の測定値を基準にして、端部もその値になるように加工を行うものとする。
@@ -273,9 +273,9 @@ $m$は梁の先端に作用する質量を示す。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 28.05.01 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{BD方向\OuterDiameter の修正}
+\subsection{\BDOD の修正}
 トップ側を考える。
-BD方向の\OuterDiameter の場合、\TopReAlocationLength$f_\mathrm T'$から$s_\mathrm T$だけ離れた位置のBD方向\OuterDiameter を測定する。
+\BDOD の場合、\TopReAlocationLength$f_\mathrm T'$から$s_\mathrm T$だけ離れた位置の\BDOD を測定する。
 あとはその測定値をもとに、BD方向だけを加工すればよい。
 
 ボトム側も同様であり、$f_\mathrm B'-s_\mathrm B$の位置の測定値を基準にして加工を行う。
@@ -284,8 +284,8 @@ BD方向の\OuterDiameter の場合、\TopReAlocationLength$f_\mathrm T'$から$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% subsection 28.05.02 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{AC方向\OuterDiameter の修正}
-AC方向の場合、$f_\mathrm T'-s_\mathrm T$の位置の\OuterDiameter を測定する際に、平行になるように\Table を傾ける必要がある。
+\subsection{\ACOD の修正}
+\ACOD の場合、$f_\mathrm T'-s_\mathrm T$の位置の\OuterDiameter を測定する際に、平行になるように\Table を傾ける必要がある。
 $f_\mathrm T'-z$の位置に対する傾き角度は、\pageeqref{eq:realocationT}より、
 \begin{align*}
   \sin\theta_z = \frac{f_\mathrm T'-z-f_\mathrm T}{\Delta_x'}
@@ -293,9 +293,9 @@ $f_\mathrm T'-z$の位置に対する傾き角度は、\pageeqref{eq:realocation
 で与えられる。
 したがって、
 \begin{align*}
-  \sin\theta_{s_\mathrm T} = \frac{f_\mathrm T'-f_\mathrm T-s_\mathrm T}{\Delta_x'}
+  \theta_{s_\mathrm T} = \sin^{-1}\frac{f_\mathrm T'-f_\mathrm T-s_\mathrm T}{\Delta_x'}
 \end{align*}
-だけ傾けてAC方向\OuterDiameter の測定を行い、それをもとに$0 < z < s_\mathrm T$の間で適宜傾けつつ加工を行えばよい。
+だけ傾けて\ACOD の測定を行い、それをもとに$0 < z < s_\mathrm T$の間で適宜傾けつつ加工を行えばよい。
 
 ボトム側の場合も同様にして、
 \begin{align*}
@@ -303,6 +303,6 @@ $f_\mathrm T'-z$の位置に対する傾き角度は、\pageeqref{eq:realocation
 \end{align*}
 で与えられるので、
 \begin{align*}
-  \sin\theta_{s_\mathrm B} = \frac{f_\mathrm B-(f_\mathrm B'-s_\mathrm B)}{\Delta_x'}
+  \theta_{s_\mathrm B} = \sin^{-1}\frac{f_\mathrm B-(f_\mathrm B'-s_\mathrm B)}{\Delta_x'}
 \end{align*}
-だけ傾けてAC方向\OuterDiameter の測定を行い、それをもとに$0 < z < s_\mathrm B$の間で適宜傾けつつ加工を行えばよい。
+だけ傾けて\ACOD の測定を行い、それをもとに$0 < z < s_\mathrm B$の間で適宜傾けつつ加工を行えばよい。
