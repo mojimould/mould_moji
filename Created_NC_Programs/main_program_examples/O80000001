@@ -1,5 +1,5 @@
 %
-O80000001 (Created on 20240925)
+O80000001 (Created on 20241108)
 (Top re_alocation: 500.016)
 (Bot re_alocation: 499.984)
 (Top Overhang: 170.016)
@@ -761,7 +761,7 @@ S35 (low gear)
 
 M28 (chip conveyor on)
 G54 G65 P150002 W500.016 Z499.984 T180.950 U180.950 B180.950 C180.950 I11.000 M12.050 K25.000 A-0.642
-(O150002: Outside Corner R, ar left)
+(O150002: Centerline)
 (W: Top re_alocation)
 (Z: Bot re_alocation)
 (T: Top outcut AC OD)
