@@ -1,4 +1,4 @@
-# last update: 20241025
+# last update: 20241108
 # Copyright 2023-2024 The individual creator, not held by any corporation.
 # All rights reserved.
 
@@ -1647,7 +1647,7 @@ with open('./O' + MainPrgID, 'w') as f:
         f.write(
             'M28 (chip conveyor on)\n'
             '' + workCoordinateBotOut + ' G65 P' + prgCenterlineDif + ' W' + topReAlocationLength + ' Z' + botReAlocationLength + ' T' + topOutcutACOD + ' U' + topOutcutBDOD + ' B' + botOutcutACOD + ' C' + botOutcutBDOD + ' I' + centerlineACDif + ' M' + keywayPos + ' K' + botOutcutLength + ' A' + topSideParallelAngle + '\n'
-            '(O' + prgCenterlineDif + ': Outside Corner R, ar left)\n'
+            '(O' + prgCenterlineDif + ': Centerline)\n'
             '(W: Top re_alocation)\n'
             '(Z: Bot re_alocation)\n'
             '(T: Top outcut AC OD)\n'
