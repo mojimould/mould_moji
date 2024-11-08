@@ -1,5 +1,5 @@
 %
-O150002 (last update on 20241011)
+O150002 (last update on 20241108)
 (X centerline measurement)
 
 N0001
@@ -109,7 +109,7 @@ G04 X1. (wait 1.0s)
 
 N0008
 G90 G54 G43 G31 Z[#5221-#33-#04+[#20/2]+#600] H50 F#652
-G90 G54 G31 Z[#5221-#33-#04+[#20/2]+#602] F#653
+G90 G54 G31 Z[#5221-#33-#04+[#20/2]+#602] F[#653/2]
 IF[#5003GT[#5221-#33-#04+[#20/2]+#602]]GOTO8002
 (Z skip: top outcut Cface +#600)
 (Z skip: top outcut Cface +#602)
@@ -127,7 +127,7 @@ G90 G53 G01 X[-#26+[#06/2]+#33] F#652
 (X: -Z+K/2 from table center)
 
 G90 G54 G43 G31 Z[#5221-#33+[#20/2]+#600] H50 F#652
-G90 G54 G31 Z[#5221-#33+[#02/2]+#602] F#653
+G90 G54 G31 Z[#5221-#33+[#02/2]+#602] F[#653/2]
 IF[#5003GT[#5221-#33+[#02/2]+#602]]GOTO8002
 (Z skip: bot outcut Cface +#600)
 (Z skip: bot outcut Cface Z+#602)
