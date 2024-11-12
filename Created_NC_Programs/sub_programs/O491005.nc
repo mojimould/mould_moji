@@ -1,5 +1,5 @@
 %
-O491005 (last update on 20241112)
+O491005 (last update on 20241113)
 (outer, ar, counterclockwise with Z-move)
 
 N0001
@@ -136,6 +136,7 @@ M99
 (Used Variables and Programs)
 
 (Local variables)
+(#32, #33)
 
 (as received arguments)
 (#02:B: curved outcut angle)
