@@ -1,5 +1,5 @@
 %
-O491005 (last update on 20241101)
+O491005 (last update on 20241112)
 (outer, ar, counterclockwise with Z-move)
 
 N0001
@@ -34,7 +34,7 @@ GOTO8000
 (if K is not 1-4, go to N8000)
 
 N0003 (for R)
-#33=30
+#33=90
 G91 G01 X-[#24-#18] Z-[[#24-#18]*SIN[#02]] F#09
 (a: X-Z-)
 #32=0
