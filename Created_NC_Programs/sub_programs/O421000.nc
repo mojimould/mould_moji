@@ -1,5 +1,5 @@
 %
-O421000 (last update on 20241101)
+O421000 (last update on 20241113)
 (Curved Outcut, ar, counterclockwise)
 
 N0001
@@ -326,6 +326,10 @@ M99
 (#3000: alarm)
 (#4012: current work coordinate G#)
 (#4120: current T#)
+(#5221)
+(#5241)
+(#5261)
+(#5281)
 
 (Subprograms)
 (O491005, O900003)
