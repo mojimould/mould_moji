@@ -306,3 +306,45 @@ $f_\mathrm T'-z$の位置に対する傾き角度は、\pageeqref{eq:realocation
   \theta_{s_\mathrm B} = \sin^{-1}\frac{f_\mathrm B-(f_\mathrm B'-s_\mathrm B)}{\Delta_x'}
 \end{align*}
 だけ傾けて\ACOD の測定を行い、それをもとに$0 < z < s_\mathrm B$の間で適宜傾けつつ加工を行えばよい。
+
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section 28.06 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\modHeadsection{\Tilt の幾何}
+\ACTilt を測定する方法として、材料のC面側の2点を測定し、その水平方向の差をみる方法を取り上げる。
+測定点を\TopEndFace から距離$t_\mathrm T$, および\BottomEndFace から距離$t_\mathrm B$の2点とすると、測定するC側外面の位置は\pageeqref{eq:tableTi}, \pageeqref{eq:tableBRi}より、
+\begin{align*}
+  \text{トップ側：}~~
+  & \ab[
+    \begin{array}{c}
+      f_\mathrm T'-t_\mathrm T\\[3pt]
+      G_{\mathrm By}\\[3pt]
+      \displaystyle
+      -G_{\mathrm Tx}
+      +\frac{W_x}2
+      -\sqrt{R_\mathrm c^2-f_\mathrm T^2}
+      +\sqrt{R_\mathrm c^2-(f_\mathrm T-t_\mathrm T)^2}
+    \end{array}
+    ]\ ,\\
+  \text{ボトム側：}~~
+  & \ab[
+    \begin{array}{c}
+      -f_\mathrm B'+t_\mathrm B\\[3pt]
+      G_{\mathrm By}\\[3pt]
+      \displaystyle
+      G_{\mathrm Bx}
+      +\frac{W_x}2
+      -\sqrt{R_\mathrm c^2-f_\mathrm B^2}
+      +\sqrt{R_\mathrm c^2-(f_\mathrm B-t_\mathrm B)^2}
+    \end{array}
+    ]\ .
+\end{align*}
+なお、これらの$Z$座標の差は以下で与えられる。
+\begin{align*}
+  \sqrt{R_\mathrm i^2-(f_\mathrm T-t_\mathrm T)^2}
+  -\sqrt{R_\mathrm i^2-(f_\mathrm B-t_\mathrm B)^2}.
+\end{align*}
+
